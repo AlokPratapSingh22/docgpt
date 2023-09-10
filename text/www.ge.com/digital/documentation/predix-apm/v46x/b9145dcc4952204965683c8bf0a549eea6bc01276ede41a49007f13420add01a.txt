@@ -1,0 +1,142 @@
+
+
+
+Fourth Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Release Notes
+Fourth Quarter of 2020
+
+
+
+
+
+
+
+Fourth Quarter of 2020Release Date: November 20, 2020This topic provides a list of product changes released for this module on this date.RBI 580
+
+Table 1. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, when duplicating an RBI PRD Criticality Analysis, if at least one related Degradation Mechanism was not selected, an error occurred, and the RBI PRD Criticality Analysis was not copied. This issue has been resolved.DE145952Previously, when you attempted to link RBI recommendations to an inspection task from the Inspection Plan Management page in bulk, for inspection tasks with similar task type, the inspection tasks were only displayed for the first recommendation. This issue has been resolved.DE145081Previously, when you attempted to create an Internal Corrosion (ICPC) group for a component with a family that was not Piping and a component type value that included the partial word PIP, an error message appeared. This issue has been resolved.DE143662
+RBI 581
+
+Table 2. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, when duplicating an RBI 581 Risk Analysis, if at least one related Degradation Mechanism was not selected, an error occurred, and the RBI 581 Risk Analysis was not copied. This issue has been resolved.DE145952Previously, when you attempted to link RBI recommendations to an inspection task from the Inspection Plan Management page in bulk, for inspection tasks with similar task type, the inspection tasks were only displayed for the first recommendation. This issue has been resolved.DE145081
+Release Date: October 2, 2020This topic provides a list of product changes released for this module on this date.RBI 580 and 581
+
+Table 3. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDYou can now implement recommended actions from multiple Inspection Plans to existing Inspection Tasks. To facilitate this enhancement, in the Inspection Plan Management workspace, in the Inspection Plans section, the Link Existing option has been added to the Implement menu. Note: The tasks to link are selected based on the task type of the recommended action and the linked asset.US340978
+Table 4. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, creating or copying an RBI analysis was failing for an Asset where the Source of Corrosion Rate was either Asset or Component and the Asset had large number of TMLs. This issue has been resolved. Now, you can go to Thickness Monitoring module and calculate the corrosion analysis before creating or copying an RBI Analysis, if the Asset has more than 1000 TMLs and the Asset Corrosion Analysis has not been calculated.US427530Previously, the security group MI Inspection Viewer did not have the permissions to view the Inspection Recommendation family. This issue has been resolved.DE135150Previously, in the Asset Hierarchy, when you selected an asset, and then selected the Integrity tab, the link for Risk Based Inspection took longer to load, depending on the number of assets in the Asset Hierarchy. This issue has been resolved.DE132867Previously, when you bulk calculated RBI 580 or RBI 581 analyses from the Unit Overview or the Corrosion Loop Overview section, the Analyses Calculation window displayed an incorrect value for the number of analyses calculated, and the percentage in the progress bar. This issue has been resolved.DE132615 Previously, in the Recommendation pane, the target completion date did not appear in the format based on your culture settings. This issue has been resolved.DE132189
+
+RBI 580
+
+Table 5. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDWith Inspection Grouping, you can now perform inspection on a subset of equipment in a group rather than on every piece of equipment in that group. Inspection Groups are created for two damage mechanisms, that is, for Internal Corrosion and External Corrosion. The primary criteria for selecting equipment for inspection are but not limited to the following:Wall RatioInspection PriorityRisk CategoryThis feature provides the following functionalities to optimize an inspection:Option to enable this feature from RBI application settingsAbility to create and update Inspection GroupAdvanced filtering for Inspection grouping gridAbility to generate Inspection group recommendationsIntegration of Inspection grouping recommendations with Inspection PlanAbility to promote Inspection grouping recommendations into Asset Strategy ManagerAbility to implement Inspection grouping recommendations from Inspection Plan and Asset Strategy ManagerUser interface to identify a Representative inspection event Ability to generate represented inspectionsNote: Existing Inspection Groups that were created in GE Digital APM V3.x will be visible in the page containing the Inspection Groups. It is recommended that you re-create the Inspection Groups.F48217You can now view the risk for the current interval on RBI PRD Criticality Analyses, Leak Degradation Mechanism Evaluations, and Over Pressure Degradation Mechanism Evaluations. The current interval is defined as the difference between the current calculation date and the Next Inspection Date field on the RBI PRD Criticality Analysis family. To facilitate this enhancement, the Next Inspection Date field is now a required field whether the RBI PRD Criticality Analysis protects components or assets. In addition, the following fields have been added to store the results of the calculation at the current interval: RBI PRD Criticality AnalysesDriving PoF – Current IntervalDriving CoF – Current IntervalDriving Inspection Priority (Unmitigated Risk) – Current IntervalRisk Category – Current IntervalInspection Interval – Current IntervalLeak Degradation Mechanism EvaluationProbability of Leak – Current IntervalProbability Category – Current IntervalOver Pressure Degradation Mechanism EvaluationProbability of Failure on Demand – Current IntervalProbability of Loss of Containment – Current IntervalProbability Category – Current IntervalUS416909You can now override the Recommended Interval field in Recommended Actions that are generated for RBI PRD Criticality Analyses by clearing the Use Calculated Data check box on the related Inspection Strategy datasheet. When the Use Calculated Data field is set to false, the Recommended Interval field will be set to the Recommended Inspection Interval field from the Inspection Strategy record.US415572You can now copy an RBI PRD Criticality Analysis. To facilitate this enhancement, the Duplicate option has been added to the Analysis Overview workspace and the Component Overview workspace.US414072To improve performance, the following queries have been modified to retrieve the ENTY_ID from the Equipment or Asset Hierarchy instead of the MI_ENTITIES table of the database:
+QueryPathActive Analyses for Evergreening - 580Public/Meridium/Modules/RBI/QueriesAnalyses Created for Evergreening - 580Public/Meridium/Modules/RBI/QueriesSelect RBI ComponentsPublic/Meridium/Modules/RBI/Queries
+US398209You can now create a What-If Analysis from an RBI Criticality Analysis in the active state. To facilitate this enhancement, the Create What-If option is now enabled on the RBI Component Overview workspace and the RBI Analysis workspace for the RBI Criticality Analyses that are in the active state.US385170To enhance usability, the #urlnotsupported tag has been removed from the URL column in the associated pages tab from the following two RBI families:RBI Criticality Analysis RBI RecommendationUS382352
+Table 6. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, Inventory was not calculated correctly for an RBI Component when Initial Fluid Phase was Gas. This issue has been resolved.DE138184Previously, the fields Operation Pressure – Channel Side and Operating Temperature – Channel Side on RBI Criticality Analysis had a default value of zero pounds force per square inch and zero degrees Fahrenheit respectively. This resulted in negative values for users assigned to the metric UOM Conversion Set. This issue has been resolved. Now, there is no default value assigned for the fields Operation Pressure – Channel Side and Operating Temperature – Channel Side. DE133049Previously, when the Allowable Stress Override check box was not selected, you could not calculate the RBI Criticality Analysis without specifying a value in the Material Grade box. However, for certain Material Specifications, the Material Grade is not required to populate the value in the Allowable Stress field for calculating the RBI Criticality Analysis. This issue has been resolved. Now, in this scenario, the Material Grade is not required when calculating the RBI Criticality Analysis.DE132255Previously, the Representative Fluid field in RBI Criticality Analysis was incorrectly mapped from the Process Fluid field value in the Technical Data - Shell Side section in the RBI Comp - Exchanger Bundle datasheet of the related RBI Component. This issue has been resolved. Now, the Representative Fluid field is not populated by default in the RBI Criticality Analysis, when the related RBI Component is Criticality RBI Component – Exchanger Bundle.DE126274
+
+RBI 581
+
+Table 7. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDPreviously, when calculating an RBI 581 Risk Analysis with an RBI 581 External Cracking Damage Evaluation or an RBI 581 Cracking Damage Evaluation, the value in the Date in Service field was used to calculate the age on Planned Date with Inspection if the Last Known Inspection Date field was not set. This issue has been resolved. Now, the Target Inspection Date field is used to calculate the age on Planned Date with Inspection regardless of whether the Last Known Inspection Date field is set for RBI 581 External Cracking Damage Evaluations and RBI 581 Cracking Damage Evaluations.US414062The following fields in the Risk Based Inspection 581 Consequence Evaluation family will now be displayed in Kilograms per Second for users assigned with the Metric Unit of Measure conversion set.Release Rate SmallRelease Rate MediumRelease Rate LargeRelease Rate RuptureAdjusted Release Rate SmallAdjusted Release Rate MediumAdjusted Release Rate LargeAdjusted Release Rate RuptureToxic Release Rate SmallToxic Release Rate MediumToxic Release Rate LargeToxic Release Rate RuptureTo facilitate this enhancement, a conversion set for Pounds per Second to Kilograms per second has been added.US403046RBI 581 Analyses now allow AST Shell calculations for Component Type field value set to Storage Tank. To facilitate this change, the following fields in the RBI 581 Consequence Evaluation family are now enabled if the Component Type field is set to Storage Tank, regardless of the related RBI Component family:Maximum Fill Height in ASTFluid Percent Leaving DikeFluid Percent OnsiteFluid Percent OffsiteEnvironmental SensitivityTank Course HeightIn Addition, RBI 581 Analyses with the Component Type field set to Storage Tank Bottom are only valid if the related RBI Component family is Criticality RBI Component - Tank Bottom.US401540To improve performance, the following queries have been modified to retrieve the ENTY_ID from the Equipment or Asset Hierarchy instead of the MI_ENTITIES table of the database:
+QueryPathActive Analyses for Evergreening – 581Public/Meridium/Modules/RBI 581/QueriesAnalyses Created for Evergreening – 581Public/Meridium/Modules/RBI 581/Queries
+US398209You can now create a What-If Analysis from an RBI 581 Risk Analysis in the active state. To facilitate this enhancement, the Create What-If option is now enabled on the RBI Component Overview workspace and the RBI Analysis workspace for the RBI 581 Risk Analyses that are in the active state.US385170
+Table 8. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, the SHE Risk Category was incorrectly set to Low on the RBI 581 Risk Analyses related to the Storage Tank Bottom components. This issue has been resolved. Now, the SHE Risk Category will always be blank on the RBI 581 Risk Analyses related to the Storage Tank Bottom components.DE140734Previously, when the Online Monitoring field was set to Yes (Y) on the 581-Internal Component Lining Damage, a Damage Mechanism Evaluation, the Online Monitoring Adjustment was incorrectly set as 0.01. This affected the calculated Damage Factor field. This issue has been resolved. Now, as per the API 581, 3rd edition specification, the Online Monitoring Adjustment is set to 0.1 when the Online Monitoring field is set to Yes (Y) on the 581-Internal Component Lining Damage a Damage Mechanism Evaluation.DE139034
+Previously, the Calculated T-min field in the 581 Risk Analyses was incorrectly calculated when the Geometry Type field value was Piping. This issue has been resolved. Now, the Calculated T-min field is calculated using the formula from the reference ASME B31.3, 2014 Edition. For more information on the formula, refer to https://digitalsupport.ge.com/communities/en_US/Article/KNOWN-ISSUE-Risk-Based-Inspection-581-Calculated-T-min-field-calculation-formula-was-incorrect-for-Piping.
+DE137299Previously, when calculating RBI 581 Analysis for an AST Shell component on an Oracle database where toxic fluid was set to ALCL3, an error occurred and the calculation failed. This issue has been resolved.DE137248 Previously, the Mapped RBI Component (MIR_MTORBIC) relationship family did not have a baseline business rule. Due to this, when you attempted to inherit the  Library.Baseline.MIR_MTORBIC.MIR_MTORBIC rule in your custom project, an error occurred. This issue has been resolved.DE133994 Previously, when the Allowable Stress Override check box was not selected, you could not calculate an RBI 581 Risk Analysis linked to RBI 581 Thinning and Lining Evaluation or RBI 581 External Damage Evaluation without specifying a value in the Material Grade box. However, for certain Material Specifications, the Material Grade is not required to populate the value in the Allowable Stress field for calculating the RBI Criticality Analysis. This issue has been resolved. Now, in this scenario, if the Allowable Stress and Flow Stress fields contain a value, the Material Grade is not required when calculating the RBI Criticality Analysis.DE132255
+
+
+
+
+
+
+On this pageRelease Date: November 20, 2020Release Date: October 2, 2020
+
+
+
+
+
+
+
+
+

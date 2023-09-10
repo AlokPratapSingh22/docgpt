@@ -1,0 +1,66 @@
+version: '3'
+
+services:
+
+  api:
+    build: .
+      # context: .
+      # dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - .env:/code/.env
+    depends_on:
+      - db
+    networks:
+      - chatgpt-network
+    restart: unless-stopped
+
+  db:
+    build: ./postgres
+      # context: ./postgres
+      # dockerfile: Dockerfile
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      # - ./postgres/db_scripts/embeddings_cleaned.csv:/data/embeddings_cleaned.csv
+      # - ./postgres/db_scripts/create_extension.sql:/docker-entrypoint-initdb.d/create_extension.sql
+      # - ./postgres/db_scripts/create_embeddings_data_table.sql:/docker-entrypoint-initdb.d/create_embeddings_data_table.sql
+      # - ./postgres/db_scripts/copy_embeddings.sql:/docker-entrypoint-initdb.d/copy_embeddings.sql
+       - ./postgres/db_scripts/embeddings_cleaned.csv:/data/embeddings_cleaned.csv
+       - ./postgres/db_scripts:/docker-entrypoint-initdb.d
+    networks:
+      - chatgpt-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # pgadmin:
+  #   container_name: pgadmin_container
+  #   image: dpage/pgadmin4
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+  #     PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+  #     PGADMIN_CONFIG_SERVER_MODE: 'False'
+  #   volumes:
+  #      - pgadmin:/var/lib/pgadmin
+  #   ports:
+  #     - "${PGADMIN_PORT:-5050}:80"
+  #   networks:
+  #     - chatgpt-network
+  #   restart: unless-stopped
+
+networks:
+  chatgpt-network:
+    driver: bridge
+
+# volumes:
+#     pgadmin:

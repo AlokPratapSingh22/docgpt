@@ -1,0 +1,1378 @@
+
+
+
+Asset Strategy Management | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health Manager
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+Asset Strategy Management
+
+
+
+
+
+
+
+Asset Strategy ManagementDeploy ASM for the First TimeBefore You Begin
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. GE Digital recommends, however, that the tasks be completed in the order in which they are listed.
+
+Results
+
+
+Step
+
+
+
+Task
+
+
+
+Notes
+
+1
+Assign Security Users to one or more of the ASM Security Groups and Roles.
+
+This step is required.
+
+Upgrade ASMBefore You Begin
+
+The following tables outline the steps that you must complete to upgrade this module to the latest version of GE Digital APM
+                    .
+                
+These tasks may be completed by multiple people in your organization. We recommend, however, that the tasks be completed in the order in which they are listed.
+
+ProcedureUpgrade to the latest version of GE Digital APM.
+This module will be updated to the latest version of GE Digital APM automatically. No additional steps are required.
+ASM Security Groups
+
+The following table lists the baseline Security Groups available for users within this module, as well as the baseline Roles to which those Security Groups are assigned. In Predix APM, Roles are assigned to Security Users through permission sets.
+
+Important:  Assigning a Security User to a Role grants that user the privileges associated with all of the Security Groups that are assigned to that Role. To avoid granting a Security User unintended privileges, before assigning a Security User to a Role, be sure to review all of the privileges associated with the Security Groups assigned to that Role.
+                
+
+Security GroupRoles
+MI ASM Administrator
+
+MI Strategy Admin
+
+MI ASM Analyst
+
+MI Strategy Admin
+MI Strategy Power
+MI Strategy User 
+MI Mechanical Integrity Power
+
+MI ASM Reviewer
+
+MI Strategy Admin
+MI Strategy Power
+MI Strategy User
+
+MI ASM Viewer
+
+MI APM Viewer
+MI Strategy Admin
+MI Strategy Power
+MI Strategy User
+
+The baseline family-level privileges that exist for these Security Groups are summarized in the following table.
+
+
+Family
+
+
+
+MI ASM Analyst
+
+
+
+MI ASM Administrator
+
+
+
+MI ASM Reviewer
+
+
+
+MI ASM Viewer
+
+Entity Families
+Action
+
+ View, Update, Insert, Delete
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+Action Mapping
+
+View
+
+None
+
+None
+
+None
+
+Active Strategy
+
+ View, Update, Insert, Delete
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+Analysis Link
+
+View
+
+View
+
+View
+
+View
+
+Asset Criticality Analysis
+
+View
+
+View
+
+View
+
+View
+
+Asset Criticality Analysis System
+
+View
+
+View
+
+View
+
+View
+
+Asset Strategy
+
+ View, Update, Insert, Delete
+
+View
+
+View, Update
+
+View
+
+Calibration Task
+
+View
+
+None
+
+View
+
+None
+
+Checkpoint Task
+
+ View, Update, Insert
+
+View, Update, Insert
+
+View, Update, Insert
+
+View
+
+Consequence
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+Distribution
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Execution Mapping
+
+View
+
+None
+
+None
+
+None
+
+Growth Model
+
+View
+
+View
+
+View
+
+View
+
+Health Indicator
+
+ View, Update, Insert, Delete
+
+None
+
+View, Update
+
+View
+
+Health Indicator Mapping
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+Hierarchy Item Child Definition
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+Hierarchy Item Definition
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+Implementation Package
+
+View, Insert
+
+None
+
+None
+
+None
+
+Inspection Task
+
+View
+
+None
+
+View
+
+View
+
+KPI
+
+View
+
+View
+
+View
+
+View
+
+KPI Measurement
+
+View
+
+View
+
+View
+
+View
+
+Measurement Location
+
+View
+
+View
+
+View
+
+View
+
+Measurement Location Group
+
+ View, Update, Insert
+
+None
+
+None
+
+None
+
+Measurement Location Template
+
+View
+
+View
+
+View
+
+View
+
+Operator Rounds Allowable Values
+
+View
+
+View
+
+View
+
+View
+
+Probability
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+Proposed Strategy
+
+ View, Update, Insert, Delete
+
+View
+
+View, Update
+
+View
+
+Protection Level
+
+View
+
+View
+
+View
+
+View
+
+RBI Degradation Mechanisms
+
+View, Update
+
+None
+
+None
+
+None
+
+RBI Recommendation
+
+View, Update
+
+None
+
+None
+
+None
+
+RCM FMEA Asset
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Reading
+
+View
+
+View
+
+View
+
+View
+
+Reliability Distribution
+
+View
+
+View
+
+View
+
+View
+
+Reliability Growth
+
+View
+
+View
+
+View
+
+View
+
+Risk Assessment
+
+ View, Update, Insert, Delete
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+Risk Category
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+Risk Matrix
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+Risk Rank
+
+ View, Update, Insert, Delete
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+Risk Threshold
+
+View
+
+Insert, View, Update, Delete
+
+View
+
+View
+
+Site Reference
+
+View
+
+View
+
+View
+
+View
+
+System Action
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+System Action Mapping
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+System Action Optimization
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+System Action Result
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+System Analysis
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+System Element
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+System Element Result
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+System Global Event
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+System Resource
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+System Resource Result
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+System Resource Usage
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+System Risk Assessment
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+System Scenario
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+System Sensor
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+System Strategy
+
+ View, Update, Insert, Delete
+
+View
+
+View, Update
+
+View
+
+Work Management Item Child Definition
+
+View
+
+None
+
+None
+
+None
+
+Work Management Item Definition
+
+View
+
+None
+
+None
+
+None
+
+Work Management Item Definition Configuration
+
+View
+
+None
+
+None
+
+None
+Relationship Families
+Asset Criticality Analysis Has System
+
+View
+
+View
+
+View
+
+View
+
+Has Action Driver
+
+ View, Update, Insert, Delete
+
+None
+
+None
+
+None
+
+Has Action Mapping
+
+View
+
+None
+
+None
+
+None
+
+Has Action Revisions
+
+ View, Update, Insert, Delete
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+Has Actions
+
+ View, Update, Insert, Delete
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+Has Active Strategy
+
+ View, Update, Insert, Delete
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+Has Asset Strategy
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has Associated Recommendation
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has Associated Strategy
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has Checkpoint
+
+View
+
+None
+
+None
+
+None
+
+Has Child Hierarchy Item
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+Has Child Work Management Item
+
+View
+
+None
+
+None
+
+None
+
+Has Driving Recommendation
+
+ View, Update, Insert, Delete
+
+View
+
+View, Delete
+
+View
+
+Has Execution Mapping
+
+View
+
+None
+
+None
+
+None
+
+Has Functional Location
+
+View
+
+None
+
+View
+
+None
+
+Has Global Events
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has Health Indicators
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has Measurement Location Group
+
+ View, Update, Insert, Delete
+
+None
+
+None
+
+None
+
+Has Mitigated TTF Distribution
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has Mitigation Revisions
+
+ View, Update, Insert, Delete
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+Has Planned Resource Usages
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has Proposed Strategy
+
+ View, Update, Insert, Delete
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+Has Readings
+
+View
+
+View
+
+View
+
+View
+
+Has Recommendations
+
+ View, Update, Insert, Delete
+
+None
+
+None
+
+N/A
+
+Has Reference Values
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+Has Resource Usages
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has Risk
+
+ View, Update, Insert, Delete
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+Has Risk Assessments
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has Risk Category
+
+ View, Update, Insert, Delete
+
+ View, Update, Insert, Delete
+
+ View, Update, Insert, Delete
+
+View
+
+Has Risk Matrix
+
+View
+
+None
+
+None
+
+None
+
+Has Risk Revisions
+
+ View, Update, Insert, Delete
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+Has Root System
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has Scenarios
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has Strategy
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has Strategy Revision
+
+ View, Update, Insert, Delete
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+Has System Actions
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has System Elements
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has System Optimization
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has System Resources
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has System Results
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has System Risks
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has System Strategy
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has TTF Distribution
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has TTR Distribution
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has Unplanned Resource Usages
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Has Work Management Item
+
+ View, Update, Insert
+
+None
+
+None
+
+None
+
+Has Work Management Item Definition Configuration
+
+View
+
+None
+
+None
+
+None
+
+Health Indicator Has Mapping
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Health Indicator Has Source
+
+ View, Update, Insert, Delete
+
+View
+
+View
+
+View
+
+Implements Action
+
+ View, Update, Insert
+
+None
+
+View
+
+View
+
+Implements Secondary Strategy
+
+View
+
+None
+
+None
+
+None
+
+Implements Strategy
+
+View, Insert
+
+None
+
+None
+
+None
+
+Is Based on RBI Degradation Mechanism
+
+None
+
+None
+
+View, Delete
+
+None
+
+Is Based on RCM FMEA Failure Effect
+
+ View, Update, Insert, Delete
+
+None
+
+None
+
+None
+
+Is Basis for Asset Strategy Template
+
+ View, Update, Insert, Delete
+
+View
+
+View, Update
+
+View
+
+Is Mitigated
+
+ View, Update, Insert, Delete
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+Master Template Has Asset Strategy
+
+ View, Update, Insert, Delete
+
+View
+
+View, Update
+
+View
+
+Mitigates Risk
+
+ View, Update, Insert, Delete
+
+View
+
+ View, Update, Insert, Delete
+
+View
+
+Safety Analysis Has Equipment
+
+View
+
+N/A
+
+View
+
+N/A
+
+Was Applied to Asset Strategy
+
+ View, Update, Insert, Delete
+
+View
+
+View, Update
+
+View
+
+Was Promoted to ASM Element
+
+View
+
+None
+
+View
+
+View
+
+Associating a Strategy with a Specific Site
+Some companies that use the GE Digital software have facilities at multiple sites or locations around the world. Each site contains unique locations and equipment.
+If needed, you can define these sites and associate equipment and locations with the site to which they belong. When you create an Asset Strategy record and link it to an Equipment or Functional Location record, the Site Reference field will be populated automatically with the Record ID of the Site Reference record to which the Equipment or Functional Location record is linked. To help streamline the strategy-building process, the GE Digital system will allow you to add multiple Asset Strategies to System Strategies only if all the underlying equipment and locations belong to the same site. 
+
+
+
+
+
+On this pageDeploy ASM for the First TimeUpgrade ASMASM Security Groups
+
+
+
+
+
+
+
+
+

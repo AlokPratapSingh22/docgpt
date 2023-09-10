@@ -1,0 +1,116 @@
+
+
+
+First Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesFirst Quarter of 2023
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Release Notes
+First Quarter of 2019
+
+
+
+
+
+
+
+First Quarter of 2019Reliability AnalyticsThis topic provides a list of product changes released for this module on the dates listed below.Release Date: March 29, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking ID
+To enhance accuracy in System Reliability analyses, the Action Optimization section has been added to the Analysis Summary page. The Action Optimization section allows you to optimize a group of actions associated with an analysis to determine the optimum interval at which to perform inspection or preventative maintenance. After you have found the optimal interval for an action, you can apply it to that action. When you do so, the value in the Interval field in the System Action record will be overwritten with the value that exists in the Optimal Interval field. After you apply the optimal interval, you can then run the simulation for the System Reliability Analysis to update the result based upon the optimized interval.
+To facilitate this enhancement, a new family, System Action Optimization, has been added to System Reliability. 
+F39608
+To enhance usability, the System Reliability Data Loader has been added to Reliability Analytics. Using the System Reliability Data Loader, you can import the following types of primary and third-party data from a fixed-format Excel workbook into the System Reliability Data Model:System Action recordsSystem Analysis recordsSystem Asset recordsSystem Risk Assessment recordsSystem Risk recordsSystem Scenario recordsSystem Subsystem records
+US317337In the Simulation Results workspace of the Analysis Summary page, you can now view charts in full-screen mode by selecting the Expand button (). US312695To enhance usability in Reliability Analytics, if you navigate away from an open page without saving your changes, the Unsaved Changes window now appears, prompting you to save. US307526
+Table 2. Resolved Issues
+The following issues that existed in one or more previous releases have been resolved.
+DescriptionTracking IDPreviously, in the Simulation Results workspace, if there were invalid values in the Simulation, a warning message appeared that overlapped the column headings in the Simulation Results workspace. This issue has been resolved. Now, if there are invalid values in the Simulation, the warning message that appears does not overlap the column headings. DE104107Previously, when using Internet Explorer, if you exported Simulation Results to a PDF, the resulting PDF did not contain any content. This issue has been resolved. DE104091Previously, in the RA Overview page, if you selected the Spares Analysis tab before the RA Overview page finished loading, no analyses appeared in the Spares Analysis section. This issue has been resolved. DE101856Previously, in the Definition section of a Spare Application, if you added an Application and with blank value in the Application Name box and then saved the Application, an error occurred. This issue has been resolved. Now, you cannot save an Application without entering a value in the Application Name box. DE101854Previously, in the Diagram section of the workspace for a Scenario in a System Reliability Analysis, if you selected an asset and then navigated to the Actions section, your selection was not retained and Actions that were not associated with the selected asset appeared in the Actions section. This issue has been resolved. Now, if you select an asset in the Diagram section and navigate to the Actions section, only the Actions associated with the selected asset appear. DE100207Previously, when creating a new Risk record in System Reliability, if you saved the new Risk record multiple times, a Risk record was created each time that you selected the Save button (). This issue has been resolved.DE98759Previously, in the Risks section of a System Reliability scenario, if you selected the link in a cell in either the Planned Resource Usages or the Unplanned Resource Usages column, the grid that appeared after selecting that link did not display the Fixed Cost and the Variable Cost fields, and you could not modify those fields in the datasheet. This issue has been resolved. DE97078Previously, in the Resources section of a System Reliability Analysis, if the value in either the Fixed Cost or the Variable Cost cell was greater than 1000, the value that actually appeared in that cell was improperly truncated. This issue has been resolved. DE97077Previously, in the Assets section of the Reliability Distribution Data Editor window of a new Reliability Distribution analysis:The Asset ID and the Installation Date columns did not appear. If you selected the Add button (), you could not add an asset to the Reliability Distribution. These issues have been resolved. DE97069Previously, in the Number of Iterations field in the Definition section of the Analysis Summary page, you could enter a value less than 400 and save the record. If you entered a value in the Number of Iterations field that was less than 400, if you then accessed the Risks workspace of a Scenario, an error occurred. This issue has been resolved. Now, in the Definition section of the Analysis Summary page, you cannot enter a value less than 400 in the Number of Iterations field. DE96567Previously, in the Reliability Analytics page, if you selected the Spares Analyses tab before the Reliability Analytics page finished loading, an error occurred. This issue has been resolved. DE94260Previously, in a Google Chrome browser, when creating a new Reliability Distribution in the Reliability Distribution Builder window by manually entering data, an error sometimes occurred, and the Asset ID field could not be modified. This issue has been resolved. DE93728Previously, when viewing plots in Analysis Summary page, if the value for the datapoint on the plot was less than one (for example, 0.01), the value plotted for the datapoint was incorrectly rounded to zero. This issue has been resolved. Now, datapoints with values less than one plotted in the Analysis Summary page appear as expected. 
+DE92444DE92443
+Previously, in the RA Overview page, after creating a new System Reliability analysis, no message appeared indicating whether or not your new analysis was created successfully. This issue has been resolved. DE88121
+Release Date: January 25, 2019
+Table 3. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, when creating a new Risk record in System Reliability, if you saved the new Risk record multiple times, a Risk record was created each time that you selected the Save button (). This issue has been resolved.DE96452
+
+
+
+
+
+On this pageReliability Analytics
+
+
+
+
+
+
+
+
+

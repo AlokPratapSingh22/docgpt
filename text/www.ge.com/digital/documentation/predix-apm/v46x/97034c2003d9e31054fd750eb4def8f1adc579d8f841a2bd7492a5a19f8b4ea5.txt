@@ -1,0 +1,157 @@
+
+
+
+Rounds Designer | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health Manager
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+Rounds Designer
+
+
+
+
+
+
+
+Rounds DesignerDeploy Rounds for the First TimeBefore You Begin
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. We recommend, however, that the tasks be completed in the order in which they are listed.
+
+ProcedureModule-level Configuration Tasks:
+StepTaskNotes
+1
+
+Assign Security Users to the following Rounds Security Roles:
+MI Operator Rounds Administrator MI Operator Rounds Mobile User
+This step is required.
+2
+Manage Measurement Location Template mappings.This step is required only if you added fields to the Measurement Location Template family via Configuration Manager.
+3
+
+Set up the Scheduled Compliance task.
+This step is required.The scheduled compliance task should be configured to start as soon as the Rounds module is deployed and set to run continuously as long as Rounds in use.
+Upgrade Rounds
+Before You Begin
+
+The following tables outline the steps that you must complete to upgrade this module to the latest version of GE Digital APM
+                    .
+                
+These tasks may be completed by multiple people in your organization. We recommend, however, that the tasks be completed in the order in which they are listed.
+
+ProcedureUpgrade to the latest version of GE Digital APM.
+This module will be upgraded to the latest version of Predix APM
+                                     automatically. No additional steps are required.
+Manage the Measurement Location Template MappingsAbout This Task
+The Measurement Location Template family and the Measurement Location family are provided as part of the baseline Rounds data model. If you create a Measurement Location Template in the GE Digital APM application, you can then create a Measurement Location based on that template. If you do so, all values in Measurement Location Template fields that also exist on the Measurement Location will be mapped automatically to the new Measurement Location.
+You might find that the Measurement Location Template and Measurement Location datasheets do not contain all the fields that you need. If so, you can add fields to the Measurement Location Template family so that the values from the new fields will be mapped to Measurement Locations based on that template. To do so, you will need to complete the following steps.
+ProcedureCreate a new Measurement Location Template field.Add the new Measurement Location Template field to the Measurement Location Template datasheet.Create a new Measurement Location field. We recommend that the field caption of this field be the same as the field caption you defined for the Measurement Location Template field. This will ensure that the text in the field IDs that identify the fields are the same. If they are not the same, the values will not be mapped from the Measurement Location Template to the Measurement Location.Add the new Measurement Location field to the Measurement Location datasheet.
+Note: For more information on Measurement Location templates, refer the Family Management documentation.
+Rounds Security Groups
+
+The following table lists the baseline Security Groups available for users within this module, as well as the baseline Roles to which those Security Groups are assigned. In Predix APM, Roles are assigned to Security Users through permission sets.
+
+Important:  Assigning a Security User to a Role grants that user the privileges associated with all of the Security Groups that are assigned to that Role. To avoid granting a Security User unintended privileges, before assigning a Security User to a Role, be sure to review all of the privileges associated with the Security Groups assigned to that Role.
+                
+
+Security GroupRolesMI Operator Rounds Administrator
+MI Health Admin
+MI Operator Rounds Mobile User
+MI Health Admin
+MI Health Power
+MI Health User
+MI Lubrication Management AdministratorMI Health AdminMI Lubrication Management User
+MI Health Admin
+MI Health Power
+MI Health User
+MI Rounds Designer ViewerMI APM ViewerMI Rounds Pro AdministratorMI Rounds-Pro AdminMI Rounds Pro Mobile UserMi Rounds-Pro User
+The following table lists the default privileges that members of each group have to the Rounds entity and relationship families.
+Note:
+Users who should be able to run Rounds queries to view the Rounds data after it has been uploaded from a tablet or a mobile device will need a combination of the privileges listed in the following table, depending on the families included in the queries they want to run.To create work requests via Operator Rounds Recommendations, users must also have the appropriate privileges to create EAM notifications (e.g., be a member of the MI SAP Interface User Security Group).The privileges assigned to the members of the MAPM Security Group, which was provided in the baseline Rounds module in Meridium Enterprise APM V3.6.0, are also assigned to the members of the MI Operator Rounds Mobile User Security Group. We recommend that you use the MI Operator Rounds User Security Group instead of the MAPM Security Group.
+
+FamilyMI Operator Rounds AdministratorMI Operator Rounds Mobile UserMAPM Security GroupMI Rounds Designer ViewerMI Lubrication Management AdministratorMI Lubrication Management UserEntity FamiliesCheckpoint ConditionView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewCheckpoint TaskView, Update, Insert, DeleteView, UpdateView, UpdateViewView, Update, Insert, DeleteView, UpdateHealth IndicatorViewViewViewViewViewViewHealth Indicator MappingView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewHierarchy Item Child Definition (Deprecated)View, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewHierarchy Item Definition (Deprecated)View, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewLubricantView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewLubrication ComponentView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewLubrication Management RecommendationView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteView, Update, Insert, DeleteLubricant ManufacturerView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewLubrication MethodView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewLubrication RequirementView, Update, Insert, DeleteView, UpdateView, UpdateViewView, Update, Insert, DeleteViewLubrication Requirement TemplateView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewMeasurement LocationView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewMeasurement Location TemplateView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewOperator Rounds Allowable Values View, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewOperator Rounds Recommendation View, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteView, Update, Insert, DeleteReadingView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteView, Update, Insert, DeleteReference DocumentView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteView, Update, Insert, DeleteRouteView, Update, Insert, DeleteView, UpdateView, UpdateViewView, Update, Insert, DeleteView, UpdateRoute HistoryView, Update, Insert, DeleteView, Insert, Update, DeleteView, Insert, Update, DeleteViewView, Update, Insert, DeleteView, Insert, Update, DeleteRounds Allowable ValueView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewRounds CategoryView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewRounds Sequence InformationView, Update, Insert, DeleteViewViewNoneView, Update, Insert, DeleteViewTaskNoneView, UpdateView, UpdateView View, UpdateTemplate GroupView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewRelationship FamiliesCondition Has MLView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewCondition Has LRView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewCategory Has Allowable ValuesView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewHas CheckpointView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewHas Checkpoint TemplateView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewHas Health IndicatorsViewViewViewViewViewViewHas HistoryView, Insert, DeleteView, Insert, DeleteView, Insert, DeleteViewView, Update, Insert, DeleteView, Insert, DeleteHas ReadingsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteView, Update, Insert, DeleteHas RecommendationsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteView, Update, Insert, DeleteHas Reference DocumentsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteView, Update, Insert, DeleteHas RouteView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteView, Update, Insert, DeleteHas TasksView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewHealth Indicator Has MappingView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewLubricant Has MethodView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewHealth Indicator Has SourceViewViewViewViewViewViewML Has ConditionView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewML Has OPR RecommendationView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteView, Update, Insert, DeleteRoute Has CheckpointView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteViewRoute Has Human ResourceView, Update, Insert, DeleteInsertInsertViewView, Update, Insert, DeleteInsertTemplate Has CheckpointView, Update, Insert, DeleteViewViewViewView, Update, Insert, DeleteView
+
+
+
+
+
+On this pageDeploy Rounds for the First TimeUpgrade Rounds
+Manage the Measurement Location Template MappingsRounds Security Groups
+
+
+
+
+
+
+
+
+

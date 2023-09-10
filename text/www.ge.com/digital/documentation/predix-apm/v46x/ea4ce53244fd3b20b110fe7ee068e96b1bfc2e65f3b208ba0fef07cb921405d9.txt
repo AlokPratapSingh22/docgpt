@@ -1,0 +1,101 @@
+
+
+
+Mappings | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Mappings
+Allowable Event Types in Related Events 
+Fields that can be Populated from one of the Three Related Records 
+Fuel Code Fields 
+Fuel Information Fields 
+Inactive Hours Field 
+Overlapping between an Outage Event and a Derate Event
+Capacity Event Types Affecting Performance Records
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Reference
+Mappings
+
+
+
+
+
+
+
+MappingsValues Mapped from a Primary Event to an RCA
+Important: You can view the list of RCAs created from GAA only if the license for Root Cause Analysis is active.
+When you create an RCA from a Primary Event, several fields in the RCA are populated automatically with the corresponding value in the Primary Event. The field mappings are listed in the following table:
+Primary Event FieldRoot Cause Analysis FieldEvent ID Analysis Name 
+Unit ID, Cause Code, Cause code Component, Cause Code System, Event Type, Event Start, Event End
+Analysis DescriptionEvent Start Start Date 
+
+
+
+
+
+On this pageValues Mapped from a Primary Event to an RCA
+
+
+
+
+
+
+
+
+

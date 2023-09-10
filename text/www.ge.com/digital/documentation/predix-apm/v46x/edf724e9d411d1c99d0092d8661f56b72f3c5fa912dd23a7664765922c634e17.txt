@@ -1,0 +1,134 @@
+
+
+
+Manage Scorecards | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Metrics and ScorecardsOverview
+Workflow
+Manage Scorecards
+Manage Key Performance Indicators (KPIs)
+Manage Metric Views
+Manage Privileges
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Metrics and Scorecards
+Manage Scorecards
+
+
+
+
+
+
+
+Manage ScorecardsOverview of ScorecardsA Scorecard allows you to monitor various performance aspects of your organization. Scorecards allow you to monitor performance from different perspectives, based on specific objectives and KPIs identified by your organization.  A complete Scorecard contains multiple instances of the following items, which appear in a hierarchy:
+Perspectives: Areas on which you want your company to focus. For example, Cost Optimization.
+Objectives: Specific goals towards which you want the company and the employees to strive. Each Objective is categorized under a specific Perspective. For example, an Objective under the Cost Optimization Perspective might be to optimize day-to-day tasks.KPIs : Key Performance Indicators that measure the company's ability to meet its objectives. Each KPI is categorized under a specific Objective. For example, to measure the company's ability to optimize day-to-day tasks, you can have a KPI that measures the percent of equipment that has a new or reviewed Asset Strategy. Note: You can use a KPI in more than one Scorecard. You can create or modify a Scorecard using the Scorecard design page. After a Scorecard is designed, as data is collected and tracked using the KPIs, you can view a summary of the data on the Scorecard details page.About Viewing the Details of a ScorecardThe page displaying the details of a Scorecard is labeled as <Scorecard_Name>, where <Scorecard_Name> is the name of the selected Scorecard. This page displays a hierarchical view of Perspectives, Objectives, and KPIs. The page displays the following details:The name of the Scorecard.The last modified date and time, and the name of the person who modified the Scorecard.The Perspective and the Objective names.The KPIs associated with the Scorecard.On the Scorecard details page, Perspectives and Objectives will be sorted alphabetically irrespective of the order that you have specified in the Scorecard design page.On this page, KPIs appear in tiles and display the values that are stored in the individual KPI records such as current value, percentage change, and a plus or minus sign that indicates the status of the KPI. For example, if there is a plus sign, it indicates that the current value is higher than the previous value. The KPIs are highlighted according to where the value falls within the values assigned to the worst value, critical value, target value, stretch value, and best value. For example, if an actual value is 10.00, and the target value is 5.00, the KPI would be highlighted in green, which indicates that the value falls between the stretch value and the best value. You can select the name of the KPI to view its details. On selecting the KPI name, the KPI details page for the selected KPI appears, displaying additional information about the selected KPI.You can add filters to view a subset of the KPIs that are currently displayed in the details page of a Scorecard. You can filter and view the KPIs associated with a Scorecard based on their performance. The following are the filter options that you can use.Worst-Critical (KPIs appears in Red color)Critical-Target (KPIs appears in Yellow color)Target-Stretch (KPIs appears in Light Green color)Stretch-Best (KPIs appears in Dark Green color)You can select  to see the grid view of the Scorecard. In this view, you can see the following additional information:
+KPI Name: The name of the associated KPIs.
+Current Value: The current value of the KPIs.
+Previous Value: The KPI value at its last measurement date.
+Change: The percentage change when compared with the Previous Value.
+Event Date: The last updated date of KPI. The update can either be a measure update or a KPI field update. You can modify the Scorecard details by selecting . About Designing a ScorecardOn the Scorecard form, you can design a new Scorecard or modify an existing Scorecard.On this page, you can do the following:Add the following content to a Scorecard:
+Perspectives
+
+Objectives
+
+KPIs 
+
+
+Modify data associated with contents of a Scorecard.
+Delete contents from a Scorecard.Access the Scorecard Details PageProcedureAccess the Metrics and Scorecards Overview Page.In the Scorecards section, select the Scorecard that you want to view.
+Note: To search for a specific Scorecard, you can select , and then enter the name of a Scorecard.
+The Scorecard details page appears.Note: When you search for a Scorecard by using , the Scorecard will appear on the Scorecard details page. This is because the Scorecard details route #metrics/scorecard-tile-view/{ENTY_KEY} is specified in Families Managed by Product Module in Configuration Manager for the Scorecard family.You can select Grid view () or Tabular view () to switch between Scorecard views.Note: When you log in for the first time, the content appears in Grid View by default. When you change the Scorecard view, it is saved as your user preference. For all future logins, when you access any Scorecard, the Scorecard details appear as per the saved user preference until you change the view. Example of a Scorecard Details Page
+ The following image shows an example of a completed Scorecard on the Scorecard details page.
+
+
+
+In this example, the Scorecard uses a Corporate Perspective, Asset Perspective, and Process Perspective. The objective for the Corporate Perspective is to minimize the maintenance expenses of the equipment, and the objective for the Process Perspective is to minimize reactive work and increase the proactive work. 
+Access the Scorecard Design PageProcedure
+Access the Scorecard details page for a Scorecard.
+In the upper-right corner of the page, select .A page containing details about the Scorecard appears, displaying the Perspectives section.If needed, modify the values in the 
+Perspectives
+ and 
+Privileges
+ sections.Select .If needed, select  to view the details page of the Scorecard.The Scorecard details page appears.Example of Scorecard Design Page
+The following image shows an example of a completed Scorecard on the Scorecard design page, including labels to indicate the perspectives, objectives, and KPIs.
+
+
+
+In this example, the Average Corrective Work Cost and Corrective Work Cost is using a Corporate Perspective to reach the objectives, or goal, of improving the corrective cost. The company is also measuring its ability to improve the asset reliability by using Asset Perspective that uses the 12 M Rolling MTBF and 12 M Rolling MTBR as the objective.
+Access the Associated Pages for a ScorecardAbout This Task
+If you need to add more associated pages to a Scorecard, you can do so by accessing the Scorecard family and the Associated Pages functionality of Configuration Manager.
+Procedure
+Access the Scorecard details page.In the right side of the page, select .The Associated Pages pane appears. The Associated Pages hierarchy contains links to associated pages. In the hierarchy, where a  button appears next to an associated page name, you can select the button to view the additional sub-pages. Access Reference Document for a ScorecardProcedure
+Access the details page of an existing Scorecard.Select .The Reference Documents window appears. Tip: For more information, refer to the Reference Documents section of the documentation.
+Create a ScorecardProcedureAccess the Metrics and Scorecards Overview Page.In the Scorecard section, select .The New Scorecard page appears, displaying the Perspectives section. Select Add Perspective, and then, in the Add Perspective box, enter the Perspective name.The Add Objective link appears.Select Add Objective and then enter the Objective name in the Enter Objective Name box.The Add KPI link appears.Select the Add KPI link.The Select KPIs window appears, displaying the list of KPIs.Select the check box appearing next to each KPI that you want to add, and then select OK.The Select KPIs window closes and the selected KPIs appear in a tile format in the Perspectives section.If you want to add another Objective and KPIs to the current Perspective, repeat steps 4 through 6.
+-or-
+If you want to add another Perspective to the Scorecard, repeat steps 3 through 6.
+Note: To remove a Perspective, Objective, or a KPI from the Scorecard, select . Removing a KPI from a Scorecard indicates that the KPI is no longer associated with that Scorecard.
+Select .A confirmation message appears, indicating that the Scorecard has been created. The name of the Scorecard appears on the page and the name of the Scorecard also appears in the Scorecards section of the Metrics and Scorecards page.Create a Copy of a ScorecardAbout This TaskYou can create a new Scorecard by using the values of an existing Scorecard. To do this, you need to create a copy of an existing Scorecard. You can also modify the values of this Scorecard as needed.Procedure
+Access the Scorecard design page for an existing Scorecard.In the upper-right corner of the page, select .Copy of <Label> page appears, where <Label> is the name of the Scorecard that you have selected. Update Measures for KPIs in a ScorecardAbout This TaskYou can bulk update the measures of all the Key Performance Indicators associated with a Scorecard.Procedure
+Access the Scorecard details page.In the upper-right corner of the page, select .
+The measures for all the KPIs are updated.
+If you want to view the status of the update, select .The KPI Measure Update Log window appears, displaying the statuses of all the KPIs.Set a Scorecard as Home PageAbout This TaskYou can set an existing Scorecard as your Home Page.Procedure
+Access the details page of an existing Scorecard.Select Set as Home Page.The Set as Home Page dialog box appears, asking you to confirm that you want to set the page as the Home Page.Select Yes.The selected Scorecard appears as Home Page.If you want to check that the Scorecard is set as your Home Page, then in the top navigation bar, select .The details page of the Scorecard that is set as Home Page appears.Filter KPIs in a Scorecard About This TaskYou can filter the KPIs associated with a Scorecard based on their performance.Procedure
+Access the Scorecard details page.Select .The Filters menu appears, displaying the list of filter options.Note: The list displayed will contain only the filter options that are applicable for the KPIs in that Scorecard. To select the filter options, select the appropriate check boxes.The result for the selected filter options appears on the Scorecard details page. The selected filters will appear selected on the Filters menu. At any time, you can remove the filter option by selecting the  button that appears next to it.Export a ScorecardBefore You Begin
+
+Create a Scorecard.
+About This TaskYou can export a Scorecard to a PDF format.Procedure
+Access the Scorecard details page.In the upper-right corner of the page, select  to export the Scorecard in PDF file format.The .PDF file appears.Delete a ScorecardProcedure
+Access the Scorecard design page of the Scorecard that you want to delete.
+In the upper-right corner of the page, select .The Delete Scorecard dialog box appears.Select OK.A confirmation message appears, indicating that the Scorecard has been deleted. The Scorecard no longer appears in the Scorecards section of the Metrics and Scorecards page.
+
+
+
+
+On this pageOverview of ScorecardsAbout Viewing the Details of a ScorecardAbout Designing a ScorecardAccess the Scorecard Details PageExample of a Scorecard Details PageAccess the Scorecard Design PageExample of Scorecard Design PageAccess the Associated Pages for a ScorecardAccess Reference Document for a ScorecardCreate a ScorecardCreate a Copy of a Scorecard Update Measures for KPIs in a ScorecardSet a Scorecard as Home PageFilter KPIs in a Scorecard Export a ScorecardDelete a Scorecard
+
+
+
+
+
+
+
+
+

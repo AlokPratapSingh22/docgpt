@@ -1,0 +1,85 @@
+
+
+
+Relationship Definition | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Family ManagementRules
+Overview
+Entity and Relationship Families
+Fields
+Datasheets
+Offline Forms
+Family Reports
+Relationship Definition
+State Configuration
+Associated Pages
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Family Management
+Relationship Definition
+
+
+
+
+
+
+
+Relationship DefinitionAbout Relationship Definition BehaviorA relationship family corresponds to a database table that is used to relate two entity family tables. A relationship definition, for a given relationship family, is a rule that specifies which two entity families are related, which family is the predecessor, which family is the successor, and the cardinality of each. By setting up relationship definitions, you can define the various types and levels of connections that exist between entities.For example, a piece of equipment might be related to items like:The location that contains itThe people who inspect and maintain itThe inspection and repair events performed on itThe workflows in which it participatesAfter you have associated entity families with one another using relationship definitions, you can create business rules based on those relationships. In this way, individual entities, which are stored separately within the database can interact with, use information from, and can even be updated based on changes made to other, related entities.You can set up and maintain relationship definitions via the Configuration Manager. When deciding how many relationships to create, remember that too many relationships can create unnecessary system overhead. Too few relationships, on the other hand, will prevent you from defining them specifically enough to be useful to the end user.Each family can participate in numerous relationships. Consider that the Pressure Vessel family can be involved in the following relationships:An Equipment Contains Sub-Equipment relationship with the Shell family and the Nozzle family.An Equipment Connects to Equipment relationship with the Valve family.An Equipment Has Inspections and Equipment Has Repairs relationship with the Inspections and Repairs families.About Creating Relationship DefinitionCreating relationship definitions allow you to define, for a relationship family, which entity families are related to one another through that relationship. Each relationship definition consists of the following elements:A relationship family.Note: The relationship family stores relationship definitions. For example, the Has Maintenance relationship family might store a relationship definition that relates the Pump family to the Work Order family.A predecessor entity family.A successor entity family.Cardinality, which specifies how many entities in the predecessor family can be linked to how many entities in the successor family.While defining a relationship definition, make sure that they do not spread to subfamilies. In other words, you must create relationship definitions for each specific predecessor and successor family that you want to participate in the relationship. For example, if the Manufacturer family has two subfamilies, Chinese Manufacturer and Canadian Manufacturer, and you want to be able to link Chinese Manufacturer records and Canadian Manufacturer records to Equipment records, you must create a relationship definition for both the Chinese Manufacturer family and the Canadian Manufacturer family. Defining a relationship for the Manufacturer family alone would not be sufficient.After you create relationship definitions, you must make sure that you assign family-level privileges, such that the users have permission to access all the families involved in the relationship definition, including the relationship family. Granting permission to only some of the families in a relationship will grant a user only partial access to the records that are linked to one another through that relationship.Note: You may want to avoid using inactive entity families in relationship definitions. Otherwise, when viewing a record in the Record Manager, and using the All Possible Families option, users will see ALL related families, including inactive families. About Successors and PredecessorsBefore creating a relationship definition, you must first decide which two families will participate in the relationship. Then, you must decide which family will be the predecessor and which will be the successor in the relationship.In many cases, the predecessor is the single part of the relationship equation and the successor is the multiple part. For example, if the relationship is Has Failure, and you determine that a piece of equipment, such as a pump, has a failure, then the pump experiencing the failure is the predecessor because there is one pump, whereas the failure is the successor because a pump might have many failures.Another way to look at predecessors and successors is to consider that the predecessor comes before the successor. For example, using this guideline, a piece of equipment could be the predecessor and a repair could be the successor because the equipment was in place before it was repaired.Note: These are guidelines. GE Digital APM will allow any type of setup that you feel best suits your needs.About Cardinality Cardinality for a particular relationship definition specifies how many links can be created between records of the predecessor and successor families. Consider an example where the Has Maintenance relationship relates the Axial Compressor family to the Work Order family. Within this relationship definition, the cardinality would specify how many Work Order records could be linked to a given Axial Compressor record, and vice versa.The following list provides descriptions of the cardinality rules that can be defined for successors and predecessors. For the purposes of our examples, assume that the Axial Compressor family is the predecessor and the Work Order family is the successor in the Has Maintenance relationship. One To One: One and only one predecessor record can be linked to one and only one successor record. For example, one and only one Axial Compressor record can be linked to one and only one Work Order record. Axial Compressor A can be linked to Work Order 1, but Axial Compressor A cannot be linked to any other Work Orders. One To Many: One and only one predecessor record can be linked to many successor records. For example, one and only one Axial Compressor record can be linked to many Work Order records. Axial Compressor A can be linked to Work Order 1, Work Order 2, and Work Order 3, and so on. Many to One: Many predecessor records can be linked to one and only one successor record. For example, many Axial Compressor records can be linked to one and only one Work Order record. Axial Compressor A and Axial Compressor B could be linked to Work Order 1.Many To Many: Many predecessor records can be linked to many successor records. For example, many Axial Compressor records can be linked to many Work Order records. Axial Compressor A and Axial Compressor B can be linked to Work Order 1, and Axial Compressor A and Axial Compressor B can be linked to Work Order 2.Note:  The Many To Many cardinality is no supported for a Foreign Key Relationship.Depending on the entity families and the relationship family involved in the relationship definition, some cardinality options may not be logical for your implementation. Via the Configuration Manager, administrative users can configure the cardinality between entity families according to your company's workflow.Based on the cardinality defined between entity families through a given relationship family, you will be limited to the number of links that you can create between records when working with the records in the GE Digital APM. For example, if your system is configured such that a Work Order record can be linked to only one piece of equipment, such as a Pump, you could create a link between Pump 101 and Work Order 1, but you could not link Work Order 1 to any other records. If you tried to do so, GE Digital APM would generate an error. In this way, cardinality prevents you from creating relationships that should not exist.You can choose to allow only one link between the entities of the predecessor family and entities of the successor family within a given relationship definition. Multiple links, however, are allowed, if the predecessor or successor family participates in additional relationship definitions. For example, your system could be configured such that the each Work Order record can be linked to only one Equipment. If an additional relationship definition existed for the Work Order family and the Functional Location family, however, then a Work Order record could be linked to an Equipment record even if it was already linked to a Functional Location record.Note: A given family can also act as the predecessor in one relationship and the successor in another. For example, the Equipment family is the successor in the Functional Location Has Equipment relationship and the successor in the Equipment Has Equipment relationship.About Relationship DataOne thing to consider when configuring relationships is whether or not information about the relationship will need to be stored. If so, fields can be defined for that relationship family, and a datasheet can be configured. Each time records are linked via the GE Digital APM, specific information about the link can be recorded in that datasheet.For example, suppose a pipe is connected to a pump in your facility. You record various types of information for the pipe in a Pipe record and different information for the pump in a Pump record. But when you link the Pipe record to the Pump record, you need to store information specific to that connection, such as weld type and material.Fields are defined at the relationship family level and are stored as columns in the relationship family table. Any relationship field that you define, therefore, will be available for any link between any predecessor and successor. So, you might need to create more specific relationship families if you plan to use relationship fields.Note: When you store data about relationships, you increase the complexity of your system, which could potentially hinder the performance of the system.About Foreign Key RelationshipIn the Relationship Definition section, you can also create a relationship between two families by using a Foreign Key relationship. All the relationship definitions for a foreign key relationship family will be in a Foreign Key relationship. Creating a Foreign Key relationship improves the performance of data retrieval.Each Foreign Key relationship consist of the following elements:A relationship familyA predecessor entity familyA successor entity family
+Cardinality 
+When using a Foreign Key relationship, you should consider the following:The Many To Many cardinality is not supported for a Foreign Key relationship.The Foreign Key relationship does not contain fields, rules, or policies.Access the Relationship Definition SectionAbout This TaskYou can use the Relationship Definitions section to manage all the relationship definitions for a given relationship family.ProcedureAccess the Family Management Page.In the left pane, select Relationship. In the list of relationship families, select the relationship family for which you want to configure relationship definitions. The details of the relationship family appear in the workspace, in the Information section.At the top of the workspace, select Relationship Definition.The Relationship Definition section appears, displaying a grid with three columns: Predecessor(s), Successor(s), and Cardinality.Create a Relationship DefinitionProcedureAccess the Relationship Definition section.Select  to add predecessor and successor families.The Manage Relationship Definition window appears.In the Predecessor(s) box, select the predecessor family.The selected families appear in the Predecessor(s) box.Note: You can choose to include all the subfamilies of a family by selecting the Apply to Predecessor Sub-Family check box. In the Successor(s) box, select the successor family.The selected families appear in the Successor(s) box.If you want to create a Foreign Key relationship, select the Create Foreign Key check box.
+Note: The Many To Many cardinality is not supported for a Foreign Key relationship.
+Select Add.The Manage Relationship Definition window closes. The selected successor and predecessor families, and the cardinality appear in the Relationship Definition section.Select .A confirmation message appears, indicating that the relationship definition is created.Modify a Relationship DefinitionAbout This TaskYou can modify the cardinality defined for a Relationship family.Procedure
+Access the Relation Definition section.Select the relationship definition that you want to modify.The Manage Relationship Definition window appears, displaying the predecessor and successor families.As needed, modify the cardinality, and then select OK.The Manage Relationship Definition window closes, and the grid displays the updated cardinality for the relationship definition.Select .A confirmation message appears, indicating that the updates are saved.Delete a Relationship DefinitionProcedure
+Access the Relationship Definition section. Select the relationship definition that you want to delete.The Manage Relationship Definition window appears.Select Delete.The Manage Relationship Definition window closes and the Relationship Definition section appears.Select .A confirmation message appears, indicating that the relationship definition is deleted.
+
+
+
+
+On this pageAbout Relationship Definition BehaviorAbout Creating Relationship DefinitionAbout Successors and PredecessorsAbout CardinalityAbout Relationship DataAbout Foreign Key RelationshipAccess the Relationship Definition SectionCreate a Relationship DefinitionModify a Relationship DefinitionDelete a Relationship Definition
+
+
+
+
+
+
+
+
+

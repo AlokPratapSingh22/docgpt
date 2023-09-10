@@ -1,0 +1,138 @@
+
+
+
+Metrics and Scorecards | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health Manager
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+Metrics and Scorecards
+
+
+
+
+
+
+
+Metrics and ScorecardsDeploy Metrics and Scorecards for the First TimeAbout This Task
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. GE Digital recommends, however, that the tasks be completed in the order in which they are listed.
+
+Note: Before you begin completing these tasks, review the system requirements for this module to identify the supported features for this module in the current version of Predix APM.
+Results
+StepTaskNotes1
+Verify that your event and asset criticality data meet the standard classification requirements, and modify the Event or Asset Criticality Data for the Work History cube as needed.This step is required.
+2
+Assign Security Users to one or more of the Metrics and Scorecards Security Groups and Roles.This step is required.
+3
+
+Configure privileges for KPI.This step is required.
+4
+
+Configure privileges for Scorecards.This step is required.
+Upgrade Metrics and ScorecardsProcedureUpgrade to the latest version of GE Digital APM.
+This module will be upgraded to the latest version of Predix APM
+                                     automatically. No additional steps are required.
+Modify the Event or Asset Criticality Data for Work History CubeIf the event or asset criticality data in your database does not match with the standard IDs used for the work history cube, then you have to  map the event or asset criticality data to the standard event or asset criticality data using the corresponding families.Map the Non-Standard Event Type Data to Standard Event Type IDs Using Queries for Event Type Dimension FamilyThis topic describes how to map the event type data available in your database to the standard event type data defined for a work history cube.ProcedureIn the module navigation menu, select Tools, and then select Queries.The Query page appears.Select Create New.The Select a Family or Query window appears.Search for the Event Type Dimension family, and then select Add.The Design workspace appears.Select the SQL tab.The SQL workspace appears.Run the query SELECT [MI_DIM_EVENT_TYPE].[EventType] "EventType", [MI_DIM_EVENT_TYPE].[EventTypeCaption] "EventTypeCaption" FROM [MI_DIM_EVENT_TYPE].The standard event type data available in GE Digital APM appears in the query results.Run the query SELECT distinct MI_EVENT_TYP_CHR from MI_EVENT.The event type data available in your database appears in the query results.Verify if the event type data returned by the query in Step 6 matches the standard event type IDs returned by the query in Step 5.If the results do not match, perform the following steps to map the event type data available in your database with the standard event type ID available in GE Digital APM:In the SQL workspace, enter the following update query:UPDATE [MI_DIM_EVENT_TYPE] SET [MI_DIM_EVENT_TYPE].[EventTypeCaption] = '<New Data>' WHERE [MI_DIM_EVENT_TYPE].[EventTypeCaption] = '<Standard Data Caption>'Note: In this query:<New Data> denotes the event type data that you want to map to the standard event type ID available in GE Digital APM.<Standard Data Caption> denotes the captions corresponding to the standard event type data available in GE Digital APM.Replace <New Data> with a value that you want to map with the standard event type data available in GE Digital APM.Replace <Standard Data Caption> with the caption available for the corresponding event type ID to which the new event type data will be mapped.Run the query.The Execute Query window appears.Select Yes.The event type data is mapped to the standard event type ID defined for the work history cube.Map an Event Type to a Standard Event Type ID
+The following standard event type data is returned by the query run in Step 5.EventTypeEventTypeCaptionMiscellaneousMiscellaneousPM/PdMPM/PdMRepairRepairUnknownUnknownThe following event type data is returned by the query run in Step 6:INSPECTIONPM/PdMReadingRepair
+If you want to map the event type INSPECTION to the standard event type ID Miscellaneous:Run the query UPDATE [MI_DIM_EVENT_TYPE] SET [MI_DIM_EVENT_TYPE].[EventTypeCaption] = 'INSPECTION' WHERE [MI_DIM_EVENT_TYPE].[EventTypeCaption] = 'Miscellaneous'.The event type INSPECTION is mapped to the standard event type ID Miscellaneous.
+Map the Non-Standard Event Priority Data to Standard Event Priority IDs Using Queries for Event Priority Dimension FamilyThis topic describes how to map the event priority data available in your database to the standard event priority data defined for a work history cube.ProcedureIn the module navigation menu, select Tools, and then select Queries.The Query page appears.Select Create New.The Select a Family or Query window appears.Search for the Event Priority Dimension family, and then select Add.The Design workspace appears.Select the SQL tab.The SQL workspace appears.Run the query SELECT [MI_DIM_EVENT_PRIORITY].[Priority] "Priority", [MI_DIM_EVENT_PRIORITY].[PriorityCaption] "PriorityCaption" FROM [MI_DIM_EVENT_PRIORITY].The standard event priority data available in GE Digital APM appears in the query results.Run the following queries:
+SELECT distinct MI_EVWKHIST_BRKDN_IND_F from MI_EVWKHISTSELECT distinct MI_EVWKHIST_RQST_PRTY_C from MI_EVWKHIST
+The event priority data available in your database appears in the query results.Verify if the event priority data returned by the query in Step 6 matches the standard event priority IDs returned by the query in Step 5.If the results do not match, perform the following steps to map the event priority data available in your database with the standard event priority ID available in GE Digital APM:In the SQL workspace, enter the following update query:UPDATE [MI_DIM_EVENT_PRIORITY] SET [MI_DIM_EVENT_PRIORITY].[PriorityCaption] = '<New Data>' WHERE [MI_DIM_EVENT_PRIORITY].[PriorityCaption] = '<Standard Data Caption>'Note: In this query:<New Data> denotes the event priority data that you want to map to the standard event priority ID available in GE Digital APM.<Standard Data Caption> denotes the captions corresponding to the standard event priority data available in GE Digital APM.Replace <New Data> with a value that you want to map with the standard event priority data available in GE Digital APM.Replace <Standard Data Caption> with the caption available for the corresponding event priority ID to which the new event priority data will be mapped.Run the query.The Execute Query window appears.Select Yes.The event priority data is mapped to the standard event priority ID defined for the work history cube.Map Event Priority Data to a Standard Event Priority ID
+The following standard event priority data is returned by the query run in Step 5.PriorityPriorityCaption1Very Low2Low3Medium4High5EmergencyUnknownUnknownThe following event priority data is returned by the query run in Step 6:1234
+If you want to map the event priority data 1 to the standard event priority ID 5:Run the query UPDATE [MI_DIM_EVENT_PRIORITY] SET [MI_DIM_EVENT_PRIORITY].[PriorityCaption] = '1' WHERE [MI_DIM_EVENT_PRIORITY].[PriorityCaption] = 'Emergency’.The event priority data 1 is mapped to the standard event priority ID 5.
+Map the Non-Standard Event Detection Methods to Standard Event Detection Method IDs Using Queries for Event Detection Method Dimension FamilyThis topic describes how to map the event detection methods available in your database to the standard event detection methods defined for a work history cube.ProcedureIn the module navigation menu, select Tools, and then select Queries.The Query page appears.Select Create New.The Select a Family or Query window appears.Search for the Event Detection Method Dimension family, and then select Add.The Design workspace appears.Select the SQL tab.The SQL workspace appears.Run the query SELECT [MI_DIM_EVENT_DETECTION].[DetectionMethod] "DetectionMethod", [MI_DIM_EVENT_DETECTION].[DetectionMethodCaption] "DetectionMethodCaption" FROM [MI_DIM_EVENT_DETECTION].The standard event detection methods available in GE Digital APM appears in the query results.Run the query SELECT distinct MI_EVWKHIST_DETCT_MTHD_CD_C from MI_EVWKHIST.The event detection methods available in your database appears in the query results.Verify if the event detection methods returned by the query in Step 6 match the standard event detection method IDs returned by the query in Step 5.If the results do not match, perform the following steps to map the event detection methods available in your database with the standard event detection method ID available in GE Digital APM:In the SQL workspace, enter the following update query:UPDATE [MI_DIM_EVENT_DETECTION] SET [MI_DIM_EVENT_DETECTION].[DetectionMethod] = '<New Data>' WHERE [MI_DIM_EVENT_DETECTION].[DetectionMethod] = '<Standard Data Caption>'Note: In this query:<New Data> denotes the event detection method that you want to map to the standard event detection method ID available in GE Digital APM.<Standard Data Caption> denotes the captions corresponding to the standard event detection method available in GE Digital APM.Replace <New Data> with a value that you want to map with the standard event detection method available in GE Digital APM.Replace <Standard Data Caption> with the caption available for the corresponding event detection method ID to which the new event detection method will be mapped.Run the query.The Execute Query window appears.Select Yes.The event detection method is mapped to the standard event detection method ID defined for the work history cube.Map an Event Detection Method to a Standard Event Detection Method ID
+The following standard event detection methods are returned by the query run in Step 5.DetectionMethodDetectionMethodCaption0001Continuous Condition Monitoring0002Corrective Maintenance0003Formal Inspection0004Operator Routine Observation0005Periodic Condition Monitoring0006Preventive Maintenance0007Production Interference0008Radar Operator observationThe following event detection methods are returned by the query run in Step 6:InspectionObservationPreventive MaintenanceProduction Interference
+If you want to map the event detection method Inspection to the standard event detection method ID 0001:Run the query UPDATE [MI_DIM_EVENT_DETECTION] SET [MI_DIM_EVENT_DETECTION].[DetectionMethod] = 'Inspection' WHERE [MI_DIM_EVENT_DETECTION].[DetectionMethod] = '0001'.The event detection method Inspection is mapped to the standard event detection method ID 0001.
+Map the Non-Standard Event Breakdown Data to Standard Event Breakdown IDs Using Queries for Event Breakdown Dimension FamilyThis topic describes how to map the event breakdown data available in your database to the standard event breakdown data defined for a work history cube.ProcedureIn the module navigation menu, select Tools, and then select Queries.The Query page appears.Select Create New.The Select a Family or Query window appears.Search for the Event Breakdown Dimension family, and then select Add.The Design workspace appears.Select the SQL tab.The SQL workspace appears.Run the query SELECT [MI_DIM_EVENT_BREAKDOWN].[Breakdown] "Breakdown", [MI_DIM_EVENT_BREAKDOWN].[BreakdownCaption] "BreakdownCaption" FROM [MI_DIM_EVENT_BREAKDOWN].The standard event breakdown data available in GE Digital APM appears in the query results.Run the query SELECT distinct MI_EVWKHIST_BRKDN_IND_F from MI_EVWKHIST.The event breakdown data available in your database appears in the query results.Verify if the event breakdown data returned by the query in Step 6 matches the standard event breakdown IDs returned by the query in Step 5.If the results do not match, perform the following steps to map the event breakdown data available in your database with the standard event breakdown ID available in GE Digital APM:In the SQL workspace, enter the following update query:UPDATE [MI_DIM_EVENT_BREAKDOWN] SET [MI_DIM_EVENT_BREAKDOWN].[BreakdownCaption] = '<New Data>' WHERE [MI_DIM_EVENT_BREAKDOWN].[BreakdownCaption] = '<Standard Data Caption>'Note: In this query:<New Data> denotes the event breakdown data that you want to map to the standard event breakdown ID available in GE Digital APM.<Standard Data Caption> denotes the captions corresponding to the standard event breakdown data available in GE Digital APM.Replace <New Data> with a value that you want to map with the standard event breakdown data available in GE Digital APM.Replace <Standard Data Caption> with the caption available for the corresponding event breakdown ID to which the new event breakdown data will be mapped.Run the query.The Execute Query window appears.Select Yes.The event breakdown data is mapped to the standard event breakdown ID defined for the work history cube.Map an Event Breakdown Indicator to a Standard Event Breakdown ID
+The following standard event breakdown data is returned by the query run in Step 5.BreakdownBreakdownCaptionNNUnknownUnknownYYThe following event breakdown data is returned by the query run in Step 6:NoYesUnknown
+If you want to map the event breakdown indicator Yes to the standard event breakdown ID Y:Run the query UPDATE [MI_DIM_EVENT_BREAKDOWN] SET [MI_DIM_EVENT_BREAKDOWN].[BreakdownCaption] = 'Yes' WHERE [MI_DIM_EVENT_BREAKDOWN].[BreakdownCaption] = 'Y'.The event breakdown indicator Yes is mapped to the standard event breakdown ID Y.
+Map the Non-Standard Asset Criticality Data to Standard Asset Criticality IDs Using Queries for Asset Criticality Dimension FamilyThis topic describes how to map the asset criticality data available in your database to the standard asset criticality IDs defined for a work history cube.ProcedureIn the module navigation menu, select Tools, and then select Queries.The Query page appears.Select Create New.The Select a Family or Query window appears.Search for the Asset Criticality Dimension family, and then select Add.The Design workspace appears.Select the SQL tab.The SQL workspace appears.Run the query SELECT [MI_DIM_ASSET_CRITICALITY].[Criticality] "Criticality", [MI_DIM_ASSET_CRITICALITY].[CriticalityCaption] "CriticalityCaption" FROM [MI_DIM_ASSET_CRITICALITY].The standard asset criticality data available in GE Digital APM appears in the query results.Run the following queries:
+For equipment criticality data, run the query SELECT distinct MI_EQUIP000_CRITI_MTHD_IND_C from MI_EQUIP000.The equipment criticality data available in your database appears in the query results.For functional location criticality data, run the query SELECT distinct MI_FNCLOC00_CRTCAL_IND_C from MI_FNCLOC00.The functional location criticality data available in your database appears in the query results.
+Verify if the asset criticality data returned by the query in Step 6 matches the standard asset criticality IDs returned by the query in Step 5.If the results do not match, perform the following steps to map the asset criticality data available in your database with the standard asset criticality ID available in GE Digital APM:In the SQL workspace, enter the following update query:UPDATE [MI_DIM_ASSET_CRITICALITY] SET [MI_DIM_ASSET_CRITICALITY].[CriticalityCaption] = '<New Data>' WHERE [MI_DIM_ASSET_CRITICALITY].[CriticalityCaption] = '<Standard Data Caption>'Note: In this query:<New Data> denotes the asset criticality data that you want to map to the standard asset criticality ID available in GE Digital APM.<Standard Data Caption> denotes the captions corresponding to the standard asset criticality data available in GE Digital APM.Replace <New Data> with a value that you want to map with the standard asset criticality data available in GE Digital APM.Replace <Standard Data Caption> with the caption available for the corresponding asset criticality ID to which the new asset criticality data will be mapped.Run the query.The Execute Query window appears.Select Yes.The asset criticality data is mapped to the standard asset criticality ID defined for the work history cube.Map Asset Criticality Data to a Standard Asset Criticality ID
+The following standard asset criticality data are returned by the query run in Step 5.CriticalityCriticalityCaptionAHighBMediumCLowUnknownUnknownThe following asset criticality data are returned by the query run in Step 6:XYZH
+If you want to map the asset criticality data X to the standard asset criticality ID A:Run the query UPDATE [MI_DIM_ASSET_CRITICALITY] SET [MI_DIM_ASSET_CRITICALITY].[CriticalityCaption] = 'X' WHERE [MI_DIM_ASSET_CRITICALITY].[CriticalityCaption] = 'High'.The asset criticality data X is mapped to the standard asset criticality ID A.
+
+
+
+
+
+On this pageDeploy Metrics and Scorecards for the First TimeUpgrade Metrics and ScorecardsModify the Event or Asset Criticality Data for Work History CubeMap the Non-Standard Event Type Data to Standard Event Type IDs Using Queries for Event Type Dimension FamilyMap the Non-Standard Event Priority Data to Standard Event Priority IDs Using Queries for Event Priority Dimension FamilyMap the Non-Standard Event Detection Methods to Standard Event Detection Method IDs Using Queries for Event Detection Method Dimension FamilyMap the Non-Standard Event Breakdown Data to Standard Event Breakdown IDs Using Queries for Event Breakdown Dimension FamilyMap the Non-Standard Asset Criticality Data to Standard Asset Criticality IDs Using Queries for Asset Criticality Dimension Family
+
+
+
+
+
+
+
+
+

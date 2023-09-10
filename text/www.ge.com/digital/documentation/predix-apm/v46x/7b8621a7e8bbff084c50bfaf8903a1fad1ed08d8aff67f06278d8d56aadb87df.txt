@@ -1,0 +1,103 @@
+
+
+
+Third Quarter of 2018 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference 
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+ First Quarter of 2019 
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Release Notes
+Third Quarter of 2018
+
+
+
+
+
+
+
+Third Quarter of 2018Inspection ManagementThis topic provides a list of product changes released for this module on the dates listed below.Release Date: September 21, 2018
+Table 1. Enhancements and New FeaturesNoteTracking ID(s)You can now use State Management for the approval work process of Inspection Recommendation. To facilitate this enhancement, the following changes have been made in the Application Configurations section in the Inspection Configuration page in Application Settings:A new preference, Use State Management for Inspection Recommendations, has been added. You can now select Status or State Management to manage Inspection Recommendations.A new utility, Configure Status to State Mapping, has been added to map each Status to a corresponding State. After mapping, you can update the existing Inspection Recommendation records to use the new states for the approval work process.US284119In the Queries section in the Overview Configuration page in Application Settings, the following queries have been added:Open Recommendations for Asset (State Management)Open Inspection Recommendations for Unit (State Management)Overdue Inspection Recommendations for Unit (State Management)These queries are used when the Use State Management for Inspection Recommendations check box in the Application Configurations section in the Inspection Configuration page in Application Settings is selected.US280130
+You can now use two new secured user roles when transitioning states for Inspection Recommendations:
+MI InspectorMI Inspection Supervisor
+US278613You can now change the state of Inspection Recommendations using the Recommended Actions pane.US276822
+Table 2. Resolved IssuesNoteTracking ID(s)Previously, in the Inspection Management module, if you used a family (parent or child) other than the baseline Functional Location family to denote a functional location, the Asset Overview page appeared as if the functional location were an asset. This issue has been resolved. Now, the Inspection Management Overview page appears as expected.DE84510Previously, in the Asset Hierarchy Configuration page, if you used a family (parent or child) other than the baseline Functional Location family to denote a functional location, in the Integrity section, an incorrect hyperlink appeared, behaving as if the functional location were an asset. Also, the number of linked records in the Asset Hierarchy page was incorrect. This issue has been resolved.DE84510Previously, when you attempted to save an inspection and the save failed, the busy indicator remained in the page until you refreshed the page. This issue has been resolved. DE83057
+
+
+
+
+
+On this pageInspection Management
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,185 @@
+
+
+
+Checklists and Questions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Management of ChangeOverview
+Workflows
+Change Projects
+Checklists
+Exceptions and Tasks
+Changed Elements
+Deployment
+AdminMOC Admin Page
+Exceptions
+Questions
+Checklists and Questions
+
+
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Management of Change
+Admin
+Checklists and Questions
+
+
+
+
+
+
+
+Checklists and QuestionsAbout Checklists and QuestionsFor successful implementation of a change, a comprehensive checklist must be created, which includes but is not limited to the following aspects of the change: Prerequisites that must be fulfilled before the implementation of change. For example, if the change involves replacing an equipment model, the impacted personnel in the organization must be trained on the new equipment.Factors that will be affected by the change (i.e., people, processes, assets, and data).
+Factors that may affect the safety of a plant. For example, requirements for an effective emergency response.
+In MOC, you can group Questions together to form a Checklist. For a Change Project, you can configure many types of Checklists and use them at different phases of the project. For example, you can create a Checklist for change planning, a Checklist for change implementation, and a checklist for change communication.Access a ChecklistBefore You BeginAs needed, modify the MI_MOC_ANS_OPT System Code table, which contains a list of values that populates the Answer box in the Question workspace.Procedure
+Access the MoC Admin page.In the left pane, select Checklists.
+A list of available Checklists appears. 
+
+
+
+In the Checklist ID column, select the link for the Checklist that you want to access.
+The datasheet for the selected Checklist appears, displaying the Definition  and Checklist Items sections. 
+
+
+
+The following information appears in these sections:
+
+
+Definition: Contains the datasheet for the Checklist. This tab is selected by default.
+Note: As needed, in the Definition section, you can modify the values in the available fields, and then select  to save your changes.
+
+
+Checklist Items: Contains the list of Questions that are associated with the Checklist. 
+Note: As needed, you can add or unlink Questions from the Checklist.
+Note: The changes made to Checklists in the administrative settings for MOC will not affect the Change Projects that have used the Checklists prior to modification.
+
+Create a ChecklistBefore You Begin
+
+Create the Questions that you want to add in the Checklist.
+Procedure
+Access the MoC Admin page.In the left pane, select Checklists.
+A list of available Checklists appears.
+
+
+
+In the upper-left corner of the workspace, select .
+The Definition section appears in the workspace, displaying a blank datasheet for Checklist. 
+
+
+
+As needed, enter values in the available fields.In the upper-right corner of the Checklists workspace, select .
+The Checklist is saved.
+In the workspace, select Checklist Items.
+The Checklist Items section appears, displaying a list of Questions associated with the Checklist. 
+
+
+
+In the upper-left corner of the section, select .
+The Select questions to add window appears, displaying a list of Questions that are available in the database. 
+
+
+
+For each Question that you want to add to the Checklist, next to the row containing the Question, select the check box.In the lower-right corner of the window, select Link.
+The Checklist is created and the Questions are added to the Checklist.
+
+
+
+Add Questions to a ChecklistBefore You Begin
+
+Create the Questions that you want to add in the Checklist.
+About This Task
+This topic describes how to add Questions to an existing Checklist.
+Procedure
+Access the Checklist to which you want to add Questions.In the Checklists workspace, select Checklist Items.
+The Checklist Items section appears, displaying a grid containing Question and Exception Triggered columns.
+
+
+
+In the upper-left corner of the section, select .
+The Select questions to add window appears, displaying a list of Questions that are available in the database.
+
+
+
+For each Question that you want to add to the checklist, in the row containing the Question, select the check box.In the lower-right corner of the window, select Link.
+The Questions are added to the Checklist.
+
+
+
+Unlink Questions From a ChecklistProcedure
+Access the Checklist from which you want to unlink Questions.Select the Checklist Items tab.
+The Checklist Items section appears, displaying the list of Questions that are associated with the Checklist.
+For each Question that you want to remove from the Checklist, next to the row containing the Question, select the check box.
+In the upper-right corner of the workspace, the  button is enabled.
+
+
+
+Select .
+The Unlink Checklist Question dialog box appears, asking you to confirm that you want to unlink the selected Questions from the Checklist.
+Select OK.
+The selected Questions are unlinked from the Checklist and the updated list of Questions appears in the section.
+Delete a ChecklistProcedure
+Access the Application Settings page.Select Management of Change.In the left pane, select Checklists.
+The Checklists workspace appears, displaying a list of Checklists that are available in the database.
+
+
+
+In the row for each Checklist that you want to delete, select the check box.
+In the upper-right corner of the workspace, the  button is enabled.
+Select .
+The Delete MOC Checklist dialog box appears, asking you to confirm that you want to delete the selected Checklist.
+Note: Deleting Checklists in the administrative settings for MOC will not affect the Change Projects that have used the Checklists prior to deletion.
+Select OK.
+The selected Checklist is deleted and the updated list of Checklists appears in the workspace.
+
+
+
+
+
+On this pageAbout Checklists and QuestionsAccess a ChecklistCreate a ChecklistAdd Questions to a ChecklistUnlink Questions From a ChecklistDelete a Checklist
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,758 @@
+
+
+
+Spares Analyses | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares AnalysisSpares Analysis: Overview
+Spares Analysis: Workflow
+Spares Analyses
+Spares
+Spare Applications
+Spare Application Populations
+Failure Distributions
+Monte Carlo Simulations
+
+
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Spares Analysis
+Spares Analyses
+
+
+
+
+
+
+
+Spares AnalysesAbout Spares Analysis Spares Analysis is a tool that helps you maintain the optimal number of spare parts. Spares Analysis uses delivery time and cost, downtime, lost production costs, and failure and repair data to calculate how many spare parts should be kept on hand at any given time.
+GE Digital APM Reliability Analytics offers various tools that help you analyze the reliability of your equipment and locations so that you can make decisions about when to repair and replace those pieces of equipment and locations. For example, a Reliability Distribution Analysis lets you analyze historical failure data to help predict future failures. Based on those predictions, you can make plans for replacing equipment and making repairs to prevent future failures. As part of making plans to replace equipment in the future, you will want to make sure that you have an adequate number of spare parts available. Having spare parts on hand will help reduce the amount of downtime associated with unplanned failures.The key to a successful spares program is maintaining a balance between:Optimizing the spares level so that you have enough spare parts to handle unplanned failures.Not having a surplus of parts that are not actually needed.You can modify the input data for a Spares Analysis to evaluate the potential savings or losses associated with changing the spares level. For example, if you currently keep three spare seals for a pump, you could use a Spares Analysis to determine whether it would benefit your company financially to store either more or fewer spare seals instead.Access a Spares Analysis Procedure
+Access the RA Overview page.
+Select Spares Analyses.
+A list of Spares Analyses available in the database appears.
+
+
+
+Select the Spares Analysis whose details you want to view.
+The Analysis Summary workspace for the selected analysis appears. 
+The workspace contains the following tabs:
+
+
+Definition: Displays the details of the selected Spares Analysis.
+Note: As needed, in the Definition section, you can select  to modify the values in the available fields, and then select  to save your changes.
+
+Summary: The Summary tab is selected by default and displays the Spare Level plot for all the Spares within the selected Spares Analysis. You can also view the following plots for all the Spares within the selected Spares Analysis: Downtime plotSpare Usage plotSensitivity plotOptimal Holding plot
+The left pane contains a list of Spares available for the selected Spares Analysis.
+
+
+
+Create a Spares AnalysisProcedure
+Access the RA Overview page. 
+In the upper-right corner, select New Analysis, and then select Spares Analysis.
+The Spares Analysis page appears, displaying a blank datasheet in the Analysis Summary workspace.
+
+
+
+As needed, enter the values in the available fields, and then select .
+The Spares Analysis is saved. 
+What To Do Next
+
+
+Create a Spare
+
+
+Example of a Spares Analysis
+This example of a Spares Analysis demonstrates how you can use Spares Analyses to evaluate spare parts. We will refer to this example throughout the Spares Analysis documentation as needed.
+Assume that you want to create a Spares Analysis for a group of pumps, which contain seals, bearings, and impellers, each of which can fail. Because you may need to replace seals, bearings, and impellers on the pumps when they fail, you can use a Spares Analysis to determine the optimal level for each spare part. Currently, two spare seals, two spare bearings, and no spare impellers are stored in the warehouse. By conducting a Spares Analysis, you can determine if this number of spare parts is adequate.
+In the Spares Analysis, you will include failure data for each part of the pump, run the Monte Carlo simulation, and then view the plots to see the optimal level of each spare part. By implementing the recommended spare level, you will be able to limit the amount of downtime and reduce failure costs.
+The following records will be defined for the Spares Analysis example. Data that exists within each record in the Spares Analysis example can be found in the example data tables.
+
+Spares Analysis Example (Spares Analysis record)
+Seals (Spare record)
+Inboard Application (Spare Application record)
+Inboard Population 1 (Spare Application Population record)
+Inboard Population 2 (Spare Application Population record)
+Outboard Application (Spare Application record)
+Outboard Population 1 (Spare Application Population record)
+Outboard Population 2 (Spare Application Population record)
+Outboard Population 3 (Spare Application Population record)
+Bearings (Spare record)
+Inboard Application (Spare Application record)
+Inboard Population 1 (Spare Application Population record)
+Inboard Population 2 (Spare Application Population record)
+Outboard Application (Spare Application record)
+Outboard Population 1 (Spare Application Population record)
+Outboard Population 2 (Spare Application Population record)
+Outboard Population 3 (Spare Application Population record)
+Impellers (Spare record)
+All Applications (Spare Application record)
+Pump Population 1 (Spare Application Population record)
+Pump Population 2 (Spare Application Population record)
+Pump Population 3 (Spare Application Population record)
+Pump Population 4 (Spare Application Population record)
+When viewing this list of records, you can see that each Spare record is linked to the Spares Analysis record, each Spare Application record is linked to a Spare record, and each Spare Application Population record is linked to a Spare Application record.
+This example represents only one approach to creating a Spares Analysis. There are many alternate workflows that can be used for developing a Spares Analysis. For example, instead of creating a Spares Analysis at the pump level (e.g., the equipment level), you can create a Spares Analysis for each of the individual spare parts. After you are familiar with the functionality of a Spares Analysis, you can implement any workflow that works best for your organization.
+Example Spare Analysis Record Data
+The following table shows the data stored in the Spares Analysis record for the Spares Analysis example.
+
+Record Section  Values Specified 
+Spares Analysis Example
+
+Analysis
+
+
+Name: Spares Analysis Example
+
+Description: This is a sample Spares Analysis example.
+
+Simulation Start Date: 1/1/2015
+
+Simulation End Date: 1/1/2025
+
+Currency: $
+
+Spares Analysis Example
+ 
+
+Simulation Options
+
+
+Number of Iterations: 100
+
+Random Seed: No
+ 
+
+
+Example Spare Record Data
+The following table shows the data stored in the Spare records that are included in the Spares Analysis example.
+
+RecordSectionValues Specified
+Seals
+
+Spare
+
+
+Name: Seals
+
+On-site Delivery Time: 4 Hours
+
+Normal Order Time: 25 Days
+
+Normal Cost: 100
+
+Expedited Order Time: 3 Days
+
+Expedited Cost: 300
+
+Holding Cost Rate: 20 per Year
+
+Minimum Holding Level: 0
+
+Maximum Holding Level: 10
+
+Current Holding Level: 1
+
+Bearings
+
+Spare
+
+
+Name: Bearings
+
+On-site Delivery Time: 4 Hours
+
+Normal Order Time: 25 Days
+
+Normal Cost: 100
+
+Expedited Order Time
+: 3 Days
+
+Expedited Cost: 300
+
+Holding Cost Rate: 20 per Year
+
+Minimum Holding Level: 0
+
+Maximum Holding Level: 10
+
+Current Holding Level: 1
+
+Impellers
+
+Spare
+
+
+Name: Impellers
+
+On-site Delivery Time: 4 Hours
+
+Normal Order Time: 25 Days
+
+Normal Cost: 100
+
+Expedited Order Time: 3 Days
+
+Expedited Cost: 300
+
+Holding Cost Rate: 20 per Year
+
+Minimum Holding Level: 0
+
+Maximum Holding Level: 10
+
+Current Holding Level: 0
+
+
+Example Spare Application Record Data
+The following table shows the data stored in the Spare Application record that are included in the Spares Analysis example. 
+
+ Section  Values Specified Seals - Indoor Application
+Application
+
+
+Name: Indoor Application 
+
+Failure Distribution
+
+
+Distribution Name: Failure Distribution 
+
+Distribution Description: Manually entered based on manufacturer data. 
+
+Units: Months 
+
+Distribution Type: Exponential 
+
+MTBF: 60 
+
+Failure Consequence
+
+
+Preparation Time: 4 Hours 
+
+Repair Time: 8 Hours 
+
+Total Correction Time: 12 Hours 
+
+Labor Cost: 1000 
+
+Fixed Lost Production Cost: 0 
+
+Variable: Lost Production Cost Rate: 100000 per Day 
+
+# of Required Spares: 1 
+
+Preventive Maintenance
+
+
+Enable Preventive Maintenance: No 
+
+Time-based Replacement Interval: No 
+
+Labor Cost: No 
+
+Downtime: No 
+Seals - Outdoor Application
+Application
+
+
+Name: Outdoor Application 
+
+Failure Distribution
+
+
+Distribution Name: Failure Distribution 
+
+Distribution Description: Manually entered based on manufacturer data. 
+
+Units: Months 
+
+Distribution Type: Exponential 
+
+MTBF: 48 
+
+Failure Consequence
+
+
+Preparation Time: 4 Hours 
+
+Repair Time: 8 Hours 
+
+Total Correction Time: 12 Hours 
+
+Labor Cost: 1000 
+
+Fixed Lost Production Cost: 0 
+
+Variable: Lost Production Cost Rate: 100000 per Day 
+
+# of Required Spares: 1 
+
+Preventive Maintenance
+
+
+Enable Preventive Maintenance: No 
+
+Time-based Replacement Interval: No 
+
+Labor Costt: No 
+
+Downtime: No 
+Bearings - Indoor Application
+Application
+
+
+Name: Indoor Application 
+
+Failure Distribution
+
+
+Distribution Name: Failure Distribution 
+
+Distribution Description: Manually entered based on manufacturer data. 
+
+Units: Months 
+
+Distribution Type: Exponential 
+
+MTBF: 60 
+
+Failure Consequence
+
+
+Preparation Time: 4 Hours 
+
+Repair Time: 4 Hours 
+
+Total Correction Time: 8 Hours 
+
+Labor Cost: 500 
+
+Fixed Lost Production Cost: 0 
+
+Variable: Lost Production Cost Rate: 100000 per Day 
+
+# of Required Spares: 1 
+
+Preventive Maintenance
+
+
+Enable Preventive Maintenance: No 
+
+Time-based Replacement Interval: No 
+
+Labor Cost: No 
+
+Downtime: No 
+Bearings - Outdoor Application
+Application
+
+
+Name: Outdoor Application 
+
+Failure Distribution
+
+
+Distribution Name: Failure Distribution 
+
+Distribution Description: Manually entered based on manufacturer data. 
+
+Units: Months 
+
+Distribution Type: Exponential 
+
+MTBF: 48 
+
+Failure Consequence
+
+
+Preparation Time: 4 Hours 
+
+Repair Time: 4 Hours 
+
+Total Correction Time: 8 Hours 
+
+Labor Cost: 500 
+
+Fixed Lost Production Cost: 0 
+
+Variable: Lost Production Cost Rate: 100000 per Day 
+
+# of Required Spares: 1 
+
+Preventive Maintenance
+
+
+Enable Preventive Maintenance: No 
+
+Time-based Replacement Interval: No 
+
+Labor Cost: No 
+
+Downtime: No 
+Impellers - All Applications
+Application
+
+
+Name: All Applications 
+
+Failure Distribution
+
+
+Distribution Name: Failure Distribution 
+
+Distribution Description: Manually entered based on manufacturer data. 
+
+Units: Months 
+
+Distribution Type: Exponential 
+
+MTBF: 72 
+
+Failure Consequence
+
+
+Preparation Time: 4 Hours 
+
+Repair Time: 4 Hours 
+
+Total Correction Time: 8 Hours 
+
+Labor Cost: 500 
+
+Fixed Lost Production Cost: 0 
+
+Variable: Lost Production Cost Rate: 100000 per Day 
+
+# of Required Spares: 1 
+
+Preventive Maintenance
+
+
+Enable Preventive Maintenance: No 
+
+Time-based Replacement Interval: No 
+
+Labor Cost: No 
+
+Downtime: No 
+
+
+Spare Application Population Record Data
+The following table shows the data stored in the Spare Application Population records that are included in the Spares Analysis example.
+
+ Population Name  Values Specified 
+Seals - Inboard Application
+
+Inboard Population 1
+
+
+Population Size: 2
+
+Age Value: 2 Years
+
+Inboard Population 2
+
+
+Population Size: 1
+
+Age Value: 4 Years
+
+Seals - Outboard Application
+
+Outboard Population 1
+
+
+Population Size: 4
+
+Age Value: 2 Years
+
+Outboard Population 2
+
+
+Population Size: 2
+
+Age Value: 3 Years
+
+Outboard Population 3
+
+
+Population Size: 1
+
+Age Value: 5 Years
+
+Bearings - Inboard Application
+
+Inboard Population 1
+
+
+Population Size: 2
+
+Age Value: 2 Years
+
+Inboard Population 2
+
+
+Population Size: 1
+
+Age Value: 4 Years
+
+Bearings - Outboard Application
+
+Outboard Population 1
+
+
+Population Size: 4
+
+Age Value: 2 Years
+
+Outboard Population 2
+
+
+Population Size: 2
+
+Age Value: 3 Years
+
+Outboard Population 3
+
+
+Population Size: 1
+
+Age Value: 5 Years
+
+Impellers - All Applications
+
+Pump Population 1
+
+
+Population Size: 6
+
+Age Value: 2 Years
+
+Pump Population 2
+
+
+Population Size: 1
+
+Age Value: 4 Years
+
+Pump Population 3
+
+
+Population Size: 2
+
+Age Value: 3 Years
+
+Pump Population 4
+
+
+Population Size: 1
+
+Age Value: 5 Years
+
+
+Delete a Spares AnalysisProcedure
+Access the RA Overview page.Select Spares Analyses.
+A list of Spares Analyses available in the database appears.
+
+
+
+Select the row containing the Spares Analysis that you want to delete, and then select . 
+The Delete Spares Analysis dialog box appears, asking you to confirm that you want to delete the selected Spares Analysis. 
+Select Yes. 
+The selected Spares Analysis is deleted.
+Results
+Any associated Spares are deleted.Any associated Spare Applications are deleted.Any associated Spare Application Populations are deleted.
+Access Spares Analysis ReportProcedure
+Access the Spares Analysis whose report you want to access.In the upper-right corner of any workspace within the selected Spares Analysis, select Report.
+The Spares Analysis report appears in a new browser tab. 
+By default, the report contains the following sections:
+Analysis PlotsAnalysis PropertiesSpare PropertiesApplication Properties
+About Spares Analysis Report
+The baseline GE Digital APM database includes the Spares Analysis Report, which you can use to view a summary of Spares Analysis results. 
+The Spares Analysis Report is built from the following Catalog items:
+The main report, Spares Analysis, which is stored in the Catalog folder \\Public\Meridium\Modules\Reliability Manager\Reports.The subreport, Spares, which is stored in the Catalog folder \\Public\Meridium\Modules\Reliability Manager\Reports.The subreport, SparesApplication, which is stored in the Catalog folder \\Public\Meridium\Modules\Reliability Manager\Reports.The subreport, SparesChart, which is stored in the Catalog folder \\Public\Meridium\Modules\Reliability Manager\Reports.The supporting queries that supply data in the main report and subreports, which are stored in the Catalog folder \\Public\Meridium\Modules\Reliability Manager\Reports. The following supporting queries are available:Spares Analysis - ApplicationsSpares Analysis - ChartsSpares Analysis - ChartsMainSpares Analysis - MainSpares Analysis - SparesSpares Analysis - SparesMain
+
+Throughout this documentation, we refer to the main report, the subreports, and the supporting queries collectively as the Spares Analysis Report.
+Analysis Properties Section
+The Analysis Properties section of the Spares Analysis Report displays information that is stored in the Spares Analysis record. The name of the analysis, which is stored in the Analysis ID field of the Spares Analysis record, is displayed in blue at the top of the Analysis Properties section.
+The following table lists each item in the Analysis Properties section and the corresponding Spares Analysis record field whose data is displayed in the report. 
+
+Report ItemRecord Field(s)
+Analysis Properties
+Description Short Description Start Date Analysis Start Date End Date Analysis End Date Currency Number Simulation Options Iteration Iteration Number Random Seed Random Seed Events Logged Enable Event Log 
+
+Spares Properties Section
+Each Spare Analysis record can be linked to multiple Spare records. In the Spares Analysis report, a Spare Properties section will appear for each Spare record that is linked to the Spare Analysis record. The name of the spare, which is stored in the Spare ID field of the Spare record, is displayed in blue at the top of each Spare Properties section.
+The following table lists each item in theSpare Properties section and the corresponding Spares Analysis record field whose data is displayed in the report.
+
+Report ItemRecord Field(s)On-site Delivery Time 
+Onsite Delivery Time Value 
+On-site Delivery Time Unit 
+Normal Order Time 
+Normal Order Time Value 
+Normal Order Time Unit 
+Expedited Order Time 
+Expedited Order Time Value 
+ Expedited Order Time Unit
+Normal Cost Normal Cost Expedited Cost Expedited Cost Holding Cost Rate 
+Holding Cost Rate 
+ Holding Cost Unit
+Inventory level range 
+Min Inventory Level 
+ Max Inventory Level
+Current Holding Level Current Holding Level 
+
+Application Properties Section
+Spare records can be linked to multiple Spare Application records. For each Spare record in the Spares Analysis report, there can be multiple Application Properties sections. The name of the corresponding Application, which is stored in the Application ID field of each Spare Application record, is displayed at the beginning of each Application Properties section.
+Each Application Properties section contains the following grids:
+The Populations grid displays information stored in Spare Application Population records. There can be multiple Spare Application Population records linked to each Spare Application record. For each Spare Application Population record, one row exists in the Populations grid.
+The following table lists each item in the Populations grid and the corresponding Spare Application Population record field whose data is displayed in the report.
+
+Report ItemRecord Field(s)Population Name 
+Name 
+Population Size 
+Population Size 
+Population Age 
+Age 
+Age Time Unit 
+
+
+The Failure Distribution grid displays information that is stored in Distribution records that are linked to the Spare Application record. There can be multiple Distribution records linked to each Spare Application record. For each Distribution record, one row exists in the Failure Distribution grid.
+The following table lists each item in the Failure Distribution grid and the corresponding Distribution record field whose data is displayed in the report. The values in the Parameter 1, Parameter 2, and Parameter 3 columns will be different depending on whether the Distribution record is an Exponential, Lognormal, Normal, or Weibull distribution.
+
+Report ItemFamilyRecord Field(s)Name Distribution 
+Onsite Delivery Time Value 
+ On-site Delivery Time Unit
+Distribution Type Distribution 
+Normal Order Time Value 
+Normal Order Time Unit 
+Time Unit Distribution 
+Expedited Order Time Value 
+ Expedited Order Time Unit
+Parameter 1 
+Exponential 
+ Lognormal
+Normal 
+ Weibull
+
+MTBF 
+Mu 
+ Fix Mean
+Beta 
+Parameter 2 
+Lognormal 
+Normal 
+ Weibull
+
+Sigma 
+ Fix Standard Deviation
+ Eta
+Note: If the Distribution Type is Exponential, no value is displayed. 
+Parameter 3 
+Lognormal 
+ Weibull
+
+Gamma 
+Gamma 
+Note: If the Distribution Type is Exponential or Normal, no value is displayed.
+
+
+The Failure Consequence grid displays information stored in the Spare Application record.
+The following table lists each item in the Failure Consequence grid and the corresponding Spare Application record field whose data is displayed in the report.
+
+Report ItemRecord Field(s)Preparation Time 
+Preparation Time Value 
+Preparation Time Unit 
+Repair Time 
+Repair Time Value 
+Repair Time Unit 
+Labor Cost 
+Repair Labor Cost 
+Fixed Lost Production Cost Fixed Lost Production Cost Variable Lost Production Cost Rate 
+Variable Lost Production Cost 
+Variable Lost Production Unit 
+# of Required Spaces 
+Required Spares 
+
+
+The Preventive Maintenance grid displays information stored in the Spare Application record.
+The following table lists each item in the Preventive Maintenance grid and the corresponding Spare Application record field whose data is displayed in the report.
+
+Report ItemRecord Field(s)Time-based Replacement Interval 
+PM Interval Value 
+PM Interval Unit 
+Labor Cost 
+PM Labor Cost 
+Downtime 
+PM Downtime Value 
+PM Downtime Unit 
+
+
+Plots Section
+If you have run a Monte Carlo simulation, the Spares Analysis graphs will appear in the Spares Analysis report with the results from the last simulation that was run. 
+
+
+
+
+
+On this pageAbout Spares Analysis Access a Spares Analysis Create a Spares AnalysisExample of a Spares AnalysisDelete a Spares AnalysisAccess Spares Analysis ReportAbout Spares Analysis Report
+
+
+
+
+
+
+
+
+

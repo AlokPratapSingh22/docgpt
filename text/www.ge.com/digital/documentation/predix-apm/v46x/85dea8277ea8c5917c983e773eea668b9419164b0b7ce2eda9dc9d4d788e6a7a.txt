@@ -1,0 +1,126 @@
+
+
+
+Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Asset HierarchyOverview
+Workflow
+Asset Hierarchy Configuration
+Data Loader
+Troubleshooting
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Asset Hierarchy
+Overview
+
+
+
+
+
+
+
+OverviewOverview of AssetsThe Assets page in GE Digital APM contains the Asset Hierarchy and Asset Group that provide a dynamic way to interact with and view your assets. Simply, the Asset Hierarchy displays records in the database and how they relate to one another. It provides a dynamic view of functional locations, equipment, and their associated analyses by navigating through the system based on the assets themselves. Asset Groups are collections of assets, grouped together for analysis. An Asset Group can be created ad hoc in the Asset Group section or during the associated workflow. An Asset Group can be saved and reused for different types of analyses. For example, if you wanted to perform an ACA and an RBI on the same 20 pieces of equipment, you can create an Asset Group with those 20 equipment, and use the same group for each analysis.About the Asset Hierarchy
+GE Digital APM is built on the premise, within your company, there are multiple functional locations that can be organized in a hierarchy to represent the fact that some locations belong to other locations. These relationships create the Asset Hierarchy.Navigating the Asset Hierarchy
+
+The Asset Hierarchy allows you to browse your assets from the top-level functional location.
+Company (MRD ~ Meridium, Inc.) Sites (MRD-ROA ~ Meridium Roanoke)Areas (MRD-ROA-REFN ~ Meridium Roanoke Chemicals) Units (MRD-ROA-CHEM-CM101 ~ Meridium Roanoke Chemicals Unit CM101)Functional Locations (MRD-ROA-CHEM-CM101-FT101A ~ REACTOR COOLANT FLOW)Equipment (G0022-065 ~ 000000000001034757 ~ PUMP)
+
+
+
+Tip:
+To navigate to a parent-level or child-level equipment or functional location of an asset that is selected in the hierarchy, select the corresponding breadcrumb link in the breadcrumb path.To expand or collapse the Asset Hierarchy panel, select  or , respectively.To resize the Asset Hierarchy panel, drag the border of the panel to the required width.
+
+Note:
+As a standard practice, we assume that your equipment is installed in locations that exist on the lowest level of your location hierarchy.The Asset Hierarchy displays:A maximum of 500 top-level records in the hierarchy.A maximum of 500 child equipment or functional locations for a parent functional location.
+
+
+The <Asset Name> Workspace
+As you navigate through the Asset Hierarchy, in the <Asset Name> workspace, you can access the information about the Health, Reliability, Strategy, and Integrity for each level of equipment or functional location. The <Asset Name> workspace provides an overview of all the data available in GE Digital APM related to the asset selected in the Asset Hierarchy. For each Health, Reliability, Strategy and Integrity item, a hyperlink is available, displaying the number and type of analysis performed against that asset. When selected, the hyperlinks open the analyses or inspections in a new tab while maintaining the selection in the Asset Hierarchy.
+Tip: To refresh the <Asset Name> workspace, select .
+View the Asset Criticality Analysis for an asset in the Asset Hierarchy
+To view the analyses for the company, MRD ~ Meridium, Inc:In the Asset Hierarchy, select MRD ~ Meridium, Inc.The MRD ~ Meridium, Inc. workspace appears.Select the Strategy tab.In the Strategy section, you can view module-specific data for the asset, such as strategy actions, recommended actions, ACA analyses, strategies, and so on.
+
+Select the 5 ACA Analyses link.The Asset Criticality Overview page appears in a new tab, and you can access the existing analyses for the selected asset.
+
+
+About Asset Groups Based on QueriesThe ability to create an Asset Group based on a query allows a user to apply an analysis to a dynamic group of assets (that is, equipment, functional locations, and RBI components). When a user bases a new Asset Group on a query, the Asset Group is dynamic in that it is subject to change as assets change with respect to the parameters of the query.Every time you access an Asset Group that is based on a query, the query is freshly run. For example, the day you create an Asset Group using a query, the query it is based on may populate it with 10 assets. If you were to access the same Asset Group a month later, the query would run afresh and may populate the Asset Group with more or fewer than 10, depending on the number of assets that will meet the parameters of the query the second time around. If you want to run a static query that is populated with specific assets, you need to provide an entity key. The entity key should be provided in the first column of your query, in the ENTY_KEY column. Additionally, when you apply an analysis to an Asset Group that is based on a query, the Asset Group is no longer dynamic. Instead, the assets returned by the base query at the time when you apply the analysis are the exact assets for which that analysis will always apply.You cannot use an Asset Group that is based on a query as a filter in a module overview page where asset filtering is available. You must convert the dynamic Asset Group to a static group to use it as a filter.Lastly, you cannot modify Asset Groups that are based on queries. You must create a new Asset Group.Access the Assets PageProcedureIn the top navigation bar, select .
+The page displaying the Asset Hierarchy appears.
+
+
+
+Create an Asset GroupBefore You BeginBefore you can create an Asset Group based on a query, you must create a query on which you want to base your Asset Group, if it does not already exist.ProcedureTo create an asset group from scratch:Access the Assets page.In the left pane, select Group, and then select .
+The New Asset Group workspace appears.
+
+
+
+In the Group Name box, enter a name for the new asset group.In the Group Description box, enter a brief description for the group.To add a Parent to the Asset Group, above the Select a Parent box, select . The Asset Finder window appears.In the Asset Finder window, use the Asset Hierarchy to select  for the level of the hierarchy with which you want to associate the group, and then select Done.Above the Add Assets box, select . The Asset Finder window appears.In the Asset Finder window, using either the Asset Hierarchy or a preexisting Asset Group, select  for the asset(s) that you want to add to the group, and then select Done.In the workspace heading, select Save.The group is saved, and appears in the Asset Group section.Note:  Relationships are determined while creating an Asset Group during an associated module workflow.To create an asset group based on a query:Access the Assets page.In the left pane, select Group, and then select .
+The New Asset Group workspace appears.
+In the Group Name box, enter a name for the new asset group.In the Group Description box, enter a brief description for the group.To add a Parent to the Asset Group, above the Select a Parent box, select . The Asset Finder window appears.Above the Select a Query box, select .The Select a Query from the Catalog window appears.Navigate to the query on which you want to base the new Asset Group, and then select that query.The Select a Query box is populated with the query path.Select Save.The group is saved, and appears in the Asset Group section.Filter AssetsAbout This Task
+Steps: Apply a Filter to the Asset Hierarchy
+ProcedureTo apply a filter to the Asset Hierarchy:Access the Assets page.In the left pane, in the Hierarchy section, select .The Filter menu appears.Optionally, in the CATEGORY drop-down list box, select a taxonomy category.Optionally, in the CLASS drop-down list box, select a taxonomy class.Optionally, in the TYPE drop-down list box, select a taxonomy type.Select Apply.The hierarchy is filtered according to your selection.To apply a filter to asset groups:Access the Assets page.In the left pane, in the Group section, select .The Group Filter window appears.Optionally, in the Relationship box, select a relationship by which to filter.Optionally, select Hierarchy Filter.The Hierarchy Finder window appears.In the Asset Hierarchy, in the row for each asset by which you want to filter groups, select . Select OK.The list of applied filters appears on the Group Filter window.Select Done.The groups are filtered according to your selection.Search for an AssetProcedureAccess the Assets page.In the left pane, in either the Asset Hierarchy section or the Asset Group section, select  , and then, in the text box, enter your search criteria. For more information, refer to the Search section of the documentation.The search results appear in a list in the left pane.Note: You can now search for the functional location or the equipment by applying the taxonomy filter.Copy an Asset Group Based on a QueryBefore You Begin
+Before you can copy an Asset Group based on a query, the system must contain an Asset Group that is based on a query.
+ProcedureAccess the Assets page.In the left pane, select Group, and then select the group that you want to copy.
+The properties for the selected group appear in the <Group Name> workspace, where <Group Name> is the name of the group. 
+Select Save As a Static Group.
+The copy of the new group appears in the <Group Name> workspace, where <Group Name> is the name of the copied group. The asset group copy contains all of the assets that were in the previous group. The new asset group is saved automatically. 
+Note:  The asset group you choose to copy must use a query or the Save As a Static Group button will not appear. 
+What To Do Next
+Modify an Asset Group
+Modify an Asset GroupProcedureAccess the Assets page.In the left pane, select Group, and then select the group that you want to modify.
+The selected group's properties appear in the <Group Name> workspace, where <Group Name> is the name of the group.
+Modify the properties as needed, and then, in the workspace heading, select Save.
+The changes are saved.
+Tip: If you want to delete an Asset Group, in the workspace for the Asset Group, select Delete. You cannot delete an Asset Group that is linked to an analysis. If you attempt to delete an Asset Group that is linked to one or more analyses, a message displaying the names of the linked analyses appears. If the Asset Group is linked to no analyses, a confirmation window appears. Select Yes to delete the Asset Group.
+
+
+
+
+
+On this pageOverview of AssetsAbout the Asset HierarchyAbout Asset Groups Based on QueriesAccess the Assets PageCreate an Asset GroupFilter AssetsSearch for an AssetCopy an Asset Group Based on a QueryModify an Asset Group
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+
+
+
+Allowable Event Types in Related Events | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Mappings
+Allowable Event Types in Related Events 
+Fields that can be Populated from one of the Three Related Records 
+Fuel Code Fields 
+Fuel Information Fields 
+Inactive Hours Field 
+Overlapping between an Outage Event and a Derate Event
+Capacity Event Types Affecting Performance Records
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Reference
+Allowable Event Types in Related Events 
+
+
+
+
+
+
+
+Allowable Event Types in Related Events Allowable Event Types in Related Events
+Use the following table to determine which event types are allowed in subsequent Primary Events in related Primary Event pairs.
+Event Type in Preceding Event Record Allowable Event Types in Subsequent Event RecordNotes
+D1 - Immediate 
+NoneIEEE Standard 762 does not recognize transition to/of deratings from/to other event types.D2 - Delayed NoneIEEE Standard 762 does not recognize transition to/of deratings from/to other event types.D3 - Postponed NoneIEEE Standard 762 does not recognize transition to/of deratings from/to other event types.D4 - Maintenance DM NoneDM - Maintenance Derating Extension DM This Capacity Event Type cannot be the first event in a sequence and must follow an existing Primary Event. If it does not follow a Primary Event with an appropriate Capacity Event Type, a warning message appears when you navigate out of the field. DP - Planned Derating Extension DP This Capacity Event Type cannot be the first event in a sequence and must follow an existing Primary Event. If it does not follow a Primary Event with an appropriate Capacity Event Type, a warning message appears when you navigate out of the field. ME - Maintenance Extension U1, SF, ME, RSThis Capacity Event Type cannot be the first event in a sequence and must follow an existing Primary Event. If it does not follow a Primary Event with an appropriate Capacity Event Type, a warning message appears when you navigate out of the field. MO - Maintenance U1, SF, MO, PO, ME, RSNonePD - Planned DP This Capacity Event Type cannot be the first event in a sequence and must follow an existing Primary Event. If it does not follow a Primary Event with an appropriate Capacity Event Type, a warning message appears when you navigate out of the field. PE - Planned Extension U1, SF, PE, RSThis Capacity Event Type cannot be the first event in a sequence and must follow an existing Primary Event. If it does not follow a Primary Event with an appropriate Capacity Event Type, a warning message appears when you navigate out of the field. PO - Planned U1, SF, PO, PE, RSNoneRS - Reserve Shutdown U1, SF, MO, PO, RSNoneSF - Startup Failure U1, SF, MO, PO, RSThis Capacity Event Type cannot be the first event in a sequence and must follow an existing Primary Event. If it does not follow a Primary Event with an appropriate Capacity Event Type, a warning message appears when you navigate out of the field. U1 - Immediate U1, SF, MO, PO, RSNoneU2 - Delayed U1, SF, MO, PO, RSNoneU3 - Postponed U1, SF, MO, PO, RSNone
+
+
+
+
+
+On this pageAllowable Event Types in Related Events
+
+
+
+
+
+
+
+
+

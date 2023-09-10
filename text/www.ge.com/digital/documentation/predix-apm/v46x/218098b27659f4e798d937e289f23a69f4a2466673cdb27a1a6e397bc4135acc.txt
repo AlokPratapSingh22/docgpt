@@ -1,0 +1,99 @@
+
+
+
+GAA Administrator Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+AdminAccess the GAA Administrator Page
+GAA Administrator Workflow
+System Codes
+Event Categories
+Event Types
+Cause Codes
+Amplification Codes
+Fuel Types
+Mapping Records
+Event Transitions
+Companies
+Plants
+Units
+Unit Capacity
+Performance Record and Report Configuration
+
+
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Admin
+GAA Administrator Workflow
+
+
+
+
+
+
+
+GAA Administrator WorkflowGAA Administrator WorkflowAbout This TaskThis workflow provides the basic, high-level steps for using this module. The steps and links in this workflow do not necessarily reference every possible procedure.ProcedureAdd a GAA Company to represent the functional location that you want to use in GAA. You must add a GAA Company at the highest level in the Asset Hierarchy.Add a GAA Plant to represent the functional location that you want to use in GAA. You must add a GAA Plant at the level next to GAA Company in the Asset Hierarchy.Add a GAA Unit to represent the functional location that you want to use in GAA. You must add a GAA Unit at the level next to GAA Plant in the Asset Hierarchy.Verify GAA Unit Capacity record. When you add a GAA Unit record, a GAA Unit Capacity record is automatically created with the values defined in the capacity related fields in the GAA Unit record. You must verify these values. As needed, you can modify the values in the available fields or create new GAA Unit Capacity records.Configure and associate GAA Reports that you want to appear for a GAA Unit.
+
+
+
+
+On this pageGAA Administrator Workflow
+
+
+
+
+
+
+
+
+

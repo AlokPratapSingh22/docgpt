@@ -1,0 +1,189 @@
+
+
+
+Policy Execution | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Policy Execution
+
+
+
+
+
+
+
+Policy ExecutionAbout Policy ExecutionWhen you execute a Policy, input values are evaluated against the logic in the Policy model. The input values for each execution are supplied by a specific Policy instance. Each time a Policy is executed, the results of the execution are recorded in the execution log, which you can view on the Execution History pane. You can use one or all the following methods to execute a Policy:Automatic executionScheduled executionManual executionImportant:
+You can execute only the active instances associated with active Policies.The policy execution log can grow quickly and significantly impact the size of the GE Digital APM database. You can control how quickly the execution log grows by modifying the execution history settings for each policy.
+Automatic Execution
+When automatic execution is configured, individual Policy instances are executed when records belonging to the Policy instance are updated. Additionally:
+For records represented by a Measurement Location, OT Connect Tag, or Health Indicator node, Policy execution is also triggered by changes in related Reading records in the APM database.For process historian tags represented by an OT Connect Tag node, Policy execution is also triggered when new readings are added in the process historian.
+Automatic execution works in conjunction with the selection in the Trigger check box that appears on the Properties window for all Input nodes except Query, Constant, and Point Value nodes. When the Trigger check box is:
+Selected: Changes in a record or related readings represented by the node will trigger Policy execution. The Trigger check box is selected by default.Cleared: Changes in a record or related readings represented by the node will not trigger Policy execution.
+Important: You must ensure that the Trigger check box is selected for only the inputs where you want changes in the record or related readings, alerts or events to trigger Policy execution.
+For example, you have a Policy that contains an Entity node that represents an Equipment record, but the Entity node does not influence any of the logic in the Policy model that determines if action is needed. Rather, other Entity nodes (for example, representing Measurement Location records that are linked to the Equipment record) influence the actual logic in the Policy model. In this case, you can exclude the associated Equipment record from triggering the Policy execution by clearing the Trigger check box for that node. By doing this, only the changes in the relevant records will trigger Policy execution.
+When Should Automatic Execution Be Used?
+Use automatic execution when the Policy is designed to monitor one or more values that change with time and when an action is needed in response to a specific change. Consider the following examples:
+The Policy monitors readings related to an OT Connect tag. When a reading value crosses a defined threshold, the Policy creates or closes a Policy event.The Policy monitors the status of a Health Indicator record. When the Health Indicator enters the Alert state, the Policy sends an email to the responsible user.
+Scheduled Execution
+When scheduled execution is configured, all active instances that are associated with a Policy are executed according to the schedule that you define.
+When Should Scheduled Execution Be Used?Use scheduled execution when the Policy is designed to evaluate data over a period or when automatic execution could produce misleading results.Consider the following examples of Policies designed to evaluate data over a period:Using the Threshold Statistics node, the Policy analyzes threshold excursions during the previous month for values related to an OT Connect tag or Health Indicator.The Policy evaluates conformance to an asset strategy by comparing the actual count of readings added for a measurement location within the previous week to the expected count.Consider the following example of a Policy monitoring values where automatic execution could produce misleading results:The Policy evaluates combined information from a Rounds Route that includes multiple measurement locations for a single asset.Because mobile users can enter readings in any order and could change a previously entered reading value before finalizing the Route, using automatic execution in this scenario could trigger executions where one or more readings are from an earlier Route execution or are otherwise invalid.Instead of using automatic execution, the Policy could be scheduled to run at a similar frequency to the Route. For example, if the Route is completed during the morning shift on weekdays, the Policy could be scheduled to execute after the end of the shift. The Policy checks whether new Readings have been added for all the required inputs before proceeding with the evaluation of the results.Considerations for Scheduled Policies
+You can take steps to prevent delays in Policy execution by considering the number of Policies you are scheduling and the number of instances associated with each.
+When scheduling multiple Policies, you can configure the Policy for different schedules so that the executions are staggered throughout the day.
+All active instances of a scheduled Policy are submitted for execution at the same time. Therefore, when scheduling a Policy with a large number of instances, you can stagger the executions by creating multiple copies of the Policy, each with a subset of the instances. You can then schedule each of the Policies to be executed at a different time. This approach may be especially advantageous when users are located in multiple time zones, as you could configure relevant Policy instances to be executed outside of normal business hours such that results are available in different locations as needed.
+Manual Execution
+If a Policy is active, you can manually execute the Policy irrespective of the configured execution settings. You can execute an active instance or all the active instances associated with the Policy. If you manually execute a Policy, the execution settings configured for the Policy are not changed and the Policy continues to be executed according to the configured settings.
+When Should Manual Execution Be Used?
+If you want the Policy to trigger the specified actions once without changing the existing execution settings that are configured for the Policy or configuring additional one-time scheduled execution settings, you can use the manual execution method.
+The following examples require the policy to be executed to fully validate the results:Sending an emailApplying an Asset Strategy TemplateCreating an Alert
+For example, you designed a new Policy for an electric motor such that if the working temperature of a motor exceeds 800 K, an email notification will be triggered to the related engineer. You created two instances for the Policy and activated them without activating the Policy. Based on the requirement of the Policy, you configured it for automatic execution. Now, if you want to verify if the newly created Policy correctly triggers the required email notification, you must additionally configure the Policy for a one-time scheduled execution and activate the Policy. In this scenario, you can manually execute the Policy and verify if it triggers the correct action, instead of configuring additional one-time execution settings.
+About Active Policies and Policy InstancesWhen a policy is active, the active instances that are associated with the policy will be executed according to the execution settings defined for the policy.Consider a policy with two instances, where one instance is active and another instance is inactive.If the policy is active, the active instance will be executed according to the execution settings defined for the policy. If the policy is inactive, neither of the policy instances will be executed. However, the active instances associated with an inactive policy can be executed if the policy is manually executed and is not according to the pre-configured execution settings.If a policy is active but does not contain an active instance, a warning message appears in the notification bar, indicating that there are no active instances to execute.Configure Scheduled ExecutionBefore You Begin
+Run the validation process to confirm that the policy logic is working correctly.Verify that the correct time zone is specified for the policy.
+About This TaskYou can configure a policy to be executed automatically or executed according to a predefined schedule (or both). This topic describes how to configure a policy to be executed according to a predefined schedule.Procedure
+Access the policy that you want to configure to be executed according to a defined schedule.In the Details workspace, in the Execution Settings section, select the Scheduled Execution check box.
+Options that you can use to specify the schedule appear.
+
+Select either One time or Recurrence.In the Start box, specify the date and time at which you want the first scheduled execution to occur.If you selected Recurrence, in the Every section, select the frequency at which you want the policy to be executed.
+Note:
+You can configure a policy to execute as frequently as every minute. However, due to performance impacts, policies should not be scheduled to execute at high frequencies in most circumstances. If you choose to execute a policy at a high frequency, consider the following guidelines to limit performance impact:
+The policy should have a limited number of instances.The policy should minimize use of Query or R Script nodes.If the policy uses tag inputs (such as GE Tag or OT Connect Tag), the range of the data retrieved should be limited. A Collection Filter node should be used after the OT Connect Tag node to limit the range of readings retrieved.
+
+On the toolbar, select .The policy is saved. A summary of the schedule and the next date on which the policy will be executed appears below the schedule settings.ResultsWhen the policy is active, the active policy instances that are associated with the policy will be executed based on the defined schedule.What To Do Next
+
+Activate policy instances
+
+Activate the policy
+
+View Execution History
+
+Configure Automatic ExecutionBefore You Begin
+
+Run the validation process to confirm that the policy logic is working correctly.
+About This TaskYou can configure a policy to be executed automatically or executed according to a predefined schedule (or both). This topic describes how to configure a policy to be executed automatically.Procedure
+Access the policy that you want to configure to be executed automatically.In the Details workspace, in the Execution Settings section, select the Automatic Execution check box.In the Design workspace, on the Properties window for each Input node that contains a Trigger check box, select or clear the Trigger check box as needed. You must select the Trigger check box for at least one Input node. When the Trigger check box is: Selected, changes in a record or related readings represented by the node will trigger policy execution. Cleared, changes in a record or related readings represented by the node will not trigger policy execution.
+Important: You should ensure that the Trigger check box is selected for only the inputs where you want changes in the record to trigger policy executionSelect Save.The policy is saved.ResultsWhen the policy is active, the active policy instances associated with the policy will be executed automatically when the specified records or related reading values are updated.What To Do Next
+
+Activate policy instances
+
+Activate the policy
+
+View Execution History
+
+Execute an Active Instance ManuallyBefore You Begin
+
+Run the validation process to confirm that the policy logic is working correctly.
+About This Task
+You can manually execute an active instance or all the active instances associated with a Policy. This topic describes how to execute a specific active instance associated with a Policy.
+Note: You can add links to the Hyperlink widget in dashboards and configure them such that on selecting a link in a dashboard, specific active instances of a Policy are executed. The URL of the instances to be executed on selecting a link must be specified in the following format: ;rte=Policy/Execute/<PolicyName>/<InstanceName1>/<InstanceName2>/...../<InstanceNameN>.
+Procedure
+Access the policy associated with the instance that you want to execute.In the Design workspace, select the Instances tab.The Instances section appears.In the Instances section, select the specific instance that you want to execute.Select .
+Note:  is enabled only for the active instances of a Policy.
+The instance is queued for execution.Execute all Active Instances ManuallyBefore You Begin
+
+Run the validation process to confirm that the policy logic is working correctly.
+About This Task
+You can manually execute an active instance or all the active instances associated with a Policy. This topic describes how to execute all the active instances associated with a Policy at once.
+Note: You can add links to the Hyperlink widget in dashboards and configure them such that on selecting a link in a dashboard, all active instances of a Policy are executed. The URL of the Policy to be executed on selecting a link must be specified in the following format: ;rte=Policy/Execute/<PolicyName>.
+Procedure
+Access the policy that you want to execute.In the Details workspace, select Execute Now.
+Note: The Execute Now button is enabled only when one of the instances associated with the Policy is active.
+The Confirm Policy Execution window appears.Select OK.
+All active instances associated with the Policy are queued for execution.
+Activate or Deactivate a PolicyBefore You Begin
+ Run the validation process in order to confirm that the policy logic is working correctly.
+Configure the execution settings for the policy.
+Procedure
+Access the policy that you want to activate or deactivate.In the Details workspace, on the toolbar, either the  button or the  button is displayed.If the  button is displayed, the policy is active. To deactivate the policy, select this button.If the  button is displayed, the policy is not active. To activate the policy, select this button.
+On the button and on the Details tab, the active/inactive indicator changes to reflect your selection.
+Select Save.The policy is saved.Results
+If you activated the policy, the active policy instances that are associated with the policy will be executed according to the policy's execution settings.If you deactivated the policy, none of the policy instances that are associated with the policy will be executed.
+What To Do Next
+
+View Execution History
+
+Configure Policy Execution History Log SettingAbout This Task
+You can configure the policy to determine when execution history log records will be created.
+Important: Policy execution history records can significantly impact the size of the GE Digital APM database. To minimize the impact, you can select either the Errors Only or Summary Only option.
+ProcedureAccess the policy for which you want to configure the execution history log setting. In the Details workspace, in the Execution History Log Setting section, select one of the following options.OptionDescriptionNormalCreates an execution history record for every execution of the policy. This option is selected by default for new policies.Errors OnlyCreates an execution history record only for the executions of the policy that result in an error. This option can be used to reduce the number of execution history records being added to the GE Digital APM database, thus reducing the load on the database server.Note:
+If you select the Errors Only option:
+You can only review the execution results in the design canvas for policy executions that result in errors.The executions that resulted in an error are shown in the COUNT OF EXECUTIONS PER POLICY FOR LAST 30 DAYS chart of the Policy Designer Overview page.The most recent execution that resulted in an error is listed in the Policies section of the Policy Designer Overview page.
+Summary OnlyCreates an execution history record for every execution of the policy and saves only the summary of the execution in the record. You can use this option to reduce the file size of the execution history records being added to the GE Digital APM database.Note: If you select Summary Only in the Execution History Log Setting section and the policy execution resulted in an error, the node execution details are also saved along with the summary. For policies which include Sub Policy nodes, execution history logs are created as follows:If the Execution History Log Setting is Normal for a calling policy, and Errors Only for the sub policy, an execution history record is created for every execution of the calling policy. The Sub Policy node in the execution history records displays execution details only for the executions of the sub policy, which resulted in an error.If the Execution History Log Setting is Errors Only for a calling policy, and Normal for the sub policy, an execution history record is created only for the executions of the calling policy, which resulted in an error. The Sub Policy node In the execution history records displays the execution details for every execution of the sub policy, regardless of whether the sub policy execution resulted in an error.If the Execution History Log Setting is Errors Only for both calling policy and sub policy, an execution history record is created only for the executions of the calling policy, which resulted in an error. The Sub Policy node in the execution history record displays execution details only for the executions of the sub policy, which resulted in an error.If the Execution History Log Setting is Summary Only for a calling policy, and Errors Only for the sub policy, an execution history record that contains the summary of the execution is created for every execution of the calling policy. The Sub Policy node in the execution history records displays the node execution details also when the sub policy execution resulted in an error.On the toolbar, select 
+The policy is saved. The execution history log setting is applied to subsequent policy executions.
+Access Execution History ProcedureAccess the policy for which you want to view the execution history.In the Design workspace, select the Execution History tab.The Execution History pane appears. On the left side of the pane, a list of the policy's instances appears. On the right side of the pane, execution summaries for all policy instances appear. Tip:
+To resize the pane, drag the top edge of the pane.To maximize the pane, select .To restore the pane to its original size, select .To close the pane, select .
+On the left side of the pane, select a policy instance.On the right side of the pane, a summary of the execution results for the selected instance appears. On the right side of the pane, select a specific execution to view additional details on the policy canvas. 
+Note:
+If changes have been made to the policy model since the selected execution occurred, you will not be able to view the details of that execution on the canvas.You can use the Actions and Errors and Warnings check boxes to display only the executions that resulted in actions or only the executions that resulted in errors and warnings.Execution history records are retained for the duration specified in the Policy Admin page.
+
+In the policy model, select a node to view additional details about the specific node's execution. 
+Note: You can now check the Execution Duration for each node in a policy. If you select each node of a policy in the Validation mode or in the Execution history entry record, the Node Execution Details display the Execution duration.
+Monitor Policy ExecutionAbout This Task
+When you execute a policy, a notification is sent to the policy trigger queue. A policy trigger service processes the requests and sends a message to the policy execution queue. A policy execution service processes this message and executes the policy. Depending on the load on the policy execution service, the start time of the policy execution varies. 
+The policy execution history contains the time that the notification was sent to the policy trigger queue, the execution start time, and the execution end time for each policy execution.
+You can monitor the average and maximum wait times and review recent policy executions on the Policy Designer Overview page and the Recent Policy Executions dashboard.
+ProcedureTo view policy execution details on the Policy Designer Overview page:Access the Policy Designer Overview page.Access the AVERAGE AND MAX WAIT TIMES IN QUEUE FOR 15 MIN INTERVALS IN LAST 4 HOURS Graph.To view policy execution details on the Recent Policy Executions dashboard:In the module navigation menu select Tools > General Dashboards.Select Browse.Navigate to the Public\Meridium\Modules\Policy Manager folder.Follow one of the steps mentioned below: If your GE Digital APM uses a SQL Server database, select the Recent Policy Executions dashboard.-or-If your GE Digital APM uses an Oracle schema, select the Recent Policy Executions(Oracle) dashboard.The dashboard opens in a new tab and the page filter window is displayed.Select the Policies for which you want to see recent executions.Enter the duration (in minutes) for which you want to see recent executions.Select Done.The Recent Policy Executions dashboard appears, displaying these results:A summary of execution results for the selected policies and review period.The progress of most recent scheduled policy execution request.The AVERAGE AND MAX WAIT TIMES IN QUEUE FOR 15 MIN INTERVALS IN LAST 4 HOURS Graph.A list of records that are policy triggers that have been edited in the selected review period, and for which no policy execution history exists. This could indicate either that the policy execution message is still in the queue, or, if enough time has elapsed based on the current maximum queue wait time, that the policy failed to trigger.Note: This dashboard may exclude results for policies where the execution log setting is Errors Only.
+
+
+
+
+On this pageAbout Policy ExecutionAbout Active Policies and Policy InstancesConfigure Scheduled ExecutionConfigure Automatic ExecutionExecute an Active Instance ManuallyExecute all Active Instances ManuallyActivate or Deactivate a PolicyConfigure Policy Execution History Log SettingAccess Execution History Monitor Policy Execution
+
+
+
+
+
+
+
+
+

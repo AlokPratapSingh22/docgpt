@@ -1,0 +1,175 @@
+
+
+
+Exceptions and Tasks | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Management of ChangeOverview
+Workflows
+Change Projects
+Checklists
+Exceptions and Tasks
+Changed Elements
+Deployment
+Admin
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Management of Change
+Exceptions and Tasks
+
+
+
+
+
+
+
+Exceptions and TasksAbout Exceptions and TasksExceptions and tasks ensure that the change management process is formally documented and the duties for review, approval, and implementation are assigned to appropriate personnel.In the Application Settings for MOC, you must create Questions such that one Answer Option for each Question is associated with an Exception, and then associate the Questions with a Checklist.For a Question in a Checklist that you added to the Change Project, when the selected Answer Option is associated with an Exception, an association is created between the Exception and the Change Project. The Exception records associated with a Change Project are action items required for the project to be implemented successfully. After you respond to all Questions in all the Checklists in the Change Project, you can access the list of Exceptions created for the Change Project from the Exceptions and Tasks workspace of the Change Project. You can associate each Exception with tasks. Tasks are used to break down Exceptions into smaller, more manageable pieces of work that consider all efforts required to complete the action item (i.e., the Exception). In GE Digital APM, tasks are stored in the Operations Task records. Each task can be assigned to an appropriate team member. You can track the progress of task by managing the states of the task.Based on the progress of the tasks associated with it, you can assign one of the following statuses to the Exceptions:Not Started: Indicates that the Exceptions and tasks have been created and requires further action.In Progress: Indicates that the assigned team members have started working on the tasks associated with the Exception.Complete: Indicates that all the tasks associated with the Exception have been successfully completed.You can track the status of Exceptions in the Change Project to ensure that each task is successfully completed by the assigned team member(s). This makes the Change Project auditable.Example: Exception and Task
+If the change being implemented results in revision of the operating or maintenance procedure, then you can create a task for updating the procedure and assign it to the appropriate team member. You can then create tasks for all involved team members to review the revised procedure. In this example, revision of the operating or maintenance procedure is an Exception.
+Access the List of Exceptions and Tasks Associated with the Change ProjectProcedure
+Access the Project Summary
+
+ workspace for the Change Project containing the Exception that you want to view.In the left pane, select Exceptions and Tasks.
+The Exceptions and Tasks workspace appears, displaying the following sections:
+
+
+Exceptions: Contains a list of Exceptions that are associated with the Change Project. For each Exception listed in this section, the following information appears:
+<Exception ID>: The value in the Exception ID field of the Exception appears as a link, which you can select to access the selected Exception.Status: The value in the Status field of the Exception.Reference Document: The number of Reference Documents associated with the Exception.Source: The value in the Question Text field of the Question, in response to which the Exceptions was created.
+Above the Exceptions section, the number of Exceptions associated with the Change Project and the number of Exceptions in each Exception status appear.
+
+
+Tasks: Contains a list of tasks that are associated with the Exception that you select in the Exceptions section. For each task listed in this section, the following information appears:
+<Task ID>: The value in the Task ID field of the Operations Task record appears as a link, which you can select to access the selected Exception.Assigned To: The value in the Task Assigned To field of the Operations Task record.Start Date: The value in the Next Date field of the Operations Task record.Interval: The value in the Desired Interval field of the Operations Task record.
+Above the Tasks section, the total number of tasks associated with the Exception and the number of tasks in each task state appear.
+
+
+
+
+Access an ExceptionProcedure
+Access the list of Exceptions and Tasks associated with the Change Project.In the Exceptions section, select the link for the Exception that you want to access.
+The workspace for the selected Exception appears, displaying the following tabs:
+
+
+Definition: Contains the datasheet for the Exception.
+Note: As needed, in the Definition section, you can modify values in the available fields, and then select  to save your changes. 
+
+
+Reference Documents: Contains the list of reference documents associated with the Exception.
+Tip: For more information, refer to the Reference Documents section of the documentation.
+
+
+
+
+What To Do Next
+
+Create a Task for an Exception
+
+Access a TaskAbout This Task
+This topic describes how to access a task via the Exceptions and Tasks workspace. You can also access a task from the MOC Overview page.
+Procedure
+Access the list of Exceptions and Tasks associated with the Change Project.In the Exceptions section, select the Exception whose task you want to access.
+In the Tasks section, the Tasks associated with the selected Exception appear.
+
+
+
+In the Tasks section, select the link for the task that you want to access.
+The datasheet for the selected task appears.
+
+
+
+Note: As needed, you can modify values in the available fields, and then select  to save your changes. 
+Create a Task for an ExceptionBefore You Begin
+
+Respond to Questions in the Checklist so that Exceptions are created.
+Procedure
+Access the list of Exceptions and Tasks associated with the Change Project.In the Exceptions section, select the Exception for which you want to create the task.
+In the Tasks section, a list of tasks associated with the selected Exception appears.
+
+
+
+In the upper-left corner of the Tasks section, select .
+In the Exceptions and Tasks workspace, a new datasheet for Operations Task appears.
+
+
+
+As needed, enter values in the available fields.In the upper-right corner of the datasheet, select .
+The task is created.
+Results
+The task that you created is associated with the selected Exception.
+What To Do Next
+
+Change the state of the Task
+
+Change the State of a TaskAbout This Task
+This topic describes how to change the state of a task, while assigning the state to the appropriate user.
+Important: You can modify the state for a task only if you are an administrator or a user who belongs to the State Configuration Role configured for that state.
+Procedure
+Access the task for which you want to change the state. In the upper-right corner of the datasheet, select the button that indicates the current state of the task. For example, if the current state of the task is Proposed, select Proposed.
+A menu appears, displaying the operation that you can perform to change the state of the task.
+
+
+
+Select the necessary operation that will change the state of the task, and then select Done. For example, if you want to change the state of the task from Proposed to Scheduled, select Schedule, and then select Done.
+The state of the task is changed.
+Delete a TaskProcedure
+Access the Exception with which the task that you want to delete is associated.In the Tasks section, select the task that you want to delete.In the upper-right corner of the section, select .
+The Delete Task dialog box appears, asking you to confirm that you want to delete the selected task.
+Select OK.
+The selected task is deleted and the updated list of tasks appears in the section.
+Delete an ExceptionProcedure
+Access the list of Exceptions and Tasks associated with the Change Project.In the Exceptions and Tasks workspace, in the Exceptions section, select the Exception that you want to delete.In the upper-right corner of the section, select .
+The Delete Exception dialog box appears, asking you to confirm that you want to delete the selected Exception and the Tasks associated with it.
+Select OK.
+The association between the Change Project and the selected Exception is removed and the updated list of Exceptions appears in the section. 
+
+
+
+
+
+On this pageAbout Exceptions and TasksAccess the List of Exceptions and Tasks Associated with the Change ProjectAccess an ExceptionAccess a TaskCreate a Task for an ExceptionChange the State of a TaskDelete a TaskDelete an Exception
+
+
+
+
+
+
+
+
+

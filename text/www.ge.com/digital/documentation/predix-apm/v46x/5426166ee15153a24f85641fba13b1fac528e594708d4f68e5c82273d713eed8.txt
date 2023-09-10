@@ -1,0 +1,176 @@
+
+
+
+RCA Preserve Item Records | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+RCA Preserve Item Records
+
+
+
+
+
+
+
+RCA Preserve Item RecordsAbout Preserve Failure DataIn a Root Cause Analysis, preserving failure data involves collecting a wide range of information related to the failure that the team will analyze. The collected data is stored in RCA Preserve Item records, which contain task-related data for the collection of the failure data. The RCA Preserve Item records are tasks that are assigned to the team member who should collect the failure data specified by a certain date. For example, an RCA Preserve Item may contain a task to collect all the broken pieces of a piece of equipment.The 5 P's
+When you create an RCA Preserve Item, the type of data that you want a member of the Root Cause Analysis Team to collect is identified by one of the following categories, known as the 5 P's:
+ People: Indicates that human witnesses should be questioned about the incident. Witnesses might include the person who is responsible for the maintenance of the piece of equipment or location associated with the failure event, the operator, or even the stock room attendant. Parts: Indicates that physical pieces of the equipment should be collected (i.e., the broken pieces). This may also include collecting a functional piece of equipment to test against the broken one. Paper: Indicates that any data or information that exists about the piece of equipment or location should be gathered. This could include recent performance reports, schedules, GE Digital APM data, specifications, and so on. Position: Indicates that the environment in which the piece of equipment or location exists should be documented and considered. This could include, for example, the temperature of the room at the time of the incident or the proximity of one piece of equipment or location to another. Paradigms: Indicates that any trends or common assumptions about the cause of the incident should be considered. The intent of noting these paradigms is to remove this assumption from the investigation (i.e., remove any bias from the analysis).
+You can select one of the 5 P's on the RCA Preserve records datasheet, in the Data Category box. 
+Access an RCA Preserve Item RecordProcedure
+Access the Root Cause Analysis for which you want to view the details of a RCA Preserve Item Record.In the left pane, select the Preserve Records tab.
+The Preserve Records workspace appears, displaying the list of RCA Preserve Item Records associated with the selected RCA. The workspace contains the following columns of information:
+
+Data to Collect
+
+Data Category
+
+Collection Strategy
+
+Due Date
+
+Date Completed
+
+Team Members
+
+
+
+
+In the Data to Collect column, select the hyperlink for the RCA Preserve Item Record whose details you want to view.
+Note: You can also search for an existing RCA Preserve Item Record by selecting .
+The datasheet for the selected RCA Preserve Item Record appears.
+
+
+
+Note: As needed, you can modify values in the available fields, and then select . You can modify a RCA Preserve Item Record based on the state of the analysis. 
+Create an RCA Preserve Item RecordAbout This Task
+This topic describes how to create a new RCA Preserve Item Record. You can also copy an RCA Preserve Item Record.
+You can create multiple RCA Preserve Item Records for one Root Cause analysis using different data categories. You can use the 5 P's in the Data Category list to categorize the type of data that should be collected.
+Procedure
+Access the Root Cause Analysis for which you want to create an RCA Preserve Item Record.In the left pane, select the Preserve Records tab.
+The Preserve Records workspace appears, displaying a list of Preserve Records that are associated with the selected RCA. 
+
+
+
+In the upper-left corner of the workspace, select . 
+The New Preserve Record window appears in the workspace. 
+
+
+
+In the Assigned to list, enter or select the team member to whom you want to assign the Preserve Records.
+The datasheet for a new Preserve Record appears. 
+
+
+
+As needed, enter the details in the available fields.Select .
+The Preserve Record is saved. 
+What To Do Next
+
+Create an Event Diagram
+
+Create a Logic Tree Diagram
+
+Copy a Preserve RecordAbout This Task
+This topic describes how to copy an RCA Preserve Item Record. You can also create a new RCA Preserve Item Record.
+Procedure
+Access the Root Cause Analysis for which you want to create an RCA Preserve Item Record.In the left pane, select the Preserve Records tab.
+The Preserve Records workspace appears, displaying the list of Preserve Records that are associated with the selected RCA.
+
+
+
+In the upper-left corner, select .
+The All Preserve Records window appears, displaying the list of RCA Preserve Item Records that are available for all the Root Cause Analyses in the database.
+
+
+
+Select the check box to the left of the RCA Preserve Item Record that you want to copy. 
+Tip: You can select one or more Preserve Records.
+Select Done. 
+The All Preserve Records window closes. 
+The Preserve Records workspace appears, displaying the copied RCA Preserve Item Record in the list of Preserve Records. 
+Results
+The RCA Preserve Item Record is saved to the database and linked to the selected RCA.The copied Record does not contain any value in the Assigned To, Date Due, and Date Completed fields. 
+Access the Reference Documents for a Preserve RecordProcedure
+Access the RCA Preserve Item Record whose Reference Documents you want to access. On the datasheet that appears, select , and then select Reference Documents.
+A list of Reference Documents linked to the selected RCA Preserve Item Record appears.
+Note: For more information, refer to the Manage Reference Documents section of the documentation for additional options when working with reference documents.
+Delete RCA Preserve Item RecordsProcedure
+Access the Root Cause Analysis for which you want to delete RCA Preserve Item records.In the left pane, select Preserve Records.
+The Preserve Records workspace appears, displaying the list of RCA Preserve Item records associated with the Root Cause Analysis. 
+
+
+
+Select check box to the left of each RCA Preserve Item record that you want to delete. In the upper-right corner of the workspace, select .
+Note: You cannot delete an RCA Preserve Item record from an analysis that is in a Published state. RCA Preserve Item records in a completed state can be deleted if the analysis is in an In Progress state.
+The Delete Preserve Record(s) dialog box appears, asking you to confirm that you want to delete the selected RCA Preserve Item records.
+Select Yes.
+The select RCA Preserve Item records are deleted.
+
+
+
+
+
+On this pageAbout Preserve Failure DataAccess an RCA Preserve Item RecordCreate an RCA Preserve Item RecordCopy a Preserve RecordAccess the Reference Documents for a Preserve RecordDelete RCA Preserve Item Records
+
+
+
+
+
+
+
+
+

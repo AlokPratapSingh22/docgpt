@@ -1,0 +1,171 @@
+
+
+
+Inspection Management | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health Manager
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+Inspection Management
+
+
+
+
+
+
+
+Inspection ManagementDeploy Inspection ManagementThe checklists in this section of the documentation contain all the steps necessary for deploying and configuring this module whether you are deploying the module for the first time or upgrading from a previous version.Deploy Inspection Management for the First TimeBefore You Begin
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. GE Digital recommends, however, that the tasks be completed in the order in which they are listed.
+
+Results
+StepTaskNotes
+1
+
+Assign Security Users to one or more of the Security Roles used in IM.
+
+This step is required. 
+Security Users will need permissions to the Inspection Management families before they can use the Inspection Management features.
+2Assign Resource Roles to users.
+This step is required to define the users who can perform Inspection workflows as Inspectors, supervisors, administrators, contract inspectors, and risk analysts in Inspection Management.
+3Modify baseline Application Configuration settings.This step is required only if you want to modify Application Configurations. The following Application Configurations are defined in the baseline database: Asset Query Path; Associated Relationship Family; Published Query Path; Summary Query Path; Alerts Query Path; Asset Is Successor; Profile Configuration; Method Configuration; Strategy Rule Configuration. 4
+Define the Inspection Profile for each piece of equipment that you will inspect.This step is required only if you plan to create Inspection records in baseline families other than the Checklists subfamilies.5Modify the baseline Asset query.
+This step is required only if you want Inspection records to be linked to records in a family other than the Equipment family.6
+Define Event Configurations for any new Inspection families that you have created.This step is required only if you have created custom Inspection families that you want to use within Inspection Management.7Create a Checklist Configuration Template for custom inspections.This step is optional.8Define Taxonomy Configurations for Inspection Families and Checklist Configurations.This step is required only if you want to link Inspection Families and Checklist Configurations to assets using equipment taxonomy.9
+Assign certifications to users.This step is optional.10
+Group inspection work into Work Packs.This step is optional.
+Upgrade Inspection ManagementBefore You Begin
+
+The following tables outline the steps that you must complete to upgrade this module to the latest version of GE Digital APM
+                    .
+                
+These tasks may be completed by multiple people in your organization. We recommend, however, that the tasks be completed in the order in which they are listed.
+
+Note: If you are using Inspection Field Data Collection for Offline Inspections, please follow the upgrade steps to install the latest app on mobile devices used for Inspection Field Data Collection.
+After you upgrade:
+A new Human Resource role, Contract Inspector (ID: CONTRACT INSPECTOR) is now available in MI_RESOURCE_ROLE system code table. This is to facilitate the enhancement where a Contract Inspector can now update the Status field in Inspection records to Pending Approval without being the user defined in the Inspection Report Owner field if they are also a Team Member in the associated Inspection record.
+ProcedureUpgrade to the latest version of GE Digital APM.
+StepTaskNotes1
+Revert the following Inspection Management queries to baseline:
+Public\Meridium\Modules\Inspection\Overview Queries\All Inspections for AssetPublic\Meridium\Modules\Inspection\Overview Queries\All Inspections for Asset with Inspection GroupingPublic\Meridium\Modules\Inspection\Work Pack Queries\All Inspections in a Work PackPublic\Meridium\Modules\Inspection\Overview Queries\All Inspections for UnitPublic\Meridium\Modules\Inspection\Overview Queries\All Inspections for Unit and BelowPublic\Meridium\Modules\Inspection\Overview Queries\My Open InspectionsPublic\Meridium\Modules\Inspection\Overview Queries\Open Inspections for UnitPublic\Meridium\Modules\Inspection\Overview Queries\Users Open Inspections (Including Team Members)Public\Meridium\Modules\Inspection\Overview Queries\Users Open Inspections
+
+This step is required only if you have modified the following queries:
+All Inspections for Asset.All Inspections for Asset with Inspection Grouping.All Inspections in a Work Pack.All Inspections for UnitAll Inspections for Unit and BelowMy Open InspectionsOpen Inspections for UnitUsers Open Inspections (Including Team Members)Users Open Inspections
+2Update the approval work process of Inspection Recommendations to use the new state management.A new state configuration has been developed for the Inspection Recommendation approval work process. This state configuration includes some new states and the existing states are updated. This step is required only if: You are using customized state configuration for the approval work process and want to use the new state configuration.You have a customized state configuration for the approval work process, but using the recommendation status for the approval work process, and want to use the new state configuration.In both the cases, you must run the Revert to Baseline utility to map the existing states to the new states.3Update the datasheets for Inspection families supported in Inspection Field Data Collection:Full InspectionGeneral InspectionAPI 510 External ChecklistAPI 510 Internal ChecklistAPI 510 Internal Exchanger ChecklistAPI 570 External ChecklistAPI 653 External ChecklistAPI 653 Internal ChecklistExternal PRD ChecklistPRD Pop Test ChecklistChecklist Inspection TemplateIf you have customized the default datasheet for any of these families and want to see the download data for Inspection Field Data Collection, you must do one of the following:Using Family Management, edit the default datasheet of each family. Add a new section, Download Information with the following fields:DownloadedLast Downloaded ByLast Downloaded DateLast Synced Back ByLast Synced DateRun Revert to Baseline for each family.4Revert the following Inspection Management queries to baseline:Public\Meridium\Modules\Inspection\Report Queries\Checklist Report Query
+This step is required only if you want to use the baseline Checklist Inspection Report/ Blank Checklist Inspection Report and modified the following query:
+Checklist Report Query
+Note: Inspection ID details are added in the Checklist Report Query to display the Inspection ID in the baseline Checklist Inspection Report.
+
+Revert Inspection Management Queries to BaselineThis action is required only if you have modified certain Inspection Management queries.About This TaskIf you have modified the following Inspection Management queries, perform the steps to revert these queries to baseline.All Inspection Assets with Inspection Or Task for UnitAll Inspections for AssetActive Recommendations of Plan for UnitAll Inspection Plans for UnitAssets with Inspection PlansMI_INSPHIST_ASSETDTLProcedureAccess the Catalog page.Navigate to the Public folder for the query that you want to revert.The queries that you want to revert are stored in the following sub-folders within the Public/Meridium/Modules/Inspection/ folder.Overview QueriesCompliance/QueriesReport QueriesSelect the check box next to the query that you want to revert, and then select .The Confirm Delete window appears, asking you to confirm if you want to delete the selected query.Select OK.The selected query is deleted.Navigate to the Baseline folder for queries.The baseline queries for the queries that you want to revert are stored in the following sub-folders within the Baseline/Meridium/Modules/Inspection/ folder.Overview QueriesCompliance/QueriesReport QueriesSelect the check box next to the query that you want to revert, and then select .The Catalog Folder Browser window appears.Navigate to the folder containing the public query that you deleted in step 3.Select OK. A success message appears indicating that the selected Item has been copied successfully.Repeat Steps 2-8 for each query that you want to revert to baseline.Inspection Datasheets - Revert to BaselineAbout This Task
+The default datasheets on Inspection families supported for Inspection Field Data Collection have been updated to include fields to track download information:FamilyFamily IDDatasheet Updated (Default)Full InspectionMI_INSPFULLFull Visual InspectionGeneral InspectionMI_INSP_GENGeneral Inspection - DefaultAPI 510 External ChecklistMI_API510EXT_CHECKAPI 510 External Checklist - DefaultAPI 510 Internal ChecklistMI_API510INT_CHECKAPI 510 Internal Checklist - DefaultAPI 510 Internal Exchanger ChecklistMI_API510IEX_CHECKAPI 510 Internal Exchanger Checklist - DefaultAPI 570 External ChecklistMI_API570EXT_CHECKAPI 570 External Checklist - DefaultAPI 653 External ChecklistMI_API653EXT_CHECKAPI 653 External Checklist – DefaultAPI 653 Internal ChecklistMI_API653INT_CHECKAPI 653 Internal Checklist - DefaultExternal PRD ChecklistMI_EXTNL_PRD_CHECKExternal PRD ChecklistPRD Pop Test ChecklistMI_PRD_PT_CHECKPRD Pop Test ChecklistChecklist Inspection TemplateMI_GEN_INSP_TMPChecklist Inspection Template
+
+If you have customized the default datasheet for any of these families and want to see the download data for Inspection Field Data Collection must do one of the following:Using Family Management, edit the default datasheet of each family. Add a new section, Download Information with the following fields:DownloadedLast Downloaded ByLast Downloaded DateLast Synced Back ByLast Synced DateRun Revert to Baseline for each family.
+Important: Running this utility overwrites your current datasheet and replaces it with the baseline version. You must be a super user in GE Digital APM to run the Revert to Baseline utility. 
+ProcedureLog in to the server where GE Digital APM is installed.Navigate to <Installation Directory>\Meridium\Upgrade\DBUpgrade.Run the RevertToBaselineApp.exe file as administrator.The Revert To Baseline Login window appears.In the Meridium Data Source box, enter the data source name that you want to access.Enter your login credentials, and then select Next.The available families that can be reverted to baseline appear.Select the Inspection family that you want to update, and then select Revert to Baseline.The Various Options For Revert window appears.Select Datasheets.Select the Default Datasheet from the drop-down, and then select Ok.Repeat steps 6-7 for each Inspection Family.Inspection Management Security Groups and Roles
+
+The following table lists the baseline Security Groups available for users within this module, as well as the baseline Roles to which those Security Groups are assigned. In Predix APM, Roles are assigned to Security Users through permission sets.
+
+Important:  Assigning a Security User to a Role grants that user the privileges associated with all of the Security Groups that are assigned to that Role. To avoid granting a Security User unintended privileges, before assigning a Security User to a Role, be sure to review all of the privileges associated with the Security Groups assigned to that Role.
+                
+
+Security GroupRolesMI Inspection
+MI Mechanical Integrity Administrator
+MI Mechanical Integrity Power
+MI Mechanical Integrity User
+MI Inspection Viewer
+MI APM Viewer
+MI Mechanical Integrity Viewer 
+MI Compliance AnalystMI Compliance AdministratorMI Inspection Plan Approver
+Note:
+The groups MI Compliance Analyst, MI Compliance Administrator, and MI Inspection Plan Approver are in general provided as a baseline content. These groups must be used only when you implement the https://digitalsupport.ge.com/communities/en_US/Article/V4-3-1-0-1-Compliance-Management-and-Risk-Based-Inspection-How-to-configure-Inspection-Plans-to-be-managed-by-users-with-a-Security-Groups.
+
+The following roles can be assigned to a group or user:InspectorInspection SupervisorSC Recommendations ImplementerSC Recommendations ReviewerThese roles are used in State Management.FamilyMI Inspection MI Inspection Viewer Entity FamiliesAlertView, Insert, Update, DeleteViewCertificationView, Insert, Update, DeleteViewChecklist FindingView, Insert, Update, DeleteViewConditional AlertsView, Insert, Update, DeleteViewCorrosionView, Insert, Update, DeleteViewEquipmentView, Insert, Update, DeleteViewEventView, Insert, Update, DeleteViewFindingView, Insert, Update, DeleteViewHuman ResourceViewViewInspection MethodView, Insert, Update, DeleteViewInspection ProfileView, Insert, Update, DeleteViewInspection Team MemberView, Insert, Update, DeleteViewInventory Group ConfigurationViewViewPotential Degradation MechanismsViewViewRBI Degradation MechanismsViewViewRBI Inspection Auto-Selection CriteriaViewViewRecommendationView, Insert, Update, DeleteViewReference DocumentView, Insert, Update, DeleteViewResource RoleView, Insert, Update, DeleteViewSAP SystemViewViewSecurity UserViewViewStrategyView, UpdateViewTaskView, Insert, Update, DeleteViewTaxonomy ReferencesViewViewTime Based Inspection IntervalView, Insert, Update, DeleteViewTime Based Inspection SettingView, Insert, Update, DeleteViewWork PackView, Insert, Update, DeleteViewRelationship FamiliesBelongs to a UnitView, Update, Insert, DeleteViewChecklist Has FindingView, Insert, Update, DeleteViewHas CertificationsView, Insert, Update, DeleteViewHas Degradation MechanismsViewViewHas FindingsView, Insert, Update, DeleteViewHas Inspection MethodView, Insert, Update, DeleteViewHas Inspection ProfileView, Insert, Update, DeleteViewHas Inspection ScopeView, Insert, Update, DeleteViewHas InspectionsView, Insert, Update, DeleteViewHas Potential Degradation MechanismsViewViewHas RecommendationsView, Insert, Update, DeleteViewHas Reference DocumentsView, Insert, Update, DeleteViewHas RolesView, Insert, Update, DeleteViewHas Sub-InspectionsView, Insert, Update, DeleteViewHas TasksView, Insert, Update, DeleteViewHas Task HistoryView, InsertViewHas Task RevisionView, InsertViewHas Team MemberView, Insert, Update, DeleteViewHas Taxonomy Hierarchy ElementViewViewHas Taxonomy MappingViewViewHas Time Based Inspection IntervalView, Insert, Update, DeleteViewHas Work PackView, Update, Insert, DeleteViewIs a UserViewViewIs Planned ByView, Insert, Update, DeleteViewIs Executed ByView, Insert, Update, DeleteView
+Note:  Security privileges for all modules and catalog folders can be found in the APM documentation.
+
+Note that:
+The family-level privileges granted to the following families are also spread to all of their subfamilies:EventTaxonomy References The Has Task History relationship family is inactive in the baseline GE Digital APM database.In addition to the families listed in the preceding table, members of the MI Inspection Security Group have View privileges to additional families to facilitate integration with the Risk Based Inspection module. Since these families are not used elsewhere in Inspection Management, they are not listed in this table.
+Note: As part of implementing Inspection Management, you will decide whether you want to link Inspection records to Equipment records, Functional Location records, or both. If you want to link Inspection records to Functional Location records, you will need to grant members of the MI Inspection Security Group at least View privileges to the Functional Location family and the Functional Location Has Equipment relationship family. All new users are automatically assigned to the Everyone user group. 
+
+
+
+
+
+On this pageDeploy Inspection ManagementDeploy Inspection Management for the First TimeUpgrade Inspection ManagementRevert Inspection Management Queries to BaselineInspection Datasheets - Revert to BaselineInspection Management Security Groups and Roles
+
+
+
+
+
+
+
+
+

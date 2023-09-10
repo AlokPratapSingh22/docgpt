@@ -1,0 +1,65 @@
+
+
+
+
+Delete an Asset Instance | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Delete an Asset InstanceYou can delete an asset instance from the business functional hierarchy.About This Task
+Use this procedure to delete an asset instance from the business functional hierarchy. You can only delete asset instances that do not have child-assets and do not have any associated tag instances. You must first delete an asset's tags before you can delete the asset instance. Asset instances can be deleted through the API. Deleting an asset instance through the API also permanently deletes all the tags, tag correlations, and group memberships in GE Digital APM.
+Tip: You can delete an enterprise, site or segment through the API. Deleting an asset in the hierarchy permanently deletes all child-assets associated with the deleted asset instance.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.In the asset instance view, select .Select Delete to confirm the deletion. ResultsThe asset instance is permanently removed from the database. Note:
+Deleting an asset instance permanently deletes the instance, all attributes, configuration, history information, and tags, tag correlations, and membership in groups.All the objects that are mapped to the deleted asset across modules in GE Digital APM such as Permissions, Alerts, Analysis Templates, SmartSignal Analytic Filters, and so on, will be unmapped and cannot be re-mapped even if the same asset is recreated.
+
+
+
+
+
+
+
+
+
+
+
+
+

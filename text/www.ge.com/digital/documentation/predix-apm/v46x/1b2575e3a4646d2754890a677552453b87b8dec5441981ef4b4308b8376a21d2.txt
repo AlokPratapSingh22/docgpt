@@ -1,0 +1,139 @@
+
+
+
+Work Packs | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference 
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Work Packs
+
+
+
+
+
+
+
+Work PacksAbout Work PacksA Work Pack is a collection of records that define inspection work that needs to be performed for a piece of equipment or functional location. Work Packs store preparatory information about necessary inspections. Work Packs, in combination with Inspections and Inspection Tasks that can be linked to Work Packs, are intended to define planned inspection work that can be estimated by the outside resources who perform the work.About the Work Pack HierarchyYou can create a Work Pack Hierarchy to organize the work that you will perform during inspections, where:The lowest level of the hierarchy contains a Work Pack for the actual item that will be inspected (i.e., a piece of equipment or location).The levels above the lowest level contain Work Pack for the locations containing the item that will be inspected.Each Work Pack hierarchy can include up to three levels.To fully understand this concept, you must understand the concept of a location hierarchy, where each location at a lower level belongs to a location at a higher level.Work Pack Hierarchy
+You might have a location hierarchy that looks like the following diagram, where process locations belong to systems, systems belong to units, and so on.
+
+
+
+Regardless of how many levels you create in a Work Pack hierarchy, you should link Inspection Tasks and Inspections directly to the Work Pack that represents the asset that will be inspected. In other words, in the first example, you would link Inspection Tasks and Inspections directly to the equipment-level Work Packs (not the location-level Work Packs). In the second example, you would link Inspection Tasks and Inspections directly to the process-location-level Work Packs (not the system-level or unit-level Work Packs).
+Example: Work Packs - Equipment
+If you are inspecting equipment, the lowest level of the hierarchy should contain Work Packs representing the equipment. If you want to include three levels in the Work Pack hierarchy, the top two levels should represent the locations to which the equipment belong. For example, if your location hierarchy looks like the previous example, you would want to structure the Work Pack hierarchy as seen in the following diagram:
+
+
+
+Example: Work Packs - Location
+In your inspection locations, the lowest level of the hierarchy should contain Work Packs representing those locations. If you want to include three levels in the Work Pack hierarchy, the top two levels should represent the higher-level locations to which those locations belong. For example, if your location hierarchy looks like the diagram in the Work Pack Hierarchy section, you would want to structure the Work Pack hierarchy as seen in the following diagram:
+
+
+Access the Work Packs Section Procedure
+Access the Inspection Management Overview page for the Inspection asset associated with the Inspection whose Work Pack you want to access. Select the Work Packs tab.
+The Work Packs section appears, displaying a list of Work Packs linked to the selected asset. 
+
+
+
+Results
+You can now select a Work Pack ID or a Sub Work Pack ID, and then edit the selection.
+Create a Work PackProcedure
+Access the Inspection Management Overview page for the Inspection asset for which you want to create a Work Pack.In the upper-right corner of the page, select , and then select Create Work Pack.On a new page, a Work Pack datasheet appears. 
+As needed, enter values in the available fields.Select .The Work Pack is created. Link a Work PackAbout This Task
+Note:  This procedure applies to linking existing Work Packs to other Work Packs and Sub Work Packs. GE Digital APM recommends that you have no more than three levels of Work Packs (i.e., a Parent Work Pack, a Child Work Pack, and a subsequent (or grandchild) Child Work Pack).
+Procedure
+Access the Work Packs section.In the row containing the Work Pack that you want to access, select the link.The Work Pack Overview workspace for the selected Work Pack appears, displaying the Definitions section. 
+In the left pane, select .The Link Existing Work Pack Records to <Work Pack Name> window appears.
+As needed, enter values in the available search fields, and then select . The Work Packs that can be linked to the selected Work Pack appear.Next to each Work Pack that you want to link to the Work Pack, select the check box, and then select OK. The selected Work Packs are linked. Unlink a Work PackProcedure
+Access the Work Packs section.In the row containing the Work Pack that you want to unlink, select the link.The Work Pack Overview workspace for the selected Work Pack appears, displaying the Definitions section. 
+In the left pane, select the Work Pack that you want to unlink. In the left pane, select, and then select Unlink.A message appears, asking you to confirm that you want to unlink the selected Work Pack.Select Yes. The selected Work Pack is unlinked. Delete a Work PackProcedure
+Access the Work Packs section.Select the row containing the Work Pack that you want to delete, and then, in the upper-right corner of the section, select . 
+A message appears, asking you to confirm that you want to delete the selected Work Pack.
+Select Yes. 
+The Work Pack is deleted.
+Results
+ Inspection Tasks and Inspection records that were linked to the deleted Work Pack are unlinked, although the records remain in the database.
+Create Single and Bulk Inspections About This Task ProcedureCreate a Single Inspection for a Work Pack
+Access the Inspection Management Overview page for the Inspection that contains the Work Pack for which you want to create inspections.Select the Work Packs tab.The Work Packs section appears. In the row containing the Work Pack to which you want to create a bulk inspection, select the link.>The Work Pack Overview workspace appears. 
+Select the Linked Tasks tab.A list of previously linked Inspection Tasks appears.Next to the linked task to which you want to create an inspection, select .If there is a value in the Inspection Document Type box of the selected task, the Inspection report is generated automatically.If there is no value in the Inspection Document Type box of the selected task, the Create Inspection window appears. In the Inspection Event box, select the type of Inspection report that you want to generate, and then select Create.Note: Inspection Events are displayed according to the Taxonomy Configurations that have been defined for Checklist Configuration Templates and Inspection Families. If no Taxonomy Configurations have been defined or the selected asset’s equipment taxonomy does not match any defined Taxonomy Configurations, a full list of Inspection Families and Checklist Configuration Templates appears.A single Inspection is created and linked to the Work Pack. The selected Inspection Task is unlinked from the Work Pack. Create a Bulk Inspection for a Work Pack
+Access the Inspection Management Overview page for the Inspection containing the Work Pack that you want to access. Select the Work Packs tab.The Work Packs section appears. In the row containing the Work Pack to which you want to create a bulk inspection, select the link.The Work Pack Overview workspace appears, displaying the Definitions section. 
+In the upper-right corner of the workspace, select Create Bulk Inspection.  A message appears, asking you to confirm that you want to generate Inspection Documents for all associated tasks. Select Yes. The Generate Inspection Documents window appears.Select OK. The Bulk Inspection is created, and the Inspections Documents for the associated tasks are generated.Note: If an inspection cannot be generated for an Inspection Task linked to the Work Pack, an error message for the task appears in the Generate Inspection Documents window. Those tasks will not be unlinked from the Work Pack.Link an Existing Work PackProcedure
+Access the Work Packs section.In the row containing the Work Pack that you want to open, select the link.The Work Pack Overview workspace for the selected Work Pack appears, displaying the Definitions section.In the left pane, Select .The Link Existing Work Pack Records to <Work Pack ID> window appears.As needed, enter values in the available search fields, and then select . The Work Packs that can be linked to the selected Work Pack appear. Next to each Work Pack that you want to link, select the check box, and then select OK. The Work Packs are linked to the selected Work Pack. Unlink an Inspection from a Work PackProcedure
+Access the Work Packs section.In the row containing the Work Pack that you want to unlink, select the link. The Work Pack Overview workspace for the selected Work Pack appears, displaying the Definitions section.In the workspace, select the Linked Inspections tab. The Linked Inspections section appears, displaying the Inspections currently linked to the selected Work Pack.Select the Inspection that you want to unlink, and then select .A message appears, asking you to confirm that you want to unlink the Inspection from the Work Pack. Select Yes. The Inspection is unlinked from the selected Work Pack. Link an Inspection Task to a Work PackProcedure
+Access the Work Packs section.In the row containing the Work Pack that you want to link, select the link. The Work Pack Overview page appears, displaying the Definitions section. 
+In the workspace, select the Linked Tasks tab.The Linked Tasks section appears, displaying tasks currently linked to the selected Work Pack.Select .The Enter Parameter Values window appears. 
+    As needed, enter values in the parameter value fields, and then select Done. The Link Existing Task Records to <Work Pack ID> window appears, displaying the Inspection Tasks that can be linked to the selected Work Pack.Next to each Inspection Task that you want to link to the Work Pack, select the check box, and then select LINK. The selected Inspection Tasks are linked to the selected Work Pack.Unlink an Inspection Task from a Work PackProcedure
+Access the Work Packs section.In the Work Packs section, select the Work Pack ID from which you want to unlink an Inspection Task. The Work Pack Overview page appears, displaying the Definitions section.In the workspace heading, select the Linked Tasks tab.The Linked Tasks section appears, displaying tasks currently linked to the selected Work Pack.Select the Inspection Task that you want to unlink from the Work Pack, and then select .A message appears, asking you to confirm that you want to unlink the Inspection Task from the Work Pack. Select Yes. The Inspection Task is unlinked from the Work Pack. Move an Inspection Task to Another Work PackProcedure
+Access the Work Packs section.In the Work Packs section, select the Work Pack ID from which you want to move an Inspection Task. The Work Pack Overview page appears, displaying the Definitions section.In the workspace heading, select the Linked Tasks tab.The Linked Tasks section appears, displaying the tasks currently linked to the selected Work Pack.Select the Inspection Task that you want to move from the Work Pack, and then select .A Move Task(s) To window appears, displaying the available Work Packs to which you can move the selected task.Select the Work Pack to which you want to move the selected task.A message appears, asking you to confirm that you want to move the Inspection Task to the selected Work Pack. Select Yes. The Inspection Task is unlinked from the current Work Pack and linked to the selected Work Pack. Create a Sub Work PackProcedure
+Access the Work Packs
+
+ section for the asset for which you want to create a Sub Work Pack.Note:
+GE Digital APM recommends that you have no more than three levels of Work Packs (Parent Work Pack, a Child Work Pack and a subsequent (or grandchild) Child Work Pack).
+Select the Work Pack ID for the Work Pack for which you want to create a Sub Work Pack. The Work Pack Overview workspace for the selected Work Pack appears, displaying the Definitions section. 
+In the left pane, select  and then select Create Sub Work Pack.The Work Pack datasheet appears. 
+As needed, enter values in the available fields.Select .The Sub Work Pack is created.Delete a Sub Work PackProcedure
+Access the Work Packs section.In the row containing the Work Pack whose Sub Work Pack you want to delete, select the link.The Work Pack Overview workspace for the selected Work Pack appears, displaying the Definitions section. 
+In the left pane, select the Sub Work Pack that you want to delete.The workspace for the selected Sub Work Pack appears.In the left pane, select , and then select Delete.A message appears, asking you to confirm that you want to delete the selected Sub Work Pack.Select Yes. The Sub Work Pack and its associated records are deleted. 
+
+
+
+
+On this pageAbout Work PacksAbout the Work Pack HierarchyAccess the Work Packs Section Create a Work PackLink a Work PackUnlink a Work PackDelete a Work PackCreate Single and Bulk Inspections Link an Existing Work PackUnlink an Inspection from a Work PackLink an Inspection Task to a Work PackUnlink an Inspection Task from a Work PackMove an Inspection Task to Another Work PackCreate a Sub Work PackDelete a Sub Work Pack
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,118 @@
+
+
+
+Third Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+Workflows
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data Loaders
+Admin
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+Release Notes
+Third Quarter of 2019
+
+
+
+
+
+
+
+Third Quarter of 2019Thickness MonitoringThis topic provides a list of product changes released for this module on the dates listed below.Release Date: September 27, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDYou can now view, add, and delete the Thickness Measurements related to a Thickness Measurement Location in the table in the TMLs section.US371494To enhance usability when using a UOM conversion set, the values in the numeric fields are rounded off according to the type of the numeric field as described in the following table.Numeric Field TypeNumber of Decimal PlacesAllowable Stress2Design Pressure2This enhancement is applicable to the fields in the Thickness Measurement Location family.US358876You can now save the TML measurements and calculate the corrosion analysis for an asset from the Measurement Data Entry workspace. To facilitate this enhancement, a new option, Save and Analyze () has been added to the Measurement Data Entry workspace.US346563For Thickness Measurement Locations, you can now modify the sequence of the default columns except the TML ID column using Column Chooser. The configuration is saved as a user preference in the database.US343673
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in the following scenarios, only the first 100 TML records were displayed, instead of all the related TML records:You attempted to access TMLs for an asset or a TML Group using the Quick View option in the TM Quick View page.You searched for TML Families using the global search box and selected the Show All Records option.This issue has been resolved.DE114781Previously, in the Analysis Overview workspace, when you selected the Manage RBI Components option, you could not access the active RBI Components to map to Thickness Measurement Location (TML) Groups. This issue has been resolved. DE112036Previously, if your culture was set to Russian, and if you accessed a TML for an asset in the Analysis Overview page, the Calculated Date field in the Analysis Output section was incorrectly translated. This issue has been resolved.DE109440Previously, in the Measurement Data Entry workspace, if you specified values in the Measurement Taken Date and Measurement Taken By boxes, when you navigated away from the workspace, and then accessed the Measurement Data Entry workspace, the specified values were not retained. This issue has been resolved.DE108534Previously, in the Thickness Monitoring Dataloggers page, users had to select all the records individually in multiple pages of the TMLs table to select all the records on all pages before transferring data between GE Digital APM and the datalogger. This issue has been resolved. Now, if you select the Select All check box, all the records on all pages of the TMLs table are selected. DE107158Previously, the Material Grade boxes in the records of the following families contained incorrect values:Piping StressThickness Measurement LocationThis issue has been resolved. Now, the correct values appear in the Material Grade boxes, as specified in the following table.
+Design CodeCode YearMaterial SpecificationMaterial Grade (Incorrect Value)Material Grade (Correct Value)B31.32014A234WFBWPBB31.12014B366/B622Starts with NSStarts with N/AB31.32014B366/B622Starts with NSStarts with N/A
+DE96435Previously, when you modified the value in the Status Indicator box of a previously inactive Thickness Measurement Location (TML) record to Active, and then saved the record, the Calculate icon () in the Analysis Overview workspace did not retain the orange highlight after the page was refreshed. This issue has been resolved. Now, in this scenario, the icon remains highlighted in the orange color even after the page is refreshed.Note: Before you modify the status of a previously inactive TML to Active, we recommend that you calculate the TML so that the Analysis Required field of the TML Corrosion Analysis resets properly prior to the reactivation of the TML.DE96015Previously, you could modify the site assigned to the Resource Role records because the Resource Role family was enabled for site filtering. When the site assigned to a Resource Role for a given user was modified, the name of that user did not appear in the drop-down list boxes in the respective datasheets. This issue has been resolved. Now, the Resource Role family is no longer enabled for site filtering and the user names appear correctly.Note: The fields containing the user names will continue to be filtered based on the site to which the respective record is assigned.DE91540Previously, the TML Asset ID field was not available in the Choose Columns window, due to which you could not view the TML Asset ID column in the TML grid. This issue has been resolved. Now, TML Asset ID column is available in the TML grid by default.DE87019
+Release Date: September 6, 2019
+Table 3. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDTo enhance the performance of the Thickness Monitoring Analysis Overview workspace, duplicate network calls have been removed.DE115278Previously, after collecting data using the DMS Go+ device, if the Send button was held for more than two seconds, the device would also store an A-Scan reading. In addition, the APM Thickness Monitoring Datalogger could not process the file containing an A-Scan or display the readings. These issues have been resolved. Note: GE Digital APM Thickness Monitoring does not store the A-Scan data stored on the device. You must upgrade Meridium Device Service application to the latest version.DE114988
+Release Date: July 26, 2019
+Table 4. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+NoteTracking ID(s)Previously, when you calculated an analysis for an asset, you could not perform any other operation while the calculation was in progress. This issue has been resolved. You can now close the window that displays the progress of calculation and perform other operations while the calculation is in progress. After you close the window, the calculation continues in the back end and you can view the calculation details from the scheduler window.DE113183
+
+
+
+
+
+On this pageThickness Monitoring
+
+
+
+
+
+
+
+
+

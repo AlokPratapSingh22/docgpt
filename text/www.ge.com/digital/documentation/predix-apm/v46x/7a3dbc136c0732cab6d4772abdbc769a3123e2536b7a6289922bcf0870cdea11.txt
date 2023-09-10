@@ -1,0 +1,102 @@
+
+
+
+Query Results | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+QueriesWorkflow
+Query Creation
+Query Results
+Query Sources, Fields, Joins, and Hyperlinks
+Query Expressions, Clauses, and Prompts
+Query Timeouts
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Queries
+Query Results
+
+
+
+
+
+
+
+Query ResultsAbout Query ResultsThe following topics describe available actions related to query results.Access the Results WorkspaceProcedureAccess the Query page.Select Browse.
+The Select a query from the catalog window appears.
+Navigate to the folder that contains the query you want to view, select the query, and then select Open.
+The Results workspace appears.
+Sort Column Values in the Results WorkspaceAbout This TaskYou can sort values in one or more columns in ascending or descending order.ProcedureAccess the Results workspace.To sort the values in a column in ascending or descending order, select the column header.The values in the selected column are sorted in ascending or descending order.To sort the values in multiple columns, perform the following steps:For the column whose values you want to sort, right-click the column header, and then select Sort Ascending or Sort Descending.For each additional column whose values you want to sort, right-click the column header, and then select the sort order.The values in selected columns are sorted in ascending or descending order.Note: The columns whose values are sorted in ascending order are indicated by  in the column headers, and the columns whose values are sorted in descending order are indicated by  in the column headers. The numbers appearing in the column headers denote the sequence in which you have sorted the columns.Tip: To clear the sorting from a column, right-click the column header, and then select Clear Sorting.Group by Column Values in the Results WorkspaceAbout This TaskYou can group query results based on the values in a column.ProcedureAccess the Results workspace.To group the results based on the values in a column, perform the following steps:Right-click the column header and select Group by This Column.
+Tip: You can also drag and drop a column header on an area outside the result grid to create a group.
+The results are grouped based on the values in the selected column.To create sub-groups, right-click additional column headers and select Group by This Column.A sub-group is created based on the values in the selected column.
+Note: The groups are automatically sorted in ascending order. You can change the order by selecting the grouped column name.
+Tip: To remove a group, perform the following steps:Right-click the grouped column name and select Ungroup. You can also drag and drop a grouped column name on an area within the result grid to remove the group.To remove all groups, right-click any grouped column name or column header, and then select Ungroup All.
+Export a Query Result Set to a FileAbout This TaskNote that, when you run a query in unformatted mode, the results will still display formatted date values. Date values will always be displayed in the local time for the user; however, if you export the unformatted query result set to a file or dataset, the exported date values will be unformatted.ProcedureFor the Select query for which you want to modify the output mode, access the Design workspace.In the upper-right corner of the workspace, select , and then select Export to a File.
+The Export to a File window appears.
+In the Please provide a File Name box, provide the file name.In the drop-down list, select the desired file type, and then select Export.The exported file will download via your browser.Save the file to the desired location.The query result set has been exported to a file.Export a Query Result Set to a DatasetAbout This Task
+A query can be exported as a dataset, a fixed set of information that is stored as a Catalog item.Note: When you run a query in unformatted mode, the results will still display formatted date values. Date values will always be displayed in the local time for the user; however, if you export the unformatted query result set to a file or dataset, the exported date values will be unformatted.
+ProcedureFor the Select query for which you want to modify the output mode, access the Design workspace.In the upper-right corner of the workspace, select , and then select Export to a Dataset.The Save As window appears.In the folder hierarchy, navigate to the folder in which you want to save the query.In the Name box, enter a name for the dataset. If you select the same name and location as an existing dataset, that existing dataset will be overwritten when you save.The Caption box is populated automatically with the value that you entered in the Name box.In the Description box, you can enter a description for the dataset. This is not required to save the query.The Of type box is populated automatically with the Catalog item type.Select Save.The query result set has been exported to a dataset.Sort the Query ResultsBefore You Begin
+When defining sort criteria for a query, note that:
+The sort criteria determines the default sort order for query results. After the results are displayed, users can modify the sort order in the results grid.If no sort criteria has been defined, the query results will not be sorted in any particular order by default. Users can still modify the sort order in the results grid.Any sort criteria that is defined for numeric columns in a query will be applied to stored values (vs. displayed values) regardless of whether the query is running in formatted or unformatted mode.Unlike the sorting that you can apply directly to the results, sorting preferences that you define in the Design workspace are stored with the query itself and are applied each time you run the query.
+For example, according to the following image, the Asset Installation Date will be sorted in Ascending order:
+
+
+
+These sort options will affect the query results, as shown in the following image:
+
+Note:  The sort order that you specify within the query definition will be saved as the default layout for the results.
+About This TaskFor any query, you can define criteria to determine how the results will be sorted by default.ProcedureFor the query whose results you want to sort, access the Design workspace.In the Conditions section, in the Sort cell for the field that you want to sort, select Ascending or Descending. By default, the Sort Index cell for the first field that you sort displays a 1, indicating that this field will be used as the primary sort value.If you want to set a secondary sort value, in the Sort cell of the appropriate field, select Ascending or Descending. By default, the Sort Index cell for the second field that you sort displays a 2, indicating that this field will be used as the secondary sort value.Repeat these steps until you have defined all the sort values you want.After you run the query, the columns for which you defined a sorting preference will be sorted in the specific order.Filter the Query ResultsAbout This TaskYou can filter the values in the query results by setting a filter in one or more columns.ProcedureAccess the Results workspace.Select .A Filter row is added below each column name.Select  below the column name in which you want to set the filter criterion.A window with a list of filter options appears.Select the option for filtering the values in the column.Enter the value for the filter in the filter cell of the column.The values are filtered as per the criterion set in the column.Modify the Value in the Field CellProcedure
+Access the Design workspace.In the Conditions section, in the grid, in the Field cell for the column whose value you want to define, select the gray button in the right side of the cell.
+The Advanced section of the Expression Builder window appears.
+In the text box, enter the text you want to appear in the results, surrounded in single quotation marks.Select Done.In the page heading, select .The Expression Builder window closes, and in the grid in the Conditions section, the word Creator appears in the Field cell.Remove the Limit on the Number of ResultsProcedureFor the query for which you want to remove the limit on the number of results that are returned, access the Design workspace.In the heading of the Conditions section, clear the Limit Results check box.The Limit Results to Top box is disabled, and the number that appeared in it is removed.In the content heading, select .The query results are displayed, and the number of results that are returned is no longer limited.Modify the Output Mode of a Select QueryProcedureFor the Select query for which you want to modify the output mode, access the Design workspace.In the grid in the Conditions section, depending on which mode you want to use, select or clear the Formatted check box as needed.The Limit Results to Top box is disabled, and the number that appeared in it is removed.In the content header, select .The query is run in the selected mode, and the results appear.Note:  When you run a query in unformatted mode, the results will still display formatted date values. Date values will always be displayed in the local time for the user.Tip:  You can save the query to save the selected mode. The next time you run the query, it will use the mode that was selected when it was last saved.Display Unique Records OnlyProcedureFor the query for which you want to display unique records only, access the Design workspace.In the grid in the Conditions section, select the Unique Records Only check box. Note that, when you are using Oracle schema, if a text field is exists in a query and the Unique Records Only check box is selected when the query is run, an error message will appear. If you are using an Oracle database and want to run a query with a text field, do not select the Unique Records Only check box.The Limit Results to Top box is disabled, and the number that appeared in it is removed.In the content heading, select .The query is run, and the results will include only unique records.Limit the Number of ResultsProcedureFor the query for which you want to define the number of results that are returned, access the Design workspace.In the Conditions section heading, select the Limit Results check box.In the Limit Results to Top box, enter the number of results you want the query to return.In the content header, select .The query results are displayed according to your selection in the Records box. For example, if you enter 20 in the Records box, the query will return only the first 20 records that meet the other query criteria.
+
+
+
+
+On this pageAbout Query ResultsAccess the Results WorkspaceSort Column Values in the Results WorkspaceGroup by Column Values in the Results WorkspaceExport a Query Result Set to a FileExport a Query Result Set to a DatasetSort the Query ResultsFilter the Query ResultsModify the Value in the Field CellRemove the Limit on the Number of ResultsModify the Output Mode of a Select QueryDisplay Unique Records OnlyLimit the Number of Results
+
+
+
+
+
+
+
+
+

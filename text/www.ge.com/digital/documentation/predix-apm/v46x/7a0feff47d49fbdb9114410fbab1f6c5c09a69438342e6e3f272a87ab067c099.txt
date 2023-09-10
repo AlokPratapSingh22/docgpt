@@ -1,0 +1,143 @@
+
+
+
+Mapping Records | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+AdminAccess the GAA Administrator Page
+GAA Administrator Workflow
+System Codes
+Event Categories
+Event Types
+Cause Codes
+Amplification Codes
+Fuel Types
+Mapping Records
+Event Transitions
+Companies
+Plants
+Units
+Unit Capacity
+Performance Record and Report Configuration
+
+
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Admin
+Mapping Records
+
+
+
+
+
+
+
+Mapping RecordsAccess a MappingProcedure
+Access the GAA Administrator page.Select the Mappings tab.
+The Mappings section appears, displaying the following columns of information:
+
+
+Entity ID: This field is populated using the following format: 
+
+<CEA Outage Code> ~ <NERC Cause Code>
+
+Where, each of the variable represents the value in the corresponding field in the GAA Code Mapping record.
+
+CEA Unit Type
+
+CEA Amplification Code
+
+CEA Outage Code
+
+NERC Cause Code
+
+
+
+
+Locate the row that contains the Mapping that you want to access. In the Entity ID column, select the link.
+The Edit Mapping window appears, displaying the datasheet of the selected Mapping.
+Note: As needed, you can modify the values in the available fields, and then select  to save your changes.
+Add a MappingProcedure
+Access the GAA Administrator page.Select the Mappings tab.
+The Mappings section appears.
+
+
+
+In the upper-left corner of the section, select .
+The Add Mapping window appears.
+As needed, enter the values in the available fields.Select .
+The new Mapping is added. 
+ExampleSuppose that for a GAA Unit Unit 1, the primary reporting organization is CEA and secondary reporting organization is NERC. For the primary reporting organization CEA, the Amplification Code field contains the value 84. For the secondary reporting organization NERC, the Amplification Code field contains the value 85. When you generate a Primary Event Report, in the file for the primary reporting organization CEA, the Amplification Code field will contain the value 84, and in the file for the secondary reporting organization NERC, the Amplification Code field will contain the value 85. This mapping is similar for the Cause Code field.Delete a MappingProcedure
+Access the GAA Administrator page.Select the Mappings tab.
+The Mappings section appears.
+Select the row containing the Mapping that you want to delete.
+Note: You cannot delete a baseline Mapping.
+In the upper-right corner of the section, select .
+The Delete Mapping dialog box appears, asking you to confirm that you want to delete the selected Mapping.
+Select Yes.
+The selected Mapping is deleted, and the updated list of Mappings appears.
+
+
+
+
+
+On this pageAccess a MappingAdd a MappingDelete a Mapping
+
+
+
+
+
+
+
+
+

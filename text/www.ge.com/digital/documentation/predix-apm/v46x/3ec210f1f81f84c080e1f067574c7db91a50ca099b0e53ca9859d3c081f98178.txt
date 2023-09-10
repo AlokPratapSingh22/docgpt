@@ -1,0 +1,134 @@
+
+
+
+First Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Release Notes
+First Quarter of 2019
+
+
+
+
+
+
+
+First Quarter of 2019Risk Based Inspection (RBI) 581This topic provides a list of product changes released for this module on the dates listed below.RBI 580 and RBI 581Release Date: March 25, 2019
+Table 1. Resolved IssuesNoteTracking ID(s)Previously, when you were using a Risk Matrix other than Default or Standard Practice Risk Matrix, the categories defined in the MI_RISK_CATEGORY System Code Table had to be capitalized to correctly map RBI risk values. This issue has been resolved. Now, the values do not have to be capitalized.DE104014
+Release Date: March 29, 2019
+Table 2. Enhancements and New FeaturesNoteTracking ID(s)
+To enhance usability, the datasheet content for the following families has been reorganized:RBI 580 and RBI 581 Consequence EvaluationRBI 580 and RBI 581 Degradation Mechanism EvaluationRBI 580 and RBI 581 Risk AnalysisRBI Component Cylindrical ShellRBI Component Exchanger BundleRBI Component Exchanger HeaderRBI Component Exchanger TubeRBI Component PipingRBI Component PRD Relief ValveRBI Component PRD Rupture DiskRBI Component Pump Compressor CasingRBI Component Tank BottomRBI Degradation Mechanism
+
+US326323US313293US313292US312832US312671US312669US312668US310210US310209US310208US310206US307738US303329US302445US229757
+When viewing an analysis in the RBI module, you can now make changes to the analysis only if it is in the Created state. When you change the state of the analysis to any other state, the analysis and related records cannot be modified, and the Save button () is not available.Note:
+The following fields in the Degradation Mechanism family are no longer editable:
+Mitigated RiskMitigated Financial Risk
+US304996You can now use a utility to generate Risk Assessment records for active RBI Criticality Analyses and RBI 581 Risk Analyses that do not have Risk Assessment records. Also, for the active RBI Criticality Analyses, the utility will calculate and set Half-Life for any related Ext. Corr. Deg. Mech Evaluations where the value is blank. After the utility is executed, the RBI 580 and RBI 581 analyses can be promoted to ASM, and RBI Recommendations can be generated for the active RBI 580 analyses with Ext. Corr. Deg. Mech Evaluations.US272821To reflect the changes in Addendum-1 of API-581 3rd Edition, the Component Damage and Personal Injury Area calculations for Type-1 flammable fluids have been modified as follows:The Consequence Area is determined based on the combination of Release Type and if the Operating Temperature is greater than the Auto Ignition Temperature.The Blending and the Autoignition Temperature factors are not considered in the calculations for Type-1 flammable fluids.US322083You can now promote an Asset to Asset Strategy Management if all the RBI Components within the Asset contain an RBI Analysis in any of the following states:Pending ApprovalApprovedImplementedUS272476You can now show or hide the analyses that are in the Archived state in the Component Overview page. To facilitate this enhancement, a new option, Hide Archived Analyses has been added to the Component Overview page.F38674
+Table 3. Resolved IssuesNoteTracking ID(s)Previously, when you were using a Risk Matrix other than Default or Standard Practice Risk Matrix, the categories defined in the MI_RISK_CATEGORY System Code Table had to be capitalized to correctly map RBI risk values. This issue has been resolved. Now, the values do not have to be capitalized.DE103968Previously, if the Asset Hierarchy was configured to use the Equipment Has Equipment relationship, the Asset Hierarchy navigation links could not differentiate between a parent Equipment and a child Equipment. This issue has been resolved. DE103536Previously, in an RBI Consequence Evaluation, in the Design Details section, the Consequence field was not translated. This issue has been resolved. Now, the Consequence field is populated by the MI_CONSEQUENCE_TYPES System Code Table, which is translated to the appropriate culture setting.DE94112Previously, when you attempted to select an RBI Component from the Asset Details page, an error occurred. This issue has been resolved.DE90981Previously, in an RBI Component or RBI Analysis, in the Design Details section, the Stress Lookup Table field was not translated. This issue has been resolved. Now, the Stress Lookup Table field is populated by the MI_STRESS_LOOKUP_TABLE System Code Table, which is translated to the appropriate culture setting.DE90270Previously, in an Oracle database, when you calculated multiple assets in bulk that had more than 500 collective analyses, a timeout error occurred. This issue has been resolved. DE88531Previously, the allowable stress and flow stress values for a Pressure Vessel component were populated incorrectly if you used the following combination of values:Stress Lookup Table: Pressure VesselsBase Material Construction Code: ASME VIII DIV 1Base Material Code Year: 2010Base Material Spec: SA-387Base Material Grade: Class 1 or Class 2 (for example, 11-CL2)This issue has been resolved.DE87370Previously, if a component had an analysis in the Approved state and, in the same component, you changed the status of another analysis to make it active, the previously active analysis was not moved to the Archived state automatically. This issue has been resolved.DE92905Previously, if your culture setting had a culture other than English, and you accessed the Risk Based Inspection Overview page, the following elements were not translated to the language based on your culture setting:Names of the widgetsColumn names in the widgetsThis issue has been resolved.US310483
+Risk Based Inspection (RBI) 580Release Date: March 29, 2019
+Table 4. Enhancements and New FeaturesNoteTracking ID(s)
+You can now configure the calculation of RBI Criticality Analysis as per your requirement without modifying the baseline rules. You can configure the calculation in one or more of the following steps:During analysis validation.During validation and calculation of consequence evaluation (CE).During validation and calculation of degradation mechanism evaluation (DME).During roll-up of CoF values to Degradation Mechanism (DM) records.During roll-up of PoF values to Analysis.
+To facilitate this enhancement, following changes have been made:The RBI 580 Flexible Calculation Preferences workspace has been added in RBI Application Settings to configure the flexible calculation, validation, and output preferences.The RBI Overview Preferences workspace has been added in RBI Application Settings to configure the RBI Component Overview, Corrosion Loop Overview, Asset Overview, and Process Unit Overview pages.The RBI Overview What-If Display Preference option has been added to RBI Overview Preferences workspace to enable the display of most recent What-If analysis risk on each component in the Asset and Corrosion Loop overview tables.The None option has been added to the RBI Overview Graph Preference drop-down list box to disable the display of any type of graphs.The following families have been renamed:Old NameNew NameRBI Custom DM Evaluation ConfigurationRBI Flexible Calculation ConfigurationRBI Custom DM Evaluation Configuration DetailsRBI Flexible Calculation Configuration DetailsRBI Custom DM Validation ConfigurationRBI Flexible Calculation ValidationRBI Custom DM Validation Configuration DetailsRBI Flexible Calculation Validation DetailsTwo new fields, Action and Policy Link, have been added to the following families:RBI Flexible Calculation ConfigurationRBI Flexible Calculation ValidationThe Degradation Mechanism Evaluation Methodology field has been renamed Action Family in the following families:RBI Flexible Calculation ConfigurationRBI Flexible Calculation ValidationThe following fields have been added to the RBI Consequence Evaluation family:Flexible Calculation UsedFlexible Calculation Policies UsedThe following queries have been modified to add the Action field and remove the Analysis Family field:RBI Flexible ConfigurationsRBI Flexible Validation RecordsThe following System Code Tables have been added:MI_CONF_CALC_ACTIONS: Lists the flexible calculation actions.MI_CONF_VAL_ACTIONS: Lists the flexible validation actions.
+F38674
+Release Date: March 29, 2019
+Table 5. Resolved IssuesNoteTracking ID(s)
+Previously, when you calculated an RBI Criticality Analysis for a Heat Exchanger Bundle component, the following incorrect validations were performed:
+The values in the Operating Pressure and Operating Temperature fields that were mapped from the shell side values on the RBI component were compared with the values in the Design Pressure and Design Temperature fields, respectively, which were mapped from the channel side values from the component.The values in the Tube Operating Press Channel and Tube Operating Temp Channel fields were not compared with the design values.
+These issues have been resolved. Now, the following validations are performed:The values in the Operating Pressure and Operating Temperature fields that are mapped to the shell side values on the RBI Component are not compared with the design values.The values in the Tube Operating Press Channel and Tube Operating Temp Channel fields are compared with the values in the Design Pressure and Design Temperature fields, respectively.
+DE94278Previously, in an RBI Consequence Evaluation, the Consequence field was not translated. This issue has been resolved. The Consequence field now displays the system code description of the MI_CONSEQUENCE_TYPES system code table and is translated to the appropriate culture setting.DE94112Previously, in an RBI Component or RBI analysis, the Stress Lookup Table field was not translated. This issue has been resolved. Now, the Stress Lookup Table is populated with the MI_STRESS_LOOKUP_TABLE system code table description, which is translated to the appropriate culture setting.DE90270Previously, the information on the valid values for the Selected Corrosion Rate field was incorrect in the Data Loaders section of the Risk Based Inspection (RBI) 580 user documentation. This issue has been resolved. DE98980
+Risk Based Inspection (RBI) 581Release Date: March 29, 2019
+Table 6. Enhancements and New FeaturesNoteTracking ID(s)The following RBI 581 DM calculations are no longer dependent on the R Server:581-Amine Corrosion581-Acid Sour Water Corrosion581-Alkaline Sour Water Corrosion581-Atmospheric Tank Bottom Corrosion581-Austenitic Component Cracking Under Insulation581-Cooling Water Corrosion581-High Temperature H2/H2S Corrosion581-High Temperature Oxidation581-High Temperature Sulfidic and Naphthenic Acid Corrosion581-Hydrochloric Acid Corrosion581-Hydrofluoric Acid Corrosion581-Piping Mechanical Fatigue581-Soil Side Corrosion581-Sulfuric Acid CorrosionThe following policies have been modified, and R Server scripts have been removed: RBI 581 Acid Sour Corrosion RateRBI 581 Alkaline Sour Water Corrosion RateRBI 581 AST Bottom Corrosion RateRBI 581 Calculate Susceptibility - Austenitic CUIRBI 581 Cooling Water Corrosion Rate EstimationRBI 581 Soil Side Corrosion Rate Calculation
+US304830US309020
+
+Table 7. Resolved IssuesNoteTracking ID(s)Previously, the fluid type of the following representative fluids was incorrectly marked as Reactive instead of Flammable:DEEEGThis issue has been resolved. Now, the fluid type of these fluids is marked as Flammable.DE101410Previously, in an RBI 581 Risk Analysis, if the time specified in the RBI Date field was later than the time specified in the Plan Date field, the Target Inspection Date field was updated incorrectly when you calculated the analysis. This issue has been resolved.Note: This issue was applicable to both the main RBI 581 Risk Analysis and the What-if Analysis.DE83090
+Table 8. Obsolete FeaturesNoteTracking ID(s)The following R Scripts have been removed from RBI 581 policies:Determine Acid Sour Velocity FactorAlkaline Sour Water Adjusted Corrosion RateSoil Side Corrosion Rate Calculations when Coating Present is NOSoil Side Corrosion Rate CalculationsDetermine Soil Multiply factorFinal Tank Bottom Corrosion RateDetermine Final Corrosion SoilAustenitic CUI Calculate SusceptibilityCalculate Cooling Water Corrosion RateCalculate Corrosion Rate Sea WaterCalculate RSICalculate Velocity Adj FactorAlso, the RBI 581 Calculate Environmental Severity HIC-H2S policy has been deactivated.
+US304830US309020
+
+
+
+
+
+
+On this pageRisk Based Inspection (RBI) 581RBI 580 and RBI 581Risk Based Inspection (RBI) 580Risk Based Inspection (RBI) 581
+
+
+
+
+
+
+
+
+

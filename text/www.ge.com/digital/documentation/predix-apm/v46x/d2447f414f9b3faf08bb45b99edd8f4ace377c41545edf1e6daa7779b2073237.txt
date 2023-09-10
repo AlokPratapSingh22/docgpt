@@ -1,0 +1,140 @@
+
+
+
+General Reference | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Metrics and ScorecardsOverview
+Workflow
+Manage Scorecards
+Manage Key Performance Indicators (KPIs)
+Manage Metric Views
+Manage Privileges
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Queries Folder
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Metrics and Scorecards
+Reference
+General Reference
+
+
+
+
+
+
+
+General ReferenceMetrics and Scorecards System RequirementsLicense Requirements
+The Metrics Manager license is required to use the Metrics and Scorecards module. 
+Additional Components Required
+In addition to the basic GE Digital APM system architecture, your system must also contain the following additional components:
+
+A SQL Server Analysis Services Server machine that will host the Microsoft SQL Server Analysis Services software. The following versions of SQL Server Analysis Services are supported in this version of GE Digital APM:
+Microsoft SQL Server Analysis Services 2014Microsoft SQL Server Analysis Services 2016
+
+If you are using an Oracle database, in order to process the Work History cube, you must install ODP.NET (Oracle Data Provider.NET), an Oracle Data Access Component, on the machine where the Work History cube is deployed. 
+
+Deploying Metrics and Scorecards
+You will need to perform some configuration steps specifically for Metrics and Scorecards. 
+Note: For more information about performing the configuration steps, refer to the Deployment section of the Metrics and Scorecards documentation.
+Metrics and Scorecards Security Groups
+
+The following table lists the baseline Security Groups available for users within this module, as well as the baseline Roles to which those Security Groups are assigned. In Predix APM, Roles are assigned to Security Users through permission sets.
+
+Important:  Assigning a Security User to a Role grants that user the privileges associated with all of the Security Groups that are assigned to that Role. To avoid granting a Security User unintended privileges, before assigning a Security User to a Role, be sure to review all of the privileges associated with the Security Groups assigned to that Role.
+                
+
+Security GroupRolesMI Metrics Administrator
+MI Foundation Admin
+MI APMNow Admin
+MI Metrics User
+MI  Foundation Power
+MI Foundation User
+MI Metrics ViewerMI APM ViewerEveryone
+MI Foundation Admin
+MI Foundation Power
+MI Foundation User
+
+The baseline family-level privileges that exist for these Security Groups are summarized in the following table.
+Family
+MI Metrics Administrator
+
+MI Metrics User
+MI Metrics ViewerEntity FamiliesAnalysis Services CubeView, Update, Insert, DeleteViewViewKPIView, Update, Insert, DeleteView, Update, Insert, DeleteView
+KPI Measurement
+ View, Update, Insert, Delete  View, Update, Insert, Delete ViewScorecardView, Update, Insert, Delete View, Update, Insert, Delete ViewRelationship FamiliesHas KPI MeasurementView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas PrivilegesView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Sub IndicatorsView, Update, Insert, DeleteView, Update, Insert, DeleteViewIs Used By ScorecardView, Update, Insert, DeleteView, Update, Insert, DeleteView
+In addition to performing functions associated with the family-level privileges described in this table, members of the MI Metrics Administrator Security Group has full access to all KPIs, Cubes, and Scorecards without needing to be granted additional privileges via the GE Digital APM.
+Metrics and Scorecards Data Model
+ The following diagram illustrates how the entity and relationship families that are used in Metrics and Scorecards are related to one another. The shaded boxes represent entity families, and the arrows represent relationship families. You can determine the predecessor and successor in each relationship definition from the direction of the arrow head:The box from which the arrow originates is the predecessor in that relationship definition.The box to which the arrow head points in the successor in that relationship definition.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+
+
+In this image, you can see that:
+KPI records can be related to other KPI records through the Has Sub-Indicators relationship.The SSAS Servers family is not related to any other families. SSAS Servers record support Metric Views.The Analysis Services Cube family is not linked to any other KPI families. Analysis Services Cube records support Metric Views.
+Metrics and Scorecard Security GroupsThe following baseline Security Groups are provided for the Metrics and Scorecards module:MI Metrics Administrator: Provides users with full access to all Metrics and Scorecards features and functions.MI Metrics User: Provides users with view-only access to Metrics and Scorecards functionality, provided that they have been granted the necessary entity-level permissions.The baseline privileges for these Security Groups are summarized in the following table.FamilyMI Metrics AdministratorMI Metrics UserAnalysis Services Cube  View, Update, Insert, Delete View KPI  View, Update, Insert, Delete  View, Update, Insert, Delete KPI Measurement  View, Update, Insert, Delete  View, Update, Insert, Delete Has KPI Measurement  View, Update, Insert, Delete  View, Update, Insert, Delete Scorecard  View, Update, Insert, Delete  View, Update, Insert, Delete Has Privileges  View, Update, Insert, Delete  View, Update, Insert, Delete Has Sub Indicators  View, Update, Insert, Delete  View, Update, Insert, Delete Is Used By Scorecard  View, Update, Insert, Delete  View, Update, Insert, Delete In addition to performing functions associated with the family-level privileges described in the previous table, members of the MI Metrics Administrator Security Group:Can see the Manage Cubes button on the Metrics and Scorecards page in the GE Digital APM application.Can manage privileges for all KPIs in the GE Digital APM application.Can manage privileges for all Scorecards in the GE Digital APM application.Have full access to all KPIs, Scorecards, and Cubes without needing to be granted additional privileges via the GE Digital APM application.Metrics and Scorecards URLs
+There is one URL route associated with Metrics and Scorecards: metrics. The following table describes the various paths that build on the route, and the elements that you can specify for each.
+
+Tip: For more information, refer to the URLs section of the documentation.
+
+ElementDescriptionAccepted Value(s)Notesmetrics/home: Opens the Metrics and Scorecards page, displaying the Scorecards, the Metric Views, and the KPIs.metrics/register-cube: Opens the Manage Cubes page.metrics/<WorkspaceName>/<EntityKey>: Opens the existing Scorecard, Metric Views, and the KPIs.<Workspace>Specifies the workspace in which you want to open a Scorecard, Metric View, or a KPI.scorecard-tile-viewThe specified Scorecard will appear in the details workspace.kpi-viewerThe specified KPI will appear in the details page.kpi-designerThe specified KPI will appear in the design page.metric-view-designerThe details of the specified Metric Views will appear in the workspace.<EntityKey>Specifies the level of the asset hierarchy for which you want to view health information. Any numeric Entity Key that corresponds to an existing Scorecard, Metric View, or a KPI.N/A0Opens a new design page for a Scorecard, Metric View, or a KPI.
+Example URLs
+
+Example URLDestinationmetrics/home The Metrics and Scorecard page.metrics/scorecard-designer/0 The design page for a new Scorecard.metrics/kpi-designer/0 The design page for a new KPI.metrics/metric-view-designer/0 The design page for a new Metric View.metrics/scorecard-tile-view/64253576972 The Scorecard details page for the specified scorecard.metrics/kpi-viewer/64253550109 The KPI details page for the specified KPI.metrics/metric-view/64253518247 The Metric View details page for the specified Metric View.
+
+
+
+
+
+
+On this pageMetrics and Scorecards System RequirementsMetrics and Scorecards Security GroupsMetrics and Scorecards Data ModelMetrics and Scorecard Security GroupsMetrics and Scorecards URLs
+
+
+
+
+
+
+
+
+

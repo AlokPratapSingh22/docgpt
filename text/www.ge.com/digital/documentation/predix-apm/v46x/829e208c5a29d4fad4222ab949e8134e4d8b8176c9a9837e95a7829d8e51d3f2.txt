@@ -1,0 +1,91 @@
+
+
+
+Administration | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+WorkflowsAdministration
+Event Management
+Performance
+Reporting
+
+
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Workflows
+Administration
+
+
+
+
+
+
+
+AdministrationGAA Administration WorkflowThis workflow describes the process for adding a GAA Company, GAA Plant, and GAA Unit. In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Define Configuration Persona: Solution AdministratorDefine the configuration to be used in a GAA unit for generating reports.Define Company Persona: Solution AdministratorDefine the GAA Company to represent the functional location that you want to use in GAA.Define Plant Persona: Solution AdministratorDefine the GAA Plant to represent the functional location that you want to use in GAA.Define Unit Persona: Solution AdministratorDefine the GAA Unit to represent the functional location that you want to use in GAA. You can also define additional Unit Capacities and configure and associate Regulatory reports for a GAA Unit.UnitPersona: Solution AdministratorDefining GAA Unit provides GAA Unit record, Unit Capacity record, and GAA Report record.GAA Event Management Persona: Operator or SupervisorDefine an event when operating status or capability of a GAA Unit changes. Go to the GAA Event Management workflow.
+
+
+
+
+On this pageGAA Administration WorkflowDefine ConfigurationDefine CompanyDefine PlantDefine UnitUnitGAA Event Management
+
+
+
+
+
+
+
+
+

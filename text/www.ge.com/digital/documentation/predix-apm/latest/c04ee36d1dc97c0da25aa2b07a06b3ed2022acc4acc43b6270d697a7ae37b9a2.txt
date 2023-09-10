@@ -1,0 +1,142 @@
+
+
+
+Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Hazards AnalysisOverview
+Workflows
+Hazards Analysis
+Components in a Hazards Analysis
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Hazards Analysis
+Overview
+
+
+
+
+
+
+
+OverviewOverview of the Hazards Analysis ModuleHazards Analysis is the process of identifying hazardous processes in a facility, assessing the risks, and providing ways to mitigate them.Using the Hazards Analysis module, you can:Examine the processes that are performed by one or more assets. Identify existing and potential hazards that are associated with those processes.Identify and assess risks. How probable is it that the risk will have a negative safety or environmental impact? How would the team rate the severity of this safety or environmental impact?Define the characteristics of the scenarios, including the risks that they include.Identify ways to prevent the risk in each scenario from occurring.Make recommendations for actions that can be taken within the facility to prevent the risks in each scenario from occurring or to mitigate the risks in some way (e.g., lower the severity of the safety or environmental impact).Hazards Analysis
+Suppose that in your facility, you have two tanks that are connected with a pipe or a piping system, where hazardous chemicals in one tank are transferred to the other tank through the pipe or the piping system. The continual process of monitoring the liquid level in each tank, increasing or decreasing it as needed, and transporting the chemicals from the source tank to the target tank is a potentially hazardous process that involves risk. During this process, for example, if the level control malfunctions, the pressure in the pipe or the source tank could increase too rapidly and cause the chemicals in the source tank to leak out, causing damage to the environment or personnel.
+After you identify the hazardous scenarios associated with a process, you can use Hazards Analysis to: 
+Define the characteristics of the scenarios, including the risks that they include.Assess the likelihood of the risks in each scenario actually occurring.Identify ways to prevent the risk in each scenario from occurring.Make recommendations for actions that can be taken within the facility to prevent the risks in each scenario from occurring or to mitigate the risks in some way (e.g., lower the severity of the safety or environmental impact).
+Suppose that, for the preceding process (transporting hazardous chemicals between two tanks), you identify a risk that the pressure monitor will stop working and a chemical spill will occur. Through a risk assessment, you also determine that the chemical spill is very likely to cause a negative impact to both human safety and the environment. Based on this assessment, you might determine that the only way to prevent the risk is to be alerted when the pressure in the tank is increasing too quickly. In this case, you may recommend that a high pressure alarm be put in place to alert someone if the pressure in the tank is rising too quickly. You may recommend to test the alarm on a periodic basis to ensure the availability of the alarm. 
+Access the Hazards Analysis Overview Page for All Hierarchy LevelsBefore You Begin
+You can access the Hazards Analysis Overview page only if you are a member of the following Security Groups:MI HA AdministratorMI HA OwnerMI HA FacilitatorMI HA MemberYou can perform the various tasks on this page based on the privileges granted to these Security Groups.
+
+About This Task
+This topic describes how to access the Hazards Analysis Overview page, which displays Hazards Analysis information for all hierarchy levels. You can also access the Hazards Analysis Overview page for a particular hierarchy level.
+ProcedureIn the module navigation menu, select
+Integrity > Hazards Analysis.
+The Hazards Analysis Overview page appears, displaying the following information that is related to all the hierarchy levels: 
+The Hazards Analysis Risk Overview
+
+ graph: Plots the unmitigated and mitigated risk ranks for each System/Node in all the Hazards Analyses.The Hazop tab: Displays a list of HAZOP Analyses. You can create a new HAZOP Analysis, or access or modify an existing one. The number on the tab indicates the number of HAZOP Analyses.The What If tab: Displays a list of What If Analyses. You can create a new What If Analysis, or access or modify an existing one. The number on the tab indicates the number of What If Analyses.The PHA Re-Validation Schedule tab: Displays a list of Hazards Analyses that are overdue or must be re-validated in the next 30 days. The number on the tab indicates the number of Hazards Analyses that are listed.
+
+
+By default, the hierarchy level is set to Home and the information that appears on the Hazards Analysis Overview page is related to all Hierarchy Levels, including records that are not associated with any Asset. You can filter the information that appears on the page based on a specific Asset by selecting  in the upper-left corner of the page.
+Access the Hazards Analysis Overview Page for a Hierarchy LevelBefore You Begin
+You can access the Hazards Analysis Overview page only if you are a member of the following Security Groups:MI HA AdministratorMI HA OwnerMI HA FacilitatorMI HA Member You can perform the various tasks on this page based on the privileges granted to these Security Groups.
+About This Task
+This topic describes how to select a hierarchy level, and then access the Hazards Analysis Overview page for that hierarchy level. You can also access the Hazards Analysis Overview page for all the hierarchy levels.
+ProcedureIn the top navigation bar, select .
+The Asset Hierarchy page appears.
+
+
+
+In the left pane, navigate to the hierarchy level for which you want to access the Hazards Analysis Overview page.
+A list of types of analyses performed on the selected hierarchy level appears in the workspace, in the Health section.
+In the workspace, select the Integrity tab.
+The Integrity section appears.
+
+
+
+In the section, in the Hazards Analysis row, select the link. 
+The Hazards Analysis Overview page appears, displaying the following information related to the selected hierarchy level:
+
+The Hazards Analysis Risk Overview
+
+ graph: Plots the unmitigated and mitigated risk ranks for each System/Node in all the Hazards Analyses conducted on the selected hierarchy level.The Hazop tab: Displays a list of HAZOP Analyses conducted on the selected hierarchy level. You can create or a new HAZOP Analysis, or access or modify an existing one. The What If tab: Displays a list of What If Analyses conducted on the selected hierarchy level. You can create a new What If Analysis, or access or modify an existing one.The PHA Re-Validation Schedule tab: Displays a list of Hazards Analyses (conducted on the selected hierarchy level) that are overdue or must be re-validated in the next 30 days. The number on the tab indicates the number of Hazards Analyses that are listed.
+
+
+
+You can filter the hierarchy level by selecting  in the upper-left corner of the page.
+ HAZOP Analysis WorkflowThis workflow provides the basic, high-level steps for using this module. The steps and links in this workflow do not necessarily reference every possible procedure.Using the Hazards Analysis module, you can conduct the following types of Hazards Analyses:
+Hazards and Operability (HAZOP) Analysis: Lets you document the known hazardous scenarios associated with a process, assess the likelihood of the risks in those scenarios occurring, and determine the best way to mitigate the risk in those scenarios.What-If Analysis: Lets you hypothesize about the possible hazardous scenarios, determine the risk associated with them, and determine the best way to mitigate those risks.Conducting a HAZOP analysis includes completing the following steps:
+Create a Hazards Analysis, which stores the details of the HAZOP analysis that you want to perform, including the start and end dates for the analysis.
+Identify the Systems/Nodes in which the hazardous scenario originates.
+
+Define components, which includes identifying the following items:
+The system in which the hazardous scenario originates.The condition under which the scenario may appear.What causes the condition to occur.The risks associated with that scenario.The safeguards that are currently in place to mitigate the risk in that scenario.The probability and severity of the safety, operational (commercial), and environmental impact of the risk associated with the scenario if a safeguard is in place.
+Assess the unmitigated and mitigated risks.
+Link a LOPA to a Consequence.
+Link Assets to each System/Node in the HAZOP Analysis. Define the Hazards Analysis team, who will conduct the analysis. Tip: For details about working with teams and the Team Members section, refer to the Teams section of the documentation. Link the Hazards Analysis to a Reference Document, which contains the reference material relevant to the analysis. Tip: For more information, refer to the Reference Documents section of the documentation.
+Propose a Recommendation for actions that should be taken to mitigate the risk in that scenario.What If Analysis WorkflowThis workflow provides the basic, high-level steps for using this module. The steps and links in this workflow do not necessarily reference every possible procedure.Using the Hazards Analysis module, you can conduct the following types of Hazards Analyses:
+Hazards and Operability (HAZOP) Analysis: Lets you document the known hazardous scenarios associated with a process, assess the likelihood of the risks in those scenarios occurring, and determine the best way to mitigate the risk in those scenarios.What If Analysis: Lets you hypothesize about the possible hazardous scenarios, determine the risk associated with them, and determine the best way to mitigate those risks.Conducting a What If Analysis includes completing the following steps:
+Create a Hazards Analysis, which stores the details of the What If Analysis that you want to perform, including the start and end dates for the analysis.
+Identify the Systems/Nodes in which the hazardous scenario originates.
+
+Define components, which includes identifying the following items:
+The system in which the hazardous scenario originates.The condition under which the scenario may occur.What causes the condition to occur.The risks associated with that scenario.The safeguards that are currently in place to mitigate the risk in that scenario.The probability and severity of the safety, operational (commercial), and environmental impact of the risk associated with the scenario if a safeguard is in place.
+Assess the unmitigated and mitigated risks.
+Link a LOPA to a Consequence.Link Assets to each System/Node in the What If Analysis. Define the Hazards Analysis team, who will conduct the analysis. Tip: For details about working with teams and the Team Members section, refer to the Teams section of the documentation. Link the Hazards Analysis to a Reference Document, which contains the reference material relevant to the analysis. Tip: For more information, refer to the Reference Documents section of the documentation.
+Propose a Recommendation for actions that should be taken to mitigate the risk in that scenario.
+
+
+
+
+On this pageOverview of the Hazards Analysis ModuleAccess the Hazards Analysis Overview Page for All Hierarchy LevelsAccess the Hazards Analysis Overview Page for a Hierarchy Level HAZOP Analysis WorkflowWhat If Analysis Workflow
+
+
+
+
+
+
+
+
+

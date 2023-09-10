@@ -1,0 +1,119 @@
+
+
+
+Fourth Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+Workflows
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data Loaders
+Admin
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+Release Notes
+Fourth Quarter of 2020
+
+
+
+
+
+
+
+Fourth Quarter of 2020Release Date: November 20, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, when you logged in to GE Digital APM as a metric user and accessed the TML Trends graph, the values for Alert Level 1 and Alert Level 2 were incorrectly plotted based on their imperial equivalents. This issue has been resolved.DE146041Previously, a user belonging to the Thickness Monitoring Inspector security group and assigned additional delete privileges could not delete a TML. This issue has been resolved.Note: If a user does not have delete privileges and attempts to delete a TML, an error message will appear.DE145958Previously, when creating Corrosion Analysis Settings for an Asset, if the Asset had multiple TML Groups, and you selected to spread the setting to those groups, an error occurred, and the settings were not saved. This issue has been resolved.DE144638Previously, when you attempted to send data to the Olympus 38DL Plus Ultrasonic Thickness Gage datalogger device multiple times, an out of memory error message appeared, and the data was not sent to the device. This issue has been resolved.Note: To implement the change, you must uninstall the Meridium Device Service, download the latest installer from the Thickness Monitoring Datalogger page, and reinstall the service.
+DE144534
+Release Date: October 2, 2020This topic provides a list of product changes released for this module on this date.
+Table 2. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDThickness Monitoring now supports rotation and flip of piping components. To facilitate this enhancement, the following changes have been made:The Pipe Rotation Preferences section has been added to the TM Admin Preferences page, where you can enable the piping rotation workflow. The Wall Ratio Preferences section has been added to the TM Admin Preferences page, where you can enter the parameters used for defining custom alert levels.The Piping Asset check box is added to the Corrosion Analysis Settings workspace, where you can designate piping assets. This check box appears when the piping rotation workflow is enabled.For piping assets, the Rotate/Flip Selection button has been added to the Analysis Overview workspace.In addition, the following features are available:In the window used to rotate or flip a component:Band heat maps denoting the alert levels for each TML in a band are available.Widgets displaying the current positions of the TMLs on a selected band, and a preview of the changed positions after a Rotation or Flip are available.The Add as What-If button to create What-If scenarios for rotating or flipping a piping component is available.For piping components, the PIPE ROTATION: HISTORY section that displays rotation or flip history is available.For piping bands, the Trends graphs that display historical measurement data for each position on the band, and for each TML in the band are available.An option to undo the last rotation or flip is available.For each rotation or flip, an Inspection record is created. These records appear in the Inspections section of the Inspection Management Overview page of the Inspection Management module.F51409You can now create or update records for Components, Bands, TMLs, and Thickness Measurements for Piping Assets using the Piping Data Loaders. You can also create or update Corrosion Analysis Settings (CAS) records. To facilitate this enhancement, the following Excel templates are provided:Thickness Monitoring (TM) Piping Equipment.xlsx Thickness Monitoring (TM) Piping Functional Location.xlsx US430968To improve usability, the following changes have been made:The Remaining Life tab has been removed from the Analysis Overview workspace for assets and TML Groups. You can now select the Analysis Output tab, and then expand the REMAINING LIFE section to view the Remaining Life graph and the Remaining Life table.The Trends tab has been removed from the Analysis Overview workspace for TMLs. You can now select the Analysis Output tab, and then expand the TRENDS section to view the Trends graph.
+US422930In the TML Trends graph, you can now view the lines representing the alert levels based on the values defined in the Wall Ratio Preferences section of the TM Admin Preferences page. In addition, you can also view the line representing the nominal thickness value.US417412You can now add advanced filters to the TMLs in the TMLs section of the Analysis Overview workspace. To facilitate this enhancement, in the TMLs section, the Filter button () has been added.US417400To improve performance, for an Asset that contains only TML Groups directly linked to it, the Remaining Life Graph for the Asset displays information about the remaining life for the TML Groups linked to the Asset.US414312To improve usability when sending data to a datalogger, the following enhancements have been made:The Select TMLs pane has been added to the TM Dataloggers page, where you can select multiple items at the Asset, TML group, and TML levels to send to the device.The Selected TMLs workspace has been added to the TM Dataloggers page, where you can view the list of selected TMLs before sending data to the device.Note:
+You must install the latest version of the Meridium Device Service to use TM Dataloggers.Sending measurement data for the TMLs for Piping Assets, Piping Components, and Piping Bands is only supported for the Olympus 38DL Plus Ultrasonic Thickness Gage datalogger.For the Olympus 38DL Plus Ultrasonic Thickness Gage datalogger, a single file is created for each Asset instead of a TML Group. You can rename the files before sending to the device, as needed.
+US414309To improve usability and performance when sending or receiving measurement data in the TM Dataloggers page, the send and receive operations have now been moved to scheduler.US409560You can now view the basis for which the value in the Measurement Status Indicator for a measurement was changed. To facilitate this enhancement, the Measurement Status Indicator Basis field has been added to the Thickness Measurements datasheet.US408143To improve usability when receiving and saving data from the Olympus 38DL Plus Ultrasonic Thickness Gage datalogger, the Datalogger History family has been introduced. TML records are now identified by entity keys stored in Datalogger History records rather than by Asset IDs and TML IDs. In addition, in the Receive From section, the FILENAME column has been added to display the file name corresponding to each TML record received from the device.US400590To improve performance, the following queries have been modified to retrieve the ENTY_ID from the Equipment or Asset Hierarchy instead of the MI_ENTITIES table of the database:
+QueryPathAssets Near or Past RetirementPublic/Meridium/Modules/Thickness Monitoring/QueriesAssets with TM TasksPublic/Meridium/Modules/Thickness Monitoring/QueriesCorrosion DistributionPublic/Meridium/Modules/Thickness Monitoring/QueriesExcessive CorrosionPublic/Meridium/Modules/Thickness Monitoring/QueriesRemaining Life Less than 180 MonthsPublic/Meridium/Modules/Thickness Monitoring/QueriesThickness InspectionsPublic/Meridium/Modules/Thickness Monitoring/QueriesTM AssetsPublic/Meridium/Modules/Thickness Monitoring/QueriesTM Assets Requiring a CalculationPublic/Meridium/Modules/Thickness Monitoring/Queries
+US398215To improve usability, for security users not associated with the MI Thickness Monitoring Administrator Security Group, the Delete option for TML Groups, TMLs, and measurements has been removed.DE134925
+Table 3. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when modifying TMLs in bulk, if you selected multiple TMLs in the TMLs section, and then selected Edit in Bulk, the TMLs that appeared in the Bulk Edit TMLs window were not sorted based on the TML ID. This issue has been resolved.DE138120Previously, for a Security User associated with a UOM Conversion Set, the value in the Allowable Stress field in the TML Details section was not converted for Tanks of types Annular Ring and Riveted Shell. This issue has been resolved.DE135631Previously, when you copied a TML, duplicate TML IDs appeared in the left pane in the Analysis Overview workspace. This issue has been resolved.DE134227Previously, when calculating the Average Corrosion Rate, the corrosion rates for TMLs with negative corrosion rates were used for the calculation. This issue has been resolved. Now, the corrosion rates for TMLs with negative corrosion rates are replaced with zero for the purpose of calculation.DE133677Previously, for Tanks of the type Annular Ring, in the TML Details section, the value in the Allowable Stress field was not populated since the calculation was incorrectly based on the value of Piping Nominal Diameter in the Piping subsection. This issue has been resolved. Now, the Allowable Stress field is populated based on the value of Tank Diameter in the Tank subsection.DE132868Previously, when you accessed the Integrity section from Asset Hierarchy, link in the Thickness Monitoring row took longer to load depending on the number of assets in the Asset Hierarchy. This issue has been resolved.DE132867
+Table 4. Obsolete Features
+The following features are no longer available.
+DescriptionTracking IDThe Corroded Area subsection is no longer available in the TML datasheet. The following fields have been removed from the datasheet:Is Corroded Area Corroded Area Length Corroded Area Width Corroded Area Rows Corroded Area Columns DE114180
+
+
+
+
+
+On this pageRelease Date: November 20, 2020Release Date: October 2, 2020
+
+
+
+
+
+
+
+
+

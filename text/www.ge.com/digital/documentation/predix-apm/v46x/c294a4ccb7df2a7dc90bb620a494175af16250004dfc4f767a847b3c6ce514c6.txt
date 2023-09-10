@@ -1,0 +1,96 @@
+
+
+
+Probability Distribution: Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability DistributionProbability Distribution: Overview
+Probability Distribution: Workflow
+Probability Distribution Analyses
+
+
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Probability Distribution
+Probability Distribution: Overview
+
+
+
+
+
+
+
+Probability Distribution: OverviewOverview of Probability Distribution AnalysisReliability Analytics
+The Reliability Analytics module provides a collection of tools that apply reliability engineering principles to help you make tactical (short-term) and strategic (long-term) decisions for maintenance and operational equipment management activities. It also provides: A means for analyzing historical failure data to identify trends and predict future failures.A mechanism for simulating what if scenarios regarding the reliability of a system to determine if a new or modified strategy will be effective. The Reliability Analytics module provides the following types of tools: Production AnalysisSystem Reliability AnalysisSpares AnalysisReliability Distribution AnalysisProbability Distribution AnalysisReliability Growth AnalysisAutomation Rules
+                                Each tool provides a unique set of features that allow you to analyze data to develop strategies to improve reliability.
+Probability Distribution Analysis
+Probability Distribution Analysis is a tool that allows you to create a statistical distribution with a specific pattern to describe the Time to Failure. An independent variable based on a query, dataset, or manually entered data is used to generate an analysis, which will help you make tactical (short-term) and strategic (long-term) decisions for maintenance and operational equipment management activities and analyze data to identify trends and predict future failures.
+Probability Distribution Analysis WorkflowThis workflow provides the basic, high-level steps for developing Probability Distribution Analysis. The steps and links in this workflow do not necessarily reference every possible procedure.
+
+Collect failure data. Create a new Probability Distribution Analysis  from an existing query or dataset, or from manually entered data. The Probability Distribution Analysis should be based on the failure data collected in the previous step.
+
+Evaluate the results
+ of performing the Probability Distribution Analysis.
+
+
+
+
+On this pageOverview of Probability Distribution AnalysisProbability Distribution Analysis Workflow
+
+
+
+
+
+
+
+
+

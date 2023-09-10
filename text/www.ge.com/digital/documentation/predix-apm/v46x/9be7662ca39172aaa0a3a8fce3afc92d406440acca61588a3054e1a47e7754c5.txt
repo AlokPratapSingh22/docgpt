@@ -1,0 +1,353 @@
+
+
+
+Risks | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System ReliabilitySystem Reliability: Overview
+System Reliability: Workflow
+System Reliability Analyses 
+Resources
+System Scenario
+Diagrams
+Risks
+Actions
+Global Events
+Grid View
+Simulations
+
+
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+System Reliability
+Risks
+
+
+
+
+
+
+
+RisksAbout RisksIn System Reliability, a Risk identifies one way in which an Asset can fail. If the Risk occurs, then the piece of equipment or location will fail, and the system cannot run. In System Reliability Analyses, Risks are stored in System Risks, which can be linked to System Assets and System Switches.A piece of equipment or location may have multiple Risks to represent multiple ways in which that piece of equipment or location can fail. As such, System Assets and System Switches can be linked to multiple System Risks.Each Risk has a characteristic pattern of causing an Asset to fail as defined by its TTF distribution data or maximum operating time. Risks also have TTR distribution data, which characterizes the time needed to correct the failure that occurs as the result of the Risk and get the system running again. This distribution data is stored in Distributions, which are linked to Risks.About Actions and Risks
+After you create an Action in a System Reliability Analysis, you can assign a single Risk or multiple Risks to that Action. When you assign a Risk to an Action, a link is created between a System Risk Assessment record, which stores the GUID of the mitigated Risk in the Risk GUID field, and the Action. This allows the Action to mitigate the Risk. An Action may mitigate a Risk by changing certain properties, such as failure consequences or the failure distribution, of the Risk.
+                               Actions mitigate Risks in different ways depending on the type of Action that is assigned to the Risk. The different types of Actions mitigate Risks in the following ways:
+                                
+Preventive Maintenance Action: Can mitigate the Time to Fail (TTF) distribution of the Risk by increasing the maximum operating time of the Risk, as defined by the fields in the Distribution record that defines the TTF distribution associated with the Risk. For example, the Replace Seal Action in Scenario B of the System Reliability Analysis Example mitigates the Seal Failure Risk by creating more operating time by replacing the existing seals, which have a smaller amount of operating time, with new seals that have a larger amount of operating time.
+Condition Monitor or Inspection Action: Can mitigate the consequences of failure by fixing potential failures before they occur. This allows proactive repairs, or planned corrections, to be made to the system instead of fixing a failure using an unplanned correction. Planned corrections can consume less Resources and lower the costs of a Scenario. For example, the Vibration Analysis Action in Scenario B of the System Reliability Analysis Example mitigates the Bearing Failure Risk by identifying a potential Bearing Failure and executing a planned correction, which requires less Resources and less Resource usage than executing an unplanned correction.
+Special Action: Can mitigate the failure consequences of the Risk, as defined in the Fixed Unplanned Correction Cost field of the System Risk record, and the TTF distribution, as defined by the Distribution record that represents the TTF distribution associated with the Risk. For example, the occurrence of the Redesign Impeller Action in Scenario B of the System Reliability Analysis Example mitigates the Impeller Failure by reducing the fixed unplanned correction cost and extending the TTF distribution of the Impeller Failure Risk.
+Note: An Action does not have to mitigate a Risk, but associating an Action with a Risk and mitigating the Risk creates a more reliable system.
+
+Potential and Functional Risks
+After you add elements to a Diagram, you must connect the elements to create the Diagram. Depending on the structure of the system for which you are creating a Diagram, you will want to connect elements to each other in a series or parallel to one another.
+Note: Interaction with diagramming and design canvases is not available on touch-screen devices.
+Elements Connected in a Series 
+When you connect elements to each other in a series, every element has one preceding connection and one succeeding connection, with only one path from the Start element to the End element. For example, in the following image of Scenario A in the System Reliability Analysis example, the elements in the Diagram for Scenario A root subsystem are connected in a series: every element between the Start and End elements has one connection from an element and one connection to an element, and you can reach the End element from the Start element in only one way.
+
+
+
+Elements Connected in Parallel 
+When you connect elements in parallel to one another, one or more elements will be connected to multiple elements, and there will be multiple paths from the Start element to the End element. For example, in the System Reliability Analysis example, the Bottling Line elements in the Bottling Subsystem root subsystem are connected in parallel. In this case, the Start element and the Linkelement are connected to three Subsystem elements: Bottling Line 1, Bottling Line 2, and Bottling Line 3. Therefore, there are three different paths from the Start element to the End element, depending on which of the three Bottling Lines that you pass through.
+
+
+
+Resetting Risks
+When a simulation is run, the occurrence of the Risks that are defined for a piece of equipment, location, or switch are simulated, based on the TTF Distribution associated with that Risk. After a Risk occurs or after actions are performed that mitigate the occurrence of that Risk in the simulation, that Risk will be reset automatically. This means that the time in-service for the component associated with the Risk will be changed to zero (0), indicating that the component was replaced (or repaired to as good as new).
+Conditions for Resetting a Risk
+When a Risk will be reset automatically is determined by the failure type of that Risk. A Risk whose failure type is Failure With Replacement will be reset automatically when any of the following scenarios occur:
+An unplanned correction takes place following the occurrence of a Risk.A planned correction takes place to mitigate the occurrence of a Risk.Preventive Maintenance is performed against a piece of equipment to mitigate the occurrence of a Risk.A Special Action with a TTF replacement is performed against a piece of equipment to mitigate the occurrence of a Risk.
+A Risk whose failure type is Failure Without Replacement will be reset automatically when any of the following scenarios occurs:
+Preventive Maintenance is performed against a piece of equipment to mitigate the occurrence of a Risk.A Special Action with a TTF replacement is performed against a piece of equipment to mitigate the occurrence of a Risk.
+Conditions for Resetting a Risk
+Suppose that the following Risks with a failure type of Failure With Replacement are defined in your simulation for a Water Pump:
+Bearing Failure Impeller Failure Seal Failure 
+In the simulation, after unplanned correction is completed following the occurrence of the Bearing Failure Risk , the time in-service for the Bearing will be reset automatically to zero (0) to indicate that you will replace the Bearing after it fails so that the Bearing Failure Risk will not occur again until the defined TTF Distribution is reached.
+Specifying Additional Risks
+In addition to Risks being reset automatically as described in the preceding scenarios, you can specify that additional Risks be reset following the planned or unplanned correction of a given Risk. In other words, you can specify a Risk as a source Risk, whose planned or unplanned correction triggers additional Risks to be reset at that time. This means that the time in-service for the components associated with the additional Risks will be changed to zero (0), indicating that the additional components were also replaced (or repaired to as good as new) following the planned or unplanned correction of the source Risk.
+Throughout the documentation we will use the term source Risk to refer to a Risk whose planned or unplanned correction triggers the resetting of additional Risks. We will use the term additional Risk to refer to Risks that are reset by the planned or unplanned correction of a source Risk.
+You can specify that additional Risks should be reset only when:
+
+An unplanned correction takes place following the occurrence of a source Risk.
+-or-
+A planned correction takes place to mitigate the occurrence of a source Risk.
+Source Risks that are mitigated as a result of Special Action with a TTF replacement or Preventive Maintenance will not trigger any additional Risks to be reset.
+Specifying Additional Risks
+Suppose that:
+
+ You will replace the Seal, in addition to the Bearing, when the Bearing Failure Risk occurs.
+-or-
+The planned correction that you perform to mitigate the occurrence of the Bearing Failure Risk will also mitigate the occurrence of the Seal Failure Risk.
+In this case, you want to indicate in your simulation that the Bearing Failure Risk (i.e., the source Risk) should reset the Seal Failure Risk (i.e., the additional Risk). In other words, the time that the Seal has been in-service will also be changed to zero (0) to reflect that the Seal will be replaced (or repaired to as good as new) following the planned or unplanned correction of the Bearing Failure Risk.
+Rules for Resetting Risks
+You can specify any Risk that is defined for an Asset as a source Risk or an additional Risk, with a few exceptions. When you set up a simulation to include source Risks and additional Risks, you must follow these rules:
+You can specify a Risk as a source Risk if the failure type for that Risk is:
+Failure With Replacement
+-or-
+Failure Without Replacement
+You can specify a Risk as an additional Risk only if the failure type for that Risk is Failure With Replacement.
+In the simulation, only Risks whose failure type is Failure With Replacement are reset following a planned or unplanned correction. Risks whose failure type is Failure Without Replacement are not reset following planned or unplanned correction because the components associated with these Risks are not replaced (or repaired to as good as new). Specifically, this means that a Risk whose failure type is Failure Without Replacement:
+Can be specified as a source Risk. In other words, the planned or unplanned correction of these Risks can trigger additional Risks to be reset, if the failure type of the additional Risks is Failure With Replacement.Cannot be specified as additional Risks. The rows containing Risks whose failure type is Failure Without Replacement are disabled.
+Example: Rules for Resetting Risks
+Suppose that the following Risks with the following failure types are defined for a Shell and Tube Heat Exchanger:
+A Tube Bundle Failure Risk whose failure type is Failure Without Replacement.A Shell Head Failure Risk whose failure type is Failure With Replacement.A Seals (gaskets) Failure Risk whose failure type is Failure With Replacement.
+Now suppose that when you complete planned or unplanned correction for the Tube Bundle Failure Risk, though you will not replace (or repair to as good as new) the Tube Bundle, you will replace (or repair to as good as new) the Seals (gaskets). In this case, you want to indicate in your simulation that the Tube Bundle Failure Risk is a source Risk that should trigger the resetting of the Seals (gaskets) Failure Risk (i.e., an additional Risk). In other words, the time that the Seals (gaskets) has been in service will be changed to zero (0) to reflect that the Seals (gaskets) will be replaced (or repaired to as good as new) following the planned or unplanned correction of the Tube Bundle Failure Risk.
+Access a RiskProcedure
+Access the System Scenario for which you want to view details of a Risk.In the workspace, select the Risks tab.
+A list of System Subsystems, a grid containing a list of Risks associated with the selected System Scenario, and the Properties pane appears.
+
+
+
+Note: As needed, in the Properties pane, you can select  to modify the values in the available fields, and then select  to save your changes.
+The grid contains the following columns of information:
+
+Name: Contains the value in the Name field in the System Risk record.
+Description: Contains the value in the Description field in the System Risk record.
+TTF Distribution: Contains the TTF Distribution link, which you can select to open the TTF Distribution window and view the Time to Failure (TTF) distribution data for the associated System Risk.
+TTR Distribution: Contains the TTR Distribution link, which you can select to open the TTR Distribution window and view the Time to Repair (TTR) distribution data for the associated System Risk.
+Planned Resource Usages: Contains the Planned Resource Usages link, which you can select to open the Planned Resource Usages window and view any planned Resource usages that have been assigned to the Risk.
+Unplanned Resource Usages: Contains the Unplanned Resource Usages link, which you can select to open the Unplanned Resource Usages window and view any unplanned Resource usages that have been assigned to the Risk.
+Risks to Reset: Contains a number that represents the number of additional Risks that will be reset following the planned or unplanned correction of the Risk in that row. This number appears as a hyperlink, which you can select to access the <Risk>/Risks to Reset window, where you can manage the additional Risks that will be reset in the simulation following the planned or unplanned correction of the source Risk.
+In the pane to the left of the grid, select the Asset for which you want to view Risks.
+The list of Risks associated with the selected Asset appears in the grid.
+
+
+
+In the grid, select the Risk whose details you want to view.
+The properties of the selected Risk appear in the Properties pane, displaying the General tab, the Planned Correction tab, and the Simulations Options tab.
+
+
+
+Add a RiskProcedure
+Access the System Scenario to which you want to add a Risk. In the workspace, select the Risks tab.
+Tip: You can also add a Risk via the Actions tab.
+A list of Risks associated with the selected Scenario appears.
+
+
+
+In the Risks section, in the pane to the left of the grid, select the Asset for which you want to add a risk, and then select .
+The datasheet for the new Risk appears.
+
+
+
+As needed, enter the values in the available fields, and then select .
+The Risk is saved.
+Assign a New Resource to a RiskAbout This Task
+This topic describes how to create and assign a new Resource to a Risk. You can also assign an existing Resource to a Risk. 
+Procedure
+Access a Risk to which you want to assign a resource. In the grid, locate the row containing the Risk to which you want to assign a Resource. If you want to assign a planned Resource, select the Planned Resource Usages link.
+-or-
+If you want to assign unplanned resource, select the Unplanned Resource Usages link.
+The <Risk> - <Resource Usage> grid appears, displaying the list of resources that are assigned to the selected Risk. <Risk> is the name of the Risk that you selected and <Resource Usages> is the type of Resource Usage that you selected. 
+The following image shows the grid when you select Unplanned Resource Usage:
+
+
+
+Select . 
+The datasheet for new System Resource Usage appears. 
+
+
+
+As needed, enter the value in the available fields, and then select .
+A new Resource is created and assigned to the Risk.
+Assign an Existing Resource to a RiskAbout This Task
+After a Resource exists for a System Reliability Analysis, you can assign the resource to a Risk. When you do so, you associate the cost of that Resource with each failure that occurs as a result of that Risk. This allows you to assign a realistic, financial cost to the consequences of the Risk that can be included in the simulation results.
+When you assign a Resource to a Risk, a System Resource Usage record will be created and will store information that specifies how the Resource will be used (e.g., the quantity and duration). There are two ways to assign Resources to Risks:
+Planned Resource UsageUnplanned Resource Usage
+This topic describes how to assign an existing Resource to a Risk. You can also create and assign a new Resource to a Risk.
+Procedure
+Access the Risk to which you want to assign a Resource. In the grid, locate the row containing the Risk to which you want to assign a Resource.If you want to assign planned Resource, select the Planned Resource Usages link.
+-or-
+If you want to assign unplanned Resource, select the Unplanned Resource Usages link.
+The <Risk> - <Resource Usage> grid appears, displaying the list of resources that are assigned to the selected Risk. <Risk> is the name of the Risk that you selected and <Resource Usages> is the type of Resource Usage that you selected. 
+The following image shows the grid when you select Unplanned Resource Usage:
+
+
+
+In the upper-left corner of the grid, select . 
+The New Resource Usage from Existing Resources window appears.
+
+
+
+As needed, enter the value in the available fields, and then select Finish.
+The selected Resource is assigned to the Risk.
+Modify a Resource Assigned to a RiskAbout This Task
+When you modify a Resource that is assigned to a Risk, you are modifying the System Resource Usage record. The actual System Resource record is not changed.
+Procedure
+Access the Risk whose resource you want to modify. In the grid, locate the row containing the Risk for which you want to modify a Resource.If you want to modify a planned Resource, select the Planned Resource Usages link.
+-or-
+If you want to modify an unplanned resource, select the Unplanned Resource Usages link.
+The <Risk> - <Resource Usage> grid appears, displaying the list of resources that are assigned to the selected Risk. <Risk> is the name of the Risk that you selected and <Resource Usages> is the type of Resource Usage that you selected. 
+The following image shows the grid when you select Unplanned Resource Usage:
+
+
+
+In the grid, select the row containing the Resource that you want to modify, and then select .
+The Edit Resource Usage datasheet appears.
+Modify values in the available fields, and then select .
+Your changes are saved.
+Remove a Resource Assigned to a RiskAbout This TaskWhen you remove a Resource from a Risk, you delete the System Resource Usage record so that the Resource is no longer used by the selected Risk. The actual System Resource record is still available for the System Reliability Analysis and can be used if needed.Procedure
+Access the Risk to which you want to modify a resource. In the grid, locate the row containing the Risk for which you want to modify a Resource.If you want to remove a planned Resource, select the Planned Resource Usages link.
+-or-
+If you want to remove an unplanned Resource, select the Unplanned Resource Usages link.
+The <Risk> - <Resource Usage> grid appears, displaying the list of resources that are assigned to the selected Risk. <Risk> is the name of the Risk that you selected and <Resource Usages> is the type of Resource Usage that you selected. 
+The following image shows the grid when you select Unplanned Resource Usage:
+
+
+
+In the grid, select the row containing the resource that you want to remove, and then select .
+A message appears, you to confirm that you want to remove the selected Resource.
+Select OK.
+The Resource is removed from the grid, and the System Resource Usage record is deleted from the database.
+Specify Risks to ResetThe following instructions provide details on specifying which additional Risks should be reset by a source Risk.Procedure
+Access the Risk for which you want to specify risks to reset. In the grid, locate the row containing the Risk for which you want to reset additional risks.In the Risks to Reset column, select the hyperlinked number.
+The <Risk>/Risks to Reset grid appears, displaying all the Risks that are defined for the selected Asset element, except for the currently selected Risk. <Risk> is the name of the Risk that you selected. 
+Locate the row containing the additional Risk that you want to be reset by the source Risk.
+Tip: You can select more than one row.
+In the Selected column, select the check box, and then select .
+The grid in the Risks section appears, and the hyperlinked number in the Risks to Reset cell for the source System Risk record changes to reflect the number of additional Risks you selected. When you run the simulation, the time in-service for the components associated with the additional Risks will be changed to zero (0), following the planned or unplanned correction of the source Risk.
+Access an Associated AnalysisYou can access the Reliability Growth or Reliability Distribution Analysis that is associated with a Risk.Procedure
+Access the Risk whose associated Distribution Analysis you want to open. Select the row that contains the Risk whose associated Distribution Analysis you want to open.In the upper-right corner of the grid, select Open Analysis.
+Note: If your System Reliability Analysis has any unsaved changes, you will be prompted to save them.
+The Reliability Growth or Reliability Distribution Analysis appears in a new tab. 
+Define Distribution Data ManuallyAbout This Task
+This topic describes how to define distribution data for Risks manually. You can also associate distribution data from existing Reliability Distribution Analyses and Reliability Growth Analyses.
+Procedure
+Access the Risk for which you want to define Distributions data. In the grid, locate the row containing the Risk for which you want to define Distribution data:If you want to define TTF Distribution data, select TTF Distribution.
+-or-
+If you want to define TTR Distribution data, select TTR Distribution.
+The details of the Distribution appear in the workspace. 
+
+
+
+Select 
+As needed, enter the values in the available fields, and then select .
+The new distribution data is saved.
+Associate Existing Distribution Data with RisksAbout This Task
+This topic describes how to associate distribution data from existing Reliability Distribution Analyses and Reliability Growth Analyses to Risks. You can also define distribution data for Risks manually.
+When you associate existing distribution data with Risks, you use data stored in a Reliability Growth or Reliability Distribution Analysis in a system.
+After existing distribution data has been associated with a Risk, you can update the information periodically. When you associate the distribution data, the Entity Key and Family Key of the Reliability Distribution and Reliability Growth Analysis are stored in the System Risk record, thereby establishing a connection between the two records that allows for future updates. This way your System Reliability Analysis uses the most current information available to calculate the simulation results.
+Procedure
+Access the Risk to which you want to associate existing Distributions data. In the grid, locate the row that contains the Risk with which you want to associate Distribution data. In the upper-right corner of the grid, select Associate Distribution.
+The Search window appears, where you can search for a Reliability Growth Analysis or Reliability Distribution Analysis whose distribution data you want to associate with a Risk. 
+Perform a search to locate your desired analysis.
+A list of analyses based on the search criteria appears.
+Select the analysis with the failure distribution information that you want to associate with the Risk, and then select OK.
+The distribution data from the selected record is imported, and a connection is established between the Risk and the selected Reliability Growth Analysis or Reliability Distribution Analysis.
+Refresh Distribution DataProcedure
+Access the Risk whose distribution data you want to refresh. In the grid, select the row that contains the Risk whose distribution data you want to refresh.Select .
+The distribution data is refreshed.
+Remove the Association Between a Risk and a Distribution AnalysisProcedure
+Access the Risk for which you want to remove an analysis association. In the row containing the Risk for which you want to remove an analysis association:
+Select TTF Distribution.
+-or-
+Select TTR Distribution.
+The <Risk> /<Distribution> window appears, where <Risk> is the name of the Risk that you selected and <Distribution> is the type of Distribution that you selected. 
+
+
+
+In the upper-right corner, select 
+
+Enable Distribution Association
+Clear the Enable Distribution Association check box.
+The fields in the <Risk>/<Distribution> window are enabled.
+Note: You can keep the last values that have been imported from the associated analysis or you can enter new distribution data manually.
+Select .
+Your changes are saved.
+Access a Mitigating ActionProcedure
+Access a Risk for which you want to view a mitigating Action.In the grid, select the row containing the Risk whose Mitigating Action you want to view.In the upper-right corner of the Risks section, select Show Mitigating Action.
+The Risks/Mitigating Actions grid appears, displaying the Mitigating Actions associated with the selected Risk. <Risk> is the name of the Risk that you selected. 
+
+
+
+The grid contains the following columns of information:
+
+Name: Displays the value in the Name field in the System Action record.
+Description: Displays the value in the Description field in the System Action record.
+Assign an Action to a RiskProcedure
+Access a Risk to which you want to assign an Action.In the grid, select the row containing the appropriate Risk.In the upper-right corner of the Risks section, select Show Mitigating Action.
+The Risks/Mitigating Actions grid appears, displaying the Mitigating Actions associated with the selected Risk. <Risk> is the name of the Risk that you selected. 
+
+
+
+If you want to assign a new Action, in the upper-right corner of the grid, select Assign New Action. 
+The datasheet for new Action appears. 
+
+
+
+You can enter values in the available fields to add an Action, and then select  to add the Action to the Risk.
+-or-
+If you want to assign an existing Action, in the upper-right corner of the grid, select Assign Existing Actions. 
+The <Risk>/Mitigating Actions/From Existing grid appears, displaying a list of Actions. <Risk> is the name of the Risk that you selected. 
+In the grid, locate the row that contains the Action that you want to assign to the Risk.In the Selected column, select the check box.In the upper-right corner of the grid, select Submit.
+The selected Action is assigned to the Risk.
+Delete a RiskProcedure
+Access the System Scenario for which you want to delete a Risk. In the workspace, select the Risks tab.
+A list of System Subsystems, a grid containing a list of Risks associated with the selected System Scenario, and the Properties pane appear.
+
+
+
+In the grid, select the Risk that you want to delete, and then select .
+The selected Risk is deleted.
+
+
+
+
+
+On this pageAbout RisksAccess a RiskAdd a RiskAssign a New Resource to a RiskAssign an Existing Resource to a RiskModify a Resource Assigned to a RiskRemove a Resource Assigned to a RiskSpecify Risks to ResetAccess an Associated AnalysisDefine Distribution Data ManuallyAssociate Existing Distribution Data with RisksRefresh Distribution DataRemove the Association Between a Risk and a Distribution AnalysisAccess a Mitigating ActionAssign an Action to a RiskDelete a Risk
+
+
+
+
+
+
+
+
+

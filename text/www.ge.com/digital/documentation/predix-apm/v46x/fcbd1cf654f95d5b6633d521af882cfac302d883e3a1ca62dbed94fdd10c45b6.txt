@@ -1,0 +1,107 @@
+
+
+
+Second Quarter of 2022 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Third Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Release Notes
+Second Quarter of 2022
+
+
+
+
+
+
+
+Second Quarter of 2022Release Date: June 24, 2022This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo enhance functionality, you can now view the additional values in the Template Information bar using a custom attribute, ANALYSIS_DISPLAY_ATTRIBUTE. To facilitate this enhancement, you can define values in the custom attribute field, which are displayed in the Template Information bar. If custom attribute values are not defined, only default values are displayed in the Template Information bar.US541213 To enhance functionality, you can now change the color range for the Parallel Axis Chart by specifying minimum and maximum values as per your requirement. To facilitate this enhancement, the Change Min/Max Range Colors option has been added to the chart settings.US541212To enhance functionality, in the Charts view, when you open a template of All Resources classification type at the asset level or enterprise level, the name of the selected template now appears in the View Selector.US541211To enhance functionality, in the Analysis Browser, when you select an analysis template, the Select Context window displays all the assets of any classification type from the list. To facilitate this enhancement, in the template creation page, the All Resources option is added in the APPLIED TO drop-down list that includes all the assets irrespective of the classification type.US541211To enhance functionality, in the Charts view, when you select the One-Up layout and hover over a point in the chart, the tag values appear in the tooltip and the tags and tag values appear in the tag register directly. To facilitate this enhancement, when you select the One-Up layout, the View data () option is disabled and the tag values appear directly in the tooltip and tag register.US541208To enhance performance, when you modify a chart, the new data is loaded faster on the chart. To facilitate this enhancement, the time series calls are not triggered now for data that already exists in the local cache, thus reducing duplicate calls.US541205To enhance functionality, in the Tag Filters pane of an Analysis chart, you can now filter the tags data by defining a specific range for the slider bar. To facilitate this enhancement, the slider handles are enabled to specify a range for the tag data by dragging them left or right and then moving the slider across the bar.US541202To enhance usability, in SmartSignal chart types, now only rows with visible chart markers appear in the marker space, allowing for more charts to be displayed on the screen.US537119To enhance functionality, in the Charts view, when you hover over a point in the chart (charts in other layout except One-Up), the tooltip spacing of the tag values is now reduced. To facilitate this enhancement, when you hover over a point in the chart, the tooltip now displays the values of a specific tag for the selected point and the remaining tags without the values are not displayed.US531814To enhance functionality, in the Charts view, you now have the option to retry loading individual charts or all the charts that failed to load. To facilitate this enhancement, the notification bar is displayed whenever the charts fail to load and the Retry option in the bar allows you to reload the charts that failed to load.US531812To enhance usability, in the Time Series Analysis chart type view page, when you select the date range for the charts from the PRESETS, you can now refresh the charts to load the latest data. To facilitate this enhancement, the Refresh () option is added in the charts view header.US531811
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in an Analysis View chart accessed from an Alert, when you selected Plotted Tag Visibility or Calculate Delta, the Tag Panel did not open. To open the Tag Panel, you had to select Expand Tag Panel, and then select the required icons from the panel. This issue has been resolved. Now, you can open the Tag Panel by selecting Plotted Tag Visibility or Calculate Delta directly. DE180996Previously, you were unable to copy individual tags from the Analysis charts. This issue has been resolved.DE179882Previously, in the Time Series chart for an Analysis card, when you selected a date range that is greater than three months, an error message appeared and the Analysis page stopped responding. This issue has been resolved.DE177219Previously, analysis expressions that contained nested expressions did not get populated in the chart. This issue has been resolved.DE176527Previously, the Add Threshold Lines option in a plotted chart’s Settings drop-down menu did not work as expected. This issue has been resolved. DE175264Previously, while using the analysis X-Y scatter plot, after you closed an element and clicked a tag in the key, the Plotted Tags section re-opened for every tree element. Due to this you had to go through the long list of elements and close the elements that were not used and scroll down to see the name of the generic series. This issue has been resolved. Now, the current viewing card is expanded automatically, so that you do not have scroll down in the Plotted Tags section.DE164913
+
+
+
+
+
+On this pageRelease Date: June 24, 2022
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,107 @@
+
+
+
+First Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference 
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+ First Quarter of 2019 
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Release Notes
+ First Quarter of 2019 
+
+
+
+
+
+
+
+
+                First Quarter of 2019
+                
+            Inspection ManagementThis topic provides a list of product changes released for this module on the dates listed below.Release Date: March 29, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDYou can now generate and download multiple Inspection Reports at a time. To facilitate this enhancement, the following changes have been made:The Bulk Print Report option has been added to the Underlying Open Inspections section to print multiple inspection reports. This feature is also available in the Inspection section in the Asset Overview page.The View Bulk Printing Status option has been added to the Inspection Management Overview page to view the status of the print job. On selecting this option, the Downloads page appears, displaying the status of all the print jobs.US278869
+Table 2. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, if you used State Management and downloaded an inspection in offline mode along with the Inspection History Report, the Inspection Recommendations did not appear in the Recommendation History section of the report. This issue has been resolved. To facilitate this fix, the MI_INSPHIST_RECINSP query has been modified to include the State column.US292248Previously, when you modified the queries in the Underlying Inspection Tasks and Underlying Recommendations sections in the Inspection Management Overview page, the counts in the Inspection Management tabs did not appear. This issue has been resolved. Now, you can add or delete columns from the Inspection Overview queries, but you cannot change the IDs of the query parameters.DE105398Previously, when you configured an Inspection record to use a master/detail datasheet, an error occurred when saving the Detail section of the datasheet. This issue has been resolved.DE104166Previously, if the Asset Hierarchy was configured to use the Equipment Has Equipment relationship, the Asset Hierarchy navigation links could not differentiate between a parent Equipment and a child Equipment. This issue has been resolved. DE103536Previously, when you added a Bundle Sub-Inspection, General Finding, or Pressure Test Sub-Inspection to a parent Inspection record, you were unable to navigate back to the parent record without saving the new related record. This issue has been resolved. Now, when you navigate back to the parent inspection without saving the related record, a message appears, asking you to confirm whether you want to save the unsaved changes. DE103287When you used a Samsung Galaxy Tab Active 3 with Android version 5.1.1 to create an Inspection, the Inspection Tasks drop-down list box did not appear within the visible portion of the window. DE102573Previously, when you created a non-recurring Inspection Task using the Inspection Management (IM) Assets or Inspection Management (IM) Functional Location data loader, an error message appeared in the log even though the Desired Interval cell was blank or contained the value 0. This issue has been resolved.DE95976Previously, when you saved a record in the Inspection Confidence Evaluation section and then attempted to navigate to any other section (such as the Team Members or Inspection Data sections) quickly, an error occurred. This issue has been resolved.Note: This issue occurred only if network connectivity was poor when using GE Digital APM.DE93365Previously, when you accessed an Inspection record and then attempted to navigate to any other page within GE Digital APM quickly, an error occurred. This issue has been resolved. Note: This issue occurred only if network connectivity was poor when using GE Digital APM.DE93361Previously, when you attempted to print a General Inspection Report or NR13 General Inspection Report with blank values in the Commencement Date or Completion Date fields, the report did not print. This issue has been resolved.DE89775Previously, when you attempted to select a value in the Type of Inspection drop-down list box that contained more than 50 characters, an error occurred, and the value was not selected. This issue has been resolved.DE82361Previously, when you attempted to create an inspection for equipment, the Inspection Tasks that were associated with the functional location of the equipment did not appear in the Inspection Tasks drop-down list box of the Create Inspection window. This issue has been resolved.DE82621Previously, when you created or updated an Inspection record using the Inspection Management (IM) Assets or Inspection Management (IM) Functional Location data loader without any value in the Final Inspection Lock column, the Inspection Lock check box was not selected even if you set the value as True in the data loader template. This issue has been resolved.DE81521
+
+
+
+
+
+On this pageInspection Management
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,250 @@
+
+
+
+General Reference | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Hazards AnalysisOverview
+Workflows
+Hazards Analysis
+Components in a Hazards Analysis
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Hazards Analysis
+Reference
+General Reference
+
+
+
+
+
+
+
+General ReferenceHazards Analysis Data Model
+The following diagram shows how the families used in a HAZOP Analysis are related to one another.
+
+
+
+The following diagram shows how the families used in a What If Analysis are related to one another.
+
+
+
+Note: In the preceding diagrams, boxes represent entity families and arrows represent relationship families that are configured in the baseline database. You can determine the direction of the each relationship definition from the direction of the arrow head: the box from which the arrow originates is the predecessor, and the box to which the arrow head points is the successor.
+All HAZOP Analyses and What If Analyses begin with a Hazards Analysis. Each Hazards Analysis is linked to:
+
+Equipment records.
+Functional Location records.
+Human Resource records.
+Reference Document records.
+System/Node records.
+Depending on whether you are conducting a HAZOP Analysis or a What If Analysis, each System/Node is linked to:
+
+
+HAZOP Deviation records (for a HAZOP Analysis).
+-or-
+
+What If records (for a What If Analysis).
+Equipment records.
+Functional Location records.
+Note:  The record to which the System/Node is linked is the only difference between the HAZOP Analysis data model and the What If Analysis data model.
+Each HAZOP Deviation or What If is linked to one or more Cause records.
+Each Cause is linked to:
+One Equipment record.One Functional Location record.
+Hazards Analysis Consequence records.
+Each Consequence is linked to:
+
+
+Risk Assessment Recommendation records.
+Note: Risk Assessment Recommendations can be linked to Equipment through the Safety Analysis Has Equipment relationship. To simplify the data model images, this relationship is not included in the images.
+One Risk Assessment record.
+Hazards Analysis Safeguard records.One LOPA record.
+Each Safeguard can be linked to:
+One Equipment record.One Functional Location record.One Risk Assessment record.
+One Instrumented Function record.
+Note: Instrumented Functions are also used by SIS Management to store details on the instrumented function for a given safety system.
+
+In addition to the relationships explained previously, families exist that are used by Hazards Analysis to support Revision History. The family caption for these families matches the source family name, appended with Revision to indicate that the family is a Revision family.
+Hazards Analysis Security Groups
+
+The following table lists the baseline Security Groups available for users within this module, as well as the baseline Roles to which those Security Groups are assigned. In Predix APM, Roles are assigned to Security Users through permission sets.
+
+Important:  Assigning a Security User to a Role grants that user the privileges associated with all of the Security Groups that are assigned to that Role. To avoid granting a Security User unintended privileges, before assigning a Security User to a Role, be sure to review all of the privileges associated with the Security Groups assigned to that Role.
+                
+
+Security GroupRolesMI HA Administrator
+MI HA Administrator
+MI Safety Admin
+MI HA Facilitator
+MI HA Facilitator
+MI Safety Admin
+MI Safety Power
+MI Safety User
+MI HA Member
+MI HA Member
+MI Safety Admin
+MI Safety Power
+MI Safety User
+MI HA Owner
+MI HA Owner
+MI Safety Admin
+MI Safety Power
+MI Hazards Viewer
+MI APM Viewer
+MI Hazards Viewer
+MI Safety Admin 
+MI Safety Power 
+MI Safety User 
+
+ 
+The baseline family-level privileges that exist for these Security Groups are summarized in the following table.
+ 
+Note:  The baseline family-level privileges available in the LOPA module are also applicable to Security Groups in Hazards Analysis module.
+FamilyMI HA AdministratorMI HA FacilitatorMI HA MemberMI HA OwnerMI Hazards ViewerEntity FamiliesAlertView, Update, Insert, DeleteView, Update, Insert, DeleteNoneView, Update, Insert, DeleteViewConsequenceView, Update, Insert, DeleteViewViewViewViewEquipmentViewViewViewViewViewFunctional LocationViewViewViewViewViewHazards AnalysisView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHazards Analysis CauseView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHazards Analysis ConsequenceView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHazards Analysis SafeguardView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHazards Analysis System/NodeView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHAZOP DeviationView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHuman ResourceView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewInitiating Event
+View, Update, Insert, Delete
+ViewViewViewViewInstrumented FunctionViewViewViewViewViewProbabilityView, Update, Insert, DeleteViewViewViewViewProtection LevelView, Update, Insert, DeleteView, InsertView, InsertView, InsertViewReference DocumentView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewRisk AssessmentView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewRisk Assessment RecommendationView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewRisk CategoryView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewRisk MatrixView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewRisk RankView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewRisk ThresholdView, Update, Insert, DeleteViewViewViewViewSite ReferenceViewViewViewViewViewWhat IfView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewRelationship FamiliesAnalysis Has Human ResourceView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewCause Has ConsequenceView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewCause Revision Has Consequence RevisionView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewConsequence Has SafeguardView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewConsequence Revision Has Safeguard RevisionView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewDeviation\What If Has CauseView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewDeviation\What If Revision Has Cause RevisionView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewEquipment Has EquipmentViewViewViewViewViewFunctional Location Has EquipmentViewViewViewViewViewFunctional Location Has Functional LocationViewViewViewViewViewHas Functional LocationView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHas Hazards Analysis RevisionView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHas HAZOP ReferenceView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHas IFView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHas LOPAView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewViewHas RecommendationsView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHas Reference DocumentsView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHas Reference ValuesView, Update, Insert, DeleteViewViewViewViewHas RiskView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHas Risk CategoryView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHas Risk MatrixView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHas Site ReferenceView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHazards Analysis Has AssetsView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHazards Analysis Revision Has Systems/Nodes RevisionView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewIs Independent Protection LayerView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewMitigates RiskView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewSafety Analysis Has EquipmentView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewSystem/Node Has Deviations/What IfsView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewSystem/Node Has Deviations/What Ifs RevisionView, Update, Insert, DeleteView, Update, Insert, DeleteViewView, Update, Insert, DeleteView
+Hazards Analysis URLs
+There is one URL route associated with Hazards Analysis: asset-safety/hazards. The following table describes the various paths that build on the route, and the elements that you can specify for each.
+
+Tip: For more information, refer to the URLs section of the documentation.
+
+ElementDescriptionAccepted Value(s)Notes
+asset-safety/hazards/overview: Displays the Hazards Analysis Overview page.asset-safety/hazards/<AnalysisType>/<EntityKey>: Displays the Analysis Summary workspace for the analysis with the specified type and Entity Key.
+<AnalysisType>
+Specifies the type of the analysis.
+hazop
+NonewhatIf
+<EntityKey>
+Specifies the analysis that you want to access.Any numeric Entity Key that corresponds to an existing analysis.
+Opens the specified analysis in a new tab.
+
+URLs
+
+Example URLDestination
+asset-safety/hazards/overview
+
+Hazards Analysis Overview pageasset-safety/hazards/hazop/64251874508
+
+Analysis Summary workspace of the Hazards Analysis of the type HAZOP with the Entity Key 64251874508asset-safety/hazards/whatif/64251874509
+
+Analysis Summary workspace of the Hazards Analysis of the type What If with the Entity Key 64251874509
+
+An Example of a Hazards Analysis
+This topic illustrates how Hazards Analysis is applied to a hazardous process involving transfer of chemicals from one tank to another.
+The following image illustrates the process of transferring hazardous chemicals from Tank E-1 to Tank E-2. 
+
+
+
+The liquid level in E-1 is maintained by the level control loop that contains the following elements:
+level sensor (LT-01)level controller (LC-01)level valve (LV-01) 
+When the level increases above the set point the valve moves in the open direction. Conversely, when the level is below the set point the valve moves in the close direction.
+Failure of any component in the level control loop can cause an excess pressure event in E-1. The probability of the event is reduced by the presence and proper operation of the following two safeguards:
+High Pressure Instrumented Functions: Open a vent line to the flare system where excess pressure can safely be burned off. The set point of the instrumented function is 80% of the maximum allowable working pressure (MAWP)Pressure Safety Valves: Vent out excess pressure to the atmosphere when the pressure reaches a point of 90% of the MAWP
+Note: This example represents a simplified process and is provided to explain the terminology and concepts that you will need to understand in order to work with the Hazards Analysis module. Depending on the types of processes in your facility, the complexity of your analyses will differ. For example, your process might include multiple deviations, or it might include deviations that are also causes of other deviations.
+Scenario 1: Failure of the Level Control in E-1
+Suppose that a scenario occurs, where the level control in E-1 fails, leading to a catastrophic failure of E-1 and ultimately causing multiple fatalities. This scenario includes the following risk and risk assessment:
+Risk: Hazardous chemicals leak out of the connector, causing multiple fatalities.Risk Assessment: The probability of multiple fatalities having a negative safety impact is very high, and the severity of the impact is also very high. However, multiple fatalities are not likely to cause a negative environmental impact.
+The specific parts of the scenario are outlined in the following list:
+System/Node: The chemical transfer system that consists of E-1 and E-2, two pressure sensors , pressure switches, and valves.Deviation: More pressure in E-1.Cause: Failure of the pressure switch and the valve connected to E-1.Consequence: Multiple people around the connector at the time of the leak are killed.Risk Assessment: The probability of multiple fatalities having a negative safety impact is very high, and the consequence of the impact is also very high. However, multiple fatalities are not likely to cause a negative environmental impact.Safeguard: The Pressure Safety Valve (PSV).
+Scenario 2: Failure of the Transfer System
+Suppose that a scenario occurs, where hazardous chemicals leak out of the connector causing an environmental degradation. This scenario includes the following risk and risk assessment:
+Risk: Hazardous chemicals leak out of the connector, causing environmental degradation.Risk Assessment: The probability of environmental degradation having a negative safety impact is very low. However, the probability of environmental degradation having a negative environmental impact if very high, but the severity of the impact is medium.
+The specific parts of the Scenario are outlined in the following list:
+System/Node: The chemical transfer system that consists of E-1, E-2, and valves.Deviation: More pressure in the piping system between E-1 and E-2.Cause: Failure of the valve connected to E-1.Consequence: Environmental degradation.Risk Assessment: The probability of environmental degradation having a negative safety impact is very low. However, the probability of environmental degradation having a negative environmental impact is very high, but the severity of the impact is medium.Safeguard: A toxicity detector, which sounds an alarm when the toxicity levels in the facility reach high-risk levels.
+ Hazards Analysis System Code Tables
+The following table lists the System Code Tables that are used by Hazards Analysis.
+Table IDTable DescriptionFunction
+MI_HAZARDS_ANALYSIS_LIFE_CYCLE_PHASE 
+
+Hazards Analysis Life Cycle Process Phase 
+
+Populates the Process Life Cycle Phase field in a Hazards Analysis. 
+MI_HAZOP_CAUSE_TYPE HAZOP Cause Type Populates the Cause Type field in a Cause. MI_HAZOP_CONSEQUENCE_TYPE HAZOP Consequence Type Populates the Consequence Type field in a Consequence. MI_HAZOP_DEVIATIONS HAZOP Deviation Populates the Deviation/Guideword field in a Deviation. MI_HAZOP_IPL_TYPE IPL Type Populates the IPL Type field in a Safeguard. MI_HAZOP_SAFEGUARD_TYPE HAZOP Safeguard Type Populates the Safeguard Type field in a Safeguard. 
+About the Risk Assessment GraphThe Risk Assessment graph plots the unmitigated and the mitigated risk ranks for each System/Node.
+
+On the Risk Assessment graph:The x-axis displays the System/Node ID.The y-axis displays the risk rank. The risk thresholds are indicated as dashed lines on the graph. Note: The names for the risk thresholds are based on what the user defined in the risk matrix. By default, they are very high, high, medium, and low.
+ The ID of the System/Node, the unmitigated and the mitigated risk ranks for each System/Node are displayed when you pause on or select the corresponding bar on the graph.You can sort the risk assessment graph by selecting a value in the drop-down box in the upper-left corner of the graph. The available options are:
+Highest Mitigated Risk: Plots the highest mitigated risk rank among all the safeguards of a System/Node and the unmitigated risk rank of the corresponding consequence.
+Highest Unmitigated Risk: Plots the highest unmitigated risk rank of all the consequences of a System/Node and the lowest mitigated risk among all the safeguards of the consequence.
+Lowest Mitigated Risk: Plots the lowest mitigated risk rank among all the safeguards of a System /Node and the unmitigated risk rank of the corresponding consequence.
+Lowest Unmitigated Risk: Plots the lowest unmitigated risk rank of all the consequences of a System/Node and the lowest mitigated risk among all the safeguards of the consequence.About State Management in Hazards Analysis
+The following baseline record states are configured for the Hazards Analysis family:
+Planning: Indicates that the analysis is in the Planning state. You can modify or delete a Hazards Analysis and its related records only if it is in the Planning state. Also, you can create, or link a LOPA to a Consequence only if the analysis is in the Planning stateActive: Indicates that the analysis is active.Review: Indicates that the analysis has been sent for review.Pending Approval: Indicates that the analysis has been reviewed and is awaiting approval.Complete: Indicates that the analysis is complete. After a Hazards Analysis state is changed to Complete: The numeric value in the Revision Number field in the Hazards Analysis is increased by one.A Hazards Analysis Revision is created, which stores a snapshot of the Hazards Analysis when the state was changed to Complete.
+
+Note: You can change the state of a Hazards Analysis, only if you are a Super User, a member of the MI HA Owner Security Group, or a member of the MI HA Facilitator Security Group.
+Illustration of the Hazards Analysis State Configuration 
+By default, the following baseline State Configuration exists for the Hazards Analysis family:
+
+
+
+Hazards Analysis Site Filtering
+In Hazards Analysis, a Hazards Analysis is assigned a site on the Definition workspace and that site assignment is spread to all the related records, such as Hazards Analysis System/Node records, HAZOP deviation records, What If records, Hazards Analysis Cause records, Hazards Analysis Consequence records, Hazards Analysis Safeguard records, and Instrumented Function records. The site assigned to the Hazards Analysis also determines the Risk Matrix used to assess mitigated and unmitigated risks.
+
+Tip: For more information, refer to the Site Filtering section of the documentation.
+
+In Hazards Analysis, users will see only Hazards Analyses that are assigned to their site(s) or that are global records.
+ExampleConsider an organization that has three sites, Site X, Site Y, and Site Z. The following Hazards Analysis records exist:Hazards Analysis A: Assigned to Site XHazards Analysis B: Assigned to Site YHazards Analysis C: Assigned to Site ZHazards Analysis D: No site assigned (global records)
+Scenario 1: User assigned to only Site X This user will see Hazards Analysis A and Hazards Analysis D.
+Scenario 2: User assigned to both Site X and Site Y
+This user will see Hazards Analysis A, B, and D.
+Scenario 3: Super User
+This user will see Hazards Analysis A, B, C, and D.Important: If a multi-site user or a Super User, links child records from multiple sites to a parent record designated as Global, another user who does not have access to all sites may only see a portion of the data associated with that record. In the previous example, even though Hazards Analysis D has records from Site X and Site Y, the Site X user will be not be able to see the records from Site Y.
+
+
+
+
+On this pageHazards Analysis Data ModelHazards Analysis Security GroupsHazards Analysis URLsAn Example of a Hazards Analysis Hazards Analysis System Code TablesAbout the Risk Assessment GraphAbout State Management in Hazards AnalysisHazards Analysis Site Filtering
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,123 @@
+
+
+
+Family Field Descriptions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+European Inspection ManagementOverview
+Configuration
+Workflow
+ReferenceGeneral Reference
+Data Models
+Annexure-1
+Family Field Descriptions
+Field Mappings
+Policies
+System Code Tables
+Queries
+
+
+ Admin
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+European Inspection Management
+Reference
+Family Field Descriptions
+
+
+
+
+
+
+
+Family Field DescriptionsAsset Technical DataAsset Technical Data datasheet stores asset-related information required for certification calculation.
+The table below provides an alphabetical list and description of the fields that exist for Asset Technical Data. The information in the table reflects the type and behavior of these fields. This list is not comprehensive.Note: You can access the Asset Technical Data datasheet for any asset using the Search () button. 
+
+Field
+
+Data Type 
+
+Description
+
+Behavior and Usage 
+Applicable RegulationCharacter (255)Stores the regulation type that is applicable to an asset.This field is populated with a list of regulations to be linked to an asset. This field is populated with a description of system codes stored in MI_INTGY_REGULATION system code table.For European Inspection Management, Applicable Regulation is listed as an European Inspection Regulation.This field is required to calculate certification requirements for the asset of the following types:Pressure VesselSimple Pressure VesselSteam BoilerPipingAsset IDCharacter (255)Stores the ID of an asset. This field is populated with the Equipment Record ID or with the Functional Location ID.Asset TypeCharacter (255)Stores the type of asset.This field is populated with descriptions of the system codes that are stored in the MI_INTGY_ASSET_TYPE system code table. This field is required to calculate certification requirements for the asset of the following types:Pressure VesselSimple Pressure VesselSteam BoilerPipingCertificationCharacter (255)Stores the certification value.The values in this field are populated from a drop-down list box and contains a list of system codes that exist in the MI_COMPLIANCE_STANDARDS system code table. In baseline, the Certification field populates the values which are referenced by MI_INTGY_REGULATION system code table. By default, it shows ZUS and BP.ChamberCharacter (255)Stores information about the type of chamber.This field contains a list of system codes that exist in the MI_CHAMBER system code table. You can choose from the baseline values. The values in this field are populated from a drop-down list box. Refer to the System Code Table for details regarding the type of chamber.CryogenicBooleanMentions whether the asset is operated under cryogenic conditions.This field records additional information regarding the asset. Select the checkbox if the asset operates under the cryogenic conditions.External AccessBooleanMentions whether the physical access for the asset is available externally.This field records additional information regarding the asset. Select the checkbox if external access is available for the asset inspection.FluidCharacter (255)Specifies the name of the fluid which is stored within an asset.This field is required to calculate certification requirements for the asset of the following types:Pressure VesselSimple Pressure VesselPipingFluid GroupCharacter (255)Stores the fluid group.This field is populated automatically when you select a fluid. The Fluid Group is Group 1 or Group 2.Fluid PhaseCharacter (255)Specifies the fluid phase.This field is populated with relevant values from a drop-down list box when you select a fluid. The values in this field exist in the system code table. The Fluid Phase is liquid or gas. Fluid TypeCharacter (255)Stores the fluid type.This field is populated automatically when you select a fluid. The Fluid Type is Flammable or Combustible.InsulatedBooleanMentions whether the asset is insulated.This field can be used to record additional information about the asset. Select the check box if the asset is insulated.Internal AccessBooleanMentions whether internal access is available for an asset.This field can be used to record additional information about the asset. Select the check box if internal access is available to inspect an asset.Internal FillingBooleanMentions whether the fluid is filled internally.This field can be used to record additional information about the asset. Select the check box if the asset is filled internally.Internal Inspection AccessBooleanMentions whether an asset is inspected internally.This field can be used to record additional information about the asset. Select the check box if there is access available to inspect an asset internally.Nominal ThicknessNumericSpecifies the manufactured or the estimated thickness used as a base measurement.This field is populated automatically based on a specified piping nominal diameter value and schedule.Operating PressureNumericSpecifies the pressure of an asset during normal operation. It is measured in pounds per square inch gauge.The value for this field can be specified manually using the datasheet.Operating TemperatureNumericSpecifies the temperature of an asset during a normal operation. It is measured in degrees Fahrenheit.The value for this field can be specified manually using the datasheet.Operational Start DateDateMentions the operational start date for an asset.Select  for the Operation start date.Outer DiameterNumericSpecifies the diameter of a piping asset from the outer wall surface. It is measured in inches.This field is populated automatically based on a specified Piping Nominal Diameter value and Schedule. This field is required to calculate certification requirements for the Asset Type Piping.Override CertificationBooleanSpecifies whether the calculated certification is to be overridden.If you select the Override Certification checkbox, you can override the certification field, and then select the value for the Override Certification field from a drop-down list box.PDNNumericMentions the value of Protected Pressure x Outer Diameter. It is measured in inches.This field is populated automatically from the multiplication of Protected Pressure and Outer Diameter.Piping Nominal Diameter - DNNumericSpecifies a nominal diameter for piping. It is measured in inches.This field populates Piping Nominal Diameter as per ISO specifications. The values in Piping Nominal Diameter field is populated by a drop-down list box. This field will be disabled if Piping is not selected as the Asset Type. When a value is selected for the Piping Nominal Diameter - NPS or the Piping Nominal Diameter - DN fields:A list of possible values are generated for the Schedule field.After a value is selected for the Schedule field, the Pipe Properties reference table populates the Nominal Thickness and the Outside Diameter fields.Piping Nominal Diameter - NPSNumericSpecifies a nominal pipe size for piping. It is measured in inches.The field populates Piping Nominal Diameter according to the ASME specifications. The values in the Piping Nominal Diameter field will be populated by a drop-down list box. This field will be disabled if Piping is not selected as the Asset Type. When a value is selected for the Piping Nominal Diameter - NPS or the Piping Nominal Diameter - DN fields:A list of possible values is generated for the Schedule fieldAfter a value is selected for the Schedule field, the Pipe Properties reference table populates the Nominal Thickness and the Outside Diameter fields.Protected PressureNumericStores the protected pressure of the asset. It is measured in pounds per square inch gauge.Value for this field can be specified manually using the datasheet. This field is required to calculate certification requirements for the asset of the following types:Pressure VesselSimple Pressure VesselSteam Boiler PipingPVNumericMentions the value of Protected Pressure x Volume. It is measured in pounds per square inch gauge.This field is populated automatically from the multiplication of Protected Pressure and Volume.ScheduleCharacter (255)Specifies the schedule number corresponding to the wall thickness of the pipe.When a value is selected for either the Piping Nominal Diameter - NPS or the Piping Nominal Diameter - DN fields, a list of possible values is generated for the Schedule field in a drop-down list box. This field will be disabled and blank if Asset Type is not selected as Piping.VolumeNumericSpecifies the amount of fluid stored within an asset. It is measured in Gallons.The value for this field can be specified manually using the datasheet. Value for this field can be specified manually using the datasheet. This field is required to calculate certification requirements for the asset of the following types:Pressure VesselSimple Pressure VesselSteam Boiler
+Fluid DataFluid Data datasheet stores fluid-related information required for the certification calculation.
+The table below provides an alphabetical list and description of the fields that exist for Fluid Data. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+
+Field
+
+Data Type 
+
+Description
+
+Behavior and Usage 
+CategoryCharacter (255)Stores the fluid category list according to Table - F.This field contains a list of system codes which exist in the MI_INTGY_FLUID_CTGY system code table. The values in this field are populated from a drop-down list box.DescriptionCharacter (255)Stores the fluid description.This field is populated automatically from the selected fluid name. Flash PointNumericStores the flash point of the fluid.The value for this field can be specified manually using the datasheet.GroupCharacter (255)Specifies the fluid group according to Table - F.This field is populated automatically according to the rules in Table - F. This field contains a list of system codes that exist in MI_INTGY_FLUID_GROUP system code table.Maximum Permissible TemperatureNumericStores the maximum permissible temperature of the fluid. It is measured in degrees Fahrenheit. Specify the value for this field manually using the datasheet.NameCharacter (255)Stores the name of the fluid.This field contains a list of system codes that exist in the MI_INTGY_FLUID_NAME system code table. You can choose from the baseline values, populated from a drop-down list box.TypeCharacter (255)Stores the type of fluid.This field contains a list of system codes that exist in the FLUID TYPES system code table. The fluid type is Combustible or Flammable.
+Compliance Recommendation MappingThe Compliance Recommendation Mapping family stores details related to Compliance Recommendations Mapping.
+The table below provides an alphabetical list and description of the fields that exist for the Compliance Recommendation Mapping family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+
+Field
+
+Data Type 
+
+Description
+
+Behavior and Usage 
+ReferenceCharacter (255)Specifies the reference to the system code.This field stores the references of a mapping record which exist in the MI_MAPPING_REFERENCE system code table.Source FamilyCharacter (255)Stores the ID of the family from which it is mapped.This field contains the ID of the source family from which it is mapped.Source FieldCharacter (255)Stores the ID of the field from which it is mapped.This field contains the ID of the source field from which it is mapped.Target FamilyCharacter (255)Stores the ID of the target family from which it is mapped.This field contains the target ID of the family to which it is mapped.Target FieldCharacter (255)Stores the ID of the target field from which it is mapped.This field contains the target ID of the family to which it is mapped.
+Inspection Summary ReferenceThe Inspection Summary Reference family stores inspection related information required for generating an Inspection Summary Reference record.
+The table below provides an alphabetical list and description of the fields that exist for Inspection Summary Reference. The information in the table reflects the type and behavior of these fields. This list is not comprehensive.
+FieldData TypeDescriptionBehavior and UsageInspection CategoryCharacterStores the Inspection Category required for generating a report for the EU Inspection Report datasheet.This field is populated with a list of inspection categories to be linked to an asset. This field is populated with the description of system codes stored in the MI_EN_DOC_CTGY system code table. Inspection InstructionCharacter Stores Inspection Instruction required for generating a report for the EU Inspection Report datasheet.
+This field is populated with a list of Inspection instructions to be linked to an asset. This field is populated with the description of system codes stored in the EU_INSP_INST system code table.
+Inspection SummaryTextStores the summary of observations that the Inspector enters for a European Inspection Event.In the EU Inspection report, based on the values selected in the Inspection Category and Inspection Instruction boxes, the summary will be auto populated with the value entered in this field.
+European Admin SettingsThe European Admin Settings family stores site-specific Compliance related information required for generating a European inspection task.The table below provides an alphabetical list and description of the fields that exist for European Admin Settings. The information in the table reflects the type and behavior of these fields. This list is not comprehensive.FieldData TypeDescriptionBehavior and UsageSiteCharacter (255)User defines the site that should have the values specified in Compliance Window and Inspection Documentation Window when a new Inspection Task is created for an asset belonging to the site. The user can access only those sites that he has the access.This field contains a list of sites that are available to the user, setting up the European Admin Settings. This is a required field.Note: After a record is created for a site, you cannot create another record for the same site.Applicable Regulation Character (255) Stores the regulation type that is applicable to a task.This field is populated with a list of regulations to be linked to a task. This field is populated with a description of system codes stored in MI_INTGY_REGULATION system code table. This field is always disabled.Compliance WindowNumericStores the value for Compliance Window in months.This field stores the duration in months and is copied to the Inspection Task when a new Inspection Task is created. The value for this field is specified manually.Inspection Documentation WindowNumericStores the value for Inspection Documentation Window. The UOM is measured in Months.This field stores the duration in months is copied to the Inspection Task when a new Inspection Task is created. The value for this field is specified manually.
+
+
+
+
+On this pageAsset Technical DataFluid DataCompliance Recommendation MappingInspection Summary ReferenceEuropean Admin Settings
+
+
+
+
+
+
+
+
+

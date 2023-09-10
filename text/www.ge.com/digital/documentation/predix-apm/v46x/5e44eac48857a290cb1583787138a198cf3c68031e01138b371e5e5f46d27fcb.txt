@@ -1,0 +1,118 @@
+
+
+
+Legacy User Actions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset HierarchyAsset Hierarchy
+Administrator Actions
+User Actions
+Legacy User Actions
+
+
+Workflows
+Instances
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Asset Hierarchy
+Legacy User Actions
+
+
+
+
+
+
+
+Legacy User ActionsFilter the Context BrowserYou can filter within the Context Browser selections by asset name.About This Task
+The filter capability for the Context Browser allows you to select an asset classification via the business functional hierarchy. 
+During selection of an asset context, you can filter the Context Browser list by asset name.
+The Context Browser contains columns of assets that are organized into business functional object groups by Enterprise, Site, Segment, and asset context groups by Asset. Each column contains asset names that can be selected and opened to select your asset. You can filter inside a column to help you find the asset context you want to use.
+ProcedureIn the module navigation menu, navigate to Assets, Analysis, or Dashboards.Select the Context Browser.In the Select Context window, select .The Asset Classification drop-down list appears.Select an option from the Asset Classification drop-down list, and then select Apply.All matching instances of the asset name appear in the search results.In the Select Context window, select an option from the list, and select Select.The asset context appears at the top.Search the Context BrowserAbout This Task
+You can search the Context Browser either by asset name or asset ID (Serial Number). Note: Asset ID is the serial number of the following Asset Hierarchy instances.EnterpriseSiteSegmentAsset
+The Search capability of the Context Browser allows you to select an asset of interest more quickly than you would via the Context Browser hierarchy. You can select an asset name in the hierarchy to access the asset.
+During selection of an asset context, you can search the Context Browser hierarchy either by asset name or asset ID.
+For more information, refer to the Navigate the Asset Hierarchy section of the documentation.
+ProcedureIn the module navigation menu, navigate to Assets, Analysis, or Dashboards.Select the Context Browser.Enter one of the following options in the Search field:Minimum three characters for the asset name.All matching instances of the asset name appear in the search results.Asset ID.An asset associated with that ID appears in the search result.In the Select Context window, select the desired asset, and select Select.The asset context selected appears at the top of the view.Select an Asset Context for AssetYou can use the Context Browser to select an asset context.About This Task
+For more information, refer to the Navigate the Asset Hierarchy section of the documentation.
+ProcedureIn the module navigation menu, go to
+Assets.Use the Context Browser to select an asset context.Select an Asset Context for AnalysisYou can use the Context Browser to select an asset context.About This Task
+For more information, refer to the Navigate the Asset Hierarchy section of the documentation.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Select an Asset Context for DashboardsYou can use the Context Browser to select an asset context.About This Task
+For more information, refer to the Navigate the Asset Hierarchy section of the documentation.
+ProcedureIn the module navigation menu, go to Tools > GE Dashboards.Use the Context Browser to select an asset context.Add or Remove Multiple Assets in AnalysisYou can add assets for analysis within the hierarchy so that you can compare time series data for multiple assets on a chart.About This Task
+You can add the same tag for multiple assets. Adding the same tag for multiple assets allows you to compare the same tag for other assets at the same level.
+You can add any asset to analysis that you have access to, enabling you to plot tags in the selected assets on the charts. This allows you to look at multiple assets to investigate or isolate an issue.
+The Tag Browser and Plotted Tags sections appear in the Tag Tree Browser. The Tag Browser section lists primary and secondary assets. The primary asset is selected in the Context Browser. While you can delete secondary assets in the view, you cannot delete the primary asset.
+You cannot add additional assets for Event Data Analysis charts in the Tag Tree Browser or Search Browser panes.
+You can plot tags for multiple selected assets simultaneously. Assets with tag expressions plotted cannot be removed.
+You can drag any tag associated with a listed asset to a chart, or remove the tag from its associated charts.
+ProcedureTo add secondary assets to a chart:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context for the primary asset.Select  to view the Tag Tree Panel.Complete one of the following actions:
+In the Tags tab, select  next to the Tag Browser section.In the Expressions tab, select  next to the Asset Scope section.
+The Asset Selector window appears.In the Asset Selector window, select  next to an asset to move it to the right pane.Continue to select assets as needed, and then select Open.Assets that are added to the Tag Tree Browser section appear below the primary asset in the order that they are added.To remove a secondary asset and its associated tags:Hover over the selected asset, and then select X.In the Remove dialog box, complete one of the following actions:
+Select OK to remove the selected asset and its tags in the Tag Browser section. Any previously plotted tags for this asset remain in the Plotted Tags section and are plotted on the charts.Select Also delete all plotted tags that belong to this asset, and then select OK to remove the selected asset and its tags in the Tag Browser section, and any plotted tags associated with the deleted asset.
+Secondary assets and their associated tags are removed.Add Multiple Assets in DashboardsYou can add an asset context to a widget destination, allowing the user to navigate to a specified destination within GE Digital APM by selecting a link on the widget.About This Task
+Some widgets allow selection of views and multiple destinations. For more information, refer to the Navigate the Asset Hierarchy section of the documentation.
+ProcedureIn the module navigation menu, go to Tools > GE Dashboards.Use the Context Browser to select an asset context. Select a view.In an existing card, select Action and then select Edit Card.Hover over a widget, and then select .Configure the specific widget, as needed. For more information, refer to the Configure Widgets section of the GE Dashboards documentation.When you select Dashboards as the destination during configuration, select the Set Context link.Use the Context Browser to select a context.Continue the configuration for the widget.
+Related ConceptsConfigure WidgetsRelated tasksNavigate the Asset Hierarchy
+
+
+
+
+On this pageFilter the Context BrowserSearch the Context BrowserSelect an Asset Context for AssetSelect an Asset Context for AnalysisSelect an Asset Context for DashboardsAdd or Remove Multiple Assets in AnalysisAdd Multiple Assets in Dashboards
+
+
+
+
+
+
+
+
+

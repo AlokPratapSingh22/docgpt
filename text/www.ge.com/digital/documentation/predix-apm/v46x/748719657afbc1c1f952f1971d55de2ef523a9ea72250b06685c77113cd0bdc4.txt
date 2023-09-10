@@ -1,0 +1,60 @@
+
+
+
+
+European Inspection Management System Code Tables | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+European Inspection Management System Code TablesThe following table lists the System Code Tables for European Inspection Management:
+System Table IDSystem Table DescriptionSystem Code IDSystem Code DescriptionBehavior and UsageMI_COMPLIANCE_STANDARDCompliance StandardAPI 510API 510This system code table stores the certification value. The values in this field are populated from a drop-down list box.API 653API 653NBICNBICAPI 650API 650ASTM 1137ASTM 1137DIN 43760DIN 43760API 570API 570TC-1A MT IIASNT TC-1A MT Level IITC-1A PT IIASNT TC-1A PT Level IITC-1A RT IIASNT TC-1A RT Level IITC-1A UT Thickness IIASNT TC-1A UT ThicknessTC-1A UT Shearwave IIASNT TC-1A UT Shearwave Level IIZUSZUSBPbPMI_INTGY_FLUID_CTGYIntegrity Fluid CategoryExplosiveExplosiveThis system code table stores the fluid category list. The values in this field are populated from a drop-down list box.Flammable Category 1Flammable Category 1Flammable Category 2Flammable Category 2Flammable Category 3Flammable Category 3PyrophoricPyrophoricAcute Toxic Category 1Acute Toxic Category 1Acute Toxic Category 2Acute Toxic Category 2OxidisingOxidisingCorrosiveCorrosiveOthersOthersNR13_FLAMMABLENR13_FLAMMABLECCombustibleThis system code table stores the type of fluid. The fluid type is either Combustible or Flammable.IFlammableFLUID TYPESFluid TypesGasGasThis system code table stores the type of fluid. The fluid type is either Gas or Liquid.LiquidLiquidMI_INTGY_ASSET_TYPEIntegrity Asset TypeSteam BoilerSteam BoilerThis system code table is required to calculate certification requirements for the asset of the following types:Pressure VesselSimple Pressure VesselSteam BoilerPiping Pressure VesselPressure VesselSimple Pressure VesselSimple Pressure VesselPipingPipingMI_INTGY_REGULATIONIntegrity Inspection RegulationsEuropean Inspection RegulationEuropean Inspection RegulationThis system code table is populated with a list of European Inspection regulations to be linked to a task. This field is always disabled.MI_MAPPING_REFERENCEMI Mapping ReferenceATD - CRAsset Technical Data - Compliance RecommendationThis system code table stores the references of a Compliance Recommendation Mapping recordMI_INTGY_FLUID_NAMEIntegrity Fluid NameThis system code table stores a list of fluid names. You can choose from the baseline values, populated from a drop-down list boxMI_INTGY_FLUID_GROUPIntegrity Fluid Group11This system code table specifies the fluid group according to .22MI_INTGY_GRACE_PERIOD_BASISGrace Period BasisUser_Defined User Defined This system code table contains the information about basis on which the Inspection Grace Date is calculated. EOM End of Month EOQ End of Quarter EOY End of Year MI_CHAMBERChamberAHRSHalf pipe jacketThis system code table information about the type of chamber. The values in this field are populated from a drop-down list box. ARJacketAVRSFull pipe jacketDISKDiskFARMLoading armGASKGasketGAUGGaugeGSMTTotal objectHEAD2Head2HEADHead1IRInteriorIVRSInterior coilJAC2Jacket 2 chamberJAC3Jacket 3 chamberJACKJacket 1 chamberNOZZNozzlesPRDRHot chamberRDDRTube chamberRUDRShell chamberSHEESheetSHELShellSLTGHoseSORAMiscelleneous chamberSRVRCold chamberTUBETubeTUSHTubesheetEU_INSP_INSTEuropean Inspection InstructionsAwSV-RTAwSV - Recurrent TestThis system code table stores the value selected in the Inspection Instruction. The values in this field are populated from a drop-down list box.AwSV-BEF-COM-SCAwSV Test Before Commissioning - After a Significant ChangeAwSV-BEF-COM-BRAwSV Test Before Commissioning - Before RestartingAwSV-BEF-COM_FTAwSV Test Before Commissioning - For The First TimeAwSV-DecomAwSV Test When DecommissionedD-CHK-BEF-STRT-UP-RID -Check Before Start-Up - After a Change Requiring InspectionD-CHK-BEF-STRT-UP-FTD -Check Before Start-Up - For The First TimeD-RI-PSD -Repeated Inspection -Checking the Pressure SystemD-RT-InternalD -Repeated Test -Internal TestD-RI-OTSTD -Repeated Test -Outside Test and Strength TestD-PI-ExternalD-Periodic Inspection -External InspectionD-PI-STD-Periodic Inspection-Strength TestEX-BEF-COM-FTEX Test Before Commissioning - For The First TimeEX-BEF-COM-RIEX Test Before Start-Up After a Change Requiring InspectionEX-PI-5.1EX-Periodic Inspection -5.1EX-PI-5.3EX-Periodic Inspection -5.3EX-RT-5.2EX-Recurrent Test -5.2INSP-REPORTInspection ReportRESUMEResumeMI_EN_DOC_CTGYInspectionTest Certificate by ZUSTest Certificate by ZUSThis system code table stores the value selected in the Inspection Document Category. The values in this field are populated from a drop-down list box.Test Record by Company InspectorTest Record by Company InspectorTest Report by SubcontractorTest Report by subcontractorMI_EU_TASK_RESCHEDULEInspectionNXT_DT_BASED_ON_COMPL_DATENext Date Based on Completion DateThis system code table captures the information based on how the Next Date field is calculated. The field can be calculated either by the Completion Date or the Previous Next Date. This field is always disabled.NXT_DT_BASED_ON_PREV_NXT_DTNext Date Based on Previous Next Date
+
+
+
+
+
+
+
+
+
+
+
+

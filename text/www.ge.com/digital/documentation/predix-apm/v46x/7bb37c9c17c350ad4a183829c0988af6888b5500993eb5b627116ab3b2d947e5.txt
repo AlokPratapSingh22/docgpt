@@ -1,0 +1,169 @@
+
+
+
+Cause Codes | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+AdminAccess the GAA Administrator Page
+GAA Administrator Workflow
+System Codes
+Event Categories
+Event Types
+Cause Codes
+Amplification Codes
+Fuel Types
+Mapping Records
+Event Transitions
+Companies
+Plants
+Units
+Unit Capacity
+Performance Record and Report Configuration
+
+
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Admin
+Cause Codes
+
+
+
+
+
+
+
+Cause CodesAbout Cause CodesIn an Event, the Cause Code field stores value that is used to identify the cause of the event. The value in the Cause Code field is populated using value in the Cause Codes records. Each Cause Codes record represents a Cause Code and can be used to populate the Cause Code field in an Event.The baseline GE Digital APM database contains Cause Codes records that are already populated with values that identify cause codes as they are defined by NERC or CEA. We recommend that you:Do not modify the baseline Cause Codes records so that they match what is defined by NERC or CEA.Do not create your own Cause Codes records.Note: For cause codes that can be used to identify the cause of an event for more than one Unit Type, multiple Cause Codes records exist in the baseline GE Digital APM database, one for each Cause Code and Unit Type combination.The Cause Codes themselves are defined by NERC and CEA. NERC and CEA divides cause codes into systems and components to group the codes into categories. As a result, the 
+GE Digital APM system uses four fields to define cause codes.
+Cause Code System
+
+Cause Code Component
+Cause Code Description
+Cause Code
+About Populating the Cause Code Field in an EventCause Code field in an Event is populated using value from the Code field in a Cause Code record. In an Event, the Cause Code System field will contain a list of each unique value in the System field in all Cause Code records with the value in the Unit Type field that matches the value in the Unit Type field in the GAA Unit record with which the Event is associated.Example: Value in Cause Code field when value of Unit Type field is Miscellaneous (800) 
+For example, using the baseline Cause Code record, consider a Primary Event that is linked to a GAA Unit with the value Miscellaneous (800) in the Unit Type field. In this case, the Cause Code System field in Event record will contain a list of each unique value in the System field in all Cause Code records with the value Miscellaneous (800) in the Unit Type field.
+In an Event, when the Cause Code System field is populated with a value, the Cause code Component field will contain only values in the Component field in Cause Code records with a value in the System field that matches the value in the Cause Code System field in the Event. The Cause code Component field will not contain a list of values until the Cause Code System field contains a value. So in this example, if you select External in the Cause Code System field, the Cause code Component field would contain a list of the following values:
+
+Catastrophe
+
+Economic
+
+Fuel Quality
+
+Miscellaneous (External)
+
+If you populate the Cause Code Category field, the Cause Code field will contain only values in the Code and Code Description fields in Cause Code records with values in the System and Component fields that match the values in the Cause Code System and Cause code Component fields in the Event. The list in the Cause Code field in an Event is displayed using the format Cause Code (Cause Code Description). The Cause Code field will not contain a list of values until the Cause code Component field contains a value. So in this example, if you select Miscellaneous (External) in the Cause code Component field, the Cause Code field would contain a list of the following values:
+
+9300 (Transmission System Problems Other Than Catastrophe)
+
+9305 (Ash Disposal Problem)
+
+9310 (Operator Training)
+
+9320 (Other Miscellaneous External Problems)
+
+Access a Cause CodeProcedure
+Access the GAA Administrator page.In the System Codes section, select Cause Codes.
+The Cause Codes subsection appears, displaying the following columns of information:
+
+Code
+
+Code Description
+
+System
+
+Component
+
+Unit Type
+
+Regulatory Organization
+
+
+
+
+Locate the row that contains the Cause Code that you want to access. In the Code column, select the link.
+The Edit Cause Code window appears, displaying the datasheet of the selected Cause Code.
+Note: As needed, you can modify the values in the available fields, and then select  to save your changes.
+Add a Cause CodeProcedure
+Access the GAA Administrator page.In the System Codes section, select Cause Codes.
+The Cause Codes subsection appears.
+
+
+
+In the upper-left corner of the Cause Codes section, select .
+The Add Cause Code window appears.
+As needed, enter the values in the available fields. Select . 
+The new Cause Code is added. 
+Delete a Cause CodeAbout This Task
+Important: You must not delete a baseline Cause Code.
+Procedure
+Access the GAA Administrator page.In the System Codes section, select Cause Codes.
+The Cause Codes subsection appears.
+Select the row containing the Cause Code that you want to delete.In the upper-right corner of the Cause Codes section, select .
+The Delete Cause Code dialog box appears.
+Select Yes.
+The selected Cause Code is deleted and the updated list of Cause Codes appears.
+
+
+
+
+
+On this pageAbout Cause CodesAbout Populating the Cause Code Field in an EventAccess a Cause CodeAdd a Cause CodeDelete a Cause Code
+
+
+
+
+
+
+
+
+

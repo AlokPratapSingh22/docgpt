@@ -1,0 +1,140 @@
+
+
+
+Tag Filters | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag PanelTag Panel
+Tag Browser
+Tag Expressions
+Tag Filters
+Search Browser
+
+
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Tag Panel
+Tag Filters
+
+
+
+
+
+
+
+Tag FiltersAbout Tag FiltersFilters can be enabled and customized for each plotted tag.Filters are accessed via the Tag Tree Panel by selecting . Tags appear in the filter list after plotting.Note: Chart selection for Event Data Analysis charts is limited to X-Y and Polar.Value-Based filters, when applied to plotted tag and tag expressions, allow you to restrict the data on a chart to a specific range and apply globally to all charts on the view. Conditional filters, when applied to plotted tag and tag expressions, exclude all data on the chart that falls outside the filter settings and apply to all the tags on the chart.A hierarchy of the view's card names, chart names, and tag names for tags that are plotted on a chart in the view appear on the Plotted Tag section in the Tag Tree Browser. A tag with an enabled filter includes a  to the left of the tag name in Plotted Tags list. The icon color matches the line color for the plotted tag.Note:  The mode (Conditional Filter or Value-Based Filter) appear when hovering over the Filter Mode icon . Filter mode does not appear on the Tag Tree Browser.When a tag is part of a tag series, the filter icon appears for the tag, not the tag series. If both tags in a tag series have filters applied, both the tags display the filter icon. Changes to data in the filter apply to all occurrences of the tag on the charts and in the Plotted Tag section.Filters can be modified to change the minimum and maximum parameter values. You can also specify a range using the slider handles and then slide the range across the slider bar in order to change the minimum and maximum parameter values. You can invert the filter to display data outside the restricted range. You can apply multiple filters to a chart at a time. You can reset or clear a filter, allowing the full data range to appear on the charts.Filters on tags or tag series can be saved to a template. Filtered tags or tag series on a view do not affect other views or templates. Create Value-Based FiltersUse value-based filters to restrict visible data to a minimum and maximum range on the Y-axis for plotted tags or tag expressions.Before You BeginPlot tags or tag expressions to make them available for filtering.About This Task
+A value-based filter allows you to exclude all data on the chart that falls outside the min and max settings for the tag or tag expression selected. All other tags or tag expressions on the chart are not affected. This allows you to focus on the relevant data within the set parameters. Additional filters that are value-based can also be set for other tags or tag expressions on the chart.
+Filters can be applied to tags on both Time Series Analysis and Event Data Analysis views. In an Event Data Analysis chart, the min and max values are based on the tag data specific to the events time range, not the entire tag range.
+The Plotted Tags section displays a hierarchy of the view's card names, chart names, and tag names for tags that are plotted on a chart in the view. The X-Y and Polar charts display tag series, which are displayed as a series under the chart name, with the tag names displayed below the series. Plotted tags with filters applied appear in the Plotted Tags list with . Plotted tags that are part of a tag series are filtered separately. You can toggle a conditional filter to a value-based filter by selecting  for the selected filter.Note: Hovering over the Filter Mode displays the mode Conditional Filter or Value-Based Filter. Filter mode does not appear on the Tag Tree Browser.
+Minimum and maximum filter values for tags or tag expressions can be modified by entering specific values or dragging the left or right slider handles.
+Filtering for plotted tags and tag expressions can be saved as part of an analysis template; however, when a date range is changed for a plotted tag expression on a template, the filter is not saved.
+ProcedureTo modify value-based filters using the minimum and maximum fields:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, complete one of the following actions:
+Select a Public Templates or My Templates view.Select New Time Series Analysis or New Event Data Analysis.
+On an existing chart with plotted tags or tag expressions, select  on the Tag Tree Panel.Plotted tags and tag expressions on the view are available for filtering.Hover over  for a tag or tag expression, and make sure the mode is Value-Based Filter.Enter values into the minimum or maximum fields for the tags or tag expressions, if needed.The Apply button is enabled.Select Apply, to apply all the filters at a time.The data for the plotted tag or tag expression on all charts on the view is restricted to the values set for the plotted tag or tag expression.To modify value-based filters using the bars on the slider:On an existing chart with plotted tags or tag expressions, select  on the Tag Tree Panel.Plotted tags or tag expressions on the view are available for filtering.Hover over  for a tag or tag expression, and make sure the mode is Value-Based Filter.For a tag or tag expression, select the left slider handle next to the minimum field or the right slider handle next to the maximum field and drag it to the position needed. Repeat this action for more tags or tag expressions as needed.You can slide either or both bars on the slider to adjust values. The values in the minimum and maximum fields change as you drag the slider handles. You can also select a specific range using the slider handlers and then slide it across the slider bar. The values in the minimum and maximum fields are updated as per the specified range. Select Apply, to apply all the filters at a time.The data for the plotted tags or tag expressions on all charts on the view is restricted to the values set for the plotted tag or tag expression.Create Conditional FiltersUse conditional filters to display data where the filtered range for all tags or tag expressions on the chart is valid for the conditionalized tag or tag expression.Before You BeginPlot tags or tag expressions to make them available for filtering.About This Task
+Conditionalized filters allow you to filter all the data in the charts and template to display data when the condition is true. This allows you to display data in the charts based on the operating mode of the equipment.
+A conditionalized filter allows you to exclude all data on the chart that falls outside the min and max settings for the tag or tag expression selected. All other tags or tag expressions on the chart also exclude data outside these settings. This allows you to focus on the relevant data within the set parameters. You can set additional conditional filters for other tags or tag expressions, making the data range set cumulative. Separate filters that are value-based can also be set for other tags or tag expressions on the chart.
+You can also have tags or tag expressions with discrete values. To create a condition-based filter with discrete values, select  in the Condition Based Filters section and then select View as Discrete Filter. The values are displayed as check boxes; select the required check box. The chart displays data for the filtered values. You can modify the condition-based filters in existing templates to use discrete values instead of a continuous range.Note: When you set a conditional filter for a tag or tag expression, the x-axis does not change.
+When you add multiple conditional filters, the narrowest parameters set for all the conditional filters apply to the data displayed for all the tags or tag expressions. If you combine value-based filters with conditional filters, one of following results is possible:If the parameters set for a value-based filter are inside the parameters set for conditional filters, the conditional filters adjust data for all tags or tag expressions to the narrowest parameters set for all the conditional filters. The value-based filter further adjusts data for the tag or tag expression only.If one or both parameters set for value-based filter are outside the parameters set for conditional filters, the conditional filters adjust data for all tags or tag expressions to the narrowest parameters set for all the conditional filters. The parameters set for the value-based filter that are outside the parameters set for the conditional filter adjust to the conditional filter parameters.
+Filters can be applied to tags on both Time Series Analysis and Event Data Analysis views. In an Event Data Analysis chart, the min and max values are based on the tag data specific to the events time range, not the entire tag range.
+The Plotted Tags section displays a hierarchy of the view's card names, chart names, and tag names for tags that are plotted on a chart in the view. The X-Y and Polar charts display tag series, which are displayed as a series under the chart name, with the tag names displayed below the series. Plotted tags with filters applied appear in the Plotted Tags list with . Plotted tags that are part of a tag series are filtered separately. You can toggle a value-based filter to a conditional filter by selecting  for the selected filter.Note: Hovering over the Filter Mode icon displays the mode (Conditional Filter or Value-Based Filter). Filter mode does not appear on the Tag Tree Browser.
+Minimum and maximum filter values for tags or tag expressions can be modified by entering specific values or dragging the bars on the slider.
+Filtering for plotted tags and tag expressions can be saved as part of an analysis template, however, when a date range is changed for a plotted tag expression on a template, the filter is not saved.
+ProcedureTo modify conditional filters using the minimum and maximum fields:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, complete one of the following actions:
+Select a Public Templates or My Templates view.Select New Time Series Analysis or New Event Data Analysis.
+On an existing chart with plotted tags or tag expressions, select  on the Tag Tree Panel.Plotted tags and tag expressions on the view are available for filtering.Hover over  for a tag or tag expression, and verify the mode is Conditional Filter.Enter values into the minimum or maximum fields for the tags or tag expressions, if needed.The Apply button is enabled.Select Apply, to apply all the filters at a time.The data for all plotted tags or tag expressions on the selected chart on the view is restricted to the values set for the conditionalized plotted tag or tag expression.To modify conditional filters using the bars on the slider:On an existing chart with plotted tags or tag expressions, select  on the Tag Tree Panel.Plotted tags or tag expressions on the view are available for filtering.Hover over  for a tag or tag expression, and verify the mode is Conditional Filter.For a tag or tag expression, select the left slider handle next to the minimum field or the right slider handle next to the maximum field and drag it to the position needed. Repeat this action for more tags or tag expressions as needed.You can slide either or both bars on the slider to adjust values. The values in the minimum and maximum fields change as you drag the slider handles.You can also select a specific range and then slide it across the slider bar. The values in the minimum and maximum fields are updated as per the specified range.Select Apply, to apply all the filters at a time.The data for all plotted tags or tag expressions on the selected chart on the view is restricted to the values set for the conditionalized plotted tag or tag expression.Create Custom Discrete FiltersUse custom discrete filters to display data where the tags or tag expressions are filtered for discrete values instead of a continuous range.Before You BeginPlot tags or tag expressions to make them available for filtering.ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, complete one of the following actions:
+Select a Public Templates or My Templates view.Select New Time Series Analysis or New Event Data Analysis.
+On an existing chart with plotted tags or tag expressions, select  on the Tag Tree Panel.Plotted tags and tag expressions on the view are available for filtering.In the Custom Discrete Filter section, select . Select one of the following options: 
+Create a new custom discrete filterCreate a new custom discrete filter group
+To create a custom discrete filter group, enter the GROUP NAME and TAG EXPRESSION NAME. In the FORMULA field, enter a conditional statement for the filter. Complete the formula string using operands and operators.
+Note: The conditional statement must have :NONE(0) as one of the condition expressions. For example, :IF(($Asset_ID|Tag_1| > value), $Asset_ID|Tag_1|,:NONE(0)).Formula help is available if you select .
+Select Done. The tag expression is added. Select the filters in the group, and then select Apply to apply all the filters at a time. 
+Note: When multiple filters are selected within a group, the OR condition is applied. If multiple groups are selected, the AND condition is applied.
+To create a new custom discrete filter, enter the TAG EXPRESSION NAME. In the FORMULA field, enter a conditional statement for the filter. Complete the formula string using operands and operators.
+Note: The conditional statement must have :NONE(0) as one of the condition expressions. For example, :IF(($Asset_ID|Tag_1| > value), $Asset_ID|Tag_1|,:NONE(0)).Formula help is available if you select .
+In the Select Group drop-down list box, select the group to which you want to add the filter.Select Done. The tag expression is added.Select the filter and then select Apply.The data for the plotted tag or tag expression on all charts on the view is restricted to the values set for the plotted tag or tag expression.ResultsThe custom discrete filters for plotted tags and tag expressions can be saved as part of an analysis template.Note: To delete a custom discrete filter, select the filter and then select . If all the filters in a group are deleted, the custom discrete filter group is also deleted. To modify a filter, you must first delete the filter and then recreate it.Invert Filter ValuesUse the Invert Filter icon to toggle displayed data inside and outside of the restricted data range for a plotted tag.Before You BeginMake sure any required tags are plotted to your chart before modifying filters.About This Task
+Inverting a filter set up for a data range allows you to switch the data for a plotted tag to inside or outside the set range.
+Filters can be applied and inverted for tags on both Time Series Analysis and Event Data Analysis views. Plotted tags with filters applied appear in the Plotted Tags list with . Plotted tags that are part of a tag series are filtered separately.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, complete one of the following actions:Select a Public Templates or My Templates view.Select New Time Series Analysis or New Event Data Analysis.On an existing chart with plotted tags, select  on the Tag Tree Panel.Plotted tags on the view are available for filtering.Modify the minimum and maximum parameter values for a specified tag.Select  for the specified tag. The data outside the specified range is displayed for the plotted tag on all charts in the view. Selecting the Invert Filter icon again displays the data inside the specified range.Reset the FiltersYou can reset all filters for plotted tags on charts or clear a specific filter to display its default value.About This Task
+Tag Filters can be reset to their default values for all plotted tags in a view, or a specific tag filter can be cleared to display default data for that plotted tag.
+Filters can be applied and reset for tags on both Time Series Analysis and Event Data Analysis views. Plotted tags with filters applied appear in the Plotted Tags list alongside . Plotted tags that are part of a tag series are filtered separately. 
+ProcedureTo reset the tag filter for all plotted tags:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, complete one of the following actions:
+Select a Public Templates or My Templates view.Select New Time Series Analysis or New Event Data Analysis.
+On an existing chart with plotted tags, select  on the Tag Tree Panel.Plotted tags on the view are available for filtering.Select Reset All.All available plotted tags display default minimum and maximum values.To clear a tag filter for a specific plotted tag:On an existing chart with plotted tags, select  on the Tag Tree Panel.Hover over the selected filter, and then select X.The selected plotted tag displays default minimum and maximum values.Mute and Unmute a FilterYou can mute or unmute a filter in the Tag Filters pane.About This Task
+Filter lists for plotted tags and tag expressions appear in the Tag Filters pane, where you can apply value-based or conditional filters. Muting a filter for a tag or tag expression on a chart allows you to display the full data for the selected tag or tag expression without clearing or resetting the filter. Filters are available for all template types.
+Muting a conditional filter affects all the tags or tag expressions on the chart. Muting a value-based filter affects all charts on the view where the selected tag or tag expression is in use.
+ProcedureTo mute a filter:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, complete on of the following actions:
+Select a Public Templates or My Templates view.Select New Time Series Analysis or New Event Data Analysis.
+On an existing chart with plotted tags or tag expressions, select  on the Tag Tree Panel.On a value-based or conditional filter, select the colored tag icon.The colored tag icon turns gray. If the selected filter is conditional, the full data set for all tags and tag expressions is available on the chart. If the selected filter is value-based, the full data set for the selected tag or tag expression is available for all charts in the view where the tag or tag expression appears.To unmute a filter:On an existing chart with plotted tags or tag expressions, select  on the Tag Tree Panel.On a value-based or conditional filter, select the gray tag icon.The gray tag icon resumes its color. If the selected filter is conditional, the data for all plotted tags or tag expression on the selected chart is restricted to the values set for the conditionalized plotted tag or tag expression. If the selected filter is value-based, the data for the plotted tag or tag expression on all charts on the view is restricted to the values set for the plotted tag or tag expression.Share the Tag FiltersYou can share filters for tags and tag expressions to templates that are available to you.About This Task
+Default filters use threshold values that are expected for each tag. You can change filter settings for a tag, save or update them as a template, then share them with templates that are available to you.
+You can share a filter from an Alert Analysis Chart or an Analysis Chart. Filters can be value-based or conditional and are shared to other Analysis Templates.
+When you share a filter on a view, it is applied to one or more templates selected by you. Templates with shared filters can then be viewed, modified, and associated with an Alert Template. Templates with modified filters affect existing templates associated with the Alert Template. You can share filters across public and private templates.
+The name of the shared filter cannot be modified. 
+When sharing a filter, you can select from private templates and public templates associated with the selected asset context, both instance and class. Templates with successfully shared filters are available for additional filter sharing.
+Shared filters are muted after sharing and must be unmuted on the receiving template. If a shared filter's tag is not plotted on the receiving template, the filter name is orange. You must plot the tag prior to saving the receiving template.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select  on the Tag Tree Panel.On a selected filter, select .In the Share Filters dialog box, select a template in the list under Share to Template, and then select Share.The filter is shared with the selected template.Note: You can share the filter with additional templates by repeating the steps above. 
+
+
+
+
+On this pageAbout Tag FiltersCreate Value-Based FiltersCreate Conditional FiltersCreate Custom Discrete FiltersInvert Filter ValuesReset the FiltersMute and Unmute a FilterShare the Tag Filters
+
+
+
+
+
+
+
+
+

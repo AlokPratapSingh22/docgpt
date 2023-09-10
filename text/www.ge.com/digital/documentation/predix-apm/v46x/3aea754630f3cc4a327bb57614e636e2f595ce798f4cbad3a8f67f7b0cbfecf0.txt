@@ -1,0 +1,91 @@
+
+
+
+Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Data PermissionsOverview
+Manage Data Permissions
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Data Permissions
+Overview
+
+
+
+
+
+
+
+OverviewAbout Data PermissionsYou can use data permissions to define which Security Users and Security Groups can access records associated with a given family. By setting up data permissions, you can determine whether users will be able to view, modify, create, and delete records belonging to particular families.For example, a Security User with Create permissions on the Equipment family will be able to create new Equipment records, while users with View permissions on the Equipment family will only be able to search for and view existing Equipment records.Data permissions can be defined for both entity families and relationship families. For each family, you can define View, Update, Insert, and Delete permissions, but the functionality associated with each level of permissions is slightly different for entity families and relationship families.More Details
+When assigning data permissions, you can assign permissions for individual Security Users or for entire Security Groups.
+When you assign data permissions at the Security Group level, all members of that Security Group will have those permissions.When you assign data permissions at the Security User level, only that specific Security User will have those permissions.
+Assigning permissions at the Security Group level can be more efficient because the permissions assigned to a Security Group will be inherited by every member of that group. Assigning permissions at the Security User level, however, gives you more flexibility in customizing permissions for individual Security Users.
+Some data permissions are configured for the baseline Security Groups to provide access to the baseline GE Digital APM families. Others permissions will need to be configured manually before users will be able to access certain features in GE Digital APM. In addition, you will need to configure permissions manually for families that you create.
+About the Cumulative Effect of Data PermissionsYou can define data permissions for both Security Users and Security Groups. Because each type of permission offers different advantages, you will probably want to use a combination of both Security User and Security Group permissions to achieve the specific permissions that are needed for your system. Note:  Data permissions are cumulative. A given Security User will be granted the sum of all permissions assigned to him and to all the Security Groups of which he is a member. In addition, permissions that are granted to Security Groups spread down automatically to all of their security subgroups.Cumulative Permissions
+Consider an example where:
+ John Smith has View permissions on the Inspection Recommendation family.The MI Inspection Security Group has View, Update, Insert, and Delete permissions on the Recommendation family.
+If John Smith is a member of the MI Inspection Security Group, he will have all permissions on the Recommendation family. The permissions assigned to the MI Inspection group are added to the permissions assigned to John Smith at the Security User level, therefore giving him full permissions to the Recommendation family.
+Due to the cumulative effect of data permissions, you will want to assign to a given Security Group the lowest level of permissions that you want to grant to any member of that Security Group. Then, you should grant additional permissions to individual Security Users who need to have more permissions.
+About the Inheritance of Data PermissionsThe permissions that are assigned for a family are automatically inherited by its subfamilies. For instance, consider the following hierarchy.
+
+In this example, any permissions that are defined for the Event family will also apply to the Calibration and Inspection families. Similarly, any permissions that are defined for the Inspection family will also apply to the Bundle Inspection and Full Inspection families.In various places throughout GE Digital APM, families are displayed using a hierarchical view. In these cases, users must have at least View permissions at the highest level in the hierarchy in order to access any subfamily within that branch of the tree.For instance, users would need View permissions to the Event family in order to see the Calibration subfamily in a hierarchical view.Access the Data Permissions PageProcedureIn the module navigation menu, select
+Admin > Configuration Manager > Data Permissions.The Data Permissions page appears, displaying a list of Entity and Relationship families in the left pane.
+
+What To Do Next
+
+Grant Data Permissions
+
+
+
+
+
+
+On this pageAbout Data PermissionsAbout the Cumulative Effect of Data PermissionsAbout the Inheritance of Data PermissionsAccess the Data Permissions Page
+
+
+
+
+
+
+
+
+

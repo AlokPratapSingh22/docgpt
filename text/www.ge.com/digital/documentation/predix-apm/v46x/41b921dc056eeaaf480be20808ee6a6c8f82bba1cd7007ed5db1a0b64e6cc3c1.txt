@@ -1,0 +1,130 @@
+
+
+
+Datalogger Mappings | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+Workflows
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data Loaders
+AdminGlobal Preferences
+Family Preferences
+Datalogger Mappings
+
+
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+Admin
+Datalogger Mappings
+
+
+
+
+
+
+
+Datalogger MappingsCreate a Datalogger MappingAbout This Task
+Datalogger Mappings are one-to-one relationships between fields in GE Digital APM families and fields on various dataloggers that are supported by Thickness Monitoring. 
+The Datalogger Mappings workspace contains a list of baseline mappings. This topic describes how to create an additional mapping.
+Important: To avoid data integrity issues:Do not modify mappings for the TML Asset ID and TML ID fields.When you add a mapping, ensure that:The source and target fields are of the same data type.The combination of source and target fields is unique (that is, there is a one-to-one relationship between the source and target fields).
+
+Procedure
+Access the TM Admin Preferences page.
+In the left pane, select the Datalogger Mappings tab. The Datalogger Mappings workspace appears, displaying a list of mappings.
+Navigate to the blank row at the bottom of the list, and enter values in the available fields. 
+Tip: If you want to add more mappings, press Tab. Another blank row appears at the bottom of the list.
+Select .The Datalogger Mapping is created. In the row containing the mapping that you have added, the  icon is replaced with the  icon.Important: After the Datalogger Mapping is created, for these additional fields to appear in the Send To section of the TM Dataloggers page, the \\Public\Meridium\Modules\Thickness Monitoring\Queries\Datalogger TMLs catalog query must be modified. In addition, to use the Piping Rotation and Flip functionality, the \\Public\Meridium\Modules\Thickness Monitoring\Piping Rotation\Queries\Datalogger TMLs - Piping Asset catalog query must be modified.Results
+If the value in the Transfer Direction field is Send To (T), then, for the datalogger for which you have created the mapping: The newly created mapping appears in the grid in the Send To section on the TM Dataloggers page. When you Send Data to a Datalogger, the value in the Source Field field that you have specified in the mapping is also sent to the device.
+If the value in the Transfer Direction field is Receive From (F), then, for the datalogger for which you have created the mapping:  The newly created mapping appears in the grid in the Receive From section on the TM Dataloggers page. When you Receive Data from a Datalogger, the value in the Source Field field that you have specified in the mapping is populated with the value from the device field.
+
+Delete a Datalogger MappingAbout This Task
+Important: Do not delete the mapping between the following fields. If you do so, you will not be able to send or receive data using the datalogger.Source Field Source FamilyTarget FieldTML Asset IDThickness Measurement Location
+Asset ID
+TML IDThickness Measurement LocationDatapoint IDNumber of ReadingsThickness Measurement LocationNumber of ReadingsReadingsThickness MeasurementReading ValuesMeasurement Taken DateThickness MeasurementMeasurement Taken Date
+Procedure
+Access the TM Admin Preferences page.
+In the left pane, select the Datalogger Mappings tab. The Datalogger Mappings workspace appears, displaying a list of mappings.
+In the upper-right corner of the workspace, select .A column of check boxes appears in the grid.
+In the row containing the mapping that you want to delete, select the check box.In the upper-right corner of the workspace, select , and then select Delete.A message appears, asking you to confirm that you want to delete the mapping.Select Yes.The Datalogger Mapping is deleted.ResultsDepending on the value in the Transfer Direction field in the mapping that you deleted, the data related to the mapping is no longer sent to or received from the datalogger.Datalogger Mapping Records
+Datalogger Mapping records are used to determine the relationship between fields in GE Digital APM families and fields used in a datalogger. This topic provides an alphabetical list and description of the fields that exist for the Datalogger Mapping family. The information in the table reflects the baseline state and behavior of these fields. 
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageAsset TypeCharacterIndicates whether the mapping is applicable only to piping assets or to all assets.The default value is null. When the value in this field is Piping Asset, the mapping for piping assets supersedes the mapping for all assets. This field is populated by the MI_DLG_ASSET_TYPE System Code Table.Device TypeCharacterThe type of the datalogger whose field you want to map.
+This field contains the description of all the System Codes in the M655 System Code Table. You can choose from the following baseline values:
+GE DMS2GE DMS Go/Go+Olympus 37DL Plus Ultrasonic Thickness GageOlympus 37DL Plus Ultrasonic Thickness Gage
+Source FamilyCharacterThe name of the GE Digital APM family whose field you want to map as the source.
+If the value in the Transfer Direction field is Send To (T), then this field contains the following list of families:
+Thickness Measurement LocationTML Corrosion Analysis
+If the value in the Transfer Direction field is Receive From (F), then this field contains the following list of families:
+Thickness MeasurementThickness Measurement Location
+Source FieldCharacterThe name of the field that you want to map as the source.This field contains a list of fields in the family that you have selected in the Source Family field.Target FieldCharacterThe name of the field that you want to map as the target.
+This field contains a list of fields in the datalogger that you have selected in the Device Type field. It contains the description of the system Codes in the M658 System Code Table. You must only use the baseline fields that appear in this field.
+By default, on the TM Dataloggers page, in the Send To and Receive From sections, the rows in the grids are arranged in the alphabetical order of the values in the Target Field column.
+Transfer DirectionCharacterIndicates whether data is sent to or received from the datalogger. 
+This field contains the description of all the System Codes in the M656 System Code Table. You can choose from the following baseline values:
+Send To (T)Receive From (F)
+
+Baseline Datalogger Mapping Records
+The following table provides the field values in baseline Datalogger Mappings.
+Device TypeTransfer DirectionSource FamilySource FieldTarget FieldGE DMS Go/Go+Receive From (F)Thickness MeasurementMeasurement Taken DateDate Last UpdatedGE DMS Go/Go+Receive From (F)Thickness MeasurementReadingsReading ValuesGE DMS Go/Go+Receive From (F)Thickness Measurement LocationTML Asset IDAsset IDGE DMS Go/Go+Receive From (F)Thickness Measurement LocationTML IDDatapoint IDGE DMS Go/Go+Send To (T)Thickness Measurement LocationTML Asset IDAsset IDGE DMS Go/Go+Send To (T)Thickness Measurement LocationTML IDDatapoint IDGE DMS Go/Go+Send To (T)Thickness Measurement LocationLocationDatapoint LocationGE DMS Go/Go+Send To (T)Thickness Measurement LocationNumber of ReadingsNumber of ReadingsGE DMS Go/Go+Send To (T)TML Corrosion AnalysisLast Measurement DateDate Last UpdatedGE DMS Go/Go+Send To (T)TML Corrosion AnalysisLast Measurement ValueMeasurement ValueGE DMS2Receive From (F)Thickness MeasurementMeasurement Taken DateDate Last UpdatedGE DMS2Receive From (F)Thickness MeasurementReadingsReading ValuesGE DMS2Receive From (F)Thickness Measurement LocationTML Asset IDAsset IDGE DMS2Receive From (F)Thickness Measurement LocationTML IDDatapoint IDGE DMS2Send To (T)Thickness Measurement LocationTML Asset IDAsset IDGE DMS2Send To (T)Thickness Measurement LocationTML IDDatapoint IDGE DMS2Send To (T)Thickness Measurement LocationLocationDatapoint LocationGE DMS2Send To (T)Thickness Measurement LocationNumber of ReadingsNumber of ReadingsGE DMS2Send To (T)TML Corrosion AnalysisLast Measurement DateDate Last UpdatedGE DMS2Send To (T)TML Corrosion AnalysisLast Measurement ValueMeasurement ValueOlympus 37DL Plus Ultrasonic Thickness GageReceive From (F)Thickness MeasurementMeasurement Taken DateDate Last UpdatedOlympus 37DL Plus Ultrasonic Thickness GageReceive From (F)Thickness MeasurementReadingsReading ValuesOlympus 37DL Plus Ultrasonic Thickness GageReceive From (F)Thickness Measurement LocationTML Asset IDAsset IDOlympus 37DL Plus Ultrasonic Thickness GageReceive From (F)Thickness Measurement LocationTML IDDatapoint IDOlympus 37DL Plus Ultrasonic Thickness GageSend To (T)Thickness Measurement LocationTML Asset IDAsset IDOlympus 37DL Plus Ultrasonic Thickness GageSend To (T)Thickness Measurement LocationTML IDDatapoint IDOlympus 37DL Plus Ultrasonic Thickness GageSend To (T)Thickness Measurement LocationLocationLocation DescriptionOlympus 37DL Plus Ultrasonic Thickness GageSend To (T)Thickness Measurement LocationNumber of ReadingsNumber of ReadingsOlympus 37DL Plus Ultrasonic Thickness GageSend To (T)TML Corrosion AnalysisLast Measurement DateDate Last UpdatedOlympus 37DL Plus Ultrasonic Thickness GageSend To (T)TML Corrosion AnalysisLast Measurement ValueMeasurement ValueOlympus 38DL Plus Ultrasonic Thickness GageReceive From (F)Thickness MeasurementMeasurement Taken DateDate Last UpdatedOlympus 38DL Plus Ultrasonic Thickness GageReceive From (F)Thickness MeasurementReadingsReading ValuesOlympus 38DL Plus Ultrasonic Thickness GageReceive From (F)Thickness Measurement LocationTML Asset IDAsset IDOlympus 38DL Plus Ultrasonic Thickness GageReceive From (F)Thickness Measurement LocationTML IDDatapoint IDOlympus 38DL Plus Ultrasonic Thickness GageSend To (T)Thickness Measurement LocationTML Asset IDAsset IDOlympus 38DL Plus Ultrasonic Thickness GageSend To (T)Thickness Measurement LocationTML IDDatapoint IDOlympus 38DL Plus Ultrasonic Thickness GageSend To (T)Thickness Measurement LocationLocationLocation DescriptionOlympus 38DL Plus Ultrasonic Thickness GageSend To (T)Thickness Measurement LocationNumber of ReadingsNumber of ReadingsOlympus 38DL Plus Ultrasonic Thickness GageSend To (T)TML Corrosion AnalysisLast Measurement DateDate Last UpdatedOlympus 38DL Plus Ultrasonic Thickness GageSend To (T)TML Corrosion AnalysisLast Measurement ValueMeasurement Value
+
+
+
+
+
+On this pageCreate a Datalogger MappingDelete a Datalogger MappingDatalogger Mapping RecordsBaseline Datalogger Mapping Records
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,104 @@
+
+
+
+Team Members | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference 
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Team Members
+
+
+
+
+
+
+
+Team MembersAbout Team MembersAn inspection team member is any person that participates in an inspection. When you view an inspection report, you will see a section that lists all team members associated with that inspection.Details
+When you view an Inspection, you can create a new Inspection Team Member to link to the Inspection. Any user that has been assigned the Inspector role can be selected in the Inspection Team Member field. After the Inspection Team Member has been linked to the Inspection, the name in the Team Member field will be displayed in the inspection report.
+About RolesInspection Roles 
+Each Human Resource can be linked to one or more Resource Roles. The Role box indicates the position of a user within the organization. You can modify Roles in Security Manager.
+After a Human Resource is linked to a Resource Role, the value in the Role box:
+Determines certain administrative tasks that a user can perform.Filters certain lists in Inspections.Controls the workflow of Inspection Management users. 
+The following roles are used with Human Resource records. Each role should be used as described in the following list.
+Resource Role DescriptionContract InspectorGathers data to enter into a new or existing Inspection. This role is typically assigned to an Inspector who is also a contractor for your organization. The Contract Inspector must be assigned as a Team Member to request approval on the Inspection Report by updating the Status field.InspectorGathers data to enter into a new or existing Inspection.Inspection SupervisorReviews Inspections that have been created by a user with an Inspector Resource Role.Inspection AdministratorPerforms administrative tasks such as updating Security User roles and certifications, managing and creating Inspection Conditional Alerts, and defining default inspection intervals. A user who is assigned an Inspection Administrator role can complete the following tasks: Inspection ConfigurationManage Inspection Resources, Roles, and CertificationsManage Inspection AlertsManage StrategiesManage Time-Based SettingsInspection SpecialistPerforms functions determined by your unique implementation of this Resource Role.
+Inspection Role Assignments 
+To assign a role to a Security User, you will need to link a Resource Role record to the Human Resource record for that Security User. The Resource Role record contains the Role field, which should contain a value that indicates the role assigned to that user. 
+For example, if John Smith is responsible for reviewing Inspection records, you would create a Human Resource record for John Smith and link it to a Resource Role record. That Resource Role record would contain the value Inspection Supervisor in the Role field.
+Security Roles
+The following security roles are used when you assign secured users to roles in the Security Manager. These security roles are assigned to specific states in State Configuration for Inspection Recommendation, and these roles are checked when users try to transition states.Security RoleDescriptionMI InspectorTransitions Inspection Recommendations from the Proposed state to the Pending Review or Superseded state.MI Inspection SupervisorTransitions Inspection Recommendations from the Pending Review state to the Proposed, Pending Approval, Cancelled, or Rejected state.SC Recommendation ReviewerTransitions Inspection Recommendations from the Pending Approval state to the Pending Review, Approved, Cancelled, or Rejected state.SC Recommendation ImplementerTransitions Inspection Recommendations from the Approved or In Progress state to the Completed state.Note: Super users can transition Inspection Recommendations between states without assigned security roles.
+About CertificationsYou can indicate a user's certification level by creating a Personnel Certification to link to that user's Human Resource information. Details
+When that user creates or approves an Inspection, the Certification will serve as documentation that the user is qualified to perform that task. Because Inspections are often used as legal documentation to prove that an inspection took place, recording the responsible party's qualifications is an important step.
+Add Team Members to an InspectionProcedure
+Access the Inspection Data section. Select the Team Members tab. The Team Members section appears. 
+As needed, enter values in the available fields. 
+Note:  To complete the following fields, the Applicable Certification field must contain a value. 
+In the Full Name box, select the name of the Team Member that you want to add. In the Applicable Certification box, select the type of certification held by the selected Team Member. In the Certification ID box, enter the identification value for the type of certification held by the selected Team Member.In the Certification Expiry Date box, select  to choose the expiry date of the selected Team Member's certification.
+Select .A new team member is added and linked to the selected Inspection.Tip:  As needed, you can repeat these steps 3 and 4 to add multiple Team Members to the selected Inspection.Remove Team Members from an InspectionProcedure
+Access the Inspection Data section. 
+Select the Team Members tab. The Team Members section appears. 
+In the upper-right corner of the section, select .In the grid, a new column of check boxes appears to the left of the Full Name column.
+In the row for each team member that you want to remove from the selected Inspection, select the check box.Select, and then select Delete. A message appears, asking you to confirm that you want to delete the selected Team Members.Select Yes. The selected Team Members are deleted from the selected Inspection.
+
+
+
+
+On this pageAbout Team MembersAbout RolesAbout CertificationsAdd Team Members to an InspectionRemove Team Members from an Inspection
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,132 @@
+
+
+
+Catalog Items | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Hazards AnalysisOverview
+Workflows
+Hazards Analysis
+Components in a Hazards Analysis
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Hazards Analysis
+Reference
+Catalog Items
+
+
+
+
+
+
+
+Catalog ItemsCatalog ItemsThe Hazards Analysis Catalog folders contain queries, graphs, and reports that appear throughout Hazards Analysis and display information contained in the records that make up a HAZOP Analysis or a What If Analysis.HAZOP Folder
+The Catalog folder \\Public\Meridium\Modules\Hazards Analysis\HAZOP contains the following folders:
+GraphsQueriesReports
+Graphs
+ The Catalog folder \\Public\Meridium\Modules\Hazards Analysis\HAZOP\Graphs contains the following items:
+Item NameBehavior and UsageHazards Analysis Mitigated Risk A graph that displays a prompt for the Entity Key of a Hazards Analysis whose HAZOP Analysis data you want to view in the Graph Viewer. Subgraphs A subfolder that contains the Hazards Analysis Mitigated Risk graph, which supports the Hazards Analysis Mitigated Risk graph. 
+Queries
+ The Catalog folder \\Public\Meridium\Modules\Hazards Analysis\HAZOP\Queries contains the following queries:
+Item NameBehavior and UsageAll HAZOP Analysis Recommendations
+Displays a list of all the Risk Assessment Recommendations that are associated with a Hazards Analysis.
+
+Hazards Analysis Deviation Mitigated Risk Query
+Displays a prompt for the Entity Key of the desired System/Node, and then displays the unmitigated and mitigated risk rank values organized by the Deviations with which they are associated. This query supports the Hazards Analysis Mitigated Risk graph that is stored in the following folder: \\Public\Meridium\Modules\Hazards Analysis\HAZOP\Graphs
+Hazards Analysis Mitigated Risk Query
+Displays a prompt for the Entity Key of the desired Hazards Analysis, and then displays the unmitigated and mitigated risk rank values organized by the Systems/Nodes with which they are associated. This query supports the Hazards Analysis Mitigated Risk graph that is stored in the following folder: \\Public\Meridium\Modules\Hazards Analysis\HAZOP\Graphs
+Hazards Analysis Query Displays a prompt for the Entity Key of the desired Hazards Analysis, and then displays various information about the HAZOP Analysis, including values that appear in the Hazards Analysis record and IDs of the records that are linked to the HAZOP Analysis. This query supports the Hazards Analysis Report that is stored in the Reports folder. HAZOP Analysis RecommendationsDisplays a prompt for the Entity Key of the desired Hazards Analysis, and then displays a list of the Risk Assessment Recommendations that are associated with the HAZOP Analysis. HAZOP Locations and Equipment Displays a prompt for the Entity Key of the desired System/Node, and then displays the Entity Keys for the Equipment and Functional Locations that are associated with the specified System/Node. HAZOP Max Risk Rank for Node Displays a prompt for the Entity Key of the System/Node, and then displays the unmitigated risk rank value for the Consequence that is linked to the specified System/Node. Hazop_Reference_Documents_QueryDisplays a prompt for the Entity Key of the desired Hazards Analysis, and then displays a list of Reference Documents and various details from those records that are linked to the specified System/Node. This query supports the Hazop_Reference_Document_Report, which is stored in the following folder: \\Public\Meridium\Modules\Hazards Analysis\HAZOP\Reports\Subreports
+Hazop_Team_Member_Query Displays a prompt for the Entity Key of the desired Hazards Analysis, and then displays the list of Human Resource records that are linked to the specified Hazards Analysis. This query supports the Hazop_Team_Member_Report, which is stored in the following folder: \\Public\Meridium\Modules\Hazards Analysis\HAZOP\Reports\Subreports
+
+Reports 
+The Catalog folder \\Public\Meridium\Modules\Hazards Analysis\HAZOP\Reports contains the following items:
+Item NameBehavior and UsageHazards Analysis Report A report that displays a prompt for the Entity Key of the desired Hazards Analysis, and then displays in the Report Viewer various information about the HAZOP Analysis, including the field values from the Hazards Analysis and details on the records that make up that analysis. Subreports A folder that contains the reports with the following names, which support the Hazards Analysis Report: Hazop_Analysis_Assets_ReportHazop_Reference_Document_Report Hazop_Team_Member_Report
+
+Queries Folder
+The Catalog folder \\Public\Meridium\Modules\Hazards Analysis\Queries contains the following queries, which are used to display search results for Hazards Analysis records for HAZOP Analyses and What If Analyses:Query NameBehavior and UsageHAZOP_Analysis_Search 
+A search that displays the following prompts, and then displays all the Hazards Analysis records whose Analysis Type field contains the value HAZOP and meets the specified criteria: 
+State: The record states that have been configured in the Configuration Manager for the Hazards Analysis family. By default, this list contains the following values: All ActiveCompletePending ApprovalPlanningReview 
+Hazards Analysis Owner: The names of the users whose names appear in the Analysis Owner field in a Hazards Analysis record. 
+This query appears by default on the HAZOP Analysis Summary page.
+WhatIf_Analysis_Search 
+A search that displays the following prompts and then displays all the Hazards Analysis records whose Analysis Type field contains the value What If and meets the specified criteria: 
+
+State: The record states that have been configured in the Configuration Manager for the Hazards Analysis family. By default, this list contains the following values: 
+AllActiveCompletePending ApprovalPlanningReview 
+Hazards Analysis Owner: The names of the users whose names appear in the Analysis Owner field in a Hazards Analysis record. 
+This query appears by default on the What If Analysis Summary page.
+
+What If Folder
+The Catalog folder \\Public\Meridium\Modules\Hazards Analysis\What If contains the following folders:
+GraphsQueriesReports
+Graphs
+ The catalog folder \\Public\Meridium\Modules\Hazards Analysis\What If\Graphs contains the following items:
+Item NameBehavior and UsageWhat If Analysis Mitigated Risk A graph that displays a prompt for the Entity Key of a Hazards Analysis whose What If Analysis data you want to view in the Graph Viewer. Subgraphs A subfolder that contains the What If Analysis Mitigated Risk graph, which supports the What If Analysis Mitigated Risk graph. 
+Queries
+The catalog folder \\Public\Meridium\Modules\Hazards Analysis\What If\Queries contains the following queries:
+Item NameBehavior and UsageWhat If Analysis Query  Displays a prompt for the Entity Key of the desired Hazards Analysis, and then displays various information about the What If Analysis, including values that appear in the Hazards Analysis and IDs of the records that are linked to the What If Analysis.    What If Analysis Recommendations Displays a prompt for the Entity Key of the desired Hazards Analysis, and then displays a list of the Risk Assessment Recommendations that are associated with the analysis that is represented by that Hazards Analysis.  What If Locations and Equipment Displays a prompt for the Entity Key of the desired System/Node, and then displays the Entity Keys for the Equipment and Functional Locations that are associated with the specified System/Node. What If Max Risk Rank for System Displays a prompt for the Entity Key of the desired System/Node, and then displays the unmitigated risk rank value for the Consequence that is linked to the specified System/Node. What If Mitigated Risk Query Displays a prompt for the Entity Key of the desired Hazards Analysis, and then displays unmitigated and mitigated risk rank values organized by the Systems/Nodes with which they are associated. What If Risk Query Displays a prompt for the Entity Key of the desired System/Node, and then displays the Entity Keys for the Equipment and Functional Locations that are associated with the specified System/Node. HAZOP Max Risk Rank for Node Displays a prompt for the Entity Key of the desired Hazards Analysis, and then displays the mitigated and unmitigated risk rank values organized by the Hazards Analysis with which they are associated. 
+Reports
+The catalog folder \\Public\Meridium\Modueles\Hazards Analysis\What If\Reports contains the following items:
+Item NameBehavior and UsageWhat If Analysis Report A report that displays a prompt for the Entity Key of the desired Hazards Analysis, and then displays in the Report Viewer various information about the What If Analysis, including the field values from the Hazards Analysis and details on the records that make up that analysis. Subreports A folder that contains the reports with the following names, which support the Hazards Analysis Report: Hazop_Analysis_Assets_ReportHazop_Reference_Document_Report Hazop_Team_Member_Report
+
+
+
+
+
+
+On this pageCatalog ItemsHAZOP FolderQueries FolderWhat If Folder
+
+
+
+
+
+
+
+
+

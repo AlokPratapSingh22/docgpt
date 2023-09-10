@@ -1,0 +1,372 @@
+
+
+
+Graphs | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+GraphsOverview
+Workflow
+Graphs
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Graphs
+Graphs
+
+
+
+
+
+
+
+GraphsAbout GraphsThis topic provides a listing of all overviews and high level explanatory information to help you understand graphs.About the Types of Graphs
+The following table describes the graph types that are supported by GE Digital APM.
+
+Graph Type
+
+Button
+
+Useful For...
+Bar GraphsStacked Column
+
+Comparing a set or series of values to the same scale, unit of comparison, or range of time. The information on a bar graph is represented by vertical or horizontal bars.Stacked Bar
+
+Clustered Column
+
+Clustered Bar
+
+Color Scale GraphLine GraphsLine
+
+Identifying trends by comparing a series of values. The data that is displayed on a line graph is represented by a line whose peaks and crevices indicate changes in the data.Area
+
+Identifying trends by tracking a series of values measured against a set scale. The information in an area graph is displayed in linear form.Stacked Area
+
+Identifying trends by tracking a series of values measured over time or other category data. The information in a stacked area graph is displayed in linear form.Pie GraphPie
+
+Comparing a portion of the data to the whole. For example, you could use the pie graph to determine the percentage of energy that is used by a particular piece of equipment or group of equipment.Doughnut
+
+Comparing portions of the data to one another. For example, you could use a doughnut graph to determine which manufacturer's centrifugal pumps are most active.Pyramid
+
+Displaying hierarchical structure of data. For example, you could use a pyramid graph to display the contributing factors to a failure arranged in the order of magnitude.Radar GraphRadar
+
+Displaying multi-source values as they relate to one another. For example, you could use a radar graph to compare your allocated versus budgeted spending, where you can also view the level of spending per expense category (e.g., marketing and salaries). The data in a radar graph is displayed in a plot that resembles a spiderweb.Filled Radar
+
+Scatter PlotsScatter
+
+Comparing a series of x and y coordinates, and identifying relationships between values in an x, y coordinate. For example, you could use a scatter plot to view the cost of repair by failure date for a group of equipment. Bubble
+
+Comparing a series of x and y values with z sizes, and identifying relationships between values of different sizes in an x, y coordinate. For example, you could use a bubble plot to view the cost of repair by failure date for a group of equipment, where the bubble marker size is determined by the criticality indicator for each piece of equipment in the group.Stock GraphsLine
+
+Comparing the trend of a particular value over time. For example, you could use a line graph to plot the cost of repair for the past four years. The graph helps you visualize how the cost of repair has been increasing or decreasing over time.Area
+
+Stacked Area
+
+Comparing the trend of multiple values over time. For example, you could use a stacked line graph to plot the cost of repair and the cost of operator training for the past four years. The graph helps you visualize if the increase in the cost of operator training leads to a decrease in the cost of repair.Heat Map GraphsHeat Map
+
+Displays data using a range of colors to give an immediate visual summary of values to identify trends and potential problems. 
+Create a GraphProcedure
+Access a Graph.In the upper-right corner of the page, select Create New. 
+The Data Source workspace appears.
+
+
+
+
+Select the data source for the graph.
+Specify the dimensions for the graph.In the upper-right corner of the page, select .
+Tip:  You can also select  to save the graph in a different location.
+The graph is created, and stored in the specified Catalog folder.
+Copy a GraphAbout This Task
+This topic describes how to copy a graph to a different Catalog folder.
+Note:
+You can copy a graph into a Catalog folder only if you have Create permissions for that folder. You cannot, however, copy a graph into a Baseline folder.For more information on the Catalog page, refer the Catalog module documentation.
+
+Procedure Access the Catalog page for the folder containing the graph that you want to copy.Select the check box that corresponds to the graph that you want to copy. In the upper-right corner of the workspace, select .
+The Catalog Folder Browser window appears.
+
+
+
+Navigate to the folder where you want to copy the graph, and then select Done.
+The graph is copied to the selected folder.
+Select a Data SourceAbout This Task
+To create a graph, you must select one of the following types of data sources from the Catalog:
+QueriesDatasets
+This topic describes how to select or modify a data source for a graph.
+Procedure
+Access the graph for which you want to specify or modify the data source.In the left pane, select Data Source.
+The Data Source workspace appears.
+
+
+
+Next to the Query Path or the Dataset Path box, select .
+The Select a query, or a dataset from the catalog window appears.
+
+
+
+In the left pane, navigate to the folder that contains the query or the dataset that you want to use as the data source. Select the query or the dataset, and then in the lower-right corner of the window, select Open.
+Note:  If the query that you have selected contains a prompt, then a window appears, displaying the prompt. Provide the required values, and then select Done.
+The Query Path or the Dataset Path box is populated with the folder path of the query or the dataset that you selected.
+If you have selected a query, then the results of the query appear in the workspace.
+-or-
+If you have selected a dataset, then the values in the dataset appear in the workspace.
+Important:  The changes are saved only after you specify the graph dimensions, and then select .
+What To Do Next
+
+Specify Graph Dimensions
+
+Modify the Graph TypeProcedure
+Access the graph for which you want to modify the graph type.In the left pane, select Graph Type.
+The Graph Type workspace appears.
+Select the type of graph that you want to use. The bar graph is selected by default.
+For example, if you want to change the graph type to a pie graph, select .
+In the upper-right corner of the page, select .
+The graph type is changed.
+About Graph Dimensions
+The Data Source workspace displays a list of the columns or fields that exist in the underlying query or dataset. The graph dimensions will adjust automatically based on your settings.
+Suppose you have a query with the following results:
+Equipment Technical NumberTotal CostMaintenance CostG0010A-0741690651386387G0003-0921341803228380G0010B-0741166331312371GC0030-0911046865175728G0016-092975146369122
+A graph that you build from this query could display the Bad Actors by total cost, as shown in the following image:
+
+
+
+...or both total cost and maintenance cost for each asset, as shown in the following image.
+
+
+
+Specify the Graph DimensionsBefore You Begin
+
+Select a data source.
+Procedure
+Access the graph for which you want to specify the graph dimensions.In the left pane, select Dimension Mapping.
+The Dimension Mapping workspace appears.
+
+
+
+Note:  If you are mapping the dimensions for a heat map or color scale graph, you will be mapping columns instead of a series.
+In the Vertical Axis Values section, select Map Series.
+The Dimension for Series window appears.
+
+Note: If you are creating a color scale graph, the Vertical Axis Value must be taken from the query column that returns the name of the color displayed on the color scale. The logic for determining the color for each row of query results should be embedded in the query itself using any valid HTML color name or code. For example, the following query determines colors based upon the value of another column: SELECT [MC_MTCRD].[MC_MTCRD_TIME_STAMP_D] "Timestamp" 
+, Decode([MC_MTCRD].[MC_MTCRD_VALUE_C], 'RUNNING', Green', 'INFEEDHOLD', 'Yellow', 'DOWNLOADING', 'Yellow', 'ABORTED', 'Red', 'Orange') "Color" 
+FROM [MC_MTCRD] ORDER BY [MC_MTCRD].[MC_MTCRD_TIME_STAMP_D] Asc 
+
+Select the dimensions that you want to plot on the vertical axis, and then select Apply.
+The selected dimensions appear in the Vertical Axis Values section.
+In the Category section, select Map Category.
+The Dimension for Category window appears.Note: If you are creating a time series graph, the Dimension for Category must be time stamp.
+Select the category that you want to plot on the x-axis, and then select Apply.
+The selected dimension appears in the Category section.
+Select .If you have created a new graph, in the Save As window that appears, in the pane, navigate to the catalog folder in which you want to save the graph, provide the details of the graph, and then select Save.
+-or-
+If you have accessed an existing graph, in the window displaying confirmation that the graph is saved. Select OK.
+The changes made to the graph dimensions are saved.
+Note: For pie charts, you can localize the labels on the slices from a system code table or a family state machine. You can do so using the options that are available in the Category section of the Dimension Mapping workspace.If you selected a system code table and the value in the Category section matches a code in the specified system code table, the localized description value from the table will be used to display the label. Similarly, if you selected a family for which state management is enabled and the value in the Category section matches a state ID in the specified state machine, the localized state caption will be used to display the label.
+Access the Query or Dataset Associated with a GraphBefore You Begin
+
+Select a data source for the graph.
+Procedure
+Access the graph whose query or dataset you want to access.In the upper-left corner of the Graph Result workspace, select .
+The query or dataset appears.
+Refresh a GraphAbout This Task
+You can refresh a graph to ensure that the graph is displaying the most recent database information and configuration options. For example, you might want to refresh the graph to rerun the associated query, or to see the effect of adding a record to the database.
+Note:  If the underlying query contains a prompt, the prompt will be displayed after you refresh the graph. You will need to provide the prompt values after refreshing.
+Procedure
+Access the graph that you want to refresh.In the upper-left corner of the Graph Result workspace, select .
+The graph refreshes to display the most recent information.
+About Hyperlinks on Graphs
+You can add hyperlinks to a graph to access any GE Digital APM module addressable via a URL or an external website. When a hyperlink has been added to a graph, selecting a datapoint on the graph will display the location defined for the link.
+Note:  If you add a hyperlink to a pie, doughnut, or a pyramid graph, the URL will not trigger when you select a datapoint on the graph.
+Note: You can enable hyperlinks when the Category column is in the first column by selecting the check box in the Settings UI on the Series tab.
+When you add a hyperlink to a graph, you can configure it such that when you select a datapoint on the graph, a specific value from the graph will be passed in as a parameter value to the URL. You can pass any of the following values into the URL:
+The vertical value of the selected datapointThe x-axis value of the selected datapointThe value stored in a specific field in the record associated with the selected datapointThe Family Key of the record associated with the selected datapointThe Entity Key of the record associated with the selected datapointAll the values for any previously accessed graph
+Add a Hyperlink to a GraphBefore You Begin
+ Create a hyperlink for the query to which you want to add the hyperlink.
+Procedure
+Access the graph for which you want to add a hyperlink.In the upper-right corner of the workspace, select .
+The Settings pane appears.
+Select the Series tab.
+The Series section appears.
+In the Pick an axis box, select the axis to which you want to apply a hyperlink. In the Hyperlink box, select the hyperlink that you want to add to the axis that you have selected.
+The hyperlink is added to the graph.
+About the Vertical Axis Scales
+When you choose a column or field to be plotted on the y-axis, you must specify the side of the graph on which the axis will appear: left or right. You can do so using the options that are available in the Dimension Mapping workspace.
+If you choose to plot more than one column or field on the y-axis and the values in those columns or fields vary greatly, using a right and left y-axis can improve the usability of the graph.
+Suppose you have a graph with the following underlying data:
+Equipment Technical NumberTotal CostMaintenance CostProduction Losses G0010A-07416906513863871304264G0003-09213418032283801113423G0010B-0741166331312371853960GC0030-0911046865175728871137G0016-092975146369122606024
+ In this example, if we plot a graph with multiple vertical axis values, it allows you to compare total cost, maintenance cost, and production loss, which provides a fuller picture of your assets.
+
+
+
+Specify the Limits for Vertical Axis ValuesProcedure
+Access the graph for which you want to specify the limits for vertical axis values.In the upper-right corner of the workspace, select .
+The Settings pane appears.
+Select the Axis tab.
+The Axis section appears.
+Provide the minimum and maximum values in the Minimum and Maximum boxes respectively.
+The graph refreshes to plot only those values that fall in the limits that you have specified.
+Specify the Format of the Vertical Axis ValuesProcedure
+Access the graph for which you want to specify the format for vertical axis values.In the upper-right corner of the workspace, select .
+The Settings pane appears.
+Select the Axis tab.
+The Axis section appears.
+In the Format box, select the format for the vertical axis values.
+The graph is refreshed to plot the vertical axis values in the specified format.
+Specify the Number of Decimals for the Vertical Axis ValuesProcedure
+Access the graph for which you want to specify the number of decimals for the vertical axis values.In the upper-right corner of the workspace, select .
+The Settings pane appears.
+Select the Axis tab.
+The Axis section appears.
+In the Decimals box, select the number of decimals for the vertical axis values.
+Note:  If the value in the Format field is None, then the vertical axis values do not contain decimals.
+The graph is refreshed to plot the vertical axis values with the specified number of decimals.
+Convert to a Three-dimensional GraphAbout This Task
+When you create a graph, by default, it is plotted as a two-dimensional graph. This topic describes how to convert it to a three-dimensional graph. 
+You can view a three-dimensional graph only for the following types of graphs:
+Bar graphsPie graphs
+Procedure
+Access the graph for which you want to specify the number of decimals for the vertical axis values.In the upper-right corner of the workspace, select .
+The Settings pane appears.
+In the Graphs section, select the 3D check box.
+The graph is refreshed to display in a three-dimensional view. 
+Tip:  If you want to covert the graph to a two-dimensional view, clear the 3D check box.
+Show or Hide the LegendProcedure
+Access the graph for which you want to show or hide the legend.In the workspace, select .The Settings pane appears.To view the legend at a specified location or hide the legend, follow these steps:To specify the location for the legend, in the Legend drop-down list box, select a location.The graph is refreshed, and the legend appears at the selected location.To hide the legend, in the Legend drop-down list box, select Hide Legend.The graph is refreshed, and the legend is hidden.Note: For pie charts, you can position the legend only at the top of the Graph Result workspace.Show or Hide Grid LinesProcedure
+Access the graph for which you want to show or hide the grid lines.In the upper-right corner of the workspace, select .
+The Settings pane appears.
+Select the Axis tab.
+The Axis section appears.
+If you want to show the grid lines, select the Grid Lines check box.
+The graph is refreshed to display the grid lines. 
+If you want to hide the grid lines, clear the Grid Lines check box.
+The graph is refreshed to hide the grid lines.
+Enable or Disable Logarithmic ScaleAbout This TaskThe Logarithmic Scale option allows you to specify that you want to display values as logarithm, and displays the values on the graph on a more manageable scale. Procedure
+Access the graph for which you want to enable or disable the logarithmic scale.In the upper-right corner of the workspace, select .
+The Settings pane appears.
+Select the Axis tab.
+The Axis section appears.
+If you want to enable the logarithmic scale, select the Logarithmic  check box.
+The graph is refreshed to reflect the logarithmic scale.
+If you want to disable the logarithmic scale, clear the Logarithmic  check box.
+The graph is reverted to its original scaling.
+Example
+For example, the following image shows a graph whose values on the scale are displayed using the Number format option when the Logarithmic box is cleared. 
+
+If you were to select the Logarithmic box, the same graph would appear as shown in the following image.
+
+
+
+Show or Hide the Labels of a GraphProcedure
+Access the graph for which you want to show or hide labels.In the upper-right corner of the workspace, select .
+The Settings pane appears.
+If you want to view the vertical axis labels, in the Graphs section, select the Show Labels check box.
+The graph is refreshed to show the vertical axis labels. 
+If you want to view the x-axis labels, in the Graphs section, select the Show X-Axis Labels check box.
+The graph is refreshed to show the x-axis labels.
+If you want to hide the vertical axis labels or the x-axis labels, clear the Show Labels or Show X-Axis Labels check box, respectively.
+The graph is refreshed to hide the labels.
+Show or Hide the Scroll BarProcedure
+Access the graph for which you want to show or hide the scroll bar.In the upper-right corner of the workspace, select .
+The Settings pane appears.
+If you want to view the scroll bar, in the Graph section, select the Show Scroll Bar check box.
+The Maximum amount of points to show box appears.
+In the Maximum amount of points to show box, enter the number of points that you want to view per page.
+The graph is refreshed to show the specified number of points per page. You can use the scroll bar to view the rest of the pages.
+If you do not want the scroll bar, in the Graphs section, clear the Show Scroll Bar check box.
+The graph is refreshed to show all the points on a single page.
+Show Full Graph LabelsAbout This Task
+The labels that appear on graphs are truncated by default. If necessary, you can modify the graph settings to show the full-length labels. 
+Note:  Depending on the size of your graph and the size of your screen, full-length labels may distort your graph and make it illegible. 
+Procedure
+Access the graph for which you want to show full-length labels.In the upper-right corner of the workspace, select .
+The Settings pane appears.
+In the Graph section, clear the Truncate Labels check box. 
+You can now see the full-length graph label. 
+Modify the Name, Caption, and Description of a GraphAbout This Task
+When you create a graph, you provide the name, caption, and description of the graph, and store it in the Catalog. This topic describes how to modify these properties by accessing the graph from the Catalog.
+To modify Catalog item properties, you must have View and Edit permissions to the folder.
+Note:
+If you transfer ownership of a Catalog item to another user, but the item resides within a folder to which that user does not have View permissions, the user will not be able to view the Catalog item.For more information on the Catalog page, refer the Catalog module documentation.
+
+Procedure Access the Catalog page for the folder containing the graph whose properties you want to modify.In the row for the graph whose properties you want to modify, select . 
+The Catalog Item Properties window appears, displaying the properties for the selected graph.
+
+
+
+As needed, modify values in About Catalog Items window, and then select Done. 
+The properties for the selected graph are modified. 
+Modify the Colors of a GraphProcedure
+Access the graph for which you want to modify the colors.In the upper-right corner of the workspace, select .
+The Settings pane appears.
+Select the Series tab.
+The Series section appears.
+
+
+
+In the Color box, select the color that you want to apply.
+Tip:  If the color that you want to apply is not available, select More, select the color, and then select Choose.
+ The selected color is applied to the series that you have specified in the Pick a series to edit box.
+Make a Prompt Appear on a GraphAbout This Task
+To make a prompt appear on a graph, you must create the prompt for the query that is used to generate the graph.
+Procedure Access the Prompt Settings section of the query that is used to generate the graph.
+Note: For more information on the Prompt Settings section, refer the Queries module documentation.
+Create any of the following prompts for the query:
+Create a Prompt with No List of Valid ValuesCreate a Prompt with a Static List of Valid ValuesCreate a Prompt with a List of System CodesCreate a Prompt with a List of Query ResultsCreate a Prompt with a List of Values from a RecordCreate a Prompt on a Logical Field
+The prompt is created for the query. When you access the graph, the prompt appears.
+Note: For more information on creating a prompt, refer the Query Expressions, Clauses, and Prompts section, in the Queries module documentation.
+Export a GraphYou can export a graph to a PDF document.ProcedureIn the module navigation menu, select Tools > Graphs.The Graphs page appears.Select Browse, and then select a graph from the catalog. Select Open.The selected graph appears in the Graph Result workspace.Select . The Print window appears. Select Save as PDF as the destination, and then select Save. The Save As window appears. Select a location for the file and enter a file name, and then select Save. The graph is saved as a PDF document to the selected location on your local drive.Delete a GraphProcedure Access the Catalog page, for the folder that contains the graph that you want to delete.
+Note: For more information on the Catalog page, refer the Catalog module documentation.
+Select the check box that corresponds to the graph that you want to delete. In the upper-right corner of the page, select .
+A confirmation message appears, asking if you really want to delete the graph.
+Select OK.
+The graph is deleted.
+
+
+
+
+
+On this pageAbout GraphsAbout the Types of GraphsCreate a GraphCopy a GraphSelect a Data SourceModify the Graph TypeAbout Graph DimensionsSpecify the Graph DimensionsAccess the Query or Dataset Associated with a GraphRefresh a GraphAbout Hyperlinks on GraphsAdd a Hyperlink to a GraphAbout the Vertical Axis ScalesSpecify the Limits for Vertical Axis ValuesSpecify the Format of the Vertical Axis ValuesSpecify the Number of Decimals for the Vertical Axis ValuesConvert to a Three-dimensional GraphShow or Hide the LegendShow or Hide Grid LinesEnable or Disable Logarithmic ScaleShow or Hide the Labels of a GraphShow or Hide the Scroll BarShow Full Graph LabelsModify the Name, Caption, and Description of a GraphModify the Colors of a GraphMake a Prompt Appear on a GraphExport a GraphDelete a Graph
+
+
+
+
+
+
+
+
+

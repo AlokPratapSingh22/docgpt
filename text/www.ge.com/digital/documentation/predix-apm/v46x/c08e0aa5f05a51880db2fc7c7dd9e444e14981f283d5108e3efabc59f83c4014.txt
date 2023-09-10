@@ -1,0 +1,179 @@
+
+
+
+Production Loss Analysis | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health Manager
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+Production Loss Analysis
+
+
+
+
+
+
+
+Production Loss AnalysisDeploy PLA for the First TimeBefore You Begin
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. GE Digital recommends, however, that the tasks be completed in the order in which they are listed.
+
+Results
+StepTaskNotes
+1
+Assign Security Users to one or more of the Production Loss Analysis Security Groups and Roles.This step is required. Users must have permissions to the PLA families to use the PLA functionality.
+2
+
+Change the default currency symbol.
+ 
+
+This step is optional. By default, the currency symbol is set to $ and appears in the following places: 
+ Default Margin field on the Production Profile datasheet. 
+Production Summary workspace. 
+
+3
+Define all products. This step is required. You must define all products whose production you plan to track using PLA. Each product is stored in a Product record.
+4
+Define Production Units. 
+This step is required. You must identify the Production Units that produce the products you defined in the previous task. A single product can be produced by more than one Production Unit. A single Production Unit can also produce more than one product. 
+ Each Production Unit is stored in a Production Unit record, which can be linked to an existing Functional Location record that contains detailed information about the Production Unit.
+
+5
+Define Production Profiles. 
+This step is required. For each Production Unit that you defined in the previous step, you must identify all the products that it produces and information about those products, such as the maximum demonstrated rate of production and the amount of profit one of those products yields. The combination of data about a product and the corresponding Production Unit is the Production Profile for that Production Unit. A Production Unit will have one Production Profile for each product it produces. 
+Each Production Profile is stored in a Production Profile record, which is linked to the corresponding Product record and Production Unit record.
+
+6
+Define Production Event Codes. 
+The baseline GE Digital APM database contains Production Event Code records that define a set of basic production event codes. Therefore, this step is required only if you do not want to use the baseline production event codes or if you want to use codes in addition to those that are provided. 
+You must use Production Event Codes to categorize the types of events that can cause you to produce less than the maximum sustained capacity amount. Production Event Codes define the cause of lost production and answer the question: Why are we losing production? You can also group the types of events by structuring them in a hierarchy. For example, you might group event types into planned and unplanned, where planned events are events such as maintenance down days or employee holidays, and unplanned events are events such as equipment failures or natural disasters (e.g., floods or hurricanes). 
+Each production event code will be stored in a separate Production Event Code record.
+
+7
+Define Impact Codes. The baseline GE Digital APM database contains Impact Code records that define a set of basic Impact Codes. Therefore, this step is required only if you do not want to use the baseline Impact Codes or if you want to use codes in addition to those that are provided.
+8
+Define OEE Codes. The baseline GE Digital APM database contains OEE Code records that define a set of basic OEE Codes. Therefore, this step is required only if you do not want to use the baseline OEE Codes or if you want to use codes in addition to those that are provided. For non-baseline codes to be included in the OEE Metric View, however, they must be children of the baseline parent codes.
+9
+Replace the Top 10 Bad Actors query for the PLA Overview page.
+This step is optional. The Top 10 Bad Actors query is used by GE Digital APM to populate the Top 10 Bad Actors graph on the PLA Overview page. In some databases, when viewing this graph, you may receive an error that prevents the graph from populating correctly. If this error occurs, replace the Top 10 Bad Actors query. 
+
+Upgrade PLABefore You Begin
+
+The following tables outline the steps that you must complete to upgrade this module to the latest version of GE Digital APM
+                    .
+                
+These tasks may be completed by multiple people in your organization. We recommend, however, that the tasks be completed in the order in which they are listed.
+
+ProcedureUpgrade to the latest version of GE Digital APM.
+This module will be updated to the latest version of GE Digital APM automatically. No additional steps are required.
+Replace the Top 10 Bad Actors QueryAbout This Task
+Note:  The steps in this section are required only if you are upgrading from a version of Meridium Enterprise APM between V4.0.0.0 and V4.1.7.4.0.
+The Top 10 Bad Actors query is used by GE Digital APM to populate the Top 10 Bad Actors graph on the Production Loss Analysis Overview page. In some databases, when viewing this graph, you may receive the following error:
+
+
+To implement the corrected query and to correct this error, complete the following steps. 
+ProcedureAccess the Query page In the heading of the Query page, select Browse.
+The Select a query from the catalog window appears.
+In the left pane, navigate the Catalog to: Meridium/Public/Modules/PLA/Queries, select the Top10BadActors query and then select Open.
+
+The Enter Parameter Values window appears. 
+Select OK. 
+Note:   For the purposes of these instructions, you do not need to complete any fields in the Enter Parameter Values window. 
+The Top 10 Actors query page appears, displaying the Results tab. 
+Select the SQL tab. 
+The SQL query text appears in the workspace, displaying the current query. 
+In the SQL workspace, select and delete the current query text.In the blank SQL workspace, copy and paste the following query text: 
+
+                    SELECT TOP 10 SUM(LossAmount) "Loss Amount" , AssetID "Asset ID" FROM
+                    (
+                    SELECT  DISTINCT [MI_PRDNLOSS].ENTY_KEY "ENTY_KEY", [MI_PRDNLOSS].[MI_PRDNLOSS_LOSS_AMOUNT_N] "LossAmount", [MI_EQUIP000].[MI_EQUIP000_EQUIP_TECH_NBR_C] "AssetID" FROM [MI_EQUIP000], [MI_PRDNLOSS] JOIN_SUCC [MI_PRDNEVNT] ON {MIR_CBPRDEVN} WHERE ([MI_PRDNEVNT].[MI_PRDNEVNT_START_DATE_D] >= MI_DateAdd('dd', ((? :s :id=numofdays) * -1), Now()) AND [MI_PRDNEVNT].[MI_PRDNEVNT_END_DATE_D] <= MI_DateAdd('dd', 1, Now()) AND [MI_PRDNEVNT].[MI_PRDNEVNT_CAUSE_EQP_KEY_N] IN ((? :ah :id=enty_key :child :all :current))  AND [MI_EQUIP000].ENTY_KEY = [MI_PRDNEVNT].[MI_PRDNEVNT_CAUSE_EQP_KEY_N]) and [MI_EQUIP000].[MI_EQUIP000_EQUIP_TECH_NBR_C] is not null
+                    UNION
+                    SELECT DISTINCT  [MI_PRDNLOSS].ENTY_KEY "ENTY_KEY", [MI_PRDNLOSS].[MI_PRDNLOSS_LOSS_AMOUNT_N] "LossAmount", [MI_FNCLOC00].[MI_FNCLOC00_FNC_LOC_C] "AssetID" FROM [MI_FNCLOC00], [MI_PRDNLOSS] JOIN_SUCC [MI_PRDNEVNT] ON {MIR_CBPRDEVN} WHERE ([MI_PRDNEVNT].[MI_PRDNEVNT_START_DATE_D] >= MI_DateAdd('dd', ((? :s :id=numofdays) * -1), Now()) AND [MI_PRDNEVNT].[MI_PRDNEVNT_END_DATE_D] <= MI_DateAdd('dd', 1, Now()) AND [MI_PRDNEVNT].[MI_PRDNEVNT_CAUSE_EQP_KEY_N] IN ((? :ah :id=enty_key :child :all :current))  AND [MI_FNCLOC00].ENTY_KEY = [MI_PRDNEVNT].[MI_PRDNEVNT_CAUSE_EQP_KEY_N]) and [MI_FNCLOC00].[MI_FNCLOC00_FNC_LOC_C] is not null
+                    ) Table1 GROUP BY AssetID  ORDER BY Sum(LossAmount) Desc
+                
+On the right side of the page heading, select .
+The new query text is saved. 
+ResultsThe corrected query will populate the Top 10 Bad Actors graph on the Production Loss Analysis Overview page.
+
+
+
+
+On this pageDeploy PLA for the First TimeUpgrade PLAReplace the Top 10 Bad Actors Query
+
+
+
+
+
+
+
+
+

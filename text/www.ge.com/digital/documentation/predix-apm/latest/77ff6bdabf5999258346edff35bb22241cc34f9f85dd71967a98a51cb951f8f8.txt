@@ -1,0 +1,306 @@
+
+
+
+Individual Reports | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+ReportsComprehensive Analysis Report
+PROACT® RCA Analysis-At-A-Glance Overview
+Individual Reports
+
+
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Reference
+Reports
+Individual Reports
+
+
+
+
+
+
+
+Individual ReportsAnalysis Summary Report
+The Analysis Summary Report displays summary information that is stored in the RCA Analysis record. The report is divided into the following sections:
+
+Analysis Data
+: Contains general information about the analysis. 
+Location Data
+: Contains information about the location of the piece of equipment being analyzed.
+Equipment Data
+: Contains information about the piece of equipment that is being analyzed.
+
+
+
+The name of the analysis, which is stored in the Analysis Name field in the RCA Analysis record, is displayed at the top of the Analysis Summary Report. The following table lists each item in the report and the corresponding RCA Analysis record field whose data is displayed in the report.
+Note: The Location Data and Equipment Data
+: sections exist in the Analysis Summary Report so that you can view this information in analyses where it existed in previous releases. In the product, the Definition tab on the Analysis Summary workspace allows you to link Equipment and Functional Location records to the RCA Analysis record. Asset information is no longer stored in fields in the RCA Analysis record, which are used to populate values in the Analysis Summary Report. You can view information in Equipment and Functional Location records that are linked to the RCA Analysis record using the 
+Assets
+ subsection of the PROACT RCA Analysis-At-A-Glance Overview section in the Comprehensive Analysis report.
+Report ItemRCA Analysis Field
+Analysis Data 
+
+Analysis Type 
+
+Analysis Type 
+
+Cost of Event 
+
+Cost 
+
+Frequency 
+
+Frequency 
+
+Acknowledgements 
+
+Acknowledgements 
+Analysis Start Date Start Date Analysis End Date End Date 
+Location Data 
+
+Plant Location 
+
+Plant Location 
+
+Division 
+
+Division 
+
+Functional Location 
+
+Functional Location 
+
+Unit 
+
+Unit 
+Equipment Data Asset Category Asset Category Asset Class Asset Class Asset Type Asset Type Asset ID Asset ID Manufacturer Manufacturer 
+Cause Report
+The Cause Report displays information that is stored in RCA Hypothesis records that are linked to the RCA Analysis record and contain a value of Cause - Physical, Cause - Latent, or Cause - Human in the State field. This information is displayed in two different formats:
+The Type of Causes graph.A table below the graph.
+The following image displays the Types of Causes graph. The x-axis displays the types of cause (i.e., human, physical, and latent). The y-axis displays the number of RCA Hypothesis records that contain a cause in the State field, which is also viewed in the Logic Tree section. 
+
+
+
+The table below the graph displays information related to each RCA Hypothesis record that is linked to the RCA Analysis record.
+
+
+
+The following table lists each item in the Cause Report and the corresponding RCA Hypothesis record field whose data is displayed in the report. A row exists for each RCA Hypothesis record and is categorized by the cause state (i.e., physical, latent, or human), which is stored in the State field of the RCA Hypothesis record.
+Report ColumnRCA Hypothesis Field
+Hypothesis 
+
+ID 
+
+Hypothesis Description 
+
+Description 
+
+Confidence Factor 
+
+Confidence Factor 
+
+Logic Tree Summary Report
+The Logic Tree Summary Report consists of two parts:
+The Logic Tree Summary By Node Type graph.A table that displays the information in the graph.
+The following image displays the Logic Tree Summary By Node Type graph. The x-axis displays the hypothesis state of the node, which is stored in the State field of each corresponding RCA Hypothesis record. The y-axis displays the number of nodes that exist in the Logic Tree for each type of state.
+
+
+
+The table below the graph contains the same information in a chart form. In this case, the values in the Node State column are equivalent to the Hypothesis State values in the graph, and the values in the Node Count column are equivalent to the Total Number on Logic Tree values in the graph. The value in the Total row is the total number of nodes that exist in the Logic Tree with a value in the State field in the corresponding RCA Hypothesis record.
+
+
+
+Verification Report
+The Verification Report displays information that is stored in each RCA Verification record and the RCA Hypothesis record that is linked to an RCA Verification record. It also displays information stored in the Human Resource record that is linked to the RCA Team Member record, which is linked to the RCA Verification record. The report includes each RCA Verification record that is linked to the RCA Analysis record.
+
+
+
+The name of the analysis, which is stored in the Analysis Name field in the RCA Analysis record, is displayed at the top of the Verification Report. The following table lists each item in the report and the corresponding RCA Verification, RCA Hypothesis, or Human Resource record field whose data is displayed in the report.
+Report ColumnRCA Verification or RCA Hypothesis RecordRecord Field
+Hypothesis 
+
+RCA Hypothesis 
+ID 
+Verification Method 
+
+RCA Verification 
+Method 
+Outcome 
+
+RCA Verification 
+Outcome 
+Responsible 
+
+Human Resource 
+First Name, Last Name
+Due Date 
+
+RCA Verification 
+Due Date 
+Recommendation Report
+The Recommendation Report displays information that is stored in each RCA Recommendation record that is linked to an RCA Analysis record.
+The name of the analysis, which is stored in the Analysis Name field in the RCA Analysis record, is displayed at the top of the Recommendation Report. The following table lists each item in the report and the corresponding RCA Recommendation record field whose data is displayed in the report.
+Report ColumnRCA Recommendation Field
+Recommendation 
+
+Recommendation Headline 
+
+Assigned to 
+
+Assigned to Name 
+
+Target Completion Date 
+
+Target Completion Date 
+
+Status 
+
+Status 
+
+Completed? 
+
+Completed 
+Completion Date Implemented Date 
+Team Member Report
+The Team Member Report displays information that is stored in an RCA Team Member record and the Human Resource record that is linked to the RCA Team Member record. The report includes each RCA Team Member record that is linked to the RCA Analysis record. 
+
+
+
+The name of the analysis, which is stored in the Analysis Name field in the RCA Analysis record, is displayed at the top of the Team Member Report. The following table lists each item in the report and the corresponding RCA Team Member or Human Resource record field whose data is displayed in the report.
+Report FieldRCA Team Member or Human Resource record Record Field
+Team Member Report 
+
+RCA Team Member 
+Type 
+Job Title 
+
+Human Resource 
+Job Title 
+Company 
+
+Human Resource 
+Company 
+Site 
+Human Resource Site Code 
+Facility 
+Human Resource Facility Business Unit Human Resource Business Unit Country Human Resource Country Address Human Resource Address City Human Resource City State Human Resource State Zip Code Human Resource Postal Code Email Human Resource Email Address Phone Human Resource Phone 
+Preserve Items Report - Group by Category
+The Preserve Items Report - Group by Category report displays information that is stored in each RCA Preserve Record that is linked to an RCA Analysis record and information stored in the Human Resource record that is linked to an RCA Team Member record that is linked to the RCA Preserve Item record. This report displays information for each Preserve Record in an analysis according to the value in the Data Category field (e.g., paper) in the RCA Preserve Item record.
+
+
+
+The name of the analysis, which is stored in the Analysis Name field in the RCA Analysis record, is displayed at the top of the Preserve Items Report - Group by Category. The following table lists each item in the report and the corresponding RCA Preserve Item or Human Resource record field whose data is displayed in the report.
+Report ItemRCA Preserve Item or Human Resource Record Record Field 
+Data to Collect 
+RCA Preserve Item Data to Collect 
+Collection Strategy 
+RCA Preserve Item Collection Strategy 
+Due Date 
+RCA Preserve Item Due Date 
+Completed? 
+RCA Preserve Item Completed? 
+Responsible 
+
+Human Resource 
+First Name, Last Name 
+Preserve Items Report - Group by Team Member
+The Preserve Items Report Group - Group by Team Member displays information that is stored in each RCA Preserve Item record that is linked to an RCA Analysis record. This report displays information for each RCA Preserve Item record according to the RCA Team Member to whom the Preserve Record is assigned. Each Team Member (e.g., Analyst) is identified in the report by the value stored in the Last Name and First Name fields of the Human Resource record that is linked to the RCA Team Member record that is linked to the RCA Preserve Item record.
+
+
+
+The name of the analysis, which is stored in the Analysis Name field in the RCA Analysis record, is displayed at the top of the Preserve Items Report Group - Group by Team Member. The following table lists each item in the report and the corresponding RCA Preserve Item record field whose data is displayed in the report.
+Report ItemRCA Preserve Item Field
+Data to Collect 
+
+Data to Collect 
+
+Collection Strategy 
+
+Collection Strategy 
+
+Due Date 
+
+Due Date 
+
+Completed? 
+
+Completed? 
+
+Data Category 
+
+Data Category 
+
+
+
+
+
+
+On this pageAnalysis Summary ReportCause ReportLogic Tree Summary ReportVerification ReportRecommendation ReportTeam Member ReportPreserve Items Report - Group by CategoryPreserve Items Report - Group by Team Member
+
+
+
+
+
+
+
+
+

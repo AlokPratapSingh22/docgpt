@@ -1,0 +1,111 @@
+
+
+
+Tag Custom Attributes | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+InstancesAsset Instances
+Asset Attributes
+Tag Instances
+Tag AttributesTag Reserved Attributes
+Tag Custom Attributes
+Tag Alias
+
+
+Location Information
+Events
+
+
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Instances
+Tag Attributes
+Tag Custom Attributes
+
+
+
+
+
+
+
+Tag Custom AttributesAdd a Custom Attribute to a Tag InstanceYou can add a custom attribute to a selected tag instance.About This Task
+Creating a new custom attribute allows you to define properties for the selected tag. Attributes may include a unit of measure next to the entered value on the tag instance view. Some attributes may include a list of values. All custom attributes are modifiable from the tag faceplate.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Select the Tag link.From the Custom Attributes section on the tag instance view, select .Each custom attribute can be uniquely configured. Use the following options to configure the custom attribute:
+For this optionDo thisNameEnter the attribute name. This field is case sensitive and cannot be empty or NULL. The name cannot exceed 100 characters and can contain alphanumeric and UTF-8 special characters.DatatypeSelect a data type from the drop-down list. The following values are available:CharacterYou can only enter a single alphanumeric character in the Value box.ShortYou can only enter up to five numeric characters in the Value box.IntegerYou can only enter numeric characters in the Value box.FloatYou can only enter up to 38 numeric characters and one decimal symbol in the Value box.DoubleYou can only enter numerical characters and one decimal symbol in the Value box.BooleanYou can select between True and False from the Value drop-down list box.TimestampThe Time Zone drop-down list box appears under Value where you can select a time zone. The displayed time stamp is converted based on the your choices in the user preferences.StringYou can add up to 100 alphanumeric or special characters to the Value box.ValueEnter the attribute value. Value formats may change based on your Datatype selection. Hints may appear to help with your entries.Note: You can add special character in the Value field of the attribute. If you want to search assets with the value that contains ,(comma), :(colon), or *(asterisk), you can search it only via wild card.
+Select Create to save the new attribute. The new attribute appears in the Custom Attributes table for the selected tag.Modify a Custom Attribute for a Tag InstanceYou can modify a custom attribute for a selected tag instance.About This Task
+Use this procedure to modify the data type and value of custom defined attributes for a tag instance.
+You can modify a custom attribute by reentering a Value in the table, or by selecting  and modifying the format and value from there.
+
+Note: If you want to modify the data type or value of an inherited attribute, you must select the parent classification link for the tag instance where the attribute was originally defined.
+
+ProcedureTo modify a value in custom attributes for a tag instance:In the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Select the Tag link.On the Custom Attributes section on the tag instance view, select a tag instance from the table.Hover over and select a value in the Custom Attributes table.Enter a new value in the Value box, then press ENTER or tap outside the field.The new value is confirmed with a message.To modify the format and value in custom attributes for a tag instance:On the Custom Attributes section on the tag instance view, select a tag instance from the table.Hover over and select  for an attribute entry in the Custom Attributes table.On the Attribute window, perform the following, then select Save:
+Select a data type from the Datatype drop-down list box.Enter the attribute value in the Value box. Value formats may change based on your Datatype selection. Hints may appear to help with your entries.
+The new values are saved and appear in the Custom Attributes table for the attribute selected.Delete a Custom Attribute from a Tag InstanceYou can delete a custom attribute from a selected tag instance.About This Task
+Use this procedure to delete a custom attribute from a tag instance. 
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Select the Tag link.From the Custom Attributes section on the asset instance view, select a Tag link from the table.Hover over and select  for an attribute entry in the Custom Attributes table.At the confirmation window, select Delete to delete the attribute configuration, history, and information permanently from the system.The attribute is removed from the Custom Attributes table.
+Related ReferenceAttribute Data Types and Values
+
+
+
+
+On this pageAdd a Custom Attribute to a Tag InstanceModify a Custom Attribute for a Tag InstanceDelete a Custom Attribute from a Tag Instance
+
+
+
+
+
+
+
+
+

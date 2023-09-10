@@ -1,0 +1,99 @@
+
+
+
+Fuel Code Fields | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Mappings
+Allowable Event Types in Related Events 
+Fields that can be Populated from one of the Three Related Records 
+Fuel Code Fields 
+Fuel Information Fields 
+Inactive Hours Field 
+Overlapping between an Outage Event and a Derate Event
+Capacity Event Types Affecting Performance Records
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Reference
+Fuel Code Fields 
+
+
+
+
+
+
+
+Fuel Code Fields Fuel Code Fields
+The fuel code fields in Performance records correspond to the fuel code fields in GAA Unit records and are populated automatically with the corresponding values in the GAA Unit records to which they are linked.
+In Performance records, fuel codes are stored within 16 distinct fields. While these fields appear as 16 separate cells on the Performance datasheet, the names of the cells do not correspond exactly to the names of the field captions. Throughout this documentation, we use the field captions when referring to these fields. Therefore, the following table maps the datasheet cell to the field caption.
+Field CaptionDatashseet TabDatasheet rowPrimary Fuel Code Primary Fuel Primary Fuel Code Secondary Fuel Code Secondary Fuel Secondary Fuel Code 
+
+
+
+
+
+On this pageFuel Code Fields
+
+
+
+
+
+
+
+
+

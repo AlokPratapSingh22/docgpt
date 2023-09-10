@@ -1,0 +1,102 @@
+
+
+
+Second Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+QueriesWorkflow
+Query Creation
+Query Results
+Query Sources, Fields, Joins, and Hyperlinks
+Query Expressions, Clauses, and Prompts
+Query Timeouts
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+First Quarter of 2019
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Queries
+Release Notes
+Second Quarter of 2020
+
+
+
+
+
+
+
+Second Quarter of 2020Release Date: May 8, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDIn the Results workspace, the wordwrap feature has been added to the columns containing text values. In addition, you can now perform the following actions:Sort values in one or more columns in ascending or descending order.Group the results according to the values in one or more columns.US396364
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, certain queries that contained parameter prompts and referenced other queries would unnecessarily recompute parameter values. This issue has been resolved. Now, parameter values are only recomputed when needed.DE127230Previously, when you attempted to select a query prompt value in the prompt filter, the prompt values intermittently took longer than expected to appear and there was no indication that the operation of loading the values was in progress. This issue has been resolved. Now, a spinner appears while the values are being loaded.DE127229Previously, the queries with a column comparison to a date constant that did not contain a time returned partial results, or no records were returned. This issue has been resolved.DE125046Previously, in GE Digital APM while saving the Catalog items, you could use a forward slash / and a back slash \ in the Catalog item name. This issue has been resolved. Now, you cannot use them (/ and \) while saving a Catalog item.DE122149Previously, the exported queries displayed dates in the Coordinated Universal Time (UTC). This issue has been resolved. Now, the exported queries display dates in the time zone specified for your GE Digital APM user account.DE119140Previously, an error occurred when executing a saved append query, which is referenced to another query as a source. This issue has been resolved. Now, the query runs as expected.DE118487Previously, if an error occurred when you attempted to export a query result set, an error message did not appear. This issue has been resolved. Now, in this scenario, a window containing the error message appears.DE116459
+Previously, if you were assigned to the MI Power User Role Security Group or MI Foundation Power Security Role, you could not create the following types of queries:Update queryDelete queryAppend query
+This issue has been resolved.
+DE112398
+
+
+
+
+
+On this pageRelease Date: May 8, 2020
+
+
+
+
+
+
+
+
+

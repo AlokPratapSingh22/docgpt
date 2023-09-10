@@ -1,0 +1,100 @@
+
+
+
+Fourth Quarter of 2018 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release NotesFirst Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Release Notes
+Fourth Quarter of 2018
+
+
+
+
+
+
+
+Fourth Quarter of 2018AssetThis topic provides a list of product changes released for this module on the dates listed below.Release Date: December 14, 2018
+Table 1. Known IssuesDescriptionTracking IDSelect and Cancel are not visible upon resize of the browser page to a smaller size.DE96140The GET call from /sites is returning all the attributes, including the deleted ones, because of the cache.DE94480When you pass anything other than the allowed parent entity CCOM Class, the task status fails.DE83773You are unable to ingest a tag with tagType as computed or sensor.DE76027If a network is part of a sub-network, then it is not searchable.DE75564The Reserved Attributes Advanced search is not working when system has large volumes of reserved attributes.DE75378[Unified App]- You are intermittently unable to see ingestion logs in IE (in the unified tenant).DE73709An internal server error displays if the user sends a request with a Malformed URL.DE68896A newly created alert (count) is not seen immediately without refreshing the page; the Date picker is not reflecting the current time.DE61811The Timestamp is incorrect if the time zone in the user preferences is set to UTC + 14(Kiritimati).DE57601Associate/Disassociate actions are logged as Create/Delete in the Audit Logs.DE44416The Asset page does not load properly and a console error displays when Tags are from Site or Segment.DE36446
+Table 2. LimitationsDescriptionTracking IDThe asset hierarchy (context browser) component has a limitation of 1000 assets for the enterprise level, and 250 assets for each subsequent level. If your asset hierarchy contains more than the allotted number of assets, depending upon the level, only the first 1000 assets for the enterprise level, or the first 250 assets for subsequent levels will appear in the asset hierarchy (context browser).N/A
+Table 3. Resolved IssuesDescriptionTracking IDThe Get tags for query (q=monitoredEntityUri->parent→type) does not work.DE74499
+
+
+
+
+
+On this pageAsset
+
+
+
+
+
+
+
+
+

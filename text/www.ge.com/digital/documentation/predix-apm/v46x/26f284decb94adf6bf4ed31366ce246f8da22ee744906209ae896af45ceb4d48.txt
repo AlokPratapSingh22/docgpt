@@ -1,0 +1,108 @@
+
+
+
+First Quarter of 2022 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesFirst Quarter of 2023
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Release Notes
+First Quarter of 2022
+
+
+
+
+
+
+
+First Quarter of 2022Release Date: March 4, 2022This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking ID
+To enhance flexibility when assigning user permissions in Reliability Analytics, additional feature permissions have been added. You can now choose from the following newly added permissions:
+MI Reliability AnalystMI Reliability ViewerMI Reliability Administrator
+US512878
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in Reliability Distribution Analysis, for an analysis that had the I have Failures without Replacement (as good as old) setting enabled, the value for the mean of TTF Distribution was labelled incorrectly as MTBF in the Analysis Summary workspace. This issue has been resolved. Now, when this setting is enabled, the mean of TTF Distribution is labelled as Mean.DE173899
+
+
+
+
+
+On this pageRelease Date: March 4, 2022
+
+
+
+
+
+
+
+
+

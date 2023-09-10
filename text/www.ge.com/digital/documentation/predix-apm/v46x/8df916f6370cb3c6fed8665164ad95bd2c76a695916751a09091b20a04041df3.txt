@@ -1,0 +1,207 @@
+
+
+
+Measurement Data | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability GrowthReliability Growth: Overview
+Reliability Growth: Workflow
+Reliability Growth Analyses
+Measurement Data
+
+
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Reliability Growth
+Measurement Data
+
+
+
+
+
+
+
+Measurement DataAbout Measurement Data
+The Reliability Growth Data Editor window allows you to view the data associated with a Reliability Growth Analysis. For an analysis based on manually-entered data, the Reliability Growth Data Editor window displays the information that you entered when you create the analysis.
+The Reliability Growth Data Editor window contains following two tabs: 
+
+<Measurement Name>: Provides information about the event data. The columns that appear on this tab are based on the following type of Reliability Growth Analysis for which you are viewing data. You need to select any combination to view Measurement data for the selected analysis.
+Time Data Format:
+Data contains dates.Data contains cumulative operating time.
+Measurement Data Format:
+Data is event count (e.g. Number of failures): Data is not event count (e.g. Costs).The following columns of information are displayed on the <Measurement> tab for event-based analyses using failure dates:
+Asset ID
+
+Date
+
+Time <units>
+Downtime <units>
+
+Failures
+
+
+Ignore
+
+Remarks
+
+
+Cumulative Time
+
+
+
+Segment
+
+The following columns of information on the <Measurement> tab behave differently for an event-based analysis based on cumulative operating time:
+Date
+
+
+COT <units> 
+
+Downtime<units> 
+
+Cumulative Time <units> 
+The following column of information behaves differently for an analysis that is not based on events and user grouped data:
+Cost
+
+
+
+Assets: Contains a grid with information about each Asset that is related to a measurement. The following columns of information are displayed in the grid on the Assets tab:
+
+Asset ID
+
+Installation Date
+
+Last Replacement
+
+
+Access the Source Analysis Data for a Reliability Growth AnalysisProcedure
+Access a Reliability Growth Analysis for which you want to view the analysis data.In the left pane, select the Cumulative <Measurement> Plot tab. 
+The Cumulative <Measurement> Plot appears in the workspace.
+
+
+
+Note: You can also view data for a plot via the Mean Time Between <Measurement> Plot, and <Measurement> Rate Plot tabs.
+In the upper-right corner of the workspace, select Analysis Data, and then select Go To Source.
+The fields on the page that appear display the analysis data associated with the selected Probability Distribution Analysis and correspond to values that were used to create the analysis. 
+For an analysis based on a query, the information returned by the query appears.
+For an analysis based on a dataset, the information stored in the dataset appears.
+
+For an analysis based on manually-entered data, you will receive the following error message: 
+There is no source data to view since the analysis is based on manually entered data. 
+To view data for an analysis based on manually-entered data, in the plot area, select an observed datapoint, and then select Go To Editor. The 
+Reliability Growth Data window for the selected Reliability Growth Analysis appears. The row containing the data for the selected observed datapoint is highlighted. 
+
+Note:
+As needed, you can modify the values in the enabled fields, and then select Finish to save your changes.
+For an analysis that is based on manually entered data, the changes that you make via the 
+Reliability Growth Data
+
+ window will be saved for the analysis.For an analysis that is based on a query or a dataset:The query or dataset will not be modified with the updated data. Additionally, any record returned by the query will not be updated with your changes. The changes will be saved to the analysis only.After you modify the data and save the analysis, the modified data will appear each time you open the analysis. If you want to revert to the original data, you can reload the original data to the analysis. In addition, if a query or dataset has changed in the database, you can reload the data in order for your analysis to contain those changes.
+
+
+Modify Data in a Reliability Growth AnalysisAbout This Task
+You can use the Reliability Growth Data window to modify the data in any enabled field. This allows you to correct errors in the data or adjust data as needed. Only certain fields in the Reliability Growth Data window can be modified. Fields that contain calculations by the GE Digital APM system are disabled.
+Procedure
+Access a Reliability Growth Analysis for which you want to modify the analysis data.In the left pane, select the Cumulative <Measurement> Plot tab. 
+The Cumulative <Measurement> Plot appears in the workspace.
+
+
+
+Note: You can also modify data for a plot via the Mean Time Between <Measurement> Plot, and <Failures> Rate Plot tabs.
+In the upper-right corner of the workspace, select Analysis Data, and then select Edit Data.
+The Reliability Growth Data window appears, displaying the data associated with the selected Probability Distribution Analysis.
+
+
+
+As needed, modify the data in any enabled field, and then select OK. 
+The analysis is updated to reflect any changes that you made.
+Select Finish. 
+The analysis is updated to reflect any changes that you made.
+Results
+For an analysis that is based on manually entered data, the changes that you make via the Reliability Growth Data window will be saved for the analysis.For an analysis that is based on a query or a dataset:The query or dataset will not be modified with the updated data. Additionally, any record returned by the query will not be updated with your changes. The changes will be saved to the analysis only.After you modify the data and save the analysis, the modified data will appear each time you open the analysis. If you want to revert to the original data, you can reload the original data to the analysis. In addition, if a query or dataset has changed in the database, you can reload the data in order for your analysis to contain those changes.
+
+Reload Analysis Data in a Reliability Growth AnalysisAbout This Task
+When you create and save analyses that are based on a query or dataset, the GE Digital APM system takes a snapshot of the data that exists at the time of creation and saves it along with the analysis. When you open an existing analysis, the GE Digital APM system loads the data that was last saved with the analysis. This means that any changes to the underlying query or dataset will not be reflected automatically when you open an existing analysis.
+Note: If the query or dataset has been deleted or renamed, when you try to open an associated analysis, an error message will be displayed, and the data will not be refreshed.
+If you want to refresh an analysis based on changes to the underlying query or dataset or to load new data that has been added since the analysis was last saved (e.g., the analysis is based on a query that retrieves failures for a piece of equipment or location, and a new failure record has been added to the database), you will need to reload the analysis manually after opening it.
+Note: Reloading analysis data resets the analysis period only if it is based on the analysis data. Start Dates and End Dates that have been set explicitly will not be overwritten.
+Procedure
+Access a Reliability Growth Analysis for which you want to reload the analysis data.In the left pane, select the Cumulative <Measurement> Plot tab. 
+The Cumulative <Measurement> Plot appears in the workspace.
+
+
+
+Note: You can also reload the data for an analysis via the Mean Time Between <Measurement> Plot, and <Measurement> Rate Plot tabs.
+In the upper-right corner of the workspace, select Analysis Data, and then select Reload Data.
+A confirmation message appears, asking you to confirm that you want to overwrite the current data with the data stored in the database.
+Note:
+For an analysis based on manually-entered data, you will receive the following error message: 
+There is no source data to reload since the analysis is based on manually entered data. 
+
+Select Yes.
+The analysis is updated to reflect the data currently stored in the query or dataset.
+Note: If you are reloading analysis data that is based on a query and an index out of range error message appears, there is an error in the query. You should modify the query or recreate the analysis to reload the correct data.
+
+
+
+
+
+On this pageAbout Measurement DataAccess the Source Analysis Data for a Reliability Growth AnalysisModify Data in a Reliability Growth AnalysisReload Analysis Data in a Reliability Growth Analysis
+
+
+
+
+
+
+
+
+

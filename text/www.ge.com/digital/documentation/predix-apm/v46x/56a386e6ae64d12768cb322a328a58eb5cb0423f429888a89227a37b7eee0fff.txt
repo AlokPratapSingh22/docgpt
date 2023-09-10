@@ -1,0 +1,357 @@
+
+
+
+Data Loader | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Data Loader
+
+
+
+
+
+
+
+Data LoaderAbout the System Reliability Data LoaderThe System Reliability Data Loader allows both primary and third-party content to be delivered to GE Digital APM through the System Reliability Data Model. Using the System Reliability Data Loader, you can import the following types of primary and third-party data from a fixed-format Excel workbook into the System Reliability Data Model:System Analysis recordsSystem Scenario recordsSystem Subsystem recordsSystem Asset recordsSystem Buffer recordsSystem Link recordsSystem Switch recordsSystem Sensor recordsSystem Risk records System Action records System Risk Assessment recordsNote:  The System Reliability Data Loader will not be backwards compatible to earlier versions of GE Digital APM.About the System Reliability Data Loader RequirementsTo use the System Reliability Data Loader, your organization must have completed the deployment of the Reliability Analytics module.Security Settings
+The Security User performing the data load operation must be associated with either the MI Data Loader User or MI Data Loader Admin Security Role, and must also be associated with the MI Reliability Administrator Security Group, the MI Reliability User Security Group, or a Security Role that is associated with this Security Group.
+About the System Reliability Data Loader Data ModelSystem Reliability Data Loader Data Model
+The following diagram shows how the families used in System Reliability Data Loader are related to one another.
+
+Note: In the diagram, boxes represent entity families and arrows represent relationship families that are configured in the baseline database. You can determine the direction of each relationship definition from the direction of the arrow head: the box from which the arrow originates is the predecessor, and the box to which the arrow head points is the successor.
+About the System Reliability Data Loader General Loading StrategyBest Practices
+When importing data using the System Reliability Data Loader, you must use the following best practices:
+ID fields (row 2 of each worksheet) must not include special characters or spaces.Columns in the worksheets should be formatted as either text or dates.The first two rows of each worksheet should not be edited.Only import a maximum of 500 analyses in each data load.
+Limitations
+This section documents a list of the limitations for the System Reliability Data Loader:
+The user must use the System Reliability Data Loader workbook (System Reliability.xlsx). Any modifications made by the user to the values in column headings in any of the worksheets will not be imported.Note:  Any column values in a customized format will not be imported by the System Reliability Data Loader.If the user imports the same data multiple times, multiple analyses will be created. 
+Load Sequence
+Create System Analysis record.Link a System Analysis record to a System Scenario record through the Has Scenarios Relationship.Link a System Scenario record to a System Subsystem record through the Has Root System Relationship.Link a System Subsystem record to a System Asset record through the Has System Elements Relationship.Link a System Subsystem record to a System Buffer record through the Has System Elements Relationship.Link a System Subsystem record to a System Link record through the Has System Elements Relationship.Link a System Subsystem record to a System Switch record through the Has System Elements Relationship.Link a System Subsystem record to a System Sensor record through the Has System Elements Relationship.Link a System Asset record to a System Action record through the Has System Actions Relationship, and then link the System Action Record to a System Risk Assessment record.Link a System Asset record to a System Risk record through the Has System Risks Relationship, and then link the System Risk record to a Distribution. 
+About the System Reliability Data Loader Workbook Layout and Use
+In order to import data using the System Reliability Data Loader, GE Digital APM provides an Excel workbook (System Reliability.xlsx) that supports baseline System Reliability in GE Digital APM. This template must be used to perform the data load.
+The following table lists the worksheets that are included in the System Reliability workbook.WorksheetDescriptionSystem AnalysisThis worksheet is used to define System Analysis records.System ScenarioThis worksheet is used to define System Scenario records.System SubsystemThis worksheet is used to define System Subsystem records.System AssetThis worksheet is used to define System Asset records.System BufferThis worksheet is used to define System Buffer records.System LinkThis worksheet is used to define System Link records.System SwitchThis worksheet is used to define System Switch records.System SensorThis worksheet is used to define System Sensor records.System DiagramThis worksheet is used to define connections between System Element records.System RiskThis worksheet is used to define System Risk records.System ActionThis worksheet is used to define System Action records.System Risk AssessmentThis worksheet is used to determine the System Risk Assessment records used for a System Scenario record. 
+Example: System Scenario Worksheet
+The following table depicts a System Scenario record for a Parallel Motor/Pump Configuration. You can enter the details of a System Scenario record into the System Scenario worksheet provided by the System Reliability Data Loader workbook. 
+System Reliability Analysis KeyScenario KeyScenario NameMI_STRATANA_ANALY_KEYMI_STRATSCE_KEYMI_STRATSCE_NAME_C12344567Parallel Motor/Pump Configuration
+System Code Tables
+The following table lists the fields from the Reliability Analytics System Codes table that must be configured.
+
+Field Name
+
+Field ID
+Action TypeMI_ACTION_TYPEAction - Condition Monitoring TypeMI_CONDITION_MONITORING_TYPE 
+System Analysis
+System Analysis records store general information about a System Analysis.
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+System Reliability Analysis KeyMI_STRATANA_ANALY_KEYNumeric
+This field is required and must be unique.
+Analysis IDMI_STRATANA_NAME_CCharacter (255)
+This field is required and must be unique.
+Site IDMI_SITE_IDCharacter (50)
+This field is required and must be unique.
+If the value in this field is black, then the site will be set to Global by default. 
+
+System Scenario
+System Scenario records store general information about a scenario in a System Reliability Analysis. 
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+System Reliability Analysis KeyMI_STRATANA_ANALY_KEYNumeric
+This field is required and must match the System Reliability Analysis Key in the System Analysis worksheet.
+Scenario KeyMI_STRATSCE_KEYNumericThis field is required. The value in the field must be unique. This field must be associated with the System Reliability Analysis Key in the System Analysis worksheet .Scenario NameMI_STRATSCE_NAME_CCharacter (255)This field is required. The value in the field must be unique. This field must be associated with the System Reliability Analysis Key in the System Analysis worksheet .
+System Subsystem
+System Subsystem records store information about a system of equipment or locations. 
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+System Reliability Analysis KeyMI_STRATANA_ANALY_KEYNumeric
+This field is required and must match the System Reliability Analysis Key in the System Analysis worksheet.
+Scenario KeyMI_STRATSCE_KEYNumeric
+This field is required and must match the Scenario Key in the System Scenario worksheet.
+Parent Subsystem KeyMI_ASOSUBSYSTEM_PARENT_KEYNumericThis field must be blank or match the Subsystem Key in another row of the same worksheet.Subsystem KeyMI_ASOSUBSYSTEM_KEYNumeric
+This field is required. The value in the field must be unique.
+The field must be associated with the System Reliability Analysis Key in the System Analysis worksheet and with the Scenario Key in the System Scenario worksheet.
+NameMI_ASOSUBSYSTEM_NAME_CCharacter (255)
+This field is required. The value in the field must be unique.
+The field must be associated with the System Reliability Analysis Key in the System Analysis worksheet and with the Scenario Key in the System Scenario worksheet.
+
+System Asset
+System Asset records store information about equipment and locations that exist in the System Analysis diagram. 
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+System Reliability Analysis KeyMI_STRATANA_ANALY_KEYNumeric
+This field is required and must match the System Reliability Analysis Key in the System Analysis worksheet.
+Scenario KeyMI_STRATSCE_KEYNumeric
+This field is required and must match the Scenario Key in the System Scenario worksheet.
+Subsystem KeyMI_ASOSUBSYSTEM_KEYNumericThis field is required and must match the Subsystem Key in the System Subsystem worksheet.Asset KeyMI_ASOASSET_KEYNumericThis field is required. The value in the field must be unique. This field must be associated with the System Reliability Analysis Key in the System Analysis worksheet and with the System Scenario Key in the System Scenario worksheet. Asset NameMI_ASOASSET_NAME_CCharacter (255)This field is required. The value in the field must be unique. The field must be associated with the System Reliability Analysis Key in the System Analysis worksheet and with the System Scenario Key in the System Scenario worksheet. Equipment IDMI_EQUIP000_EQUIP_ID_CCharacter (255)This field is optional.Functional Location IDMI_FNCLOC00_IDCharacter (50)This field is optional.
+System Buffer
+System Buffer records store information about buffer elements that exist in the System Analysis diagram.
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+System Reliability Analysis KeyMI_STRATANA_ANALY_KEYNumeric
+This field is required and must match the System Reliability Analysis Key in the System Analysis worksheet.
+Scenario KeyMI_STRATSCE_KEYNumeric
+This field is required and must match the Scenario Key in the System Scenario worksheet.
+Subsystem KeyMI_ASOSUBSYSTEM_KEYNumericThis field is required and must match the Subsystem Key in the System Subsystem worksheet.Buffer KeyMI_ASOBUFFE_KEYNumeric
+This field is required. The value in the field must be unique.
+The field must be associated with the System Reliability Analysis Key in the System Analysis worksheet and with the System Scenario Key in the System Scenario worksheet.
+NameMI_ASOBUFFE_NAME_CCharacter (255)
+This field is required. The value in the field must be unique.
+The field must be associated with the System Reliability Analysis Key in the System Analysis worksheet and with the System Scenario Key in the System Scenario worksheet.
+Initial Quantity in PercentageMI_ASOBUFFE_INI_QUA_IN_PER_NNumericThis field is required.Time to EmptyMI_ASOBUFFE_TIME_TO_EMP_NNumericThis field is required.Time to Empty UnitsMI_ASOBUFFE_TIME_TO_EMPUNS_CCharacter (50)This field is required.Time to RefillMI_ASOBUFFE_TIME_TO_REF_NNumericThis field is required.Time to Refill UnitsMI_ASOBUFFE_TIME_TO_REFUNS_CCharacter (50)This field is required.
+System Link
+System Link records store information about link elements that exist in the System Analysis diagram.
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+System Reliability Analysis KeyMI_STRATANA_ANALY_KEYNumeric
+This field is required and must match the System Reliability Analysis Key in the System Analysis worksheet.
+Scenario KeyMI_STRATSCE_KEYNumeric
+This field is required and must match the Scenario Key in the System Scenario worksheet.
+Subsystem KeyMI_ASOSUBSYSTEM_KEYNumericThis field is required and must match the Subsystem Key in the System Subsystem worksheet.Link KeyMI_ASOLINK_KEYNumeric
+This field is required. The value in the field must be unique.
+The field must be associated with the System Reliability Analysis Key in the System Analysis worksheet and with the System Scenario Key in the System Scenario worksheet.
+NameMI_ASOLINK_NAME_CCharacter (255)
+This field is required. The value in the field must be unique.
+The field must be associated with the System Reliability Analysis Key in the System Analysis worksheet and with the System Scenario Key in the System Scenario worksheet.
+Minimum PredecessorsMI_ASOLINK_MINIM_PREDE_NNumericThis field is required.
+System Switch
+System Switch records store information about switch elements that exist in the System Analysis diagram.
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+System Reliability Analysis KeyMI_STRATANA_ANALY_KEYNumeric
+This field is required and must match the System Reliability Analysis Key in the System Analysis worksheet.
+Scenario KeyMI_STRATSCE_KEYNumeric
+This field is required and must match the Scenario Key in the System Scenario worksheet.
+Subsystem KeyMI_ASOSUBSYSTEM_KEY
+Numeric
+This field is required and must match the Subsystem Key in the System Subsystem worksheet.Switch KeyMI_ASOSWIT_KEYNumeric
+This field is required. The value in the field must be unique.
+The field must be associated with the System Reliability Analysis Key in the System Analysis worksheet and with the System Scenario Key in the System Scenario worksheet.
+NameMI_ASOSWIT_NAME_CCharacter (255)
+This field is required. The value in the field must be unique.
+The field must be associated with the System Reliability Analysis Key in the System Analysis worksheet and with the System Scenario Key in the System Scenario worksheet.
+Is Initially OnMI_ASOSWIT_IS_INIT_ON_FBooleanThis field is required.
+System Sensor
+System Sensor records store information about sensor elements that exist in the System Analysis diagram.
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+System Reliability Analysis KeyMI_STRATANA_ANALY_KEYNumeric
+This field is required and must match the System Reliability Analysis Key in the System Analysis worksheet.
+Scenario KeyMI_STRATSCE_KEYNumeric
+This field is required and must match the Scenario Key in the System Scenario worksheet.
+Subsystem KeyMI_ASOSUBSYSTEM_KEYNumericThis field is required and must match the Subsystem Key in the System Subsystem worksheet.NameMI_ASOSENSO_NAME_CCharacter (255)
+This field is required. The value in the field must be unique.
+The field must be associated with the System Reliability Analysis Key in the System Analysis worksheet and with the System Scenario Key in the System Scenario worksheet.
+Monitored ElementsMI_ASOSENSO_MONIT_ELEME_TText
+This field is required.
+The field contains the comma-separated keys of System Subsystem/Asset/Buffer/Switch records.
+Deactivated SwitchesMI_ASOSENSO_DEACTI_SWIT_TText
+This field is required.
+The field contains the comma-separated keys of System Switch records.
+Activated SwitchesMI_ASOSENSO_ACTI_SWIT_TText
+This field is required.
+The field contains the comma-separated keys of System Switch records.
+
+System Diagram
+System Diagram records store information about element connections that exist in the System Analysis diagram. 
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+System Reliability Analysis KeyMI_STRATANA_ANALY_KEYNumeric
+This field is required and must match the System Reliability Analysis Key in the System Analysis worksheet.
+Scenario KeyMI_STRATSCE_KEYNumeric
+This field is required and must match the Scenario Key in the System Scenario worksheet.
+Subsystem KeyMI_ASOSUBSYSTEM_KEYNumericThis field is required and must match the Subsystem Key in the System Subsystem worksheetPredecessor Node KeyMI_ASODIAG_PRED_KEYNumericThis field is required. If the value in the field is blank, the asset will be connected to the Start node.Successor Node KeyMI_ASODIAG_SUCC_KEYNumericThis field is required. If the value in the field is blank, the asset will be connected to the End node.
+System Risk
+System Risk records store details about a Risk in a System Analysis and the cost of an equipment or location failure due to that risk.
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+System Reliability Analysis KeyMI_STRATANA_ANALY_KEYNumeric
+This field is required and must match the System Reliability Analysis Key in the System Analysis worksheet.
+Scenario KeyMI_STRATSCE_KEYNumeric
+This field is required and must match the Scenario Key in the System Scenario worksheet.
+Asset KeyMI_ASOASSET_KEYNumeric
+This field is required and must match the Asset Key in the System Asset worksheet.
+Risk KeyMI_ASORISK_KEYNumeric
+This field is required. The value in the field must be unique. 
+The field must be associated with the System Reliability Analysis Key in the System Analysis worksheet and the Asset Key in the System Asset worksheet.
+Risk NameMI_ASORISK_NAMECharacter (255)
+This field is required. The value in the field must be unique. 
+The field must be associated with the System Reliability Analysis Key in the System Analysis worksheet and the Asset Key in the System Asset worksheet.
+TTFMI_DISTRIB_EXPN_TTFNumericThis field is required. TTF UnitsMI_DISTRIB_UNIT_TTFCharacter (20)This field is required. TTRMI_DISTRIB_EXPN_TTRNumericThis field is required. TTR UnitsMI_DISTRIB_UNIT_TTRCharacter (20)This field is required. 
+System Action
+System Action records store information about Condition-Based Maintenance, Procedure, Redesign, Time-Based Maintenance, and Training Actions. 
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+System Reliability Analysis KeyMI_STRATANA_ANALY_KEYNumeric
+This field is required and must match the System Reliability Analysis Key in the System Analysis worksheet.
+Scenario KeyMI_STRATSCE_KEYNumeric
+This field is required and must match the Scenario Key in the System Scenario worksheet.
+Asset KeyMI_ASOASSET_KEYNumeric
+This field is required and must match the Asset Key in the System Asset worksheet.
+Action KeyMI_ASOACT_KEYNumeric
+This field is required. The value in the field must be unique. 
+The field must be associated with the System Reliability Analysis Key in the System Analysis worksheet, the Scenario Key in the System Scenario worksheet, and the Asset Key in the System Asset worksheet.
+Action NameMI_ASOACT_NAME_CCharacter (255)
+This field is required. The value in the field must be unique.
+The field must be associated with the System Reliability Analysis Key in the System Analysis worksheet, the Scenario Key in the System Scenario worksheet, and the Asset Key in the System Asset worksheet.
+Action TypeMI_STRATACT_ACTIO_TYPE_CCharacter (50)This field is required.Action - Condition Monitoring TypeMI_STRATACT_COND_MONI_TYPE_CCharacter (50)
+This field is required only if the value in the Action Type field is Condition-Based Maintenance (Preventative).
+The values in the field are populated by the MI_ACTION_TYPE System Code Table.
+
+Action Cost 
+MI_STRATACT_FIXED_COST_NNumeric
+This field is required. The value in the field represents an expense that is incurred every time the action occurs.
+By default, the value in the field is 0 (zero).
+Action IntervalMI_STRATINSP_INTER_NNumericThis field is required. Action Interval UOMMI_STRATINSP_INTER_UNITS_CCharacter (50)This field is required. Action DurationMI_STRATINSP_DURAT_NNumericThis field is required. Action Duration UOMMI_STRATINSP_DURAT_UNITS_CCharacter (50)This field is required. 
+System Risk Assessment
+System Risk Assessment records store information about the Risks and Actions included in a specific scenario. 
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+System Reliability Analysis KeyMI_STRATANA_ANALY_KEYNumeric
+This field is required and must match the System Reliability Analysis Key in the System Analysis worksheet.
+Scenario KeyMI_STRATSCE_KEYNumeric
+This field is required and must match the Scenario Key in the System Scenario worksheet.
+Asset KeyMI_ASOASSET_ASSET_KEY_NNumeric
+This field is required and must match the Asset Key in the System Asset worksheet.
+Action KeyMI_STRATACT_KEYNumeric
+This field is required and must match the Action Key in the System Action worksheet.
+Risk KeyMI_ASORISK_KEYNumeric
+This field is required and must match the Risk Key in the System Risk worksheet.
+
+About the System Reliability Data Loader Load VerificationAbout This TaskFollowing a successful data load, you can navigate to the System Reliability section of the RA Overview page and view the analysis created from the imported workbook.A successful import can also be defined as an event where partial data on a worksheet was loaded into GE Digital APM, and where the user was given appropriate messaging that enabled him or her to identify and correct issues resulting from the import.
+
+
+
+
+On this pageAbout the System Reliability Data LoaderAbout the System Reliability Data Loader RequirementsAbout the System Reliability Data Loader Data ModelAbout the System Reliability Data Loader General Loading StrategyAbout the System Reliability Data Loader Workbook Layout and UseAbout the System Reliability Data Loader Load Verification
+
+
+
+
+
+
+
+
+

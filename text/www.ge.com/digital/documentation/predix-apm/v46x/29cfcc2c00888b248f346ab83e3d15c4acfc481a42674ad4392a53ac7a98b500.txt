@@ -1,0 +1,90 @@
+
+
+
+Reliability Growth: Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability GrowthReliability Growth: Overview
+Reliability Growth: Workflow
+Reliability Growth Analyses
+Measurement Data
+
+
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Reliability Growth
+Reliability Growth: Workflow
+
+
+
+
+
+
+
+Reliability Growth: WorkflowReliability Analytics: Reliability Growth Analysis WorkflowThis workflow describes the process for analyzing changes to a measured value over time. In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+View Existing Analysis Persona: AnalystView the details of an existing analysis.Create Analysis Persona: AnalystCreate an analysis based on production data or event data.Merge/Split Segments Persona: AnalystMerge or split growth analyses into segments based on calculated parameters. Extrapolate Data Persona: AnalystExtrapolate segments to a future date that will be charted for each segment.Set Confidence Level Persona: AnalystEstablish and set the confidence levels applicable to the analysis results.View Report Persona: AnalystView and save the analysis report.Manage Performance Recommendations Persona: AnalystCreate any number of performance recommendations and Approve them using state management. Note:  Performance recommendations are not required.Go to the Manage Performance Recommendations workflow.Other Workflows Persona: AnalystOther workflows provide production data from SAP, EAM, and Recommendations. 
+
+
+
+
+On this pageReliability Analytics: Reliability Growth Analysis WorkflowView Existing AnalysisCreate AnalysisMerge/Split SegmentsExtrapolate DataSet Confidence LevelView ReportManage Performance RecommendationsOther Workflows
+
+
+
+
+
+
+
+
+

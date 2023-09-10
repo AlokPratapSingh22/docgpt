@@ -1,0 +1,91 @@
+
+
+
+Asset Hierarchy Configuration | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Asset Hierarchy Configuration
+GE Digital APM is built on the premise that, within your company, there are multiple records that can be organized into a hierarchy. This organization relies on the parent-child relationship between records to represent the fact some records can belong to other records. The Hierarchy can be modified to reflect a custom family. However, the baseline configuration relies on the Functional Location family and the fields in each Functional Location record to define which location each represents. Because there is only one Functional Location family, it is used to store data about all of your locations, where the values in each Functional Location record identify which type of location it is.The baseline configuration assumes that Functional Locations have Functional Locations and that Equipment is found at the lowest levels of Functional Locations. For example, three pieces of equipment might belong to the same Functional Location, meaning the Functional Location resides on a higher level of the hierarchy than the Equipment.More Details: Baseline Configuration
+In the baseline configuration, there are two levels reflected in the Asset Hierarchy: the Root and a secondary level. The primary level of the Hierarchy, the Root, reflects the Functional Location relationships. The second level of the hierarchy reflects Equipment related to Functional Locations. The hierarchy first displays the Root Function Location, and drills down to child Functional Locations based on your selections. The hierarchy will continue to do so until there are no child relationships for the selected Functional Location. Then, using the criteria defined in the second level, the hierarchy will display Equipment records related to the selected Functional Location.
+The baseline configuration is as follows:
+
+Root: The primary level of the hierarchy.
+Parent Family: Functional Location
+Relationship: Functional Location Has Functional Location(s)
+Child Family: Functional Location
+Display Field: Functional Location Description
+Taxonomy Category: Taxonomy Category
+Taxonomy Class: Taxonomy Class
+Taxonomy Type: Taxonomy Type
+
+Secondary Level: The second level of the hierarchy.
+Parent Family: Functional Location
+Relationship: Functional Location Has Equipment
+Child Family: Equipment
+Display Field: ENTY_ID
+Taxonomy Category: Taxonomy Category
+Taxonomy Class: Taxonomy Class
+Taxonomy Type: Taxonomy Type
+
+Important: Equipment or functional location with multiple parent functional location is not supported in Asset Hierarchy.To find the duplicate keys, run the below query in GE Digital APM:SELECT MV_AST_HRCY_DUP.parent_enty_key
+, PAR_FMLY.FMLY_CAPTION_TX "PARENT_FMLY"
+, MV_AST_HRCY_DUP.enty_key "CHILD_ENTY_KEY"
+, CHILD_FMLY.FMLY_CAPTION_TX "CHILD_FMLY"
+, MV_AST_HRCY_DUP.enty_id "CHILD_ENTY_ID"
+, MV_AST_HRCY_DUP.the_level
+, MV_AST_HRCY_DUP.path
+FROM MIV_MI_AST_HRCY_MV_DUP MV_AST_HRCY_DUP
+ JOIN MI_FAMILIES PAR_FMLY ON PAR_FMLY.FMLY_KEY = MV_AST_HRCY_DUP.parent_fmly_key
+ JOIN MI_FAMILIES CHILD_FMLY ON CHILD_FMLY.FMLY_KEY = MV_AST_HRCY_DUP.fmly_key
+ORDER BY MV_AST_HRCY_DUP.enty_key Asc
+
+
+
+
+
+
+
+
+
+
+
+

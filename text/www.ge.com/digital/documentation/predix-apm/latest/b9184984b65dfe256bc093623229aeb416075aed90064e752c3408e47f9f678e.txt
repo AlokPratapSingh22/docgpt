@@ -1,0 +1,548 @@
+
+
+
+Family Field Descriptions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Hazards AnalysisOverview
+Workflows
+Hazards Analysis
+Components in a Hazards Analysis
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Hazards Analysis
+Reference
+Family Field Descriptions
+
+
+
+
+
+
+
+Family Field DescriptionsHazards Analysis Cause Records
+Hazards Analysis Cause records store details on the cause of a particular event or condition within a process. This topic provides an alphabetical list and description of the fields that exist for the Hazards Analysis Cause family. These fields appear on the Hazards Analysis Cause datasheet, unless otherwise specified. The information in this table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+Cause Comment 
+
+Text
+
+Comments about the cause.
+
+None
+
+Cause Description 
+
+Text
+
+A detailed description of the cause.
+
+None
+Cause Frequency (per year) Number A numeric value that represents the number of times per year the cause may occur. 
+This field is disabled and populated with the default value of frequency specified in the Initiating Event record based on your selection in the CCPS Cause Type field. 
+Cause ID Character A brief description of the cause. This is a required field.Cause Number Character A set of three numeric values, separated by decimal points, which represents the location in which the Cause appears in the hierarchical view of the components in the Systems/Nodes. 
+This field is disabled and populated with a set of three numbers, separated by decimal points (e.g., 2.1.1). 
+The first two numbers correspond to the value that exists in the What If Number field in the What If or the Deviation/Guideword Number field in the Deviation to which the Cause is linked.  The third number is the value that exists in the Sequence Number field in the Cause. 
+Cause Type Character The type of cause. 
+This field contains the description of the System Codes that exist in the MI_HAZOP_CAUSE_TYPE System Code Table. You can choose from the following baseline values: 
+Equipment Failure Human Error Process Upset Flooding Lightning Power Loss Terrorism 
+CCPS Cause Type CharacterThe type of cause as defined by CCPS.
+This field is populated by the value in the Initiating Event ID field of the Initiating Event records.
+When you create a LOPA from a cause-consequence pair in Hazards Analysis module, the Initiating Event Type field in the LOPA is disabled and automatically populated with the value in the CCPS Cause Type field.
+Equipment Entity Key Number The Entity Key for the Equipment whose Record ID appears in the Equipment ID field. This field does not appear on the datasheet.Equipment ID Character The ID of the Equipment that is linked to the Cause through the Safety Analysis Has Equipment Relationship family. This field contains a  button, which you can select to link an Equipment to the Cause. Functional Location KeyNumber The Entity Key for the Functional Location whose ID appears in the Functional Location ID field. This field does not appear on the datasheet.Functional Location ID Character The ID of the Functional Location that is linked to the Cause through the Has Functional Location Relationship family. This field contains a  button, which you can select to link a Functional Location to the Cause. Sequence Number Number A numeric value that represents the position in which the Cause appears in the hierarchical view of the components in the System/Node, relative to the other Causes that are linked to the same Deviation or What If. This field does not appear on the datasheet.
+Hazards Analysis Consequence Records
+Hazards Analysis Consequence records store details on the specific risk that is associated with a given scenario. This topic provides an alphabetical list and description of the fields that exist for the Hazards Analysis Consequence family. By default, these fields appear on the Hazards Analysis Consequence datasheet, unless otherwise specified. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and Usage
+Consequence Comment 
+
+Text
+
+Comments about the risk.
+
+None
+
+Consequence Description 
+
+Text
+
+A detailed description of the risk.
+
+None
+Consequence ID Character A brief description of the risk.  This is a required field. Consequence Number Character A set of four numeric values, separated by a decimal point, which represents the location in which the Consequence appears in the hierarchical view of the components in the System/Node.
+This field is disabled and populated with numbers, separated by decimal points (e.g., 2.1.1.1). 
+ The first three numbers correspond to the value that exists in the Cause Number field in the Cause to which the Consequence is linked.  The fourth number is the value that exists in the Sequence Number field in the Consequence. 
+Consequence Type Character The type of risk. 
+This field contains the description of the System Codes that exist in the MI_HAZOP_CONSEQUENCE_TYPE System Code Table. You can choose from the following baseline values: 
+Fire Explosion Single Fatality Multiple Fatalities Equipment Damage Production Loss 
+Sequence Number Number A numeric value that represents the position in which the Consequence appears in the hierarchical view of the components in the System/Node, relative to the other Consequences that are linked to the same Cause. This field is used to populate the Consequence Number field, and does not appear on the datasheet by default. 
+Hazards Analysis Deviation Records
+HAZOP Deviation records store details on the condition within a process that deviates from the normal behavior during that process, resulting in a risk. This topic provides an alphabetical list and description of the fields that exist for the HAZOP Deviation family. These fields appear on the HAZOP Deviation datasheet, unless otherwise specified. The information in this table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+Deviation/Guideword 
+
+Character
+
+A brief description of the deviation. 
+
+This field contains the description of the System Codes that exist in the MI_HAZOP_DEVIATIONS_TYPE System Code table. You can choose from the following baseline values:
+More Pressure Less Pressure More Temperature Less Temperature More Flow Less Flow No Flow 
+This value appears in the list of Deviations in the hierarchical view of the components of the System/Node.
+
+Deviation/Guideword Number 
+
+Character
+
+A set of numeric values, separated by a decimal point, which represents the location in which the Deviation appears in the hierarchical view of the components of the System/Node. 
+
+This field is disabled and populated with a set of numeric values, separated by a decimal point. 
+The first number is the value that exists in the System/Node Number field in the System/Node record to which the Deviation is linked. 
+ The second number is the value that exists in the Sequence Number field in the Deviation.
+
+Sequence Number Number A numeric value that represents the sequence in which the Deviation appears in the hierarchical view of the components of the System/Node, relative to the other Deviations that are linked to the same System/Node. This field does not appear on the datasheet by default. This value in this field is used to populate the Deviation/Guideword Number field. 
+Hazards Analysis Records
+Hazards Analysis records store details about the hazards analysis that you are conducting. This topic provides an alphabetical list and description of the fields that exist for the Hazards Analysis family and appear on the Hazards Analysis datasheet, unless otherwise specified. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+Data TypeDescriptionBehavior and Usage
+Analysis Description 
+
+Character
+
+A brief description for the analysis.
+
+None
+
+Analysis End Date 
+
+Date
+
+The date on which the analysis will end or has ended.
+
+On the datasheet, this field contains a  button, which you can select to access the Calendar feature. The date in this field must be later than the date in the Analysis Start Date field, or an error message will appear.
+When you copy a Hazards Analysis, the value in this field is not copied.
+
+Analysis ID 
+
+Character
+
+The ID for the analysis.
+
+A value is required and must be unique.
+
+Analysis Objective 
+
+Text
+
+A description of the goals for the analysis.
+
+ None
+
+Analysis Owner 
+
+Character
+
+The analysis team member whose name appears in the Process Owner field.
+
+The value for this field is based on the process owner that you have defined in the team. To change this value, modify the team members by assigning a new person as the process owner. Tip: For details about working with teams and the Team Members section, refer to the Teams section of the documentation.
+
+Analysis Purpose 
+
+Text
+
+A description of the purpose of the analysis.
+
+None
+
+Analysis Scope 
+
+Text
+
+The scope of the analysis. This can be (but not limited to) geographic boundaries or process-related boundaries.
+
+None
+
+Analysis Start Date 
+
+Date
+
+The date on which the analysis will begin or has already begun.
+
+ This field contains a  button, which you can select to access the Calendar feature. This date must be earlier than the date in the Analysis End Date field, or an error message will appear.
+When you copy or create a Hazards Analysis, this field is populated with the current date in the new record. 
+
+Analysis Type 
+
+Character
+
+The type of analysis that you are conducting (HAZOP or What If ).
+
+This field does not appear on the datasheet by default. This field is disabled and populated automatically.
+
+Facilitator 
+
+Character
+
+The name of analysis team member who is specified as the Facilitator.
+
+This field does not appear on the datasheet by default.
+
+Is Deleted 
+
+Logical
+
+Indicates whether the Hazards Analysis has been removed from searches within the Hazards Analysis module.
+
+This field does not appear on the datasheet by default. This check box is selected automatically when you flag a Hazards Analysis as complete. This value is used by the GE Digital APM system, so you should not modify it manually.
+
+Last Modified By 
+
+Character
+
+The name of the user who was logged in when the Hazards Analysis was last modified.
+
+This field is disabled and populated automatically. When you copy a Hazards Analysis, the value in this field is not copied. 
+
+Last Modified Date 
+
+Date
+
+The date on which the Hazards Analysis was last modified.
+
+This field is disabled and populated automatically. When you copy a Hazards Analysis, the value in this field is not copied. 
+
+Next Reevaluation Date 
+
+Date
+
+The date on which the Hazards Analysis should be re-evaluated. 
+
+This field is disabled, and calculated as follows:
+Next Reevaluation Date = Revision Date + Reevaluation Interval 
+
+Process Description 
+
+Text
+
+A longer description of the process that you are studying.
+
+None
+
+Process Life Cycle Phase 
+
+Character
+
+The phase within the life cycle for the process that you are analyzing.
+
+This field contains the description of all System Codes in the MI_HAZARDS_ANALYSIS_LIFE_CYCLE_PHASE System Code Table. You can choose from the following baseline values:
+
+Design and Development 
+
+Construction and Startup 
+
+Operate and Maintain 
+
+Decommissioning 
+
+
+Process Owner 
+
+Character
+
+The name of the analysis team member who is specified as the Process Owner.
+
+This field does not appear on the datasheet by default and is populated when you assign the role of a Process Owner to a Team Member. This value is populated in the Analysis Owner field.
+Tip: For details about working with teams and the Team Members section, refer to the Teams section of the documentation.
+
+Process Type 
+
+Character
+
+A brief description of the process that you are studying.
+
+None
+
+Reevaluation Interval 
+
+Number
+
+The number of years between evaluations of the Hazards Analysis.
+
+Enter the value that is prescribed by the applicable governing body.
+
+Revision Date 
+
+Date
+
+The date and time on which the revision of the Hazards Analysis was created.
+
+This field is disabled and populated with the date and time of the most recent revision. When you copy a Hazards Analysis, this field is populated with the current date and time in the new record.
+
+Revision Number 
+
+Character
+
+A number that represents the number of times the Hazards Analysis state has been changed to Complete. This field contains the value 0 by default.
+
+On the datasheet, this field is disabled and populated. Each time you cycle the Hazards Analysis state from Planning to Complete, the value in this field is incremented by 1.
+When you copy a Hazards Analysis, this field is populated with 0 in the new record.
+
+Site Description 
+
+Character
+
+A description of the site that is specified in the Site ID field.
+
+This field does not appear on the datasheet by default. This value is populated when you select a site ID in the Site ID field.
+
+Site ID 
+
+Character
+
+The ID of the site that is associated with the Hazards Analysis.
+
+This field contains the values stored in the Name field in Site Reference records. The value that you select in the list is used to identify which risk matrix to display when you create Risk Assessment records in Hazards Analysis. If this field is blank, the default risk matrix will be used.
+
+Summary 
+
+Text
+
+A summary of the analysis that was conducted.
+
+ None
+
+Unit Description 
+
+Character
+
+A description of the unit that is specified in the Unit ID field.
+
+This field does not appear on the datasheet by default.
+
+Unit ID 
+
+Character
+
+The ID for the unit that is associated with the processes for which you are conducting a Hazards Analysis.
+None
+Hazards Analysis Safeguard Records
+Hazards Analysis Safeguard records store details on safeguards that can be used to mitigate the risk. If the safeguard is an IPL, then these records aIPL Sub Typelso store the details of the IPL Type and the corresponding PFD value. The Hazards Analysis Safeguard family is also used in the Layers of Protection Analysis to store details about Safeguards. This topic provides an alphabetical list and description of the fields that exist for the Hazards Analysis Safeguard family. These fields appear on the Hazards Analysis Safeguard datasheet and in the IPL Checklist section of a Safeguard. The information in this table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and Usage
+Equipment ID 
+
+Character
+
+The identification of the Equipment that is linked to the Safeguard through the Safety Analysis Has Equipment Relationship family. 
+
+You can select an Equipment to associate with the Safeguard.
+ When you associate an Equipment with the Safeguard, the Functional Location to which the Equipment belongs is automatically associated with the Safeguard, and appears in the Functional Location ID box on the datasheet. 
+
+Equipment Key
+Numeric
+The Entity Key of the Equipment whose ID appears in the Equipment ID field. 
+
+This field does not appear on the datasheet by default.
+Functional Location ID Character The identification of the Functional Location that is linked to the Safeguard through the Has Functional Location Relationship family. 
+You can select a Functional Location to associate with the Safeguard.
+Functional Location KeyNumeric The Entity Key for the Functional Location whose ID appears in the Functional Location ID field. This field does not appear on the datasheet by default.IF ID Character The ID of the Instrumented Function that is linked to the Safeguard. 
+You can select an Instrumented Function to associate with the Safeguard.
+IF KeyNumericThe Entity Key for the Instrumented Function whose ID appears in the IF ID field. This field does not appear on the datasheet by default.  IPL Credits NumericIndicates the order of magnitude by which the independent protection layer reduces the risk.
+You can select a value from 1 through 10 from the drop-down list box.
+This field appears in the IPL Checklist section of the Safeguard.
+IPL Reference Key Numeric The Entity Key for the Independent Layer of Protection that is linked to the Hazards Analysis Safeguard. This field does not appear on the datasheet by default. IPL Sub TypeCharacterIndicates the classification of the independent layer of protection that you selected in the IPL Type field in the Safeguard records.
+This field is disabled by default, indicating that the safeguard is not an independent layer of protection. Only if the safeguard is an independent layer of protection, this field is enabled.
+This field is populated based on your selection in the IPL Type field of the Safeguard datasheet:If the value in the IPL Type field is Active IPL, this field is populated as defined in the Active IPL record.If the value in the IPL Type field is Passive IPL, this field is populated as defined in the Passive IPL record.If the value in the IPL Type field is Human IPL, this field is populated as defined in the Human IPL record.
+PFDNumericA number representing the probability that the independent layer of protection will fail to mitigate the risk.By default, this field is disabled. Based on you selection in the IPL Sub Type field, this field is populated with the value in the Default Value field of one of the following record:Active IPL record if the value in the IPL Type field is Active IPL.Passive IPL record if the value in the IPL Type field is Passive IPL.Human IPL record if the value in the IPL Type field is Human IPL.This field appears in the IPL Checklist section of the Safeguard. For more information, refer to the Layers of Protection Analysis section of the documentation. IPL TypeCharacter Indicates the type of risk reduction that is provided by the independent layer of protection. 
+You can select one of the following values in this field: 
+Consequence Reducing IPLFrequency Reducing IPL
+This field is labeled as Risk Reduction Type and appears on the IPL Checklist section of the Safeguard.
+Safeguard Comment Text A comment about the safeguard. You can enter a value manually.Safeguard Description Text A detailed description of the safeguard. You can enter a value manually.Safeguard ID Character The identification of the safeguard.
+You can enter a value manually.
+This field is required. 
+Safeguard Type Character The type of the safeguard. 
+This field contains the description of the System Codes that exist in the MI_HAZOP_SAFEGUARD_TYPE System Code Table. You can select a value from the following options: 
+Process Design Process Control System PSV OperationsDeluge System Fire Alarm Process Alarm SIS 
+Sequence Number Numeric A number that represents the position in which the Safeguard appears in the grid, relative to the other Safeguards that are linked to the same Consequence. 
+This field is used to populate the Safeguard Number field. 
+This field does not appear on the datasheet by default. 
+TypeCharacter
+If the safeguard is an independent layer of protection, this value indicates the type of risk the independent layer of protection mitigates. 
+By default, this field is disabled, indicating that the safeguard is not an independent layer of protection. 
+If the safeguard is an independent layer of protection, then this field is enabled. 
+This field contains the description of the System Codes that exist in the MI_IPL_TYPES_SAFEGUARD System Code Table. You can select a value from the following options:
+Active IPLPassive IPLHuman IPL
+This field is labeled IPL Type in the IPL Checklist section of the Safeguard datasheet. 
+
+Hazards Analysis System/Node Records
+Hazards Analysis System/Node records store details on the group of equipment or functional locations that perform the process that you are studying. This topic provides an alphabetical list and description of the fields that exist for the Hazards Analysis System/Node family. These fields appear on the Hazards Analysis System/Node datasheet, unless otherwise specified. The information in the table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and Usage
+Hazards Analysis Key 
+
+Number
+
+A numeric value identifying the Hazards Analysis that is linked to the System/Node. 
+
+This field does not appear on the datasheet. 
+
+Modified By 
+
+Character
+
+The name of the user who was logged in when the System/Node was last modified. 
+
+This field does not appear on the datasheet. 
+Modified Date Date The date on which the System/Node was last modified. This field does not appear on the datasheet. Reference Drawing Character A value identifying the reference document. This value exists in the Name field in the corresponding Reference Document. This field contains the IDs of the Reference Documents that are linked to the Hazards Analysis that is linked to the System/Node. System/Node Comments Text Comments about the System/Node. NoneSystem/Node Description Text Description of the System/Node. NoneSystem/Node Equipment Type Character The type of equipment that corresponds to the system that the System/Node represents. This field contains the System Codes in the MI Equipment Type System Code Table. System/Node ID Character A brief description of the System/Node. A value is required.System/Node Number Number A numeric value representing the sequence in which the System/Node record appears.This field is disabled and populated automatically.System/Node Process Type Character The type of the process that you are studying. 
+This field contains the following values: 
+Gas/Oil Feed Steam Boiler (Steam Generation) Ethylene Oxide storage (EO Storage) FCCU (Fluid Catalytic Cracking Unit) 
+
+Risk Assessment Recommendation Records
+Risk Assessment Recommendation records store details about the recommendation that you have proposed to mitigate the risk. This topic provides an alphabetical list and description of the fields that exist for the Risk Assessment Recommendation family. These fields appear on the Risk Assessment Recommendation datasheet, unless otherwise specified. The information in this table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Action IntervalNumberThe interval at which the Action related to the Recommendation needs to be performed. This Action is created as part of an Asset Strategy after the Recommendation is promoted to ASM.For example, if the value in this field is 4, and if the value in the Interval Units field is Days, then that Action must be performed every four days. This field appears in the Alert datasheet.Action Interval UnitsCharacterThe units of the interval at which the Action related to the Recommendation needs to be performed. This Action is created as part of an Asset Strategy after the Recommendation is promoted to ASM.For example, if the value in this field is Days, and if the value in the Interval field is 4, then that Action must be performed every four days. This field appears in the Alert datasheet.Alert Assignee When Due? LogicalIndicates whether an email notification must be sent to the user selected in the Assigned To Name field when the Risk Assessment Recommendation is due.This field appears in the Alert section of the datasheet.Assigned To Name CharacterThe name of the user who is assigned the Risk Assessment Recommendation.You can select a user from the list.Author Name CharacterThe first and last name of the Security User who created the Risk Assessment Recommendation.This field is populated with the name of the user who was logged in while creating the Recommendation. Business Impact CharacterThe impact to the business if the recommended action is performed. 
+This field contains a list of System Codes that exist in the MI BUSINESS IMPACT System Code Table. You can choose from the following baseline values: 
+Facility Shutdown (FACILITY SHUTDOWN) Facility Slowdown (FACILITY SLOWDOWN) Unit Shutdown (UNIT SHUTDOWN) Unit Slowdown (UNIT SLOWDOWN) System Shutdown (SYSTEM SHUTDOWN) System Slowdown (SYSTEM SLOWDOWN)
+Completed Date DateThe date on which the recommended action was performed.This field contains a  button, which you can select to access the Calendar feature.Create SAP Notification? LogicalIndicates whether a notification should be created in an external EAM system when this Risk Assessment Recommendation is saved.NoneDays Before Due Date to be Notified NumberThe number of days before the Target Completion Date that an email notification must be sent to the user selected in the Assigned To Name field.This field appears in the Alert section of the datasheet. This field is required when the Alert Assignee When Due check box is selected.Equipment ID CharacterThe Equipment that is associated with the Consequence for which you are proposing the Risk Assessment Recommendation.This field is disabled and populated with the value stored in the Equipment ID field in the Cause datasheet.Final Approver Name CharacterThe name of the user who must grant the final approval for the Risk Assessment Recommendation.You can select a user from the list.Frequency of Alert After Due Date NumberSpecifies how often email messages will be sent after the completion date has passed. 
+You can choose any of the following options: 
+Never Daily Weekly Monthly Yearly 
+This field appears in the Alert section of the datasheet. This field is required when the Alert Assignee When Due check box is selected.
+Functional Location ID CharacterThe Functional Location that is associated with the Consequence for which you are proposing the Risk Assessment Recommendation.This field is disabled and populated with the value stored in the Functional Location ID field in the Cause datasheet.Implementation Alert Text CharacterThe text that will be included in the email notification sent to the approver.This field appears in the Alert section of the datasheet.Mandatory Date DateThe date by which the recommended action must be completed if it was not completed by the target completion date.This field contains a  button, which you can select to access the Calendar feature.Reevaluate? LogicalIndicates whether you want to reevaluate the Risk Assessment Recommendation.This field appears in the Alert section of the datasheet.Reevaluation Alert Body Text CharacterThe text that will be included in the reevaluation email message.This field appears in the Alert section of the datasheet. This field is enabled only when the Reevaluate? check box is selected.Reevaluation Date DateThe date on which a reevaluation email message will be sent to the users selected in the Reevaluation Notification List field.This field appears in the Alert section of the datasheet. This field is required when the Reevaluate? check box is selected.Reevaluation Notification List CharacterThe users to whom the reevaluation email message will be sent.This field appears in the Alert section of the datasheet. This field is enabled and is required when the Reevaluate? check box is selected.Recommendation Basis CharacterThe basis for the Risk Assessment Recommendation.NoneRecommendation Description CharacterA description of the Risk Assessment Recommendation.NoneRecommendation Headline CharacterA short description of the Risk Assessment Recommendation.
+If you select the Alert Assignee When Due check box, the value that you provide in the Recommendation Headline field becomes the subject of the alert email.
+
+Recommendation ID 
+
+Character
+
+The ID for the Risk Assessment Recommendation.
+
+This value must be unique.
+Recommendation Priority CharacterThe priority of the recommended action.
+This field contains a list of System Codes that exist in the MI PRIORITY System Code Table. You can choose from the following baseline values: 
+ High (HIGH) Medium (MEDIUM) Low (LOW)
+Required Equipment Status CharacterThe state in which the equipment should exist before performing the recommended action against it. 
+This field contains a list of System Codes that exist in the MI STATUS System Code Table. You can choose from the following baseline values: 
+On-line (ON-LINE) Off-line (OFF-LINE) Not Applicable (N/A)
+Reviewer Name CharacterThe name of the user who will review the Risk Assessment Recommendation.You can select a user from the list.Status CharacterThe status of the Risk Assessment Recommendation.
+This field contains a list of the following states:
+Created (CREATED)Pending Review (PENDING REVIEW)Reviewed (REVIEWED)Rejected (REJECTED)Cancelled (CANCELLED)Superseded (SUPERSEDED)
+Target Completion Date DateThe date by which the recommended action should be completed.This field contains a  button, which you can select to access the Calendar feature.Work Request Equipment CharacterThe ID of the external equipment that is associated with the external work request that was created from this Risk Assessment Recommendation (e.g., using functionality provided with the SAP Interfaces, Oracle EBS EAM Interfaces, and Maximo Interfaces). This field is disabled and populated after the external work request is created.Work Request Functional Location CharacterThe ID of the external location that is associated with the external work request that was created from this Risk Assessment Recommendation (e.g., using functionality provided with the SAP Interfaces, Oracle EBS EAM Interfaces, and Maximo Interfaces). This field is disabled and populated after the external work request is created.Work Request Reference CharacterThe ID of the external work request that was created from this Risk Assessment Recommendation (e.g., using functionality provided with the SAP Interfaces, Oracle EBS EAM Interfaces, and Maximo Interfaces).This field is disabled and populated after the SAP Notification or Oracle EBS EAM Work Request is created.
+What If Records
+What If records store details about the hypothetical condition that may occur during process and lead to a risk. This topic provides an alphabetical list and description of the fields that exist for the What If family. These fields appear on the What If datasheet, unless otherwise specified. The information in this table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+Sequence Number 
+
+Number
+
+A numeric value that represents the position in which the What If appears in the hierarchical view of the components of the System/Node, relative to the other What Ifs that are linked to the same System/Node. 
+
+This field does not appear on the datasheet by default. This field is used to populate the What If Number field.
+
+What If Description 
+
+Text
+
+A detailed description of the specific event or condition within a scenario that deviates from the normal behavior of that process and directly leads to a risk. 
+
+ None
+What If ID Character A brief description of the event or condition within the scenario that deviates from the normal behavior of the process. This value appears in the What If ID field in the hierarchical view of the components of the System/Node. This field is required. What If Number Character A set of numeric values, separated by a decimal point, which represents the location in which the What If appears in the hierarchical view of the components in the System/Node.
+This field is disabled and populated with a set of numeric values. 
+The first number is the value that exists in the System/Node Number field in the System/Node to which the What If is linked.  The second number is the value that exists in the Sequence Number field in the What If. 
+
+
+
+
+
+
+On this pageHazards Analysis Cause RecordsHazards Analysis Consequence RecordsHazards Analysis Deviation RecordsHazards Analysis RecordsHazards Analysis Safeguard RecordsHazards Analysis System/Node RecordsRisk Assessment Recommendation RecordsWhat If Records
+
+
+
+
+
+
+
+
+

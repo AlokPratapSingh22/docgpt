@@ -1,0 +1,116 @@
+
+
+
+Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SearchOverview
+Advanced Search
+Search Configuration
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Search
+Overview
+
+
+
+
+
+
+
+OverviewOverview of SearchThe Search tool is available throughout GE Digital APM, and allows you to search for records, families, analyses, or entire modules.Perform a SearchAbout This Task
+You can use the global GE Digital APM search feature to locate records, applications, and Catalog items.
+Note:  Records that were recently added to GE Digital APM via a large data load or bulk import may not appear in the search results immediately. For more information, see the Search Configuration documentation.
+ProcedureOn the top navigation bar, select .
+The search menu appears. 
+
+
+
+Enter a search term, and then select . Search terms are case-insensitive and can contain any number of characters and alphanumeric values.
+Note: If you are searching the Asset Hierarchy, the search term must contain at least three characters or alphanumeric values.
+Tip:  You can enter a supported search syntax to perform a complex search.
+The following items appear in the search results:
+Records whose record IDs or family captions contain the search term.Applications whose names contain the search term.Catalog items: Includes Catalog items containing the search term in the item name, caption, or Catalog path. 
+Tip:  For records, a Related - <n> link appears next to the result, where <n> is the number of records related to the record shown in the search results. You can select the link to view a list of these records. 
+If you are searching for a record, you can filter the results as follows:
+Select  and then select .Select a family in the Look In box. The results are filtered to include only the records within the selected family.Selected a family in the Linked to box. The results are filtered further to include only the records linked to a record in the selected family.
+Select a search result to open the item.
+Tip:  You can select the Need Help? link at the bottom of the search menu to search the GE Digital APM documentation for the specified search term.
+Access the Bulk Data Form PageProcedureOn the top navigation bar, select .
+The search menu appears. 
+
+
+
+Enter a search term, and then select . Search terms are case-insensitive and can contain any number of characters and alphanumeric values.
+Tip:  You can enter a supported search syntax to perform a complex search.
+Search results appear for the search term according to the following criteria:
+Records: Includes records containing that search term in the record ID, family ID, family caption, or family key.Applications: Includes applications containing the search term in their name.
+Catalog items: Includes Catalog items containing the search term in the item name, caption, or Catalog path.
+
+Note:  When you search for Records, Applications, and Catalog Items, you will be able to view global data, as well as data for each of the sites to which you are assigned. 
+Tip:  For records, a Related - <n> link appears next to the result, where <n> is the number of records related to the record shown in the search results. You can select the link to view a list of these records. 
+Select .
+
+
+
+A check box appears before each record in the list.
+Beside each record that you want to view in bulk, select the check box, and then select Open.
+Note:  The Open button is enabled only when you select records of similar type.
+The Bulk Data Form page appears, displaying the details of all the records. 
+Note:  The Site Reference for each record is also displayed in the Bulk Data Form in the first column. The Site selector component for each record is enabled for multi-site user. A multi-site user can change the site to any of the sites to which the user has permission, or choose to make the record a Global Record by selecting Global, so that all GE Digital APM users can access it regardless of the site assignment.
+
+
+
+
+
+
+
+
+On this pageOverview of SearchPerform a SearchAccess the Bulk Data Form Page
+
+
+
+
+
+
+
+
+

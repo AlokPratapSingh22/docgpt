@@ -1,0 +1,94 @@
+
+
+
+First Quarter of 2023 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Record ManagerOverview
+Manage Records
+Manage Linked Records
+Manage Bulk Data Form 
+Manage Reference Documents
+Manage Conditional Alerts
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Third Quarter of 2019
+First Quarter of 2019
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Record Manager
+Release Notes
+First Quarter of 2023
+
+
+
+
+
+
+
+First Quarter of 2023Release Date: February 24, 2023This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when you opened a datasheet and immediately selected the More Options button (), the Reference Documents link did not appear. This issue has been resolved. Now, the Reference Documents link appears, but the number of linked Reference Documents appears after a short time.DE196907Previously, when you tried to view the data copied from a datasheet through the result grid, multiple spaces between the copied words were reduced to a single white space. This issue has been resolved. DE195721Previously, if you created a customized dialog box, the OK and Cancel buttons were not translated. This issue has been resolvedDE193285Previously, when you created a new user, and then accessed a record for the Conditional Alert family, the user did not appear in the Alert Owner drop-down list box. This issue has been resolved. Now, the More Options icon () has been added in the Alert Owner field, which opens a window displaying all users for the Conditional Alert record site. DE193214Previously, if you selected a master detail datasheet for a record in a family using a state machine and attempted to change the state of the record, incorrect values were displayed in the datasheet and you could not save the record. This issue has been resolved.DE192792
+
+
+
+
+
+On this pageRelease Date: February 24, 2023
+
+
+
+
+
+
+
+
+

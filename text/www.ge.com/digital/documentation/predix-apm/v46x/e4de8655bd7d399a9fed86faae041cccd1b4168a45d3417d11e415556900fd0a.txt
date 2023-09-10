@@ -1,0 +1,87 @@
+
+
+
+Inspection Planning Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+WorkflowsInspection Planning Workflow
+Inspection Assessment Workflow
+
+
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference 
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Workflows
+Inspection Planning Workflow
+
+
+
+
+
+
+
+Inspection Planning WorkflowInspection Management: Inspection Planning WorkflowThis workflow details the process for managing Inspection Profile Items, Inspection Methods, Inspection Tasks, and Work Packs for Execution.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Identify Asset for Inspection  Persona: TechnicianDepending on the inspection activities to be managed, select the appropriate assets for further definition.Define Inspection Profile for AssetPersona: TechnicianDefine an Inspection Profile to identify what can be inspected and documented during the inspection.Define Inspection Profile Items Persona: TechnicianDefine Inspection Profile Items to identify which individual parts or subcomponents of the asset may be inspected. The Inspection Profile represents the asset inspection configuration, not necessarily what is planned to be inspected for any given task.Define Inspection Methods? Persona: TechnicianDetermine if specific Inspection Methods must be defined to increase the confidence of detection of damage mechanisms.Define Inspection Methods Persona: TechnicianFor each Inspection Profile Item, define specific Inspection Methods (e.g., CUI Inspection, Penetrant Fluorescent Test, Wet Magnesium Particle, and Radiographic X-ray).Asset Strategy Management Persona: AnalystDevelop Asset Strategies from various strategy development methods, such as Risk Based Inspection. The actions defined in the strategy are implemented as Inspection Tasks for execution in Inspection Management.Go to the Asset Strategy Management workflow. EAM - Work Order Generation Persona: AnalystIf the overall schedule is being managed by Enterprise Asset Management (EAM), Inspection Tasks may also be created from an EAM work management system.Go to the EAM - Work Order Generation workflow.Inspection Tasks Exist? Persona: TechnicianIf Inspection Tasks were created from the EAM - Work Management: Work Order Generation workflow, or based on actions from the Asset Strategy Management workflow, then proceed directly to the View Inspection Tasks for Asset step.Otherwise, proceed to the Create Inspection Task for Asset step.Create Inspection Tasks for Asset Persona: TechnicianCreate Inspection Tasks manually outside of an Asset Strategy for inspection activities that are not managed as part of an overall strategy.View Inspection Tasks for Asset Persona: TechnicianIrrespective of the initiating means, manage Inspection Tasks to track compliance and inspection activity execution.Set Up Scope for Inspection Task? Persona: TechnicianDetermine if Inspection Tasks should be further defined with specific scope requirements.Define Inspection Scope for Each Inspection Task Persona: TechnicianDetermine and select which of the possible Inspection Methods defined for the Inspection Profile Items of the asset will be carried out for the identified task.Manage Inspection Tasks by Work Pack? Persona: TechnicianDetermine if a group of Tasks will be managed by a Work Pack for work distribution.If not, then the Inspection Tasks can be performed directly in Inspection Management.Custom Checklist Template Required?Persona: AnalystDetermine if the Inspection Tasks require a custom Checklist Template with custom or baseline checklist categories and items.If not, then the Inspection Tasks can be created using an existing Checklist Template or baseline Inspection families.Configure Custom Checklist TemplatePersona: Analyst Create a Checklist Configuration Template that includes a custom or baseline assortment of categories and items.Taxonomy Configuration Required?Persona: AnalystDetermine if the Checklist Template and/or Baseline Inspection families should be associated only with assets with a specific equipment taxonomy.If not, the Checklist Template and/or Baseline Inspection families can be used to create Inspection Events for all assets.Configure Taxonomy ConfigurationPersona: Analyst Create a Taxonomy Configuration that corresponds to equipment taxonomy for the selected asset taxonomy. Link Inspection Families or Checklist Templates to associate them with the assets with that Taxonomy Configuration. Create an Inspection Work Pack Persona: TechnicianIf you will manage Inspection Tasks by a Work Pack, then create an Inspection Work Pack.Add Inspection Tasks to Work Pack Persona: TechnicianAssign the Inspection Tasks to the Work Pack for work distribution.Review Inspection Work Pack Persona: TechnicianReview the Work Pack for completeness and accuracy to verify that it is ready to be performed.Work Pack Ready? Persona: TechnicianDetermine if the Work Pack is ready to be performed.Inspection Assessment Persona: TechnicianIf the individual Inspection Task or Work Pack is ready to be performed, then proceed to the Inspection Management: Inspection Assessment workflow.Go to the Inspection Management: Inspection Assessment workflow.
+
+
+
+
+On this pageInspection Management: Inspection Planning WorkflowIdentify Asset for Inspection Define Inspection Profile for AssetDefine Inspection Profile ItemsDefine Inspection Methods?Define Inspection MethodsAsset Strategy ManagementEAM - Work Order GenerationInspection Tasks Exist?Create Inspection Tasks for AssetView Inspection Tasks for AssetSet Up Scope for Inspection Task?Define Inspection Scope for Each Inspection TaskManage Inspection Tasks by Work Pack?Custom Checklist Template Required?Configure Custom Checklist TemplateTaxonomy Configuration Required?Configure Taxonomy ConfigurationCreate an Inspection Work PackAdd Inspection Tasks to Work PackReview Inspection Work PackWork Pack Ready?Inspection Assessment
+
+
+
+
+
+
+
+
+

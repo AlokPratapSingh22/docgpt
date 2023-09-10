@@ -1,0 +1,248 @@
+
+
+
+Change Projects | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Management of ChangeOverview
+Workflows
+Change Projects
+Checklists
+Exceptions and Tasks
+Changed Elements
+Deployment
+Admin
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Management of Change
+Change Projects
+
+
+
+
+
+
+
+Change ProjectsAbout Change ProjectsChange Projects organize the proposed changes in an organization as a set of interrelated tasks that must be performed over a fixed period with necessary approvals. This ensures that the change process is initiated, implemented, and delivered effectively to all stakeholders.A Change Project in MOC stores all the details about a change. When you create a Change Project in MOC, you must provide details about the change. This includes details such as the scope of the project, the purpose of the project, the asset(s) that will be impacted by the change, and the type of change that is being implemented. You can also add team members who will approve and manage tasks proposed in the Change Project. You can associate related files as Reference Documents. A reference document can be any document that is relevant to implementing the change (e.g., a drawing or an equipment detail document). After you define the Change Project, you can associate the Change Project to the following records:
+Checklists
+
+Exceptions
+Change Type
+Change project types are used to describe the type of change which is being undertaken. In MOC, a Change Project can be of one of the following four types:
+Temporary: Indicates that the change is planned for a limited duration.Permanent: Indicates that the change is a major change that will remain unchanged for a longer duration.Minor Instrument Change: Indicates that the change includes minor modification to the process or equipment and does not significantly affect the workflow in the organization.Personnel: Indicates a change in the organizational structure, change in number of employees, change in the contractor for a site, or development of a new role in the organization. 
+Note: The change types described in the above list are available in GE Digital APM by default. As needed, you can add or remove change types by modifying the MI_Change_Project_Type System Code Table.
+Based on the type of change, you can configure Checklists and use them to drive the efforts towards the implementation of change.
+Access the Project Summary WorkspaceProcedure
+Access the MOC Overview page.Select the Change Projects tab.
+A list of all Change Projects that belong to the site for which you have access appears.
+
+
+
+In the Project ID column, select the link for the Change Project for which you want to view the summary.
+The Project Summary workspace appears, displaying the Summary section. 
+
+
+
+The following tabs appear in the workspace:
+
+Definition: Contains the datasheet for the selected Change Project.
+
+Summary: Contains a summary of the Exceptions and Tasks associated with the Change Project. This tab is selected by default. The following information appears in this section:
+Project ID: Contains the value in the Change Project ID field of the Change Project.Project Type: Contains the value in the Change Type field of the Change Project.Project Status: Contains the current state of the Change Project.No Of Reference Documents: Contains a value indicating the number of reference documents associated with the Change Project.Number Of Assets: Contains a value indicating the number of assets associated with the Change Project.Site Name: Contains a value indicating the Site to which the Change Project belongs.Task Next Date: Contains the date that represents the earliest of all the dates in the Next Date field among all the Tasks associated with the Exceptions of the Change Project.Task End Date: Contains the date that represents the latest of all the dates in the Last Date field among all the Tasks associated with the Exceptions of the Change Project.Exceptions: Contains a value indicating the total number of Exceptions associated with the Change Project. Tasks: Contains a value indicating the total number of Tasks associated with the Exceptions in the Change Project.Exception Summary Graph: Contains a doughnut graph that shows the percentages of Exceptions in each of the following statuses: Not StartedIn ProgressCompleteYou can pause on or select each section of the graph to view the number of Exceptions in each status. Task Summary Graph: Contains a doughnut graph that shows the percentages of tasks in each state defined for the Operations Task family: You can pause on or select each section of the graph to view the number of tasks in each state.
+Linked Assets: Contains a list of Assets that are associated with the Change Project.Team Members: Contains a list of team members who are associated with the Change Project.Reference Documents: Contains a list of Reference Documents that are associated with the Change Project.
+The following tabs appear in the left pane:
+Checklists: Contains the list of Checklists that are associated with the Change Project.Exceptions and Tasks: Contains the list of Exceptions created for the Change Project and the list of Tasks associated with each Exception.Changed Elements: Contains the list of records with which the Change Project is associated.
+Note: In the upper-right corner of the workspace, you can select 
+
+Access a Change ProjectProcedure
+Access the MOC Overview page. Select the Change Projects tab.
+A list of all Change Projects available in the database appears. The following columns of information appear in the section:
+
+Project ID: Contains the value from the Change Project ID field of the Change Project.
+Description: Contains the value that you entered in Description field to describe the Change Project.
+State: Contains the current state of the Change Project. 
+Project Type: Contains the value that you entered in Change Type field to identify the type of Change Project.
+
+
+
+In the Project ID column, select the link for the Change Project that you want to access.
+The Project Summary workspace of the Change Project appears.
+
+
+
+Select the Definition tab.
+The Definition section appears, displaying the details of the Change Project.
+Note: As needed, in the Definition section, you can modify values in the available fields, and then select  to save your changes.
+
+
+
+Access the Team Members SectionProcedure
+Access the Change Project whose Team Members you want to access.Select the Team Members tab.
+The Team Members section appears, displaying a list of Team Members in the Change Project.
+
+Tip: For details about working with teams and the Team Members section, refer to the Teams section of the documentation.
+
+
+
+
+Access the Reference Documents SectionProcedure
+Access the Change Project whose Reference Documents you want to access.Select the Reference Documents tab.
+The Reference Documents section appears, displaying a list of Reference Documents linked to the Change Project.
+
+
+
+Tip: For more information, refer to the Reference Documents section of the documentation.
+Access a Recommended Actions PaneAbout This Task
+The recommendations that appear on the Recommended Actions  pane are filtered based on your selection. 
+If you access the Recommended Actions  pane via the Project Summary workspace, the list of recommendations linked to all the Exceptions in the Change Project appears.If you access the Recommended Actions  pane by selecting an Exception in the Change Project, the list of recommendations linked with the selected Exception appears.
+Note: You can modify a recommendation only if you access the recommendation by selecting the Exception with which it is linked. You cannot create or modify a recommendation from the Project Summary workspace of a Change Project.
+Procedure
+Access the Project Summary workspace for the Change Project whose recommendations you want to view.
+-or- 
+
+Access the Exception whose recommendation you want to view.
+In the upper-right corner of the page, select .
+The Recommended Actions  pane appears, displaying a list of recommendations.
+
+
+
+In the list, select the recommendation whose details you want to view.
+The datasheet for the selected recommendation appears.
+
+
+
+Tip: For information about additional options available when working with recommendation records, refer to the Recommended Actions section of the documentation.
+Create a Change ProjectProcedure
+Access the MOC Overview page. Select the Change Projects tab.
+A list of Change Projects available in the database appears.
+
+
+
+In the upper-left corner of the Change Projects section, select .
+The Project Summary workspace appears, displaying a blank datasheet for the Change Project.
+
+
+
+As needed, enter values in the available fields.In the upper-right corner of the section, select .
+The Change Project is created.
+What To Do Next
+
+Add Team Members to the Change Project.
+Create a RecommendationProcedure
+Access the Exception for which you want to create a recommendation.In the upper-right corner of the page, select .
+The Recommended Actions  pane appears, displaying a list of recommendations associated with the Exception.
+
+
+
+In the upper-left corner of the pane, select .
+A blank datasheet for Recommendation appears.
+
+
+
+As needed, enter values in the available field.Select .
+The recommendation is created.
+Tip: For information about additional options available when working with the Recommendation records, refer to the Action Management section of the documentation.
+Results
+A General Recommendation record is created and linked with the Exception. 
+Change the State of a Change ProjectAbout This Task
+This topic describes how to change the state of a Change Project, while assigning the state of the project to the appropriate user.
+Important: You can modify the state for a Change Project only if you are an administrator or a user who belongs to the State Configuration Role configured for that state.
+Procedure
+Access the Change Project for which you want to change the state.In the upper-right corner of the workspace, select the button that indicates the current state of the Change Project. For example, if the current state of the Change Project is Proposed, select Proposed.
+A menu appears, displaying the operation that you can perform to change the state of the project.
+
+
+
+Select the necessary operation that will change the state of the project, and then select Done. For example, if you want to change the state of the project from Proposed to Approved, select Approve, and then select Done.
+Note: You can view the states assigned to various users by selecting the Manage State Assignments link. If not already done, you can assign the next state of the Change Project to the appropriate user, and then select Done.
+The state of the Change Project is changed.
+Access a List of Assets associated with a Change ProjectProcedure
+Access the Change Project for which you want to view the associated assets.Select the Linked Assets tab.
+The Linked Assets section appears, displaying the following columns of information for the list of assets associated with the Change Project. 
+
+
+Asset ID: Contains a link which you can select to view the details of the Asset in the Record Manager. Based on the type of asset, the link to the Asset appears in the following format:
+Functional Location: <Functional Location> ~ <Description> Equipment: <Equipment Technical Number> ~ <Description> ~ <Equipment ID> 
+
+Asset Type: Contains the value in the Description field of the Asset.
+Functional Location: Contains the value in the Functional Location field of the Equipment. This column is blank if the asset is a Functional Location.
+
+
+
+Link an Asset with a Change ProjectAbout This TaskIn MOC, you can associate an asset where changes are being implemented to the Change Project that is used to manage those changes. Procedure
+Access the Linked Assets section for the Change Project with which you want to associate an asset.In the upper-left corner of the section, select .
+The Asset Finder window appears. In the left pane of the window, a list of assets available in the database appears. 
+
+
+
+For each asset that you want to associate with the Change Project, navigate to the asset, and then select  next to the Asset ID. 
+Note: In the left pane of the Asset Finder window, you can search within Hierarchy or Group by selecting the corresponding tabs on the window. 
+In the right pane of the window, each selected asset appears. 
+Select Done.
+Each selected asset is linked with the Change Project and the updated list of assets appears in the Linked Assets section.
+Note: If you selected an asset group, then all the assets within the asset group are linked to the Change Project.
+Unlink an Asset from the Change ProjectProcedure
+Access the Linked Assets section for the Change Project from which you want to unlink an asset.In the row for each asset that you want to unlink from the project, select the check box.In the upper-right corner of the section, select .
+The Delete Linked Assets dialog box appears, asking you to confirm that you want to unlink each selected asset from the Change Project. 
+Select OK.
+Each selected asset is unlinked from the Change Project and the updated list of assets appears in the Linked Assets section.
+Delete a Change ProjectProcedureAccess the Change Project that you want to delete.Select the Definition tab.
+The Definition section appears, displaying the datasheet for the Change Project.
+In the upper-right corner of the datasheet, select , and then select Delete.
+The Confirm Delete dialog box appears, asking you to confirm that you want to delete the Change Project.
+Note: When you delete a Change Project, relationships with the associated Checklists and Exceptions are removed. 
+Select Yes.
+The Change Project is deleted.
+
+
+
+
+
+On this pageAbout Change ProjectsAccess the Project Summary WorkspaceAccess a Change ProjectAccess the Team Members SectionAccess the Reference Documents SectionAccess a Recommended Actions PaneCreate a Change ProjectCreate a RecommendationChange the State of a Change ProjectAccess a List of Assets associated with a Change ProjectLink an Asset with a Change ProjectUnlink an Asset from the Change ProjectDelete a Change Project
+
+
+
+
+
+
+
+
+

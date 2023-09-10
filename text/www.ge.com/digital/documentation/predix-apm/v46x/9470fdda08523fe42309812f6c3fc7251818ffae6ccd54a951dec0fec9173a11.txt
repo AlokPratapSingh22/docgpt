@@ -1,0 +1,107 @@
+
+
+
+Second Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Third Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Release Notes
+Second Quarter of 2020
+
+
+
+
+
+
+
+Second Quarter of 2020Release Date: June 26, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDYou can now view the Analytic deployment name when you hover over the Analytic name in the Tag Browser. US420315You can now analyze data of components that do not exist in  GE Digital APM.  To facilitate this feature, the New CSV Template has been added to the templates using which you can upload a CSV file containing data of the components.US418004You can now configure your preferred mode of data quality for non-SmartSignal charts, which will be loaded to the Analysis view. To facilitate this enhancement, in the Chart and Marker Settings section of the My Preferences page, the Data Quality Preferences section has been added.  Show Good Quality Data is the default view for data quality in an Analysis view. US416639You can now compare assets from the SmartSignal card and SmartSignal template when you access the analysis from alerts using the default analysis view. To facilitate this feature, the Compare Asset icon () has been added to the SmartSignal card and tag browser of the SmartSignal template.US410606You can now zoom charts in the XY mode by default when you select the zoom option for any chart.US407796The modification of date range in SmartSignal card and SmartSignal template has been enhanced to improve usability. As part of the enhancement, when you modify the date range on the SmartSignal card using the calendar in a non-points mode, selecting Apply on the calendar refreshes the data automatically. Now, you do not need to select Apply on the SmartSignal template again to view the refreshed data on the SmartSignal card.US406908The Analytic tag groups now appear in the order of their ordinal numbers in the Analytic Groups section of the Tag Browser, when the tag groups are assigned ordinal numbers in the Analytics template. However, if the Analytic tag groups do not have any ordinal numbers assigned in the Analytics template, they appear in the alphabetical order in the Tag Browser. US405491When a chart containing tags from multiple assets is exported as an image, the tag register on the image now contains the asset name and the tag name. This feature is supported on the following export options of charts:PNGPDFClipboardUS405490
+Table 2. Known Issues and Limitations
+The following known issues and limitations exist.
+DescriptionTracking IDThe Smart Signal template in points mode takes longer time to load and may go into an infinite loop intermittently. In this scenario, you must restart the browser.DE137148
+
+
+
+
+
+On this pageRelease Date: June 26, 2020
+
+
+
+
+
+
+
+
+

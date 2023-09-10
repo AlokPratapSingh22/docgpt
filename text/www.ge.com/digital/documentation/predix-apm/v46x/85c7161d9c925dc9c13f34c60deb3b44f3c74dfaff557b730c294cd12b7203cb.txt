@@ -1,0 +1,130 @@
+
+
+
+First Quarter of 2018 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release NotesFirst Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Release Notes
+First Quarter of 2018
+
+
+
+
+
+
+
+First Quarter of 2018Asset Release Notes for March 30, 2018Provides a list of new and updated features for this release, as well as any resolved issues, limitations, and known issues.Release Information
+Module NameAssetRelease DateMarch 30, 2018Documentation Build DateMarch 22, 2016
+Limitations
+
+Support for the cascade-delete feature is limited to 2000 objects. As an alternative, you can delete a single asset instance at a time. If you are trying to move the asset instances within a hierarchy, it is recommended you use the API to change the parent object.
+
+Resolved Issues
+Resolved issues are those defects that have been fixed for the release.Tracking IDDescriptionDE62354When a user clicks on the asset name in the alerts detail pane, the system opens a chromeless window displaying the asset faceplate. The system by defaults opens the events tab.
+Known Issues
+Known issues are those issues that are documented in the defect tracking system that affect this release, and may be fixed in a future release.
+Tracking IDDescriptionDE57273After clicking the Asset ID of an alert in the Alerts Inbox, the system will navigate to the Asset Faceplate. If the alert creation date is older than 30 days, the alert will not automatically display in the Events tab.Workaround: Customers should manually change the calendar date range to a time period that includes the alert creation date.DE57601Timestamp is incorrect if time zone in user preferences is set to UTC + 14(Kiritimati)DE61811Newly created alert (count) is not seen immediately without refreshing the page (Date picker is not reflecting current time)DE68896Users who provided malformed URLs, of the format with two // characters side by side, previously the system would process the URL as if only one / were present. If this malformed URL is presented now the system will generate an error.
+Asset Release Notes for February 28, 2018Provides a list of new and updated features for this release, as well as any resolved issues, limitations, and known issues.Release Information
+Module NameAssetRelease DateFebruary 28, 2018Documentation Build DateFebruary 26, 2018
+What's New or Changed in This Release
+This section outlines the new and updated product features that are available for this release.
+Configure the equipment template with tag classifications.Create an equipment instance with dynamic tag instance using the equipment template.Event search for past alerts and cases related to the selected asset instance.Navigate from an Event to an Alert or Case.
+Limitations
+You should limit the number of objects during ingestion to 150,000 objects per file. The ingestion will continue, however when you inspect the job on the data ingestion page, the summary will either load very slowly or not load at all.
+Known Issues
+Known issues are those issues that are documented in the defect tracking system that affect this release, and may be fixed in a future release.
+Tracking IDDescriptionDE57273After clicking the Asset ID of an alert in the Alerts Inbox, the system will navigate to the Asset Faceplate. If the alert creation date is older than 30 days, the alert will not automatically display in the Events tab.Workaround: Customers should manually change the calendar date range to a time period that includes the alert creation date.DE57601Timestamp is incorrect if time zone in user preferences is set to UTC + 14(Kiritimati)DE61811Newly created alert (count) is not seen immediately without refreshing the page (Date picker is not reflecting current time)DE62354When a user clicks on the asset name in the alerts detail pane, the system opens a chromeless window displaying the asset faceplate. The system by defaults opens to the attributes tab instead of the events tab.
+Asset Release Notes for January 26, 2018Provides a list of new and updated features for this release, as well as any resolved issues, limitations, and known issues.Release Information
+Product:
+GE Digital APM Asset
+Documentation Build Date: January 19, 2018
+Release Date: January 26, 2018
+New and Updated Features
+Display past events that affected the selected asset instance. Users will now be able to click on an asset name from te alerts detail view and see a timeline view of all the related alerts and case.Decommission an asset instance. By default, all asset instances in the decommissioned state will no longer be viewable without granting an explicit permission.
+Limitations
+When ingesting asset JSON files, the CCOM Type is case sensitive and must be entered in capital letters.Users with the All resources permission can see Decommissioned Assets.Users with the View Decommissioned Asset policy can create an alert for a decommissioned asset.
+Resolved Issues
+Resolved issues are those defects that have been fixed for the release.Tracking IDDescriptionDE57037If no events are displayed, the count is refreshed to zero and retains last search count for All, Alerts and Cases. Zero is displayed if no data found.DE56868When cases are updated, then Asset Events reflects last updated time stamp.
+Known Issues
+Known issues are those issues that are documented in the defect tracking system that affect this release, and may be fixed in a future release.Tracking IDDescriptionDE57273After clicking the Asset ID of an alert in the Alerts Inbox, the system will navigate to the Asset Faceplate. If the alert creation date is older than 30 days, the alert will not automatically display in the Events tab.Workaround: Customers should manually change the calendar date range to a time period that includes the alert creation date.DE57601Timestamp is incorrect if time zone in user preferences is set to UTC + 14(Kiritimati)DE61811Newly created alert (count) is not seen immediately without refreshing the page (Date picker is not reflecting current time)DE62354When a user clicks on the asset name in the alerts detail pane, the system opens a chromeless window displaying the asset faceplate. The system by defaults opens to the attributes tab instead of the events tab.
+
+
+
+
+
+On this pageAsset Release Notes for March 30, 2018Asset Release Notes for February 28, 2018Asset Release Notes for January 26, 2018
+
+
+
+
+
+
+
+
+

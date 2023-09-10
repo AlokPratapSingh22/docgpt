@@ -1,0 +1,129 @@
+
+
+
+Family Preferences | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+Workflows
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data Loaders
+AdminGlobal Preferences
+Family Preferences
+Datalogger Mappings
+
+
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+Admin
+Family Preferences
+
+
+
+
+
+
+
+Family PreferencesAbout Family Preferences
+You will use the 
+Family Preferences workspace to define settings for families that are used in Thickness Monitoring.
+If you follow the TM Best Practice, you can define settings for the Equipment or TML Group families via this page. If you do not follow the TM Best Practice, you can define settings for families that store equipment or component data. Regardless of whether or not you follow the TM Best Practice, these settings must be configured at the level where records will actually be stored.
+The settings that you define on the Family Preferences workspace will define the field in the following records that will be used to populate the following fields in Thickness Measurement Location and Thickness Monitoring Task records in your Corrosion Analysis.
+If you follow the TM Best Practice, these settings will determine the field in the Equipment or TML Group record that should be used to:Populate the TML Asset ID field in the Thickness Measurement Location records that are linked to Equipment or TML Group records.Populate the Task ID field in Thickness Monitoring Task records that are created automatically and linked to Equipment or TML Group records.
+If you do not follow the TM Best Practice, these settings will determine field in the record stores equipment or component data that should be used to:Populate the TML Asset ID field in the Thickness Measurement Location records that are linked to records that store equipment or component data.Populate the Task ID field in Thickness Monitoring Task records that are created automatically and linked to records that store equipment or component data.
+
+Additionally, if your Corrosion Analyses will contain TML Group records or other records that store component data, you will also need to define the relationship between certain families via the Family Preferences workspace.
+If you follow the TM Best Practice, you should define the relationship between the Equipment family and the TML Group family via this page.If you do not follow the TM Best Practice, you should define the relationship between the family that stores equipment data and the family that stores component data via this page.
+About Subcomponent Relationships
+If your Corrosion Analysis includes TML Group records or other records that store component data, you will need to define Subcomponent Relationship preferences for certain families. These settings determine which records Thickness Monitoring will include in a Corrosion Analysis and which families will be included throughout Thickness Monitoring.
+Note: Thickness Monitoring Best Practice assumes that your Corrosion Analyses include TML Groups.
+For example, if your Corrosion Analysis contains TML Groups, and you are analyzing a piping circuit that contains three piping lines, you would store information for the piping circuit in the following four records:
+Equipment (piping circuit)TML Group (piping line 1)TML Group (piping line 2)TML Group (piping line 3)
+In this case, the TML Groups would be linked to the Equipment record through the Has TML Group relationship.
+Continuing with the example, if you do not use TML Group records, but your Corrosion Analysis contains records that store component data, and you are analyzing the same piping circuit, you would store information in four records, one that stores equipment data and three that store component data. In this case, you would need to specify the relationship that links the records that store equipment data to the records that store component data.
+The Subcomponent Relationship section in the Family Preferences workspace contains the following lists that allow you to define these settings:
+
+
+Asset-to-Subcomponent Relationship: Specifies the relationship family that links certain records used in a Corrosion Analysis, depending upon whether or not you follow the TM Best Practice.
+If you follow the TM Best Practice, your selection in this list specifies how Equipment records will be linked to TML Group records. You should select Has TML Group in this list.
+If you do not follow the TM Best Practice, your selection in this list specifies how records that store equipment data will be linked to records that store component data.
+Note: If you do not follow TM Best Practice, you should configure your desired record in addition to Equipment records. That is to say, you should not remove the relationship preferences for Equipment records.
+
+If a component represented by a TML Group record or another record that stores component data can contain additional components in a multi-tier record hierarchy, this setting should also be defined for TML Group family or the family that stores component data.
+
+
+Subcomponent-to-Asset Relationship: Specifies the relationship family that links certain records used in a Corrosion Analysis, depending upon whether or not you follow the TM Best Practice.
+If you follow the TM Best Practice, your selection in this list specifies how TML Group records will be linked to Equipment records. You should select Has TML Group in this list.If you do not follow the TM Best Practice, your selection in this list specifies how records that store component data will be linked to records that store equipment data.
+
+Configure Family PreferencesBefore You Begin
+By default, Thickness Monitoring is configured to use Equipment family as the foundational source of records to which other records, such as Asset Corrosion Analyses and TML Groups, will be linked.
+Most commonly, if you are making changes to the Family Preferences, it is to implement the Functional Location family as the foundational source of records. When Functional Locations are correctly configured, Asset View is enabled in Thickness Monitoring. If you want to configure the Functional Location family, the Functional Location family should be configured as a Predecessor to the following Relationship Families:Has Corrosion AnalysesHas Corrosion Analysis SettingsHas TML GroupHas TML
+You can also configure Thickness Monitoring to use the TML Group family to store data.
+Procedure
+Access the TM Admin Preferences page, and then select Family Preferences in the left pane.The Family Preferences workspace appears.Select .The boxes in the Family Preferences workspace are enabled.  is replaced with .In the box at the top of the workspace, select the family you want to configure. By default, the available options are Equipment, Functional Location, and TML Group.The Asset to Subcomponent Relationship, Subcomponent to Asset Relationship, and Component ID Field boxes appear.If you want to configure Thickness Monitoring to use Equipment, in the box at the top of the workspace, select Equipment.In the Asset to Subcomponent Relationship box, select Has TML Group.In the Component ID Field box, select Equipment ID.
+Note: The Subcomponent to Asset Relationship box must be left blank.
+Select .If you want to configure Thickness Monitoring to use Functional Locations, in the box at the top of the workspace, select Functional Location.In the Asset to Subcomponent Relationship box, select Has TML Group.In the Component ID Field box, select Functional Location.
+Note: The Subcomponent to Asset Relationship box should be left blank.
+Select .The Asset View () option is enabled on the Thickness Monitoring Overview workspace. TML Groups and TMLs can now be linked directly to a Functional Location. When you first select a Functional Location and select , you will be automatically directed to create Corrosion Analysis Settings for that Functional Location.If you want to configure Thickness Monitoring to use TML Groups, in the box at the top of the workspace, select TML Group.In the Subcomponent to Asset Relationship box, select Has TML Group.In the Component ID Field box, select TML Group ID.
+Note: The Asset to Subcomponent Relationship box should be left blank.
+Select .ResultsThe setting is saved, along with any other changes you have made to the preferences in the Global Preferences workspace.
+
+
+
+
+On this pageAbout Family PreferencesAbout Subcomponent RelationshipsConfigure Family Preferences
+
+
+
+
+
+
+
+
+

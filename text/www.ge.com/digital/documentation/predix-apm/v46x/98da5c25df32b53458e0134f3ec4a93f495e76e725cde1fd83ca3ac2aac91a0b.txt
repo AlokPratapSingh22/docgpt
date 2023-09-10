@@ -1,0 +1,115 @@
+
+
+
+Second Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Release Notes
+Second Quarter of 2019
+
+
+
+
+
+
+
+Second Quarter of 2019Policy DesignerThis topic provides a list of product changes released for this module on the dates listed below.Release Date: June 28, 2019
+Table 1. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, in the Properties window for a Create Entity node, if you specified values for more than two fields of the new entity, and then saved the policy, when you reloaded the policy, sometimes the values of only the first two fields were retained. This issue has been resolved.DE111238Previously, when a vector output of an R Script returned only one value during the execution or validation of a policy, an error occurred. This issue has been resolved.DE110279
+Release Date: June 28, 2019
+Table 2. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDThe messages written in the server logs by the Policy Execution Service and Policy Trigger Service are now more specific to the logging levels.US347947
+Table 3. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, if you copied and renamed an Input node of the policy model, and then saved the policy, the following issues occurred until you reloaded the policy:The renamed node did not appear in the instances associated with the policy.All instances associated with the policy were deactivated due to which the policy was not executed.The validation of the policy failed with an error message, indicating that you had not specified any record for the new Input node.These issues have been resolved.DE109329Previously, when the job configured to delete the execution history logs ran, the following issues intermittently occurred:The old Execution History records were not deleted.The policy execution transactions were reverted because the Execution History table of the database was locked by the job. This resulted in the execution failure of policies while the job was in progress.These issues have been resolved.
+DE106869DE101822
+
+Release Date: April 18, 2019
+Table 4. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, when you started the Policy Execution Service or Policy Trigger Service, if the Microsoft Message Queuing (MSMQ) stopped responding or could not be accessed, the service failed to start. This issue has been resolved.US341549Previously, in the Properties window for a Math node, when you specified the names of some variables, an error message appeared in the notification bar, indicating a conflict between variable names, even when there was no apparent conflict in the specified names. This issue occurred when two variable names contained the same string and one of them contained an underscore or numeric value after the string. This issue has been resolved. Now, in these scenarios, the following events occur:If one of the variable names contains an underscore after the string, no notification appears in the notification bar.If one of the variable names contains a numeric value after the string and if there is a possibility of conflict between the variable names during the execution of the policy, a warning appears in the notification bar.DE107317Previously, in the Properties window for a Create Entity node, in the Value box, if you specified a value which is same as the default value of the corresponding field, the execution of the policy failed, and an error message appeared in the Node Execution Details window for the node, indicating that the index size is incorrect. This issue has been resolved.DE106599Previously, in the Properties window for a Create Recommendation node, in the Create Work Request section, if you selected Yes, the execution of the policy failed, and no work request was created in the configured Enterprise Asset Management (EAM) system for the new Policy Recommendation record. This issue has been resolved.DE99104
+
+
+
+
+
+On this pagePolicy Designer
+
+
+
+
+
+
+
+
+

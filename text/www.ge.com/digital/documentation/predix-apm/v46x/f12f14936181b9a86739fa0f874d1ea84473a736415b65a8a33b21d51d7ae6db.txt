@@ -1,0 +1,117 @@
+
+
+
+Third Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Release Notes
+Third Quarter of 2019
+
+
+
+
+
+
+
+Third Quarter of 2019Policy DesignerThis topic provides a list of product changes released for this module on the dates listed below.Release Date: September 27, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDYou can now execute any one or all the active instances associated with a Policy on demand without modifying the existing execution settings configured for the policy. To facilitate this enhancement:A new button, Execute Now, has been added to the Details workspace.A new button, , has been added to the Instances section of the Design workspace.US359689You can now use a reserved parsing keyword, such as the name of a function or a mathematical constant, as an input variable name in a Math node.US359538You can now configure a policy to create an execution history log record for all the executions or only the executions that result in an error.US345229To prevent disruptions of the Policy Execution Service by policies that take too long to execute, a time limit of 15 minutes has been introduced for executing a policy instance.US344236When you update the execution schedule of a policy other than in the Details workspace, the Policy Trigger Job is now configured according to the updated schedule.US339892You can now validate and execute a policy that contains a Collection Filter node with a blank collection. However, a warning message appears in the Node Execution Details window for the node, indicating that the collection is blank.US334152To enhance the usability of the model canvas in the Design workspace, the following enhancements have been made:You can now use a grid to accurately align the nodes with the other nodes in the model canvas. To facilitate this enhancement, the Enable Grid button () has been added to the canvas.You no longer need to select specific connection points on nodes. To facilitate this enhancement, the  button now appears when you select a node.You can now bend a connector between nodes.The  button now appears when you point to a connector. This button enables you to define the logic path of the connector.You can now select a point on the model canvas and then drag the pointer to select all nodes and connectors within a rectangular region.
+US330552US284834US237250
+You can now create a recurring alert using the Create Alert node.US328484To improve the performance of policy execution, a node whose output is not used by any node of the policy model is no longer executed during the execution of the policy. This enhancement has been made to the following nodes:EntityHealth IndicatorMathMeasurement LocationQueryQuery AlertsR ScriptPredix Time SeriesUS327421In the Properties window for a node, when you specify a family ID, the name of the family associated with the family ID is now added to the default name of the node. However, if you modify the default name of the node before specifying the family ID, the modified name of the node is not updated with the name of the family. This enhancement has been made to ensure consistent behavior of the following nodes:EntityCreate EntityCreate RelationshipDelete RelationshipEdit EntityUS325425You can now download the image of a policy model to your local drive. To facilitate this enhancement, the Download button () has been added to the model canvas in the Design workspace.US325413To enhance the usability of the Design workspace, the following enhancements have been made:The Policy section has been removed from the toolbar.The Save button now contains the text Save instead of the  icon.US321474You can now refresh the metadata used by a policy and its nodes without refreshing the policy. To facilitate this enhancement, the Refresh Policy Metadata button () has been added to the following elements of the Design workspace:The Edit section of the toolbar.The Properties window for the nodes that use external metadata.US315588When you define the execution settings for a policy that does not contain an active instance, a warning message now appears in the notification bar, indicating that the policy does not contain any active instance to execute.US311955You can now retrieve the latest readings for a given time period in a Predix Time Series node. To facilitate this enhancement, the Start Time input has been made optional. US246548
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, if an entity that was specified as a trigger for automatic policy execution was modified more than once within a short time span (that is, less than one second), only one policy execution was triggered. This feature, which was implemented to prevent unintended duplicate policy executions, resulted in some intended policy executions being skipped. This issue has been resolved. Now, policy execution is triggered each time an entity is modified, except for policies that are triggered by new Readings added to a Measurement Location.Note: For policies that are triggered by new Readings added to a Measurement Location, duplicate policy executions are still prevented because the insertion of new Readings using the Rounds Data Collection module results in multiple entity updates.US324385Previously, in the Validation section, if you copied the null value of an instance to use it as an ad hoc test value for validation, the validation results of the policy were incorrect. This issue has been resolved.US306739Previously, when you added the Create Alert node to a policy, only 20 values were displayed in the Alert Name drop-down list box even if more than 20 Alert Templates were defined in GE Digital APM. In addition, if you selected an Alert Name, saved the policy, and then added additional Alert Templates, when you reloaded the policy, the Alert Name setting may have been lost. These issues have been resolved. Now, up to 1000 Alert Names can be displayed.Note: The capability to display unlimited Alert Names will be enabled in a future release.DE117905Previously, while accessing GE Digital APM using Internet Explorer 11, when you accessed a policy that contained a Health Indicator node, the policy did not load or took a long time to load. This issue has been resolved.DE117337Previously, if you configured a Query Alerts node to retrieve alerts for a Functional Location representing a Site, Segment, or Enterprise, no alerts were returned. Also, if you configured a Create Alert node to create an alert for a Functional Location representing a Site, Segment, or Enterprise, no alert was created. These issues have been resolved.DE117298Previously, the Query Alert node retrieved a maximum of 100 alerts regardless of the number available within the requested time range, and there was no indication that the result was truncated. This issue has been resolved. Now, the Query Alert node retrieves up to 1,000 alerts, and if the result is truncated, a notification appears in the execution history details.DE117288Previously, if you configured the Policy input of a Sub Policy node, then copied and pasted the node, the copy of the Sub Policy node did not display the input fields for the specified Policy. This issue has been resolved.DE116740Previously, if you attempted to access a policy containing an Entity, Create Entity, or Edit Entity node referencing an entity family that did not exist in GE Digital APM, the policy failed to load. This issue has been resolved.DE113400Previously, if you entered a value in the Value section of a Text node that could be interpreted as a date or time span (for example, Sunday or 30d), the value was converted to the standard display format for a date or time span prior to being inserted into the Text Pattern. This issue has been resolved. Now, the Text node treats these values as strings.Note: This change may affect the behavior of the pre-existing policies. Before you upgrade, you must review the policy designs to ensure that the Text node is configured so that the date and time and the time span values are mapped from the Constant node.DE113062Previously, if a sub policy contained multiple Return Value nodes with the same name, when you mapped the results from the sub policy to a successor node, the successor node input value list displayed the Return Value name multiple times, even though a single value was returned from the sub policy. This issue has been resolved. Now, the Return Value name is displayed only once in the input value list.DE113041Previously, if you specified an input value in a policy instance for a Point Value node or specified a value in a Constant node that could be interpreted as a date or a time span (for example, today or 700D), and if you specified string as the data type for the node, the input value was converted to a date or time span. This issue has been resolved.Note: This change may affect the behavior of the pre-existing policies. Before you upgrade, you must review the policy designs to ensure that the correct data type is specified in all the Constant and Point Value nodes.
+DE112424Previously, when you accessed a policy, the following issues may have occurred:The mappings between the output fields of the predecessor nodes and the input fields of the successor nodes were not retained.Incorrect error messages appeared in the notification bar.These issues have been resolved.DE110027Previously, in the Properties window for an Edit Entity node, in the Auto-map field values section, if you selected Yes, the Entity Key Column box was enabled as a required field. This issue has been resolved. Now, in this scenario, the Entity Key Column box is enabled as an optional field, and a warning message appears in the notification bar, indicating that you have not specified any value in the Entity Key Column box.DE107430Previously, in the Instances section of a policy that contained a Predix Time Series node, if you specified a functional location record representing an enterprise, site, or segment in the asset hierarchy as the primary record of the policy, an error occurred and no input suggestions appeared for the Predix Time Series node. This issue has been resolved.DE105465Previously, if the GE Digital APM database contained an active policy configured for automatic execution, and if you added the database as a new data source on the GE Digital APM server, the policy was not executed as per the execution schedule until you updated the policy. This issue has been resolved.DE53608
+Table 3. Known Issues
+The following issues are unresolved in this release.
+DescriptionTracking IDWhen you export a policy from GE Digital APM V4.3.1.0.0, and then access the exported policy in an older version of GE Digital APM, the connectors in the policy model do not appear even though you can successfully validate and execute the policy. The workaround for this is to manually redraw the connectors between the nodes before making any modifications to the policy.DE116734
+Release Date: September 6, 2019
+Table 4. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, a policy that was configured to be triggered when an Entity was created or modified was intermittently not triggered when the trigger event occurred. This issue has been resolved.
+DE116926DE114823
+Previously, an error message stating that the session had expired appeared periodically in the policy execution results. This issue has been resolved.DE113039
+
+
+
+
+
+On this pagePolicy Designer
+
+
+
+
+
+
+
+
+

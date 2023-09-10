@@ -1,0 +1,265 @@
+
+
+
+SRS Projects | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+SRS Projects
+
+
+
+
+
+
+
+SRS ProjectsAbout SRS ProjectCreation of an SRS Project allows the user to select one or many of the SRS templates. Once the user has made the selection of templates, a copy of the collection of templates will be made.The user can link the SRS Project to zero or many of the following elements:SIL AnalysisLogic SolverInstrumented FunctionProtective LoopThe linkage takes place in the context of a linkable item (for example, instrumented function) where the user can search and select an approved SRS Project.Access an SRS ProjectProcedure
+Access the SIS Management Overview page.
+
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level. 
+Select the SRS tab.
+The SRS section appears, displaying a list of SRS Projects.
+
+
+
+In the SRS Project Id column, select the SRS Project that you want to access.
+The SRS Project page appears, displaying the Project Summary workspace for the selected SRS Project. The Definition tab is selected by default.
+Note: As needed, you can modify the values in the available fields, and then select  to save your changes.
+
+
+
+Create an SRS ProjectBefore You Begin
+
+Create an SRS Template.
+Procedure
+Access the SIS Management Overview page.
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level.
+In the workspace, select the SRS tab.
+The SRS section appears, displaying a list of SRS Projects.
+
+
+
+In the upper-left corner of the SRS section, select .
+The SIS Management page appears, displaying the Project Summary workspace for the SRS Project.
+
+
+
+Enter values in the Project ID and Project Description boxes for the new SRS Project, and then select . The Project ID is a required field.
+A confirmation message appears, indicating that the datasheet has been saved successfully. 
+Results
+The SRS Project that you created appears in the SRS section of the SIS Management Overview page.
+What To Do Next
+
+Add an SRS Category to an SRS Project
+
+Access the List of Linked Records in an SRS ProjectProcedure
+Access the SRS Project for which you want to view the list of linked records.
+The SRS Project page appears, displaying the Project Summary workspace for the selected SRS Project. The following tabs appear in the workspace:
+
+Definition: Contains the datasheet for the SRS Project. This tab is selected by default.
+Instrumented Functions: Contains a list of Instrumented Functions that are associated with the SRS Project.
+SIL Analysis: Contains a list of SIL Analyses that are associated with the SRS Project.
+Protective Loop: Contains a list of Protective Loops that are associated with the SRS Project.
+Logic Solvers: Contains a list of Logic Solvers that are associated with the SRS Project.
+
+
+
+Select the tab containing the records that you want to view.
+The following image shows the SIL Analysis section, which contains the list of SIL Analyses that are associated with the SRS Project.
+
+
+
+Change the State of an SRS ProjectProcedure
+Access the SRS Project for which you want change the state.In the upper-right corner of the workspace, select the button that indicates the current state of the SRS Project. For example, if the current state of the project is In Progress, select In Progress.
+A menu appears, displaying the list of operations that you can perform on the SRS Project to change its state.
+
+
+
+Select the necessary operation that will change the state of the project, and then select Done. For example, if you want to change the state of the analysis from Planning to Active, select Begin , and then select Done. 
+Note: You can view the states assigned to various users by selecting the Manage State Assignments link. If not already done, you can assign the next state to the appropriate user, and then select Done.
+The state of the SRS Project is changed.
+Results
+Based on the state of the SRS Project, the datasheet is either enabled or disabled for modification:If the state of the SRS Project is changed to Pending Review, the datasheet is disabled.If the state of the SRS Project is changed to  In Progress, the datasheet is enabled.If the state of the SRS Project is changed to Pending Review, the datasheet is disabled.If the state of the SRS Project is changed to Approved, the datasheet is disabled. At this stage, the revision number is incremented.
+
+Access the Revision History of an SRS ProjectProcedure
+Access the SRS Project for which you want view the revision history.In the upper-right corner of the workspace, select Revisions.
+The Revision History page appears, displaying the list of revisions done on the SRS Project.
+
+
+
+Change the SRS Template that is Defined for an SRS Category in an SRS ProjectProcedure
+Access the SRS Project for which you want to change the template used in an SRS Category.In the left pane, select the SRS Category in which the SRS Template needs to be changed.
+The SRS Category page appears.
+
+
+
+In the upper-right corner of the workspace, select Change Template.
+The Create new SRS category window appears, displaying a list of available SRS templates.
+
+
+
+Select the <SRS Template> radio button, and then select OK.
+The new SRS template is added to the list of SRS categories displayed in the left pane of the <SRS Project> page.
+Compare the Revision Records of an SRS ProjectProcedure
+Access the revision history of the SRS Project.Select the revision record which you want to compare with the previous revision record.
+The Revision History page displays the details of the selected revision record.
+
+
+
+In the upper-right corner of the workspace, select Show Changes.
+The Changes For Selected Datasheet page appears, displaying the comparison details. 
+
+
+
+Link an SRS Project to Instrumented Function, SIL Analysis, Protective Loop, and Logic SolverBefore You Begin
+
+Create an SRS Project.
+ProcedureLink an SRS Project to Instrumented Function
+Access the Instrumented Function to which you want to link the SRS Project.In the Definition section, in the SIS Project ID box, select .
+The Search window appears.
+
+In the Look in box, select SRS Project.
+The list of SRS projects appears.
+
+Select the SRS Project that you want to associate with the Instrumented Function, and then select OK.
+In the SRS Project ID box, the SRS Project ID appears as a link.
+In the upper-right corner of the Definition section, select .
+The selected SRS Project is linked to the Instrumented Function.
+Link an SRS Project to SIL Analysis
+Access the SIL Analysis to which you want to link the SRS Project.In the Definition section, in the SIS Project ID box, select .
+The Search window appears.
+
+
+
+In the Look in box, select SRS Project.
+The list of SRS projects appears.
+
+
+
+Select the SRS Project that you want to associate with the SIL Analysis, and then select OK.
+In the SRS Project ID box, the SRS Project ID appears as a link.
+In the upper-right corner of the Definition section, select .
+The selected SRS Project is linked to the SIL analysis.
+Link an SRS Project to Protective Loop
+Access the protective loop to which you want to link the SRS Project.In the Definition section, in the SIS Project ID box, select  .
+The Search window appears.
+
+
+
+In the Look in box, select SRS Project.
+The list of SRS projects appears.
+
+
+
+Select the SRS Project that you want to associate with the protective loop, and then select OK.
+In the SRS Project ID box, the SRS Project ID appears as a link.
+In the upper-right corner of the Definition section, select .
+The selected SRS Project is linked to the protective loop.
+Link an SRS Project to Logic Solver
+Access the Logic Solver to which you want to link the SRS Project.In the Definition section, in the SIS Project ID box, select .
+The Search window appears.
+
+
+
+In the Look in box, select SRS Project.
+The list of SRS Projects appears.
+
+
+
+Select the SRS Project that you want to associate with the Logic Solver, and then select OK.
+In the SRS Project ID box, the SRS Project ID appears as a link.
+In the upper-right corner of the Definition section, select .
+The selected SRS Project is linked to the Logic Solver.
+Download an SRS Project ReportProcedure
+Access the SRS Project for which you want to print an SRS Project report. On the upper-right corner of the page, select . 
+The Save As window appears.
+Navigate to the location where you want to save the report, and then select Save.
+The report is downloaded and saved as a .pdf file.
+Note: The actions required in steps 2 and 3 may differ slightly depending on the browser that you use and the browser settings.
+Delete an SRS ProjectProcedure
+Access the SIS Management Overview page.
+
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level. 
+In the workspace, select the SRS tab.
+The SRS section appears, displaying a list of SRS Projects.
+
+
+
+Select the row that contains the SRS Project that you want to delete.In the upper-right corner of the section, select .
+Note: SRS Projects that are in the Approved state cannot be deleted.
+A confirmation message appears, asking if you really want to delete the SRS Project(s).
+Select OK.
+The SRS Project, along with all the related SRS Project details, is deleted. 
+Note: When you delete a SRS Project, the relationships with the associated Instrumented Functions, Logic Solvers, Protective Instrument Loops, and SIL Analyses are removed.
+
+
+
+
+
+On this pageAbout SRS ProjectAccess an SRS ProjectCreate an SRS ProjectAccess the List of Linked Records in an SRS ProjectChange the State of an SRS ProjectAccess the Revision History of an SRS ProjectChange the SRS Template that is Defined for an SRS Category in an SRS ProjectCompare the Revision Records of an SRS ProjectLink an SRS Project to Instrumented Function, SIL Analysis, Protective Loop, and Logic SolverDownload an SRS Project ReportDelete an SRS Project
+
+
+
+
+
+
+
+
+

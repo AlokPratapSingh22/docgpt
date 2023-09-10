@@ -1,0 +1,192 @@
+
+
+
+Production Data | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production AnalysisProduction Analysis: Overview
+Production Analysis: Workflow
+Production Analyses
+Production Data
+Production Lines
+
+
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Production Analysis
+Production Data
+
+
+
+
+
+
+
+Production DataAccess the Source Data for Production AnalysisProcedure
+Access a Production Analysis for which you want to view the source data.In the left pane, select the Production Data tab.
+The Production Data workspace appears.
+
+
+
+In the upper-right corner of the workspace, select Analysis Data, and then select Go To Source.
+The fields on the page that appears display the analysis data associated with the selected Production Analysis and correspond to values that were used to create the analysis. 
+For an analysis based on a query, the information returned by the query appears.
+For an analysis based on a dataset, the following information stored in the dataset appears: 
+
+
+
+
+Date
+
+Production
+
+Lost Production
+
+Modified Production
+
+GAUR Category
+
+GAUR Sub-Category
+
+Comments
+
+ 
+
+For an analysis based on manually-entered data, you will receive the following error message: 
+There is no source data to view since the analysis is based on manually entered data. 
+To view data for an analysis based on manually-entered data, you can access the Production Data window. 
+
+Modify Production Analysis DataProcedure
+Access a Production Analysis whose data you want to modify.In the left pane, select the Production Data tab.
+The Production Data workspace appears.
+
+
+
+In the upper-right corner of the workspace, select Analysis Data, and then select Edit Data.
+Note: You can also view data for an analysis by selecting an observed datapoint in the plot, and then select Go To Editor. The Production Data window for the selected Production Analysis appears. The row containing the data for the selected observed datapoint is highlighted. 
+The Production Data Editor window appears. 
+
+
+
+Modify the data in any enabled field, and then select OK. 
+The analysis is updated.
+Results
+For an analysis that is based on manually entered data, the changes that you make via the Production Data window will be saved for the analysis.For an analysis that is based on a query or a dataset:The query or dataset will not be modified with the updated data. Additionally, any record returned by the query will not be updated with your changes. The changes will be saved to the analysis only.After you modify the data and save the analysis, the modified data will appear each time you open the analysis. If you want to revert to the original data, you can reload the original data to the analysis. In addition, if a query or dataset has changed in the database, you can reload the original data to the analysis in order for your analysis to contain those changes.
+
+Group Production DataAbout This Task
+When a Production Analysis has been created using fields including Production Output and Date, you can color code the datapoints according to the values in any of those fields. 
+
+Consider our example of the bottled water production process. The dataset used to create our Bottled Water Production Analysis contains three columns: Date, Production, and Category. We used the Category field to record the reasons for the Production Output on a given day, such as Equipment Failure, Process Variability, Budgeted Maintenance, and so on. We can use the Group By feature to color code our datapoints for each of these categories. 
+Procedure
+Access the Production Analysis whose datapoints you want to group.In the left pane, select the Production Data tab.
+The Production Data workspace appears.
+
+
+
+In the upper-right corner of the workspace, select Analysis Tasks, and then select Group Data By.
+The Group Data By window appears, displaying a list of fields available in the query or datasheet.
+
+
+
+Select the field that you want to use to group data.
+The datapoints within the Production Data plot change color to correspond to the values in the field. A different color is assigned automatically to each unique value.
+Tip: You can tap on a datapoint in the Production Data plot to get information on how it is grouped. You can use Legend to group the datapoints.
+Ignore Production Output ValuesProcedure
+Access a Production Analysis within which you want to exclude a production output value.In the left pane, select the Production Data tab.
+The Production Data workspace appears.
+
+
+
+In the Production Data plot, select the datapoint that you want to exclude.
+The Point Tooltip window appears.
+
+
+
+Select Ignore.
+The selected datapoint is excluded. GE Digital APM recalculates the losses on the Production Loss Regions pane, taking the ignored datapoints into account. The ignored datapoints are still plotted on the analysis, but are represented by a black dot.
+Tip: You can also exclude a datapoint via the Production Data Editor window for a Production Analysis. To do so, in the row containing the production data that you want to exclude, select the check box in the Ignore cell of that row, and then select OK. The selected datapoint will be excluded. 
+Note: If you want to include the datapoint, you can select the excluded datapoint to open the Point Tooltip window, and then select Include.
+Reload Production Analysis Data About This Task
+When you create and save an analysis that is based on a query or dataset, the GE Digital APM system saves the data that exists at the time of creation. When you open an existing analysis, changes made to the underlying query or dataset since the analysis was created will not be reflected automatically.
+Note: If the query or dataset has been deleted or renamed, when you try to open an associated analysis, an error message will appear and the data will not be refreshed.
+If you want to refresh an analysis to reflect changes to the underlying query or dataset or to load new data that has been added since the analysis was last saved (e.g., the analysis is based on a query that retrieves failures for a piece of equipment or location, and a new failure record has been added to the database), you will need to reload the analysis manually after opening it. When you reload the data, any manual changes made to the analysis data set will be deleted.
+Note: Reloading analysis data resets the analysis period only if it is based on the analysis data. Start Dates and End Dates that have been set explicitly will not be overwritten.
+Procedure
+Access a Production Analysis whose data you want to modify.In the left pane, select the Production Data tab.
+The Production Data workspace appears.
+
+
+
+In the upper-right corner of the workspace, select Analysis Data, and then select Reload Data.
+A confirmation message appears, asking you to confirm that you want to overwrite the current data with the data stored in the database. 
+Note:
+For an analysis based on manually-entered data, you will receive the following error message: 
+There is no source data to reload since the analysis is based on manually entered data. 
+
+Select Yes.
+The analysis is updated to reflect the data currently stored in the query or dataset.
+Note: If you are reloading analysis data that is based on a query and an index out of range error message appears, there is an error in the query. You should modify the query or recreate the analysis to reload the correct data.
+
+
+
+
+
+On this pageAccess the Source Data for Production AnalysisModify Production Analysis DataGroup Production DataIgnore Production Output ValuesReload Production Analysis Data 
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,199 @@
+
+
+
+Questions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Management of ChangeOverview
+Workflows
+Change Projects
+Checklists
+Exceptions and Tasks
+Changed Elements
+Deployment
+AdminMOC Admin Page
+Exceptions
+Questions
+Checklists and Questions
+
+
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Management of Change
+Admin
+Questions
+
+
+
+
+
+
+
+QuestionsAbout QuestionsIn MOC, a Checklist is presented as a list of questions. These questions must be designed such that they identify all relevant impact areas of the change and action items that must be completed for a smooth implementation of the change. Questions must take into consideration various aspects of the change, such as the technical feasibility of the change and its impact on safety. In the Application Settings for MOC, you can configure a Question with two or more Answer Options. Each Question can be configured to have only one Exception. The Checklist Questions that you created in the Application Settings for MOC are used as a template when adding a Checklist to a Change Project. When you respond to Questions in MOC, based on your configuration for Answer Options, Exceptions are created automatically.Default Questions in MoC
+By default, GE Digital APM provides a set of Questions. These Questions are also associated with Answer Options that are linked to the default Exceptions. The following table lists the default Questions and the associated Answer Options, which you can modify as needed:
+
+MI MOC Checklist Question RecordsMI MOC Answer Option RecordsChecklist Question IDQuestion TextAnswerExceptionAsset ChangeDoes the change involve the installation of new or different assets?YesAsset ChangeAsset RemovalDoes the change require demolition or destruction of existing assets?YesAsset RemovalChemical ChangeDoes the change require the use of a toxic, hazardous or ozone depleting chemical?YesProceduralControls parametersWill controls parameters (setpoints, alarm limits, ranges) be impacted by the change project?YesControls parametersDrawings/DiagramsDoes the change project affect any drawings or diagrams?YesUpdate and link all updated drawings and diagramsElectrical loadDoes the change increase electrical loading such that additional PPE or physical barriers would be needed?YesElectrical loadEnergy SourceWill the change modify processes or systems involving energy sources (e.g. gravitational, hydraulic, electrical, steam) ?YesEnergy SourceExit RouteDoes the change involve changes to existing emergency exit routes, muster areas, etc?YesExit RouteFlare additionWill the change result in the possible discharge to a flare, or other destructive mechanism?YesFlare additionHeightsWill the change add or change working at heights?YesHeightsIngress/EgressWill ingress or Egress be affected by the change project?YesUpdate applicable emergency evacuation routingLock out Tag outWill the change necessitate revision of existing lockout tagout or job safety analyses?YesLock out Tag outMachine guardingWill the change add or modify equipment or machinery requiring physical guarding?YesMachine guardingMaterial StorageWill the change introduce new chemicals or significantly increase the usage or storage of an existing chemical?YesMaterial StorageMSDSWill process chemistry  be changed as a result of the change project?YesMSDSProceduralDoes the change project affect Operating or Maintenance procedures?YesControls parametersProcess Safety InformationDoes the change project affect process safety information?YesUpdate the process safety informationProcess SewerWill the change add or modify a discharge to a process sewer?YesProcess SewerSolid WasteWill the change generate a new type or increase the volume of solid waste?YesSolid WasteStorm DrainWill the change result in a possible discharge to an "outside" storm drain system?YesStorm Drain
+
+Access a QuestionAbout This Task
+Before You Begin
+As needed, modify the MI_MOC_ANS_OPT System Code table, which contains a list of values that populates the Answer box in the Question workspace.
+Procedure
+Access the MoC Admin page.In the left pane, select Questions.
+A list of available Questions appears.
+
+
+
+In the Checklist Question ID column, select the link for the Question that you want to access.
+The page for the selected Question appears.
+
+
+
+The following information appears on the page:
+
+
+Details: This section contains the datasheet for the selected Question. 
+
+Note:
+If you want to modify values in the Details section:
+In the upper-right corner of the Questions workspace, select .
+The fields on the datasheet are enabled.
+
+As needed, modify the values in the available fields, and then select .
+Your changes are saved. 
+
+
+
+
+
+Answer Options: This subsection contains a row for each Answer Option. Each row contains the following columns of information:
+
+Answer: Contains the answer that you selected for the Question.
+Exception Triggered: Contains the Exception that you selected for the answer in the Answer column. 
+Note:
+In the Answer Options subsection, you can perform the following tasks:
+You can modify the values in the Answer and Exception Triggered boxes. If you want to change the Answer Option to which the Exception is associated, you must first delete the Answer Option with which an Exception is currently associated, and then associate another Answer Option with the Exception.You can select  to delete the Answer Option.
+
+Note: The changes made to Questions in the administrative settings for MOC will not affect the Change Projects that have used the Questions prior to modification.
+
+Create a QuestionAbout This Task
+Before You Begin
+As needed, modify the MI_MOC_ANS_OPT System Code table, which contains a list of values that populates the Answer box in the Question workspace.
+Create the Exception that you want to link to an Answer Option in the Question.
+Procedure
+Access the MoC Admin page.In the left pane, select Questions.
+A list of available Questions appears.
+
+
+
+In the upper-left corner of the workspace, select .
+A blank datasheet for Question appears in the workspace, displaying the Details section and Answer Options subsection.
+
+
+
+In the 
+Question
+ box, enter a unique name for the Question. In the 
+Description
+ box, enter a description for the Question.In the 
+Question Text
+ box, enter the text for the Question.In the Answers Options subsection, select Add Answer Option.
+A new row for adding an Answer Option appears, displaying a drop-down list box in the 
+Answer
+ column and a box in the 
+
+Exception Triggered
+
+ column.
+
+
+
+In the Answer box, select a value for the answer.If you want to associate the Answer Option with an Exception, complete the following steps:
+
+In the row containing the Answer Option, next to the Exception Triggered box, select .
+The Exceptions window appears, displaying the list of Exceptions that are available in the database.
+
+
+
+
+Select the Exception that you want to associate with the Answer Option, and then select Link.
+In the Exception Triggered box, the Exception ID of the selected Exception appears.
+
+
+
+
+Note: For a Question, you can associate only one Answer Option with an Exception. When you associate an Exception with an Answer Option, the  button next to the Exception Triggered box is disabled for other Answer Options in the Question.
+If you want to add more Answer Options to the Question, repeat steps 8 through 10.In the upper-right corner of the workspace, select .
+The Question is created.
+Note: If you save the Question without associating it with at least two Answer Options, the Add Answer Option dialog box appears, asking you to associate the Question with a minimum of two Answer Options.
+Results
+For each answer that you have included for the question, an Answer Option record is created and associated with the Question. 
+What To Do Next
+
+Create a Checklist
+
+Delete a QuestionProcedure
+Access the MoC Admin page.In the left pane, select Questions.
+A list of available Questions appears.
+
+
+
+In the row for each Question that you want to delete, select the check box.
+In the upper-right corner of the workspace, the  button is enabled.
+Select .
+The Delete MOC Question dialog box appears, asking you to confirm that you want to delete each selected Question and its association with Checklists.
+Note: Deleting Questions in the administrative settings for MOC will not affect the Change Projects that have used the Questions prior to deletion.
+Select OK.
+The selected Question is deleted and the updated list of Questions appears in the workspace.
+
+
+
+
+
+On this pageAbout QuestionsAccess a QuestionCreate a QuestionDelete a Question
+
+
+
+
+
+
+
+
+

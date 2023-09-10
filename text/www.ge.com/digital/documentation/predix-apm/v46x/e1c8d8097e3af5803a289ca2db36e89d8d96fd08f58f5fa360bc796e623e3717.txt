@@ -1,0 +1,401 @@
+
+
+
+SIL Validation | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+SIL Validation
+
+
+
+
+
+
+
+SIL ValidationAbout Safety Integrity Level (SIL) ValidationSafety instrumented systems and each instrumented function within that system must be tested to ensure that those systems is functioning to the standards for which they are designed. A proof test consists of a set of steps that you need to perform to test safety instrumented systems and instrumented functions. The conditions under which the test is conducted should represent the normal conditions under which the system is intended to operate.Depending on the group of equipment or devices that make up a safety instrumented system, you will want to define a set of test steps that apply to a given group of equipment or devices. In other words, you will need to define one set of test steps that you can reuse when you test similar systems.Creating Records in Proof Testing
+For each proof test that you want to conduct, you should create at least one record in each of the following families:
+
+SIS Proof Test Template : Stores details about a given proof test, including the steps that need to be performed. For each unique set of test steps that exists, you will need to create one SIS Proof Test Template to store those details.
+SIS Proof Test Template Detail : Stores the details on each specific step that needs to be performed for the test. These records are linked to SIS Proof Test Templates through the Has Template Detail relationship. You should create one SIS Proof Test Template Detail for each step that is required for that test.
+Inspection Task : Stores the details of the proof test task, which specifies the schedule for the proof test. These records are linked to the asset on which you will perform the proof test and to the Proof Test through the Has Task relationship. After you perform the proof test and the Proof Test that is linked to the asset is closed, the Proof Test Task is updated automatically to reflect the date on which the proof test was performed and the next date on which the proof test is due for that asset. Proof Tests Tasks are also created in Asset Strategy Management (ASM) after you promote a Recommendation to ASM. 
+SIS Proof Test : Stores details about a proof test that you perform, including the test results. When you create an SIS Proof Test, you will need to specify the SIS Proof Test Template that contains the details about the proof test you want to perform. When you select the SIS Proof Test Template, one Functional Test Detail will be created for each SIS Proof Test Template Detail that is linked to the SIS Proof Test Template. For each proof test that you want to perform, you will need to create one SIS Proof Test. You can, however, reuse SIS Proof Test Templates.
+You can think of the SIS Proof Test Template and SIS Proof Test Template Details as the specifications for how the test should be performed, and the SIS Proof Test and Functional Test Details as a record of the test occurring.
+Steps Involved in Conducting a Proof Test
+To conduct a proof test, you will need to complete the following steps:
+
+Define the proof test steps that need to be performed for a given safety instrumented system by creating one Proof Test Template for each type of test that will need to be performed. Creating an SIS Proof Test Template includes linking SIS Proof Test Template Details to the SIS Proof Test Template.
+Create one SIS Proof Test, which serves as a record of the test event and stores the results of that test.
+
+This topic provides details on SIS Proof Test Template and SIS Proof Tests. For details on how these families participate in the SIS Management data model, see the SIS Management data model.
+About Mobile Proof TestsYou can use Mobile Proof Testing on the GE Digital APM mobile application to run test procedures and collect proof testing data using mobile devices, such as a tablet. You can record values for the Proof Test and create recommendations (e.g., a maintenance follow-up) for the proof test, directly from the mobile device even if the mobile device is disconnected from the network.When you download a Proof Test Task for offline access, on the Mobile Proof Testing page, the  icon appears on the downloaded Proof Test Task, indicating that the Proof Test Task is downloaded to the mobile device that you will use for recording values for the Proof Test. Safety Integrity Level (SIL) Validation WorkflowThis workflow provides the basic, high-level steps for performing an SIL validation. The steps and links in this workflow do not necessarily reference every possible procedure.Performing an SIL Verification includes the following steps:
+Create a Proof Test Template, which stores the details of the pass/fail criteria and error limits.
+Create a Proof Test Task, which stores the schedule for the task.Perform the proof test.
+Create a Proof Test.
+Apply the Proof Test Template and the Proof Test Task to the Proof Test.In the Proof Test record, provide the results of the proof test that you have performed.The GE Digital APM system performs the error calculations and provides the pass/fail results.Access the SIL Validation Page for an Instrumented FunctionBefore You Begin
+You can access the SIL Validation page only if you are a member of one of the following Security Groups:MI SIS AdministratorMI SIS EngineerMI SIS User You can perform the various tasks on this page based on the privileges granted to these Security Groups. 
+Procedure
+Access the SIS Management Overview page.
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level.
+In the workspace, select the SIL Analysis tab.
+The SIL Analysis section appears, displaying a list of SIL Analyses.
+
+
+
+Select the SIL Analysis that is linked to the Instrumented Function for which you want to perform SIL validation.
+The SIL Analysis Summary section appears.
+
+
+
+In the left pane, select the Instrumented Function for which you want to perform SIL validation.
+The datasheet for the Instrumented Function appears.
+
+
+
+In the workspace, select the SIL Validation tab.
+The SIL Validation section appears, displaying a list of the Proof Test Templates linked to the Instrumented Function.
+
+
+
+Access the SIL Validation Page for a Logic SolverBefore You Begin
+You can access the SIL Validation page only if you are a member of one of the following Security Groups:MI SIS AdministratorMI SIS EngineerMI SIS User
+You can perform the various tasks on this page based on the privileges granted to these Security Groups.
+
+Procedure
+Access the SIS Management Overview page.
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level.
+In the workspace, select the SIL Analysis tab.
+The SIL Analysis section appears, displaying a list of SIL Analyses. 
+
+
+
+Select the SIL Analysis that is linked to the Logic Solver for which you want to perform SIL validation.
+The SIL Analysis Summary section appears.
+
+
+
+In the left pane, select Logic Solvers. 
+The Logic Solvers section appears, displaying a list of Logic Solvers in the SIL Analysis. 
+Select the Logic Solver for which you want to perform SIL validation.
+The datasheet for the Logic Solver appears.
+
+
+
+In the workspace, select the Validation tab.
+The Validation section appears, displaying a list of Proof Test Templates linked to the Logic Solver.
+
+
+
+Access a Proof Test TemplateProcedureAccess the SIL Validation page for the Instrumented Function or the Logic Solver that is linked to the Proof Test Template.Select the Proof Test Template that you want to access.
+The datasheet for the Proof Test Template appears.
+
+
+
+If needed, modify values in the available fields. In the upper-right corner of the datasheet, select .
+The changes made to the Proof Test Template are saved.
+Note: The changes made to the Proof Test Template does not affect the Proof Tests that have used the template prior to modifications. 
+Create a Proof Test TemplateProcedureAccess the SIL Validation page for the Instrumented Function or the Logic Solver. In the upper-right corner of the workspace, select .
+A blank datasheet for the Proof Test Template appears.
+
+
+
+As needed, in the Definition section, enter values in the available fields. As needed, in the Details section, enter values in the available fields. In the upper-right corner of the datasheet, select .
+The Proof Test Template is created.
+What To Do Next
+
+Create a Proof Test Template Detail
+
+Approve the Proof Test Template
+
+Change the State of a Proof Test TemplateAbout This Task
+Note: You can apply approved templates on a Proof Test.
+Procedure
+Access the Proof Test Template for which you want to change the state.In the upper-right corner of the datasheet, select the button that indicates the current state of the Proof Test Template. For example, if the current state of the template is Development, select the Development button.
+A menu appears, displaying a list of operations that you can perform on the template to change its state.
+
+
+
+Select Manage State Assignments.
+The State Assignments window appears. 
+
+
+
+If not already done, assign the next state of the template to the appropriate user, and then select Done.
+The State Assignments window closes.
+Select the operation to change the state of the template, and then select Done. For example, if you want to change the state of a template from Approved to Development, select Modify/Reassess, and then select Done.
+The state of the Proof Test Template is changed.
+Generate a Report of the Proof Test TemplateProcedureAccess the SIL Validation page for the Instrumented Function or the Logic Solver.Select the check box that corresponds to the template whose report you want to generate.In the upper-right corner of the section, select .
+The Proof Test Template report is generated. You can print, save, or export the report, or attach it to an email.
+Delete a Proof Test TemplateProcedureAccess the SIL Validation page for the instrumented function or the logic solver that is linked to the Proof Test Template.Select the check box that corresponds to the Proof Test Template that you want to delete.In the upper-right corner of the section, select  .
+A confirmation message appears, asking if you really want to delete the Proof Test Template.
+Select OK.
+The Proof Test Template is deleted.
+Access a Proof Test Template DetailProcedure
+Access the Proof Test Template that is linked to the Proof Test Template Detail that you want to access.In the workspace, select the Details tab.
+The Details section appears, displaying a list of Proof Test Template Details linked to the Proof Test Template.
+
+
+
+Select the Proof Test Template Detail that you want to access.
+A datasheet for the Proof Test Template Detail appears.
+
+
+
+If needed, modify values in the available fields. In the lower-right corner of the datasheet, select Save.
+The changes made to the Proof Test Template Detail are saved.
+Note: The changes made to the Proof Test Template does not affect the Proof Tests that have used the template prior to modifications.
+Create a Proof Test Template DetailThis topic describes how to create Proof Test Template Detail. You can also copy one or more Proof Test Template Details.Before You Begin
+
+Create a Proof Test Template.
+Procedure
+Access the Proof Test Template for which you want to add a Proof Test Template Detail.In the workspace, select the Details tab. 
+The Details section appears, displaying a list of Proof Test Template Details linked to the Proof Test Template.
+
+
+
+In the upper-right corner of the section, select Add New.
+A blank datasheet for the Proof Test Template Detail appears.
+
+
+
+As needed, enter values in the available fields. In the lower-right corner of the datasheet, select Save.
+The Proof Test Template Detail is created.
+Note: The changes made to the Proof Test Template does not affect the Proof Tests that have used the template prior to modifications. 
+Copy a Proof Test Template DetailThis topic describes how to create Proof Test Template Detail by copying an existing one. You can also create a Proof Test Template Detail using a blank datasheet.Before You Begin
+
+Create a Proof Test Template.
+Procedure
+Access the Proof Test Template for which you want to add a Proof Test Template Detail. In the workspace, select the Details tab.
+The Details section appears, displaying a list of Proof Test Template Details linked to the Proof Test Template.
+
+
+
+In the upper-right corner of the section, select Add Existing.
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select  .
+A list of Proof Test Template Details appears.
+
+
+
+Select the check box that corresponds to the Proof Test Template Detail that you want to copy, and then select OK.
+The GE Digital APM system creates a copy of the selected Proof Test Template Detail and links to the Proof Test Template.
+Note: The changes made to the Proof Test Template does not affect the Proof Tests that have used the template prior to modifications. 
+Delete a Proof Test Template DetailProcedure
+Access the Proof Test Template that is linked to the Proof Test Template Detail that you want to delete. In the workspace, select the Details tab.
+The Details section appears, displaying a list of Proof Test Template Details linked to the Proof Test Template.
+
+
+
+Next to the Proof Test Template Detail that you want to delete, select .
+ The Delete Template Details dialog box appears, asking you to confirm that you want to delete the Proof Test Template Detail.
+Select OK.
+The Proof Test Template Detail is deleted.
+Note: The changes made to the Proof Test Template does not affect the Proof Tests that have used the template prior to modifications. 
+Access a List of all Proof Test TasksThis topic describes how to access a list of Proof Test Tasks linked to all the SIL Analysis in SIS Management. The tasks that are listed here are created either in SIS Management or in Asset Strategy Management.Procedure
+Access the SIS Management Overview page.
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level.
+In the workspace, select the Proof Test Tasks tab.
+The Proof Test Tasks section appears, displaying a list of Proof Test Tasks. 
+
+
+
+If you want to access the datasheet of a Proof Test Task, select the Proof Test Task.If needed, modify values in the available fields. In the upper-right corner of the datasheet, select .
+The changes made to the Proof Test Task are saved.
+Access a Proof Test Task Linked to a Logic SolverAbout This Task
+This topic describes how to access a Proof Test Task that you have created for a Logic Solver either in SIS Management or in Asset Strategy (after promoting a Recommendation to ASM).
+Procedure
+Access the Logic Solver that is linked to the Proof Test Task that you want to access.In the workspace, select the Tasks tab.
+The Proof Test Tasks section appears, displaying a list of Proof Test Tasks. 
+
+
+
+Select the Proof Test Task that you want to access.
+The datasheet for the Proof Test Task appears.
+
+
+
+If needed, modify values in the available fields. In the upper-right corner of the datasheet, select .
+The changes made to the Proof Test Task are saved.
+Access a Proof Test Task Linked to an Instrumented FunctionAbout This Task
+This topic describes how to access a Proof Test Task that you have created for an Instrumented Function either in SIS Management or in Asset Strategy (after promoting a Recommendation to ASM).
+Procedure
+Access the Instrumented Function that is linked to the Proof Test Task that you want to access.In the workspace heading, select the Proof Test Tasks tab.
+The Proof Test Tasks section appears, displaying a list of Proof Test Tasks. 
+
+
+
+Select the Proof Test Task that you want to access.
+The datasheet for the Proof Test Task appears.
+
+
+
+If needed, modify values in the available fields. In the upper-right corner of the datasheet, select .
+The changes made to the Proof Test Task are saved.
+Create a Proof Test TaskThis topic describes how to create a Proof Test Task for an Instrumented Function or a Logic Solver using a blank datasheet.ProcedureAccess the Logic Solver or the Instrumented Function for which you want to create a Proof Test Task.In the workspace, select the Proof Test Tasks tab.
+The Proof Test Tasks section appears, displaying a list of Proof Test Tasks for the Logic Solver or the Instrumented Function.
+
+
+
+Select , and then select Create New Task.
+The New Proof Test Task page containing a blank datasheet for the Proof Test Task appears.
+
+
+
+Enter values in the available fields in the datasheet.
+Note: The value PROOF TEST must appear in the Task Type box. If it does not appear, you must select that value in the box.
+Select .
+The Proof Test Task is created.
+Note: In order to complete the Proof Test workflow, the Equipment should be linked to the Instrumented Function before creating a Proof Test Task record.
+What To Do Next
+Perform the proof test, and create a Proof Test Event to store the results.
+Assign an Existing Proof Test TaskThis topic describes how to assign an existing Proof Test Task for an Instrumented Function or a Logic Solver.ProcedureAccess the Logic Solver or the Instrumented Function for which you want to create a Proof Test Task.In the workspace, select the Proof Test Tasks tab.
+The Proof Test Tasks section appears, displaying a list of Proof Test Tasks for the Logic Solver or the Instrumented Function.
+
+
+
+Select , and then select Assign Existing Task. The Search window appears.Select .A list of Proof Test Tasks appears.Select the task that you want to assign, and then select OK.The Proof Test Task is assigned, and it appears in the list of Proof Test Tasks.Note: In order to complete the Proof Test workflow, the Equipment should be linked to the Instrumented Function before assigning an existing Proof Test Task record.Delete a Proof Test TaskAbout This Task
+This topic describes how to delete a Proof Test Task either from the SIS Management Overview page or from the list of tasks that are linked to a Logic Solver or an Instrumented Function.
+ProcedureAccess the list of Proof Test Tasks that are linked to a Logic Solver or an Instrumented Function.Select the check box that corresponds to the Proof Test Task that you want to delete, and then in the upper-right corner of the section, select .
+The Delete Proof Test Task(s) dialog box appears, indicating that deleting the Proof Test Task will also delete the related records.
+Select OK.
+The Proof Test Task is deleted.
+Access a Proof TestProcedureAccess the SIL Validation page for the Instrumented Function or the Logic Solver. In the SIL Validation workspace, select Proof Test.
+A list of Proof Tests appears.
+
+
+
+Select the Proof Test that you want to access.
+The datasheet for the Proof Test appears.
+
+
+
+If needed, modify values in the available fields. In the upper-right corner of the datasheet, select .
+The changes made to the Proof Test are saved.
+Create a Proof TestThis topic describes how to create a Proof Test for an Instrumented Function or a Logic Solver.Before You Begin
+
+Create a Proof Test Template.Perform the proof test.
+ProcedureAccess the SIL Validation page for the Instrumented Function or the Logic Solver. In the SIL Validation section, select Proof Test.
+A list of Proof Tests appears.
+
+
+
+ In the upper-right corner of the workspace, select .
+A blank datasheet for the Proof Test appears.
+
+
+
+As needed, enter values in the available fields.In the upper-right corner of the datasheet, select .
+The Proof Test is created.
+Apply a Proof Test Template and a Proof Test Task to a Proof TestBefore You Begin
+
+Create a Proof Test Template.
+Approve the Proof Test Template.
+Create a Proof Test Task.
+Create a Proof Test.
+About This TaskWhen you apply a Proof Test Template to a Proof Test, a Functional Test Detail is created for each Proof Test Template Detail. The pass/fail criteria, step sequence number, and other details in the Proof Test Template Detail are populated in the corresponding fields in the Functional Test Detail.Procedure
+Access the Proof Test to which you want to apply a template.In the Functional Test Template drop-down list box, select the template that you want to apply.
+Note: You can select only from the list of templates that are approved and linked to the same Instrumented Function or Logic Solver.
+In the Task Addressed box, select the task that is addressed by the Proof Test.
+Note: You can select only from the list of tasks that are linked to the same Instrumented Function or Logic Solver.
+In the upper-right corner of the datasheet, select .
+The Proof Test Task and the Proof Test Template are linked to the Proof Test.
+Results
+A Functional Test Detail is created for each Proof Test Template Detail. These Functional Test Details are listed in the Details section. Each row in this grid corresponds to each step in the Proof Test as specified in the template.
+What To Do Next
+Perform the Proof Test, and enter the readings for each step in the corresponding Proof Test Detail. The GE Digital APM system then calculates the error values and provides the results of the proof test.
+Generate a Report of the Proof TestProcedureAccess the SIL Validation page for the Instrumented Function or the Logic Solver.In the SIL Validation section, select Proof Test.
+A list of Proof Tests appears.
+
+
+
+Select the check box that corresponds to the Proof Test whose report you want to generate.In the upper-right corner of the section, select .
+The Proof Test report is generated. You can print, save, or export the report, or attach it to an email.
+Close a Proof TestThis topic describes how to close a Proof Test for an Instrumented Function or a Logic Solver.Before You Begin
+
+Create a Proof Test Template.Perform the proof test.Create a Proof Test.
+ProcedureAccess the SIL Validation page for the Instrumented Function or the Logic Solver. In the SIL Validation section, select the Proof Test tab.The Proof Test section appears, displaying a list of proof tests.Select the proof test that you want to close.The SIS Proof Test datasheet appears for the selected proof test.In the SIS Proof Test datasheet, perform the following actions:In the Completion Date box, enter or select the completion date for the proof test.In the Functional Test Status box, enter or select Closed or Complete.In the Actual Work Time box, enter the number of hours required to complete the proof test.
+Note: A value is required in this field only if integration with Work Management Interface is enabled.
+Select the Functional Test Closed check box.Select .Your changes are saved, and the proof test is closed.Note: After the proof test is closed, the fields in the SIS Proof Test datasheet will be disabled.Delete a Proof TestProcedureAccess the SIL Validation page for the Instrumented Function or the Logic Solver. In the SIL Validation section, select Proof Test.
+A list of Proof Tests appears.
+
+
+
+Select the check box that corresponds to the Proof Test that you want to delete, and then select  .
+A confirmation message appears, asking if you really want to delete the Proof Test.
+Select OK.
+The Proof Test is deleted.
+
+
+
+
+
+On this pageAbout Safety Integrity Level (SIL) ValidationAbout Mobile Proof TestsSafety Integrity Level (SIL) Validation WorkflowAccess the SIL Validation Page for an Instrumented FunctionAccess the SIL Validation Page for a Logic SolverAccess a Proof Test TemplateCreate a Proof Test TemplateChange the State of a Proof Test TemplateGenerate a Report of the Proof Test TemplateDelete a Proof Test TemplateAccess a Proof Test Template DetailCreate a Proof Test Template DetailCopy a Proof Test Template DetailDelete a Proof Test Template DetailAccess a List of all Proof Test TasksAccess a Proof Test Task Linked to a Logic SolverAccess a Proof Test Task Linked to an Instrumented FunctionCreate a Proof Test TaskAssign an Existing Proof Test TaskDelete a Proof Test TaskAccess a Proof TestCreate a Proof TestApply a Proof Test Template and a Proof Test Task to a Proof TestGenerate a Report of the Proof TestClose a Proof TestDelete a Proof Test
+
+
+
+
+
+
+
+
+

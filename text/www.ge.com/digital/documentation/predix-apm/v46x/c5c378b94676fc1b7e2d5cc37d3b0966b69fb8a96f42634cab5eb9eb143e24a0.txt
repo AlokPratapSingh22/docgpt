@@ -1,0 +1,96 @@
+
+
+
+Second Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release NotesFirst Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Release Notes
+Second Quarter of 2021
+
+
+
+
+
+
+
+Second Quarter of 2021Release Date: June 25, 2021This topic provides a list of product changes released for this module on this date.APM Asset Service Upgrade NotificationWhat does this mean to Asset CustomersGE Digital appreciates and values your business. As part of our efforts to continuously improve our product offerings, APM Asset Service is upgrading its S95 model to allow for automatic Tag ingestion from Edge devices(like OSM, OSI-PI, Historian) to APM cloud.As a result of this upgrade, Asset Service API endpoints that allow creating and querying Tags will be deprecated and replaced with new set of API endpoints by March 2022 (subject to change to a future date). Find below preliminary list of API endpoints that will be deprecated by March 2022 (subject to change to a future date). This communication is to identify customers who are invoking Asset Service endpoints for Tag create and Tag query.API endpoints being deprecated in Q1 2022 – both /V1 and /V3https://apm-asset-apidoc-svc-prod.app-api.aws-usw02-pr.predix.io/docs/indexv3.html#associate-tags-to-assethttps://apm-asset-apidoc-svc-prod.app-api.aws-usw02-pr.predix.io/docs/indexv3.html#disassociate-tags-from-assethttps://apm-asset-apidoc-svc-prod.app-api.aws-usw02-pr.predix.io/docs/indexv3.html#get-by-criteriahttps://apm-asset-apidoc-svc-prod.app-api.aws-usw02-pr.predix.io/docs/indexv3.html#query-tagshttps://apm-asset-apidoc-svc-prod.app-api.aws-usw02-pr.predix.io/docs/indexv1.html#associate-tags-to-assethttps://apm-asset-apidoc-svc-prod.app-api.aws-usw02-pr.predix.io/docs/indexv1.html#disassociate-tags-from-assethttps://apm-asset-apidoc-svc-prod.app-api.aws-usw02-pr.predix.io/docs/indexv1.html#get-by-criteriahttps://apm-asset-apidoc-svc-prod.app-api.aws-usw02-pr.predix.io/docs/indexv1.html#query-tagsNote: All API’s with /tags in them will be deprecated within both V1 and V3 versions of the API.What will happen to existing data?Tag data will be migrated to the upgraded S95 model. What other changes are expected?Tag ingestion format will change, there will be detailed communication sent in the near future to describe Full API deprecation list, changes to Tags UI in Asset microapp, Tag Ingestion, new API endpoints that allow for Querying Tags.User ActionsIf you are a user of APM Asset Service and are invoking API endpoints listed above for creating and querying Tag data, please reach out to the Predix Support, so that we can make sure to keep you informed with details about the upcoming changes
+
+
+
+
+On this pageRelease Date: June 25, 2021
+
+
+
+
+
+
+
+
+

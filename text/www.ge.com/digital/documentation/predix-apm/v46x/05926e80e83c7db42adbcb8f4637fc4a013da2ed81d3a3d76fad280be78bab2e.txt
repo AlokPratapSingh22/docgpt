@@ -1,0 +1,96 @@
+
+
+
+Implement Recommended Actions to Inspection Tasks | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection PlansRBI Inspection Plans
+Inspection Plan Management
+Managing Recommended Actions in Inspection Plan
+Implement Recommended Actions to Inspection Tasks
+Inspection Plan Revision History
+
+
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Inspection Plans
+Implement Recommended Actions to Inspection Tasks
+
+
+
+
+
+
+
+Implement Recommended Actions to Inspection TasksImplement an RBI Recommendation to an Inspection TaskYou can create new Inspection Tasks or link existing Inspection Tasks to an RBI Recommendation that is in the Approved state in an Inspection Plan. Before You Begin
+Ensure that the Implement Recommended Actions to Tasks in ASM setting is set to False in the Global Preferences section of the RBI Admin Preferences page.You must have an Inspection Plan that is in the Approved state.
+ProcedureAccess the Inspection Plan that contains the RBI Recommendations that you want to implement.Next to the RBI Recommendation that you want to implement, select the check box.Select Implement.The Implement as Inspection Task window appears.
+
+Select one of the following:ActionDescriptionCreate NewCreates a new task that is linked to the RBI Recommendation. The new task is assigned a Task ID, and the Task ID appears in the Task ID column for the respective RBI Recommendation.Link ExistingAllows you to select an existing Inspection Task to link to the RBI Recommendation. The task uses the existing Task ID.Note: You cannot link non-reoccurring tasks to reoccurring recommendations.Select Implement.The Inspection Task is linked to the RBI Recommendation and appears in the Existing Tasks section of the Inspection Plan page.The Inspection Task fields are populated with the following values from the RBI Recommendation:FieldValueSourceDesired IntervalThe least value among the following:The value in the Interval field The value in the RBI Half-Life field in the associated Degradation Mechanism EvaluationThe value in the TM Half-Life field in the associated Asset Corrosion AnalysisTime-Based Inspection SettingsNote: If you are linking to an existing Inspection Task, this field is populated only if the value in the Override Interval field is False and the value in the Reoccurring field is True.RBI RecommendationDesired Interval BasisThe value of the Interval Basis that corresponds to the Interval field Note: If you are linking to an existing Inspection Task, this field is populated only if the value in the Override Interval field is False and the value in the Reoccurring field is True.RBI RecommendationNext DateThe value in the Target Completion Date fieldNote: This field is populated only when the RBI Recommendation field, NonRecurring? is true.RBI RecommendationNext Date BasisRBI Recommendation or RBI 581 RecommendationNote: This field is populated only when the RBI Recommendation field, NonRecurring? is true.NoneOverride IntervalFalseNote: If you are linking to an existing Inspection Task, this field is not populated.NoneReasonRBI Recommendation or RBI 581 RecommendationNoneReoccurringThe negated value of the NonRecurring? fieldRBI RecommendationTask DetailsThe value in the Recommended Inspection Scope field concatenated with the value in the Recommendation Basis fieldRBI RecommendationTask IDThe value in the Degradation Mechanism field concatenated with the value in the Task Type fieldNote: If you are linking to an existing Inspection Task, this field is not populated.RBI RecommendationTask TypeThe value in the Task Type fieldRBI RecommendationUnlink an Inspection Task from an RBI RecommendationYou can unlink Inspection Tasks from Compliance Recommendations to remove them from the Linked Actions.ProcedureAccess the Inspection Plan that contains the RBI Recommendations from which you want to unlink tasks.Next to the RBI Recommendation that contains the Inspection Task that you want to unlink, select the check box.Select .A message appears, asking if you want to unlink the selected recommendation from the task.Select Yes.The Inspection Task is unlinked from the RBI Recommendation.Note: The Inspection Task will remain linked to the parent asset. The Desired Interval and Desired Interval Basis fields in the Inspection Task will remain populated based on the previously linked recommendation.
+
+
+
+
+On this pageImplement an RBI Recommendation to an Inspection TaskUnlink an Inspection Task from an RBI Recommendation
+
+
+
+
+
+
+
+
+

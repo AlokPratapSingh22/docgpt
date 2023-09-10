@@ -1,0 +1,99 @@
+
+
+
+Second Quarter of 2022 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+QueriesWorkflow
+Query Creation
+Query Results
+Query Sources, Fields, Joins, and Hyperlinks
+Query Expressions, Clauses, and Prompts
+Query Timeouts
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+First Quarter of 2019
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Queries
+Release Notes
+Second Quarter of 2022
+
+
+
+
+
+
+
+Second Quarter of 2022Release Date: June 24, 2022This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when you attempted to export the query results of an unformatted query, the exported data was different from the actual query results for the fields with Units of Measure (UOM) conversions. This issue has been resolved.US529272Previously, if your culture setting was set to a language other than English, and you accessed the Query Results, the message text Drag a column header here to group by that column was not translated to the language based on your culture setting. This issue has been resolved.For more information on enabling translation, refer to KBA 000039427.DE179290Previously, you were unable to run a single query to delete multiple records that are linked to the same successor record in the relationship family. This issue has been resolved. DE178642
+Table 2. Known Issues and Limitations
+The following known issues and limitations exist.
+DescriptionTracking IDWhen you attempt to create a cascading query, the Enter Parameter Values window keeps refreshing continuously and you are unable to update any field in this window.DE176729
+
+
+
+
+
+On this pageRelease Date: June 24, 2022
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,159 @@
+
+
+
+Query Sources, Fields, Joins, and Hyperlinks | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+QueriesWorkflow
+Query Creation
+Query Results
+Query Sources, Fields, Joins, and Hyperlinks
+Query Expressions, Clauses, and Prompts
+Query Timeouts
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Queries
+Query Sources, Fields, Joins, and Hyperlinks
+
+
+
+
+
+
+
+Query Sources, Fields, Joins, and HyperlinksAbout Query Sources, Fields, Joins, and HyperlinksThe following topics describe available actions related to query sources, fields, joins, and hyperlinks.Add a SourceAbout This Task
+Steps: Add a Source to a New Query
+ProcedureTo add a source to a new query:
+Access the Design workspace.Depending on the type of query source that you want to use, on the Select a Family or Query window, select either the Families or Queries tab.one of the following tabs:Depending on your selection, the list of entity families or Catalog folders to which you have at lease View privileges appears.Note: If all sources have been removed from the Design workspace, in the page heading, select Add Source to open the Select a Family or Query window.In the Families section, in the list, select an entity family. Or, in the Queries section, navigate through the folder hierarchy and select a query. You can also select  in the Families section to browse and select a family from the family hierarchy.Select Add.The Select a Family or Query window closes, and your selected query source appears as a node on the design canvas.
+
+To add a related source:
+Access the Design workspace.On the design canvas, select the source to which you want to add a related source.
+
+
+
+Select the plus symbol, and then drag the pointer to another location on the design canvas.A blank node appears, and, in the direction that you drag the pointer, a line connecting the two nodes is drawn automatically.
+
+In the location where you want to place the related source, release the pointer.
+The Add Related Source window appears.
+Depending on the type of related source you want to use, select one of the following tabs. Select the Add Related Family tab to access the list of entity families to which you have at least View privileges, as well as the corresponding GE Digital APM relationship families that link those entity families to the source you selected on the design canvas. Select the Add Manual Join tab to access options that allow you to manually link a field in the predecessor source (the source you selected) to a field in a successor family or query. Once you select a successor source, you can then define the type of join you want to use.In the Add Related Family section, select the desired entity family and relationship family combination. Alternatively, add a manual join via the Add Manual Join section.Select Add.
+The design canvas appears, and the new source node is populated with the selected source. The line connecting the two nodes changes to represent one of the following types of relationships.
+
+Join TypeLine Style
+GE Digital APM Inner Join
+
+
+
+
+GE Digital APM Outer Left Join
+
+
+
+
+GE Digital APM Outer Right Join
+
+
+
+Manual Inner Join
+
+
+
+Manual Outer Left Join
+
+
+
+Manual Outer Right Join
+
+
+
+
+
+What To Do Next
+
+Add a field to a query.
+
+Add a Field to a QueryProcedure
+Access the Design workspace.In the design canvas, select the source that contains the field you want to add to the conditions grid.The [<Source Name>] window appears, where [<Source Name>] is the name that appears on the query source node in the design canvas.
+
+In the [<Source Name>] window, in the Fields section, select the field that you want to add to the query.The field appears in the grid in the Conditions section.Note:  If you add the same field from one source to the grid in the Conditions section twice, you must specify a unique value in the Alias cell for each field. If you do not specify a unique alias, GE Digital APM will add a unique alias automatically.Results
+The Field cell contains a drop-down list, where you can modify your field selection.
+What To Do Next
+
+Run the query.
+Arrange ColumnsProcedure
+Access the Design workspace.In the Conditions section, select the heading of the column that you want to move, drag the pointer to a different location within the grid, and then release the pointer.The column is moved to the specified location.Modify the Properties of a JoinProcedureTo modify a join:
+Access the Design workspace.On the design canvas, select the line that connects two query sources.The window for the selected relationship family appears.Select Join Properties.The Join Properties window appears.On the Join Properties window, modify the join type to one of the following options, and then select Done:
+OptionDescriptionInner joinRepresented by the Only include rows that are linked through '<Relationship Family>' option.Left outer joinRepresented by the Include ALL rows from '[<predecessor source>]' and only those rows from '[<successor source>]' where the joined fields are equal option.Right outer joinRepresented by the Include ALL rows from '<Successor Family>' and only those rows from '<Predecessor Family>' that are linked through '<Relationship Family>' option.
+OptionDescriptionInner joinRepresented by the Only include rows that are linked through '<Relationship Family>' option.Left outer joinRepresented by the Include ALL rows from '[<predecessor source>]' and only those rows from '[<successor source>]' where the joined fields are equal option.Right outer joinRepresented by the Include ALL rows from '<Successor Family>' and only those rows from '<Predecessor Family>' that are linked through '<Relationship Family>' option.To modify a manual join:
+Access the Design workspace.On the design canvas, select the line that connects two query sources.The window for the selected relationship family appears.Select Join Properties.The Join Properties window appears.On the Join Properties window, modify the join type to one of the following options, and then select Done:
+
+Inner join, represented by the Only include rows that are linked through '<Relationship Family>' option.
+Left outer join, represented by the Include ALL rows from '[<predecessor source>]' and only those rows from '[<successor source>]' where the joined fields are equal option.
+
+Right outer join, represented by the Include ALL rows from '<Successor Family>' and only those rows from '<Predecessor Family>' that are linked through '<Relationship Family>' option.
+
+The properties of the join are modified.
+Delete a JoinProcedure
+Access the Design workspace for the query from which you want to delete a join.On the design canvas, delete a source that is directly connected to the join that you want to delete.The join is deleted.Display the System and Inactive Fields for a Query SourceProcedure
+Access the Design workspace.
+Add one or more sources to the design canvas.Select the source node for which you want to display system or inactive fields.The window for the selected source node appears.In the window, in the Fields section, select . Then, in the drop-down list, select either one or both of the Show System Fields and Show Inactive Fields check boxes.Depending on your selection, the system and/or inactive fields for the family appear in the Fields section, at the end of the list. System fields are identified by their field IDs, and inactive fields are identified by their field captions appearing within square brackets.Remove a Query SourceProcedure
+Access the Design workspace for the query from which you want to remove a source.On the design canvas, select the source node that you want to remove.The option buttons appear just above the source node.Select the  button.
+The source and all connected joins are removed from the query.
+Create a HyperlinkProcedureTo create an internal URL:Access the Design workspace of the query in which you want to create hyperlinks.In the grid in the Conditions section, for the field on which you want to create the hyperlink, in the Hyperlink cell, select .The URL Builder window appears.
+Note: Do not create a hyperlink on a date field. Doing so will convert the value in the date field to the local time of the user creating it, and the value will be incorrect for users in different time zones.
+In the Select URL Format section, select Meridium APM, and then select Next.In the Select URL Feature Area section, in the list, select the area of GE Digital APM to which you want the URL to point, and then select Next.In the Select URL Type section, in the list, select the specific location to which you want the URL to point, and then select Next.In the Specify Parameters section, specify the Entity Key and any other values necessary to populate the URL, and then select Finish.The Expression Builder window closes, and then, in the grid in the Conditions section, <expr> appears in the field on which you created the prompt.To create an external URL:Access the Design workspace of the query in which you want to create hyperlinks.In the grid in the Conditions section for the field on which you want to create the hyperlink, in the Hyperlink cell, select . Do not create a hyperlink on a date field. Doing so will convert the value in the date field to the local time of the user creating it, and the value will be incorrect for users in different time zones.The URL Builder window appears.In the Select URL Format section, select Manual.In the Specify Parameters section, enter the URL to which you want the hyperlink to correspond, and then select Finish.The Expression Builder window closes, and in the grid in the Conditions section, <expr> appears in the field on which you created the expression.Results
+Note:  If you clear the Included check box for the System field, and then run the query in formatted mode, selecting a hyperlink in the query results may cause the following error message to appear: An entity with the key '{<X>}' could not be found. Please close the tab. If this occurs, select the Included check box for the System field, and then rerun the query.
+You cannot modify a hyperlink using the URL Builder window. The URL Builder interface does not store settings for existing hyperlinks.If you want to use the URL Builder window to modify a hyperlink, you can recreate the hyperlink and include your modifications in the URL Builder window.
+Delete a HyperlinkProcedure
+Access the Design workspace.In the grid in the Conditions section, for the cell in which you want to delete a hyperlink, select .The hyperlink is removed from the query.
+
+
+
+
+On this pageAbout Query Sources, Fields, Joins, and HyperlinksAdd a SourceAdd a Field to a QueryArrange ColumnsModify the Properties of a JoinDelete a JoinDisplay the System and Inactive Fields for a Query SourceRemove a Query SourceCreate a HyperlinkDelete a Hyperlink
+
+
+
+
+
+
+
+
+

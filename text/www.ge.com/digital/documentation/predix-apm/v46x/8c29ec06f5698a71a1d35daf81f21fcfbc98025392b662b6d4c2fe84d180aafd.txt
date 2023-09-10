@@ -1,0 +1,125 @@
+
+
+
+Monte Carlo Simulations | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares AnalysisSpares Analysis: Overview
+Spares Analysis: Workflow
+Spares Analyses
+Spares
+Spare Applications
+Spare Application Populations
+Failure Distributions
+Monte Carlo Simulations
+
+
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Spares Analysis
+Monte Carlo Simulations
+
+
+
+
+
+
+
+Monte Carlo SimulationsAbout Monte Carlo SimulationsThere are some instances in which conditions are too complex to use the typical analytical methods to answer certain questions. Monte Carlo simulations can be used to predict results in these situations. Details
+Consider the following simple questions with seemingly unpredictable answers:
+How many people will be in the check-out line at the grocery store at 7 P.M. on Wednesday?How many cars will be on Main Street at 9 P.M. on Friday?When will the next power outage occur in our neighborhood?
+The answers to these questions vary based on a number of factors, including:
+The probability of previous occurrences in these situations.Actual conditions leading up to the event.Variable values that provide inputs to calculated outputs.
+Now, consider the following more complex questions:
+How long will the piece of equipment continue to operate before the next failure?How many spare parts should be stored to handle unplanned failures but not result in a surplus of parts that are not needed?
+When these types of questions arise, a Monte Carlo simulation can be run to look at the random variables and probability for a complex piece of equipment to calculate the most predictable results. You can specify the number of iterations to indicate the amount of times that you want the Monte Carlo simulation to run. The larger the number of iterations, the more accurate the Monte Carlo results will be.
+Rolling a Seven Using two Dice
+Suppose you want to determine the probability of rolling a seven using two dice with values one through six. There are 36 possible combinations for the two dice, six of which will total seven, which means that mathematical probability of rolling a seven is six in 36, or 16.67 percent. But is the mathematical probability the same as the actual probability? Or are there other factors that might affect the mathematical probability, such as the design of the dice themselves, the surface on which they are thrown, and the technique that is used to roll them?
+To determine the actual probability of rolling a seven, you might physically roll the dice 100 times and record the outcome each time. Assume that you did this and rolled a seven 17 out of 100 times, or 17 percent of the time. Although this result would represent an actual, physical result, it would still represent an approximate result. If you continued to roll the dice again and again, the result would become less and less approximate.
+A Monte Carlo simulation is the mathematical representation of this process. It allows you to simulate the act of physically rolling the dice and lets you specify how many times to roll them. Each roll of the dice represents a single iteration in the overall simulation; as you increase the number of iterations, the simulation results become more and more accurate. For each iteration, variable inputs are generated at random to simulate conditions such as dice design, rolling surface, and throwing technique. The results of the simulation would provide a statistical representation of the physical experiment described above.
+Run a Monte Carlo SimulationBefore You Begin
+
+Create a Spares Analysis
+The Spare analysis must contain at least one:
+Spare record
+
+Spare Application record
+
+Spare Application Population record
+
+
+ If the analysis does not meet this minimum requirement, when you attempt to run the Monte Carlo simulation, an error message appears, explaining which record(s) are missing.
+About This Task
+When you run a Monte Carlo simulation, calculations are performed on the delivery time, downtime, lost production costs, and failure and repair data to determine how many spare parts should be kept on hand at any given time. A Monte Carlo simulation performs these calculations many times for every spare part. The exact number of times the calculations are performed is determined by the value in the Number of Iterations box in the Analysis Summary workspace for the selected Spares Analysis. After a Monte Carlo simulation has been run, you can view its results on any of the Spares Analysis plots. 
+The plots will contain results from the last time the Monte Carlo simulation was run. Therefore, if you edit any data on any record that might affect the results of the Monte Carlo simulation, you should re-run the simulation before viewing the plots. Otherwise, the plots might contain results that do not match the most current data.
+You can run only one simulation at a time for an analysis. For example, if you are running a simulation for Analysis A, you cannot run another simulation for Analysis A. You can, however, run a simulation for Analysis A while running the simulation for Analysis B. While a simulation is running, you can continue working in other areas of the GE Digital APM Framework.
+Procedure
+Access the Spares Analysis for which you want to run a simulation. 
+Note:  The Run Simulation link is only enabled when the simulation is first created or when changes have been made that affect the simulation results. If changes are made to an existing simulation, only the modified scenario will run.
+In the left pane, select Run Simulation.
+Simulation begins and the status appears in the left pane, indicating the progress of the simulation in percentage.
+After the simulation is complete, a confirmation message appears in the top right corner of the page. The plots display the updated results.
+
+
+
+
+
+On this pageAbout Monte Carlo SimulationsRun a Monte Carlo Simulation
+
+
+
+
+
+
+
+
+

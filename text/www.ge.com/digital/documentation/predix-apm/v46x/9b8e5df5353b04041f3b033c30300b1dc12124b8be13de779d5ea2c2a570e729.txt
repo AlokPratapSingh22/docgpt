@@ -1,0 +1,132 @@
+
+
+
+Exceptions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Management of ChangeOverview
+Workflows
+Change Projects
+Checklists
+Exceptions and Tasks
+Changed Elements
+Deployment
+AdminMOC Admin Page
+Exceptions
+Questions
+Checklists and Questions
+
+
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Management of Change
+Admin
+Exceptions
+
+
+
+
+
+
+
+ExceptionsAbout Exceptions Exceptions are action items that must be completed by the team before delivering a change. In the Application Settings for MOC, you can create Exception records to identify the type of Exception that must be created for an Answer Option. When you respond to Questions in a Checklist in the Change Project, Exceptions are automatically created by copying the Exceptions that you created. Default Exceptions in MoC
+
+GE Digital APM provides a set of Exceptions, by default. These Exceptions are associated with Answer Options of Questions. The following table lists the default Exceptions, which you can modify as needed:
+
+Exception IDException TypeAsset ChangeUpdate EAM/CMMS recordsAsset RemovalUpdate EAM/CMMS recordsChemical ChangeUpdate facility chemical hazard storage documentationControls parametersList all pre and post change controls parametersElectrical loadUpdate electrical safe work plansEnergy SourceUpdate LOTO documentation and safe work plansExit RouteRevise or replace emergency exit route placardsFlare additionUpdate flare usage documentationHeightsUpdate safe work plans related to working above gradeLock out Tag outUpdate safe work plans, and applicable LOTO plansMachine guardingRevise existing or add new machine guarding as appMaterial StorageUpdate facility chemical hazard storage documentationMSDSUpdate material safety data sheetProceduralUpdate applicable Operating or Maintenance procedureProcess SewerUpdate sewer source and usage documentationSolid WasteUpdate facility chemical hazard storage documentationStorm DrainNotify local authorities, and update facility possible discharge documentation Update and link all updated drawings and diagramsDrawings/DiagramsUpdate applicable emergency evacuation routingIngress/EgressUpdate the process safety informationProcess Safety Information
+
+Access an ExceptionProcedure
+Access the MoC Admin page.In the left pane, select Exceptions.
+A list of available Exceptions appears. 
+
+
+
+In the Exception ID column, select the link for the Exception that you want to access.
+The datasheet for the selected Exception appears.
+
+
+
+Note: As needed, you can modify the values in the available fields, and then select  to save your changes. The changes made to Exceptions in the administrative settings for MOC will not affect the Change Projects that have used the Exceptions prior to modification.
+Create an ExceptionProcedure
+Access the MoC Admin page.In the left pane, select Exceptions.
+A list of available Exceptions appears. 
+
+
+
+In the upper-left corner of the workspace, select .
+A blank datasheet for an Exception appears in the workspace.
+
+
+
+As needed, enter values in the available fields.In the upper-right corner of the workspace, select .
+The Exception is created.
+What To Do Next
+
+Create a Question
+
+Delete an ExceptionProcedure
+Access the MoC Admin page.In the left pane, select Exceptions.
+A list of available Exceptions appears. 
+
+
+
+In the row for each Exception that you want to delete, select the check box.
+In the upper-right corner of the workspace, the  button is enabled.
+Select .
+The Delete MOC Exception dialog box appears, asking you to confirm that you want to delete each selected Exception and its relationship with the associated Answer Options.
+Note: Deleting Exceptions in the administrative settings for MOC will not affect the Change Projects that have used the Exceptions prior to deletion.
+Select OK.
+The selected Exception is deleted and the updated list of Exceptions appears in the workspace.
+
+
+
+
+
+On this pageAbout ExceptionsAccess an ExceptionCreate an ExceptionDelete an Exception
+
+
+
+
+
+
+
+
+

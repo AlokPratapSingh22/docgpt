@@ -1,0 +1,102 @@
+
+
+
+Spares Analysis: Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares AnalysisSpares Analysis: Overview
+Spares Analysis: Workflow
+Spares Analyses
+Spares
+Spare Applications
+Spare Application Populations
+Failure Distributions
+Monte Carlo Simulations
+
+
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Spares Analysis
+Spares Analysis: Overview
+
+
+
+
+
+
+
+Spares Analysis: OverviewOverview of Spares AnalysisReliability Analytics
+The Reliability Analytics module provides a collection of tools that apply reliability engineering principles to help you make tactical (short-term) and strategic (long-term) decisions for maintenance and operational equipment management activities. It also provides: A means for analyzing historical failure data to identify trends and predict future failures.A mechanism for simulating what if scenarios regarding the reliability of a system to determine if a new or modified strategy will be effective. The Reliability Analytics module provides the following types of tools: Production AnalysisSystem Reliability AnalysisSpares AnalysisReliability Distribution AnalysisProbability Distribution AnalysisReliability Growth AnalysisAutomation Rules
+                                Each tool provides a unique set of features that allow you to analyze data to develop strategies to improve reliability.
+Spares Analysis
+Spares Analysis is a tool that uses delivery time and cost, downtime, lost production costs, and failure and repair data to calculate the amount of spare parts you need to keep at any specific time. Analyses provide you with the data needed to ensure that you have the necessary spare parts for unplanned failures, while also making sure you do not have a surplus of unneeded parts.
+Spares Analysis WorkflowThis workflow provides the basic, high-level steps for developing Spares Analyses. The steps and links in this workflow do not necessarily reference every possible procedure.To create a Spares Analysis, you must complete the following steps: 
+ Create a Spares Analysis , which contains data for the analysis.
+ Create a Spare , which contains data about the spare part that you want to analyze. A Spare is used to define delivery time, cost, and spare level data for the spare part that you are analyzing. There might be more than one Spare to represent each spare part related to a piece of equipment.
+ Create a Spare Application , which contains the failure and repair data for the spare part that you want to analyze. You might have more than one Spare Application for each Spare. For example, a spare part might be used in a piece of equipment that is located in an indoor environment, and the same type of spare part might be used in another piece of equipment located in an outdoor environment. The failure data and repair data might be different for both spare parts. Therefore, you would want to create one Spare Application for the spare part that is used in the indoor environment and another Spare Application for the spare part that is used in the outdoor environment.
+ Create a Spare Application Population , which contains age data for the equipment that contains the spare part that you are analyzing. A Spare Application Population is used to record the population age of a group of equipment that together use the data in the Spare Application to which it is linked. An analysis might have more than one group of equipment with different ages using the same failure and repair data from the linked Spare Application. 
+Create one or more Failure Distributions, which allows you to define the ways in which a spare part can fail, requiring a replacement (or repaired to as good as new) spare part. You can define one or multiple Failure Distributions for a Spare Application record, and you can define the Failure distribution manually or by importing the information from an existing Reliability Distribution or Reliability Growth Analysis. 
+ Run the Monte Carlo simulation , which allows you to view the cost differences between spare levels on the Spares Analysis plots.After you complete these initial steps, you can modify existing records, add additional records, rerun the Monte Carlo simulation, and view the updated results as needed.
+
+
+
+
+On this pageOverview of Spares AnalysisSpares Analysis Workflow
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,157 @@
+
+
+
+Corrosion Loops | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Corrosion Loops
+
+
+
+
+
+
+
+Corrosion LoopsAbout Corrosion Loops A Corrosion Loop is a collection of components grouped together for the purpose of conducting an RBI 581 Risk Analysis.In GE Digital APM, Corrosion Loops are used to store relevant identifying and grouping information of the loop. Each Corrosion Loop is linked to other records to further define the Corrosion Loop. For example, Corrosion Loops are linked to Potential Degradation Mechanisms (PDMs), which define the ways in which the components in the Corrosion Loop can fail. Corrosion Loop
+The following image illustrates the records and links that you might create if you want to perform an RBI 581 Risk Analysis on the RBI Components that are involved in an Overhead system. 
+
+
+
+Access an RBI Corrosion LoopProcedure
+Access the Unit Summary workspace of the process unit that is linked to the Corrosion Loop you want to access.In the left pane, select the Corrosion Loop that you want to access.
+-or-
+In the list of Corrosion Loops below the graphs, in the row containing the Corrosion Loop that you want to access, select the link.
+The Corrosion Loop: <name> workspace appears, displaying the following information:
+ The left pane: Contains a list of RBI Components in the corrosion loop.
+ The Corrosion Loop Overview section: Contains the following graphs and a list of RBI Components in the corrosion loop:
+The first graph plots the risk category of each RBI Component that is linked to an RBI Criticality Analysis, RBI PRD Analysis, or an RBI Pipeline Analysis. If you pause over a bar on the graph, the Component ID and the respective lowest Inspection Priority value appear. This graph appears only if the value in the RBI Overview Graph Preference box in the Global Preferences workspace on the RBI Admin Preferences page is either RBI 580 or 580 and 581.The second graph plots the maximum SHE risk value of each RBI Component that is linked to an RBI 581 Risk Analysis. If you pause over a bar on the graph, the Component ID and the respective SHE risk value appear. This graph appears only if the value in the RBI Overview Graph Preference box in the Global Preferences workspace on the RBI Admin Preferences page is either RBI 581 or 580 and 581.
+ If you select a bar on either of the graphs, the Component Overview section for the component appears. 
+ The Potential Degradation Mechanisms section: Contains a list of Potential Degradation Mechanisms (PDMs) that are linked to the Corrosion Loop. The Corrosion Loop Details section: Contains the Corrosion Loop datasheet.
+
+
+
+Create an RBI Corrosion LoopAbout This Task
+This topic describes how to create a Corrosion Loop and link it to a Process Unit. You can also link an existing Corrosion Loop to a Process Unit.
+Procedure
+Access the Process Unit for which you want to create a Corrosion Loop. In the left pane, select , and then select Create New Corrosion Loop.
+The Corrosion Loops Details section appears, displaying a blank datasheet for the Corrosion Loop. The value in the RBI Corrosion Loop ID field is populated automatically.
+
+
+
+As needed, enter values in the available fields.In the upper-right corner of the section, select .
+The RBI Corrosion Loop is created, and linked to the selected Process Unit.
+What To Do Next
+
+Link Potential Degradation Mechanisms (PDMs) to an RBI Corrosion Loop
+
+Link RBI Corrosion Loops to a Process UnitAbout This TaskThis topic describes how to link an existing Corrosion Loop to a Process Unit. You can also create a new Corrosion Loop and link it to a Process Unit.ProcedureAccess the Process Unit to which you want to link Corrosion Loops.In the left pane, select , and then select Link Existing Corrosion Loop.The Select Corrosion Loops window appears, displaying a list of Corrosion Loops that are not yet linked to a process unit.
+
+In the row containing each Corrosion Loop that you want to link to the unit, select the check box, and then select Done.The selected Corrosion Loops are linked to the unit.What To Do Next
+
+Link Potential Degradation Mechanisms (PDMs) to an RBI Corrosion Loop.
+Unlink an RBI Corrosion Loop from a UnitProcedure
+Access the Process Unit from which you want to unlink a Corrosion Loop. In the left pane, select the Corrosion Loop that you want to unlink, and then select .
+A message appears, asking you to confirm if you want to unlink the selected Corrosion Loop. 
+Select Yes. 
+The selected RBI Corrosion Loop is unlinked from the unit. 
+Link Potential Degradation Mechanisms (PDMs) to an RBI Corrosion LoopAbout This Task
+When you link PDMs to an RBI Corrosion Loop, the PDMs are applied to all the RBI Components contained in that RBI Corrosion Loop. 
+This topic describes how to link one or more PDMs to a Corrosion Loop. You cannot create PDMs; you can only link them. Therefore, a PDM must already exist to be linked to a Corrosion Loop.
+Procedure
+Access the Corrosion Loop to which you want to link PDMs. In the workspace, select the Potential Degradation Mechanisms tab.
+The Potential Degradation Mechanisms section appears. 
+
+
+
+In the Potential Degradation Mechanisms section, select Add PDM.A list of PDMs appears, displaying the methodology type of each PDM.
+
+Tip: If you select the link that corresponds to a PDM, the PDM record appears in Record Explorer on a new page.In the row containing each PDM that you want to link to the Corrosion Loop, select the check box, and then select OK.The selected PDMs are linked to the Corrosion Loop.What To Do Next
+
+Create an RBI Component.
+Link RBI Components to an RBI Corrosion Loop.
+Unlink a Potential Degradation Mechanism (PDM) Procedure
+Access the Corrosion Loop from which you want to unlink a PDM.In the workspace, select the Potential Degradation Mechanisms tab.
+The Potential Degradation Mechanisms section appears, displaying a list of associated PDMs. 
+
+
+
+In the Potential Degradation Mechanisms section, in the row that contains the PDM that you want to unlink from the RBI Corrosion Loop, select .
+A message appears, asking you to confirm that you want to unlink the selected PDM. 
+Select Yes.
+The PDM is unlinked from the selected RBI Corrosion Loop.
+Delete an RBI Corrosion Loop Before You Begin
+If the Corrosion Loop that you want to delete is linked to a Potential Degradation Mechanisms record (PDM), unlink the PDM before deleting the Corrosion Loop.
+Procedure
+Access the Process Unit that is linked to the Corrosion Loop that you want to delete.In the Unit Overview section, below the graph, select the check box next to the Corrosion Loop that you want to delete, and then select .
+A message appears, asking you to confirm that you want to delete the selected Corrosion Loop.
+Select Yes.The Corrosion Loop is deleted.
+
+
+
+
+On this pageAbout Corrosion Loops Access an RBI Corrosion LoopCreate an RBI Corrosion LoopLink RBI Corrosion Loops to a Process UnitUnlink an RBI Corrosion Loop from a UnitLink Potential Degradation Mechanisms (PDMs) to an RBI Corrosion LoopUnlink a Potential Degradation Mechanism (PDM) Delete an RBI Corrosion Loop 
+
+
+
+
+
+
+
+
+

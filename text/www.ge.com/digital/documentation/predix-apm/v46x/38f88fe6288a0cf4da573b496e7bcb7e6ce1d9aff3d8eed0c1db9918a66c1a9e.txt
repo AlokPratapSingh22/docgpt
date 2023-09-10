@@ -1,0 +1,111 @@
+
+
+
+Second Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Release Notes
+Second Quarter of 2019
+
+
+
+
+
+
+
+Second Quarter of 2019Risk Based InspectionThis topic provides a list of product changes released for this module on the dates listed below.RBI 580Release Date: June 7, 2019
+Table 1. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+NoteTracking ID(s)Previously, in the Criticality Consequence Evaluation datasheet, two required fields for Heat Exchanger Bundles, Flammable Leak Type and Toxic Leak Type, did not have the Not Applicable (N/A) option in their respective drop-down list boxes. This issue has been resolved. Additionally, the following validation changes have been made:The Flammable Leak Type field is required irrespective of the governing representative fluid type.The Toxic Leak Type field is required in the following scenarios:If the Governing or Leaking fluid is toxic.If the Governing or Leaking fluid contains a toxic mixture.DE109171
+RBI 581Release Date: June 7, 2019
+Table 2. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+NoteTracking ID(s)Previously, you could not create a Quantitative (581) analysis if the logged in user culture was Russian. This issue has been resolved.DE109168
+
+
+
+
+
+On this pageRisk Based InspectionRBI 580RBI 581
+
+
+
+
+
+
+
+
+

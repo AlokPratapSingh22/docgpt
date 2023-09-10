@@ -1,0 +1,102 @@
+
+
+
+Fourth Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Record ManagerOverview
+Manage Records
+Manage Linked Records
+Manage Bulk Data Form 
+Manage Reference Documents
+Manage Conditional Alerts
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Third Quarter of 2019
+First Quarter of 2019
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Record Manager
+Release Notes
+Fourth Quarter of 2020
+
+
+
+
+
+
+
+Fourth Quarter of 2020Release Date: November 20, 2020 This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, in a record containing a drop-down list box, if you selected a value in the drop-down list box, and then attempted to save the record, an error occurred. This issue has been resolved.DE146300
+Release Date: October 2, 2020 This topic provides a list of product changes released for this module on this date.
+Table 2. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDYou can now configure a conditional alert record that is run based on the frequency set for the conditional alerts in the Strategy Macros page. To facilitate this enhancement, a new list item, Strategy Macro Schedule, has been added to the Interval drop-down list box of the conditional alert record.DE131694
+Table 3. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in a conditional alert record, if you selected the Send Web Query Link check box, and then scheduled the corresponding alert, the web query link in the alert message was incorrect when the alert was executed. This issue has been resolved. Now, in this scenario, the correct web query link appears, containing the GE Digital APM server and domain names.DE142566Previously, when you attempted to open a Reference Document that was stored in the GE Digital APM database, an error occurred and the document could not be accessed. This issue has been resolved.DE140391Previously, if the URL of an Associated Page contained a datasheet ID other than the ID of the default datasheet for the associated family, and you accessed a record for the family, the record contained the default datasheet ID. This issue has been resolved. DE137911Previously, in Record Manager, when you selected a record in the Master Detail Datasheet with only view privileges for the detail family, an error occurred. This issue has been resolved.DE137695Previously, when you modified the value of a field contained in a record, the revision history of the fields in the Datasheet Field History window was incorrect in the following scenarios:The Keep History check box was selected for the field in Family Management.The field contained only numeric values.This issue has been resolved.DE137094Previously, in a conditional alert record, if you selected the ENT_KEY option in the Do Not Include drop-down list box, and then scheduled the corresponding alert, the values contained in the ENT_KEY column incorrectly appeared in the alert message when the alert was executed. This issue has been resolved.DE136571Previously, if an associated page URL for a family was an external URL and contained parameters, when you attempted to access the corresponding associated page, an error occurred. This issue has been resolved.DE136415Previously, when you added the Disabled behavior to a multi-value character field of a family, and then accessed a record of the same family in Record Manager, the Disabled behavior of the field was not retained. This issue has been resolved.DE135167Previously, if a field in a record contained the More Options button (), when you copied the record, the More Options button () did not appear in the new record. Due to this, the custom UI configuration for that field was not accessible. This issue has been resolved.DE134432Previously, if your user account did not have the Delete privilege for a record, you could not unlink the record from its parent record. This issue has been resolved.DE134415Previously, if the query associated with a conditional alert contained a date field with any date format, and you scheduled the conditional alert, the alert was not executed at specified intervals. This issue has been resolved.DE133339Previously, in the GE Digital APM database, when you attempted to upload files of size more than 142 MB as Refence Documents, an error occurred. This issue has been resolved. Now, the upper limit of the Refence Documents file size has been set to 30 MB.DE133146Previously, when you added a reference document to a record, the document appeared in the Reference Documents list even though the document was not uploaded to GE Digital APM successfully. This issue has been resolved. Now, in this scenario, a message appears, indicating that the file is being uploaded.DE133140Previously, when you scheduled the recurring conditional alerts, the conditional alert emails were not sent at specified intervals. This issue has been resolved.DE131694Previously, when you removed the value of a field contained in a record, the revision history of the fields in the Datasheet Field History  window did not appear in the following scenarios:The Keep History check box was selected for the field in Family Management.The field contained only numeric values.This issue has been resolved.DE130484Previously, if the time zone associated with your user account was different than the time zone of the GE Digital APM server, and you scheduled a conditional alert to be run at specific intervals, the time stamp contained in the conditional alert email was not based on the time zone associated with your user account. This issue has been resolved.DE130007Previously, if the State Configuration was enabled for a family, when you modified the following fields of a record associated with the family, and then attempted to save the record, a warning message appeared, and only the state of the record was updated.Any field in the recordThe state of the recordThis issue has been resolved. Now, in this scenario, the field values and the state of the record are updated simultaneously.DE129035Previously, in a record, if an expandable text box contained alphanumeric text, when you expanded the box, you could not modify the text that appeared in the Text Editor window. This issue has been resolved.DE69040
+Table 4. Obsolete Features
+The following features are no longer available.
+DescriptionTracking IDThe Print a report option is no longer available for printing multiple records contained in a Bulk Data Form. Now, when you attempt to print the records, a PDF file is downloaded that contains the associated datasheet.DE126127
+
+
+
+
+
+On this pageRelease Date: November 20, 2020 Release Date: October 2, 2020 
+
+
+
+
+
+
+
+
+

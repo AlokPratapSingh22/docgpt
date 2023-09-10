@@ -1,0 +1,140 @@
+
+
+
+Contributing Events | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Contributing Events
+
+
+
+
+
+
+
+Contributing EventsAccess a Contributing EventAbout This Task
+A Contributing Event is available only for Primary Event that is associated with a GAA Unit in which the value in the Primary Regulatory Body field is North American Electric Reliability Corporation (NERC).
+Procedure
+Access the Primary Event for which you want to access a Contributing Event. In the Events workspace, select Contributing Events. 
+A list of Contributing Events associated with the selected Primary Event appears. 
+
+
+
+In the Event ID column, select the Contributing Event that you want to access.
+The datasheet for the selected Contributing Event appears. 
+Note: As needed, you can modify the values in the available fields, and then select  to save your changes. 
+Create a Contributing EventBefore You Begin
+
+Create a Primary Event
+
+About This TaskA Contributing Event is available only for Primary Event that is associated with a GAA Unit in which the value in the Primary Regulatory Body field is North American Electric Reliability Corporation (NERC).This topic describes how to create a new Contributing Event. You can also copy a Contributing Event.Procedure
+Access the Primary Event for which you want to create a Contributing Event. In the Events workspace, select Contributing Events. 
+A list of Contributing Events associated with the selected Primary Event appears. 
+
+
+
+In the upper-left corner of the Contributing Events section, select .
+A datasheet appears. 
+As needed, enter values in the available fields.Select .
+The Contributing Event is saved and linked to the selected Primary Event. 
+Copy a Contributing EventBefore You Begin
+
+Create a Primary Event
+
+About This TaskA Contributing Event is available only for Primary Event that is associated with a GAA Unit in which the value in the Primary Regulatory Body field is North American Electric Reliability Corporation (NERC).This topic describes how to copy a Contributing Event. You can also create a new Contributing Event.Procedure
+Access the Primary Event within which you want to copy a Contributing Event. In the Events workspace, select Contributing Events. 
+A list of Contributing Events associated with the selected Primary Event appears. 
+
+
+
+In the upper-left corner of the workspace, select . 
+The Copy Contributing Event window appears.
+In the Look in box, select Contributing Event.
+A list of Contributing Events available in the database appears.
+Select the row containing the Contributing Event that you want to copy, and then select OK. 
+The Copy Contributing Event dialog box appears, asking you to confirm that you want to copy the selected Contributing Event. 
+Select Yes. 
+ The datasheet for the copied Contributing Event appears. 
+As needed, modify values in the available fields, and then select .
+The selected Contributing Event is copied. 
+Delete a Contributing EventAbout This Task
+A Contributing Event is available only for Primary Event that is associated with a GAA Unit in which the value in the Primary Regulatory Body field is North American Electric Reliability Corporation (NERC).
+Procedure
+Access the Primary Event for which you want to delete a Contributing Event. In the Events workspace, select Contributing Events. 
+A list of Contributing Events associated with the selected Primary Event appears. 
+
+
+
+Select the check box corresponding to the Contributing Event that you want to delete, and then select .
+Tip: You can select more than one Contributing Event to delete. However, for best performance, it is recommended to select a maximum of 10 records.
+The Delete Contributing Event dialog box appears, asking you to confirm that you want to delete the selected Contributing Event.Select Yes.The selected Contributing Event is deleted and the updated list of Contributing Events appears. Export Contributing EventsAbout This TaskYou can export the Contributing Event records associated with the Primary Events of a GAA Unit to a Microsoft Excel file.Procedure
+Access the Unit Summary workspace for the GAA Unit whose Contributing Events you want to export.In the Unit Summary pane, select Events.
+The Events workspace appears, displaying a list of Primary Events that are linked to the selected GAA Unit.
+In the table, select the check box for the Primary Event records whose Contributing Event records you want to export.Select , and then select Export Contributing Events.The records are exported to a Microsoft Excel file that is automatically downloaded to your local drive.
+
+
+
+
+On this pageAccess a Contributing EventCreate a Contributing EventCopy a Contributing EventDelete a Contributing EventExport Contributing Events
+
+
+
+
+
+
+
+
+

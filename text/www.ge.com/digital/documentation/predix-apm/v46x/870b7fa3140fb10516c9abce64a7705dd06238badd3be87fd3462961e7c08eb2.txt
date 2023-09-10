@@ -1,0 +1,87 @@
+
+
+
+Third Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+GraphsOverview
+Workflow
+Graphs
+Reference
+Release NotesSecond Quarter of 2023
+Fourth Quarter of 2021
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Graphs
+Release Notes
+Third Quarter of 2019
+
+
+
+
+
+
+
+Third Quarter of 2019GraphsThis topic provides a list of product changes released for this module on the dates listed below.Release Date: September 27, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDIn the Settings pane, in the Series section, in the Color column, the colors have been updated. Note: The colors in the existing graphs remain unchanged.US313324
+Table 2. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, on a Stock Chart Graph with multiple lines, the tooltip labels were incorrect. This issue has been resolved.DE113773Previously, the results displayed in a graph were incorrect if the associated query included the same family as both a predecessor and a successor to a JOIN clause, and if the query result contained the same field from each instance of the family. This issue has been resolved. DE106005Previously, if you accessed a graph from the Catalog folder for which you had the permission to view, but if you did not have the permission to view the Catalog folder where the data source query of the graph was stored, an incorrect error message appeared. This issue has been resolved. Now, a correct error message appears, indicating that you do not have the permission to view the query result used by the graph.DE101164
+
+
+
+
+
+On this pageGraphs
+
+
+
+
+
+
+
+
+

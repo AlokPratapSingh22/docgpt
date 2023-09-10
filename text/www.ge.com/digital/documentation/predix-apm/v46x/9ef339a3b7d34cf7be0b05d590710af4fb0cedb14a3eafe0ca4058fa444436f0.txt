@@ -1,0 +1,94 @@
+
+
+
+Fourth Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Compliance ManagementOverview
+Workflows
+Inspection Plans
+Inspection Plan Management
+Compliance Recommendations
+Inspection Plan Revision History
+Suggested Compliance Strategy Templates
+Admin
+Deployment
+Reference 
+Release NotesFourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Third Quarter of 2019
+ Second Quarter of 2019 
+ First Quarter of 2019 
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Compliance Management
+Release Notes
+Fourth Quarter of 2021
+
+
+
+
+
+
+
+Fourth Quarter of 2021Release Date: October 8, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when you approved an Inspection Plan with a Superseded Master Recommended Action in the Not Required state, an action was erroneously created and linked to the Master Recommended Action. This issue has been resolved. Now, when you approve an Inspection Plan, no actions are created for Recommended Actions in the Not Required state.DE165764Previously, for an Inspection Plan, when you were viewing the Linked Recommendations window for a recommendation that was superseding at least one other recommendation, duplicate recommendations appeared. This issue has been resolved.DE165397Previously, when you created or updated an Inspection Plan based on a Compliance Strategy Template, and executed a policy associated with the template, no error message appeared if the returned output node value did not match the Compliance Strategy ID field value of the associated Compliance Strategy records. This issue has been resolved. DE159036
+
+
+
+
+
+On this pageRelease Date: October 8, 2021
+
+
+
+
+
+
+
+
+

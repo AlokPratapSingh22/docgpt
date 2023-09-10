@@ -1,0 +1,260 @@
+
+
+
+About Tag Model | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About Tag ModelAnatomy of a tagA tag can have many characteristics defined as separate attributes or properties. Creating a tag model enables you to derive data from common tags for data analysis.The following example has some common attributes of a sensor tag:unit of measureunit grouprange (min and max values)resolution (number of data points)compression (for example, dead band filtering applied)interpolated (true or false)threshold (true or false)binary (true or false)number of significant digitsTag Classification
+You can model classification for tags with common characteristics and define a standard tag at the GE Digital APM level. A tag classification is a reusable definition of a specific instrument. For example, you can create a tag classification called Standard_Inlet_Temperature. 
+Table 1. JSON Fields for Tag ClassificationFieldRequirementidMust be unique per tag classification and can only contain alphabets (a-z, A-Z), digits (0-9), underscores _, hyphens -, dots . and quotes ""id": "TagType1"name(optional) The name of the tag classification."name": "Tag 1"description(optional) The general description for the tag classification. "description":"Standard tag for temperature"properties(optional) Define properties for the tag classification in key-value pairs. Each property block contains type, id and value. You can define multiple blocks with properties: [ ]A best practice is to define static properties as part of the classification."properties": [
+                {
+                    "id": "configured",
+                    "value": [false],
+                    "type": "boolean"
+                }
+            ]reservedProperties(optional) Define reserved properties aka system defined attributes and default values for the tag classification. Each reservedProperties block contains the list of expected reserved properties defined at the asset framework level. If you do not define the reserved properties block in your model, the system will automatically insert any required reserved attributes and set it to the default values."reservedProperties": {
+    "uom": "ºF",
+    "dataType": "Double",
+    "resolution": ""
+  }
+ An example of usage of the tag classification is to represent the characteristics of a specific sensor type, such as manufacturer, make, model, weight, or dimension. Tag classifications help you define similar types of tags. The tag instances are defined within tag associations. 
+{ "tagClassifications":[  
+      {
+  "id": "HISTORIAN-TAG",
+  "name": "HISTORIAN-TAG",
+  "description": "This is historian tag",
+  "reservedProperties": {
+    "uom": "ºF",
+    "dataType": "Double",
+    "resolution": ""
+  },
+  "properties": [
+     {
+      "id": "Downtime",
+      "value": [
+        "true"
+      ],
+      "type": "string"
+     } 
+  ]
+}
+         ]
+      }
+   ]}
+Tag Instances
+Tag instances are defined inside tagAssociations (also refer to Tag Relationships). Every object instance of a tag is unique. A tag instance can have its own properties and common properties inherited from its tag classification. You can add properties directly to an instance. Therefore, the instance is not limited to properties defined in its classification. 
+Best practice is to define static attributes as part of the tag classification, and to define dynamic attributes as part of the instance. If the same attribute is defined at the class and instance levels, the attribute value defined in the instance takes precedence over the class. For example, the default value for unit of a temperature tag can be set as Fahrenheit; however, an instance can be set as Celsius.
+A tag instance can represent a unique measurement from sensors, an asset-specific analytic calculation, or an asset-specific software input.
+You can associate a tag classification with an asset classification. When an asset instance is created from an asset classification, the asset instance automatically creates an appropriate tag-instance where the tag classification was associated to the asset classification.
+Table 2. JSON Fields for Tag InstancesFieldRequirementidMust be source key id of the tag and can only contain alphabets (a-z, A-Z), digits (0-9), underscores _, hyphens -, dots . and quotes ""id": "TagType1"nameProvide a unique name for searchability in the user interface. If not provided, the name field will store the tag classification name as the default value."name": "Temp_tag_SS_134"description(optional) The general description for the tag instance. "description":"Temperature tag for asset1"aliases(optional) Possible alias names for the tag instance as a string array."aliases": ["TagAlias3_1", "TagAlias3_2"]properties(optional) Provide property values for the tag instance."properties": [
+                {
+                    "id": "configured",
+                    "value": [false],
+                    "type": "boolean"
+                }
+            ]reservedProperties(optional) Define reserved properties aka system defined attributes and default values for the tag instances. Each reservedProperties block contains the list of expected reserved properties defined at the asset framework level for the tag instances. If you do not define the reserved properties block in your model, the system will automatically insert any required reserved attributes and set it to the default values. Any properties values defined at the tag instance level overrides the default values set at the tag classification. The following are reserved properties at the tag instance level."reservedProperties": {
+"status": "02",
+        "uom": "ºF",
+        "dataType": "Double",
+        "resolution": "",
+        "timeseriesLink": ""
+  }
+Tag Relationships
+After defining your tag classifications, you must also define the tags and their associations:
+Tag Association
+Defines the tag instances and associates tag instances to a node in the asset hierarchy. Tag instances must belong to one of the defined tag classifications. This is the most common relationship for an asset configuration in which a sensor can be configured into any level of equipment: system, module, component or part.
+
+A tag can also be associated with a group of assets, for example, a lineup of equipment.
+{ "tagAssociations": [
+    {
+      "monitoredEntity": {
+        "id": "Sample-CA-ASSET-ID1",
+        "ccomClass": "ASSET"
+      },
+      "tags": [
+        {
+          "name": "Sample Asset Tag Pressure name",
+          "id": "Sample-CA-ASSET-ID1.Sample_Tag_Pressure_ID",
+          "classification": "Sample_Tag_Type_Classification_ID",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "atm",
+            "dataType": "Double",
+            "resolution": ""
+          },
+          "aliases": [
+            "Sample Atmospheric Tag Pressure Alias"
+          ]
+        }
+      ]
+    },
+    {
+      "monitoredEntity": {
+        "id": "Sample-CA-SEGMENT-ID",
+        "ccomClass": "SEGMENT"
+      },
+      "tags": [
+        {
+          "name": "Sample Segment Tag name",
+          "id": "Sample-CA-SEGMENT-ID.Sample_Tag_Segment_ID",
+          "classification": "Sample_Tag_Type_Classification_ID",
+          "unit": "",
+          "aliases": [
+            "Sample Tag Segment Alias 1"
+          ]
+        }
+      ]
+    },
+    {
+      "monitoredEntity": {
+        "id": "Sample-CA-SITE",
+        "ccomClass": "SITE"
+      },
+      "tags": [
+        {
+          "name": "Sample Site Tag name",
+          "id": "Sample-CA-SITE.Sample_Tag_Site_ID",
+          "aliases": [
+            "Sample Tag Site Alias 1"
+          ],
+          "classification": "Sample_Tag_Type_Classification_ID"
+        }
+      ]
+    },
+    {
+      "monitoredEntity": {
+        "id": "Sample-CA-ASSET-ID1",
+        "ccomClass": "ASSET"
+      },
+      "tags": [
+        {
+          "name": "Sample Asset Tag Pressure name",
+          "id": "Sample-CA-ASSET-ID2.Sample_Tag_Pressure_ID2",
+          "classification": "Sample_Tag_Type_Classification_ID",
+          "unit": "",
+          "reservedProperties": {
+            "status": "02",
+            "uom": "atm",
+            "dataType": "Double",
+            "resolution": ""
+          },
+          "nextRelatedTag": {
+            "id": "Sample-CA-ASSET-ID1.Sample_Tag_Pressure_ID"
+          },
+          "aliases": [
+            "Sample Tag Pressure Alias"
+          ]
+        }
+      ]}
+Tag Alias
+Defines an alternative name for a tag. Use tag aliases when multiple groups in an organization or different source systems use different names for the same tag. For example, a user may use a meaningful name for the tag as a reminder of its purpose, or may use an alias that customers use. A tag can have one or more aliases. An alias only contains a string."aliases": ["TagAlias3_1", "TagAlias3_2"]
+Tag Correlation 
+Tag correlation is a way of associating a tag with another closely related tag. Correlated tags show a linear association. Tags should only be correlated if they capture the same measurement data but are labeled differently, and may have different quality and density.
+For example, suppose an equipment engineer configures a tag for collecting the vibration frequency of a drill pump at the controller of the machine. The data points are collected at the rate of 0.5 secs and the tag name is PUMP1.VIBEFRQ1. The OSM collects the data from the controllers in a round-robin style at a data rate of 1 minute. The tag name in the OSM is now PUMP1.VIBEUPPER1. When the same data moves to the cloud storage, the IT specialist configures the tag at a standardized frequency and renames the tag CLOUD.TXOIL.PUMP1.VIBEUPPER1. Finally, the IT specialist standardizes all vibrations tags to a common name for applications and labels it STD.PUMP.FREQUENCY.
+Tag Correlation Example
+The tag correlation can be represented as follows in the tag instance definition of the asset ingestion JSON file:
+ "nextRelatedTag": {
+             "id": "SY0513959.Control_Pressure"
+           }
+Note:
+When correlating tags, consider the following:
+The nextRelatedTag.id must be the tag ID for an already ingested tag instance or the tag instance must be defined for the tag prior to correlation in the tags [] block. If the nextRelatedTag.id does not already exist in the GE Digital APM asset store or is in the incorrect order in the tags [] block, then the ingestion will fail.Pass the value for nextRelatedTag.id as null to remove a correlation that has been established in GE Digital APM asset store through a prior ingestion.To replace an existing correlation with a new one, you must first pass the value for nextRelatedTag.id as null to delete the existing correlation, and then set the value to the new correlated tag ID.
+
+Tag Group
+A tag group can aggregate data from multiple tags. For example, rather than creating 50 individual inputs, you can use a tag group to aggregate data from 50 tags to provide a single input to an analytic.
+Groups
+A group object provides a mechanism to group a homogeneous group of asset objects under a single entity.
+The following are types of groups available in GE Digital APM:Asset Classification Groups - Contains asset classification objects.Tag Classification Groups - Contains tag classification objects.Asset Instance Groups - Contains asset instance objects.Tag Instance Group - Contains tag instance objects.Business Functional Hierarchy Groups - Contains Business Functionality Hierarchy objects.
+The following are the JSON fields available for groups in GE Digital APM:
+
+FieldRequirementidMust be unique per group and can only contain alphabets (a-z, A-Z), digits (0-9), underscores _, hyphens -, dots . and quotes ".nameThe name of the group."name" : "Group Name 1"description(Optional) The general description for the group."description": "This is a group1 for temperature"ccomClassThe GE Digital APM s95 adapter uses four ccomClass to represent the levels within the asset model hierarchy."ccomClass": "GROUP"associatedEntityCcomClassThe GE Digital APM s95 adapter uses four ccomClass to represent the levels within the asset model hierarchy. Each group must be associated to one of the four ccomClasses such as ENTERPRISE_TYPE, SITE_TYPE, SEGMENT_TYPE, and ASSET_TYPE ."associatedEntityCcomClass": "TAG_TYPE"properties(Optional) Define properties for the group in key-value pairs. You can define multiple blocks with properties: [ ] A best practice is to define static properties as part of the group."properties": [ { "id": "Sample-CA-GROUP-ID1_model_number", "value": [ "Sample-CA-GROUP-ID1 id description" ], "type": "string" } ]associatedEntityIds(optional) defines the members of the group. A group can have one or more homogeneous members associated using their source Key."associatedEntityIds": ["Sample_Tag_Type_Classification_ID", "Sample_Tag_Type_Classification_ID1"]
+
+Below is an example:
+"groups":[
+      {
+         "id": "Sample-CA-GROUP-ID1",
+         "name": "Sample Intake temperature group1",
+         "description": "This is a group1 for temperature",
+         "ccomClass": "GROUP",
+         "associatedEntityCcomClass": "TAG_TYPE",
+         "properties": [
+            {
+               "id": "Sample-CA-GROUP-ID1_model_number",
+               "value": [
+                  "Sample-CA-GROUP-ID1 id description"
+               ],
+               "type": "string"
+            }
+         ],
+         "associatedEntityIds": ["Sample_Tag_Type_Classification_ID", "Sample_Tag_Type_Classification_ID1"]
+      },
+      {
+         "id": "Sample-CA-GROUP-ID2",
+         "name": "Sample Intake temperature group2",
+         "description": "This is a group2 for temperature",
+         "ccomClass": "GROUP",
+         "associatedEntityCcomClass": "TAG_TYPE",
+         "properties": [
+            {
+               "id": "Sample-CA-GROUP-ID2_model_number",
+               "value": [
+                  "Sample-CA-GROUP-ID2 id description"
+               ],
+               "type": "string"
+            }
+         ],
+         "associatedEntityIds": ["Sample_Tag_Type_Classification_ID2", "Sample_Tag_Type_Classification_ID3"]
+      }
+   ]
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,654 @@
+
+
+
+System Reliability | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field DescriptionsReliability Recommendation Records
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+
+
+Catalog Items
+Distribution Types
+Calculations
+Failure Data
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Reference
+Family Field Descriptions
+System Reliability
+
+
+
+
+
+
+
+System ReliabilitySystem Action Families
+This topic provides a listing of all the System Action families with links to the family fields information. 
+System Action Records
+System Action records store information about Condition-Based Maintenance, Procedure, Redesign, Time-Based Maintenance, and Training Actions. The following table provides an alphabetical list and description of the fields that exist for the System Action family and appear by default in the System Action datasheet. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and UsageAction CostNumeric A numeric value that specifies the cost associated with any materials or personnel needed to complete an action. 
+This value represents an expense that is incurred every time the action occurs. 
+By default, the value in this field is set to 0 (zero). 
+Acton TypeCharacter The category into which the action can be classified. 
+You can select a value from the following options when you create the System Action record:
+Condition-Based Maintenance (Predictive)ProcedureRedesignTime-Based Maintenance (Preventative)Training
+After you create an action, this field is disabled.
+The values in this field are populated by the MI_ACTION_TYPE System Code Table.
+Condition Monitoring TypeCharacterIndicates whether the action occurs continuously or periodically. You can select a value from the following options when you create or modify the System Action record:PeriodicContinuousBy default, the value in this field is set to Continuous.The values in this field are populated by the MI_CONDITION_MONITORING_TYPE System Code Table.DescriptionTextA text field that stores any additional information about the action. 
+You can define this value manually by entering text in the Description box. 
+GUIDCharacter A value that uniquely identifies the record within a System Reliability Analysis. 
+This value is generated automatically by the GE Digital APM system and does not appear in the System Action datasheet. In System Reliability Analyses, GUIDs are used to identify records because Entity Keys will not exist until a record is saved. Because a System Reliability Analysis may contain unsaved records, it is necessary to use a value that uniquely identifies those records within the system. 
+NameCharacter The name of the action. 
+You can define this field manually. This value is used to identify Actions in the System Reliability Analyses. For instance, the Name column appears by default in the Actions section in the workspace and displays values that exist in the Name field to identify the System Action records that are displayed in the workspace.
+
+System Action Optimization Records
+System Action Optimization records store information about the action intervals used when performing optimizations on an action. The following table provides an alphabetical list and description of the fields that exist for the System Action Optimization family and appear by default in the System Action Optimization datasheet. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and UsageInterval IncrementNumericThe delta used to increase the action interval when performing Action Optimization.You can modify the value in this field to adjust the accuracy when performing Action Optimization to determine the action interval.Last OptimizedDateThe date on which Action Optimization was last performed. 
+This field is read-only.
+ 
+This value is populated automatically after performing Action Optimization. 
+Max ValueNumericThe maximum action interval allowed when performing Action Optimization.
+The value in this field must be greater than the value in the Min Value field.
+You can modify the value in this field to adjust the search range when performing Action Optimization.
+Min ValueNumericThe minimum action interval allowed when performing Action Optimization.
+The value in this field must be less than the value in the Max Value field. 
+You can modify the value in this field to adjust the search range when performing Action Optimization.
+Optimal ValueNumericThe optimal interval at which an action should be performed.
+This field is read-only.
+ 
+This value is populated automatically after performing Action Optimization.
+Time UnitsCharacterThe unit of time attributed to the action interval.
+This field contains a list of the following values:HoursDaysWeeksMonthsYears
+
+System Condition Monitor Records
+System Condition Monitor records store information about continuous, condition-based maintenance Actions. The following table provides an alphabetical list and description of the fields that exist for the System Condition Monitor family and appear by default on the System Condition Monitor datasheet. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and Usage Action Cost Number A numeric value that specifies the cost associated with any materials or personnel needed to complete the Action. 
+ By default, this value represents a one-time expense that is incurred when the Action is started. This value is set to 0 (zero).
+This field is available in the General section of the Properties pane. 
+ Action Type Character The category into which the Action can be classified. 
+By default, this value is set to Condition-Based Maintenance (Predictive) (CM). After you create an Action, this field is disabled. 
+This field is available in the General section of the Properties pane. 
+ Condition Monitoring Type Character A field that contains a value indicating whether the Action occurs continuously or periodically at regular intervals. 
+By default, this value is set to Continuous. After you create an Action, this field is disabled. 
+This field is available in the General section of the Properties pane. 
+ Description TextA text field that stores any additional information about the Action. 
+You can enter text manually in the Description box.
+This field is available in the General section of the Properties pane. 
+ Detection probability (%) Number A numeric value representing the probability that the Action will identify a potential failure resulting from any Risk and correct that failure before it occurs. 
+By default, this value is set to 100 by default. For an Action with no assigned Risks, any value stored in this field will be ignored.
+For example, a System Condition Monitor record with the Detection Probability value 50 has a 50% chance of identifying a potential failure resulting from a Risk. In other words, the Action will detect one out of two potential failures resulting from any Risks assigned to the Action.
+This field is available in the Condition Monitor section of the Properties pane. 
+ GUID Character A value that uniquely identifies the record within a System Reliability Analysis. 
+This value is generated automatically by the GE Digital APM system and does not appear on the System Condition Monitor datasheet. In System Reliability Analyses, GUIDs are used to identify records because Entity Keys will not exist until a record is saved. Since a System Reliability Analysis may contain unsaved records, it is necessary to use a value that uniquely identifies those records within the system.
+ Name Character The name of the Action. 
+You can define this value manually. This value is used to identify Actions in the System Reliability Analyses. For example, the Name column appears by default in the Actions tab in the workspace and displays values that exist in the Name field to identify the System Action records that are displayed in the workspace.
+This field is available in the General section of the Properties pane. 
+
+System Inspection Records
+System Inspection records store information about periodic, condition-based maintenance Actions. The following table provides an alphabetical list and description of the fields that exist for the System Inspection family and appear by default on the System Inspection datasheet. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and UsageAction Cost Number A numeric value that specifies the cost associated with any materials or personnel needed to complete the Action. 
+This value represents an expense that is incurred every time the Action occurs. By default, this value is set to 0 (zero). 
+This field is available in the General section in the Properties pane. 
+Action Type Character The category into which the Action can be classified. 
+By default, this value is set to Condition-Based Maintenance (Predictive) (CM). After you create an Action, this field is disabled. 
+This field is available in the General section of the Properties pane. 
+Condition Monitoring Type Character A value that indicates whether the Action occurs continuously or periodically at regular intervals. 
+By default, this value is set to Periodic. After you create an Action, this field is disabled. 
+This field is available in the General section of the Properties pane. 
+Description TextA text field that stores any additional information about the Action. 
+You can enter text manually in the Description box. 
+This field is available in the General section of the Properties pane. 
+Detection Probability Number A numeric value representing the probability that the Action will identify a potential failure resulting from any Risk and correct that failure before it occurs. 
+By default, this value is set to 100. For an Action with no assigned Risks, any value stored in this field will be ignored.
+An Action can detect a potential failure only when the Action occurs during a Risk's PF Interval, as defined by the value in the PF Interval and PF Interval Units fields in the System Risk record. If the Action does not occur during the PF Interval, the Action cannot identify the potential failure, and the value in the Detection Probability field will be ignored. To make the Action occur during the PF Interval of a Risk, you can manually modify the values in the PF Interval and PF Interval Units fields of the System Risk record, or you can optimize the Action.
+For example, setting the Detection Probability to 50 would indicate that the Action has a 50% chance of identifying a potential failure resulting from any Risk if the Action occurs during the PF Interval of the Risks. In other words, the Action will detect one out of two potential failures resulting from any Risks assigned to the Action when the Action occurs during the PF Interval of the Risks.
+This field is available in the Inspection section of the Properties pane. 
+Duration Number 
+A numeric value that, combined with the value in the Duration Units field, identifies the total time needed to complete the Action. 
+For example, if the value in the Duration field is 4 and the value in the Duration Units field is Hours, then the Action will take four hours to complete. 
+
+By default, this value is set to 0 (zero). 
+This field is available in the Inspection section of the Properties pane. 
+Duration Units Character The time units associated with the value in the Duration field. 
+You can select a value from the following options:
+Minutes Hours Days Weeks Months Years 
+By default, the value in this field is set to Days. This field is available in the Inspection section of the Properties pane. 
+GUID Character A value that uniquely identifies the record within a System Reliability Analysis. 
+This value is generated automatically by the GE Digital APM system and does not appear on the System Inspection datasheet. In System Reliability Analyses, GUIDs are used to identify records because Entity Keys will not exist until a record is saved. Since a System Reliability Analysis may contain unsaved records, it is necessary to use a value that uniquely identifies those records within the system.
+Interval Number 
+A numeric value that, combined with the value in the Interval Units field, indicates how often the Action will occur. 
+For example, if the value in the Interval field is 4 and the value in the Interval Units field is Months, then the Action will occur every four months during the simulation period. 
+
+By default, this value is set to 1. 
+This field is available in the Inspection section of the Properties pane. 
+Interval Units Character The time units associated with the value in the Interval field. 
+You can select a value from the following options:
+Minutes Hours Days Weeks Months Years 
+By default, the value in this field is set to Days. This field is available in the Inspection section of the Properties pane. 
+Name Character The name of the Action. 
+You can define this value manually. This value is used to identify Actions in the System Reliability Analyses. 
+For example, the Name column appears by default in the grid in the Actions section and displays values that exist in the Name field to identify the System Action records that are displayed in the grid.
+This field is available in the General section of the Properties pane. 
+One Time Action Logical Indicates whether the Action will occur one time or will be repeated more than once. 
+If this check box is selected, the Action will occur once. If this check box is cleared, the Action will occur more than once. For example, an Action to inspect the vibration level of a pump might occur several times a year. In this case, the One Time Action check box of the corresponding System Inspection record would be cleared. An Action to inspect a newly installed pump for any installation errors might occur only once, in which case the One Time Action check box of the corresponding System Inspection record would be selected. By default, this check box is cleared.
+This field is available in the Inspection section of the Properties pane. 
+Shutdown Required Logical Indicates whether the Action requires the piece of equipment or location to be shut down in order for the Action to be completed. 
+If this check box is selected, the piece of equipment or location must be shut down in order for the Action to be completed. If this check box is cleared, the Action can be completed while the piece of equipment or location is running.
+For example, an Action to inspect the vibration level of a pump could be completed while the pump is running, so the Shutdown Required check box would be cleared. An Action to inspect the internal components of a pump would be completed while the pump is not running, so the Shutdown Required check box would be selected. By default, this check box is cleared.
+This field is available in the Inspection section of the Properties pane. 
+
+System Preventive Maintenance Records
+System Preventative Maintenance records store information about time-based maintenance Actions. The following table provides an alphabetical list and description of the fields that exist for the System Preventative Maintenance family and appear by default on the System Preventative Maintenance datasheet. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and UsageAction Cost Number A numeric value that specifies the cost associated with any materials or personnel needed to complete the Action. 
+This value represents an expense that is incurred every time the Action occurs. By default, this value is set to 0 (zero). 
+This field is available in the General section of the Properties pane. 
+Action Type Character The category into which the Action can be classified. 
+By default, this value is set to Time-Based Maintenance (Preventive) (PM). After you create an Action, this field is disabled. 
+This field is available in the General section of the Properties pane. 
+Condition Monitoring Type Character A value that indicates whether the Action occurs continuously or periodically at regular intervals. 
+This field is not used for System Preventive Maintenance records and is disabled. 
+This field is available in the General section of the Properties pane. 
+Description TextA text field that stores any additional information about the Action. 
+You can define this value manually by entering text in the Description box. 
+This field is available in the General section of the Properties pane. 
+Duration Number A numeric value that, combined with the value in the Duration Units field, identifies the total time needed to complete the Action. For example, if the value in the Duration field is 4 and the value in the Duration Units field is Hours, then the Action will take four hours to complete. 
+By default, this value is set to 0 (zero).
+This field is available in the Preventive Maintenance section of the Properties pane. 
+Duration Units Character The time units associated with the value in the Duration field. 
+You can select a value from the following options:
+Minutes Hours Days Weeks Months Years 
+By default, the value in this field is set to Days by default. This field is available in the Preventive Maintenance section of the Properties pane. 
+GUID Character A value that uniquely identifies the record within a System Reliability Analysis. This value is generated automatically by the GE Digital APM system and does not appear on the System Preventative Maintenance datasheet. In System Reliability Analyses, GUIDs are used to identify records because Entity Keys will not exist until a record is saved. Since a System Reliability Analysis may contain unsaved records, it is necessary to use a value that uniquely identifies those records within the system. Interval Number 
+A numeric value that, combined with the value in the Interval Units field, indicates how often the Action will occur. 
+For example, if the value in the Interval field is 4 and the value in the Interval Units field is Months, then the Action will occur every four months during the simulation period. 
+
+By default, this value is set to 1. 
+This field is available in the Preventive Maintenance section of the Properties pane. 
+Interval Units Character The time units associated with the value in the Interval field. 
+You can select a value from the following options:
+Minutes Hours Days Weeks Months Years 
+This field is available in the Preventive Maintenance section of the Properties pane. 
+Name Character The name of the Action. 
+You can define this value manually. This value is used to identify Actions in the System Reliability Analyses. For instance, the Name column appears by default in the Actions section of the workspace and displays values that exist in the Name field to identify the System Action records that are displayed in the workspace. 
+This field is available in the General section of the Properties pane. 
+One Time Action Logical Indicates whether the Action will occur one time or will be repeated more than once. 
+If this check box is selected, the Action will occur once. If this check box is cleared, the Action will occur more than once. 
+For example, an Action to inspect the vibration level of a pump might occur several times a year. In this case, the One Time Action check box of the corresponding System Inspection record would be cleared. An Action to inspect a newly installed pump for any installation errors might occur only once, in which case the One Time Action check box of the corresponding System Inspection record would be cleared. By default, this value is set to cleared.
+This field is available in the Preventive Maintenance section of the Properties pane. 
+Shutdown Required Logical Indicates whether the Action requires the piece of equipment or location to be shut down in order for the Action to be completed. 
+If this check box is selected, the piece of equipment or location must be shut down for the Action to be completed. If this check box is cleared, the Action can be completed while the piece of equipment or location is running.
+For example, an Action to inspect the vibration level of a pump could be completed while the pump is running, so the Shutdown Required check box would be cleared. An Action to inspect the internal components of a pump would be completed while the pump is not running, so the Shutdown Required check box would be selected. By default, this check box is selected.
+This field is available in the Preventive Maintenance section of the Properties pane. 
+
+System Special Action Records
+System Special Action records store information about procedural, redesign, or training Actions. The following table provides an alphabetical list and description of the fields that exist for the System Special Action family and appear by default on the System Special Action datasheet. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and UsageAction Cost Number A numeric value that specifies the cost associated with any materials or personnel needed to complete the Action. 
+This value represents an expense that is incurred every time the Action occurs. By default, this value is set to 0 (zero). 
+This field is available in the General section of the Properties pane. 
+Action Type Character The category into which the Action can be classified. 
+You can select a value from the following options when you create the System Special Action record:
+Procedure (PROC) Redesign (DSN) Training (TRN) 
+After you create an Action, this field is disabled.
+This field is available in the General section of the Properties pane. 
+Description TextA text field that stores any additional information about the Action. 
+You can define this value manually by entering text in the Description box. 
+This field is available in the General section of the Properties pane. 
+Duration Number 
+A numeric value that, combined with the value in the Duration Units field, identifies the total time nedeed to complete the Action. 
+For example, if the value in the Duration field is 4 and the value in the Duration Units field is Hours, then the Action will take four hours to complete. 
+
+By default, this value is set to 0 (zero). 
+This field is available in the Special section of the Properties pane. 
+Duration Units Character The time units associated with the value in the Duration field. 
+You can select a value from the following options:
+Minutes Hours Days Weeks Months Years 
+ By default, this value is set to Days. This field is available in the Special section of the Properties pane. 
+GUID Character A value that uniquely identifies the record within a System Reliability Analysis. This value is generated automatically by the GE Digital APM system and does not appear on the System Special Action datasheet. In System Reliability Analyses, GUIDs are used to identify records because Entity Keys will not exist until a record is saved. Because a System Reliability Analysis may contain unsaved records, it is necessary to use a value that uniquely identifies those records within the system. Interval Number 
+A numeric value that, combined with the value in the Interval Units field, indicates how often the Action will occur.
+ For example, if the value in the Interval field is 4 and the value in the Interval Units field is Months, then the Action will occur every four months during the simulation period. 
+
+By default, this value is set to 1.
+This field is available in the Special section of the Properties pane. 
+Interval Units Character The time units associated with the value in the Interval field. 
+You can select a value from the following options:
+Minutes Hours Days Weeks Months Years 
+By default, this value is set to Days. This field is available in the Special section of the Properties pane. 
+Name Character The name of the Action. 
+You can define this field manually. This value is used to identify Actions in the System Reliability Analyses. For instance, the Name column appears by default in the Actions tab in the workspace and displays values that exist in the Name field to identify the System Action records that are displayed in the workspace.
+This field is available in the General section of the Properties pane. 
+One Time Action Logical Indicates whether the Action will occur one time or will be repeated more than once. 
+If this check box is selected, the Action will occur once. If this check box is cleared, the Action will occur more than once. 
+For example, an Action to inspect the vibration level of a pump might occur several times a year. In this case, the One Time Action check box of the corresponding System Special Action record would be cleared. An Action to inspect a newly installed pump for any installation errors might occur only once, in which case the One Time Action check box of the corresponding System Special Action record would be selected. By default, this check box is selected. 
+This field is available in the Special section of the Properties pane. 
+Shutdown Required Logical Indicates whether the Action requires the piece of equipment or location to be shut down in order for the Action to be completed. 
+If this check box is selected, the piece of equipment or location must be shut down in order for the Action to be completed. If this check box is cleared, the Action can be completed while the piece of equipment or location is running.
+For example, an Action to inspect the vibration level of a pump could be completed while the pump is running, so the Shutdown Required check box would be cleared. An Action to inspect the internal components of a pump would be completed while the pump is not running, so the Shutdown Required check box would be selected. By default, this check box is selected.
+This field is available in the Special section of the Properties pane. 
+
+System Analysis Records
+System Analysis records store general information about a System Analysis. The following table provides an alphabetical list and description of the fields that exist for the System Analysis family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+Note: In the following table, the bold field captions identify properties that can be defined for a System Reliability Analysis on the datasheet in the Analysis Summary workspace.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageAction Cost Plot Binary A field that is used internally by the GE Digital APM system to store the image of the Annual Action Cost plot. 
+You should not modify the value in this field. Doing so will cause the analysis to become corrupt, and you will no longer be able to open it. 
+This field does not appear by default on the System Analysis datasheet. 
+Action Cost Trend Plot Binary A field that is used internally by the GE Digital APM system to store the image of the Action Cost Trend plot. 
+You should not modify the value in this field. Doing so will cause the analysis to become corrupt, and you will no longer be able to open it. 
+This field does not appear by default on the System Analysis datasheet. 
+Analysis End Date DateThe date on which the analysis ends (i.e., when the simulation will stop running). 
+This value is calculated by adding the amount of time defined by the values in the Period and Period Units fields to the value in the Analysis Start Date field. This field is populated automatically. 
+This field does not appear by default on the System Analysis datasheet. 
+Analysis Name CharacterA value that identifies the System Reliability Analysis throughout System Reliability. 
+This value is populated automatically with New Analysis 1. You can define this field manually. The Analysis Name field appears by default in the Definition section in the Analysis Summary workspace and displays values that exist in the Analysis Name field to identify the System Analysis records that are displayed in the grid. 
+This field is labeled Name on the datasheet.
+Analysis Result BinaryA field that is used internally by the GE Digital APM system to store the data that appears in the Elements, Actions, and Resources grids. 
+You should not modify the value in this field. Doing so will cause the analysis to become corrupt, and you will no longer be able to open it. 
+This field does not appear by default on the System Analysis datasheet. 
+Analysis Start Date DateThe first date of the analysis. 
+You can define this field manually. This field is labeled Start Date in the Definition section of the Analysis Summary workspace. The amount of time defined by the values in the Period and Period Units fields is added to the value in this field to determine how long the simulation will run. 
+This field is labeled Start Date on the datasheet.
+Confidence NumberA numeric value that represents the confidence level of simulation results. 
+This value determines the Optimistic and Pessimistic values in the Histogram plot in the Simulation Results workspace. The default value for this field is 90. If you accept the default value, when you look at the Histogram plot, you will know that there is a 90% chance that the value in any cell in the grids in the Simulation Results workspace in the analysis lies within the range between the Optimistic and Pessimistic values. 
+This field is labeled Confidence Level on the datasheet.
+Cost Plot BinaryA field that is used internally by the GE Digital APM system to store the image of the Total Cost plot. 
+You should not modify the value in this field. Doing so will cause the analysis to become corrupt, and you will no longer be able to open it.
+This field does not appear by default on the System Analysis datasheet. 
+Cost Trend Plot BinaryA field that is used internally by the GE Digital APM system to store the image of the Total Cost Trend plot. 
+You should not modify the value in this field. Doing so will cause the analysis to become corrupt, and you will no longer be able to open it. 
+This field does not appear by default on the System Analysis datasheet. 
+Currency Character The currency used to display financial results in various places throughout System Reliability. 
+This value is set to $ by default. The Cost column appears by default in the 
+Elements section of the Simulation Results workspace. The value that exists in the Currency field is included in the Cost column header. For example, if you specify $ in the Currency field, the label for the Cost column will be Cost ($). 
+This field is labeled Select Currency on the datasheet. 
+Description TextA text field that stores any additional information about the analysis. 
+You can define this value by entering text manually. 
+This field is labeled Analysis Description on the datasheet. 
+Histogram Bins Number A numeric value that defines the number of bins, or columns, that will be displayed on the Histogram plot. The default value for this field is 20. If you accept the default value, when you look at the Histogram plot on the Simulation Results workspace, there will be 20 bins on the Histogram plot. Number of Iterations Number A numeric value that identifies the number of times the system will be simulated in order to compile simulation results. 
+In the simple Monte Carlo example provided in this documentation, one iteration represents a single roll of the dice. The more iterations you use in an analysis, the more reliable the simulation results will be. The default value for this field is 1,000.
+The value you specify in the Iterations field must be compatible with the value that you specify in the Confidence field. The required number of iterations is dependent on the confidence boundary, as defined by the value in the Confidence field. The following equation is used to determine the required number of iterations:
+
+Minimum Number of Iterations = 40/(1- Confidence Field Value)
+
+In other words, the number of iterations must be high enough to provide a statistically significant confidence level. For example, a System Reliability Analysis with a value of 90 in the Confidence field would require a value of at least 400 in the Iterations field, as shown in the following calculation:
+Minimum Number of Iterations = 40/(1-90%)
+Minimum Number of Iterations = 40/.1
+Minimum Number of Iterations = 400
+If you enter a value in the Iterations field that is below the desired value, an error message will appear, and you will be required to specify another value before you can save the analysis.
+Period Number A numeric value that identifies the time period over which an analysis occurs. By default, this value is set to 1. The value in the Period Units field determines the time units that will be applied to the value in the Period field. Period Units CharacterThe time units associated with the value in the Period field. 
+You can select a value from one of the following options:
+Hours Days Weeks Months Years 
+Random Seed Logical Indicates whether or not different random numbers will be used for the system-generated inputs for each run of the simulation so that different results are returned each time. 
+By default, this value is set to False. If the Random Seed field is set to True, different inputs will be used for each simulation so that different results will be generated each time the simulation is run even if you have made no changes to the analysis. If the Random Seed field is set to False, the same results will be generated each time you run the simulation, provided that you have made no changes to the analysis. 
+This field is labeled Enable Random Seed on the datasheet. 
+Resource Cost Plot BinaryA field that is used internally by the GE Digital APM system to store the image of the Resource Cost plot. 
+You should not modify the value in this field. Doing so will cause the analysis to become corrupt, and you will no longer be able to open it. 
+This field does not appear by default on the System Analysis datasheet. 
+Resource Occurrence Plot BinaryA field that is used internally by the GE Digital APM system to store the image of the Resource Occurrence plot. 
+You should not modify the value in this field. Doing so will cause the analysis to become corrupt, and you will no longer be able to open it. 
+This field does not appear by default on the System Analysis datasheet. 
+Time Analysis Type CharacterA field whose value determines how results are displayed in the Total Cost Trend Plot and Trend Plot. By default, this value is Yearly. If this field is set to Yearly, the x-axis will display results for every year in the simulation period. If this field is set to Monthly, the x-axis will display results for every month in the simulation period. Visual Attributes TextA field that is used internally by GE Digital APM and stores visual information, such as chart settings and diagram positioning. 
+You should not modify the value in this field. Doing so will cause the analysis to become corrupt, and you will no longer be able to open it. 
+This field does not appear by default on the System Analysis datasheet. 
+
+System Asset Records
+System Asset records store information about equipment and locations that exist in the System Analysis diagram. The following table provides an alphabetical list and description of the fields that exist for the System Asset family and appear by default on the System Asset datasheet. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and UsageDescription TextA detailed description that allows you to identify the piece of equipment or location and distinguish it from other pieces of equipment and locations. 
+You can define this value manually by entering text in the Description box. 
+This field appears in the General section.
+Fixed Cost NumberThe fixed cost of the piece of equipment or location when it fails. Fixed cost does not change as a result of other variables such as downtime. An example of fixed unplanned correction cost is the cost of a new piece of equipment. 
+By default, the Fixed Cost is set to 0 (zero). 
+This field appears in the Financial Consequences section.
+GUID CharacterA value that uniquely identifies the record within a System Reliability Analysis. 
+This value is generated automatically by the GE Digital APM system and disabled. In System Reliability Analyses, GUIDs are used to identify records because Entity Keys will not exist until a record is saved. Since a System Reliability Analysis may contain unsaved records, it is necessary to use a value that uniquely identifies those records within the system. 
+This field does not appear in the Properties pane.
+Lost Production Cost NumberThe financial amount of lost production per unit of time when the system is stopped or unable to run. 
+By default, the Lost Production Cost is set to 0 (zero) by default. 
+This field appears in the Financial Consequences section.
+Lost Production Cost Units CharacterThe time units associated with the value in the Lost Production Cost field. 
+You can select a value from the following options:
+Per Hour Per Day Per Week Per Month Per Year 
+This field appears in the Financial Consequences section.
+Name CharacterThe name of the piece of equipment or location. 
+This value is populated automatically with Asset. You can define this value manually. 
+This field appears in the General section.
+Production Contribution Number
+The percentage that this piece of equipment or location will contribute to the overall production capacity of its parent system, with respect to other elements that are running in parallel to the piece of equipment or location. 
+ For example, if two pieces of equipment are running in parallel with one another and each one contributes 50% to the overall production output, you would enter a value of 50 in the Production Contribution field of each piece of equipment or location. The Production Contribution of each element in the Diagram will be used to calculate the overall production loss of the parent system when one or more elements are down. 
+
+By default, the Production Contribution is set to 100. If the piece of equipment or location does not contribute to the overall production output of its parent system, you can set the Production Contribution to 0 (zero). 
+This field appears in the General section.
+Variable Cost NumberThe cost incurred during downtime due to failures or shutdowns. 
+By default, the Variable Cost is set to 0 (zero). 
+This field appears in the Financial Consequences section.
+Variable Cost Units CharacterThe time units associated with the value in the Variable Cost field. 
+You can select a value from the following options:
+Per Hour Per Day Per Week Per Month Per Year 
+This field appears in the Financial Consequences section.
+
+System Buffer Records
+System Buffer records store information about buffers that exist in the System Analysis diagram. The following table provides an alphabetical list and description of the fields that exist for the System Buffer family and appear by default on the System Buffer datasheet. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and UsageDescription TextAny additional information regarding the buffer. 
+On the System Buffer datasheet, you can define this value manually by entering text in the Description box.
+This field appears in the General section. 
+GUID CharacterA value that uniquely identifies the record within a System Reliability Analysis. 
+This value is generated automatically by the GE Digital APM system and disabled. In System Reliability Analyses, GUIDs are used to identify records because Entity Keys will not exist until a record is saved. Because a System Reliability Analysis may contain unsaved records, it is necessary to use a value that uniquely identifies those records within the system. 
+This field does not appear in the Properties pane.
+Initial Quantity in Percentage NumberThe percentage of product that the storage tank contains at the time of a failure. 
+By default, the value is set to 100. 
+This field appears in the Buffer section.
+Name CharacterThe name of the buffer.
+This value is populated automatically with Buffer. You can define this value manually. 
+This field appears in the General section.
+Production Contribution Number
+The percentage that this piece of equipment or location will contribute to the overall production capacity of its parent system, with respect to other elements that are running in parallel to the piece of equipment or location. For example, if two pieces of equipment are running in parallel with one another and each one contributes 50% to the overall production output, you would enter a value of 50 in the Production Contribution field of each piece of equipment. The Production Contribution of each element in the Diagram will be used to calculate the overall production loss of the parent system when one or more elements are down.
+
+By default, the Production Contribution is set to 100. If the piece of equipment does not contribute to the overall production output of its parent system, you can set the Production Contribution to 0 (zero).
+This field appears in the General section.
+Time to Empty NumberThe time that it will take for the contents of a full buffer to empty when it is used. 
+By default, the Time to Empty is set to 0 (zero). 
+This field appears in the Buffer section.
+Time to Empty Units CharacterThe time units that apply to the value in the Time to Empty field. 
+You can select a value from the following options:
+Hours Days Weeks Months Years 
+This field appears in the Buffer section.
+Time to Refill NumberThe time that it will take for the contents of an empty buffer to refill completely after it has been emptied. 
+By default, the Time to Refill is set to 0 (zero). 
+This field appears in the Buffer section.
+Time to Refill Units CharacterThe time units that apply to the value in the Time to Refill field. 
+You can select a value from the following options:
+Hours Days Weeks Months Years 
+This field appears in the Buffer section.
+
+System Global Event Records
+System Global Event records store information about global events, which group together Actions requiring a system shutdown so that they will be performed at the same time, thereby maximizing the availability of the system. The following table provides an alphabetical list and description of the fields that exist for the System Global Event family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and UsageDescription TextA text field that stores any additional information about the Global Event. You can enter text manually to define this value.Driver Type CharacterIndicates whether the Global Event will be started with an action or on a certain date. 
+This value is required. The following options are available:
+
+Action Driven: The Global Event will start on the date the driving Action(s) begin and will trigger the start of any other Actions that are assigned to the Global Event. If more than one Action has been designated as a driving Action, the Global Event will occur when the first driving Action occurs. If no Action has been designated as a driving Action, the Global Event will not occur.
+Date Driven: The Global Event will start on the date in the First Date field. If no date exists in the First Date field, the Global Event will start one interval period, as defined by the values in the Interval and Interval Units fields, into the simulation.
+Event Definition TextThe Actions assigned to the Global Event. 
+This value that is used internally by the GE Digital APM system to store information identifying the Actions assigned to the Global Event.
+This field does not appear on the System Global Event datasheet. 
+First Date DateThe date on which the Global Event will occur for the first time. 
+If no value exists in the First Date field, date-driven Global Events will start one interval period, as defined by the values in the Interval and Interval Units fields, into the simulation. This field is disabled in System Global Event records that contain the value Action Driven in the Driver Type field.
+GUID CharacterA value that uniquely identifies the record within a System Reliability Analysis. 
+This value is generated automatically by the GE Digital APM system. In System Reliability Analyses, GUIDs are used to identify records because Entity Keys will not exist until a record is saved. Since a System Reliability Analysis may contain unsaved records, it is necessary to use a value that uniquely identifies those records within the system. 
+This field does not appear on the System Global Event datasheet. 
+Interval Number
+A numeric value that indicates how often the Global Event will occur. For example, if the value in the Interval field is 4 and the value Months exists in the Interval Units field, then the Global Event will occur every 4 months during the simulation period.
+This field is enabled only if the value in the Driver Type field is Date Driven and the One Time Event check box is cleared. Interval Units CharacterThe time units associated with the value in the Interval field. 
+You can select a value from the following options:
+Hours Days Weeks Months Years 
+Max Advance Duration Number
+A numeric value that identifies the maximum time that an Action can be advanced forward to be completed with the other Actions assigned to the Global Event.
+For example, if the Max Advance Duration field contains the value 3 and the Max Advance Duration Units field contains the value Months, then any Action that would be performed 3 months or less after the Global Event can be moved forward in time and completed with the rest of the Actions that are assigned to the Global Event.
+This value is set to 0 (zero) by default. 
+Max Advance Duration Units 
+CharacterThe time units associated with the value in the Max Advance Duration field. 
+You can select a value from the following options:
+Hours Days Weeks Months Years 
+Max Delay Duration Number
+A numeric value that identifies the maximum time that an Action can be delayed to be completed with the other Actions that are assigned to the Global Event.
+For example, if the Max Delay Duration field contains the value 2 and the Max Advance Duration Units field contains the value Weeks, then any Action that would be performed 2 weeks or less before the Global Event can be delayed in time and completed with the rest of the Actions that are assigned to a Global Event.
+By default, this value is set to 0 (zero). Max Delay Duration Units CharacterThe time units associated with the value in the Max Delay Duration field. 
+You can select a value from the following options:
+Hours Days Weeks Months Years 
+Name CharacterThe name of the Global Event. 
+You can define this value manually. This value is used to identify Global Events in System Reliability Analyses. 
+One Time Event LogicalIndicates whether the Global Event will occur one time or can be repeated more than once. If this check box is selected, the Global Event will occur once. If this check box is cleared, the Global Event will occur more than once. For example, you might create an Action to replace an expensive piece of machinery. If the Action requires a complete shutdown, to reduce total downtime of the system, you could create a one-time Global Event with the One Time Event check box selected that would reschedule any assigned Actions to be completed during the desired shutdown. In contrast, Actions that are repeated several times would be assigned to a recurring Global Event with the One Time Event check box cleared because the Global Event would be needed several times to minimize downtime in a simulation period. 
+System Link Records
+System Link records store information about links that connect other elements that work together to produce output. The following table provides an alphabetical list and description of the fields that exist for the System Link family and appear by default on the System Link datasheet. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and UsageDescription TextAny additional information regarding the buffer. On the System Link datasheet, you can define this value manually by entering text in the Description box. GUID CharacterA value that uniquely identifies the record within a System Reliability Analysis. 
+This value is generated automatically by the GE Digital APM system and disabled. In System Reliability Analyses, GUIDs are used to identify records because Entity Keys will not exist until a record is saved. Because a System Reliability Analysis may contain unsaved records, it is necessary to use a value that uniquely identifies those records within the system. 
+This field does not appear in the Properties pane.
+Minimum Predecessors NumberThe minimum number of predecessors that the link can have. The value in this field cannot exceed the actual number of predecessors. Attempting to enter a number greater than the number of actual predecessors results in the value reverting to the previous value. Name CharacterThe name of the link.
+This value is populated automatically with Link. You can define this value manually. 
+
+System Resource Records
+System Resource records store information about physical parts or materials, such as spare bearings or seals, or human resources, such as mechanics or technicians, or tools needed to complete an action (e.g. crane or hoist), or any other item which has a cost per use or per time associated with it. The following table provides an alphabetical list and description of the fields that exist for the System Resource family and appear by default on the System Resource datasheet. The information in the table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field Caption Data TypeDescriptionBehavior and UsageCount Occurrences BooleanIndicates whether the occurrences of the associated Resource Usages will be displayed in the Resource Occurrence plot.If this check box is selected, the associated Resource Usages will be displayed on the Resource Occurrence Plot. If this check box is cleared, the Resource Usages will not be displayed. By default, this check box is selected. Description TextAny additional information regarding the Resource. 
+You can enter text to define this value manually.
+Fixed Cost NumberThe expense of the Resource that is not dependent on the amount of time the Resource is used. By default, this value is set to 0 (zero).GUID CharacterA value that uniquely identifies the record within a System Reliability Analysis. This value is generated automatically by the GE Digital APM system and does not appear on the System Resource datasheet by default. In System Reliability Analyses, GUIDs are used to identify records because Entity Keys will not exist until a record is saved. Because a System Reliability Analysis may contain unsaved records, it is necessary to use a value that uniquely identifies those records within the system. Name CharacterThe name of the Resource (e.g., Mechanic). You can define this value manually by typing a value into the Name field. Quantity NumberThe quantity of a Resource that will be used by an Action or Risk. If an Action requires three Mechanic Resources, then the quantity would be three. By default, this value is set to 1 (one).Variable Cost Number The cost of the Resource that is dependent on the Variable Cost Units. By default, the Variable Cost is set to 0 (zero).Variable Cost Units CharacterThe time units associated with the Variable Cost Field. 
+You can select a value from the following options:
+Per Hour Per Day Per Week Per Month Per Year 
+By default, the Variable Cost Units is set to Per Day.
+
+System Resource Usage Records
+System Resource records store information about how a Resource will be used. The following table provides an alphabetical list and description of the fields that exist for the System Resource Usage family and appear by default on the System Resource Usage datasheet. The information in the table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and UsageDuration NumberThe length of time that a Resource will be used by an Action or Risk. If an Action requires a Mechanic Resource for four hours, then the Duration would be four. By default, this value is set to 0 (zero). Duration Units CharacterThe units of time associated with the value in the Duration field. If an Action requires a Mechanic Resource for four hours, then the Duration Units would be Hours. 
+You can select a value from the following options:
+Hours Days Weeks Months Years 
+GUID CharacterA value that uniquely identifies the System Resource Usage record within a System Reliability Analysis. 
+This value is generated automatically by the GE Digital APM system and disabled. In System Reliability Analyses, GUIDs are used to identify records because Entity Keys will not exist until a record is saved. Because a System Reliability Analysis may contain unsaved records, it is necessary to use a value that uniquely identifies those records within the system.
+Quantity NumberThe quantity of a Resource that will be used by an Action or Risk. If an Action requires three Mechanic Resources, then the quantity would be three. By default, this value is set to 1 (one).Resource List CharacterContains a list of resources that can be assigned to a Risk or an Action.
+You can select a Resource from the list to assign to a Risk or an Action.
+
+System Risk Records
+System Risk records store details about a Risk in a System Analysis and the cost of an equipment or location failure due to that Risk. Multiple System Risk records can be linked to a single System Asset record to represent multiple ways in which that piece of equipment or location can fail. The following table provides an alphabetical list and description of the fields that exist for the System Risk family and appear on the System Risk datasheet by default. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and UsageDescription textAdditional information that is used to identify the Risk.
+You can enter a description of the Risk into this field manually. 
+This field appears in the General section.
+Failures Without Replacement LogicalIndicates whether or not the piece of equipment or location is replaced after each failure that results from the Risk. By default, this check box is cleared. If this check box is selected, the piece of equipment or location is not replaced after each failure (as good as old). If this check box is cleared, the piece of equipment or location is replaced after each failure (as good as new). Fixed Unplanned Correction Cost NumberIndicates the set cost of a piece of equipment or location when it fails as a result of the Risk. Fixed cost does not change as a result of other variables, such as downtime. An example of fixed unplanned correction cost is the cost of a new piece of equipment. 
+By default, this field contains the value 0.
+This field appears in the Correction section.
+Is Active Logical Indicates whether or not the piece of equipment's or location's operating time accumulates while the system is running. After a potential failure is detected, this value indicates whether the piece of equipment's or location's remaining life is reduced when the system is active or latent. 
+This value is a characteristic of the piece of equipment or location to which the Risk is related and should be the same for all Risks related to the same piece of equipment or location. By default, this check box is selected. If the check box is selected, the piece of equipment's or location's operating time will accumulate while the system is running, and the Is Latent check box should be cleared. This means that the v or location will lose lifetime while the system is running.
+For example, when a car (i.e., the system) is moving, a tire's (i.e., piece of equipment's) lifetime is being used up. The tire is active. 
+This field is available in the Simulations Options section.
+Is Latent LogicalIndicates whether or not the piece of equipment's or location's operating time accumulates while the system is idle. After a potential failure is detected, this value indicates whether the piece of equipment's or location's remaining life is reduced when the system is active or latent. 
+This value is a characteristic of the piece of equipment or location to which the Risk is related and should be the same for all Risks related to the same piece of equipment or location. By default, this check box is cleared. If check box is selected, the piece of equipment's or location's operating time will accumulate while the system is idle, and the Is Active check box should be cleared. This means the piece of equipment or location will lose lifetime when the system is not running.
+For example, when a car (i.e., the system) is idle and not being used, failures can occur that will affect the hydraulic braking system (i.e., piece of equipment's). The rate of these failures is not impacted by the car being used or being idle, and is therefore latent in nature.
+Last Failure DateIndicates the most recent date that the piece of equipment or location failed due to the Risk. You can use the Calendar tool to select the date of the most recent equipment or location replacement. Name CharacterThe name of the Risk. You can enter the name of the Risk in this field manually. This value is used to identify Risks in the System Reliability Analysis. Number of Subcomponents NumberThe number of subcomponents to which the Risk applies. By default, this field contains the value 1. The value should be greater than 1 only if the Failure Without Replacement check box is selected. Percentage of PF Interval to Wait NumberA numeric value that indicates how long to wait to repair the piece of equipment or location after detecting a potential failure due to this Risk. 
+By default, this field contains the value 0 and should be used only if the Repair Immediately check box is cleared. This value indicates at what percentage of the value in the PF Interval field the piece of equipment or location should be repaired.
+For example, an engineer monitors a Risk more frequently after a potential failure is detected and does not want to repair the piece of equipment or location immediately. If a potential failure is detected at the start of the PF Interval, and the engineer knows that the piece of equipment or location will not actually fail for 10 more days (i.e., a PF Interval of 10), he might decide to initiate a repair strategy six days later, or at 60 percent of the PF Interval. In this case, the Percentage of PF Interval to Wait is 60 percent.
+PF Interval NumberThe time between when a potential failure is detectable and when an actual failure will occur. By default, this field contains the value 0. This value is used along with the value in the Percentage of PF Interval to Wait field to determine when a piece of equipment or location should be repaired after a failure. The P-F Interval is determined by the user and is not calculated by the system. PF Interval Units CharacterThe time units associated with the PF Interval. 
+by default, this value is set to Days. You can select from a list of the following options:
+Minutes Hours Days Weeks Months Years 
+
+Planned Correction Cost 
+ 
+NumberThe total cost (i.e., fixed cost plus variable cost) of a planned correction that will prevent the Risk from resulting in a functional failure. An example of a planned correction is a routine equipment cleaning. By default, this field contains the value 0. A planned correction does not happen as a result of a failure. Planned Correction Duration NumberThe time needed to implement a planned correction. By default, this field contains the value 0. Planned Correction Duration Units CharacterThe time units associated with the Planned Correction Duration. 
+By default, this value is set to Days. You can select from a list of the following options:
+Hours Days Weeks Months Years 
+Repair Immediately LogicalA value that indicates whether or not the piece of equipment or location should be repaired immediately if a potential failure due to this Risk is detected. By default, this check box is selected. If the check box is selected, the piece of equipment or location should be repaired as soon as an inspection detects a failure, regardless of the remaining life of the piece of equipment or location. If the check box is cleared, the piece of equipment or location should be repaired according to the value in the Percentage of PF Interval to Wait field. Variable Unplanned Correction Cost NumberA number that indicates the variable cost associated with the downtime of an piece of equipment or location when it fails due to the Risk. An example of variable unplanned correction cost is the cost of labor per time period of the mechanic that repairs the piece of equipment or location. By default, this field contains the value 0.Variable Unplanned Correction Cost Units CharacterThe time units associated with the Variable Unplanned Correction Cost. 
+By default, this value is set to Per Day. You can select from a list of the following options:
+Per Hour Per Day Per Week Per Month Per Year 
+
+System Scenario Records
+System Scenario records store general information about a scenario in a System Reliability Analysis. The following table provides an alphabetical list and description of the fields that exist for the System Scenario family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and UsageDescription TextA brief description that helps distinguish a given Scenario from other Scenarios that exist within a certain System Reliability Analysis. For example, the value in the Description field may indicate how the Diagram associated with one Scenario differs from the Diagram associated with another. You can define this value manually by entering text in the Description box. GUID CharacterContains a value that uniquely identifies the record within a System Reliability Analysis. 
+This value is generated automatically by the GE Digital APM system. In System Reliability Analyses, GUIDs are used to identify records because Entity Keys will not exist until a record is saved. Since a System Reliability Analysis may contain unsaved records, it is necessary to use a value that uniquely identifies those records within the system. 
+This field does not appear in the Definition section.
+Is Result Valid BooleanA logical value that indicates whether the current simulation results are valid. 
+If this value is True, the current simulation results are valid. If the simulation has been modified or changed in any way, this field will be set to False until the simulation has been run again. 
+This field does not appear in the Definition section.
+Name CharacterThe name of the scenario. This value is populated automatically with New Scenario 1. You can modify this value by selecting . 
+System Sensor Records
+System Sensor records store information about a sensor that detects the failure of a piece of equipment or location and notifies Switches of the failure. The following table provides an alphabetical list and description of the fields that exist for the System Sensor family. The information in the table reflects the baseline state and behavior of these fields. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and UsageActivated Switches TextIdentifies the switches that the sensor activates. 
+The Activated Switches cell contains a list of all Switch elements in the diagram. In the list, you can select a switch that the sensor activates. After you make your selections, the names of those Switch elements will appear in the Activated Switches cell. These values are stored as text in the Activated Switches field. 
+This field appears in the Detail section. 
+Deactivated Switches TextIdentifies the switches that the sensor deactivates.
+The Deactivated Switches cell contains a list of all Switch elements in the diagram. In the list, you can select A switch that the sensor deactivates. After you make your selections, the names of those Switch elements will appear in the Deactivated Switches cell. These values are stored as text in the Deactivated Switches field.
+This field appears in the Detail section. 
+Description TextAny additional information about the sensor. 
+On the System Sensor datasheet, you can define this value manually by entering text in the Description box. 
+This field appears in the General section. 
+GUID CharacterA value that uniquely identifies the record within a System Reliability Analysis. 
+This value is generated automatically by the GE Digital APM system and disabled. In System Reliability Analyses, GUIDs are used to identify records because Entity Keys will not exist until a record is saved. Because a System Reliability Analysis may contain unsaved records, it is necessary to use a value that uniquely identifies those records within the system. 
+This field does not appear in the Properties pane.
+Monitored Elements TextIdentifies the Diagram elements that the sensor monitors. 
+The Monitored Elements cell contains a list of all elements in the diagram. In the list, you can select an element that a given sensor monitors. After you make your selections, the names of those elements will appear in the Monitored Elements cell. These values are stored as text in the Monitored Elements field.
+This field appears in the Detail section. 
+Name CharacterThe name of the sensor. 
+This value is populated automatically with Sensor. You can define this value manually. 
+This field appears in the General section. 
+
+System Subsystem Records
+System Subsystem records store information about a system of equipment or locations. The following table provides an alphabetical list and description of the fields that exist for the System Subsystem family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and UsageConnections TextThis field is used internally by the GE Digital APM system to store connections in the diagram. 
+This field does not appear in the Properties pane.
+Description TextAny additional information regarding the subsystem. 
+On the System Subsystem datasheet, you can define this value manually by entering text in the Description box. 
+This field appears in the General section. 
+Diagram BinaryThis field is used internally by the GE Digital APM system to store the diagram. 
+This field does not appear in the Properties pane.
+Element Properties TextThis field is used internally by the GE Digital APM system to store element properties. 
+This field does not appear in the Properties pane.
+Fixed Cost NumberThe cost of lost production when the subsystem fails. Fixed cost does not change as a result of other variables such as downtime. 
+By default, this value is set to 0 (zero).
+This field appears in the Financial Consequences section.
+GUID CharacterA value that uniquely identifies the record within a System Reliability Analysis. 
+This value is generated automatically by the GE Digital APM system and disabled. In System Reliability Analyses, GUIDs are used to identify records because Entity Keys will not exist until a record is saved. Because a System Reliability Analysis may contain unsaved records, it is necessary to use a value that uniquely identifies those records within the system. 
+This field does not appear in the Properties pane.
+Lost Production Cost NumberThe cost of lost production per unit of time when the subsystem is not running. 
+By default, the Lost Production Cost is set to 0 (zero). 
+This field appears in the Financial Consequences section.
+Lost Production Cost Units CharacterThe time units for the Lost Production Cost field. 
+You can select a value from the following options:
+Per Hour Per Day Per Week Per Month Per Year 
+This field appears in the Financial Consequences section.
+Name CharacterThe name of the Subsystem. 
+This value is populated automatically with Subsystem. You can define this value manually. 
+This field appears in the General section. 
+Production Contribution Number
+The percentage that this piece of equipment or location will contribute to the overall production capacity of its parent system, with respect to other elements that are running in parallel to the piece of equipment or location. 
+For example, if two pieces of equipment are running in parallel and each one contributes 50% to the overall production output, you would enter a value of 50 in the Production Contribution field for each piece of equipment. The Production Contribution of each element in the Diagram will be used to calculate the overall production loss of the parent system when one or more elements are down. 
+
+By default, the Production Contribution is set to 100. If the piece of equipment or location does not contribute to the overall production output of its parent system, you can set the Production Contribution to 0 (zero). The value in the Production Contribution field of the Default subsystem or Root Subsystem is disabled on that subsystem's Properties pane. 
+This field appears in the General section. 
+ 
+Variable Cost NumberThe cost incurred during the downtime due to subsystem failures or shutdowns. 
+By default, the Variable Cost is set to 0 (zero).
+This field appears in the Financial Consequences section.
+Variable Cost Units CharacterThe time units associated with the value in the Variable Cost field. 
+You can select a value from the following options:
+Per Hour Per Day Per Week Per Month Per Year 
+This field appears in the Financial Consequences section.
+
+System Switch Records
+System Switch records store information about components that are activated or deactivated by a Sensor when a failure occurs. The following table provides an alphabetical list and description of the fields that exist for the System Switch family and appear by default on the System Switch datasheet. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and UsageDescription TextAny additional information regarding the buffer. 
+You can define this value manually by entering text in the Description box. 
+This field appears in the General section. 
+Fixed Cost NumberThe cost to fix the switch when it fails. Fixed cost does not change as a result of other variables such as downtime. 
+By default, the value is set to 0 (zero).
+This field appears in the Financial Consequences section.
+GUID CharacterA value that uniquely identifies the record within a System Reliability Analysis. 
+This value is generated automatically by the GE Digital APM system and disabled. In System Reliability Analyses, GUIDs are used to identify records because Entity Keys will not exist until a record is saved. Because a System Reliability Analysis may contain unsaved records, it is necessary to use a value that uniquely identifies those records within the system. 
+This field does not appear in the Properties pane.
+Lost Production Cost NumberThe cost of lost production per unit of time when the switch is not running. 
+The Lost Production Cost is set to 0 (zero) by default. 
+This field appears in the Financial Consequences section.
+Lost Production Cost Units CharacterThe time units for the Lost Production Cost field. 
+You can select a value from the following options:
+Per Hour Per Day Per Week Per Month Per Year 
+This field appears in the Financial Consequences section.
+Name CharacterThe name of the switch.
+This value is populated automatically with Switch. You can define this value manually. 
+This field appears in the General tab. 
+Production Contribution Number
+The percentage that this piece of equipment or location will contribute to the overall production capacity of its parent system, with respect to other elements that are running in parallel to the piece of equipment or location.
+For example, if two pieces of equipment are running in parallel with one another and each one contributes 50% to the overall production output, you would enter a value of 50 in the Production Contribution field of each piece of equipment. The Production Contribution of each element in the Diagram will be used to calculate the overall production loss of the parent system when one or more elements are down.
+
+By default, the Production Contribution is set to 100. If the piece of equipment does not contribute to the overall production output of its parent system, you can set the Production Contribution to 0 (zero).
+This field appears in the General section. 
+Variable Cost NumberThe cost incurred during the downtime due to failures or shutdowns. 
+By default, the Variable Cost is set to 0 (zero).
+This field appears in the Financial Consequences section.
+Variable Cost Units CharacterThe time units associated with the value in the Variable Cost field. 
+You can select a value from the following options:
+Per Hour Per Day Per Week Per Month Per Year 
+This field appears in the Financial Consequences section.
+
+
+
+
+
+
+On this pageSystem Action FamiliesSystem Action RecordsSystem Action Optimization RecordsSystem Condition Monitor RecordsSystem Inspection RecordsSystem Preventive Maintenance RecordsSystem Special Action RecordsSystem Analysis RecordsSystem Asset RecordsSystem Buffer RecordsSystem Global Event RecordsSystem Link RecordsSystem Resource RecordsSystem Resource Usage RecordsSystem Risk RecordsSystem Scenario RecordsSystem Sensor RecordsSystem Subsystem RecordsSystem Switch Records
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,104 @@
+
+
+
+Asset and Tag Instance Search | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Asset and Tag Instance Search
+
+
+
+
+
+
+
+Asset and Tag Instance SearchAbout SearchSearch functionality allows you to search for asset or tag instances using search criteria or modifiers.You can use Search to locate asset or tag instances using search criteria and/or search modifiers.Asset instances are added to GE Digital APM during ingestion by the tenant administrator. Tag instances are added to a selected asset instance by you. You can use Search to locate asset or tag instances by the type of data provided. For instance, you can find a tag instance by its asset context.GE Digital APM Search allows you to search, select and configure a specific asset or tag instance.The Search results table lists the first 250 instances. Use the scroll bar to access additional instances.
+Tip: You can load your tenant's custom Asset Instance or Tag Instance landing page, replacing the GE Digital APM Asset Instance or Tag Instance landing page in the results section of the Search module. Your tenant administrator must configure through API to replace one or both of the landing pages.
+Access an Asset or Tag Instance Via SearchSearch allows you to use a text string or modifier to find an asset or tag instance.About This TaskSearch categorizes asset and tag instances to narrow your search. Use the Search Type drop-down list box, or enter search criteria or modifiers to search the Search results table for specific instances. Available instance types are:Asset InstancesTag InstancesNote: The Search results table lists the first 250 entries. Use the scroll bar to access additional groups.When you enter search criteria, the first 250 matching entries for any column in the Search results table are displayed. Use modifiers to construct queries, narrowing your search.Search results display using a combination of search filters and on the selection of the group type selected from the drop-down list box. The following columns are displayed in the Search results table:NameClassificationSource KeyDescriptionUse three or more characters in your search text to avoid time-outs. You can use multiple modifiers when searching. When you perform the search with multiple query options or fewer search characters, your search scope is widened leading to slower result retrieval.Note: If you want to search an asset or tag with the value that contains ,(comma), :(colon), or *(asterisk), you can search it only via wild card.For example: If you want to search an asset (that is, Turbine,test*123=0), you can search it as name=Turbine*. The assets starting with Turbine appears in the search result.ProcedureIn the module navigation menu, go to
+Assets >  Search.Optional: Select Asset Instances or Tag Instances from the Search Type drop-down list box to narrow the list to a specific type.To refine your search results, use the following search modifiers:
+Search ModifiersDescriptionname: tag or asset instance display name
+Enter a partial or full display name of an asset or tag in the Search box, such as name:Hydro Turbine.Press Enter to activate string in the Search box.
+description: text describing an asset or tag
+Enter a partial or full description of an asset or tag in the Search box, such as description:output asset.Press Enter to activate the string in the Search box.
+sourceKey: unique identifier
+Enter a partial or full source key for a tag or asset instance in the Search box. Press Enter to activate the string in the Search box.
+inContext: asset context
+In the Search box, enter inContext:<full name of an asset or tag>. Press Enter to activate the string in the Search box.
+ofClass: name of the classification
+In the Search box, enter ofClass:<full classification name>. Press Enter to activate the string in the Search box.
+type: uri of the classification
+In the Search box, enter type:<full URI> for an asset tag or classification.  Press Enter to activate the string in the Search box.
+<attributeName>: attribute value
+In the Search box, enter the attribute name followed by a colon and the fully specified value. (for example, enter manufacturer:GE or uom:ft). Press Enter to activate the string in the Search box.
+parent: uri of the parent asset
+In the Search box, enter parent:<full URI> for an asset.  Press Enter to activate the string in the Search box.
+
+If no results are found, the message "No Results Found" is displayed. If the search fails, the message "Data failed to load" appears.Tip:
+When using modifiers, you must match the modifier value exactly to get a result.When searching for a reserved attribute, you must use the fieldName to get a result. For a list of reserved attributes for Asset and Tag Instances, refer to the Add or Modify Reserved Attribute Values for an Asset Instance and Add or Modify Reserved Attribute Values for a Tag Instance documentation.
+Select Search.The instance options in the Search results table narrow according to your criteria.
+Related tasksAdd or Modify Reserved Attribute Values for an Asset InstanceAdd or Modify Reserved Attributes Values for a Tag Instance
+
+
+
+
+On this pageAbout SearchAccess an Asset or Tag Instance Via Search
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,102 @@
+
+
+
+Fields that can be Populated from one of the Three Related Records | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Mappings
+Allowable Event Types in Related Events 
+Fields that can be Populated from one of the Three Related Records 
+Fuel Code Fields 
+Fuel Information Fields 
+Inactive Hours Field 
+Overlapping between an Outage Event and a Derate Event
+Capacity Event Types Affecting Performance Records
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Reference
+Fields that can be Populated from one of the Three Related Records 
+
+
+
+
+
+
+
+Fields that can be Populated from one of the Three Related Records Fields that can be Populated from one of the Three Related Records
+When you create a Primary Event record, you will specify, in the Unit ID field, the Unit ID of the GAA Unit record to which the Event record will be linked. When you save the Primary Event record, the GE Digital APM system will attempt to populate various fields in the Event record with values based on the Unit ID value. These values will not necessarily come directly from the GAA Unit record itself.
+First, the GE Digital APM system will attempt to populate each field with the corresponding value in the Performance record that is linked to the specified GAA Unit record for the month in which the event occurred.If the associated Performance record does not exist or does not contain a value in a given field, the GE Digital APM system will attempt to populate the field with the corresponding value in the GAA Unit record.If the GAA Unit record does not contain a value in a given field, that field will not be populated automatically.
+Note that:
+These fields are populated automatically only when a Primary Event record is first created. After the record exists, the Unit ID field is disabled. Since this value cannot be modified, these fields will never be updated automatically.Fields in new Contributing Event records are populated using these same rules. In other words, fields in Contributing Event records will not necessarily be populated with the same values that exist in the Primary Event record. Instead, they will be populated with the values that exist in the Performance and GAA Unit record at the time the Contributing Event record is created.
+The following tables provides a list of fields in Event records that are populated in this way and specifies the corresponding fields in Performance and GAA Unit records that will be used to populate them.
+Event RecordPerformance RecordGAA Unit RecordCause Code GADS Unit Code GADS Unit Code GADS Unit Type Unit Type Unit Type GADS Utility Code GADS Utility Code GADS Utility Code Gross Dependable Capacity Gross Dependable Capacity (G) Gross Dependable Capacity Gross Maximum Capacity Gross Max Capacity (G) Gross Maximum Capacity Net Dependable Capacity Net Dependable Capacity (N) Net Dependable Capacity Net Maximum Capacity Net Maximum Capacity (N) Net Maximum Capacity Unit Name Unit Name Unit Name 
+
+
+
+
+
+On this pageFields that can be Populated from one of the Three Related Records
+
+
+
+
+
+
+
+
+

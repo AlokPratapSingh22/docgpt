@@ -1,0 +1,98 @@
+
+
+
+Inspection Plans | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Compliance ManagementOverview
+Workflows
+Inspection Plans
+Inspection Plan Management
+Compliance Recommendations
+Inspection Plan Revision History
+Suggested Compliance Strategy Templates
+Admin
+Deployment
+Reference 
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Compliance Management
+Inspection Plans
+
+
+
+
+
+
+
+Inspection PlansAbout Inspection PlansAn Inspection Plan can be created from any asset that is linked to a Compliance Strategy Template and meets the requirements of Compliance Strategy records in the policy that is associated with the Compliance Strategy Template.When an MI Compliance Administrator creates a Compliance Strategy Template, the completed template has linked assets. From this point, an MI Compliance Analyst or MI Inspection Plan Approver can generate an Inspection Plan based on the policy that is mapped to the Compliance Strategy Template. Alternatively, users can get suggested Compliance Strategy Templates for assets; MI Compliance Analysts can apply Compliance Strategy Templates to these assets and create Inspection Plans from the Compliance Management Overview page. An Inspection Plan is attached to the asset from which it is generated, and the user can view the details of the Inspection Plan from Compliance Management. The Inspection Plan contains Compliance Recommendations and displays Inspection Tasks for an asset. When the Inspection Plan is moved to the Approved state by an MI Inspection Plan Approver, users then can create or link an Inspection Task to the Compliance Recommendation. When the Compliance Recommendations have Inspection Tasks linked, the Inspection Plan is fully integrated with the Inspection Management module. For more information on Security Roles and Inspection Plans, see Compliance Management Security Roles.About Inspection Plan ApprovalAn MI Inspection Plan Approver can approve Inspection Plans that are created by the MI Compliance Analyst. Approving an Inspection Plan will also integrate the related asset with Asset Strategy Manager (ASM).Compliance Recommendations are used to create Actions. For more information on ASM Integration, see, About Asset Strategy Management (ASM) Integration.MI Compliance Analysts can review and modify the Inspection Plan if more changes are needed.After an Inspection Plan is created, the MI Inspection Plan Approver and MI Compliance Analysts can review the plan and modify existing Compliance Recommendations. The MI Inspection Plan Approver can move the Inspection Plan to the Approved state. When the Inspection Plan is in the Approved state, users can create or link Inspection Tasks to the Compliance Recommendations based on the application setting. If the MI Inspection Plan Approver or an MI Compliance Analyst is no longer satisfied by the items contained in the Inspection Plan, they can update the Inspection Plan, which moves the Inspection Plan back to the Modified state. The MI Inspection Plan Approver can then delete, mark as not required, or supersede Compliance Recommendations. Each time the Inspection Plan is changed from the Approved to the Modified state, an Inspection Plan Revision record is created and linked to the existing Inspection Plan. For each existing Compliance Recommendation record, a Recommendation Revision record is created and linked to the Inspection Plan Revision. In addition, the Inspection Plan must be returned to the Approved state by the MI Inspection Plan Approver before they can re-promote it to ASM. About Modifying Compliance Recommendations on an Inspection PlanAn MI Compliance Analyst or MI Inspection Plan Approver can modify Compliance Recommendations if they want to modify an Inspection Plan.An Inspection Plan should be modified in the following scenarios:A policy that is used in a Compliance Strategy Template is modified.The Compliance Strategy records that are associated with a policy that is mapped to a Compliance Strategy Template are modified.Modifying Compliance Recommendations on an Approved Inspection Plan
+An Inspection Plan that is in the Approved state is ready for implementation, but you can choose to modify the Inspection Plan further by modifying Compliance Recommendations. When you modify the Inspection Plan:
+The plan is moved from the Approved state to the Modified state.Linked tasks are removed from the Inspection Plan, but they remain linked to the asset.An Inspection Plan Revision record is created and linked to the existing Inspection Plan.For each existing Compliance Recommendation record, a Compliance Recommendation Revision record is created and linked to the Inspection Plan Revision.Any existing Compliance Recommendations are deleted. New Compliance Recommendations that are based on the mapped policy in the Compliance Strategy Template populate the Inspection Plan.
+Modifying Compliance Recommendations on an Inspection Plan That is in the Proposed or Modified State
+You can also modify Compliance Recommendations on Inspection Plans that are in the Proposed or Modified state.
+When an Inspection Plan that is in the Proposed state is modified, any existing Compliance Recommendations are updated, while any Compliance Recommendations that are in the Superseded or Not Required state are returned to the Proposed state. In addition, the value in the Comments field of the Compliance Recommendation datasheet is deleted. Depending on the mapped policy in the Compliance Strategy Template, new Compliance Recommendations may be created.When an Inspection Plan that is in the Modified state is modified, any existing Compliance Recommendations are deleted, and new Compliance Recommendations are generated based on the mapped policy in the Compliance Strategy Template.
+Access an Inspection Plan You can access an Inspection Plan for an asset that is linked to a Compliance Strategy Template.Before You BeginYou must have assets for which you have created an Inspection Plan.
+ProcedureAccess Compliance Management, and then select the Assets with Inspection Plans tab.Select an asset that has an Inspection Plan that you want to access.The Inspection Plan page for the selected asset appears.Create an Inspection Plan from the Compliance Management Overview PageYou can create an Inspection Plan for assets that are linked to Compliance Strategy Templates.Before You BeginThe assets must have one or more Compliance Strategy Templates linked to them.ProcedureAccess Compliance Management, and then select the Assets without Inspection Plans tab.The Assets without Inspection Plans section appears, displaying a list of available assets based on the current filter.In the Assets section, select the check boxes against the rows containing the asset to create an Inspection Plan.The selected assets are highlighted.Select Create Inspection Plans.The job status appears in the page heading, displaying the progress of the Inspection Plan creation.Note: When the process is complete, you can select  to access the Schedule Logs page.Create an Inspection Plan for any Asset Using the Asset HierarchyAbout This Task
+You can create an Inspection Plan for assets that are linked to Compliance Strategy Templates.
+Note: If the asset is not linked to a Compliance Strategy Template, the Create Inspection Plans button does not appear.
+Before You BeginThe assets must have one or more Compliance Strategy Templates linked to them. Note: The following procedure is applicable only if the selected asset does not contain an Inspection Plan.ProcedureAccess the Assets page.The Asset Hierarchy appears in the Assets page.In the left pane, in the Hierarchy section, enter the Asset ID in the Search box, and then press Enter.Select an asset that does not contain an Inspection Plan.Select the Integrity tab.Select the link next to Compliance Management.The Inspection Plan page appears.Select Create Inspection Plans.The job status appears in the page heading, displaying the progress of the Inspection Plan creation. Note: When the process is complete, you can select  to access the Schedule Logs page.Update Compliance Recommendations for an Inspection PlanAny user with the MI Inspection Plan Approver or MI Compliance Analyst Security Role can update Compliance Recommendations for Inspection Plans for assets that previously contained Inspection Plans.Before You Begin
+You must have an asset for which you had created an Inspection Plan.You must have one of the following Security Roles:MI Inspection Plan ApproverMI Compliance Analyst
+ProcedureAccess Compliance Management, and then select the Assets with Inspection Plans tab.
+Note: If you want to update only one Inspection Plan, you can access that Inspection Plan, and then select .
+Select the check box next to each asset for the Inspection Plan for which you want to update the Compliance Recommendation.Select Update Compliance Recommendations.The Confirm Update window appears, asking you if you want to update the selected Inspection Plans.Select Yes.
+Tip: If any Inspection Plans for the selected assets are in the Approved state, the Reason for Revision window appears. In the text box, enter a reason for updating the Compliance Recommendations for the Inspection Plans, and then select Done.
+The job status appears in the Compliance Management Overview page, displaying the progress of the update.Note: When the process is complete, you can select  to access the Schedule Logs page. Approve an Inspection Plan Any user with the MI Inspection Plan Approver Security Role can move an Inspection Plan to the Approved state. After the Inspection Plan is approved, recommendations can be implemented as tasks.About This TaskWhen an Inspection Plan is in the Approved state, you can create new Inspection Tasks or link existing Inspection Tasks to the related recommendations. The Inspection Tasks are transferred to the Inspection Management module.ProcedureAccess the Inspection Plan that you want to approve.In the Proposed box, select Approve, and then select Done.A message appears, stating that the Inspection Plan has been approved.Note:
+After you approve an Inspection Plan, you cannot delete, supersede, or designate recommendations as Not Required. You must first move them to the Modified state.While the Inspection Plan is being modified, you cannot delete, supersede, or designate recommendations as Not Required. 
+Delete an Inspection PlanYou can delete Inspection Plans that are obsolete or unnecessary.Before You BeginYou must have one of the following Security Roles:MI Inspection Plan ApproverMI Compliance AnalystProcedureAccess the Inspection Plan that you want to delete.In the Inspection Plan page, select .The Confirm Delete window appears, asking you to confirm that you want to delete the Inspection Plan.Select Yes.The Inspection Plan is deleted. Note: An Inspection Plan cannot be deleted if it has recommendations.
+
+
+
+
+On this pageAbout Inspection PlansAbout Inspection Plan ApprovalAbout Modifying Compliance Recommendations on an Inspection PlanAccess an Inspection PlanCreate an Inspection Plan from the Compliance Management Overview PageCreate an Inspection Plan for any Asset Using the Asset HierarchyUpdate Compliance Recommendations for an Inspection PlanApprove an Inspection Plan Delete an Inspection Plan
+
+
+
+
+
+
+
+
+

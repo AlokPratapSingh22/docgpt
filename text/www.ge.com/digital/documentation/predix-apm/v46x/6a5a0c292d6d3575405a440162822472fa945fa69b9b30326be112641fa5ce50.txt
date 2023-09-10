@@ -1,0 +1,99 @@
+
+
+
+Site Filtering | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Site Filtering Site Filtering helps users who are assigned to specific sites find relevant records more easily. Site Filtering uses a Site Reference Key on families that have site filtering enabled. Site Filtering is a useful tool for companies that have facilities at multiple sites because users are prevented from viewing records associated with sites to which they are not assigned.Important: Site Filtering is not a security feature. While Site Filtering can limit the number of results shown, it should not be considered a measure to block data access to certain users. Site Filtering improves the performance of GE Digital APM so that the data shown is limited to that which is most relevant and necessary for your needs. The Site Filtering feature utilizes data stored in the Site Reference family (i.e., sites). Site Filtering filters data in GE Digital APM according to the sites stored in Site Reference records. You can generally only see data assigned to the same sites to which you are assigned as a GE Digital APM Security User.A user who is assigned to multiple sites can choose the site to which a record should be assigned when creating records for families that are enabled for site filtering. Records of families that are not enabled for site filtering are considered global records, which can be seen by all GE Digital APM users regardless of site assignments.Note: You can use only the Unified Asset Ingestion data loader to create new sites and populate the data for the new sites in GE Digital APM. For more information about creating sites, refer to the Create an Enterprise and a Site Using Unified Asset Ingestion Data Loader topic in the APM Connect documentation.Key Terms 
+
+Global: Global is not actually considered a site. The Global designation means that the record contains a null Site Reference Key. The data is not assigned to any particular site. 
+
+Global Data: Global data is data to which site filtering does not apply. Global data can be seen by any user.
+Note:  Your individual license and family privileges still affect the data that you can see. For example, if you do not have View access to a family containing global records, then you will not be able to see those records.
+
+
+Global Record: A record that contains global data, either because the specific record has been designated in the UI as Global, or because the family itself is not enabled for site filtering. In either case, the record has no site assigned to it (i.e., the Site Reference Key is null).
+Users and Site Filtering
+All users must be assigned a site.If you are a user who is assigned to only one site, you see all of the data associated with the site to which you are assigned, as well as any global records. 
+Every user of GE Digital APM has a Site Reference Key attribute. All users will be assigned at least one site and one default site. All users will also be able to access global data (i.e., data that does not have a specific Site Reference Key).
+
+Site Control
+For databases in which there is only one site stored in the Site Reference family, the site control never appears, and records of families that are enabled for site filtering are assigned to that site.
+When you have access to only one site, you can only see that site and the Global option when creating new records, as seen in this example in the Asset Criticality Analysis module.
+
+
+
+When you have access to more than one site, but you do not have Super User privileges, you can see only the sites to which you are assigned as well as the Global option, as seen in this example in the Asset Criticality Analysis module.
+
+
+
+If you are a Super User, you can see all of the sites available, including the Global option, when creating new records, as seen in this example of an analysis in the Reliability Distribution Builder in the Reliability Analytics module.
+
+
+
+Example: Site Filtering in Asset Criticality Analysis
+Log in as a user named Analyst, whose default site is Roanoke, VA. Access ACA.Create a new Asset Criticality Analysis.The new analysis is set to the default site for the Analyst.
+
+Keep the default site selection and save the analysis.Note:
+Unless you are a Super User, you cannot change the site after saving, as seen in the following image.
+
+
+
+The analysis is saved.Create an ACA System.The new ACA system inherits the site from the analysis. The site can only be changed by a Super User. Note: If a Super User changes the site reference on the ACA System to a reference that is different than the related Asset Criticality Analysis record, then users may see an incomplete analysis if they do not have the correct permissions.Link Functional Locations or Equipment to the system.You are only able to see Functional Locations and Equipment assigned to a site to which you are assigned. 
+
+
+Site Filtering Configuration
+If you would like additional information about Site Filtering, as well as instructions on how to configure it for your GE Digital APM system, see the Sites section of the Administrative User Help.
+Site Filtering Within Specific Modules
+For additional information about how Site Filtering impacts specific modules, consult the Site Filtering topic in the documentation for that module, if applicable.
+
+
+
+
+
+
+
+
+
+
+
+

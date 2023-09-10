@@ -1,0 +1,107 @@
+
+
+
+Probability Distribution | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field DescriptionsReliability Recommendation Records
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+
+
+Catalog Items
+Distribution Types
+Calculations
+Failure Data
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Reference
+Family Field Descriptions
+Probability Distribution
+
+
+
+
+
+
+
+Probability DistributionDistribution Data for a Probability Distribution Analysis 
+The following table contains a list of fields available on the Probability Distribution Data window for a Probability Distribution Analysis:
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageCensored Logical
+A value that indicates whether or not the datapoint is excluded as a failure but included in the operating time of the Asset. 
+Select the check box if you want to censor the data on the selected row. Datasheet CharacterA link that displays the datasheet associated with the failure event. If you have the appropriate privileges, after you select the View link, you can edit the data and select Save to save any changes. This column appears only when a query is the data source for the analysis.Ignore LogicalA value that indicates whether or not the data on the selected row is excluded from the analysis calculations and plots.
+When selected, the data in the associated row will be excluded from the analysis. When cleared, data in the selected row will be included in the analysis. You can modify this value manually. 
+Note: A minimum of three datapoints is required to perform a calculation. If you exceed the maximum number of ignored datapoints, the application will display a warning message after you select OK. The events marked as ignored will not appear on the plots.
+Remarks TextComments about the event.You can enter a value manually in the box. X NumericThe value of the random variable. This value can be mapped from a query or dataset using the or manually entered when you create the analysis. 
+
+
+
+
+
+On this pageDistribution Data for a Probability Distribution Analysis 
+
+
+
+
+
+
+
+
+

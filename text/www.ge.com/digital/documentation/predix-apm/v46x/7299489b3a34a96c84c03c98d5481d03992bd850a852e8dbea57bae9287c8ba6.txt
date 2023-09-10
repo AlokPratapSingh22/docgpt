@@ -1,0 +1,67 @@
+
+
+
+
+Configure Widgets | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Configure WidgetsWidgets control the data displayed on cards. The card library includes widgets in the Overview card, and a Custom card where you can add widgets to fit your needs.You must configure the following widgets for your site:Generic time series chart widget.Interactive generic time series chart widget.Scatter Chart widget.Ambient Conditions widget.Small List widget.Spiderweb chart widget.Vertical Grouped bar chart widget.Goals KPI widget.KPI widget.Summary KPI widget.Summary Count widget.Does not apply to Legacy Predix APM: Calendar widgetThe following widgets work with your selection in the Context Browser, and cannot be modified:Unclaimed Alerts and Events: Unclaimed count for severity 1, 2, and 3 alerts.Open Cases: Count of current open cases, displayed as a stacked chart and grouped by severity.Monitoring & Diagnostics Outcomes: Historical outcomes for cases grouped by resolution code, displayed as a stacked chart.Does not apply to Legacy Predix APM: Asset Criticality: Displays the criticality number assigned to an asset context.Does not apply to Legacy Predix APM: Completed Work Orders: Displays the ten most recent completed work orders for an asset context.Does not apply to Legacy Predix APM: Open Work Orders: Displays the 10 most recent open work orders for an asset context.Does not apply to Legacy Predix APM: Recommendations: Displays all Recommendation records for an asset context.Configuration for Generic Graph Widget
+The Generic Graph widget allows you to create a line chart using time series data from the assets that exist in GE Digital APM. The widgets allow you to configure. This configuration adds navigation and an auto-refresh interval to the widget.
+Modify the Title to Heat Rate Performance.Select Line Chart in the Chart selections.Select Every 3 minutes in the Refresh box.Select a tag to display the time series output.Select On in the Navigation box.Select Done to exit modify mode.Select Save to save the widget changes.
+Configuration for Ambient Conditions Widget
+Ambient Conditions - Site relative humidity, displayed as a percentage, and site temperature, displayed in degrees Celsius.
+Modify the Title to Ambient Conditions.Select the first tag, which displays the temperature.Enter Temperature in the Name box.Select the second tag, which displays the relative humidity.Enter Humidity in the Name box.Select Done to exit modify mode.Select Save to save the widget changes.
+Configuration for Interactive Generic Graph Widget
+The Interactive Generic Graph widget allows you to create a line chart using time series data from the assets that exists in GE Digital APM. The additional functionality allows the widget to communicate with the other interactive graph widgets in the card to synchronize the time context between the widgets. This configuration adds navigation and an auto-refresh interval to the widget along with whether this widget can receive messages from other widgets, or if it can send messages to other widgets. It can also be configured to do both.
+In the Widget Communication, toggle Send and Receive to On.Select a tag to display the time series output.Select Done to exit modify mode.Repeat for each additional widget.Tip: Change the Title for each widget to match the tags for temperature and pressure.Select  for one of the widgets.Note: All widgets must be on the same card.Select Save to save the widget changes.
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,112 @@
+
+
+
+Third Quarter of 2018 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesFirst Quarter of 2023
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Release Notes
+Third Quarter of 2018
+
+
+
+
+
+
+
+Third Quarter of 2018Reliability AnalyticsThis topic provides a list of product changes released for this module on the dates listed below.Release Date: September 21, 2018
+Table 1. Enhancements and New FeaturesNoteTracking ID(s)
+To enhance usability, while viewing a graph, you can now set the Distribution Parameters for the following plots:
+CDF PlotFailure Rate Plot PDF Plot
+Probability Plot 
+
+With the Distribution Parameters option selected, you can now change the values for Beta, Eta, and Gamma.
+US280608
+The following distribution types have been added to the Reliability Distribution and Probability Distribution graphs:
+Generalized Extreme Value DistributionGumbel DistributionTriangular Distribution
+
+US259200US259199US259198
+In the Reliability Distribution Comparison Plot, you can now select the plot line to access the Reliability Distribution Analysis page corresponding to the line.US256603In the Reliability Growth Comparison Plot, you can now select the plot line to access the Reliability Growth Analysis page corresponding to the line.US256600To enhance usability, when creating an analysis, in the Reliability Growth Data Editor window or the Reliability Distribution Data Editor window, you can now select multiple assets to delete from the new analysis at one time.US256503In Reliability Distribution, when viewing a plot, you can now adjust the x-axis to vary the display range.US254521
+Table 2. Resolved IssuesNoteTracking ID(s)Previously, in the Cumulative Failures Plot section of the Analysis Summary page for a Reliability Growth analysis, if you were logged in to the GE Digital APM Unified environment as a Super User that was not part of either the MI Reliability User Security Group or the Mi Reliability Administrator Security Group, the Growth Options and the Analysis Tasks menus did not appear. This issue has been resolved. DE88466Previously, when creating a Reliability Growth analysis from a query, if the created analysis was assigned to a specific site, the site assignment did not properly restrict the source data to that site. As a result, all queried data was included in the Reliability Growth analysis, regardless of the site assignment. This issue has been resolved.DE86856Previously, when creating a new Reliability Distribution analysis, if you placed your cursor in the Analysis Name field and then pressed Tab to navigate to a different field, an error occurred. This issue has been resolved.DE84432Previously, when creating a Recommended Action, in the Target Completion Date field, if you selected a Target Completion Date that was prior to the current date, the Recommendation record was erroneously saved, and no error occurred. This issue has been resolved. Now, if you attempt to select a date in the Target Completion Date field that is prior to the current date, an error occurs as expected.DE83123Previously, when you accessed the report for a Reliability Growth Analysis based on costs, the fields in the Analysis Summary section were incorrectly labeled as failures. This issue has been resolved.DE80604Previously, when accessing an Asset Strategy Optimization Analysis from either Asset Strategy Management or from a System Reliability Analysis, in the Definitions section, if you modified the value in the Scenario Name field and then navigated away from the section, there was no indication that your changes were not saved. This issue has been resolved. Now, if you modify the value in the Scenario Name field and then navigate away from the Definitions section, a message appears, indicating that your changes have not yet been saved.DE78114
+
+
+
+
+
+On this pageReliability Analytics
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,206 @@
+
+
+
+Catalog Items | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Mappings
+Allowable Event Types in Related Events 
+Fields that can be Populated from one of the Three Related Records 
+Fuel Code Fields 
+Fuel Information Fields 
+Inactive Hours Field 
+Overlapping between an Outage Event and a Derate Event
+Capacity Event Types Affecting Performance Records
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Reference
+Catalog Items
+
+
+
+
+
+
+
+Catalog ItemsQueries Folder
+The Catalog folder \\Public\Meridium\Modules\Generation Management\Queries contains the following items. 
+
+Query Name
+
+Behavior and Usage
+GAA Contributing Events for the given Primary event Datagrid 
+Returns the list of Contributing Events that are associated with a Primary Event.
+You cannot modify or delete the Event ID, Primary Event Key, Contributing Event Key, or Hyperlink fields.
+You can also add a new Hyperlink field.
+GAA Event Categories
+Returns the list of all the event categories and its associated color codes and events.
+You can modify the columns for the Event Category grid.
+You cannot modify the ENTY_ID column.
+Note: When adding or deleting columns, update the required hyperlink URLs.
+GAA Event Types
+Returns the list of all the event types and its associated color codes and regulatory organizations.
+You can modify the columns for the Event Type grid.
+You cannot modify the Event Type Code column.
+Note: When adding or deleting columns, update the required hyperlink URLs.
+GAA Mappings list
+Returns the list of the mappings between NERC and CEA Codes.
+You can modify the columns within the Mappings grid.
+You cannot modify the ENTY_KEY column.
+Gaa reports and performance configuartion list
+Returns a list of all the configuration data.
+You can modify the Configuration grid.
+You cannot modify the Entity ID column.
+Get Contributing Events for Export
+Returns the details of Contributing Events for exporting.
+You can modify this query to determine the fields of the Contributing Event records that must be exported.
+Important:
+Do not delete the columns in this query.Do not modify the alias and order of columns in this query.
+
+Get Event Types to exclude from Required fields check Returns the list of the CEA Event Types to check whether the following fields, Cause Code System, Cause Code Component, Cause Code, Amplification Code, and Verbal Description are required fields during event state transition.Note: Currently, the query returns the following list of CEA Event Types 11-1,11-2,14,14-1,14-2 only. However, you can modify the query to add or remove any CEA Event Type.Get Primary and Related Events for Export
+Returns the details of Primary Events and Related Events for exporting.
+You can modify this query to determine the fields of the Primary Event and Related Event records that must be exported.
+Important:
+Do not delete the columns in this query.Do not modify the alias and order of columns in this query.
+
+Primary Event Details
+Returns the list of all the Primary Events for a GAA Unit, including OMC Events, for the specified period.
+You cannot modify or delete the Event ID, Primary Event Key, Event Key, or Hyperlink fields.
+Primary Event Details Datagrid
+Returns the list of all the Primary Events associated with a Performance record for the associated GAA Unit. This query calls the Primary Event Details or Primary Event Details Excluding OMC query based on your selection in the Performance Records section in the Performance & Reports workspace.
+You cannot modify or delete the Event ID, Primary Event Key, Event Key, or Hyperlink fields. You cannot modify the Hyperlink column. And you cannot modify the Regulatory and Management reports.
+You can add a new Hyperlink field. 
+Note: When adding or deleting columns, update the required hyperlink URLs.
+Primary Event Details DataGrid Excluding OMC
+Returns the list of all the Primary Events associated with a Performance record for the associated GAA Unit. This query calls the Primary Event Details or Primary Event Details Excluding OMC query based on your selection in the Performance Records section in the Performance & Reports workspace.
+You cannot modify or delete the Event ID, Primary Event Key, Event Key, or Hyperlink fields. You cannot modify the Hyperlink column.
+You can add a new Hyperlink field.
+Primary Events for Events List
+Returns the list of Primary Events for a GAA Unit during the specified period.
+Important: When using this query, you must not perform the following actions on the query:Modify or delete the hyperlink and entity key fields.Modify or delete the Event ID field.Change the alias of the fields.Modify the order of fields.However, you can add a new field.
+Primary Events for Events List with eLog
+Returns the list of Primary Events for a GAA Unit during the specified period.
+Important: When using this query, you must not perform the following actions on the query:Modify or delete the hyperlink and entity key fields.Modify or delete the Event ID field.Change the alias of the fields.Modify the order of fields.However, you can add a new field.
+Primary Events for Events List with RCA
+Returns the list of Primary Events for a GAA Unit during the specified period.
+Important: When using this query, you must not perform the following actions on the query:Modify or delete the hyperlink and entity key fields.Modify or delete the Event ID field.Change the alias of the fields.Modify the order of fields.However, you can add a new field.
+Primary Events for Events List with RCA and eLog
+Returns the list of Primary Events for a GAA Unit during the specified period.
+Important: When using this query, you must not perform the following actions on the query:Modify or delete the hyperlink and entity key fields.Modify or delete the Event ID field.Change the alias of the fields.Modify the order of fields.However, you can add a new field.
+Primary Events Tiles Wrapper Query
+Returns the list of Events in the Event Under Review and Approved Events
+ tabs on the GAA Overview page.
+You must not delete the Event Key and Unit Entity Key fields.
+You can add a Hyperlink property to a field but you cannot modify or delete a field that contains this property.
+You can modify the sub query to add more columns and then, as needed, modify this query to add more columns.
+You must not modify the Even ID and Unit Name columns.
+Note: When adding or deleting columns, update the required hyperlink URLs.
+Reports list for Unit Datagrid
+Returns the list of Regulatory Reports on the GAA Administrator page.
+You can add a Hyperlink property to a field but you cannot modify or delete a field that contains this property.
+You cannot modify an existing Key field and the Key column.
+Retrieve Capacities for a Unit
+Returns the list of the capacities for a Unit.
+You can modify the columns for the Capacities grid for a specified unit.
+You cannot modify the ENTY_KEY column.
+Note: When adding or deleting columns, update the required hyperlink URLs.
+Retrieve Event Transition Data
+Returns the list of the Event Transition data.
+You can modify the Event Transition grid.
+You cannot modify the ENTY_KEY column.
+Retrieve GAA Amplification Codes
+Returns the list of the GAA Amplification Codes.
+You can modify the columns for the Amplification Codes grid.
+You cannot modify the ENTY_KEY column.
+Note: When adding or deleting columns, update the required hyperlink URLs.
+Retrieve GAA Cause Codes
+Returns the list of the GAA Cause Codes.
+You can modify the columns for the Cause Codes grid.
+You cannot modify the ENTY_KEY column.
+Note: When adding or deleting columns, update the required hyperlink URLs.
+Retrieve GAA Fuel Data
+Returns the list of GAA Fuel Code data.
+You can modify the columns for the Fuel Data grid.
+You cannot modify the ENTY_KEY column.
+
+Graph Queries Folder
+The Catalog folder \\Public\Meridium\Modules\Generation Management\Queries\Graph Queries contains the following items. 
+
+ Query Name
+
+Behavior and Usage
+GAA_Overview - Performance Report Statistics
+This query is used to populate the Event and Performance Report Statistics section in the GAA Overview page.
+This query cannot be modified in the query designer. The Performance Indexes Based NMC and Performance Records between date ranges sub-queries can be modified to add, delete, or reorder columns.
+You cannot modify the Unit ID column.
+
+
+
+
+
+
+On this pageQueries FolderGraph Queries Folder
+
+
+
+
+
+
+
+
+

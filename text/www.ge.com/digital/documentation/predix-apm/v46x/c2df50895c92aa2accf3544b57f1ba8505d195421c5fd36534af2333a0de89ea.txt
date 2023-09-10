@@ -1,0 +1,104 @@
+
+
+
+First Quarter of 2023 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Third Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Release Notes
+First Quarter of 2023
+
+
+
+
+
+
+
+First Quarter of 2023Release Date: March 30, 2023This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo improve usability, you can now view up to nine decimal digits for tag values. The number of decimal digits is decided by the precision level configured in the selected Data Source. This setting impacts the following scenarios:When you export data from a chartWhen you hover over the chart to view the tag value in the tool tip and the chart registerThe decimal digits in a tag expression value depends on the SIGNIFICANT DIGITS configured for the expression.US581204To enhance usability, you can now use the Custom Discrete Filters in the Tag Panel to display data where the tags or tag expressions are filtered for discrete values.US579412To enhance usability, you can now retrieve event data for up to 14400 seconds (that is, four hours) before and after the event time.US577399To enhance usability, in addition to the name, you can now search for an enterprise, site, segment, or asset using the ID (that is, the serial number) in the context browser. In addition, the search results contain both the name and the ID. If, however, the name is the same as the ID, only the name appears.US575526To enhance usability, when exporting data as a CSV file, you can now remove the Quality column. To facilitate this enhancement, in the Analysis card, select  and then select Export Data without Data Quality.US566993
+
+
+
+
+
+On this pageRelease Date: March 30, 2023
+
+
+
+
+
+
+
+
+

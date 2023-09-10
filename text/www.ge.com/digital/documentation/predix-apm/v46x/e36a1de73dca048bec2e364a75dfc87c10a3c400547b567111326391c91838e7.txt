@@ -1,0 +1,82 @@
+
+
+
+First Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Import and ExportOverview
+Import and Export
+Release NotesSecond Quarter of 2023
+Fourth Quarter of 2022
+Fourth Quarter of 2021
+Fourth Quarter of 2020
+First Quarter of 2019
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Import and Export
+Release Notes
+First Quarter of 2019
+
+
+
+
+
+
+
+First Quarter of 2019Import and ExportThis topic provides a list of product changes released for this module on the dates listed below.Release Date: March 29, 2019
+Table 1. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, if a policy that was scheduled to be executed was imported, when you updated the policy, a job to execute the policy was created in addition to the existing job that was created while importing the policy. This issue has been resolved. DE98204Previously, when you attempted to export a family that had a field with a list of valid values associated with an APM Query, and if the APM Query had a prompt configured for it, an error occurred. This issue has been resolved.DE94684Previously, if no rules were available in a rule library project, and you attempted to export the project, an error occurred and an incorrect message appeared in the error log. This issue has been resolved. Now, an appropriate error message appears in the error log, indicating that the rules are not available in the rule library project. DE89799
+
+
+
+
+
+On this pageImport and Export
+
+
+
+
+
+
+
+
+

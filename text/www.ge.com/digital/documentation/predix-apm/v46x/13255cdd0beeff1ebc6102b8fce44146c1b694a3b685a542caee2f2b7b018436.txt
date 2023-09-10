@@ -1,0 +1,91 @@
+
+
+
+Reliability Distribution: Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability DistributionReliability Distribution: Overview
+Reliability Distribution: Workflow
+Reliability Distribution Analyses
+Confidence Level and P Value
+Failure Probability
+
+
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Reliability Distribution
+Reliability Distribution: Workflow
+
+
+
+
+
+
+
+Reliability Distribution: WorkflowReliability Analytics: Reliability and Probability Distribution Analysis WorkflowThis workflow describes the process for analyzing changes to a measured value over time to determine the mathematical median and mean values associated with analyzed data. In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Existing Analysis? Persona: AnalystIs the analysis one that was created previously and saved to the database?View Existing Analysis Persona: AnalystView the details of an existing analysis.Create Analysis Persona: AnalystCreate an analysis based on production data or event data.Review/Modify Distribution Parameters Persona: AnalystIf Distribution Parameters have been updated, review/modify them. Distribution Parameters are updated when a different distribution type is selected (e.g., when changing from Lognormal to Auto).Optimize Preventative Maintenance Persona: AnalystDetermine the optimal time to perform Preventive Maintenance based on a failure rate.View Report Persona: AnalystView and save the analysis report.Manage Performance Recommendations Persona: AnalystCreate any number of performance recommendations and Approve them using state management. Note:  Performance recommendations are not required.Go to the Manage Performance Recommendations workflow.Other Workflows Persona: AnalystOther workflows provide production data from SAP, EAM, and Recommendations. 
+
+
+
+
+On this pageReliability Analytics: Reliability and Probability Distribution Analysis WorkflowExisting Analysis?View Existing AnalysisCreate AnalysisReview/Modify Distribution ParametersOptimize Preventative MaintenanceView ReportManage Performance RecommendationsOther Workflows
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+
+
+
+Annexure-1 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+European Inspection ManagementOverview
+Configuration
+Workflow
+ReferenceGeneral Reference
+Data Models
+Annexure-1
+Family Field Descriptions
+Field Mappings
+Policies
+System Code Tables
+Queries
+
+
+ Admin
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+European Inspection Management
+Reference
+Annexure-1
+
+
+
+
+
+
+
+Annexure-1Table F: Fluid Group TableThe following table lists the specific conditions for the different fluid categories used for European Inspection Management:
+Fluid CategoryConditionsFluid GroupExplosiveNot ApplicableNot Applicable1Flammable Category 1Not ApplicableNot Applicable1Flammable Category 2Not ApplicableNot Applicable1Flammable Category 3TB > FPFP<=55 degree Celsius (131 degree Fahrenheit) 1PyrophoricNot ApplicableNot Applicable1Acute Toxic Category 1Not ApplicableNot Applicable1Acute Toxic Category 2Not ApplicableNot Applicable1OxidisingNot ApplicableNot Applicable1CorrosiveNot ApplicableNot Applicable2Flammable Category 3TB <= FPNot Applicable2OthersNot ApplicableNot Applicable2* TB : Max. Permissible Temperature* FP : Flash Point
+Table R: Reference Table ChartThe following table lists the reference table charts for the equipment categories:
+Asset TypePhysical StateFluid GroupTableBoilerNot RelevantNot Relevant2Pressure VesselGas13Pressure VesselGas24Pressure VesselLiquid15Pressure VesselLiquid26Simple Pressure VesselGas27PipingGas18PipingGas29PipingLiquid110PipingLiquid211
+Table - 1: Inspection Interval for Asset TypesThe following table lists the Inspection interval for the asset types used for European Inspection Management: 
+Asset TypeExternal ExaminationInternal ExaminationStrength TestSteam Boiler in Table 21 Year3 Years9 YearsPressure Vessel in Table 3, Table 4, Table 5, and Table 62 Years5 Years10 YearsSimple Pressure Vessel in Table 7Not Applicable5 Years10 YearsPiping in Table 8, Table 9, Table 10, and Table 115 YearsNot Applicable5 Years
+Table - 2: Boiler Equipment CategoryThe following table lists the test responsibilities for the Boiler equipment category:
+V [Litre]PS [Bar]PS.V [Bar-Litre]Non-Recurring InspectionRecurring Inspection>20.5< PS <=32<=200bPbP<=10000.5 < PS <= 32200< PS.V<= 1000ZÜSbP>10000.5 < PS <= 32Not ApplicableZÜSZÜS<= 10000.5 < PS <= 32>1000ZÜSZÜS> 2>32Not ApplicableZÜSZÜS
+Table - 3: Pressure Vessels with Gas for the Fluid Group - 1The following table lists the test responsibilities for the pressure vessels with gas for the Fluid Group - 1:
+V [Litre]PS [Bar]PS.V [Bar-Litre]Non-Recurring InspectionRecurring Inspection1<V<=200>0.525<PS.V <=200bPbP>2000.5<PS<=1Not ApplicablebPbP<=1200<PS<=1000Not ApplicableZÜSbP>1>1200<PS.V<=1000ZÜSbP<=1>1000Not ApplicableZÜSZÜS>1>1>1000ZÜSZÜS
+Table - 4: Pressure Vessels with Gas for Fluid Group - 2The following table lists the test responsibilities for the pressure vessels with gas for Fluid Group - 2:
+V [Litre]PS [Bar]PS.V [Bar-Litre]Non-Recurring InspectionRecurring Inspection1<V<=200>0.550<PS.V<=200bPbP>2000.5<PS<=1Not ApplicablebPbP>1>1200<PS.V<=1000ZÜSbP<=1>1000Not ApplicableZÜSZÜS>1>1>1000Not ApplicableNot Applicable
+Table - 5: Pressure Vessels with Liquids for Fluid Group - 1The following table lists the test responsibilities for the pressure vessels with liquids for Fluid Group - 1:
+V [Litre]PS [Bar]PS.V [Bar-Litre]Non-Recurring InspectionRecurring InspectionNot Applicable0.5<PS<=10>200bPbP<=1>500<=1000bPbP<=1>5001000<PS.V<=10000ZÜSbP>1>500<=10000ZÜSbP>110<PS<=500>200ZÜSbPNot Applicable>500>10000ZÜSZÜS
+Table - 6: Pressure Vessels with Liquids for Fluid Group - 2The following table lists the test responsibilities for the pressure vessels with liquids for Fluid Group - 2:
+V [Litre]PS [Bar]PS.V [Bar-Litre]Non-Recurring InspectionRecurring Inspection<=1>1000<=1000bPbP<=10>10001000<PS.V<=10000ZÜSbPNot Applicable10<PS<=500>10000ZÜSbPNot Applicable>500>10000ZÜSZÜS
+Table - 7: Simple Pressure VesselsThe following table lists the test responsibilities for Simple Pressure Vessels:
+V [Litre]PS [Bar]PS.V [Bar-Litre]Non-Recurring InspectionRecurring InspectionNot Applicable0.5<PS<=3050<PS.V<=200bPbPNot Applicable0.5<PS<=1200<PS.V<=10000bPbPNot Applicable1<PS<=30200<PS.V<=1000ZÜSbPNot Applicable1<PS<=301000<PS.V<=10000ZÜSZÜS
+Table - 8: Piping with Gases for Fluid Group Table - 1The following table lists the test responsibilities for Piping with gases for Fluid Group - 1:
+Sl. No.DN[Millimeter]PS[Bar]PS.DN[Bar-mm]Non-Recurring InspectionRecurring Inspection1>25>0.5<=2000bPbP2>25>0.5>2000ZÜSZÜS
+Table - 9: Piping with Gases for Fluid Group Table- 2The following table lists the test responsibilities for Piping with gases for Fluid Group - 2:
+DN[Millimeter]PS[Bar]PS.DN[Bar-mm]Non-Recurring InspectionRecurring Inspection>32>0.51000<PS.DN<=2000bPbP>32>0.5>2000ZÜSZÜS
+Table - 10: Piping with liquids for Fluid Group Table - 1The following table lists the test responsibilities for Piping with liquids for Fluid Group - 1:
+DN[Millimeter]PS[Bar]PS.DN[Bar-mm]Non-Recurring InspectionRecurring Inspection>25>0.5>2000ZÜSZÜS
+Table - 11: Piping with liquids for Fluid Group Table - 2The following table lists the test responsibilities for Piping with liquids for Fluid Group - 2:
+DN[Millimeter]PS[Bar]PS.DN[Bar-mm]Non-Recurring InspectionRecurring Inspection>200>10>5000ZÜSZÜS
+
+
+
+
+
+On this pageTable F: Fluid Group TableTable R: Reference Table ChartTable - 1: Inspection Interval for Asset TypesTable - 2: Boiler Equipment CategoryTable - 3: Pressure Vessels with Gas for the Fluid Group - 1Table - 4: Pressure Vessels with Gas for Fluid Group - 2Table - 5: Pressure Vessels with Liquids for Fluid Group - 1Table - 6: Pressure Vessels with Liquids for Fluid Group - 2Table - 7: Simple Pressure VesselsTable - 8: Piping with Gases for Fluid Group Table - 1Table - 9: Piping with Gases for Fluid Group Table- 2Table - 10: Piping with liquids for Fluid Group Table - 1Table - 11: Piping with liquids for Fluid Group Table - 2
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,729 @@
+
+
+
+Ingest Assets through the REST Client for Legacy Predix APM | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ingest Assets through the REST Client for Legacy Predix APMBefore You Begin
+
+Important: You must ingest the enterprise, site, segment, and asset data using the Asset Ingestion Loader (Tools > Data Loaders). For more information on using the Asset Ingestion Loader refer to Unified Loaders documentation in About Data Loaders section of the help. 
+
+Important:
+In Predix APM, adding or modifying assets using the Legacy Predix APM user interface, APIs, or Asset Ingestion Service, or bypassing the Unified Asset Ingestion Data Loader, causes the asset databases to become out-of-sync. 
+In Predix APM:You must add or modify assets using the Unified Asset Ingestion Data Loader.You cannot delete assets.You must use the Asset Ingestion Service to add tags to assets.
+In Legacy Predix APM:You can add, modify, or delete assets in the user interface, using APIs, or using the Asset Ingestion Service.You can add tags to assets in the user interface, using APIs, or using the Asset Ingestion Service. 
+
+You need the following:Asset ZIP file containing a valid JSON file. Oauth token to ingest assets.Important: Make sure you have a valid, unexpired token. Tokens are client specific and usually expire within a set time. Look for the token expiration in the JSON response.On the Setup section, get the following information:Client IDAsset ingestion URLUsernameIngestion Password that was created during initial tenant setup.Access to a REST client such as Postman or Advanced REST client.
+About This Task
+Use the REST client to only ingest the following:Reserved attributesCustom attributesGeo locationGroupsTagsClassifications
+You must ingest the asset model and instances before adding assets to users.Important:
+When ingesting classifications, instances, connections, tagClassifications, and tagAssociations as separate files, you must ingest the <your_classifications_filename>.zip first. You can then repeat this procedure to ingest each of the remaining files in the following order: <your_instances_filename>.zip, <your_connections_filename>.zip, <your_tagClassfications_filename>.zip, and <your_tagAssociations_filename.zip>. If you ingest data with an existing id, the new data replaces the existing data in GE Digital APM. This applies all data types. 
+
+ProcedureAccess your REST client.Enter the ingestion URL in the HOST value field.Select the POST method.In the request header, enter the following key-value pairs:
+Table 1. Asset Ingestion Service HeadersParameterDescriptionAuthorizationEnter the token_type followed by a space, then the access_token from the response you previously obtained, for example, bearer eyJhbGciOiJSUzI1NiJ9.A... The following code sample includes a bearer token:{
+  "access_token": "eyJhbGciOiJSUzI1NiJ9.A...",
+  "token_type": "bearer",
+  "refresh_token": "eyJhbGciOiJSUzI1NiJ9.e..",
+  "expires_in": 86399,
+  "scope": "openid",
+  "jti": "5e2c90ea-9edd-4da1-80c8-4a0d67f77ef3"
+}tenantThe unique ID for the tenant (for example, 07F28C049E0F4F29B8E85E4A6C916D7F)
+In the Body field, select form-data.Enter file in the key field and select File as the parameter type. Select the ZIP file to ingest.
+Important: You cannot load a JSON file directly. You must use a compression utility to convert the JSON to a ZIP file before ingesting. 
+A sample JSON within the ZIP is shown below:{
+    "classifications": [
+        {
+            "id": "AVDtest-Asset-Enterprise-Type",
+            "name": "AVDtest Enterprise Type",
+            "description": "Enterprise Type Descirption",
+            "ccomClass": "ENTERPRISE_TYPE",
+            "properties": [
+                {
+                    "id": "AVDtest Enterprise Asset Type Property",
+                    "value": [
+            "AVDtest Enterprise Asset Type property value"
+          ],
+                    "type": "string"
+        }
+      ],
+            "parent": null
+    },
+        {
+            "id": "AVDtest-Asset-Site-Type",
+            "name": "AVDtest Asset Site Type",
+            "description": "Site Type Description",
+            "ccomClass": "SITE_TYPE",
+            "properties": [
+                {
+                    "id": "AVDtest Site Asset Type property",
+                    "value": [
+            "AVDtest Site Asset Type property value"
+          ],
+                    "type": "string"
+        }
+      ],
+            "parent": null
+    },
+        {
+            "id": "AVDtest-Asset-Segment-Type",
+            "name": "AVDtest-Asset-Segment-Type",
+            "description": "Segment Type Description",
+            "ccomClass": "SEGMENT_TYPE",
+            "parent": null
+    },
+        {
+            "id": "AVDtest-Asset-Type",
+            "name": "AVDtest Asset Type_updated",
+            "description": "Asset Type Description",
+            "ccomClass": "ASSET_TYPE",
+            "parent": null
+    }
+  ],
+    "instances": [
+        {
+            "id": "AVDtest-Asset-Enterprise",
+            "name": "AVDtest Enterprise",
+            "description": "AVDtest Asset entierprise description",
+            "properties": [
+                {
+                    "id": "Location",
+                    "value": [
+            "Bay Area"
+          ],
+                    "type": "string"
+        }
+      ],
+            "classification": "AVDtest-Asset-Enterprise-Type",
+            "ccomClass": "ENTERPRISE"
+    },
+        {
+            "id": "AVDtest-CA-Site",
+            "name": "AVDtest Site",
+            "description": "AVDtest Site description",
+            "properties": [
+                {
+                    "id": "AVDtest_CA_address",
+                    "value": [
+            "Bay Area"
+          ],
+                    "type": "string"
+        }
+      ],
+            "classification": "AVDtest-Asset-Site-Type",
+            "ccomClass": "SITE"
+    },
+        {
+            "id": "AVDtest-CA-Segment-ID",
+            "name": "Samp Segment",
+            "description": "AVDtest Segment description",
+            "properties": [
+                {
+                    "id": "AVDtest_model_number",
+                    "value": [
+            "AVDtest Segment description"
+          ],
+                    "type": "string"
+        },
+        {
+                            "id": "ts_attr",
+                            "type": "Timestamp",
+                            "value": [
+                "07-15-2016 04.45.30"
+              ]
+            }
+      ],
+            "classification": "AVDtest-Asset-Segment-Type",
+            "ccomClass": "SEGMENT"
+    },
+        {
+            "id": "avdtest-CA-Asset-ID",
+            "name": "AVDtest Asset",
+            "description": "AVDtest Description",
+            "classification": "AVDtest-Asset-Type",
+            "ccomClass": "ASSET"
+    }
+  ],
+    "connections": [
+        {
+            "from": {
+                "id": "AVDtest-CA-Site",
+                "ccomClass": "SITE"
+            },
+            "to": [
+                {
+                    "type": "parent",
+                    "id": "AVDtest-Asset-Enterprise",
+                    "ccomClass": "ENTERPRISE"
+        }
+      ]
+    },
+        {
+            "from": {
+                "id": "AVDtest-CA-Segment-ID",
+                "ccomClass": "SEGMENT"
+            },
+            "to": [
+                {
+                    "type": "parent",
+                    "id": "AVDtest-CA-Site",
+                    "ccomClass": "SITE"
+        }
+      ]
+    },
+        {
+            "from": {
+                "id": "avdtest-CA-Asset-ID",
+                "ccomClass": "ASSET"
+            },
+            "to": [
+                {
+                    "type": "parent",
+                    "id": "AVDtest-CA-Segment-ID",
+                    "ccomClass": "SEGMENT"
+        }
+      ]
+    }
+  ],
+    "tagClassifications": [
+        {
+            "id": "AVDtest_Tag_Type_Classification_ID",
+            "name": "AVDtest_Tag_Pressure_Classification_name",
+            "description": "This is tag Pressure Classification description",
+            "unitGroup": "pressure",
+            "properties": [
+                {
+                    "id": "compressor",
+                    "value": [
+            190
+          ],
+                    "type": "int"
+        }
+      ]
+    }
+  ],
+    "tagAssociations": [
+        {
+            "monitoredEntity": {
+                "id": "AVDtest-Asset-Enterprise",
+                "ccomClass": "ENTERPRISE"
+            },
+            "tags": [
+                {
+                    "name": "AVDtest Enterprise Tag updated",
+                    "id": "AVDtest-Asset-Enterprise.AVDtest_Tag_Pressure",
+                    "description": "Enterprise Tag Descrpition",
+                    "classification": "AVDtest_Tag_Type_Classification_ID",
+                    "aliases": [
+            "AVDtest Enterprise Tag Alias"
+          ]
+        }
+      ]
+    },
+        {
+            "monitoredEntity": {
+                "id": "AVDtest-CA-Site",
+                "ccomClass": "SITE"
+            },
+            "tags": [
+                {
+                    "name": "AVDtest Site Tag Pressure",
+                    "id": "AVDtest-CA-Site.AVDtest_Tag_Pressure",
+                    "description": "Site Tag Pressure Descrpition",
+                    "classification": "AVDtest_Tag_Type_Classification_ID",
+                    "aliases": [
+            "AVDtest Site Tag Pressure Alias_updated"
+          ]
+        }
+      ]
+    },
+        {
+            "monitoredEntity": {
+                "id": "AVDtest-CA-Segment-ID",
+                "ccomClass": "SEGMENT"
+            },
+            "tags": [
+                {
+                    "name": "AVDtest Segment Tag name",
+                    "id": "AVDtest-CA-Segment-ID.AVDtest_Tag_Segment_ID",
+                    "description": "Segment Tag Pressure Descrpition",
+                    "classification": "AVDtest_Tag_Type_Classification_ID",
+                    "aliases": [
+            "AVDtest Tag Segment Alias 1"
+          ]
+        }
+      ]
+    },
+        {
+            "monitoredEntity": {
+                "id": "avdtest-CA-Asset-ID",
+                "ccomClass": "ASSET"
+            },
+            "tags": [
+                {
+                    "name": "AVDtest Asset Tag Pressure name",
+                    "id": "AVDtest-CA-Asset-ID.AVDtest_Tag_Pressure_ID",
+                    "description": "Asset Tag Pressure Descrpition",
+                    "classification": "AVDtest_Tag_Type_Classification_ID",
+                    "properties": [
+                        {
+                            "id": "ch_attr_min",
+                            "type": "Character",
+                            "value": [
+                "A"
+              ]
+            },
+                        {
+                            "id": "ch_attr_array",
+                            "type": "Character",
+                            "value": [
+                "Z",
+                "a",
+                "v",
+                "N",
+                "q",
+                "i"
+              ]
+            },
+                        {
+                            "id": "sh_attr_min",
+                            "type": "Short",
+                            "value": [
+                -32768
+              ]
+            },
+                        {
+                            "id": "sh_attr_max",
+                            "type": "Short",
+                            "value": [
+                32767
+              ]
+            },
+                        {
+                            "id": "sh_attr_array",
+                            "type": "Short",
+                            "value": [
+                32767,
+                300,
+                600,
+                90,
+                158,
+                -32768
+              ]
+            },
+                        {
+                            "id": "int_attr_min",
+                            "type": "Integer",
+                            "value": [
+                -2147483648
+              ]
+            },
+                        {
+                            "id": "int_attr_max",
+                            "type": "Integer",
+                            "value": [
+                2147483647
+              ]
+            },
+                        {
+                            "id": "int_attr_array",
+                            "type": "Integer",
+                            "value": [
+                2147483647,
+                200,
+                -500,
+                600,
+                99999,
+                -1452895
+              ]
+            },
+                        {
+                            "id": "fl_attr_min",
+                            "type": "Float",
+                            "value": [
+                -3.4e+38
+              ]
+            },
+                        {
+                            "id": "fl_attr_max",
+                            "type": "Float",
+                            "value": [
+                3.4e+38
+              ]
+            },
+                        {
+                            "id": "fl_attr_array",
+                            "type": "Float",
+                            "value": [
+                3.4e+38,
+                3.2e+38,
+                3.1e+38
+              ]
+            },
+                        {
+                            "id": "dbl_attr_min",
+                            "type": "Double",
+                            "value": [
+                -1.7e+308
+              ]
+            },
+                        {
+                            "id": "dbl_attr_max",
+                            "type": "Double",
+                            "value": [
+                1.7e+308
+              ]
+            },
+                        {
+                            "id": "dbl_attr_array",
+                            "type": "Double",
+                            "value": [
+                1.7e+308,
+                1.6e+302,
+                1.4e+302,
+                1.1e+38
+              ]
+            },
+                        {
+                            "id": "bool_attr_true",
+                            "type": "Boolean",
+                            "value": [
+                true
+              ]
+            },
+                        {
+                            "id": "bool_attr_fal",
+                            "type": "Boolean",
+                            "value": [
+                false
+              ]
+            },
+                        {
+                            "id": "ts_attr",
+                            "type": "Timestamp",
+                            "value": [
+                "07-15-2016 04.45.30"
+              ]
+            },
+                        {
+                            "id": "ts_attr_array:07/15/2016 04:45:30",
+                            "type": "Timestamp",
+                            "value": [
+                "07-15-2016 04.45.30",
+                "07-15-2016 04.45.30",
+                "07-15-2016 04.45.30"
+              ]
+            },
+                        {
+                            "id": "str_attr_min",
+                            "type": "String",
+                            "value": [
+                "Test String"
+              ]
+            },
+                        {
+                            "id": "str_attr_array",
+                            "type": "String",
+                            "value": [
+                "First",
+                "Second",
+                "Third",
+                "Fourt"
+              ]
+            }
+          ],
+                    "reservedProperties": {
+                        "status": "01",
+                        "uom": "MetersPerSecond",
+                        "dataType": "Double",
+                        "resolution": "7"
+                    },
+                    "aliases": [
+            "AVDtest Tag Pressure Alias"
+          ]
+        },
+    {
+      "name": "AVDtest Asset Tag Pressure name2",
+      "id": "AVDtest-CA-Asset-ID.AVDtest_Tag_Pressure_ID2",
+      "description": "Asset Tag Pressure Descrpition2",
+      "classification": "AVDtest_Tag_Type_Classification_ID",
+      "properties": [
+        {
+          "id": "ch_attr_min",
+          "type": "Character",
+          "value": [
+    "A"
+      ]
+    },
+                        {
+                            "id": "ch_attr_array",
+                            "type": "Character",
+                            "value": [
+                "Z",
+                "a",
+                "v",
+                "N",
+                "q",
+                "i"
+              ]
+            },
+                        {
+                            "id": "sh_attr_min",
+                            "type": "Short",
+                            "value": [
+                -32768
+              ]
+            },
+                        {
+                            "id": "sh_attr_max",
+                            "type": "Short",
+                            "value": [
+                32767
+              ]
+            },
+                        {
+                            "id": "sh_attr_array",
+                            "type": "Short",
+                            "value": [
+                32767,
+                300,
+                600,
+                90,
+                158,
+                -32768
+              ]
+            },
+                        {
+                            "id": "int_attr_min",
+                            "type": "Integer",
+                            "value": [
+                -2147483648
+              ]
+            },
+                        {
+                            "id": "int_attr_max",
+                            "type": "Integer",
+                            "value": [
+                2147483647
+              ]
+            },
+                        {
+                            "id": "int_attr_array",
+                            "type": "Integer",
+                            "value": [
+                2147483647,
+                200,
+                -500,
+                600,
+                99999,
+                -1452895
+              ]
+            },
+                        {
+                            "id": "fl_attr_min",
+                            "type": "Float",
+                            "value": [
+                -3.4e+38
+              ]
+            },
+                        {
+                            "id": "fl_attr_max",
+                            "type": "Float",
+                            "value": [
+                3.4e+38
+              ]
+            },
+                        {
+                            "id": "fl_attr_array",
+                            "type": "Float",
+                            "value": [
+                3.4e+38,
+                3.2e+38,
+                3.1e+38
+              ]
+            },
+                        {
+                            "id": "dbl_attr_min",
+                            "type": "Double",
+                            "value": [
+                -1.7e+308
+              ]
+            },
+                        {
+                            "id": "dbl_attr_max",
+                            "type": "Double",
+                            "value": [
+                1.7e+308
+              ]
+            },
+                        {
+                            "id": "dbl_attr_array",
+                            "type": "Double",
+                            "value": [
+                1.7e+308,
+                1.6e+302,
+                1.4e+302,
+                1.1e+38
+              ]
+            },
+                        {
+                            "id": "bool_attr_true",
+                            "type": "Boolean",
+                            "value": [
+                true
+              ]
+            },
+                        {
+                            "id": "bool_attr_fal",
+                            "type": "Boolean",
+                            "value": [
+                false
+              ]
+            },
+                        {
+                            "id": "ts_attr",
+                            "type": "Timestamp",
+                            "value": [
+                "07-15-2016 04.45.30"
+              ]
+            },
+                        {
+                            "id": "ts_attr_array",
+                            "type": "Timestamp",
+                            "value": [
+                "07-15-2016 04.45.30",
+                "07-15-2016 04.45.30",
+                "07-15-2016 04.45.30"
+              ]
+            },
+                        {
+                            "id": "str_attr_min",
+                            "type": "String",
+                            "value": [
+                "Test String"
+              ]
+            },
+                        {
+                            "id": "str_attr_array",
+                            "type": "String",
+                            "value": [
+                "First",
+                "Second",
+                "Third",
+                "Fourt"
+              ]
+            }
+          ],
+                    "reservedProperties": {
+                        "status": "01",
+                        "uom": "MetersPerSecond",
+                        "dataType": "Double",
+                        "resolution": "7"
+                    },
+                    "aliases": [
+            "AVDtest Tag Pressure Alias2"
+          ]
+        }
+      
+   
+    ]
+    }
+  ],
+    "groups": [
+        {
+            "id": "AVDtest_Tag_Group",
+            "name": "AVDtest Tag Group",
+            "description": "AVDtest Tag Group Description",
+            "ccomClass": "GROUP",
+            "associatedEntityCcomClass": "TAG",
+            "properties": [
+                {
+                    "id": "AVDtest_Tag_Group_attribute",
+                    "value": [
+          "AVDtest Tag Group Attribute Description"],
+                    "type": "string"
+              }
+            ],
+            "associatedEntityIds": [
+              "AVDtest-CA-Segment-ID.AVDtest_Tag_Segment_ID",
+              "AVDtest-CA-Site.AVDtest_Tag_Pressure"
+            ],
+            "mappedInstances": [
+                {
+                    "ccomClass": "ASSET",
+                    "id": "AVDtest-CA-Asset-ID"
+              }
+            ]
+      }
+    ]
+
+}
+Select Send.Results
+On successful acceptance, you receive a 200 OK in the JSON response. Note that the ingestion happens asynchronously, which means that your request is queued for the server to process it. You must check the ingestion progress through HTTP GET to make sure if ingestion was successful. Save the uuid from the JSON response for tracking purposes.
+Example
+The following code sample appears a JSON response:
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 293
+
+{
+  "tenantUuid": "A5BE798652EE43F0BDE0CA20A7239BBB",
+  "description": "Upload S95 assets from zip file: newE2EAsset.zip, size: 1927 bytes",
+  "status": "QUEUED",
+  "ingestionLogMsgList": [],
+  "uuid": "2408ba25-77d2-42b2-9a8f-88b01875a86b",
+  "isActive": true,
+  "createdOn": 1464298499106,
+  "updatedOn": 1464298499106
+}
+What To Do NextVerify asset ingestion.For information about bulk ingestion using the Asset APIs, refer to the About Classifications documentation. For information about browsing using the Asset APIs, refer to the About Instances documentation.
+Related ConceptsAbout ClassificationsAbout Instances
+
+
+
+
+
+
+
+
+
+
+

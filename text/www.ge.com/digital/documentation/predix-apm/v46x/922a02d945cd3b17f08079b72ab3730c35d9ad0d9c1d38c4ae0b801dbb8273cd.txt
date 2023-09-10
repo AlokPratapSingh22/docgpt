@@ -1,0 +1,100 @@
+
+
+
+Third Quarter of 2018 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release NotesFirst Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Release Notes
+Third Quarter of 2018
+
+
+
+
+
+
+
+Third Quarter of 2018AssetThis topic provides a list of product changes released for this module on the dates listed below.Release Date: September 14, 2018
+Table 1. Enhancements and New FeaturesNoteTracking IDAdd, update and remove geolocation information for any node in the business functional hierarchy.F33469
+Table 2. Known IssuesNoteTracking IDTimestamp is incorrect if time zone in user preferences is set to UTC + 14(Kiritimati)DE57601Newly created alert (count) is not seen immediately without refreshing the page (Date picker is not reflecting current time)DE61811Internal server error is thrown if user sends request with Malformed URL.DE68896[Unified App] Asset restrictions menu item in the left nav does not appear when logged in for the first time.DE73123[Unified App]- Intermittently unable to see ingestion logs in IE (in unified tenant).DE73709[Unified App] Asset restrictions menu item in the left nav does not appear when logged in for the first time.DE73123Get tags for query (q=monitoredEntityUri->parent→type) does not work.DE74499Reserved Attributes Advanced search not working when system has large volumes of reserved attributes.DE75378If a network is part of a sub-network, then it is not searchable.DE75564Unable to ingest a tag with tagType as computed or sensor.DE76027
+Table 3. Resolved IssuesNoteTracking IDAfter clicking on the asset ID of an alert in the Alerts Inbox the system will navigate to the Asset Faceplate. If the alert creation date is older than 30 days the alert will not automatically display in the Events Tab. Customers will have to manually change the calendar date range to a time period which includes the alert creation date. DE57273
+
+
+
+
+
+On this pageAsset
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,95 @@
+
+
+
+Glossary | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Policy Examples
+Input Nodes
+Condition, Logic, and Calculation Nodes
+Action Nodes
+Baseline Policies
+Glossary
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Reference
+Glossary
+
+
+
+
+
+
+
+GlossarycollectionA set of results from a Query node or a set of readings associated with input nodes such as Measurement Location
+                                    or 
+Health Indicator
+                                    .policy instancesIdentifies the records to which logic in the policy model will be applied.entity keyThe Entity Key output can be used in subsequent action nodes, such as the Create Relationship node, but will return a value of 0 if used in a calculation or a Return Value node, since the Entity Key is not available until the record is saved at the end of policy execution.policy modelThe nodes and connections that define the policy logic.primary nodeThe node that represents the primary record in a policy instance.primary recordThe record in a policy instance to which most or all other records in the instance are linked.
+
+
+
+
+On this pagecollectionpolicy instancesentity keypolicy modelprimary nodeprimary record
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,205 @@
+
+
+
+Tag Browser | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag PanelTag Panel
+Tag Browser
+Tag Expressions
+Tag Filters
+Search Browser
+
+
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Tag Panel
+Tag Browser
+
+
+
+
+
+
+
+Tag BrowserAbout the Tag BrowserThe Tag Browser allows you to find tags, view tag information, and plot tags.The Tag Browser loads the in-context asset and its associated tags by default. You can add additional assets and their associated tags to the Tag Browser.You can plot SmartSignal Model groups and tags from the Tag Browser.The following appears in the Tag Browser:The asset currently in context.The asset attributes associated with the selected asset. Listed asset attributes are restricted to Reference attributes only.The tag expressions associated with the selected asset.The plotted tags for the selected view.The tag groups associated with the asset.The tag groups that have been deployed. The SmartSignal analytics provide Modes and Models for both active and inactive tags.The non-SmartSignal analytics provide Input Tags and Output Tags. When you hover over the Analytic name, the Analytic deployment name appears. You cannot add additional assets for Event Data Analysis charts in the Tag Browser, Tag Expressions, or Search Browser panes.The Tag Browser and Plotted Tags appear in the Tag Panel for both SmartSignal and Analysis cards. The Asset node in the Tag Browser expands to display the All Tags node, the Analytics node, and the Tag Expressions node. Child-Asset nodes are expandable. The Tag Expressions node can be expanded to reveal the relevant tag expressions for the asset context. To view the tag details in a tool tip, hover over a tag in the Tag Browser or in Plotted Tags. The Analytics node expands to display model groups, which also expand to display groups of tags that can be plotted. Tool tips are not available for nodes.When you use search in the Tag Browser, tags within the selected assets are highlighted as you enter characters.When you select a view, any tags that are currently plotted in the view appear in Plotted Tags.Use the Tag Browser to:Plot tags, analytics groups and tags, and tag expressions to the charts for the selected view.Globally mute or unmute tags that appear on the charts for the selected view.Access tag information.Add and remove multiple assets and their associated tags.Search the Tag Browser by tag name or description.View tag groups associated with the asset in the tag tree. Note: The Analytic tag groups appear in the order of their ordinal numbers in the Analytic Groups section of the Tag Browser, when the tag groups are assigned ordinal numbers in the Analytics template. However, if the Analytic tag groups do not have any ordinal numbers assigned in the Analytics template they appear in the alphabetical order in the Tag Browser.In Analysis charts, you can drag up to 40 tags to a Time Series, Spiderweb, or Parallel Axis chart in the view singly or in groups. The X-Y and Polar charts are limited to two or three tags per chart, respectively. Double-clicking the heading of Plotted Tags collapses it. You may need to scroll to see all items in a long list of tags in the Tag Browser.In SmartSignal charts, you can drag up to 40 tags to a Time Series chart in the view singly or in groups. If you add a group with more than 40 tags, the remaining tags are added to a new card automatically.Removing an asset from the tree does not affect tags already plotted; however, tag expressions listed in the tree may become invalid. The primary asset cannot be removed. Nodes and tags listed in the Tag Browser appear as specific icons depending on the type of tag:Tag iconMeaning
+Card icon: Name of cards in the Plotted Tags list for the view.
+
+Chart icon: Name of charts on the associated card in the Plotted Tags list for the view. Charts appear under a card in the Plotted Tags list.
+
+Tag with data: Includes tags that are associated with the selected asset during ingestion. 
+Asset attribute tag: Includes tags that are related to the selected asset, such as wind speed or power output of the asset. No data: Indicates that no data is available. GE Digital APM allows tags with no data for a specified time range to be plotted to a chart. The tag appears in the Plotted Tags list, but is disabled. When the date range is changed to include tag data, it appears as enabled and plots its data.Computed tag: Indicates a tag created using the Expression Calculator. These tags are simple math calculations that include tags related to the selected asset. If an asset is removed from the Tag Tree Panel, computed tags related to the removed asset can become invalid for plotting.
+Tag group: Indicates a group of designated related tags created during ingestion of the selected asset that can be plotted simultaneously.
+Threshold tag: Indicates a static value created as a marker to measure against the performance of other tags plotted on the chart.Reference curve tag: Indicates a power curve tag created to assess performance for tags used in an X-Y chart.
+Analytics tag: Includes SmartSignal tags that are associated with the selected asset during ingestion.Tag groups associated: Indicates the tag groups associated with the asset. Tag not configured: Indicates that the tag was removed from the selected asset, or that you do not have access to the asset associated with the tag.Tag filtered: Indicates that the tag has filters applied.Unit of measure: The gear icon is used to select line style, line color, and unit of measure for tags and charts that do not use pairs of tags. They are used to set unit of measure for charts that use pairs of tags.
+Plot Tags for Time Series Analysis ChartsTags and child tags can be plotted on an Alert Analysis or Time Series Analysis chart. About This Task
+The default ad hoc analysis chart has no tags plotted, so you must search for tags and plot them manually. Analysis charts may utilize pre-defined analysis templates, which can be accessed in the View Selector. Alert analysis charts contain pre-plotted tags that depend on the analysis template, which is part of the alert template associated with the alert. You can modify the charts by dragging and dropping additional tags on a chart. 
+When plotting a tag, the source UoM is converted to the standard UoM during plotting.
+Each plotted tag has a unique color identifier, and the data for that tag is plotted on the chart using the same color. Plotted tags with no data or tags that are not configured have no color assigned.
+You can plot tags to charts in the following ways:On the asset tags list, plotted tag list, or search results list to an existing chart.On the asset tags list, plotted tag list, or search results list to a new chart.You can select multiple tags from the asset tags list, plotted tag list, or search results by using the Shift key or the Control key on the keyboard. Note: This is limited to 40 tags.
+The Tag Browser section of the Tag Tree Browser is made up of parent nodes, such as assets or tag expressions. These parent nodes expand to reveal tags. The Plotted Tag section is made up of tags. In some cases, a tag node can be expanded to reveal child tags, which can also be plotted to charts.
+ProcedureTo plot tags or tag expressions in the Tag Browser or Plotted Tags list to an existing chart:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Complete one of the following actions:
+Select a tag in the Tag Browser or Plotted Tags list, drag it over a chart, and then drop it on the chart.Select multiple tags in the Tag Browser list using CTRL+Tap or SHIFT+Tap, drag them over a chart, and then drop them on the chart. Note: Multiple tags can only be selected from one parent node at a time. For example, you can select multiple tags from a single asset, but you cannot simultaneously select any from a second asset or in the Plotted Tags list.
+The selected chart is framed as you drop the tags. If a tag is already plotted on the selected chart, an error message appears.Note: Tags that are not configured for an asset or do not have any data, do not appear on the chart or the tag register. These tags now, appear only in the Plotted Tags list on a chart with a not configured (NC) or a no data (ND) indicator.To plot tags or tag expressions in the Search list in the Tag Tree Browser to an existing chart:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.On the View Selector, select a Public Templates or My Templates view.Enter at least three characters in the Search field.The Tag Tree Browser only provides a search for the displayed Tag Browser or Plotted Tags. A tag in the Tag Browser or Plotted Tags list is considered a match if any part of its name contains the search keyword.A list of tags found during the search appears as you enter values below the All Tags node.Complete one of the following actions:
+Select a tag in the All Tags list, drag it over a chart, and then drop it on the chart.Select multiple tags in the All Tags list using CTRL+Tap or SHIFT+Tap, drag them over a chart, and then drop them on the chart. 
+The selected chart is framed as you drop the tags. If a tag is already plotted on the selected chart, an error message appears.Plot Tags for Event Data Analysis ChartsTags and child tags can be plotted on an event-based ad hoc analysis chart.About This Task
+The data for an event appears on the Event Data Analysis chart. You can display data for up to forty prior events of the type selected on your chart. The Event Data Analysis view uses a selected number of events prior to a date and time selected by you to determine the time range to display for the selected event. You can also select the number of seconds pre- and post-event for the amount of data surrounding the selected event. Once you have plotted tags to a chart, an Event Frames list appears in the Tag Tree Browser that contains the number of events selected.
+When plotting a tag, the source UOM is converted to the standard UoM during plotting.
+ProcedureTo plot tags or tag expressions in the Tag Browser list to an existing chart:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select New Event Data Analysis.Select the Event Type, number of Events to plot, End Date, Pre-Event, and then Post-Event seconds for the chart.For Pre-Event and Post-Event, you can enter up to 14400 seconds (that is, four hours) before and after the event time, respectively.Select a chart type in the Chart Type drop-down list box.Select a tag or tag expression in the Tag Browser list, drag it over an X or Y area on the chart, and then drop it on the chart.The selected area on the chart is framed as you drop the tags. If a tag is already plotted on the selected chart, an error message appears.To plot tags or tag expressions in the Search list in the Tag Tree Browser to an existing chart:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select New Event Data Analysis.Select the Event Type, number of Events to plot, End Date, Pre-Event, and then Post-Event seconds for the chart.For Pre-Event and Post-Event, you can enter up to 14400 seconds (that is, four hours) before and after the event time, respectively.Select a chart type in the Chart Type drop-down list box.Enter at least three characters in the Search field on the Tag Tree Browser.The Tag Tree Browser only provides a search for the Tag Browser that appears. A tag in the Tag Browser list is considered a match if any part of its name contains the search keyword.A list of tags found during the search appears as you enter characters under the All Tags node.Select a tag in the All Tags list, drag it over an X or Y area on the chart, and then drop it on the chart.You can select multiple tags from the search results by using the Shift key or the Control key on the keyboard. Note: This is limited to 40 tags.The selected area on the chart is framed as you drop the tags. If a tag is already plotted on the selected chart, an error message appears.Plot SmartSignal Model Group TagsYou can select a SmartSignal model group within an analytic, and plot all the associated tags to a SmartSignal card.About This Task
+Plotting multiple tags to a SmartSignal card displays a separate chart for each associated tag. Only SmartSignal tags can be plotted to a SmartSignal card.
+If the number of tags in the model group exceeds 40, a new card is automatically added and the remaining tags are plotted on the new card. 
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select a SmartSignal asset context.In the Tag Browser, open the Analytics node.Select and open a SmartSignal Model node.Drag a group of tags to the card to create the SmartSignal charts.
+Note: Tags within a group can be dragged singly or in multiples.
+Plot a Reference CurveYou can compare actual data points on an X-Y chart with a plotted power curve to assess performance. About This Task
+You can plot a reference curve along with the actual data in the asset to see how much the data is deviating in the reference curve. This could indicate an under-performing asset due to configuration, or a degradation of the asset.
+You can add a reference curve tag to an X-Y chart as part of a tag series.
+The Plotted Tags section displays a hierarchy of the view's card names, chart names, and tag names for tags that are plotted on a chart in the view. Plotted tags for an X-Y chart are displayed in the Plotted Tags section as tag series. Tags that are displayed as tag series in the Plotted Tags list can be removed as a tag series.Note: You can remove a tag series from an X-Y chart in both Time Series Analysis and Event Data Analysis views.
+All tags can be filtered, including reference curves. You cannot drag and drop a tag series in the Plotted Tags section. Additional tag series plotted to the chart must match UoMs to the tag series already plotted.
+Removing tags that exist on multiple charts in a view affects all the charts in the view.
+You must plot tags associated with a power curve, as the system does not validate your tag type.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, complete one of the following actions:Select a Public Templates or My Templates view that contains an X-Y chart.Select New Time Series Analysis or New Event Data Analysis.Select X-Y (line) or X-Y (scatter) in the Chart Type drop-down list box.Drag the reference attribute and drop it onto the x- or y- axis to plot tags associated with a power curve.Drag an additional tag to the other axis to plot the tag series.A reference curve is plotted on the chart as part of a tag series.Plot Tags in a Tabular FormatAbout This Task
+You can display data of a query in tabular format. 
+ProcedureTo create a data table chart from the Time Series data:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context for the primary asset.In the View selector, select New Time Series Analysis.In the Chart Selector, select Data Table.Select a tag in the Tag Browser, drag it over a chart, and then drop it on the chart.In the Plotted Tags section, select Table.Plot tags as needed.You can drag up to 40 tags. Modify the chart as needed.Display All Generated Alerts for a SmartSignal AssetYou can display one or more Alerts for an asset or group of assets along with the contributing and non-contributing tags associated with the generated Alerts from the Tag Browser.About This Task The contributing and non-contributing tags for each asset from a generated Alert will be grouped in a node in the Tag Browser.When you select an Alert in the Alerts module it navigates to Analysis and plots the tags for the selected Alert. Assets may include additional generated Alerts that appear in the Tag Browser. The Tag Browser will show all the ready or an in-progress tags from generated Alerts for all the assets that the Alerts are associated with.Contributing and non-contributing tags associated with generated Alerts appear within the Tag Browser. When alerts occur, the affected Analytic name, Analytic Tag, mode, model, group, or tag icons become red. Any parent node in the Tag Browser that is related to the affected tag also becomes red.The Alerts are listed in order of severity and have both contributing tags (tags that directly contribute to the Alert) and non-contributing tags (tags that are a part of the asset but are not contributing to the Alert).The Alert icon for the associated tag includes a severity number and a color generated by the Alert. See Alert Severity and Status. When dates within the date range are changed, the generated severity Alerts available on the highlighted SmartSignal chart may change. You can save the updated chart as evidence and view the information in the chart from the time the evidence was saved.ProcedureIn the module navigation menu, go to
+Alerts.Select an Alert Inbox filter, such as Unclaimed or SmartSignal.Select an Alert from the Alert Inbox.In the details page, select an Analysis View chart.Select  to open the Tag Panel to view the available tags.Severity Alerts and the icons that display the tags for the generated Alerts are available in the Tag Browser.Display On Monitor Tags for SmartSignalYou can display the On Monitor tags you have designated for SmartSignal.About This Task
+If a tag stops providing good data, you can turn it off in the asset model. If you designate the tag as On Monitor, it continues to collect data that is available in the Tag Browser.
+ProcedureIn the module navigation menu, go to
+Alerts.Select an Alert Inbox filter, such as Unclaimed or SmartSignal.Select an Alert from the Alert Inbox.In the details page, select an Analysis View chart.Select  to open the Tag Panel to view the available tags.Open the Analytics node on the Tag Browser.Open a named analytic node containing the On Monitor tags.Open the On Monitor Tags group node.You can view all the On Monitor tags related to the selected asset that are available for the selected analytic.Display the Tag Values in Scientific NotationYou can toggle between standard and scientific notation for Y-axis tag values on a chart.About This Task
+Selecting scientific notation for tag values on a chart in a view allows you to view very large tag values on the Y-axis. Once selected, you can save the options for the chart as a part of the template.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Template or My Templates view.In the chart for which you want the scientific notation for tag values appear, select .On the Chart Settings dialog box, select Standard or Scientific in the Y-Axis Unit drop-down list box, and then select Apply.The Y-axis tag values on the selected chart appear as standard or scientific notation.Remove a TagYou can remove a tag from all the charts in the view. About This Task
+The view's card names, chart names, and tag names for tags that are plotted on a chart in the view appear on the Plotted Tags section. Plotted tags are displayed in the Plotted Tags section as single tags or tag series. The X-Y chart and the Polar chart display tag series. Tags that are displayed as tag series in the Plotted Tags list can be removed as a tag series. 
+Note: You can remove a tag series from an X-Y or Polar chart in both Time Series Analysis and Event Data Analysis views.
+Removing tags that exist on multiple charts in a view affects all the charts in the view.
+ProcedureTo remove single tags in the Plotted Tags list:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.In the Tag Tree Browser, hover over the tag in the Plotted Tags list, then select X.The tag is removed from all charts in the view.To remove a tag series in the Plotted Tags list:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, complete one of the following actions:
+Select a Public Templates or My Templates view that contains an X-Y or Polar chart.Select New Time Series Analysis or New Event Data Analysis, and then select an X-Y or Polar chart type.Note: A Polar chart type cannot be selected for an Event Data Analysis.
+On the Tag Tree Browser, hover over the tag series in the Plotted Tags list, and then select X.The tag series is removed from all charts in the view. If one or more additional tag series were plotted, the chart will continue to display tag series. If the removed tag series is the only tag series plotted, the chart returns to its overlay state.To remove a tag while building a tag series:In the module navigation menu, select Analysis.Use the Context Browser to select an asset context.In the View Selector, select New Time Series Analysis or New Event Data Analysis view, then select an X-Y or Polar chart type.After plotting the first tag, hover over the tag in the chart layout, and select X.
+Note: This option is only available for the first tag. After the second tag is plotted, you must remove the tag series in the Plotted Tags list.
+The tag is removed from the chart. If one or more additional tag series were plotted, the chart will continue to display tag series. If the removed tag is the only tag plotted, the chart returns to its overlay state.Add and Remove Y-Axes on a ChartAbout This Task
+When you are plotting tags on a time series chart, then you can select for all the tags on the same Y-axis to appear. Or, select to automatically group the tags based on UoM on multiple axis. By default, the time series chart will plot all the tags on the single axis.
+If only one tag series is plotted, the tag name appears on the Y-axis. Tag series are created when two tags are plotted for an X-Y or Polar chart.
+You can turn on or turn off multiple-Y-axes on the time series chart.
+Tags dropped onto a chart that have different units of measure create a new y-axis. You can add up to six Y-axes to a chart. Y-axes appear three to the left of the chart, then three to the right of the chart. The unit of measure and the tag colors associated with that Y-axis appear for each Y-axis.
+Tags dropped onto a chart with a corresponding unit of measure are added to that y-axis. All tags are added to the Chart Register.
+If you select a card layout other than one-up, multi-Y-axes functionality is not available. All tags will plot to one Y-axis.
+ProcedureTo add a Y-axis to a chart:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Drag a tag with a different unit of measure to a chart.Select , to access the chart settings.In Chart Settings, for a single Y-axis, in the MIN and MAX boxes, enter the minimum and maximum limit values for the single Y-axis, and select Apply.
+Note: The logical tags are always plotted on the default y-axis.
+Alternatively, in Chart Settings, select Show Multiple Y Axes option, to add multiple y-axes.All the tags plotted on the chart appear in the Plotted Tags section. If you are using Time-Series (Line) chart, the logical tags do not appear in the Plotted Tags section.Drag and drop the tags on the Y-Axis Positions to arrange the tags positions to the left or right side of the chart. In the MIN and MAX boxes, enter the minimum and maximum limit values for the Y-axes.
+Note:
+In case of an XY chart, the MIN and MAX boxes are displayed for the X-axis also.By default, the limits are set to Automatic and the axes on the chart scale based on the tag data. If the maximum or minimum values are entered, the Y-axes scale based on the entered values.You can use the first y-axis to determine the domain range.
+
+Select Apply. A new Y-axis incorporating the selected tag and limits that are applicable based on the limit settings appears on the chart. Note: Each new Y-axis appears first to the left of the chart, and then they appear to the right of the chart for a total of six Y-axes.Select , and then select Save as New Template.For more information on saving templates, see Save an Analysis Template.The chart settings with the Y-axes limits states are saved to the template.To remove multiple Y-axes from a chart:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select  , and unselect Show Multiple Y Axes option.Select Apply. Add and Remove Multiple AssetsYou can add assets for analysis within the hierarchy so that you can compare time series data for multiple assets on a chart. About This Task
+You can add any asset to analysis that you have access to, enabling you to plot tags in the selected assets on the charts. This allows you to look at multiple assets to investigate or isolate an issue.
+The Tag Browser and Plotted Tags sections appear in the Tag Tree Browser. The Tag Browser section lists primary and secondary assets. The primary asset is selected in the Context Browser. While you can delete secondary assets in the view, you cannot delete the primary asset.
+You cannot add additional assets for Event Data Analysis charts in the Tag Tree Browser, Tag Expressions, or Search Browser panes.
+You can plot tags for multiple selected assets simultaneously. Assets with tag expressions plotted cannot be removed.
+You can drag any tag associated with a listed asset to a chart, or remove the tag from its associated charts. 
+ProcedureTo add secondary assets to a chart:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context for the primary asset. Select  to view the Tag Tree Panel.Select , if it is not already visible.Select  next to the Tag Browser section.Select an asset in the Context Browser, and then select Open.Assets that are added to the Tag Tree Browser section appear below the primary asset in the order that they are added.To remove a secondary asset and its associated tags: Hover over the selected asset, and then select X.On the Remove dialog box, complete one of the following actions:
+Select OK to remove the selected asset and its tags in the Tag Browser section. Any previously plotted tags for this asset remain in the Plotted Tags section and are plotted on the charts.Select Also delete all plotted tags that belong to this asset, and then select OK to remove the selected asset and its tags in the Tag Browser section, and any plotted tags associated with the deleted asset.
+Compare Multiple AssetsYou can compare similar tags for selected assets on a plotted chart.About This Task
+Comparing similar tags for assets adds the assets to the tag browser and updates the charts with the plotted tags.
+The following exceptions apply:If you select an existing asset in the context browser, the "Asset already exists in the tree view" message appears.If similar tags are not available for any of the selected assets, the "Matching tags are not found for some assets" message appears.If tag expressions contain multiple assets, the "Comparing tag expression with multiple assets are not supported" message appears.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.On the View Selector, select New Time Series Analysis, and create at least one chart with tag, series, or tag expressions.Alternatively, you can access a class template.Select Compare Asset on the tag browser.Select one or more assets, and select Compare.A model appears with the question "Do you want to compare similar tags for the selected assets on the plotted charts?"Select Yes.Selected ssets are added to the tag browser. Charts are updated with similar tags for the selected assets. Plotted tag section updates are based on the updated chart.Modify a Tag Series NameYou can modify a tag series name on a chart.About This Task
+You can change a plotted tag series name on a Time Series Analysis or Event Data Analysis chart to a more meaningful name. The tag series name appears in both the Chart Register and the Plotted Tags list in the Tag Tree Browser.Note: Tag series are created in X-Y or Polar charts.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Template or My Templates view.Hover over the series you want to rename in the Chart Register, select , and then select Edit.In the Edit Series Name dialog box, enter a unique name for the tag series into the New Name field, and then select OK. The selected tag series name is applied in the Chart Register and in the Plotted Tags list in the Tag Tree Browser.Focus on a Tag Series in a ChartYou can focus on a particular tag series when you have multiple series plotted to a chart.About This Task
+X-Y and Polar charts allow you to plot multiple tag series on a chart. You can focus on a specific tag series on the chart by bringing it to the front. Muted tags are unmuted when they appear.
+Templates containing multiple tag series do not save the order in which the series appear.
+When you have multiple series plotted on a chart , sometimes the tags overlap on each other and the last one that was plotted is the one that is visible on the chart. In order to look at the other series that are not visible , the user can bring that series to the front so that they can view that series on top.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Template or My Templates view.Hover over the series you want to bring forward in the Chart Register, select , and then select Bring to Front.The selected tag series appears on the chart.Mute the Chart DataYou can mute tags, tag series, or tag expressions plotted on a chart to change the data. About This Task
+Each plotted tag displays a uniquely colored mute circle in the Plotted Tags section of the Tag Tree Browser that matches the data plotted on the charts. You can mute tags globally for all charts on the view, or for separate charts. Note: Tags in the Plotted Tags list may appear as  instead of .
+Muting in the Plotted Tags list on the Tag Tree Browser mutes the selected tag on all charts. Muting in the Chart Register on a chart mutes the selected tag on the current chart only. Muting in the Chart Register for multi-y-axes charts removes the tag from both the y-axis and the Chart Register.Note: Chart selection for Event Data Analysis charts is limited to X-Y and Polar.
+The Plotted Tag section in the Tag Tree Browser displays a hierarchy of the card names for the view, chart names, and tag names for tags that are plotted on a chart in the view. Tags displayed in the Plotted Tag list can be individually muted. X-Y charts and Polar charts display plotted tags as a tag series, which can be muted. 
+A single color from a palette of sixteen is applied to a plotted tag and its data in a specific order. Once muted, these items retain their color for later use.
+ProcedureTo mute a plotted tag or tag series for all charts on the view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a System Templates or My Templates view.Select  on the view header to access the Tag Tree Panel if it is not already accessed.In the Tag Tree Browser, select a colored tag or tag series located in the Plotted Tags section.The selected tag or tag series is muted in all charts in the view.To mute an Event Frame for all charts in the Event Data Analysis view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a System Templates or My Templates view that contains an Event Data Analysis template.On the Tag Tree Browser, select a colored tag located in the Event Frames section.The selected event frame is muted in all charts in the view.To mute a tag or tag series plotted on a specific chart in the view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a System Templates or My Templates view.In the Chart Register on a selected chart, select the colored line that indicates the plotted tag or tag series.The plotted data is hidden on that specific chart, and colored line is removed from the register.To mute an Event Frame for a specific chart in the Event Data Analysis view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a System Templates or My Templates view that contains an Event Data Analysis template.In the Chart Register on a selected chart, select the colored line that indicates the plotted event frame.The plotted data is hidden on that specific chart, and the colored line is removed from the register.Unmute the Chart DataYou can unmute previously muted plotted tags, tag series, or tag expressions.About This Task
+You can unmute tags globally for all charts on the view, or for separate charts.Note: Tags in the Plotted Tag list may appear as the  instead of the . Unmuting in the Plotted Tags list on the Tag Tree Browser unmutes the selected tag on all charts. Muting in the Chart Register on a chart unmutes the selected tag on the current chart only. Unmuting in the Chart Register for multi-y-axes charts displays the tag on both the y-axis and the Chart Register.
+A hierarchy of the view's card names, chart names, and tag names for tags that are plotted on a chart in the view appears in the Plotted Tag section in the Tag Tree Browser. The Plotted Tag list can be individually unmuted. X-Y charts and Polar charts display plotted tags as a tag series, which can be unmuted.Note: Chart selection for Event Data Analysis charts is limited to X-Y and Polar.
+ProcedureTo unmute a plotted tag or tag series for all charts on the view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select  on the view header to open the Tag Tree Panel if it is not already open.On the Tag Tree Browser, select a gray tag or tag series located in the Plotted Tags section.The selected tag or tag series is unmuted in all charts in the view.To unmute an Event Frame for all charts in the Event Data Analysis view:In the module navigation menu, select Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view that contains an Event Data Analysis template.On the Tag Tree Browser, select a gray tag located in the Event Frames section.The selected event frame is unmuted in all charts in the view.To unmute a tag or tag series on a specific chart in the view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.On the Chart Register on a selected chart, select the gray line that indicates the plotted tag or tag series.The plotted data line appears as the same color used prior to muting on that specific chart, and the colored line in the register becomes active.To unmute an Event Frame for a specific chart in the Event Data Analysis view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view that contains an Event Data Analysis template.On the Chart Register on a selected chart, select the gray line that indicates the plotted event frame.The plotted data line appears as the same color used prior to muting on that specific chart.Search the Tag Tree BrowserUse Search on the Tag Tree Browser to find assets and tags existing in the plotted tags and tree hierarchy.About This Task
+You can search assets, asset attributes, and tags that are appearing in the Tag Tree Browser and Plotted Tags lists.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select  if it is not already accessed, and then select .Enter at least one character into the Search field. The results will narrow as you enter characters.Results appear beneath the Tag Tree Browser and Plotted Tags sections.Export Tags from a Tabular FormatAbout This Task
+You can export the tabular data to a .CSV file. 
+ProcedureTo create a data table chart from a Time Series view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context for the primary asset.In the View selector, select New Time Series Analysis.Select a tag in the Tag Browser, drag it over a chart, and then drop it on the chart.In the Plotted Tags section, select Table.Plot tags as needed.You can drag up to 40 tags. The plotted tags display in a tabular format. In the Actions list, select any of the following:
+OptionDescriptionExport CSVSelect this option to export the tabular format to a .CSV file.Data QualitySelect this option to include data quality in the .CSV output file.Date & TimeSelect this option to include the date and time in the .CSV output file.
+
+Related ConceptsAbout Alert Severity and Status
+
+
+
+
+On this pageAbout the Tag BrowserPlot Tags for Time Series Analysis ChartsPlot Tags for Event Data Analysis ChartsPlot SmartSignal Model Group TagsPlot a Reference CurvePlot Tags in a Tabular FormatDisplay All Generated Alerts for a SmartSignal AssetDisplay On Monitor Tags for SmartSignalDisplay the Tag Values in Scientific NotationRemove a TagAdd and Remove Y-Axes on a ChartAdd and Remove Multiple AssetsCompare Multiple AssetsModify a Tag Series NameFocus on a Tag Series in a ChartMute the Chart DataUnmute the Chart DataSearch the Tag Tree BrowserExport Tags from a Tabular Format
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+
+
+
+Compliance Recommendations | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Compliance ManagementOverview
+Workflows
+Inspection Plans
+Inspection Plan Management
+Compliance Recommendations
+Inspection Plan Revision History
+Suggested Compliance Strategy Templates
+Admin
+Deployment
+Reference 
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Compliance Management
+Compliance Recommendations
+
+
+
+
+
+
+
+Compliance RecommendationsAccess a Compliance RecommendationYou can access a Compliance Recommendation that is part of an existing Inspection Plan. ProcedureAccess the Inspection Plan that contains the Compliance Recommendations that you want to access.Select the Recommendation ID of the Compliance Recommendation that you want to access.The Compliance Recommendation appears.Modify a Compliance Recommendation Compliance Recommendations can be marked not required, superseded, or deleted.Before You BeginYou must have one of the following Security Roles to modify a Compliance Recommendation:MI Compliance AnalystMI Inspection Plan ApproverProcedureAccess the Inspection Plan that contains the Compliance Recommendations that you want to access.Modify the Compliance Recommendation in one of the following ways:StateActionSupersede ()Changes the state of the Compliance Recommendation to Superseded. To supersede recommendations:Next to two or more Compliance Recommendations, select the check boxes.Select .The Supersede Recommended Actions window appears. Select the Compliance Recommendation that you want to designate as the master recommendation.Select Supersede.The master recommendation supersedes the other Compliance Recommendations and appears in the grid. Note: You can view the superseded recommendations by selecting the number in the Linked Actions column.Not Required ()Changes the state of the Compliance Recommendation to Not Required. Select the check box next to each Compliance Recommendation that you want to mark Not Required.Select .A window appears, asking you to confirm that you want to mark the Compliance Recommendation as Not Required.Select Yes.The Reason for Not Required window appears.Enter a reason for marking the Compliance Recommendation as Not Required, and then select Done.The Compliance Recommendation is moved to the Not Required state.Unlink Superseded RecommendationsThis unlinks superseded Compliance Recommendations from the master recommendation. The state of the unlinked Compliance Recommendations is modified from Superseded to Proposed.Select the number in the Linked Actions column of the master recommendation you would like to unlink superseded recommendations from.The Linked Recommended Actions window appears, displaying the linked superseded Compliance Recommendations.Select the check box next to each Compliance Recommendation that you want to unlink.Select Unlink.The Compliance Recommendations are unlinked from the master recommendation and appear in the grid. The Compliance Recommendations are then moved to the Proposed state.Delete a Compliance RecommendationProcedureAccess the Inspection Plan that contains the Compliance Recommendations that you want to delete.Next to each Compliance Recommendation that you want to delete, select the check box.Select .A window appears, asking if you want to delete the selected records.Select Yes.The Compliance Recommendations are deleted.Implement a Compliance Recommendation to an Inspection TaskYou can create new Inspection Tasks or link existing Inspection Tasks to a Compliance Recommendation that is in the Approved state to add them to the Inspection Plan. Before You Begin
+Ensure that the Implement Recommended Actions to Tasks in ASM setting is set to False in the Inspection Configuration section of the IM Admin Preferences page.You must have an Inspection Plan that is in the Approved state.
+ProcedureAccess the Inspection Plan that contains the Compliance Recommendations that you want to implement.Next to the Compliance Recommendation that you want to implement, select the check box.Select Implement.The Implement as Inspection Task window appears.Select one of the following:ActionDescriptionCreate NewCreates a new task that is linked to the Compliance Recommendation. The new task is assigned a Task ID, and the Task ID appears in the Task ID column for the respective Compliance Recommendation.Link ExistingAllows you to select an existing Inspection Task to link to the Compliance Recommendation. The task uses the existing Task ID.Note: You cannot link non-reoccurring tasks to Compliance Recommendations.Select Implement.The Compliance Recommendation is changed to the Implemented state. The Inspection Task is linked to the Compliance Recommendation and appears in the Existing Tasks section of the Inspection Plan page. Also, some Inspection Task fields are populated by values from the Compliance Recommendation.Unlink an Inspection Task from a Compliance RecommendationProcedureAccess the Inspection Plan that contains the Compliance Recommendations from which you want to unlink tasks.Select the check box next to the Compliance Recommendation that you want to unlink from its related Inspection Task.Select .A message appears, asking if you want to unlink the selected recommendation from the task.Select Yes.The Inspection Task is unlinked from the Compliance Recommendation.Note: The Inspection Task will remain linked to the parent asset. Also, the Desired Interval and Desired Interval Basis fields in the Inspection Task will remain populated based on the previously linked recommendation.
+
+
+
+
+On this pageAccess a Compliance RecommendationModify a Compliance RecommendationDelete a Compliance RecommendationImplement a Compliance Recommendation to an Inspection TaskUnlink an Inspection Task from a Compliance Recommendation
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,129 @@
+
+
+
+First Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release NotesFirst Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Release Notes
+First Quarter of 2019
+
+
+
+
+
+
+
+First Quarter of 2019AssetThis topic provides a list of product changes released for this module on the dates listed below.Release Date: March 29, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDWhen using the <attributeName> modifier while searching for a tag instance, results appear for both custom and reserved attributes. F680
+Table 2. Known Issues
+The following issues are unresolved in this release.
+DescriptionTracking IDIE 11 experiences a long-running script error when attempting to navigate to the details of an object in APM (Asset, Site, Segment, or Enterprise).DE95900Associate/Disassociate actions are logged as Create/Delete in the Audit Logs.DE44416
+Table 3. Limitations
+Describe a limiting rule or circumstance related to functionality in this release.
+DescriptionTracking ID
+
+In Predix APM, adding or modifying assets using the Legacy Predix APM user interface, APIs, or Asset Ingestion Service, or bypassing the Unified Asset Ingestion Data Loader, causes the asset databases to become out-of-sync. 
+In Predix APM:You must add or modify assets using the Unified Asset Ingestion Data Loader.You cannot delete assets.You must use the Asset Ingestion Service to add tags to assets.
+In Legacy Predix APM:You can add, modify, or delete assets in the user interface, using APIs, or using the Asset Ingestion Service.You can add tags to assets in the user interface, using APIs, or using the Asset Ingestion Service. 
+
+N/A
+Table 4. Resolved Issues
+The following issues that existed in one or more previous releases have been resolved.
+DescriptionTracking IDPreviously, in the Select Context window, when you attempted to search for an asset, sometimes, the asset did not appear in the search results. This issue occurred because the search results displayed only the first 10 records in a sequence that matched the search string you specified, and the asset that you attempted to search did not match any of these records. Search results appear as expected.DE102986Select and Cancel were not visible upon resize. The Context Browser resizes to show the options to 'Select' or 'Cancel' when a user resizes the browser window.DE96140The GET call from /sites was returning all the attributes, including the deleted ones, because of the cache. This has been moved to the GEDA backlog.DE94480When you passed anything other than the allowed parent entity CCOM Class, the task status failed. This has been moved to the GEDA backlog.DE83773You were unable to ingest a tag with tagType as computed or sensor. Ingestion for a tagType as computed or sensor works as expected.DE76027If a network was part of a sub-network, then it was not searchable. This feature is being deprecated in April 2019.DE75564The Reserved Attributes Advanced search was not working when system had large volumes of reserved attributes. The Reserved Attributes Advanced search works as expected when the system has large volumes of reserved attributes.DE75378You were intermittently unable to see ingestion logs in IE. Ingestion logs in IE are displayed as expected.DE73709An internal server error displayed if the user sent a request with a Malformed URL. The correct error message now displays if the user sends a request with a Malformed URL.DE68896A newly created alert (count) was not seen immediately without refreshing the page; the Date picker was not reflecting the current time. A newly created alert (count) is now reflected in the alert count.DE61811The Timestamp was incorrect if the time zone in user preferences is set to UTC + 14(Kiritimati). The Timestamp now displays correctly in the asset faceplate.DE57601
+
+Release Date: January 17, 2019
+Table 5. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDThe asset hierarchy component (context browser) has been replaced for use with legacy Predix APM modules.F38575You can now search for tag instances from an asset instance.F680You can now add and delete groups for classifications using the user interface. F443You can now remove members of a group using the user interface.F443You can now select and add classifications to an existing group.F443
+Table 6. Known Issues
+The following issues are unresolved in this release.
+DescriptionTracking IDSelect and Cancel are not visible upon resize of the browser page to a smaller size.DE96140The GET call from /sites is returning all the attributes, including the deleted ones, because of the cache.DE94480When you pass anything other than the allowed parent entity CCOM Class, the task status fails.DE83773You are unable to ingest a tag with tagType as computed or sensor.DE76027If a network is part of a sub-network, then it is not searchable.DE75564The Reserved Attributes Advanced search is not working when system has large volumes of reserved attributes.DE75378You are intermittently unable to see ingestion logs in IE (in the unified tenant).DE73709Associate/Disassociate actions are logged as Create/Delete in the Audit Logs.DE44416An internal server error displays if the user sends a request with a Malformed URL.DE68896A newly created alert (count) is not seen immediately without refreshing the page; the Date picker is not reflecting the current time.DE61811The Timestamp is incorrect if the time zone in the user preferences is set to UTC + 14(Kiritimati).DE57601
+Table 7. Limitations
+Describe a limiting rule or circumstance related to functionality in this release.
+DescriptionTracking IDOn the Tags tab of the asset details page, users cannot search for tags using reserved attributes.N/A
+Table 8. Resolved Issues
+The following issues that existed in one or more previous releases have been resolved.
+DescriptionTracking IDThe Asset page loads properly when Tags are from Site or Segment.DE36446
+
+
+
+
+
+On this pageAsset
+
+
+
+
+
+
+
+
+

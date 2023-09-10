@@ -1,0 +1,98 @@
+
+
+
+SRS | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+WorkflowsSIL Assessment
+SIL Verification
+SIL Validation 
+SIS Trip Reporting
+Custom Device
+SRS
+
+
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+Workflows
+SRS
+
+
+
+
+
+
+
+SRSSIS Management: SRS WorkflowThis workflow describes the process of creating an SRS Template, approving it, and adding it to the SRS Project, after which the SRS Project is approved and linked to an SIL Analysis, Instrumented Function, Logic Solver, and Protective Loop. In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Create SRS Category Template Persona: AnalystCreate an SRS Template for any SRS Template category.Review, Approve SRS Category Template Persona: AnalystReview an SRS template and move it through the approval process.Create SRS Project Persona: AnalystCreate a new SRS Project to select one or many of the SRS templates. Once you have made the selection of templates, a copy of the collection of templates will be made.Review, Approve SRS Project Persona: AnalystReview an SRS Project and move it through the approval process.View Linked Elements Persona: AnalystLink an existing, approved SRS project to an SIL Analysis, Instrumented Function, Logic Solver, and Protective Instrument Loop.View/Print Report Persona: AnalystView or print an SRS project report.SIL Verification Persona: AnalystGo to the SIL Verification workflow.SIL Assessment Persona: AnalystGo to the SIL Assessment workflow.
+
+
+
+
+On this pageSIS Management: SRS WorkflowCreate SRS Category TemplateReview, Approve SRS Category TemplateCreate SRS ProjectReview, Approve SRS ProjectView Linked ElementsView/Print ReportSIL VerificationSIL Assessment
+
+
+
+
+
+
+
+
+

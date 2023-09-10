@@ -1,0 +1,293 @@
+
+
+
+SIL Assessment | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+SIL Assessment
+
+
+
+
+
+
+
+SIL AssessmentAbout Safety Integrity Level (SIL) AssessmentBefore the Safety Integrity Level (SIL) analysis team can make recommendations for actions that should be taken to mitigate risk for a given safety instrumented system, the team must first assign a numeric rating to each instrumented function within that safety instrumented system. The SIL is a numeric value that represents an overall rating for the instrumented function. This rating tells you to what degree the instrumented function meets its requirements to mitigate risk. After you have assigned an SIL value to each instrumented function within a safety instrumented system, the combination of these values indicates the overall safety integrity of the safety instrumented system to which the instrumented functions belong.SIL Assessment Methods
+You can use the following methods to assess the SIL value for an instrumented system:
+
+Risk Matrix
+
+Layer of Protection Analysis (LOPA)
+
+Hazards Analysis Risk Assessment
+
+You can use more than one assessment method to determine the SIL value for an instrumented function. The list of SIL assessments performed on the instrumented function are listed in the SIL Assessment section of the Instrumented Function workspace. However, you can associate only one SIL Assessment with the Instrumented Function. 
+Safety Integrity Level (SIL) Assessment Workflow This workflow provides the basic, high-level steps for performing a Safety Integrity Level (SIL) assessment. The steps and links in this workflow do not necessarily reference every possible procedure.Performing an SIL assessment includes the following steps:
+Assess the required SIL value for an Instrumented Function by creating the following SIL Assessment records:
+
+Layer of Protection Analysis (LOPA)
+
+Risk Matrix
+
+Process Hazards Analysis (PHA)
+
+External
+
+Note: You can create only one Risk Matrix and PHA SIL Assessment records for an Instrumented Function.
+
+Associate the appropriate SIL Assessment with the Instrumented Function.About Safety Integrity Level (SIL) Assessment Using a Risk MatrixYou can assess the Safety Integrity Level (SIL) of an instrumented function using the standard GE Digital APM Risk Matrix interface to select the risk rank values for specific categories of risk. To determine the SIL value using a Risk Matrix, you must:Specify the SIL Threshold values. An SIL Threshold record stores the upper and lower boundary values for each SIL. Select the risk assessment that you want to use to assess the SIL value. You can use the baseline Risk Matrix or a custom Risk Matrix.Select the unmitigated risk rank values for each category in the Risk Matrix. GE Digital APM then calculates the overall unmitigated risk rank by adding the unmitigated risk rank values for each category. This value is stored in the Unmitigated Risk Rank box above the Risk Matrix on the Risk Assessment Interface. The category that has been assigned with the highest risk rank in the Risk Matrix is called the Driving Risk, and the corresponding risk rank is called the Driving Risk Rank. Depending on the range in which the driving risk rank value falls, the system determines the SIL, and then populates the Selected SIL Level field with this value.Note: If the driving risk rank value falls on the boundary value of two SIL thresholds, GE Digital APM populates the Selected SIL Level field with the higher SIL value. For example, suppose that the SIL Threshold contains SIL value 1 for the risk range 0 through 10, and SIL value 2 for the risk range 10 through 100. If the driving risk in the risk assessment is 10, the Selected SIL Level field is populated with the SIL value 2.About Safety Integrity Level (SIL) Assessment Using a Hazards AnalysisIf you have already performed risk assessments for a Hazards Analysis via the Hazards Analysis module, you can use one of those risk assessments to assess the Safety Integrity Level (SIL) for an instrumented function. To determine SIL using a PHA Internal assessment, you must:Specify the SIL Threshold values. An SIL Threshold record stores the upper and lower boundary values for each SIL. Select the Hazards Analysis and the Cause-Consequence pair that you want to use to assess the SIL value. The category that has been assigned with the highest risk rank in the risk assessment is called the Driving Risk, and the corresponding risk rank is called the Driving Risk Rank.The system determines which risk rank values to use based on the following criteria:If the risk from the Hazards Analysis has not been mitigated, the Driving Risk Rank of the unmitigated risk assessment is used to calculate SIL.If the risk from the Hazards Analysis has been mitigated, then the Driving Risk Rank of the mitigated risk assessment is used to calculate SIL. Depending on the range in which the driving risk rank value falls, GE Digital APM determines the SIL, and then populates the Selected SIL Level field with this value.Note: If the driving risk rank value falls on the boundary value of two SIL thresholds, GE Digital APM populates the Selected SIL Level field with the higher SIL value. For example, suppose that the SIL Threshold contains SIL value 1 for the risk range 0 through 10, and SIL value 2 for the risk range 10 through 100. If the driving risk in the risk assessment is 10, the Selected SIL Level field is populated with the SIL value 2.About SIL Assessment Using LOPAA Layer of Protection Analysis (LOPA) is a type of risk assessment that lets you determine the SIL value that is associated with the protective instruments that exist to mitigate the same risks for which the instrumented function exists. When you use a LOPA to assess the SIL value for an instrumented function, you examine the granular portions of the scenario and assess the risk associated with each portion, and then those individual risk values are used to calculate the SIL value for the instrumented function.You can conduct one LOPA per risk that is associated with an instrumented function. Refer to the LOPA documentation for further information on managing LOPA and related record.To assess the SIL value for an Instrumented Function using LOPA, you must link the LOPA to the LOPA Assessment of the Instrumented Function.LOPA
+ When you create a LOPA record, it will be linked to the corresponding Instrumented Function record.
+LOPA records can be linked to records in the following families:
+
+Conditional Modifier: Stores details about the consequences of the risk described in the LOPA.
+Hazards Analysis Safeguard: Stores details about the safeguards and independent layers of protection that exist to mitigate the risk associated with the consequences described in the Conditional Modifiers. Independent Layers of Protection can be linked to Equipment and Functional Locations, which store details about the equipment or location with which the independent layers of protection are associated.
+These families also store numeric values that represent probability and failure rates. These values are used to calculate the SIL value of the instrumented function whose risks you are assessing through the LOPA. The calculated SIL value is stored in the Calculated SIL field in the LOPA.
+When you create a LOPA, you will define the following items in the record:
+The risk for which you are conducting the LOPA.The consequences that may occur if that risk is not prevented from proceeding into an undesirable scenario.The events or conditions that can initiate the undesirable event.How often the event may occur.How often it is acceptable for the event to occur.
+Independent Layers of Protection
+An independent layer of protection is a device, system, or action that exists to prevent a risk, and that is independent of the event that initiates the scenario. An independent layer of protection is external to any other layer of protection or safety instrumented system. The effectiveness of an independent layer of protection is quantified in terms of its probability of failure data (PFD), which is a numeric value that represents the probability that the independent layer of protection will fail to perform its specified function.
+You can use the values in the Type list to populate an Independent Layer of Protection automatically with values from an IPL Type record. IPL Type records are provided in the baseline database, and can be defined by an SIS Administrator or SIS Engineer. 
+You should create one Safeguard record per layer of protection that exists. Via the Safeguard datasheet, you can link the Independent Layer of Protection to the Equipment or Functional Location for which the layer of protection exists. 
+Conditional Modifier
+A conditional modifier is an action or event that can increase or decrease the probability that a risk may occur if the action is not mitigated and proceeds into an undesirable event. Details about a conditional modifier are stored in Conditional Modifier records, which are linked to LOPA records. 
+For example, assume that the SIL analysis team is conducting a LOPA to investigate the risk scenario illustrated in the following diagram, where each box represents a portion of the scenario, and each label indicates the family that stores the relevant information:
+When Valve A-1001 fails, flammable gas is released into an explosive atmosphere. If the flame ignites, causing a vapor cloud explosion in the vicinity of the operator, it could cause a fatal injury.
+
+
+
+In this risk scenario, the fatal injury is a consequence of the valve failure, and the following events or actions are the conditional modifiers:
+The flame ignitingThe vapor cloud explodingThe operator being in the vicinity of the explosion
+Since these actions and events appear within the risk scenario, the probability associated with the consequence occurring is increased exponentially. In other words, if the operator was not in the vicinity of the blast, the probability of fatal injury would be less. By examining the granular events that are associated with a risk, the SIL analysis team can more accurately assess the SIL value for the instrumented function.
+Assess the Safety Integrity Level (SIL) via a Layer of Protection Analysis (LOPA)This topic describes how to assess the SIL level for an Instrumented Function using a LOPA.Before You Begin
+ Create a LOPA to define the risk that you are assessing. For more information, refer to the Layers of Protection Analysis section of the documentation.
+Procedure
+Access the Instrumented Function for which you want to assess the SIL value. In the workspace, select the SIL Assessment tab.
+The SIL Assessment section appears. The Assessment Details tab is selected by default.
+
+
+
+In the lower-right corner of the Assessment Details subsection, select Add Assessment
+, and then select LOPA Internal.
+A blank LOPA Assessment datasheet appears.
+
+
+
+As needed, enter values in the available fields. 
+Note: In the Linked LOPA ID field, you can only link LOPA records that are in Complete state.
+In the upper-right corner of the datasheet, select .
+The LOPA Assessment is saved, and the SIL level for the Instrumented Function is assessed using LOPA.
+Results
+In the Assessment Details subsection, the LOPA that you have created appears in list of SIL assessments.In the Assessment Details subsection, for the row that contains the LOPA that you created, the SIL level that is calculated in the LOPA appears in the SIL Level column. A copy of the Risk Assessment associated with the LOPA is created and linked with the LOPA Assessment.Any change to the linked LOPA will reflect in the associated LOPA Assessment when the state of the LOPA is changed to Complete.
+What To Do Next
+
+Associate an SIL Assessment with an Instrumented Function
+
+Assess the Safety Integrity Level (SIL) via a Risk MatrixBefore You Begin
+
+Create an Instrumented Function. Configure the Risk Matrix. For information, refer to the Risk Matrix section of the documentation.
+Note: You can create only one Risk Matrix Internal for an Instrumented Function.
+Procedure
+Access the Instrumented Function for which you want to assess the Safety Integrity Level (SIL). In the workspace, select the SIL Assessment tab.
+The SIL Assessment section appears. 
+
+
+
+ In the 
+SIL Assessment section, in the upper-right corner of the All SIL Assessments subsection, select Add Assessment, and then select Risk Assessment Internal.
+A blank datasheet for the Risk Matrix Internal assessment appears.
+
+
+
+As needed, enter values in the available fields. In the upper-right corner of the datasheet, select .
+The Risk Assessment section appears above the datasheet.
+
+
+
+Select the Risk Assessment section.
+The Mitigated Risk Assessment window appears, displaying the risk matrix for each category.
+
+
+
+Specify the risk ranks for each category by selecting the appropriate cell on the risk matrix interface, and then select Save.
+Note: You can also provide financial details, if applicable. These details, however, are not used in SIL calculations.
+Based on the risk ranks that you have defined on the risk matrix interface, the GE Digital APM system calculates the following values:
+
+Safety Integrity Level (SIL)
+
+Risk Reduction Factor (RRF)
+
+Required Probability of Failure
+Failure Rate UOMAvailability Target
+Results
+The Risk Matrix Internal assessment that you have created is listed in the SIL Assessment section.
+What To Do Next
+
+Associate an SIL Assessment with an Instrumented Function
+
+Assess the Safety Integrity Level (SIL) via a Process Hazards Analysis (PHA)Before You Begin
+
+Create an Instrumented Function.
+About This TaskThis topic describes how to assess the Safety Integrity Level (SIL) of an Instrumented Function using the risk assessment of a Process Hazards Analysis (PHA), which has been mitigated by one or more safeguards. If a risk has not been mitigated, then the unmitigated risk assessment is used instead.Procedure
+Access the Instrumented Function for which you want to assess the SIL value. In the workspace, select the SIL Assessment tab.
+The SIL Assessment section appears. 
+
+
+
+ In the 
+SIL Assessment section, in the upper-right corner of the All SIL Assessments subsection, select Add Assessment, and then select PHA Internal.
+A blank datasheet for the PHA Internal assessment appears.
+
+
+
+Next to the Hazards Analysis ID field, select .
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of Hazards Analysis appears.
+
+
+
+Select the Hazards Analysis that you want to link to the PHA Internal Assessment, and then select OK.In the upper-right corner of the datasheet, select .
+The list of Cause-Consequence pairs linked to the selected Hazards Analysis appears in the PHA Internal Risk Assessment subsection below the datasheet.
+
+
+
+Select the check box that corresponds to the Cause-Consequence pair that you want to use for SIL assessment.
+
+
+
+Note: You can access the risk matrix associated with the selected Consequence by selecting View Risk Matrix.
+The GE Digital APM system calculates the following values in the PHA - Internal datasheet based on the selected Consequence and its overall risk rank:
+
+Safety Integrity Level (SIL)
+
+Risk Reduction Factor (RRF)
+
+Required Probability of Failure
+Failure Rate UOMAvailability Target
+Results
+The PHA - Internal record that you have created is listed in the SIL Assessment section. 
+What To Do Next
+
+Associate an SIL Assessment with an Instrumented Function
+
+Assess the Safety Integrity Level (SIL) via an External MethodBefore You Begin
+
+Create an Instrumented Function.
+Procedure
+Access the Instrumented Function for which you want to assess the Safety Integrity Level (SIL). In the workspace, select the SIL Assessment tab.
+The SIL Assessment section appears. 
+
+
+
+ In the 
+SIL Assessment section, in the upper-right corner of the All SIL Assessments subsection, select Add Assessment, and then select External.
+The External datasheet appears.
+
+
+
+As needed, enter values in available fields. In the upper-right corner of the datasheet, select .
+The SIL assessment is performed.
+Results
+The External SIL Assessment that you have created is listed in the SIL Assessment section.
+What To Do Next
+
+Associate an SIL Assessment with an Instrumented Function
+
+Associate an SIL Assessment with an Instrumented FunctionWhen you associate an SIL Assessment with an Instrumented Function, the GE Digital APM system performs the SIL calculations for the Instrumented Function based on the values that you have provided in the associated SIL Assessment. You can associate only one SIL Assessment with an Instrumented Function.Before You Begin
+
+Perform an SIL assessment.
+About This Task
+This topic describes how to associate the following SIL Assessments with an Instrumented Function:
+LOPA AssessmentRisk Matrix Internal AssessmentPHA Internal AssessmentExternal Assessment
+Procedure
+Access the Instrumented Function with which you want to associate an SIL Assessment. In the workspace, select the SIL Assessment tab.
+The SIL Assessment section appears, displaying a list of SIL Assessments performed on the Instrumented Function.
+
+
+
+In the Link column, select the option button that corresponds to the SIL Assessment that you want to associate.
+The SIL Assessment is associated with the Instrumented Function.
+
+
+
+Results
+
+Based on the values that you have entered in the SIL Assessment, GE Digital APM system populates the following values in the Instrumented Function datasheet :
+Selected SIL ValueRequired Probability of FailureRisk Reduction FactorSpurious Trip Limit (per year)Failure Rate UOMAvailability TargetLast Modified
+If you associated a LOPA Assessment, Risk Matrix Internal Assessment, or a PHA Internal Assessment with the Instrumented Function, then the Risk Assessment record associated with the corresponding SIL Assessment is also linked with the Instrumented Function.
+
+
+
+
+
+On this pageAbout Safety Integrity Level (SIL) AssessmentSafety Integrity Level (SIL) Assessment WorkflowAbout Safety Integrity Level (SIL) Assessment Using a Risk MatrixAbout Safety Integrity Level (SIL) Assessment Using a Hazards AnalysisAbout SIL Assessment Using LOPAAssess the Safety Integrity Level (SIL) via a Layer of Protection Analysis (LOPA)Assess the Safety Integrity Level (SIL) via a Risk MatrixAssess the Safety Integrity Level (SIL) via a Process Hazards Analysis (PHA)Assess the Safety Integrity Level (SIL) via an External MethodAssociate an SIL Assessment with an Instrumented Function
+
+
+
+
+
+
+
+
+

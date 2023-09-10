@@ -1,0 +1,168 @@
+
+
+
+Spare Applications | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares AnalysisSpares Analysis: Overview
+Spares Analysis: Workflow
+Spares Analyses
+Spares
+Spare Applications
+Spare Application Populations
+Failure Distributions
+Monte Carlo Simulations
+
+
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Spares Analysis
+Spare Applications
+
+
+
+
+
+
+
+Spare ApplicationsAccess a Spare ApplicationProcedure
+Access the Spare for which you want to view a Spare Application.Select the Applications tab. 
+A list of Applications associated with the selected Spare appears.
+
+
+
+In the list, select the hyperlink for the Spare Application whose details you want to view. 
+The details of the selected Spare Application appear in the workspace. The following tabs appear in the workspace:
+
+
+Definition: Displays the name of the selected Spare Application.
+Note: As needed, in the Definition section, you can select  to modify the name of the Spare Application, and then select  to save your changes.
+
+Populations: Displays a list of any Spare Application Populations that are linked to the selected Spare Application. This tab is selected by default. 
+Failure Distributions: Displays a list of any Failure Distributions that are linked to the selected Spare Application. 
+Failure Consequence: Displays the failure consequence information for the selected Spare Application.
+Preventive Maintenance: Displays the preventive maintenance information for the selected Spare Application.
+
+
+
+Create a Spare Application This topic describes how to create a new Spare Application. You can also copy an existing Spare Application.Before You Begin
+
+Create a Spare
+
+Procedure
+Access the Spare for which you want to create a new Spare Application.Select Applications, and then select .
+The workspace for the new Spare Application appears.
+In the Application Name box, enter the name of the application. The name of each Spare Application must be unique to the root record.Select .
+The Spare Application is saved. The workspace for the Spare appears, displaying the Populations section.
+
+
+
+Results
+The new Spare Application is linked to the Spare automatically.
+What To Do Next
+
+Create a Spare Application Population.
+
+Create a Failure Distribution.
+
+Copy a Spare ApplicationThis topic describes how to copy a Spare Application. You can also create a new Spare Application.Before You Begin
+
+Create a Spare
+
+Procedure
+Access the Spare for which you want to create a new Spare Application. Select Applications.
+The list of Spare Applications associated with the selected Spare appears.
+
+
+
+In the Application section, select the row that contains the Application that you want to copy, and then select .
+The Copy Application dialog box appears, asking you to confirm that you want to copy the selected Spare Application.
+Select Yes.
+The new Spare Application appears in the list of available Spare Applications in the following format:
+ <Name of the original SpareApplication> - Copy 1 
+Where, <Name of the original SpareApplication> is the name of the Spare Application that you copied.
+Note: If you want to modify the name of the Spare Application, you can select the Definition tab, and then select . To save your changes, select . The name of each Spare Application must be unique to the root record.
+Results
+The new Spare Application is linked to the Spare automatically.Any associated Spare Application Populations are copied.Failure Consequence and Preventive Maintenance information is copied.
+What To Do Next
+
+Create a Spare Application Population.
+
+Create a Failure Distribution.
+
+Delete a Spare ApplicationAbout This TaskWhen you delete a Spare Application, any associated Spare Application Populations are also deleted.Procedure
+Access the Spare for which you want to delete an associated Spare Application.Select Application. 
+A list of Spare Applications associated with the selected Spare appears. 
+
+
+
+Select the row containing the Spare Application that you want to delete, and then, in the upper-right corner of the section, select . 
+The Delete Application dialog box appears, asking you to confirm that you want to delete the selected Spare Application.
+Select Yes. 
+The selected Spare Application is deleted. The updated list of Spare Applications appears in the Applications section.
+Results
+Any associated Spare Application Populations are deleted.
+
+
+
+
+
+On this pageAccess a Spare ApplicationCreate a Spare Application Copy a Spare ApplicationDelete a Spare Application
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,119 @@
+
+
+
+Reliability Analytics Security Groups | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+ReferenceGeneral ReferenceReliability Analytics Security Groups
+Reliability Analytics URLs
+Reliability Analytics System Code Tables
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+
+
+Family Field Descriptions
+Catalog Items
+Distribution Types
+Calculations
+Failure Data
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Reference
+General Reference
+Reliability Analytics Security Groups
+
+
+
+
+
+
+
+Reliability Analytics Security GroupsReliability Analytics Security Groups
+
+The following table lists the baseline Security Groups available for users within this module, as well as the baseline Roles to which those Security Groups are assigned. In Predix APM, Roles are assigned to Security Users through permission sets.
+
+Important:  Assigning a Security User to a Role grants that user the privileges associated with all of the Security Groups that are assigned to that Role. To avoid granting a Security User unintended privileges, before assigning a Security User to a Role, be sure to review all of the privileges associated with the Security Groups assigned to that Role.
+                
+
+Security GroupRolesMI Reliability ViewerMI APM ViewerMI Reliability User
+MI FE PowerUser
+MI FE User
+MI Reliability Administrator
+MI APM Viewer
+MI FE Admin
+MI FE PowerUser
+MI FE User
+
+The baseline family-level privileges that exist for these Security Groups are summarized in the following table.
+FamilyMI Reliability Administrator MI Reliability User MI Reliability Viewer Analysis ViewViewViewDistribution View, Update, Insert, DeleteView, Update, Insert, DeleteViewExponential View, Update, Insert, DeleteView, Update, Insert, DeleteViewGrowth Model View, Update, Insert, DeleteView, Update, Insert, DeleteViewLognormal View, Update, Insert, DeleteView, Update, Insert, DeleteViewNormalView, Update, Insert, DeleteView, Update, Insert, DeleteViewProduction Analysis View, Update, Insert, DeleteView, Update, Insert, DeleteViewProduction Losses View, Update, Insert, DeleteView, Update, Insert, DeleteViewReliability Automation Rule View, Update, Insert, DeleteViewViewReliability DistributionView, Update, Insert, DeleteView, Update, Insert, DeleteViewReliability GrowthView, Update, Insert, DeleteView, Update, Insert, DeleteViewReliability RecommendationView, Update, Insert, DeleteView, Update, Insert, DeleteViewSpareView, Update, Insert, DeleteView, Update, Insert, DeleteViewSpares AnalysisView, Update, Insert, DeleteView, Update, Insert, DeleteViewSpare Analysis Chart View, Update, Insert, DeleteView, Update, Insert, DeleteViewSpare Application View, Update, Insert, DeleteView, Update, Insert, DeleteViewSpare Application PopulationView, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem ActionView, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Action Mapping View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Action OptimizationView, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Action Result View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Analysis View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Asset View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem BufferView, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Condition Monitor View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Element View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Element Result View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Global Event View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Inspection View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Link View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Preventative Maintenance View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Resource View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Resource Result View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Resource Usage View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Risk View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Risk Assessment View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Scenario View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Sensor View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Special Action View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Subsystem View, Update, Insert, DeleteView, Update, Insert, DeleteViewSystem Switch View, Update, Insert, DeleteView, Update, Insert, DeleteViewWeibull View, Update, Insert, DeleteView, Update, Insert, DeleteViewAnalysis Link View, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Global Events View, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Mitigated TTF Distribution View, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Planned Resource Usages View, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Consolidated RecommendationsViewViewViewHas Recommendations View, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Reliability View, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Resource Usage View, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Risk Assessments View, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Root System View, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Scenarios View, Update, Insert, DeleteView, Update, Insert, DeleteViewHas System Actions View, Update, Insert, DeleteView, Update, Insert, DeleteViewHas System Elements View, Update, Insert, DeleteView, Update, Insert, DeleteViewHas System Optimization View, Update, Insert, DeleteView, Update, Insert, DeleteViewHas System Resources View, Update, Insert, DeleteView, Update, Insert, DeleteViewHas System Results View, Update, Insert, DeleteView, Update, Insert, DeleteViewHas System Risks View, Update, Insert, DeleteView, Update, Insert, DeleteViewHas TTF Distribution View, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Unplanned Resource Usages View, Update, Insert, DeleteView, Update, Insert, DeleteView
+
+
+
+
+
+On this pageReliability Analytics Security Groups
+
+
+
+
+
+
+
+
+

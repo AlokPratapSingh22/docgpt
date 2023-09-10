@@ -1,0 +1,142 @@
+
+
+
+Tracking Items | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Tracking Items
+
+
+
+
+
+
+
+Tracking ItemsAbout Tracking ItemsA Tracking Item allows you to monitor the performance of an Asset and set up notifications to be sent when specific reevaluation criteria have been met (i.e. cost and the number of failures).A Tracking Item queries the failure and cost data from work history records linked to the selected equipment or functional location. Queries are automatically initiated when the track item Start Date is reached. By default, the values in the Work History Total Cost field for Maintenance Work are used to derive the cost value used for the Count. The work history costs that occur prior to the track item Start Date will not be included in the Count. A track item alert is triggered when either the total cost or total number of failure events threshold count is met. After an alert is sent, the Count reverts to zero, and the process is repeated until the track items instruction is terminated.Access a Tracking ItemProcedure
+Access the Root Cause Analysis that contains the Tracking Item whose details you want to view.In the left pane, select the Track tab.
+The Track workspace appears, displaying the list of Tracking Items associated with the selected RCA. The following columns of information appear in the workspace:
+
+Start Date
+
+Is Active?
+
+Count
+
+Cost
+
+Equipment
+
+In the Start Date column, select the hyperlink for the Tracking Item whose details you want to view.
+The Add/Edit Tracking Item window appears, displaying the datasheet for the selected Tracking Item.
+Note: As needed, you can modify the values in the available fields, and then select  to save your changes.
+Create a Tracking ItemAbout This Task
+As part of the reevaluation process, you can create an RCA Tracking Item and set up tracking notifications. In the Track workspace, you will define the:
+User to whom the notification will be sent.Time interval or event-based conditions that should be met before the notification can be sent.
+You can create a new Tracking Item or copy a Tracking Item.
+Procedure
+Access the RCA within which you want to create a new Tracking Item.In the left pane, select the Track tab.
+A list of Tracking Items associated with the selected RCA appears in the workspace. 
+In the upper-left corner of the workspace, select .
+The Add/Edit Tracking Item window appears, displaying a blank datasheet.
+As needed, enter values in the available fields. 
+Note: Above the Tracking Item Details datasheet, the Related Assets box appears, which contains the ID of the Asset to which the RCA Tracking Item is linked. If the RCA Tracking Item is not linked to an Asset, this box will be blank. You can select Search next to the Related Assets box to search for an Asset and link the Asset to the Tracking Item.
+Select .
+The Tracking Item is saved.
+Results
+When you create a Tracking item, a link is automatically created between the Tracking Item and the RCA. 
+Copy a Tracking ItemAbout This Task
+You can copy a Tracking Item or create a new Tracking Item.
+Procedure
+Access the RCA that contains the Tracking Item that you want to copy.In the left pane, select Track.
+A list of Tracking Items associated with the selected RCA appears in the workspace. 
+Select the check box to the left of the Tracking Item that you want to copy.
+Tip: You can select one or more Tracking Item.
+In the upper-right corner of the workspace, select . 
+The Copy Track Item(s) dialog box appears, asking you to confirm that you want to copy the selected Tracking Item(s).
+Select Yes.
+The Tracking Items are copied and are associated with the selected RCA. 
+Results
+The values in all of the fields on the Tracking Items are copied except for the value in the Related Assets box. 
+Access Reference Documents for a Tracking ItemProcedure
+Access the Tracking Item whose Reference Documents you want to access.On the datasheet that appears, select , and then select Reference Documents. 
+A list of Reference Documents linked to the selected Tracking Item appears.
+Note: For more information, refer to the Manage Reference Documents section of the documentation for additional options when working with reference documents.
+Delete a Tracking ItemProcedure
+Access the RCA that contains the Tracking Item that you want to delete.In the left pane, select the Track tab.
+A list of Tracking Items associated with the selected RCA appears in the workspace.
+ Select the check box to the left of the Tracking Item(s) that you want to delete, and then select .
+Tip: You can select one or more Tracking Item.
+The Delete Track Item(s) dialog box appears, asking you to confirm that you want to delete the selected Tracking Item(s).
+Select Yes.
+The selected Tracking Item is deleted.
+
+
+
+
+
+On this pageAbout Tracking ItemsAccess a Tracking ItemCreate a Tracking ItemCopy a Tracking ItemAccess Reference Documents for a Tracking ItemDelete a Tracking Item
+
+
+
+
+
+
+
+
+

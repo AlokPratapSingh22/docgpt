@@ -1,0 +1,337 @@
+
+
+
+Logic Tree | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Logic Tree
+
+
+
+
+
+
+
+Logic TreeAbout Logic TreeIn a Root Cause Analysis, analyzing data involves compiling the information that has been collected so far in the Root Cause Analysis and representing it visually to facilitate discussion. A Logic Tree is an organizational tool that you can use to diagram all the possible causes of a failure event.Details
+The Logic Tree lets you represent visually the events that are associated with a failure and the cause-and-effect relationships that may have led to a failure event. The structure of the Logic Tree is hierarchical so that you can easily reference which event caused which effect. Each cause or effect is represented by a labeled icon called a node. You can add nodes to the Failure Event node that represent components of the Root Cause Analysis. For example, if you define the Failure Event node as a fire, in the Logic Tree, you would add to the Failure Event node downstream nodes that represent all the possible causes for the failure event.
+The following table provides the types of nodes that you can use in a Logic Tree Diagram.IconNode
+
+Failure Event 
+
+Failure Mode 
+
+Hypothesis 
+ or 
+Logic Gate
+Each node has an associated node, which participates in a predecessor-successor relationship. For example, each Failure Mode node that appears in the Logic Tree has an associated RCA Failure Mode that is linked to the root RCA Event. Additionally, for each Hypothesis node that appears in the Logic Tree, an associated RCA Hypothesis exists that is linked to the predecessor RCA Failure Mode and the root RCA Event. Additionally, when you add a node to the Logic Tree, a link is created between that node and the RCA.
+Difference Between an Event Diagram and a Logic Tree
+The Event Diagram can depict the cause-and-effect of events that led to the failure event and post-failure activities. The Logic Tree, however, can depict, starting with the failure event, possible causes and hypotheses related to the event itself.
+The Event Diagram enables the RCA Team to view and organize the chain of events prior to the failure event and identify possible work process issues. The following image shows an Event Diagram that was created in the Event Diagram workspace. 
+
+
+
+The Logic Tree can depict, starting with the failure event, possible causes and hypotheses related to the event itself. The Logic Tree enables the RCA Team to organize and discussion points on the possible causes of the failure event. The following image shows a Logic Tree that was created using options in the Logic Tree workspace. 
+
+
+
+Event Diagram and Logic Tree Data Model
+An Event Diagram and a Logic Tree consist of an RCA Event and all the records that are linked to it directly or indirectly. For example, after you define the failure event, you can create RCA Failure Modes to link to the RCA Event, and then you can link RCA Hypothesis to the RCA Failure Modes, and so on.
+The following image shows the entity families and relationship families that are used to create an Event Diagram and a Logic Tree in Root Cause Analysis. The Logic Tree and the Event Diagram share an RCA Event. The RCA Sequence Node family is used only by the Event Diagram. All of the other families are used by the Logic Tree.
+
+
+
+Records in the RCA Logic Gate family can be linked to others in the RCA Logic Gate family. Additionally, records in the RCA Sequence Node family can be linked to others in the RCA Sequence Node family.
+In addition to the relationships that appear in the images, the following families can be linked to records in the RCA Reference Document family through a relationship definition on the Has Reference Documents family:
+RCA Event RCA Hypothesis RCA Logic Gate 
+About Failure ModesA failure mode is a possible cause associated with the failure event. The failure mode is represented by a node, called the Failure Mode node, which appears below the Failure Event node. When you add a Failure Mode node to the Logic Tree, you are defining the RCA Failure Mode. When you define an RCA Failure Mode, a link is created between the RCA Failure Mode and the root RCA Event and between the RCA Failure Mode and the RCA.  
+Failure Mode nodes exist on the second level of the tree, under the Failure Event node. Multiple Failure Mode nodes can be linked to the Failure Event node. The following image shows an example of how a Failure Mode node will look in the Logic Tree.
+
+
+
+A given failure event can have multiple failure modes. For example, the image shows the failure modes from our Cooling Water Pump failure example. The Failure Event node (i.e., the overheated pump) is associated with the following Failure Mode nodes:
+ No Spare Parts: There were no spare parts when the pump overheated, which caused the pump to be down for a longer amount of time and a greater loss of production. This failure mode did not cause the failure, so there are no hypotheses associated with it, but it is included as part of the failure event. Motor tripped due to high temperature: This failure was the cause of the overheated pump event. There are additional hypotheses associated with this node so that the cause of the event can be determined.
+About HypothesesBy definition, a hypothesis is a tentative assumption intended to explain certain facts or observations. For a Root Cause Analysis, a hypothesis represents a theory about the root cause of a failure event. RCA Hypotheses are then assigned a state that indicates the validity of the hypothesis. Details
+In the Logic Tree, a hypothesis is represented by a Hypothesis node, which is defined in an associated RCA Hypothesis. Hypothesis nodes can appear below Failure Mode nodes and other Hypothesis nodes in the Logic Tree. When you add a Hypothesis node to the Logic Tree, a link is created between the RCA Hypothesis and the RCA. A link is also created between the RCA Hypothesis and either the RCA Failure Mode or the predecessor RCA Hypothesis.
+The following image shows an example of how a Hypothesis node and the associated RCA Hypothesis will look in the Logic Tree when it is first created.
+
+
+
+To the right of the label that you assign to the Hypothesis node, a number appears, indicating the level of confidence that the team has in the hypothesis being true. After a given RCA Hypothesis has been created, the team can create an RCA Verification to test the hypothesis. The team will then change the state of the RCA Hypothesis according to the results of the RCA Verification.
+You can define multiple Hypothesis nodes for any RCA Failure Mode or RCA Hypothesis, meaning that multiple factors could be responsible for a given cause. For example, a lubrication issue may cause a cooling water pump to overheat, but that lubrication issue was caused by an operator who did not apply enough lubricant, which was caused by inadequate accountability of workers. In this case, the lubrication issue is a physical cause, too little lubrication applied is a human cause, and the latent root cause is the inadequate accountability of workers. The following image shows how this scenario would appear in the Logic Tree.
+
+
+
+About Hypothesis StatesRCA Hypotheses are assigned a state that indicates the validity of the hypothesis. When a Hypothesis node is first created, it is assigned the Hypothesis state by default. Tip: You can add your own Hypothesis state and assign it an image by updating the RCA Hypothesis State System Code Table in Configuration Manager.
+ After the hypothesis has been tested through the completion of an RCA Verification, the state of the Hypothesis node can then be changed to True or Not True. If a hypothesis is proven to be incorrect, after you change the Hypothesis state to Not True, you are finished working with that hypothesis. If a hypothesis is proven to be true and you change the Hypothesis state to True, you can:
+Create additional RCA Hypothesis records that provide further information on a root cause and link them to the RCA Hypothesis.
+Create RCA Verifications to test the additional hypotheses, determine if the hypotheses are true or not true, and then change the state of the associated RCA Hypothesis records accordingly.
+Create additional RCA Verifications to test the hypothesis to further identify the root cause as physical, human, or latent.
+After the root cause has been identified, you can change the state of the associated RCA Hypothesis to indicate your conclusions (i.e., Cause Human, Cause Latent, or Cause Physical).
+When you change the state of a Hypothesis node, the node icon changes to indicate the new state. The following table describes all the possible states of an RCA Hypothesis and how the associated Hypothesis node will appear in the Logic Tree.
+
+Hypothesis Node Hypothesis State Description For example, the team may determine that: 
+
+Hypothesis The hypothesis is proposed and no conclusions can be drawn at this point. This is the default state. The piece of equipment may have failed due to a pressure leak. 
+
+Hypothesis True The hypothesis has been tested and proven to be correct. Further conclusions can be drawn. The piece of equipment failed due to a pressure leak. 
+
+Hypothesis Not True The hypothesis has been tested and proven to be incorrect. No further conclusions can be drawn. The piece of equipment did not fail due to a pressure leak. 
+
+Cause Human The hypothesis has been proven correct and further testing has revealed that the root cause of the Failure Event was caused by human interaction. The operator failed to increase the pressure when it reached the critical level, therefore causing a pressure leak and the failure. 
+
+Cause Latent The hypothesis has been proven correct and further testing has revealed that the root cause of the Failure Event was caused by flaw(s) in procedure or the system that caused incorrect decisions to be made. This is often due to poor data or communication between individuals within the organization. In the vast majority of events, there will be at least one latent cause. Management failed to adhere to the recommended safety guidelines for the piece of equipment, thus the operator failed to increase the pressure when it reached the critical level, causing the pressure leak and the failure. 
+
+Cause Physical The hypothesis has been proven correct, and further testing has revealed that the root cause of the Failure Event was caused by a physical piece of equipment. The seals on the pressure relief valve are worn and require replacement, which caused the pressure leak and the failure. 
+
+About VerificationA verification is a task to prove or disprove a hypothesis. An RCA Verification contains the task-related information required to verify a hypothesis. The RCA Verifications are assigned to team members, similar to the way in which RCA Preserve Records are assigned. For example, if you wanted to verify whether a pump overheated because of a mechanical or electrical problem, you would need to inspect the pump's wiring. About Logic GatesYou can add logic gates to the Logic Tree to define a connection between nodes. A logic gate is defined in an RCA Logic Gate and is represented in the Logic Tree by a Logic Gate node. You can use Logic Gate nodes to add Boolean logic between nodes (i.e., AND and OR statements). The AND Logic Gate is represented by the  symbol in the Logic Tree. The OR Logic Gate is represented by the  symbol in the Logic Tree.Details 
+Adding a Logic Gate node between other nodes in the Logic Tree indicates a conditional relationship between the nodes, which you can define in the description fields in the RCA Logic Gate. These conditional relationships are defined in logical statements (e.g., if B is true, then A is true).
+When two or more hypotheses are linked to a common predecessor node, the hypotheses nodes are by default connected using the OR Logic Gates, whether the Logic Gates are visible or not.
+Example: Logic Gates
+Suppose that you want to indicate in the Logic Tree that Failure Mode is true only if Hypothesis 1 and Hypothesis 2 or Hypothesis 2A and Hypothesis 2B are true. 
+You would organize the nodes in the Logic Tree as shown in the following image.
+
+
+
+Access the Logic Tree DiagramProcedure
+Access the Root Cause Analysis for which you want to view the Logic Tree diagram.In the left pane, select the Logic Tree tab.
+The Logic Tree diagram for the selected RCA appears in the workspace.
+
+
+
+Tip: Select  to display the diagram in full screen.
+Note: If you access the Logic Tree tab for the first time, the RCA Failure Event window will appear, where you can define an RCA Failure Event. If you previously accessed the Logic Tree tab and defined a Failure Event, you will see the Failure Event node in the main display area (i.e., the design canvas). 
+Create a Failure EventAbout This Task
+When you create an RCA Event, you are also defining the associated Failure Event node. After you create a Failure Event node, you cannot delete it via Root Cause Analysis, but you can modify the RCA Event. Only one RCA Event can be defined for each RCA.
+This topic describes how to define a failure event.
+Note: A Failure Event can only be defined from the Logic Tree if no Failure Event currently exists.
+Procedure
+Access the RCA for which you want to create a Failure Event.In the left pane, select the Logic Tree tab.
+A blank datasheet appears.
+
+
+
+As needed, enter values in the available fields.Select .
+The RCA Failure Event is created and linked automatically to the selected RCA. The Failure Event node appears in the design canvas in Logic Tree workspace.
+What To Do Next
+
+Add a Failure Mode Node to the Logic Tree 
+
+Add a Failure Mode Node to the Logic TreeBefore You Begin
+
+Define a Failure Event. 
+Procedure
+Access the Logic Tree Diagram to which you want to add the Failure Mode node.In the design canvas, double-click the Failure Event node.A window appears, displaying the datasheet of the Failure Event node.In the window, select the Failure Mode tab.In the text box, enter a name for the failure mode as you want it to appear on the Logic Tree, and then select Add to automatically assign the failure mode to the Failure Event node.The new failure mode appears in the Assigned Nodes section of the window.In the Assigned Nodes section of the window, select the link corresponding to the failure mode that you want to update.In the Description box that appears, enter a description for the failure mode.Select .
+The RCA Failure Mode node is saved. 
+What To Do Next
+Add a Hypothesis to the Failure Mode Node
+Access a Logic Tree Node Procedure
+Access the Logic Tree Diagram for which you want to view the details of a node.On the design canvas, double-click the Logic Tree node whose properties you want to view.
+The Properties window appears, displaying the datasheet for the selected node. 
+Note: As needed, you can modify the details of the selected node, and then select  to save your changes.
+Copy a Logic Tree NodeAbout This Task
+After you create various nodes in your Logic Tree, you can copy and paste them within the same Logic Tree. 
+You can add:
+Failure Mode nodes to the Failure Event node.Hypothesis nodes to the Failure Mode nodes and Hypothesis nodes.Verification nodes to Hypothesis nodes.
+Procedure
+Access the Logic Tree Diagram containing the Logic Tree node that you want to copy.In the design canvas, select the Logic Tree node that you want to copy.In the upper portion of the workspace, in the Manage Diagram section, select 
+Select the node onto which you want to paste the copied node, and then in the upper portion of the workspace, in the Manage Diagram section, select .
+If the selected node is a valid location to paste the copied node, the nodes that were copied appear at the levels below the selected node.If the selected node is not a valid node to paste the copied node, an error message appears indicating that this is not a valid location. You will need to select a different location to paste the node.
+Results
+When you copy a Hypothesis node, if the RCA Hypothesis is linked to an RCA Verification, the verifications for that Hypothesis will also be copied. When you paste the Hypothesis, new RCA Hypothesis and RCA Verification will be created and will contains the same information as the sources.
+Access Reference Documents for a Logic Tree Node About This Task
+You can link a Reference Document to any of the following Logic Tree elements represented in the Logic Tree:
+Failure Event Failure Mode Hypothesis Logic Gate 
+Procedure
+Access the Logic Tree Diagram for which you want to link a reference document to an existing node represented in the Logic Tree.On the design canvas, double-click the node to which you want to link a Reference Document.
+The Properties window appears, displaying the datasheet for the selected node.
+On the datasheet, select, and then select Reference Documents. 
+A list of Reference Documents linked to the selected Failure Event node appears.
+Note: For more information, refer to the Manage Reference Documents section of the documentation for additional options when working with reference documents.
+Import Existing Failure Modes and HypothesesAbout This Task
+You can import Failure Modes or Hypotheses from an existing RCA analysis or analysis template into a Logic Tree Diagram. When you do so, you can import:
+Failure Modes below EventsHypotheses below Failure ModesHypotheses below other Hypotheses
+Procedure
+Access the Logic Tree Diagram containing the node to which you want to attach imported Failure Modes or Hypotheses.On the design canvas, select the node to which you want to attach imported Failure Modes or Hypotheses.At the top of the workspace, in the Manage Diagram section, select , and then select Import From RCA.
+The Import window appears, displaying the Select Analysis/Template section.
+
+
+
+In the Search In subsection, if necessary, select an analysis type within which you want to search for RCA analyses and templates containing the items you want to import to the Logic Tree diagram. If the analysis does not contain an Analysis Type, then select No Analysis Type Assigned.
+Tip:  You can refine the search by selecting values in the Choose RCA Event, Choose Failure Mode, or Choose Hypothesis boxes. In the Choose Hypothesis box, you can use wildcard characters to modify the selected value as needed.
+Select Search.
+The analyses and templates that meet the specified criteria appear in the Search Results subsection. For each analysis, the label that appears in the search results is the value in the Analysis Name field in the Root Cause Analysis record for that analysis. 
+
+
+
+In the Search Results subsection, select the check box in the row for each RCA containing Failure Modes and Hypotheses that you want to import, and then select Next. 
+Note: Although you can select the check box in the row for an RCA, you cannot import an RCA into the Logic Tree.
+The Select Failure modes/Hypothesis section appears, displaying a list of RCAs.
+
+
+
+In the row for the RCA name containing the Failure Mode or Hypothesis that you want to import, select the link.
+ The label for an RCA Failure Event is the value in the Label field of the RCA Failure Event record for that RCA Failure Event. If the Label field is empty, then the label will appear as RCA Event: Undefined. 
+Note: Although you can select the check box next to the RCA Failure Event, you cannot import an RCA Failure Event into the Logic Tree.
+Select the RCA Failure Event name to display the list of Failure Modes available for the analysis.
+Note: You can continue to select links in the rows for RCA Failure Events to display additional hierarchical levels.
+Select the check box next to each RCA Failure Event that you want to import, and then select Finish.
+Note: The Verifications check box is enabled only if you import a Hypothesis. If you want to import the RCA Verifications associated with the selected Hypothesis, select the Verifications check box. The Children check box allows you to import a selected node and any associated children.
+The Import window is closed. The Logic Tree workspace appears, displaying the newly added Failure Mode or Hypothesis to the Logic Tree diagram for the selected analysis.
+
+
+
+Results
+
+If you import an RCA Hypothesis along with the linked Verification, a new Verification is created and linked to the Hypothesis that is created from the imported Hypothesis. Values from the following fields in the Verification are copied to a new RCA Verification:
+MethodSend Alert on Due DateAlert Email Text Fields
+
+Import Failure Modes from Failure Modes and Effects Analysis (FMEA) and Reliability Centered Maintenance (RCM)About This Task
+Note:  You can only import Failure Modes from RCM and FMEA if the assets are linked to the RCA.
+Procedure
+Access the Logic Tree Diagram containing the event to which you want to attach imported Failure Modes from FMEA and RCM.On the design canvas, select the Event node.At the top of the workspace, in the Manage Diagram section, select , and then select Import From RCM and FMEA.
+The Import From RCM and FMEA window appears, displaying a list of assets that are linked to the analysis.
+
+
+
+Select the assets containing Failure Modes that you want to import.
+A list of Failure Modes linked to the selected assets appears.
+Select the Failure Modes that you want to import, and then select Finish.
+The Logic Tree workspace appears, displaying the newly added Failure Mode to the Logic Tree diagram for the selected analysis.
+Arrange Nodes Manually Within the Logic TreeAbout This Task
+If you manually arrange nodes, the arrangements are saved. The GE Digital APM system only automatically arranges the presentation of the nodes of the Logic Tree diagram in the design canvas when the Auto Arrange option is enabled.
+Procedure
+Access the Logic Tree Diagram for which you want to arrange the nodes.In the design canvas, clear the Auto Arrange check box.In the design canvas, select and drag the required node to the required location in the Logic Tree.In the pane, select the Analysis Summary tab.
+The logic tree diagram is saved, and the Analysis Summary workspace appears.
+Note: The node arrangement is not saved in the database if you refresh the page, close the browser, or log out of GE Digital APM before selecting the Analysis Summary tab.
+Delete Nodes from the Logic TreeProcedure
+Access the Logic Tree diagram within which you want to delete a node.In the design canvas, select the node that you want to delete.
+Note: Any node except the Failure Event node can be deleted from a Logic Tree.
+In the upper portion of the workspace, select .
+The Delete Logic Tree Items dialog box appears, asking you to confirm that you want to delete the selected node and its successor nodes.
+Select OK.
+The selected node is deleted from the database, and the node does not appear in the Logic Tree.
+Results
+All the child nodes of the deleted node are deleted.The link between the deleted node and the node to which it was linked is removed.
+Export a Logic Tree DiagramAbout This Task
+You can export a Logic Tree as an image and save it to another location, such as your local hard drive.
+Note: The zoom factor does not affect the size of the image that you want to export. Regardless of the zoom factor that is currently applied to the Logic Tree, the entire tree will be included in the image, even if part of the tree is cut off at the time you perform the export. 
+Procedure
+Access the Logic Tree diagram that you want to export.At the top of the workspace, in the Manage Diagram section, select . A new tab appears with a message asking you to print an image of the Logic Tree.Select Print to print the image of the exported Logic Tree, or go to the location to which you want to save the image of the Logic Tree in the PDF format.In the File name box, enter the name of the file.In the Save as type list, select the format in which you want to save the image, and then select Save.
+Note: The above steps might change depending on the browser and browser settings that you use. 
+The Logic Tree is saved to the selected location in the selected image format.
+Add a Hypothesis to a Logic TreeBefore You Begin
+
+Add a Failure Mode Node to the Logic Tree.
+Procedure
+Access the Logic Tree diagram to which you want to add a hypothesis.In the design canvas, double-click the Failure Mode node to which you want to add a hypothesis.A window appears, displaying the datasheet of the Failure Mode node.In the window, select the Hypothesis tab.In the text box, enter a name for the hypothesis, and then select Add.A hypothesis is created, and assigned only to the Failure Mode node that is already selected as the target node in the design canvas.What To Do Next
+
+Add a Verification to a Hypothesis
+
+Change the State of an RCA HypothesisAbout This Task
+When an RCA Hypothesis is created, the state is set to Hypothesis by default. Based on the verifications, each RCA Hypothesis can then be tested and proven True or Not True, and then you can change the state of the hypothesis accordingly.
+Procedure
+Access the Logic Tree diagram in which you want to change the state of a hypothesis.In the design canvas, double-click the hypothesis whose state you want to change.A window appears, displaying the datasheet of the hypothesis.In the window, in the State drop-down list box, select one of the following options:
+
+Hypothesis True: If the hypothesis has been confirmed. After you determine a hypothesis to be true, you can identify the root cause of the Failure Event.
+Hypothesis Not True: If the hypothesis has been ruled out.
+Select .The state of the hypothesis is saved.Identify the Root Cause for Hypotheses Proven TrueProcedure
+Access the Logic Tree diagram in which you want to specify the root cause for a hypothesis.In the design canvas, double-click the hypothesis for which you want to specify the root cause.A window appears, displaying the datasheet for the hypothesis. In the State drop-down list box, select one of the following options:
+
+Cause - Physical
+
+Cause - Human
+
+Cause - Latent
+
+Select .Your changes are saved.Results
+After you select a cause:
+A red line is drawn to show the path to failure.The icon used to identify the hypothesis node changes to indicate the specific cause.The team can communicate their findings to the decision makers in your organization.
+Delete a Hypothesis from the Hypothesis ListProcedure
+Access the Logic Tree diagram from which you want to delete a hypothesis from the Hypothesis List.In the design canvas, double-click any node.A window appears, displaying the datasheet for the node.Select the Hypothesis tab.A list of hypotheses for the analysis appears.In the Assigned Nodes section, next to the hypothesis that you want to delete, select .A window appears, asking if you want to delete the hypothesis.Select Yes.The hypothesis is deleted from the hypothesis list.Access a VerificationProcedure
+Access the Logic Tree diagram that contains the hypothesis for which you want to access a verification.In the design canvas, double-click the hypothesis for which you want to access the verification.A window appears, displaying the datasheet for the hypothesis.In the window, select the Verifications tab.A list of verifications that are available for the selected hypothesis appears. Select the verification whose details you want to access.The datasheet for the verification appears. Note: As needed, you can modify the values in the available fields, and then select  to save your changes.Create a VerificationProcedure
+Access the Logic Tree diagram for which you want to create a verification.In the design canvas, double-click the hypothesis to which you want to create a verification.A window appears, displaying the Hypothesis section that contains the datasheet for the hypothesis.In the window, select the Verifications tab.The Verifications section appears in the window.In the Add Verification text box, enter the name for the new verification, and then select Add.The verification is created and assigned to the hypothesis. The verification appears in the Assigned Nodes list.Add Verification DetailsProcedure
+Access the Logic Tree diagram for which you want to add the verification details.In the design canvas, double-click the hypothesis for which you want to add the verification details.A window appears, displaying the Hypothesis section.In the window, select the Verifications tab.A list of verifications that are available for the selected hypothesis appears.Select the verification for which you want to add details.The Verifications window appears.As needed, enter values in the available fields, and then select .The RCA Verification details are saved.Add a Verification to a HypothesisBefore You Begin
+
+Add the hypothesis nodes to the Logic Tree.
+Procedure
+Access the Logic Tree diagram that contains the hypothesis to which you want to add a verification.In the design canvas, double-click the hypothesis for which you want to add the verification.A window appears, displaying the Hypothesis section.In the window, select the Verifications tab.A list of verifications that are available for the selected hypothesis appears.In the Add Verification text box, enter the name for the new verification, and then select Add.The verification is assigned to the selected hypothesis.Note:
+RCA Verifications are associated only with RCA Hypotheses.A verification can be assigned only to the hypothesis node that is already selected as the target node in the design canvas.
+Delete a VerificationProcedureAccess the Logic Tree diagram that contains the hypothesis for which you want to delete a verification.In the design canvas, double-click the hypothesis.A window appears, displaying the datasheet of the hypothesis.In the window, select the Verifications tab.A list of Verifications that are available for the selected hypothesis node appears in the Assigned Nodes section of the window.Next to the Verification that you want to delete, select .The Delete Verification window appears, asking you to confirm that you want to delete the verification.Select Yes.The Verification is deleted.Enable Logic GatesProcedure
+Access the Logic Tree within which you want to enable Logic Gates.In the Logic Tree workspace, select Show/Hide, and then select Show Logic Gates.
+Note: If the Show Logic Gates option is enabled, Hide Logic Gate will appear in the options.
+The Logic Gates appear in the design canvas.Change the Gate Type of a Logic GateProcedure
+Access the Logic Tree that contains the Logic Gate whose Gate Type you want to change.In the design canvas, select the Logic Gate whose Gate Type you want to change, and then select .
+The Properties window appears, displaying the datasheet for the selected Logic Gate. 
+In the Gate Type field, select the type of Logic Gate that you want to include: AND or OR. Select .
+The Gate Type is updated. 
+
+
+
+
+
+On this pageAbout Logic TreeAbout Failure ModesAbout HypothesesAbout Hypothesis StatesAbout VerificationAbout Logic GatesAccess the Logic Tree DiagramCreate a Failure EventAdd a Failure Mode Node to the Logic TreeAccess a Logic Tree Node Copy a Logic Tree NodeAccess Reference Documents for a Logic Tree Node Import Existing Failure Modes and HypothesesImport Failure Modes from Failure Modes and Effects Analysis (FMEA) and Reliability Centered Maintenance (RCM)Arrange Nodes Manually Within the Logic TreeDelete Nodes from the Logic TreeExport a Logic Tree DiagramAdd a Hypothesis to a Logic TreeChange the State of an RCA HypothesisIdentify the Root Cause for Hypotheses Proven TrueDelete a Hypothesis from the Hypothesis ListAccess a VerificationCreate a VerificationAdd Verification DetailsAdd a Verification to a HypothesisDelete a VerificationEnable Logic GatesChange the Gate Type of a Logic Gate
+
+
+
+
+
+
+
+
+

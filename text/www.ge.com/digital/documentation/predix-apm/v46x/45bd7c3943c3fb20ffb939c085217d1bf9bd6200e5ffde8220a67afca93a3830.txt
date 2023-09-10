@@ -1,0 +1,111 @@
+
+
+
+Layers of Protection Analysis | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health Manager
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+Layers of Protection Analysis
+
+
+
+
+
+
+
+Layers of Protection AnalysisDeploy LOPA for the First TimeBefore You Begin
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. GE Digital recommends, however, that the tasks be completed in the order in which they are listed.
+
+Results
+StepTaskNotes1Modify existing or create additional Initiating Events. This step is required only if you want to modify or create additional initiating event types that appear in the Initiating Event Type field, on the LOPA datasheet. Note: Initiating Event records also populate the CCPS Cause Type field on the Hazards Analysis Cause datasheet. Therefore, any modifications to these records will also reflect on the Hazards Analysis Cause datasheet.2Modify existing or create additional Consequence Adjustment Probabilities.This step is required only if you want to modify or create additional conditional modifier types that appear in the Modifier Type field, on the Consequence Modifier datasheet. 3Modify existing or create additional Active IPLs.This step is required only if you want to modify or create additional active IPL types that appear in the IPL Sub Type field, on the Hazards Analysis Safeguard datasheet. 4Modify existing or create additional Passive IPLs.This step is required only if you want to modify or create additional passive IPL types that appear in the IPL Sub Type field, on the Hazards Analysis Safeguard datasheet. 5Modify existing or create additional Human IPLs.This step is required only if you want to modify or create additional human IPL types that appear in the IPL Sub Type field, on the Hazards Analysis Safeguard datasheet. 6Modify the Safety Integrity Level record.The Safety Integrity Level records contain the standard boundary values for the required probability of failure for each SIL. This step is required only if you want to modify the default boundary values for the required probability of failure for a Safety Integrity Level. 
+7
+Assign Security Users to one or more of the LOPA Security Groups and Roles.This step is required. 
+Upgrade LOPAAbout This TaskProcedureUpgrade to the latest version of GE Digital APM.
+This module will be upgraded to the latest version of Predix APM
+                                     automatically. No additional steps are required.
+
+
+
+
+
+On this pageDeploy LOPA for the First TimeUpgrade LOPA
+
+
+
+
+
+
+
+
+

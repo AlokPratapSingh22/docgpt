@@ -1,0 +1,162 @@
+
+
+
+Classifications Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+Groups
+ClassificationsClassifications Overview
+Classifications Attributes
+
+
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Classifications
+Classifications Overview
+
+
+
+
+
+
+
+Classifications OverviewAbout Asset and Tag ClassificationsA classification is collection of asset or tag instances with common characteristics.A classification is a modeling construct that allows a data modeler to design an asset model by identifying the common characteristics of assets or tags.For example, suppose you have a product line of bicycles: two-wheeled, three-wheeled, and four-wheeled. The common characteristic (or attribute) for each model in the line is number of wheels. A data modeler would add this attribute to the root asset classification when the asset instances are created they will inherit the custom attribute for number of wheels. If there are additional common attributes for bicycles these can be added at the root asset classification as well.Classifications are added to GE Digital APM during ingestion by anyone with modify asset privileges.You can access classifications by selecting a link in an associated instance, or by searching criteria in Classifications.Create a ClassificationYou can create new root-classifications or child-classifications for each level in the business functional hierarchy. You can create new root-tag classifications or child-tag classifications.About This Task
+
+Important: After you have created a classification, you cannot modify the placement of the classification in the business functional hierarchy. For information on deleting a classification from a Business Functional Object, refer to Delete a Classification for a Business Functional Object, and begin again.
+
+You can create classifications in the business functional hierarchy as follows:Table 1. Available Classification TypesBeginning from hereYou can create this type of classificationEnterpriseYou can create a root-Enterprise or a child-Enterprise.SiteYou can create a root-Site or a child-Site.SegmentYou can create a root-Segment or a child-Segment.AssetYou can create root-Asset or a child-Asset.TagYou can create a root-Tag or a child-Tag.
+When you create a new classification, you must define the following:Table 2. Classification DefinitionsFieldDescriptionClassification NameThe name of the new classification.(Optional) DescriptionA description of the new classification.Source IDA unique identifier for the new classification.Note: You can assign same source ID to different types of classification such as Enterprise, Site, Segment, Asset, and Tag in different cases.For example: TurbineSiteType (SiteType), turbinesitetype (AssetType), Turbinesitetype (TagType)(Optional) Position in Hierarchy check boxCreates the new classification at the root level in the hierarchy. You can select any Type as the root. This disables the Parent Classification box.TypeSpecifies the type of classification (Enterprise, Site, Segment, Asset, or Tag). Parent ClassificationAllows you to define the association in which the new classification is created as a child-classification. Selecting the Parent Classification drop-down list box allows you to select from the choices available.The Parent Classification is based on the Type selected. During creation of child-classifications, the Parent Classification created last displays by default. Otherwise, the first classification in the drop-down list box is displayed.If the Asset or Tag Type is selected as a classification type, you can search for a classification.
+ProcedureIn the module navigation menu, go to
+Assets >  Classifications.In the classification view, select .
+Note: Classifications can be Enterprise, Site, Segment, Asset, or Tag.
+The New Classification window appears.Enter the required information in the new classification form:Enter a classification name in the Classification Name box.Optional: Enter a description for the new classification in the Description box.Enter a sourcekey for the new classification in the Source ID box.Optional: If you want the new classification to be placed into the root level of the hierarchy, select the Set as top level node check box.
+Important: Selecting this option disables the Parent Classification box.
+Select an option in the Type drop-down list box.If you want to change the Parent Classification, choose from the following:
+For an Enterprise, Site, or Segment Type selection, select an option in the Parent Classification box.For an Asset or Tag Type selection, select  in the Parent Classification box to access the Select Classification window. Enter your search criteria, and then select Select. For more information about how to select a classification, refer to the Find and Select a Parent Classification documentation.Tip:
+The Parent Classification box is disabled if the Set as top level node check box is selected.The parent classifications associated with the Type selected appear as a list in the Parent Classification box by default. The Parent Classification is optionally preselected to the last created parent classification. If you are creating a classification that requires a different parent classification, you will need to change the selection.
+
+Select Create.
+Note: Create is disabled until all required fields have been completed.
+The new classification appears. The classification includes the identifier information of the classification, including any inherited attributes. Instances created using the new classification are included in the selected column in the Context Browser.Create a Child-ClassificationYou can create child-classifications for each level in the business functional hierarchy. You can create new root-tag classifications or child-tag classifications.About This Task
+You can create child-classification of any type in the business functional hierarchy. The child-classification inherits all the attributes from the root-classification. The datatype defined for the attributes in the root-classification remains same and cannot be changed. However, you can add or delete custom attributes. The instances also inherit attributes from the Classification or Type under which they have been created.
+For example, if an attribute Rotor Diameter within Turbine Classification is defined as integer datatype, then all the instances of the Turbine populating value for the attribute Rotor Diameter must provide integer as datatype and values must comply to the datatype.
+
+Important: After you have created a child-classification, you cannot modify the placement of the child-classification in the business functional hierarchy. For information on deleting a classification from a Business Functional Object, refer to Delete a Classification for a Business Functional Object, and begin again.
+
+ProcedureIn the module navigation menu, go to
+Assets >  Classifications.In the Classification results table, select the classification from Classification Name or Parent Class for which want to add a child classification.In the selected classification view, select .The New Classification window appears.As needed, enter values in the available fields.
+Important: Selecting the Set as top level node check box disables the Parent Classification box and places the classification into the root level of the hierarchy.
+Note: By default, the child-classification has the same type as root-classification. However, you can change it to a different type such as Enterprise, Site, Segment, Asset, or Tag and select associated parent classification. For more information on type, refer to Create a Classification.
+Select Create.The new child-classification appears. The child-classification includes the identifier information of the classification, including any inherited attributes. The custom attributes from the root-classification are copied to the inherited attributes in the child-classification. You can add more custom attributes in the child-classification; however, the attribute name cannot be same as the existing inherited attributes. Instances created using the new child-classification are included in the selected column in the Context Browser.Find and Select a Parent ClassificationYou can search for a specific Asset or Tag classification to use as a parent classification.About This Task
+After selecting Asset or Tag as the Type while creating a classification, you can search for a parent classification to associate with the new classification.Note: Searching for a classification is only available if you have selected Asset or Tag as the Type while creating a classification. For more information, refer to the Creating a Classification in the Business Functional Hierarchy documentation.
+The following search parameters are supported for asset or tag types:urinamesourcekeydescriptionattributesreservedattributesparent
+ProcedureIn the module navigation menu, go to
+Assets >  Classifications.In the classification view, select .The New Classification page appears.Enter the required information. For more information about how to do this, refer to the Create a Classification in the Business Functional Hierarchy documentation.In the New Classification page, select Asset or Tag in the Type box.Select  in the Parent Classification box to access the Select Classification window.Enter a search string using modifiers and wild cards, and then press ENTER to activate the search string.Scroll through the results, select an option from the list, then select Select.The selected classification appears in the Parent Classification box.Select Create.The new classification appears. The classification includes the identifier information of the classification, including any inherited attributes. Instances created using the new classification are included in the selected column in the Context Browser.Add Members to a Classification GroupYou can add member objects to an existing classification group.About This Task
+You can select classification member objects and specify an existing group for which to add the selected members.
+ProcedureIn the module navigation menu, go to
+Assets >  Classifications.Search for a classification type.The selected classification items appear in the Classifications table.Scroll through the items in the table, and select check boxes in the Selected column for the items you want to add to a group.Alternatively, you can select the Select All check box to add all the items to a group.Select Add to Group.The Add to Group page appears. Enter criteria for a group name or source ID into the Search box, then select Search.Select a group from the list and select Add.The member objects are added to the selected group.Access Classifications Via SearchYou can access a classification by selecting a classification type and applying modifiers in the Classifications page. You can also access a specific classification from an instance or group.About This Task
+You can use the Classification Type drop-down list box to select an option to display a list of all classifications of that type. Additionally, you can further narrow your search for classifications by using the modifiers during your search.
+Available classification types are:All ClassificationsBusiness Functional Hierarchy ClassificationsAsset ClassificationsTag Classifications
+Once the list of classifications in the Classification results table appears, you can navigate to a specific classification or parent classification by selecting the appropriate link.
+When you enter search criteria, the first 250 matching entries for any column in the Classifications table display in the Search Results. Use modifiers to construct queries, narrowing your search.
+Search results display using a combination of search filters and on the selection of the classification type selected from the drop-down list. The following columns are displayed in the Classifications table:Classification NameSource IDParent ClassClassification TypeDescription
+Use three or more characters in your search text to avoid time-outs. You can use multiple modifiers when searching. When you perform the search with multiple query options or fewer search characters, you search scope is widened, leading to slower result retrieval.
+ProcedureIn the module navigation menu, go to
+Assets >  Classifications.Select an option from the Classifications Type drop-down list box to narrow the classifications in the list to a specific type.Optional: Select the View search modifiers link to see a list of possible modifiers that can be used during search.To refine your search results, using the following search modifiers:
+Search modifiersDescriptionname:classification name
+Enter a partial or full name of a classification in the Search box, such as Name:Boiler Feed Group.Press Enter to activate the string in the Search box.
+sourceId:unique identifier
+Enter a partial or full source id of a classification in the Search box.Press Enter to activate the string in the Search box.
+<attributeName>:attribute value
+Enter the attribute name followed by a colon and the fully specified value in the Search box, such as manufacturer:GE.Press Enter to activate the string in the Search box.
+parentClass:parent classification name
+Enter a partial or full name of a parent classification in the Search box, such as parentClass:Boiler Feed Group.Press Enter to activate the string in the Search box.
+
+If no results are found, the message “No Results Found” appears. If the search fails, the message “Data failed to load” appears.Note: When using modifiers, you must match the modifier value exactly to get a result.Select Search.The classification options in the Classifications table narrow according to your criteria.Modify a Classification NameYou can modify a classification name.About This Task
+Once you have selected a classification in the Classifications results table, you can modify the name. The new name for the asset or tag classification is propagated throughout GE Digital APM.
+ProcedureIn the module navigation menu, go to
+Assets >  Classifications.Find and select a Classification Name or Parent Class link in the Classifications results table.On the selected classification view, hover over, then select the classification name.Enter a new name in the Classification Name box, then press ENTER or select outside the field.The new name appears for the classification on the selected view and on the Classification results table. Modify a Classification DescriptionYou can modify a classification description.About This Task
+Once you have selected a classification in the Classifications results table, you can modify the description. The new description for the classification is propagated throughout GE Digital APM.
+ProcedureIn the module navigation menu, go to
+Assets >  Classifications.Find and select a classification in the Classifications results table.Select a Classification Name or Parent Class link from the Classifications results table.In the selected classification view, hover over, then select the classification description.Enter a new description in the Classification Description box, then press ENTER or select outside the box.The new description appears for the classification on the selected view and on the Classification results table. Delete a Classification for a Business Functional ObjectYou can delete a business functional object classification from GE Digital APM.About This Task
+A business functional object refers to the Enterprise, Site, and Segment locations within the business functional hierarchy.
+You can delete a business functional object classification if it does not have any child-classifications or associated asset or tag instances. Tip:
+Deleting a classification cannot be undone.You must delete any associated child-classifications and asset or tag instances before you can delete a business functional object classification.
+
+ProcedureIn the module navigation menu, go to
+Assets >  Classifications.Select an Enterprise Classification, Site Classification, or Segment Classification from the Classification Type drop-down list box. Apply other filters as needed, then select Apply.In the Classification results table, hover over and select  for the classification you want to delete.
+Tip: Alternatively, you can select the classification link and delete the classification using  in the classification view. 
+Select Delete in the confirmation window to delete the classification. The business functional object classification is permanently removed from the database.Note:
+Deleting a business functional object classification permanently deletes the classification, all attributes, configuration, history information and membership in groups.If you are attempting to delete a business functional object classification with associated child-classifications or asset or tag instances, an error message appears and the business functional object classification is not deleted.
+Delete an Asset or Tag ClassificationYou can delete an asset or tag classification from GE Digital APM.About This Task
+You can delete an asset classification if it does not have any child-classifications or associated asset instances. You can delete a tag classification if it does not have any associated tag instances.Tip:
+Deleting a classification cannot be undone.You must delete any associated child-classifications and asset instances before you can delete an asset classification.You must delete any associated tag instances before you can delete a tag classification.
+
+ProcedureIn the module navigation menu, go to
+Assets >  Classifications.Find and select an Asset Classification or Tag Classification on the Classifications results table.On the asset or tag classification view, select  in the view.
+Tip: Alternatively you can delete a classification directly from the the Classifications results table by hovering over the classification and selecting .
+Select Delete in the confirmation window to delete the asset or tag classification. The asset or tag classification is permanently removed from the database.Note:
+Deleting an asset or tag classification permanently deletes the classification, all attributes, configuration, history information and membership in groups.If you are attempting to delete an asset classification with associated child-classifications or asset instances, an error message appears and the asset classification is not deleted.If you are attempting to delete a tag classification with associated tag instances, an error message appears and the tag classification is not deleted.
+
+Related ConceptsAbout Asset ModelAbout Tag ModelRelated tasksDelete a Classification for a Business Functional ObjectNavigate to a Classification from a GroupNavigate to a Classification from an Asset InstanceNavigate to a Classification from a Tag Instance
+
+
+
+
+On this pageAbout Asset and Tag ClassificationsCreate a ClassificationCreate a Child-ClassificationFind and Select a Parent ClassificationAdd Members to a Classification GroupAccess Classifications Via SearchModify a Classification NameModify a Classification DescriptionDelete a Classification for a Business Functional ObjectDelete an Asset or Tag Classification
+
+
+
+
+
+
+
+
+

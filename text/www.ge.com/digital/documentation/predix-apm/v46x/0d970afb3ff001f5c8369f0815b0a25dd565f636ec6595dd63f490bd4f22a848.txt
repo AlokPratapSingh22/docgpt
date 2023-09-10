@@ -1,0 +1,101 @@
+
+
+
+Search Browser | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag PanelTag Panel
+Tag Browser
+Tag Expressions
+Tag Filters
+Search Browser
+
+
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Tag Panel
+Search Browser
+
+
+
+
+
+
+
+Search BrowserAbout the Search BrowserUse the Search Browser to search for assets tags, and correlated tags for the enterprise.The Search Browser performs a deep search, allowing you to search through the enterprise asset tags, including child tags, using modifiers and search strings. A Search Help link is provided to allow selection of modifiers to construct your query:name: tag instance name.sourceKey: tag unique identifier.inContext: asset context.ofClass: tag classification name.<attributeName>: tag attribute value.
+Note: The assetSourceKey, which is the assetID, is the default context prefix modifier that is used for unique searches. You can also use the assetName as the context prefix modifier if you want to search based on asset names.You can enter multiple search criteria based on the modifiers, adding them to the Search box. You can type the characters of the criteria or copy from another location and paste the characters in the Search box.You can also type special characters in the search criteria to search for tag names with special characters. Note:
+When you type the special characters asterisk (*), colon(:), and backslash(\) in the Search box as part of the search criteria, you must type a backslash(\) before these characters to escape them. Else, the specific special characters are displayed as different characters than expected. However, when you copy and paste tag names with the specific special characters in the Search box, the backslash(\) is added before the specific characters by default. You do not have to add the backslash(\) before the special characters manually to escape them.  Wildcard search and usage of modifiers is not supported on the paste functionality for asset tags search.
+The Search button is enabled only when any search criterion is added to the Search box. The Search button is disabled after the search is triggered until a new criterion is added or any existing criteria is modified.If you enter more than 10 search criteria, you can scroll down the Search box to view the criteria.Hovering over the search criteria chip displays an information tooltip prompting you to double click the chip to edit the search criteria or click  to clear the criteria. A maximum of 250 results is displayed at a time. You can select the maximum number of results to be displayed per page, 40 or 100, using the results per page drop-down list box. On the pagination toolbar, when the first page is selected  is disabled and when the last page is selected  is disabled.Tip: If your search returns more than 250 results, a hint appears to refine your search.If all the results appear on one page, the Select All  check box appears on the Search Browser. You can select all the tags from the search results to add to a chart, by selecting this check box.If the results appear on multiple pages, the Select Visible Tags check box appears on the Search Browser. You can select all the visible tags on the page to add to a chart by selecting this check box.The search results header displays the number of search results that are selected.Correlated tags and units of measure are displayed in the search results for a tag when available. Hovering over a tag or a correlated tag in the search results displays an information tooltip. Tooltip information is not displayed for nodes. Tags and correlated tags can be dragged to a chart for plotting.If you drag a tag associated with an asset that is not currently displayed in the Tag Tree Browser from the search results to a chart, that asset and its associated tags display in the Tag Tree Browser.You can select multiple tags from the search results to add to a chart, by using the Shift key or the Control key on the keyboard. Note: This is limited to 40 tags.
+You cannot add additional assets for Event Data Analysis charts from the Tag Tree Browser, Tag Expressions or Search Browser panes.Search for Asset TagsUse the Search Browser to search for enterprise asset tags using modifiers.About This Task
+You can search for asset tags belonging to assets that are not on the Tag Tree Browser. Use the search modifiers to narrow your search.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.On an existing chart, select  on the Tag Tree Panel.Select Search Help.A list of modifiers appears, displaying hints that help you to construct a query.Enter one or more modifiers in the Search box.For example, if you enter manufacturer:GE and ofClass:Turbines into the Search box, all GE turbine asset tags in the enterprise display in the Search Results.Scroll through the search results and drag a tag or correlated tag to a chart.The selected tag is plotted in the chart. The asset associated with the plotted tag appears in the Tag Tree Browser.Search for Correlated TagsUse the Search Browser to search for correlated tags associated with asset tags.About This Task
+You can search for correlated tags associated with asset tags. Use the search modifiers to narrow your search.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.In an existing chart, select  on the Tag Tree Panel.Select Search Help.A list of modifiers appears, displaying hints that help you to construct a query.Enter one or more modifiers in the Search box.For example, if you enter manufacturer:GE and ofClass:Turbines into the Search field, all GE turbine assets in the enterprise display in the Search Results.Scroll through the search results and select a Correlated Tags drop-down box under a selected asset tag.Correlated Tags associated with the selected asset tag display in the Search Results.Drag a correlated tag to a chart.The selected correlated tag is plotted in the chart. The asset associated with the plotted tag appears in the Tag Tree Browser.Search Using ModifiersUse search modifiers to narrow displayed tags by categories. About This Task
+You can enter a few characters into the Search box to display all tag names or source key information that matches those characters within the enterprise. Instead of entering a tag name into the Search box, you can string modifiers together to narrow your search to a few specific tags. 
+For more information on the search modifiers and their results, refer to the Search Modifiers topic.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.In an existing chart, select  on the Tag Tree Panel.Select Search Help to display the allowable modifiers below the Search box.Enter one or more modifiers in the Search box to display all tags related to the criteria, then select Search.Stringing modifiers
+In this example, suppose you enter the following modifiers: inContext:BFP_1, ofClass:Turbines, UoM:ohm, BR1X.
+The results are tags that have BR1X anywhere in their name, that are associated with the BFP_1 asset, are part of the Turbine class, and use ohms as their unit of measure. Correlated tags for each displayed tag in the search are also found.
+
+
+
+
+
+On this pageAbout the Search BrowserSearch for Asset TagsSearch for Correlated TagsSearch Using Modifiers
+
+
+
+
+
+
+
+
+

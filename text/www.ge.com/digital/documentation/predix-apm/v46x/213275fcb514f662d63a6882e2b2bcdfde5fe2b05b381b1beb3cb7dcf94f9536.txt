@@ -1,0 +1,159 @@
+
+
+
+RBI Components to TML Groups Relationship Data Loader | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data LoadersRBI 581
+Corrosion Loop
+RBI Components to TML Groups Relationship Data Loader
+
+
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Data Loaders
+RBI Components to TML Groups Relationship Data Loader
+
+
+
+
+
+
+
+RBI Components to TML Groups Relationship Data LoaderAbout the RBI Components To TML Groups Relationship Data LoaderYou can map the corrosion rates used in RBI analysis from the TM Analysis at the TML Group level. To do this, you must link the RBI Component to the TML Group. Using the RBI Components To TML Groups Relationship Data Loader, you can link RBI Components to TML Groups. You can link multiple RBI Components to a TML Group and multiple TML Groups to an RBI Component.Note:  The Corrosion rates are copied from TML Group to RBI analysis of the mapped component only if the Source of Calculated Corrosion Rate of the component is set to Component. If the Source of Calculated Corrosion Rate of the component is not set to Component, the Corrosion rates are not copied from the TML Group to the RBI analysis. However, the records are linked.About the RBI Components To TML Groups Relationship Data Loader RequirementsBefore you use the RBI Components To TML Groups Relationship Data Loader, you must complete the following steps:Ensure that the Risk Based Inspection and Thickness Monitoring modules are deployed.Ensure that the following records are available:RBI ComponentsTML GroupsCorrosion data of TM AnalysisAsset recordsSecurity Settings
+The Security User performing the data load operation must be associated with either the MI Data Loader User or MI Data Loader Admin Security Role, and must also be associated with the MI RBI Analyst Security Group or a Security Role that is associated with this Security Group.
+About the RBI Components To TML Groups Relationship Data Loader General Loading StrategyBest Practices
+When importing data using the RBI Components To TML Groups Relationship Data Loader, you must use the following best practices:ID fields must not include special characters or spaces.The data loader workbook contains sample data in each column. It is only for your reference. You must remove this data before using the data loader workbook.Columns (including columns representing custom fields) in the worksheets should be formatted as Text.Import a maximum of 500 records in each data load.
+Load Sequence
+The data is loaded in the following sequence to create all necessary relationships between records:
+The Assets worksheet is processed. The Data Loader searches for the asset that corresponds to the Asset ID, Asset CMMS System, Equipment Technical Number and Asset Family information that you provide in the Assets worksheet. If an asset specified on the worksheet does not exist, the worksheet and all the entries in the subsequent worksheets corresponding to that asset is skipped.The RBIComponents_To_TMLGroups worksheet is processed. An existing RBI Component is looked up based on the Asset ID, Asset CMMS System, Equipment Technical Number, Component, and Component Type. If found, that RBI Component will be linked to the specified TML Group. If you do not specify any RBI Component, this worksheet is skipped.If any of the RBI Component or TML Group records specified in the worksheet is not available in the database, an error is added to the log, and the row is skipped.
+About the RBI Components To TML Groups Relationship Data Loader Workbook Layout and UseTo import data using the RBI Components To TML Groups Relationship Data Loader, GE Digital APM provides an Excel workbook, RBI Components To TML Groups Relationship.xlsx, which supports baseline Risk Based Inspection in GE Digital APM. This workbook must be used to link RBI Components to TML Groups.Note: The Excel workbook is referred to throughout this documentation as the data loader workbook.The following table provides a list of the worksheets that are included in the data loader workbook.WorksheetDescriptionAssetsThis worksheet is used to specify existing Asset records to which components are linked. RBIComponents_To_TMLGroupsThis worksheet is used to link RBI Components to TML Groups.(PickList)This worksheet details the valid values available for fields that have pick lists. When you load data using the data loader, the data on this worksheet is not loaded.Color Coding
+Certain columns on the worksheets have different functions and requirements. To illustrate this, certain columns are color-coded. The following table lists the colors and what they represent.
+
+Color
+
+Description
+
+Comments
+
+Gray
+
+Required Key Fields
+
+Indicates columns that contain values that are used by the Risk Based Inspection (RBI) Corrosion Loop Data Loader to look up and create records. If these columns are removed from the worksheets, the data load will fail. While the worksheets require that these columns be present, values are not necessarily required in these columns.
+
+Red
+
+Fields Required for Saving Records
+
+Indicates columns that contain values that are required to save the record.
+
+Blue
+
+Recommended Fields
+
+Indicates columns that, according to GE Digital APM Best Practice for Inspection Management, should contain values.
+
+None 
+
+Custom Fields
+
+Indicates columns in which you can specify custom fields.
+
+Limitations
+The RBI Components To TML Groups Relationship Data Loader has the following limitations:
+The values that you enter in the data loader workbook are case-sensitive.If there are multiple components with same ID within an asset, the TML group is mapped only to the first component and the remaining components are ignored.
+Assets WorksheetIn the Assets worksheet, you can specify assets. You can link the RBI Components that belongs to the assets specified in this worksheet to the TML groups. The columns that appear on this worksheet also appear on every subsequent worksheet, and are used to identify the records that will be linked, directly or indirectly, to the assets. Note: Each row in this worksheet represents a unique asset. You should not include the same asset more than once.
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+Asset IDMI_EQUIP000_EQUIP_ID_CCharacter (255)This column requires at least one cell to have a value. For a Functional Location asset, the field MI_FNCLOC00_FNC_LOC_C should be used.Asset CMMS SystemMI_EQUIP000_SAP_SYSTEM_CCharacter (255)If the Asset record has a value in the CMMS System field, the same value is required in this cell. For a Functional Location asset the field MI_FNCLOC00_SAP_SYSTEM_C should be used.Equipment Technical NumberMI_EQUIP000_EQUIP_TECH_NBR_CCharacter (255)
+If you are required to enter a value for the CMMS System cell for an Equipment asset, and the Equipment record has a value in the Equipment Technical Number field, that value is required in this cell.
+If there is no value in the CMMS System field, this cell can be blank, even if the Equipment record contains a value for the Equipment Technical Number field.Note: This field must be left blank for a Functional Location asset.
+Asset FamilyASSET_FAMILY_IDCharacter(255)This column is required when loading Functional Location assets. If no value is provided, the asset will be considered an Equipment asset. Note: Following are the valid values:MI_EQUIP000MI_FNCLOC00
+RBIComponents_To_TMLGroups
+In the RBIComponents_To_TMLGroups worksheet, you can specify the RBI Components and the corresponding TML Groups that you want to link.
+Note: Each row represents a unique component, though multiple components may be related to the same asset.
+Asset IDMI_EQUIP000_EQUIP_ID_CCharacter (255)Values in this column must match values entered on the Assets worksheet. Asset CMMS SystemMI_EQUIP000_SAP_SYSTEM_CCharacter (255)Values in this column must match values entered on the Assets worksheet, if they exist. Equipment Technical NumberMI_EQUIP000_EQUIP_TECH_NBR_CCharacter (255)Values in this column must match values entered on the Assets worksheet, if they exist. ComponentMI_RBICOMPO_COMPO_CCharacter (250)
+A value is required.
+Enter the RBI Component ID.
+Component TypeMI_RBICOMPO_COMPO_TYPE_CCharacter (60)
+A value is required.
+In the baseline GE Digital APM system, this cell may only contain one of the values available in the (Picklist) worksheet.
+TML Group IDMI_TMLGROUP_ID_CCharacter (50)
+A value is required.
+Enter the TML Group ID that you want to link to the specified RBI Component.
+
+
+
+
+
+
+On this pageAbout the RBI Components To TML Groups Relationship Data LoaderAbout the RBI Components To TML Groups Relationship Data Loader RequirementsAbout the RBI Components To TML Groups Relationship Data Loader General Loading StrategyAbout the RBI Components To TML Groups Relationship Data Loader Workbook Layout and Use
+
+
+
+
+
+
+
+
+

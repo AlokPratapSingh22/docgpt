@@ -1,0 +1,100 @@
+
+
+
+Third Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Compliance ManagementOverview
+Workflows
+Inspection Plans
+Inspection Plan Management
+Compliance Recommendations
+Inspection Plan Revision History
+Suggested Compliance Strategy Templates
+Admin
+Deployment
+Reference 
+Release NotesFourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Third Quarter of 2019
+ Second Quarter of 2019 
+ First Quarter of 2019 
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Compliance Management
+Release Notes
+Third Quarter of 2019
+
+
+
+
+
+
+
+Third Quarter of 2019Compliance ManagementThis topic provides a list of product changes released for this module on the dates listed below.Release Date: September 27, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDInspection Plan is now integrated with Risk Based Inspection in addition to Compliance Management. To facilitate this enhancement:Compliance Recommendation Revision family is renamed Recommendation Revision.Relationship family Has Compliance Recommendation is renamed Inspection Plan Has Recommendations.US367968
+Previously, the Assets with Inspection Plan section of the Compliance Management Overview page displayed the assets that were associated with an Inspection Plan. Now, this section displays the assets that are associated with an Inspection Plan and linked to a Compliance Strategy Template.
+Additionally, the Update Inspection Plans button in this section has been renamed Update Compliance Recommendations.
+US367595When you update Compliance Recommendations on the Inspection Plan that is in the Modified state, the existing Compliance Recommendations are now deleted, and new Compliance Recommendations are generated based on the mapped policy in the Compliance Strategy Template.US360461You can now implement Compliance recommendations that belong to an Inspection Plan in:Asset Strategy Management.Inspection Plan as Inspection Task. To facilitate this enhancement, a new option, Implement Recommended Actions to Tasks in ASM, has been added to the Global Preferences section of the IM Admin Preferences page.US335134
+Table 2. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, after creation or update of multiple Inspection Plan records, one or more of the inspection plans might not have been able to be transitioned to the Approved state. An error message appeared during approval indicating that the inspection plan was currently being updated. This issue has been resolved.DE116073
+
+
+
+
+
+On this pageCompliance Management
+
+
+
+
+
+
+
+
+

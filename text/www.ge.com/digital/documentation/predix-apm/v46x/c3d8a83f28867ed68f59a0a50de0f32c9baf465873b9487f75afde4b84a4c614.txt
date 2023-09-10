@@ -1,0 +1,97 @@
+
+
+
+Fourth Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Asset HierarchyOverview
+Workflow
+Asset Hierarchy Configuration
+Data Loader
+Troubleshooting
+Release NotesFirst Quarter of 2023
+Second Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Asset Hierarchy
+Release Notes
+Fourth Quarter of 2021
+
+
+
+
+
+
+
+Fourth Quarter of 2021Release Date: December 17, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when you closed the Asset Hierarchy pane, you could not reopen the hierarchy as the  icon did not appear in the Asset Hierarchy pane. This issue has been resolved.DE167340Previously, when you attempted to create a query-based Asset Group using a query that returned a large number of results, an error occurred, and the group was not saved. This issue has been resolved.DE164894
+Release Date: October 8, 2021This topic provides a list of product changes released for this module on this date.
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when you accessed the asset hierarchy selector in a modal dialog, and you attempted to search for an asset group, the list of all asset groups was displayed in addition to the search results. This resulted in usability issues. This issue has been resolved. Now, only the search results are displayed.DE162993Previously, when you searched for an asset in the Asset Hierarchy, the search failed if more than 2100 assets matched the search term. This issue has been resolved.DE162129
+
+
+
+
+
+On this pageRelease Date: December 17, 2021Release Date: October 8, 2021
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,95 @@
+
+
+
+Fourth Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Asset HierarchyOverview
+Workflow
+Asset Hierarchy Configuration
+Data Loader
+Troubleshooting
+Release NotesFirst Quarter of 2023
+Second Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Asset Hierarchy
+Release Notes
+Fourth Quarter of 2020
+
+
+
+
+
+
+
+Fourth Quarter of 2020Release Date: November 20, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, GE Digital APM was nonresponsive during high load on the asset hierarchy service. This issue has been resolved.US442710Previously, the scheduled Asset Hierarchy rebuild task failed and an error message appeared. This issue has been resolved.DE145595
+Release Date: October 2, 2020This topic provides a list of product changes released for this module on this date.
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in the Hierarchy section, when applying the taxonomy filter to filter assets, if you selected a value as a filter criterion in the Category drop-down list box, the CLASS and TYPE drop-down lists were not populated with all the values based on the criterion. This issue has been resolved.DE137910Previously, when you attempted to access an asset using a hyperlink in the results of a query, the <Asset Details> workspace displayed the details of a different asset even though the correct asset was selected in the Asset Hierarchy. This issue has been resolved.DE137232Previously, when accessing the health summary report for an asset in the <Asset Name> workspace, if you selected the associated parent-level asset in the asset hierarchy, an error occurred. This issue has been resolved.DE131648
+
+
+
+
+
+On this pageRelease Date: November 20, 2020Release Date: October 2, 2020
+
+
+
+
+
+
+
+
+

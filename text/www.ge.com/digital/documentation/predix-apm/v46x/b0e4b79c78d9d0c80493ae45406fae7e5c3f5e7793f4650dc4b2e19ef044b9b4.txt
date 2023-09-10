@@ -1,0 +1,88 @@
+
+
+
+Thickness Monitoring Piping Rotation Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+WorkflowsThickness Monitoring Planning Workflow
+Thickness Monitoring: Thickness Assessment Workflow
+Thickness Monitoring Piping Rotation Workflow
+
+
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data Loaders
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+Workflows
+Thickness Monitoring Piping Rotation Workflow
+
+
+
+
+
+
+
+Thickness Monitoring Piping Rotation WorkflowThickness Monitoring Piping Rotation WorkflowThis workflow describes the process of performing a rotation or flip on piping components. The TM Planning workflow and the TM Assessment workflow are applicable for all piping assets. However, for piping assets that are part of a pipe rotation strategy, the Piping Rotation workflow follows specific TM Planning and Assessment workflows. The Corrosion Analyst will review the corrosion analysis results and determine if a movement (rotation or flip) is necessary. In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+TM Planning Persona: AnalystTM Planning includes defining all of the elements required to execute rotation or flip of a piping asset. This includes defining a piping asset, setting up components, bands, and thickness monitoring locations based on the corrosion mechanisms affecting the circuit.Piping Asset Setup Persona: AnalystEnable the piping rotation workflow and define values for the wall ratio preferences. In addition, you must set up analysis settings for the asset.Create Components Persona: AnalystCreate components for the piping asset. Components are basically TML groups that contain bands at defined locations. Components can be straight spools or elbows.Create Bands Persona: AnalystCreate bands for the piping component. Based on the location on the component, bands can be classified into center band, mirrored band, and odd bands. Elbows can also contain an additional type of band called the extrados band.Create Nominal Measurements for TMLs Persona: AnalystEnter Nominal measurement values and the date when the measurement was taken for each TML. For new TMLs, document initial measurements.Calculate Corrosion AnalysisPersona: AnalystUse the new measurements to perform a full corrosion analysis to determine the controlling corrosion rate, remaining life, and next inspection date. TM AssessmentPersona: AnalystOver a period of time, as a piping asset erodes, an evaluation is carried out to determine if certain components need to be rotated or flipped to extend the life of the asset. This section includes the steps involved in analysis of corrosion data, creating and using what-if scenarios, and performing a rotation or flip on the components.Rotate or Flip Component?Persona: Analyst Determine whether a rotation or flip is required for piping components based on the corrosion analysis for the piping asset.Select Parameters for MovementPersona: AnalystSelect the action that you want to perform (that is, rotate or flip), and then enter the parameters for the movement, such as Rate Method, Movement Date, and so on.Create What-If Scenario? Persona: AnalystDetermine if you want to create a What-If Scenario for evaluation.What-If ScenarioPersona: AnalystCreate a What-If scenario for rotating or flipping the component.Review What-If ScenariosPersona: AnalystEvaluate the scenarios and select the most optimal scenario for movement based on the analysis outputs.Perform Movement from a Scenario? Persona: AnalystDetermine if you want to perform a rotation or flip from the selected scenario.Rotate or Flip the ComponentPersona: Analyst Perform a rotation or flip on the piping component.Rotation EventPersona: AnalystAn inspection is created for the asset for the Pipe Rotation Event.Review Corrosion Analysis Results Persona: AnalystReview the results to determine if any follow-up action is necessary to ensure the integrity of the asset or improve asset performance.Corrosion History Persona: AnalystThe overall result of TM inspections is to provide Corrosion History, which is used primarily for long-term strategy evaluation and development.This corrosion history can be evaluated through Core Analysis workflows or advanced strategy development methods, such as Risk Based Inspection (RBI).Other APM Workflows Persona: AnalystFor follow-up analysis, use Core Analysis.Go to the Core Analysis: Asset Event Analysis workflow.Go to the Core Analysis: Graph Analysis workflow.Go to the Core Analysis: Query Analysis workflow.Go to the Core Analysis: Report Analysis workflow.Updated Corrosion Analysis Persona: AnalystThe resultant corrosion analysis is created, and the associated TM task is updated with the next inspection date.
+
+
+
+
+On this pageThickness Monitoring Piping Rotation WorkflowTM PlanningPiping Asset SetupCreate ComponentsCreate BandsCreate Nominal Measurements for TMLsCalculate Corrosion AnalysisTM AssessmentRotate or Flip Component?Select Parameters for MovementCreate What-If Scenario?What-If ScenarioReview What-If ScenariosPerform Movement from a Scenario?Rotate or Flip the ComponentRotation EventReview Corrosion Analysis ResultsCorrosion HistoryOther APM WorkflowsUpdated Corrosion Analysis
+
+
+
+
+
+
+
+
+

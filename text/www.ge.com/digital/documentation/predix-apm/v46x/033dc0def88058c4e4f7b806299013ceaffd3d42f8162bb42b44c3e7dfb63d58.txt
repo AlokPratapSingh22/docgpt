@@ -1,0 +1,96 @@
+
+
+
+Analysis Troubleshooting | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Analysis Troubleshooting
+
+
+
+
+
+
+
+Analysis TroubleshootingAssets or Child Tags Missing in the Search ResultChild tags expected to match the search filter are not available to plot in the Analysis chart.Description
+One or both of the following apply:
+You perform the task to search for child tags within the context of the selected enterprise, site, segment, or asset in the Context Browser. You expect to see more tags matching the search filter within the context of all children below the selected node (enterprise, site, segment or asset) up to the last leaf. However, the result does not include all tags matching the search criteria. As a result, the tags unlisted cannot be plotted on the chart.
+Note: When selecting an item returned from the Context Browser: If the result is an asset, the context is automatically set to the selected asset, and a new analysis appears.  If the result is an enterprise, site, or segment, the context is automatically set to your selection. 
+You perform the steps "To add secondary assets to a chart" in the task Add and Remove Multiple Assets. You expect to see assets within the context of the selected enterprise, site, segment, or asset in the Context Browser. However, the results do not include all child assets for the selected root node. You are unable to add required assets to search further for tags to plot in the chart. 
+Cause
+In GE Digital APM, the asset configuration service stores tenant-specific transitive depth information. Unless explicitly changed during tenant setup, these values are set to the default shown in the following code sample:
+{
+  "transitiveDepthConfig": {
+    "enterprises": 1,
+    "sites": 1,
+    "segments": 1,
+    "assets": 1
+  }
+}
+This transitive depth determines how deep to query the hierarchy in child node searches such as the child tag search in the Analysis screen. If your tenant asset model has a depth greater than the default, then the search query returns results limited to the level matching the default. For example, if your tenant uses an asset hierarchy with two levels of segments and two levels of assets, but its transitive depth configuration is set to the default value of 1, then searching for assets or child tags from the top segment node does not include search results beyond the default depth.
+Solution
+Contact support to change your transitive depth configuration to match the nodes in your hierarchy, allowing the child tag search to traverse to the last leaf node starting from the selected node. Click the following link to enter a support ticket: http://www.ge.com/digital/support.
+To verify, after the transitive depth configuration has been updated,  Add and Remove Multiple Assets again to search for assets or tags. The search list shows results as expected.
+
+
+
+
+
+On this pageAssets or Child Tags Missing in the Search Result
+
+
+
+
+
+
+
+
+

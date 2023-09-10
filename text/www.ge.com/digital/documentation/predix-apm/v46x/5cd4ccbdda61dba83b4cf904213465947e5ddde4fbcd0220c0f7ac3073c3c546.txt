@@ -1,0 +1,88 @@
+
+
+
+Admin | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Admin
+
+
+
+
+
+
+
+AdminAccess the Policy Admin PageAbout This TaskYou can use the Policy Admin page to configure the retention settings for the execution history records of policies created using Policy Designer.Important: You can access the Policy Admin page only if you are a member of the MI Policy Administrator security group.ProcedureIn the module navigation menu, select
+Admin > Application Settings > Policy Designer.The Policy Admin page appears, displaying the Execution History Settings workspace.Configure Execution History Retention SettingsAbout This Task
+You can configure the execution history retention settings to specify the time for which execution history records for policies must be retained in the GE Digital APM database. You can configure the settings to retain the execution history records for executions that result in Errors, Warnings (Action Taken), Warnings (No Action Taken), Success (Action Taken), or Success (No Action Taken), either for an indefinite period or for a specific duration. By default, the execution history records are configured to be retained for an indefinite period. If you configure the settings to retain these records for a specific duration, an automated job deletes the records that have been retained in the database for more than the specified duration. You can specify the interval at which the job must run.
+Note:
+The Policy execution log can grow quickly and significantly impact the size of the GE Digital APM database. You can control the size of the execution log by minimizing the time that the execution history is retained in the GE Digital APM system and also by selecting an appropriate execution history setting for each policy.The execution history retention settings are not specific to a policy and are applicable for all policies. The settings are also applicable to any execution history records for the Family Policies.The most recent execution history of each instance associated with a policy is retained in the database even if it exceeds the specified retention duration.Depending on the number of old execution history records that exists when the retention settings are configured, it may take multiple runs of the automated job to delete all the old execution history records.
+
+This topic describes how to configure the settings to retain the execution history records for policies for a specific duration in the database depending on the execution result.
+ProcedureAccess the Policy Admin page.For each execution result type which you do not want to retain execution history records indefinitely, perform the following steps:In the Execution History Settings workspace, in the Retention Period section, select Duration.The Duration and Every fields appear.In the Duration box, enter the duration in months for which you want to retain the execution history records in the database.In the Every box, enter the time interval at which the automated job must run to delete old execution history records from the database.By default, the time interval that you enter is defined in hours. However, you can select the required unit from the drop-down list box to specify the interval in other units of time.Select Save.The execution history settings are configured.
+
+
+
+
+On this pageAccess the Policy Admin PageConfigure Execution History Retention Settings
+
+
+
+
+
+
+
+
+

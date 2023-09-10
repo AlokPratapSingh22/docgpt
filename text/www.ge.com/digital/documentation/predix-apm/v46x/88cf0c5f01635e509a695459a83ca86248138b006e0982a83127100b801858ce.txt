@@ -1,0 +1,87 @@
+
+
+
+First Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+GraphsOverview
+Workflow
+Graphs
+Reference
+Release NotesSecond Quarter of 2023
+Fourth Quarter of 2021
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Graphs
+Release Notes
+First Quarter of 2019
+
+
+
+
+
+
+
+First Quarter of 2019GraphsThis topic provides a list of product changes released for this module on the dates listed below.Release Date: March 29, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDYou can now export a graph to a PDF file. To facilitate this enhancement, the Export to PDF button () has been added to the Graph Result workspace.US297381You can now define where the legend for a graph should appear in the Graph Result workspace. To facilitate this enhancement, in the graph settings pane, the Show Legend check box is now the Legend drop-down list box, where you can select a location for the legend or hide the legend.US290781For a numeric value in the tooltip of a graph, commas now appear as the thousands delimiter. To facilitate this enhancement, the format of the numeric value for a tooltip has been changed to match the format of the numeric value in the y-axis of the graph. US283101
+Table 2. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, for a pie chart with more than two pie slices, if the State management enabled Family for captions or System code table for captions option was selected in the Dimension for Category window, when you removed a row in the Series section of the Settings pane and saved the graph, multiple slices were removed from the graph. This issue has been resolved.DE103948Previously, for a pie chart with two pie slices, if the State management enabled Family for captions or System code table for captions option was selected in the Dimension for Category window, when you removed a row in the Series section of the Settings pane and saved the graph, an error message appeared. This issue has been resolved.DE103809Previously, after a database upgrade, when you attempted to access a graph based on a query that contained a family whose state management was enabled for captions, a spinner appeared, and the graph did not load. This issue can be resolved.For information on how to fix this issue, refer to KBA 6616.DE101475Previously, when you accessed a pie chart based on a query that contained family state IDs, the state IDs incorrectly appeared as graph labels. This issue has been resolved.DE100709Previously, if you created a graph using a Crosstab query and mapped fields containing site data to the vertical axis, the graph legend and tooltips contained values from the first field in the list, regardless of the site to which you are assigned. This issue has been resolved.DE98265
+
+
+
+
+
+On this pageGraphs
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,194 @@
+
+
+
+Manage Records | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Record ManagerOverview
+Manage Records
+Manage Linked Records
+Manage Bulk Data Form 
+Manage Reference Documents
+Manage Conditional Alerts
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Record Manager
+Manage Records
+
+
+
+
+
+
+
+Manage RecordsAbout Master Detail DatasheetsA Master Detail datasheet is a custom form that lets you display a record and all the records that are linked to it through a given relationship definition. Master Detail datasheets can be configured for any entity family using any relationship definition that relates it to another entity family.For example, in the baseline GE Digital APM database, the Calibration Template family is related to the Calibration Template Detail family through the Has Template Details relationship. GE Digital APM includes a Master Detail datasheet that allows you to open a Calibration Template record while simultaneously viewing, creating, and modifying linked Calibration Template Detail records.Note: In the Master Detail Datasheet, the Master and Details sections appear in separate sections.About Associated PagesAssociated Pages are links that are configured for a specific family, and which provide quick access to internal or external locations, such as a page in the GE Digital APM application, a webpage, or an external file. Associated Pages are meant to provide additional information or functionality related to the record that is currently being viewed. You can configure Associated Pages for any entity family so that when users view a record belonging to that family, links will appear on its Associated Pages menu to provide users with access to those items.To create Associated Pages, you must be familiar with constructing URLs for GE Digital APM features. When you create Associated Pages, you will find that it is particularly useful to be familiar with URLs that use an Entity Key parameter, which will allow you to pass in to the URL the Entity Key of the record that you are currently viewing.About Reference TablesBy configuring various aspects of the GE Digital APM system, you can make values in one record dependent on the values in another record. For example, if you know that certain pump properties, such as weight, size, and pump type, are the same for all pumps with a specific model number, you can create a record that contains fields and values specific to the pump weight, pump size, pump type, and pump model number. You can then write a rule dictating that when any pump record lists the specified model number, the related record containing the populated values will be used to look up various pump information and populate the corresponding fields automatically. You can create multiple records that belong to a single family and reference those records whenever necessary. When you create multiple reference records in the same family, those records are referred to collectively as a reference table.Reference table records are best viewed using one of the following options:Query resultsBulk Data FormEach row in the Bulk Data Form or query results represents one record that belongs to the selected reference table family. Each column in the Bulk Data Form or query results represents a field in the reference table records, each of which may correspond to fields in other records.Reference tables are simply a group of records that, coupled with the appropriate code or rules, tell fields in other records how to behave. Depending on your implementation, you could create as many reference tables as desired and write the appropriate rules to determine the functionality of the reference tables. Note that some GE Digital APM modules rely on reference tables to populate baseline fields. In some cases, the reference tables are configured by GE Digital APM, and in other cases, you will need to configure the reference tables manually.Note: A datasheet and the T-Min Calculator can be populated with values from the corresponding reference table only if it also contains all the other reference table values that GE Digital APM rule logic expects it to contain, exactly as they appear in the reference table record.Because reference table records are accessible in the GE Digital APM system, anyone with the proper security privileges for the associated family will be able to modify and save changes to those records, thereby changing the values in the reference table. Note that if a reference table is modified, any analysis that was calculated using the previous values becomes outdated and must be recalculated to reflect the changes to the reference table.If you want to be able to quickly access an individual reference table record to modify it, consider creating a query on the reference table family and fields, and add a hyperlink to the query that will allow you to open and modify the record in the Record Manager or Bulk Data Form.About Revision HistoryVia the Configuration Manager, for a given field, you can specify whether or not you want to keep track of the revision history for that field. When this option is enabled for a field, GE Digital APM records a log of changes that are made to the value in that field.You can access the log by using either of the following options:
+The Datasheet Field History dialog box, which is accessible from the datasheet.The Field History Records query, which is provided in the baseline GE Digital APM database in the following Catalog folder: \\Public\Meridium\Modules\Core\Queries.About Record HierarchyThe record hierarchy is a visual representation of the records in the database and how they relate to one another. The following image displays an example of the record hierarchy as it appears in the Record Explorer pane.
+
+Details
+The record hierarchy displays the records in the database and how they relate to one another. When you open a record in the Record Manager, it appears as the root record at the top of the record hierarchy in the Record Explorer pane. Below the root record, the record hierarchy displays the families that are related to the family of the root record.
+Family-level and record-level tabs in the record hierarchy are distinguished in the following ways:
+
+Family-level tabs in the record hierarchy contain the  button, and the related records within the given family appear below that family tab in the record hierarchy.
+
+
+
+
+
+When they are selected, record-level tabs in the record hierarchy open the given record's datasheet, and the families related to that record appear below that record tab in the record hierarchy.
+
+
+
+
+When you select a record in the record hierarchy, you can filter the related families in two ways:
+ Related Families: The record hierarchy displays only the families that contain records that are linked to the root record. All Possible Families: The record hierarchy displays all families that are related to the family of the root record, regardless of whether those families contain records that are linked to the root record. 
+About Viewing and Modifying RecordsThe GE Digital APM system provides two primary features through which you can view and modify records: the Record Manager and the Bulk Data Form.Note: These are the same tools that you use to create and delete records.Records store information that you can view, modify, and manipulate throughout the GE Digital APM system. Many modules provide custom interfaces that allow you to interact with records in ways that are unique to those modules. In some cases, records are meant to be created and modified only from within the modules to which they belong, but all records can be viewed in the Record Manager and Bulk Data Form.Note: Depending upon the records you are using, the restrictions that have been placed upon them by the module to which they belong, and the permissions that have been granted to you, some of the features described in this documentation may be unavailable.About DatasheetsWhile Record Manager is the tool through which you can manipulate records, datasheets are the vehicles for organizing and storing the data in those records. Datasheets will differ depending on the type of records they support, and they can be created by an administrative user in Configuration Manager using the Datasheet Builder. This topic gives a basic overview of datasheets. The following image demonstrates an example of an Equipment datasheet on the Record Manager page.
+
+The Datasheet ID field has a drop-down menu from which you can select the saved datasheet configuration of your choice.
+
+The datasheet tabs allow you to have separate types of datasheets within one saved datasheet configuration.
+
+When you access a record, you can enable editing for its datasheet by selecting , which also enables you to access a number of other actions.
+
+Parameter Syntax for Associated Pages
+In the URL Manager, you can create Associated Pages, which are URLs that are associated with a specific entity family. Associated Pages will be available in the GE Digital APM system when a user is viewing a record that belongs to a family for which Associated Pages have been defined. In general, the syntax for URLs that serve as Associated Pages is the same as the syntax for URLs that you construct in the GE Digital APM system. One exception to Associated Pages is the URL syntax for specifying a variable parameter value. In the GE Digital APM system, variable parameter values in query URLs are surrounded by $ (dollar signs). For URLs that serve as Associated Pages, variable parameter values are surrounded by [ ] (square brackets).
+Consider an example where the Tank family has a Manufacturer_ID field that stores the name of the company that manufactured the Tank. Now, suppose a query exists that returns a list of tank failures and contains a prompt, with the prompt ID Manufacturer, which accepts the name of a given manufacturer. The purpose of the prompt is to limit the query results to those failures associated with the specified manufacturer. Using this example, you could create a link on the Associated Pages menu that executes this query and passes in to the Manufacturer prompt the Manufacturer ID from the Tank record that is displayed in the Record Manager.
+The URL for the link might look something like this:
+meridium://Registry/QueryBuilder?QueryPath=Public\Meridium\Queries\Failures by Manufacturer&Manufacturer=[Manufacturer_ID]
+This URL contains one variable parameter value: Manufacturer_ID. When a user executes the Associated Page, the value from the Manufacturer_ID field in the current Tank record will be passed to the Manufacturer prompt in the Failures by Manufacturer query. As a result, the query will return a list of failures associated with the manufacturer of the Tank record that you are viewing at any given time.
+Create a RecordAbout This Task
+To create a new record, complete one of the following sequences of steps.
+ProcedureCreate a New Record Using the  ButtonOn the top navigation bar, select .A menu appears.In the menu, in the search bar, enter the family to which you would like the record to belong, and then select that family in the list of search results.A blank datasheet appears.In the data fields, enter your information to build the new record.
+Note: If needed, select the site to which you want to assign the record, or designate the record as a Global record. See the Site Filtering section of the documentation for more information.
+Select .A new record is created.Create a New Record Using the Record Explorer
+Access an existing record.In the Record Explorer pane , below the record, change the filtering option to All Possible Families.Select the family for which you want to create a new record.Select , and then select Add New Record.
+
+
+
+A new blank datasheet appears.
+In the data fields, enter your information to build the new record.
+Note: If needed, select the site to which you want to assign the record, or designate the record as a Global record. 
+
+Tip: For more information, refer to the Site Filtering section of the documentation.
+
+Select  .
+A new record is created.
+Create a New Record by Copying an Existing Record
+Access the record that you want to copy.On the upper-right corner of the datasheet, select , and then select Copy.
+The content of the record is copied.
+On the upper-right corner of the datasheet, select , and then select Add.
+A new record is created and appears in the Record Explorer.
+On the upper-right corner of the datasheet, select , and then select Paste.
+The content of the copied record appears in the new record.
+Select .
+The new, copied record is saved.
+Create a New Record in the Bulk Data Form
+Access the Bulk Data Form.As needed, enter values in the first new row of the Bulk Data Form.Select .
+The new record is saved.
+Access a Record from the Record ExplorerAbout This Task
+In the Record Explorer pane, using the Record Hierarchy, you can access via their relationships to other records.
+Procedure
+Access Record Manager, selecting the record whose related records you want to view.
+If the record you accessed has related families, they will be visible in the Record Explorer pane.
+
+
+
+Select a related family to expand it.Select the record that you want to access.
+The datasheet for the selected record appears.
+Collapse and Expand the Record Explorer PaneAbout This Task
+When you access a record, the Record Explorer pane appears to the left of the datasheet. You can collapse and expand the pane as needed.
+Procedure
+Access Record Manager.On the left side of the page, in the Record Explorer pane, select  to collapse the pane.To expand the Record Explorer pane, select .
+The Record Explorer pane is expanded.
+Change the Filtering OptionProcedure
+Access Record Manager.In the Record Explorer pane, next to Related Families, select . 
+A drop-down menu appears.
+
+
+
+Select the desired filter option:
+
+Related Families - The Record Explorer displays only the families that contain records that are linked to the root record.
+All Possible Families - The Record Explorer displays all families that are related to the family of the root record, regardless of whether those families contain records that are linked to the root record.
+The record hierarchy in Record Explorer is updated to reflect the selected filtering option.
+Access the Datasheet Field History WindowProcedure
+Access the record in Record Manager, selecting the record that contains the field history that you want to view.Select 
+
+The Datasheet Field History window appears, displaying the revision history for all fields for which revision history exists.
+Access Associated Pages for a RecordProcedure
+Access Record Manager. Select .
+The Associated Pages hierarchy appears.
+Results
+The Associated Pages hierarchy contains links to associated pages. In the hierarchy, when a  appears beside a node, the node can be expanded to reveal child nodes, much like the record hierarchy in the Record Explorer. If a record contains no associated pages, the Associated Pages hierarchy will display No Associated Pages.
+Modify a Record in the Record ManagerProcedure
+Access Record Manager, selecting the record that you want to modify.As needed, modify the available fields on the datasheet.On the upper-right corner of the datasheet, select Site:.
+Note: If the user creates a new record from an existing record, then the new record will inherit the site reference key of the predecessor record.
+Select the site to which you want to assign the record.
+Note:
+ If the record is assigned to the default site, then it can be accessed only by users who have been assigned to the same site or by a Super User. You may change the site to any of the sites that the user has permission for or choose to designate the record as a Global Record by selecting Global, so that all GE Digital APM users can see it. A Super user can assign any site to the record.
+
+
+Tip: For more information, refer to the Site Filtering section of the documentation.
+
+Select .
+The changes are saved.
+Print a RecordProcedure
+Access Record Manager.Select , and then select .
+The datasheet for the record is downloaded and appears in .pdf format, which is ready to print as needed.
+Delete a RecordProcedure
+Access Record Manager, selecting the record that you want to delete.Select , and then select Delete.
+The Alert dialog box appears, asking you to confirm the deletion.
+Select Yes.
+The record is deleted from the GE Digital APM database.
+
+
+
+
+
+On this pageAbout Master Detail DatasheetsAbout Associated PagesAbout Reference TablesAbout Revision HistoryAbout Record HierarchyAbout Viewing and Modifying RecordsAbout DatasheetsParameter Syntax for Associated PagesCreate a RecordAccess a Record from the Record ExplorerCollapse and Expand the Record Explorer PaneChange the Filtering OptionAccess the Datasheet Field History WindowAccess Associated Pages for a RecordModify a Record in the Record ManagerPrint a RecordDelete a Record
+
+
+
+
+
+
+
+
+

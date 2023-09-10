@@ -1,0 +1,90 @@
+
+
+
+Template Sharing | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage TemplatesTemplates
+Analysis Templates
+SmartSignal Templates
+Template Sharing
+
+
+Analysis Troubleshooting
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Manage Templates
+Template Sharing
+
+
+
+
+
+
+
+Template SharingAbout Sharing an Analysis TemplateYou can share analysis templates across enterprises based on privileges assigned to user groups and ownership. Use the Permission option to assign visibility, privileges, and ownership to define the permissions. This option is only enabled for template owners. The following types of public templates are available:All Enterprises accessible templates (Tenant Level)Specific Enterprises accessible templatesNote: Existing rules for privileges and ownership apply for the accessibility of the public templates.Set Default Permissions for a Public TemplateAbout This TaskAs the template owner, you can assign visibility, privileges, and ownership to any public class template. ProcedureIn the chart section of a template, select menu, and then select Permissions.Select Visibility. 
+If you have permission to create tenant level templates, select one of the following options that are displayed:Tenant Level Template - This option allows templates to be visible across all enterprises. When this option is selected the specific enterprises option is disabled and the list is cleared of selection.Specific Enterprises - This option allows templates to be visible to specific enterprises. By default this option is selected.
+
+If you do not have permission to create tenant level template, select an enterprise in the list. The template becomes visible to that enterprise. You can access the template for any enterprise to which you have access.If you have permission to create public templates, you can select the template visibility to be based on specific enterprises list from the list.
+(Optional) In the Filter section, specify the name of the enterprise for which you are searching.(Optional) Select or clear the check box next to the enterprise whose permissions you want to set. By default, all the enterprises are selected. All the users for the selected enterprises are able to view the template. Users for enterprises that are not selected will not be able to view the template. Select Privileges. A list of the enterprises to which you have access appears. You can access the template for any enterprise to which you have access.(Optional) In the Filter section, specify the name of the enterprise for which you are searching.Select or clear the check box next to the group. By default, all the groups are selected. Select Ownership. This tab depicts the owner of the template. As the owner, you can update, save, delete, and modify permission on the template. In the Select Owner section, you can select from the following:
+OwnerDescriptionAnyoneThis option allows anyone with access to the template and the template update permissions to update this template.<owner>This option only allows the selected user to make changes to the template.GroupThis option allows you to make modifications to the template as part of the group to which you belong.
+(Optional) In the Filter section, specify the name of the enterprise for which you are searching.Select or clear the check box next to the enterprise. By default, all the user groups are selected. Select Apply. In the chart section of a template, select menu.Select Saves as New Template, and then select Update.View Shared TemplatesAbout This TaskYou can view analysis templates associated with an asset on another tenant, including the asset instance level templates and the asset classification level templates. Anything public is available across all tenants and shared artifacts are view-only. You can add new analysis templates to the assets on another tenant and allow all users to view the templates. Shared templates are view-only and cannot be updated. You can view all public dashboards on the shared asset.ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Complete one of the following actions:In the From box, select a date and time. In the To box, select a date and time.Select Apply.The shared templates for the selected time range will be displayed. 
+
+
+
+
+On this pageAbout Sharing an Analysis TemplateSet Default Permissions for a Public TemplateView Shared Templates
+
+
+
+
+
+
+
+
+

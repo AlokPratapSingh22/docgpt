@@ -1,0 +1,168 @@
+
+
+
+Spares Analysis | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field DescriptionsReliability Recommendation Records
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+
+
+Catalog Items
+Distribution Types
+Calculations
+Failure Data
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Reference
+Family Field Descriptions
+Spares Analysis
+
+
+
+
+
+
+
+Spares AnalysisFailure Distributions Records
+A Failure Distributions record stores information about the distribution of failures over the life of the spare part that you are analyzing. The following table provides an alphabetical list and description of the fields that exist for the Failure Distributions family and appear on the Failure Distributions tab in the workspace for a Spare by default. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageDistribution Type CharacterThe distribution type of the Failure Distribution.
+For Failure Distribution information that you want to define manually, a list appears in which you can select the desired value. The value is set to Exponential by default, but you can select any of the following additional distribution types:
+
+Normal
+Weibull
+Exponential
+
+Lognormal
+TriangularGumbelGeneralized Extreme Value
+
+For Failure Distribution information that you have imported, this column displays the read-only distribution type of the analysis from which you have imported failure distribution information.
+Name CharacterThe name of the Failure Distribution.
+This is a required field. The name of each Failure Distribution must be unique to the root Spare Application record. This field is labeled Distribution Name on the datasheet.
+For Failure Distribution information that you want to define manually, you can enter a name in the Distribution Name field. For Failure Distribution information that you have imported, the Distribution Name field displays the hyperlinked value that is stored in the Analysis ID field in the Reliability Distribution or Reliability Growth record with which you associated failure distribution information. You can select the hyperlink to open the analysis.
+<Parameter 1>NumberThe value of the <Parameter 1>
+Displays one of the following parameters, depending on the distribution type:
+For a Weibull distribution, displays the Beta value.For an Exponential distribution, displays the Mean Time Between Failures value.For a Normal distribution, displays the Mean value.For a Lognormal distribution, displays the Mu value.
+By default, values up to four decimal places are displayed in the <Parameter 1> column. If you select a cell in the <Parameter 1> column for a parameter that can be modified, all decimal places for the value will be displayed.
+<Parameter 2>NumberThe value of the <Parameter 2>
+Displays one of the following parameters, depending on the distribution type:
+For a Weibull distribution, displays the Eta value.For an Exponential distribution, nothing is displayed. The Mean Time Between Failures value that is displayed in the <Parameter 1> column is the only parameter in an Exponential distribution.For a Normal distribution, displays the Standard Deviation value.For a Lognormal distribution, displays the Sigma value.
+By default, values up to four decimal places are displayed in the <Parameter 2> column. If you select a cell in the <Parameter 2> column for a parameter that can be modified, all decimal places for the value will be displayed.
+<Parameter 3>NumberThe value of the <Parameter 3>
+Displays one of the following parameters, depending on the distribution type:
+For a Weibull distribution, displays the Gamma value.For an Exponential distribution, nothing is displayed. The Mean Time Between Failures value displayed in the <Parameter 1> column is the only parameter in an Exponential distribution.For a Normal distribution, nothing is displayed. The Mean and Standard Deviation values that are displayed in the <Parameter 1> and <Parameter 2> columns are the only parameters in a Normal distribution.For a Lognormal distribution, displays the Gamma value.
+By default, values up to four decimal places are displayed in the <Parameter 3> column. If you select a cell in the <Parameter 3> column for a parameter that can be modified, all decimal places for the value will be displayed.
+Time Unit CharacterThe unit of measure that applies to the distribution type that appears in the Distribution Type column.
+For Failure Distribution information that you want to define manually, a list appears in which you can select the desired value. The value is set to Days by default, but you can select any of the following additional units of measure:
+
+Hours
+
+Weeks
+
+Months
+
+Years
+
+For Failure Distribution information that you have imported, this column displays the read-only unit of measure used in the analysis from which you have imported Failure Distribution information.
+
+Spares Records
+A Spares record stores data related to the spare part that you want to analyze. The following table provides an alphabetical list and description of the fields that exist for the Spare family and appear on the Spare datasheet by default. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageCurrent Holding Level NumberThe actual number of spare parts that you are currently storing. The current holding level must be greater than or equal to the minimum inventory level but less than or equal to the maximum inventory level. If you enter a value in the Current Holding Level box that is less than the value in the Minimum Holding Level box or greater than the value in the Minimum Holding Level box, an error message appears and the value in the Current Holding Level box reverts back to the original valueEAM Stock Number NumberThe unique value associated with a Spare in the Enterprise Asset Management (EAM) system of the user that is used to identify a spare part.A user can query GE Digital APM using an EAM Stock Number to determine the optimum holding value for a given spare part. This information can then be shared with the department of the organization that is responsible for procuring the spare part.Expedited Cost($) NumberThe cost associated with placing a rush order for the spare part. The expedited cost must be greater than the normal cost. If you enter a value in the Expedited Cost ($) box that is less than the value in the Normal Cost ($) box, an error message will appear, and the value in the Expedited Cost ($) box will revert back to the value that existed before you modified it.Expedited Order Time NumberThe amount of time it will take to place a rush order for the part and receive it at the location where it is stored on-site (i.e., warehouse). The list to the right of the Expedited Order Time box lets you define the unit of measure for the specified period of time. The expedited order time must be less than the normal order time.Holding Cost Rate($) NumberThe cost of storing the spare part for the amount of time selected in the Per list. The list to the right of the Holding Cost Rate($) box lets you define the unit of measure that applies to the specified cost for storing a spate part. Maximum Holding Level NumberThe maximum number of spare parts that you want to analyze using the Spares Analysis. The maximum inventory level must be greater than the minimum inventory level. If you enter a value in the Maximum Holding Level box that is less than the value in the Minimum Holding Level box, an error message will appear, and the value in the Maximum Holding Level box will revert back to the value that existed before you modified it.Minimum Holding Level NumberThe minimum number of spare parts that you want to analyze using the Spares Analysis. 
+The minimum holding level must be less than or equal to the maximum holding level. If you enter a value in the Minimum Holding Level box that is greater than the value in the Maximum Holding Level box, the Maximum Holding Level box will be updated automatically with the value in the Minimum Holding Level box.
+For example, if the Maximum Holding Level box contains the value 3 and you enter 4 in the Minimum Holding Level box, the value in the Maximum Holding Level box will be set automatically to 4.
+Normal Cost ($) NumberThe cost associated with a standard (i.e., not expedited) order for the spare part. The normal cost must be less than or equal to the expedited cost.
+ If you enter a value in the Normal Cost ($) box that is greater than the value in the Expedited Cost ($) box, the Expedited Cost ($) box will be updated automatically with the value in the Normal Cost ($) box.
+For example, if the Expedited Cost ($) box contains the value 1000 and you enter 1500 in the Normal Cost ($) box, the value in the Expedited Cost ($) box will be set automatically to 1500.
+Normal Order Time NumberThe amount of time that it takes to order the spare part from the manufacturer and receive it at the location where it is stored on-site (i.e., warehouse).The list to the right of the Normal Order Time box lets you define the unit of measure for the specified period of time.On-site Delivery Time NumberThe amount of time that it takes to have the spare part transferred from where it is stored on-site (e.g., warehouse) to the repair location. The list to the right of the On-site Delivery Time box lets you define the unit of measure for the specified period of time.Spare Name CharacterThe name of the Spare record.This is a required field. The name of each Spare must be unique to the root Spares Analysis. 
+Spare Application Populations Records
+A Spare Application record stores information about age data for the equipment that contains the spare part that you are analyzing. The following table provides an alphabetical list and description of the fields that exist for the Spare Application Population family and appear in the grid by default. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageAge NumberThe operational age of the population of equipment that is associated with the data in the linked Spare Application record and Spare record. Age value is the amount of time that the population has been in use.You can enter a value manually to define this value.Age Time Unit CharacterThe unit of measure associated with the Age. The Age Time Unit list is set to Years by default. Name CharacterThe name of the Spare Application record.
+This is a required field. The name of each Spare Application must be unique to the root record. 
+Population Size NumberThe number of pieces of equipment that share the same age.You can enter a value manually to define this value.
+Spares Analysis Records
+A Spares Analysis record stores information about an analysis that helps you maintain the optimal number of spare parts. The following table provides an alphabetical list and description of the fields that exist for the Spares Analysis family and appear on the Spares Analysis datasheet by default. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageAnalysis Name CharacterThe name of the Spares Analysis. You can modify the default value in this box to change the name of the existing analysis. The name of each Spare Analysis must be unique. This field is required. Currency Character The currency that will be used as a label throughout the Spares Analysis for all cost boxes and in the plots.
+ You can enter symbols and text in the Currency box. For example, you can enter the symbol for U.S. currency, $, or you can enter text for U.S. currency, US Dollars. Any data that you enter in the Cost boxes throughout the analysis must be appropriate for the type of currency that you enter in the Currency box.
+ 
+Description Character
+A text field that stores any additional information about the Spares Analysis.
+You can enter text manually to define this value.Enable Random Seed Logical Specifies whether or not you want to run the Monte Carlo simulation for random results.If you select the Enable Random Seed check box, you will generate different results each time you run the Monte Carlo simulation.Number of Iterations NumberThe number of times the GE Digital APM system will perform calculations on the Spares Analysis data when you run the Monte Carlo simulation.
+When you create a new Spares Analysis, the Number of Iterations is set to 1000 by default. You can enter a different number of iterations. If the number of iterations is large, it will take longer for the simulation results to run and will result in more accurate Monte Carlo results.
+An Event Log is created for each holding level for every Spare for each iteration in a Spares Analysis. If you enable Event Logs for a Spares Analysis with a large number of iterations, a large number of Event Logs will be created, and the simulation will take longer to complete. When you enable Event Logs, you should change the number of iterations to a small number (i.e., one) so a small number of Event Log files will be created and the simulation will run in the shortest amount of time.
+Simulation End Date DateA date that defines the end of the analysis period.When you create a new analysis, the end date of the analysis is set by default to the first day of the year that is 10 years after the current date. For example, if the start date is 1/1/2015 by default, then the end date will be set to 1/1/2025 by default. You can enter or select a different end date. The end date must be after the start date. If the end date is before the specified start date, an error message appears when you attempt to save the analysis.Simulation Start Date Date A date that defines the beginning of the analysis period. When you create a new analysis, the start date is set by default to the first day of the current year. For example, for the analyses created in the year 2015, the start date will be set to 1/1/2015 by default. You can enter or select a different start date. If the start date is after the specified end date, an error message appears when you attempt to save the analysis.
+
+
+
+
+
+On this pageFailure Distributions RecordsSpares RecordsSpare Application Populations RecordsSpares Analysis Records
+
+
+
+
+
+
+
+
+

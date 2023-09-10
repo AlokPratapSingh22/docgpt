@@ -1,0 +1,110 @@
+
+
+
+Fourth Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference 
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+ First Quarter of 2019 
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Release Notes
+Fourth Quarter of 2020
+
+
+
+
+
+
+
+Fourth Quarter of 2020Release Date: November 20, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, in certain cases, when you modified a checklist inspection and checklist finding record, an error occurred when you attempted to save the record. This issue has been resolved.DE144072Previously, in certain cases, when you accessed the Inspection Management Overview page for an Asset and selected a tab, the corresponding section did not load, and displayed a blank space. This issue has been resolved.DE143859
+Release Date: October 2, 2020This topic provides a list of product changes released for this module on this date.
+Table 2. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDInspection Management supports inspections created from the rotation and flip of piping components from the Thickness Monitoring module. To facilitate this enhancement, the Pipe Rotation Event Inspection family is provided as part of the baseline Inspection Management content.US432413To improve performance, the following queries have been modified to retrieve the ENTY_ID from the Equipment or Asset Hierarchy instead of the MI_ENTITIES table of the database:
+QueryPathAll Inspection Assets with Inspection Or Task for UnitPublic\Meridium\Modules\Inspection\Overview Queries\All Inspections for AssetPublic\Meridium\Modules\Inspection\Overview Queries\Active Recommendations of Plans for UnitPublic\Meridium\Modules\Inspection\Compliance\Queries\All Inspection Plans for UnitPublic\Meridium\Modules\Inspection\Compliance\Queries\Assets with Inspection PlansPublic\Meridium\Modules\Inspection\Compliance\Queries\MI_INSPHIST_ASSETDTLPublic\Meridium\Modules\Inspection\Report Queries\
+US398214To enhance usability, the #urlnotsupported tag has been removed from the URL column in the Associated pages tab from the following inspection families: Full InspectionGeneral InspectionPressure Test InspectionBundle InspectionUS351014
+Table 3. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when you attempted to save a checklist inspection report that contained edits to multiple categories of checklist findings, an error occurred, and certain findings were not saved. This issue has been resolved.DE142898Previously, for Inspection Tasks created as part of the work management interface with EAM as the master, the Task Type field was disabled. This issue has been resolved.DE141999Previously, when there were multiple Taxonomy Classes or Types for the same category, Taxonomy Configurations were not correctly displayed in the IM Admin Preferences workspace. This issue has been resolved.DE140172Previously, the Inspection Task Complete field was disabled for Team Members assigned to Checklist Inspection families. This issue has been resolved. Now, Team Members assigned to Checklist Inspections can set the Inspection Task Complete field.DE136020Previously, when you selected the Inspection Lock check box, the Reviewers Name field was disabled and another Reviewer was unable to modify the field or assign a different Inspection Reviewer to approve the Inspection. This issue has been resolved. Now, the Reviewers Name field is enabled for all reviewers. You can also assign a different Reviewer to approve the Inspection. The Reviewers Name field is disabled only when the Final Inspection Lock field is selected.DE133983Previously, the Checklist Has Finding (MIR_CHKHSFDG) relationship family did not have a baseline business rule. Due to this, you received an error when you attempted to inherit the Library.Baseline.MIR_CHKHSFDG.MIR_CHKHSFDG rule in your custom project. This issue has been resolved.DE132960Previously, in the Asset Hierarchy, when you selected an asset, and then selected the Integrity tab, the link for Inspection Management took longer to load, depending on the number of assets in the Asset Hierarchy. This issue has been resolved.DE132867
+Previously, when you downloaded inspections in bulk from the Inspection Field Data Collection Overview page along with the inspection history report, no warning message appeared even if the SQL Server Reporting Services were not configured. This issue has been resolved.
+DE132733Previously, when an Inspection event was created for an Asset for which Equipment profiles were defined and sequenced, the automatically generated General Finding records were not arranged in the order of the values in the assigned Sequence field. This issue has been resolved. Now, the Equipment Profiles in General Finding records are arranged in the same order in which they were sequenced in the Inspection Profile Details.DE132290
+
+
+
+
+
+On this pageRelease Date: November 20, 2020Release Date: October 2, 2020
+
+
+
+
+
+
+
+
+

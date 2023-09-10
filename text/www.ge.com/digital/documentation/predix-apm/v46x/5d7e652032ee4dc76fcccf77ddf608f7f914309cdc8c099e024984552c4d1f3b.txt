@@ -1,0 +1,174 @@
+
+
+
+Logic Solvers | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+Logic Solvers
+
+
+
+
+
+
+
+Logic SolversAbout Logic SolverA logic solver is a hardware device or a software system whose inputs and outputs are connected to safety critical devices. The safety critical devices along with the logic solver form the Protective Instrument Loop. The loop is designed to meet the needs of the Instrumented Function, which is used to define requirements of the Protective Instrument Loop in maintaining process safety.Access a Logic SolverProcedure
+Access the SIL Analysis that is linked to the Logic Solver that you want to access.In the left pane, select Logic Solvers.
+A list of Logic Solvers appears.
+
+
+
+Select the Logic Solver that you want to access.
+The datasheet for the Logic Solver appears in the workspace.
+
+
+
+If needed, modify values in the available fields.In the upper-right corner of the datasheet, select .
+The changes made to the Logic Solver are saved.
+Create a Logic SolverBefore You Begin
+
+Create an SIL Analysis
+
+Procedure
+Access the SIL Analysis for which you want to create a Logic Solver.In the left pane, select Logic Solvers.
+A list of Logic Solvers linked to the SIL Analysis appears.
+
+
+
+Select , and then select Create New.
+A blank datasheet for the Logic Solver appears.
+
+
+
+As needed, enter values in the available fields. In the lower-right corner of the datasheet, select Save.
+The Logic Solver is created.
+What To Do Next
+
+Create an Instrumented Function
+
+Set a Default Logic SolverThis topic describes how to set a default Logic Solver from among those linked to an SIL Analysis.Before You Begin
+
+Create a Logic Solver.
+About This Task
+Note: You can set only one Logic Solver as default. If an analysis already has a default Logic Solver and you set another Logic Solver as default, then the latter one becomes the default Logic Solver.
+When you create an Instrumented Function, the default Logic Solver is linked automatically to that Instrumented Function. You can, however, link a different Logic Solver to that Instrumented Function.
+Procedure
+Access the SIL Analysis that is linked to the Logic Solver that you want to set as the default one. In the left pane, select Logic Solvers. 
+A list of Logic Solvers appears. 
+
+
+
+Select the Logic Solver that you want to set as the default one.
+The datasheet for the Logic Solver appears in the workspace.
+
+
+
+In the upper-right corner of the datasheet, select Set as Default.
+Note: If the selected Logic Solver is already set as default, then the Set as Default button does not appear.
+The selected Logic Solver is set as the default one for the SIL Analysis.
+Results
+When you create an Instrumented Function for the SIL Analysis, the ID of the default Logic Solver is populated in the SIS System ID field on the Instrumented Function datasheet. You can, however, select a different logic solver from the Logic Solver list.
+Remove Default Logic Solver SettingsProcedure
+Access the SIL Analysis that is linked to the Logic Solver. In the left pane, select Logic Solvers.
+A list of Logic Solvers appears.
+
+
+
+Select the default Logic Solver.
+The datasheet for the Logic Solver appears in the workspace.
+
+
+
+In the upper-right corner of the datasheet, select Remove Default.
+Note: If the selected Logic Solver is not the default one, then the Remove Default button does not appear. 
+The selected Logic Solver is no longer the default one for the SIL Analysis.
+Results
+When you create an Instrumented Function, the SIS System ID field is no longer populated. The SIS System ID field is blank, and you can select a Logic Solver ID from the list.
+Delete a Logic SolverProcedure
+Access the SIL Analysis that is linked to the Logic Solver that you want to delete.In the left pane, select Logic Solvers.
+A list of Logic Solvers appears.
+
+
+
+Select the Logic Solver that you want to delete.
+The datasheet for the Logic Solver appears in the workspace.
+
+
+
+In the upper-right corner of the datasheet, select , and then select Delete.
+A message appears, asking if you really want to delete the Logic Solver.
+Select Yes.
+The Logic Solver is deleted.
+
+
+
+
+
+On this pageAbout Logic SolverAccess a Logic SolverCreate a Logic SolverSet a Default Logic SolverRemove Default Logic Solver SettingsDelete a Logic Solver
+
+
+
+
+
+
+
+
+

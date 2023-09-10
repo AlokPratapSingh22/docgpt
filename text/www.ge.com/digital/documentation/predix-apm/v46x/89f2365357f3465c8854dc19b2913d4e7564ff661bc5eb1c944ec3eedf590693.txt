@@ -1,0 +1,222 @@
+
+
+
+Failure Distributions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares AnalysisSpares Analysis: Overview
+Spares Analysis: Workflow
+Spares Analyses
+Spares
+Spare Applications
+Spare Application Populations
+Failure Distributions
+Monte Carlo Simulations
+
+
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Spares Analysis
+Failure Distributions
+
+
+
+
+
+
+
+Failure DistributionsAccess a Failure DistributionAbout This Task
+You can access and modify the details of a Failure Distribution only if you have created a new Failure Distribution. 
+If you associate the Failure Distribution information, you cannot access and modify the Failure Distribution information in the Failure Distributions section. You can, however, refresh the distribution to retrieve the latest data.
+Procedure
+Access the Spare Application for which you want to view a Failure Distribution. Select the Failure Distributions tab.
+The list of Failure Distributions associated with the selected Spare Application appears in the workspace. 
+Following columns of information appear in the workspace:
+Distribution NameDistribution TypeTime UnitParameter 1Parameter 2Parameter 3
+ Select the row containing the Spare Failure Distribution that you want to view, and then select . 
+The Update Distribution window appears, displaying the details of the selected Failure Distribution.
+
+
+
+Note: As needed, you can modify the values in the available fields, and then select OK to save your changes.
+Create a Failure DistributionBefore You Begin
+
+Create a Spare Application
+
+About This Task
+When you create a Failure Distribution and associate it with a Spare Application, you are defining the time interval during which a spare part can fail, requiring a replacement (or repaired to as good as new) spare part.
+This topic describes how to create a new Failure Distribution for a Spare Application. You can also associate Existing Failure Distribution.
+Procedure
+Access the Spare Application for which you want to create a new Failure Distribution.Select the Failure Distributions tab, and then select .
+ The datasheet for the new Failure Distribution appears.
+
+
+
+As needed, enter values in the available fields, and then select OK.
+The Failure Distribution details are saved and appear in the Failure Distributions section.
+Results
+The New Failure Distribution is associated with the Spare Application.When you define multiple Failure Distributions for a Spare Application:After a failure occurs and a replacement (or repaired to as good as new) spare part is put into service, the time in-service for the spare part is reset to zero (0) for all the Failure Distributions defined for that Spare Application to reflect that a replacement (or repaired to as good as new) spare part is placed into service.After you complete preventive maintenance on a spare part to mitigate one failure, the time in service for the spare part is reset to zero (0) for all the Failure Distributions defined for that Spare Application to reflect that conducting preventive maintenance on a spare part is equivalent to replacing (or repairing to as good as new) the spare part.
+
+What To Do Next
+
+
+Run a Monte Carlo Simulation
+
+
+Associate Failure Distribution InformationBefore You Begin
+The Spares Analysis must contain the Spare Application for which you want to associate Failure Distribution information.You cannot associate an analysis that uses the unit of measure Quarters.Associated analyses must be assigned to the same site.
+About This Task
+If an existing Reliability Distribution or Reliability Growth Analysis contains failure distribution information for the piece of equipment that you are analyzing in a Spares Analysis, you can associate that Failure Distribution information with the Spare Application.
+This topic describes how to associate Failure Distribution information with a Spare Application. You can also create a new Failure Distribution.
+Procedure
+Access the Spare Application for which you want to create a new Failure Distribution.Select the Failure Distributions tab.
+The list of Failure Distributions associated with the selected Spare Application appears.
+In the upper-right corner of the grid, select Add From Analysis.
+The Search window appears.
+Specify the search criteria that will return the Reliability Distribution or Reliability Growth Analysis containing the Failure Distribution information that you want to associate, and then select .
+The search results appear in the grid below the search criteria.
+Select the analysis with the failure distribution information that you want to associate with the Spares record, and then select OK.
+The failure distribution information from the selected analysis appears in the Failure Distributions section.
+Note: If you select a row containing an analysis that uses the unit of measure Quarters, an error message appears, indicating that the unit of measure Quarters is not supported in Spares Analysis, and the Failure Distribution information for that Analysis is not added to the Failure Distributions section.
+Results
+After you associate the Failure Distribution information, you cannot modify the Failure Distribution information in the Failure Distributions section. You can, however, refresh the distribution to retrieve the latest data.
+Refresh Failure Distribution InformationBefore You Begin
+
+Associate Failure Distribution Information
+
+About This TaskAfter you associate failure distribution information with an existing Reliability Distribution or Reliability Growth Analysis, if the source analysis is modified, you can refresh the distribution to retrieve the latest data.Procedure
+Access the Spare Application that contains Failure Distribution for which you want to refresh information.Select the Failure Distributions tab.
+The list of Failure Distributions associated with the selected Spare Application appears in the workspace.
+ Select the row containing the Spare Failure Distribution that you want to refresh, and then select Refresh Distribution. 
+The Refresh Distribution dialog box appears, asking you to confirm that you want to refresh the selected Failure Distribution information.
+Select OK. 
+The Failure Distribution information is refreshed. 
+Remove Failure Distribution Information AssociationBefore You Begin
+
+Associate Failure Distribution Information
+
+About This TaskAfter you associate failure distribution information with an existing Reliability Distribution or Reliability Growth Analysis, if the source analysis is modified, you can refresh the distributions to retrieve the latest data. If you want to modify the data manually after associating the failure distribution information, you can remove the association between the Failure Distribution record and the Reliability Growth or Reliability Distribution record.Procedure
+Access the Spare Application that contains Failure Distribution for which you want to remove association.Select the Failure Distributions tab.
+The list of Failure Distributions associated with the selected Spare Application appears in the workspace.
+ Select the row containing the Failure Distribution for which you want to remove the association, and then select . 
+The Edit Distribution message appears, asking you to confirm that you want to modify the distribution.
+Select OK. 
+The Update Distribution window appears. 
+As needed, modify the values in the available fields, and then select OK.
+The Failure Distribution information is saved and the association is removed.
+Results
+When you modify a Failure Distribution that is associated with an existing Reliability Distribution or Reliability Growth Analysis, the connection between the following is removed:
+
+The Failure Distribution to which the Spare Application is linked.
+-and-
+The Reliability Growth or Reliability Distribution to which you associated the failure distribution information.
+Delete a Failure Distribution RecordProcedure
+Access the Spare Application that contains Failure Distribution that you want to delete.Select the Failure Distributions tab.
+The list of Failure Distributions associated with the selected Spare Application appears in the workspace.
+Select the row containing the Failure Distribution that you want to delete, and then select . 
+The Delete Spare Application Failure Distribution dialog box appears, asking you to confirm that you want to delete the selected Failure Distribution. 
+Select OK. 
+The selected Failure Distribution is deleted. The updated list of Failure Distributions is displayed in the Failure Distributions section.
+Specify Failure ConsequencesBefore You Begin
+
+Create a Spare Application
+
+Procedure
+Access the Spare Application for which you want to specify failure consequences.Select the Failure Consequence tab.
+The Failure Consequence section appears.
+
+
+
+Enter values in the following fields:
+
+Preparation Time: The amount of time it takes to prepare for the repair of a part. Preparation tasks might include setting up equipment that may be used for the repair or disassembling any equipment. The spare parts are not required to be in stock for preparation tasks to be performed. The list to the right of the Preparation Time box lets you define the unit of measure for the specified period of time. By default, Days is selected as the unit of measure.
+Repair Time: The amount of time it takes to complete the actual repair. The list to the right of the Repair Time field lets you define the unit of measure for the specified period of time. By default, Days is selected as the unit of measure.
+Total Correction Time: The sum of the values in the Preparation Time and Repair Time boxes. This box is populated automatically after you enter values in the Preparation Time and Repair Time boxes. This value is not stored in the Spare Application record; it appears only in the Failure Consequence section of the Spare Application record. The list to the right of the Total Correction Time box contains the unit of measure for the specified period of time. The list is populated automatically with the unit of measure that is the largest between the selections in the Preparation Time and Repair Time lists.
+Labor Cost($)
+: The cost of the labor associated with the value in the Total Correction Time box. 
+Fixed Lost Production Cost
+($): The lost production cost that is incurred each time the piece of equipment fails, regardless of the length of downtime. For example, when a piece of equipment fails, there might be incomplete products that must be thrown away, therefore costing your organization a total of $20,000 each time the piece of equipment fails. 
+Variable Lost Production Cost Rate ($): For a piece of equipment failure, the lost production cost per unit of downtime. For example, your organization might lose $100,000 per day that the piece of equipment is down. The list to the right of the Variable Lost Production Cost Rate ($) field lets you define the unit of measure for the specified cost. By default, Day is selected as the unit of measure.
+# of Required Spares
+: The number of spare parts that will be used for this particular repair. 
+Select .
+The values are saved in the Failure Distributions section.
+Specify Preventive MaintenanceBefore You Begin
+
+Create a Spare Application
+
+Procedure
+Access the Spare Application for which you want to specify preventive maintenance. Select the Preventive Maintenance tab.
+The Preventive Maintenance section appears.
+Enter values in the following fields:
+
+Enable Preventive Maintenance: Indicates whether or not you want to include any preventive maintenance work that is done for the spare part(s) in the calculations of the Monte Carlo simulation. When you select this check box, the analysis results will include a calculation of the preventive maintenance cost based on the values that you specify in the Preventive Maintenance section. 
+Time-based Replacement Interval: The operational time between subsequent planned maintenance activities. This box becomes enabled only if you selected the Enable Preventive Maintenance check box. The list to the right of the Time-based Replacement Interval field lets you define the unit of measure for the specified period of time. By default, Days is selected as the unit of measure.
+Labor Cost($): The cost of labor for each time the maintenance work is performed on the spare part(s). This option is enabled only if you select the Enable Preventive Maintenance check box. 
+Downtime: The amount of time that the piece of equipment is not functional during the preventive maintenance work. When you run the Monte Carlo simulation, the GE Digital APM system will use this value and the values that you specify in the Variable Lost Production Cost Rate and # of Required Spares boxes in the Failure Consequence section to calculate the cost of the preventive maintenance activity. The list to the right of the Downtime field lets you define the unit of measure for the specified period of time. By default, Days is selected as the unit of measure.
+Select .
+The values are saved in the Preventive Maintenance section.
+
+
+
+
+
+On this pageAccess a Failure DistributionCreate a Failure DistributionAssociate Failure Distribution InformationRefresh Failure Distribution InformationRemove Failure Distribution Information AssociationDelete a Failure Distribution RecordSpecify Failure ConsequencesSpecify Preventive Maintenance
+
+
+
+
+
+
+
+
+

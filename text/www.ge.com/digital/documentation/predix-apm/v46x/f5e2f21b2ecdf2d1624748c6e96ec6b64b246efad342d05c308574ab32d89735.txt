@@ -1,0 +1,272 @@
+
+
+
+Catalog Items | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference Family Field Descriptions
+Catalog Items
+General Reference
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Reference 
+Catalog Items
+
+
+
+
+
+
+
+Catalog ItemsConfig Queries Folder
+The Catalog folder \\Public\Meridium\Modules\Inspection\Config Queries contains the following items.
+
+Query
+
+Behavior and Usage
+
+Asset Query 
+
+This query is used to identify the records that store information about pieces of equipment for which you perform inspections. In the baseline database, this query returns a count of all Equipment records with the Entity Key specified in the query prompt (i.e., one or zero).
+
+Base Summary Query 
+
+Used by the Inspection History Summary Query. 
+
+Inspection History Summary Query 
+
+Returns a list of all Inspection records that are linked to a certain Equipment or Functional Location record. This query uses the Base Summary Query to determine the Entity Key of the Equipment or Functional Location record.
+
+Published Documents 
+
+Returns a list of all Inspection records whose Published fields are set to true. This query contains a Load Inspection hyperlink that lets you open Inspection records in the Record Manager.
+
+Published Documents by Asset 
+
+This query returns the same results as the Published Documents query; however, this query contains a prompt on the Asset Key field in the Inspection record. 
+
+User Key for HR Key 
+
+Returns the Entity Key of each Security User record and the Entity Key of each Human Resource record to which that Security User record is linked. This query exists simply to support the workflow facilitated by the following queries, which exist in the Review Queries folder:
+ Bundle Inspections for Review for Current User - Choose State Bundle Inspections Pending Approval for Current User Full Inspections for Review for Current User - Choose State Full Inspections Pending Approval for Current User General Inspections for Review for Current User - Choose State General Inspections Pending Approval for Current User Pressure Inspections Pending Approval for Current User Pressure Test Inspections for Review for Current User - Choose State
+
+Overview Charts Folder
+The Catalog folder \\Public\Meridium\Modules\Inspection\Overview Charts contains the following items.
+Graph NameBehavior and Usage Open Recommendations by Asset 
+This graph shows the number of open Recommendations for the selected Asset. It appears in the OPEN INSPECTION RECOMMENDATIONS BY ASSET section on the Inspection Management Overview page.
+Task Types Coming Due Within the Year 
+This graph shows the number of Inspection Tasks of each type that must be completed in the current year. It appears in the TASK TYPES COMING DUE WITHIN THE YEAR section on the Inspection Management Overview page.
+
+Overview Queries Folder
+The Catalog folder \\Public\Meridium\Modules\Inspection\Overview Queries contains queries that are used on the following pages:
+The Inspection Management Overview page for the selected hierarchy level.The Inspection Management Overview page for the selected asset.
+The following table provides a list of queries that are used in the Inspection Management Overview page for the selected hierarchy level, along with a list of required fields and their alias names for each query.
+Important: The queries in the table below may have one or more required fields or parameters. When using the queries:Do not remove the required fields from a query.Do not change the alias of the required fields.Do not modify the order of required fields.Do not modify the IDs of the query parameters.If you do so, you cannot perform certain operations in the Inspection Management Overview page.
+Query NameBehavior and Usage Required FieldsAll Inspection Assets for Unit Returns a list of assets with at least one Inspection or Inspection Task in the selected unit or underlying assets. This query is used to display results in the grid in the Inspection Assets section.NoneAll Inspections for Unit 
+Returns a list of Inspections performed on the selected Functional Location. This query is used to display results in the All Inspections for This Location subsection in the Underlying Inspections section.
+
+ENTY_KEY (Alias Name: Inspection Entity Key)ENTY_ID (Alias Name: Inspection ID)
+All Inspections for Unit and BelowReturns the count of Inspections performed on the selected Functional Location or underlying assets.NoneAll Inspection Assets with Inspection Or Task for UnitReturns a list of assets with at least one Inspection or Inspection Task. This query is used by the All Inspection Assets for Unit query.NoneAll Tasks for UnitReturns all Inspection Tasks performed on the assets in the unit.
+ENTY_KEY (Alias Name: ENTY_KEY0)
+Count of Task Types due Within the Year Returns the number of Task Types that are due within the calendar year. This query is used in the graph in the TASK TYPES COMING DUE WITHIN THE YEAR section.NoneInspection Overview Parameters Returns the parameters used to navigate through the Asset Hierarchy. All fields in the queryMy Open Inspections
+Returns a list of open Inspections assigned to you. This query is used to display results in the My Open Inspections subsection in the Underlying Inspections section.
+
+ENTY_KEY (Alias Name: Inspection Entity Key)ENTY_ID (Alias Name: Inspection ID)
+Open Inspection Recommendations by Asset Returns the number of open Inspection Recommendations for each asset contained within the unit. This query is used in the graph in the OPEN INSPECTION RECOMMENDATIONS BY ASSET section.NoneOpen Inspections for Unit 
+Returns a list of open Inspections for Equipment or Functional Locations contained within the unit based on their current assigned status. This query is used to display results in the Underlying Open Inspections subsection in the Underlying Inspections section.
+
+ENTY_KEY (Alias Name: Inspection Entity Key)ENTY_ID (Alias Name: Inspection ID)
+Open Recommendations for Asset 
+Returns a list of Inspection Recommendations for the given asset based on their current assigned status. This query is used to display results in the following sections: All Recommendations for this Location subsection in the Overdue Recommendations sectionRecommendation section in the Inspection Management Asset Overview pageThis query is used when the Use State Management for Inspection Recommendations check box in Application Settings is cleared.
+
+ENTY_KEY (Alias Name: Inspection Entity Key)startDateendDate
+Open Recommendations for Asset (State Management)Returns a list of open Inspection Recommendations for the given asset based on their current assigned state. This query is used to display results in the following sections: All Recommendations for this Location subsection in the Overdue Recommendations sectionRecommendation section in the Inspection Management Asset Overview pageThis query is used when the Use State Management for Inspection Recommendations check box in Application Settings is selected. 
+ENTY_KEY (Alias Name: Inspection Entity Key)startDateendDate
+Open Inspection Recommendations for UnitReturns a list of open Inspection Recommendations for assets within the unit based on their current assigned status and filtered by date. This query is used to display results in the Underlying Open Recommendations subsection in the Underlying Recommendations section. This query is used when the Use State Management for Inspection Recommendations check box in Application Settings is cleared.
+ENTY_KEY (Alias Name: Inspection Entity Key)startDateendDate
+Open Inspection Recommendations for Unit (State Management)Returns a list of open Inspection Recommendations that are associated with the asset and Functional Locations in the unit based on their current assigned state and filtered by date. This query is used to display results in the Underlying Open Recommendations subsection in the Underlying Recommendations section. This query is used when the Use State Management for Inspection Recommendations check box in Application Settings is selected.
+ENTY_KEY (Alias Name: Inspection Entity Key)startDateendDate
+Overdue Inspection Recommendations for UnitReturns a list of overdue Inspection Recommendations that are associated with the asset and Functional Locations in the unit based on their current assigned status and filtered by date. This query is used to display results in the Recommendations Due for Implementation subsection in the Underlying Recommendations section. This query is used when the Use State Management for Inspection Recommendations check box in Application Settings is cleared.
+ENTY_KEY (Alias Name: Inspection Entity Key)startDateendDate
+Overdue Inspection Recommendations for Unit (State Management)Returns a list of overdue Inspection Recommendations that are associated with the asset and Functional Locations in the unit based on their current assigned state and filtered by date. This query is used to display results in the Recommendations Due for Implementation subsection in the Underlying Recommendations section. This query is used when the Use State Management for Inspection Recommendations check box in Application Settings is selected. 
+ENTY_KEY (Alias Name: Inspection Entity Key)startDateendDate
+Overdue Tasks for Unit
+Returns a list of Inspection Tasks that are overdue and associated with the Equipment or Functional Locations in the unit. This query is used to display results in the Overdue Tasks subsection in the Inspection Tasks subsection.
+ENTY_KEY (Alias Name: ENTY_KEY0)Top-Level Work Packs Returns a list of top-level Work Packs in GE Digital APM. This query is used to display results in the Work Packs section.Work Pack ID (Alias Name: Work Pack ID)
+The following table provides a list of queries that are used on the Inspection Management Overview page for the selected asset.
+Query NameBehavior and Usage Required FieldsAll Inspections for Asset Returns a list of Inspections performed on the selected asset. This query is used to display results in the Inspections section.
+ENTY_KEY (Alias Name: Inspection Entity Key)ENTY_ID (Alias Name: Inspection ID)
+All Tasks for Asset Returns a list of Inspection Tasks for the selected asset. This query is used to display results in the Inspection Tasks section.
+ENTY_KEY (Alias Name: ENTY_KEY0)
+All Health Evaluations for AssetReturns a list of Health Evaluations for the selected assets. This query is used to display results in the Health Evaluations section.Open Recommendations for Asset Returns a list of Inspection Recommendations for the given asset. This query is used to display results in the Recommendations section.
+ENTY_KEY (Alias Name: ENTY_KEY)
+Top-Level Work Packs Returns a list of top-level Work Packs in GE Digital APM. This query is used to display results in the Work Packs section.
+MI_WORKPACK_ID_C (Alias Name: Work Pack ID)ENTY_KEY (Alias Name: ENTY_KEY)
+
+ Report Queries Folder
+The Catalog folder \\Public\Meridium\Modules\Inspection\Report Queries contains the following items.
+
+Query
+
+Behavior and Usage
+
+Checklist Report Query 
+
+Generates the report for an Inspection Document associated with a Checklists record.
+
+MI Asset Corrosion Analysis 
+
+Generates information in the Asset Corrosion Analysis section of each main report.
+
+MI Reference Document 
+
+Generates information in the Reference Documents section of each main report.
+
+MI FIND CHECK 
+
+Generates information in the Checklist Findings section of a Checklist Inspection report.
+
+MI FIND GEN 
+
+Generates information in the Findings section of each main report.
+
+MI INSP GEN 
+
+Generates the report for a General Inspection Document.
+
+MI INSPBSUB 
+
+Generates information in the Bundle Sub Inspections section of a Full Inspection report.
+
+MI INSPBUND 
+
+Generates the report for a Bundle Inspection Document.
+
+MI INSPFULL 
+
+Generates the report for a Full Inspection Document.
+
+MI INSPPSUB 
+
+Generates the information in the Pressure Test Sub Inspections section of a Full and General Inspection report.
+
+MI INSPPTST 
+
+Generates the report for a Pressure Test Inspection Document.
+
+MI RECINSP 
+
+Generates the information in the Recommendations section of each main report.
+
+MI TEAMINSP 
+
+Generates the information in the Inspection Team Members section of each main report.
+
+MI_INSPHIST_RECINSP
+
+Generates the information in the Recommendation History section of an Inspection History Report.
+
+Reports and SSRS Reports 
+The Catalog folders \\Public\Meridium\Modules\Inspection\Reports and \\Public\Meridium\Modules\Inspection\SSRS contain the following items.
+Report NameBehavior and Usage Asset Corrosion Analysis Report Generates the SSRS report that provides a summary of the Asset Corrosion Analysis.Blank Checklist Finding Report Generates the sub-report for the Blank Checklist Inspection report. This sub-report provides blank entries for the Checklist Findings related to a particular Checklist Inspection.Blank Checklist Inspection Report Generates the SSRS report that provides blank entries for the Checklist Inspection and a blank section for the manual entry of Checklist Finding details.Bundle Inspection Report Generates the SSRS report that displays the number of tubes present in a bundle and the condition of the tubes.Bundle Sub Inspection Report Generates the SSRS report that provides details on bundle subinspections for the Bundle Inspection Report.Checklist Findings Report Generates the SSRS report that displays all of the Checklist Findings associated with a Checklist Inspection.Checklist Inspection Report Generates the SSRS report that provides a summary of Checklist Inspection data, Checklist Findings, and related sub-report data.Finding Report Generates the SSRS report that displays all the Findings for an Inspection.Full Inspection Report Generates the SSRS report that provides a summary of Findings, Bundle Inspection, Pressure Test, Recommendations, Inspection Team Members, and reference documents.General Inspection Report Generates the SSRS report that provides a summary of Findings, Bundle Inspection, Pressure Test, Recommendations, Inspection Team Members, and reference documents.Inspection Recommendation Report Generates the SSRS report that displays all recommendations that are associated with a given Inspection.Inspection Team Member Report Generates the SSRS report that displays all team members associated with an Inspection.NR13 Full Inspection Generates the SSRS report (NR13 Version) that provides a summary of Findings, Bundle Inspection, Pressure Test, Recommendations, Inspection Team Members, and reference documents.NR13 General Inspection Report Generates the SSRS report (NR13 Version) that provides a summary of Findings, Bundle Inspection, Pressure Test, Recommendations, Inspection Team Members, and reference documents.Pressure Test Inspection Report Generates the SSRS report that displays results of a Pressure Test for Corrosion Analysis, Findings, and Recommendations, using subreports.Pressure Test Sub Inspection Report Generates the SSRS report that provides details on Pressure Test subinspections for the Pressure Test Inspection report.Reference Document Report Generates the SSRS report that displays a summary of all the reference documents that are associated with an Inspection.Work Pack Inspection Findings Summary Report  Generates the Work Pack Inspection Findings Summary Report.Work Pack Inspection Scope Summary Report Generates the Work Pack Inspection Scope Summary Report.
+Resource Queries Folder
+The Catalog folder \\Public\Meridium\Modules\Inspection\Resource Queries contains the following items.
+
+Query
+
+Behavior and Usage
+
+All Human Resources 
+
+Returns a list of all the Human Resource records in the database.
+This query contains the following URL Fields:
+ Manage Resource Roles (Field Alias: Manage Roles): Displays the Human Resource record in the master/detail datasheet. The detail grid lets you view and create Resource Role records that are linked to the Human Resource record.Manage Resource Certifications (Field Alias: Manage Certifications): Displays the Human Resource record in the master/detail datasheet. The detail grid lets you view and create Personnel Certification records that are linked to the Human Resource record.
+
+Human Resources with Certification 
+
+Returns a list of Human Resource records that are linked to a Personnel Certification record.
+This query contains the following URL Field:
+Last Name: Displays the Human Resource Record in the master/detail datasheet. The detail grid lets you view and create Personnel Certification records that are linked to the Human Resource record.
+
+Human Resources with Roles 
+
+Returns a list of Human Resource records that are linked to a Resource Role record.
+This query contains the following URL Field:
+ Last Name: Displays the Human Resource Record in the master/detail datasheet. The detail grid lets you view and create Resource Role records that are linked to the Human Resource record.
+
+Work Pack Queries Folder
+The Catalog folder \\Public\Meridium\Modules\Inspection\Work Pack Queries contains the following items:
+Query NameBehavior and Usage Required FieldsAvailable Tasks for Work PackReturns a list of Tasks available for linkage to a Work Pack 
+ENTY_KEY (Alias Name: TASK_ENTY_KEY) 
+All Inspections in a Work Pack Returns a list of Inspections linked to a given Work Pack
+Inspection.ENTY_KEY (Alias Name: INSP_ENTY_KEY)Inspection.ENTY_ID (Alias Name: INSP_ID)
+All related Work PacksReturns a list of Work Packs linked to a given Work Pack
+KEYIDLEVEL
+All Tasks in a Work PackReturns a list of Inspection Tasks linked to a given Work Pack
+ENTY_KEY (Alias Name: TASK_ENTY_KEY)MI_TASK_ID (Alias Name: TASK_ID)MI_TASK_INSP_INSPTYPE_FMLYID_C (Alias Name: INSP_DOC_TYPE)PRED_ENTY_KEY (Alias Name: ASSET_ENTY_KEY) 
+
+
+
+
+
+
+On this pageConfig Queries FolderOverview Charts FolderOverview Queries Folder Report Queries FolderReports and SSRS Reports Resource Queries FolderWork Pack Queries Folder
+
+
+
+
+
+
+
+
+

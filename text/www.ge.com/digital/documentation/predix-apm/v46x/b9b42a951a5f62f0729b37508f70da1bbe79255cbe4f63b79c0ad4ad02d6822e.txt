@@ -1,0 +1,93 @@
+
+
+
+Classifications Inherited Attributes | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+Groups
+ClassificationsClassifications Overview
+Classifications AttributesClassifications Reserved Attributes
+Classifications Custom Attributes
+Classifications Inherited Attributes
+
+
+
+
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Classifications
+Classifications Attributes
+Classifications Inherited Attributes
+
+
+
+
+
+
+
+Classifications Inherited AttributesAccess Inherited Attributes for a ClassificationYou can access inherited attributes for a classification. When a child-classification is created, all the custom attributes in the root-classification are copied to the inherited attributes.About This TaskInherited attributes appear only for asset or tag classifications. You can enter a new value or modify an existing value for an inherited attribute. You cannot add or delete an inherited attribute from the classification view. It can only be deleted from the root-classification.Note: Root-classification does not have inherited attributes.ProcedureIn the module navigation menu, go to
+Assets >  Classifications.Find and select a classification in the Classifications results table.Scroll down to Inherited Attributes to access the following information:
+FieldDescriptionAttribute NameThe name of the attribute appears. ValuesThe value or values of the attribute appears.
+Add or Modify Inherited Attribute Values for a ClassificationYou can add or modify an inherited attribute value for a selected root-classification or a child-classification.ProcedureIn the module navigation menu, go to
+Assets >  Classifications.In the Classification results table, select the classification to which you want to add or modify inherited attribute values.In the Inherited Attributes section, hover over and select an attribute value.In the Value box, enter a new value, and then press ENTER or select outside the box.The new value is added.Alternatively, you can hover over a reserved attribute value, select , and then enter a value in the Attribute Value Definition box.Note: You cannot change the datatype of the attribute.Select Save.The entered value is saved and appears in the Value column for the selected reserved attribute.
+
+
+
+
+On this pageAccess Inherited Attributes for a ClassificationAdd or Modify Inherited Attribute Values for a Classification
+
+
+
+
+
+
+
+
+

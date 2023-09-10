@@ -1,0 +1,115 @@
+
+
+
+Fourth Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference 
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+ First Quarter of 2019 
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Release Notes
+Fourth Quarter of 2021
+
+
+
+
+
+
+
+Fourth Quarter of 2021Release Date: December 17, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, if you did not have an active Risk Based Inspection license, and you attempted to open an inspection record, an error was incorrectly logged in the MI_EXCEPTION_LOG_ENTRIES table. This issue has been resolved.DE169120
+Table 2. Obsolete Features
+The following features are no longer available.
+DescriptionTracking IDThe Combined Bulk Inspection Report in the following path is no longer used and has been removed from the database.
+Public\Meridium\Modules\Inspection\Reports\Combined Bulk Inspection Report
+Previously, the Combined Bulk Inspection Report was used to merge the individual reports selected into a single file for the Combined Report feature. Now, the default reports generated for each inspection family selected, are combined into a single PDF file. Also, the MHTML file format is no longer supported to view and download the files.US504783
+Release Date: October 8, 2021This topic provides a list of product changes released for this module on this date.
+Table 3. Enhancements and New FeaturesThe following enhancements and new features have been added.DescriptionTracking IDThe following enhancements have been added to capture the asset health information in the Inspection Management module:Health Evaluation option has been added to the Event Configuration section of the Inspection Admin Preferences page. If you select this option when creating the main event, you can create Inspection Health Evaluation records and link them to the asset.Enable Asset Mapping option has been added to the Template Name window of the Checklist Configuration page. If you select this option, the Asset Mapping section appears in the Create Inspection window.When you create a new inspection event, you can now see a new section Asset Mapping added to the Create Inspection window. You can now select the sub-assets and map them to the corresponding checklist categories. The Inspection Health Evaluations generated for these checklist categories are then linked to their corresponding asset.Note: The Asset Mapping section appears only when you select to create an inspection checklist template from the Inspection Event list, and that template has the Enabled Asset Mapping option selected.To facilitate selection of asset health, new icons have been added to the Inspection Data page. Icons are also available for each category header in a checklist inspection.The Inspection Field Data Collection feature has been modified to support the ability to capture health evaluation information when performing mobile checklist inspections.When collecting inspection data for an event record that has Inspection Health Evaluation data, an icon indicating the health of the overall asset is available on the header of the mobile inspection. This icon shows the worst-case indicator level of the health assessments against the checklist findings. A card is available on each checklist category for defining the health assessment value and comments.F61227To enhance the usability, Inspection ID has been added to the following reports:Public\Meridium\Modules\Inspection\Reports\Checklist Inspection ReportPublic\Meridium\Modules\Inspection\Reports\Blank Checklist Inspection ReportIf the report is for a Checklist Inspection Template record, the Inspection ID also contains the name of the template associated with the event.US491005The following enhancements have been added to European Inspection Management: New fields are added in the Inspection Task Family, to calculate the grace period. The new fields are included in European Inspection Task Datasheet.You can now define Grace Period. This grace period helps in determining whether an inspection task is overdue or not.Inspection Documentation Completion Date is now populated based on adding the Next Date, Inspection Documentation Window, and Grace period (defined by you).US488180The following enhancements have been added to Work Packs: You can now link multiple Inspection tasks to Work Packs. Search for Inspection Tasks can now be performed through a configurable query. You can add search criteria while searching for Inspection Tasks.The query is located at: Public\Meridium\Modules\Inspection\Work Pack Queries\Available Tasks for Work PackWork Pack Linked Inspection Tasks is now a configurable query.The query is located at: Public\Meridium\Modules\Inspection\Work Pack Queries\All Tasks in a Work PackWork Pack Linked Inspections is now a configurable query.The query is located at: Public\Meridium\Modules\Inspection\Work Pack Queries\All Inspections in a Work PackYou can view the results of the above queries within a result grid that has enhanced search and filter capabilities.You can relocate the existing Inspection Tasks between the Sub Work Packs.
+US483140US483137US483125
+To enhance the usability of viewing images created using the mobile Field Data Collection feature, or created manually as reference documents, the following enhancements have been made:An image gallery button has been added for the inspection and any related record of the inspection that supports reference documents (i.e., General Findings or sub-inspections). The image gallery displays reference documents containing images that are either directly stored in the GE Digital APM or as external network paths such as UNC or URL paths.All images created or linked to a related record of an inspection, are now also linked to the root inspection event record. This allows you to view all the images across the inspection in one location. This is also true for images synced from the Inspection Field Data Collection feature.Note: When you manually unlink a reference document containing an image from a related record, the link between the reference document and the root inspection event will remain. You can unlink the reference document from the inspection event record as well.For images against either General Findings or Checklist Findings, the image gallery dialog now displays the description of the Reference Document and the Finding Summary value from the finding record.For Checklist Inspections, a similar functionality has been added for each checklist category and an image button has been added with each category header. All images collected against finding items within that category are displayed in the image gallery.Note: The height of individual Checklist Finding rows has been increased for more visibility of the summary text.US481174You can now generate and download multiple Inspection Reports at a time. To facilitate this enhancement:A new option, Download Report () is added in the Inspection Management Overview page. A new option, View log is added in the Inspection Management Overview page to view the status of the Download Report job. Note: If you have a pop-up blocker enabled in your browser, you need to disable it to download the report.US480277You can now embed image files under the Reference Images section in the printed reports of the following Baseline Checklist Inspection families: API 510 External ChecklistAPI 510 Internal ChecklistAPI 510 Internal Exchanger ChecklistAPI 570 External ChecklistAPI 653 External ChecklistAPI 653 Internal ChecklistChecklist Inspection TemplateExternal PRD ChecklistUS467663You can now configure the %TimeOut; within the SSRS section in appsettings.json. The default TimeOut is set to 60 minutes.DE165612
+Table 4. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in the IM Admin Preferences, when you modified the options in the Date Filter section of the Overview Configuration page and saved them, a message indicating a successful save appeared. However, the changes were not saved and when you refreshed the page, the values reverted to the previous settings. This issue has been resolved.DE165869Previously, for non-reoccurring Inspection Tasks, the Task Execution records were not created when you selected the Inspection Task Complete option for the associated inspection event. This issue has been resolved.DE163900Previously, some queries incorrectly included direct joins to the Equipment family. This issue has been resolved. Now, Inspection Management supports both Equipment and Functional Location families in the baseline product and these queries have been corrected. The following table provides a comprehensive list of the queries affected and their corresponding Inspection Management Overview widget or tile by title.
+QueryCorresponding Overview Widget/TilePublic\Meridium\Modules\Inspection\Overview Queries\All Inspections for AssetInspections tile for Asset Overview.Public\Meridium\Modules\Inspection\Overview Queries\All Inspections for Asset with Inspection GroupingInspections tile for Asset Overview.
+DE157675Previously, in the Inspection Confidence Evaluation record, the values in the Type of Inspection field were not sorted alphabetically. This issue has been resolved.DE157674Previously, when you attempted to access an Asset Technical Data record using global search, an error occurred. This issue has been resolved.DE157666Previously, when you were switching from one tab to another in an inspection event, if there was any unsaved data in the tabs, the Save window did not appear consistently. This issue has been resolved now.DE154418
+
+
+
+
+
+On this pageRelease Date: December 17, 2021Release Date: October 8, 2021
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,86 @@
+
+
+
+SmartSignal Cards | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage CardsCards
+Analysis Cards
+SmartSignal Cards
+
+
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Manage Cards
+SmartSignal Cards
+
+
+
+
+
+
+
+SmartSignal CardsAdd a SmartSignal CardAdding SmartSignal cards to ad hoc analysis charts allows the analyst to view SmartSignal analytics outputs to help isolate and identify issues with the assets.About This Task
+You can add a SmartSignal card to an analysis view using  in the view header or the card Action drop-down list box.Note: These options are also available when creating Time Series Analysis and Event Data Analysis views.
+For the purposes of this documentation, it is assumed that you are adding a card to an existing template view.
+ProcedureTo add a card below the currently selected card:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a System Templates (public or my template) or New Time Series Analysis view.On a card in the view, select , and then select SmartSignal Card.In the Name Your Card window, enter a name for the new card, and then select Create.Once selected, you are able to plot on your chart by dragging-and-dropping the tag. Each chart can only have one plotted tag. Export Data on a SmartSignal CardYou can export the data from a SmartSignal card to a CSV file for record-keeping or ingestion purposes.ProcedureNavigate to the desired SmartSignal card.In the SmartSignal card workspace, select .The CSV file of the exported card data is downloaded to the downloads folder.
+
+
+
+
+On this pageAdd a SmartSignal CardExport Data on a SmartSignal Card
+
+
+
+
+
+
+
+
+

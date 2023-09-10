@@ -1,0 +1,94 @@
+
+
+
+First Quarter of 2022 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Record ManagerOverview
+Manage Records
+Manage Linked Records
+Manage Bulk Data Form 
+Manage Reference Documents
+Manage Conditional Alerts
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Third Quarter of 2019
+First Quarter of 2019
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Record Manager
+Release Notes
+First Quarter of 2022
+
+
+
+
+
+
+
+First Quarter of 2022Release Date: March 4, 2022This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when you attempted to access a record that had a large number of related records, the record did not load, and the spinner continued for an indefinite timespan. This issue has been resolved. Now, a message appears indicating that there are too many related records, and you can open the record in the Bulk Data Form. DE175550Previously, when you selected a network folder to browse for documents, if the network folder path included Chinese or other non-Latin characters, an error occurred. This issue has been resolved.DE175545Previously, when you performed a global search for an Equipment record, the related links included a reference to the family itself, which caused a discrepancy between the number of Related Families in the Record Manager and in the global search. This issue has been resolved.DE153236
+
+
+
+
+
+On this pageRelease Date: March 4, 2022
+
+
+
+
+
+
+
+
+

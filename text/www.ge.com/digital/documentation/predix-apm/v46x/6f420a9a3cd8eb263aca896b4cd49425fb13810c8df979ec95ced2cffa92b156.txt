@@ -1,0 +1,105 @@
+
+
+
+Second Quarter of 2023 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Release Notes
+Second Quarter of 2023
+
+
+
+
+
+
+
+Second Quarter of 2023Release Date: May 26, 2023This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo ensure that content protection and revert to baseline features operate as expected, you can no longer modify the Name field in a baseline Policy record.Note: If you have already modified the name of a baseline Policy, you can no longer modify the name. However, if you revert the Policy to baseline, the name will be reverted to the original name.US580871
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, if the ActiveMQ server failed over or was restarted, scheduled policy executions were not executed as expected. This issue has been resolved.DE201019
+
+
+
+
+
+On this pageRelease Date: May 26, 2023
+
+
+
+
+
+
+
+
+

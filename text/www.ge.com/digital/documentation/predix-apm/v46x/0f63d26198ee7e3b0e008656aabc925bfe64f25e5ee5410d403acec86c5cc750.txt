@@ -1,0 +1,172 @@
+
+
+
+Instrumented Functions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+Instrumented Functions
+
+
+
+
+
+
+
+Instrumented FunctionsAbout Instrumented FunctionAn instrumented function is a specific need of a safety instrumented system to monitor the conditions of a process. For each instrumented function defined for a safety instrumented system, at least one protective instrument loop (PIL) will exist to satisfy that need.When you create an Instrumented Function, it will be linked automatically to the current SIL Analysis. When you create the Instrumented Function, in addition to details about the instrumented function, you can specify the following records linked to the Instrumented Function:Logic Solver Equipment and Functional LocationSIF Common Cause Failures Hazardous events that may occur if the safe state associated with the current instrumented function occurs at the same time as the safe state associated with a different instrumented function.Access an Instrumented FunctionProcedure
+Access the SIL Analysis that is linked to the Instrumented Function that you want to access. In the left pane, select the Instrumented Function that you want to access.
+The datasheet for the Instrumented Function appears in the workspace.
+
+
+
+If needed, modify values in the available fields.In the upper-right corner of the datasheet, select .
+The changes made to the Instrumented Function are saved.
+Create an Instrumented FunctionAbout This Task
+This topic describes how to create an Instrumented Function using a blank datasheet. You can also copy an Instrumented Function.
+Procedure
+Access the SIL Analysis for which you want to create an Instrumented Function. In the left pane, select , and then select Create New.
+A blank datasheet for the Instrumented Function appears.
+
+
+
+As needed, enter values in the available fields.In the lower-right corner of the datasheet, select Save.
+The Instrumented Function is created.
+What To Do Next
+ Perform an SIL Assessment
+
+Copy an Instrumented FunctionAbout This Task
+You can create an Instrumented Function by copying the details from another Instrumented Function linked to a SIL Analysis. 
+When you copy an Instrumented Function, the SIL Assessment that is associated with the Instrumented Function is also copied.
+However, the values of the following fields are not copied:
+
+IF ID: After you copy an Instrumented Function, this filed has the value copy. You can modify this value as needed.
+SIS System ID: This field is populated with the ID of the default Logic Solver, instead of the value in the SIS ID field of the Instrumented Function that you want to copy.
+Hazards Analysis Reference: This field is blank after you copy an Instrumented Function.
+Hazards Analysis Date: This field is blank after you copy an Instrumented Function.
+You can also create an Instrumented Function using a blank datasheet.
+Procedure
+Access the SIL Analysis into which you want to copy an Instrumented Function.In the left pane, select , and then select Copy Existing.
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of Instrumented Functions appears.
+Select the check box that corresponds to the Instrumented Function that you want to copy, and then in the lower-right corner of the window, select OK.
+A copy of the Instrumented Function is created, and listed in the left pane.
+If needed, select the copied Instrumented Function, and modify the values in the available fields.In the upper-right corner of the datasheet, select .
+The changes made to the Instrumented Function are saved.
+Create a Recommendation Procedure
+Access the Instrumented Function for which you want to create a Recommendation.In the upper-right corner of the page, select .
+The Recommended Actions pane appears, displaying a list of Recommendations linked to the Instrumented Function.
+
+
+
+In the upper-left corner of the pane, select .
+A blank datasheet of the Recommendation appears.
+
+
+
+As needed, enter values in the available fields, and then in the upper-right corner of the datasheet, select .
+The Recommendation is created.
+Tip: For information about additional options available when working with the Recommendation records, refer to the Action Management section of the documentation.
+Results
+The Recommendation that you have created is listed in the Recommended Actions pane for the Instrumented Function and the related SIL Analysis.
+Access the Health Summary Page of an AssetThis topic describes how to access the Health Summary page of the Asset that is being protected by an Instrumented Function.Before You Begin
+Ensure that the Equipment ID or the Functional Location ID fields in the Instrumented Function datasheet are populated with the values that correspond to the Asset that is being protected by the Instrumented Function.
+Procedure
+Access the Instrumented Function that protects the Asset for which you want to access the Health Summary page.In the upper-right corner of the page, select .
+The Health Summary page for the Asset appears, displaying the health indicators for the Asset.
+Note: If there is no value in the Equipment ID or the Functional Location ID fields of the Instrumented Function, then the  button is disabled.
+Note:
+Policies and other health indicator sources can be leveraged to provide a holistic view of the asset which include but are not limited to the following:
+Proof Test Schedule Compliance Sensor or Final Element detected failureInstrumented Function bypassInstrumented Function tripsProof testing results (e.g., Pass or fail ratios)
+
+Generate a Report of an Instrumented FunctionProcedure
+Access the Instrumented Function whose report you want to generate.In the upper-right corner of the datasheet, select .
+The report is generated. You can print, save, or export the report, or attach it to an email.
+Delete an Instrumented FunctionAbout This Task
+Note: You can delete an Instrumented Function only if the SIL Analysis with which it is associated is in the Planning state.
+Procedure
+Access the SIL Analysis that is linked to the Instrumented Function that you want to delete. In the left pane, select the Instrumented Function that you want to delete.
+The datasheet for the Instrumented Function appears.
+
+
+
+In the upper-right corner of the datasheet, select , and then select Delete.
+A message appears, asking if you really want to delete the Instrumented Function.
+Select Yes.
+The Instrumented Function and all the related successor records are deleted.
+Important:  Deleting an Instrumented Function also deletes the following successor records: LOPA Assessment, Risk Matrix Internal Assessment, PHA Internal Assessment, External Assessment, and Protective Instrument Loop (along with the Protective Instrument Loop Elements). The associated recommendations, Proof Test Templates, and Proof Tests are not deleted.
+
+
+
+
+
+On this pageAbout Instrumented FunctionAccess an Instrumented FunctionCreate an Instrumented FunctionCopy an Instrumented FunctionCreate a Recommendation Access the Health Summary Page of an AssetGenerate a Report of an Instrumented FunctionDelete an Instrumented Function
+
+
+
+
+
+
+
+
+

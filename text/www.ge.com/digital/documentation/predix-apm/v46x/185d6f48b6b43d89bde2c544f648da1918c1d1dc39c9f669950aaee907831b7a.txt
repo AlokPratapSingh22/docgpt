@@ -1,0 +1,264 @@
+
+
+
+Catalog Items | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Distribution Types
+Calculations
+Failure Data
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Reference
+Catalog Items
+
+
+
+
+
+
+
+Catalog ItemsAnalyses Folder
+The Catalog folder \\Public\Meridium\Modules\Reliability Manager\Analyses contains the following items. 
+
+Item Name
+
+Behavior and Usage
+All Production Data
+This query is used to create a Production Analysis from PLA Production Data.
+Combined Production Data CodesThis subquery is used by the All Production Data query.Production Event Code - Max LossThis subquery is used by the Combined Production Data Codes subquery.Production Impact Code - Max LossThis subquery is used by the Combined Production Data Codes subquery.Production OEE Code - Max LossThis subquery is used by the Combined Production Data Codes subquery.
+Queries Folder
+The Catalog folder \\Public\Meridium\Modules\Reliability Manager\Queries contains the following items. 
+
+Item Name
+
+Behavior and Usage
+Dashboard - Recommendation Summary
+Displays the Recommendation Summary chart on the RA Overview page.
+Dashboard - Top 10 - Cost from Work History by EquipmentDisplays the top 10 Equipment based on costs from Work Histories in the Top 10 Bad Actors chart on the RA Overview page.Dashboard - Top 10 - Cost from Work History by Functional Location
+Displays the top 10 Functional Locations based on costs from Work Histories in the Top 10 Bad Actors chart on the RA Overview page.
+Dashboard - Top 10 - Equipment Linked to Reliability
+Displays the top 10 Equipment linked by the Reliability family in the Top 10 Bad Actors chart on the RA Overview page.
+Dashboard - Top 10 - Functional Location Linked to Reliability
+Displays the top 10 Functional Locations linked by the Reliability family in the Top 10 Bad Actors chart on the RA Overview page.
+Dashboard - Top 10 - LPO from PLA by Equipment
+Displays the LPO from PLA by Equipment in the Top 10 Bad Actors chart on the RA Overview page.
+Dashboard - Top 10 - Production Cost from PLA by Equipment
+Displays the production costs from PLA by Equipment in the Top 10 Bad Actors chart on the RA Overview page.
+Dashboard - Top 10 Bad Actors with PLA
+Displays the top 10 assets or Functional Locations that are costing you the most with PLA in the Top 10 Bad Actors chart on the RA Overview page.
+Dashboard - Top 10 Bad Actors without PLA
+Displays the top 10 assets or Functional Locations that are costing you the most without PLA in the Top 10 Bad Actors chart on the RA Overview page.
+Dashboard - Track Result - Cost from Work History
+Displays the costs from work history in the Track Results By recommendation Implementation Year chart on the RA Overview page.
+Dashboard - Track Result - Costs of Functional Location
+Displays the sum of maintenance costs and production costs of a Functional Location in the Track Results By recommendation Implementation Year chart on the RA Overview page.
+Dashboard - Track Result - Equipment with FE Recommendations Implemented
+Displays the equipment with FE recommendations implemented in the Track Results By recommendation Implementation Year chart on the RA Overview page.
+Dashboard - Track Result - Equipment with FE Recommendations Implemented - All Years
+Displays the equipment with FE recommendations implemented for all years in the Track Results By recommendation Implementation Year chart on the RA Overview page.
+Dashboard - Track Result - Last 5 Years
+Displays the results of the last 5 years in the Track Results By recommendation Implementation Year chart on the RA Overview page.
+Dashboard - Track Result - Maintenance Costs
+Displays maintenance costs in the Track Results By recommendation Implementation Year chart on the RA Overview page.
+Dashboard - Track Result - Production Loss CostsDisplays production loss costs in the Track Results By recommendation Implementation Year chart on the RA Overview page.Dashboard - Track Result - Production Loss Costs - Sub QueryDisplays subquery production loss costs in the Track Results By recommendation Implementation Year chart on the RA Overview page.Dashboard - Track Result - Total Cost from Work History
+Displays the total cost from work history in the Track Results By recommendation Implementation Year chart on the RA Overview page.
+Dashboard - Track Result - Total Cost from Work History and PLA
+Displays total cost from work history and PLA in the Track Results By recommendation Implementation Year chart on the RA Overview page.
+Dashboard - Track Result with PLA
+Displays results with PLA in the Track Results By recommendation Implementation Year chart on the RA Overview page.
+Dashboard - Track Result without PLA
+Displays results without PLA in the Track Results By recommendation Implementation Year chart on the RA Overview page.
+RAPageFilterReturns the page filters for the RA Overview page.
+Reliability Manager Folder
+The Catalog folder \\Public\Meridium\Modules\Reliability Manager contains the following items. 
+
+Item Name
+
+Behavior and Usage
+RARecommendationSummary Displays the Recommendation Summary graph on the RA Overview page.RATop10BadActorsDisplays the Top 10 Bad Actors chart on the RA Overview page.RATop10BadActorsWithPLADisplays the Top 10 Bad Actors chart with PLA data on the RA Overview page.RATrackResultsByRecommendationDisplays the Track Results By Recommendation Implementation Year graph on the RA Overview page.RATrackResultsByRecommendationWithPLADisplays the Track Results By Recommendation Implementation Year graph with PLA data on the RA Overview page.Reliability DashboardDisplays the Reliability Dashboard that contains the Recommendation Summary graph, Top 10 Bad Actors chart, and Track Results By Recommendation Implementation Year graph.
+Reports Folder
+The Catalog folder \\Public\Meridium\Modules\Reliability Manager\Reports contains the following items. 
+
+Item Name
+
+Behavior and Usage
+AssetSubreportDistribution
+Displays the subreport for Asset Data in the Reliability Distribution Analysis Report.
+AssetsubreportGrowth
+Displays the subreport for Asset Data in the Reliability Growth Analysis Report.
+Distribution Analysis Report
+Displays the SSRS Report for Distribution Analysis in the Reliability Distribution Analysis Report.
+Exponential Distribution Query
+ Returns data for Exponential Distributions in the Probability Distribution Report.
+FailuresubreportGrowth
+Displays the subreport for Failure data in the Reliability Growth Analysis Report.
+GrowthAnalysisQuery
+Displays data in the main and subreports in the Reliability Growth Analysis Report. 
+GrowthAnalysisReport
+Displays the main report of the SSRS Reliability Growth Analysis Report.
+Lognormal Distribution Query
+Returns data for Lognormal Distributions of failure data in the Probability Distribution Report.
+Normal Distribution Query
+Returns data for Normal Distributions in the Probability Distribution Report.
+ProbabilityDistributionQuery
+Returns data for the Probability Distribution Report.
+ProbDistReport
+Displays the SSRS Probability Distribution Report for Probability Distribution Analysis.
+ProductionAnalysisQuery
+This is the main query that returns data for the Production Analysis Report.
+ProductionAnalysisQueryLines
+Returns the Lines data for the Production Analysis Report.
+ProductionAnalysisQueryRegions
+Returns Regions data for the Production Analysis Report.
+Production Analysis Report
+Displays the SSRS Production Analysis Report.
+ReliabilityDistributionQuery
+Returns data for the Reliability Distribution Report, including TTF data.
+ReliabilityDistributionTTRReturns TTR data for the Reliability Distribution Analysis Report.ReliabilityExponentialTTFReturns TTF data for the Exponential Distribution in the Reliability Distribution Analysis Report.ReliabilityExponentialTTRReturns TTR data for the Exponential Distribution in the Reliability Distribution Analysis Report.ReliabilityLognormalTTFReturns TTF data for the Lognormal Distribution in the Reliability Distribution Analysis Report.ReliabilityLognormalTTRReturns TTR data for the Lognormal Distribution in the Reliability Distribution Analysis Report.ReliabilityNormalTTFReturns TTF data for the Normal Distribution in the Reliability Distribution Analysis Report.ReliabilityNormalTTRReturns TTR data for the Normal Distribution in the Reliability Distribution Analysis Report.ReliabilityWeibullTTFReturns TTF data for the Weibull Distribution in the Reliability Distribution Analysis Report.ReliabilityWeibullTTR
+Returns TTR data for the Weibull Distribution in the Reliability Distribution Analysis Report.
+Spares
+Displays the Spare information for a Spares Analysis in the Spares Analysis Report.
+ This is a subreport to the Spares Analysis report, named SparesApplication.
+Spares Analysis - Applications
+Returns application information corresponding to a particular Spare in a Spares Analysis.
+Spares Analysis - Charts
+Returns chart data tied to a particular Spares Analysis.
+Spares Analysis - ChartsMain
+Returns a list of charts for a particular Spares Analysis.
+Spares Analysis - MainReturns property information for a particular Spares Analysis.Spares Analysis - SparesReturns Spare information related to a particular Spares Analysis.Spares Analysis - SparesMainReturns a list of Spares for a particular Spares Analysis.SparesAnalysis
+Displays information and graphs for a Spares Analysis. 
+This report also uses the SparesChart and Spares subreports.
+SparesApplicationDisplays application information for a Spares Analysis. This is a subreport to the Spares report.SparesChartDisplays charts for a Spares Analysis. This is a subreport to the SparesAnalysis report.SubreportDistributionAnalysisDisplays the subreport for Reliability Distibution Analyses containing failure data.SubReportProbDistDisplays the subreport for Probability Distribution Analyses containing failure data.SubreportProductionAnalysisDisplays the subreport for Production Analyses containing Production Data.System Reliability - ActionResultReturns a list of action simulation results for a particular System Reliability Analysis.System Reliability - ElementResultReturns a list of element simulation results for a particular System Reliability Analysis.System Reliability - MainReturns property information for a particular System Reliability Analysis.System Reliability - ResourceResultReturns a list of resource simulation results for a particular System Analysis.System Reliability - SummaryResultReturns root element simulation results for a particular System Analysis.SystemReliabilityActionResultReportDisplays the subreport for System Reliability Analyses containing Action Simulation Result Data.SystemReliabilityElementResultReportDisplays the subreport for System Reliability Analyses containing Element Simulation Result Data.SystemReliabilityMainReportDisplays the SSRS report for System Reliability Analysis.SystemReliabilityResourceResultReportDisplays the subreport for System Reliability Analyses containing Resource Simulation Result Data.SystemReliabilitySummaryResultReportDisplays the subreport for System Reliability Analyses containing Root Element Simulation Result Data.Weibull Distribution QueryReturns data for Weibull Distributions in the reports in the Reliability Analytics module.
+Automation Rule Folder
+The Catalog folder \\Public\Meridium\Modules\Reliability Manager\Automation Rule contains the following items. 
+
+Item Name
+
+Behavior and Usage
+Queries SubfolderTileListOfAutomationRule
+Returns the list of Automation Rules in the Automation Rules list on the RA Overview page. 
+
+Probability Distribution Folder
+The Catalog folder \\Public\Meridium\Modules\Reliability Manager\Probability Distribution contains the following items. 
+
+Item Name
+
+Behavior and Usage
+Queries SubfolderTileListOfProbabilityDistribution
+Returns the list of Probability Distribution Analyses in the Probability Distribution list on the RA Overview page.
+
+Production Analysis Folder
+The Catalog folder \\Public\Meridium\Modules\Reliability Manager\Production Analysis contains the following items. 
+
+Item Name
+
+Behavior and Usage
+Queries SubfolderTileListOfRAProductionAnalysis
+Returns the list of Production Analyses in the Production Analyses list on the RA Overview page.
+
+Reliability Distribution Folder
+The Catalog folder \\Public\Meridium\Modules\Reliability Manager\Reliability Distribution contains the following items. 
+
+Item Name
+
+Behavior and Usage
+Queries SubfolderTileListOfReliabilityDistribution
+Returns the list of Reliability Distribution Analyses in the Reliability Distribution list on the RA Overview page.
+
+Reliability Growth Folder
+The Catalog folder \\Public\Meridium\Modules\Reliability Manager\Reliability Growth contains the following items. 
+
+Item Name
+
+Behavior and Usage
+Queries SubfolderTileListOfReliabilityGrowth
+Returns the list of Reliability Growth Analyses in the Reliability Growth list on the RA Overview page.
+
+Spares Folder
+The Catalog folder \\Public\Meridium\Modules\Reliability Manager\Spares contains the following items. 
+
+Item Name
+
+Behavior and Usage
+Queries SubfolderTileListOfSpares
+Returns the list of Spares Analyses used in the Spares Analyses list on the RA Overview page.
+
+System Reliability Folder
+The Catalog folder \\Public\Meridium\Modules\Reliability Manager\System Reliability contains the following items. 
+
+Item Name
+
+Behavior and Usage
+Queries SubfolderTileListOfSystemReliability
+Returns the list of System Reliability Analyses in the System Reliability list on the RA Overview page.
+
+
+
+
+
+
+On this pageAnalyses FolderQueries FolderReliability Manager FolderReports FolderAutomation Rule FolderProbability Distribution FolderProduction Analysis FolderReliability Distribution FolderReliability Growth FolderSpares FolderSystem Reliability Folder
+
+
+
+
+
+
+
+
+

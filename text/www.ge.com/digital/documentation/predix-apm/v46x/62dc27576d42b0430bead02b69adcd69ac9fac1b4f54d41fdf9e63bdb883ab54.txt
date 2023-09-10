@@ -1,0 +1,226 @@
+
+
+
+Inspection Configuration | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+AdminInspection Configuration
+Taxonomy Configuration
+Overview Configuration
+Compliance Configuration
+Human Resources
+
+
+Data Loaders
+Deployment
+Reference 
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Admin
+Inspection Configuration
+
+
+
+
+
+
+
+Inspection ConfigurationAccess the Inspection Configuration WorkspaceProcedureIn the module navigation menu, select
+Admin > Application Settings > Inspection Management.The IM Admin Preferences page appears, displaying the Inspection Configuration workspace. You can view the Application Configuration settings for Inspection Management and modify any necessary fields. 
+About Checklist Configuration TemplatesChecklist Configuration Templates allow you to define a collection of checklist categories and the items that they contain to create Checklist Templates. Users can create Inspection Events using the Checklist Templates, and the Checklist Finding records are generated based on the selected template. Using Checklist Configuration Templates 
+Checklist Configuration Templates should contain checklist categories and items that will result in detailed Checklist Templates that can be used to create Inspection Events. In the Checklist Configuration Templates section, you can create Checklist Configuration Templates that contain multiple checklist categories and items that are defined based on system code tables. You can modify the available checklist categories and items using the MI CHECKLIST CATEGORIES system code table. When you add a category to a Checklist Configuration Template, you can choose which items appear in the checklist. You can continue adding checklist categories and items to your Checklist Configuration Template until you have created a Checklist Template that will be useful for the intended asset. Creating a Checklist Configuration Template with checklist categories and items that correspond closely to existing assets streamlines inspections by including relevant Checklist Finding items in a user-created Inspection Event. 
+Checklist Configuration Templates and Taxonomy Configuration
+The Checklist Configuration Templates that you create can be linked to a Taxonomy Configuration. When a Checklist Configuration Template has been linked to a Taxonomy Configuration, the Checklist Template appears as an option when users create Inspection Events for an asset whose equipment taxonomy matches the Taxonomy Configuration. The Checklist Configuration Template will also appear by default if the equipment taxonomy of the asset does not match an existing Taxonomy Configuration.
+Checklist Configuration Templates and Asset Mapping
+Asset Mapping allows the Checklist Template categories to be associated with the existing Assets. When creating or editing a Checklist Configuration Template, the Enable Asset Mapping option is available in the Template Name window. If you select this option when creating an Inspection Event using the Checklist Configuration Template, an Asset Mapping section appears, allowing you to map the Assets to the checklist categories.
+Example: Fire Tube Boiler
+A Checklist Configuration Template named Fire Tube Boilers Inspection Checklist contains the Tubes Waterside checklist category. The Tubes Waterside checklist category contains two items: Borescope Inspection and Corrosion. 
+When a user creates an Inspection Event, a Checklist Template named Fire Tube Boilers Inspection Checklist appears in the Inspection Event list. If the user creates an Inspection Event using the Fire Tube Boilers Inspection Checklist Checklist Template, the Checklist Finding record displays the Tubes Waterside checklist category with Borescope Inspection and Corrosion listed as Checklist Finding items. 
+Example: Fire Tube Boiler linked to a Taxonomy Configuration
+The Fire Tube Boilers Inspection Checklist is linked to the following Taxonomy Configuration:
+ Taxonomy Category: FixedTaxonomy Class: BoilerTaxonomy Type: Misc Boiler
+When a user creates an Inspection Event for an asset that shares that Taxonomy Configuration, Fire Tube Boilers Inspection Checklist appears in the list of available Checklist Templates for that asset. 
+About Application ConfigurationThis topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.Configure Status to State MappingAbout This TaskGE Digital APM supports uses of both Status and State Management for the approval work process of Inspection Recommendation. If you are currently using the Status field in Inspection Recommendation for the approval work process and want to use the State Management for Inspection Recommendation, you must map each Status value in the Inspection Recommendation Status field to a corresponding State in Inspection Recommendation State Configuration. After you configure and save the mapping, you must upgrade the existing Inspection Recommendation records using the Upgrade Records button so that all the Status values are updated to the mapped States. This ensures that current approval work process for Inspection Recommendation now uses states.For example, the following Inspection Recommendation records are using the Status field.Recommendation IDAsset IDFunctional Location IDRecommendation HeadlineStatusREC-21HE-1608 CRUDE-HVY. ATMOS. GAS OIL016-E-E3104A CRUDE-HVY. ATMOS. GAS OILShell CorrosionCreatedRec-2005HE-1608 CRUDE-HVY. ATMOS. GAS OILC-488 LUBE/SEAL OIL COOLER ~ HXST 105General CorrosionPending ReviewRec-244HE-1608 CRUDE-HVY. ATMOS. GAS OILC-488 LUBE/SEAL OIL COOLER ~ HXST 105General DistortionPending ReviewNow, to use the State field for Inspection Recommendation, you must map each Status to a corresponding State. The following table provides a sample Status-to-State mapping.Source FamilyStatusStateInspection RecommendationCreatedProposedInspection RecommendationPending ReviewPending ApprovalTo update the existing records to use the State field for Inspection recommendation, you must upgrade the records. After you upgrade the records, the Inspection Recommendation records are updated to use the State field. The following table provides the updated Inspection Recommendation records.Recommendation IDAsset IDFunctional Location IDRecommendation HeadlineStateREC-21HE-1608 CRUDE-HVY. ATMOS. GAS OIL016-E-E3104A CRUDE-HVY. ATMOS. GAS OILShell CorrosionProposedRec-2005HE-1608 CRUDE-HVY. ATMOS. GAS OILC-488 LUBE/SEAL OIL COOLER ~ HXST 105General CorrosionPending ApprovalRec-244HE-1608 CRUDE-HVY. ATMOS. GAS OILC-488 LUBE/SEAL OIL COOLER ~ HXST 105General DistortionPending ApprovalThe State Configuration for Inspection Recommendations uses security roles to perform specific functions. For example, only a user with the Inspector Supervisor role can change the status from Pending Review to Pending Approval. However, during the upgrade, security is not enforced to transition to a State. If you are using State Management for Inspection Recommendation and want to enforce security and prevent users from transitioning to certain states, make sure that all the required roles are assigned to the users. For more information on the security roles, refer to the Inspection Management Security Groups and Roles topic.Currently, GE Digital APM only allows mapping of Status to States. After you upgrade the Inspection Recommendation records using this feature, you can switch back to Status by clearing the Use State Management for Inspection Recommendation check box. However, the existing Inspection Recommendation records cannot be reverted to Status. To align Inspection Recommendations with other performance recommendations, we recommend using State Management to manage Inspection Recommendations.Before You Begin
+Make sure that the State Functionality is enabled in the State Configuration section of the Inspection Recommendation Family Management.Make sure that the Inspection Admin role or the Super User role is assigned to you.
+Important: After you transition from Status to State, you cannot revert to Status again. However, you can restore Status of the Inspection Recommendation records by deleting the Inspection Status Upgrade family.
+ProcedureAccess the Inspection Configuration workspace.Select .The Application Configurations section is now modifiable.Select the Use State Management for Inspection Recommendations check box.A warning message appears.Select OK, and then select .The Configure Status to State Mapping button is enabled.Select Configure Status to State Mapping.The Configure Status to State Mapping window appears.In the drop-down list box of the Source Family column, select Inspection Recommendation.In the drop-down list box of the Status column, select an existing Inspection Recommendation Status.In the drop-down list box of the State column, select the State that you want to map to the status specified in the Status column.Repeat steps 6 through 8 for each Status available in the drop-down list box of the Status column.
+Note: If a status is not mapped, a warning message appears, indicating the same. The Inspection Recommendation records with a status that is not mapped to a state fail to upgrade during the process.
+Select .The mappings are saved.Select Upgrade Records.An alert message appears, providing the number of records that are upgraded.Select Yes.The upgrade job starts.You can select the View Scheduling button to view the status of the upgrade job. The duration of the upgrade process depends on the number of records being upgraded. You can also download the log file to view the detailed log of the upgrade job. If any of the records fails to upgrade, you can run the job again to upgrade only the failed records.Tip: The Inspection Status Upgrade family tracks all the Inspection Recommendation records that are upgraded. If any of the records are upgraded incorrectly due to an incorrect mapping, you can delete the records from the Inspection Status Upgrade family, and then restart the upgrade job with the correct mapping.About Event ConfigurationsThis topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.Modify the Asset Query Path and the Alerts Query PathAbout This Task
+The Asset Query Path and the Alerts Query Path fields are populated with default query paths. This topic describes how to modify these values.
+Procedure
+Access the Inspection Configuration workspace. In the upper-right corner of the workspace, select 
+The Application Configurations section is now modifiable.In the Application Configurations section, in the row containing the Asset Query Path field, select .The Select a query from the catalog window appears. 
+Navigate the Catalog to select the query that you want the Application Configuration to use for the Asset Query Path field, and then select Open.The selected query appears in row containing the Asset Query Path field.In the upper-right corner of the workspace, select .The Asset Query Path is saved for the Application Configuration.Repeat steps 3-5 for the Alerts Query Path field.Modify Profile ConfigurationProcedureModify the Taxonomy Profile Configuration 
+Access the Inspection Configuration workspace. Select the Profile Configurations tab. The Profile Configurations section appears. In the upper-right corner of the workspace, select .The Profile Configurations section is now modifiable. In the Pick a Source box, select Taxonomy. 
+Tip:  To add a Taxonomy Profile Configuration, in the upper-right corner of the section, select 
+
+Enter values in the following boxes:In the Category box, select the asset used by the Profile Configuration. In the Class box, select the type of equipment used by the Profile Configuration. In the Type box, select the type of component used by the Profile Configuration. The value in the Profiles column is populated based on the selected information. Select the link in the Profiles column. The Select Profiles window appears. 
+Select the check box for each profile that you want to add. Select Done. The selected profiles are added to the Profile Configuration.In the workspace heading, select .The new Taxonomy Profile Configuration is modified. Modify the Profile System Code Configuration 
+Access the Inspection Configuration workspace. Select the Profile Configurations tab. The Profile Configurations section appears. 
+In the upper-right corner of the workspace, select .
+The Profile Configuration section is now modifiable. 
+In the Pick a Source box, select System Code. In the Pick a system code table for generating profile items box, select the System Code table that you want the Profile Configuration to use.In the upper-right corner of the workspace, select .
+The System Code Profile Configuration is modified. 
+ Modify the Profile Query Configuration 
+Access the Inspection Configuration workspace. Select the Profile Configurations tab. The Profile Configurations section appears. 
+In the upper-right corner of the workspace, select .
+The Profile Configuration section is now modifiable. 
+In the Pick a Source box, select Query. Next to the Path to profile query box, select Browse.The Select a query from the catalog window appears. 
+Modify the Profile Query Configuration
+Access the Inspection Configuration workspace. Select the Profile Configurations tab. The Profile Configurations section appears. In the upper-right corner of the workspace, select .The Profile Configuration section is now modifiable. In the Pick a Source box, select Query. Next to the Path to profile query box, select Browse.The Select a query from the catalog window appears. Navigate the Catalog to select the query that you want the Profile Configuration to use, and then select Open.In the upper-right corner of the workspace, select .The Query Profile Configuration is modified. ResultsYou can access the Application Configurations page to view the changes to the datasheet. Delete a Taxonomy Profile ConfigurationProcedure
+Access the Inspection Configuration workspace. Select the Profile Configurations tab. The Profile Configurations section appears. In the upper-right corner of the workspace, select .The Profile Configurations section is now modifiable. In the Taxonomy grid, in the rows containing one or more Profile Taxonomy Configurations that you want to delete, select the check boxes.In the upper-right corner of the section, select .A message appears, confirming that you want to delete the selected Profile Taxonomies.Select Yes.The selected Profile Taxonomies are deleted.In the upper-right corner of the workspace, select .The Profile Configuration is saved. Modify Method ConfigurationProcedureModify the Method System Code Configuration
+Access the Inspection Configuration workspace. In the upper-right corner of the workspace, select .The Inspection Configuration workspace is now modifiable. Select the Method Configurations tab. The Method Configurations section appears.
+In the Pick a Source box, select System Code. 
+In the Pick a system code table for generating profile items box, select the System Code table that you want the Method Configuration to use. In the upper-right corner of the workspace, select .The Method System Code Configuration is modified. 
+ Modify the Method Query Configuration 
+Access the Inspection Configuration workspace. In the upper-right corner of the workspace, select .
+The Inspection Configuration workspace is now modifiable. 
+Select the Method Configurations tab. The Method Configurations section appears. 
+In the Pick a Source box, select Query.
+Next to the Path to method query box, select Browse.The Select a query from the catalog window appears. 
+Navigate the Catalog to select the query that you want the Method Configuration to use. In the upper-right corner of the workspace, select 
+The Method Query Configuration is modified. 
+Add or Modify Event ConfigurationProcedureAdd an Event Configuration
+Access the Inspection Configuration workspace. In the Inspection Configuration workspace, select the Event Configurations tab. The Event Configurations section appears, displaying a list of the Event Configurations currently applied to the Inspection Configuration. 
+In the workspace heading, select .The grid in the Event Configurations section can now be modified. In the Event Configurations section, in the section heading, select .The Add New Event Configuration window appears. 
+In the Inspection Families box, select the Inspection Family that you want to add to the Event Configuration, and then select Done. Note:   Only Inspection Families that are not already added to the Event Configuration appear in the box.The new Event Configuration is added.In the upper-right corner of the workspace, select .The new Event Configuration is added to the Inspection Configuration.Steps: Modify an Event Configuration 
+Access the Inspection Configuration workspace. Select the Event Configurations tab. The Event Configurations section appears, displaying a list of the Event Configurations applied to the Inspection Configuration. In the upper-right corner of the workspace, select .The grid in the Event Configurations section can now be modified. As needed, modify values in the available fields in the following columns:
+Health Evaluation: Select this option to generate Inspection Health Evaluation records for inspections of the family and related Checklist Template categories. Tip: If the option is already selected, and you do not want to generate Inspection Health Evaluation records, clear the option.
+Auto Generate: Select or clear the check box to generate or not to generate General Findings records based on the Inspection Scope of the task being addressed.
+Reviewer's Datasheet: Select the datasheet that the inspection will use to complete the tasks. 
+
+
+Related Families
+: Associate functional roles for any related families associated with the family caption. 
+
+Modify or Delete Family PreferencesProcedureModify Related Family Preferences
+Access the Inspection Configuration workspace. Select the Event Configurations tab. The Event Configurations section appears, displaying a list of the Event Configurations currently applied to the Inspection Configuration. 
+In the upper-right corner of the workspace, select .The grid in the Event Configurations section can now be modified.Select the Related Families link that you want to modify.The Related Families window appears.
+Tip:  To add a Related Family, in the upper-right corner of the Related Families box, select . As needed, modify the following values:
+In the Relationship column, select the relationship family for new related family. In the Family column, select the inspection family for the new related family. In the Create column, select or clear the check box to allow users to create new related family records.In the Delete column, select or clear the check box to allow users to delete related family records.In the Link column, select or clear the check box to allow users to link related family records.In the Unlink column, select or clear the check box to allow users to unlink related family records.
+Select Done. One or more related families are modified.In the upper-right corner of the workspace, select .Related Family preferences are modified. Delete a Related Family 
+Access the Inspection Configuration workspace. Select the Event Configurations tab. The Event Configurations section appears, displaying a list of the Event Configurations currently applied to the Inspection Configuration. 
+Steps: Delete a Related Family Access the Inspection Configuration workspace. Select the Event Configurations tab. The Event Configurations section appears, displaying a list of the Event Configurations currently applied to the Inspection Configuration. In the upper-right corner of the workspace, select .The grid in the Event Configurations section can now be modified.In the grid in the Event Configurations section, select the Related Families link that you want to delete.The Related Families window appears. 
+ Delete a Related Family Access the Inspection Configuration workspace.Select the Event Configurations tab. The Event Configurations section appears, displaying a list of the Event Configurations currently applied to the Inspection Configuration. In the upper-right corner of the workspace, select .The grid in the Event Configurations section can now be modified.In the grid in the Event Configurations section, select the Related Families link that you want to delete.The Related Families window appears. In the row for each Related Family that you want to delete, select the check box. Delete a Related Family Access the Inspection Configuration workspace.Select the Event Configurations tab. The Event Configurations section appears, displaying a list of the Event Configurations currently applied to the Inspection Configuration. In the upper-right corner of the workspace, select .The grid in the Event Configurations section can now be modified.In the grid in the Event Configurations section, select the Related Families link that you want to delete.The Related Families window appears. In the row for each Related Family that you want to delete, select the check box. In the upper-right corner of the window, select .A message appears, confirming that you want to delete the selected Related Families.Select Yes.The selected Related Families are deleted.In the upper-right corner of the window, select .The Related Family preferences are saved.Delete an Event Configuration Procedure
+Access the Inspection Configuration workspace. Select the Event Configurations tab. The Event Configurations section appears, displaying a list of the Event Configurations applied to the Inspection Configuration. In the upper-right corner of the workspace, select .The grid in the Event Configurations section can now be modified. Next to each Event Configurations that you want to delete, select the check box. In the upper-right corner of the workspace, select .A message appears, confirming that you want to delete the selected Event Configuration.Select Yes.The selected Event Configuration is deleted.In the workspace heading, select .The Event Configuration is saved. Access a Checklist Configuration TemplateAbout This Task
+ Super Users and members of the MI Inspection Security Group who also have an Inspection Administrator resource role can use the Inspection Configuration workspace to configure the information that is displayed in Inspection Management. For more information, see the documentation for Inspection Management.
+Procedure
+Access the Inspection Configuration workspace. Select the Checklist Configurations tab.The Checklist Configurations section appears, displaying a list of available Checklist Inspection Templates. 
+Create a Checklist Configuration TemplateProcedure
+Access the Checklist Configurations section.
+In the Checklist Configurations section, select .
+The Template Name window appears.
+
+
+
+In the Unique Template Name box, enter a unique name for the Checklist Configuration Template, and then, in the Select Family... box, select an applicable Inspection family for the template.
+Optionally, select the Enable Asset Mapping option when creating an Inspection based on the checklist inspection template. This allows you to map the checklist categories to the existing assets.
+
+Note:  This will be the Inspection family for which this template will create a set of Checklist Findings represented by the template. In the baseline configuration, Checklist Inspection Template is the only available family.
+Select Done. 
+The new Checklist Configuration Template appears.
+Delete a Checklist Configuration TemplateProcedure
+Access the Checklist Configurations section.
+In the Checklist Configurations section, select the Checklist Configuration Template you want to delete.Select Select Yes.
+The selected Checklist Configuration Template is deleted.
+Add Categories and Items to a Checklist Configuration TemplateAbout This Task
+After creating a Checklist Configuration Template, you can select a checklist category from which you want to add items to the template. The selected checklist category is used to sort your selected items in the template. You can add multiple checklist categories that each contain one or more items to your Checklist Configuration Template. 
+Procedure
+Access the Checklist Configurations section.
+In the Checklist Configurations section, select the Checklist Configuration Template to which you want to add items.In the Checklist Configuration Template section, select .The New Category window appears. 
+In the Category Name box, select the category that contains the items you want to add.The category items appear.
+In the Available Items list, select one or more items that you want to include in the Checklist Configuration Template.To add the items to the Selected Items list, select .
+Tip:  To remove an item from the Selected Items list, select the item you want to remove, and then select . To reorder items, select  and .
+Select Done.The new category and selected items appear in the Checklist Configuration Template section.
+Note:  You can only add items from one checklist category at a time. To add another checklist category with items, you must complete the selections for the current checklist category, and then select .Select .One or more checklist categories are added to the Checklist Configuration Template.Delete a Category from a Checklist Configuration TemplateProcedure
+Access the Checklist Configurations section.
+In the Checklist Configurations section, select the Checklist Configuration Template from which you want to delete checklist categories.In the Checklist Configuration Template section, select the checklist category you want to delete, and then select .
+Note: When you delete a checklist category, the items contained in the checklist category are also deleted.
+Select Yes.
+The checklist category is deleted.
+Select .
+The Checklist Configuration Template is saved.
+Delete an Item from a Checklist Configuration TemplateProcedure
+Access the Checklist Configurations section.
+In the Checklist Configurations section, select the Checklist Inspection Template from which you want to delete an item.In the Checklist Configuration Template section, select the checklist category that contains the item you want to delete.Select the item you want to delete, and then select .Select Yes.
+The item is deleted.
+Select .
+The Checklist Configuration Template is saved.
+Modify Categories and Items in a Checklist Configuration Template Procedure
+Access the Checklist Configurations section.
+In the Checklist Configurations section, select the Checklist Configuration Template that you want to modify.In the Checklist Configuration Template section, select the checklist category that you want to modify.Select .The Edit Category window appears. 
+Use > or < to add or remove items from the selected checklist category.Optionally, you can modify the order of items within the selected checklist category using Select Done.Select .
+The Checklist Configuration Template is saved.
+Copy a Checklist Configuration TemplateProcedure
+Access the Checklist Configurations section.
+In the Checklist Configurations section, select the Checklist Configuration Template you want to copy.Select .
+The Template Name window appears.
+
+
+
+Enter a unique name for the Checklist Configuration Template you want to copy, and then select an Inspection Family in the list.
+Optionally, select the Enable Asset Mapping option when creating an Inspection based on the checklist inspection template. This allows you to map the checklist categories to the existing assets.
+Select Done.
+The Checklist Configuration Template you copied appears in the Inspection Configuration workspace.
+Select .
+The copied Checklist Configuration Template is saved.
+
+
+
+
+
+On this pageAccess the Inspection Configuration WorkspaceAbout Checklist Configuration TemplatesAbout Application ConfigurationConfigure Status to State MappingAbout Event ConfigurationsModify the Asset Query Path and the Alerts Query PathModify Profile ConfigurationDelete a Taxonomy Profile ConfigurationModify Method ConfigurationAdd or Modify Event ConfigurationModify or Delete Family PreferencesDelete an Event Configuration Access a Checklist Configuration TemplateCreate a Checklist Configuration TemplateDelete a Checklist Configuration TemplateAdd Categories and Items to a Checklist Configuration TemplateDelete a Category from a Checklist Configuration TemplateDelete an Item from a Checklist Configuration TemplateModify Categories and Items in a Checklist Configuration Template Copy a Checklist Configuration Template
+
+
+
+
+
+
+
+
+

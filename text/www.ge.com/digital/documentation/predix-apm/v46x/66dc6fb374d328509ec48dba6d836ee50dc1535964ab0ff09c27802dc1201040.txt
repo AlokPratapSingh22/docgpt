@@ -1,0 +1,102 @@
+
+
+
+Fourth Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Compliance ManagementOverview
+Workflows
+Inspection Plans
+Inspection Plan Management
+Compliance Recommendations
+Inspection Plan Revision History
+Suggested Compliance Strategy Templates
+Admin
+Deployment
+Reference 
+Release NotesFourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Third Quarter of 2019
+ Second Quarter of 2019 
+ First Quarter of 2019 
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Compliance Management
+Release Notes
+Fourth Quarter of 2020
+
+
+
+
+
+
+
+Fourth Quarter of 2020Release Date: November 20, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, when creating Inspection Plans or updating Compliance Recommendations for Inspection Plans in bulk from the Compliance Management Overview page, if the job did not complete successfully for a certain Asset, subsequent Assets were not processed until the datasource was made offline and then online. This issue has been resolved.DE145731Previously, when creating an Inspection Plan, if an Asset did not meet the policy criteria of the assigned template, no error message was added to the log file, and the log file incorrectly indicated that the Inspection Plan was created successfully. This issue has been resolved.DE145729Previously, when you attempted to link compliance recommendations to an inspection task from the Inspection Plan Management page in bulk, for inspection tasks with similar task type, the inspection tasks were only displayed for the first recommendation. This issue has been resolved.DE145081
+Release Date: October 2, 2020This topic provides a list of product changes released for this module on this date.
+Table 2. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDThe following functionalities have been added to Compliance Management and Inspection Management to support the European Inspection requirements:A new user interface is introduced to add the Asset Technical Data from the Inspection Management Overview page.A new family, European Admin Settings has been created to store the site-specific records and a new section, European Admin Settings has been added in the Compliance Configuration section of the IM Admin Preferences page.New datasheets have been added for European Inspection event and European Inspection task.New fields are added to calculate the Compliance Minimum Date, Compliance Maximum Date, and Inspection Documentation Date in the Inspection Task for the European Regulation.The ability to modify an Inspection Task as per the addressed certification has been introduced.Task Rescheduling Basis is added to an Inspection Task based on the European Regulations.You can now filter Inspection Report Owner and the Reviewer Name in an Inspection Event based on the Certification requirement in addition to the Resource Role.The Inspection Summary in an Inspection Event can now be auto populated by creating a new Inspection Summary reference record in the Record Manager.F51412To enhance usability, when you search for an Asset Technical Data for any asset, you will now be directed to the Asset Technical Data page instead of the Record Manager.US428475To enhance usability, Task Rescheduling Basis is added to an Inspection Task based on the European Regulations. This field captures the information based on how the Next Date field is calculated. The field can be calculated either by the Last Date or the Previous Next Date.US425715You can now add European Admin Settings records for generating a European Inspection Task. To facilitate this enhancement, following changes have been made:A new section, European Admin Settings has been added in the Compliance Configuration section of the IM Admin Preferences page.A new family, European Admin Settings has been created to store the site-specific records.US411512To enhance usability, the European Inspection Task datasheet has been introduced to the Inspection Task family. This datasheet allows us to manage Inspection Tasks according to the Compliance guideline of the regulation. You can access the following new fields in the European Inspection Task datasheet:Applicable Regulation: This field provides a list of regulations to be linked to a task.Certification: This field stores the certification values.Compliance Minimum Date: This field provides the minimum compliance date for a task to be performed.Compliance Maximum Date: This field provides the maximum compliance date for a task to be performed.Compliance Window: This field provides information about the Compliance duration in months.Inspection Documentation Window: This field provides information about the Duration for Documenting an Inspection Report in months.Inspection Documentation Completion Date: This field provides information about documentation completion date for an Inspection.Previous Next Date: The field provides information about the Next Date before rescheduling.Task Rescheduling Basis: This field provides information about how the task was rescheduled. The task can be rescheduled based on the Last Date or the Previous Next Date.US411461To enhance usability, a European Inspection Report is added to the Full Inspection family to manage an Inspection event for an Asset and the following changes have been made in the EU Inspection Report Datasheet:You can access the following new fields in the European Inspection Report datasheet:Applicable Regulation: This field provides a list of regulations to be linked to a task.Certification: This field stores the certification values.Inspection Document Type: The field populates the following values: Test Certificate by ZUSTest Record by Company InspectorTest Report by SubcontractorInspection Instructions: This field provides the Inspection Type according to European Compliance.The field Inspection Summary Reference within the datasheet can now be auto populated by creating a new Inspection Summary reference record in the Record Manager. The Inspection Summary Reference record stores inspection summary related information based on Inspection Document Type and Inspection Instructions required for generating a summary for an Inspection Event.You can now filter Inspection Report Owner and the Reviewer Name in an Inspection Event based on the Certification requirement in addition to the Resource Role. US390197To enhance usability, you can now access the Asset Technical Data datasheet from the Inspection Management Overview page.US381862You can now implement recommended actions from multiple Inspection Plans to existing Inspection Tasks simultaneously. To facilitate this enhancement, a new option, Link Existing, is added under Implement on the Inspection Plans tab, on the Inspection Plan Management workspace. The tasks to link is selected based on the recommended action’s task type and the linked asset. US340978
+Table 3. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when you attempted to approve an Inspection Plan on Compliance Recommendations where recommended interval scope was not set, an error occurred. This issue has been resolved.DE135661Previously, when the parent asset was a Functional Location, an error occurred when implementing multiple Compliance Recommendations on Inspection Plans to Inspection Tasks. This issue has been resolved.DE134657
+Table 4. Obsolete Features
+The following features are no longer available.
+DescriptionTracking IDThe following System Code Table has been deprecated:CertificationUS430391
+
+
+
+
+
+On this pageRelease Date: November 20, 2020Release Date: October 2, 2020
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,227 @@
+
+
+
+SRS Templates | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+SRS Templates
+
+
+
+
+
+
+
+SRS TemplatesAbout SRS TemplatesThe IEC61511 standard is a performance-based standard that is all about the performance of the SIS and reducing risk, and defines what the SRS should contain all the requirements for the Safety Instrumented System and its associated Safety Instrumented Functions (SIFs).The SIS consists of one or more Safety Instrumented Functions (SIFs), which can consist of a combination of sensor(s), logic solver(s) and final element(s), including all interfaces and sources of power. Therefore, the SRS needs to define a number of criteria for each SIF: a set of Functional Requirements and a set of Integrity Requirements (Safety Integrity Level target), indicating the amount of risk reduction required to be achieved (i.e. a measure of its dependability), as well as failure modes, operations and maintenance related information. The SRS templates account for these functional and integrity requirements.Create an SRS TemplateProcedure
+Access the SIS Management Overview page.
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level.
+In the workspace, select the SRS tab, and then select the SRS Template button.
+The SRS Template page appears.
+
+
+
+Select .
+The Select Category window appears.
+
+
+
+Select any category, and then select OK.
+The SRS Template page appears, displaying a blank datasheet for the SRS Template.
+Enter values in the available fields, and then select .
+The SRS Template is created.
+Update an SRS TemplateProcedure
+Access the SIS Management Overview page.
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level.
+In the workspace, select the SRS tab and then select SRS Template.
+The SRS Templates page appears, displaying a list of SRS Templates.
+
+
+
+In the SRS Template ID column, select the link for the SRS Template that you want to update.
+The <SRS Template> page appears.
+
+
+
+Modify the values in the fields that need to be updated, and then select .
+A confirmation message appears, indicating that the datasheet has been saved successfully.
+Copy an SRS TemplateProcedure
+Access the SIS Management Overview page.
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level.
+In the workspace, select the SRS tab and then select the SRS Template button.
+The SRS Templates page appears.
+
+
+
+Select the check box to the left of the SRS Template(s) that you want to copy.In the upper-right corner of the workspace, select . 
+A confirmation message appears, indicating that the SRS Template(s) has been saved successfully. The SRS Template ID of the copied template is created by appending the term Copy to the SRS Template ID if the template that was copied.
+Set an SRS Template as DefaultProcedureSet an SRS Template as Default from the SRS Template Page
+Access the SIS Management Overview page.
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level.
+In the workspace, select the SRS tab and then select the SRS Template button.
+The SRS Templates page appears.
+
+
+
+In the row for the SRS Template that you want to set as default, next to the SRS Template ID, select the check box.In the upper-right corner of the workspace, select Set as Category Default.
+A confirmation message appears, asking if you really want to set the selected SRS Template as default.
+Select OK.
+The selected SRS Template is set as default.
+Set an SRS Template as Default from Inside an SRS Template
+Access the SIS Management Overview page. 
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level. In the workspace, select the SRS tab and then select the SRS Template button.
+The SRS Templates page appears.
+
+
+
+For the SRS Template that you want to set as default, select the link.
+The workspace for the selected SRS Template appears.
+
+
+
+In the upper-right corner of the workspace, select Set as Category Default.
+A confirmation message appears, asking if you really want to set the SRS Template as default.
+Select OK.
+The selected SRS Template is set as default.
+View the Revision History of an SRS TemplateProcedure
+Access the SIS Management Overview page.
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level.
+In the workspace, select the SRS tab and then select the SRS Template button.
+The SRS Templates page appears, displaying the list of SRS Templates.
+
+
+
+Select the SRS Template for which you want to view the revision history.
+The <SRS Template> page appears.
+
+
+
+In the upper-right corner of the workspace, select Revisions.
+The Revision History page appears, displaying the list of revisions done on the SRS Template.
+
+
+
+In the Revision Name column, select the link for the revision that you want to view.
+The page for the selected revision record appears.
+
+
+
+Change the State of an SRS TemplateProcedure
+Access the SIS Management Overview page.
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level.
+In the workspace, select the SRS tab and then select the SRS Template button.
+The SRS Templates page appears, displaying the list of available SRS templates.
+
+
+
+Select an SRS Template for which you want to change the state. 
+The SRS Template page for the selected template appears, displaying the current state in the upper-right corner of the page.
+
+
+
+In the upper-right corner of the workspace, select In Progress, select Propose, and then select Done.
+The state of the SRS Template is changed to Pending Review and the datasheet is disabled.
+In the upper-right corner of the workspace, select Pending Review, select Rework, and then select Done.
+The state of the SRS Template is changed to  In Progress and the datasheet is enabled.
+In the upper-right corner of the workspace, select In Progress, select Propose, and then select Done.
+The state of the SRS Template is changed to Pending Review and the datasheet is disabled.
+In the upper-right corner of the workspace, select Pending Review, select Approve, and then select Done.
+The state of the SRS Template is changed to Approved and the datasheet is disabled. At this stage, The revision number is incremented.
+In the upper-right corner of the workspace, select Approved, select Reassess, and then select Done.
+The state of the SRS Template is changed to  In Progress and the datasheet is enabled.
+Compare the Revision Records of an SRS TemplateProcedure
+Access the Revision History of the SRS Template for which you want to compare the revisions.
+Select the revision record which you want to compare with the previous revision record.
+The Revision History page displays the details of the selected revision record.
+
+
+
+In the upper-right corner of the workspace, select Show Changes.
+The Changes For Selected Datasheet page appears, displaying the comparison details. 
+
+
+
+Delete an SRS TemplateProcedure
+Access the SIS Management Overview page.
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level.
+In the workspace, select the SRS tab and then select the SRS Template button.
+The SRS Templates page appears.
+
+
+
+Select the SRS Template(s) that you want to delete, and then select  .
+A confirmation message appears, asking if you really want to delete the SRS Template(s).
+Select OK.
+The selected SRS Template(s) are deleted.
+
+
+
+
+
+On this pageAbout SRS TemplatesCreate an SRS TemplateUpdate an SRS TemplateCopy an SRS TemplateSet an SRS Template as DefaultView the Revision History of an SRS TemplateChange the State of an SRS TemplateCompare the Revision Records of an SRS TemplateDelete an SRS Template
+
+
+
+
+
+
+
+
+

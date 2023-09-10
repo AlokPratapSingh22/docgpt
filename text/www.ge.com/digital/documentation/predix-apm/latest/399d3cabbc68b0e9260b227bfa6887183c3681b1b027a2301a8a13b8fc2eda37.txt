@@ -1,0 +1,199 @@
+
+
+
+Results | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Results
+
+
+
+
+
+
+
+ResultsTrack and Reevaluate the Analysis ResultsAfter your team's findings have been communicated successfully to the necessary individuals in your organization, the next step in the PROACT workflow is to track the effectiveness of your recommendations through RCA Tracking Items. The goal of tracking recommendations is to make sure that the recommendation that was implemented has produced the required results. Depending on the results, you may need to reevaluate the solution that was implemented to address the underlying issues. During the tracking process, the team should decide on a set of conditions on which reevaluation notifications should be based. The Principal Analyst should specify these conditions in the associated fields in the RCA Tracking Item. These notifications should be based on event criteria.  Criteria that is event-based includes a number of failure events and/or the failure cost that the piece of equipment or location has incurred after the implementation of a recommendation. When the criteria defined in the RCA Tracking Item is exceeded, the RCA Tracking Item will be updated automatically to a Reevaluate status, and an email reminder will notify the responsible party to reexamine the recommendation. About RecommendationsA recommendation is a suggested solution for preventing or lessening the impact of future failures for the piece of equipment or location that the RCA Team is analyzing, such as making changes to maintenance schedules or providing additional training to operators. The RCA Team should develop these solutions based on the evidence that was collected and the conclusions that were drawn in the Preserve and Analyze steps of the Root Cause analysis.RCA Recommendations store the details of the team's recommendation and provide functionality that lets you send alert emails to a human resource for the person responsible for implementing the recommendation. In this way, RCA Recommendations represent tasks assigned to a person with human resource.After the recommendation is completed, the value in the Status field of the RCA Recommendation can be marked as Implemented. The success of the implemented recommendation, however, should continue to be tracked. If the piece of equipment or location continues to fail after the recommendation has been implemented, the RCA Recommendation can be flagged for reevaluation.About Equipment, Locations, and RCA Recommendations 
+The details of the recommendations and the progress associated with getting the recommendation approved and implemented can be tracked using fields in RCA Recommendations records. When you create an RCA Recommendation, a link is created between the RCA Recommendation and the Root Cause analysis. You can then choose to link the RCA Recommendation to an Equipment or Functional Location. Depending on the nature of the recommendation, RCA Recommendations may or may not be linked to the same Equipment and Functional Locations that are linked to the Root Cause analysis.
+For example, suppose you created a root cause analysis for a piece of equipment called Pump 1 that was shutting down more frequently than normal. You find that the pump is one of several pumps that are more than 10 years old. You create an RCA Recommendation to increase inspection rounds for Pump 1. Although the root cause analysis was performed for Pump 1, another similar pump, Pump 2, is the same age. You can create a new RCA Recommendation and populate the value in the Equipment ID field to Pump 2 so that the same recommendation can be applied.
+Furthermore, if the Equipment Pump 1 is already linked to the Functional Location Row 12, you can change the value in the Functional Location ID field of the RCA Recommendation from Row 12 to reflect a higher level Functional Location, such as Statesville Plant. This value can serve as an indicator that pumps located at the Statesville Plant are older than other plants, which is more relevant than the information that Pump 1 is located in a certain row.
+Workflow for Proposing and Implementing Recommendations 
+RCA and the fields in the RCA Recommendation facilitate the following general workflow for proposing and implementing recommendations:
+After a hypothesis is proven true and a root cause is identified, the RCA Team discusses possible solutions.After a recommendation has been developed, the analysis team creates an RCA Recommendation from the analysis. When the RCA Recommendation is created, the value in the Status field is populated by default.The Analysis Team defines the details of the recommendation in the RCA Recommendation. If the recommendation is specific to a piece of equipment or location, the Analysis Team can define values in the Equipment ID and Functional Location ID fields to link the RCA Recommendation to the Equipment or Functional Locations that represents that equipment and locations.After the RCA Recommendation is created to track the progress of the recommendation, an RCA Team member proposes the recommended solution to the decision makers in your organization using the details stored in the RCA Recommendation.Your organization makes decisions about the recommendation (e.g., approve or reject), and the necessary fields (including the Status field) in the RCA Recommendation are updated to reflect these decisions.After a recommendation has been approved (i.e., the value in the Status field is changed to Approved), it should be implemented within your organization. Alert emails can be scheduled and sent to a human resource for the person responsible for implementing the recommendation.To implement the recommendation, you can create a work request in a maintenance management system (e.g., an SAP Notification, an Oracle EBS eAM Work Request) by setting the value in the Create Work Request field in the RCA Recommendation to True.
+After the recommendation is implemented, the value in the Status field in the RCA Recommendation should be changed to Implemented, and the RCA Recommendation is considered complete.
+Note: This step is part of the Tracking and Reevaluating Analysis Results step in an RCA.
+If the piece of equipment or location continues to fail, the RCA Recommendation should be flagged for reevaluation.The team should meet to discuss the implemented recommendation, propose new recommendations, amend the original recommendations, and so on until an implemented solution prevents the piece of equipment or location from failing in the same manner that triggered the RCA.
+Access a RecommendationProcedure
+Access the Root Cause Analysis for which you want to view a Recommendation.In the upper-right corner the workspace, select the .
+The Recommended Actions pane appears, displaying a list of recommendations associated with the selected analysis.
+
+
+
+Select the row containing the recommendation that you want to view.
+The RCA Recommendation datasheet appears, displaying the General Information and Alert tabs.
+
+
+
+Tip: For information about additional options available when working with the Recommendation records, refer to the Action Management section of the documentation.
+What To Do Next
+
+Create a Tracking Item 
+
+Send a Summary of Findings Via EmailAbout This Task
+After the RCA Team has successfully identified the root causes associated with the failure that was investigated, the next step involves communicating the team's findings and proposing recommendations to the appropriate individuals within your organization. To do so, you can:
+Complete the fields in the RCA Communicate datasheet in the Comprehensive Analysis Report section to provide a summary of findings and acknowledge those who participated in the root cause analysis but who were not members of the RCA Team.Associate RCA Recommendations to the Root Cause Analysis.
+Procedure
+Access the Root Cause Analysis for which you want to communicate the findings.In the left pane, select the Communicate Findings tab.
+The Communicate Findings workspace appears. The Comprehensive Analysis Report tab is selected by default, displaying the Comprehensive Analysis Report section.
+Select  to add one or more users to whom you want to send the Comprehensive Analysis Report.
+The Add Users section appears, displaying the list of human resources in the left section.
+
+
+
+In the left side of the section, select the Human Resource record, and then select .
+The user represented by the Human Resource record is added to the right side of the section.
+Tip: You can add more than one user.
+Select  to go back to the Comprehensive Analysis Report section.In the RCA Communicate datasheet, modify the values in the available fields as needed. In the upper-right corner of the workspace, select Send.
+The Comprehensive Analysis Report is sent to the selected user via an email. The email contains the Comprehensive Analysis Report as an attachment as well as the following information:
+Summary of Findings fieldAcknowledgments field
+What To Do Next
+
+Create a Tracking Item 
+
+Send a Link to an RCA Via EmailProcedure
+Access the Root Cause Analysis whose link you want to send.In the left pane, select the Communicate Findings tab.
+The Communicate Findings workspace appears. 
+In the workspace, select the Analysis Link tab. 
+The Analysis Link section appears. 
+
+
+
+Select  to add one or more users to whom you want to send the link to the analysis.
+The Add Users section appears, displaying the list of human resources in the left section.
+
+
+
+On the left side of the section, select the Human Resource record, and then select .
+The user represented by the Human Resource record is added to the right side of the section.
+Tip: You can add more than one user.
+Select 
+
+Analysis Link
+In the Comment box, enter any additional information about the selected analysis.In the upper-right corner of the workspace, select Send.
+An email to the selected user is sent. 
+What To Do Next
+
+Create a Tracking Item 
+
+Generate a ReportProcedure
+Access the Root Cause Analysis for which you want to generate a report.In the left pane, select the Reports tab.
+The Reports workspace appears, displaying the following sections:
+
+
+
+Master Report
+ : Displays the Catalog caption of the Comprehensive report as hyperlink. The report is stored in the Catalog folder \\Public\Meridium\Modules\RCA\SSRS along with the subreports that support the main report.
+
+Individual Reports : Displays the Catalog captions of all the reports that exist in the Catalog folder \\Public\Meridium\Modules\RCA as hyperlinks. This list includes any baseline reports provided with the Root Cause Analysis product and any custom reports that you have saved in this location.
+
+
+
+Select one of the following links to generate a report:
+
+
+Comprehensive Analysis Report
+
+Note:
+If this is the first time the Comprehensive Analysis Report has been generated by any user, that user must have View, Update, and Insert privileges to the RCA Image family to view the report.
+To open the Comprehensive Analysis Report, you must have View privileges to all families included in the underlying queries and datasets. You must also have View and Update privileges to the RCA Image family.To ensure that you will be able to run the report, you should not delete or rename any of the reports or queries that exist by default in the folder \\Public\Meridium\Modules\RCA\SSRS.Reference document images are added to the report.
+
+
+Analysis Summary Report
+
+Cause Report
+
+Logic Tree Summary Report
+
+Verification Report
+
+Team Member Report
+
+Preserve Items Report - Group by Category
+
+Preserve Items Report - Group by Team Member
+
+The selected report appears in a new browser tab.
+What To Do Next
+
+Create a Tracking Item 
+
+
+
+
+
+
+On this pageTrack and Reevaluate the Analysis ResultsAbout RecommendationsAccess a RecommendationSend a Summary of Findings Via EmailSend a Link to an RCA Via EmailGenerate a Report
+
+
+
+
+
+
+
+
+

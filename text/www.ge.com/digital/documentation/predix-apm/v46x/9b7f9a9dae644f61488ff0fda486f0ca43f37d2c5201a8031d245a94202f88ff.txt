@@ -1,0 +1,375 @@
+
+
+
+General Reference | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+Workflows
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data Loaders
+Admin
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Corrosion Rates in Thickness Monitoring
+Calculations
+Family Search Configuration
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+Reference
+General Reference
+
+
+
+
+
+
+
+General ReferenceTM Data ModelThe following diagram illustrates how families are related within the TM data model. In the following image, boxes represent entity families, and arrows represent relationship families that are configured in the baseline database.Data Model 
+TM Piping Rotation Data ModelThe following diagrams illustrate how families are related within the TM Piping Rotation data model. In the following image, boxes represent entity families, and arrows represent relationship families that are configured in the baseline database.TM Security Groups
+
+The following table lists the baseline Security Groups available for users within this module, as well as the baseline Roles to which those Security Groups are assigned. In Predix APM, Roles are assigned to Security Users through permission sets.
+
+Important:  Assigning a Security User to a Role grants that user the privileges associated with all of the Security Groups that are assigned to that Role. To avoid granting a Security User unintended privileges, before assigning a Security User to a Role, be sure to review all of the privileges associated with the Security Groups assigned to that Role.
+                
+
+Security GroupRolesMI Thickness Monitoring Administrator
+MI Mechanical Integrity Administrator
+MI Thickness Monitoring Inspector
+MI Mechanical Integrity Administrator
+MI Mechanical Integrity Power
+MI Mechanical Integrity User
+MI Thickness Monitoring User
+MI Mechanical Integrity Administrator
+MI Mechanical Integrity Power
+MI Mechanical Integrity User
+MI Thickness Monitoring Viewer
+MI APM Viewer 
+MI Mechanical Integrity Viewer 
+
+
+The baseline family-level privileges that exist for these Security Groups are summarized in the following table.
+FamilyMI Thickness Monitoring AdministratorMI Thickness Monitoring InspectorMI Thickness Monitoring UserMI Thickness Monitoring ViewerEntity FamiliesCorrosionView, Update, InsertView, Update, InsertView, Update, InsertViewDatapointView, Update, InsertView, Update, InsertView, Update, InsertViewDatapoint MeasurementView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, InsertViewEquipmentViewViewViewViewHuman ResourceView, Update, Insert, DeleteViewViewViewInspection TaskViewView, UpdateViewViewInventory Group ConfigurationViewViewViewViewMaterials of ConstructionViewViewViewViewMeridium Reference TablesView, Update, Insert, DeleteViewViewViewRBI Inspection Auto-Selection CriteriaViewViewViewViewResource RoleView, Update, Insert, DeleteViewViewViewSecurity GroupViewViewViewViewSecurity UserViewViewViewViewSettingsView, Update, InsertView, Update, InsertViewViewTask ExecutionView, InsertView, InsertViewViewThickness Monitoring TaskView, Update, Insert, DeleteView, Update, InsertView, Update, InsertViewTML GroupView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewRelationship FamiliesBelongs to a UnitView, Update, Insert, DeleteView, Update, InsertView, Update, InsertViewEquipment Has EquipmentViewViewViewViewGroup AssignmentViewViewViewViewHas Archived Corrosion AnalysesView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Archived Corrosion Analysis SettingsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Archived Subcomponent Analysis SettingsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Archived Subcomponent Corrosion AnalysesView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Corrosion AnalysesView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Corrosion Analysis SettingsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas DatapointsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas InspectionsNoneNoneNoneViewHas MeasurementsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas RolesView, Update, Insert, DeleteViewViewViewHas Task ExecutionView, InsertView, InsertViewViewHas Task RevisionView, InsertView, InsertViewViewHas TasksView, InsertView, InsertView, InsertViewHas TML GroupView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewIs a UserViewViewViewViewUser AssignmentViewViewViewView
+
+
+The following table lists the baseline Security Groups available for users within this module, as well as the baseline Roles to which those Security Groups are assigned. In Predix APM, Roles are assigned to Security Users through permission sets.
+
+Important:  Assigning a Security User to a Role grants that user the privileges associated with all of the Security Groups that are assigned to that Role. To avoid granting a Security User unintended privileges, before assigning a Security User to a Role, be sure to review all of the privileges associated with the Security Groups assigned to that Role.
+                
+
+Security GroupRolesMI Thickness Monitoring Administrator
+MI Mechanical Integrity Administrator
+MI Thickness Monitoring Inspector
+MI Mechanical Integrity Administrator
+MI Mechanical Integrity Power
+MI Mechanical Integrity User
+MI Thickness Monitoring User
+MI Mechanical Integrity Administrator
+MI Mechanical Integrity Power
+MI Mechanical Integrity User
+MI Thickness Monitoring Viewer
+MI APM Viewer 
+MI Mechanical Integrity Viewer 
+
+
+The baseline family-level privileges that exist for these Security Groups are summarized in the following table.
+FamilyMI Thickness Monitoring AdministratorMI Thickness Monitoring InspectorMI Thickness Monitoring UserMI Thickness Monitoring ViewerEntity FamiliesCorrosionView, Update, InsertView, Update, InsertView, Update, InsertViewDatapointView, Update, InsertView, Update, InsertView, Update, InsertViewDatapoint MeasurementView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, InsertViewEquipmentViewViewViewViewHuman ResourceView, Update, Insert, DeleteViewViewViewInspection TaskViewView, UpdateViewViewInventory Group ConfigurationViewViewViewViewMaterials of ConstructionViewViewViewViewMeridium Reference TablesView, Update, Insert, DeleteViewViewViewRBI Inspection Auto-Selection CriteriaViewViewViewViewResource RoleView, Update, Insert, DeleteViewViewViewSecurity GroupViewViewViewViewSecurity UserViewViewViewViewSettingsView, Update, InsertView, Update, InsertViewViewTask ExecutionView, InsertView, InsertViewViewThickness Monitoring TaskView, Update, Insert, DeleteView, Update, InsertView, Update, InsertViewTML GroupView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewRelationship FamiliesBelongs to a UnitView, Update, Insert, DeleteView, Update, InsertView, Update, InsertViewEquipment Has EquipmentViewViewViewViewGroup AssignmentViewViewViewViewHas Archived Corrosion AnalysesView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Archived Corrosion Analysis SettingsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Archived Subcomponent Analysis SettingsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Archived Subcomponent Corrosion AnalysesView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Corrosion AnalysesView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Corrosion Analysis SettingsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas DatapointsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas InspectionsNoneNoneNoneViewHas MeasurementsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas RolesView, Update, Insert, DeleteViewViewViewHas Task ExecutionView, InsertView, InsertViewViewHas Task RevisionView, InsertView, InsertViewViewHas TasksView, InsertView, InsertView, InsertViewHas TML GroupView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewIs a UserViewViewViewViewUser AssignmentViewViewViewView
+Field Mappings in the Default View of the TML Grid
+In the Analysis Overview workspace, the grid in the TMLs section displays values in the following fields:
+FieldFamilyTML ID Thickness Measurement Location TML Asset IDThickness Measurement LocationMinimum Thickness Thickness Measurement Location Number of Readings Thickness Measurement Location Corrosion Rate TML Corrosion Analysis Remaining LifeTML Corrosion Analysis Factor Remaining Life Date TML Corrosion Analysis Scheduled Next Inspection Date TML Corrosion Analysis Projected T-min Date TML Corrosion Analysis Last Measurement Value TML Corrosion Analysis Last Measurement Date TML Corrosion Analysis Near Measurement Value TML Corrosion Analysis 
+The values in the Remaining Life column are calculated based on the current date and the value in the Projected T-Min Date field in the TML Corrosion Analysis family. This value is displayed in years.
+About Allowable Stress
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+About Color-Coding
+Color-coding lets you see at a glance whether certain conditions exist for a given Thickness Measurement Location (TML) or Thickness Measurement. A color-coding category is assigned to each TML or Thickness Measurement based on the following criteria:
+CategoryVisual CueCriteria for a TMLCriteria for a Thickness MeasurementBelow T-Min
+
+
+
+The value in the Measurement Value field in the latest Thickness Measurement is less than the value in the Minimum Thickness field.The value in the Measurement Value field is less than the value in the Minimum Thickness field in the associated TML.Overdue
+
+The value in the Scheduled Next Inspection Date or the Projected T-min Date field is earlier than the current date.N/AHigh Loss
+
+
+The decrease in the measurement value of the latest Thickness Measurement compared to that of the previous one is greater than or equal to a specified percentage. 
+Note: The default value is 30 percent. You can, however, modify this value.
+
+The decrease in the measurement value of the latest Thickness Measurement compared to that of the previous one is greater than or equal to a specified percentage.
+Note: The default value is 30 percent. You can, however, modify this value.
+Growth
+
+The measurement value of the latest Thickness Measurement is greater than that of the previous one.The measurement value of the latest Thickness Measurement is greater than that of the previous one.Normal
+
+The TML does not meet the criteria for any of the aforementioned categories.The Thickness Measurement does not meet the criteria for any of the aforementioned categories.
+Note: The values displayed in the Measurements section are rounded up to four decimal places. When assigning a color-coding category, instead of these rounded up values, the actual field values are considered.
+These categories appear at the top of the TMLs section in the Analysis Overview workspace. The number in parentheses next to each category indicates the number of records that meet the criteria for each category. The visual cue appears in each row in the list of TMLs and Thickness Measurements.
+Tip: You can filter the TMLs for each category by selecting the category at the top of the section. You can remove the filter by selecting the same category again.
+Even if a TML or a Thickness Measurement meets the criteria for more than one category, only one color-code is assigned to each record, based on the following priority:
+Below T-MinOverdueHigh LossGrowth
+Example: Color-Coding
+
+Suppose a TML contains the following field values:
+
+Minimum Thickness: 1.2 inches
+High Loss: 10 percent (as specified on the TM Admin Preferences page)
+Suppose the TML contains the following Thickness Measurements.
+
+Measurement IDMeasurement Value (inches)TM-1 1.34TM-2 1.20
+
+The following table describes the color-coding category that will be applied to each Thickness Measurement.
+
+Measurement IDColor-Coding CategoryReasonTM-1Normal
+The Measurement Value does not meet the criteria for any other categories.
+TM-2High Loss
+The percentage of decrease between the latest Measurement Value (1.20 inches) and the previous one (1.34 inches) is greater than 10 percent.
+
+
+Suppose you have created two more Thickness Measurements with the following Measurement Values:
+
+Measurement IDMeasurement Value (inches)TM-3 1.01TM-41.21
+
+The following table describes the color-coding category that will be applied to each Thickness Measurement.
+
+Measurement IDColor-Coding CategoryReasonTM-1Normal
+The Measurement Value does not meet the criteria for any other categories.
+TM-2Normal
+Although the percentage of decrease in the Measurement Value (1.20 inches) from the previous one (1.34 inches) is greater than 10 percent, since this is no longer the latest Thickness Measurement, the category Normal is applied instead of High Loss.
+TM-3Below T-MinThe Measurement Value (1.01 inches) is less than Minimum Thickness (1.2 inches).TM-4GrowthThe Measurement Value (1.21 inches) is greater than the previous one (1.01 inches).
+
+Suppose the current date is December 31, 2017, and the TML Corrosion Analysis associated with the TML contains the following field values:
+
+Scheduled Next Inspection Date: January 01, 2018
+Projected T-min Date: January 02, 2018
+For the TML, color-coding category is applied based on the following logic:
+
+Below T-Min: The value in the Measurement Value field (1.21 inches) of the latest Thickness Measurement (TM-4) is greater than the value in the Minimum Thickness field (1.2 inches). Therefore, the category Below T-Min is not applied to the TML.
+Overdue: The Scheduled Next Inspection Date (January 01, 2018) and the Projected T-Min Date (January 02, 2018) are later than the current date ( December 31, 2017). Therefore, the category Overdue is not applied to the TML.
+High Loss: There is no decrease in the Measurement Value of the latest Thickness Measurement (1.21 inches) compared to that of the previous one (1.01 inches). Therefore, the category High Loss is not applied to the TML.
+Growth: The Measurement Value of the latest Thickness Measurement (1.21 inches) is greater than that of the previous one (1.01 inches). Therefore, the category Growth is applied to the TML.
+
+About the Measurement Data Entry (MDE) Workspace
+The Measurement Data Entry workspace is used for entering Thickness Measurement readings for multiple TMLs. It is divided into two areas: the common measurement data section, and the data entry grid.
+Common Measurement Data
+
+
+The common measurement data section appears at the top of the Measurement Data Entry workspace, and allows you to define values that will be distributed to cells in the corresponding columns for each Thickness Measurement Location (TML) listed in the data entry grid.
+The Common Measurement Data section provides three boxes in which you can enter data: 
+
+Measurement Taken Date
+
+Measurement Taken By
+
+Temperature
+
+You can customize this section to make additional boxes available. Data entered in these boxes becomes the default value in the corresponding cell in each row. 
+Changes to the common measurement data section will not be applied to any rows in the data entry grid that already contain data.
+
+Data Entry Grid
+
+
+The data entry grid appears below the common measurement data section. The grid will be populated with one row for each TML linked to the record that you selected when accessing the Measurement Data Entry workspace.
+By default, the grid is sorted in ascending order according to the value in the TML ID column.
+Some TMLs will require you to enter multiple readings, as determined by the value in the Number of Readings field in a TML. You can enter multiple readings on the data entry grid by specifying the values separated by semi-colon or by selecting  in the row corresponding to a TML. A measurement value will be determined based on the readings.
+
+TM FolderGraphs
+The Catalog folder \\Public\Meridium\Modules\Thickness Monitoring\Graphs contains the following items.
+Item NameBehavior and UsageCorrosion Rate DistThis graph appears on the Thickness Monitoring Overview page, and is based on the Corrosion Distribution query. It displays the corrosion rates of assets with calculated Asset Corrosion Analyses, ordered from highest rate of corrosion to lowest.Remaining Life Less than 180 Months GraphThis graph appears on the Thickness Monitoring Overview page, and is based on the Remaining Life Less than 180 Months query. It displays the remaining life of assets with calculated Asset Corrosion Analyses, ordered from lowest remaining life to highest.
+Piping Rotation
+The Catalog folder \\Public\Meridium\Modules\Thickness Monitoring\Piping Rotation\Queries contains the following items.
+Item NameBehavior and UsageDatalogger TMLs - Piping AssetUsed to populate the list of items in the Select TMLs pane for piping assets.Measurement Input Reference for Piping AssetReturns TMLs and additional reference data used for entering Thickness Measurements in the Measurement Data Entry workspace for piping assets. The following reference columns in the data entry grid are populated by this query:Component IDPiping Band IDPositionTML IDMinimum ThicknessLast Measurement ValueLast Measurement DatePiping Components with Number of PositionsReturns the components for a piping asset and the number of positions in the bands for each component.Rotation History for ComponentUsed to populate the list in the PIPE ROTATION: HISTORY section of the Component Details workspace for a piping component.Rotation Revisions by Rotation Event and BandNoneRotation What-Ifs for ComponentUsed to populate the list in the PIPE ROTATION: WHAT-IFS section of the Component Details workspace for a piping component.
+Queries
+The Catalog folder \\Public\Meridium\Modules\Thickness Monitoring\Queries contains the following items.
+Item NameBehavior and UsageAssets Near or Past RetirementUsed on the Thickness Monitoring Overview workspace to return a list of all assets with Asset Corrosion Analyses that are within 5 years of or past the retirement date. The list is displayed when you select the Assets Near or Past Retirement Date tab.Assets with TM TasksUsed on the Thickness Monitoring Overview workspace to return a list of all assets with Thickness Monitoring Tasks. The list is displayed in the TM Tasks box.AvailableTMTasksReturns all Thickness Monitoring Tasks related to the supplied assets.Corrosion DistributionUsed to populate the data in the Corrosion Rate Distribution graph on the Thickness Monitoring Overview workspace.Datalogger TMLsUsed to populate the list of items in the Select TMLs pane for non-piping assets.Degradation Rates Greater than ExpectedUsed to populate the list in the Degradation Distribution box on the Thickness Monitoring Overview workspace.Excessive CorrosionUsed on the Thickness Monitoring Overview workspace to return all assets with Asset Corrosion Analyses, and a Controlling Corrosion Rate greater than 20 Mils/year. The list is displayed when you select the Excessive Corrosion tab.Measurement Input ReferenceReturns TMLs and additional reference data used for entering Thickness Measurements in the Measurement Data Entry workspace.Measurement Input Reference CountReturns the count of TMLs on the Measurement Data Entry workspace.Measurements Near or Less than T-MinUsed on the Thickness Monitoring Overview workspace to return all assets with measurements that fall within 10 Mils or less of T-Min.MI_TASKS_FOR_MDE Returns the Inspection Tasks on the Measurement Data Entry workspace. Remaining Life Less than 180 MonthsUsed to populate the data in the Remaining Life graph on the Thickness Monitoring Overview workspace.Thickness InspectionsUsed on the Thickness Monitoring Overview workspace to return all assets with a Next Inspection Date, including past dates. This list is displayed when you select the Thickness Inspections tab.TM AssetsUsed on the Thickness Monitoring Overview workspace to display a list of all assets with Thickness Monitoring data linked to the selected Functional Location.It is also used to populate the list of all assets that the selected functional location contains on the Select Assets to Load for Dataloggers window, in the TM Dataloggers page.TM Assets Requiring a CalculationUsed on the Thickness Monitoring Overview workspace to display a list of all assets with Asset Corrosion Analyses that must be recalculated. This list is displayed when you select the Assets Requiring a Calculation Assets Requiring a Calculation tab.TM Overview Filter ParametersNoneTML Groups for an AssetReturns a list of all TML Groups linked to the selected asset.TMLs for an AssetReturns a list of all TMLs linked to the selected asset or TML Group.
+TM Rules Lookup
+Thickness Monitoring includes a set of baseline Thickness Monitoring Rules Lookup records and the associated Rules Library projects. You can use the baseline records as they are delivered, or you can modify them to suit your specific needs. Like all reference table records, Thickness Monitoring Rules Lookup records are best viewed through a query. You can manage Thickness Monitoring Rules Lookup records via the TM Admin Preferences page.
+Thickness Monitoring Rules
+
+The following table provides a list of the fields that exist in the Thickness Monitoring Rules Lookup family, descriptions of these fields, and information about any corresponding Thickness Measurement Location (TML) fields.
+Field NameField DescriptionCorresponding TML FieldAsset Type Contains a value that identifies the type of equipment to which a TML is linked. The value in this field determines which values are available in the Design Code field. For example, when Piping is selected in the Asset Type field, only piping design codes will appear in the Design Code field.This field exists simply to facilitate the creation of new Thickness Monitoring Rules Lookup records by filtering values in the Design Code field. 
+Code Year 
+
+Contains a list of years associated with the selected Design Code.
+Code Year (T-Min Formula) 
+Design Code 
+Contains a list of design codes that are appropriate for the equipment type selected in the Asset Type field.
+Design Code 
+Component Type Contains a list of component types.
+Determined by the equipment type, which is derived from the value in the Design Type field, and can be any of the following fields: 
+Vessel Type for Pressure Vessel TMLs.Tank Type for Tank TMLs.No Mapping for Piping TMLs. 
+Formula Classification Contains a list of formula classifications.
+Determined by the equipment type, which is derived from the value in the Design Type field, and can be any of the following fields:
+Piping Formula for Piping TMLs. PV Formula for Pressure Vessel TMLs.No Mapping for Tank TMLs. 
+T-Min Formula Rule Contains a reference to a project in the Rules Library.This value is derived for each TML based on values in other fields. Although the derived value is not stored in the TML itself, it identifies the formula that will be used to determine the Calculated T-Min value for a TML.MAWP Formula Rule Contains a reference to a project in the Rules Library.This value is derived for each TML based upon values in other fields. Although the derived value is not stored in the TML itself, it is used to determine the Maximum Allowable Working Pressure value for a TML.
+
+Default Datalogger Settings
+This following table provides a list of default settings for each datalogger. You must review them and modify if needed before sending or receiving data from a datalogger.
+DataloggerConnection TypeBaud RateCOM PortDatalogger Service PortGE DMS GoUSB N/A N/A2014GE DMS Go+USB N/A N/A2014GE DMS2SerialPer Device SettingCOM12014Olympus (Panametrics) 37DL Plus Ultrasonic Thickness GageSerial1200COM12014Olympus (Panametrics) 38DL Plus Ultrasonic Thickness GageUSB N/A N/A2014
+Note: The Olympus (Panametrics) 38DL Plus Ultrasonic Thickness Gage also supports the serial connection type. When you set the Connection Type to Serial, the Olympus (Panametrics) 38DL Plus Ultrasonic Thickness Gage uses the same default settings as the Olympus (Panametrics) 37DL Plus Ultrasonic Thickness Gage.
+Limitations When Using Dataloggers
+This topic provides a list of limitations when using each type of datalogger.
+GE DMS Go and GE DMS Go+
+You must specify a directory in the File Directory box. Files will be sent to and received from the Meridium folder that is created in the specified directory.
+The GE DMS Go and GE DMS Go+ devices use only the first 32 characters of the file name that is used to send data. If the file name is longer than 32 characters, a message appears, specifying the original item name and the truncated item name. 
+If multiple files are sent to the device, and the first 32 characters of the file names are the same, then a single file will be created on the device using the first 32 characters, which stores the data in all the files.
+The GE DMS Go and GE DMS Go+ devices use only the first 16 characters of the TML ID. If the TML ID is longer than 16 characters, a message appears, specifying that the TML ID will be truncated to 16 characters.Important: Because of the truncation, if duplicate TML IDs are created in the device, it collects data from both the locations. However, while receiving the data, it updates the data only for the first TML ID.
+GE DMS2
+
+The GE DMS2 device uses only the first 32 characters of the file name that is used to send data. If the file name is longer than 32 characters, a message appears, specifying the original item name and the truncated item name. 
+If multiple files are sent to the device, and the first 32 characters of the file names are the same, then a single file will be created on the device using the first 32 characters, which stores the data in all the files.
+The GE DMS2 device uses only the first 16 characters of the TML ID. If the TML ID is longer than 16 characters, a message appears, specifying that the TML ID will be truncated to 16 characters.Important: Because of the truncation, if duplicate TML IDs are created in the device, it collects data from both the locations. However, while receiving the data, it updates the data only for the first TML ID.
+Olympus (Panametrics) 37DL Plus Ultrasonic Thickness Gage
+The Olympus (Panametrics) 37DL Plus Ultrasonic Thickness Gage does not accept Asset IDs containing lowercase characters.
+Olympus (Panametrics) 38DL Plus Ultrasonic Thickness Gage
+The Olympus (Panametrics) 38DL Plus Ultrasonic Thickness Gage does not accept Asset IDs containing lowercase characters.
+TM URLs
+There are two URL routes associated with Thickness Monitoring, that is, tm for non-piping assets, and tm-piping for piping assets. The following table describes the various paths that build on the route, and the elements that you can specify for each route.
+
+Tip: For more information, refer to the URLs section of the documentation.
+
+ElementDescriptionAccepted Value(s)Notes
+
+tm/unit: Opens the Thickness Monitoring Overview workspace. 
+
+tm/unit/<UnitEntityKey>: Displays the selected unit on the Thickness Monitoring Overview workspace. 
+<UnitEntityKey> Specifies the Functional Location or Unit you want to view in TM. Any Entity Key that corresponds to a Unit or Functional Location.Required.
+
+tm/asset/<AssetEntityKey>: Displays the selected non-piping asset in the Analysis Overview workspace.
+
+tm-piping/asset/<AssetEntityKey>: Displays the selected piping asset in the Analysis Overview workspace.
+
+tm/asset/<AssetEntityKey>/settings: Displays the selected non-piping asset in the Corrosion Analysis Settings workspace.
+
+tm-piping/asset/<AssetEntityKey>/settings: Displays the selected piping asset in the Corrosion Analysis Settings workspace.
+
+tm/asset/<AssetEntityKey>/input: Displays the selected non-piping asset in the Measurement Data Entry workspace.
+
+tm-piping/asset/<AssetEntityKey>/input: Displays the selected piping asset in the Measurement Data Entry workspace.
+<AssetEntityKey> Specifies the asset you want to view in TM. Any Entity Key that corresponds to an asset.Required.
+tm/asset/<AssetEntityKey>/subcomponent/<TMLGroupEntityKey>: Displays the selected TML Group for a non-piping asset in the Analysis Overview workspace.
+tm-piping/asset/<AssetEntityKey>/subcomponent/<TMLGroupEntityKey>: Displays the selected TML Group for a piping asset in the Analysis Overview workspace.
+
+tm/asset/<AssetEntityKey>/subcomponent/<TMLGroupEntityKey>/settings: Displays the selected TML Group for a non-piping asset in the Corrosion Analysis Settings workspace.
+
+tm-piping/asset/<AssetEntityKey>/subcomponent/<TMLGroupEntityKey>/settings: Displays the selected TML Group for a piping asset in the Corrosion Analysis Settings workspace.
+
+tm/asset/<AssetEntityKey>/subcomponent/<TMLGroupEntityKey>/input: Displays the selected TML Group for a non-piping asset in the Measurement Data Entry workspace.
+
+tm-piping/asset/<AssetEntityKey>/subcomponent/<TMLGroupEntityKey>/input: Displays the selected TML Group for a piping asset in the Measurement Data Entry workspace.
+<TMLGroupEntityKey> Specifies a TML Group linked to an asset that you want to view in TM.Any Entity Key that corresponds to a TML Group.Required.
+tm/asset/<AssetEntityKey>/tml/<TMLEntityKey>: Displays the selected TML for a non-piping asset in the Analysis Overview workspace.
+tm-piping/asset/<AssetEntityKey>/tml/<TMLEntityKey>: Displays the selected TML for a piping asset in the Analysis Overview workspace.
+
+tm/asset/<AssetEntityKey>/tml/<TMLEntityKey>/settings: Displays the selected TML for a non-piping asset in the Corrosion Analysis Settings workspace.
+
+tm-piping/asset/<AssetEntityKey>/tml/<TMLEntityKey>/settings: Displays the selected TML for a piping asset in the Corrosion Analysis Settings workspace.
+<UnitEntityKey> Specifies a TML linked to an asset that you want to view in TM.Any Entity Key that corresponds to a TML.Required.
+Example URLs
+
+
+Example URLDestinationtm/unit The Thickness Monitoring Overview workspace.tm/unit/2305330 The Thickness Monitoring Overview workspace for the specified unit.tm/asset/2509505 The Analysis Overview workspace for the specified non-piping asset.tm-piping/asset/64263085162The Analysis Overview workspace for the specified piping asset.tm/asset/2509505/settings The Corrosion Analysis Settings workspace for the specified non-piping asset.tm-piping/asset/64263085162/settingsThe Corrosion Analysis Settings workspace for the specified piping asset.tm/asset/2509505/input The Measurement Data Entry workspace for the specified non-piping asset.tm-piping/asset/64263085162/inputThe Measurement Data Entry workspace for the specified piping asset.tm/asset/2509505/subcomponent/3476094 The Analysis Overview workspace for the TML Group with Entity Key 3476094, which is linked to the non-piping asset with Entity Key 2509505. tm-piping/asset/64263085162/subcomponent/64263438219The Analysis Overview workspace for the Component or Band with Entity Key 64263438219, which is linked to the piping asset with Entity Key 64263085162. tm/asset/2509505/subcomponent/3476094/settings The Corrosion Analysis Settings workspace for the TML Group with Entity Key 3476094, which is linked to the non-piping asset with Entity Key 2509505. tm-piping/asset/64263085162/subcomponent/64263438219/settingsThe Corrosion Analysis Settings workspace for the Component or Band with Entity Key 64263438219, which is linked to the piping asset with Entity Key 64263085162. tm/asset/2509505/subcomponent/3476094/input The Measurement Data Entry workspace for the TML Group with Entity Key 3476094, which is linked to the non-piping asset with Entity Key 2509505. tm-piping/asset/64263085162/subcomponent/64263438219/inputThe Measurement Data Entry workspace for the Component or Band with Entity Key 64263438219, which is linked to the piping asset with Entity Key 64263085162. tm/asset/2509505/tml/6225073 The Analysis Overview workspace for the TML with Entity Key 6225073, which is linked to the non-piping asset with Entity Key 2509505. tm-piping/asset/64263085162/tml/64263438232The Analysis Overview workspace for the TML with Entity Key 64263438232, which is linked to the piping asset with Entity Key 64263085162. tm/asset/2509505/tml/6225073/settings The Corrosion Analysis Settings workspace for the TML with Entity Key 6225073, which is linked to the non-piping asset with Entity Key 2509505. tm-piping/asset/64263085162/tml/64263438232/settingsThe Corrosion Analysis Settings workspace for the TML with Entity Key 64263438232, which is linked to the piping asset with Entity Key 64263085162. 
+
+
+TM System Code Tables
+The following table lists the System Code Tables used to support various functions throughout Thickness Monitoring.
+Table IDTable DescriptionUsageCITP Corrosion Inspection Type
+Populates the Corrosion Inspection Type field in Corrosion Analysis Settings.
+You can modify the System Codes in this System Code Table if you want to use custom TML Analysis Types.
+
+CRAM 
+
+Corrosion Analysis Methods
+
+Unknown
+DPAC Datapoint AccessPopulates the Access field in TMLs.DPCN Datapoint ConditionUnknownDPCR Datapoint Corrosion Analysis MethodsPopulates the Corrosion Rate Options in Corrosion Analysis Settings.DPIN Datapoint InsulationUnknownDPTP Datapoint TypeUnknownDSCD Design CodePopulates the Design Code list in TMLs. INST Inspection Status CodeUnknownINSM Inspection Interval TypesUnknownMI_ASSET_TYPEAsset TypePopulates the Asset Type list in Thickness Monitoring Rules Lookup records.MI_DLG_ASSET_TYPEDatalogger Mapping Asset TypePopulates the Asset Type list in Datalogger Mapping records.MI_MEAS_STAT_IND_BASISMeasurement Status Indicator BasisPopulates the Measurement Status Indicator Basis field of Thickness Measurements records.MI_MIN_THICKNESS_TYPEMinimum Thickness TypePopulates the Minimum Thickness Type field in the Thickness Measurement Location.MI_PIPE_MOVE_TYPES Piping Movement TypesPopulates the Movement Type list in the Pipe Rotation/Flip dialog.MI_PIPE_WHAT_IF_TYPES What If Types Populates the What-If Method field of Pipe Rotation Event records.MI_RESOURCE_ROLE List of user rolesPopulates the Role list in Resource Role records.MI_STATUS_INDICATOR TML Status IndicatorPopulates the Status Indicator list in TMLs.MI_TML_GROUP_BAND_TYPES Piping Band Types Populates the Piping Band Type field of TML Group records.MI_TML_GROUP_COMP_TYPES Piping Component Types Populates the Piping Component Type field of TML Group records. MI_TML_GROUP_TYPES TML Group Types Populates the TML Group Type field of TML Group records.PIPFMU Pipe FormulaPopulates the Formula Classification list in Thickness Monitoring Rules Lookup records.PVFMU Pressure Vessel FormulaPopulates the Formula Classification list in Thickness Monitoring Rules Lookup records.SLCR Straight Line Corrosion MethodsUnknownT_MIN_CUSTOM_EQUATIONS T-Min Calculator Custom EquationsUnknown.STCR Statistical Corrosion MethodsUnknownTNKT Tank TypePopulates the Component Type list in Thickness Monitoring Rules Lookup records.VSTP Vessel TypePopulates the Component Type list in Thickness Monitoring Rules Lookup records.
+Other standard System Code Tables, such as UOME, MATG, and MATL, are also used in Thickness Monitoring.
+TM Site Filtering
+All of the families included in the Thickness Monitoring module employ the GE Digital APM
+Site Control. This means that you can access or modify only the records in TM that are assigned to the same site to which you are assigned. 
+
+Tip: For more information, refer to the Site Filtering section of the documentation.
+
+Example: Viewing TMLs
+
+Consider an organization that has three sites, Site X, Site Y, and Site Z.
+TML A: Assigned to Site XTML B: Assigned to Site YTML C: Assigned to Site Z
+TML D: No site assigned (global record)
+Note:  A global record in TM only occurs if there was an error in the data load or if the site location was changed by a Super User. Global records are not recommended Best Practices in TM. 
+
+
+Scenario 1: User assigned to only Site X
+
+When this user accesses the TMLs from an analysis, he or she will see:
+TML ATML D
+
+Scenario 2: User assigned to both Site X and Site Y
+
+When this user accesses the TMLs from an analysis, he or she will see: 
+TML ATML BTML D
+
+Scenario 3: Super User
+
+When this user accesses the TMLs from an analysis he or she will see:
+TML ATML BTML CTML D
+
+
+
+
+
+
+On this pageTM Data ModelTM Piping Rotation Data ModelTM Security GroupsField Mappings in the Default View of the TML GridAbout Allowable StressAbout Color-CodingAbout the Measurement Data Entry (MDE) WorkspaceTM FolderTM Rules LookupDefault Datalogger SettingsLimitations When Using DataloggersTM URLsTM System Code TablesTM Site Filtering
+
+
+
+
+
+
+
+
+

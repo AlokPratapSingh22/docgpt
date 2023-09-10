@@ -1,0 +1,200 @@
+
+
+
+Generation Availability Analysis | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health Manager
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+Generation Availability Analysis
+
+
+
+
+
+
+
+Generation Availability AnalysisDeploy GAA for the First TimeBefore You Begin
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. GE Digital recommends, however, that the tasks be completed in the order in which they are listed.
+
+Results
+StepTaskNotes
+1
+
+Specify additional system codes for families available in GAA.
+
+By default, GE Digital APM provides a set of system codes for the families available in GAA. You can modify these default system codes or you can add new system codes.
+
+2
+
+Add a GAA Company.
+This step is required. You must define the GAA Company to represent the functional location that you want to use in GAA. You must add a GAA Company at the highest level in the functional location, followed by GAA Plant and GAA Unit at the next subsequent levels.
+You must define GAA Company, GAA Plant, and GAA Unit before you can start recording event data. GAA Company is stored in a GAA Company record.
+You will need to repeat this step whenever you want to record data about any company that has not yet been identified within your system. Each GAA Company, however, can be associated with only one Hierarchy Level and vice-versa. 
+
+3
+
+Add a GAA Plant.
+This step is required. You must define the GAA Plant to represent the functional location that you want to use in GAA. You must add a GAA Plant at the level next to GAA Company in the functional location, followed by GAA Unit at the next subsequent levels.
+You must define a GAA Company before defining a GAA Plant, and a GAA Plant before defining a GAA Unit. GAA Plant is stored in a GAA Plant record.
+You will need to repeat this step whenever you want to record data about any plant that has not yet been identified within your system. Each GAA Plant, however, can be associated with only one Hierarchy Level and vice-versa. 
+
+4
+
+Add a GAA Unit.
+This step is required. You must define the GAA Unit to represent the functional location that you want to use in GAA. You must add a GAA Unit at the level next to GAA Plant in the functional location.
+You must define a GAA Unit after defining a GAA Company and a GAA Plant. GAA Unit is stored in a GAA Unit record.
+You will need to repeat this step whenever you want to record data about any unit that has not yet been identified within your system. Each GAA Unit, however, can be associated with only one functional location and vice-versa. 
+
+5
+
+Verify GAA Unit Capacity. 
+This step is required. When you add a GAA Unit record, a Unit Capacity record is automatically created with the values defined in the capacity related fields in the GAA Unit record. You must verify these values. As needed, you can modify the values in the available fields.
+
+6
+
+Configure GAA Reports.This step is required. You must configure the reports that you want to appear for a GAA Unit. 
+Upgrade GAA
+Before You Begin
+
+The following tables outline the steps that you must complete to upgrade this module to the latest version of GE Digital APM
+                    .
+                
+These tasks may be completed by multiple people in your organization. We recommend, however, that the tasks be completed in the order in which they are listed.
+
+ProcedureUpgrade to the latest version of GE Digital APM.
+This module will be updated to the latest version of GE Digital APM automatically. No additional steps are required.
+Migrate from Generation Management (GM) to GAAAbout This TaskThe following table outlines the steps that you must complete to migrate to this module. These instructions assume that you have completed the steps for upgrading the basic GE Digital APM system architecture.Results
+StepTaskNotes1
+Using the file Meridium.DbUtility.GAAUpgradeUtility.exe stored in the installation folder (e.g., C:\Program Files\Meridium\Upgrade), set the following information:
+User ID in the userId field.Password in the password field.Database name in the datasourceId field.Regulatory organization (NERC, CEA) in the fuelReportingOrganization field.
+
+This step is required.
+2
+In the Generation Company family:
+In the Enterprise 1 Code (MI_GMCOMPNY_ERP_01_CD_C) field, enter the Asset ID.Note: The Asset ID is the Entity ID of the functional location.In the Enterprise 1 Description (MI_GMCOMPNY_ERP_01_DESC_C) field, for the Primary Regulatory Organization, enter the value NERC or CEA.Note: If the Primary Regulatory Organization information has not been set, an exception error will occur.In the Enterprise 3 Code (MI_GMCOMPNY_ERP_03_CD_C) field, enter the Country ID.Note:  In GE Digital APM V4.3.0.0.0, the Country field is required.
+
+This step is required.
+The GAA Company will receive the site key from the associated functional location.
+ 3 In the Generation Plant family:In the Enterprise 1 Code (MI_GM_PLANT_ERP_01_CD_C) field, enter the Asset ID.Note:  The Asset ID is the Entity ID of the functional location.In the Enterprise 1 Description (MI_GM_PLANT_ERP_01_DESC_C) field, for the Primary Regulatory Organization, enter the value NERC or CEA.Note:  If the Primary Regulatory Organization information has not been set, an exception error will occur.In the Enterprise 4 Code (MI_GM_PLANT_ERP_04_CD_C) field, enter the time zone for the Plant.Note: If the time zone information is invalid, an exception error will occur.
+This step is required.
+The GAA Plant will receive the site key from the associated functional location.
+ 4 
+In the Generation Unit family:
+In the Enterprise 1 Code (MI_GM_UNIT0_ERP_01_CD_C) field, enter the Asset ID.Note:  The Asset ID is the Entity ID of the functional location.In the Enterprise 1 Description (MI_GM_UNIT0_ERP_01_DESC_C) field, for the Primary Regulatory Organization, enter the value NERC or CEA.Note: If the Primary Regulatory Organization information has not been set, an exception error will occur.
+
+This step is required.
+The GAA Unit will receive the site key from the associated functional location.
+The Primary Event and the Contributing Event will receive the site key from the GAA Unit.
+The values in the Generation Unit records will be mapped to the corresponding fields in Unit Capacity records as shown in the following table:Fields in Generation Unit recordFields in Unit Capacity recordGross Maximum CapacityNameplate Gross Maximum CapacityNet Maximum CapacityNameplate Net Maximum CapacityGross Dependable CapacityNameplate Gross Dependable CapacityNet Dependable CapacityNameplate Net Dependable CapacityBy default, the Unit Capacity record will be created for all the units with the value in Start Date field set to 01/01/1900 and the value in End Date field set to null.
+ 5 
+Important: R server must be configured and running before you run the GAAUpgradeUtility.exe.
+Run the file GAAUpgradeUtility.exe.
+
+This step is required.
+During the upgrade:
+The states in the Incident Reporting Status field for Primary Events and the states in the Reporting Status field for Performance records will be updated to the new State Management.The queries in V3.6.0.0.0 will be replaced by the queries in V4.3.0.0.0.The Is Default field will be set to True for all records in the GAA Configuration family.The upgrade will map the existing fields in the Events and Performance data to the fields in the new families.The Event Details for all the Units will be generated.
+After you complete this step, a log file is generated containing detailed information about the upgrade process.
+
+Query Mapping
+When you upgrade this module from V3.6.0.0.0 through V4.0.0.0.0, the following queries in V3.6.0.0.0 will be replaced by the queries in V4.3.0.0.0:
+Query in V3.6.0.0.0Query in V4.3.0.0.0Public\Meridium\Modules\Generation Management\Queries\NERC Queries\NERC GADS Event Report 07Public\Meridium\Modules\Generation Management\Queries\NERC Queries\NERC Event Report 07Public\Meridium\Modules\Generation Management\Queries\NERC Queries\NERC GADS Performance Report 05Public\Meridium\Modules\Generation Management\Queries\NERC Queries\NERC Performance Report 05
+State Management Mapping
+When you upgrade this module from V3.6.0.0.0 through V4.0.0.0.0, the state in the Incident Reporting Status field for Primary Events and the state in the Reporting Status field for Performance Records will be updated to the new State Management as shown in the following table:
+States in V3.6.0.0.0States in V4.3.0.0.0Created In Progress Unit Level Approval Unit Approved Corporate Approval Approved 
+The values from the Incident Reporting Status field (MI_GMCAPINC_INC_REPOR_STATU_C) for a Primary Event and the values from the Reporting Status field (MI_GMCAPHST_REPOR_STATU_C) for a Performance Record in V3.6.0.0.0, will be mapped to the new State Management field (MI_SM_STATE_ID_C) for a Primary Event and Performance Record in V4.3.0.0.0.
+Field Mapping
+When you upgrade this module from V3.6.0.0.0 through V4.0.0.0.0, the calculations will be performed for the net and gross values. The policies that are provided as part of the baseline data during the upgrade will be associated with all the GAA Units. 
+Note:  During the upgrade, for the GAA Performance Indexes family, one record each will be created for the Net Maximum Capacity (NMC) and Gross Maximum Capacity (GMC) weightage type fields. Also, in the GAA Performance Fuel family, one record each will be created for the primary and secondary Fuel Source.
+The upgrade will map the Events and Performance data from the fields in the existing Capacity History family to the corresponding fields in the GAA Performance Fuel, GAA Performance Index, and GAA Performance Summary families as follows.
+ Fields in V3.6.0.0.0Fields in V4.3.0.0.0Capacity HistoryGAA Performance FuelCommon Fuel Code 1 (MI_GMCAPHST_COMMO_FUEL_CD_1_C) Common Fuel Code (MI_PERF_FUEL_COMM_FUEL_CODE_C) Heat Rate (G) (MI_GMCAPHST_G_HEAT_RATE_N) Heat Rate (MI_PERF_FUEL_HEAT_RATE_N) Primary Ash Softening Temp (MI_GMCAPHST_PRI_ASH_SOFTE_TE_N) Ash Softening Temperature (MI_PERF_FUEL_ASH_SOFT_TEMP_N) Primary Average Heat Content (MI_GMCAPHST_PRI_AVG_HEAT_C_N) Average Heat Content (MI_PERF_FUEL_AVER_HEAT_CONT_N) Primary Fuel BTUs - Contract (MI_GMCAPHST_PRI_FUEL_BTUS_CO_N) Fuel BTUs - Contract (MI_PERF_FUEL_BTUS_CONT_N) Primary Fuel BTUs - Electrical Generation (MI_GMCAPHST_PRI_FUEL_BTUS_EL_N) Fuel BTUs - Electrical Generation (MI_PERF_FUEL_BTUS_ELEC_GEN_N) Primary Fuel BTUs - Plant Heat and Cooling (MI_GMCAPHST_PRI_FUEL_BTUS_HC_N) Fuel BTUs - Plant Heat and Cooling (MI_PERF_FUEL_BTUS_PL_HEAT_CL_N) Primary Fuel BTUs - Process Steam (MI_GMCAPHST_PRI_FUEL_BTUS_PS_N) Fuel BTUs - Process Steam (MI_PERF_FUEL_BTUS_PROC_STEA_N) Primary Fuel BTUs Total (MI_GMCAPHST_PRI_FUEL_BTUS_N) Fuel BTUs - Total (MI_PERF_FUEL_BTUS_TOTA_N)Primary Fuel Code (MI_GMCAPHST_PRI_FUEL_CODE_C) Fuel Code (MI_PERF_FUEL_FUEL_CODE_C) Primary Grindability Index (MI_GMCAPHST_PRI_GRIND_INDEX_N) Grindability Index (MI_PERF_FUEL_GRIN_INDE_NBR) Primary Percent Alkalines (MI_GMCAPHST_PRI_PERCE_ALKAL_N) Percent Alkalines (MI_PERF_FUEL_PERC_ALKA_N) Primary Percent Ash (MI_GMCAPHST_PRI_PERCE_ASH_N) Percent Ash (MI_PERF_FUEL_PERC_ASH_N) Primary Percent Moisture (MI_GMCAPHST_PRI_PERCE_MOIST_N) Percent Moisture (MI_PERF_FUEL_PERC_MOIS_N) Primary Percent Sulfur (MI_GMCAPHST_PRI_PERCE_SULFU_N) Percent Sulfur (MI_PERF_FUEL_PERC_SULF_N) Primary Quantity Burned (MI_GMCAPHST_PRI_QUANT_BURNE_N) Quantity Burned (MI_PERF_FUEL_QUAN_BURN_N) Primary Quantity Burned Unit of Measure (MI_GMCAPHST_PRIM_BURN_UOM_C) Quantity Burned Unit of Measure (MI_PERF_FUEL_QTY_BRN_UNITMES_C) Secondary Ash Softening Temp (MI_GMCAPHST_SEC_ASH_SOFTE_TE_N) Ash Softening Temperature (MI_PERF_FUEL_ASH_SOFT_TEMP_N) Secondary Average Heat Content (MI_GMCAPHST_SEC_AVG_HEAT_N) Average Heat Content (MI_PERF_FUEL_AVER_HEAT_CONT_N) Secondary Fuel Code (MI_GMCAPHST_SEC_FUEL_CODE_C) Fuel Code (MI_PERF_FUEL_FUEL_CODE_C) Secondary Grindability Index (MI_GMCAPHST_SEC_GRIND_INDEX_N) Grindability Index (MI_PERF_FUEL_GRIN_INDE_NBR) Secondary Percent Alkalines (MI_GMCAPHST_SEC_PERCE_ALKAL_N) Percent Alkalines (MI_PERF_FUEL_PERC_ALKA_N) Secondary Percent Ash (MI_GMCAPHST_SEC_PERCE_ASH_N) Percent Ash (MI_PERF_FUEL_PERC_ASH_N) Secondary Percent Moisture (MI_GMCAPHST_SEC_PERCE_MOIST_N) Percent Moisture (MI_PERF_FUEL_PERC_MOIS_N) Secondary Percent Sulfur (MI_GMCAPHST_SEC_PERCE_SULFU_N) Percent Sulfur (MI_PERF_FUEL_PERC_SULF_N) Secondary Quantity Burned (MI_GMCAPHST_SEC_QUANT_BURNE_N) Quantity Burned (MI_PERF_FUEL_QUAN_BURN_N) Secondary Quantity Burned Unit of Measure (MI_GMCAPHST_SECND_BURN_UOM_C) Quantity Burned Unit of Measure (MI_PERF_FUEL_QTY_BRN_UNITMES_C) Sum of Fuel BTUs (MI_GMCAPHST_SUM_OF_FUEL_BTUS_N) Sum of Fuel BTUs (MI_PERF_FUEL_SUM_OF_BTUS_N) Capacity History (Net)GAA Performance Indexes
+Capacity Factor (N) (MI_GMCAPHST_N_CAPAC_FAC_N) 
+Capacity Factor (MI_PERF_INDX_CAPA_FACT_N) D1 Eqv Upl Derate Hrs (N) (MI_GMCAPHST_D1_HRS_N) D1 Equivalent Unplanned Derate Hours (MI_PERF_INDX_D1_EQ_UPL_DR_HR_N) D1 Eqv Upl Derate MWh (N) (MI_GMCAPHST_D1_EQV_UPL_DRT_N) D1 Equivalent Unplanned Derate MWH (MI_PERF_INDX_D1_EQ_UPL_DR_MW_N) D2 Eqv Upl Derate Hrs (N) (MI_GMCAPHST_D2_HRS_N) D2 Equivalent Unplanned Derate Hours (MI_PERF_INDX_D2_EQ_UPL_DR_HR_N) D2 Eqv Upl Derate MWh (N) (MI_GMCAPHST_D2_EQV_UPL_DRT_N) D2 Equivalent Unplanned Derate MWH (MI_PERF_INDX_D2_EQ_UPL_DR_MW_N) D3 Eqv Upl Derate Hrs (N) (MI_GMCAPHST_D3_HRS_N) D3 Equivalent Unplanned Derate Hours (MI_PERF_INDX_D3_EQ_UPL_DR_HR_N) D3 Eqv Upl Derate MWh (N) (MI_GMCAPHST_D3_EQV_UPL_DRT_C) D3 Equivalent Unplanned Derate MWH (MI_PERF_INDX_D3_EQ_UPL_DR_MW_N) D4 Eqv Maint Derate Hrs (N) (MI_GMCAPHST_MNT_DRT_HRS_D4_N) D4 Equivalent Maintenance Derating Hours (MI_PERF_INDX_D4_EQ_MN_DR_HRS_N) D4 Eqv Maint Derate MWh (N) (MI_GMCAPHST_D4_EQV_MNT_DRT_N) D4 Equivalent Maintenance Derate MWH (MI_PERF_INDX_D4_EQ_MN_DR_MW_N) Eqv Avail Factor (N) (MI_GMCAPHST_EQV_AVAIL_FAC_NE_N) Equivalent Availability Factor (MI_PERF_INDX_EQ_AVAI_FACT_N) Eqv Derate Ext (N) (MI_GMCAPHST_EQV_DRT_EXT_N_N) Equivalent Derate Extension (MI_PERF_INDX_EQ_DR_EXT_N) Eqv Forced Derate Hrs (N) (MI_GMCAPHST_FORCE_DRT_HRS_D1_N) Equivalent Forced Derated Hours (MI_PERF_INDX_EQ_FORC_DR_HRS_N) Eqv Forced Outage Factor (N) (MI_GMCAPHST_EQV_FRC_OU_FAC_N_N) Equivalent Forced Outage Factor (MI_PERF_INDX_EQ_FORC_OUT_FAC_N) Eqv Forced Outage Rate (N) (MI_GMCAPHST_EQV_FRC_OUT_RA_N_N) Equivalent Forced Outage Rate (MI_PERF_INDX_EQ_FOR_OUT_RATE_N) Eqv Forced Outage Rate Dmd (N) (MI_GMCAPHST_EQV_FRC_ORT_DE_N_N) Equivalent Forced Outage Rate Demand (MI_PERF_INDX_EQ_FOR_OT_RTDEM_N) Eqv Maint Derate Hrs (N) (MI_GMCAPHST_EMDH_N_N) Equivalent Maintenance Derated Hours (MI_PERF_INDX_EQ_MN_DR_HRS_N) Eqv Maint Derate Hrs RS (N) (MI_GMCAPHST_EMDHRS_HRS_N_N) Equivalent Maintenance Derated Hours During Reserve Shutdown (MI_PERF_INDX_EQ_MN_DR_HR_RS_N)Eqv Maint Outage Factor (N) (MI_GMCAPHST_EQV_MN_OU_FAC_N_N) Equivalent Maintenance Outage Factor (MI_PERF_INDX_EQ_MN_OUT_FAC_N) Eqv Maintenance Outage Rate (N) (MI_GMCAPHST_EQV_MN_OU_RA_N_N) Equivalent Maintenance Outage Rate (MI_PERF_INDX_EQ_MN_OUT_RAT_N) Eqv Planned Derate Hrs (N) (MI_GMCAPHST_PL_DRT_HRS_PD_N) Equivalent Planned Derated Hours (MI_PERF_INDX_EQ_PLN_DR_HRS_N) Eqv Planned Derate Hrs RS (N) (MI_GMCAPHST_EPDHRS_HRS_N_N) Equivalent Planned Derated Hours During Reserve Shutdown (MI_PERF_INDX_EQ_PL_DR_HR_RS_N) Eqv Planned Derate MWh (N) (MI_GMCAPHST_PD_EQV_PL_DRT_M_N) Equivalent Planned Derate MWH (MI_PERF_INDX_EQ_PLN_DR_MWH_N) Eqv Planned Outage Factor (N) (MI_GMCAPHST_EQV_PL_OU_FAC_N_N) Equivalent Planned Outage Factor (MI_PERF_INDX_EQ_PLN_OUT_FAC_N) Eqv Planned Outage Rate (N) (MI_GMCAPHST_EQV_PLAN_OU_RA_N_N) Equivalent Planned Outage Rate (MI_PERF_INDX_EQ_PLN_OUT_RATE_N) Eqv Sched Derate Hrs (N) (MI_GMCAPHST_ESDH_N_N) Equivalent Scheduled Derated Hours (MI_PERF_INDX_EQ_SCH_DR_HRS_N) Eqv Sched Outage Factor (N) (MI_GMCAPHST_EQV_SCH_OU_FAC_N_N) Equivalent Scheduled Outage Factor (MI_PERF_INDX_EQ_SCH_OUT_FAC_N) Eqv Sched Outage Factor (N) (MI_GMCAPHST_EQV_SEA_DRT_HO_N_N) Equivalent Seasonal Derated Hours (MI_PERF_INDX_EQ_SEAS_DR_HRS_N) Eqv Seasonal Derate MWh (N) (MI_GMCAPHST_EQV_SEA_DRT_MW_N_N) Equivalent Seasonal Derate MWH (MI_PERF_INDX_EQ_SEAS_DR_MWH_N) Eqv Unavail Factor (N) (MI_GMCAPHST_EQV_UNAV_FAC_NE_N) Equivalent Unavailability Factor (MI_PERF_INDX_EQ_UNAV_FAC_N) Eqv Unplanned Outage Rate (N) (MI_GMCAPHST_EQV_UNPL_OU_RA_N_N) Equivalent Unplanned Outage Rate (MI_PERF_INDX_EQ_UNPL_OUT_RAT_N) Eqv Upl Derate Hrs (N) (MI_GMCAPHST_EUDH_N) Equivalent Unplanned Derated Hours (MI_PERF_INDX_EQ_UNPL_DR_HRS_N) Eqv Upl Derate Hrs RS (N) (MI_GMCAPHST_EUDHRS_HRS_N_N) Equivalent Unplanned Derated Hours During Reserve Shutdown (MI_PERF_INDX_EQ_UNPL_DR_HR_S_N) Eqv Upl Frcd Derate Hrs RS (N) (MI_GMCAPHST_EUFDH_HRS_N_N) Equivalent Unplanned Forced Derate Hours (MI_PERF_INDX_EQ_UPLFRC_DR_HR_N) Eqv Upl Frcd Derate MWh RS (N) (MI_GMCAPHST_EUFDH_MWH_N_N) Equivalent Unplanned Forced Derate MWH (MI_PERF_INDX_EQ_UPLFRC_DR_MW_N) Eqv Uplanned Outage Factor (N) (MI_GMCAPHST_EQV_UPL_OU_FAC_N_N) Equivalent Unplanned Outage Factor (MI_PERF_INDX_EQ_UNPL_OUT_FAC_N) Ext Maint Derate Eqv Hrs (N) (MI_GMCAPHST_EXT_MNT_DRTEQVHR_N) Extension of Maintenance Derating Equivalent Hours (MI_PERF_INDX_EXT_MN_DR_EQ_HR_N) Ext Maint Derate Eqv MWh (N) (MI_GMCAPHST_EXT_OF_MNT_D_MW_N) Extended Maintenance Derate Equivalent MWH (MI_PERF_INDX_EXT_MN_DR_EQ_MW_N) Ext Pln Derate Eqv Hrs (N) (MI_GMCAPHST_EXT_PL_DRT_EQV_H_N) Extension of Planned Derating Equivalent Hours (MI_PERF_INDX_EXT_PL_DR_EQ_HR_N) Ext Pln Derate Eqv MWh (N) (MI_GMCAPHST_EXT_PL_DRT_EQU_N) Extended Planned Derate Equivalent MWH (MI_PERF_INDX_EXT_PL_DR_EQ_MW_N) Forced Outage MWh (N) (MI_GMCAPHST_FORCE_OUT_MWH_N) Forced Outage MWH (MI_PERF_INDX_FORC_OUT_MWH_N) Maint Outage MWh (N) (MI_GMCAPHST_MNT_OUT_MWH_N) Maintenance Outage MWH (MI_PERF_INDX_MAIN_OUT_MWH_N) Maint Outage Sched Ext MWh (N) (MI_GMCAPHST_MNT_OUT_SCHD_EXT_N) Maintenance Outage Scheduled Extension MWH (MI_PERF_INDX_MN_OT_SCHEXT_MW_N) Maint and Ext Outage MWh (N) (MI_GMCAPHST_MNT_EXT_OUTMWH_N) Maintenance and Extension Outage MWH (MI_PERF_INDX_MN_ND_EXT_OT_MW_N) NonCurtailing Event MWh (N) (MI_GMCAPHST_NC_NONCU_EVT_MWH_N) Non Curtailing Event MWH (MI_PERF_INDX_NON_CURT_EVT_MW_N) Output Factor (N) (MI_GMCAPHST_N_OUTPU_FAC_N) Output Factor (N) (MI_GAA_PERF_OUTPUT_FACT_NET_N) Planned Outage MWh (N) (MI_GMCAPHST_PL_OUT_MWH_N) Planned Outage MWH (MI_PERF_INDX_PLN_OUT_MW_N) Planned and Ext Outage MWh (N) (MI_GMCAPHST_PL_EXT_OUTMWH_N) Planned and Extension Outage MWH (MI_PERF_INDX_PLN_EXT_OT_MW_N) Pln Outage Sched Ext MWh (N) (MI_GMCAPHST_PLN_OUT_SCHD_EXT_N) Planned Outage Scheduled Extension MWH (MI_PERF_INDX_PL_OT_SC_EXT_MW_N) Reserve Shutdown MWh (N) (MI_GMCAPHST_RESER_SHUTD_MWH_N) Reserve Shutdown MWH (MI_PERF_INDX_RSRV_SHUT_MW_N) Seasonal Derate Factor (N) (MI_GMCAPHST_SEA_DRT_FAC_NE_N) Seasonal Derating Factor (MI_PERF_INDX_SEAS_DR_FAC_N) Startup Failure MWh (N) (MI_GMCAPHST_SF_STRT_FAIL_MWH_N) Startup Failure MWH (MI_PERF_INDX_STAR_FAIL_MW_N) Total Eqv Derate Hrs (N) (MI_GMCAPHST_TOTAL_DRT_HRS_N) Total Equivalent Derate Hours (MI_PERF_INDX_TOTA_EQ_DR_HR_N) Total Eqv Derate MWh (N) (MI_GMCAPHST_TOTAL_EQV_DRT_MW_N) Total Equivalent Derate MWH (MI_PERF_INDX_TOTA_EQ_DR_MW_N) U1 Unplanned Outage MWh (N) (MI_GMCAPHST_U1_UPL_OUT_MWH_N) U1 Unplanned Outage MWH (MI_PERF_INDX_U1_UNPL_OUT_MW_N) U2 Unplanned Outage MWh (N) (MI_GMCAPHST_U2_UPL_OUT_MWH_N) U2 Unplanned Outage MWH (MI_PERF_INDX_U2_UNPL_OUT_MW_N) U3 Unplanned Outage MWh (N) (MI_GMCAPHST_U3_UPL_OUT_MWH_N) U3 Unplanned Outage MWH (MI_PERF_INDX_U3_UNPL_OUT_MW_N) Unit Derating Factor (N) (MI_GMCAPHST_UNIT_DRT_FAC_NE_N) Unit Derating Factor (MI_PERF_INDX_UNIT_DR_FAC_N) Weightage Type Weightage Type (MI_PERF_INDX_WEIG_TYPE_C) Performance Summary Key Performance Summary Key (MI_PERF_INDX_PERF_SUMM_KEY_N) Capacity History (Gross)GAA Performance Indexes
+Capacity Factor (G) (MI_GMCAPHST_G_CAPAC_FAC_N) 
+Capacity Factor (MI_PERF_INDX_CAPA_FACT_N) D1 Eqv Upl Derate Hrs (G) (MI_GMCAPHST_D1_EQV_UPL_G_DRT_N) D1 Equivalent Unplanned Derate Hours (MI_PERF_INDX_D1_EQ_UPL_DR_HR_N) D1 Eqv Upl Derate MWh (G) (MI_GMCAPHST_D1_EQV_UPL_DRTG_N) D1 Equivalent Unplanned Derate MWH (MI_PERF_INDX_D1_EQ_UPL_DR_MW_N) D2 Eqv Upl Derate Hrs (G) (MI_GMCAPHST_D2_EQV_UPL_G_DRT_N) D2 Equivalent Unplanned Derate Hours (MI_PERF_INDX_D2_EQ_UPL_DR_HR_N) D2 Eqv Upl Derate MWh (G) (MI_GMCAPHST_D2_EQV_UPL_DRTG_N) D2 Equivalent Unplanned Derate MWH (MI_PERF_INDX_D2_EQ_UPL_DR_MW_N) D3 Eqv Upl Derate Hrs (G) (MI_GMCAPHST_D3_EQV_UPL_G_DRT_N) D3 Equivalent Unplanned Derate Hours (MI_PERF_INDX_D3_EQ_UPL_DR_HR_N) D3 Eqv Upl Derate MWh (G) (MI_GMCAPHST_D3_EQV_UPL_DRTG_N) D3 Equivalent Unplanned Derate MWH (MI_PERF_INDX_D3_EQ_UPL_DR_MW_N) D4 Eqv Maint Derate Hrs (G) (MI_GMCAPHST_D4_EQV_MNT_G_DRT_N) D4 Equivalent Maintenance Derating Hours (MI_PERF_INDX_D4_EQ_MN_DR_HRS_N) D4 Eqv Maint Derate MWh (G) (MI_GMCAPHST_D4_EQV_MNT_DRTG_N) D4 Equivalent Maintenance Derate MWH (MI_PERF_INDX_D4_EQ_MN_DR_MW_N) Eqv Avail Factor (G) (MI_GMCAPHST_EQV_AVAIL_FAC_N) Equivalent Availability Factor (MI_PERF_INDX_EQ_AVAI_FACT_N) Eqv Derate Ext (G) (MI_GMCAPHST_EQV_DRT_EXT_G_N) Equivalent Derate Extension (MI_PERF_INDX_EQ_DR_EXT_N) Eqv Forced Derate Hrs (G) (MI_GMCAPHST_FRC_DRT_HRS_D1_G_N) Equivalent Forced Derated Hours (MI_PERF_INDX_EQ_FORC_DR_HRS_N) Eqv Forced Outage Factor (G) (MI_GMCAPHST_EQV_FRC_OU_FAC_G_N) Equivalent Forced Outage Factor (MI_PERF_INDX_EQ_FORC_OUT_FAC_N) Eqv Forced Outage Rate (G) (MI_GMCAPHST_EQV_FORCE_OUT_N) Equivalent Forced Outage Rate (MI_PERF_INDX_EQ_FOR_OUT_RATE_N) Eqv Forced Outage Rate Dmd (G) (MI_GMCAPHST_EQV_FRC_ORT_DE_G_N) Equivalent Forced Outage Rate Demand (MI_PERF_INDX_EQ_FOR_OT_RTDEM_N) Eqv Maint Derate Hrs (G) (MI_GMCAPHST_EMDH_G_N) Equivalent Maintenance Derated Hours (MI_PERF_INDX_EQ_MN_DR_HRS_N) Eqv Maint Outage Factor (G) (MI_GMCAPHST_EQV_MN_OU_FAC_G_N) Equivalent Maintenance Outage Factor (MI_PERF_INDX_EQ_MN_OUT_FAC_N) Eqv Maintenance Outage Rate (G) (MI_GMCAPHST_EQV_MN_OU_RA_G_N) Equivalent Maintenance Outage Rate (MI_PERF_INDX_EQ_MN_OUT_RAT_N) Eqv Planned Derate Hrs (G) (MI_GMCAPHST_PD_EQV_PL_G_DRT_N) Equivalent Planned Derated Hours (MI_PERF_INDX_EQ_PLN_DR_HRS_N) Eqv Planned Derate Hrs RS (G) (MI_GMCAPHST_EPDHRS_HRS_G_N) Equivalent Planned Derated Hours During Reserve Shutdown (MI_PERF_INDX_EQ_PL_DR_HR_RS_N) Eqv Planned Derate MWh (G) (MI_GMCAPHST_PD_EQV_PL_DRT_MG_N) Equivalent Planned Derate MWH (MI_PERF_INDX_EQ_PLN_DR_MWH_N) Eqv Planned Outage Factor (G) (MI_GMCAPHST_EQV_PL_OU_FAC_G_N) Equivalent Planned Outage Factor (MI_PERF_INDX_EQ_PLN_OUT_FAC_N) Eqv Planned Outage Rate (G) (MI_GMCAPHST_EQV_PLAN_OU_RA_G_N) Equivalent Planned Outage Rate (MI_PERF_INDX_EQ_PLN_OUT_RATE_N) Eqv Sched Derate Hrs (G) (MI_GMCAPHST_ESDH_G_N) Equivalent Scheduled Derated Hours (MI_PERF_INDX_EQ_SCH_DR_HRS_N) Eqv Sched Outage Factor (G) (MI_GMCAPHST_EQV_SCH_OU_FAC_G_N) Equivalent Scheduled Outage Factor (MI_PERF_INDX_EQ_SCH_OUT_FAC_N) Eqv Sched Outage Factor (G) (MI_GMCAPHST_EQV_SCH_OU_FAC_G_N) Equivalent Seasonal Derated Hours (MI_PERF_INDX_EQ_SEAS_DR_HRS_N) Eqv Seasonal Derate MWh (G) (MI_GMCAPHST_EQV_SESO_DRT_MW_N) Equivalent Seasonal Derate MWH (MI_PERF_INDX_EQ_SEAS_DR_MWH_N) Eqv Unavail Factor (G) (MI_GMCAPHST_EQV_UNAVA_FAC_N) Equivalent Unavailability Factor (MI_PERF_INDX_EQ_UNAV_FAC_N) Eqv Unplanned Outage Rate (G) (MI_GMCAPHST_EQV_UNPL_OU_RA_G_N) Equivalent Unplanned Outage Rate (MI_PERF_INDX_EQ_UNPL_OUT_RAT_N) Eqv Upl Derate Hrs (G) (MI_GMCAPHST_EUDH_G_N) Equivalent Unplanned Derated Hours (MI_PERF_INDX_EQ_UNPL_DR_HRS_N) Eqv Upl Derate Hrs RS (G) (MI_GMCAPHST_EUDHRS_HRS_G_N) Equivalent Unplanned Derated Hours During Reserve Shutdown (MI_PERF_INDX_EQ_UNPL_DR_HR_S_N) Eqv Upl Frcd Derate Hrs RS (G) (MI_GMCAPHST_EUFDH_HRS_N) Equivalent Unplanned Forced Derate Hours (MI_PERF_INDX_EQ_UPLFRC_DR_HR_N) Eqv Upl Frcd Derate MWh RS (G) (MI_GMCAPHST_EUFDH_MWH_N) Equivalent Unplanned Forced Derate MWH (MI_PERF_INDX_EQ_UPLFRC_DR_MW_N) Eqv Uplanned Outage Factor (G) (MI_GMCAPHST_EQV_UPL_OU_FAC_G_N) Equivalent Unplanned Outage Factor (MI_PERF_INDX_EQ_UNPL_OUT_FAC_N) Ext Maint Derate Eqv Hrs (G) (MI_GMCAPHST_EXT_MNT_DRT_GEQV_N) Extension of Maintenance Derating Equivalent Hours (MI_PERF_INDX_EXT_MN_DR_EQ_HR_N) Ext Maint Derate Eqv MWh (G) (MI_GMCAPHST_EXT_OF_MNT_D_MWG_N) Extended Maintenance Derate Equivalent MWH (MI_PERF_INDX_EXT_MN_DR_EQ_MW_N) Ext Pln Derate Eqv Hrs (G) (MI_GMCAPHST_EXT_PL_DRT_G_N) Extension of Planned Derating Equivalent Hours (MI_PERF_INDX_EXT_PL_DR_EQ_HR_N) Ext Pln Derate Eqv MWh (G) (MI_GMCAPHST_EXT_PL_DRT_EQUG_N) Extended Planned Derate Equivalent MWH (MI_PERF_INDX_EXT_PL_DR_EQ_MW_N) Forced Outage MWh (G) (MI_GMCAPHST_FORCE_OUT_MWHG_N) Forced Outage MWH (MI_PERF_INDX_FORC_OUT_MWH_N) Maint Outage MWh (G) (MI_GMCAPHST_MNT_OUT_MWHG_N) Maintenance Outage MWH (MI_PERF_INDX_MAIN_OUT_MWH_N) Maint Outage Sched Ext MWh (G) (MI_GMCAPHST_MNT_OUT_SCH_EXTG_N) Maintenance Outage Scheduled Extension MWH (MI_PERF_INDX_MN_OT_SCHEXT_MW_N) Maint and Ext Outage MWh (G) (MI_GMCAPHST_MNT_EXT_OUTMWHG_N) Maintenance and Extension Outage MWH (MI_PERF_INDX_MN_ND_EXT_OT_MW_N) NonCurtailing Event MWh (G) (MI_GMCAPHST_NC_NC_EVT_MWHG_N) Non Curtailing Event MWH (MI_PERF_INDX_NON_CURT_EVT_MW_N) Output Factor (G) (MI_GMCAPHST_G_OUTPU_FAC_N) Output Factor (G) (MI_GAA_PERF_OUTPUT_FACT_GROS_N) Planned Outage MWh (G) (MI_GMCAPHST_PL_OUT_MWHG_N) Planned Outage MWH (MI_PERF_INDX_PLN_OUT_MW_N) Planned and Ext Outage MWh (G) (MI_GMCAPHST_PL_EXT_OUTMWHG_N) Planned and Extension Outage MWH (MI_PERF_INDX_PLN_EXT_OT_MW_N) Pln Outage Sched Ext MWh (G) (MI_GMCAPHST_PLN_OUT_SCH_EXTG_N) Planned Outage Scheduled Extension MWH (MI_PERF_INDX_PL_OT_SC_EXT_MW_N) Reserve Shutdown MWh (G) (MI_GMCAPHST_RESER_SHUTD_MWHG_N) Reserve Shutdown MWH (MI_PERF_INDX_RSRV_SHUT_MW_N) Seasonal Derate Factor (G) (MI_GMCAPHST_SEA_DRT_FAC_N) Seasonal Derating Factor (MI_PERF_INDX_SEAS_DR_FAC_N) Startup Failure MWh (G) (MI_GMCAPHST_SF_STR_FAIL_MWHG_N) Startup Failure MWH (MI_PERF_INDX_STAR_FAIL_MW_N) Total Eqv Derate Hrs (G) (MI_GMCAPHST_TOTAL_DRT_HRS_G_N) Total Equivalent Derate Hours (MI_PERF_INDX_TOTA_EQ_DR_HR_N) Total Eqv Derate MWh (G) (MI_GMCAPHST_TOT_EQV_DRT_MWG_N) Total Equivalent Derate MWH (MI_PERF_INDX_TOTA_EQ_DR_MW_N) U1 Unplanned Outage MWh (G) (MI_GMCAPHST_U1_UPL_OUT_MWHG_N) U1 Unplanned Outage MWH (MI_PERF_INDX_U1_UNPL_OUT_MW_N) U2 Unplanned Outage MWh (G) (MI_GMCAPHST_U2_UPL_OUT_MWHG_N) U2 Unplanned Outage MWH (MI_PERF_INDX_U2_UNPL_OUT_MW_N) U3 Unplanned Outage MWh (G) (MI_GMCAPHST_U3_UPL_OUT_MWHG_N) U3 Unplanned Outage MWH (MI_PERF_INDX_U3_UNPL_OUT_MW_N) Unit Derating Factor (G) (MI_GMCAPHST_UNIT_DRT_FAC_N) Unit Derating Factor (MI_PERF_INDX_UNIT_DR_FAC_N) Capacity HistoryGAA Performance SummaryActual Unit Starts (MI_GMCAPHST_ACTUA_UNIT_STRT_N) Actual Unit Starts (MI_GAA_PERF_ACT_UNIT_STAR_N) Attempted Unit Starts (MI_GMCAPHST_ATTEM_UNIT_STRT_N) Attempted Unit Starts (MI_GAA_PERF_ATT_UNIT_STAR_N) Availability Factor (MI_GMCAPHST_AVAIL_FAC_N) Availability Factor (MI_GAA_PERF_AVAI_FACT_N) Available Hrs (MI_GMCAPHST_AVAIL_HRS_N) Available Hours (MI_GAA_PERF_AVAI_HRS_N) Average Run Time (MI_GMCAPHST_AVER_RUN_TIME_N) Average Run Time (MI_GAA_PERF_AVG_RUN_TIME_N) Demonstrated Max Capacity (N) (MI_GMCAPHST_DEMON_N_MAXIM_CP_N) Demonstrated Max Capacity (MI_GAA_PERF_DEMO_MAX_CAPA_N) Ext Sched Outages Hrs (MI_GMCAPHST_EXT_OF_SCHED_OUT_N) Extension of Scheduled Outage Hours (MI_GAA_PERF_EXT_SCH_OUT_HRS_N) Forced Outage Factor (MI_GMCAPHST_FORCE_OUT_FAC_N) Forced Outage Factor (MI_GAA_PERF_FORC_OUT_FACT_N) Forced Outage Hrs (MI_GMCAPHST_FORCE_OUT_HRS_N) Forced Outage Hours (MI_GAA_PERF_FORC_OUT_HRS_N) Forced Outage Rate (MI_GMCAPHST_FORCE_OUT_RATE_N_N) Forced Outage Rate (MI_GAA_PERF_FORC_OUT_RATE_N) Forced Outage Rate Demand (MI_GMCAPHST_FRC_OUT_RT_DM_N_N) Forced Outage Rate Demand (MI_GAA_PERF_FORC_OUT_RAT_DEM_N) GADS Unit Code (MI_GMCAPHST_UNIT_CODE_N) Primary Unit Code (MI_GAA_PERF_PRIM_UNIT_CODE_N) GADS Utility Code (MI_GMCAPHST_UTILI_CODE_N) Primary Utility Code (MI_GAA_PERF_PRIM_UTIL_CODE_N) Gross Actual Capacity (G) (MI_GMCAPHST_G_ACTUA_CAPAC_N) Gross Actual Capacity (G) (MI_GAA_PERF_GROSS_ACTU_CAPA_N) Gross Actual Generation (G) (MI_GMCAPHST_G_ACTUA_GENER_N) Gross Actual Generation (G) (MI_GAA_PERF_GROSS_ACTU_GENE_N) Gross Dependable Capacity (G) (MI_GMCAPHST_G_DEPEN_CAPAC_N) Gross Dependable Capacity (G) (MI_GAA_PERF_GROSS_DEPE_CAPA_N) Gross Max Capacity (G) (MI_GMCAPHST_G_MAXIM_CAPAC_N) Gross Maximum Capacity (G) (MI_GAA_PERF_GROSS_MAX_CAPA_N) Inactive Hours (MI_GMCAPHST_INACT_HRS_N) Inactive Hours (MI_GAA_PERF_INAC_HRS_N) MI_SM_STATE_ENTERED_D (MI_SM_STATE_ENTERED_D) MI_SM_STATE_ENTERED_D (MI_SM_STATE_ENTERED_D)MI_SM_STATE_ID_C (MI_SM_STATE_ID_C)MI_SM_STATE_ID_C (MI_SM_STATE_ID_C) MI_SM_STATE_KEY_N (MI_SM_STATE_KEY_N)MI_SM_STATE_KEY_N (MI_SM_STATE_KEY_N) MI_SM_STATE_OWNER_ID_C (MI_SM_STATE_OWNER_ID_C) MI_SM_STATE_OWNER_ID_C (MI_SM_STATE_OWNER_ID_C)Maint Outage Basic Hrs (MI_GMCAPHST_MNT_OUT_HRS_N) Maintenance Outage Hours (MI_GAA_PERF_MAIN_OUT_HRS_N) Maint Outage Factor (MI_GMCAPHST_MNT_OUT_FAC_N) Maintenance Outage Factor (MI_GAA_PERF_MNT_OUT_FACT_N) Maint Outage Sched Ext Hrs (MI_GMCAPHST_MNT_OUT_SCHD_EX_N) Maintenance Outage Schedule Extension Hours (MI_GAA_PERF_MNTOT_SCHEXT_HR_N) Maint and Ext Outage Hrs (MI_GMCAPHST_MNT_AND_EXT_OT_N) Maintenance and Extenstion Outage Hours (MI_GAA_PERF_MNT_ND_EXT_OT_HR_N) Max Generation (G) (MI_GMCAPHST_MAX_G_GENER_N) Max Generation (G) (MI_GAA_PERF_MAX_GENE_GROSS_N) Max Generation (N) (MI_GMCAPHST_MAX_N_GENER_N) Max Generation (N) (MI_GAA_PERF_MAX_GENE_NET_N) Mean Forced Outage Duration (MI_GMCAPHST_MN_FORC_OUT_DUR_N) Mean Forced Outage Duration (MI_GAA_PERF_MEAN_FORC_OT_DUR_N) Mean Maintenance Outage Duration (MI_GMCAPHST_MN_MAIN_OUT_DUR_N) Mean Maintenance Outage Duration (MI_GAA_PERF_MEAN_MAIN_OT_DUR_N) Mean Planned Outage Duration (MI_GMCAPHST_MN_PLAN_OUT_DUR_N) Mean Planned Outage Duration (MI_GAA_PERF_MEAN_PLAN_OT_DUR_N) Mean Service Time To Forced Outage (MI_GMCAPHST_MN_SER_TM_FRC_OU_N) Mean Service Time To Forced Outage (MI_GAA_PERF_MEAN_SER_TIME_OT_N) Mean Service Time To Maintenance Outage (MI_GMCAPHST_MN_SER_TM_MAI_OU_N) Mean Service Time To Maintenance Outage (MI_GAA_PERF_MN_SERTIM_MNT_OT_N) Mean Service Time To Planned Outage (MI_GMCAPHST_MN_SER_TM_PL_OU_N) Mean Service Time To Planned Outage (MI_GAA_PERF_MN_SERTIM_PLN_OT_N) Mean Service Time To Unplanned Outage (MI_GMCAPHST_MN_SER_TM_UPL_OU_N) Mean Service Time To Unplanned Outage (MI_GAA_PERF_MN_SERTM_UNPL_OT_N) Mean Unplanned Outage Duration (MI_GMCAPHST_MN_UNPL_OUT_DUR_N) Mean Unplanned Outage Duration (MI_GAA_PERF_MEAN_UNPL_OT_DUR_N) Net Actual Capacity (N) (MI_GMCAPHST_N_ACTUA_CAPAC_N) Net Actual Capacity (N) (MI_GAA_PERF_NET_ACTU_CAPA_N) Net Actual Generation (N) (MI_GMCAPHST_N_ACTUA_GENER_N) Net Actual Generation (N) (MI_GAA_PERF_NET_ACTU_GENE_N) Net Dependable Capacity (N) (MI_GMCAPHST_N_DEPEN_CAPAC_N) Net Dependable Capacity (N) (MI_GAA_PERF_NET_DEPE_CAPA_N) Net Maximum Capacity (N) (MI_GMCAPHST_N_MAXIM_CAPAC_N) Net Maximum Capacity (N) (MI_GAA_PERF_NET_MAXI_CAPA_N) NonCurtailing Event Hrs (MI_GMCAPHST_NONCU_EVT_HRS_NC_N) Non Curtailing Event Hours (MI_GAA_PERF_NON_CURTEVNT_HRS_N) Number Of Non Curtailing Events (MI_GMCAPHST_NUM_NC_EVE_N) Number Of Non Curtailing Events (MI_GAA_PERF_NON_CURTEVNT_CNT_N) Number of Forced Outages (MI_GMCAPHST_NUM_FRC_OUT_N) Number of Forced Outages (MI_GAA_PERF_FORC_OUT_CNT_N) Number of Maintenance Outages (MI_GMCAPHST_NUM_MNT_OUT_N) Number of Maintenance Outages (MI_GAA_PERF_MAIN_OUT_CNT_N) Number of Planned Outages (MI_GMCAPHST_NUM_PLN_OUT_N) Number of Planned Outages (MI_GAA_PERF_PLAN_OUT_CNT_N) Number of Unplanned Outages (MI_GMCAPHST_NUM_UPL_OUT_N) Number of Unplanned Outages (MI_GAA_PERF_UNPL_OUT_CNT_N) Override Reserve Shutdown Hours (MI_GMCAPHST_OV_RSRV_SHTD_HRS_F) Override Reserve Shutdown Hours (MI_GAA_PERF_RSRVSHUT_HRS_FLG) Period Hours (MI_GMCAPHST_PERIO_HRS_N) Period Hours (MI_GAA_PERF_PERIOD_HRS_N) Planned Outage Basic Hrs (MI_GMCAPHST_PL_OUT_HRS_N) Planned Outage Hours (MI_GAA_PERF_PLAN_OUT_HRS_N) Planned Outage Factor (MI_GMCAPHST_PL_OUT_FAC_N) Planned Outage Factor (MI_GAA_PERF_PLAN_OUT_FACT_N) Planned and Ext Outage Hrs (MI_GMCAPHST_PL_AND_EXT_OT_N) Planned and Extension Outage Hours (MI_GAA_PERF_PLN_EXT_OT_HRS_N) Plant ID (MI_GMCAPHST_PLANT_ID_C )Plant ID (MI_GAA_PERF_PLANT_ID_C) Plant Name (MI_GMCAPHST_PLANT_NAME_C) Plant Name (MI_GAA_PERF_PLANT_NAME_C) Pln Outage Sched Ext Hrs (MI_GMCAPHST_PL_OUT_SCHD_EX_N) Planned Outage Schedule Extension Hours (MI_GAA_PERF_PL_OT_SCHEXT_HRS_N) Pumping Hrs (MI_GMCAPHST_PUMPI_HRS_N) Pumping Hours (MI_GAA_PERF_PUMPING_HRS_N) Report Date (MI_GMCAPHST_REPO_DATE_DT) Report Date (MI_GAA_PERF_REPORT_DATE_DT) Reporting Date (MI_GMCAPHST_REPOR_DATE_D) Reporting Date (MI_GAA_PERF_REPORTING_DATE_DT) Reporting Month (MI_GMCAPHST_REPOR_MONTH_C) Reporting Month (MI_GAA_PERF_REPORTING_MONT_C) Reporting Year (MI_GMCAPHST_REPOR_YEAR_C) Reporting Year (MI_GAA_PERF_REPORTING_YEAR_C) Reserve Shutdown Hrs (MI_GMCAPHST_RESER_SHUTD_HRS_N) Reserve Shutdown Hours (MI_GAA_PERF_RESE_SHUT_HRS_N) Revision (MI_GMCAPHST_REVIS_N) Revision (MI_GAA_PERF_REVISION_N) Sched Outage Hrs (MI_GMCAPHST_SCHED_OUTAG_HRS_N) Scheduled Outage Hours (MI_GAA_PERF_SCH_OUT_HRS_N) Scheduled Outage Factor (MI_GMCAPHST_SCHED_OUT_FAC_N) Scheduled Outage Factor (MI_GAA_PERF_SCH_OUT_FACT_N) Service Factor (MI_GMCAPHST_SERVI_FAC_N) Service Factor (MI_GAA_PERF_SERV_FACT_N) Service Hrs (MI_GMCAPHST_SERVI_HRS_N) Service Hours (MI_GAA_PERF_SERV_HRS_N) Start Reliability (MI_GMCAPHST_STRT_RELIA_N) Start Reliability (MI_GAA_PERF_STAR_RELI_N) Startup Failure Hrs (MI_GMCAPHST_STRT_FAIL_HRS_SF_N) Startup Failure Hours (MI_GAA_PERF_STAR_FAIL_HRS_N) Synchronous Condensing Hrs (MI_GMCAPHST_SYNCR_CONDE_HRS_N) Synchronous Condensing Hours (MI_GAA_PERF_SYNC_COND_HRS_N) Typical Unit Loading (MI_GMCAPHST_TYPIC_UNIT_LOADI_C) Typical Unit Loading (MI_GAA_PERF_TYPI_UNIT_LOAD_C) U1 Unplanned Outage Hrs (MI_GMCAPHST_U1_HRS_N) U1 Unplanned Outage Hours (MI_GAA_PERF_U1_UNPL_OUT_HRS_N) U2 Unplanned Outage Hrs (MI_GMCAPHST_U2_HRS_N) U2 Unplanned Outage Hours (MI_GAA_PERF_U2_UNPL_OUT_HRS_N) U3 Unplanned Outage Hrs (MI_GMCAPHST_U3_HRS_N) U3 Unplanned Outage Hours (MI_GAA_PERF_U3_UNPL_OUT_HRS_N) Unavailability Factor (MI_GMCAPHST_UNAVA_FAC_N) Unavailability Factor (MI_GAA_PERF_UNAV_FACT_N) Unavailable Hrs (MI_GMCAPHST_UNAVA_HRS_N) Unavailable Hours (MI_GAA_PERF_UNAV_HRS_N) Unit ID (MI_GMCAPHST_UNIT_ID_C) Unit ID (MI_GAA_PERF_UNIT_ID_C) Unit Name (MI_GMCAPHST_UNIT_NAME_C) Unit Name (MI_GAA_PERF_UNIT_NAME_C) Unit Type (MI_GMCAPHST_NERC_UNIT_TYPE_C) Unit Type (MI_GAA_PERF_UNIT_TYPE_C) Unplanned Outage Factor (MI_GMCAPHST_UPL_OUT_FAC_N) Unplanned Outage Factor (MI_GAA_PERF_UNPL_OUT_FACT_N) Unplanned Outage Hrs (MI_GMCAPHST_UPL_OUT_HUR_UO_N) Unplanned Outage Hours (MI_GAA_PERF_UNPL_OUT_HRS_N) Verbal Description (MI_GMCAPHST_DESCR_C) Verbal Description (MI_GAA_PERF_VERB_DESC_C) YTD Actual Unit Starts (MI_GMCAPHST_YTD_CUM_ACT_STRT_N) YTD Actual Unit Starts (MI_GAA_PERF_YTD_ACTUNIT_STAR_N) YTD Attempted Unit Starts (MI_GMCAPHST_YTD_CUM_ATT_STRT_N) YTD Attempted Unit Starts (MI_GAA_PERF_YTD_ATTUNIT_STAR_N) YTD Start Reliability (MI_GMCAPHST_YTD_STRT_RELIA_N) YTD Start Reliability (MI_GAA_PERF_YTD_STAR_RELI_N) Zone (MI_GMCAPHST_ZONE_C) Zone (MI_GAA_PERF_ZONE_C) 
+
+
+
+
+
+On this pageDeploy GAA for the First TimeUpgrade GAA
+Migrate from Generation Management (GM) to GAAQuery MappingState Management MappingField Mapping
+
+
+
+
+
+
+
+
+

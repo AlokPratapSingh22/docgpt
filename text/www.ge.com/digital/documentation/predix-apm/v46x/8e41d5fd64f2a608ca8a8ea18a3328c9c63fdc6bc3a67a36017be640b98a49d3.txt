@@ -1,0 +1,109 @@
+
+
+
+Second Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+Fourth Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Release Notes
+Second Quarter of 2020
+
+
+
+
+
+
+
+Second Quarter of 2020Release Date: June 19, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when running the RCA Comprehensive Analysis Report, the Logic Tree and Event Diagram did not appear in the SSRS report. This issue has been resolved.DE135676
+Release Date: May 8, 2020This topic provides a list of product changes released for this module on this date.
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in the Cause Details section of the RCA Overview page, when you attempted to access an RCA Analysis record, the RCA Overview page appeared instead of the <Analysis Summary> workspace. This issue has been resolved. Now, when you select the RCA Analysis record, the <Analysis Summary> workspace for the record appears, displaying the logic tree of the RCA analysis.US398535Previously, in an RCA Logic Tree, even after specifying the hypothesis causes for Human, Physical, or Latent, when you returned to the design canvas, the red line was lost and reverted to black. This issue has been resolved.DE130968Previously, when logged in to RCA Module with view-only permission, you could rearrange nodes in the RCA Logic Tree and RCA Event Diagram and changes were saved to the RCA record when you exited the page. This issue has been resolved. Now, with view-only rights you cannot change the node position in the Event diagram and logic tree. DE130838Previously, users with view-only permission were able to add, assign, or unassign nodes from the Logic Tree Properties window. This issue has been resolved.DE130339Previously, when you attempted to access an RCA Analysis without an active PLA license, an error occurred. This issue has been resolved.DE128152Previously, in an RCA Analysis with state management enabled, you could create duplicate states in customer databases, which resulted in double images in the user interface. This issue has been resolved.DE127245Previously, when completing a verification and setting the completed field to Yes, the completed action was not retained after saving. This issue has been resolved.DE127225Previously, when creating an RCA from a template, if the assigned name was not unique, the analysis details were not saved, and you were forced to restart the process. This issue has been resolved.DE126529Previously, when saving an RCA Analysis from a template, the page would appear to freeze while the content was being saved to the analysis. This issue has been resolved. Now, a waiting wheel appears to inform the user that the analysis is being saved.DE126447Previously, when you created a Tracking Item, the Start Date appeared twice in the <Track Items> workspace. This issue has been resolved.DE123413Previously, when an SAP notification was created for an RCA Recommendation, the Work Request Reference field was not automatically populated with the corresponding value in the notification. This issue has been resolved.DE121855Previously, if a team member associated with an RCA analysis no longer existed, and you attempted to create an RCA Recommendation for the analysis, the associated Cause drop-down list box was not automatically populated. This issue has been resolved.DE121016Previously, when you accessed the Reliability section for an asset from the Asset Hierarchy, in the Root Cause Analysis row, the counts of the analyses that were in the In Progress and Published states were incorrect. This issue occurred when some of the analyses were linked to assets from sites for which you did not have the necessary permissions. This issue has been resolved.DE120439Previously, in an RCA Recommendation record, if you selected the Create Work Request check box, and then saved the record, the SAP Notification that was created did not contain the Equipment and Functional Location values associated with the record. This issue has been resolved.DE119937
+
+
+
+
+
+On this pageRelease Date: June 19, 2020Release Date: May 8, 2020
+
+
+
+
+
+
+
+
+

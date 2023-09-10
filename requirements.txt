@@ -1,0 +1,21 @@
+fastapi >= 0.75.0
+uvicorn >= 0.17.1
+spacy >= 3.2, <3.3
+tiktoken
+openai
+requests
+bs4
+pandas
+numpy
+matplotlib
+plotly
+scipy
+scikit-learn
+python-dotenv
+fastapi_sqlalchemy
+# psycopg2
+psycopg2-binary
+pgvector
+python-multipart
+openapi-spec-validator
+jsonref

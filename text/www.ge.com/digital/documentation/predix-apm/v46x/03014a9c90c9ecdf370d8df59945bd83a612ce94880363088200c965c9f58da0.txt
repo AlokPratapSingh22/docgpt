@@ -1,0 +1,85 @@
+
+
+
+
+About Asset Groups | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About Asset GroupsYou can add, modify, search, and delete asset groups, add and remove asset group members, and add and remove asset groups in the business functional hierarchy.Asset groups are used to organize business functional objects, assets, or tags into manageable units that are related and have value to you when you perform tasks. You can create groups from instances, classifications, enterprises, sites, or segments.Asset groups are comprised of business functional objects, assets or tags that are related or connected in some way (physical or logical). For example:You can assign membership in a group to asset instances that are all of the same type (e.g., gas turbines).You can assign membership in a group to different types of asset instances that are all members of a functional unit that performs a specific task, such as a block of assets that are physically connected to complete a process.You can assign membership in a group to different types of asset instances that all use a specific analytic.You can assign membership in a group to all asset instances that are physically present on a site.You can assign membership in a group to all sites in an enterprise.You can assign membership in a group to all tag instances that perform the same function (e.g., temperature).You can add an instance, classification, enterprise, site, or segment to multiple groups. You can add multiple groups to a single business functional object, and similarly, you can add a single group to multiple business functional objects. Associations are two-way.Note: When you delete a group, use the APIs to first remove it from all associated business functional objects and then delete all of its members.You can use the Asset APIs or ingestion to:Create an Asset Group.List Groups by criteria and URI.List Group members using UUID.List Group Associations.Update Group.Add Group members to a Group.Remove Group members from a Group.Add a Group to a business functional object.Remove a Group from a business functional object.Delete a Group.A JSON is required when using an API or ingesting an asset group. The JSON structure for ingestion or APIs is different.Use the following API requests:This requestDoes thisPOSTCreate a group, add group members to a group, and add a group to the business functional hierarchy using the Asset APIs.GETList the groups using the Asset APIs. You can list by criteria or URI. You can also list group members using UUID, and list group associations.PATCHUpdate the groups using the Asset APIs.DELETEDelete a specific group by UIID, and delete group members from a group.To use the API to configure a group, refer to the Asset APIs documentation.Asset Group Rules
+Use group rules when creating groups.All members of a group must be homogenous. i.e., If you are assigning tag instances, then only tag instances may be a member of the group.There are no permissions involved in accessing groups, however you can only view the assets for which you have access, even if there are other assets in the group you are viewing.An asset can be added to multiple groups.A group can be added to multiple business functional objects.A group cannot contain another group.Groups populated from a query are not supported.Instances must be a member of a group to be associated to a business functional object.
+Create an Asset Group
+You can create a group using a parent node in the JSON. Use your Asset Model to determine placement of the asset group. The JSONs for ingestion and API are different.You will need to add the following values into the JSON for ingestion.nameiddescriptionccomClass (predefined as GROUP).associatedEntityCcomClasspropertiesRepeat the previous step for any group you want to add.Save the JSON, then ingest it using the REST client.
+You are ready to add the asset members.
+Example 1: Diagnose an IssueAn experienced M&D analyst determines that by creating a group containing tags from several different assets, which are connected together can be used to diagnose an issue. By associating the group to a segment or site within the business functional hierarchy where the assets are modeled, allows the M&D analyst to locate and drag-and-drop the data for visualization.Example 2: Identify potential problemsAn analytic developer has determined by creating a group containing several assets in the plant that they use this group as input for an analytic, which identify potential problems at the plant. By associating the group to a segment or site within the business functional hierarchy, allows the analytic to be programmed to search for group and apply it to the assets within the group.Add Members to an Asset Group
+You can add members to an asset group in the JSON. All members of a group must be the same type.
+For example, you can add tag instances that determine temperature, pressure, frequency, and vibration to a group, then add the group to a specific asset instance in the business functional hierarchy.Find the group node to which you are adding the members.Add the associatedEntityIds values for each member to the group parent node:Repeat the previous step for each group to which you are adding members.Save the JSON, then update it using ingestion.
+You are ready to add asset groups to the business functional hierarchy.
+Remove Members from an Asset Group
+If an asset is obsolete, no longer connected to a parent asset, or simply no longer in use, you can remove the member from an asset group without affecting the remaining members.Find the group node from which you are removing the member.Remove the child node containing the member’s information.Save the JSON, then update it using the APIs.
+Add Asset Groups to the Business Functional Hierarchy
+You can add asset groups to a business functional object using a parent node in the JSON.
+Use your Asset Model to determine placement of the asset group. For example, you can add a group of asset instances to a segment, site, or asset instance node that is higher in the business functional hierarchy. Similarly, a group of sites instances can only be added to an enterprise node.
+You can add a group to multiple parent nodes, or add multiple groups to a single parent node in the business functional hierarchy.
+When you provide an ingestion file with a group containing tag(s), asset(s), segment(s), or sites(s) with a connection to that business functional object, then the system stores the association.Find the business functional object name to which you are adding a connection to the group.Add a connection using the following:mappedInstances (to a business functional object, i.e., enterprise, site, segment, asset) specifying ccomClass and id.Repeat the previous step for each group you want to connect to the business functional hierarchy.Save the JSON, then ingest it using the REST client.
+Remove Asset Groups from the Business Functional Hierarchy
+You can remove asset groups from a business functional object.
+You can use the API to remove the association when a group no longer has a relationship to the business functional object.Find the business functional object node from which you are removing the group.Remove the association between the asset group URI and the business functional object URI.Save the JSON, then update it using APIs.
+To verify the removal, search Groups to determine the existence of the group connection to the business functional object.Important: A group may be connected to multiple business functional objects. Make sure you are removing the correct association. If you are deleting the group entirely, make sure that all associations for the group are removed prior to deleting the group.
+List Asset Groups
+You can retrieve a list of groups by criteria or URI using the APIs.
+You can use the API to retrieve the groups associated to a business function object. Use the API with the group URI.
+Use the API request parameters to narrow the list by criteria (e.g., sourceKey).
+The following search parameters are supported for asset groups:urinamesourcekeydescriptionattributesreservedattributescategory
+Delete Asset Groups
+You can delete an asset group from the JSON.Important: A group may be connected to multiple business functional objects. If you are deleting the group entirely, make sure that all associations for the group are removed prior to deleting the group.Find the group node and remove the group members.Remove the group node from the JSON using APIs.
+
+
+
+
+
+
+
+
+
+
+
+

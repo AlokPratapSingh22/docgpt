@@ -1,0 +1,385 @@
+
+
+
+Root Cause Analyses | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Root Cause Analyses
+
+
+
+
+
+
+
+Root Cause AnalysesAbout Root Cause AnalysisThis topic provides a listing of all overviews and high-level explanatory information to help you understand the Root Cause Analysis module.About PROACT for MeridiumPROACT for Meridium is a comprehensive methodology that is used in the RCA module that allows you to conduct a root cause analysis.The PROACT acronym consists of the following steps, where the letters that make up the acronym are capitalized: Preserve: Team members gather and information (i.e., failure data) about an Asset's failure.
+ Order: The Principal Analyst:
+Defines the goals of the RCA.Assembles the team members who will conduct the RCA.
+ Analyze: Team members review and analyze the available information and then any conclusions. Communicate: Team members submit, to the decision makers in the organization, their hypotheses about the cause of the failure and their recommendations for solutions to the failure. Track: Team members track the success of the solutions that were implemented. A re-evaluation can be performed, as needed.You can use these steps as a guideline for conducting a Root Cause Analysis in the RCA module, which consists of creating the data in GE Digital APM that is necessary to complete these five steps of the PROACT for Meridium methodology and implement successful solutions.Note: You are not required to complete these steps in the exact order that they are listed above. It is important, however, that all steps of the methodology be completed. For more information, see the workflow for conducting a Root Cause Analysis.About State Management in RCA
+The Root Cause Analysis Module uses standard State Management functionality to manage RCA Analysis records.
+
+Note: For more information, refer to the State Management section of the documentation.
+Details
+Actions that you take in the RCA module determine the state of an RCA Analysis. When you perform an action, the value in the State field changes automatically, which transitions the analysis from one state to another.
+The state of an RCA Analysis record is stored in the State field, which is not included on any of the baseline datasheets that exist for the RCA Analysis family.
+If State Management has been configured, then Root Cause Analyses can have one of the states in the following list.Note: Only super users, MI PROACT Administrators and Principal members can change the state of an analysis.
+Not Started: Indicates that an RCA has not yet started.In Progress: Indicates that an RCA has not yet been completed.On Hold: Indicates that an RCA is on hold.Deferred: Indicates that an RCA has been postponed.Completed: Indicates that an RCA has been completed.
+About Analysis Statuses in RCAActions that you take in the RCA module determine the state of an RCA Analysis. Statuses do not require configuration like State Management, and are used to track the progress of analyses.
+Root Cause Analyses can have one of the states in the following list.
+ In Progress: Indicates that an RCA has not yet been completed. Only GE Digital APM users who are members of the RCA Team and members of the MI PROACT Administrator Security Group can view and modify an RCA when it is in the In Progress status. RCA Analyses will remain In Progress until the Principal Analyst publishes the analysis. Additionally, a Published RCA that is unpublished will return to the In Progress status. Published: Indicates that an RCA has been completed. After the RCA is complete, the Principal Analyst can publish the analysis, which will assign the Published status to the analysis and populate the Date Published field in the RCA Analysis record with the date on which it was published. When an RCA is published, GE Digital APM users, regardless of whether they are members of the analysis team or not, will have read-only access to the RCA as long as they have the following security permissions:View privileges to all RCA Analysis families, including the RCA Analysis Relationships and RCA System Relationships families.Insert privileges on the RCA Analysis family.Update privileges on the RCA Image family. If a Published RCA is unpublished, the RCA will return to the In Progress state, but the value in the Date Published field will not be updated until the analysis is published again. 
+ Template: Indicates that an RCA has been produced from an existing analysis using the Produce Template link. RCA Analyses in the Template status are identical to Root Cause Analyses that are in the In Progress status, except that they do not have an analysis team defined. To modify or transition analyses with a Template status, you need to be a user with one of the following permissions.
+Super Users, members of the MI PROACT Administrators Security Group, and Principal Analysts can transition analyses to the Template state.
+Super Users and members of the MI PROACT Administrators Security Group can modify an RCA Analysis that is in the Template state.
+
+About Analysis TemplatesAn Analysis Template is a Root Cause Analysis that is in the Template state. Analysis Templates are the same as other Root Cause Analyses except that they do not have team members assigned to them and they are always in the Template state (i.e., they never become published). The Analysis Templates can be created either from Root Cause Analyses in either the Published or In-Progress state and can be used for creating Root Cause Analyses.About Team CharterThe Team Charter is a statement that defines the goal that the RCA Team wants to achieve by conducting an RCA. The RCA Team can refer to the Team Charter throughout the analysis to determine if the goal is being achieved. A Team Charter is provided in the baseline GE Digital APM database and appears in the Team Charter workspace of the 
+RCA Administrator page. An administrative user can specify the default Team Charter, which can be modified as needed. About the RCA TeamThe RCA team is the group of individuals who will complete the steps required for a comprehensive root cause analysis. Security permissions in the Root Cause Analysis module are based on family-level privileges and a user's role within a given Root Cause Analysis. Root Cause Analysis users who are members of the RCA Team will have one of the following RCA team member roles:  Principal Analyst: The user who is responsible for facilitating and coordinating the Root Cause Analysis. Analysis Team Member: Any user who is a member of an RCA Team.You can add GE Digital APM users and non-GE Digital APM users to the RCA Team.
+GE Digital APM users will have an existing GE Digital APM Security User account and an associated Human Resource that is created automatically when the Security User account is created.Non-GE Digital APM users will not have a GE Digital APM Security User account. To add a non-GE Digital APM user to the RCA Team, you first need to create a Human Resource for that user.When you add new members to the RCA Team, an RCA Team Member is created automatically and linked to the Root Cause Analysis and the individual's Human Resource. If the same team member is linked to multiple analyses, an RCA Team Member will exist for each RCA team in which it is a member. The RCA Team Member stores the RCA Team member's role (i.e., Team Member or Principal Analyst). RCA Team Members and Security
+In RCA, Security Group membership is used in conjunction with a user's role within a given analysis to determine what that user can and cannot do with that analysis. A given team member's role determines the security privileges that the user has in Root Cause Analysis. After you add a new team member to the RCA Team, that user will inherit the security privileges associated with the user's team member role (e.g., Principal Analyst).
+Each analysis has:
+A Principal Analyst who can perform all functions related to the analysis.Analysis team members, who can perform most functions related to analysis but are restricted from performing some tasks that are reserved for the Principal Analyst.Viewers, who can only view the analysis.
+For a complete description of the functions that are allowed and not allowed based on a user's role within an analysis, see the RCA Security Groups. Privileges granted through roles are done through data filters that are defined on the baseline Analysis family for Root Cause Analyses.
+About Assets in RCAAssets are Equipment and Functional Locations that you can link to a Root Cause Analysis. Each RCA is linked to one or more Equipment and Functional Locations to indicate the equipment and locations that are experiencing problems. You can link only Equipments, only Functional Locations, or both to a Root Cause Analysis. The type of asset to which you link depends on the type of situation that you are analyzing. Consider the following examples.You want to run a Root Cause Analysis on a pump, which is always located in the same place. You link the pump's Equipment to the Root Cause Analysis.You want to run a Root Cause Analysis on an incident that occurred at a specific plant and you aren't sure which pump was involved. You link the plant's Functional Location to the Root Cause Analysis.You want to run a Root Cause Analysis on a pump that was previously located in another plant and has been installed in a new plant. You link both the pump's Equipment (which is already linked to the new plant's Functional Location) and the old plant's Functional Location to the Root Cause Analysis.You want to run a Root Cause Analysis involving multiple pumps that are all experiencing similar failures. You link multiple Equipments to the same Root Cause Analysis. You can link Equipment or Functional Locations to the Root Cause Analysis after you complete the initial steps required for an Root Cause Analysis, or you can link Equipment or Functional Locations to an existing Root Cause Analysis in the Linked Assets section.Define When a Root Cause Analysis Should be PerformedBefore you begin conducting a Root Cause Analysis using the Root Cause Analysis module, you should determine which events require further investigation through a Root Cause Analysis. This involves defining criteria that standardizes when a Root Cause Analysis should always be performed.The criteria to perform a Root Cause Analysis should be defined according to the needs and resources within your organization. For instance, the criteria can be based strictly on the data collected in Failures. For example, the criteria might be that a Root Cause Analysis is automatically performed when an asset fails more than two times in a 12-month period. The criteria can also be less restrictive, allowing an area manager or reliability engineer to initiate a Root Cause analysis even if a failure does not meet the standard criteria.Regardless of the specific criteria that you use, your goal should be to define criteria that will allow personnel to know when a Root Cause Analysis should always be conducted, ensuring that failure events are analyzed in a consistent and methodical way.Next Steps
+
+Create an RCA
+
+Access a Root Cause AnalysisProcedure
+Access the RCA Overview page.Select one of the following tabs:
+
+In Progress: Select this tab if you want to view an RCA in In Progress state.
+My Analyses: Select this tab if you want to view an RCA in Published, In Progress, or Template state to which you are assigned as a team member.
+Published: Select this tab if you want to view an RCA in Published state.
+Template: Select this tab if you want to view an RCA in Template state.
+A list of available analyses appears based on the tab that you selected.
+In the Analysis ID column, select the link for the Root Cause Analysis that you want to view.
+The Analysis Summary workspace appears, displaying the Overview section.
+
+
+
+The following sections exist in the workspace:
+
+
+Definition: Contains the Analysis Details and Plant & Equipment Info
+datasheets for the selected analysis. The Plant & Equipment Info subsection provides information about the asset that is associated with the selected RCA.
+Note: As needed, in the Definition section, you can modify the values in the available fields, and then select  to save your changes.
+
+Overview: Contains the following information for the selected analysis:
+Hypothesis Verification: Contains a chart that represents the summary of status (i.e., Completed or Pending) of Hypothesis Verifications associated with the selected analysis. When you select this chart, a list of Hypothesis Verifications for the selected analysis appears in the grid.
+Recommendations: Contains a chart that displays the number of recommendations filtered by state for the selected analysis. When you select this chart, a list of recommendations for the selected analysis appears in the grid.
+Track Item: Contains a bar chart that provides an overview of the assets that are being tracked using the selected analysis. The chart displays the following values for a tracked Asset from the time the tracking began:Total cost associated with an Asset Total number of work histories for an Asset
+When you select this chart, a list of Assets that are being tracked appears in the grid.
+
+
+Critical Success Factors: Contains a list of Critical Success Factors associated with the selected analysis.
+Team Members: Contains a list of Team Members associated with the selected analysis.
+Linked Assets: Contains a list of assets associated with the selected analysis.
+Linked Events: Contains a list of events associated with the selected analysis.
+Reference Documents: Contains a list of Reference Documents associated with the selected analysis.
+The tabs in the left pane can be used to access the following workspaces:
+
+Preserve Records: Contains a list of Preserve records associated with the selected analysis.
+Event Diagram: Contains the Event Diagram associated with the selected analysis.
+Logic Tree: Contains the Logic Tree associated with the selected analysis.
+Communicate Findings: Contains the Analysis Details datasheet, which includes root cause of the Asset failure. Via this workspace, you can communicate team findings and propose recommendations to the appropriate individuals within your organization.
+Track: Contains a list of tracking items that allow you to track the effectiveness of your recommendations. 
+Reports: Contains the 
+Master Report
+ and Individual Reports sections, as well as custom reports, which have links to access various reports for the selected analysis.
+Create a Root Cause Analysis Before You Begin
+
+Define when a Root Cause Analysis should be performed.
+
+Procedure
+Access the RCA Overview page.In the upper-right corner of the page, select New Analysis.
+A blank datasheet appears in the Analysis Summary workspace. 
+
+
+
+As needed, enter values in the available fields. Select .
+The Root Cause Analysis is saved. 
+What To Do Next
+
+Create a Critical Success Factor
+
+Copy a Root Cause AnalysisAbout This Task
+This topic describes how to copy an analysis. You can also create a Root Cause Analysis from the RCA Overview page or create an analysis using the RCA Templates.
+Procedure
+Access the RCA Overview page.Select one of the following tabs:
+
+In Progress: Select this tab if you want to view an RCA in In Progress state.
+Published: Select this tab if you want to view an RCA in Published state.
+A list of available analyses appears based on the tab that you selected.
+Select the row that contains the Root Cause Analysis that you want to copy.In the upper-right corner, select .
+The Copy Analysis dialog box appears, asking you to confirm that you want to create a new Root Cause Analysis based on the selected Root Cause Analysis.
+Select Yes. 
+The Analysis Summary workspace appears in a new tab, displaying a blank datasheet for the new Root Cause Analysis.
+
+
+
+As needed, enter values in the available fields.Select .
+The new Root Cause Analysis is created and saved. The list of analyses on the RCA Overview page is updated.
+Results
+When you copy a Root Cause Analysis, any of the following items that exist in the original Root Cause Analysis will be copied to the new Root Cause analysis:
+
+RCA Preserve records. The values in the remain the same except:
+The value in the Date Due field is set to 30 days after the date the copy is performed.The value in the Completed field is set to No.The Date Completed field is disabled, and the value is removed.
+The Logic Tree and any associated (e.g., Hypothesis, Failure Mode). The values in theses remain the same.
+RCA Verifications. The values in the remain the same except:
+The value in the Outcome field is removed.The value in the Due Date field is set to 30 days after the date the copy is performed.The value in the Completed field is set to No.The Date Completed field is disabled, and the value is removed.
+Event Diagram and any associated (i.e., RCA Sequence Nodes). The values in theses remain the same.RCA Team Charter.
+Create an RCA Template About This Task
+To create an RCA template from a Root Cause analysis that is in the In Progress or Published state, you will use the Save As feature.
+Procedure
+Access the RCA Overview page.Select one of the following tabs:
+
+In Progress: Select this tab if you want to view an RCA in In Progress state.
+Published: Select this tab if you want to view an RCA in Published state.
+Template: Select this tab if you want to view an RCA in Template state.
+A list of analysis available appears based on the tab that you selected.
+Select the row that contains the Root Cause Analysis that you want to save as template, and then select . 
+The Save As Template dialog box appears, asking you to confirm that you want to create the template. 
+Select Yes.
+The Save As Template window appears.
+
+
+
+By default, the New Analysis Name box contains the name of the Root Cause Analysis that you selected along with the prefix Template.
+In the New Analysis Name box, enter a name for the RCA Template to distinguish it from the original Root Cause analysis.
+Note: If you attempt to save an RCA Template with a name that is already being used by an Root Cause analysis or RCA Template, an error message will appear, warning you that the name already exists and prompting you to enter another name.
+Select Save.
+The new RCA Template is created and saved. The list of available analyses in the RCA Overview page is updated. 
+Note: Any GE Digital APM user that has View privileges to the Root Cause Analysis can view RCA Templates. Only members of the MI PROACT Administrator Security Group and Super Users can modify RCA Templates.
+Create an RCA using an RCA TemplateBefore You Begin
+
+Create an RCA Template
+
+Procedure
+Access the RCA Overview page.Select the Template tab.
+A list of available templates appears.
+
+
+
+Select the row that contains the RCA Template that you want to use to create new RCA, and then select .
+The Template Analysis dialog box appears, asking you to confirm that you want to create a new Root Cause analysis based on the selected RCA Template.
+Select Yes. 
+The Analysis Summary workspace appears, displaying a datasheet. All the fields on the datasheet are populated from the template except the Analysis Name field. 
+In the Analysis Name box, enter a unique name for the analysis. This is a required field.As needed, modify the values in the remaining fields, and then select . 
+The new Root Cause analysis is created and saved. The list of available analyses on the Templates section is updated.
+Results
+When you create a new RCA from an Analysis Template, any of the following items that exist in the original RCA Template will be copied to the new Root Cause analysis:
+
+RCA Preserve records. The values in the remain the same except:
+The value in the Date Due field is set to 30 days after the date the copy is performed.The value in the Completed field is set to No.The Date Completed field is disabled, and the value is removed.
+The Logic Tree and any associates (e.g., Hypothesis, Failure Mode). The values in theses remain the same.
+RCA Verifications. The values in the remain the same except:
+The value in the Outcome field is removed.The value in the Due Date field is set to 30 days after the date the copy is performed.The value in the Completed field is set to No.The Date Completed field is disabled, and the value is removed.
+Event Diagram and any associated (i.e., RCA Sequence Nodes). The values in theses remain the same.RCA Team Charter.
+Publish a Root Cause Analysis (RCA)About This Task
+Important: You must be a Principal Analyst to publish an analysis.
+Procedure
+Access the RCA Overview page.Select the In Progress tab.
+A list of available analyses appears.
+Select the row for the analysis that you want to publish.
+The row is highlighted.
+Select Publish. 
+The Publish Analysis dialog box appears.
+Select Yes.
+The analysis is published and is now in read-only format.
+Unpublish a Root Cause Analysis (RCA)About This Task
+Important: You must be a Principal Analyst to unpublish an analysis.
+Procedure
+Access the RCA Overview page.Select the Published tab.
+A list of available published analyses appears.
+Select the row for the analysis that you want to unpublish.
+The row is highlighted.
+Select Unpublish.
+The Unpublish Analysis dialog box appears.
+Select Yes.
+The analysis is unpublished.
+Publish an RCA Template About This Task
+Important: You must be a Principal Analyst to publish an RCA Template. 
+Procedure
+Access the RCA Overview page.Select the Template tab.
+A list of available templates appears.
+Select the row for each template that you want to publish.
+Note: If more than one template is selected,  is disabled. 
+Select Publish. 
+The Publish Analysis Template dialog box appears.
+Select Yes.
+The template is published and is now in read-only format. 
+Unpublish an RCA Template About This Task
+Important: You must be a Principal Analyst to unpublish an RCA Template.
+Procedure
+Access the RCA Overview page.Select the Template tab.
+A list of available templates appears.
+Select the row for each template that you want to unpublish.
+Note: If more than one template is selected,  is disabled. 
+Select Unpublish. 
+The Unpublish Analysis Template dialog box appears.
+Select Yes.
+The template is published and is now in read-only format.
+Access the Reference Documents in an RCAProcedure
+Access the Root Cause Analysis whose Reference Documents you want to access.In the workspace, select the Reference Documents tab.
+A list of Reference Documents linked to the selected RCA appears.
+
+
+
+Note: For additional options when working with reference documents, refer to the Manage Reference Documents section in the Record Manager documentation. 
+What To Do Next
+
+Create a Preserve Record
+
+Link an Asset to an RCAProcedure
+Access the Root Cause Analysis to which you want to link an Asset. Select the Linked Assets tab.
+A list of Assets associated with the selected analysis appears.
+
+
+
+Select . 
+The Asset Finder window appears.
+
+
+
+ Select an Asset that you want to associate with the selected RCA, and then select Done. 
+The selected Asset appears in the Linked Assets section. 
+Note: For more information, refer to the Assets section of the documentation.
+What To Do Next
+
+Access the Reference Documents in an RCA
+
+Unlink an Asset from an RCAProcedure
+Access the Root Cause Analysis from which you want to unlink an Asset. Select the Linked Assets tab.
+A list of Assets associated with the selected analysis appears.
+
+
+
+Select the row containing the Asset that you want to unlink from the analysis, and then select . 
+The Delete Linked Asset dialog box appears, asking if you to confirm that you want to unlink the selected Asset.
+Select Yes.
+The association between the selected Asset and the RCA is deleted. 
+Link an Event to an RCAProcedure
+Access the Root Cause Analysis to which you want to link a Production Event. Select the Linked Events tab.
+The Linked Events section appears.
+
+
+
+Select . 
+The Import Production Events window appears, displaying a list of Production Events with the same causing asset as assets linked to the analysis, which have not previously been linked to the Analysis.
+
+
+
+Select a Production Event that you want to associate with the selected RCA, and then select Done. 
+The selected Production Event appears in the Linked Events section. 
+
+
+
+Unlink an Event from an RCAProcedure
+Access the Root Cause Analysis from which you want to unlink a Production Event. Select the Linked Events tab.
+A list of Production Events that have been linked to the selected analysis appears.
+
+
+
+Select the row containing the Production Event that you want to unlink from the analysis, and then select . 
+A confirmation message appears.
+Select Yes.
+The association between the selected Production Event and the RCA is deleted. 
+Access the Root Cause Analysis Team Members SectionAbout This Task
+This topic describes how to access the Team Members section in an RCA. You can access a list of Team Members in the analysis, add new ones, assign roles to Team Members, modify or delete them. 
+Procedure
+Access the Root Cause Analysis for which you want to view a list of Team Members.In the workspace, select the Team Members tab.
+The Team Members section appears, displaying a list of Team Members in the analysis.
+
+Tip: For details about working with teams and the Team Members section, refer to the Teams section of the documentation.
+
+
+
+
+Delete an RCA or an RCA TemplateAbout This Task
+When you delete an RCA or RCA Template, the record is deleted along with all the records that are linked to the Root Cause Analysis except for the:
+
+RCA Recommendations.
+
+RCA Template based on Reliability Center Incorporated (RCI) Intellectual Property.
+Note: Super User or a member of the MI PROACT Administrator Security Group cannot modify or delete the RCA Template based on Reliability Center Incorporated (RCI) Intellectual Property.
+
+Procedure
+Access the RCA Overview page.Select one of the following tabs:
+
+In Progress: Select this tab if you want to view an RCA in In Progress state.
+Published: Select this tab if you want to view an RCA in Published state.
+Template: Select this tab if you want to view an RCA in Template state.
+A list of available analyses appears based on the tab that you selected.
+Select the row that contains the Root Cause Analysis that you want to delete.In the upper-right corner of the section, select .
+The Delete Analysis dialog box appears, asking you to confirm that you want to delete the selected analysis.
+Select Yes. 
+The selected Root Cause Analysis is deleted. 
+
+Related ConceptsAbout Reference Documents
+
+
+
+
+On this pageAbout Root Cause AnalysisAbout PROACT for MeridiumAbout State Management in RCAAbout Analysis Statuses in RCAAbout Analysis TemplatesAbout Team CharterAbout the RCA TeamAbout Assets in RCADefine When a Root Cause Analysis Should be PerformedAccess a Root Cause AnalysisCreate a Root Cause Analysis Copy a Root Cause AnalysisCreate an RCA Template Create an RCA using an RCA TemplatePublish a Root Cause Analysis (RCA)Unpublish a Root Cause Analysis (RCA)Publish an RCA Template Unpublish an RCA Template Access the Reference Documents in an RCALink an Asset to an RCAUnlink an Asset from an RCALink an Event to an RCAUnlink an Event from an RCAAccess the Root Cause Analysis Team Members SectionDelete an RCA or an RCA Template
+
+
+
+
+
+
+
+
+

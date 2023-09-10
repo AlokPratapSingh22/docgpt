@@ -1,0 +1,190 @@
+
+
+
+Calibration Management | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health Manager
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+Calibration Management
+
+
+
+
+
+
+
+Calibration ManagementDeploy Calibration Management for the First TimeBefore You Begin
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. GE Digital recommends, however, that the tasks be completed in the order in which they are listed.
+
+Results
+StepTaskNotes
+1
+
+Assign Security Users to one or more of the Calibration Management Security
+ Roles.
+This step is required.
+
+2
+
+
+Define alternate search queries.This step is required only if you do not want to use the baseline search queries.
+3
+
+Configure default values for Calibration Template and Calibration Event Records by accessing the Calibration Setup Defaults family in Application Settings.This step is required.
+4
+
+Install the Meridium Device Service on all of the machines that will connect to devices that will be used with Calibration Management.This step is required only if you are performing an automated calibration.
+Upgrade Calibration Management
+Before You Begin
+
+The following tables outline the steps that you must complete to upgrade this module to the latest version of GE Digital APM
+                    .
+                
+These tasks may be completed by multiple people in your organization. We recommend, however, that the tasks be completed in the order in which they are listed.
+
+ProcedureUpgrade to the latest version of GE Digital APM.
+
+
+StepTaskNotes1
+Uninstall the previous version of the Meridium Device Service, and install the latest version on all the machines that you will connect to a device used for automated calibration.
+Important: If, however, you use HTTPS to connect to GE Digital APM, then you must follow the instructions in KBA 2850. 
+
+This step is required only if you want to use a device to perform automated calibration. 
+2
+Using the command prompt, navigate to the <GE Digital APM installation folder>/Upgrade folder, and then run the following command: 
+Meridium.DbUtility.CalibDeviceMappingsUpgradeUtility.exe <datasource ID> <username> <password>
+Where,
+
+<datasourceID> is the identification of your data source.
+
+<username> is the GE Digital APM username.
+
+<password> is the GE Digital APM password. 
+
+
+This step is required only if you want to use the Fluke documenting process calibrator. This will replace the old Calibration Device Mappings for the device with the new ones. It will also update the existing templates to use the new Calibrator Device Mappings.
+After you complete this step, a log file is generated containing information about the upgrade process.
+
+Install the Meridium Device ServiceAbout This Task
+Important:  You must repeat this procedure on each machine to which you will connect a calibrator.
+The Meridium Device Service can be installed as part of the workflow when you try to send data to calibrator or verify the settings of the calibrator.
+ProcedureAccess the Calibration Management Overview page. 
+Note:  A calibrator does not need to be connected.
+Select the Calibration Tools tab.
+The Calibration Tools section appears, displaying a list of test equipment and standard gas cylinders.
+In the upper-right corner of the page, select Calibrator Settings.
+The Calibrator Settings window appears.
+
+
+In the Select Device box, select the required device.If you selected the CMX Calibration Management software, enter values in the following fields:
+If you want to test the connection of the CMX Calibration Management software, select the Perform Connection Test check box.
+In the Device Service Settings Service Port box, enter the value of the service port number that you have configured. The default value in the Device Service Settings Service Port box is 2014.
+
+If you selected a Fluke documenting process calibrator, enter values in the following fields:
+
+In the COM Port box, select the communication port number to which the calibrator is connected.
+Important:
+GE Digital APM supports port numbers in the range of COM1 through COM4. If the communication port number of the calibrator does not fall within this range, you must change the value in the Device Manager, or connect the calibrator to a different port.
+
+If you want to test the connection of the Fluke documenting process calibrator, select the Perform Connection Test check box.
+Note:  The Baud Rate box contains the value 9600. You cannot change this value.
+
+In the Device Service Settings Service Port box, enter the value of the service port number that you have configured. The default value in the Device Service Settings Service Port box is 2014.
+
+If you selected a GE Druck documenting process calibrator, enter values in the following fields:
+If you want to test the connection of the GE Druck documenting process calibrator, select the Perform Connection Test check box.In the Device Service Settings Service Port box, enter the value of the service port number that you have configured. The default value in the Device Service Settings Service Port box is 2014.
+Select Done.
+The  Calibrator Settings window appears, indicating that the Meridium Device Service is not installed.
+
+
+Select Download.
+The file MeridiumDevices.exe is downloaded.
+Run MeridiumDevices.exe, and then follow the instructions in the installer.
+The Meridium Device Service is installed.
+
+
+
+
+
+On this pageDeploy Calibration Management for the First TimeUpgrade Calibration Management
+Install the Meridium Device Service
+
+
+
+
+
+
+
+
+

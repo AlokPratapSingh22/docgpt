@@ -1,0 +1,102 @@
+
+
+
+Inactive Hours Field | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Mappings
+Allowable Event Types in Related Events 
+Fields that can be Populated from one of the Three Related Records 
+Fuel Code Fields 
+Fuel Information Fields 
+Inactive Hours Field 
+Overlapping between an Outage Event and a Derate Event
+Capacity Event Types Affecting Performance Records
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Reference
+Inactive Hours Field 
+
+
+
+
+
+
+
+Inactive Hours Field Inactive Hours Field
+The GE Digital APM system calculates the time between the values in the Event Start Date and the Event End Date fields in each Primary Event record and stores it in the Event Duration field of the Primary Event record. The value in the Event Duration field will be used to populate the Inactive Hours field in the Performance record that is linked to the Primary Event record if the Capacity Event Type field in the Primary Event record contains one of the following values:
+IR (Inactive Reserve) MB (Mothballed) RU (Retired) 
+If multiple Primary Event records are linked to a Performance record, then the sum of the values in the Event Duration field in all Primary Event records will be used as the total event duration. This calculated value is then used to populate the Inactive Hours field.
+Consider the following example.
+ Primary Event - IR (Inactive Reserve ) Primary Event - M (Mothball ) Primary Event - RU (Retired) Event Start 01/01/2016 12:00 AM 01/02/2016 12:00 AM 01/03/2016 12:00 AM Event End 01/02/2016 12:00 AM 01/03/2016 12:00 AM 01/04/2016 12:00 AM 
+In this example, the event duration for each Primary Event record is 24 hours. In the Performance record for January 2016 for the GAA Unit record to which these three Primary Event records are linked, the Inactive Hours field would contain the sum of the duration of these three events, or 72 hours.
+
+
+
+
+
+On this pageInactive Hours Field
+
+
+
+
+
+
+
+
+

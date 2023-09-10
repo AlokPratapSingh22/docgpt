@@ -1,0 +1,98 @@
+
+
+
+SIL Verification | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+WorkflowsSIL Assessment
+SIL Verification
+SIL Validation 
+SIS Trip Reporting
+Custom Device
+SRS
+
+
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+Workflows
+SIL Verification
+
+
+
+
+
+
+
+SIL VerificationSIS Management: SIL Verification WorkflowThis workflow describes the process of verifying that the Safety Integrity Level (SIL) value for an Instrumented Function meets the target SIL defined in SIL assessment.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Define/Re-design PIL Persona: AnalystDetermine if there is a Protective Instrument Loop (PIL) for the Instrumented Function. If one exists, redesign the loop based on the requirement. If one does not exist, define the PIL.PIL Elements Defined? Persona: AnalystDetermine if there are sensors, logic solvers, and final elements in the PIL.Define PIL Elements Persona: AnalystAfter you identify the elements of the PIL, enter the details of each element in the corresponding record that is created when you create a PIL, such as the type, manufacturer, model number, and the failure rate.Use an SERH Device or a Custom Device Persona: AnalystYou can link a custom device or an element from SERH. This will populate the interfaces, modules, and channels for the element as needed. Alternatively, you can use the failure rate data provided by the manufacturer of the device, failure distributions, or other failure rate databases.PIL Results Calculated Persona: AnalystAfter you select an element from SERH, the details of the element such as the mean time to repair and mission time are populated. Based on these values, the probability of failure, spurious trip limit, and other values are calculated. GE Digital APM then calculates the SIL value, spurious trip limit, and other values for the entire loop using the Markov calculation engine.Verify PIL Calculation Results Persona: AnalystVerify if the loop calculations meet the target SIL requirement specified in SIL Assessment.Modify Test Interval Persona: AnalystYou can modify the proof test intervals of each element to ensure that the SIL value meets the target SIL value. You can manage proof testing in SIL Validation.SIL Validation Persona: AnalystGo to the SIL Validation workflow.Modify PIL Design Persona: AnalystElements with better failure rates can be substituted or additional elements can be added in voted scenarios to improve performance.SIL Assessment Persona: AnalystGo to the SIL Assessment workflow.Custom Device Persona: AnalystGo to the Custom Device workflow.
+
+
+
+
+On this pageSIS Management: SIL Verification WorkflowDefine/Re-design PILPIL Elements Defined?Define PIL ElementsUse an SERH Device or a Custom DevicePIL Results CalculatedVerify PIL Calculation ResultsModify Test IntervalSIL ValidationModify PIL DesignSIL AssessmentCustom Device
+
+
+
+
+
+
+
+
+

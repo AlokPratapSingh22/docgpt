@@ -1,0 +1,989 @@
+
+
+
+System Reliability Analyses | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System ReliabilitySystem Reliability: Overview
+System Reliability: Workflow
+System Reliability Analyses 
+Resources
+System Scenario
+Diagrams
+Risks
+Actions
+Global Events
+Grid View
+Simulations
+
+
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+System Reliability
+System Reliability Analyses 
+
+
+
+
+
+
+
+System Reliability Analyses About System Reliability AnalysisSystem Reliability is a feature of GE Digital APM Reliability Analytics that allows you to model different system scenarios (often referred to as RAM, i.e., Reliability, Availability, and Modelling) and then run Monte Carlo simulations to simulate the behavior of the system so that you can predict the cost and reliability of the system and its elements.System Reliability can be a useful tool in various situations:When you are constructing a new system, you can use a System Reliability Analysis to model various options for the construction of the system and then choose the option that is the most reliable and cost-effective.For existing systems, you can use a System Reliability Analysis to evaluate how the system could be modified to increase reliability and production output.Using a System Reliability Analysis, you can:Estimate the overall reliability and cost of a system, including the estimated reliability for each of the included pieces of equipment and locations.Use equipment and location information that is already stored in the database or create new equipment and locations to use in the analysis.Add maintenance and downtime to the system and recalculate the effects of additions.View a graphical summary of the cost and reliability predictions for a system.Model different scenarios to compare reliability and cost across multiple systems.Access a System Reliability AnalysisProcedure
+Access the RA Overview page.Select the System Reliability tab. 
+A list of System Reliability Analyses available in the database appears. 
+
+
+
+Select a System Reliability Analysis whose summary you want to view.
+The Analysis Summary workspace for the selected analysis appears. 
+The workspace contains the following tabs:
+
+
+Definition: Contains the details of the selected System Reliability Analysis.
+Note: As needed, in the Definition section, you can select  to modify the values in the available fields, and then select  to save your changes.
+
+Summary: The Summary tab is selected by default, displaying the Total Cost graph for all the Scenarios within the selected System Reliability Analysis. You can also view the following graphs for all the Scenarios within the selected System Reliability Analysis: 
+Total Cost Trend graph
+
+Annual Action Cost graph
+
+Action Cost Trend graph
+
+Resource Occurrence graph
+
+Resource Time graph
+
+Resource Cost graph
+
+
+Resources: Contains a list of the resources that can be applied to Risks and Actions in the selected System Reliability Analysis. 
+The left pane contains the following tabs:
+
+Simulation Results
+: Contains the  Simulation Results.
+The left pane also contains a list of Scenarios available for the selected System Reliability Analysis.
+
+
+
+Create a System Reliability AnalysisAbout This Task
+To develop a System Reliability Analysis, you must first define the parameters of the analysis, and then create a System Scenario. The analysis parameters serve as inputs to the simulation and will affect the simulation results. You can modify the analysis parameters and rerun the simulation to see the effect that they have on the results.
+Procedure
+Access the RA Overview page.In the upper-right corner, select New Analysis, and then select System Reliability.
+The System Reliability page appears, displaying a blank datasheet in the Analysis Summary workspace.
+
+
+
+As needed, enter the values in the available fields, and then select . 
+The System Reliability Analysis is created.
+What To Do Next
+
+
+Create a System Scenario
+
+
+About Components in a System Reliability Analysis
+A System Reliability Analysis is made up of records and links as defined by the System Reliability data model. At a conceptual level, groups of records and links make up the main elements of the analysis, as defined in the following list:
+
+ System Reliability analysis : A collection of Scenarios, Resources, and simulation results that make up a given analysis. A System Reliability Analysis is represented by a System analysis record, which stores identifying information about the analysis and is linked to other records that make up the analysis.
+
+ Scenario : A representation of one design option for a given system. A Scenario is represented by a System Scenario record, which contains all the identifying information for the Scenario and is linked to other records that help define the Scenario. Each Scenario can contain the following components:
+
+
+ Diagram : A logical, visual representation of the physical structure of a system, including all the elements in the system and the connections between them. A Diagram might be the representation of a system as it physically exists at your work site, or it might represent a variation of a physical system developed for the purpose of analyzing how changes to the system could impact maintenance and production costs. Each Scenario contains one Diagram.
+A Diagram is represented by a System Subsystem record, which can be linked to System Subsystem, System Sensor, System Buffer, System Link, System Asset, and System Switch records. The items that these records represent are referred to as elements, which are simply the components that make up the Diagram itself.
+
+ Risk : A component that identifies a specific way that a piece of equipment or location can fail and specifies the consequences of the failure and includes Time to Failure (TTF) and Time to Repair (TTR) distribution data. A Risk is represented by a System Risk record, which contains all of the identifying information for the Risk.
+ Action : A component that identifies a specific operation that can be performed against a piece of equipment or location. Actions include condition-based maintenance, procedures, redesigns, time-based maintenance, and training, and may or may not mitigate Risks. Actions are represented by records in the System Condition Monitor, System Inspection, System Preventive Maintenance, or System Special Action families, which contain all the identifying information for the Action.
+ Global Event : A component that groups together Actions that require a system shutdown. Scheduling a Global Event can make a system more efficient by providing more time in which to run the system while still allowing maintenance and other Actions to take place. A Global Event is represented by a System Global Event record, which contains all the identifying information for the Global Event.
+ Resource: A component of a System Reliability Analysis that associates a cost with an occurrence of an Action or Risk. Resources are defined for a System Reliability Analysis and are represented by a System Resource record.
+ Simulation Results : The outcome of running a simulation against all Scenarios included in a given System Reliability Analysis. Simulation results are stored in System Element Result, System Action Result, or System Resource Result records, which are linked to the root System analysis record.
+Example of a System Reliability Analysis
+This topic provides an example of a System Reliability Analysis. This example will be referred to as necessary throughout the System Reliability Analysis documentation.
+This System Reliability Analysis example involves a water bottling facility, which contains a system that performs the following steps in the water bottling process:
+Collects water from a source via a pump.Runs the water through a bottling subsystem, which fills bottles and attaches caps and labels to the bottles.
+Note: In this example, we assume that the bottles, labels, and caps are produced at a separate facility and utilized in this process.
+For our example, we will use three different scenarios to evaluate the reliability and cost associated with three different models for this system:
+Scenario A
+Diagram
+Scenario A represents the current structure of the system as shown in the following image. 
+
+
+
+The physical model for Scenario A includes the following components:
+
+Water Source: Produces water that can be used in the water bottling process. For our example, we will assume that the Water Source is a naturally occurring spring. This component is represented by an Asset element in the Diagram for Scenario A.
+Water Pump: Pulls water from the Water Source and into the Buffer. This component is represented by an Asset element in the Diagram for Scenario A.
+Water Tank: Stores water and feeds it into the Bottling Subsystem. This component is represented by a Buffer element in the Diagram for Scenario A.
+Bottling Subsystem: Fills bottles and attaches labels and caps. This subsystem is comprised of three Asset elements (Bottling Line 1, Bottling Line 2, and Bottling Line 3) and a Link. This component is represented by a Subsystem element in the Diagram for Scenario A.
+Link: Combines and manages the production of the Bottling Lines within the Bottling Subsystem. The Link specifies that two of the three Bottling Lines must be running for the entire Subsystem to run. This component is represented by a Link in the Diagram for Scenario A.
+Risks
+When the Water Pump element fails due to a risk, the entire system will fail and accrue lost production costs. The following risks are assigned to the Water Pump element in Scenario A:
+Seal Failure.Bearing Failure.Impeller Failure.
+Every time the Water Pump experiences an unplanned Bearing Failure, the correction will require the use of the Bearing, Mechanic, and Seal Resources. If the Water Pump requires a bearing replacement as the result of a planned correction, only the Bearing and Mechanic Resources will be needed. Therefore, the following Resources have been assigned to the Bearing Failure Risk:
+
+Unplanned Resources: Mechanic, Bearings, and Seal.
+Planned Resources: Mechanic and Bearings.
+Actions
+There are no actions defined for Scenario A.
+Scenario B
+Diagram
+Scenario B represents the current structure of the system as shown in the following image. 
+
+
+
+The physical model for Scenario B is shown in this image. It is identical to Scenario A, but Actions and additional Resources have been assigned to the Water Pump in this Scenario to mitigate Risks.
+Risks
+The same Risks are defined for Scenario B as are defined for Scenario A. The same Resources are assigned to these Risks.
+Actions
+For Scenario B, the following Actions have been defined for the Water Pump:
+
+Replace Seal: A time-based maintenance Action that mitigates the Seal Failure Risk.
+Vibration Analysis: An inspection or periodic condition-based maintenance Action that mitigates the Bearing Failure Risk. The Vibration Technician Resource has been assigned to the Vibration Analysis Action.
+Redesign Impeller: A redesign Action that mitigates the Impeller Failure Risk.
+Scenario C
+Diagram
+Scenario C represents the current structure of the system as shown in the following image. 
+
+
+
+The physical model for Scenario C is shown in this image. It is similar to Scenario A but contains the following additional components:
+
+Water Pump 2: Pulls water from the Water Source and into the Water Tank. Water Pump 2 serves as a backup or standby for Water Pump 1 and is represented by an Asset element in the Diagram for Scenario C.
+Sensor 1: Monitors Water Pump 1 for failure. When Water Pump 1 fails, Sensor 1 activates Switch 2, indicating that Water Pump 2 will start running, and deactivates Switch 1 to indicate that Water Pump 1 has stopped running. Sensor 1 is represented by a Sensor element in the Diagram for Scenario C.
+Sensor 2: Monitors Water Pump 2 for failure. When Water Pump 1 fails, Water Pump 2 will start running and will continue to run until it fails. When Water Pump 2 fails, Sensor 2 will activate Switch 1, indicating that Pump 1 is running, and will deactivate Switch 2 to indicate that Water Pump 2 has stopped running. Sensor 2 is represented by a Sensor element in the Diagram for Scenario C.
+Switch 1: Is initially set to On, indicating that Water Pump 1 is initially running. When activated by Sensor 1, connects the Water Source and Water Pump 1 so that Pump 1 will feed water into the Water Tank. When deactivated by Sensor 1, Switch 1 disconnects Water Source and Water Pump 1. Switch 1 is represented by a Switch element in the Diagram for Scenario C.
+Switch 2: Is initially set to Off, indicating that Pump 2 is not running initially. When activated by Sensor 2, connects the Water Source and Water Pump 2 so that Pump 2 will feed water into the Water Tank. When deactivated by Sensor 2, Switch 2 disconnects Water Source and Water Pump 2. Switch 2 is represented by a Switch element in the Diagram for Scenario C.
+Risks
+The same Risks are defined for Scenario C as are defined for Scenarios A and B. The same Resources are assigned to these Risks.
+Actions
+There are no Actions defined for Scenario C.
+
+In addition to these scenarios, we will define the following resources for our example:
+
+Bearing: A replacement bearing.
+Seal: A replacement seal.
+Mechanic: A mechanic who will perform needed maintenance.
+Vibration Technician: A professional who will perform vibration analysis.
+Redesign Impeller: A redesign action that mitigates the Impeller Failure Risk.
+Conclusions
+By comparing Scenario A, Scenario B, and Scenario C, we will be able to view each scenario's reliability and cost and identify the scenario that has the highest reliability and lowest cost associated with it. Scenario A represents the current design, and both Scenario B and Scenario C represent modifications to the original design. These modifications support different hypotheses about modifying our current system:
+Scenario B proposes that by implementing certain Actions that mitigate Risks associated with the Water Pump, we may be able to increase the reliability and decrease the cost of the system.Scenario C proposes that by introducing an additional Water Pump, which will prevent a full system failure when Water Pump 1 fails, we may be able to increase the reliability and decrease the cost of the system.
+By modeling and comparing the three different Scenarios, we should be able to draw conclusions and make recommendations about changes that should be implemented to improve the reliability of the system.
+This is a simple example and is limited to three scenarios only. As you develop a System Reliability Analysis, you may want to develop additional scenarios that model other variations to the system. As we continue to use this example throughout the System Reliability documentation, we will provide suggestions for where you might modify or extend our example to take advantage of the System Reliability features to create a more complex, in-depth analysis.
+Example System Analysis Record Data
+This example contains one root System Analysis record. The following values exist in the fields of that record:
+
+FieldsValuesName System Reliability Analysis ExampleCurrency $Start Date 1/1/2010 12:00:00 AMPeriod 7 YearsIterations 1000Time Analysis Type YearlyConfidence (%)90Histogram Bins 20Enable Event Log FalseRandom Seed True
+
+System Scenario Record Data
+The following table shows the data stored in the System Scenario records in this example:
+
+ScenariosValues SpecifiedScenario A
+
+Name: Scenario A 
+
+Description: Current Structure 
+Scenario B 
+
+Name: Scenario B 
+
+Description: Current Structure With Actions 
+Scenario C 
+
+Name: Scenario C 
+
+Description: Redesigned Structure With Backup Pump 
+
+
+System Subsystem Record Data
+Each Scenario in this example contains two System Subsystem records. One System Subsystem record contains the Diagram structure for each Scenario, and the other System Subsystem record contains the Bottling Lines, which are used in all three Scenarios. The following table lists the data that exist in each record.
+
+SubsystemValues Specified
+Diagram for Scenario A
+
+
+Name: Diagram for Scenario A
+
+Production Contribution: 100
+
+Fixed Cost: 0
+
+Variable Cost: 0
+
+Variable Cost Units: Per Day
+
+Lost Production Cost: 100000
+
+Lost Production Cost Units: Per Day
+
+Diagram for Scenario B
+
+
+Name: Diagram for Scenario B
+
+Production Contribution: 100
+
+Fixed Cost: 0
+
+Variable Cost: 0
+
+Variable Cost Units: Per Day
+
+Lost Production Cost: 100000
+
+Lost Production Cost Units: Per Day
+
+Diagram for Scenario C
+
+
+Name: Diagram for Scenario C
+
+Production Contribution: 100
+
+Fixed Cost: 0
+
+Variable Cost: 0
+
+Variable Cost Units: Per Day
+
+Lost Production Cost: 100000
+
+Lost Production Cost Units: Per Day
+
+Bottling Subsystem
+
+
+Name: Bottling Subsystem
+
+Production Contribution: 100
+
+Fixed Cost: 0
+
+Variable Cost: 0
+
+Variable Cost Units: Per Day
+
+Lost Production Cost: 0
+
+Lost Production Cost Units: Per Day
+
+
+System Asset Record Data
+The following table shows the data stored in the System Asset records in this example. The light blue row identifies the Scenario(s) in which each Asset element is used.
+
+AssetValues SpecifiedAll ScenariosWater Source
+
+Name: Water Source
+
+Production Contribution: 100
+
+Fixed Cost: 0
+
+Variable Cost: 0
+
+Variable Cost Units: Per Day
+
+Lost Production Cost: 0
+
+Lost Production Cost Units: Per Day
+Bottling Line
+
+Name: <Bottling Line 1, Bottling Line 2, or Bottling Line 3> 
+All Bottling Lines use the same data with the exception of the Name field, whose value is different for each Asset element. 
+
+Production Contribution: 40
+
+Fixed Cost: 0
+
+Variable Cost: 0
+
+Variable Cost Units: Per Day
+
+Lost Production Cost: 0
+
+Lost Production Cost Units: Per Day
+Scenario AWater Pump
+
+Name: Water Pump
+
+Production Contribution: 100
+
+Fixed Cost: 5000
+
+Variable Cost: 50
+
+Variable Cost Units: Per Hour
+
+Lost Production Cost: 0
+
+Lost Production Cost Units: Per Day
+Scenario BWater Pump
+
+Name: Water Pump
+
+Production Contribution: 100
+
+Fixed Cost: 5000
+
+Variable Cost: 50
+
+Variable Cost Units: Per Hour
+
+Lost Production Cost: 0
+
+Lost Production Cost Units: Per Day
+Scenario C
+Water Pump 1
+ 
+
+Name: Water Pump 1
+Production Contribution: 100
+
+Fixed Cost: 5000
+
+Variable Cost: 50
+
+Variable Cost Units: Per Hour
+
+Lost Production Cost: 0
+
+Lost Production Cost Units: Per Day
+Water Pump 2
+
+Name: Water Pump 2
+
+Production Contribution: 100
+
+Fixed Cost: 5000
+
+Variable Cost: 50
+
+Variable Cost Units: Per Hour
+
+Lost Production Cost: 0
+
+Lost Production Cost Units: Per Day
+
+
+System Buffer Record Data
+The following table shows the data stored in the System Buffer record for this example:
+
+FieldValue
+Name
+Water Tank
+Production Contribution
+100
+Initial Quantity in Percentage
+50
+Time to Empty
+0.5
+Time to Empty Units
+Days
+Time to Refill
+5
+Time to Refill Units
+Days
+
+System Link Record Data
+The following table shows the data stored in the System Link record for this example:
+
+FieldValue
+Name
+Link
+Minimum Predecessors:2
+
+System Sensor Record Data
+The following table shows the data stored in the System Sensor records for this example:
+
+SensorValues Specified
+Sensor 1
+
+
+Name: Sensor 1
+
+Monitored Elements: Water Pump 1
+
+Activated Switches : Switch 2
+
+Deactivated Switches: Switch 1
+
+Sensor 2
+
+Name: Sensor 2
+Monitored Elements: Water Pump 2
+
+Activated Switches: Switch 1
+
+Deactivated Switches: Switch 2
+
+
+Switch Element Data
+The following table shows the data stored in the System Switch records in this example:
+
+ElementValues Specified Switch 1 
+
+Name: Switch 1
+
+Is Initially On: Yes
+
+Production Contribution: 100
+
+Fixed Cost: 0
+
+Variable Cost: 0
+
+Variable Cost Units: Per Day
+
+Lost Production Cost: 0
+
+Lost Production Cost Units: Per Day
+ Switch 2 
+
+Name: Switch 2
+
+Is Initially On: No
+
+Product Contribution: 100
+
+Fixed Cost: 0
+
+Variable Cost: 0
+
+Variable Cost Units: Per Day
+
+Lost Production Cost: 0
+
+Lost Production Cost Units: Per Day
+
+
+Risk Data
+The following tables show the data for the Risks used in this example:
+Note: The Source column identifies the entity family name of the record in which the associated data is stored. The data from all source records is combined to create the comprehensive Risk data.
+RiskWater Source FailureAssigned ToWater Source Asset in all Scenarios SourceSystem Risk Record Values specified
+
+Name: Water Source Failure
+Last Failure: 1/1/1999 12:00:00 AM
+Fixed Unplanned Correction Cost: 0
+Variable Unplanned Correction Cost: 0 Per Day
+Planned Correction Cost: 0
+Planned Correction Duration: 0 Hours
+Is Active: True
+Is Latent: False
+Failure Without Replacement: False
+Number of Subcomponents: 1
+PF Interval: 0 Days
+Repair Immediately: True
+Percentage of PF Interval to Wait(%): 0
+
+RiskWater Source FailureAssigned ToWater Source Asset in all Scenarios SourceExponentialValues specifiedRecord 1:
+Name: TTF Distribution
+Distribution Type: Exponential
+Time Unit: Years
+MTBF: 20
+Enable Distribution Association: NoRecord 2:
+Name: TTF Distribution
+Distribution Type: Exponential
+Time Unit: Weeks
+MTBF: 2
+Enable Distribution Association: No
+RiskBottling Line Failure Assigned ToBottling Line Asset in all Scenarios SourceSystem Risk Record Values specified
+
+Name: Bottling Line Failure
+Last Failure: 1/1/1999 12:00:00 AM
+Fixed Unplanned Correction Cost: 0
+Variable Unplanned Correction Cost: 0 Per Day
+Planned Correction Cost: 0
+Planned Correction Duration: 0 Hours
+Is Active: True
+Is Latent: False
+Failure Without Replacement: False
+Number of Subcomponents: 1
+PF Interval: 0 Days
+Repair Immediately: True
+Percentage of PF Interval to Wait (%): 0
+
+RiskBottling Line Failure Assigned ToBottling Line Asset in all Scenarios SourceExponentialValues specified
+
+Name: TTF Distribution
+Distribution Type: Exponential
+Time Unit: Months
+MTBF: 12
+Enable Distribution Association: No
+
+RiskBottling Line Failure Assigned ToBottling Line Asset in all Scenarios SourceNormalValues specified
+
+Name: TTF Distribution
+Distribution Type: Exponential
+Time Unit: Days
+MTTR: 1
+Enable Distribution Association: No
+
+RiskSeal FailureAssigned To
+Water Pump Asset in Scenario A and BWater Pump 1 and Water Pump 2 Assets in Scenario C
+SourceSystem Risk RecordValues specified
+Name: Seal Failure
+Last Failure: 1/1/1999 12:00:00 AM
+Fixed Unplanned Correction Cost: 1500
+Variable Unplanned Correction Cost: 1000 Per Day
+Planned Correction Cost: 1000
+Planned Correction Duration: 4 Hours
+Is Active: True
+Is Latent: False
+Failure Without Replacement: No
+Number of Subcomponents: 1
+PF Interval: 30 Days
+Repair Immediately: True
+Percentage of PF Interval to Wait (%): 0
+
+RiskSeal FailureAssigned To
+Water Pump Asset in Scenario A and BWater Pump 1 and Water Pump 2 Assets in Scenario C
+SourceWeibullValues specified
+
+Name: TTF Distribution
+Distribution Type: Weibull
+Time Unit: YearsBeta: 4Eta: 3Gamma: 0Enable Distribution Association: No
+
+RiskSeal FailureAssigned To
+Water Pump Asset in Scenario A and BWater Pump 1 and Water Pump 2 Assets in Scenario C
+SourceNormalValues specified
+
+Name: TTR Distribution
+Distribution Type: SingleValue
+Time Unit: HoursValue: 12
+Enable Distribution Association: No
+
+RiskBearing FailureAssigned To
+Water Pump Asset in Scenario A and BWater Pump 1 and Water Pump 2 Assets in Scenario C
+SourceSystem Risk Record Values specified
+
+Name: Bearing Failure
+Last Failure: 1/1/1999 12:00:00 AM
+Fixed Unplanned Correction Cost: 2000
+Variable Unplanned Correction Cost: 1000 Per Day
+Planned Correction Cost: 1000
+Planned Correction Duration: 4 Hours
+Is Active: True
+Is Latent: False
+Failure Without Replacement: False
+Number of Subcomponents: 1
+PF Interval: 6 Weeks
+Repair Immediately: True
+Percentage of PF Interval to Wait (%): 0
+
+RiskBearing FailureAssigned To
+Water Pump Asset in Scenario A and BWater Pump 1 and Water Pump 2 Assets in Scenario C
+SourceExponentialValues specified
+
+Name: TTF Distribution
+Distribution Type: Exponential
+Time Unit: Months
+MTBF: 60
+Enable Distribution Association: No
+
+RiskBearing FailureAssigned To
+Water Pump Asset in Scenario A and BWater Pump 1 and Water Pump 2 Assets in Scenario C
+SourceExponentialValues specified
+
+Name: TTR Distribution
+Distribution Type: Exponential
+Time Unit: HoursMTTR: 8
+Enable Distribution Association: No
+
+RiskImpeller FailureAssigned To
+Water Pump Asset in Scenario A and BWater Pump 1 and Water Pump 2 Assets in Scenario C
+SourceSystem Risk Record Values specified
+
+Name: Impeller Failure
+Last Failure: 1/1/1999 12:00:00 A.M.
+Fixed Unplanned Correction Cost: 1500
+Variable Unplanned Correction Cost: 1000 Per Day
+Planned Correction Cost: 1000
+Planned Correction Duration: 4 Hours
+Is Active: True
+Is Latent: False
+Failure Without Replacement: False
+Number of Subcomponents: 1
+PF Interval: 0 Days
+Repair Immediately: True
+Percentage of PF Interval to Wait (%): 0
+
+RiskImpeller FailureAssigned To
+Water Pump Asset in Scenario A and BWater Pump 1 and Water Pump 2 Assets in Scenario C
+SourceExponentialValues specified
+
+Name: TTF Distribution
+Distribution Type: Exponential
+Time Unit: Months
+MTBF: 24
+Enable Distribution Association: No
+
+RiskImpeller FailureAssigned To
+Water Pump Asset in Scenario A and BWater Pump 1 and Water Pump 2 Assets in Scenario C
+SourceNormalValues specified
+
+Name: TTR Distribution
+Distribution Type: Single Value
+Time Unit: HoursValue: 12
+Enable Distribution Association: No
+
+Action Data
+The following table shows the data used in the Actions in this example. This information defines the properties of the Actions associated with the Water Pump element in Scenario B.
+Note: The Source column identifies the entity family name of the record in which the associated data is stored. The data from all source records is combined to create comprehensive Action data.
+Action Mitigated Risk Source Values Specified Redesign Impellers Impeller Failure 
+System Special Action Record
+
+
+Name: Redesign Impellers
+
+Action Cost: 1600
+
+Interval: 2 Years
+
+Duration: 2 Days
+
+Shutdown Required: True
+
+One Time Action: True
+
+Replace Failure Consequence: True
+
+Replace TTF Distribution: True
+
+System Risk Assessment
+
+
+Mitigated Unplanned Correction Cost: 10001 
+Note: When you associate a Risk to an Action that is represented by a System Special Action record, and select the hyperlinked Action name in the Actions pane on the System Reliability Scenarios - Actions page, the Mitigated Unplanned Correction Cost field appears in the New Failure Consequence section on the Mitigated Risks tab and is labeled Fixed Unplanned Correction Cost.
+ Weibull 
+
+Name: New TTF Distribution
+
+Distribution Type: Weibull
+
+Time Unit: Months
+
+Beta: 4
+
+Eta: 48
+
+Gamma: 0
+ Replace Seals Seal Failure System Preventive Maintenance Record 
+
+Name: Replace Seals
+
+Action Type: Time-Based Maintenance (Preventive) (PM)
+
+Action Cost: 2000
+
+Interval: 2 Years
+
+Duration: 4 Hours
+
+Shut Down Required: True
+
+One Time Action: False
+ Vibration Analysis  Bearing Failure  System Inspection Record 
+
+Name: Vibration Analysis
+
+Action Type: Condition-Based Maintenance (Predictive) (CM)
+
+Condition Monitoring Type: Periodic
+
+Action Cost: 0
+
+Interval: 3 Weeks
+
+Duration: 1 Hours
+
+Shut Down Required: False
+
+One Time Action: False
+
+Detection Probability(%): 90
+System Resource Record Data
+The following table shows the data stored in the System Resource records in this example:
+
+ResourceValues Specified  Bearing 
+
+Name: Bearing
+
+Fixed Cost: 200
+
+Variable Cost: 0 Per Day
+
+Count Occurrences: True
+ Mechanic 
+
+Name: Mechanic
+
+Fixed Cost: 0
+
+Variable Cost: 100 Per Hour
+
+Count Occurrences: False
+ Seal 
+
+Name: Seal
+
+Fixed Cost: 250
+
+Variable Cost: 0 Per Day
+
+Count Occurrences: True
+ Vibration Technician 
+
+Name: Vibration Technician
+
+Fixed Cost: 0
+
+Variable Cost: 100 Per Hour
+
+Count Occurrences: False
+
+
+System Resource Usage Record Data
+The following table shows the data stored in the System Resource Usage records in this example:
+
+ResourceLinked ToValues Specified  Vibration Technician  Vibration Analysis Action 
+
+Resource: Vibration Technician
+
+Quantity: 1
+
+Duration: 1
+
+Duration Units: Hours
+ Mechanic  Bearing Failure Risk 
+Planned Resource Usage
+
+Resource: Mechanic
+
+Quantity: 1
+
+Duration: 4
+
+Duration Units: Hours
+ 
+Unplanned Resource Usage
+
+Resource: Mechanic
+
+Quantity: 1
+
+Duration: 8
+
+Duration Units: Hours
+ Bearing  Bearing Failure Risk 
+Planned Resource Usage
+
+Resource: Bearing
+
+Quantity: 2
+
+Duration: 0
+
+Duration Units: Hours
+ 
+Unplanned Resource Usage
+
+Resource: Bearing
+
+Quantity: 2
+
+Duration: 0
+
+Duration Units: Hours
+ Seal  Bearing Failure Risk 
+Unplanned Resource Usage
+
+Resource: Seal
+
+Quantity: 1
+
+Duration: 0
+
+Duration Units: Hours
+
+
+Delete a System Reliability AnalysisProcedure
+Access the RA Overview page.Select System Reliability.
+A list of System Reliability Analysis available in the database appears.
+
+
+
+Select the row containing the System Reliability Analysis that you want to delete, and then select . 
+The Delete System Reliability Analysis dialog box appears, asking you to confirm that you want to delete the selected System Reliability Analysis. 
+Select Yes. 
+The selected System Reliability Analysis is deleted.
+Results
+Any associated Scenarios and the components of each of the Scenario are deleted.
+Access System Reliability ReportProcedure
+Access the System Reliability Analysis whose report you to want access.In the upper-right corner of any workspace within the selected System Reliability Analysis, select Report.
+The System Reliability report appears in a new browser tab. 
+By default, the report contains the following sections:
+
+Summary
+
+Simulation Result Summary
+
+Plots
+
+Simulation Results - Elements
+
+Simulation Results - Actions
+
+Simulation Results - Resources
+
+About System Reliability Analysis Report
+The baseline GE Digital APM database includes the System Reliability Report, which you can use to view a summary of the results of a System Reliability Analysis. 
+The following table provides a list and description of the Catalog items that are used to generate the System Reliability Report. Each report provides a formatted view of the supporting query identified in the table. For additional details on the data that is included in the subreport, you can run any of the queries, which are stored in the Catalog folder \\Public\Meridium\Modules\Reliability Manager\Reports.
+Report Supporting Query Description SystemReliability System Reliability - Main Provides the information that is displayed in the Summary and Plots sections of the System Reliability Report. SystemReliabilitySummaryResultReport SystemReliability - SummaryResult Provides the information that is displayed in the Simulation Result Summary section of the System Reliability Report. SystemReliabilityElementResultReport SystemReliability - ElementResult Provides the information that is displayed in the Simulation Results - Elements section of the System Reliability Report. SystemReliabilityActionResultReport System Reliability - ActionResult Provides the information that is displayed in the Simulation Results - Actions section of the System Reliability Report. SystemReliabilityResourceResultReport SystemReliability - ResourceResult Provides the information that is displayed in the Simulation Results - Resources section of the System Reliability Report. 
+Each report query contains a prompt on the ENTY_KEY field of the System Analysis family. When you run the System Reliability Report while viewing a System Reliability Analysis, the ENTY_KEY of the System Analysis record associated with the current analysis is passed automatically to the prompt, and the results for the current System Analysis will be displayed. If you run one of the reports or queries listed in the table directly from the Catalog, however, you will need to supply the ENTY_KEY of a System Analysis record manually to retrieve results.
+Throughout this documentation, we refer to the main report, the subreports, and the supporting queries collectively as the System Reliability Report.
+Summary Section
+The Analysis Summary section of the System Reliability Report displays general summary information that is stored in the System Analysis record. 
+The following table lists each item in the Analysis Summary section and the corresponding Systems Analysis record fields whose data is displayed in the report:
+
+Report Item Record Field (s)Name Analysis ID  DescriptionDescription Analysis Start Date Analysis Start Date Analysis End Analysis End Date Analysis Period 
+Period 
+Period Units 
+Iterations Iterations Confidence Confidence Last Updated Date LAST UPDT DT Last Updated By 
+LAST UPBY SEUS KEY 
+Note: The name of the Security User associated with this value is displayed in the report. 
+
+
+Simulation Result Summary Section
+The Simulation Result Summary section of the System Reliability Report displays a summary of the information that is displayed in the Elements section in the 
+Simulation Results workspace. Results for each scenario are stored in a System Element Result record. Additional information about each element within a scenario is displayed in the Simulation Results - Elements section of the System Reliability Report.
+The following table lists each item in the Simulation Results Summary section and the corresponding System Element Result record field whose data is displayed in the report.
+
+Report Item Record Field (s)Scenario Scenario Element Element Failures Failures Downtime Downtime Cost Cost Reliability 
+Reliability 
+Note: The values in the Reliability column are formatted as decimals rather than as percentages, as in the Elements section. 
+Availability 
+Availability 
+Note: The values in the Availability column are formatted as decimals rather than as percentages, as in the Elements section. 
+Next Failure TTNF 
+
+Plots Section
+The Plots section of the System Reliability Report displays the graphs that are shown on the Summary section of the 
+Analysis Summary workspace for the selected analysis. 
+The Plots section displays the following graphs:
+
+Total Cost
+
+Total Cost Trend
+
+Annual Action Cost
+
+Action Cost Trend
+
+Resource Occurrence
+
+Resource Time
+
+Resource Cost
+
+Simulation Results Elements Section
+The Simulation Results - Elements section of the System Reliability Report displays results for each Scenario and any Subsystems, Assets, Risks, Switches or Buffers that belong to it. This information, which is stored in System Element Result records, also appears in the 
+Elements
+
+ section in the 
+Simulation Results workspace. 
+The results for each element are stored in a separate System Element Result record, and one row exists for each record. The following table lists each item in the Simulation Results - Elements section and the corresponding System Element Result record field whose data is displayed in the report.
+
+Report Item Record Field (s)Element 
+Element 
+Note: The elements are listed below the root Subsystem of the Scenario to which they belong, with elements appearing below the element to which they belong.
+Failures Failures Downtime Downtime Cost Cost Reliability )
+Reliability 
+Note: The values in the Reliability column are formatted as decimals rather than as percentages, as in the Elements section. 
+Availability 
+Availability 
+Note: The values in the Availability column are formatted as decimals rather than as percentages, as in the Elements section. 
+Next Failure TTNF 
+
+Simulation Results Actions Section
+The Simulation Results - Actions section of the System Reliability Report displays results for the Actions that belong to each Scenario, which are stored in System Action Result records. This is the same information that appears in the Actions section in the 
+Simulation Results workspace. 
+
+Report Item Record Field (s)Action 
+Action 
+Note: Actions are listed below the Scenario to which they belong.
+Occurrences Occurrences Cost Cost Detected Failures Detected Failures 
+
+Simulation Results Resources Section
+The Simulation Results - Resources section of the System Reliability Report displays results for each Resource used in the System Reliability Analysis, which are stored in System Resource Result records. This is the same information that appears in the Resources section in the 
+Simulation Results workspace. 
+The results for each element are stored in a separate System Resource Result record, and one row exists for each record. The following table lists each item in the Simulation Results - Resources section and the corresponding System Resources Result record field whose data is displayed in the report.
+
+Report Item Record Field (s)Resource 
+Action 
+Note: The Resources are listed below the Scenario to which they belong.
+Occurrences Occurrences Time Time Cost Cost 
+
+
+
+
+
+
+On this pageAbout System Reliability AnalysisAccess a System Reliability AnalysisCreate a System Reliability AnalysisAbout Components in a System Reliability AnalysisExample of a System Reliability AnalysisDelete a System Reliability AnalysisAccess System Reliability ReportAbout System Reliability Analysis Report
+
+
+
+
+
+
+
+
+

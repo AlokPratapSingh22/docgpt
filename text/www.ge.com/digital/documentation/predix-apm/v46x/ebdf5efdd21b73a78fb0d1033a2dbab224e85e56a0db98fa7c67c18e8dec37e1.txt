@@ -1,0 +1,140 @@
+
+
+
+Query Expressions, Clauses, and Prompts | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+QueriesWorkflow
+Query Creation
+Query Results
+Query Sources, Fields, Joins, and Hyperlinks
+Query Expressions, Clauses, and Prompts
+Query Timeouts
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Queries
+Query Expressions, Clauses, and Prompts
+
+
+
+
+
+
+
+Query Expressions, Clauses, and PromptsAbout Query Expressions Clauses and PromptsCreate an ExpressionBefore You Begin
+When you construct expressions in the Expression Builder window, the system does not check whether your syntax is correct. The Expression Builder window is simply an interface for selecting the criteria to include in the expression.
+About This TaskThere are two sections on the Expression Builder window: the Simple section and the Advanced section. The steps that you follow to create an expression on a field depend on which cell that you select in the grid in the Conditions section, and which type of expression you want to create.ProcedureTo create a simple expression:For the query in which you want to create a simple expression, access the Design workspace.In the grid in the Conditions section, for the field on which you want to create the expression, in either the Criteria cell or the Or cell, select the button in the right side of the cell.The Simple section of the Expression Builder window appears.Using the fields provided, construct your expression.Select Done.
+The Expression Builder window closes, and in the grid in the Conditions section, <expr> appears in the field on which you created the expression. You can modify the expression directly in the Advanced section of the Expression Builder window.
+To create an advanced expression:For the query in which you want to create an advanced expression, access the Design workspace.In the grid in the Conditions section, in the appropriate Field, Criteria, or Or cell, select the gray button in the right side of the cell. If the Simple section is currently displayed, then select Advanced.The Advanced section of the Expression Builder window appears.Using the fields provided, construct your expression.Select Done.The Expression Builder window closes, and in the grid in the Conditions section, <expr> appears in the field on which you created the expression. Tip:  If you re-access the Expression Builder window via any cell, you can modify the expression directly in the Advanced section of the Expression Builder window, or you can modify previously made selections to update the expression.Create a WHERE ClauseProcedure
+Access the Design workspace for the query within which you want to create a WHERE clause.In the Conditions section, make sure the Show Totals check box is selected.In the Total cell of the desired field, in the drop-down list, select Where.Access the Expression Builder window from the Criteria or Or cells, enter the necessary parameters, and then select Done. Make sure to clear the Include and Display check boxes in the column in which you want to create a WHERE clause.Results
+The WHERE clause is generated in the SQL code.If you want to modify the clause, you can do so in the Expression Builder window, or you can modify the SQL code directly.
+Create a HAVING ClauseProcedure
+Access the Design workspace for the query within which you want to create a HAVING clause.In the Conditions section, make sure the Show Totals check box is selected.In the Total cell of the desired field, in the drop-down list, select any option other than Where.Access the Expression Builder window from the Criteria or Or cells, enter the necessary parameters, and then select Done.Results
+The HAVING clause is generated in the SQL code.If you want to modify the clause, you can do so in the Expression Builder window, or you can modify the SQL code directly.
+Delete an ExpressionProcedure
+Access the Design workspace.In the grid in the Conditions section, for the cell in which you want to delete an expression, select .The expression is removed from the query.Access the Prompt Settings SectionProcedure
+Access the Advanced section of the Expression Builder window for the field on which you want to create a prompt.Select .The Prompt Settings section appears.
+
+Create a Prompt with No List of Valid ValuesProcedure
+Access the Prompt Settings section of the Expression Builder window.
+Define the prompt settings as needed.In the Valid Values list, select Prompt Has No Valid Values, and then select Next.The Configure Default Prompt Value section appears.In the Default Prompt Value box, you can enter a default value for the prompt that will appear when a user runs the query, then select Finish.
+Note: You can select multiple default prompt values only if the Prompt Data Type is set to Character. If you do not want to provide a default value for the prompt, you can leave the text box blank.
+The prompt appears in the Expression Builder window.
+Select Done.The Expression Builder window closes, and then, in the grid in the Conditions section, <expr> appears in the field on which you created the prompt.Results
+When a user runs the query, the prompt will appear. If you specified a default prompt value, that value will appear in a modifiable text box.If the user enters a value that does not exist in the limiting field, the query will not return any results. For example, if two asset types exist in the results, such as Rotating Pumps and Centrifugal Pumps, and the user enters Reciprocating Pump, the query results will be empty.
+Create a Prompt with a Static List of Valid ValuesProcedure
+Access the Prompt Settings section of the Expression Builder window.
+Define the prompt settings as needed.In the Valid Values list, select Static List of Values, and then select Next.The Static List of Valid Values section appears.In the Enter List of Values box, enter the first value that you want to appear in the list, and then select . Repeat this step to continue adding values as needed. To delete a value from the list, select the corresponding . If you are defining a list of values for a numeric field and you enter a non-numeric character in the list, then the Next button will be disabled. You will not be able to proceed or close the Prompt Builder until you replace the non-numeric character with a numeric value.Select the Values are Exclusive check box if you want users to be able to select only from the list of defined values in the prompt window. If you do not select this check box, users will be able to enter alternate values.Select the Allow Multiple Selections check box if you want users to be able to select multiple values by which to filter the query results. The Allow Multiple Selections check box is enabled only if you select the Values are Exclusive check box.Select Next.The Configure Default Prompt Selection section appears.If you want a particular value to be selected by default, then select the row containing the necessary value, and then select Finish.
+Note:  You can select multiple default prompt values only if the Prompt Data Type is set to Character, and you selected the Allow Multiple Selections check box in the Static List of Valid Values section.
+The prompt appears in the Expression Builder window.
+Select Done.The Expression Builder window closes, and then, in the grid in the Conditions section, <expr> appears in the field on which you created the prompt.Results
+When a user runs the query, the prompt will display the list of predefined values. The user will need to select a value to view the query results.
+Create a Prompt with a List of System CodesProcedure
+Access the Prompt Settings section of the Expression Builder window.
+Define the prompt settings as needed.In the Valid Values list, select Values From a System Code Table, and then select Next.The Values From a System Code Table section appears.In the System Code Table list, select the System Code Table whose values you want to display in the prompt.Select the Use Reference System Code check box if you want to specify a referenced System Code Table (i.e., a System Code Table that is referenced within the original table in the Configuration Manager). If you select this check box, then select values in the Reference Table and Reference System Code lists.Select the Values are Exclusive check box if you want users to be able to choose only from the list of presented values in the prompt window. If you do not select this check box, users will be able to enter an alternate value for the prompt.Select the Allow Multiple Selections check box if you want users to be able to select multiple values by which to filter the query results. The Allow Multiple Selections check box is enabled only if you select the Values are Exclusive check box.Select Next.The Configure Default Prompt Selection section appears.If you want a particular value to be selected by default, then select the row containing the necessary value, and then select Finish.
+Note:  You can select multiple default prompt values only if the Prompt Data Type is set to Character, and you selected the Allow Multiple Selections check box in the Values From a System Code Table section.
+The prompt appears in the Expression Builder window.
+Select Done.The Expression Builder window closes, and then, in the grid in the Conditions section, <expr> appears in the field on which you created the prompt.Results
+When a user runs the query, the prompt will contain a list of values as defined in the associated System Code Table.
+Create a Prompt with a List of Query ResultsBefore You BeginYou can use only a Select query for generating a list of prompt values. Note that:If the selected query contains only one column, the values return in that column will be displayed in the list of available prompt values. For example, if the query contains the Equipment ID column, the prompt will display a list of Equipment IDs.If the selected query contains more than one column, the list of prompt values will contain a concatenated list of values from the second column and each subsequent column. For example, if the query results look like this table:Equipment IDManufacturerDescriptionStatus123AlcoTankActive456WhitlockPumpInactive789DeltaPressure VesselActive... the list of prompt values will look like this:Alco Tank ActiveWhitlock Pump InactiveDelta Pressure Vessel ActiveTip:  Select Unique Values Only in the prompt query to keep the prompt list from containing duplicate values.About This TaskWhen you create a prompt that presents a list of results from another query, the prompt selection dialog box will display a drop-down list of values retrieved by running that query.Tip:  You can use a prompt with a list of query results to filter a dependent prompt's values.Procedure
+Access the Prompt Settings section of the Expression Builder window.
+Define the prompt settings as needed.In the Valid Values list, select Values From Query, and then select Next. The Values From a Query section appears.In the Enter query text or click Browse button to select an existing query box, enter SQL code directly. If you completed this task, then proceed to Step 6. Otherwise, select Browse, and then proceed to step 5.The Select a query from the catalog window appears.Select a query from the folder hierarchy, and then select Open.Select the Values are Exclusive check box if you want users to be able to choose only from the list of presented values in the prompt window. If you do not select this check box, users will be able to enter an alternate value for the prompt. Select the Allow Multiple Selections check box if you want users to be able to select multiple values by which to filter the query results.
+Note:  The Allow Multiple Selections check box is enabled only if you select the Values are Exclusive check box.
+Select Next.The Configure Default Prompt Selection section appears.If you want a particular value to be selected by default, then select the row containing the necessary value, and then select Finish.The prompt appears in the Expression Builder window.Note:  You can select multiple default prompt values only if the Prompt Data Type is set to Character and you selected the Allow Multiple Selections check box in the Values From Query section.Select Done. The Expression Builder window closes, and then, in the grid in the Conditions section, <expr> appears in the field on which you created the prompt.Create a Prompt with a List of Values from a RecordAbout This TaskWhen you build a prompt that presents a list of fields from a table, the prompt will display a list of values pulled from the specified field of all records in a given family. For example, you could build a prompt that contains values pulled from the Taxonomy Type field of all records in the Equipment family.Tip:  You can use a prompt with a list of values from a record to filter a dependent prompt's values.Procedure
+Access the Prompt Settings section of the Expression Builder window.
+Define the prompt settings as needed.In the Valid Values list, select Distinct List of Values From [X], where X is the name of the field for which you are defining the prompt criteria, and then select Next.The Values From a Query section appears.In the text box, enter SQL code directly, and then proceed directly to Step 6. Alternatively, select Browse.The Select a query from the catalog window appears.Select a query from the folder hierarchy.Select the Values are Exclusive check box if you want users to be able to choose only from the list of presented values in the prompt window. If you do not select this check box, users will be able to enter an alternate value for the prompt.Select the Allow Multiple Selections check box if you want users to be able to select multiple values by which to filter the query results. The Allow Multiple Selections check box is enabled only if you select the Values are Exclusive check box.Select Next.The Configure Default Prompt Selection section appears.If you want a particular value to be selected by default, then select the row containing the necessary value, and then select Finish. You can select multiple default prompt values only if the Prompt Data Type is set to Character and you selected the Allow Multiple Selections check box in the Values From Query section.
+Note:  You can select multiple default prompt values only if the Prompt Data Type is set to Character and you selected the Allow Multiple Selections check box in the Values From Query section..
+The prompt appears in the Expression Builder window.
+Select Done.The Expression Builder window closes, and then, in the grid in the Conditions section, <expr> appears in the field on which you created the prompt.Results
+When the user runs the query, the prompt will display a list of values pulled from the selected field for all records in the selected family.
+Create a Prompt on a Logical FieldProcedure
+Access the Prompt Settings section of the Expression Builder window.
+Define the prompt settings as needed.In the Prompt Data Type section, select Logical.By default, when you select Logical, all the options in the Valid Values section are disabled.Select Next.The Configure Default Prompt Value section appears.In the Default Prompt Value list, select the value that you want to be selected by default. You can select True or False, or you can select All, which returns both True and False values. Then, select Finish.The prompt appears in the Expression Builder window.Select Done.The Expression Builder window closes, and then, in the grid in the Conditions section, <expr> appears in the field on which you created the prompt.Results
+When a user runs the query, the prompt will display a list of values pulled from the selected field for all records in the selected family.
+Filter Prompt Values Based on Previous Prompt SelectionsBefore You Begin
+These instructions assume that you have already created a Select query for a family that contains at least two fields, and that you have added those fields to your query.The first prompt should exist in a column that appears to the left of the column on which you will build the second prompt. If you do not order the fields this way, the values in the first prompt will still filter the values in the second prompt, but the second prompt will appear first when you run the query, which does not follow the appropriate workflow.
+About This TaskYou can configure multiple prompts where the value in one prompt filters the values available in another prompt, which would further refine the records that are returned.Procedure
+Access the Prompt Settings section of the Expression Builder window for the field on which you want to build the first prompt.
+Define the prompt settings as needed for the first prompt.In the Prompt ID box, specify a unique ID for the prompt. You will use this prompt ID in the second prompt.In the Valid Values list, select one of the following prompt types: No list of valid values; Static list of valid values; List of query results; List of values from a record. Note that, if you select No list of valid values, when you run the query, you must enter the exact value stored in the database to populate the dependent prompt with the appropriate values.Depending on the type of prompt you selected, finish defining the prompt settings, and then select Finish in the Prompt Settings section. Then, select Done on the Expression Builder window.The Expression Builder window closes, and then, in the grid in the Conditions section, <expr> appears in the field on which you created the prompt.
+Access the Prompt Settings section of the Expression Builder window from the Criteria cell for the field on which you want to build the second prompt.
+Define the prompt settings as needed for the second prompt.In the Valid Values list, select one of the following prompt types: List of query results; List of values from a record.Depending on the type of prompt that you selected, finish defining the prompt settings, and then select Finish.
+The Expression Builder window returns to focus. The following instructions assume that you created the second prompt with a list of values from a record.
+On the Expression Builder window, in the text box, directly before the ORDER BY clause, enter a WHERE clause to indicate the field on which the prompt is based and the prompt ID associated with that field. The WHERE clause should look like this: WHERE [<FieldID 1>] = (? :s :id=<PromptID 1>). In this example, <FieldID 1> represents the field ID of the field on which you built the first prompt, and <PromptID 1> represents the prompt ID that you defined for the first prompt in Step 3.Select Done.Results
+When you run the query, the first prompt will display a list of values according to how you specified the valid values (e.g., static list of valid values). The second prompt will display only values that apply to the first prompt's value.
+Modify an Existing PromptBefore You Begin
+You cannot modify a prompt using the Prompt Settings section. The Prompt Settings interface does not store settings for existing prompts.If you want to use the Prompt Settings section to modify a prompt, you can recreate the prompt and include your modifications in the Prompt Settings section.
+Procedure
+Access the SQL workspace, or Access the Expression Builder window.Modify the prompt as needed.Delete a PromptProcedure
+Access the Design workspace.In the grid in the Conditions section, for the cell in which you want to delete a prompt, select .The prompt is removed from the query.
+
+
+
+
+On this pageAbout Query Expressions Clauses and PromptsCreate an ExpressionCreate a WHERE ClauseCreate a HAVING ClauseDelete an ExpressionAccess the Prompt Settings SectionCreate a Prompt with No List of Valid ValuesCreate a Prompt with a Static List of Valid ValuesCreate a Prompt with a List of System CodesCreate a Prompt with a List of Query ResultsCreate a Prompt with a List of Values from a RecordCreate a Prompt on a Logical FieldFilter Prompt Values Based on Previous Prompt SelectionsModify an Existing PromptDelete a Prompt
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+
+
+
+MOC Administration | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Management of ChangeOverview
+WorkflowsMOC Administration
+MOC Change Project
+
+
+Change Projects
+Checklists
+Exceptions and Tasks
+Changed Elements
+Deployment
+Admin
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Management of Change
+Workflows
+MOC Administration
+
+
+
+
+
+
+
+MOC AdministrationManagement of Change: MoC AdministrationThis workflow describes the process for creating Exceptions, Answer Options, Questions, and Checklists that can be used in a Change Project.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Create Exceptions Persona: Solution AdministratorCreate the Exceptions that represent the action items that will be created automatically when you select Answer Options in a Checklist in a Change Project.Create Answer Options Persona: Solution AdministratorCreate additional Answer Options that you want to use when you create Questions.Create Questions Persona: Solution AdministratorCreate the Questions that you can want to associate with Checklists. You must associate each Question with a minimum of two Answer Options. As needed, you can associate an Answer Option with an Exception.Create Checklists Persona: Solution AdministratorCreate Checklists by adding Questions as Checklist Items to each Checklist. Change Project Persona: AnalystGo to the Change Project workflow.
+
+
+
+
+On this pageManagement of Change: MoC AdministrationCreate ExceptionsCreate Answer OptionsCreate QuestionsCreate ChecklistsChange Project
+
+
+
+
+
+
+
+
+

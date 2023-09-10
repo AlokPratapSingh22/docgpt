@@ -1,0 +1,118 @@
+
+
+
+Second Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Third Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Release Notes
+Second Quarter of 2021
+
+
+
+
+
+
+
+Second Quarter of 2021Release Date: June 25, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo enhance functionality, while using the conditional based filters (CBF), you can now see the slider for a tag or tag expression to select the minimum and maximum values. To facilitate this enhancement, a new Enable numeric data for CBF  check box has been added to the SmartSignal Marker Configuration section of the Tenant Preferences page.When Enable numeric data for CBF  is selected, while using the conditional filters functionality, you can see the slider for a tag or tag expression to select the minimum and maximum values. When Enable numeric data for CBF  is not selected, while using the conditional filters functionality, the data for the string tags is displayed in a drop-down list box instead of a slider.US491028
+Table 2. Known Issues and Limitations
+The following known issues and limitations exist.
+DescriptionTracking IDTimeseries and Filter API's are failing for incorrect UOM configuration.DE161562
+Release Date: May 26, 2021This topic provides a list of product changes released for this module on this date.
+Table 3. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in the Timing Diagram chart, you were not able to apply MIN and MAX values to the standard tags. This issue has been resolved. You can now provide MIN and MAX values to the standard tags, which appear on multiple y-axes.DE158352Previously, you were unable to open some templates types that were at the Classification or Instance level. This issue has been resolved. Now, you can open charts for both the template types to investigate potential issues with the assets.DE158282Previously, when adding a SmartSignal card to an Analysis view, you were unable to search for the Analytics tags in the Search box. This issue has been resolved.DE158156Previously, you were unable to plot tag expressions on prefetched templates in some scenarios on the chart even though the tags had valid data. This issue has been resolved.DE153742
+Release Date: April 16, 2021This topic provides a list of product changes released for this module on this date.
+Table 4. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo enhance functionality, support for special characters is now included in Analysis module. You can perform the following tasks that support inclusion of special characters:Include special characters in tag names.Type special characters in the search criteria to search for tag names with special characters. Type the characters of the criteria or copy from another location and paste the characters in the Search box to search for asset tags.Type the characters or copy from another location and paste the characters to construct tag expressions. Construct or modify tag expressions with tag names that have special characters.Visualize the data on an Analysis chart in CSV, for tag names with special characters. Save and retrieve templates that include special characters in tag names.F58125To enhance usability, when you plot two pins in the Time Series (Line) and Time Series Scatter Plot charts, you can now view the time stamps for the two pins and the time difference between the pins in the PINNED DATA pane. You can drag the PINNED DATA pane to increase the width that enables you to view all the data in the table. F56316To enhance functionality, the Analysis Browser page has been added. Using the Analysis Browser page you can perform the following tasks:View the analysis templates based on the privileges assigned to you. View the associated template information and navigate to other templates. When you select the analysis template associated with the classification template, all the assets associated with the same classification appear in the Context Browser, where you can select the required asset to access the asset template.Filter the template data to narrow options for selection.Show or hide selected columns using the column chooser.Using the Create Analysis button, you can select the analysis type that you want to access. The analysis types are available based on the privileges assigned to you.You can navigate back to the Analysis Browser page from an Analysis view. To facilitate this enhancement, the Template Browser () icon is added to the Analysis template or view header.You can now expand and view the asset hierarchy containing the list of assets in a parent-child structure from the Analysis template or view. To facilitate this enhancement, the Asset Hierarchy () icon is added to the Analysis template or view header.F56315To improve usability in the Analysis workspace, based on the configuration or the default settings, the following changes have been made:The From and To labels for the Range Picker in the analysis template header, now appear in the same line as the settings options. If the fields do not have enough space to align in the same line, the fields change to icons. The From label is hidden and the To label appears in between the calendars.In the Time Series and EBQ  templates, based on the configuration or the default settings, the labels for the configuration settings drop-down list boxes now appear in the analysis template header in the same line. The selected configuration or the default value for each drop-down list box appears below the label as a full version or a shorter version, based on the space available. If the fields do not have enough space to align in the same line, they appear as icons. (Time Zone) (Data Source) (Data Resolution) (System of Measure) (Data Quality)F56303To improve usability, the Timing Diagram chart in now added to the chart types. Using the Timing Diagram chart, you can perform the following tasks:Plot tags having values other than 0 or 1 in the logical overlay. These tags are represented in step-up manner on the chart.Drag and drop the tags into the Logical and Standard zones to identify the tags respectively.View all the logical tags together plotted in a stacked-up view. Note: For a single y-axis, the logical tags are plotted on the default y-axis in stacked-up manner.F56301You can now save the logical tags to any template instance.US462941In a chart, you can now select a maximum of 40 tags, out of which you can use a maximum of 20 logical tags.US462936To enhance functionality, when you create a new CSV analysis, you can now access the CSV view directly, without navigating through the Context Browser.US461853To enhance functionality, you can now save and retrieve templates that include special characters in tag names.US461390
+Table 5. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in the tag search results, a maximum of 40 results were displayed per page. This issue has been resolved. You can now view a maximum of 100 results per page now. You can select the maximum number of results to be displayed per page as 40 or 100, using the results per page drop-down list box.DE152708Previously, the Asset name, which is not unique, was the default prefix context modifier for asset tag searches. Hence, the search results displayed asset tags for multiple assets with the same Asset name. This issue has been resolved. Now, the AssetID, which is the unique source key of an asset (AssetSourcekey), is the default prefix context modifier for asset tag searches.DE152708
+
+
+
+
+
+On this pageRelease Date: June 25, 2021Release Date: May 26, 2021Release Date: April 16, 2021
+
+
+
+
+
+
+
+
+

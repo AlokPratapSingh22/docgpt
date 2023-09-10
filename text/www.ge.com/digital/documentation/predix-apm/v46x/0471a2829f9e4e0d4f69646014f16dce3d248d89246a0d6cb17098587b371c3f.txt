@@ -1,0 +1,155 @@
+
+
+
+Unit Capacity | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+AdminAccess the GAA Administrator Page
+GAA Administrator Workflow
+System Codes
+Event Categories
+Event Types
+Cause Codes
+Amplification Codes
+Fuel Types
+Mapping Records
+Event Transitions
+Companies
+Plants
+Units
+Unit Capacity
+Performance Record and Report Configuration
+
+
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Admin
+Unit Capacity
+
+
+
+
+
+
+
+Unit CapacityAbout GAA Unit CapacityGAA Unit records contain four fields that define the capacity of the unit:Nameplate Gross Dependable CapacityNameplate Gross Maximum CapacityNameplate Net Dependable CapacityNameplate Net Maximum CapacityThe above fields define the default capacity of a GAA Unit. This capacity is the intended full-load sustained output of a GAA Unit under conditions described by the OEM. The actual capacity for a GAA Unit, however, may vary because of the several reasons:Actual conditions may not match the design conditions, such as environment, fuel, etc.The unit is operating at reduced output for part of the time due to equipment failures or routine maintenance.Fuel quality may be different from original recommendationMay include restrictions or limitations on air permits and limitations on transmission that force the unit to produce reduced output.Also, the actual capacity typically decreases over a period of time, because of wear and tear of the equipment and other reasons described above.In GAA, you can define different capacities for different periods of time. By default, when you add a GAA Unit record, a GAA Unit Capacity record is automatically created with the values defined in the capacity related fields in the GAA Unit record. You can modify this record or add new records. When you create a Performance record for a month for the first time, the values defined in the GAA Unit Capacity record are used. After you save the Performance record, you can continue to use the same values or modify them, as needed. Access a GAA Unit Capacity RecordBefore You Begin
+
+Add a GAA Unit
+
+Procedure
+Access the GAA Unit for which you want to view the list of GAA Unit Capacity records.Select the Capacity tab.
+A list of GAA Unit Capacity records defined for the selected GAA Unit appears, displaying the following columns of information:
+
+Entity ID
+
+Start Date
+
+End Date
+
+Net Maximum Capacity
+
+Net Dependable Capacity
+
+Gross Maximum Capacity
+
+Gross Dependable Capacity
+
+
+
+
+Note: As needed, you can modify the values in the available fields by selecting the link in the Entity ID column, and then selecting  to save your changes.
+Add a GAA Unit Capacity RecordBefore You Begin
+
+Add a GAA Unit
+
+Procedure
+Access the GAA Unit for which you want to add a GAA Unit Capacity record.Select the Capacity tab.
+A list of GAA Unit Capacity records defined for the selected GAA Unit appears.
+
+
+
+Note: When you add a GAA Unit record, a GAA Unit Capacity record is automatically created with the values defined in the capacity related fields in the GAA Unit record. As needed, you can modify the values in the available fields.
+In the upper-left corner of the Capacity section, select .
+The Add Capacity window appears. 
+As needed, enter the values in the available fields. 
+Note: If you enter values in all the capacity-related fields and save the datasheet, the specified values will be used to perform various calculations in GAA. If you enter a value in Gross Maximum Capacity field only and save the datasheet, the values in other capacity-related fields will be populated as defined by NERC in the GADS DRI and those values will be used to perform various calculations in GAA.
+In the upper-right corner of the workspace, select Site:.
+Note: By default, the site to which the user is assigned appears.
+Select the site to which you want to assign the GAA Unit Capacity record.
+Note: If the GAA Unit Capacity record is assigned to the default site, it can be accessed only by users who have been assigned to the same site. The site selector component becomes read-only after it is saved. 
+Select .
+Your changes are saved.
+Delete a GAA Unit Capacity RecordProcedure
+Access the GAA Unit for which you want to delete a GAA Unit Capacity record.Select the Capacity tab.
+A list of GAA Unit Capacity records defined for the selected GAA Unit appears.
+Select the row containing the GAA Unit Capacity record that you want to delete.
+Note: You cannot delete a GAA Unit Capacity record if that is the only record in the list.
+In the upper-right corner of the Capacity section, select .
+The Delete Capacity dialog box appears, asking you to confirm that you want to delete the selected GAA Unit Capacity record.
+Select Yes.
+The selected GAA Unit Capacity record is deleted and the updated list of GAA Unit Capacity records appears.
+
+
+
+
+
+On this pageAbout GAA Unit CapacityAccess a GAA Unit Capacity RecordAdd a GAA Unit Capacity RecordDelete a GAA Unit Capacity Record
+
+
+
+
+
+
+
+
+

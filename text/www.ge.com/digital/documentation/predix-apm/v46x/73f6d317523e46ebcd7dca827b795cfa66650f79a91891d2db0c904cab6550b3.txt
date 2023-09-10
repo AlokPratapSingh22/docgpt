@@ -1,0 +1,89 @@
+
+
+
+Import and Export | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Import and ExportOverview
+Import and Export
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Import and Export
+Import and Export
+
+
+
+
+
+
+
+Import and ExportExport MetadataAbout This TaskFor exporting GE Digital APM metadata, you can choose the items of each supported data type and any combination of any data types you wish to export. However, large exports can take a considerable amount of time.ProcedureIn the module navigation menu, select
+Admin > Configuration Manager > Export.In the Available Items section, perform the following steps:Select the data type (such as Families, Filters and Fields, Family Rules and so on) from the Select metadata type drop-down list.All the metadata in that data type appears in the Available Items section.If you want to export all the metadata in the selected data type, select .-or-If you want to export only some of the metadata in a data type, select the check box for metadata that you want to export and then select .All the selected metadata that you chose to export appear in Selected Items section. 
+Tip: You can also search for metadata in a data type (by name) by selecting  .
+Note: If you want to remove the selections from the Selected Items list, then select the check box for the items, and then select . The metadata removed from the Selected Items list will be available for selection in the Available Items section. 
+In the File Name box, provide the name of the file, and then select the file type from the File Type box.
+Note: By default, the Include underlying Query/Dataset/Subreports check box is selected. If you do not want to export the underlying queries or datasets, then clear the Include underlying Query/Dataset/Subreports check box.
+Select Start Export.ResultsA ZIP file is generated in the name that you specified in File Name box. This file contains all the metadata that you have selected along with a log file in CSV format.Export Records and LinksWhen you export records, only existing links to successor records are exported with the records. If a relationship family includes fields, any links between records that use that relationship family will not be exported. When the records and links are exported, one file will be created for each family for which you exported records.ProcedureIn the module navigation menu, select
+Admin > Configuration Manager > Export.In the Available Items section, perform the following:In the Select metadata type box, select the Records and Links from the drop-down list.The Select a query from the catalog window appears displaying the Catalog folder structure.Navigate to the folder that contains the query and then select Open.Only the following queries are supported:
+Query with two related entity families, joined in the query using the relationship family.
+
+Query with one entity family only.
+The selected query appears in the Available Items section. It also displays the following information in that query.The Primary Family, its fields and ActionThe Predecessor Family, its fields and the action associated with it.The Successor Family, its fields and the action associated with it.Select .All the metadata that you want to export appear in Selected Items section. You can select the next metadata type that you want to export in the Available Items section.Note: If you want to remove the selections from the Selected Items list, then select the check box of the items and select  button. The items removed will appear in the Select metadata type box of the Available Items section.In the File Name text box, provide the name of the file and then select the file type from the File Type drop-down list box.Select Start Export.Results
+A .ZIP file is generated in the name that you specified in File Name text box. This file contains all the metadata that you have selected along with a log file. At this point, you can:View a log of the export by selecting the log file in the .ZIP file.View the .XLSX or .XML file to ensure that the data exported is correct.
+
+Import MetadataAbout This TaskWhen you import GE Digital APM metadata, you can choose to import all the metadata in the file that is associated with a given data type or only some of the metadata. ProcedureIn the module navigation menu, select
+Admin > Configuration Manager > Import.On the Import page, select Choose File.The Open dialog box appears.Navigate to the folder that contains the .ZIP file from which you want to import data and then select the file.Select Open.The Open dialog box closes, and the file name that you selected appears in the Choose File box. The metadata contained in that file appears listed in drop-down box in the Available Items section.If you want to import all the items in the file, then in the Available Items section, in the Select metadata type box, select the option All Metadata.All the items in the import file appears in Selected Items section.Note:  The All Metadata option appears only if the import file contains more than one metadata type.If you want to import all the items in a metadata type, in the Select metadata type box, select the metadata type, and then select .All the items in the selected metadata type appear in Selected Items section.-or-If you want to import only some of the items in a metadata type, select the metadata type, select the check box for the required items, and then select . Tip: You can search for a metadata type (by name) by using .The items that you want to import appears in Selected Items section.Select Start Import to import the selected metadata.ResultsWhen the import is complete, a confirmation message appears, indicating that the metadata are imported to the database successfully and a log file in .CSV format is generated.Import Records and LinksWhen you import records and links from a legacy format or from a CGU file, the existing relationships in the file will be imported if the predecessor and successor families exist in the database. However, the relationship between the records will not appear in the application.ProcedureIn the module navigation menu, select
+Admin > Configuration Manager > Import.On the Import page, select Choose File.The Open window appears.Navigate to the folder that contains the CGU file from which you want to import the record, and then select the file.Select Open.The Open window closes, and the file name that you selected appears in the Choose File box. The family IDs and entity IDs of all the records contained in that file appears in the Available Items section listed under Records and Links- CGU .In the Available Items section: 
+If you want to import all the metadata in a data type, select .All the metadata in a data type appear in the Selected Items section.-or-If you want to import only some of the metadata in a data type, select the check box for the metadata, and then select . Tip: You can search for a metadata (by name) by using .The metadata that you want to import appear in Available Items section.
+Select Start Import to import the selected metadata.When the import is complete, a confirmation message appears, indicating that the metadata are imported to the database, and a log file in CSV format is generated.
+
+
+
+
+On this pageExport MetadataExport Records and LinksImport MetadataImport Records and Links
+
+
+
+
+
+
+
+
+

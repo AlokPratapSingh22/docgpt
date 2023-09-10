@@ -1,0 +1,209 @@
+
+
+
+Catalog Items | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Calculations
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+Reference
+Catalog Items
+
+
+
+
+
+
+
+Catalog ItemsDashboards Folder
+The Catalog folder \\Public\Meridium\Modules\SIS Management\Dashboards contains the following items:
+Item NameBehavior and UsageAsset Safety DashboardDisplays the Asset Safety Dashboard. SIL SummaryDisplays a prompt for the Entity Key of an SIL Analysis, and then displays the Safety Integrity Level (SIL) distribution for all the Instrumented Functions in the analysis.SIS Overview
+Displays the following graphs:
+
+SIL Distribution : Plots the number of Protective Instrument Loops with Safety Integrity Levels (SIL) of 1, 2, 3, and 4.
+Proof Testing Results : Plots the number of passed and failed proof tests for the current year and past four years.
+Graphs
+Contains the following graphs:
+Proof Tests Pass Fail Proven In Use Devices by Type Quantity of Protective Instrumented Loops Quantity of SIF Trips View SIL Distribution 
+
+LOPA Folder
+The Catalog folder \\Public\Meridium\Modules\SIS Management\LOPA contains the following sub-folders:
+Queries : The following table displays the queries that exist in the Queries sub-folder.Query NameBehavior and UsageLOPA Conditional Modifiers Search A search that displays a prompt for the Entity Key for a LOPA, and then displays a list of conditional modifiers that are linked to the specified LOPA. The results of this query appear on the Conditional Modifiers section of the LOPA. LOPA ILP Search A search that displays a prompt for the Entity Key for a LOPA, and then displays a list of Independent Layers of Protection that are linked to the specified LOPA. The results of this query appear by default in the Independent Protective Layers section of the LOPA. LOPA_Analysis_Search A search that displays a prompt for the Entity Key for a LOPA, and then displays the LOPA records that are linked to a given Instrumented Function. Reports : The following table displays the items that exist in the Reports subfolder.Item NameBehavior and UsageLOPA Report Displays a prompt for the Entity Key for a LOPA, and then displays information about the Layer of Protection Analysis that exists in the LOPA and linked records. SubreportsA sub-folder that contains the reports with the following names: 
+LOPA Consequence Modifiers Report: Supports the LOPA Report. 
+LOPA ILP Report: Supports the LOPA Report.
+
+PIF Folder
+The Catalog folder \\Public\Meridium\Modules\SIS Management\PIF contains the following subfolders:
+
+
+Queries: The following table displays the queries that exist in the Queries subfolder.
+Query NameBehavior and UsagePIF Query Displays a prompt for the Entity Key for an Instrumented Function, and then displays information that is stored in the fields in that Instrumented Function. PIF Risk Matrix Result Query Displays a prompt for the Entity Key for an Instrumented Function, and then displays the risk rank values that are linked to that Instrumented Function. 
+
+
+Reports: The following table displays the reports that exist in the Reports subfolder.
+Report NameBehavior and UsageIF Report Displays a prompt for the Entity Key for an Instrumented Function, and then displays information about the instrumented function and linked records. IF Risk Matrix Result Report Supports the IF Report when the SIL Assessment used is Riask Matrix Internal. 
+
+Proof Test Templates Folder
+The Catalog folder \\Public\Meridium\Modules\SIS Management\Proof Test Template contains the following subfolders:
+
+
+Queries: The following table displays the query that exists in the Queries subfolder.
+Query NameBehavior and UsageProof Test Template Query Displays a prompt for the Entity Key for an SIS Proof Test Template, and then displays information that is stored in that SIS Proof Test Template. 
+
+
+Reports: The following table displays the report that exists in the Reports subfolder.
+Report NameBehavior and UsageProof Test Template Report Displays a prompt for the Entity Key for an SIS Proof Test Template, and then displays summary information that is stored in that SIS Proof Test Template. 
+
+Proof Tests Folder
+The Catalog folder \\Public\Meridium\Modules\SIS Management\Proof Tests contains the following sub-folders:
+Queries: The following table displays the queries that exist in the Queries sub-folder. Query NameBehavior and UsageSIS Proof Test Query Displays a prompt for the Entity Key for an SIS Proof Test, and then displays information that is stored in that SIS Proof Test. SIS Proof Test Query UNION Supports the SIS Proof Test Query. Reports: The following table displays the report that exists in the Reports subfolder.Report NameBehavior and UsageProof Test Report Displays a prompt for the Entity Key for an SIS Proof Test, and then displays summary information that is stored in that SIS Proof Test. 
+Protective Instrument Loop Folder
+The Catalog folder \\Public\Meridium\Modules\SIS Management\Protective Instrument Loop contains the following subfolders:
+
+
+Queries: The following table displays the queries that exist in the Queries subfolder.
+Query NameBehavior and UsageProtective Instrument Loop Query Displays a prompt for the Entity Key for a Protective Instrument Loop, and then displays information that is stored in that Protective Instrument Loop. This query supports the Protective Instrument Loop Report that is stored in the Reports folder. Protective Instrument Loop Sensor System Subquery Displays a prompt for the Entity Key for a Protective Instrument Loop, and then displays information that is stored in the Protective Instrument Loop System that are linked to the Protective Instrument Loop. This query supports the Protective Instrument Loop Report that is stored in the Reports folder. 
+
+
+Reports: The following table displays the items that exist in the Reports subfolder.
+Item NameBehavior and UsageProtective Instrument Loop Report Displays a prompt for the Entity Key for a Protective Instrument Loop, and then displays summary information that is stored in that Protective Instrument Loop. SubreportsA subfolder that contains the PIL Sensor System Report, which supports the Protective Instrument Loop Report. 
+
+Queries Folder
+The Catalog folder \\Public\Meridium\Modules\SIS Management\Queries contains: 
+Queries that support various features with the SIS Management module, including those that support the reports that make up the SRS Report.A subfolder, Dashboard Queries, that contains queries that are used to display content on the Asset Safety dashboard. 
+To simplify the documentation, the items that are stored in this folder are split up into the following groups: 
+Queries that Support Module-Specific Pages
+The following queries are stored in the Catalog folder \\Public\Meridium\Modules\SIS Management\Queries and support module-specific pages within SIS Management.
+
+Query NameBehavior and UsageNotesAdd_SIS_Trip_Report_Detail_Search A search that displays prompts for the Entity Key for a Logic Solver and an SIS Trip Report, and then displays information that is stored in both records. NoneALL SIL Analysis Recommendations Displays a list of all the Risk Assessment Recommendation records that are linked to any SIL Analysis. NoneALL SIL Analysis Tasks 
+Displays the following prompts, and then displays a list of all the Tasks that meet the specified criteria: 
+
+Asset ID : The IDs for the Equipment and Functional Location families in the GE Digital APM database. 
+Task Family : The names of the Task families that exist in the GE Digital APM database.
+The results of this query appear in the Proof Test Tasks section of an SIL Analysis.Export_SIL_Analysis_Search 
+Displays a prompt for the record state of an SIL Analysis, and then displays a list of SIL Analysis that meet the specified criteria. The State prompt contains a list of record states that are configured for the SIL Analysis family. This list contains the following baseline values by default: 
+All  Active  Complete  Pending Approval Planning  Review
+This query is used by the SIS Management Export Builder. Final_Element_Reference_Data_Search A search that displays a prompt, and then displays a list of Final Elements whose Is Reference Data field value is set to True. The results of this query appear in the Final Elements section on the SIS Management Overview page. IF_Safety_Loop_Search 
+A search that displays a prompt for the record state of a Protective Instrument Loop, and then displays a list of Protective Instrument Loops that are linked to a particular Instrumented Function. The State prompt contains a list of record states that are configured for the Protective Instrument Loop family. This list contains the following baseline values: 
+All  Approval DesignIn Service  Out of Service Pending Approval
+NoneLogic_Solver_Reference_Data_Search A search that displays a prompt and then displays a list of Logic Solvers whose Is Reference Data field value is set to True. The results of this query appear in the Logic Solvers section on the SIS Management Overview page. Safety_Loop_Search 
+A search that displays a prompt for the record state of a Protective Instrument Loop, and then displays a list of Protective Instrument Loops that meet the specified criteria. The State prompt contains a list of record states that are configured for the Protective Instrument Loop family. By default, the list contains the following baseline values: 
+All  Approval DesignIn Service Out of Service Pending Approval 
+NoneSafety_Loop_Template_Search A search that displays a prompt for the record state of a Protective Instrument Loop, where the Is Template field value in that record is Yes, and then displays a list of Protective Instrument Loops that are specified as templates and meet the specified criteria. The results of this query appear on the PIL Templates section on the SIS Management Overview page. Sensor_Reference_Data_Search A search that displays a prompt, and then displays a list of Logic Solvers whose Is Reference Data field value is set to True. The results of this query appear by default in the Sensors section on the SIS Management Overview page. SIL Analysis Recommendations Displays a prompt for the Entity Key for an SIL Analysis, and then displays a list of Risk Assessment Recommendation records that are linked to the specified SIL Analysis. NoneSIL_Analysis_Search 
+A search that displays the following prompts, and then displays a list of SIL Analyses that meet the specified criteria:
+
+State : The record states that have been configured for the SIL Analysis family. This list contains the following values:  All Active Complete Pending Approval Planning Review
+
+
+SIL Analysis Owner : The names of the users whose names appear in the Owner field in an SIL Analysis.
+ The results of this query appears in the SIL Analysis section on the SIS Management Overview page.SIS Find ASM Actions for IF Displays a prompt for the Entity Key for an Instrumented Function and is used to find ASM Actions that were created when the specified Instrumented Function was promoted to ASM. NoneSIS Find ASM Risk for IF Displays a prompt for the Entity Key for an Instrumented Function and is used to find ASM Risks that were created when the specified Instrumented Function was promoted to ASM. None
+
+Queries that Support the SRS Report
+The following queries are stored in the Catalog folder \\Public\Meridium\Modules\SIS Management\Queries, and support the SRS Report and subreports stored in the \SIL\Reports folder.
+
+Query NameBehavior and UsageFinal_Element_Hazardous_Event_Comb Displays a prompt for the PIF ID for the Instrumented Function, and then displays values stored in records that make up a protective instrument loop. This query supports the subreport, Final_Element_Subreport. Final_Element_Query Displays a prompt for the PIF ID for an Instrumented Function, and then displays values stored in records that make up a protective instrument loop. This query supports the subreport, Loop_Report. IF_Common_Cause_Failures 
+Displays a prompt for the PIF ID for an Instrumented Function to which SIF Common Cause Failures are linked, and then displays the values stored in the following fields in the SIF Common Cause Failures that are linked to the specified Instrumented Function: 
+CCF ID CCF Description CCF Mitigation 
+ This query supports the subreport, IF Subreport.
+IF_Concurrent_Safe_State 
+Displays a prompt for the PIF ID for the Instrumented Function to which Instrumented Functions are linked, and then displays the values stored in the following fields in the Instrumented Function: 
+Concurrent Safe State Hazard  PIF Description Safe State Description PIF ID 
+This query supports the subreport IF Subreport.
+SIL_Analysis_Doc_Query Displays a prompt for the Entity Key of the SIL Analysis to which all the records that make up an SIL analysis are linked, and then displays all the Reference Documents that are linked to that record. This query supports the subreport, SIL_Doc_Report. SRS_Report_Query 
+Displays a prompt for the Entity Key of the SIL Analysis to which all the records that make up an SIL analysis are linked, and then displays values stored in fields that are required in the following records: 
+Instrumented Function Safety Instrumented System SIL Analysis 
+This query supports the main SRS Report.
+SRS_Sensor_Query Displays a prompt for the PIF ID for an Instrumented Function, and then displays values stored in records that make up a protective instrument loop. This query supports the subreport, Loop_Report. SRS_SubReport_Query Displays a prompt for the PIF ID for an Instrumented Function, and then displays values stored in records that make up a protective instrument loop. This query supports the subreport, Loop_Report. 
+
+Dashboard Queries Folder
+The queries listed in the following table are stored in the Catalog location \\Public\Meridium\Modules\SIS Management\Queries\Dashboard Queries. In this table, the values listed in the Query column refer to the query names. The baseline query captions are the same as the query names.
+
+Query NameBehavior and UsageAnalysis States 
+Used to return results that are displayed in the Hazards Analysis Schedule section on the Asset Safety dashboard. In the baseline database, this query is configured to return Hazards Analysis records by state.
+Calibration Recommendations Used to return results that are displayed in the Calibration Recommendations section on the Asset Safety dashboard. Calibration Recommendations - All Used by the Calibration Recommendations source query to display content on the Asset Safety dashboard. Calibration Results - Fail Used by the Calibration Results for Graph source query to display content on the Asset Safety dashboard. Calibration Results - Pass as Found Used by the Calibration Results for Graph source query to display content on the Asset Safety dashboard. Calibration Results - Pass as Left Used by the Calibration Results for Graph source query to display content on the Asset Safety dashboard. Calibration Results All Used by the Calibration Results for Graph source query to display content on the Asset Safety dashboard. Calibration Results for Graph Used to return results that are displayed in the Calibration Pass/Fail Results for Last 12 Months section on the Asset Safety dashboard. Calibration Tasks Used to return results that are displayed in the Calibration Schedule section on the Asset Safety dashboard. Calibration Tasks - All Used by the Calibration Tasks source query to display content on the Asset Safety dashboard. Filter Widget Used to return results that are displayed in the Content Filter section on the Asset Safety dashboard. HAZOP Analysis Used by one or more source queries to the Asset Safety dashboard. Last 5 Years Used by one or more source queries to the Asset Safety dashboard. Overdue Hazards Analysis Used to return results that are displayed in the Hazards Analysis Schedule section on the Asset Safety dashboard. Overdue Proof Test Tasks Used to return results that are displayed in the Proof Test Schedule section on the Asset Safety dashboard. Asset Safety dashboard. Proof Tests States Used by one or more source queries to the Asset Safety dashboard. Proof Tests States by State Used by one or more source queries to the Asset Safety dashboard. Proof Tests States for Graph Used by one or more source queries to the Asset Safety dashboard. Proof Test States with Functional Location Used by one or more source queries to the Asset Safety dashboard. Protective Instrument Loop States Used by the Quantity of protective instrument loops by State for Graph source query to display content on the Asset Safety dashboard. Proven In Use Device Types Used by the Proven In Use Devices by Type for Graph source query to display content on the Asset Safety dashboard. Proven In Use Devices by Type Used by the Proven In Use Devices by Type for Graph source query to display content on the Asset Safety dashboard. Proven In Use Devices by Type for Graph Used to return results that are displayed in the Proven in Use Devices by Type section on the Asset Safety dashboard. Quantity of Hazards Analysis Used by one or more source queries to the Asset Safety dashboard. Quantity of Protective Instrumented Loops Used by the Quantity of Protective Instrumented Loops by State for Graph source query to display content on the Asset Safety dashboard. Asset Safety dashboard. Quantity of Protective Instrumented Loops by State Used by the Quantity of Protective Instrumented Loops by State for Graph source query to display content on the Asset Safety dashboard. Quantity of Protective Instrumented Loops by State for Graph Used to return results that are displayed in the Quantity of Protective Instrumented Loops section Quantity of Protective Instrumented Loops section on the Asset Safety dashboard. Quantity of SIF Trips Used to display results that are displayed in the Quantity of SIF Trips sectionQuantity of SIF Trips section on the Asset Safety dashboard. Quantity of SIL Analysis Used by one or more source queries to the Asset Safety dashboard. Quantity of SIL Analysis by State Used by one or more source queries to the Asset Safety dashboard. SIF Spurious Trip Reports Used by one or more source queries to the Asset Safety dashboard. SIF Trip Report Types Used by the Quantity of SIF Trips source query to display content on the Asset Safety dashboard. SIF Unsafe Trip ReportsUsed by one or more source queries to the Asset Safety dashboard. SIL Analysis States Used by one or more source queries to the Asset Safety dashboard. SIL Distribution Used by the SIL Distribution for Graph source query to display content on the Asset Safety dashboard. SIL Distribution for Graph Used to return results that are displayed in the View SIL Distribution section on the Asset Safety dashboard. SIS Proof Test Pass Fail Used to return results that are displayed in the Proof Tests Pass/Fail section on the Asset Safety dashboard. SIS Proof Tests Failed Used by the SIS Proof Test Pass Fail source query to display content on the Asset Safety dashboard. SIS Proof Tests Passed Used by the SIS Proof Test Pass Fail source query to display content on the Asset Safety dashboard. What If Analysis Used by one or more source queries to the Asset Safety dashboard. 
+
+SIL Folder
+The Catalog folder \\Public\Meridium\Modules\SIS Management\SIL contains the following sub-folders:
+Graphs: The following table displays the graphs that exist in the Graphs sub-folder.Graph NameBehavior and UsageNotesSIL Analysis Risk Graph A bar chart that displays a summary of the Risk Rank values that are associated with each Instrumented Function that is linked to the specified SIL analysis. When you access this graph from the SIL Analysis Summary page, the value for the SIL analysis that you are currently accessing is passed in to the ENTY_KEY prompt to return the results for that analysis. NoneSIL Assignment Summary Graph A pie chart that shows a breakdown of the Selected SIL Level values in the Instrumented Functions that are linked the specified SIL analysis. This graph is based on the query SIL Assignment Summary Query, which is stored in the folder \\Public\Meridium\Modules\SIS Management\SIL\Queries, and returns a count for each Selected SIL Level value. For example, if five Instrumented Functions that are linked to the SIL Analysis contain the value 2 in the Selected SIL Level field, the count for level 2 would be 5. Each count is displayed as a percentage in the SIL Assignment Summary Graph. When you access this graph from the SIL Analysis Summary page, the value for the SIL analysis that you are currently accessing is passed in to the ENTY_KEY prompt to return the results for that analysis. Queries: The following table displays the queries that exist in the Queries sub-folder.Query NameBehavior and UsageSIL Analysis Mitigated Risk Query Displays risk assessment details that are associated with all SIL Analysis . SIL Analysis Query Displays a prompt for the Entity Key for an SIL Analysis, and then displays information that is stored in the specified SIL Analysis. SIL Analysis Risk Query Displays a prompt for the Entity Key for an SIL analysis, and then displays risk rank details for the instrumented functions that are linked to the specified SIL Analysis. SIL Assignment Summary QuerySupports the graph SIL Assignment Summary Graph, and returns a count for each Selected SIL Level value in the Instrumented Functions that are linked to the specified SIL analysis. Reports: The following table displays the items that exist in the Reports sub-folder.Report NameBehavior and UsageSIL Analysis Report Displays a prompt for the Entity Key for an SIL Analysis, and then displays in the Report Viewer summary information for the specified SIL Analysis. SRS Report Displays a prompt for the Entity Key for the SIL Analysis to which all the records that make up an SIL analysis are linked, and then displays in the Report Viewer the Safety Requirement Specifications report for the specified SIL analysis. While you can run the report from the Catalog and manually enter the Entity Key for the SIL Analysis, we recommend that you access the report only from within the SIS Management module. You should not modify the SRS Report or any of the supporting queries and sub-reports. Subreports
+The SubReports folder stores the following reports that support the SRS Report, and are supported by queries stored in the Queries folder: 
+Final Element Subreport  IF Subreport Loop Report SIL Doc Report 
+
+SIS Trip Report Folder
+The Catalog folder \\Public\Meridium\Modules\SIS Management\SIS Trip Report contains the following sub-folders:
+Queries: The following table displays the queries that exist in the Queries subfolder.Query NameBehavior and UsageSIS Trip Report Recommendations Displays a prompt for the Entity Key for an SIS Trip Report record and then displays the list of Risk Assessment Recommendation records that are linked to the specified SIS Trip Report record. SIS Trip Reports Query Displays a prompt for the Entity Key for an SIS Trip Report record and then displays the list of SIS Trip Report records and information that is stored in each record. Reports: The following table displays the report that exists in the Reports sub-folder.Report NameBehavior and UsageSIS Trip Report Displays a prompt for the Entity Key for an SIS Trip Report record and then displays summary information that is associated with the specified SIS Trip Report record and the records that are linked to that SIS Trip Report record. 
+
+
+
+
+
+On this pageDashboards FolderLOPA FolderPIF FolderProof Test Templates FolderProof Tests FolderProtective Instrument Loop FolderQueries FolderSIL FolderSIS Trip Report Folder
+
+
+
+
+
+
+
+
+

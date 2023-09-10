@@ -1,0 +1,378 @@
+
+
+
+RBI Analyses | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+RBI Analyses
+
+
+
+
+
+
+
+RBI AnalysesAbout RBI AnalysisAn RBI Analysis is a combination of linked RBI Analysis records and their successor records. These records contain risk information about the RBI Component for which the analysis was created. There are two kinds of RBI Analyses: RBI 581 and RBI 580. The details of an RBI 580 analysis are stored in an RBI Criticality Analysis record. It is based on the API 580 specification for Risk Based Inspection requirements and methodologies, and is the type of analysis provided in baseline RBI. The details of an RBI 581 analysis are stored in an RBI 581 Risk Analysis. It is based on the API 581 specification, and is provided by the RBI 581 module. Depending on the requirements of the organization, generally you will use one of the two types of analyses, but not both.Note: Unless otherwise specified, RBI Analysis procedures are the same for both RBI 581 and RBI 580 analyses. Generally, RBI 581 Risk Analysis and RBI Criticality Analysis records will be referred to collectively as RBI Analyses.Details
+There are two types of RBI Analyses:
+ Main RBI Analysis: An RBI Analysis that represents current information about the RBI Component and the operating environment. You can use the information in a main RBI Analysis as the starting point for a child What If Analysis. What-If Analysis: A child analysis of a main RBI Analysis. What If Analyses allow you to calculate the risk associated with an RBI Component under hypothetical circumstances or at some future date. For example, you might want to see what the risk would be if you changed the operating pressure or what the risk could be in a few years.
+Note: While the RBI Analysis is linked to child What-If Analyses (through the Has RBI Analysis family), those child RBI Analysis records are not considered part of the main RBI Analysis. Instead, they are considered part of their own RBI Analysis.
+About Active AnalysisAn RBI 581 Risk Analysis can be active or inactive. An active analysis is the one on which recommendations and tasks for a particular RBI Analysis will be based. For an RBI Component, you can have only one active analysis. There is no limit, however, to the number of inactive analyses that can exist for an RBI Component.When you create an analysis, it is in the Created state. If the analysis is active, you can then set the analysis to one of the following states in that order: Risk Completed  Accepted by ASM If the analysis is inactive, however, the state of the analysis will automatically be set to Archived. If you change the state of an analysis to Risk Completed, all the other analyses are marked inactive (i.e., their state is set to Archived).About What-If AnalysisA What-If Analysis is a child analysis of a main RBI Analysis (or another What-If Analysis) in an active state that allows you to calculate the risk associated with an RBI Component under hypothetical circumstances. What-If Analyses allow you to analyze hypothetical situations to determine how operational and procedural changes would impact the risk associated with a component's failure on a certain date.When you create a What-If Analysis: 
+A record of the RBI 581 Risk Analysis is created. For the What-If Analysis, however, the value in the Event Type field is populated with the value W. 
+Note: For a normal RBI Analysis, the value in the Event Type field is blank.
+The What-If Analysis is linked to the main analysis through the Has Child RBI Criticality Analysis relationship. The Consequence Evaluation, Degradation Mechanisms (DMs), and Degradation Mechanism Evaluations (DMEs) linked to the main analysis are copied and linked to the What-If Analysis.  The Analysis ID of the What-If Analysis is in the following format: W <Analysis ID of the main analysis> <Number> <Scenario ID>, where <Number> is the sequential number of the What-If Analysis.You can duplicate the What-If Analysis. You cannot, however, apply the What-If Analysis.You can change the state of the What-If Analysis. The state assignments and operations that are applicable to an RBI Analysis are also applicable to a What-If Analysis.
+GE Digital APM copies the values from the fields in the main analysis to the What-If Analysis. However, values in the output fields (i.e., fields that appear in the Risk Results and Risk Analysis sections of the datasheet) are not copied.
+About Inspection PlanningInspection Planning is a methodology used by the RBI 581 module as outlined by API RP 581. The purpose of this methodology is to mitigate the risk of a failure within a given period of time. This period is called the plan period. To mitigate risk based on inspection planning:Calculate the analysis.If the analysis results are acceptable, change the state of the analysis to Risk Completed.
+Generate Recommendations.
+
+GE Digital APM creates non-recurring recommendations based on the recommended inspections for each Degradation Mechanisms record (DM).
+
+Promote the asset to Asset Strategy Management (ASM).
+Actions are created in ASM for each RBI Recommendation.
+Create Inspection Tasks based on the proposed actions.Implement the Inspection Tasks.Risk is calculated for all applicable Degradation Mechanism Evaluations (DMEs) at RBI Date and plan Date. Risk calculated on plan date without mitigation appears on the Without Plan section of the analysis datasheet. Risk calculated on the plan date with mitigation appears on the With Plan section of the datasheet.Inspection Planning, however, is applied only to the following DMEs: RBI 581 Cracking Damage Evaluation RBI 581 External Damage Evaluation RBI 581 Thinning and Lining Evaluation Inspection Planning determines if mitigation will help, and if it does, GE Digital APM recommends an Inspection for the DM with an A, B, or C level of Inspection Effectiveness.Risk Targets
+The following risk targets are defined in RBI 581: 
+
+ Target Damage Factor Max: This value represents maximum acceptable damage factor for calculating probability of failure. 
+Target Damage Factor Max will still be considered even if your organization specifies that the SHE Risk or Financial Risk should be the driving risk for RBI 581 Risk Analyses. This is because, even if the SHE Risk or Financial Risk is less than the target, it can still lead to a failure if the damage factor is high. For example, suppose there is a condensate piping with insulation. In this case, the consequence of a condensate leakage is low. Therefore, the SHE Risk and Financial Risk are considerably low, which results in a risk value lower than the target. Even if the condensate leaks frequently, the low risk value does not help the analyst identify the high probability of failure due to ferritic corrosion under insulation. Therefore, it is necessary to ensure that the damage factor is less than the target damage factor as well.
+ Target SHE Risk : This value represents maximum acceptable safety, health, and environmental risk. Target Financial Risk : This value represents maximum acceptable financial risk.
+These targets appear in the Planning Targets section of the RBI 581 Risk Analysis datasheet. 
+Risk Summary
+Each risk target represents a threshold value. Based on whether the total risk value is already below the target risk, or will be mitigated after inspection planning, the appropriate Risk Summary is specified for the analysis. 
+The following Risk Summaries are defined in the Inspection Planning Risk Summary family as an outcome from Inspection Planning:
+ Risk exceeded, Mitigation does not help : Indicates that the risk exceeds the target, and the highest level of inspection cannot mitigate the risk to a value less than the target. In this case, the Risk Summary Description field is populated with the value Residual Risk after applying highest level of Inspection. Total DF Max Exceeded, Mitigation does not help : Indicates that the highest level of inspection cannot mitigate the risk, which is greater than the driving target (Total DF Max). In this case, the Risk Summary Description field is populated with the value Residual Damage Factor after applying highest level of Inspection. Risk within Target, Mitigation not required : Indicates that the risk is below the target, no mitigation is required. In this case, the Risk Summary Description field is populated with the value Risk is less than target hence Inspection not required. Risk exceeded target, but mitigated by inspection : Indicates that the risk exceeds the target, but inspection can mitigate the risk. In this case, the Risk Summary Description field is populated with the value Risk Mitigated after applying required level of Inspection.
+RBI Date, Plan Date, and Target Inspection Date
+The values in the RBI Date, Plan Date, and Target Inspection Date fields are used to determine the Risk Summary of an analysis.
+ RBI Date : It is the date on which you have started conducting the RBI analysis. By default, it is set to the date on which you create an RBI Analysis. Plan Date : It is the end date of the plan period. By default, this is set to ten years from the RBI date.
+ Target Inspection Date : It is the date on which the risk will first exceed the Risk Targets.
+If risk exceeds the target on the RBI date, then the Target Inspection Date is set to the RBI Date.If risk does not exceed the target at Plan Date, then the Target Inspection Date is set to the Plan Date.
+
+Note:  Target Inspection Date is used to calculate age during Inspection Planning for RBI 581 External Cracking Damage Evaluations and RBI 581 Cracking Damage Evaluations.
+When calculating the damage factor, age is calculated based on Inspection Date. The Inspection Date is determined using the following table:
+RBI DateWith PlanWithout PlanDamage MechanismLast Known Inspection Date SetLast Known Inspection Date Not SetLast Known Inspection Date SetLast Known Inspection Date Not SetLast Known Inspection Date SetLast Known Inspection Date Not SetExternal CrackingLast Known Inspection DateDate In ServiceLast Known Inspection DateDate In ServiceTarget Inspection DateEnvironment CrackingLast Known Inspection DateDate In ServiceLast Known Inspection DateDate In ServiceTarget Inspection DateThinningLast Known Inspection Date if there is a thickness. Else, Date In ServiceDate In ServiceLast Known Inspection DateDate In ServiceLast Known Inspection DateDate In ServiceLiningLast Known Inspection Date if there is a thickness. Else, Date In ServiceLiner Installation DateLast Known Inspection DateLiner Installation DateLast Known Inspection DateLiner Installation DateExternalLast Known Inspection Date if there is a thickness. Else, Date In ServiceDate In ServiceLast Known Inspection DateDate In ServiceLast Known Inspection DateDate In Service
+About the RBI 581 Asset Risk ReportThe RBI 581 Asset Risk report provides information about the risk assessments on all the components in the asset, along with a risk matrix and supporting data.The RBI 581 Asset Risk report contains the following sections: Equipment DataComponent SummaryPlanning TargetsRisk / Damage Mechanism AnalysisRBI Component Risk ResultsRBI RecommendationsInspection HistoryCorrosion AnalysisReference DocumentsEquipment Data
+This section provides the equipment details. The following table provides a list of items that are included in the Equipment Data section of the report and their corresponding fields in RBI.Report ItemCorresponding Field in RBI (Family Name)Equipment IDEquipment ID (Equipment)Equipment Technical NoEquipment Technical Number (Equipment)DescriptionEquipment Short Description (Equipment)Functional LocationFunctional Location (Functional Location)
+Component Summary
+This section provides the design and operating details of all the components linked to the asset, including the components that have an active analysis (that is, analysis in Risk Completed or Accepted by ASM state). The following table provides a list of items that are included in the Component Summary section of the report and their corresponding fields in RBI.Report ItemCorresponding Field in RBI (Family Name)ComponentRBI Component (Criticality Calculator RBI Components)Component TypeComponent Type (Criticality Calculator RBI Components)Date in ServiceComponent Date in Service (Criticality Calculator RBI Components)Design CodeConstruction Code (Criticality Calculator RBI Components)Material SpecMaterial Spec (Criticality Calculator RBI Components)Material GradeMaterial Grade (Criticality Calculator RBI Components)PWHTPWHT (Criticality Calculator RBI Components)InsulationInsulated? (Criticality Calculator RBI Components)Insulation TypeInsulation Type (Criticality Calculator RBI Components)Process FluidProcess Fluid (Criticality Calculator RBI Components)Design PressureDesign Pressure (Criticality Calculator RBI Components)Design TemperatureDesign Temperature (Criticality Calculator RBI Components)Operating PressureOperating Pressure (Criticality Calculator RBI Components)Operating TemperatureOperating Temperature (Criticality Calculator RBI Components)Design Pressure - ShellDesign Pressure - Shell Side (Criticality RBI Component - Exchanger Bundle)Design Temperature - ShellDesign Temperature - Shell Side (Criticality RBI Component - Exchanger Bundle)Operating Pressure - ShellOperating Pressure - Shell (Criticality RBI Component - Exchanger Bundle)Operating Temperature - ShellOperating Temperature - Shell (Criticality RBI Component - Exchanger Bundle)
+Planning Targets
+This section provides the details of components that have an active analysis. The RBI Components with no active analysis are not included in this section. The following table provides a list of items that are included in the Planning Targets section of the report and their corresponding fields in RBI. Report ItemCorresponding Field in RBI (Family Name)ComponentRBI Component (Criticality Calculator RBI Components)Driving Risk TargetDriving Risk Target (RBI 581 Risk Analysis)Damage Factor MaxTarget Damage Factor Max (RBI 581 Risk Analysis)SHE RiskTarget SHE Risk (RBI 581 Risk Analysis)Financial RiskTarget Financial Risk (RBI 581 Risk Analysis)Cracking Minimum Damage FactorTarget Cracking Minimum Damage Factor (RBI 581 Risk Analysis)External Minimum Damage FactorTarget Cracking Minimum Damage Factor (RBI 581 Risk Analysis)Thinning and Lining Minimum Damage FactorTarget Thinning And Lining Minimum Damage Factor (RBI 581 Risk Analysis)
+Risk / Damage Mechanism Analysis
+This section provides details of degradation mechanisms linked to active RBI 581 Risk Analyses of RBI Components in the Asset. Risk details of RBI Components with no active analysis is not included in this section. The following table provides a list of items that are included in the Risk / Damage Mechanism Analysis section of the report and their corresponding fields in RBI. Report ItemCorresponding Field in RBI (Family Name)Degradation MechanismDegradation Mechanism (RBI Degradation Mechanisms)Damage Factor (RBI Date)Total Damage Factor - RBI Date (RBI Degradation Mechanisms)SHE Risk (RBI Date)Total SHE Risk - RBI Date (RBI Degradation Mechanisms)Financial Risk (RBI Date)Total Financial Risk - RBI Date (RBI Degradation Mechanisms)Damage Factor (Without Plan)Total Damage Factor Without Plan (RBI Degradation Mechanisms)SHE Risk (Without Plan)Total SHE Risk Without Plan (RBI Degradation Mechanisms)Financial Risk (Without Plan)Total Financial Risk Without Plan (RBI Degradation Mechanisms)Damage Factor (With Plan)Total Damage Factor With Plan (RBI Degradation Mechanisms)SHE Risk (With Plan)Total SHE Risk With Plan (RBI Degradation Mechanisms)Financial Risk (With Plan)Total Financial Risk With Plan (RBI Degradation Mechanisms)Recommended Inspection EffectivenessRecommended Inspection Effectiveness (RBI Degradation Mechanisms)
+RBI Component Risk Results
+This section provides the cumulative risk details of the Active RBI 581 Analyses of the components. These details are captured from Risk Results and Risk Analysis sections of RBI 581 Risk Analysis datasheet. The following table provides a list of items that are included in the RBI Component Risk Results section of the report and their corresponding fields in RBI. Report ItemCorresponding Field in RBI (Family Name)Total Damage Factor (RBI Date)Total Damage Factor - RBI Date (RBI 581 Risk Analysis)SHE Risk (RBI Date)Total SHE Risk - RBI Date (RBI 581 Risk Analysis)Financial Risk (RBI Date)Total Financial Risk - RBI Date (RBI 581 Risk Analysis)SHE Risk Category (RBI Date)SHE Risk Category - RBI Date (RBI 581 Risk Analysis)Financial Risk Category (RBI Date)Financial Risk Category - RBI Date (RBI 581 Risk Analysis)Total Damage Factor (Without Plan)Total Damage Factor Without Plan (RBI 581 Risk Analysis)SHE Risk (Without Plan)Total SHE Risk Without Plan (RBI 581 Risk Analysis)Financial Risk (Without Plan)Total Financial Risk Without Plan (RBI 581 Risk Analysis)SHE Risk Category (Without Plan)SHE Risk Category - Without Plan (RBI 581 Risk Analysis)Financial Risk Category (Without Plan)Financial Risk Category - Without Plan (RBI 581 Risk Analysis)Total Damage Factor (With Plan)Total Damage Factor With Plan (RBI 581 Risk Analysis)SHE Risk (With Plan)Total SHE Risk With Plan (RBI 581 Risk Analysis)Financial Risk (With Plan)Total Financial Risk With Plan (RBI 581 Risk Analysis)SHE Risk Category (With Plan)SHE Risk Category - With Plan (RBI 581 Risk Analysis)Financial Risk Category (With Plan)Financial Risk Category - With Plan (RBI 581 Risk Analysis)Target Inspection DateTarget Inspection Date (RBI 581 Risk Analysis)Risk Summary IDRisk Summary ID (RBI 581 Risk Analysis)Risk Summary DescriptionRisk Summary Description (RBI 581 Risk Analysis)Inspection will MitigateInspection Will Mitigate (RBI 581 Risk Analysis)
+RBI Recommendations
+This section provides the details of the RBI Recommendation that is linked to the asset and are in Proposed or Accepted by ASM state. The following table provides a list of items that are included in the RBI Recommendations section of the report and their corresponding fields in RBI.Report ItemCorresponding Field in RBI (Family Name)ComponentRBI Component (RBI Recommendation)Task TypeTask Type (RBI Recommendation)Damage MechanismDamage Mechanism (RBI Recommendation)Recommended Inspection ScopeRecommended Inspection Scope (RBI Recommendation)Target Inspection DateTarget Completion Date (RBI Recommendation)StateState (RBI Recommendation)
+Inspection History
+This section provides the details of the Inspection Confidence Evaluations linked to the damage mechanisms of the Active Analysis of the components. If the component has an active analysis, but the degradation mechanisms do not have Inspection Confidence Evaluations, such components are not included in this section. The following table provides a list of items that are included in the Inspection History section of the report and their corresponding fields in RBI. Report ItemCorresponding Field in RBI (Family Name)ComponentRBI Component (Criticality Calculator RBI Components)Damage MechanismDamage Mechanism (RBI 581 Damage Mechanism Evaluation)Inspection ReportInspection Report (Inspection)Completion DateCompletion Date (Inspection Confidence Evaluation)Inspection EffectivenessInspection Confidence (Inspection Confidence Evaluation)Inspection FamilyInspection Family (Inspection)StatusInspection Document Status (Inspection)
+Corrosion Analysis
+This section provides the corrosion rate details of an RBI Component if the component has an active analysis and at least one RBI 581 Thinning and Lining Evaluation degradation mechanism linked. In the component, if the Source of Calculated Corrosion Rate field value is Component, and has any TML Groups linked, then the TML Groups are also included in the report. The following table provides a list of items that are included in the Corrosion Analysis section of the report and their corresponding fields in RBI.Report ItemCorresponding Field in RBI (Family Name)ComponentRBI Component (Criticality Calculator RBI Components)Damage MechanismDamage Mechanism (RBI 581 Thinning and Lining Evaluation)Selected Corrosion RateSelected BM Corrosion Rate (RBI 581 Thinning and Lining Evaluation)Corrosion RateBase Material Estimated Corrosion Rate, Base Material Calculated Corrosion Rate, Long Term Avg Corr Rate, Short Term Avg Corr Rate, Controlling Corrosion Rate (RBI 581 Thinning and Lining Evaluation)Source of Calculated Corrosion RateSource of Calculated Corrosion Rates (Criticality Calculator RBI Components)TML GroupCorrosion Group (TML Group)
+
+Reference DocumentsThis section provides information on any reference documents attached to the RBI Component of the asset. The following table provides a list of items that are included in the Reference Documents section of the report and their corresponding fields in RBI.Report ItemCorresponding Field in RBI (Family Name)ComponentRBI Component (Criticality Calculator RBI Components)Document IDID (Reference Document)Document DescriptionDescription (Reference Document)Access an RBI 581 Risk AnalysisAbout This TaskProcedure
+Access the component that contains the RBI Analysis that you want to access. Below the graph, select the RBI Analysis that you want to access.
+The Analysis Details section appears, displaying the analysis datasheet.
+
+
+
+Note: If needed, you can modify values in the available fields, review the 
+required fields and valid Representative Fluids
+, and then select  to save your changes.
+Create an RBI AnalysisAbout This Task
+You can create an RBI 581 Risk Analysis for an RBI Component.
+ProcedureAccess the RBI Component for which you want to create an RBI 581 Risk Analysis.Below the graph, select , and then select Quantitative (581).A new analysis is created, and the Analysis Details section appears.Note: When an analysis is created, the Consequence Evaluations and Degradation Mechanisms corresponding to the Potential Degradation Mechanisms linked to the selected component are also created.Enter values in the available fields. 
+
+Review the required fields, and the valid Representative Fluids
+.In the upper-right corner of the section, select .The RBI analysis is created.Results
+For each Potential Degradation Mechanism (PDM) linked to the Component, a Degradation Mechanism (DM) is added to the Analysis.
+What To Do Next
+
+Add Degradation Mechanisms (DMs).
+Add a What-If AnalysisAbout This Task
+When you create a What-If Analysis, a copy of the main RBI Analysis is created. In the What-If Analysis, however, the value in the Event Type field is populated with the value W. 
+ProcedurePerform one of the following sets of steps:
+
+
+Access the analysis to which you want to add a What-If Analysis. 
+
+In the upper-right corner of the workspace, select , and then select Create What If Analysis. 
+
+-or-
+
+
+Access the component that is linked to the analysis to which you want to add a What-If Analysis.
+Below the graph, a list of analyses linked to the component appears in a grid.
+Select the check box that corresponds to the analysis to which you want to add a What-If Analysis.In the upper-right corner of the grid, select .
+The Create What If Analysis window appears.
+
+
+
+In the Create What If Analysis window:
+In the Scenario ID box, enter an ID to identify the scenario.In the Plan Date box, select a date that is the same as or later than the RBI date (as specified in the RBI Date field in the main analysis).
+Select Done.
+The What-If Analysis is created and linked to the main analysis. The Analysis workspace appears, displaying the Analysis Details section. 
+Note:
+If needed, modify values in the available fields, and then select  to save your changes.If the Source of Calculated Corrosion rate is set to Asset or Component on the related component and the related TML asset has more than 1000 TMLs where the related TML Corrosion Analysis has not been calculated, you need to calculate the asset in the Thickness Monitoring module before continuing.
+
+Results
+The Analysis ID of the What-If Analysis is in the following format: W <Analysis ID of the main analysis> <Number> <Scenario ID>, where <Number> is the sequential number of the What-If Analysis.All the fields (with a few exceptions) in the What-If Analysis are populated with values in the main analysis fields.The Consequence Evaluation, Degradation Mechanisms (DMs), and Degradation Mechanism Evaluations (DMEs) linked to the main analysis are copied and linked to the What-If Analysis.
+Override Flow StressProcedure
+Access the RBI 581 Risk Analysis for which you want to override Flow Stress.Select the Design tab.
+The Design section appears.
+
+
+
+Select the Stress Override check box.
+The Allowable Stress and Flow Stress fields are enabled.
+Enter a new value in the Flow Stress field, and then, in the section heading, select .
+The new Flow Stress value is saved.
+Calculate an RBI 581 Risk AnalysisBefore You Begin
+Make sure that you have entered values in all the required fields. Otherwise, the calculation fails.Make sure that you have selected valid representative and toxic fluids.Make sure that a DM is linked to the RBI 581 Risk Analysis. Otherwise, the calculation fails.
+About This Task
+This topic describes how to calculate a single analysis. In addition to an individual analysis, you can also calculate:
+All analyses associated with a Process Unit.All analyses associated with a single asset or Corrosion Loop.All analyses associated with multiple assets.
+Tip: This procedure also applies to calculating a What-If Analysis.
+Procedure
+Access the RBI 581 Risk Analysis that you want to calculate.In the upper-right corner of the workspace, select .
+Note: The  button is enabled only for RBI Analyses in the Created state.
+The Analysis Calculation window appears, displaying the calculation progress and a log detailing any errors. If the calculation fails, a list of the required fields appear in an error report at the bottom of the Analysis Calculation window. 
+
+
+
+After the calculation is complete: 
+To view log details, select View Complete Log.
+To close the window, select Close.
+
+The RBI 581 Risk Analysis is calculated. 
+Calculate all RBI 581 Risk Analyses Associated with a Process UnitBefore You Begin
+Ensure that you have entered values in all the required fields. Otherwise, the calculation fails.Ensure that you have selected valid representative and toxic fluids.
+About This Task
+This topic describes how to calculate all RBI Analyses associated with a single Process Unit. You can also calculate:
+A singe analysis.All analyses associated with a single asset or Corrosion Loop.All analyses associated with multiple assets.
+Procedure
+Access the Unit Summary  workspace. On the upper-right corner of the page, select .
+This begins the calculation of any RBI 580, RBI 581, PRD, or Pipeline analyses associated with the process unit.
+The Analysis Calculation window appears, displaying the calculation progress and a log detailing any errors. If a calculation fails, a list of the required fields appear in an error report at the bottom of the Analysis Calculation window. 
+
+
+
+After the calculation is complete: 
+
+To view the log details for all calculated analyses, select View Complete Log.
+
+To view the log details for a single analysis, in the list, select that analysis. 
+
+To close the window, select Close.
+
+The RBI 581 Risk Analyses for the selected Process Unit are calculated.
+Optionally, if you want to view the status of all bulk analyze operations, on the upper-right corner of the Risk Based Inspection Overview page, select . 
+The Schedule Logs page appears, displaying a list of all the operations in GE Digital APM that are in progress, along with the percentage of completion. You can also access a list of operations that have been successful or have failed. 
+Calculate all RBI 581 Risk Analyses Associated with a Single Asset or Corrosion LoopBefore You Begin
+Ensure that you have entered values in all the required fields. Otherwise, the calculation fails.Ensure that you have selected valid representative and toxic fluids.
+About This Task
+This topic describes how to calculate all analyses associated with a single Asset or Corrosion Loop. You can also calculate:
+A singe analysis.All analyses associated with a single Process Unit.All analyses associated with multiple assets.
+Procedure
+Access the Asset Summary workspace of the Asset that is associated with the analyses you want to calculate.
+-or-
+
+Access the Corrosion Loop that is associated with the analyses that you want to calculate.
+In the upper-right corner of the section, select .
+This begins the calculation of any RBI 580, RBI 581, PRD, or Pipeline analyses associated with the process unit.
+The Analysis Calculation window appears, displaying the calculation progress and a log detailing any errors. If the calculation fails, a list of the required fields appear in an error report at the bottom of the Analysis Calculation window. 
+
+
+
+After the calculation is complete: 
+
+To view the log details for all calculated analyses, select View Complete Log.
+
+To view the log details for a single analysis, in the list, select that analysis. 
+
+To close the window, select Close.
+
+The RBI 581 Risk Analysis is calculated.
+Optionally, if you want to view the status of all bulk analyze operations, on the upper-right corner of the Risk Based Inspection Overview page, select . 
+The Schedule Logs page appears, displaying a list of all the operations in GE Digital APM that are in progress, along with the percentage of completion. You can also access a list of operations that have been successful or have failed. 
+Tip: For more information on Schedule Logs, refer to the Schedule Logs section of the documentation.
+Calculate all RBI 581 Risk Analyses Associated with Multiple AssetsBefore You Begin
+Ensure that you have entered values in all the required fields. Otherwise, the calculation fails.Ensure that you have selected valid representative and toxic fluids.
+About This Task
+This topic describes how to calculate all the RBI Analyses associated with multiple assets. You can also calculate:
+A single analysis.All analyses associated with a Process Unit.All analyses associated with a single asset or Corrosion Loop.
+Procedure
+Access the Risk Based Inspection Overview page for the Functional Location that contains the assets for which you want to calculate all analyses. If you want to calculate analyses associated with all the assets in the functional location, then proceed to step 5. You cannot, however, calculate all analyses if you have selected Home on the Asset Hierarchy page. 
+-or- 
+ If you want to calculate analyses associated with selected assets, then in the workspace heading, select the Assets tab.
+The Assets section appears.
+
+
+
+Select the check boxes that correspond to the assets for which you want to calculate all analyses.In the upper-right corner of the section, select .
+Note: If you have selected Home on the Asset Hierarchy page, and have not selected any assets, then the  button is disabled.
+A message appears, specifying the number of assets that you have selected, and asking you if you want to continue.
+Select Yes.
+This begins the calculation of any RBI 580, RBI 581, PRD, or Pipeline analyses associated with the process unit.
+The Analysis Calculation window appears, displaying a list of analyses that are sent for calculation, the asset and the component that each analysis is associated with, and the status of each calculation. If the calculation fails, a list of the required fields appear in an error report at the bottom of the Calculate Analysis window. 
+
+
+
+After the calculation is complete: 
+
+To view the log details for all calculated analyses, select View Complete Log.
+
+To view the log details for a single analysis, in the list, select that analysis. 
+
+To close the window, select Close.
+
+The RBI 581 Risk Analysis is calculated.
+Optionally, if you want to view the status of all bulk analyze operations, on the upper-right corner of the Risk Based Inspection Overview page, select . 
+The Schedule Logs page appears, displaying a list of all the operations in Meridium Enterprise APM that are in progress, along with the percentage of completion. You can also access a list of operations that have been successful or have failed. 
+Tip: For more information on Schedule Logs, refer to the Schedule Logs section of the documentation.
+Generate a Report for an AssetThis topic describes how to generate the RBI 581 Asset Risk Report.ProcedureAccess the Asset Summary workspace for the asset for which you want to generate the report.Select , and then select RBI 581 Asset Risk Report.The RBI 581 Asset Risk Report appears. Duplicate an RBI 581 Risk AnalysisAbout This Task
+When you duplicate an RBI 581 Risk Analysis, you make an exact copy of the original RBI Analysis. The duplicated RBI 581 Risk Analysis is linked to the same RBI Component as the original RBI 581 Risk Analysis. To copy an RBI 581 Risk Analysis, and link it to a different RBI Component, you can apply an RBI Analysis.
+Procedure
+Access the component that contains the RBI 581 Risk Analysis that you want to duplicate.Below the graph, select the check box next to the RBI 581 Risk Analysis that you want to duplicate, and then select .
+The Select Degradation Mechanisms window appears. 
+
+
+
+ Only Degradation Mechanisms (DMs) that can be applied to the duplicated analysis appear in the window. By default, the check boxes next to all the Degradation Mechanisms are selected.
+If you do not want a particular DM to be applied, clear the check box that corresponds to the DM.If you want the Recommendations to be copied, select the Copy Recommendations for Degradation Mechanisms check box. You can select this check box only if the Enable Recommendation To be Generated at Created State check box in the Global Preferences workspace is selected.  Select Done.
+The RBI 581 Risk Analysis is duplicated.
+Note:
+Similarly, you can duplicate a What-If Analysis regardless of its state. The duplicated What-If Analysis is a copy of the main RBI Analysis.If the Source of Calculated Corrosion rate is set to Asset or Component on the related component and the related TML asset has more than 1000 TMLs where the related TML Corrosion Analysis has not been calculated, you need to calculate the asset in the Thickness Monitoring module before continuing.
+
+Results
+All the DMs that you have selected are copied and linked to the duplicated analysis.If you have selected the Copy Recommendations for Degradation Mechanisms check box, then Recommendations are also copied.
+Apply an RBI 581 Risk Analysis About This Task
+When you apply an RBI 581 Risk Analysis, you make a copy of the original RBI 581 Risk Analysis. The applied RBI 581 Risk Analysis is not automatically linked to the original RBI Component. Instead, the applied RBI 581 Risk Analysis can be linked to any RBI Component of the same type as the source component. To copy an RBI 581 Risk Analysis and link it to the same RBI Component, you can duplicate an RBI 581 Risk Analysis.
+Procedure
+Access the component that contains the RBI 581 Risk Analysis that you want to apply. Below the graph, select the check box next to the RBI 581 Risk Analysis that you want to apply, and then select .
+The Select RBI Components to Apply Analysis window appears.
+
+
+
+In the Hierarchy section, navigate to and select the asset that contains the RBI Component to which you want to apply the analysis.
+A list of available RBI Components in the selected asset appears in the Available RBI Components section.
+
+
+
+Select the RBI Components to which you want to apply the analysis.
+The selected RBI Components appear in the Selected RBI Components column.
+
+
+
+Select Next.
+A list of Degradation Mechanisms (DMs) linked to the analysis appears.
+In each row containing the DMs that you want to link to the new analysis, ensure that the check box is selected.Select Done.
+The RBI 581 Risk Analysis is applied.
+Note: The values in the Inventory Group and Inventory Group Mass fields are not copied after you apply an analysis.
+Finalize Risk of an RBI 581 Risk AnalysisProcedure
+Access the analysis whose state you want to modify. Select the button that indicates the current state of the analysis (that is, Created).
+A menu appears, displaying a list of operations that you can perform on the analysis to modify its state.
+
+
+
+Select Finalize Risk, and then select Done.
+Note:  You can modify the state of an analysis to Risk Completed only if you have calculated the analysis.
+The state of the RBI 581 Risk Analysis is modified, and an Inspection Plan is created and linked to the parent asset of the analysis. Note:
+If you want to access the Inspection Plan, select the Inspection Plan link.When an RBI 581 Risk Analysis is not in the Created state, you cannot modify the analysis and the related Consequence Evaluations, Degradation Mechanisms, and Degradation Mechanism Evaluations through the Risk Based Inspection (RBI) module. You can, however, modify the fields that are not disabled when the record is accessed through Record Manager.
+What To Do Next
+
+Create an RBI Recommendation Manually.
+Finalize Risk of Multiple RBI 581 Risk AnalysesBefore You Begin
+Ensure that all the analyses to which you want to assign a new state are assigned to the same state. 
+About This TaskThis topic describes how to finalize risk of the analyses that are linked to multiple assets or Corrosion Loops. You can finalize risk of only the analyses that are calculated and are in the Created state. You cannot finalize risk of multiple analyses that belong to the same component. In such cases, the status of the analyses that belong to the same component are not modified, however, the status of the remaining analyses are updated to Risk Completed.Procedure
+Access the Risk Based Inspection Overview page , and then select the Assets tab.
+or
+
+Access the Unit Summary workspace of the Process Unit that is linked to the Corrosion Loops.
+In the Assets section, select the check boxes that correspond to the assets that contain the analyses for which you want to finalize risk.
+or
+Select the check box for each Corrosion Loop containing analyses for which you want to finalize risk.
+The  button is enabled. Select .
+The Finalize Risk window appears, displaying any RBI 580, RBI 581, PRD, or Pipeline analyses that are calculated and are in the Created state.
+
+
+
+Select the check box for each analysis for which you want to finalize risk. 
+The Finalize Risk button is enabled. 
+Select Finalize Risk.The selected analyses are moved to the Risk Completed state.Note: If an Inspection Plan does not exist for the parent asset of the analyses, an Inspection Plan is created and linked to the asset.Select Close.What To Do Next
+
+Generate RBI Recommendations for Multiple RBI 581 Risk Analyses.
+Delete an RBI 581 Risk AnalysisBefore You Begin
+You cannot delete an RBI 581 Risk Analysis if it is Active, has a child analysis, or has Recommendations. 
+If an RBI 581 Risk Analysis has a child analysis, delete the child analysis. If an RBI 581 Risk Analysis has Recommendations, delete the recommendations. 
+Procedure
+Access the component containing the RBI 581 Risk Analysis that you want to delete.Below the graph, in the row containing the Analysis ID that you want to delete, select the check box, and then select .
+A message appears, asking you to confirm that you want to delete the RBI 581 Risk Analysis.
+Select Yes. 
+The RBI 581 Risk Analysis is deleted.
+
+
+
+
+
+On this pageAbout RBI AnalysisAbout Active AnalysisAbout What-If AnalysisAbout Inspection PlanningAbout the RBI 581 Asset Risk ReportAccess an RBI 581 Risk AnalysisCreate an RBI AnalysisAdd a What-If AnalysisOverride Flow StressCalculate an RBI 581 Risk AnalysisCalculate all RBI 581 Risk Analyses Associated with a Process UnitCalculate all RBI 581 Risk Analyses Associated with a Single Asset or Corrosion LoopCalculate all RBI 581 Risk Analyses Associated with Multiple AssetsGenerate a Report for an AssetDuplicate an RBI 581 Risk AnalysisApply an RBI 581 Risk Analysis Finalize Risk of an RBI 581 Risk AnalysisFinalize Risk of Multiple RBI 581 Risk AnalysesDelete an RBI 581 Risk Analysis
+
+
+
+
+
+
+
+
+

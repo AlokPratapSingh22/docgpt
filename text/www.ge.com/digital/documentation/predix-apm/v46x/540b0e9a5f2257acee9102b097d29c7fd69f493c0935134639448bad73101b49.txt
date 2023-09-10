@@ -1,0 +1,137 @@
+
+
+
+Asset Criticality Analysis | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health Manager
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+Asset Criticality Analysis
+
+
+
+
+
+
+
+Asset Criticality AnalysisDeploy ACA for the First TimeBefore You Begin
+
+The following tables outline the steps that you must complete to upgrade this module to the latest version of GE Digital APM
+                    .
+                
+These tasks may be completed by multiple people in your organization. We recommend, however, that the tasks be completed in the order in which they are listed.
+
+Results
+StepTaskNotes1Assign Security Users to one or more of the ACA Security Groups and Roles.This step is required.2Optional: Configure Criticality Definition records to use a Checklist as the Criticality Assessment method instead of the Risk Matrix.To configure to use a Checklist, select the Use Checklist field and select the desired family from the Checklist Family field. To associate a Criticality Definition record with a Site, link the Criticality Definition record to a Site Reference record. The Criticality Checklist family datasheet and Before Insert Family Policy can be configured to implement the desired assessment input fields and criticality value calculation logic.
+Upgrade ACABefore You Begin
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. GE Digital recommends, however, that the tasks be completed in the order in which they are listed.
+
+ProcedureUpgrade to the latest version of GE Digital APM.
+This module will be updated to the latest version of GE Digital APM automatically. No additional steps are required.
+ACA Security Groups
+
+The following table lists the baseline Security Groups available for users within this module, as well as the baseline Roles to which those Security Groups are assigned. In Predix APM, Roles are assigned to Security Users through permission sets.
+
+Important:  Assigning a Security User to a Role grants that user the privileges associated with all of the Security Groups that are assigned to that Role. To avoid granting a Security User unintended privileges, before assigning a Security User to a Role, be sure to review all of the privileges associated with the Security Groups assigned to that Role.
+                
+
+Security GroupRoles
+MI ACA Administrator
+MI Foundation AdminMI ACA Member
+MI Foundation Admin
+MI Foundation Power
+MI Foundation User
+MI APM Viewer
+
+MI ACA Owner
+
+MI Foundation Admin
+MI Foundation Power
+
+The baseline family-level privileges that exist for these Security Groups are summarized in the following table.
+FamilyMI ACA AdministratorMI ACA MemberMI ACA OwnerEntityAsset Criticality AnalysisView, Update, Insert, DeleteViewView, Update, Insert, DeleteAsset Criticality Analysis Has SystemView, Update, Insert, DeleteViewView, Update, Insert, DeleteAsset Criticality Analysis SystemView, Update, Insert, DeleteViewView, Update, Insert, DeleteConsequenceView, Update, Insert, DeleteViewViewConsequence ModifierView, Update, Insert, DeleteViewViewCriticality MappingViewViewViewEquipmentViewViewViewFunctional LocationViewViewViewAnalysis Has Human ResourceView, Update, Insert, DeleteViewView, Update, Insert, DeleteHuman ResourceView, Update, Insert, DeleteNoneView, Update, Insert, DeleteGeneral RecommendationView, Update, Insert, DeleteViewView, Update, Insert, DeleteMitigates RiskView, Update, Insert, DeleteViewView, Update, Insert, DeleteNotificationView, Update, Insert, DeleteViewView, Update, Insert, DeleteProbabilityView, Update, Insert, DeleteViewViewProtection LevelViewViewViewRCM FMEA AnalysisViewNoneNoneReference DocumentView, Update, Insert, DeleteViewView, Update, Insert, DeleteRiskView, Update, Insert, DeleteViewView, Update, Insert, DeleteRisk AssessmentView, Update, Insert, DeleteViewView, Update, Insert, DeleteRisk CategoryView, Update, Insert, DeleteViewView, Update, Insert, DeleteRisk MatrixView, Update, Insert, DeleteViewView, Update, Insert, DeleteRisk ThresholdView, Update, Insert, DeleteViewViewSafety Analysis Has EquipmentView, Update, Insert, DeleteViewView, Update, Insert, DeleteSite ReferenceViewViewViewSystem StrategyViewNoneNoneRelationshipEquipment Has EquipmentViewViewViewFunctional Location Has EquipmentViewViewViewFunctional Location Has Functional LocationViewViewViewHas Criticality MappingViewViewViewHas Functional LocationView, Update, Insert, DeleteViewView, Update, Insert, DeleteHas RCM FMEA AnalysisViewNoneNoneHas RecommendationsView, Update, Insert, DeleteViewView, Update, Insert, DeleteHas Reference DocumentsView, Update, Insert, DeleteViewView, Update, Insert, DeleteHas Reference ValuesView, Update, Insert, DeleteViewViewHas RiskView, Update, Insert, DeleteViewView, Update, Insert, DeleteHas Risk CategoryView, Update, Insert, DeleteViewView, Update, Insert, DeleteHas Risk MatrixView, Update, Insert, DeleteViewView, Update, Insert, DeleteHas Site ReferenceView, Update, Insert, DeleteViewView, Update, Insert, DeleteHas StrategyViewNoneNone
+
+
+
+
+
+On this pageDeploy ACA for the First TimeUpgrade ACAACA Security Groups
+
+
+
+
+
+
+
+
+

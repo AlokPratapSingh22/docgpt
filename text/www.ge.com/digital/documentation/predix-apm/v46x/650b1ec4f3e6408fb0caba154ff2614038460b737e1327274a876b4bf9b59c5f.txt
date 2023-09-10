@@ -1,0 +1,129 @@
+
+
+
+Asset Health Manager Deployment | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health ManagerAsset Health Manager Deployment
+Upgrade or Update Asset Health Manager
+
+
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+Asset Health Manager
+Asset Health Manager Deployment
+
+
+
+
+
+
+
+Asset Health Manager DeploymentDeploy AHM for the First Time Before You Begin
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. GE Digital recommends, however, that the tasks be completed in the order in which they are listed.
+
+Results
+StepTaskNotes1Assign Security Users to one or more of the Asset Health Manager Security Roles.This step is required.
+2
+
+Determine the equipment or location whose overall health you want to evaluate, and make sure that an asset record exists in the database for this equipment or location and is included in the Asset Hierarchy configuration.
+
+This step is required.
+
+3
+Configure Health Indicator Mapping records for each family that you want to use as a health indicator source, for which a baseline Health Indicator Mapping record does not already exist.
+This step is required.
+Baseline Health Indicator Mapping records exist for the following health indicator source families: 
+Measurement LocationKPIHealth Indicator 
+
+4
+Link each asset record to the record(s) that you want to use as a health indicator source records.This step is required.
+5
+For any specific records in a health indicator source family for which you do not want health indicators to be created, exclude these records from the automatic health indicator creation.This step is optional.
+6
+Review the baseline event mappings and modify or create new mappings as necessary to customize the information that is displayed in the Events section in Asset Health Manager.This step is optional.
+Refer to the Asset Health Manager end user help for more information about events.
+
+
+
+
+
+On this pageDeploy AHM for the First Time 
+
+
+
+
+
+
+
+
+

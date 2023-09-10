@@ -1,0 +1,121 @@
+
+
+
+Generation Availability Analysis Wind | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health Manager
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+Generation Availability Analysis Wind
+
+
+
+
+
+
+
+Generation Availability Analysis WindDeploy GAA Wind for the First TimeBefore You Begin
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. GE Digital recommends, however, that the tasks be completed in the order in which they are listed.
+
+Results
+StepTaskNotes1
+Review the GAA Wind data model to determine which relationship definitions you will need to modify to include your custom equipment and location families. Via Configuration Manager, modify the relationship definitions as needed.
+
+
+This step is required only if you store equipment and location information in families other than the baseline Equipment and Functional Location families.
+
+2Assign Security Users to one or more of the GAA Wind Security Groups and Roles.This step is required.3Specify additional system code tables for the GAA Wind families.By default, GE Digital APM provides a set of system code tables for the GAA Wind families. You can modify these default system code tables or add new system code tables.4Configure the GAA Wind Report Configuration records.This step is required.5Using the GAA Wind Asset Hierarchy Data Loader, create the following records in the GAA Wind Asset Hierarchy:GAA CompanyGAA Wind PlantGAA Wind GroupGAA Wind Sub GroupGAA Wind UnitThis step is required.6Using the GAA Wind Sub Group Capacity Data Loader, create the GAA Wind Sub Group Capacity record.This step is required.
+Upgrade GAA WindBefore You Begin
+
+The following tables outline the steps that you must complete to upgrade this module to the latest version of GE Digital APM
+                    .
+                
+These tasks may be completed by multiple people in your organization. We recommend, however, that the tasks be completed in the order in which they are listed.
+
+ProcedureUpgrade to the latest version of GE Digital APM.
+This module will be updated to the latest version of GE Digital APM automatically. No additional steps are required.
+
+
+
+
+
+On this pageDeploy GAA Wind for the First TimeUpgrade GAA Wind
+
+
+
+
+
+
+
+
+

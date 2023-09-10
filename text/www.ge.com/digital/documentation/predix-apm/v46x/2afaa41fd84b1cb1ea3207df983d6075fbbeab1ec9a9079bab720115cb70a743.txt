@@ -1,0 +1,91 @@
+
+
+
+First Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Metrics and ScorecardsOverview
+Workflow
+Manage Scorecards
+Manage Key Performance Indicators (KPIs)
+Manage Metric Views
+Manage Privileges
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2019
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Metrics and Scorecards
+Release Notes
+First Quarter of 2021
+
+
+
+
+
+
+
+First Quarter of 2021Release Date: March 26, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, the KPI date format in tables and trend charts did not appear based on your culture settings. This issue has been resolved.DE154666
+Release Date: January 8, 2021This topic provides a list of product changes released for this module on this date.
+Table 2. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, the following issues existed in Metrics and Scorecards:If there were multiple perspectives and objectives for a Scorecard in the <Scorecard Name> page, and you added multiple Key Performance Indicators (KPI) to an objective:The KPIs incorrectly appeared in the <Objective Name> section.Some KPIs intermittently appeared in other <Perspective Name> sections.The time stamp indicating the date and time when the scorecard was modified did not appear based on the time zone specified for your GE Digital APM user account.When you attempted to modify a KPI, the data in the <KPI Name> page took longer than expected to appear and there was no indication that the operation of loading the data was in progress.These issues have been resolved. Now, a spinner appears when the data in the <KPI Name> page is being loaded.DE148424
+
+
+
+
+
+On this pageRelease Date: March 26, 2021Release Date: January 8, 2021
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,137 @@
+
+
+
+Policy Management | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Policy Management
+
+
+
+
+
+
+
+Policy ManagementAbout PoliciesPolicies are strategic plans that define actions that should be taken when certain conditions exist. A policy is made up of multiple components. Technically, a policy can exist with only a name and description, which are stored in a Policy record. However, a complete policy includes a policy model and one or more policy instances.Policy Model
+The following image shows an example of a policy model:
+
+A policy model is made up of nodes and connections that define the policy logic. Specifically, the nodes in a model represent:The items that you want to monitor (e.g., equipment temperature).The conditions that should trigger actions to be taken (e.g., temperature rises above 200 degrees). The actions that should be taken (e.g., send an email message). 
+A policy model does not function like a typical logic diagram. For example, a node does not automatically evaluate the values from the immediately preceding node. Rather, for each node, you can specify an input value that is associated with any predecessor node, even if the nodes are not directly connected. Before you create a policy model, make sure that you understand the basic principles for working with a policy model.
+Policy Instances
+Policy instances identify the records to which logic in the policy model will be applied. In other words, you will use policy instances to identify the specific records whose values you want to monitor.
+Each policy instance references one record for each input node in the policy model. For example, if a policy model contains two input nodes, one that represents the Equipment family and one that represents the Work History family, each policy instance that is associated with the policy will reference two records. The following image illustrates this example. In this image, boxes represent individual records and dotted lines represent associations between records.
+
+
+
+Each policy can be associated with an unlimited number of policy instances, so you can use one policy to apply the same logic to multiple records.
+About Module Workflow PoliciesVarious policies are added during the deployment of certain modules in GE Digital APM. These policies GE Digital APM exist to support the respective module workflows, for example: Policies used by RBI 580, RBI 581, and Pipeline Management are used to generate recommendations based on various criteria. Policies used by GAA  are used to perform calculations for the module.Important:  You should not modify or delete module workflow policies unless you are an expert user of the respective module. You cannot modify the name of a module workflow policy.A list of module workflow policies is available on the Policy Designer Overview page. Module workflow policies are identified by the text Module Workflow Policy for module <ModuleName>, which appears at the top of the Details workspace when you open the policy.For additional details about module workflow policies, including any required configuration steps, refer to the relevant module-specific documentation.Reverting a Module Workflow Policy to the Baseline Version
+In the event that a module workflow policy has been changed, but you want to reinstate the original baseline version (that is, the version delivered with the GE Digital APM distribution package that was imported during the deployment of the respective module), you can revert the policy to baseline. 
+The action of reverting a policy to baseline affects only the values stored in the Policy record, not the values stored in Policy Instance records. This means that adding or editing instances does not affect whether or not a policy is considered baseline. In addition, when you revert a policy to baseline, any policy instances will be unaffected.
+Similarly, policy security settings do not affect whether or not a policy is considered baseline, and any security settings will be unaffected when you revert to baseline.
+Note:
+Taking ownership of a policy will cause the policy to be considered non-baseline. However, if you want to change only the instances or security settings of a policy, you can take ownership, make the necessary changes, and then revert to baseline.
+Dates and Times Displayed in Policy DesignerThe date format and time zone that are displayed on the Policy Designer interface may differ from other user or system settings that you have configured. This topic describes the specific differences you may see.Policy Designer Date Format
+Certain dates and times in the Policy Designer interface are displayed and saved in the standard ISO date format YYYY-MM-DD HH: mm: ss, where the time values use a 24-hour time format. This applies to the dates and times that are:
+Written into the body of email messages.Written into the Description field of Policy Recommendation and Policy Event records that are generated by policies.Included in the validation and execution result text for the Return Value node.
+In these areas, the standard ISO date format is used regardless of any global date format settings or operating system settings.
+Policy Time Zone
+         For each policy, you can specify the time zone in which the Policy Designer interface displays dates and times. For example, the time zone setting determines the dates and times that are: Displayed in the Execution History pane.Displayed in validation messages.Written into the body of email messages.Written into the Description field of Policy Recommendation and Policy Event records that are generated by policies.Evaluated when you specify a relative date and time.The time zone that you specify for a policy will be used irrespective of any other user or system time zone settings.
+Create a New PolicyProcedure
+Access the Policy Designer Overview page, and then select New Policy.
+The Policy Designer page appears, displaying the Details workspace.
+
+
+
+Tip:  If you are already viewing a policy, you can also create a new policy by selecting in the Details workspace.
+In the Details workspace, enter a name and description for the new policy. The policy name is required and must be unique.In the Time Zone list, select the policy time zone.On the toolbar, select 
+A new policy is created, and you can now build a policy model and create one or more policy instances to complete the policy.Results
+The Policy record belonging to the policy is saved to the GE Digital APM database.You are assigned automatically as the policy owner.
+Dates and times that are associated with the policy are set to display in the time zone that you specified.The policy is set to inactive.
+Access a PolicyProcedure Choose one of the following methods to access a policy:Access the Policy Designer Overview page, and then select a policy name in one of the lists. Search for a policy using the GE Digital APM search tool.The Policy Designer page appears, displaying the Details workspace.
+
+Take Ownership of a PolicyProcedure Access the policy for which you want to take ownership.In the Details workspace, on the toolbar, select .
+Your name appears next to the  button.
+On the toolbar, select . 
+The policy is saved.
+Results
+You are set as the owner of the policy.You can modify the policy.
+Copy a PolicyAbout This Task
+You can create a new policy by copying an existing policy, either with or without its associated instances.
+Procedure
+Access the policy that you want to copy. In the Details workspace:If you want to copy the policy only, select .If you want to copy the policy and its associated instances, select .The Save Policy As dialog box appears. 
+In the Policy Name box, enter a name for the new policy. The policy name is required and must be unique.Select OK.The new policy appears.Results
+You are assigned automatically as the owner of the new policy.The new policy is set to inactive.All other policy and instance (if applicable) settings match the original policy.
+Refresh Metadata for PoliciesAbout This TaskIf the metadata used by a policy or node of a policy model is modified, you can refresh the metadata for the policy and its nodes so that they use the updated metadata. You can refresh the metadata for the policy or for specific nodes of the policy model.ProcedureAccess the policy for which you want to refresh the metadata.In the Design workspace, perform one of the following steps:If you want to refresh the metadata for the policy, in the Edit section of the toolbar, select .The metadata for the policy is refreshed.If you want to refresh the metadata for a node, select the node, and then in the Properties window for the node, select .The metadata for the node is refreshed.Delete a PolicyProcedure
+Access the policy that you want to delete.On the toolbar, select .A dialog box with a confirmation message appears.Select OK.The policy is deleted from the GE Digital APM database.Revert a Module Workflow Policy to the Baseline VersionProcedure
+Access the policy that you want to revert to the baseline version. In the Details workspace, select Revert to Baseline.
+Note:  This button appears only for module workflow policies and is enabled only when the policy has been modified from its original version.
+The Confirm Revert to Baseline dialog box appears. 
+Select OK.
+The Close Policy Tab dialog box appears.
+Select OK.Close the tab. If you want to view the baseline version, open the policy again.
+
+
+
+
+On this pageAbout PoliciesAbout Module Workflow PoliciesDates and Times Displayed in Policy DesignerCreate a New PolicyAccess a PolicyTake Ownership of a PolicyCopy a PolicyRefresh Metadata for PoliciesDelete a PolicyRevert a Module Workflow Policy to the Baseline Version
+
+
+
+
+
+
+
+
+

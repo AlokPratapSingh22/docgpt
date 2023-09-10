@@ -1,0 +1,119 @@
+
+
+
+Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Overview
+
+
+
+
+
+
+
+Overview Overview of the Risk Based Inspection (RBI) Module Risk Based Inspection (RBI) allows you to analyze the risk of the components of a piece of asset failing due to specific degradation mechanisms through defining both the consequence and probability of failure and then to define an Inspection Strategy for each mechanism. Using RBI, you can set up corrosion loops to organize the components that you want to analyze. For each component in a corrosion loop, you can create one of the following types of analyses: RBI Criticality Analysis: To create an RBI Criticality Analysis, you must use the RBI 580 methodology. You can also create an RBI PRD Criticality Analysis or an RBI Pipeline Analysis.  RBI 581 Risk Analysis: To create an RBI 581 Risk Analysis, you must use the RBI 581 methodology.Overview of the RBI 581 MethodologyYou can create an RBI 581 Risk Analysis using the RBI 581 methodology. If it is possible to mitigate risk at the component, RBI 581 recommends inspection tasks that will, for a specified period, keep the projected risk below the thresholds. If risk cannot be mitigated (i.e., inspections would not bring risk below the Risk Target values), the Risk Summary of the analysis provides a synopsis which will help determine the next course of action.Based on the analysis results, if risk is mitigated, you can generate recommendations to capture recommended actions. You can also create non-recurring inspection tasks that must be completed to mitigate risk over the plan period.About RBI MethodologiesRisk Based Inspection supports the following methodologies.  RBI 580: This methodology is included in the Risk Based Inspection module.  RBI 581: This methodology is implemented with the RBI 581 module. The RBI 581 Methodology
+After you conduct a RBI 581 Risk Analysis, if it is possible to mitigate risk at the component, RBI 581 will recommend inspection tasks that will, for a specified period, keep the projected risk below the thresholds. These thresholds are called Risk Targets. They are determined by your organization. If risk cannot be mitigated (i.e., inspections would not bring risk below the Risk Target values), the Risk Summary of the analysis provides a synopsis which will help determine the next course of action.
+Based on the analysis results, if risk is mitigated, you can generate recommendations. This is to capture recommended actions and create non-recurring inspection tasks that must be completed in order to mitigate risk over the plan period.
+The RBI 580 Methodology
+After you conduct an RBI Criticality Analysis, if the risk values are unacceptable, you can analyze hypothetical scenarios using What If Analyses and Future Risk Analyses to see how additional actions or factors might affect the risk. For example, you might create a What If Analysis to see what the risk level would be if you changed the operating pressure. Or, you might create a Future Risk Analysis to see what the risk level might be in five years.
+Based on the analysis results, you can create RBI Recommendations to capture recommended actions that might mitigate the risk associated with a component. You can then create Tasks or SAP Notifications from the RBI Recommendations to track the progress and ensure that the recommended actions are implemented.
+After the recommended actions are implemented, you can conduct another RBI Criticality Analysis to determine if the new operating procedures or environment have actually reduced the risk.
+Access the Risk Based Inspection Overview PageProcedureIn the module navigation menu, select
+Integrity > Risk Based Inspection.
+Note: You can also access the Risk Based Inspection Overview page for a process unit (i.e., functional location marked as a unit). To do so: In the main navigation bar, select .The Asset Hierarchy appears.In the pane, navigate to and select the functional location for which you want to access the Risk Based Inspection Overview page, and then, in the workspace, select Integrity.The Integrity section appears, displaying a list of analyses performed on the selected functional location.In the row containing Risk Based Inspection, select the link.
+
+The Risk Based Inspection Overview page appears, displaying the following information:
+ The Assets section: Contains a list of assets in the selected process unit. The Process Units section: Contains a list of process units under the selected functional location, a description for each process unit, the number of assets in each process unit, and the number of Corrosion Loops in each process unit.The Pending Reassessment section: Contains a list of assets that are ready to be duplicated for evergreening. The No Recommendations section: Contains a list of assets in the process unit that have at least one component with a Risk Completed analysis with no recommendations.The Inspection/TM Updates section: Contains two sections, the Inspection Updates and TM Updates sections. The Inspection Updates section contains a list of recent Inspections performed on assets which have an active analysis in the process unit. This list contains Inspections that have a Completion Date after the analysis Calculation Date. The TM Updates section contains a list of Corrosion Analyses performed on assets which have an active analysis in the process unit if the Corrosion Analyses have been calculated after the RBI Analysis. The Current Risk Overview graph: Plots the number of assets in the process unit by their current risk values in a pie chart. The Current Risk section: Contains a list of assets plotted in the Current Risk Overview pie chart. The The RBI Risk Matrix graph: Plots the total number of RBI Components based on their consequence of failure and probability of failure values. Only if a component is linked to an active RBI Criticality Analysis, RBI PRD Criticality Analysis, or RBI Pipeline Analysis, it is considered while plotting the graph. This graph appears only if the Risk Based Inspection license is active. The Past Risk Overview graph: Plots the number of assets in the process unit by their past risk values in a pie chart. The Past Risk section: Contains a list of assets plotted in the Past Risk Overview pie chart.
+
+
+
+Tip:  To return to the Risk Based Inspection Overview page after selecting a tab, select the tab again. 
+Note: The Risk Based Inspection Overview page is not updated automatically when you return to the previously opened tab. You can select Refresh () button to update the page.
+Access the Unit Summary WorkspaceBefore You Begin
+To mark a Functional Location as a Process Unit, access the Functional Location via Record Manager, and then select the Is a Unit? check box.
+Procedure
+Access the Risk Based Inspection Overview page.In the workspace, select the Process Units tab. The Process Units section appears, displaying a list process units. In the row containing the process unit that you want to access, select the link. The Unit Summary workspace appears, displaying the following information: The left pane: Contains a list of Corrosion Loops in the process unit.
+ The Unit Overview section: Contains the following graphs and a list of Corrosion Loops in the process unit:
+The first graph plots the risk category of each Corrosion Loop associated with an RBI Criticality Analysis, RBI PRD Analysis, or an RBI Pipeline Analysis. If you pause over a bar on the graph, the Corrosion Loop ID and the respective lowest Inspection Priority value appear. This graph appears only if the value in the RBI Overview Graph Preference box in the Global Preferences workspace on the RBI Admin Preferences page is either RBI 580 or 580 and 581.The second graph plots the SHE risk value of each Corrosion Loop that is associated with an RBI 581 Risk Analysis. If you pause over a bar on the graph, the Corrosion Loop ID and the respective maximum SHE risk value appear. This graph appears only if the value in the RBI Overview Graph Preference box in the Global Preferences workspace on the RBI Admin Preferences page is either RBI 581 or 580 and 581.
+If you select a bar on either of the graphs, the Corrosion Loop Overview section for the Corrosion Loop appears.
+ The Unit Details section: Contains the datasheet of the Functional Location that represents the process unit.
+Access the Asset Summary WorkspaceProcedure
+Access the Risk Based Inspection Overview page. In the workspace, select the Assets tab.The Assets section appears, displaying a list of assets. 
+Note: The Assets section displays the Equipment or Functional Locations that have at least one component.In the row containing the asset that you want to access, in the Asset ID column, select the link.The Asset Summary workspace appears, displaying the following information: The left pane: Contains a list of RBI Components in the asset. If you select a component, the Component Overview section appears in the workspace. The Asset Overview section: Contains the following graphs and a list of RBI Components in the asset:The first graph plots the risk category of each RBI Component that is linked to an RBI Criticality Analysis, RBI PRD Analysis, or an RBI Pipeline Analysis. If you pause over a bar on the graph, the Component ID and the respective Inspection Priority value appear. This graph appears only if the value in the RBI Overview Graph Preference box in the Global Preferences workspace on the RBI Admin Preferences page is either RBI 580 or 580 and 581.The second graph plots the SHE risk value of each RBI Component that is linked to an RBI 581 Risk Analysis. If you pause over a bar on the graph, the Component ID and the respective SHE risk value appear. This graph appears only if the value in the RBI Overview Graph Preference box in the Global Preferences workspace on the RBI Admin Preferences page is either RBI 581 or 580 and 581. If you select a bar on either of the graphs, the Component Overview section for the component appears. The Asset Details section: Contains the datasheet of the Equipment or the Functional Location that represents the asset.
+Access the Asset Summary Workspace for a New AssetProcedureIn the Asset Summary workspace, select the Assets using the Asset Hierarchy.In the module navigation menu, select
+Integrity > Risk Based Inspection.
+For Equipment Records, the Asset Summary workspace appears.
+or
+For Functional Location Records, the Risk Based Inspection Overview page appears.
+For Functional Location Records, select .The Asset Summary workspace appears.Note: The Asset Summary workspace displays the following information: The left pane: Contains a list of RBI Components in the asset. If you select a component, the Component Overview section appears in the workspace. The Asset Overview section: Contains the following graphs and a list of RBI Components in the asset:The first graph plots the risk category of each RBI Component that is linked to an RBI Criticality Analysis, RBI PRD Analysis, or an RBI Pipeline Analysis. If you pause over a bar on the graph, the Component ID and the respective Inspection Priority value appear. This graph appears only if the value in the RBI Overview Graph Preference box in the Global Preferences workspace on the RBI Admin Preferences page is either RBI 580 or 580 and 581.The second graph plots the SHE risk value of each RBI Component that is linked to an RBI 581 Risk Analysis. If you pause over a bar on the graph, the Component ID and the respective SHE risk value appear. This graph appears only if the value in the RBI Overview Graph Preference box in the Global Preferences workspace on the RBI Admin Preferences page is either RBI 581 or 580 and 581. If you select a bar on either of the graphs, the Component Overview section for the component appears. The Asset Details section: Contains the datasheet of the Equipment or the Functional Location that represents the asset.
+
+
+
+
+On this page Overview of the Risk Based Inspection (RBI) Module Overview of the RBI 581 MethodologyAbout RBI MethodologiesAccess the Risk Based Inspection Overview PageAccess the Unit Summary WorkspaceAccess the Asset Summary WorkspaceAccess the Asset Summary Workspace for a New Asset
+
+
+
+
+
+
+
+
+

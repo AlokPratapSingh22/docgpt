@@ -1,0 +1,108 @@
+
+
+
+Fourth Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference 
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+ First Quarter of 2019 
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Release Notes
+Fourth Quarter of 2019
+
+
+
+
+
+
+
+Fourth Quarter of 2019Inspection ManagementThis topic provides a list of product changes released for this module on the specified dates.Release Date: December 13, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDYou can now manage API RBI Recommendations in the Inspection Plan page for the asset. The Inspection Plan page of the Compliance Management module now supports viewing, managing, approving, and implementing API RBI Recommendations. In addition, the Inspection Plan Management page now supports managing Inspection plans with API RBI Recommendations in bulk. To facilitate this enhancement, you must follow the steps in KBA: https://digitalsupport.ge.com/communities/en_US/Article/V4-3-1-0-2-Compliance-Management-How-to-Configure-API-RBI-Recommendations-for-Inspection-Plan.Note: If you had previously performed the steps in a similar https://digitalsupport.ge.com/communities/en_US/Article/V4-3-0-7-8-Compliance-Management-How-to-Configure-API-RBI-Recommendations-for-Inspection-Plan for the V4.3.0.7.8 release, you must still perform the steps in the KBA for the V4.3.1.0.2 release and ensure the attached queries are imported.US373707
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, the Inspection Management Overview page was filtered based on the asset hierarchy context, despite providing the unit key in the Uniform Resource Locator (URL). This issue has been resolved. Now, the Inspection Management Overview page is filtered based on the unit key you provide.US376669
+Release Date: November 8, 2019
+Table 3. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in the Inspection Management Overview page, the master-detail sheet associated with an Inspection family did not appear when the following conditions were met:You configured a family in the Event Configurations section in the Inspection Configuration page so that the family appeared in the module navigation menu.You configured the master-detail sheet for the related family.This issue has been resolved.DE120247
+
+
+
+
+
+On this pageInspection Management
+
+
+
+
+
+
+
+
+

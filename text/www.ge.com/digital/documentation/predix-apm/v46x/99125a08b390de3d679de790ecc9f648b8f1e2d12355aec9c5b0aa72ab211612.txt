@@ -1,0 +1,229 @@
+
+
+
+ASM Integration | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+ASM Integration
+
+
+
+
+
+
+
+ASM IntegrationAbout Asset Strategy Management (ASM) IntegrationYou can approve the Inspection Plan of an asset to ASM if all the RBI Components in the asset have an active RBI 581 Risk Analysis. When you approve the Inspection Plan, the asset is promoted to ASM. When an asset is promoted: Degradation Mechanisms (DMs) are used to create Risks in ASM.Recommendations are used to create Actions, which can be implemented as Inspection Tasks. These tasks are listed in Inspection Management.
+
+Note: The way in which you manage the unmitigated and mitigated risk values depends on how administrative settings are configured.Details
+You can decide how you want to track recommended actions based on the risk information in the DMs. You can choose either of the following options:
+You can create or generate RBI Recommendations to record the mitigated risk values and then approve the Inspection Plan of the asset. Approving the Inspection Plan will transfer the Degradation Mechanism and RBI Recommendations, along with unmitigated and mitigated risk values, to ASM. Risks are created for the Degradation Mechanism and Actions are created for the recommendation. You can implement either RBI Recommendations from an approved Inspection plan or Actions from an active Asset Strategy as an Inspection Task.You will not create RBI Recommendations. Instead, you will recommend a future action and manage mitigated risk values using Actions in ASM.
+To transfer RBI Recommendations to Asset Strategies in ASM, you must approve the Inspection Plan of the corresponding asset. Note: A single asset can have multiple RBI Components, and each RBI Component can have only one active RBI 581 Risk Analysis.
+After you approve the Inspection Plan of the asset:
+All the RBI 581 Risk Analyses and RBI Recommendations linked to the RBI Components in the asset are set to the Accepted by ASM state. You cannot modify them.If you create another RBI 581 Risk Analysis for an RBI Component linked to the asset and modify the state of the new analysis to Risk Completed, the Inspection Plan will be moved to the Modified state. You can re-approve the Inspection Plan to promote the asset to ASM again.If you modify the state of the analysis to Re-evaluating, and if you want to approve the Inspection Plan again, you must first create an RBI 581 Risk Analysis, move the analysis to the Risk Completed state, and create RBI Recommendations for a component in the asset before promoting it.
+ASM Integration
+ In the following image, Asset A is linked to two RBI Components, Component 1 and Component 2, which are each linked to a Risk Completed RBI 581 Risk Analysis, Analysis 1 and Analysis 2, respectively. If you approve the Inspection Plan on Asset A, the asset is promoted to ASM, and both Analysis 1 and Analysis 2 are set to the Accepted by ASM state.
+
+
+
+Managing Asset Strategies That Were Created from RBI
+After an Asset Strategy has been created from RBI, you can manage the Asset Strategy using ASM. Some restrictions will apply to the Asset Strategy depending on how the administrative settings are configured. 
+The following table provides information about which Actions are always allowed and which ones are always restricted.
+
+Always AllowedAlways Restricted
+
+Creating Risks.
+
+Assigning new Actions to Risks that did not originate in RBI.
+
+Managing Asset Strategy states.
+
+In the Risk Analysis, clearing the Selected Actions check box for any Action that did not originate in RBI.
+
+Assigning new Actions to any Risk that originated in RBI.
+
+Assigning existing Actions that did not originate in RBI to any Risk that did originate in RBI.
+
+Assigning new Risks to any Action that originated in RBI.
+
+Assigning existing Risks that did not originate in RBI to any Action that did originate in RBI.
+
+Accessing the Risk Matrix to view the unmitigated risk rank for any Risk that was created from RBI.
+
+Accessing the Risk Matrix to view the mitigated risk rank for any Action that was created from RBI.
+
+Copying a Risk that was created from RBI.
+
+Copying a Risk that was created from RBI.
+
+
+
+Risk Records
+
+Undoing a Risk that was created from RBI.
+
+Removing a Risk that was created from RBI.
+
+Assigning Actions that originated in RBI to a Risk that originated in RBI.
+
+For any Risk that was created from RBI, modifying values in the following fields in the Risk datasheet (listed in the order in which they appear on the datasheet, from top to bottom):
+
+Name 
+
+Description 
+
+Risk Basis 
+
+Failure Mode 
+
+Maintainable Item 
+
+Failure Cause 
+
+
+Modifying the unmitigated risk rank or unmitigated financial risk rank for any Risk that was created from RBI.
+Action Records 
+Removing an Action that was created from RBI.
+
+Assigning Risks that originated in RBI to an Action that originated in RBI.
+
+For any Action that was created from RBI, modifying values in the following fields on the Action datasheet (listed in the order in which they appear in the datasheet, from top to bottom):
+
+Action Basis
+
+Name
+
+Action Type
+
+Interval
+
+Interval Units
+
+Nonrecurring
+
+Cost
+
+Shutdown Required
+
+Cost Basis
+
+Target Completion Date
+
+
+Modifying the mitigated risk rank for any Action that was created from RBI.
+
+In the Risk Analysis, clearing the Selected Actions check box for an Action that was created from RBI.
+
+General
+Applying an Asset Strategy Template as a master template to the Asset Strategy
+
+
+
+
+The following table describes Actions that are allowed for Asset Strategies that were created from RBI and the corresponding administrative setting that allows it.
+
+ActionCorresponding Administration Action 
+Implement Actions as Tasks in ASM
+
+This action is allowed if the Implement Recommended Actions to Tasks in ASM check box is selected.
+If the Implement Recommended Actions to Tasks in ASM check box is cleared, recommendations can be implemented only as Inspection Tasks through the Inspection Plan of the related asset.
+
+
+Asset Strategy Management (ASM) Integration Workflow Addressed
+Create an
+RBI Component  for each piece of Asset.
+Create an RBI 581 Risk Analysis for the component.
+Assess the unmitigated risk of the Degradation Mechanisms (DMs) that are linked to the RBI 581 Risk Analyses.
+Modify the state of all the RBI 581 Risk Analyses to Risk Completed.An Inspection Plan will be created and linked to the parent asset if one does not exist. If the Inspection Plan does exist and is approved, the state of the Inspection Plan will be updated to Modified.
+
+Generate Recommendations for all the analyses within the asset, and assess the mitigated risk. Recommendations will be linked to the Inspection Plan of the asset.Access an Inspection Plan for the asset.Approve the Inspection Plan. This will transition the Inspection Plan to the Approved state and promote all the RBI Recommendations and DMs associated with the asset to ASM. Approving an Inspection Plan on an asset includes steps to analyze the risk associated with each component, recommend a future action based on the risks, and transfer the analysis data to ASM. You can recommend a future action in one of the following ways:Using RBI Recommendations in RBI: In this workflow, you will identify the mitigated risk of DMs in RBI.Using Actions in ASM: In this workflow, you will identify the mitigated risk of DMs in ASM.In most cases, you will complete the steps in either workflow on a regular basis as you refine the operating conditions and environment. RBI Analyses are dynamic tools that help you refine your strategy for maintaining RBI Components.About Unmitigated RiskWhen you calculate an RBI 
+
+581 Risk
+
+ Analysis, the unmitigated SHE risk and unmitigated financial risk for each Degradation Mechanisms record (DM) are calculated automatically and stored in the DM. The calculation is performed using Risk Mapping Policies.Unmitigated Risk
+The unmitigated risk rank is plotted on a Risk Matrix. This value is the intersection of the consequence and probability that are calculated when you calculate an RBI 581 Risk Analysis. 
+Tip: For more information, refer to the Risk Matrix section of the documentation.
+
+ Consequence of Failure: The consequence of failure is based on the following fields in the associated RBI 581 Consequence Evaluation:
+Safety Risk CategoryFinal Consequence AreaOperations Risk CategoryCalculated Total Financial Consequence
+ Probability of Failure: This value is calculated and stored in the DM.
+About Mitigated RiskWhen you calculate an RBI 581 Risk Analysis, the unmitigated risk and unmitigated financial risk for each DM is calculated automatically and stored in the related Degradation Mechanisms record (DM). By default, the mitigated risk values are set to the same values as the unmitigated risk values. You can modify the mitigated risk values manually using the risk matrix to indicate how the risk could be lowered if certain actions are taken.Access Asset Strategy Manager (ASM) from an Inspection PlanProcedure
+Access an Inspection Plan for the asset which you want to access the Asset Strategy in Asset Strategy Manager (ASM).In the workspace, select the Open Strategy link.The Risks and Actions workspace appears for the Asset Strategy in the Asset Strategy Manager (ASM). For more information, refer to the Asset Strategy Management documentation.Note: The Open Strategy link will be available only if the Inspection Plan is in the Approved or Modified state and an Asset Strategy exists for the asset. The state of the asset strategy also appears next to the Open Strategy link. Approving the Inspection Plan of an AssetBefore You Begin
+All the RBI Components linked to the asset must contain an active RBI 581 Risk Analysis (that is, an analysis in Risk Completed, Pending Approval, Approved, or Implemented state).
+Procedure
+Access the Inspection Plan workspace for the Inspection Plan that you want to approve. Select the button that indicates the current state of the Inspection Plan (that is, Proposed or Modified).
+A menu appears, displaying a list of operations that you can perform on the Inspection Plan to modify its state.
+
+Select Approve, and then select Done.
+The Inspection Plan is approved.
+If the selected asset is not currently linked to an Asset Strategy, an Asset Strategy is created and linked to the asset.
+ResultsThe selected asset, along with all the DMs and Recommendations linked to the asset, are promoted to Asset Strategy Manager (ASM). What To Do NextAccess ASM.
+
+
+
+
+On this pageAbout Asset Strategy Management (ASM) IntegrationAsset Strategy Management (ASM) Integration Workflow About Unmitigated RiskAbout Mitigated RiskAccess Asset Strategy Manager (ASM) from an Inspection PlanApproving the Inspection Plan of an Asset
+
+
+
+
+
+
+
+
+

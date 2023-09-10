@@ -1,0 +1,341 @@
+
+
+
+Corrosion Loop | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data LoadersRBI 581
+Corrosion Loop
+RBI Components to TML Groups Relationship Data Loader
+
+
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Data Loaders
+Corrosion Loop
+
+
+
+
+
+
+
+Corrosion LoopAbout the Risk Based Inspection (RBI) Corrosion Loop Data Loader
+GE Digital APM, through the Risk Based Inspection module, provides the functionality to carry out a Semi-Quantitative Analysis (RBI Criticality Analysis) on Corrosion Loops, which are comprised of various types of linked RBI Components. Using the Risk Based Inspection (RBI) Corrosion Loop Data Loader, you can generate all Corrosion Loops for a Process Unit along with the related RBI Components and Reference Documents.Using the Risk Based Inspection (RBI) Corrosion Loop Data Loader, you can create or update Corrosion Loops, link RBI Components, and Reference Documents.About the Risk Based Inspection (RBI) Corrosion Loop Data Loader RequirementsThis documentation assumes that your organization has completed fully the deployment of the Risk Based Inspection module. The Risk Based Inspection (RBI) Corrosion Loop Data Loader should only be used after the Risk Based Inspection module has been implemented.The data loader can be used to set up an RBI program during implementation. Because the RBI Components must exist prior to the Corrosion Loop data load, the Risk Based Inspection (RBI) 580 Data Loader should be used before the Risk Based Inspection (RBI) Corrosion Loop Data Loader.When you create or update a Corrosion Loop, it is linked to a Functional Location, which must already exist, and then linked to Criticality RBI Components and Reference Documents that you specify.The following data must be defined prior to loading Corrosion Loop data:Site ReferencesEquipment Taxonomies
+Functional Location Families
+Security Settings
+The Security User performing the data load operation must be associated with either the MI Data Loader User or MI Data Loader Admin Security Role, and must also be associated with the MI RBI Analyst Security Group or a Security Role that is associated with this Security Group.
+About the Risk Based Inspection (RBI) Corrosion Loop Data Loader Data Model
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+About the Risk Based Inspection (RBI) Corrosion Loop Data Loader General Loading StrategyBest Practices
+When importing data using the Risk Based Inspection (RBI) Corrosion Loop Data Loader, you must use the following best practices:
+ ID fields (Row 2 of each worksheet) must not include special characters or spaces.The data loader workbook contains sample data in each column. It is only for your reference. You must remove this data before using the data loader workbook.Columns (including columns representing custom fields) in the worksheets should be formatted as Text.Import a maximum of 500 records in each data load.For Oracle databases, valid cell values are case-sensitive.For a Corrosion Loop to have associated RBI Components, the RBI Components that will be linked to the Corrosion Loop must already exist in the GE Digital APM system.If RBI Components do not exist, the Corrosion Loop Data Loader will create or update Corrosion Loop data, but it will not have any associated RBI Components.
+Load Sequence
+The RBI Corrosion Loop data load is performed in a specific sequence to create all necessary relationships between records:
+Note:  Prior to deploying the Risk Based Inspection (RBI) Corrosion Loop Data Loader, the Risk Based Inspection (RBI) 580 Data Loader must be implemented. The Corrosion Loop Data Loader uses the values in the Functional Location field, the Corrosion Loop field, the Asset field, and the Component field to look up the associated component record and to link said RBI Component to a Corrosion Loop. . For RBI Components to be linked to a Corrosion Loop, the RBI Components must already exist and be present in the Components worksheet. If RBI Components do not exist, the Corrosion Loop Data Loader will create or update Corrosion Loop data, but it will not have any associated RBI Components.
+The Corrosion Loops worksheet is processed. An existing Functional Location will be looked up based on the Functional Location (MI_FNCLOC00_FNC_LOC_C) and the RBI Corrosion Loop ID (MI_RBI_SYSTEM_RBI_SYS_ID_C).If a Corrosion Loop specified on the worksheets exists, it will be updated. If a Corrosion Loop cannot be found, then a new Corrosion Loop will be created.The RBI Components worksheet is processed. An existing RBI Component is looked up based on the below fields: Asset ID (For Equipment: MI_EQUIP000_EQUIP_ID_C and for Functional Location: MI_FNCLOC00_FNC_LOC_C)Asset CMMS System (For Equipment:MI_EQUIP000_SAP_SYSTEM_C and for Functional Location: MI_FNCLOC00_SAP_SYSTEM_C)Equipment Technical Number (MI_EQUIP000_EQUIP_TECH_NBR_C)Asset FamilyComponent (MI_RBICOMPO_COMPO_C)Component Type (MI_RBICOMPO_COMPO_TYPE_C)If found, the RBI Component will be linked to the specified Corrosion Loop (MI_RBI_SYSTEM_RBI_SYS_ID_C). If no RBI Components exist, this worksheet is skipped. If the RBI Component is specified in the worksheet, but that RBI Component cannot be looked up, an error is added to the log. Note: When an RBI Component is linked to a Corrosion Loop, the Potential Degradation Mechanisms linked to the Corrosion Loop are added to the RBI Component.The Reference Document worksheet is processed. The Corrosion Loop will be looked up by the Functional Location (MI_FNCLOC00_FNC_LOC_C), the RBI Corrosion Loop (MI_RBI_SYSTEM_RBI_SYS_ID_C), and the Reference Document ID (CTIT_ID).If a Reference Document specified on the worksheet exists, it is updated. If a Reference Document cannot be found, then a new Reference Document is created.
+Data that you specify in the field on each worksheet will be included in the new records.
+About the Risk Based Inspection (RBI) Corrosion Loop Data Loader Workbook Layout and Use
+In order to import data using the Risk Based Inspection (RBI) Corrosion Loop Data Loader, GE Digital APM provides an Excel workbook, Risk Based Inspection (RBI) Corrosion Loop.xlsx, which supports baseline Risk Based Inspection in GE Digital APM. This workbook must be used to perform the data load. You can modify the Excel workbook to include custom fields used by your organization.
+Note: The Excel workbook is referred to throughout this documentation as the data loader workbook.
+The following table lists the worksheets that are included in the data loader workbook.
+WorksheetDescriptionCorrosion_LoopsThis worksheet is used to specify which Corrosion Loops the user wants to link to Functional Locations.ComponentsThis worksheet is used only to lookup fields for unique, existing RBI Components to link to Corrosion Loops.Reference_DocumentThis worksheet is used to specify the Functional Location key fields as well as the Corrosion Loop key fields.
+Color Coding
+Certain columns on the worksheets have different functions and requirements. To illustrate this, certain columns are color-coded. The following table lists the colors and what they represent.
+
+Color
+
+Description
+
+Comments
+
+Gray
+
+Required Key Fields
+
+Indicates columns that contain values that are used by the Risk Based Inspection (RBI) Corrosion Loop Data Loader to look up and create records. If these columns are removed from the worksheets, the data load will fail. While the worksheets require that these columns be present, values are not necessarily required in these columns.
+
+Red
+
+Fields Required for Saving Records
+
+Indicates columns that contain values that are required to save the record.
+
+Blue
+
+Recommended Fields
+
+Indicates columns that, according to GE Digital APM Best Practice for Inspection Management, should contain values.
+
+None
+
+Custom Fields
+
+Indicates columns in which you can specify custom fields.
+
+Limitations
+The Risk Based Inspection (RBI) Corrosion Loop Data Loader has the following limitations:
+The values that you enter in the data loader workbook are case-sensitive.
+If you reimport data, the records that have been created by the Data Loader will be updated. Therefore, while reimporting data, if you remove the data for a field in the data loader workbooks, the value for the corresponding field in GE Digital APM will be either a default value or blank.
+
+Corrosion_Loops Worksheet
+On the Corrosion_Loops worksheet, you will specify which Corrosion Loops the user wants to link to Functional Locations.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Functional Location
+
+MI_FNCLOC00_FNC_LOC_C
+
+Character (255)
+
+The value in this column is used to break the data into smaller data loads.
+
+CMMS System
+
+MI_FNCLOC00_SAP_SYSTEM_C
+
+Character (255)
+
+A value is required for each row. 
+
+RBI Corrosion Loop ID
+
+MI_RBI_SYSTEM_RBI_SYS_ID_C
+
+Character (255)
+
+If this column is populated, the Corrosion Loop referenced in this column will be identified by a combination of the Functional Locations and CMMS System.
+
+RBI Corrosion Loop Description
+
+MI_RBI_SYSTEM_RBI_SYS_DESC_C
+
+Character (2000)
+
+This column is not required for calculations; however, providing a value for this column is considered Best Practice.
+
+RBI Corrosion Loop From
+
+MI_RBI_SYSTEM_RBI_SYS_FROM_C
+
+Character (255)
+
+This column is not required for calculations; however, providing a value for this column is considered Best Practice.
+
+RBI Corrosion Loop To
+
+MI_RBI_SYSTEM_RBI_SYS_TO_C
+
+Character (255)
+
+This column is not required for calculations; however, providing a value for this column is considered Best Practice.
+
+
+Components Worksheet
+On the Components worksheet, you will use lookup fields to find unique, existing RBI Components to link to Corrosion Loops.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Functional Location
+
+MI_FNCLOC00_FNC_LOC_C
+
+Character (50)
+
+Values in this column must match values entered on the Corrosion_Loop worksheet, if they exist.
+
+CMMS System
+
+MI_FNCLOC00_SAP_SYSTEM_C
+
+Character (255)
+
+Values in this column must match values entered on the Corrosion_Loop worksheet, if they exist.
+
+RBI Corrosion Loop ID
+
+MI_RBI_SYSTEM_RBI_SYS_ID_C
+
+Character (255)
+
+Values in this column must match values entered on the Corrosion_Loop worksheet, if they exist.
+
+Asset ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+A value is required for each row. For a Functional Location asset, the field MI_FNCLOC00_FNC_LOC_C should be used.
+Asset CMMS SystemMI_EQUIP000_SAP_SYSTEM_CCharacter (255)A value is required for each row. For a Functional Location asset, the field MI_FNCLOC00_SAP_SYSTEM_C should be used.
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+A value is required for each row.Note: This field must be left blank for a Functional Location asset.Asset FamilyASSET_FAMILY_IDCharacter (255)This field is required when loading Functional Location assets. If no value is provided, the asset will be considered an Equipment asset. Note: Below are the valid values:MI_EQUIP000MI_FNCLOC00
+Component
+
+MI_RBICOMPO_COMPO_C
+
+Character (250)
+
+A value is required for each row.
+
+Component Type
+
+MI_RBICOMPO_COMPO_TYPE_C
+
+Character (60)
+
+A value is required for each row.
+This cell may only contain a value that exists in the list in the Component Type field for Criticality RBI Component records.
+
+
+Reference_Document Worksheet
+On the Reference_Document worksheet, you will specify the Functional Location key fields as well as the Corrosion Loop key fields.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Functional Location
+
+MI_FNCLOC00_FNC_LOC_C
+
+Character (255)
+
+Values in this column must match values entered on the Corrosion_Loop worksheet, if they exist.
+
+CMMS System
+
+MI_FNCLOC00_SAP_SYSTEM_C
+
+Character (255)
+
+Values in this column must match values entered on the Corrosion_Loop worksheet, if they exist.
+
+RBI Corrosion Loop ID
+
+MI_RBI_SYSTEM_RBI_SYS_ID_C
+
+Character (255)
+
+Values in this column must match values entered on the Corrosion_Loop worksheet, if they exist.
+
+Reference Document ID
+
+CTIT_ID
+
+Character (255)
+
+A value is required for each row. 
+
+Description
+
+CTIT_DESC_TX
+
+Character (255)
+
+This column is not required for calculations; however, providing a value for this column is considered Best Practice.
+
+Document Path
+
+MIRD_DOC_PATH_CHR
+
+Character (1023)
+
+This column is not required for calculations; however, providing a value for this column is considered Best Practice.
+
+
+About the Risk Based Inspection (RBI) Corrosion Loop Data Loader Load VerificationAbout This TaskFollowing a data load, you should perform the following steps in GE Digital APM to confirm the integrity and accuracy of the data imported from the data loader workbook.ProcedureAccess the details of the import job. These details will indicate if any errors, minor or otherwise, were encountered during the import job. The log may help account for any records that are unexpectedly absent after the data load.In Risk Based Inspection or Record Manager, access the Corrosion Loops specified in the data loader workbook, and then verify that the expected components are present or updated, and that any associated records that you expected to be created are also present in the database.
+You can enter the following query in the SQL workspace of the Query page to review a list of components created after a specified date:
+SELECT [MI_RBiSYS00].LAST_UPDT_DT "LAST_UPDT_DT", [MI_RBiSYS00].[MI_RBI_SYSTEM_RBI_SYS_ID_C] "RBI Corrosion Loop ID", [MI_RBiSYS00].[MI_RBI_SYSTEM_RBI_SYS_DESC_C] "RBI Corrosion Loop Description", [MI_RBiSYS00].[MI_RBI_SYSTEM_RBI_SYS_TO_C] "RBI Corrosion Loop To", [MI_RBiSYS00].[MI_RBI_SYSTEM_RBI_SYS_FROM_C] "RBI Corrosion Loop From", [MI_RBICOMPO].[MI_RBICOMPO_COMPO_C] "RBI Component ID", [MI_RBICOMPO].[MI_RBICOMPO_COMPO_TYPE_C] "Component Type" FROM [MI_RBiSYS00] LEFT JOIN {MIR_HSRBICMP} JOIN [MI_RBICOMPO] ON {MIR_HSRBICMP}.SUCC_ENTY_KEY = [MI_RBICOMPO].ENTY_KEY ON [MI_RBiSYS00].ENTY_KEY = {MIR_HSRBICMP}.PRED_ENTY_KEY WHERE [MI_RBiSYS00].LAST_UPDT_DT >= CONVERT(VARCHAR(255), (? :d :caption='Enter a Date'), 110)
+
+
+
+
+
+On this pageAbout the Risk Based Inspection (RBI) Corrosion Loop Data LoaderAbout the Risk Based Inspection (RBI) Corrosion Loop Data Loader RequirementsAbout the Risk Based Inspection (RBI) Corrosion Loop Data Loader Data ModelAbout the Risk Based Inspection (RBI) Corrosion Loop Data Loader General Loading StrategyAbout the Risk Based Inspection (RBI) Corrosion Loop Data Loader Workbook Layout and UseAbout the Risk Based Inspection (RBI) Corrosion Loop Data Loader Load Verification
+
+
+
+
+
+
+
+
+

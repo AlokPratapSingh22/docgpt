@@ -1,0 +1,607 @@
+
+
+
+Probability Distribution Analyses | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability DistributionProbability Distribution: Overview
+Probability Distribution: Workflow
+Probability Distribution Analyses
+
+
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Probability Distribution
+Probability Distribution Analyses
+
+
+
+
+
+
+
+Probability Distribution AnalysesAbout Probability Distribution AnalysisProbability Distribution Analysis allows you to describe the Time to Failure (TTF) as a statistical distribution, which usually is characterized by a specific pattern. Based on a query, dataset, or data that you manually enter, you can use an independent variable to generate a Probability Distribution Analysis. GE Digital APM Reliability supports four Distribution types: 
+Normal
+Weibull
+Exponential
+
+Lognormal
+TriangularGumbelGeneralized Extreme Value
+About Data Censoring in a Probability Distribution Analysis
+Probability Distribution Analysis supports the functionality of censoring, which accounts for the period of time from the last failure date to the analysis end date. You can censor or ignore datapoints in a Probability Distribution Analysis to estimate the probability when a failure might occur. Censoring is based on failure modes. 
+Censoring a datapoint means that the datapoint is excluded as a failure but included in the operating time of the Asset. If you select the Censored check box, the data in the selected row is excluded. When you create a Probability Distribution Analysis using a query or dataset as the data source, the GE Digital APM system automatically censors time values from the beginning of the Analysis Period to the first event and the time value from the last event to the end of the analysis. After the calculations for the analysis have been performed, each time that the query or dataset is refreshed, the failure data will be automatically censored.
+Regardless of the data source you use, you can censor any failure data. Consider the following:
+For Maximum Likelihood Estimators (MLE), the maximum number of censored datapoints is one (1) less than the total number of datapoints.For Least Squares estimation, the maximum number of censored datapoints is two (2) less than the total number of datapoints.
+Pump Failure
+Assume that you want to determine the reasons for a pump failure. 
+A pump might have failed due to multiple reasons, such as rusted part, motor overheating, insufficient power supply, or power outage. Each of these reasons will have its own specific failure rate and probability density function. To determine the failure rate of "motor overheating," you must censor all other failure modes from the analysis. 
+Further, motor overheating might be caused due to multiple reasons, such as improper operation, improper application, and improper maintenance. The censoring feature allows you to separate the failure modes, and determine which is the dominant failure mode. Based on this information, you can decide what is needed to improve the motor performance. 
+Access a Probability Distribution AnalysisProcedure
+Access the RA Overview page. Select the Probability Distribution tab.
+A list of Probability Distribution Analyses available in the database appears.
+
+
+
+Select the Probability Distribution Analysis whose details you want to view.
+The Analysis Summary workspace for the selected analysis appears, displaying a preview of the Probability Distribution Function (PDF) plot and the Cumulative Density Function (CDF) plot. The workspace also contains the following sections at the bottom of the workspace:
+
+Distribution Options
+: Contains the summary of distribution properties for the selected Probability Distribution Analysis and allows you to modify these properties. 
+Distribution Parameters: Contains the distribution parameters, which are determined by the distribution type. 
+Goodness of Fit Test: Displays the results of the Goodness of Fit (GOF) test and includes the Statistic, P-Value and Passed fields.
+The left pane contains the following tabs:
+
+
+Probability Plot
+
+
+
+PDF Plot
+
+
+
+CDF Plot
+
+
+
+
+
+About Probability Plot
+The Probability Plot is a log-log plot with data overlay and confidence limits that graphically displays the probability (expressed as a percentage) of each possible value of the random variable (CDF Occurrence % vs. time). CDF Occurrence % used here is numerically equal to the value from the cumulative distribution. 
+Note: Time used here refers to life data, not calendar data.
+
+
+
+The Probability Plot shows the same data as the CDF plot, just represented in a log-log format. The log-log format reflects the standard technique for representing Weibull Distribution. Log-log format Data overlay gives a visual estimate of Goodness of Fit (GOF). Data overlay also gives clues to the presence of multiple failure modes. If a single or multiple inflection points exist in the data, then there is a possibility of multiple failure modes.
+Note: Interaction with charts is not available on touch-screen devices.
+Graph Features
+While accessing a Probability Plot, you can:
+
+Hover or tap on any datapoint to view the coordinates and the details of a datapoint.
+For an Estimated datapoint, you can view the type of distribution, the distribution parameters, and the value of R-Squared.For an Observed datapoint, you can view the name and the value of Variable. 
+
+Click or double-tap on any observed datapoint to view the data on the 
+Distribution Data
+ window. 
+
+Censor a datapoint. Customize the appearance of the plot by using standard graph features.Customize the data displayed in the graph by adjusting the x-axes to vary the display range. 
+About Failure Rate Plot
+The Failure Rate Plot shows the instantaneous failure rate of the population.
+If the function is increasing, then equipment is wearing out.If the function is decreasing, then equipment is subject to infant mortality.
+
+
+
+Note: Interaction with graphs is not available on touch-screen devices.
+Graph Features
+When you access a Failure Rate Plot, GE Digital APM displays auto-censored datapoints that represent the life between the last date of the failure and the end of the analysis.
+While viewing a Failure Rate Plot, you can:
+Hover or tap on any datapoint to view the coordinates and the details of a datapoint.For an Estimated datapoint, you can view the type of distribution, the distribution parameters, and the value of R-Squared.For an Observed datapoint, you can view the name and the value of Variable. 
+Select an observed datapoint to open the Point Information window. You can then select Go To Editor to view data. 
+Censor a datapoint. Customize the appearance of the graph by using standard graph features.
+About PDF Plot
+The Probability Density Function (PDF) plot is a lin-lin plot that counts the number of failures (or any other data) between certain time periods, creating a curve fit that estimates how many failures (failure data or any other data) you can expect to occur at a given point of time. This plot shows Density vs. Size. The term Density is used here with failure data to describe the size of the population that failed at the particular value of size (SqFt). A PDF plot helps you to answer a question such as, "What is the chance of a member of the population failing at exactly the time in question?"
+
+
+
+Note: Interaction with charts is not available on touch-screen devices.
+Graph Features
+While accessing a PDF plot, you can:
+Hover or tap on any datapoint to view the coordinates and the details of a datapoint.For an Estimated datapoint, you can view the type of distribution, the distribution parameters, and the value of R-Squared.For an Observed datapoint, you can view the name and the value of Variable. 
+Click or double-tap on any observed datapoint to view the data on the 
+Distribution Data
+ window. 
+Censor a datapoint. Customize the appearance of the plot by using standard graph features.Customize the data displayed in the graph by adjusting the x-axes to vary the display range. 
+About CDF Plot
+The Cumulative Distribution Function (CDF) plot is a lin-lin plot with data overlay and confidence limits. It shows the cumulative density of any data set over time (i.e., Probability vs. size). The term Probability is used in this instance to describe the size of the total population that will fail (failure data or any other data) by size (SqFt). 
+
+
+
+CDF plot answers a different question than PDF. For example, "What is the probability of failure at Size (SqFt)?" The CDF curve is the area under the PDF curve. The CDF accumulates all probability of failure up to the point in time in question. Since the number of failures increases with increasing size, the slope of the curve is always positive, always increasing.
+Note: Interaction with charts is not available on touch-screen devices.
+Graph Features
+While accessing a CDF plot, you can:
+Hover or tap on any datapoint to view the coordinates and the details of a datapoint.For an Estimated datapoint, you can view the type of distribution, the distribution parameters, and the value of R-Squared.For an Observed datapoint, you can view the name and the value of Variable. 
+Click or double-tap on any observed datapoint to view the data on the 
+Distribution Data
+ window. 
+Censor a datapoint. Customize the appearance of the plot by using standard graph features.Customize the data displayed in the graph by adjusting the x-axes to vary the display range. 
+About Preventive Maintenance Optimization
+Preventative Maintenance (PM) Optimization uses the results of a Reliability Distribution Analysis to measure the optimum time to perform a Planned (Restorative) Maintenance (PM) procedure on a piece of equipment. PM optimization does not calculate minor maintenance schedules but determines the optimal time to perform major repairs or replace a piece of equipment until there is a minimal amount of cost and risk. PM optimization is only valid for wear-out failure modes and will not give accurate results for a Weibull analysis where Beta is less than 1.
+
+
+
+Note: Interaction with graphs is not available on touch-screen devices.
+Details
+A PM optimization is composed of the following steps:
+The calculation model is configured to acquire the necessary parameters, including Mean Time Between Failures (MTBF). MTBF is used to determine the probability that a piece of equipment will fail.The cost ratio is determined. This ratio is the cost of planned Preventative Maintenance (PM) events versus the cost of unplanned maintenance events. You can manually enter the cost or select an existing query as the source of the cost data.Based on the MTBF and the calculation of the ratios, the GE Digital APM system estimates the optimum time (interval) to maintain equipment. The cost per piece of equipment based on the Optimized Preventative Maintenance Interval is also displayed.The GE Digital APM system creates optimization graphs, which gives the analyst the optimum time to conduct a repair or overhaul based upon the ratio of planned to unplanned repair costs. This ensures that repairs are conducted in a cost-effective manner, minimizing risk while maximizing time in service.
+The limitation to using a PM optimization is it will always give a result for the statistical distribution on which it is based. This does not mean that it will always make sense to do a PM at the interval specified. In particular, design flaws that manifest themselves as poor reliability can more effectively be addressed through redesign rather than PM.
+Collect Data for Probability Distribution Analysis
+To create a Probability Distribution Analysis, you must select the field that contains the value that you want to analyze. 
+The following table shows the typical data needed to build and analyze Probability Distribution Analyses.
+Data RequiredData Type Description Behavior and Usage
+Censored 
+Logical
+As needed, select the field to provide censoring information. Select the field from the data source that contains a value that indicates censored values.
+
+ This field is optional.
+
+Random Variable 
+Character
+If the data source is a query, the name of the random variable and the units of measure will be pre-populated based on the selection you made in the Value field on the previous screen. If you selected a different data source, type the name of the random variable in the Random Variable field and the units of measure for the random variable in the Units field.
+
+This field is optional.
+ 
+
+Units 
+Character
+Select the units of measure for the random variable.
+
+This field is optional.
+
+Value 
+Numeric
+Select the field that contains the value you want to analyze.
+
+ This is a required field.
+
+Access Multiple Probability Distribution AnalysesAbout This Task
+You can access multiple Probability Distribution Analyses and compare multiple plots for the selected analyses. You cannot modify the details of the analyses based on which the Comparison Plot is generated.
+Procedure
+Access the RA Overview page. Select the Probability Distribution tab.
+A list of Probability Distribution Analyses available in the database appears.
+
+
+
+Select two or more Probability Distribution Analyses whose plots you want to compare.
+Note: You can select up to 20 analyses to compare plots.
+In the upper-right corner of the grid, select .
+The Multiple Probability Distribution Analysis page appears, displaying the Comparison Plot. By default, Probability Plot for the selected analyses appears. You can also view the following types of plots: 
+
+PDF plot
+
+CDF plot
+
+
+
+
+Create a Probability Distribution from an Existing Query or DatasetProcedure
+Access the RA Overview page.In the upper-right corner, select New Analysis, and then select Probability Distribution.
+The Probability Distribution Builder window appears, displaying the Define New Analysis screen. 
+
+
+
+Note: All required information is provided, but for additional information, consult the Distribution Analysis Families topic.
+Enter values in the Analysis Name and Description boxes for the new analysis, and then select Next.
+The Select Data Source Type screen appears. The Data will be based on an existing Query option is selected by default.
+
+
+
+If you want to load data using an existing query, select Next. 
+The Select Query screen appears. 
+
+
+
+-or-
+If you want to load data using an existing dataset, select Data will be based on an existing Dataset, and then select Next. 
+The Select Dataset screen appears.
+
+
+
+Select Browse to search for an existing query or dataset in the GE Digital APM Catalog.
+The Select a query from the catalog or Select a dataset from the catalog window appears, depending on whether you selected Data will be based on an existing Query or Data will be based on an existing Dataset in the previous step.
+Select the required query or dataset, and then select Open. 
+The complete path to the query or dataset is displayed in the Query or Dataset box. The fields that exist for the selected query or dataset appear in the Available Fields list.
+The following image shows the path to a selected query and the fields in the Available Fields list:
+
+
+
+In the Includes Data From the Following Sites list, select the site(s) whose data from which you want to create an analysis.
+If you are creating an analysis in a database that has only one site stored in the Site Reference family, then the Includes Data From the Following Sites list will not appear on the Select Query screen.
+Select Next. 
+The Select Data Fields screen appears.
+
+
+
+As necessary, specify values in the following fields: 
+In the Random Variable list, select a numeric value. This is a required field. A random variable associates a numerical value with every event. It describes a (possibly infinite) set of different events having a related probabilistic structure. The probability distribution of the random variable is a function that maps each possible value of the random variable to a particular probability.In the Censored list, select a field that indicates censored values (i.e., not included in the Probability Distribution Analysis calculations). The selected field must be a logical field. This is an optional field.
+Select Next.
+The Specify Random Variable screen appears. 
+
+
+
+In the Random Variable Name box, enter the name of the random variable.In the Units of Random Variable box, enter the units of measure for the random variable selected above. Select Finish. 
+The GE Digital APM system generates the analysis and the Probability Distribution page appears, displaying the analysis results.
+Create a Probability Distribution from Manually Entered DataProcedure
+Access the RA Overview page.In the upper-right corner, select New Analysis, and then select Probability Distribution.
+The Probability Distribution Builder appears, displaying the Define New Analysis screen.
+
+
+
+Note: All required information is provided, but for additional information, consult the Distribution Analysis Families topic.
+Enter values in the Analysis Name and Description boxes for the new analysis, and then select Next.
+The Select Data Source Type screen appears.
+
+
+
+Select I will manually enter data, and then select Next. 
+The Select Data Format screen appears.
+
+
+
+In the Random Variable Name box, enter the name of the Random Variable.In the Units of Random Variable box, enter the units of measure for the Random Variable selected above. Select Finish. 
+The Probability Distribution Data Editor window appears. 
+
+
+
+Enter the information about the random variables that you want to include in the analysis. By default, the following columns are listed on the grid:
+
+Random Variable : Provide the value of the random variable.
+Censored : Select the check box to censor data.
+Ignore : Select the check box if you do not want to include the data on the selected row in the calculations.
+Remarks : Provide comments about the event.
+Note: A minimum of three failure data points are needed to perform a calculation or you will receive a warning message and the analysis will not be generated.
+Tip: You can add more rows of data by selecting Add at the bottom of the grid. You can remove any row of data by selecting the Remove next to the row of data that you want to delete. 
+Select OK. 
+The GE Digital APM system generates the analysis. The Distribution Data window closes and the Probability Distribution page appears, displaying the analysis results.
+Change the Distribution Type of a Probability Distribution AnalysisAbout This Task
+When you create a Probability Distribution Analysis, the Distribution Type is set to Weibull by default. After the analysis is created, you can change the Distribution Type to one of the following:
+
+Normal
+Weibull
+Exponential
+
+Lognormal
+TriangularGumbelGeneralized Extreme Value
+
+Note: Select Auto if you want the GE Digital APM system to select the appropriate Distribution Type based on the results of the Goodness of Fit test.
+You can change the Distribution Type from the Analysis Summary workspace or from any of the plot tabs in the left pane. 
+Procedure
+Access a Probability Distribution Analysis for which you want to modify the Distribution Type.If you want to change the Distribution Type from the Analysis Summary workspace:
+In the bottom section, select Distribution Options, and then select .The Distribution Type field is enabled.In the Distribution Type box, select the desired Distribution Type, and then select .The analysis is recalculated based on the selected Distribution Type.
+-or-
+If you want to change the Distribution Type from one of the plot tabs (e.g., Probability Plot tab):
+In the left pane, select the Probability Plot tab.The Probability Plot appears in the workspace.Note: You can also change the Distribution Type via the PDF Plot or CDF Plot tabs.In the upper-right corner of the workspace, select Distribution Options, and then select Distribution Type.The Edit Distribution Type window appears. Select the desired Distribution Type, and then select OK.The analysis is recalculated based on the selected Distribution Type.
+Change the Distribution Parameters in a Probability Distribution AnalysisAbout This Task
+This topic describes how to modify the values of the distribution parameters in a Probability Distribution Analysis. 
+You can change the distribution parameters from the Analysis Summary workspace or from any of the plot tabs in the left pane. 
+Procedure
+Access a Probability Distribution Analysis for which you want to modify the Distribution Parameters.If you want to modify the values of the Distribution Parameters from the Analysis Summary workspace:
+
+In the bottom section, select Distribution Parameters, and then select .
+The Calculate check boxes appear below each of the parameters.
+
+Clear the Calculate check box next to the parameter(s) whose value you want to modify.
+The parameter field(s) are enabled.
+Enter the desired value for the parameter. Select . Note: If you reselect the Calculate check box after manually entering data, the manually entered data for the parameter will not be retained. If you decide not to use the parameters you entered, select , and the previous selection will be used in the calculations.The system recalculates the analysis based on the selected distribution parameter.
+
+-or-
+If you want to modify the values of the distribution parameters from one of the plot tabs (e.g., Probability Plot tab):
+
+In the left pane, select the Probability Plot tab.
+The Probability Plot appears in the workspace.
+Note: You can also change distribution parameter via the PDF Plot or CDF Plot tabs.
+In the upper-right corner of the workspace, select Distribution Options, and then select Distribution Parameters.The Edit Distribution Parameters window appears.
+
+Clear the Calculate check box next to the parameter(s) whose value you want to modify.The parameter field(s) are enabled.Enter the desired value for the parameter, and then select OK.Note: If you reselect the Calculate check box after manually entering data, the manually entered data for the parameter will not be retained. If you decide not to use the parameters you entered, select Cancel, and the previous selection will be used in the calculations.The system recalculates the analysis based on the selected distribution parameter.
+Change the Fit Method of a Probability Distribution AnalysisAbout This Task
+The Kolmogorov-Smirnov test is a Goodness of Fit (GOF) test applied to a Probability Distribution Analysis to determine how well the data fits the analytical curve. When you create an analysis, the fit method is set to Least Squares by default. 
+After the analysis is created, you can modify the fit method to one of the following:
+ Least Squares: A curve-fitting estimation method that relies on linear regression techniques to estimate the parameters for the distribution. Maximum Likelihood Estimators: A curve-fitting estimation method that maximizes the likelihood function for a given population. This method includes a survivor function that estimates changes in reliability as the piece of equipment or location survives beyond a certain age.
+You can change the fit method from the Analysis Summary workspace or from any of the plot tabs in the left pane. 
+Procedure
+Access a Probability Distribution Analysis for which you want to modify the Fit Method.If you want to change the Fit Method from the Analysis Summary workspace:
+In the bottom section, select Distribution Options, and then select .The Fit Method field is enabled.In the Fit Method box, select the desired Fit Method, and then select .The analysis is recalculated based on the selected Fit Method.
+-or-
+If you want to change the Fit Method from one of the plot tabs (e.g., Probability Plot tab):
+In the left pane, select the Probability Plot tab.The Probability Plot appears in the workspace.Note: You can also change the Fit Method via the PDF Plot or CDF Plot tabs.In the upper-right corner of the workspace, select Distribution Options, and then select Fit Method.The Edit Fit Method window appears.
+
+Select the desired Fit Method, and then select OK.The analysis is recalculated based on the selected Fit Method.
+Modify the Confidence Level for a Probability Distribution AnalysisAbout This Task
+The Confidence Level specifies how the optimistic and realistic scenarios will be selected in a Monte Carlo Simulation for TTR Distributions in an analysis. The Confidence Level indicates whether the distribution is within the confidence limits or not. The default Confidence Level for an analysis is 90 percent.
+You can modify the Confidence Level from the Analysis Summary workspace or from any of the plot tabs in the left pane. 
+Procedure
+Access a Probability Distribution Analysis for which you want to modify the Confidence Level.If you want to change the Confidence Level from the Analysis Summary workspace:
+In the bottom section, select Distribution Options, and then select .The Confidence Level field is enabled.Note: If the Confidence Level field is disabled, select the Use Confidence check box to activate the confidence level and enable the Confidence Level field.In the Confidence Level box, select the desired Confidence Level, and then select .The GE Digital APM system displays the confidence intervals for the analysis based on the percentage you entered in the Confidence Level field.
+-or-
+If you want to change the Confidence Level from one of the plot tabs (e.g., Probability Plot tab):
+In the left pane, select the Probability Plot tab.The Probability Plot appears in the workspace.Note: You can also change the Confidence Level via the PDF Plot or CDF Plot tabs.In the upper-right corner of the workspace, select Distribution Options, and then select Fit Method.The Select Confidence Level window appears.
+
+Select the desired Confidence Level, and then select OK.The GE Digital APM system displays the confidence intervals for the analysis based on the percentage you entered in the Confidence Level field.
+Modify the Random Variable and Specify Units for a Probability Distribution AnalysisProcedure
+Access a Probability Distribution Analysis for which you want to modify the value of Random Variable and specify units.In the left pane, select the Probability Plot tab. 
+The Probability Plot appears in the workspace.
+
+
+
+Note: You can also modify the value of Random Variable and specify units via the PDF Plot or CDF Plot tabs.
+In the upper-right corner of the workspace, select Analysis Task, and then select Change Units.
+The Specify the Random Variable window appears.
+
+
+
+In the Random Variable box, enter the name of the Random Variable.In the Units box, enter the corresponding units, and then select OK.
+The analysis is recalculated using the new Random Variable.
+Rename a Probability Distribution AnalysisProcedure
+Access a Probability Distribution Analysis whose name you want to change.In the left pane, select the Probability Plot tab. 
+The Probability Plot appears in the workspace.
+
+
+
+Note: You can also modify the value of Random Variable and specify units via the PDF Plot or CDF Plot tabs.
+In the upper-right corner of the workspace, select Analysis Task, and then select Rename.
+The Set Analysis Name window appears.
+
+
+
+In the Name box, enter a new name for the analysis.In the Description box, enter a new description for the analysis, and then select OK.
+The analysis name is updated in all the appropriate sections on the Probability Distribution page. In addition, the Description field in any appropriate sections will reflect any changes.
+Access the Source Data for a Probability Distribution AnalysisProcedure
+Access a Probability Distribution Analysis for which you want to view the data.In the left pane, select Probability Plot.
+The Probability Plot appears in the workspace.
+
+
+
+Note: You can also view the data via the PDF Plot or CDF Plot tabs.
+In the upper-right corner of the workspace, select Analysis Data, and then select Go To Source.
+The fields on the page that appears display the analysis data associated with the selected Probability Distribution Analysis correspond to values that were used to create the analysis. 
+For an analysis based on a query, the information returned by the query appears.
+For an analysis based on a dataset, the information stored in the dataset appears.
+
+For an analysis based on manually-entered data, you will receive the following error message: 
+There is no source data to view since the analysis is based on manually entered data. 
+To view data for an analysis based on manually-entered data, you can access the Probability Distribution Data
+
+ window. 
+
+Modify Data in a Probability Distribution AnalysisProcedure
+Access a Probability Distribution Analysis for which you want to modify the data.In the left pane, select Probability Plot.
+The Probability Plot appears in the workspace.
+
+
+
+Note: You can also modify the data via the PDF Plot or CDF Plot tabs.
+In the upper-right corner of the workspace, select Analysis Data, and then select View Data.
+The Probability Data Editor window appears, displaying the data associated with the selected Probability Distribution Analysis.
+As needed, modify the data in any enabled field, and then select OK. 
+The analysis is updated to reflect any changes that you made.
+Results
+For an analysis that is based on manually entered data, the changes that you make via the Probability Distribution Data window will be saved for the analysis.For an analysis that is based on a query or a dataset:The query or dataset will not be modified with the updated data. Additionally, any record returned by the query will not be updated with your changes. The changes will be saved to the analysis only.After you modify the data and save the analysis, the modified data will appear each time you open the analysis. If you want to revert to the original data, you can reload the original data to the analysis. In addition, if a query or dataset has changed in the database, you can reload the data in order for your analysis to contain those changes.
+
+Reload Analysis Data in a Probability Distribution AnalysisAbout This Task
+When you create and save an analysis that is based on a query or dataset, the GE Digital APM system takes a snapshot of the data that exists at the time of creation and saves it along with the analysis. When you open an existing analysis, the GE Digital APM system loads the data that was last saved with the analysis. This means that any changes to the underlying query or dataset will not be reflected automatically when you open an existing analysis.
+Note: If the query or dataset has been deleted or renamed, when you try to open an associated analysis, an error message will be displayed and the data will not be refreshed.
+If you want to refresh an analysis based upon changes to the underlying query or dataset or to load new data that has been added since the analysis was last saved (e.g., the analysis is based on a query that retrieves failures for a piece of equipment or location, and a new failure record has been added to the database), you will need to reload the analysis manually after opening it. When you reload the data, any manual changes made to the analysis data set will be deleted.
+Note: Reloading analysis data resets the analysis period only if it is based on the analysis data. Start Dates and End Dates that have been set explicitly will not be overwritten.
+Procedure
+Access a Probability Distribution Analysis for which you want to reload the data.In the left pane, select Probability Plot.
+The Probability Plot appears in the workspace.
+
+
+
+Note: You can also reload the data via the PDF Plot or CDF Plot tabs.
+In the upper-right corner of the workspace, select the Analysis Data list, and then select Reload Data.
+A confirmation message appears, asking you to confirm that you want to overwrite the current data with the data stored in the database.
+Note:
+For an analysis based on manually-entered data, you will receive the following error message: 
+There is no source data to reload since the analysis is based on manually entered data. 
+
+Select Yes.
+The analysis is updated to reflect the data currently stored in the query or dataset.
+Note: If you are reloading analysis data that is based on a query and an index out of range error message appears, there is an error in the query. You should modify the query or recreate the analysis in order to reload the correct data.
+Censor Data in a Probability Distribution AnalysisProcedure
+Access the Probability Distribution Analysis, which contains the plot in which you want to censor a datapoint.In the left pane, select the plot in which you want to censor a datapoint.In the plot, select the desired datapoint.
+The Probability Data Editor window appears. 
+
+
+
+In the Censored column, select the check box for the desired datapoint.
+The selected datapoint is censored or ignored in the Probability Distribution Analysis.
+Delete a Probability Distribution AnalysisProcedure
+Access the RA Overview page.Select the Probability Distribution tab.
+A list of Probability Distribution Analyses available in the database appears.
+
+
+
+Select the row containing the Probability Distribution Analysis that you want to delete, and then select . 
+The Delete Probability Distribution Analysis dialog box appears, asking you to confirm that you want to delete the selected analysis.
+Select Yes. 
+The selected analysis is deleted.
+Access Probability Distribution ReportProcedure
+Access the Probability Distribution Analysis whose report you want to access.In the upper-right corner of any workspace within the selected Probability Distribution Analysis, select Report.
+The Probability Distribution Analysis report appears in a new tab. 
+By default, the report contains the following sections:
+
+Analysis Plots
+
+Analysis Summary
+
+Statistical Distribution Information
+
+Distribution Data
+
+About Probability Distribution Report
+The baseline GE Digital APM database includes the Probability Distribution report, which you can use to view a summary of the results of a Probability Distribution Analysis. 
+The Probability Distribution report is built from the following Catalog items:
+The subreport, SubReportProbDist, which is stored in the Catalog folder \\Public\Meridium\Modules\Reliability Manager\Reports.The supporting queries that supply data in the main report and subreport, which are stored in the Catalog folder \\Public\Meridium\Modules\Reliability Manager\Reports. The following supporting queries are available:ProbabilityDistributionQueryWeibull Distribution QueryLognormal Distribution QueryNormal Distribution QueryExponential Distribution Query
+
+Throughout this documentation, we refer to the main report, the subreport, and the supporting queries collectively as the Probability Distribution report.
+The Probability Distribution report contains a prompt on the ENTY KEY and Distribution Type fields in the Distribution family. When you run the Probability Distribution report via the Probability Distribution module, the ENTY KEY and Distribution Type of the Distribution record associated with the current analysis is passed automatically to the prompt, and the results for the current Probability Distribution Analysis are displayed. If you run the main report or any of the queries in the preceding list directly from the Catalog, however, you will need to supply the ENTY KEY and Distribution Type of a Distribution record manually to retrieve results. The subreport (i.e., Catalog item SubReportProbDist) cannot be run directly from the Catalog.
+Analysis Summary Section
+The Analysis Summary section of the Probability Distribution report displays information that is stored in a Distribution record. Distribution records are categorized into one of four Distribution subfamilies: Exponential, Lognormal, Normal, or Weibull.
+The following table lists each item in the Analysis Summary section and the corresponding Distribution record field whose data is displayed in the report.
+
+Report Item Distribution record Analysis Name Analysis ID Analysis Description Short Description Random Variable Random Variable Field Units Units Last Modified LAST UPDT DT Modified By 
+LAST UPBY SEUS KEY 
+Note: The name of the Security User associated with this value is displayed in the report. 
+
+
+Statistical Distribution Information Section
+The Statistical Distribution Information section of the Probability Distribution report displays information that is stored in the Distribution record (i.e., Exponential, Lognormal, Normal, or Weibull record). 
+The following subsections are displayed within the Statistical Distribution Information section:
+The Distribution Type subsection displays information that is stored in the Distribution record. Throughout the documentation, we will refer to this subsection as the Distribution subsection.
+The following table lists each item in the Distribution subsection and the corresponding Distribution record field whose data is displayed in the report.
+
+Report ItemDistribution FieldDistribution Type 
+Distribution Type 
+Fit Method 
+Fit Method 
+Use Confidence 
+Use Confidence 
+Confidence Level Confidence Level Mean Mean Standard Deviation Standard Deviation Median 
+Median 
+R2 R-Squared 
+
+The Parameters subsection contains information stored in the Distribution record. The type of information that appears in the Parameters subsection depends on the distribution type (i.e., Weibull, Lognormal, Exponential, or Normal). 
+The following table lists each item in the Parameters subsection for a Weibull record whose data is displayed in the report. One row is displayed for each of the following field captions: Beta, Eta, and Gamma.
+
+Report ItemWeibull FieldBeta Value 
+Beta 
+Low 
+Beta Low 
+High Beta High Calculated Beta Fixed Eta Value Eta Low Eta Low High 
+Eta High 
+Calculated Eta Fixed Gamma Value Gamma Low Gamma Low High 
+Gamma High 
+Calculated Gamma Fixed 
+
+The following table lists each item in the Parameters subsection for a Lognormal record whose data is displayed in the report. For a Lognormal record, one row is displayed for each of the following field captions: Mu, Sigma, and Gamma.
+Report ItemLognormal FieldMu Value 
+Mu 
+Low 
+Mu Low 
+High Mu High Calculated Mu Fixed Sigma Value Sigma Low Sigma Low High 
+Sigma High 
+Calculated Sigma Fixed Gamma Value Gamma Low Gamma Low High 
+Gamma High 
+Calculated Gamma Fixed 
+The following table lists each item in the Parameters subsection for an Exponential record whose data is displayed in the report. For an Exponential record, one row is displayed for the field caption MTBF.
+Report ItemExponential FieldMTBF Value 
+MTBF 
+Low 
+MTBF Low 
+High MTBF High Calculated MTBF Fixed 
+The following table lists each item in the Parameters subsection for a Normal record whose data is displayed in the report. For a Normal record, one row is displayed for each of the following field captions: Mean, Standard Deviation.
+Report ItemNormal FieldMean Value 
+Mean 
+Low 
+Mean Low 
+High Mean High Calculated Mean Fixed Standard Deviation Value Standard Deviation Low Standard Deviation Low High 
+Standard Deviation High 
+Calculated Standard Deviation Fixed 
+The Goodness of Fit Test subsection displays information from the Distribution record.
+The Kolmogorov-Smirnov test is the only test used to measure goodness of fit, so the Name column in the report is populated with the value Kolmogorov-Smirnov Test. 
+The following table lists each remaining item in the Goodness of Fit Test subsection and the Distribution record field whose data is displayed in the report.
+
+Report ItemWeibull FieldStatistic 
+GOF Statistic 
+P-Value 
+GOF P-Value 
+Passed 
+Passed 
+
+
+Distribution Data Section
+The Distribution Data section of the Probability Distribution report displays information that is stored in the Data field in the Distribution record.
+The following values are displayed in the Distribution Data section, and they are stored in the Data field in the Reliability Distribution record:
+
+X (i.e., the Random Variable) 
+Censored
+
+Ignored
+
+Remarks
+
+Plots Section
+The Plots section of the Probability Distribution report displays the plots that are displayed on the Analysis Summary workspace or accessed via the Plots tabs in the left pane on the Probability Distribution page. 
+The Plots section displays the following graphs:
+
+Probability Plot
+
+Probability Density Function Plot
+
+Cumulative Distribution Function Plot
+
+
+
+
+
+
+On this pageAbout Probability Distribution AnalysisAbout Data Censoring in a Probability Distribution AnalysisAccess a Probability Distribution AnalysisAbout Probability PlotAbout Failure Rate PlotAbout PDF PlotAbout CDF PlotAbout Preventive Maintenance OptimizationCollect Data for Probability Distribution AnalysisAccess Multiple Probability Distribution AnalysesCreate a Probability Distribution from an Existing Query or DatasetCreate a Probability Distribution from Manually Entered DataChange the Distribution Type of a Probability Distribution AnalysisChange the Distribution Parameters in a Probability Distribution AnalysisChange the Fit Method of a Probability Distribution AnalysisModify the Confidence Level for a Probability Distribution AnalysisModify the Random Variable and Specify Units for a Probability Distribution AnalysisRename a Probability Distribution AnalysisAccess the Source Data for a Probability Distribution AnalysisModify Data in a Probability Distribution AnalysisReload Analysis Data in a Probability Distribution AnalysisCensor Data in a Probability Distribution AnalysisDelete a Probability Distribution AnalysisAccess Probability Distribution ReportAbout Probability Distribution Report
+
+
+
+
+
+
+
+
+

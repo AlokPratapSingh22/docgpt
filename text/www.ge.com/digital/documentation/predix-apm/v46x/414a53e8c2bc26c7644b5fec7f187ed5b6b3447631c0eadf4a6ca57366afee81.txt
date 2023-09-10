@@ -1,0 +1,140 @@
+
+
+
+Plants | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+AdminAccess the GAA Administrator Page
+GAA Administrator Workflow
+System Codes
+Event Categories
+Event Types
+Cause Codes
+Amplification Codes
+Fuel Types
+Mapping Records
+Event Transitions
+Companies
+Plants
+Units
+Unit Capacity
+Performance Record and Report Configuration
+
+
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Admin
+Plants
+
+
+
+
+
+
+
+PlantsAccess a GAA PlantProcedure
+Access the GAA Company for which you want to access a GAA Plant.In the left pane, select the GAA Plant that you want to access. 
+The datasheet for the selected GAA Plant appears in the workspace. A list of GAA Units associated with the selected GAA Plant appears in the left pane. 
+
+
+
+Note: As needed, you can modify the values in the available fields, and then select  to save your changes.
+
+Add a GAA PlantBefore You Begin
+
+Add a GAA Company
+
+Procedure
+Access the GAA Company to which you want to add a GAA Plant.In the left pane, select .
+A blank datasheet for GAA Plant appears in the workspace.
+
+
+
+In the Asset ID cell, select .
+The Asset Finder window appears.
+Select the Functional Location to which you want to associate the GAA Plant, and then select Done. 
+The selected Functional Location appears in the Asset ID box as a link. You can select the link to access the details of the Functional Location. 
+As needed, enter values in the available fields.In the upper-right corner of the workspace, select Site:.
+Note: A user can be assigned to multiple sites. By default, the user's default site appears.
+Select the site to which you want to assign the GAA Plant.
+Note: If the GAA Plant is assigned to the default site, then it can be accessed only by users who have been assigned to the same site. The site selector component becomes read only after it is saved. 
+Select .
+The GAA Plant is saved.
+What To Do Next
+
+Add a GAA Unit
+
+Delete a GAA PlantProcedure
+Access the GAA Company from which you want to delete a GAA Plant.
+The datasheet for the selected GAA Company appears in the workspace. A list of GAA Plants associated with the selected GAA Company appears in the left pane. 
+In the left pane, select the GAA Plant that you want to delete, and then select . 
+The Delete dialog box appears, asking you to confirm that you want to delete the selected GAA Plant.
+Select Yes.
+The GAA Plant is unlinked from the associated functional location and the associated record is deleted from the database. 
+Note: You cannot delete a GAA Plant if it has an associated GAA Unit.
+
+
+
+
+
+On this pageAccess a GAA Plant
+Add a GAA PlantDelete a GAA Plant
+
+
+
+
+
+
+
+
+

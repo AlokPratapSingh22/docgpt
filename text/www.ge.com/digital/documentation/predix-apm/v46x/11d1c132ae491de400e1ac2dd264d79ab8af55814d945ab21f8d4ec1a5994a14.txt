@@ -1,0 +1,181 @@
+
+
+
+Calculations | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+ReferenceGeneral Reference
+Data Models
+Family Field Descriptions
+Calculations
+Family Search Configuration
+ASM Integration
+Inspection Strategies
+RBI Policies
+Catalog Items
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Reference
+Calculations
+
+
+
+
+
+
+
+CalculationsCalculating Combined Confidence
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+Calculating Flow Stress
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+Allowable Stress Calculation
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+Calculating Inventory Component Mass
+The inventory component mass of a component is calculated using the values in the following fields in the Criticality Calculator RBI Component record:
+Operating Pressure (P)Operating Temperature (T)Diameter (d)Length (L) Note: If the component type is Piping, then the value in the Piping Length field is used instead of the value in the Length field.
+Percent Liquid Volume (pc)Molwt (This value is stored in the RepresentativeFluids reference table for the fluid specified in the Process Fluid field in the Criticality Calculator RBI Components record) Fluid Density (This value is specified in the RepresentativeFluids reference table for the fluid specified in the Process Fluid field in the Criticality Calculator RBI Components record)
+Note: If the component is linked to an RBI 581 Risk Analysis, then these values are taken from the corresponding fields in the analysis record instead of the component record.
+ The inventory component mass of a component is calculated as follows:
+ Inventory Component Mass = (Liquid Volume x Fluid Density) + (Vapor Volume x Vapor Density)
+Where:
+Liquid Volume = (pc/100) x Volume of the cylinder Note: The volume of the cylinder is calculated from the values in the Diameter and Length fields in the Criticality Calculator RBI Component record.
+Vapor Volume = (1-(pc/100)) x Volume of the cylinderVapor Density = (Molwt x (P + 14.7)) / (10.73 x (T + 459.15) x z)
+This value is populated in the Inventory Component Mass field in the Common section of the associated RBI 581 Consequence Evaluation.
+Example for Calculating Inventory Component Mass
+Suppose a component has the following specifications:
+
+Component Type: Heat Exchanger (Shell)
+
+Process Fluid : C6-C8
+
+Operating Pressure: 101 Pounds/Sq Inch Gage
+
+Operating Temperature: 121 Degrees Fahrenheit
+
+Molwt of CO: 28
+
+Diameter: 97.625 inches
+
+Length: 360 inches
+
+Percent Liquid Volume: 50 percent
+
+Fluid Density: 42.704
+
+Given these values:
+
+Volume of the cylinder = (pi x (d/12) x (d/12) x (L/12)) / 4
+Volume of the cylinder = ((22/7) x (97.625/12) x (97.625/12) x (360/12)) / 4
+Volume of the cylinder = 1560.075 Cubic feet
+
+Liquid volume = (pc/100) x Volume of the cylinder
+Liquid volume = (50/100) x 1560.075
+Liquid volume = 780.038 Cubic feet
+
+Vapor volume = (1 - (pc/100)) x volume of the cylinder
+Vapor volume = (1 - (50/100)) x 1560.075
+Vapor volume = 780.038  Cubic feet
+
+Vapor Density = (Molwt x (P + 14.7)) / (10.73 x (T + 459.15) x z)
+Vapor Density = (100 x (101 + 14.7)) / (10.73 x (121 + 459.15) x 1)
+Vapor Density = 1.859 Pounds per cubic feet
+
+Inventory Component Mass = (Liquid Volume x Fluid Density) + (Vapor Volume x Vapor Density)
+Inventory Component Mass = (780.038 x 42.704) + (780.038 x 1.859)
+Inventory Component Mass = 34760.526 Pounds
+Note: The value in the Inventory Component Mass field on the RBI Component datasheet may slightly differ from the value that is shown in the example. This happens because of rounding off some of the values.
+
+Calculating Inventory Group Mass
+The inventory group mass is calculated as the sum of the inventory component mass values of all the individual components in an inventory group. This value is populated in the Inventory Group Mass field in the Common section in the associated RBI 581 Consequence Evaluation record. If the component is not linked to an inventory group, then the value in the Inventory Group Mass field is the same as the value in the Inventory Component Mass field.
+Note: The value in the Calculated Inventory field in a component datasheet is calculated only for RBI 580. It is not used in calculating inventory group mass.
+For example, suppose you have created an inventory group, Group 1, and linked it to three components, Component 1, Component 2, and Component 3. The inventory component mass values for each of these components are shown in parentheses.
+
+
+
+In this case, the inventory group mass is calculated as follows:
+Inventory Group Mass of Group 1 = Inventory Component Mass of Component 1 + Inventory Component Mass of Component 2 + inventory Component Mass of Component 3
+Inventory Group Mass of Group 1 = 120 + 100 + 130
+Inventory Group Mass of Group 1 = 350 Pounds
+Suppose you have created an RBI 581 Risk Analysis, Analysis 1, for Component 1. GE Digital APM then calculates the inventory component mass of Component 1 based on the input values in Analysis 1. In the following diagram, this value is shown in parentheses next to Analysis1.
+
+
+
+In this case, the inventory group mass is calculated as follows:
+Inventory Group Mass of Group 1 = Inventory Component Mass calculated based on input values from Analysis 1 + Inventory Component Mass of Component 2 + Inventory Component Mass of Component 3
+Inventory Group Mass of Group 1 = 150 + 100 + 130
+Inventory Group Mass of Group 1 = 380 Pounds
+
+
+
+About Tmin Calculations 
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+
+
+
+
+
+On this pageCalculating Combined ConfidenceCalculating Flow StressAllowable Stress CalculationCalculating Inventory Component MassCalculating Inventory Group MassAbout Tmin Calculations 
+
+
+
+
+
+
+
+
+

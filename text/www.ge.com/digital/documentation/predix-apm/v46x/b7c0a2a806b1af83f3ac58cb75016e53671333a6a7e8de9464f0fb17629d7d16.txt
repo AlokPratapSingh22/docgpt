@@ -1,0 +1,65 @@
+
+
+
+Add Assets to Users and Groups | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Add Assets to Users and GroupsBefore You BeginYou must be logged into GE Digital APM as a User Admin. You must first add users or user groups before adding assets.About This Task
+You can either add individual assets to each user or add assets to a user group and then add users to that user group. Use the latter technique to quickly assign a group of users to access the same set of assets. You can also assign users or user groups to any level in the context browser. For example, assigning an Enterprise gives the user access to all levels (sites, segments, and assets) within that Enterprise.
+ProcedureTo add assets to a user:
+In the module navigation menu, go to
+Administration > Users.In the row containing the user you want to modify, select .Select Edit User.The Edit User page appears.Select Assign Permission Set.The Assign Permission Set and Asset to <user> window appears.Select Select an Asset.In the drop-down list box, select  next to the asset you want to assign.Select a permission set.Select Assign.The asset is assigned to the user.Select Done.
+To add assets to a user group:
+In the module navigation menu, go to
+Administration > User Groups.Select a user group from the list and click Edit.In the row containing the user you want to modify, select .Select Edit Group.The Edit Group page appears.Select Assign Permission Set.The Assign Permission Set and Asset to Group window appears.Select Select an Asset.In the drop-down list box, select  next to the asset you want to assign.Select a permission set.Select Assign.The asset is assigned to the group.Select Done.
+ResultsUsers and user groups have access to the associated assets and features as defined.
+
+
+
+
+
+
+
+
+
+
+

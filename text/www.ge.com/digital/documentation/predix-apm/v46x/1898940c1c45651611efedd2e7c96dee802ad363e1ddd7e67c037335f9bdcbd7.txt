@@ -1,0 +1,133 @@
+
+
+
+Security Settings | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Security Settings
+
+
+
+
+
+
+
+Security SettingsConfigure Security Settings for a PolicyBefore You BeginEnsure that you understand how
+                                        individual policy security will
+                                    affect access to the policy for you and all users.About This TaskIf you want only certain users within a Policy Designer Security Group to be able to access a policy, you can optionally configure security settings on individual policies.Procedure
+Access the policy for which you want to configure security.Select the Security tab.
+The Security workspace appears.
+
+
+
+Specify security for a single user or a group:To specify security for a single user, select .
+The Assign Users window appears. 
+
+To specify security for users within a Security Group, select .
+The Assign Groups window appears. 
+
+Select the users or groups for which you want to specify security, and then select Update.
+The selected users or groups appear in the grid in the Security workspace.
+In the Permissions column of the grid, select the level of security you want to apply.
+Important: Ensure that the selections you make do not inadvertently remove your own access to the policy. If you do, you will no longer be able to make changes to the security. In that case, only another user designated as a Designer for this policy or a Super User would be able to make changes. See About Policy Security Ownership for more information.
+Select .
+Your changes are saved.
+If the security settings result in you no longer having Designer permission on the policy, the Confirm Security Settings window is displayed.
+If the permissions change is as intended, select OK to save the policy.
+-or-
+If the permission change is not as intended, select Cancel and repeat step 3 through step 6 to correct the issue.
+Results
+Access to the policy is restricted
+                                    based on your selections and the Policy Designer Security Groups
+                                    to which users belong.On the Policy Designer Overview page, Yes appears in the Locked column of any list that contains the policy.
+Modify or Remove Security Settings for a PolicyBefore You BeginEnsure that you understand how
+                                        individual policy security will
+                                    affect access to the policy for you and all users.Procedure
+Access the policy for which you want to modify or remove security settings.Select the Security tab.
+The Security workspace appears.
+
+
+
+To remove or modify security settings for a user or group, choose one of the following:OptionDescriptionRemove security settings
+In the grid, select the check box in the row for the user or group whose security settings you want to remove.Select .In the Confirm Delete dialog box, select Yes.
+Modify security settings
+In the Permissions column of the grid, select or clear the check boxes as appropriate.Select .
+
+Important:
+Ensure that the selections you make do not inadvertently remove your own access to the policy. If you do, you will no longer be able to make changes to the security. In that case, only another user designated as a Designer for this policy or a Super User would be able to make changes. See About Policy Security Ownership for more information.
+
+Your changes are saved.If the security settings result in you no longer having Designer permission on the policy, the Confirm Security Settings window is displayed.
+If the permissions change is as intended, select OK to save the policy.
+-or-
+If the permission change is not as intended, select Cancel and repeat step 3 through step 6 to correct the issue.
+Results
+Access to the policy is restricted
+                                    based on your selections and the Policy Designer Security Groups
+                                    to which users belong.If you removed all specific security settings for the policy, on the Policy Designer Overview page, Yes no longer appears in the Locked column of any list that contains the policy.
+
+
+
+
+
+On this pageConfigure Security Settings for a PolicyModify or Remove Security Settings for a Policy
+
+
+
+
+
+
+
+
+

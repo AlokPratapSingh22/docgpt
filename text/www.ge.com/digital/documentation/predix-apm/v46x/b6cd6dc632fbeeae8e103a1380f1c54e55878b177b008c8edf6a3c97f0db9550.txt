@@ -1,0 +1,108 @@
+
+
+
+Fourth Quarter of 2022 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Third Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Release Notes
+Fourth Quarter of 2022
+
+
+
+
+
+
+
+Fourth Quarter of 2022Release Date: December 9, 2022This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo enhance usability, when exporting data as a CSV file, you can now remove the Quality column. To facilitate this enhancement, in the Chart and Marker Settings section of the My Preferences page, the Remove Data Quality columns from exported data when Good Quality Data check box has been addedF68898To enhance usability, when creating a condition-based filter from a tag or tag expression, you can now select discrete values for a tag. To facilitate this enhancement, the View as Range Filter and View as Discrete Filter options have been added in the Condition Based Filters sectionF68609To enhance usability, in the Parallel Axis Chart, you can now identify the top five records easily. To facilitate this enhancement, the Black color has been added to the color gradients to identify top five records. However, the existing Min/Max Range Colors have been changed to the following colors:Blue - Tags with the most recent data.Green - Tags with data in between recent and oldest.Yellow - Tags with the oldest data.US566990To enhance functionality, in one-up level, you can now view the chart in both Timestamps and Points modes by enabling one of the modes. To facilitate this enhancement, the Timestamps mode is added for the Times Series and Event Data Analysis.The following charts have been modified:Time Series (Line)Time Series Scattered PlotTiming Diagram ChartNote: By default, Points mode is enabled.US566991
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when plotting a tag in an analysis chart, if the source unit of measure and the standard unit of measure were the same, you were unable to add a conversion in the Units of Measure conversion table. This issue has been resolved. Now, you can select the source unit of measure from a drop-down list in the Plotted Tags section for conversion. Additionally, the standard abbreviations are now used in the Units of Measure tableDE192910Previously, in a Time Series Analysis chart, when you modified the SYSTEM OF MEASURE, the chart was not updated with the corresponding data. Also, when you modified the Unit of Measure from the PLOTTED TAGS section, the chart was not updated. This issue has been resolved. Now, the time series chart displays data corresponding to the modified System of Measure and or Unit of Measure.DE187183Previously, in an Analysis when a template had a condition based filter saved in the Filters tab, if you switched to another asset that did not have the same tags as the previous asset, then the CONDITION BASED FILTER did not load any tags irrespective of whether the tag exists or not for the selected asset. This issue has been resolved. Now, the condition based filter displays all the tags for the asset, and the slider for the non configured tags remains zero (0). For the configured tags the right value range is displayed on the slider.DE174686Previously, in an Analysis for a selected asset with a defined template, when you selected Show Tag Information in the chart settings, the chart table displayed the non configured (NC) tags and no data (ND) tags along with the configured tags that have data. Also, the chart table displayed other assets as well that are not part of the current chart analysis. This issue has been resolved. Now, only the configured tags that have data corresponding to the selected asset are displayed.DE187611Previously, in Time Series Analysis template, when you selected Calculate Delta
+ on a chart for a One-Up layout, and when you attempted delta calculation for the tags in the chart, the PINNED DATA pane was displayed for only one tag value. This issue has been resolved. Now, when you select two points and plot the pin markers PIN 1 and PIN 2 in the chart for delta calculation, the PINNED DATA displays the values of all the tags.DE187216Previously, in time series analysis template with X-Y (Line) and X-Y (Scatter) chart, the Lasso selection   did not have the XY, X, and Y-axis functionalities. This issue has been resolved. Now, the XY, X, and Y-axis functionalities are added in the Lasso selection.DE189853Previously, in a Time Series Analysis chart, the selected unit of measure did not appear in a single line. This issue has been resolved. Now, the unit of measure for the tags appear in a single line.DE188422
+
+
+
+
+
+On this pageRelease Date: December 9, 2022
+
+
+
+
+
+
+
+
+

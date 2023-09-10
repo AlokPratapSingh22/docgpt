@@ -1,0 +1,254 @@
+
+
+
+Performance Records | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Performance Records
+
+
+
+
+
+
+
+Performance RecordsAbout Performance RecordsPerformance records store statistical data about capacity events and fuel consumption for a particular unit within a given month of a specific year. Each Performance record should be linked to the GAA Unit record that represents the unit for which the Performance record stores data. For a given GAA Unit record, one Performance record should exist for each month and year combination for which data exists.The values in Performance records are used for reporting event data to NERC and CEA. All capacity event and generation statistics are calculated using the calculations defined by NERC in the GADS DRI. For fields that are neither calculated nor populated automatically by GE Digital APM but are required for reporting, you will need to collect the data and enter values into the fields manually if you want that information to be reported.You can create Performance records manually. After Performance records exist, you will need to update them manually on a regular basis to ensure that all values within the records are up-to-date before that information is reported.At the end of the reporting period, before you can start reporting data, you need to create Performance records for months in which events did not occur.While you are not required to have a Performance record for every month in a reporting period before you can report data, data will be reported only for the months for which Performance record exist. So, if you need to report data for a given month, you will need to make sure that the Performance record has been created and is up-to-date.Weightage Types
+You can create Performance records that include all events or exclude OMC events. Based on these Performance types, you can view performance calculations for the following weightage types:
+Net Maximum Capacity (NMC)Gross Maximum Capacity (GMC)
+About Creating Performance Records that Exclude OMC EventsSome events, such as a power outage that occurred as the result of a thunderstorm, are not preventable. These types of events are considered to be outside management control (i.e., OMC events). Other preventable events, such as loss in generation capacity that resulted from an equipment failure or operator error are considered to be within management control.All event data, regardless of its cause, must be reported to NERC. For internal tracking purposes, however, you may not be concerned with statistics associated with events that could not be avoided. Instead, you may want to review data associated with events that could have been avoided since these are the events from which strategies could be developed to prevent future, similar events. In other words, only the events that are within management control represent potential cost savings.
+GE Digital APM provides you with the option of collecting a separate set of statistics for the events that are within management. To do so, you must complete two steps:In GAA Unit records, set the Create Outside Management Control Statistics? field to True.In any Event record that represents an event outside management control, set the OMC Event? field to True.You can create two Performance records for each reporting month and year:One record will include values from all Event records, regardless of the value in the OMC Event field in the Primary Event record that is linked to the Performance record. The Capacity History Statistics Type field in this Performance record will contain the value All Events.The other record will exclude values from Event records in which the OMC Event field is set to True. The Capacity History Statistics Type field in this Performance record will contain the value Excludes OMC Events.Access a Performance RecordBefore You Begin
+
+Associate a Performance record with a GAA Unit
+
+Procedure
+Access the Unit Summary workspace for the GAA Unit whose Performance record you want to access. In the left pane, select Performance & Reports.
+The Performance & Reports workspace appears. The Performance Records tab is selected by default, displaying a list of Performance records associated with the GAA Unit for the current year in reverse chronological order.
+
+
+
+The Performance Records section contains the following columns of information:
+
+
+Record ID: Contains links to access the Performance records associated with the selected Primary Event, for the specified month. 
+The link to the Performance record appears in the following format:
+
+<Record Name> ~ <Record Type> ~~ <Performance Type>
+
+Note: As needed, you can modify the ID Template of the GAA Configuration family to specify a different format. 
+
+<Performance Type> indicates one of the following:
+
+All Events: Select the link containing All Events to access the Performance record that contains all events, including OMC Events.
+ExcludingOMC: Select the link containing ExcludingOMC to access the Performance record that contains all events, excluding OMC Events.
+
+Last Modified By: Contains the name of the last user who modified the Performance record during the specified month.
+
+Event List: Contains the number of events that occurred during the specified month and the number of events that are in OUT OF SYNC status currently. When you select the link in this column, you can view the list of events that occurred during the specified month. The events that are in SYNCED status appear with a green bar to their left, and the events that are in the OUT OF SYNC status appear with a red bar to their left.
+
+State: Indicates the state of the Performance record. 
+
+Sync Status: Indicates whether or not the Performance record includes updated information. A Performance record can have one of the following statuses:
+
+SYNCED: A Performance record is in SYNCED status when the record includes updated information. 
+OUT OF SYNC: A Performance record is in OUT OF SYNC status when the record does not include updated information. A Performance record is in OUT OF SYNC status when an associated Event has been modified or a new Event has been added. If a Performance record is in OUT OF SYNC status, you can regenerate the Performance record for that month.
+Note: If no Performance record exists for the specified month, you can 
+create a Performance record
+ for that month. You can create a Performance record that includes all events, or a Performance record that includes all events except the OMC events. 
+Tip:
+You can also select  to filter the events that appear in the Performance Records section. 
+The Records for the Year option allows you to specify the year for which you want to view the Performance records in the Performance Records section. By default, current year is selected. 
+
+
+In the month for which you want to view a Performance record, select the link. 
+On a new page, the following tabs appear: 
+
+
+Performance Summary:
+ This tab is selected by default. 
+
+
+Performance Indexes:
+
+ Contains loss- and performance-related information for all the Weightage Types that you configured in the Performance & Reports workspace. You cannot modify the values in any of the fields. 
+
+Performance Fuel:
+Contains fuel-related information.
+Note: As needed, you can modify the values in the available fields, and then select 
+
+ to save your changes. 
+Create a Performance RecordBefore You Begin
+
+Associate a Performance record to a GAA Unit
+
+About This TaskIf no Performance record exists for a month, you can create the Performance record for that month. You can create the Performance record that includes all events, or the Performance record that includes all events except the OMC events.ProcedureCreate a Performance Record for a Month
+Access the Unit Summary workspace for the GAA Unit whose Performance record you want to create. In the left pane, select Performance & Reports.
+The Performance & Reports workspace appears, displaying the Performance Records section, which contains a list of Performance records associated with the GAA Unit for the current year. 
+
+For the month for which you want to create a Performance record, in the Sync Status column, select Create Record.
+Note: You can create a Performance record for a month only if no Performance record exists for that month. If a Performance record exists for a month but is in OUT OF SYNC status, you can regenerate the Performance record for that month.
+On a new page, the Performance Summary, Performance Indexes, and Performance Fuel tabs appear. The following fields are populated by default:
+
+Plant ID
+
+Plant Name
+
+Reporting Year
+
+Unit ID
+
+Reporting Month
+
+Unit Type
+
+Unit Name
+
+Primary Unit Code
+
+Revision
+
+Reporting Date
+
+Primary Utility Code
+
+Select .
+The Performance record is saved. 
+Note: For GAA Units for which the value in the Primary Regulatory Organization field is Canadian Electricity Association (CEA), the NERC Event Types mapped to the CEA Event Types are used to calculate data. The calculations are based on the calculations defined for North American Reliability Corporation (NERC) in the IEEE Standard Definitions for Use in Reporting Electric Generating Unit Reliability, Availability, and Productivity documentation.
+If you want to include the calculated values, then, in the upper-right corner of the Performance Records section, select . 
+The Regenerate Record dialog box appears, asking you to confirm that you want to regenerate the Performance record.
+Select Yes. 
+The Performance record appears in the workspace. The Sync Status column indicates that the record is in SYNCED status. 
+Create Performance Records for a Year
+Access the Unit Summary workspace for the GAA Unit whose Performance record you want to create for a year. In the left pane, select Performance & Reports.
+The Performance & Reports workspace appears, displaying the Performance Records section, which contains a list of Performance records associated with the GAA Unit for the current year. 
+In the upper-left corner of the Performance records section, select .
+The Records for the Year window appears.
+Select the year for which you want to generate the Performance records, and then select Apply.
+The Performance records associated with the GAA Unit for the selected year appear.
+In the upper-right corner of the Performance Records section, the  button is enabled.
+Note: If all the Performance records for the year exist, the  button is disabled.
+Select .
+ The Performance for <Year> dialog box appears, asking you to confirm that you want to create and regenerate the Performance records for the selected year. 
+Select Yes.
+The Performance records for the selected year are created and regenerated. If the regeneration of the Performance records was successful, the status will be SYNCED. If the regeneration was unsuccessful, the status will be OUT OF SYNC. 
+If an error occurred while creating and regenerating Performance records, the  button will appear. If you want to view the details of the error, select .
+Regenerate a Performance RecordAbout This Task
+ When you create a Performance record, it will be populated with the values that you specified when you created it. After it exists, it will not be updated automatically by the GE Digital APM system. Since values in Performance records will be used in reports, before you begin reporting event and fuel consumption data, ensure that you regenerate all the Performance records for that reporting period to keep them up-to-date.
+Procedure
+Access the Primary Event that is associated with the GAA Unit for which you want to regenerate a Performance record. In the left pane, select Performance & Reports.
+The Performance & Reports workspace appears, displaying the Performance Records section, which contains a list of Performance records associated with the Generation Unit for the current year. 
+
+
+
+Locate the month that indicates that the Performance record is in OUT OF SYNC status. 
+Note: If no Performance record exists for a month, you can create a Performance record for that month.
+Select the row containing the Performance record in OUT OF SYNC status. 
+Note: You can also regenerate a Performance record by accessing a Performance record. 
+In the upper-right corner of the Performance Records section,  is enabled. 
+Note: If you want to view the list of events that occurred during the specified month, select the link in the Event List column. The events that are in SYNCED status will appear with a green bar to their left, and the events that are in the OUT OF SYNC status will appear with a red bar to their left.
+In the upper-right corner of the section, select . 
+The Regenerate Record window appears, asking you to confirm that you want to regenerate the Performance record. 
+Note: If the Performance Record is in the approved state for a particular month and year, the Regenerate Record window appears with the additional message that the Performance Record for the month and year is in the approved state, and asks you to confirm that you want to regenerate the Performance record. 
+Important: For the bulk report generation, validation messages appear in the log file. However, for the single report generation, the validation messages appear in the windows.
+Select Yes. 
+The Performance record is regenerated and the status changes to SYNCED. 
+Change the State of a Performance RecordAbout This Task
+This topic describes how to change the state of a Performance record, while assigning the state of the event to the appropriate user.
+Important: You can modify a Performance record in a particular state only if you are an administrator or the assignee for that state.
+Procedure
+Access the Performance record for which you want to change the state.
+The current state of the record appears in upper-right corner of the workspace.
+
+
+
+Select the button that indicates the current state of the Performance record. For example, if the current state of the Performance record is New, select the New button.
+A menu appears, displaying the operation that you can perform on the Performance record to change its state.
+Select the necessary operation that will change the state of the Performance record, and then select Done. For example, if you want to change the state of the Performance record from New to In Progress, select Create, and then select Done.
+Note: You can view the states assigned to various users by selecting the Manage State Assignments. If not already done, you can assign the next state of the event to the appropriate user, and then select Done. 
+The state of the Performance record is changed.
+Delete a Performance RecordAbout This Task
+You cannot delete a Performance record that is in the Approved state.
+Procedure
+Access the Unit Summary workspace for the GAA Unit whose Performance record that you want to delete. In the left pane, select Performance & Reports.
+The Performance & Reports workspace appears, displaying the Performance Records tab, which contains a list of Performance records associated with the GAA Unit for the current year.
+
+
+
+For the month for which you want to delete a Performance record, select the row containing the Performance record.
+In the upper-right corner of the Performance Records section,  is enabled. 
+In the upper-right corner of the section, select .
+The Delete Record dialog box appears, asking you to confirm that you want to delete the selected Performance record.
+Select Yes.
+The selected Performance record is deleted and the updated list of Performance record appears. 
+Results
+All the associated event details are deleted.The graphs on the GAA Overview and the Unit Summary workspace are updated.
+Generate Performance RecordsYou can generate and download Performance Records in bulk for a GAA Unit record.Procedure
+Access the GAA Overview page.Select Bulk Generation.The Bulk Generation page appears.Select the Generate tab, and then select Performance Record.As needed, enter values in the following fields.
+FieldsDescriptionCompanyThe name of the company that contains the GAA Units for which you want to generate the performance records.UnitsThe GAA Units for which you want to generate the records.YearThe year for which you want to generate the records.MonthsThe months in the year for which you want to include the details in the records.
+Select Submit.The generation of the record starts. You can view the status of the job by selecting the Bulk Generation Logs button. What To Do NextAfter the performance records are generated, you can download the records by selecting the Download tab in the Bulk Generation page. You can download the records as a single file or multiple files by selecting the appropriate option.
+
+
+
+
+On this pageAbout Performance RecordsAbout Creating Performance Records that Exclude OMC EventsAccess a Performance RecordCreate a Performance RecordRegenerate a Performance RecordChange the State of a Performance RecordDelete a Performance RecordGenerate Performance Records
+
+
+
+
+
+
+
+
+

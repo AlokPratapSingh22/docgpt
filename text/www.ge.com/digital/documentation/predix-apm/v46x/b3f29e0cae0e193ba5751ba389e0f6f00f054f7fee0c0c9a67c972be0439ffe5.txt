@@ -1,0 +1,139 @@
+
+
+
+Spares | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares AnalysisSpares Analysis: Overview
+Spares Analysis: Workflow
+Spares Analyses
+Spares
+Spare Applications
+Spare Application Populations
+Failure Distributions
+Monte Carlo Simulations
+
+
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Spares Analysis
+Spares
+
+
+
+
+
+
+
+SparesAccess a SpareProcedure
+Access the Spares Analysis whose associated Spare you want to view.In the left pane, select the Spare whose details you want to view.
+The details of the selected Spare appears in the workspace, displaying the following tabs:
+
+
+Definition: Contains the values that you provided while creating a Spare.
+Note: As needed, in the Definition section, you can select  to modify the values in the available fields, and then select  to save your changes.
+
+Applications: Contains the list of Applications associated with the selected Spare. 
+Result: The Result tab is selected by default, displaying the Spare Level plot for the selected Spare. You can also view the following plots for the selected Spare:Downtime plotSpare Usage plotSensitivity plotOptimal Holding plot
+
+
+
+Create a SpareThis topic describes how to create a new Spare. You can also copy an existing Spare.Before You Begin
+
+Create a Spares Analysis
+
+Procedure
+Access the Spares Analysis for which you want to create a Spare. In the left pane, select .
+The datasheet for the new spare appears.
+
+
+
+As needed, enter values in the available fields, and then select .
+The Spare is created.
+Results
+The Spare is linked to the Spares Analysis.
+Copy a SpareThis topic describes how to copy a Spare. You can also create a new Spare.Before You Begin
+
+Create a Spares Analysis
+
+Procedure
+Access the Spares Analysis for which you want to create a Spare. In the left pane, select the Spare that you want to copy, and then select .
+The Copy Spare dialog box appears, asking for a confirmation to copy the selected Spare.
+Select Yes.
+The new Spare is created and appears in the left pane in the following format:
+ <Name of the original Spare> - 1 
+Where, <Name of the original Spare> is the name of the Spare that you copied.
+Note: If you want to change the name of the Spare, you can select the Definition tab, and then select . To save your changes, select . The name of each Spare must be unique to the root record.
+Results
+The Spare is linked to the Spares Analysis.Any associated Spare Applications are copied.Any associated Spare Application Populations are copied.Values in the Failure Consequence and Preventive Maintenance section are copied.
+Delete a SpareAbout This TaskWhen you delete a Spare, any associated Spare Applications and Spare Application Populations are also deleted.Procedure
+Access the Spares Analysis whose associated Spare you want to delete.In the left pane, select the row containing the Spare that you want to delete, and then select . 
+The Delete Spare dialog box appears, asking if you really want to delete the selected Spare record.
+Select Yes. 
+The selected Spare record is deleted.
+Results
+Any associated Spare Applications are deleted.Any associated Spare Application Populations are deleted.
+
+
+
+
+
+On this pageAccess a SpareCreate a SpareCopy a SpareDelete a Spare
+
+
+
+
+
+
+
+
+

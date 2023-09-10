@@ -1,0 +1,141 @@
+
+
+
+Event Categories | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+AdminAccess the GAA Administrator Page
+GAA Administrator Workflow
+System Codes
+Event Categories
+Event Types
+Cause Codes
+Amplification Codes
+Fuel Types
+Mapping Records
+Event Transitions
+Companies
+Plants
+Units
+Unit Capacity
+Performance Record and Report Configuration
+
+
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Admin
+Event Categories
+
+
+
+
+
+
+
+Event CategoriesAccess an Event CategoryProcedure
+Access the GAA Administrator page.In the System Codes section, select Event Categories.
+The Event Categories subsection appears, displaying the following columns of information:
+
+Event Category ID: This column is populated based on the value in the Entity ID field. 
+Event Category Code
+
+Category Description
+
+Associated Event Types
+
+Color Code
+
+Mapped ID
+
+Regulatory Organization
+
+
+
+
+Locate the row that contains the Event Category that you want to access.In the Event Category ID column, select the link.
+The Edit Event Categories window appears, displaying the datasheet of the selected Event Category.
+Note: As needed, you can modify the values in the available fields, and then select  to save your changes.
+Add an Event CategoryProcedure
+Access the GAA Administrator page.In the System Codes section, select Event Categories.
+The Event Categories subsection appears.
+
+
+
+In the upper-left corner of the Event Categories section, select .
+The Add Event Category window appears.
+As needed, enter the values in the available fields.Select .
+The new Event Category is added. 
+Delete an Event CategoryAbout This Task
+Important: You must not delete a baseline Event Category.
+Procedure
+Access the GAA Administrator page.In the System Codes section, select Event Categories.
+The Event Categories subsection appears.
+Select the row containing the Event Category that you want to delete.In the upper-right corner of the Event Category section, select .
+The Delete Event Category dialog box appears, asking you to confirm that you want to delete the selected Event Category.
+Select Yes.
+The selected Event Category is deleted, and the updated list of Event Categories appears.
+
+
+
+
+
+On this pageAccess an Event CategoryAdd an Event CategoryDelete an Event Category
+
+
+
+
+
+
+
+
+

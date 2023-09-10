@@ -1,0 +1,107 @@
+
+
+
+Search Configuration | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SearchOverview
+Advanced Search
+Search Configuration
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Search
+Search Configuration
+
+
+
+
+
+
+
+Search ConfigurationSearch ConfigurationYou can use the search configuration options to change the way that records are returned by the global search. For example, you can specify the information that is shown in search results or whether or not a certain family or field should be included in the search results at all. Excluding Families from Search
+When you exclude a family from search, records in that family are not returned by the global search tool. In addition, records in any excluded families will not be returned in any Search window used in GE Digital APM. Therefore, you will not be able to select the records in workflows that use the Search window to select records. For example, in Policy Designer, you could not assign one of these records to a policy instance.
+In the baseline GE Digital APM database, the following families are excluded from search by default:
+Family PolicyHealth Indicator ValueOPC ReadingReadingReading In ErrorSecurity Group
+About The Search Index
+The search index is used to return the results of the Global search in GE Digital APM. The search index is updated automatically, and, for performance reasons, is designed to update incrementally.
+When only a few records are added to the database, those records appear in the Global search results almost immediately. However, when large data loads are performed or records updated in bulk (e.g., during an initial implementation), it takes a longer amount of time for the records to be indexed, and therefore for them to appear in the Global search results.
+Important: You should not rebuild the search index solely because newly added records do not appear in the Global search results after completing a large data load or bulk record import.
+ The search index typically only needs be rebuilt manually after a database upgrade. However, in some cases the search index may become out of sync with the data in your database. For example, if you add records to the database directly rather than via Record Manager in the GE Digital APM application, the search index will not include those changes and you must rebuild the search index manually. If occurrences such as this happen regularly in your company’s implementation of GE Digital APM, you may want to schedule the search index to be built on a regular basis. 
+Access the Search Configuration PageProcedureAccess the Operations Manager page, and then select Search Configuration.
+The Search Configuration page appears.
+In the left pane, select the family for which you want to configure search results.
+The workspace for the selected family appears, displaying the family search settings.
+Configure SearchProcedureAccess the Search Configuration page selecting the family for which you want to configure search results.As necessary, modify the following options for the family:
+
+Increase Rank: You can enter a numeric value to specify the location of the family within search results. The higher the number, the higher the priority. The lowest number that you can enter is 0.
+
+Exclude: Indicates whether or not the family is indexed, and therefore searchable. 
+Important: Before you modify this option, you should ensure that you understand how this setting may affect other areas of the application.
+
+As necessary, in the Field Search Settings section, modify the following options for each field within a family:
+
+
+Display Field?: Indicates the field whose text will be displayed in the search results. The ENTITY_ID field is the default for all fields.
+
+Index?: Indicates whether or not the field is indexed, and therefore searchable.
+Partial Search Pattern: This field allows you to use regular expressions to configure more streamlined searches. For examples and instructions on how to properly use this field, refer to Use Partial Search Patterns.
+Select Save.
+Your changes are reflected in search results throughout GE Digital APM.
+Build the Search IndexProcedure
+Access the Search Configuration page. To build the search index, perform the following steps: Select Build Index.The Rebuild window appears.Select OK.The search index will be built, and all expected results will be included in the global search. To verify whether the operation has completed successfully, you can view the generated Meridium.Service.Search_<Date>.txt log file at <installdir>\ProgramData\Meridium\Logs\. 
+Tip: To access the ProgramData folder, you must show the hidden folders on your system.
+To schedule the search index to be built at a future time or on a recurring schedule, perform the following steps:Select Schedule. 
+The Edit Schedule window appears. 
+Select either the One time or Recurrence check box.In the Start box, specify the date and time at which you want the search index to be built.If you selected Recurrence, in the Every section, specify the frequency at which you want the search index to be built.If you selected Recurrence, in the End section, specify when you want the scheduled recurrences to end.Select OK.The search index will be built according to the schedule, and the expected results will be included in the global search. You can view the status of the scheduled job by accessing Admin > Operations Manager > Schedule Logs.
+
+
+
+
+On this pageSearch ConfigurationAccess the Search Configuration PageConfigure SearchBuild the Search Index
+
+
+
+
+
+
+
+
+

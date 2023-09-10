@@ -1,0 +1,87 @@
+
+
+
+Manage State Assignments | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+State ManagementOverview
+Manage State Assignments
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+State Management
+Manage State Assignments
+
+
+
+
+
+
+
+Manage State AssignmentsModify State AssignmentsProcedureAccess the State Assignments Window for a Record.In the State Assignment section, in the list, select the state that you want to apply to the record, and then select Done.The state of the record is changed.Assign a Security User to a StateProcedureAccess the State Assignments window for a record.In the State Assignments section, in the Assignee column, select the corresponding combo box for the state to which you want to assign a Security User.A list of Security Users appears.
+
+Note:  Only users who have logged in to the system at least once will appear in the list.Select the Security User that you want to assign to the corresponding state, and then select Done.
+Note: You can search for a Security User that you want to assign to the corresponding state by entering the first name, last name, or user ID of the user in the corresponding combo box.
+The user is assigned to the state, and appears in the 
+State Assignment
+
+ window. The previous assignee will no longer be able to change the state.About Assigning Security Users to States
+Security Users can be assigned to states when you are viewing a record of a family for which State Configuration has been defined. If the State Configuration has been defined appropriately, then, after you assign a Security User to a state, that Security User can transition that record from that state to a new state.
+Details
+If a Security User is assigned to a state for a given record, that Security User will be allowed to transition only that record from the assigned state. If other records exist in the same family, that Security User will not be allowed to transition those records from the same state unless the Security User is assigned to that state in all of those records.
+Example: Security User
+Suppose the Security User John Smith is assigned to the Created state in the Work Order record WO-101, but he is not assigned to any state in the record WO-102. The Security User will be able to transition WO-101 from Created to Assigned, but will not be able to transition WO-102 from Created to Assigned.
+View the State History of a RecordProcedureAccess the State Assignments Window for a Record.Select the History tab.A grid appears, displaying past states and their associated assignees.
+
+
+
+
+
+
+On this pageModify State AssignmentsAssign a Security User to a StateAbout Assigning Security Users to StatesView the State History of a Record
+
+
+
+
+
+
+
+
+

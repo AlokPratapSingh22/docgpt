@@ -1,0 +1,102 @@
+
+
+
+Compliance Configuration | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Compliance ManagementOverview
+Workflows
+Inspection Plans
+Inspection Plan Management
+Compliance Recommendations
+Inspection Plan Revision History
+Suggested Compliance Strategy Templates
+AdminCompliance Configuration
+
+
+Deployment
+Reference 
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Compliance Management
+Admin
+Compliance Configuration
+
+
+
+
+
+
+
+Compliance ConfigurationAbout Compliance Strategy TemplatesCompliance Strategy Templates help you manage your assets and generate recommendations based on a selected policy.Creating a Compliance Strategy Template lays the groundwork for creating a cohesive and compliant Inspection Plan for linked assets. When an MI Compliance Administrator creates a Compliance Strategy template, they must choose a policy to link to the template that will enable recommendation generation when the Inspection Plan creation is initiated. After the policy is selected, the MI Compliance Administrator then links assets to the Compliance Strategy Template. At this point, Inspection Plans can be created by the MI Compliance Analyst or the MI Compliance Approver. When the Inspection Plan creation is initiated, the policy selected in the Compliance Strategy Template is executed against the assets that are linked to the template. Then, Inspection Plans are created, and recommendations are generated according to the guidelines specified in the policy. When an asset is linked to multiple Compliance Strategy Templates, the policy for each template executes, and the recommendations are linked to the Inspection Plan of that asset.  Access the Administrative Features of Compliance ManagementBy accessing the administrative features of Compliance Management, you can create Compliance Strategy Templates, which enables you to create Inspection Plans.ProcedureIn the module navigation menu, select
+Admin > Application Settings > Inspection Management.Select Compliance Configuration.The Compliance Configuration workspace appears.Access a Compliance Strategy TemplateProcedureAccess the administrative features of Compliance Management.
+In the Compliance Templates section, select the name of the Compliance Strategy Template that you want to access.The Compliance Strategy Template datasheet appears, displaying the Template Details section.Create a Compliance Strategy TemplateProcedureAccess the Compliance Strategies workspace.In the Compliance Templates section, select .The Compliance Strategy Template datasheet appears, displaying the Template Details section.In the datasheet, enter values in the available fields. 
+Note:
+In the Compliance Category Name drop-down, you can add a new Compliance Category by entering a name in the Add Caption field.When you select a policy to link to the Compliance Strategy Template, you must select a policy that has the same family as the Compliance Strategy Template.You can select the Policy Link field to navigate to the Policy Designer to view or modify the selected policy.
+
+Select Save.The Compliance Strategy Template is saved.Delete a Compliance Strategy TemplateProcedureAccess the administrative features of Compliance Management.
+In the Compliance Templates section, next to the name of the Compliance Strategy Template that you want to delete, select the check box.Select .A window appears, asking you to confirm that you want to delete the Compliance Strategy Template.Select Yes.The Compliance Strategy Template is deleted.Add Assets to a Compliance Strategy TemplateProcedureAccess the Compliance Strategy Template to which you want to add assets.Select the Assets tab.The Assets section appears, displaying a list of assets associated with the selected Compliance Strategy Template.In the Assets section, select .In the drop-down list box, select an option:Add an AssetActionsVia Finder
+In the Hierarchy Finder window, navigate to the asset that you want to add. Next to each asset that you want to add to the Compliance Strategy Template, select the .The selected assets appear in the Hierarchy Finder window.Select OK.
+Via Query
+In the Add Assets to <Asset ID> window, next to each query that you want to use to search for assets to add to the Compliance Strategy Template, select the check box, and then select Next.Note:
+After you select the first query and assets, the query that you selected is stored in the Asset Lookup Query field of the Compliance Strategy Template record. Subsequent uses of the Add Asset via Query tool will use the previously selected query by default. Additionally, the results of this query are used in the Assets without Templates section of the Compliance Management Overview page. To use a different query in the Add Asset via Query tool, select Previous, and then select a query from the catalog.When you use a query to select assets, one of the output fields of the query must be the entity key for an asset. The field in the query must be named ASSET_ENTY_KEY.If you have already added assets to the Compliance Strategy Template, you can filter the query results using a WHERE parameter; the entity key of the template must be TEMP_ENTY_KEY.
+The Select Assets section appears, displaying the results of the query that you selected.In the Select Assets section, next to each asset that you want to add, select the check box.Select Finish.
+The selected assets appear in the Assets section.Important:
+When you select assets to add, you must select assets that are in the same family as the defined asset family for the template. Additionally, you cannot add the same asset more than once.When you are adding assets to the Compliance Strategy Template, the assets listed in the Hierarchy Finder and the queries listed are site filtered.
+Tip: If one or more assets cannot be added to the Compliance Strategy Template, an error message will appear. You can select the error to view a list of assets that were not successfully added to the template. Delete Assets from a Compliance Strategy TemplateProcedureAccess the Compliance Strategy Template from which you want to delete assets.Select the Assets tab.The Assets section appears, displaying a list of assets associated with the Compliance Strategy Template.Next to each asset that you want to delete, select the check box. Select .A window appears, asking you to confirm that you want to delete the asset.Select Yes.The asset is deleted from the Compliance Strategy Template.Map a Policy to a Compliance Strategy TemplateBefore You BeginYou must have an existing Compliance Strategy Template that has a linked policy.ProcedureAccess the Compliance Strategy Template to which you want to map a policy.Select the Policy Mapping tab.The Policy Mapping section appears, displaying a list of families and policy nodes.Next to the family that you want to modify, in the Policy Node box, enter the name of the policy node that you want to map to the family.
+Note: The policy node that you map to the family should be an entity node that is part of the policy that you linked to the Compliance Strategy Template. 
+Select .The policy mapping is saved.Example: Compliance Strategy Template and Inspection PlanThe following example details a Compliance Strategy Template with a working policy that results in a cohesive Inspection Plan.
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+
+
+
+
+
+On this pageAbout Compliance Strategy TemplatesAccess the Administrative Features of Compliance ManagementAccess a Compliance Strategy TemplateCreate a Compliance Strategy TemplateDelete a Compliance Strategy TemplateAdd Assets to a Compliance Strategy TemplateDelete Assets from a Compliance Strategy TemplateMap a Policy to a Compliance Strategy TemplateExample: Compliance Strategy Template and Inspection Plan
+
+
+
+
+
+
+
+
+

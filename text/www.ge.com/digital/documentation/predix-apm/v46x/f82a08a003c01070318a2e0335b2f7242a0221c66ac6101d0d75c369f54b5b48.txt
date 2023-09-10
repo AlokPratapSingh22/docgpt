@@ -1,0 +1,145 @@
+
+
+
+Family Field Descriptions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Metrics and ScorecardsOverview
+Workflow
+Manage Scorecards
+Manage Key Performance Indicators (KPIs)
+Manage Metric Views
+Manage Privileges
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Queries Folder
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Metrics and Scorecards
+Reference
+Family Field Descriptions
+
+
+
+
+
+
+
+Family Field DescriptionsKPI Records
+KPI records store basic information about Key Performance Indicators. This topic provides an alphabetical list and description of the fields that exist for the KPI family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Alert Distribution List TextThe Security Users who have been designated to receive alerts from this KPI.This field is populated automatically with the names of the recipients you defined when you created an alert in the Add Recipient of Alerts section.Alert Message CharacterThe text of the email message sent to a user when an alert is triggered.This field is populated automatically with the text you defined in the Additional Notes box when you created an alert. Alert Value NumberThe value that a KPI must meet in order to trigger an alert message. This field is automatically populated with the number you defined in the Alert Configuration dialog box when creating an alert. When the KPI reaches this value, the text in the Alert Message field is sent in an email message to the users identified in the Alert Distribution List field. Best value NumberThe optimal output level. This field is automatically populated with the value you entered on the Limits section of the KPI Datasheet section. This value is used to calculate the normalized score that is assigned to the KPI when it is created. Critical Value NumberThe output value that indicates that the KPI has reached a low performance level and is not reaching its potential target. This field is populated automatically with the value you entered in the Limits section of the KPI Datasheet section. Has Score Only LogicalIndicates whether the Score is the only value displayed on the Trend Chart. If this field is set to True, the KPI's Actual, Target, Critical and Stretch values are not displayed on the Trend Chart or Trend Data. Instead, only the score will be displayed for that KPI. There are formulas to calculate the score value. KPI Schedule TextInformation about the KPI schedule and how frequently to update measurements over a period of time. This field stores the schedule information that you define via the Schedule section of the KPI design page. Last Measure Update DateThe date the KPI measurements were last updated. If the KPI is successfully executed, this value is populated automatically with the current date. NameCharacterThe name of the KPI. You can enter a name for the KPI into this field manually. Schedule Last Run Date DateThe most recent date that a KPI was updated by a scheduled update. 
+If the KPI is scheduled as a recurring item, after successful execution, this value is populated automatically with the current date. 
+This field is not on a datasheet by default.
+Schedule Next Run Date DateThe next date that a KPI is scheduled to take place. 
+If the KPI is scheduled as a recurring item, after successful execution, this value is populated automatically with the next scheduled run date based on the KPI's schedule frequency. If the KPI is not scheduled as a recurring item, this field is not populated with a value. 
+This field is not on a datasheet by default.
+Stretch Value NumberThe output value that is much higher than a target value, demanding a breakthrough performance. 
+This field is automatically populated with the value you entered in the Limits section of the KPI Datasheet section. 
+Target Value NumberThe output value that is your aim for the KPI measurement at a given time. This field is automatically populated with the value you entered in the Limits section of the KPI Datasheet section.Worst Value NumberThe output value that should be strictly avoided. This field is automatically populated with the value you entered in the Limits section of the KPI Datasheet section. This value is used to calculate the normalized score that is assigned to the KPI when it is created. 
+KPI Measurement Records
+KPI Measurement records store information about the measurement values used in a KPI. This topic provides an alphabetical list and description of the fields that exist for the KPI Measurement family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageActualNumberThe actual value for a KPI on a particular date.Automatically populated from KPI data source.Critical Numeric The critical value for a KPI on a particular date.Automatically populated from a KPI or KPI datasource.Event Start Date DateThe KPI measurement date.Populated automatically from KPI data source.Stretch NumericThe stretch value for a KPI on a particular date.Automatically populated from KPI or KPI data source. Not visible on KPI datasheetTarget Numeric The target value for a KPI on a particular date.Automatically populated from KPI or KPI data source. Not visible on KPI datasheet.
+KPI Objective, KPI Perspective, and Scorecard Records
+KPI Objective, KPI Perspective, and Scorecard records store information about KPI Objective, KPI Perspective, and Scorecard families. This topic provides an alphabetical list and description of the fields that exist for the KPI Objective, KPI Perspective, and the Scorecard families. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+The following families are not enabled for site filtering, which means that records in these families can be accessed by any user with the appropriate license and family privileges. For more information, refer the Site Filtering section of the documentation. 
+KPI Objective
+
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Objective Name CharacterName of the Objective.None
+
+KPI Perspective
+
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Perspective Name CharacterName of the Perspective.None
+
+Scorecard
+
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+ Scorecard IDCharacterName of the Scorecard. None
+
+
+
+
+
+
+On this pageKPI RecordsKPI Measurement RecordsKPI Objective, KPI Perspective, and Scorecard Records
+
+
+
+
+
+
+
+
+

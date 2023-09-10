@@ -1,0 +1,357 @@
+
+
+
+Family Field Descriptions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference Family Field Descriptions
+Catalog Items
+General Reference
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Reference 
+Family Field Descriptions
+
+
+
+
+
+
+
+Family Field DescriptionsChecklist Inspection Template Records
+The table below provides an alphabetical list and description of the fields that exist for the Checklist Inspection Template family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. See the Site Filtering section of the documentation for more information.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Inspection Family Character The family associated with the checklist configuration template.This field is populated by a list of Inspection Families that contain the Checklist Template field.Template JSONTextStores the category configuration for the template as JSON text.
+This field is populated by the application using a JSON structure. This field is populated automatically by the GE Digital APM system.
+Important:  Do not modify the contents of this field.
+Template Name Character Stores the unique name for the template.This field is populated by the unique name of the Checklist Configuration Template.
+Inspection Records
+
+Inspection records store information about:
+Bundle Inspections Bundle Sub-Inspections Checklist Inspections Full Inspections General InspectionsInspection Confidence Evaluation Pressure Test Inspections Pressure Test Sub Inspections 
+The table below provides an alphabetical list and description of the fields that exist for the Inspection family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData Type DescriptionBehavior and Usage Action This Inspection CharacterThe action that was performed on the tube bundle during the inspection.This field displays a list of the IDs and Descriptions of the System Codes that are stored in the MI BUNDLE ACTION (Bundle Sub-Inspection) System Code Table. The value No Action is selected in the list by default.Actual Work Time NumericThe number of hours required to complete the inspection.This field appears on datasheets configured for Inspection families whose caption contains the word Checklist and on SAP Integration datasheets configured for the following families:Bundle Inspection Full Inspection General Inspection Pressure Test Inspection Applicable RegulationCharacterStores the application regulation for an eventThis field is populated with a list of regulations to be linked to a task. This field is populated with a description of system codes stored in MI_INTGY_REGULATION system code table. This field is always disabled.As Found Pop Pressure NumericThe pressure at which the PRD opens at the time of the inspection.This field accepts non-negative, numeric values only (for example, 10). As Left Pop Pressure NumericThe pressure at which the PRD opens after maintenance has been performed on the PRD (for example, cleaning).This field accepts non-negative, numeric values only (for example, 10). Asset ID CharacterThe Equipment Record ID to which the Inspection is linked.This field is populated by the associated Equipment Record ID. This field is populated with either the Equipment Record ID or with the Equipment Record ID that is linked to the selected Functional Location.Asset ID Link CharacterA link to the Equipment record to which the Inspection record is linked.When you select this link, the Equipment record is opened.Bundle Inspection Summary TextA summary of the inspection.You can use this field to record any additional information about the inspection that is not stored in another field in the Bundle Sub-Inspection record.Bundle Tag TextUnique ID applied by the user to identify the bundle.You can specify a value for this field using the datasheet. Bundle Type CharacterThe type of the tube bundle equipment.This field is populated with a list of the IDs and Descriptions of the System Codes that are stored in the MI BUNDLE TYPE (Inspection; Bundle Types) System Code Table.CertificationCharacterStores the certification valueThe values in this field are populated from a drop-down list box and contains a list of system codes that exist in the MI_COMPLIANCE_STANDARDS system code table. In baseline, the Certification field populates the values which are referenced by MI_INTGY_REGULATION system code table. By default, it shows ZUS and BP. Completion Date DateThe date on which the inspection was completed.By default, this value is set to the date that the Inspection is created. You can modify this date to reflect the actual completion date.If the value in the Inspection Task Complete field is set to True, the value in the Completion Date field will be used to populate the Last Date field when the Inspection is saved.The commencement date and completion date are always the same.Degradation Mechanism CharacterThe Degradation Mechanism that was observed during the inspection.This field displays a list of the IDs and Descriptions of the System Codes stored in the MI DAMAGE MECHANISM (Inspection, Damage Mechanism) System Code Table. The datasheet caption for this field is As Found Degradation Mechanism.Deterioration Mode CharacterHow the Degradation Mechanism was observed during the inspection.This field displays a list of the IDs and Descriptions of the System Codes stored in the MI DAMAGE MODE (Inspection, Damage Mode) System Code Table.Design Set Pressure NumericThe pressure at which the PRD was designed to open.This field accepts non-negative, numeric values only (for example, 10).DownloadedBooleanIndicates whether the inspection has been downloaded for field data collection.This field is set to true when an inspection is downloaded for field data collection. It is set to false when the inspection is synced back.Equipment Operating StatusCharacterDocuments the operating state that the equipment was in at the time of the inspection. You can specify a value for this field using the datasheet.  Equipment Technical NumberCharacterUnique ID that identifies the equipment. This ID is assigned during manufacture. Extent CharacterThe extent to which the inspection was performed.This field displays a list of values based on the value that you selected in the Type of Inspection field and the values that exist in the Inspection Extent field in Inspection Strategy records.The Extent field displays a list of values that exist in the Inspection Extent field in all Inspection Strategy records whose Inspection Task Type field contains the value that you selected in the Type of Inspection field.Filter DMBooleanIndicates whether the degradation mechanisms must filter based on the selected RBI component in an Inspection Confidence Evaluation record.If you select this, the degradation mechanisms are filtered based on the selected RBI component in an Inspection Confidence Evaluation record.This field is enabled only when the Risk Based Inspection license is active and an RBI component is selected in an Inspection Confidence Evaluation record.Final Inspection Lock BooleanIndicates whether the Inspection record has reached a final state.Typically, the person reviewing the Inspection Document will set this field to True when the review is complete.When the Final Inspection Lock is set to True, the following fields are disabled:Inspection Document StatusInspection LockReviewers NameReviewers CommentsFunctional Location ID CharacterThe ID of the Functional Location record linked to the Inspection record.This field is populated with the ID of the Functional Location record with which the Inspection record is associated. This field is either populated by the Functional Location record ID or the Functional Location record of the Equipment record. Functional Location ID Link CharacterA link to the Functional Location record to which the Inspection record is linked.When you select this link, the Functional Location record will be opened.Generate Represented Inspections BooleanIndicates whether or not Inspection records will be created automatically for equipment in Inspection Groups that you create using the Risk Based Inspection (RBI) module.When the value in this field is set to True, Represented Inspections may be created.This field is enabled only when the Inspection record fulfills two criteria:The Inspection Task Record is associated with an Equipment record in an Inspection Group.The Inspection Task record was created from an RBI Recommendation record that was created from that Inspection Group. Note: This field is not available in datasheets for the External PRD Checklist and PRD Pop Test Checklist subfamilies.Inspection Completion Date DateThe date on which the inspection was completed. This field is populated automatically by the GE Digital APM system; however, you can modify the date by selecting .Inspection Confidence Evaluation ReviewedBooleanIndicates if the Inspection Confidence Evaluation records are reviewed and locked.You can lock the Inspection Confidence Evaluation records only if:You have the Risk Analyst resource role assigned to you.The Allow Risk Analyst to Lock Inspection Confidence Evaluation Records check box is selected in the Application Configurations section of the Inspection Configuration workspace.If the value in this column is True, the Inspection Confidence Evaluation records are locked.Inspection Document Status CharacterThe status of the Inspection Document.This field displays a list of the IDs and Descriptions of the System Codes stored in the MI STATUS (Status Codes - CORE) System Code table.When an Inspection record is created, the value is set to Draft (DRAFT) by default. You can change it to Pending Approval when you are ready for the reviewer to review it. Likewise, the reviewer can change it to Approved (APPROVED) after they have reviewed it.Note: This field does not apply to Third Party Damage.Inspection Document CategoryCharacterStores the inspection document categoryThis field will display a pick list. It will be disabled if Applicable regulation is "European Inspection Regulation" and Certification is "ZUS". If no option is selected or anyone of the option is selected, then the respective field will be enabled.It contains a list of system codes that exist in the MI_EN_DOC_CTGY system code table. The field populates the following values: Test Certificate by ZUSTest Record by Company InspectorTest Report by SubcontractorInspection InstructionCharacterStores instructions for the inspector It contains a list of system codes that exist in the EU_INSP_INST system code table. Inspection Headline CharacterA short description of the findings of the inspection.You can specify a value for this field using the datasheet. Inspection Lock BooleanIndicates whether the Inspection record is locked. When this field is set to False, the Inspection record is unlocked. When this field is set to True, the Inspection record is locked.Important: After you lock an Inspection record, only the inspection report owner or team member can unlock it..When an Inspection record is locked, all fields except for the following fields are disabled:Inspection Document Status Inspection Lock Reviewers Name Reviewers Comments Final Inspection Lock Published After the Inspection record is locked, you can flag it for approval using the Inspection Document Status field.You can lock an Inspection if you are the Inspection Report Owner or a Contract Inspector who is also a Team Member in the associated Inspection Record.Inspection Reference CharacterA value used to identify the Inspection record.This value is generated automatically by the GE Digital APM system.Inspection Report Owner CharacterThe first and last name of the GE Digital APM Security User who performed the inspection.This field contains a list of Security Users who have been assigned the Inspector role. When you create the Inspection record, you must select the name of the GE Digital APM Security User who performed the inspection.Inspection Start Date DateThe date on which the inspection began.This field is populated automatically by the GE Digital APM system; however, you can modify the date by selecting . Inspection Summary TextA summary of the inspection.You can specify a value for this field using the datasheet. Inspection Task Complete BooleanIndicates whether the Inspection record is closed, and the associated Task records have been updated. When this field is set to True, the Inspection record is closed.When you close an Inspection record:The value in the Completion Date field will be used to populate the Last Date field in the Task record.If the Completion Date field of the inspection is later than the Last Date field of the related Inspection Task, and the configuration mentioned in the note below is in place, a Task Execution record is automatically created and linked to the Inspection and the Inspection Task records. The value in the Date Executed field in the Task Execution record is automatically set to the date on which the Inspection record was closed.Note: To modify this check box, you must be assigned the Human Resource role of Inspector.Note: To create Task Execution records, ensure the following configuration is in place:The State Management for the Inspection Task family is enabled, and the Inspection Task record set to a Scheduled state.The Inspection Event family is related to the Task Execution family through the Has Event Execution relationship.The Inspection Task family is related to the Task Execution family through the Has Task Execution relationship.Last Downloaded ByCharacterThe user ID of the resource that downloaded the inspection for field data collection.This field is set to the user ID of the current user when an inspection is downloaded.Last Downloaded DateDateThe date when the inspection was downloaded for field data collection.This field is set to the current date when an inspection is downloaded.Last Synced Back ByCharacterThe resource which synced the inspection to GE Digital APM after the field data collection.This field is set to the user ID of the current user when an inspection is synced to GE Digital APM through Inspection Field Data Collection.Last Synced DateDateThe date when the inspection was synced to GE Digital APM after the field data collection.This field is set to the current date when an inspection is synced to GE Digital APM through Inspection Field Data Collection.Leak Category CharacterThe type of leak that is associated with the PRD.In the datasheet, this field appears as list that contains the following values:Minor Moderate Stuck Open This list is populated with the descriptions of the System Codes stored in the MI INSPECTION LEAK CATEGORY (Inspection Leak Category) System Code Table.This field is enabled and can retain a value only when the Leak Test Results field contains the value Leak. Leak Test Results CharacterIndicates whether there was a leak detected on the PRD during the inspection.In the datasheet, this field appears as a list that contains the following values:No Leak Leak This list is populated with the descriptions of referenced System Codes for the MI INSP RESULTS LEAK System Code that is stored in the System Code Table with the ID MI RBI REFERENCES.No. of Gauges Used NumericThe total number of gauges used by a piece of equipment.  You can specify a value for this field using the datasheet. Over Pressure Test Results CharacterIndicates whether the PRD passed the Pressure Test that you performed during the inspection.In the datasheet, this field appears as a list that contains the following values:Pass Fail This list is populated with the descriptions of referenced System Codes for the MI INSP RESULTS OVER PRESSURE System Code that is stored in the System Code Table with the ID MI RBI REFERENCES.Percentage Heat Transfer Area Loss NumericThe percentage of the area of the tube bundle that will experience heat transfer loss due to plugged tubes.This value is calculated using the following formula: Percentage Heat Transfer Area Loss = (Total Number of Tubes Plugged At Inspection End / Total Number of Tubes In Bundle) x 100 Published BooleanIndicates whether the Inspection Document is published. N/ARBI ComponentNumericThe Entity ID of the RBI Component in an Inspection Confidence Evaluation record.This field displays the RBI Components that are linked to the related asset. If the asset does not have RBI Components, then this list is empty.Based on the value in this field, the degradation mechanisms are filtered in an Inspection Confidence Evaluation record if the Filter check box is selected.This field is enabled only when the Risk Based Inspection license is active.Reason for Inspection TextThe comments from the inspector about why the inspection was performed.You can specify a value for this field using the datasheet. Reviewers Comments TextThe comments from the reviewer about the Inspection Document.You can specify a value for this field using the datasheet. Note: This field does not apply to Third Party Damage.Reviewers Name CharacterThe first and last name of the GE Digital APM Security User who is responsible for reviewing the Inspection Document.This field contains a list of Security Users who have been assigned the Inspection Supervisor role. When you create the Inspection record, you should specify in this field the Security User who will be responsible for reviewing the Inspection record.Scope TextThe recommended scope for this type of inspection.This field displays a value based on the value that you selected in the Type of Inspection field, the value that you selected in the Extent field, and the values that exist in the Recommended Inspection Scope field in Inspection Strategy records.The Scope field displays the value that exists in the Recommended Inspection Scope field in all Inspection Strategy records whose:Inspection Task Type field contains the value that you selected in the Type of Inspection field.Inspection Extent field contains the value that you selected in the Extent field.SRV Set Pressure Text The pressure at which the test is set. You can specify a value for this field using the datasheet. Tasks Addressed CharacterThe tasks that are addressed by the inspection.You can select Task records associated with the Inspection record from the list of Task Record IDs when you open an existing Inspection record:Defined for a family whose caption includes the word Checklist in the Tasks Addressed list.Defined for a family whose caption does not include the word Checklist in the Tasks Addressed list in the Inspection datasheet. Test Comments TextThe comments from the inspector about the performed test.You can specify a value for this field using the datasheet. Test Duration NumericThe length of time pressure was held.You can specify a value for this field using the datasheet. Test Media Text The liquid or gas used to perform the Pressure Test.You can specify a value for this field using the datasheet. Test Media Temperature NumericThe temperature of the test media used.You can specify a value for this field using the datasheet. Test Pressure NumericThe pressure at which the test was performed.You can specify a value for this field using the datasheet. Total Number of Tubes in Bundle NumericThe number of tubes in the tube bundle.This value is used to calculate the value in the Percentage Heat Transfer Area Loss field. By default, this field contains the value 0 (zero). If you enter a value in this field, save the record, and then modify the value, the following fields will be populated with the value 0 (zero) because, if you modify the value in the Total Number Of Tubes In Bundle field after saving the record, you should re-enter values in these fields: Tubes Plugged at Inspection Start Tubes (Plugged At Start) Replaced Tubes Plugged During This Inspection Tubes (Not Previously Plugged) Replaced Total Number of Tubes Replaced at Inspection End The value in this field must be greater than or equal to the:Value in the Tubes Plugged at Inspection Start field. Value in the Tubes Plugged During This Inspection field. Sum of the values in the Tubes Plugged At Inspection Start and Tubes Plugged During This Inspection Total Number of Tubes Plugged at Inspection End NumericThe number of tubes in the tube bundle that were plugged at the end of the inspection.This field is populated based on the following values: Tubes Plugged at Inspection Start Tubes Plugged During Inspection Tubes (Plugged At Start) ReplacedDepending on which of these fields contain values, this field is populated as follows: If only the Tubes Plugged At Inspection Start and Tubes Plugged During Inspection field contain a value, the Total Number of Tubes Plugged At Inspection End field is populated with that value. If the Tubes Plugged At Inspection Start and fields contain values, the Total Number of Tubes Plugged At Inspection End field is populated with the sum of these values.If all three fields contain values, the Total Number of Tubes Plugged At Inspection End field is populated with the sum of the values in the Tubes Plugged At Inspection Start and Tubes Plugged During Inspection minus the value in the Tubes (Plugged At Start) Replaced field. This field is disabled when the Action This Inspection field contains a value. Total Number of Tubes Replaced at Inspection End NumericThe total number of tubes in the tube bundle that have been replaced at the end of a given inspection.By default, this field contains the value 0 (zero). This field is disabled when the Action This Inspection field contains a value. When the Action This Inspection field contains the value: Partial Retube (PARTIAL RETUBE), this field is populated with the sum of the values in the Tubes (Plugged At Start) Replaced and Tubes (Not Previously Plugged) Replaced fields. If only one of these fields contains a value, the Total Number of Tubes Replaced at Inspection End field is populated with that value. Bundle Replaced (BUNDLE REPLACED) or Total Retube (TOTAL RETUBE), this field is populated with the value in the Total Number of Tubes In Bundle field. Tubes Plugged (TUBES PLUGGED) or No Action (NO ACTION), this field is populated with the value 0 (zero). Tubes (Not Previously Plugged) Replaced NumericThe number of tubes in the tube bundle that were not plugged before the inspection started but were plugged during the inspection.N/ATubes (Plugged At Start) Replaced NumericThe number of tubes in the tube bundle that were plugged before the inspection started but were replaced during the inspection.This field is enabled only when the value in the Action This Inspection field is Partial Retube (PARTIAL RETUBE). This value must be less than or equal to the value in the Tubes Plugged At Inspection Start field. By default, this field contains the value 0 (zero).Tubes Plugged at Inspection Start NumericThe number of tubes in the tube bundle that were not plugged before the inspection started but were replaced during the inspection.This field is enabled only when the value in the Action This Inspection field is Partial Retube (PARTIAL RETUBE). By default, this field contains the value 0 (zero).Tubes Plugged During This Inspection NumericThe number of tubes in the tube bundle that were plugged during the inspection.This field is enabled only when the Action This Inspection field contains a value other than No Action (NO ACTION). By default, this field contains the value 0 (zero). The value in this field must be less than or equal to the value in the Total Number Of Tubes In Bundle field. When the value in the Action This Inspection field is Bundle Replaced (BUNDLE REPLACED), this field is populated with the value 0 (zero). Tubes Plugged in at Inspection Start NumericThe number of tubes in the tube bundle that were plugged before the inspection started.By default, this field contains the value 0 (zero). The value in this field must be: Greater than or equal to the value in the Tubes (Plugged At Start) Replaced field. Less than or equal to the value in the Total Number Of Tubes In Bundle field. This value is used to calculate the value in the Percentage Heat Transfer Area Loss field. Type of Inspection CharacterThe type of inspection that was performed.This field displays a list of values stored in the Task Type ID field in Task Types records whose Reference field contains the value INSPECTION STRATEGY.The values that appear in this list depend on the type of Inspection record that you are viewing. For Inspection records belonging to:The PRD Pop Test Checklist subfamily, the values in this list are populated using the System Code Table MI PRD INSPECTION TYPE FILTER (PRD Inspection Type Filter).Any Inspection subfamily except the PRD Pop Test Checklist subfamily, this list is populated with the Task Type ID value in each Task Types record that does not correspond to a value in the System Code Table MI PRD INSPECTION TYPE FILTER (PRD Inspection Type Filter).
+Inspection Health Evaluation
+Inspection Health Evaluations represent health evaluations recorded either on a root asset or a sub-asset because of an inspection. The following table provides an alphabetical list and description of the fields that exist in the Inspection Health Evaluation family. This list is not comprehensive, and some fields are sourced from the parent Inspection family.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData Type DescriptionBehavior and Usage AcknowledgedBooleanIndicates whether this evaluation has been acknowledged.If you select this, the Acknowledged By and Acknowledged Date fields will be populated by the user that performed the action and the current date.Acknowledged ByCharacterIndicates the user that Acknowledged this evaluation.Automatically populated based on the setting of the Acknowledged field. Acknowledged DateDateIndicates the date this evaluation was acknowledged.Automatically populated based on the setting of the Acknowledged field.Asset IDCharacterThe Equipment Record ID to which the Inspection is linked.This field is populated by the associated Equipment Record ID. This field is populated with either the Equipment Record ID or with the Equipment Record ID that is linked to the selected Functional Location.Checklist CategoryCharacterStores the category name of the Checklist Finding this health evaluation is intended forAutomatically populated upon creation of a checklist inspection that is based on a template and the Checklist Inspection Template family has the Health Evaluation property enabled in the Event Configuration.Commencement DateDateThe date on which the health assessment was createdAutomatically populated with the current date upon inspection creationCompletion DateDateThe date on which the health assessment was performed.Automatically updated when the value of Health Assessment is changed.Driving CategoryCharacterContains the category name of the checklist category that is driving this rolled-up health evaluation.If this assessment is for the root asset, automatically populated with the category name of the checklist category that is currently driving this assessment.Functional Location IDCharacterThe ID of the Functional Location record linked to the Inspection record.This field is populated with the ID of the Functional Location record with which the Inspection record is associated. This field is either populated by the Functional Location record ID or the Functional Location record of the Equipment record.Health AssessmentCharacterCaptures the health assessment for the asset.Populated by the APM application when the user selects a health assessment value in the Inspection page for either a checklist category or for the direct asset. The value in this field is an ID from the system code table MI_FINDING_TYPE.Parent InspectionCharacterFormatted link to the root inspection for which this evaluation is related.When you select the link, the root inspection will be opened.
+Inspection Recommendation
+Inspection Recommendations represent actions that need to be taken as a result of an inspection. The following table provides an alphabetical list and description of the fields that exist in the Inspection Recommendation family. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData Type DescriptionBehavior and Usage Alert Assignee When Due?BooleanIndicates whether an email notification must be sent to the user selected in the Assigned To Name field when the recommendation is due.When this check box is selected, the following fields are enabled:Days Before Due Date to be NotifiedFrequency of Alert After Due DateThis field appears in the Alert datasheet.
+Asset ID 
+
+Character
+
+The Equipment Record ID to which the Inspection is linked.
+
+This field is populated by the Equipment Record ID with which the Inspection record is associated. This field is either populated with the Equipment Record ID, or with the Equipment Record ID that is linked to the selected Functional Location.
+Assigned to Name CharacterThe first and last name of the person to whom the recommendation is assigned. 
+The value in this field is populated by the First Name and Last Name fields in the corresponding Human Resource records. If the Human Resource record also has an associated Security User, the value from the User ID field also appears. 
+In the database, values in this field are stored in the following formats:
+<Last Name>, <First Name> ~ <User Name>
+-or-
+<Last Name>, <First Name> ~
+For example, a name stored in the database would be Smith, Jane ~ jsmith.
+The Human Resource records that populate the drop-down list box in this field are filtered based on the site that is applied to the Inspection Recommendation.
+Author Name CharacterThe first and last name of the person who is proposing the recommendation.
+The value in this field is populated by the First Name and Last Name fields in corresponding Human Resource records that have one of the following roles:Inspection SupervisorInspection AdministratorInspector
+If the Human Resource record also has an associated Security User, the value from the User ID field also appears. 
+In the database, values in this field are stored in the following formats:
+<Last Name>, <First Name> ~ <User Name>
+-or-
+<Last Name>, <First Name> ~
+For example, a name stored in the database would be Smith, Jane ~ jsmith.
+The Human Resource records that populate the drop-down list box in this field are filtered based on the site that is applied to the Inspection Recommendation.
+Business Impact CharacterRecords the impact on the manufacturing process during the recommendation implementation.
+This field contains a list of System Codes that exist in the MI BUSINESS IMPACT System Code Table. You can choose from the following baseline values:
+Facility Shutdown (FACILITY SHUTDOWN)Facility Slowdown (FACILITY SLOWDOWN)Unit Shutdown (UNIT SHUTDOWN)Unit Slowdown (UNIT SLOWDOWN)System Shutdown (SYSTEM SHUTDOWN)System Slowdown (SYSTEM SLOWDOWN)
+Completion CommentsCharacterContains notes regarding the completion of the Inspection RecommendationBy default, this field does not contain a value. This field is required if an Inspection Recommendation is superseded. Create Work Request? BooleanIndicates whether or not a Work Request will be created for the Inspection Recommendation.N/A Days Before Due Date to be NotifiedNumericThe number of days before the Target Completion Date that an email notification must be sent to the user selected in the Assigned To Name field.This field uses  to manage time conversions. This field appears in the Alert datasheet. This field is required when the Alert Assignee When Due check box is selected.Final Approver Name CharacterThe first and last name of the person who is giving the final approval for an Inspection Recommendation.
+The value in this field is populated by the First Name and Last Name fields in the corresponding Human Resource records. If the Human Resource record also has an associated Security User, the value from the User ID field also appears. 
+In the database, values in this field are stored in the following formats:
+<Last Name>, <First Name> ~ <User Name>
+-or-
+<Last Name>, <First Name> ~
+For example, a name stored in the database would be Smith, Jane ~ jsmith.
+The Human Resource records that populate the drop-down list box in this field are filtered based on the site that is applied to the Inspection Recommendation.
+Frequency of Alert After Due DateNumericSpecifies how often email messages will be sent after the completion date has passed.You can choose any of the following options:NeverDailyWeeklyMonthlyYearlyThis field appears in the Alert datasheet. This field is required when the Alert Assignee When Due check box is selected.
+Functional Location ID 
+
+Character
+
+The Record ID of the Functional Location record linked to the Inspection record.
+
+This field is populated with the Record ID of the Functional Location record with which the Inspection Recommendation is associated. This field is either populated by the Functional Location record ID or the Functional Location record of the Equipment record. 
+Implementation Alert TextCharacterThe text that will be included in the email notification sent to the approver.This field appears in the Alert datasheet. By default, this field does not contain a value. Optionally, you can type a value in this field.Implemented Date DateThe date on which the Inspection Recommendation was implemented. N/AInspection Profile Item CharacterThe Inspection Profile that represents the subcomponent for which findings are being recorded.This field is populated with a list of the Inspection Profiles that you have defined for the particular Inspection Scope.Mandatory Date CharacterThe date on which the Inspection Recommendation must be completed.  N/AThis field contains a  button, which you can select to access the Calendar feature.Recommendation Basis TextAllows the user to explain the reasoning for why an Inspection Recommendation was proposed.By default, this field does not contain a value. Optionally, you can enter a value in this field.Recommendation DescriptionCharacterA description of the Inspection Recommendation.By default, this field does not contain a value. Optionally, you can enter a value in this field.Recommendation HeadlineCharacterA short description of the Inspection RecommendationIn the Alert datasheet, if you select the Alert Assignee When Due check box, the value that you provide in the Recommendation Headline field becomes the subject of the alert email.Recommendation ID CharacterUnique ID assigned to the Inspection Recommendation. This field is generated by the GE Digital APM system through business rules. Recommendation Priority NumericThe priority value used to rank the importance of the Inspection Recommendation. 
+N/A
+This field contains a list of System Codes that exist in the MI_PRIORITY System Code Table. You can choose from the following baseline values:
+High (HIGH)Medium (MEDIUM)Low (LOW)
+Reevaluate?BooleanIndicates whether you want to reevaluate the Recommendation.This field appears in the Alert datasheet.Reevaluation Alert Body TextCharacterThe text that will be included in the reevaluation email message.This field appears in the Alert datasheet. This field is enabled only when the Reevaluate? check box is selected.Reevaluation DateDateThe date on which a reevaluation email message will be sent to the users selected in the Reevaluation Notification List field.This field appears in the Alert datasheet. This field is enabled only when the Reevaluate? check box is selected.Reevaluation Notification ListTextThe first and last name of the person who is notified about reevaluating an Inspection Recommendation.This field appears in the Alert datasheet. This field is enabled only when the Reevaluate? check box is selected.The value in this field is populated by the First Name and Last Name fields in the corresponding Human Resource records. If the Human Resource record also has an associated Security User, the value from the User ID field also appears. In the database, values in this field are stored in the following formats:<Last Name>, <First Name> ~ <User Name>-or-<Last Name>, <First Name> ~For example, a name stored in the database would be Smith, Jane ~ jsmith.You can select more than one user in this field.Required Equipment Status CharacterRecords the operating state of the equipment used to implement the Inspection Recommendation. N/A This field contains a list of System Codes that exist in the MI_STATUS System Code Table. You can choose from the following baseline values:ON-LINE (ON-LINE)Off-line (OFF-LINE)Not Applicable (N/A)Reviewer Name CharacterThe first and last name of the person who reviewed the Inspection Recommendation. This field contains a list of Security Users who have been assigned the Inspection Supervisor role. When you create the Inspection Recommendation record, you should specify in this field the Security User who will be responsible for reviewing the Inspection Recommendation record. The Human Resource records that populate this field are filtered based on the site that is applied to the Inspection Recommendation.Service Record IDCharacterThe ID of the service record.This field is populated by Service Max when the status of a work request is modified.Status CharacterIndicates the status of the Inspection Recommendation as indicated by the user.This field is populated automatically and set to Created. Target Completion Date DateThe date by which the Inspection Recommendation is intended to be implemented.This field is required. This field contains a  button, which you can select to access the Calendar feature.Technical Number Character A unique ID for the asset to which the recommendation is assigned.  N/AWitnessed By Character
+The GE Digital APM Security User who witnessed the test, which appears in the following format: <Last Name>, <First Name> ~ <User ID>
+
+N/A
+Work Request Equipment Character The equipment against which the work request will be generated. N/A This field is disabled and populated after the external work request is created.Work Request Functional Location CharacterThe Functional Location against which the work request will be generated.  N/AThis field is disabled and populated after the external work request is created.Work Request Reference CharacterThe ID of the work request. N/A 
+Inspection Profile
+Inspection Profiles represent subcomponents of a piece of equipment on which inspections are performed. The following table provides an alphabetical list and description of the fields that exist in the Inspection Profile family. By default, all fields in the Inspection Profile family appear on the Inspection Profile datasheet.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData Type DescriptionBehavior and Usage 
+Item Category 
+
+Character
+
+The type of subcomponent (e.g., pipes) that exists on the piece of equipment needing inspection.
+
+This field appears as a list that contains the System Code IDs and Descriptions in the MI INSPECTION PROFILE CATEGORY (Inspection, Profile Category) System Code Table. The Profile Configuration setting determines how this field will be populated. You can modify the value in this field using the datasheet.
+
+Item Description 
+
+Character
+
+A description of the subcomponent.
+
+You can specify a value for this field using the datasheet. 
+
+Item ID 
+
+Character
+
+The ID of the subcomponent.
+
+This field is populated automatically based on the value in the Item Category field. You can modify the value in the Item ID field using the datasheet.
+
+RBI Component 
+
+Character
+
+The Record ID of the RBI Component that is associated with the Inspection Profile.
+
+This field appears as a list that contains the Record IDs of all RBI Components that are linked to the associated Equipment. This field is null, by default.
+This field is enabled only when the Risk Based Inspection license is active.
+
+RBI Component Family 
+
+Character
+
+The RBI Component subfamily that is associated with the Inspection Profile.
+
+This field appears as a list that contains the captions of all RBI Components subfamilies that exist in the baseline GE Digital APM database. This field is populated automatically when you select a value in the RBI Component list. You can modify the selection in this list using the datasheet.
+
+Sequence 
+
+Numeric
+
+The order in which the subcomponent should be inspected, relative to other subcomponents on the piece of equipment.
+
+You can specify a value for this field using the datasheet.
+
+Inspection Method
+Inspection Method records represent the method that will be used to inspect a subcomponent of a piece of equipment that is represented by a linked Inspection Profile record. The following table provides an alphabetical list and description of the fields that exist in the Inspection Method family. All fields in the Inspection Method family, appear on the Inspection Method datasheet by default.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData Type DescriptionBehavior and Usage 
+Category 
+
+Character
+
+The method that should be used to inspect the subcomponent that is represented by an Inspection Profile record to which the Inspection Method record is linked.
+
+This field appears as a list that contains the System Code IDs and Descriptions in the MI INSPECTION METHOD CATEGORY (Inspection Method Category) System Code Table. The Method Configuration setting determines how this field will be populated. You can modify the value in this field using the datasheet. 
+
+Description 
+
+Character
+
+A description of the Inspection Method.
+
+You can specify a value for this field using the datasheet.
+
+ID 
+
+Character
+
+The ID of the Inspection Method.
+
+This field is populated automatically based on the value in the Category field. You can modify the value in the ID field using the datasheet.
+
+RBI Degradation Mechanism 
+
+Character
+
+The Potential Degradation Mechanisms record that is associated with the Inspection Method record.
+
+This field appears as a list that contains the Record IDs of all Potential Degradation Mechanisms records that are linked to the Criticality Calculator RBI Components record that is associated with the Inspection Profile record to which the Inspection Method record is linked. You can specify a value for this field using the datasheet.
+
+Inspection State Mapping Records
+Inspection State Mapping records are used when an administrator uses the Configure Status to State Mapping utility in Application Settings. This topic provides an alphabetical list and description of the fields that exist for the Inspection State Mapping family. The information in the table reflects the baseline state and behavior of these fields.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Source FamilyCharacterStores the ID of the family that is being mapped.The default value for this field is the ID for the Inspection Recommendation family.StatusCharacterStores the system code value of the status that is being mapped. The value in this field will be converted to a corresponding state in Inspection Recommendation records. The values available in this field appear based on the system code table that is associated with the value that populates in the Source Family Status field.StateCharacterStores the state ID of the state that is being mapped. The value in this field will be used to replace an existing status in Inspection Recommendation records.The values available in this field appear based on the available states configured for the source family.
+Inspection Strategy
+Inspection Strategies represent methods by which inspections are performed. The following table provides an alphabetical list and description of the fields that exist in the Inspection Strategy family. By default, all fields in the Inspection Strategy family appear on the Inspection Strategy datasheet.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData Type DescriptionBehavior and Usage 
+Inspection Confidence 
+
+Character
+
+A value that indicates how effective prior inspections were at identifying the degradation mechanism and the rate of degradation.
+
+This field is populated automatically based on the value that you selected in the Type of Inspection field, the value that you selected in the Extent field, and the values that exist in the Inspection Confidence field in Inspection Strategy records.
+Specifically, the Inspection Confidence field is populated with the value that exists in the Inspection Confidence field in the Inspection Strategy record whose:
+
+Inspection Task Type field contains the value that you selected in the Type of Inspection field.
+
+Inspection Extent field contains the value that you selected in the Extent field.
+
+This field is not available on the baseline Inspection datasheets.
+The value that you select in this field is used in RBI when you assign Inspection records to RBI Degradation Mechanism Evaluation records. 
+
+Inspection Extent 
+
+Character
+
+The extent to which the inspection was performed.
+
+This field displays a list of values based upon the value that you selected in the Type of Inspection field and the values that exist in the Inspection Extent field in Inspection Strategy records.
+The Extent field displays a list of values that exist in the Inspection Extent field in all Inspection Strategy records whose Inspection Task Type field contains the value that you selected in the Type of Inspection field.
+Inspection Strategy Description CharacterA description of the Inspection Strategy.You can specify a value for this field using the datasheet. Inspection Strategy ID CharacterThe unique ID of the Inspection Strategy.This field is required. Inspection Task Type Character The Inspection Method used during the inspection event.  You can specify a value for this field using the datasheet. Recommended Inspection Interval Numeric The recommended time between inspection events.  You can specify a value for this field using the datasheet. Recommended Inspection Scope Character An explanation of the tasks that should be performed during an inspection event. You can specify a value for this field using the datasheet. Use Calculated Data Boolean Indicates whether or not to use calculated data over data that has been recommended by the GE Digital APM system.  N/A
+Inspection Task
+The following table provides an alphabetical list and description of the fields that exist in the Inspection Task family. By default, all fields in the Inspection Task family appear in the Inspection Strategy datasheet.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Note: European Inspection Task is introduced to the Inspection Task family to manage the Inspection tasks, according to the Compliance regulation.
+FieldData Type DescriptionBehavior and Usage Applicable Regulation Character Stores the regulation type that is applicable to a task.This field is populated with a list of regulations to be linked to a task. This field is populated with a description of system codes stored in MI_INTGY_REGULATION system code table. This field is always disabled. The value is mapped from Compliance Recommendation.Certification CharacterStores the certification value.The values in this field are populated from a drop-down list box and contains a list of system codes that exist in the MI_COMPLIANCE_STANDARDS system code table. In baseline, the Certification field populates the values which are referenced by MI_INTGY_REGULATION system code table. By default, it shows ZUS and BP.Compliance Window Numeric Stores information about the duration of Compliance in months. The UOM is measured in Months.This field is copied from the Application Settings when a new European Inspection task is created. You can edit the values in the European Inspection Task datasheet. This field is used for calculating the values for the following:Compliance Minimum DateCompliance Maximum DateInspection Documentation Completion DateCompliance Minimum Date DateMentions the minimum compliance date for a task to be performed.The Compliance Minimum Date is calculated as the start date of the Next Date minus the Compliance Window (Next Date - Compliance Window). For example:If Compliance Window: 3 monthsNext Date: December 3rd, 2020Compliance Min Date: September 1st, 2020Compliance Maximum DateDateMentions the maximum compliance date for a task to be performed. The Compliance Maximum Date is calculated as the end date of the next date plus the Compliance Window (Next Date + Compliance Window). For example:If Compliance Window: 3 monthsNext Date: December 3rd, 2020Compliance Max Date: March 31st, 2021Coverage TextA definition of the percentage of the asset to be inspected.You can specify a value for this field using the datasheet. Desired Interval NumericThe number of months between inspection events.N/ADesired Interval Basis TextThe comments from the inspector that explain the reasoning for the selected Desired Interval.If the value in the Override Interval field is set to True, the value in Desired Interval Basis field will be User-Defined. If the value in the Override Interval field is set to False, the system populates the Desired Interval Basis field with one of the following values:Compliance RecommendationRBI RecommendationUndefinedGrace Period Basis Character Stores the information about the basis on which the Grace Period is populated.This field is populated with a description of system codes stored in MI_INTGY_GRACE_PERIOD_BASIS system code table. Grace Period NumericStores the Grace Period value. The field captures the grace period in units of Days.Inspection Grace Due Date DateStores the date considering the Grace Period duration from the Next Date, as per legal requirement.This field is calculated by adding Grace Period to the Next Date field. Inspection Documentation Window NumericStores information about the duration in months for documenting an Inspection report. The UOM is measured in Months.This field is duplicated from the administrator’s settings when a new European Inspection task is created. You can edit the values in the European Inspection Task datasheet. This field populates values for the Inspection Documentation Completion Date.Inspection Documentation Completion Date DateMentions the completion date for documenting an Inspection report.The value in this field is populated based on the addition of Inspection Documentation Window and Grace Period to the next date. For example:If Inspection Documentation Window: 1 monthGrace Period: 5 daysNext Date: December 3rd, 2020Inspection Documentation Completion Date: January 8th, 2021Inspection Document Type CharacterThe type of document that will be created during Work Pack execution. N/ALast Date DateThe date on which the last inspection was performed.This field is populated automatically by the GE Digital APM system; however, you can modify the date by selecting . Max Date DateThe date furthest in the future on which the inspection can be performed and still be in compliance.This field is populated automatically by the GE Digital APM system; however, you can modify the date by selecting . Max Interval NumericThe time between the Last Date and the Max Date.N/AMin Date DateThe earliest date on which an inspection may be performed. This field is populated automatically by the GE Digital APM system; however, you can modify the date by selecting . Min IntervalNumericThe earliest date on which the inspection can be performed and still be in compliance.The Desired Interval value must be between the value in this field and that of the Max Interval field. If this field is set to a value that is higher than the Max Interval or Desired Interval, those values are adjusted to be equal to the Min Interval value.Modifiable BooleanIndicates whether a user can modify fields.N/ANext Date DateDate on which the inspection event is schedule. This field is populated automatically by the GE Digital APM system; however, when the task is reoccurring, you can modify the date by selecting . When an Inspection Task is newly created, this field can be modified when the Last Date field is cleared.Next Date Basis TextThe comments of the inspector; the comments explain the reasoning for the Next Date. N/APrevious Next DateDateThe date is calculated based on the Inspection Completion date.This field is populated automatically by the GE Digital APM system. This filed stores the Next Date before the rescheduling occurs. This field is always disabled.Override Interval BooleanIndicates whether the user may define their own interval.This field is automatically set to True by the GE Digital APM system; however, you can modify field by clearing the check box.Rejectable BooleanIndicates whether the inspection task may be rejected and not performed.This field is automatically set to True by the GE Digital APM system; however, you can modify field by clearing the check box.Related Entity ID CharacterThe unique ID of that asset that is related to the inspection event.N/AReoccurring BooleanIndicates whether the task is recurring.This field is populated by Strategy rules, which document the basis of the proposed Next Date. After you save the Inspection Task, you cannot modify the value in this field.Source Type CharacterThe work process that generated this task.This field is populated automatically based on the Inspection Scope. Task Assigned To CharacterThe first and last name of the GE Digital APM Security User responsible for completing the inspection task. You can enter the name of a Security User in this field.Task Description TextDefines the requirement for completing this task.You can specify a value for this field using the datasheet. Task Details TextA field for the inspector to record additional details about the task.You can specify a value for this field using the datasheet. Task ID CharacterThe unique ID used to track the task through the workflow.This field is required. Task State CharacterIndicates to the user the state of the current task.N/ATask Type Character The type of inspection that should be performed on the piece of equipment at the interval indicated in the Interval field. This field is populated with the value that is stored in the Task Type ID field in the Task Types record associated with the time-based inspection setting (that is, the task type for which an inspection interval is defined in the Time-Based Inspection Settings page).Task Rescheduling BasisCharacter (255)The rescheduling of the inspection task information is captured in this field.This field captures the information based on how the Next Date field is calculated. The field can be calculated either by the Completion Date or the Previous Next Date. This field is populated with a description of system codes stored in MI_EU_TASK_RESCHEDULE system code table. This field is always disabled.Unconstrain Min/Max Dates BooleanIndicates whether the user may define their own min or max dates.This field is automatically set to True by the GE Digital APM system; however, you can modify field by clearing the check box.
+Inspection Taxonomy Configuration Records
+The table below provides an alphabetical list and description of the fields that exist for the Inspection Taxonomy Configuration family. The information in the table reflects the baseline state and behavior of these fields. 
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Checklist Template Character Stores and displays the defined Checklist Configuration Template name.This field is populated automatically by the GE Digital APM system with the name of a Checklist Configuration Template that has been linked to a Taxonomy Configuration.Checklist Template Key Number Stores the entity key of the defined Checklist Configuration Template.
+This field is populated automatically by the GE Digital APM system. 
+Important:  Do not modify the contents of this field.
+Inspection FamilyCharacterStores the defined Family ID and caption.This field is populated automatically by the GE Digital APM system with the Family ID and caption of an Inspection Family that has been linked to a Taxonomy Configuration. Taxonomy CategoryCharacterStores the defined Taxonomy Category. This field contains a list of available Taxonomy Categories that are available in GE Digital APM. This field can be modified in the Taxonomy Configurations section of Application Settings.Taxonomy ClassCharacterStores the defined Taxonomy Class. This field contains a list of available Taxonomy Classes that are available in GE Digital APM. This field can be modified in the Taxonomy Configurations section of Application Settings. This field is filtered based on the selected Taxonomy Category.Taxonomy TypeCharacterStores the defined Taxonomy Type. This field contains a list of available Taxonomy Types that are available in GE Digital APM. This field can be modified in the Taxonomy Configurations section of Application Settings. This field is filtered based on the selected Taxonomy Category and Taxonomy Class.
+Inspection Team Member RecordsInspection Team Member records contain information for Team Members, such as names and certification information.
+An inspection team member is any person that participates in an inspection. When you view an inspection report, you will see a section that lists all team members associated with that inspection.
+The table below provides an alphabetical list and description of the fields that exist for the Inspection Team Member family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData Type DescriptionBehavior and Usage Applicable CertificationCharacterThe relevant certification held by the Team Member.This field is populated with certifications based on the value in the Full Name field. When you select a Full Name, the certifications associated with that Human Resource appear in the drop-down list box.Certification Expiry DateDateThe date on which the Applicable Certification expires.This field is populated automatically when you select an Applicable Certification.Certification IDCharacterThe ID of the Applicable Certification.This field is populated automatically when you select an Applicable Certification. Full NameCharacterThe name of the Human Resource for whom the Team Member record is created.This field is populated by a list of Human Resources who have the Inspector or Contract Inspector role.
+Work Pack
+Work Packs store preparation information about inspection work that needs to be performed for equipment and/or locations. The following table provides an alphabetical list and description of the fields that exist in the Work Pack family. By default, all fields in the Work Pack family appear on the Work Pack datasheet.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and Usage
+Preparation Details 
+
+Text
+
+Preparation information about the inspection work associated with the Work Pack
+
+You can enter any preparation details about the inspections in this field.
+
+Work Pack ID 
+
+Character
+
+The Record ID of the Work Pack
+
+This is a required field. You must enter a value in this field before you can save a Work Pack.
+
+Work Pack Description 
+
+Character
+
+A description of the Work Pack
+
+This is a required field. You must enter a value in this field before you can save a Work Pack.
+
+Pipe Rotation Event
+Pipe Rotation Event family is used in Thickness Monitoring module to capture Rotation or Flip movements for Piping Assets. The following table provides an alphabetical list and description of the fields that exist in the Piping Rotation Event family. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageComponent IDCharacterSpecifies a unique ID for the component that is rotated or flipped.This field is automatically populated during a rotation or flip. This field is always disabled.Movement DateDateStores the date of the rotation or flip.This field is automatically populated during a rotation or flip. This field is always disabled.Moved ByCharacterStores the Security User key of the user that performed a rotation or flip.This field is automatically populated during a rotation or flip. This field is always disabled.Move TypeCharacterIdentifies the type of movement that occurred. For example, Rotate or Flip.This field is automatically populated during a rotation or flip. This field is always disabled. This field is populated by the MI_PIPE_MOVE_TYPES System Code Table.Rate MethodCharacterStores the Rate Method specified when performing a rotation or flip.The value in this field must be selected when performing a rotation or flip.Remaining Life BeforeNumericStores the remaining life of the component, prior to the rotation or flip.This field is automatically populated during a rotation or flip. This field is always disabled.Retirement Date BeforeDateStores the retirement date of the component, prior to the rotation or flip.This field is automatically populated during a rotation or flip. This field is always disabled.Remaining Life AfterNumericStores the remaining life of the component after the rotation or flip.This field is automatically populated during a rotation or flip. This field is always disabled.RevertedBooleanIdentifies Pipe Rotation Events that have been reverted.This field is automatically set to True when a Pipe Rotation Event undo an action. This field is always disabled.Rotation Sequence NumberNumericStores the sequence number of the rotation of the component.This field is automatically populated during a rotation or flip. This field is always disabled.Scenario IDCharacterStores the Scenario ID for a What If scenario.The value in this field must be entered when a What If scenario is created.Top Center Moved ToNumericStores the Position ID of the position that the Top-Center position was moved to.This field is automatically populated during a rotation or flip. This field is always disabled.What If MethodCharacterStores the method used to generate the What If scenario.
+This field is populated automatically when a What If scenario is created. This field is populated by the MI_PIPE_WHAT_IF_TYPES System Code Table.
+This field is always disabled.
+
+
+
+
+
+
+On this pageChecklist Inspection Template RecordsInspection RecordsInspection Health EvaluationInspection RecommendationInspection ProfileInspection MethodInspection State Mapping RecordsInspection StrategyInspection TaskInspection Taxonomy Configuration RecordsInspection Team Member RecordsWork PackPipe Rotation Event
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,101 @@
+
+
+
+First Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Family ManagementRules
+Overview
+Entity and Relationship Families
+Fields
+Datasheets
+Offline Forms
+Family Reports
+Relationship Definition
+State Configuration
+Associated Pages
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+Third Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Family Management
+Release Notes
+First Quarter of 2019
+
+
+
+
+
+
+
+First Quarter of 2019Family ManagementThis topic provides a list of product changes released for this module on the dates listed below.Release Date: March 29, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDWhen you attempt to update the existing records for a given family with the modified record ID, now, a new job, UpdateTemplateIDJob, is created in the Schedule Logs page to update the existing records. This enhancement significantly improves the performance of the system while updating the records in bulk.US299142 The first report that you associate with a family becomes the default report for the family.US293868You can now hide a datasheet belonging to a family that you do not want to appear for the corresponding records. To facilitate this functionality, the Hide check box has been added to the Datasheet Information window of the Datasheet Builder page.US290738
+Table 2. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, if a newly created field had been added to a datasheet belonging to the Checklist Findings family, and you attempted to access a checklist category for an inspection belonging to a checklist inspection family, an error message appeared, indicating that the datasheet failed to load. This issue has been resolved.DE101578Previously, in the Manage ID Template window, while entering a delimiter for a field in the Delimiter box, if you entered a space, the space did not appear in the New ID Template value in the following scenarios:Space is the only character in the entered value.Space is the first or last character in the entered value.This issue has been resolved.DE92913
+
+
+
+
+
+On this pageFamily Management
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,209 @@
+
+
+
+General Reference | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Management of ChangeOverview
+Workflows
+Change Projects
+Checklists
+Exceptions and Tasks
+Changed Elements
+Deployment
+Admin
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Management of Change
+Reference
+General Reference
+
+
+
+
+
+
+
+General ReferenceMoC Data Model
+The following diagram shows how the families used in Management of Change are related to one another. 
+
+
+
+Note: In the diagram, boxes represent entity families and arrows represent relationship families that are configured in the baseline database. You can determine the direction of each relationship definition from the direction of the arrow head: the box from which the arrow originates is the predecessor, and the box to which the arrow head points is the successor.
+The following records in MOC are created in the Application Settings for MOC and copies of these records are used in Change Projects:
+MI MOC ExceptionMI MOC Answer OptionMI MOC Checklist QuestionMI MOC Checklist
+A Change Project can be linked to:
+One or more Equipments or Functional Locations.One or more Human Resource records.One or more Reference Documents.One or more Checklists.One or more Exceptions.
+Each Exception can be linked to one or more General Recommendations.
+MoC Security Groups
+
+The following table lists the baseline Security Groups available for users within this module, as well as the baseline Roles to which those Security Groups are assigned. In Predix APM, Roles are assigned to Security Users through permission sets.
+
+Important:  Assigning a Security User to a Role grants that user the privileges associated with all of the Security Groups that are assigned to that Role. To avoid granting a Security User unintended privileges, before assigning a Security User to a Role, be sure to review all of the privileges associated with the Security Groups assigned to that Role.
+                
+
+
+Security GroupRolesMI MOC AdministratorMI MOC AdministratorMI Safety AdminMI MOC ApproverMI MOC ApproverMI Safety PowerMI MOC UserMI MOC UserMI Safety UserMI MOC Viewer
+MI MOC Viewer
+MI Safety User
+MI Safety Power
+MI Safety Admin
+MI APM Viewer
+
+The baseline family-level privileges that exist for these Security Groups are summarized in the following table.
+FamilyMI MOC AdministratorMI MOC ApproverMI MOC User MI MOC ViewerEntity FamiliesGeneral RecommendationView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewMI MOC Answer OptionView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewMI MOC Change ProjectView, Update, Insert, DeleteView, UpdateView, Update, Insert, DeleteViewMI MOC ChecklistView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewMI MOC Checklist QuestionView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewMI MOC ExceptionView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewOperation TasksView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewReference DocumentView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewRelationship FamiliesAnalysis Has Human ResourceView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewChange Project Has ChecklistView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewChange Project Has Elements View, Update, Insert, DeleteViewView, Update, Insert, DeleteViewChange Project Has Exception View, Update, Insert, DeleteViewView, Update, Insert, DeleteViewChecklist has Questions View, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHas Functional LocationView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHas Reference Documents View, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHas Tasks View, Update, Insert, DeleteViewView, Update, Insert, DeleteViewMOC Answer Has MOC ExceptionView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewMOC Question Has MOC AnswerView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewHas RecommendationsView, Update, Insert, DeleteViewView, Update, Insert, DeleteViewSafety Analysis Has EquipmentView, Update, Insert, DeleteViewView, Update, Insert, DeleteView
+MoC URLs
+There is one URL route associated with MOC: asset-safety/moc. The following table describes the various paths that build on the route, and the elements that you can specify for each.
+
+Tip: For more information, refer to the URLs section of the documentation.
+
+ElementDescriptionAccepted Value(s)Notes
+asset-safety/moc/admin: Displays the MoC Admin page. 
+asset-safety/moc/overview: Displays the MOC Overview page.
+asset-safety/moc/<EntityKey>: Displays the Project Summary workspace of the Change Project with the specified Entity Key.
+<EntityKey>
+Specifies the Entity Key of the Change Project that you want to access.Any numeric Entity Key that corresponds to an existing Change Project.
+This value is required to access an existing Change Project and its related records (i.e., Checklists, Exceptions, and Changed Elements) from a URL.
+
+asset-safety/moc/overview/<AssetKey>: Displays the MOC Overview page. The information on the page is filtered by the asset specified by the Asset Key.
+<AssetKey>
+Specifies the Asset Key of the asset based on which you want to filter information on the MOC Overview page.Any numeric Asset Key that corresponds to an existing asset.None
+URLs
+
+Example URLDestinationasset-safety/moc/2996501The Project Summary workspace of the Change Project with the Entity Key 2996501.asset-safety/moc/overview/64251832823The MOC Overview page appears. In the Change Projects and Tasks section, the list of Change Projects and tasks associated with the asset whose Asset Key is 64251832823 and with all assets within the hierarchy level of the specified asset appears. The results on the MOC Overview Graph and the MOC Calendar are also filtered based on the specified Asset Key.
+
+ MoC System Code Tables
+The following table lists the System Code Tables that are used by MOC.
+
+Table ID
+
+Table Description
+
+Function
+MI MOC ANS OPT MOC Answer Options
+Populates the Answer field in MI MOC Answer Option records. By default, this table contains the following values:
+YesNo NA
+A user with administrator privileges can modify this table to include additional answer options.
+MI EXCEPTIONS STATE Exception States
+Populates the Status field in the MI MOC Exception records. By default, this table contains the following values:
+Not StartedIn ProgressComplete
+MI Change Project Duration Change Project Duration Type
+Populates the Change Duration field in the MI MOC Change Project records. By default, this table contains the following values:
+PermanentTemporary
+MI Change Project Type Change Project Type
+Populates the Change Type field in the MI MOC Change Project records. By default, this table contains the following values:
+TemporaryPermanentMinor Instrument ChangePersonnel
+A user with administrator privileges can modify this table to include additional change types.
+
+MoC State Management for Change Projects
+When you are working with Change Projects, you can use state management to track the progress of the projects. When you access a Change Project, options to manage the states for the project appear. You can follow the standard procedure to manage record states. The following baseline record states are configured for the Change Project family:
+New: Indicates that a new Change Project is created.Proposed: Indicates that the Change Project is proposed for review and approval. Approved: Indicates that the Change Project has been approved and is ready to be implemented.Rejected: Indicates that the Change Project has been rejected and the change will not be implemented.Implemented: Indicates that all the tasks created for the Change Project have been completed and the Change Project is ready to be approved for completion.Completed: Indicates that the results of all the tasks associated with the Change Project have been reviewed and approved for completion. For a temporary change, if you want to change the date up to which the changes will be valid, you can select the Rework operation to modify the date in the Change Valid Until field of the Change Project.Finalized: Indicates that the change has been delivered successfully and all affected personnel have been communicated about the change.
+Illustration of Change Project State Configuration
+
+
+
+State Configuration Roles
+The following table lists the baseline states, the operation that can be performed on each state, and the State Configuration Roles assigned to each state:
+
+StateOperationUser RoleNewProposeMI Safety User, MI Safety AdminProposedReworkMI Safety Power, MI Safety AdminApproveRejectRejectedNoneNoneApprovedImplementMI Safety User, MI Safety Power, MI Safety AdminImplementedReworkMI Safety Power, MI Safety AdminCompleteCompletedReworkMI Safety Power, MI Safety AdminCompletedFinalizeFinalizedNoneNone
+
+About State Management for Tasks
+When you are working with tasks in MOC, you can use state management to facilitate a workflow that tracks the progress of the task. When you access a task, options to manage the states for the task appear. You can follow the standard procedure to manage record states. The following record states are configured for the Operations Task family:
+Proposed: Indicates that the task is proposed to the appropriate user for review and approval. Scheduled: Indicates that the task has been approved and scheduled for execution. If you want to modify the task further before approving, you must select the Rework operation to change the state of the task to Proposed.Rejected: Indicates that the task has been rejected and will not be implemented.Executing: Indicates that the user to whom the task has been assigned has started work for the task. If you want to re-schedule the task, you must select the Re-schedule operation to change the state of the task to Scheduled.Completed: Indicates that the assigned user has completed the task.
+Illustration of Task State Configuration
+
+
+
+State Configuration Roles
+The following table lists the default states, the operations that can be performed on each state, and the State Configuration Roles assigned to each state:
+
+StateOperationUser RoleProposedScheduleMI Safety Admin, MI Safety Power, MI Safety UserReject MI Safety Admin, MI Safety PowerScheduledRework MI Safety Admin, MI Safety PowerExecuteMI Safety Admin, MI Safety Power, MI Safety UserMark as CompleteMI Safety Admin, MI Safety Power, MI Safety UserRejectedNoneNoneExecutingRe-ScheduleMI Safety Admin, MI Safety Power, MI Safety UserMark as CompleteMI Safety Admin, MI Safety Power, MI Safety UserCompletedNoneNone
+
+MoC Site Filtering
+Site filtering in MOC is achieved by specifying a site on the datasheet of the Change Project and that site assignment is applied to all the related records. Users must have privileges for the relevant site to access records for the specified site. Users can be assigned to one or many sites. They will be able to see only the records that are assigned to their site(s) or those that are global records.
+Site filtering is enabled for the following families:
+MI MOC Change Project: When you create a Change Project, you can assign it to any site. After you save the changes, you cannot modify the site of the Change Project. You can link assets to a Change Project only if the asset is a Global record or a record that belongs to the same site as that of the Change Project. Also, you can associate only Global records or records that belong to the same site as that of the Change Project, as changed elements to the project.MI MOC Checklist: When you create a Checklist, you can assign it to any site. After you save the changes, you cannot modify the site for the Checklist. You can add a Checklist to a Change Project, only if the Checklist belongs to the same site as that of the Change Project. If you associate a Change Project with a copy of the Checklist whose site is set to Global, then the copy of the Checklist and all the records associated with it will inherit the site of the Change Project.MI MOC Checklist Question: When you create a Question, you can assign it to any site. The Answer Options that you create in a Question will inherit the site of the Question. You can add a Question to a Checklist only if the site assigned to the Question and the Checklist are the same. MI MOC Exception: When you create an Exception, you can assign it to any site. After you save the changes, you cannot modify the site for the Exception. You can associate an Answer Option in a Question with an Exception only if the site assigned to the Exception and to the Question are the same. Operations Task: The tasks created for Exceptions associated with the Change Project will inherit the site from the associated Change Project. 
+Illustration
+The following image shows an illustration of site filtering in MOC:
+
+
+
+ Users assigned to Site A will be able to view data related to Site A or Global data. Users assigned to Site A and Site B will be able to view data related to Site A, Site B, and Global. Users assigned to Site A, Site B, and Site C will be able to view data related to Site A, Site B, Site C, and Global.
+Example
+Consider an organization that has three sites, Site X, Site Y, and Site Z and contains the following records:
+Change Project 1: Assigned to Site XChange Project 2: Assigned to Site YChange Project 3: Assigned to Site ZChecklist 1: Assigned to Site XChecklist 2: Assigned to Site YChecklist 3: Assigned to Global
+Scenario 1: User assigned to only Site X 
+When this user accesses the MOC Overview page, the user will be able to see the records that are assigned to Site X and Global:
+
+Change Project 1: Assigned to Site X
+Checklist 1: Assigned to Site XChecklist 3: Assigned to Global
+To Change Project 1, the user can add Checklists that belong to Site X and Global. 
+Suppose that the user adds Checklist 3 to Change Project 1, then Checklist 3_1 is created as a copy of Checklist 3 and associated with Change Project 1. The site assigned to Checklist 3_1 will be Site X. The copies of Questions and Exceptions created will also be assigned to Site X. The tasks that the user creates for Change Project 1 will also belong to Site X.
+Scenario 2: User assigned to both Site X and Site Y 
+When this user accesses the MOC Overview page, the user will be able to see the records that are assigned to Site X, Site Y, and Global:
+Change Project 1: Assigned to Site XChange Project 2: Assigned to Site YChecklist 1: Assigned to Site XChecklist 2: Assigned to Site YChecklist 3: Assigned to Global
+The user will also be able to access and manage the Checklists, Exceptions, and tasks associated with Change Project 1 and Change Project 2. 
+The user can add only Checklist 1 and Checklist 3 to Change Project 1 since the project belongs to Site X. Similarly, the user can add only Checklist 2 and Checklist 3 to Change Project 2, which belongs to Site Y.
+Scenario 3: Super User
+
+When this user accesses the MOC Overview page, the user will be able to view the records that are assigned to any of the sites:
+Change Project 1: Assigned to Site XChange Project 2: Assigned to Site YChange Project 3: Assigned to Site ZChecklist 1: Assigned to Site XChecklist 2: Assigned to Site YChecklist 3: Assigned to Global
+The user will also be able to access and manage the Checklists, Exceptions, and tasks associated with Change Project 1, Change Project 2, and Change Project 3. 
+The user can add only Checklist 1 and Checklist 3 to Change Project 1 since the project belongs to Site X. Similarly, the user can add only Checklist 2 and Checklist 3 to Change Project 2, which belongs to Site Y. The user can add only Checklist 3 to Change Project 3.
+
+
+
+
+
+On this pageMoC Data ModelMoC Security GroupsMoC URLs MoC System Code TablesMoC State Management for Change ProjectsAbout State Management for TasksMoC Site Filtering
+
+
+
+
+
+
+
+
+

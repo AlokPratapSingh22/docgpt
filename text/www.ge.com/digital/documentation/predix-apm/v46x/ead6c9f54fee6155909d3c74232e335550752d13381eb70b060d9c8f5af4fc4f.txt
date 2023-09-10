@@ -1,0 +1,105 @@
+
+
+
+Second Quarter of 2023 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+Fourth Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Release Notes
+Second Quarter of 2023
+
+
+
+
+
+
+
+Second Quarter of 2023Release Date: May 26, 2023This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, if your culture setting was English or Japanese, when you sent an RCA  link via email from the Communicate Findings tab, the link in the email incorrectly redirected the user to a web browser, and an error message appeared. This issue has been resolved.DE200357Previously, when loading the Root Cause Analysis tabs like 5 Whys, Logic Tree, or Event Timeline, there were some timeout issues or lag in page loading . This issue has been resolved. The pages now load without time out errors.DE199624Previously, there were multiple issues when adding Event Timeline Events:A timeout error occurred until the page was refreshed.When adding multiple events, the event timeline was momentarily shown at random places until the page was refreshed.Navigating between different screens (event diagram and logic tree) returned an error. Blank error appeared with no description.These issues have been resolved. The page now loads without errors.DE199139Previously, when you navigated between Event Diagram, 5 Whys, Logic Tree, or Event Timeline tabs, random error messages appeared, which were not informative. This issue has been resolved. Now, the error messages do not appear when you navigate between the tabs.DE197705Previously, if an RCA Preserve Item record was assigned to a team member without a first name, the team member was not listed in the Preserve Records workspace. This issue has been resolved.DE197418
+
+
+
+
+
+On this pageRelease Date: May 26, 2023
+
+
+
+
+
+
+
+
+

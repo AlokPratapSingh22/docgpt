@@ -1,0 +1,136 @@
+
+
+
+Critical Success Factors | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Critical Success Factors
+
+
+
+
+
+
+
+Critical Success FactorsAbout Critical Success Factors (CSFs)Critical Success Factors are elements of a Root Cause Analysis that allow the analysis team to evaluate whether or not the analysis effort has been successful. The effort is considered to be successful if the analysis team adheres to and meets the standards defined by the Critical Success Factors. The Root Cause Analysis Team can define Critical Success Factors that are specific to a given Root Cause Analysis or that are more generic to the work process.RCA uses the following two types of Critical Success Factors:
+Default CSFs: RCA Critical Success Factors that are available for use in all Root Cause Analyses. Default Critical Success Factors are stored as system preferences and appear in the Critical Success Factors workspace on the 
+RCA Administrator page, where an administrative user can modify them and define their own default Critical Success Factors. Default Critical Success Factors are not stored until they are added to an RCA. When a default Critical Success Factor is added, a new Critical Success Factor is created and populated automatically with the Default CSF text, then linked to the Root Cause Analysis.Custom CSFs: RCA Critical Success Factors that are created for specific Root Cause Analyses. You can define custom Critical Success Factors for each Root Cause analysis via the Critical Success Factors section. Custom Critical Success Factors are defined for a single Root Cause Analysis and stored in RCA Critical Success Factors. When Custom Critical Success Factors are created for a Root Cause Analysis, a new RCA Critical Success Factor is created and linked to the Root Cause Analysis.You can select one or more Critical Success Factor from the default Critical Success Factors, create a custom Critical Success Factor, or you can choose not to define a Critical Success Factor.Access a Critical Success FactorProcedure
+Access the Root Cause Analysis for which you want to view a Critical Success Factor.Select the Critical Success Factors tab.
+The CSF section appears, displaying a list of Critical Success Factors associated with the selected RCA.
+
+
+
+Select the hyperlink for the Critical Success Factor that you want to view.
+The Edit Critical Success Factor window appears, displaying the details of the selected CSF.
+
+
+
+Note: As needed, you can modify the CSF, and then select  to save your changes.
+Create a Critical Success FactorProcedure
+Access the Root Cause Analysis for which you want to create a Critical Success Factor.Select the Critical Success Factors tab.
+The CSF section appears, displaying a list of Critical Success Factors associated with the selected RCA.
+
+
+
+In the upper-left corner of the workspace, select . 
+The Available CSFs and the CSFs for this Analysis subsections appear. The Available CSFs section contains a list of Critical Success Factors that an administrative user has pre-configured for use with Root Cause Analyses. The CSFs for this Analysis section contains a list of Critical Success Factors associated with this analysis. 
+
+
+
+If you want to add a new Critical Success Factor to the RCA, in the Available CSFs subsection, select . 
+In the Add Critical Success Factor window that appears, enter the necessary text, and then select Save. The name of the Critical Success Factor must be unique for the Root Cause analysis to which you are adding the Critical Success Factor. The new Critical Success Factor appears in the CSFs for this Analysis subsection. 
+Tip: You can add more than one custom CSF to an analysis.
+-or-
+If you want to add an existing CSF to the RCA, in the Available CSF subsection, select check box to the left of the Critical Success Factor that you want to add. Select  to add it to the CSFs for this Analysis subsection. 
+Tip: You can remove a pre-configured CSF from the CSFs for this Analysis subsection. To do this, in the CSFs for this Analysis subsection, select the check box to the left of the CSF, and then selecting the  to add it back to the Available CSF subsection.
+In the lower-right corner of the workspace, select Done to save your changes.What To Do Next
+
+Access the Root Cause Analysis Team Members Section
+
+Access the Reference Documents for a Critical Success FactorProcedure
+Access the Critical Success Factor whose Reference Documents you want to access.In the Edit Critical Success Factor window, select, and then select Reference Documents. 
+A list of Reference Documents linked to the selected CSF appears.
+
+
+
+Note: For more information, refer to the Manage Reference Documents section of the documentation for additional options when working with reference documents.
+Delete a Critical Success FactorProcedure
+Access the RCA for which you want to delete a Critical Success Factor.Select the Critical Success Factors tab.
+The CSF section appears.
+
+
+
+Select the row containing the Critical Success Factor that you want to delete, and then select .
+The Delete Critical Success Factor dialog box appears, asking you to confirm that you want to delete the selected Critical Success Factor.
+Select Yes. 
+The selected Critical Success Factor is deleted. 
+
+
+
+
+
+On this pageAbout Critical Success Factors (CSFs)Access a Critical Success FactorCreate a Critical Success FactorAccess the Reference Documents for a Critical Success FactorDelete a Critical Success Factor
+
+
+
+
+
+
+
+
+

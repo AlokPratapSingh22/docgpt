@@ -1,0 +1,107 @@
+
+
+
+Second Quarter of 2018 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Third Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Release Notes
+Second Quarter of 2018
+
+
+
+
+
+
+
+Second Quarter of 2018AnalysisThis topic provides a list of product changes released for this module on the dates listed below.Release Date: June 29, 2018
+Table 1. Enhancements and New FeaturesNoteTracking ID Plot tags in a tabular format. N/ADisplay data quality flag.N/AAdd tag threshold to charts.N/AView tags and tag values in tag register. N/AGradient across Parallel Axis and Spider charts.N/AEnhancements to Event Data Analysis.N/A
+Table 2. Known IssuesNoteTracking IDWhen you export data from a data table, the asset names are not included in the export. DE79153
+Release Date: May 14, 2018
+Table 3. Resolved IssuesNoteTracking ID The data quality flags from Historian and other data sources do not match the time series data quality flags. Filtering out bad data for any data sources other than Predix TimeSeries is disabled. If asset tags are configured to point to Historian tags, then there will be issues displaying data for that tag. DE74666
+Release Date: April 27, 2018
+Table 4. Resolved IssuesNoteTracking IDWhen viewing an analysis template from an Alert, then the option to change the System of Measure on the fly does not work. DE70668When viewing an analysis template from an Alert, then the UoM of the tags does not convert correctly. DE70593 When viewing an analysis template associated with an Alert, then the tags used in the tag expression do not convert correctly.DE70592
+
+
+
+
+
+On this pageAnalysis
+
+
+
+
+
+
+
+
+

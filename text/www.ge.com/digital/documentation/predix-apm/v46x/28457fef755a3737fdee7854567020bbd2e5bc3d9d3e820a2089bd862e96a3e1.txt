@@ -1,0 +1,66 @@
+
+
+
+
+Filter Audit Logs | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Filter Audit LogsYou can filter Audit Logs on the Audit Log Management page. Before You Begin
+You must have the necessary permissions to access the Audit Log Management page.
+About This TaskAfter you have selected the type of audit log you want to view and the date, the first 250 records appear. The default date shown is the current date. In addition, you can filter and sort the data by column. ProcedureIn the module navigation menu, go to
+ Groups.In the Choose Audit Log box, select one of the following options: 
+Analytics Asset ManagementUser Management: This option is available only when you are logged in as a tenant administrator.Alarm ManagementCasesAlerts/Cases TemplatesOO KPIManagementAnalysisUnits of Measure Conversions
+Select  next to the displayed date. The calendar appears.Use the left and right arrows to select the month and year.Select the day, and then select Apply.The table is updated based on your selections.Optionally, to change the displayed date, complete the following actions:Select the month, and then enter the desired two-digit number for the month (for example, 07).Select the day, and then enter the desired two-digit number for the day (for example,10).Select the year, and then enter the desired four-digit number for the year (for example, 2016).In the table, use the following filter criteria to narrow your search. 
+Note: Based on the type of log you selected, what you enter as the filter for Resource, Action, or Detail will vary.
+FilterDescriptionTimeStampFilter is not available. You can select the TimeStamp to sort the displayed results.UsernameLists the GE Digital APM user account name of the person who performed the action. Enter starting characters in the Username filter. NameLists the name of the user that performed the action. Begin entering the name of the user who performed the action. Displays <user first name> <user last name>. ResourceLists the resource type followed by the resource name. Enter Enterprise, Site, Segment, or Asset, followed by the resource name to display a list of matching resources. ActionLists the action type. Enter the action of the user. For example: Alert Created, Case Created, Case Linked, Update (for Asset), Permission set updated). For Cases, possible activities include: Case Assigned, Template Applied, Case Created or Deleted, Case Claimed or Acknowledged, Note Added or Deleted, Attachment Added or Deleted.DetailLists the details of the action. Enter any other detail by which to filter. 
+Optional: Scroll down to view more results.
+
+
+
+
+
+
+
+
+
+
+

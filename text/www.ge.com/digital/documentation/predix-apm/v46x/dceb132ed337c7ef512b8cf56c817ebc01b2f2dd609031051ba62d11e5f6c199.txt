@@ -1,0 +1,349 @@
+
+
+
+Degradation Mechanisms | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Degradation Mechanisms
+
+
+
+
+
+
+
+Degradation MechanismsAbout Degradation Mechanisms (DMs)A Degradation Mechanism is a defined method that affects failure as explained in an RBI Analysis. When an RBI Analysis is performed, DMs are assigned to capture the failure that should apply to an RBI Analysis to calculate its risk. Degradation Mechanisms
+The following table provides a list of DMs that can be linked to each component type. This list is not comprehensive.
+
+ComponentDegradation Mechanism Pump 
+ 581-Amine Cracking 
+
+581-Piping Mechanical Fatigue
+
+581-Brittle Fracture
+ Vessel  581-High Temperature Oxidation  581-Caustic Cracking  581-Chloride Stress Corrosion Cracking  Heat Exchanger  581-Amine Cracking  581-Caustic Cracking  581-Austenitic Component Atmospheric Cracking 
+
+When you associate degradation mechanisms with a Corrosion Loop, you have two options:
+
+You can link only the DMs that are common across all underlying RBI Components. If you choose this option, you will need to link additional degradation mechanisms with each RBI Component as needed. 
+-or-
+You can associate all possible DMs for all underlying RBI Components, even if those DMs apply only to one or a few of the components. If you choose this option, you will need to unlink DMs from each component as needed.
+Unmitigated Risk for RBI Degradation Mechanisms
+When you calculate an RBI 581 Risk Analysis, the unmitigated risk and unmitigated financial risk for each DM is calculated automatically and stored in the related RBI Degradation Mechanisms record. If you have created a custom calculator, unmitigated risk will be calculated by your custom calculator and displayed on the following datasheets:
+Risk MatrixDegradation Mechanism with Risk MitigationDegradation Mechanism without Risk Mitigation
+After the unmitigated risk and unmitigated financial risk are calculated for the DMs, depending on how the administrative settings are configured, you can:
+
+Accept the calculated unmitigated values.
+-or-
+Override the calculated unmitigated values.
+About Degradation Mechanism Evaluations (DMEs)For each Degradation Mechanism (DM) that belongs to an RBI 581 Risk Analysis, a corresponding RBI 581 Damage Mechanism Evaluation record also belongs to that RBI 581 Risk Analysis. In each RBI 581 Damage Mechanism Evaluation  that is associated with a qualitative degradation mechanism (i.e., the corresponding RBI Degradation Mechanisms record was created from a Potential Degradation Mechanism with the value Qualitative in the Methodology Type field), you can specify the probability that the corresponding component will fail due to that degradation mechanism. For example, if an RBI 581 Risk Analysis contains a 581-Amine Cracking DM, it will also contain a corresponding RBI 581 Cracking Damage Evaluation. In this DME, you can specify a value in the Probability Category field to indicate the probability that the RBI Component will fail due to amine cracking.After you select a value in the Probability Category field and calculate the RBI 581 Risk Analysis, the Probability Category Description field will be populated automatically based on the values in an existing Degradation Mechanisms Evaluation Factors record.Degradation Mechanisms
+Suppose a Degradation Mechanisms Evaluation Factors record contains the following values in the following fields:
+ Degradation Mechanism: 581-Amine Cracking
+ Ranking: 1 Ranking Description: 581-Amine Cracking - Impact Resistant Material. Good Inspection History with no evidence of Damage.
+If an RBI Analysis is linked to a 581-Amine Cracking Degradation Mechanism, and you select 1 in the Probability Category field, the value in the Probability Category Description field will be populated with the value in the Ranking Description field in the Degradation Mechanisms Evaluation Factors record containing the values 581-Amine Cracking and 1. In this example, the Probability Category Description field would be populated with the value 581-Amine Cracking - Impact Resistant Material. Good Inspection History with no evidence of Damage.
+DMs that Belong to each DME
+The following table provides a list of DMs that belong to each DME.
+
+Damage Mechanism EvaluationDegradation Mechanism  RBI 581 Brittle Fracture Damage Evaluation
+581-Brittle Fracture 581-Low Alloy Steel Embrittlement 581-Sigma Phase Embrittlement 581-885F Embrittlement 
+RBI 581 Cracking Damage Evaluation 
+581-Amine Cracking 581-Alkaline Carbonate Stress Corrosion Cracking 581-HIC/SOHIC - HF 581-HIC/SOHIC - H2S 581-Caustic Cracking 581-Hydrogen Stress Cracking 581-Other Cracking 581-Sulfide Stress Cracking 581-Chloride Stress Corrosion Cracking 581-Polythionic Acid Cracking 
+RBI 581 External Cracking Damage Evaluation 
+581-Austenitic Component Atmospheric Cracking 581-Austenitic Component Cracking Under Insulation 
+RBI 581 External Damage Evaluation 
+
+581-Ferritic Component Atmospheric Corrosion 
+
+581-Ferritic Component Corrosion Under Insulation 
+
+RBI 581 HTHA Damage Evaluation 
+581-High Temperature Hydrogen Attack 
+RBI 581 Mechanical Fatigue Damage Evaluation 
+581-Piping Mechanical Fatigue 
+RBI 581 Thinning and Lining Evaluation
+
+581-High Temperature Oxidation 
+
+581-Cooling Water Corrosion 
+
+581-High Temperature H2/H2S Corrosion 
+
+581-Amine Corrosion 
+
+581-Hydrofluoric Acid Corrosion 
+
+581-Sulfuric Acid Corrosion 
+
+581-Hydrochloric Acid Corrosion 
+
+581-Acid Sour Water Corrosion 
+
+581-High Temperature Sulfidic and Naphthenic Acid 
+
+581-Alkaline Sour Water Corrosion 
+
+581-Soil Side Corrosion 
+581-Thinning Damage 581-Atmospheric Tank Bottom Corrosion 581-Internal Component Lining Damage 
+
+
+About Inspection IntegrationIntegration between the RBI and Inspection Management modules allows you to take credit for inspection history when you calculate the damage factor of a Damage Mechanism (DM). You can, however, take credit for inspection history only for DMs that belong to the following Damage Mechanism Evaluations (DMEs): In RBI 581:RBI 581 Cracking Damage Evaluation RBI 581 External Damage Evaluation RBI 581 Thinning and Lining Evaluation In RBI 580: Criticality Env. Crack. Deg. Mech. Eval. Criticality Ext. Corr. Deg. Mech. Eval. Criticality Int. Corr. Deg. Mech. Eval. To take credit for inspection history, you must:
+ Enable the Inspection Auto-Selection feature. If you enable this feature, GE Digital APM automatically assigns Inspections to a DM.
+-or-
+Assign Inspections to a DME manually. To assign Inspections to a DME  manually:  Create an Inspection in Inspection Management. Specify the DM that you have inspected. 
+Create an RBI Analysis on the component that you have inspected.
+
+Add the DM that you have selected in step 2.
+
+
+Access the Inspection History of the DM.
+The Inspection that you have created in step 1 appears in the grid only if:
+The date entered in the Date in Service field in the DME is earlier than the date entered in the Inspection Completion Date field in the Inspection.The Inspection Confidence field in the Inspection is not blank.
+Additionally, if you have created an Inspection for a DM that belongs to the same or a related DME, it appears in the list as well.
+
+Assign the Inspection to the DME. You can assign any inspection that appears in the list.About Related DMEsWhen you assign an Inspection to a DM, you can select Inspections performed on a DM that belong to the same DME or a related DME. The following table provides a list of DMEs in RBI 580 that are related to DMEs in RBI 581. You cannot modify this mapping.The following DME in RBI 580......is related to the following DME in RBI 581 Criticality Env. Crack. Deg. Mech. Eval.  RBI 581 Cracking Damage Evaluation  Criticality Ext. Corr. Deg. Mech. Eval. 
+ RBI 581 External Damage Evaluation 
+ Criticality Int. Corr. Deg. Mech. Eval.  RBI 581 Thinning and Lining Evaluation When you select an Inspection on a related DME, the values in the Inspection Confidence and Inspection Effectiveness fields are mapped as follows: Inspection Confidence Inspection Effectiveness Very High  Highly Effective (A) High  Usually Effective (B)Medium Fairly Effective (C) Low  Poorly Effective (D)Assigning Inspections that Belong to Same or Related DME
+Suppose that you have created four Inspections: Insp 1, Insp 2, Insp 3, and Insp 4.
+You have linked the Inspections to DMs as specified in the following table.
+
+InspectionDM Insp 1  581-Amine Cracking  Insp 2  581-Sulfide Stress Cracking  Insp 3  Amine Cracking (ASCC)  Insp 4  Criticality Calculator Internal Corrosion 
+
+You have then created an RBI Analysis, and linked it to 581-Amine Cracking. If you access the inspection history for 581-Amine Cracking, the following Inspections appear:
+ Insp 1 : This is because Insp 1 is linked to 581-Amine Cracking.  Insp 2 : This is because Insp 2 is linked to 581-Sulfide Stress Cracking, which belongs to the same DME as 581-Amine Cracking (i.e., RBI 581 Cracking Damage Evaluation). Insp 3 : This is because Insp 3 is linked to Amine Cracking (ASCC), which belongs to a related DME (i.e., Criticality Env. Crack. Deg. Mech. Eval.).
+Therefore, you can assign 581-Amine Cracking to Insp 1, Insp 2, and Insp 3. You cannot assign it to Insp 4 because it is linked to Criticality Calculator Internal Corrosion, which belongs to Criticality Int. Corr. Deg. Mech. Eval. And, this DME is not related to RBI 581 Cracking Damage Evaluation.
+About Assigning Inspections to a Degradation Mechanism Evaluation (DME)You can use Inspection Management to record inspection results for a piece of asset. In each Inspection, you can specify the DM for which you were looking during the inspection.In RBI, you use RBI Components to divide a piece of asset into parts. You then define DMs for those components, and then conduct analyses for each RBI Component.Assigning Inspections to DMEs in RBI
+If an RBI Component represents parts of a piece of asset that you have inspected in the past, and have recorded results in Inspection records, you can assign those inspections to the appropriate DMEs for that component. By doing so, you identify the inspections that were used to detect DMs for that component.
+You can either assign Inspections to a DME manually or enable the Inspection Auto-Selection feature to have GE Digital APM assign Inspections to the DME automatically.
+The type of analysis used will determine what happens when you assign an inspection to a DM. For any RBI 580 DME, the listed inspections fall within a specified 20-year window. When you are working with an RBI Analysis, GE Digital APM uses the values in the Inspection Confidence field of the Inspection records to automatically populate the following fields in the RBI 581 Damage Mechanism Evaluation representing that degradation mechanism:
+ Inspection Confidence: Indicates how effective the last inspection was at detecting the DM and identifying the rate of degradation.  Equivalent Number of Inspections: Indicates the number of inspections that will be used when calculating the analysis.
+About Associating Potential Degradation Mechanisms (PDMs)Each RBI Corrosion Loop contains multiple RBI Components. Each of these components can fail in multiple ways. To indicate the ways in which components can fail, you can link Potential Degradation Mechanisms (PDMs) to the RBI Corrosion Loops.Each PDM that is linked to the RBI Corrosion Loop represents a degradation mechanism (a way in which the components in that Corrosion Loop might fail). Once the RBI Corrosion Loop has been associated with a PDM, all components added to that RBI Corrosion Loop will inherit the PDM.For each component, you can define the specific ways in which the RBI Component that it represents can fail.Note:  PDMs can be standardized and inherited from RBI Corrosion Loops. When a new RBI Component is generated from and linked to a specific RBI Corrosion Loop, the PDMs associated with that RBI Corrosion Loop will be inherited by the new RBI Component.Overhead (OVHD) System 
+Suppose you have created an RBI Corrosion Loop to represent an OVHD system. You may have determined that components in this corrosion loop can fail in the following ways:
+ Exchanger Failure: The tubes in the exchanger could foul and cause the exchanger to produce too much or too little cooling. Column Failure: The column may be susceptible.
+In this case, the RBI Corrosion Loop would be linked to two PDMs to represent each type of degradation mechanism in the preceding list. After the PDMs are linked to the RBI Corrosion Loop as a whole, and you have determined the components in the corrosion loop, you will need to validate the degradation mechanisms for each component.
+Assuming that the OVHD system contains the Exchanger and the Column, the RBI Corrosion Loop representing the OVHD system would be linked to the following RBI Component records:
+Column Top (belongs to the Column)Outlet Nozzle (belongs to the Column)Exchanger Shell (belongs to the Water Heater)
+Each of these RBI Components would be linked automatically to all the PDMs that are linked to the Corrosion Loop. You would need to determine, however, which degradation mechanisms make sense for each component. To do so, you might decide that the RBI Component should be linked to the PDMs as described in the following table.
+
+
+RBI Component
+
+PDM
+
+Column Top 
+
+ 581-Amine Cracking 
+
+Outlet Nozzle
+
+ 581-Cooling Water Corrosion 
+
+Exchanger Shell
+
+ 581-Amine Cracking 
+
+
+So, while the RBI Corrosion Loop is linked to two PDMs, each RBI Component is linked to only one PDM in this case.
+ About Inspection History When you calculate an RBI 581 Risk Analysis, Degradation Mechanism Evaluations (DMEs) are used as an input to calculate the Probability of Failure. A key factor in calculating the Probability of Failure for the analysis is the assessment of previous inspections, which are contained in the Inspection History.Details
+As part of each analysis, you can choose the inspection for each DME. This selection assists in reducing uncertainty posed by the particular Degradation Mechanism (DM) and in determining its rate of deterioration. Each Inspection is quantitatively assessed to determine its effectiveness in achieving this goal.
+You can select the Inspections used to populate the following fields on RBI 581 datasheets to drive calculations: 
+In the 581 Cracking Damage Evaluation, the 581 AST Bottom, and the RBI 581 External Cracking Damage Evaluation DatasheetsUse Combined ConfidenceNumber of Highest Effective Inspections
+Highest Effective Inspection Level
+In the RBI 581Thinning and Lining Damage Evaluation DatasheetUse Related InspectionsNumber of A Level InspectionsNumber of B Level InspectionsNumber of C Level InspectionsNumber of D Level Inspections
+
+Add Degradation Mechanisms (DMs)About This Task
+For each Potential Degradation Mechanism (PDM) linked to the Component, a DM is added to the Analysis. You can, however, add additional DMs to the analysis.
+Note:  You cannot add a DM if the state of the analysis is Risk Completed. 
+Procedure
+Access the analysis to which you want to add DMs.In the workspace, select the Degradation Mechanisms tab.
+The Degradation Mechanisms section appears, displaying a list of DMs associated with the analysis.
+
+
+
+In the upper-left corner of the section, select .
+ A list of the DMs that can be applied to the RBI 581 Risk Analysis appears, displaying the methodology type of each DM.
+
+
+
+Tip:  If you select the link that corresponds to a DM, the associated PDM record appears in Record Explorer on a new page.
+Note:  DMs that can be added to an RBI 581 Risk Analysis contain a 581 prefix (e.g., 581-Amine Cracking).
+In the row containing each DM that you want to add, select the check box, and then select Add.
+The selected DMs are added to the RBI 581 Risk Analysis. 
+Results
+A Consequence Evaluation is created and linked to the RBI 581 Risk Analysis.
+What To Do Next
+
+Evaluate a Degradation Mechanisms Record (DM).
+Evaluate a Degradation Mechanism (DM) Procedure
+Access the analysis containing the DM that you want to evaluate.In the workspace heading, select the Degradation Mechanisms tab.
+The Degradation Mechanisms section appears, displaying a list of DMs associated with the analysis.
+
+
+
+In the row containing the DM that you want to modify, select the link.
+A blank datasheet of the corresponding Degradation Mechanism Evaluation (DME) appears.
+
+
+
+
+Depending on the Degradation Mechanism Evaluation family that the DM belongs to, enter values in the available fields for the following records:
+
+
+RBI 581 Brittle Fracture Damage Evaluation
+
+RBI 581 Cracking Damage Evaluation
+
+RBI 581 External Cracking Damage Evaluation
+
+RBI 581 External Damage Evaluation
+
+RBI 581 HTHA Damage Evaluation
+
+RBI 581 Mechanical Fatigue Damage Evaluation
+
+RBI 581 Thinning and Lining Evaluation
+
+Select . 
+The DM is evaluated.
+Assess the Unmitigated Risk of a Degradation Mechanism (DM) Before You Begin
+ Generate Recommendations for the analysis.Tip: For information about additional options available when working with the Recommendation records, refer to the Action Management section of the documentation.
+Change the state of the analysis to Risk Completed.
+Procedure
+Access the analysis containing the DM for which you want to assess the unmitigated risk.In the workspace heading, select the Degradation Mechanisms tab.
+The Degradation Mechanisms section appears, displaying a list of DMs associated with the analysis.
+
+
+
+Select the row containing the DM that you want to assess, and then in the upper-right corner of the section, select .
+The Risk Matrix window appears. 
+
+
+
+Select the cell that represents the risk rank for each category, and then select Done. These categories depend on the risk matrix that is defined by your organization. By default, these categories are Safety, Environment, Operations, and Financial.
+The unmitigated risk and unmitigated financial risk values for the DM are saved.
+Access the Inspection History of a Degradation Mechanism (DM)Procedure
+Access the analysis whose inspection history you want to access.Below the graph, in the row containing the analysis whose Inspection History you want to access, select the link.
+The Analysis Details section appears, displaying the analysis datasheet.
+
+
+
+In the workspace, select the Degradation Mechanisms tab.
+The Degradation Mechanisms section appears, displaying a list of DMs associated with the analysis.
+
+
+
+Select the row containing the DM whose inspection history you want to view, and then select . 
+The inspection history for the selected DM appears.
+
+
+
+Tip:  If you want to access the Inspection in Inspection Management, select the link in the Inspection Report column. The Inspection Data section appears, displaying the Inspection datasheet. 
+Assign Inspections to a Degradation Mechanism Evaluation (DME)Before You Begin
+For RBI 581 Cracking Damage Evaluation and RBI 581 External Cracking Damage Evaluation, you can assign up to six Inspections. For 581-Atmospheric Tank Bottom Corrosion, you can assign only one Inspection.
+About This TaskIf the Inspection Auto-Selection feature is enabled, then Inspections are automatically assigned to a DME. You can, however, assign Inspections manually to the DME. Procedure
+Access the inspection history for the analysis containing the DME to which you want to assign Inspections. 
+Note:  The listed inspections fall within a specified 20-year window.
+In the row containing each Inspection that you want to assign, select the check box, and then select OK. 
+The selected Inspections are assigned to the DME.
+
+
+
+Tip:  To view the Inspection in Inspection Management, select the link in the Inspection Report column. 
+Link an Inspection Consequence Evaluation to an RBI Degradation Mechanism Evaluation (DME)About This Task
+Important: To link an Inspection Confidence Evaluation to an RBI DME, the Risk Based Inspection or the RBI 581 license must be active.
+Procedure Access the analysis containing the RBI DME to which you want to link an Inspection Confidence Evaluation.
+Note:  To link an Inspection Confidence Evaluation to an RBI DME, the associated RBI Analysis must be in the Active state. Only Active RBI Analyses will display current Inspection Reports in their corresponding Inspection History section. 
+Select the Degradation Mechanism tab.
+The Degradation Mechanism section appears, displaying a list of PDMs linked to the selected RBI Analysis.
+
+
+
+In the grid, select the row containing the DME that you want to link to the Inspection Confidence Evaluation, and then select .
+Note:   The RBI DME that you select must also be the DME in the corresponding Inspection Confidence Evaluation. 
+A list of corresponding Inspection Reports appears in the grid. 
+
+
+Next to the Inspection Report containing the Inspection Confidence Evaluation that you want to link to the RBI DME, select the check box.In the lower-right corner of the section, select OK.
+The Inspection Confidence Evaluation is linked to the RBI DME.
+Delete Degradation Mechanisms (DMs)Before You Begin
+When you delete a DM, the associated RBI Degradation Mechanism Evaluation (DME) and RBI Consequence Evaluation records are also deleted.You cannot delete a DM if the associated analysis is in Risk Completed state.
+Procedure
+Access the analysis that contains the DMs that you want to delete.In the workspace heading, select the Degradation Mechanisms tab.
+The Degradation Mechanisms section appears, displaying a list of DMs associated with the analysis.
+
+
+
+Select the row containing the DM that you want to delete, and then, in the upper-right corner of the section, select .
+A message appears, asking you to confirm that you want to delete the selected DM. 
+Select Yes.
+The DMs, along with the associated DMEs and RBI Consequence Evaluations, are deleted. 
+
+
+
+
+
+On this pageAbout Degradation Mechanisms (DMs)About Degradation Mechanism Evaluations (DMEs)About Inspection IntegrationAbout Related DMEsAbout Assigning Inspections to a Degradation Mechanism Evaluation (DME)About Associating Potential Degradation Mechanisms (PDMs) About Inspection History Add Degradation Mechanisms (DMs)Evaluate a Degradation Mechanism (DM) Assess the Unmitigated Risk of a Degradation Mechanism (DM) Access the Inspection History of a Degradation Mechanism (DM)Assign Inspections to a Degradation Mechanism Evaluation (DME)Link an Inspection Consequence Evaluation to an RBI Degradation Mechanism Evaluation (DME)Delete Degradation Mechanisms (DMs)
+
+
+
+
+
+
+
+
+

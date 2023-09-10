@@ -1,0 +1,153 @@
+
+
+
+Exida Project Files | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+Exida Project Files
+
+
+
+
+
+
+
+Exida Project FilesAbout Exida Project FilesYou can import data from an Exida project file (.exi or .exp) to GE Digital APM. You can also export the data from GE Digital APM as an .exi file. It stores data related to one or more Protective Instrument Loops in an SIL analysis.Note: Importing and exporting project files to and from exSILentia is not supported on mobile devices (for example, tablets or mobile phones).Import Data From ExidaAbout This Task
+This topic describes how to import an exSILentia file from Exida. GE Digital APM supports exSILentia v3 (.exi file) and exSILentia v4 (.exp file). The exSILentia file stores data related to one or more Protective Instrument Loops in an SIL analysis.
+Note:
+Importing and exporting project files to and from exSILentia is not supported on mobile devices (for example, tablets or mobile phones).
+
+Procedure
+Access the SIS Management Overview page.
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level.
+Select Import from Exida.
+The Import from Exida Project window appears.
+
+
+
+Provide the path to the exSILentia file that you want to import, and then select Next.
+A list of Instrumented Functions appears.
+
+
+
+Select the Instrumented Functions whose data you want to import, and then select Next.
+A list of SIL Analyses in the GE Digital APM system appears.
+
+
+
+If you want to include the selected Instrumented Functions in an existing analysis, select the analysis from the list, and then select Finish. 
+The selected Instrumented Functions are appended to the selected SIL Analysis.
+-or-
+If you want to create a new SIL analysis to include the selected Instrumented Functions: 
+
+Select Create New Analysis. 
+A blank datasheet for an SIL Analysis appears. 
+
+
+
+
+As needed, enter values in the available fields, and then select .
+The SIL Analysis is created, and the selected Instrumented Functions are linked to it.
+
+Export Data To ExidaAbout This Task
+This topic describes how to export data to Exida. The data is related to one or more Protective Instrument Loops that are part of an SIL analysis.
+Note:
+Importing and exporting project files to and from exSILentia is not supported on mobile devices (e.g., tablets or mobile phones).
+
+ProcedureAccess the SIS Management Overview page. 
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level.
+In the upper-right corner of the page, select Export to Exida.
+The Export to Exida Project window appears, displaying a list of SIL Analyses.
+
+
+
+Select the SIL Analysis that is linked to the Instrumented Functions that you want to export, and then select Next.
+A list of Instrumented Functions linked to the selected SIL Analysis appears.
+
+
+
+Select the Instrumented Functions that you want to export, and then select Next.
+A list of Protective Instrument Loops linked to the selected Instrumented Functions appears.
+
+
+
+Select the Protective Instrument Loops that you want to export, and then select Next.
+The Select Location Path tab appears, displaying the File Name box.
+
+
+
+Provide the file name, and then select Finish.
+The Save As window appears
+Navigate to the location where you want to save the report, and then select Save.The data related to the selected loops is exported into a .exi file.Note: The actions required in steps 6 and 7 may differ slightly depending on the browser that you use and the browser settings.
+
+
+
+
+On this pageAbout Exida Project FilesImport Data From ExidaExport Data To Exida
+
+
+
+
+
+
+
+
+

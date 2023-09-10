@@ -1,0 +1,189 @@
+
+
+
+TML Groups | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+Workflows
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data Loaders
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+TML Groups
+
+
+
+
+
+
+
+TML GroupsAbout TML GroupsA TML Group is a group of TMLs that represent a component of an asset.Details
+
+Suppose you have an asset, Piping Circuit 101, ) which contains three components, Line A, Line B, and Line C. On those components, there are multiple TMLs. The following image illustrates this example, where the components are represented by shaded regions, and the TMLs are represented by stars.
+
+
+
+For a given asset, a TML Group can represent:
+
+All TMLs that exist on that asset. You would create a TML Group to represent all TMLs that exist on an entire asset if the asset is a standalone asset. You would create one TML Group to represent all of the stars.
+
+
+
+
+
+A subset of TMLs that exist on one or more components that belong to the asset. Using this option, you could create:
+
+One TML Group per component, where the TML Group represents all TMLs that exist on that component. You would create three TML Groups, one to represent each set of stars.
+
+
+
+-or-
+
+
+One TML Group for multiple components, where the TML Group represents all TMLs that exist on those components. Using the previous Piping Circuit 101 example, you could create two TML Groups, where one represents the blue and green stars and one represents the orange stars.
+
+
+
+
+
+Additionally, throughout the life of the asset, you might identify one or more TMLs within a TML Group that you want to analyze separately from other TMLs. In this case, you can create additional TML Groups to represent any subdivision of an existing group of TMLs.
+For example, suppose that an asset that you are analyzing in Thickness Monitoring represents a shell and tube heat exchanger. The shell and tube heat exchanger has two components, the shell side and the tube side, each with its own process flow. Since the corrosion environments of these components will differ, you might create the following TML Groups:
+TML Group - Shell SideTML Group - Tube Side
+When you first begin analysis on the shell and tube heat exchanger, you are not sure what the TM corrosion data will show, (i.e., whether TML Group - Shell Side or TML Group - Tube Side will have more aggressive corrosion). After you have completed some analysis on the shell and tube heat exchanger, you notice that a subset of TMLs on the shell side near the nozzle have very high corrosion rates. At this point, you create a third TML Group, TML Group - Shell Nozzle to represent this component, and you move the TMLs associated with this component from TML Group - Shell Side to TML Group - Shell Nozzle.
+Regardless of what they represent, all TML Groups in a Corrosion Analysis will be linked directly to a single asset. If you decide to use TML Groups, all TMLs in your Corrosion Analysis should be linked directly to TML Groups (rather than the asset to which the TML Groups are linked).
+
+About Equipment and TML GroupsEach Corrosion Analysis begins with an asset for which you want to monitor corrosion. The asset you want to monitor may consist of a number of components you want to monitor independently. If so, you can create a TML Group for each component to contain the TMLs that are for that specific component. Details
+
+Before you can conduct a Corrosion Analysis on an asset, an Equipment record must exist in the GE Digital APM database to represent the asset on which you want to perform the corrosion analysis. The types of records that you create in your Corrosion Analyses will depend upon what your Equipment records represent.
+Before you can create TML Groups, an Asset Corrosion Analysis and Corrosion Analysis Settings must be created for an asset, represented by an Equipment record. Equipment records can be created manually via Record Manager, or they may be loaded into your database from another data source (e.g., SAP). After assets exist, you can create TML Groups.
+
+Example: Using Piping Circuits to define TML Groups
+
+Consider, for example, a piping circuit that contains three piping lines. You might want:
+
+
+One Equipment record to store all of the information for the piping circuit and the three piping lines.
+-or-
+
+One Equipment record to store information for the piping circuit and three TML Groups to store information for the individual piping lines (one TML Group for each piping line). These TML Groups would be linked directly to the Equipment record that stores information for the piping circuit.
+
+About Corrosion Analyses that Include TML GroupsYou should include TML Groups in your Corrosion Analyses if any of the assets that you will analyze in TM consist of components that you want to analyze individually, or you want to analyze corrosion data for certain groups of TMLs on an asset or component. What the TML Groups that you create represent will depend upon whether the associated Equipment record represents a standalone asset or an asset that contains components.If you use this method:You must configure preferences for the Equipment family.Each TML Group that you create will be linked to an Equipment record representing the asset through the Has TML Group relationship.An Asset Corrosion Analysis and Corrosion Analysis Settings will be created and linked to the Equipment record representing the asset, as well as each TML Group that is linked to that asset.All TMLs that you create will be linked directly to a TML Group. In this case, TMLs should not be linked directly to the asset.Details
+The following diagram illustrates the structure of Corrosion Analyses that include TML Groups. Specifically, this diagram illustrates the records and links that would exist if a Corrosion Analysis included one Equipment record (representing an asset), which is linked to three TML Groups. The boxes in the diagram are labeled according to the records that they represent, and the lines connecting the boxes represent the links between these records in a Corrosion Analysis. The following table provides information on how the records that are illustrated in the diagram are created manually or automatically. RecordNotes
+Corrosion Analysis Settings
+
+Manually for Equipment records
+-and-
+Automatically for TML Groups that you create and link to those equipment records.
+
+Asset Corrosion Analysis
+Automatically for Equipment records and TML Groups, but at different points in the workflow.Equipment Manually.Thickness Measurement Manually. Thickness Measurement Location Manually. Thickness Monitoring Task Automatically (when a Corrosion Analysis Setting are created).TML Corrosion Analysis Automatically (when a Thickness Measurement Location record is saved).
+About Corrosion Analyses that Exclude TML GroupsYou can exclude TML Groups from your TM analyses if none of the equipment that you will analyze in TM contain components, or if you want to analyze an asset without considering the components individually. If you use this method:Asset Corrosion Analyses and Corrosion Analysis Settings will be created and linked to each Equipment record.All TMLs that you create will be linked directly to Equipment records representing assets.DetailsThe following diagram illustrates the structure of Corrosion Analyses that do not include TML Group records. The boxes in the diagram are labeled according to the records that they represent, and the lines connecting the boxes represent links between these records in a Corrosion Analysis. The following table provides information on how the records illustrated in the diagram are created manually or automatically. RecordNotesCorrosion Analysis Settings 
+Automatically.
+Asset Corrosion Analysis Automatically (when a Corrosion Analysis Setting are created for an Equipment record).Equipment Manually.Thickness Measurement Manually. Thickness Measurement Location Manually. Thickness Monitoring Task Automatically (when a Corrosion Analysis Setting are created).TML Corrosion Analysis Automatically (when a Thickness Measurement Location record is saved).About TML Groups and RBI Components You can use TML Corrosion Analyses to determine corrosion rates in Risk Based Inspection (RBI). To complete the analysis, you must perform key steps in this workflow within the RBI module. If you want to specify that TML Group values should be used to calculate RBI corrosion rate values, you can perform this step using TM rather than RBI. Before you can link an RBI Component to a TML Group, you must first create an RBI Component for the asset, and then set the Source of Calculated Corrosion Rate field for the component to Component.Note: For more information on RBI Components, see the Risk Based Inspection section of the documentation.Details
+
+To complete this task, you will need to link a TML Group to a Criticality Calculator RBI Component. When you link a Criticality Calculator RBI Component to a TML Group, RBI corrosion rate values for the RBI Analysis that you create are based on the average of the following values in the TML Corrosion Analysis:
+Long Term Corrosion Rate Short Term Corrosion Rate 
+In other words, the values in the preceding list will determine the following values in the Criticality Int. Corr. Deg. Mech. Eval record associated with the RBI Analysis that is created from the linked TML Group record:
+Short Term Avg. Corr. Rate Long Term Avg. Corr. Rate 
+Note:  When you use TM to select a TML Group to link to a Criticality Calculator RBI Component, you will do so for only one TML Group at a time. Alternatively, via RBI, you can select more than one TML Group at a time to link to a Criticality Calculator RBI Component.
+
+Create a TML GroupProcedure
+Access the Analysis Overview workspace for the asset for which you want to create a TML Group. In the left pane, select , and then select TML Group.
+The Select Analysis Type window appears. 
+
+
+
+On the Select Analysis Type window, select either 
+UT or RT
+ for the analysis type, and then select Done. 
+The new TML Group is created as a subcomponent of the asset. 
+Results
+The TML Group ID is automatically generated.The TML Group inherits the Corrosion Analysis Settings from the asset.You can make changes to the TML Group by accessing the datasheet.
+Link a TML Group to RBI Components Before You BeginCreate an RBI Component for the asset, and then set the Source of Calculated Corrosion Rate field for the component to Component.Note: For more information on creating RBI Components, refer to the Risk Based Inspection section of the documentation.About This TaskYou can link multiple RBI Components to a TML Group.Procedure
+Access the Analysis Overview workspace for the TML Group to which you want to link an RBI Component. In the workspace, select , and then select Manage RBI Components.The Manage RBI Components window appears. 
+Next to each RBI Component that you want to link to the TML Group, select the check box.
+Note: To unlink the TML Group, you can repeat this procedure and clear the check box.
+Select OK.The TML Group is now linked to the RBI Components.Results
+RBI Components linked to TML Groups inherit the corrosion rate values from the TML Groups. The resulting RBI Analysis is based on the average of the following values in the TML Corrosion Analyses linked to the TML Group:
+Short Term Corrosion Rate
+
+Long Term Corrosion Rate
+
+Controlling Corrosion Rate
+
+Delete a Thickness Monitoring Location (TML) GroupBefore You Begin
+When you delete a TML Group, the following linked records are also deleted:TMLsThickness MeasurementsCorrosion Analysis SettingsTML Corrosion AnalysesAsset Corrosion Analyses
+
+Procedure
+Access the Analysis Overview workspace  for the TML Group that you want to delete.Select , and then select Delete.
+Note: The Delete option is only available for security users associated with the MI Thickness Monitoring Administrator Security Group.
+
+A message appears, asking you to confirm that you want to delete the TML Group.
+Select Yes.
+The TML Group is deleted.
+Note:
+To allow the deletion of TML groups that has larger number of TMLs associated with an asset, the delete operation is provided as a scheduled action. You can download the corresponding logs from the Schedule Logs page.
+
+
+
+
+
+
+On this pageAbout TML GroupsAbout Equipment and TML GroupsAbout Corrosion Analyses that Include TML GroupsAbout Corrosion Analyses that Exclude TML GroupsAbout TML Groups and RBI Components Create a TML GroupLink a TML Group to RBI Components Delete a Thickness Monitoring Location (TML) Group
+
+
+
+
+
+
+
+
+

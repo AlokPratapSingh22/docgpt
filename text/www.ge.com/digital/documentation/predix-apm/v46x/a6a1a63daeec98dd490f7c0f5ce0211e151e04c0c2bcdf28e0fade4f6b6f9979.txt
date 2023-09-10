@@ -1,0 +1,103 @@
+
+
+
+First Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Release Notes
+First Quarter of 2021
+
+
+
+
+
+
+
+First Quarter of 2021Release Date: March 26, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New FeaturesThe following enhancements and new features have been added.DescriptionTracking IDYou will now be able to choose to get Interpolated data in the Predix Time Series node. To facilitate this enhancement, Use Interpolated Data option has been added in the Predix Time Series node properties window. When this option is selected, you must select the interpolation method and enter the interpolation interval in seconds.US469390
+Table 2. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, the policy execution service user permissions may have been intermittently invalid, resulting in:No data was retrieved when you executed a policy using Predix Time Series nodes.When you executed a policy using Create Alert or Query Alerts nodes an error occurred.These issues have been resolved.DE156299
+Release Date: February 12, 2021This topic provides a list of product changes released for this module on this date.
+Table 3. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, when you took ownership of a policy from a user with a culture using a different date format, and attempted to edit and save the policy, an error occurred. This issue has been resolved.DE150659
+
+
+
+
+
+On this pageRelease Date: March 26, 2021Release Date: February 12, 2021
+
+
+
+
+
+
+
+
+

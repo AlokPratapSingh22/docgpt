@@ -1,0 +1,136 @@
+
+
+
+Tag Expressions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag PanelTag Panel
+Tag Browser
+Tag Expressions
+Tag Filters
+Search Browser
+
+
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Tag Panel
+Tag Expressions
+
+
+
+
+
+
+
+Tag ExpressionsAbout Tag ExpressionsUse Tag Expressions to construct simple calculations that can be used on a chart.You can construct an expression consisting of tags, including tags with special characters, mathematical operators, functions, and other existing expressions, allowing you to plot a calculated tag that would otherwise be handled by analytics. This allows you to display time-series data on the chart and add a tag that calculates a marker or other indicator. Operators must be placed between asset-tag combinations. Tag expressions can be saved on an analysis template Note: Tag Expressions are not enabled for SmartSignal. You can construct tag expressions by typing the characters or copying and pasting the characters from another location.Note:
+When you type tag names with special characters for tag expressions, you cannot use Dollar ($), Pipe (|), Colon (:), and Ampersand (&), which are used as symbols to represent various parameters in the tag expressions.When you type tag names for an expression and use the lookup for assist, you can skip typing the special characters in the tag name, and continue with the rest of the words. The criteria entered narrows down to the matches. For example, when you search for a tag name TT$NHLogic:Gate10, you can search directly after adding the asset name $<AssetName>|TTNHLogicGate10. You can skip typing the special characters Dollar ($) and Colon (:) that are used in the tag name. 
+You cannot add additional assets for Event Data Analysis charts in the Tag Tree Browser, Tag Expressions, or Search Browser panes.When creating or adding a new tag expression you can:Add or change the tag expression name.Enter a description of the tag expression functionality.Add additional assets to the Asset Scope.Create or modify a mathematical calculation that is usable as a tag during analysis.Create or modify a mathematical calculation that includes conditional statements, predefined functions, and allows embedding of existing tag expressions within a new tag expression.Define the number of significant digits that appeared for the tag expression.Drag a tag expression to a chart.View tag expression information as hover-over text.When creating a tag expression, you can add conditions, predefined functions, and embed an existing tag expression within a tag expression.When you view tag expression information, the tool tip appears with the following information:The full tag expression name.The description.The UoM for the tag expression.Note: If any information is missing for the tag expression, the area in the tool tip is blank.Tag Expressions uses the following valid operators:Addition – Enter a +Subtraction – Enter a -Multiplication – Enter a *Division – Enter a /Remainder - Enter a %Exponent - Enter a ^Parentheses – Enter ( )Expressions use symbols for assets ($), tags (|), functions (:), and existing expressions (&). The supported format for tag expressions is: $<assetID>|<tagID>|+<numeral><operator>$<assetID>|<tagID>|+<numeral>, and so on. Note: Spaces are allows between operands and operators.The following examples are valid expressions:$Asset01|tag01|+10+$Asset02|tag02|$Asset01|tag01|*$Asset02|tag02|(1-$Asset01|tag01|)-($Asset02|tag02|)$Asset01|tag01|*2
+Tag expressions can be treated like any other tag. For example, you can mute and unmute a tag expression and drag it into another chart. Tag expressions saved to a template also include value-based filters or conditional filters. Once saved, tag expressions that include filters can be shared to another template. Tag expressions can be used as one tag in a plotted tag series. Add the Tag ExpressionsTag expressions allow you to perform quick calculations using tag data. About This Task
+You can create and add a tag expression to a chart that consists of tags and simple mathematical operators, allowing you to add a marker or other calculation relating to the data on the chart.
+Tag expressions are treated the same as any other tag, and can be added as a component of a tag series for X-Y and Polar charts. All tags can be filtered, including tag expressions. UoM labels for tags are retrieved automatically. Tags added to a tag expression must match the first tag's UoM. If an embedded tag expression is added first, then the UoM for any additional tags in the tag expression must match the embedded tag expression's UoM. If the first tag is removed in the tag expression, the UoM is blank.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select  if it is not already accessed, select , and then select  next to Tag Expressions.A New Tag Expression workflow appears.Enter a name for the tag expression in the Tag Expression Name field.Names for tag expressions must be unique. Do not put spaces in the tag expression name.Enter a description for the tag expression in the Description field.If needed, add assets to the Asset Scope field by selecting  next to Asset Scope, and then select an asset in the Context Browser.The Asset Scope field is populated by default with nodes currently listed in the Tag Tree Browser.In the Formula field, enter $ and select an asset in the list. After the selected asset in the Formula field, enter | and select a tag in the list.
+Note: Formula help is available if you select .
+The system adds a second after each tag.Complete the formula string using operands and operators. Spaces are allowed between operands and operators.You can include conditional statements, predefined functions, and embed an existing tag expression into the current tag expression. You can include tag names with special characters.The system checks to see if the formula is well formed.Select a value for the tag expression in the Significant Digits drop-down list box.There are four significant digits by default.Select Done.The expression is added to the list in the Tag Expression pane and as a tag to the Tag Expressions node in the Tag Browser section of the Tag Tree Browser.ExampleExample 1: Dividing a tag by a constant value to change the magnitude: $Asset_01|tag_01|/1000ExampleExample 2: Subtracting two tags to see their deviation from one another: $Asset_01|tag_01|-$Asset_02|tag_02|Plot a Tag ExpressionYou can plot a tag expression in the Tag Tree Browser pane.About This Task
+Tag expression can be plotted, muted, and deleted like any other tag. Once a tag expression has been plotted to a chart, you can view it in the Plotted Tags section of the Tag Tree Browser. 
+When plotting a tag, the source UoM is converted to the standard UoM during plotting.
+ProcedureTo plot a tag expression in the Tag Expression pane:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select  if it is not open, and then select . A list of tag expressions appears in the Expression Calculator pane in the Tag Expressions section.Select a tag expression in the list, then drag and drop it onto a chart in the view.The tag expression is plotted to the chart and appears in the Plotted Tags section.To plot a tag expression in the Tag Tree Browser:In the Tag Tree Panel, select .In the Tag Browser section, access an asset node, and then access its tag expressions node.A list of tag expressions associated with the selected asset appears.Select a tag expression in the list, then drag and drop it onto a chart in the view.The tag expression is plotted to the chart and appears in the Plotted Tags section.Modify a Tag ExpressionOnce it has been created, you can modify a tag expression in the Expression Calculator pane.About This Task
+Tag expressions are managed within a list under the Tag Expressions section.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select  if it is not open, and then select . A list of tag expressions appears in the Tag Expression pane in the Tag Expressions section.Hover over a tag expression in the list, and then select .The Edit Tag Expression pane for the selected tag expression appears.Modify the tag expression as necessary.You can modify tag expression with special characters also.Select Done.Modifications to plotted tag expression apply to all charts in the view. Share the Tag ExpressionsYou can share tag expressions to templates that are available to you.About This Task
+Tag expressions are calculations using tags for the asset context. You can change tag expressions, save or update them as a template, and then share them with templates that are available to you.
+When you share a tag expression on a view, it is applied to one or more selected templates. Templates with shared tag expressions can then be viewed, modified, and associated with an Alert Template. Templates with modified tag expressions affect existing templates associated with the Alert Template. You can share tag expressions across public and private templates.
+Tag expressions saved to a template also include value-based filters or conditional filters. Once saved, tag expressions that include filters can be shared to another template. 
+The name of the shared tag expression can be modified prior to sharing and cannot match an existing tag expression. 
+When sharing tag expressions, you can select from private templates and public templates associated with the selected asset context for an instance template only. You cannot share a tag expression with a class template. Templates with successfully shared tag expressions are available for additional sharing.
+If a shared tag expression's associated tags are not available on the receiving template, the tag expression is invalid cannot be used. An invalid tag expression is disabled and  appears.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select  on the Tag Tree Panel.On a selected tag expression, select .In the Share Tag Expression dialog box, specify a tag expression name into the Tag Expression Name field, if needed.Select a template in the list under Share to Template, and then select Share.The tag expression is shared with the selected template.Note: You can share the tag expression with additional templates by repeating the steps above. Delete a Tag ExpressionYou can delete a tag expression in the Expression Calculator list.About This Task
+Deleting a tag expression from the Expression Calculator list, which removes it from the Plotted Tags list in the Tag Tree Browser and all the associated charts in the view. This action cannot be undone.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select  if it is not open, and then select .Hover over the tag expression in the Tag Expression list, and then select .Select Delete.The selected tag expression is deleted in the Tag Expressions list, all plotted charts in the view, and the Plotted Tags and Tag Expressions lists in the Tag Browser.Add Conditions to a Tag ExpressionUse conditions to add conditional statements to a tag expression.About This Task
+Conditional statements are used to obtain different results based on different conditions. When you plot a conditional tag expression, the evaluation is plotted. 
+Evaluations in a tag expression use the following operators in the first argument only:Less than - Enter <Greater than - Enter >Equal to - Enter ==Less than or equal to - Enter <=Greater than or equal to - Enter >=Not equal to - Enter !=
+You can create a simple boolean expression, or a complex one using ( ), AND, or OR. 
+The conditional evaluator can be in the form of a function as follows: IF(CONDITION, TRUE-EXPR, FALSE-EXPR). You cannot embed an IF function within another IF function. The second and third argument in the function must use tags; do not use a value only. Logical expressions always evaluate to either true or false. 
+It is best practice to use parentheses around each conditional statement to avoid ambiguities during evaluation.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select  if it is not already open, then select , and then select  next to Tag Expressions, or hover over an existing tag expression in the Tag Expressions list, and then select Edit
+). A New Tag Expression workflow or the Edit Tag Expression workflow for the selected tag expression appears.Add or modify the tag expression as needed.In the Formula section, enter a conditional statement within the calculation.All conditional statements are entered using the following format: if(<expression>)<boolean_operator>(<expression>)Select Done.The expression is added to the list in the Tag Expression pane, and as a tag to the Tag Expression node in the Tag Browser section of the Tag Tree Browser.ExampleExample 1: Simple if, then, else statement: :IF(($asset1|tag1| + 1) > ($asset2|tag2| * 10), $asset3|tag3| + 4, $asset4|tag4| - 10)ExampleExample 2: Statement using functions: :IF(((:SIN($asset1|tag1|)+$asset2|tag2|)*3.14) <= (:ABS($asset3|tag3|)/10), ($asset4|tag4| + 4), (1^$asset5|tag5|)*100)ExampleExample 3: Statement using two conditions: :IF(((($asset1|tag1|) < ($asset2|tag2|)) OR (($asset3|tag3|) < ($asset4|tag4|))), :AVG($asset5|tag5|, -1),$asset6|tag6|/$asset7|tag7|)Add Predefined Functions to Tag ExpressionsUse predefined functions to add statistical or trigonometric functions to a tag expression.About This Task
+You can create or modify a tag expression that includes predefined statistical or trigonometric functionality. Tag expressions are treated like any other tag when dragged to a chart. You can save tag expressions plotted on a chart in an Analysis Template.Note:
+For more information on the predefined statistical functions that are supported, refer to the Statistical Functions topic.For more information on the predefined math and trigonometric functions that are supported, refer to the Math and Trigonometric Functions topic.
+
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select  if it is not already open, then select , and then select  next to Tag Expressions, or hover over an existing tag expression in the Tag Expressions list, and select . A New Tag Expression workflow, or the Edit Tag Expression workflow for the selected tag expression appears.Add or modify the tag expression as needed.In the Formula section, enter a predefined function within the calculation.All predefined functions are entered using the following format: :<function>($asset_1|tag_1|,$asset_2|tag_2|)Select Done.The expression is added to the list in the Tag Expression pane, and as a tag to the Tag Expression node in the Tag Browser section of the Tag Tree Browser.ExampleExample 1: Adding two tags, then multiplying the sum by the average of two more tags: ($asset_1|tag_1| + $asset_2|tag_2| * :AVG($asset_3|tag_3|,$asset_4|tag_4|)
+Embed Tag ExpressionsYou can embed existing tag expressions into another tag expression.About This Task
+Embedding a tag expression into another tag expression allows you to evaluate multiple expressions within one tag.
+Tag expressions are treated like any other tag when dragged to a chart. You can save tag expressions plotted on a chart in an Analysis Template.
+Tags selected for a embedding into a tag expression must have the same UoM as the current expression. You cannot embed another expression in the formula if the UoMs are different.
+Existing tag expressions are added to the current tag expression using an & and the name of the existing tag expression, then placed within the current tag expression.
+When the name or formula of an expression is updated, all expressions that embed the updated expression are updated as well.
+You cannot delete a tag expression that is embedded within another tag expression. To delete the tag expression, you must first remove it from all other tag expressions.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select  if it is not open, select , and then select  next to Tag Expressions, or hover over an existing tag expression in the Tag Expressions list, and select . A New Tag Expression workflow, or the Edit Tag Expression workflow for the selected tag expression appears.Add or modify the tag expression as needed.In the Formula section, add an existing tag expression within the calculation.All embedded tag expressions are entered using the following format: (<expression1> &<expression_name>)<boolean_operator>(<expression2>)Select Done.The expression is added to the list in the Tag Expression pane, and as a tag to the Tag Expression node in the Tag Browser section of the Tag Tree Browser.ExampleExample 1: Embedding an existing expression: ($asset_1|tag_1| + $asset_2|tag_2| &<expression_name> * :AVG($asset_3|tag_3|,$asset_4|tag_4|)Access the Formula Associated with a SmartSignal Calculated TagAbout This TaskYou can access the formula of a calculated tag on demand and as a part an analytic. This allows you to diagnose some issues and find out how a tag is calculated and what the sensor feed is, especially on sensor failure. ProcedureTo view the formula associated with a SmartSignal calculated tag:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Select Add Cards, and then select SmartSignal Card.Complete one of the following actions:
+Select a tag in the Tag Browser or Plotted Tags list, drag it over a chart, and then drop it on the chart.Select multiple tags in the Tag Browser list using CTRL+Tap or SHIFT+Tap, drag them over a chart, and then drop them on the chart. You must move the tag to the drop zone to plot itNote: This is limited to 20 tags.
+Hover over tags with the calculator icon to view the calculated formula. 
+
+
+
+
+On this pageAbout Tag ExpressionsAdd the Tag ExpressionsPlot a Tag ExpressionModify a Tag ExpressionShare the Tag ExpressionsDelete a Tag ExpressionAdd Conditions to a Tag ExpressionAdd Predefined Functions to Tag ExpressionsEmbed Tag ExpressionsAccess the Formula Associated with a SmartSignal Calculated Tag
+
+
+
+
+
+
+
+
+

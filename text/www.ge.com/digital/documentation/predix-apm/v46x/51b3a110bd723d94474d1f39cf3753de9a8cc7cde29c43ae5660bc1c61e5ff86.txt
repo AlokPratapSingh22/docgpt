@@ -1,0 +1,88 @@
+
+
+
+Fourth Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+European Inspection ManagementOverview
+Configuration
+Workflow
+Reference
+ Admin
+Release NotesFourth Quarter of 2020
+Second Quarter of 2020
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+European Inspection Management
+Release Notes
+Fourth Quarter of 2020
+
+
+
+
+
+
+
+Fourth Quarter of 2020Release Date: October 2, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking ID
+New content is added to Compliance Management and Inspection Management to support the European Inspection requirements. To facilitate this enhancement, the following changes have been made:A new user interface is added to the Asset Technical Data datasheet from the Inspection Management Overview page.A new family, European Admin Settings has been created to store the site-specific records and a new section, European Admin Settings has been added in the Compliance Configuration section of the IM Admin Preferences page.A new datasheet EU Inspection Report is added for European Inspection Event and European Inspection Task.New fields are added to calculate the Compliance Minimum Date, Compliance Maximum Date, and Inspection Documentation Date in the Inspection Task for the European Regulation.The Certification field can either be ZUS or Bp, if the Certification is ZUS then Inspector with ZUS certification can only perform the inspection but if the Certification is Bp then inspector with either ZUS or BP certification can perform the inspection.Task Rescheduling Basis is added to an Inspection Task based on the European Regulations.You can now filter Inspection Report Owner and the Reviewer Name in an Inspection Event based on the Certification requirement in addition to the Resource Role.The Inspection Summary can now be auto populated by creating a new Inspection Summary reference record in the Record Manager.
+F51412To enhance usability, the European Inspection Task datasheet has been introduced to the Inspection Task family. This datasheet allows us to manage Inspection Tasks according to the Compliance guideline of the regulation. You can access the following new fields in the European Inspection Task datasheet:Applicable Regulation: This field provides a list of regulations to be linked to a task.Certification: This field stores the certification values.Compliance Minimum Date: This field provides the minimum compliance date for a task to be performed.Compliance Maximum Date: This field provides the maximum compliance date for a task to be performed.Compliance Window: This field provides information about the Compliance duration in months.Inspection Documentation Window: This field provides information about the Duration for Documenting an Inspection Report in months.Inspection Documentation Completion Date: This field provides information about documentation completion date for an Inspection.Previous Next Date: The field provides information about the Next Date before rescheduling.Task Rescheduling Basis: This field provides information about how the task was rescheduled. The task can be rescheduled based on the Last Date or the Previous Next Date.US411461To enhance usability, you can now access the Asset Technical Data datasheet from the Inspection Management Overview page.US381862To enhance usability, a European Inspection Report is added to the Full Inspection family to manage an Inspection event for an Asset and the following changes have been made in the EU Inspection Report Datasheet:You can access the following new fields in the European Inspection Report datasheet:Applicable Regulation: This field provides a list of regulations to be linked to a task.Certification: This field stores the certification values.Inspection Document Type: The field populates the following values: Test Certificate by ZUSTest Record by Company InspectorTest Report by SubcontractorInspection Instructions: This field provides the Inspection Type according to European Compliance.The field Inspection Summary Reference within the datasheet can now be auto populated by creating a new Inspection Summary reference record in the Record Manager. The Inspection Summary Reference record stores inspection summary related information based on Inspection Document Type and Inspection Instructions required for generating a summary for an Inspection Event.You can now filter Inspection Report Owner and the Reviewer Name in an Inspection Event based on the Certification requirement in addition to the Resource Role. US390197To enhance usability, Task Rescheduling Basis is added to an Inspection Task based on the European Regulations. This field captures the information based on how the Next Date field is calculated. The field can be calculated either by the Last Date or the Previous Next Date.US425715You can now add European Admin Settings records for generating a European Inspection Task. To facilitate this enhancement, following changes have been made:A new section, European Admin Settings has been added in the Compliance Configuration section of the IM Admin Preferences page.A new family, European Admin Settings has been created to store the site-specific records.US411512To enhance usability, when you search for an Asset Technical Data for any asset, you will now be directed to the Asset Technical Data page instead of the Record Manager.US428475
+Table 2. Obsolete Features
+The following features are no longer available.
+DescriptionTracking IDThe following System Code Table has been deprecated:CertificationUS430391
+
+
+
+
+
+On this pageRelease Date: October 2, 2020
+
+
+
+
+
+
+
+
+

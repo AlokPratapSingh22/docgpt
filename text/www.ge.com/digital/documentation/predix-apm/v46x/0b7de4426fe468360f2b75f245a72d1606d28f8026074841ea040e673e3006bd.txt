@@ -1,0 +1,99 @@
+
+
+
+Manage Custom Form Datasheet | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Family ManagementRules
+Overview
+Entity and Relationship Families
+Fields
+DatasheetsDatasheets
+Manage Custom Form Datasheet
+Custom Layout
+Tabular Layout
+
+
+Offline Forms
+Family Reports
+Relationship Definition
+State Configuration
+Associated Pages
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Family Management
+Datasheets
+Manage Custom Form Datasheet
+
+
+
+
+
+
+
+Manage Custom Form DatasheetAdd Fields to a DatasheetProcedure
+Access the Datasheet Builder.Next to the Datasheet Caption label, select , select the datasheet to which you want to add fields.The datasheet appears in the Datasheet Builder workspace.In the Available Items pane, select the field that you want and drag it into the Datasheet Builder workspace.The field is added to that datasheet.Select Save.The datasheet is saved.Note: The field that is added to the datasheet will be available for you in Family Management, whereas to access the field from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the created field will be available only when they log in to the application again.Add Fields to a Datasheet SectionProcedure
+Access the Datasheet Builder page.Next to the Datasheet Caption label, select , select the datasheet to which you want to add a section.The datasheet appears in the Datasheet Builder page.Select the datasheet section to which you want to add fields.In the Available Items pane, select the field that you want and drag it into the appropriate section.The field is added to that section.Select Save.The datasheet is saved.Note: The field that is added to the datasheet section will be available for you in Family Management, whereas to access the field from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the added field will be available only when they log in to the application again.Modify the Datasheet Caption for a FieldProcedure
+Access the Datasheet Builder page.In the upper-right corner of the page, select , and then select the section for which you want to modify the caption.The datasheet appears in the Datasheet Builder page.Select .The Datasheet Information window appears.As needed, modify the value in the Caption box.Select Update.The datasheet caption for the field is modified.Hide a DatasheetThis topic describes how to hide a datasheet belonging to a family that you do not want to appear for the corresponding records.ProcedureAccess the Datasheet Builder page for the family containing the datasheet that you want to hide.Next to the Datasheet Caption label, select , and then select the datasheet that you want to hide.The selected datasheet appears.Select .The Datasheet Information window appears.Select the Hide check box.
+Note: You cannot hide a datasheet that is marked as default. If you want to hide a default datasheet, in the Datasheet Information window, clear the Default check box, and then select the Hide check box.
+Select Update.The datasheet is saved and is not displayed for any record corresponding to the family.Remove a Field from a Datasheet SectionProcedure
+Access the Datasheet Builder page.Next to the Datasheet Caption label, select , and then select the datasheet you want to modify.The datasheet appears in the Datasheet Builder page.In the Available Items pane, select the field that you want to remove.
+
+
+
+Select .The datasheet section is removed.Select Save.
+Note: The removed family will no longer be available for you in Family Management, whereas to ensure that the field is not accessible from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the deleted field will not be available only when they log in to the application again.
+Rearrange RowsProcedure
+Access the datasheet for which you want to rearrange the rows.Select and drag the items that you want to remove back to the Available Items pane, and then select and drag the items to the available rows as needed.Select Save.The datasheet is saved reflecting your changes.Modify an Item LabelProcedure
+Access the datasheet that you want to modify.In the workspace, select the label that you want to modify, and then enter your changes directly.Select Save.The item label is modified.
+
+
+
+
+On this pageAdd Fields to a DatasheetAdd Fields to a Datasheet SectionModify the Datasheet Caption for a FieldHide a DatasheetRemove a Field from a Datasheet SectionRearrange RowsModify an Item Label
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,98 @@
+
+
+
+SIS Trip Reporting | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+WorkflowsSIL Assessment
+SIL Verification
+SIL Validation 
+SIS Trip Reporting
+Custom Device
+SRS
+
+
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+Workflows
+SIS Trip Reporting
+
+
+
+
+
+
+
+SIS Trip ReportingSIS Management: Trip Reporting WorkflowThis workflow describes the process of saving and analyzing trip reports.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Create Trip Report Persona: AnalystCreate a Trip Report record to store the details of the trip that occurred.Select Logic Solver Persona: AnalystSelect the Logic Solver that is associated with the Instrumented Functions for which the trip occurred.Select Applicable Instrumented Functions Persona: AnalystSelect the Instrumented Functions that are associated with the trip that occurred.Is Trip As Designed? Persona: AnalystDetermine whether the trip was as designed, spurious, or dangerous.Record Details of Failed Component Persona: AnalystIf the trip was not as designed (i.e., spurious or dangerous), then enter the details of the Protective Instrument Loop element that caused the trip. For example, if a trip was caused when a sensor indicated high pressure even when the pressure level was normal, enter the details of the sensor. For that example, the trip type would be Spurious.
+
+
+
+
+On this pageSIS Management: Trip Reporting WorkflowCreate Trip ReportSelect Logic SolverSelect Applicable Instrumented FunctionsIs Trip As Designed?Record Details of Failed Component
+
+
+
+
+
+
+
+
+

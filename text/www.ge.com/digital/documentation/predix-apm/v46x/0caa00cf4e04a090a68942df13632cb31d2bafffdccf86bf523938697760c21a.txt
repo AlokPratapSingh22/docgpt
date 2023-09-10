@@ -1,0 +1,106 @@
+
+
+
+Manage Data Permissions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Data PermissionsOverview
+Manage Data Permissions
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Data Permissions
+Manage Data Permissions
+
+
+
+
+
+
+
+Manage Data PermissionsView Existing Data PermissionsProcedure
+Access the Data Permissions page.In the left pane, select the family whose permissions you want to view.The list of Security Groups and Security Users who currently have access to the family appear in the workspace.What To Do Next
+
+Grant Data Permissions
+
+Grant Data PermissionsProcedureAccess the Data Permissions page.Select the family whose permissions you want to manage.The workspace for the selected family appears, displaying a list of assigned Security Users and Groups for the Family. To assign a Security User, select .
+-or-
+ To assign a Security Group, select .
+Depending on the selection, the Assign Users or Assign Groups window appears.
+In the list, select the Security User or Security Group to which you want to assign permissions.Select Save. The selected Security Users or Security Groups are assigned to the Family.Select the check box next to the Security Users or Security Groups to which you want to assign permissions.Next to each type of permission that you want to assign, select the check box. You can select from the following options:
+
+View: The Security Group or User will be able to view records that belong to the family.
+Insert: The Security Group or User will be able to create records in the family.
+Update: The Security Group or User will be able to update records that belong to the family.
+Delete: The Security Group or User will be able to delete records that belong to the family.
+Select .The permissions are granted.About Entity Family Data Permissions
+For each entity family, you can grant users View, Update, Insert, and Delete permissions. The following table provides details about each permission.
+PermissionDescriptionNotesViewUsers can view records that belong to the family. Users with only View permissions on a family will be able to open existing records belonging to that family but would not be able to create, modify, or delete them.
+For typical users, View permissions are a prerequisite to Update, Insert, and Delete permissions because they provide users with the initial access required for modify, create, and delete operations.
+For example, users with View permissions on a family can:
+Search for records in that family and open them in the Record Manager.Create a Select query on that family.Open reports that include that family.
+UpdateUsers can modify records that belong to the family. Users with only Update permissions on a family would be able to modify existing records belonging to that family but would not be able to view, delete, or create records in that family.Typically, you would not grant Update-only permissions to a user because, while that user would be able to modify records in that family, without View permissions, they would not be able to search for them or open them. Update-only permissions, however, may be used to support processes and operations that occur outside of the user interface (i.e., interfaces or scheduled jobs).InsertUsers can create records in the family. Users with only Insert permissions on a family would be able to create records in that family, but would not be able to view, modify, or delete them.Typically, you would not grant Insert-only permissions to a user because, while that user would be able to create records in that family, without View permissions, they would not be able to initiate the record-creation process in GE Digital APM. Insert-only permissions, however, may be used to support processes and operations that occur outside of the user interface (i.e., interfaces or scheduled jobs).DeleteUsers can delete records that belong to the family. Users with only Delete permissions on a family would be able to delete records belonging to a family, but would not be able to view, modify or create them.Typically, you would not grant Delete-only permissions to a user because, while that user would be able to delete records in that family, without View permissions, they would not be able to perform a search to find the records that they wanted to delete. Delete-only permissions, however, may be used to support processes and operations that occur outside of the user interface (i.e., interfaces or scheduled jobs).
+About Relationship Family Data Permissions
+Relationship family permissions are similar to entity family permissions in that the same permission levels are available: View, Update, Insert, and Delete. Each permission level, however, provides access that is slightly different from the access provided through entity family permissions.
+Remember that relationship families are used to create links between records in entity families. Consider an example where the Equipment family is related to the Failure family through the Has Failure relationship. In this case, to provide a user with full access to an Equipment record and its associated Failure record, that user would need permissions to three families: Equipment, Failure, and Has Failure.
+Note: Permissions to a relationship family do not automatically provide access to the predecessor and successor families; for that, explicit entity family permissions are required.
+The following table provides details about each relationship family data permission.
+PermissionDescriptionNotesViewUsers have basic access to the links that relate predecessor and successor records. Users with View-only access to a relationship family can open existing linked records, but cannot link and unlink records using that relationship.
+None
+UpdateUsers can modify existing links in a relationship family. This applies only in cases where fields are defined for the relationship family. Users with Update permissions will also need View permissions.InsertUsers can link records together using that relationship family. Using the previous example, a user would need Insert permissions on the Has Failure family to link Equipment records to Failure records.Users with Insert permissions will also need View permissions.DeleteUsers can unlink records associated with the relationship family. Using the previous example, a user would need Delete permissions on the Has Failure family to unlink Failure records from Equipment records.Users with Delete permissions will also need View permissions.
+Remove Data PermissionsProcedure
+Access the Data Permissions page.Select the family whose permissions you want to manage.The workspace for the selected Family appears, displaying a list of assigned Security Users and Groups for the Family.Next to each Security User or Group from which you want to remove permissions, select the check box. To remove all permissions that the Security Groups and Users have to the family, select .
+-or-
+Next to each family permission that you want to remove from the Security Groups and Users, clear the check box. 
+Select .The permissions are removed.
+
+
+
+
+On this pageView Existing Data PermissionsGrant Data PermissionsAbout Entity Family Data PermissionsAbout Relationship Family Data PermissionsRemove Data Permissions
+
+
+
+
+
+
+
+
+

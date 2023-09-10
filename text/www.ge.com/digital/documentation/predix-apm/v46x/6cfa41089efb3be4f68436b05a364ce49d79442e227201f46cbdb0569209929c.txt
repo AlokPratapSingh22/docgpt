@@ -1,0 +1,154 @@
+
+
+
+Entity and Relationship Families | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Family ManagementRules
+Overview
+Entity and Relationship Families
+Fields
+Datasheets
+Offline Forms
+Family Reports
+Relationship Definition
+State Configuration
+Associated Pages
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Family Management
+Entity and Relationship Families
+
+
+
+
+
+
+
+Entity and Relationship FamiliesAbout FamilyImportant:
+GE Digital APM does not support any modifications made to database tables directly or via third-party tools. Do not write data directly into or change data in database tables through any third-party tool.
+Only access, add, or modify data related to GE Digital APM products via approved GE Digital procedures and processes. Accessing, adding, or modifying data by any other method may result in data corruption, and may void your GE Digital APM product warranty. For more information, consult a member of the GE Digital Professional Services department.
+In GE Digital APM, a family is an organizational unit that helps classify data in the database. GE Digital APM uses two types of families: entity families and relationship families. Families serve to organize information within the database and to help end users locate and classify similar data.Each GE Digital APM family has a corresponding table in the database. Family tables are used to store all the data belonging to a given family, where each row in a family table corresponds to a record in that family.
+GE Digital APM provides many families, both entity families and relationship families, in the baseline GE Digital APM database. In addition, you can create your own families. You can create families as you need to categorize all of your records and provide appropriate names for classifying the type of data that they will store for your organization. Family Hierarchy
+In GE Digital APM, entity families can be organized into a hierarchy so that one family is defined as a subfamily of another family. By creating a hierarchy, you can enhance clarity.
+When you look at the baseline GE Digital APM database, you will see that some families are further divided into subfamilies. For example, the Recommendation family contains several subfamilies that define the types of Recommendation records that you can create.
+
+As you configure your database, you will need to look at all of the different groupings of items that you will manage in GE Digital APM. Then you need to divide these items and name each group, which will become your families. Next, you need to look for situations where one item is a type of another item. In some cases, you may want to create a family that helps form your hierarchy but to which you would not directly save records. In the end, you will probably have a number of families.
+Consider an example where you create three families: Failure, Equipment Failure, Shutdown. These three families are distinctly different, but they also share some commonality: a shutdown is a type of equipment failure and equipment failure is a type of failure.
+If you set up your hierarchy so that all of these families are stored at the root level along with all other families, there would be no connection between one family and another to organize the families logically. A better choice would be to set up families and subfamilies. 
+Each root level will be useful for defining data that is common to its sub-levels. In addition, the metadata is well ordered based on the type of data that is being collected. Since it is not an easy task to change designations after the other metadata elements have been created, you will probably find it easier to organize your database on a paper prior to creating it within the Configuration Manager.
+About Families Delivered with Read-Only Properties
+Baseline families can be delivered with read-only properties such that you will be not be able to perform any of the following actions on the family:Modifying certain properties of the family.Customizing the rules for a family.Creating new fields for the family.Customizing certain properties for the fields within a family.Deleting the fields within a family.Deleting the family.
+In other words, families that are delivered in this way can be managed only by GE Digital APM.
+In the Configuration Manager, when you select a family that has been delivered in this way, the properties that you cannot modify will be displayed as read-only in the interface. In addition, some options that allow you to customize the family or its fields will be disabled. 
+The following table lists the UI elements that are disabled when you select a family that has been delivered with read-only properties.Location in the Configuration ManagerInterface Element 
+Family Information section
+
+ID text boxPhysical Table Name text boxDatabase View Name text box
+Delete Family button
+
+Family Fields section
+Create New Field  Delete Field(s) Data TypeUnit of Measure listField ID text boxID Field check boxSpread to Sub Families check boxHyperlink Field check boxFormula Field check boxKeep History? check boxActive Status check box
+
+About Entity Families and Relationship FamiliesGE Digital APM uses two types of family: Entity and Relationship.An Entity family is an organizational unit that is used for classifying elements within your organization. Records belonging to entity families store information that is related to physical items (e.g., equipment, people, analysis, and inspections) in your company or facility. For example, Full Inspection is an entity family that GE Digital APM provides in the baseline database. An individual Full Inspection would be one entity belonging to that family. Each entity family has a corresponding entity family table in the GE Digital APM database. Entity family records are what you view and manage in the Record Manager.A Relationship family corresponds to a database table that is used to connect two entity family tables. Relationship definitions can be used for each relationship family to specify the entity families to which it relates. For example, in the baseline GE Digital APM database, the Has Reference Documents relationship family relates the Full Inspection entity family with the Reference Document entity family.When two entity families have been related to one another through a relationship family, records within those entity families can be linked, meaning that a connection can be created between the two records. For example, a Full Inspection record might be linked to a Reference Document record that stores information about the item that was inspected. The link itself is defined by a record that is stored in the Has Reference Documents relationship family table.About Families Managed by Product ModulesBaseline entity families can be delivered with their Family Is Managed By Product Module property set to True such that records in that family can be managed using only the module that the family supports.  The Family Managed by Product Modules functionality determines how a record for family will be launched from  (search). If there is a specific route assigned, each time a record in that family is opened from Search, it will use that route to open the record in the specified route. For example, if you have specified a route as #aca/analysis/[ENTY_KEY] in the Asset Criticality Analysis family, the record selected from the search results will always be routed to the specified route, i.e, #aca/analysis/[ENTY_KEY].If you have specified the route to a datasheet in the family and you access the datasheet through search, then the following links and buttons that appear on the datasheet will be active:DeleteSaveNewBaseline families that are delivered with this property setting exist to support specific modules.About Manage ID TemplateThe GE Digital APM uses Manage ID Templates to construct Record IDs and index records in the system. When a record is created in the system, a field ID is created using the values stored in the fields that are included in the ID Template. The Field ID is stored in the ENTY_ID system field of that record. After the Field ID is created, it can be used to search for that record in the GE Digital APM.For example, when you perform a search in the GE Digital APM and specify a value in the search text box, the GE Digital APM searches for the specified keyword(s) in the Field ID's of records in the database. Your search results will include records that contain your keyword(s) in their Field IDs.The following image displays the results for the records that contains the value Repair in the Record ID.Create a FamilyProcedureAccess the Family Management Page.Depending on the type of family that you want to create, select Entity or Relationship.The list of families arranged in a hierarchy appears.Navigate to the family to which you want to add the new family. To add the new family at the root level, select Home.Select .The Information section appears, displaying an empty form.As needed, enter the values in the available fields.
+Select .A new family is created.Note:
+The newly created family is excluded from the search index by default. To add the family to the search index, you must clear the Exclude check box for the family in the Search Configuration page.The newly created family will be available for you in Family Management, whereas to access the family from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the created family will be available only when they log in to the application again.
+About the Entity and Relationship Sections of the Left Pane
+The Entity and the Relationship pane, which appears on the left side of the Family Management page, displays a hierarchy of all the record and relationship families that currently exist in the GE Digital APM.
+At the top of the Entity/Relationship pane, there are two buttons that you can use to toggle between family tabs:
+Entity: Contains a hierarchical view of all of the entity families in the database. The Home family is at the highest level and serves as the parent of all families. Below the Home level, families are sorted in alphabetical order and may be organized into various sublevels.
+Relationship: Contains an alphabetical list of all the relationship families in the database. Relationship families store relationship definitions, which define the connections between entity families.
+The search button () appears below the Entity and Relationship buttons, which you can use to search for a family.
+Depending on which family tab is selected, you can add an Entity or Relationship by selecting the  button.
+Family Information
+The Information section stores the data and physical storage information for a family. The following table provides description of the fields that exist in the Information section. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+FieldDescriptionBehavior and Usage
+Active Status
+Specifies the status of the family.If the box is selected, the family is active. If the box is cleared, the family is inactive.
+Authentication Required to Insert or Update Records
+Specifies whether or not authentication is required to create or modify records in the family. If this box is selected, the password associated with the Security User who is currently logged in is required each time you create or modify a record in that family, and revision history is enabled automatically for that family. If this box is cleared, records in that family can be created or modified without a password. This box is enabled only when an entity family is selected and is cleared by default.
+Caption
+The name of the family.The caption that you provide will appear on the interface to identify the family. The caption is required and must be unique within the system. The name that you enter in the Caption box will automatically populate the ID box and the Physical Table Name box. The Database View Name box will be populated with the caption in the required SQL script format.Important: A family caption can not contain Microsoft SQL Server reserved keywords. For a complete list of reserved keywords, please refer to the Reserved Keywords.
+Description
+The description of a family.You can enter text in the Description box.
+Database View Name
+Specifies that name of the database view that will be used by a family.This is a required field and is populated automatically.
+Enable Site Filtering
+Specifies that the site filtering is selected for the family.By enabling site filtering, the records produced by the family are assigned to a specific site, and then can be accessed by users who have been assigned to the same site.When you create a new family, by default, the check box appears selected. For custom families, you can select or clear the Enable Site Filtering check box . For more information about sites and site filtering, see the Sites topic.
+Family Managed by Product Module
+Specifies whether or not records in the family can be modified only using the associated module and not the Record Manager. If the box is selected, records in the family can be modified only using the associated module. If the box is cleared, records in the family can be modified using the module or the Record Manager. This box is enabled only if you select an entity family. It is disabled if you select a relationship family.
+ID
+The unique ID assigned to the selected family. The ID is a required field and must be unique as compared to other family IDs in the database, but it can be the same as the caption. The family is identified in the hierarchy and in the database by using this ID.Note: The family ID cannot start with a number.
+Module Navigation URL
+The URL that will be used to redirect users from the Record Manager to the associated module when viewing a record belonging to this family in the Record Manager.This box is enabled only if the Family Managed by Product Module box is selected.
+Physical Table Name
+The name of the physical database table that exists for the family.This is a required field and is populated automatically.
+About Families with Authentication Required
+Families can be configured such that authentication is required to create or update records in that family. When authentication is required, Security Users will need to re-enter their passwords before they can save changes to records in that family. In this way, an electronic signature is provided for these changes, which indicates that the user is accountable for any actions recorded under that signature (i.e., changes to data).
+To configure a family in this way, you can set the Authentication Required to Insert or Update Records family property to True. Setting this property to true for a parent family does not change this setting automatically for its subfamilies. After this property is set, the next time a Security User tries to save changes to an existing record or create a new record in that family, a dialog box will appear, prompting the Security User for their password. If the password that the Security User enters does not match the password stored for that Security User, a message will appear, indicating that the authentication failed, and the record will not be saved. 
+Note: If you create or modify multiple records from the same family and save them at the same time, the Re-authenticate to Complete Save dialog box will appear only one time so that you can authenticate all the records at once.
+
+Revision history is also enabled automatically for families with this setting, and the following additional details are displayed on the Record Manager:
+Record created by or modified by: The name of the Security User who created the record originally.Record created on: The date and time on which the record was created originally.
+No baseline family is delivered with the Authentication Required to Insert or Update Records property set to True.
+Modify a FamilyProcedureAccess the Family Management Page.Depending on the type of family you want to modify, select Entity or Relationship.
+Note: You can also search for the family by selecting 
+The list of families arranged in a hierarchy appears.In the family hierarchy, select the family that you want to modify.The workspace for the selected family appears.As needed, modify the details of the family in the following sections:
+InformationFieldsDatasheets
+Family ReportsRelationship DefinitionsState ConfigurationAssociated PagesRules and PoliciesNote: For more information, refer to the Rules and Policies section of the documentation.
+Select .The family is modified.Note: The modified details of the family will be available for you in Family Management, whereas to access the family from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the modified details of the family will be available only when they log in to the application again.Modify the ID TemplatesAbout This TaskThe Manage ID Template feature describes how fields are added, removed, or arranged to modify the record ID of the records available for a given family.Important: All the existing records must be updated, if you modify:The ID template (for example, adding or deleting a field, adding a delimiter, or reordering the fields in the ID template).The behavior of the fields.Note: The record IDs that are constructed based on the ID Template are stored in the ENTY_ID field in the database. The ENTY_ID field can contain a maximum of 255 characters. If required, the record IDs are truncated so that they do not exceed the limit of 255 characters. For example, if the record ID has two fields, and each field can contain a maximum of 255 characters, the ENTY_ID field stores only 255 characters even though the Record ID contains 510 characters.ProcedureAccess the Family Management page.Select the family whose ID template you want to modify.The workspace for the selected family appears.In the Information section, select Manage ID Template.The Manage ID Template window appears, displaying the current ID template and new ID template.Note: The Current ID Template section displays the existing ID template. The modified ID template will appear in the New ID Template section.In the Select a field to add to template box, select the field that you want to add to the ID Template.The field is added to the Field Caption column.Note: If you want to remove a field from the Field Caption column, select the  button appearing next to the field.Tip: If there are multiple fields, and you want to change the order of the fields in the new ID template, drag the fields to arrange the fields in the required order.If required, in the Delimiter column, enter a delimiter for each field.A delimiter is used to separate different fields (for example, an ellipsis or a dash).Select Save.The ID template is modified, and a job is scheduled to update all the existing records associated with the family.Important: When you create a new record, the record ID for that record is created using the ID template that exists for the family at that time. Note: The modified Record ID will be available for you in Family Management, whereas to access the family from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the modified Record ID will be available only when they log in to the application again.Delete a Family
+Note: You cannot delete a baseline family.
+ProcedureAccess the Family Management Page.Depending on the type of family you want to delete, select the Entity or the Relationship.
+Note: You can also search for a family by selecting .
+The list of families arranged in a hierarchy appears.In the family hierarchy, select the family that you want to delete.In the right pane, select .The Delete Family window appears.Select OK.The Delete Family window closes, and a confirmation message appears, indicating that the family is deleted.ResultsWhen you delete a family from the database, the following items are deleted:Successor relationship definitionsPredecessor relationship definitionsFamily rulesFamily datasheetsFamily fieldsPhysical tables and views associated with that familyThe State Configuration associated with that familyNote: If the State Configuration is inherited from the parent family and you are deleting the subfamily, then only the State Configuration associated with the subfamily will be deleted.Note: The deleted family will no longer be available for you in Family Management, whereas it will be available in other modules until you log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the deleted family will be available until they log out from the application.
+
+
+
+
+On this pageAbout FamilyAbout Families Delivered with Read-Only PropertiesAbout Entity Families and Relationship FamiliesAbout Families Managed by Product ModulesAbout Manage ID TemplateCreate a FamilyAbout the Entity and Relationship Sections of the Left PaneFamily InformationAbout Families with Authentication RequiredModify a FamilyModify the ID TemplatesDelete a Family
+
+
+
+
+
+
+
+
+

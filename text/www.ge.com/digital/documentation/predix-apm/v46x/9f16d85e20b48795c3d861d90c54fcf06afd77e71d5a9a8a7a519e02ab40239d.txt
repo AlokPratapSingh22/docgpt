@@ -1,0 +1,67 @@
+
+
+
+Specify Risk Values to Determine an Overall Risk Rank | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Specify Risk Values to Determine an Overall Risk RankAbout This Task
+You can use the Risk Assessment window to select values in various categories that will be used to determine an overall risk rank.
+Note:  These steps assume that you want to specify a risk value on each tab of the Risk Matrix. You can, however, specify that a risk category does not apply to the current risk.
+ProcedureIn GE Digital APM, access the Risk Assessment window.
+Tip:  Refer to a specific module's documentation for details on how to access this window.
+In each tab that contains a risk matrix, select the cell whose value represents the risk for that category.An icon appears in the selected cell. The way in which you accessed the Risk Assessment window determines the icon that appears in the cell.
+If you are defining unmitigated risk (for example, for a Risk in Asset Strategy Management), the  icon will appear.
+If you are defining mitigated risk (for example, for an Action in Asset Strategy Management), the  icon will appear.Note:  When defining mitigated risk, you cannot select a value with a higher probability or consequence than the value that is already represented by the  icon. For example, suppose the  icon appears in the cell at the intersection of the Probable probability (1) and Low consequence (10). In this case, using the  icon, you could not select a value with a probability greater than 1 or a consequence greater than 10.Select the Financial tab, if applicable.In each list or box on the Financial tab, select or enter the necessary value.The values that you type in the Production Loss and Maintenance Cost boxes will be added together to determine the overall consequence, which is displayed in the Consequence box.Note:  If you are defining mitigated risk, the mitigated financial values must be lower than the unmitigated financial values.Select Save.Results
+When you are finished making selections on each tab, the values that appear next to each tab name (except for a financial tab) are used in a calculation to determine the overall risk rank.In the corresponding Risk Matrix record, if the Use Maximum Risk Rank check box is selected, the risk rank will equal the largest value on the tabs.-or-In the corresponding Risk Matrix record, if the Use Maximum Risk Rank check box is not selected, the risk rank will equal the sum of values on each tab.The calculated risk rank is displayed in either the Unmitigated Risk Rank section or the Mitigated Risk Rank section, depending on the type of risk you are working with.
+The calculated risk rank is displayed in either the Unmitigated Risk Rank section or the Mitigated Risk Rank section, depending on the type of risk you are working with.
+
+
+
+
+
+
+
+
+
+
+
+

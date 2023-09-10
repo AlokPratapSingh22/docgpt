@@ -1,0 +1,102 @@
+
+
+
+Second Quarter of 2022 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesFirst Quarter of 2023
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Release Notes
+Second Quarter of 2022
+
+
+
+
+
+
+
+Second Quarter of 2022Release Date: June 24, 2022June 24, 2022This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in System Reliability, when scenarios with very short action intervals are run in Monte Carlo simulation, the simulation will take a long time to complete. This issue has been resolved. Now, if you attempt to create an action interval of one hour or less, a message will appear stating that simulations with action intervals of less than one hour are not permitted.DE180465Previously, when running Monte Carlo simulations, it was possible for a simulation to run indefinitely without completing. This restricted the server space for other users and for other queued simulations. This issue has been resolved. Now, a configurable limit of four hours has been set for a simulation run; once this limit is reached, the simulation run will be terminated.DE180463
+
+
+
+
+
+On this pageRelease Date: June 24, 2022June 24, 2022
+
+
+
+
+
+
+
+
+

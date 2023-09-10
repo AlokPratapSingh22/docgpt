@@ -1,0 +1,131 @@
+
+
+
+Asset Hierarchy Configuration | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Asset HierarchyOverview
+Workflow
+Asset Hierarchy Configuration
+Data Loader
+Troubleshooting
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Asset Hierarchy
+Asset Hierarchy Configuration
+
+
+
+
+
+
+
+Asset Hierarchy ConfigurationAsset Hierarchy Configuration
+GE Digital APM is built on the premise that, within your company, there are multiple records that can be organized into a hierarchy. This organization relies on the parent-child relationship between records to represent the fact some records can belong to other records. The Hierarchy can be modified to reflect a custom family. However, the baseline configuration relies on the Functional Location family and the fields in each Functional Location record to define which location each represents. Because there is only one Functional Location family, it is used to store data about all of your locations, where the values in each Functional Location record identify which type of location it is.The baseline configuration assumes that Functional Locations have Functional Locations and that Equipment is found at the lowest levels of Functional Locations. For example, three pieces of equipment might belong to the same Functional Location, meaning the Functional Location resides on a higher level of the hierarchy than the Equipment.More Details: Baseline Configuration
+In the baseline configuration, there are two levels reflected in the Asset Hierarchy: the Root and a secondary level. The primary level of the Hierarchy, the Root, reflects the Functional Location relationships. The second level of the hierarchy reflects Equipment related to Functional Locations. The hierarchy first displays the Root Function Location, and drills down to child Functional Locations based on your selections. The hierarchy will continue to do so until there are no child relationships for the selected Functional Location. Then, using the criteria defined in the second level, the hierarchy will display Equipment records related to the selected Functional Location.
+The baseline configuration is as follows:
+
+Root: The primary level of the hierarchy.
+Parent Family: Functional Location
+Relationship: Functional Location Has Functional Location(s)
+Child Family: Functional Location
+Display Field: Functional Location Description
+Taxonomy Category: Taxonomy Category
+Taxonomy Class: Taxonomy Class
+Taxonomy Type: Taxonomy Type
+
+Secondary Level: The second level of the hierarchy.
+Parent Family: Functional Location
+Relationship: Functional Location Has Equipment
+Child Family: Equipment
+Display Field: ENTY_ID
+Taxonomy Category: Taxonomy Category
+Taxonomy Class: Taxonomy Class
+Taxonomy Type: Taxonomy Type
+
+Important: Equipment or functional location with multiple parent functional location is not supported in Asset Hierarchy.To find the duplicate keys, run the below query in GE Digital APM:SELECT MV_AST_HRCY_DUP.parent_enty_key
+, PAR_FMLY.FMLY_CAPTION_TX "PARENT_FMLY"
+, MV_AST_HRCY_DUP.enty_key "CHILD_ENTY_KEY"
+, CHILD_FMLY.FMLY_CAPTION_TX "CHILD_FMLY"
+, MV_AST_HRCY_DUP.enty_id "CHILD_ENTY_ID"
+, MV_AST_HRCY_DUP.the_level
+, MV_AST_HRCY_DUP.path
+FROM MIV_MI_AST_HRCY_MV_DUP MV_AST_HRCY_DUP
+ JOIN MI_FAMILIES PAR_FMLY ON PAR_FMLY.FMLY_KEY = MV_AST_HRCY_DUP.parent_fmly_key
+ JOIN MI_FAMILIES CHILD_FMLY ON CHILD_FMLY.FMLY_KEY = MV_AST_HRCY_DUP.fmly_key
+ORDER BY MV_AST_HRCY_DUP.enty_key Asc
+Access the Asset Hierarchy Configuration PageProcedureAccess the Operations Manager page, and then select Asset Hierarchy Configuration.The Asset Hierarchy Configuration page appears, displaying the Asset Hierarchy configuration.Modify the Asset Hierarchy ConfigurationAbout This Task
+Note: You only need to modify the Asset Hierarchy if you want to change the baseline configuration. 
+ProcedureAccess the Asset Hierarchy Configuration page.For the section you want to use as the primary level of the hierarchy, select Root. In the Root section, select a value for the following as necessary: 
+
+Parent Family: The list of all entity families that exist in the database.
+Relationship: The list of relationship families that exist in the database for the selected parent family.
+Child Family: The list of entity families that exist in the database that are linked to the selected parent family through the selected relationship family.
+Display Field: The list of fields from child families.Note: When using the Oracle Database, you cannot assign a Long Text field as the Display Field.
+Taxonomy Category: A list of equipment categories (e.g., electrical is a category of equipment).
+Taxonomy Class: A list of types of equipment classifications (e.g., capacitor is a class of electrical equipment).
+
+Taxonomy Type: A list of types of equipment (e.g., series capacitor is a type of capacitor).
+Tip:  In GE Digital APM, taxonomy refers to the classification systems used for identifying equipment. Equipment taxonomy is broken down into three sections: Category, Class, and Type. 
+
+If you want to add another level, in the upper left corner of the page, select . To save, but not apply, the modifications, select .
+-or-
+To apply the modifications, select , and then select Rebuild.
+The modifications are applied, and are reflected on the Assets page.
+Schedule an Asset Hierarchy RebuildYou can schedule an Asset Hierarchy rebuild to occur on a one-time or recurring basis.ProcedureIn the module navigation menu, select
+Admin > Operations Manager > Asset Hierarchy Configuration.In the page, select , then select the Enable Schedule check box, and then select Schedule.In the Edit Schedule window, select either One time or Recurrence.In Time Zone, select the time zone in which you want the first scheduled rebuild to occur.In Start, specify the date and time at which you want the first scheduled rebuild to occur.If you selected Recurrence, in the Every section, specify the frequency at which you want the rebuild to occur.If you selected Recurrence, in the End section, specify when the recurring rebuild should end.Select Save.
+The Edit Schedule window closes.
+In the Asset Hierarchy Configuration page, select Save.Results
+The Asset Hierarchy rebuild is scheduled.
+
+
+
+
+
+On this pageAsset Hierarchy ConfigurationAccess the Asset Hierarchy Configuration PageModify the Asset Hierarchy ConfigurationSchedule an Asset Hierarchy Rebuild
+
+
+
+
+
+
+
+
+

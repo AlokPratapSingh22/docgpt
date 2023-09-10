@@ -1,0 +1,99 @@
+
+
+
+Asset Restrictions Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset RestrictionsAsset Restrictions Overview
+Restriction Policies
+
+
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Asset Restrictions
+Asset Restrictions Overview
+
+
+
+
+
+
+
+Asset Restrictions OverviewAbout Asset RestrictionsUse Asset Restrictions to restrict users or user groups from viewing the decommissioned assets.If a user is given permission to an Enterprise, Site, or Segment, the user can access all the assets including the decommissioned assets within the Enterprise, Site, or Segment. The tenant administrators or a user with Asset fine-grained permissions in the tenant can restrict the users to access the assets in the decommissioned state.A Restriction Policy table listing restrictions policies and their descriptions is included. Selecting a link from the table opens the Restrictions page for the selected policy. Metadata associated to the selected policy populates the applicability, attribute, action, and attribute value information on the Restrictions page. In the User / User Group Selection section on the Restrictions page, you can toggle between User Groups and Users. Once you have selected User Groups or User, the relevant table displaying members that have the selected policy applied appears. You can add new members, remove members, and search for members in this section. You can add members to the selected policy singly, or in bulk. Members are validated and confirmed when you add them.The default settings for asset restrictions is the selected asset access is restricted.Tip: If you have decommissioned an asset, you cannot recommission it using ingestion. Use the API to add the asset.The default settings for tag restrictions is the selected tag access is not restricted.Add a User to an Asset RestrictionYou can apply asset restrictions to one or more selected users.About This Task
+Use Asset Restrictions to prevent one or more selected users from viewing or querying a selected asset configured within an asset restriction.
+A Users table provides a listing of users that were previously applied to the asset restriction.
+ProcedureIn the module navigation menu, go to
+Assets.Select Asset Restrictions on the navigation menu.Select a policy link in the Restriction Policy table. The Restriction page for the selected policy appears.Select Users from the User / User Group Selection section.In the Users table, do one of the following:Enter a User Name or User ID into the Users Filter to detect a previously added user in the Users table. If the user is already added, you need do nothing further.Select  to add a new user.In the Add Users window, enter the User Name or User ID in the Add Users box. As you type a drop-down list appears with possible user choices. Select a user from the drop-down list.The User Name for the selected user appears in the Selected Users box. You can add multiple users to the Selected Users box.To add multiple users, enter the User Name for each user, select from the options presented, and then repeat for the next user. GE Digital APM checks for matching users automatically.Select Add.The selected users are added to the restriction policy. The user names appear in the list in the Users table.Remove a User from an Asset RestrictionYou can remove a user from an asset restriction to which they were previously added.About This Task
+Adding users to an asset restriction prevents the user from viewing or querying the assets configured for the restriction. If you no longer want to restrict a user, you can remove the user from an asset restriction to which they were previously added.
+ProcedureIn the module navigation menu, go to
+Assets.Select Asset Restrictions on the navigation menu.Select a policy link in the Restriction Policy table. The Restriction page for the selected policy appears.Select Users from the User / User Group Selection section.In the Users table, enter a User Name or User ID into the Users Filter box to detect a previously added user.Alternatively, you can scroll through the Users table and hover over a selected user to display an X for the user.Select the X next to the selected user.In the Remove User window, select Remove.The selected user is removed from the restriction policy. The user name is removed from the Users list in the Users table.Add a User Group to an Asset RestrictionYou can apply asset restrictions to the associated users in one or more selected user groups.About This Task
+Use Asset Restrictions to prevent users within a user group from viewing or querying a selected asset configured within an asset restriction.
+A User Groups table provides a listing of user groups that were previously applied to the asset restriction.
+ProcedureIn the module navigation menu, go to
+Assets.Select Asset Restrictions on the navigation menu.Select a policy link in the Restriction Policy table. The Restriction page for the selected policy appears.Select User Groups from the User / User Group Selection section.In the User Group Selection table, do one of the following:Enter a User Group Name into the User Groups Filter to detect a previously added user group in the User Groups table. If the user group is already added, you need do nothing further.Select  to add a new user group.In the Add User Groups window, enter the User Group Name in the Add User Groups box. As you type a drop-down list appears with possible user group choices. Select a user group from the drop-down list.The User Group Name for the selected user appears in the Selected User Groups box. You can add multiple user groups to the Selected User Groups box.To add multiple user groups, enter the User Group Name for each user group, select from the options presented, and then repeat for the next group. GE Digital APM checks for matching user groups automatically.Select Add.The selected user groups are added to the restriction policy. The user group names appear in the list in the User Groups table.Remove a User Group from an Asset RestrictionYou can remove user groups from an asset restriction to which they were previously added.About This Task
+Adding user groups to an asset restriction prevents the associated users in the group from viewing or querying the assets configured for the restriction. If you no longer want to restrict a user group, you can remove the user group from an asset restriction to which it was previously added.
+ProcedureIn the module navigation menu, go to
+Assets.Select Asset Restrictions on the navigation menu.Select a policy link in the Restriction Policy table. The Restriction page for the selected policy appears.Select User Groups from the User / User Group Selection section.In the User Groups table, enter a User Group Name into the User Groups Filter to detect a previously added user group.Alternatively, you can scroll through the User Groups table and hover over a selected user group to display an X for the group.Select the X next to the selected user group.In the Remove User Group window, select Remove.The selected user group is removed from the restriction policy. The user group name is removed from the list in the User Groups table.
+Related tasksFilter Audit LogsDecommission an Asset InstanceRecommission an Asset InstanceAdd Assets to Users and Groups
+
+
+
+
+On this pageAbout Asset RestrictionsAdd a User to an Asset RestrictionRemove a User from an Asset RestrictionAdd a User Group to an Asset RestrictionRemove a User Group from an Asset Restriction
+
+
+
+
+
+
+
+
+

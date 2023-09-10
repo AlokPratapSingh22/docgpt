@@ -1,0 +1,115 @@
+
+
+
+Production Analysis: Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production AnalysisProduction Analysis: Overview
+Production Analysis: Workflow
+Production Analyses
+Production Data
+Production Lines
+
+
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Production Analysis
+Production Analysis: Overview
+
+
+
+
+
+
+
+Production Analysis: OverviewOverview of Production AnalysisReliability Analytics
+The Reliability Analytics module provides a collection of tools that apply reliability engineering principles to help you make tactical (short-term) and strategic (long-term) decisions for maintenance and operational equipment management activities. It also provides: A means for analyzing historical failure data to identify trends and predict future failures.A mechanism for simulating what if scenarios regarding the reliability of a system to determine if a new or modified strategy will be effective. The Reliability Analytics module provides the following types of tools: Production AnalysisSystem Reliability AnalysisSpares AnalysisReliability Distribution AnalysisProbability Distribution AnalysisReliability Growth AnalysisAutomation Rules
+                                Each tool provides a unique set of features that allow you to analyze data to develop strategies to improve reliability.
+Production Analysis
+Production Analysis is a tool that allows you to quantify production losses and the cost associated with them using a visual representation of production output. The analysis will help you evaluate your production for weaknesses and develop strategies for improving production reliability.
+Production Analysis WorkflowThis workflow provides the basic, high-level steps to develop a Production Analysis. The steps and links in this workflow do not necessarily reference every possible procedure.
+
+Collect production output data
+, which are numeric values representing the production output of a production process being analyzed over some period of time.
+Create a new Production Analysis
+from a GE Digital APM query or dataset, or from manually entered data. The Production Analysis should be based on the production output data collected in the previous step. Define the unit of measure for your production output data. Unit of measure is not taken into account when you first create the analysis, even if a unit of measure is associated with your production output values. After the analysis has been created, however, you can label the production output data with the appropriate unit by setting the unit of measure for the analysis.
+
+Define the cost associated with each unit of production output
+ to calculate the cost of your production losses.
+
+Draw the Demonstrated Line
+, which represents the demonstrated production output when the unit is operating at its observed rate of capability.
+
+Draw the Process Reliability Line
+, which is the first point at which production output begins to deviate significantly from the Demonstrated Line.
+
+Draw the Nameplate Line
+, which represents the ideal production output of the unit under ideal conditions.
+
+Draw one or more Custom Lines
+, which let you make a visual comparison between your demonstrated production output and other observed or theoretical production outputs.
+Evaluate the results by viewing the calculations in the 
+Production Loss Regions pane.
+
+
+
+
+On this pageOverview of Production AnalysisProduction Analysis Workflow
+
+
+
+
+
+
+
+
+

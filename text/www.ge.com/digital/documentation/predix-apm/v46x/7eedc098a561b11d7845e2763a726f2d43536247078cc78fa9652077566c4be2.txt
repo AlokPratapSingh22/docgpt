@@ -1,0 +1,80 @@
+
+
+
+Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Overview
+
+
+
+
+
+
+
+OverviewAnalysis OverviewThe GE Digital APM Analysis module allows you to visualize and analyze data from sensors on assets. You can explore the time series data related to selected assets, and investigate potential issues with the assets.Use Analysis to select assets in the Context Browser to investigate, access data in an existing view or template, and create ad hoc analysis views where you can select the assets and tags to appear for analysis. Analyzing this data can help diagnose the root cause of an alert, respond to a customer query about asset performance, or find issues before they become problematic.You can filter the asset hierarchy to narrow options for selection. See Filter the Context Browser for more information.You can search the asset hierarchy to rapidly find an asset of interest. See Search the Context Browser for more information.You can add and compare an asset context from the Analysis Tag Tree Panel. See Add and Remove Multiple Assets in Analysis for more informationYou can create a time series analysis view or an event data analysis view using the ad hoc selections. The time series analysis view uses time series data for the asset context you select. The event data analysis view uses time series data within event frames for the asset context you select. Both the time series analysis and event data analysis views can be saved as templates.Note: You can also perform analysis related to Operations Performance Monitoring (OPM). For more information on these analyses, refer to the https://www.ge.com/digital/documentation/opm/. The OPM services are available subject to subscription by tenant.Analysis Templates can be associated with Alerts to provide visualization of the information related to the alert.The Tag Tree Panel is an integral part of chart creation, and includes panes for:Tag Tree Browser. The Tag Tree Browser includes the Tag Browser section where you can interact with tags, asset attributes, and tag expressions. You can add additional assets and their tags in the Tag Browser section. A Search box allows you to search for any tags included in the asset context on the pane. The Tag Browser section contains the tag section, which contains the information regarding the charts that are plotted in the template and all the tags associated with the charts in the template. Some charts use pairs of tags where the actions are based on the pairs rather than the individual tags. You cannot drag tags in the Plotted Tags list to the charts in the view. You can drag tags in the Tag Tree Browser to a chart.Tag Expressions. The Tag Expressions pane allows you to create and update tag expressions that are then added to the Tag Tree Browser for the asset context. Tag expressions are simple calculations using assets and tags, which can be dragged to a chart from either the Tag Expression pane or the Tag Tree Browser. Tag expressions can include conditions, existing tag expressions, and functions. Tag expression can be filtered and muted like any other tag.Tag Filters. Plotted Tags appear and can be filtered in the Tag Filters pane. Filtering for the plotted tags can be inverted.Search Browser. The Search Browser pane allows you to search throughout the enterprise for specific tags using modifiers. Modifiers include the tag name, source key, tags in the current asset context, tag classification name, and tag attribute value. You can drag tags in the Search Browser to a chart.The following definitions are helpful for understanding the Analysis module:Analysis ChartCollection of tags, tag attributes, and tag expressions that are associated with a chart within the Analysis template.Alert Analysis Chart ViewChart view generated using an analysis template and the alert information to provide data visualization for an alert. Alerts require an alert template to determine the analysis chart views it uses or makes available for use.Analysis TemplateTime series data for plotted tags associated with a specific asset, group of assets, or asset classifications appear. You can create an analysis template for use in an alert template.Analysis templates automatically populate charts with alert, asset, and time range information.Analysis templates can define a date range and data resolution for a view, or the default date range and data resolution configured to appear in an alert. The default time range is 15 days prior to the present.An analysis template contains a selected asset, a context ribbon, and one or more cards. Analysis templates can be designated to be private or public.Analysis templates can be associated with an asset instance or an asset classification. When you select an analysis template associated with the asset instance, you are directly navigated to the asset template. However, when you select the analysis template associated with the classification template, all the assets associated with the same classification appears in the context browser, where you can select the required asset to access the asset template.Ad hoc analysis views can be generated for time series analysis or event data analysis within time series.Analysis CardA container for one or more charts of different types.Analysis cards allow you to add or delete charts in the card, modify the name of the card, add a card, share a card, or change the card layout.Tag Tree PanelAllows access to the Tag Tree Browser, Tag Expression, Tag Filters, and Search Browser.Tag Tree BrowserAllows you to select assets and tags, search for tags to plot, view the Plotted Tag list, view tag information, and plot tags individually or in bulk.Tag ExpressionAllows you to create and share tags that contain simple calculations using available tag data. You can add conditions, add predefined functions, and embed existing tag expressions within a tag expression.Tag FiltersAllows you to globally filter and share plotted tags to view available data within a specified range. Allows you to invert the data range to view data outside the entered range. Allows you to globally mute a filter for a specific tag.Search BrowserAllows you to search across the enterprise for tags associated with all assets, correlated tags, and tags associated with modifiers such as UOM.TagName for a sensor or calculated time-series data. You can toggle between the GE tag alias and customer source tag name. You can now include special characters while naming a tag. Select a plotted tag name for the tag name and alias to appear.Access the Analysis Browser PageProcedureIn the module navigation menu, select
+Analysis.The Analysis Browser page appears, displaying information about the Analysis templates that are available. Access a Template in the Analysis BrowserProcedureAccess the Analysis Browser Page and then from the ANALYSIS NAME column, select the template that you want to view.For an analysis template associated with the classification template, the Context Browser appears displaying all the assets associated with the same classification.Note: When you select an analysis template associated with an asset instance, the selected asset template appears.
+In the Context Browser, select the specific asset for which you want to access the asset template.The analysis template of the selected asset appears.Note: To navigate back to the Analysis Browser page, in the analysis template header, select  .ResultsYou can view and access analysis templates based on your user privileges. Filter a Template Browser ListProcedureAccess the Analysis Browser Page.Type a few characters in the Filter text box below the column header.For example, to find all entries with template type of classification, enter Class in the Filter text box for the TEMPLATE TYPE column.Note: By default, the Filter text box appears below the column header of all the columns. If needed, select  to remove the text box.Alternatively, select , to view the pre-defined filter sets that you can use to filter the analysis templates. For example, to find all entries with template type of classification, select Classification in the TEMPLATE TYPE column filter set.Note: The  option is not enabled for the ANALYSIS NAME, CREATED DATE, and UPDATED DATE columns. The data in the column is filtered, showing all entries with template type Classification.ResultsYou can filter the columns in the Analysis Browser page to narrow the results.Show Columns in the Analysis BrowserProcedureAccess the Analysis Browser Page.From the column chooser drop-down list box, select the check box next to the column name that you want to view.The selected column appears in the browser. Hide Columns in the Analysis BrowserProcedureAccess the Analysis Browser Page.From the column chooser drop-down list box, clear the check box next to the column name that you want to hide.The selected column is hidden in the browser. Create AnalysisProcedureAccess the Analysis Browser Page.In the Analysis Browser page, select Create Analysis.The Choose New Analysis Type dialog-box appears with the following analysis type:CSV AnalysisESP AnalysisESP OptimizationEvent Data AnalysisEvent Frame AnalysisTime Series AnalysisWhat-If AnalysisNote: The analysis types are available based on the user privileges.Select the analysis type for which you want to create analysis.The Context Browser appears for all types of analysis except for CSV Analysis.Note: When you select CSV Analysis, you are prompted to upload the CSV file. You can access this file directly in the CSV analysis view without navigating through the Context Browser.Select the asset that you want to use.The analysis workspace appears.Resize the Analysis Chart AreaAbout This TaskYou can expand or collapse the navigation bar to accommodate analysis charts. ProcedureTo collapse the expanded navigation bar, select  at the top of the navigation bar.The navigation bar collapses until only the module icons appear. Any analysis charts that appear adjust to fit the available space. To expand the collapsed navigation bar, select  at the top of the navigation bar.The navigation bar expands for the module icons and names to appear. Any analysis charts that appear adjust to fit the available space.
+Related tasksFilter the Context BrowserSearch the Context BrowserAdd or Remove Multiple Assets in Analysis
+
+
+
+
+On this pageAnalysis OverviewAccess the Analysis Browser PageAccess a Template in the Analysis BrowserFilter a Template Browser ListShow Columns in the Analysis BrowserHide Columns in the Analysis BrowserCreate AnalysisResize the Analysis Chart Area
+
+
+
+
+
+
+
+
+

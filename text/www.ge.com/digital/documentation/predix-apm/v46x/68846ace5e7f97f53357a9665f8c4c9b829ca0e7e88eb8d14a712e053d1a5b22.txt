@@ -1,0 +1,112 @@
+
+
+
+First Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+Workflows
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data Loaders
+Admin
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+Release Notes
+First Quarter of 2019
+
+
+
+
+
+
+
+First Quarter of 2019Thickness MonitoringThis topic provides a list of product changes released for this module on the dates listed below.Release Date: March 29, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDThickness Monitoring now supports TML Groups with linked child TML Groups. You can configure this feature in the TM Family Preferences.US312372The time required to load the Analysis Overview page for an asset has been reduced.US312357The Thickness Monitoring (TM) Equipment and Thickness Monitoring (TM) Functional Location Data Loaders have been enhanced to skip any blank cells when you create or update records using the data loaders.US300470To enhance the data loading process for large amounts of data and to prevent the failure of data load batches that take longer than five minutes, the Thickness Measurement (TM) Equipment data loader and the Thickness Measurement (TM) Functional Location data loader have been enhanced. To facilitate this enhancement and to prevent timeouts, the TM Equipment Data Loader and the TM Functional Location Data loader now split large amounts of data into the following transaction scopes:Asset Level DataTML Groups in 100-count batchesThickness Measurement Locations in 100-count batchesMeasurements in 250-count batches In addition to these default values, you can modify these transaction scopes if required.US309806, DE98795To prevent failure of TML batches that took longer than five minutes, the TML renewal functionality has been enhanced to perform the renewal job through a scheduler. Performing the job through a scheduler provides the following advantages: You can renew a large number of TMLs without any timeout errors. You can view the progress of the job in the Renew TMLs window.You can close the Renew TMLs window without cancelling the job.You can view the current and past job details from the scheduler.US310307To prevent failure of TML batches that took longer than five minutes, the TML nominal measurement creation functionality has been enhanced to perform the renewal job through a scheduler. Performing the job through a scheduler provides the following advantages: You can create the nominal measurement for large number of TML records without any timeout error.You can view the progress of the job in the Nominal Measurements window.You can close the Nominal Measurements window without cancelling the job.You can view the current and past job details from the scheduler.US312370
+Table 2. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, if the Asset Hierarchy was configured to use the Equipment Has Equipment relationship, the Asset Hierarchy navigation links could not differentiate between a parent Equipment and a child Equipment. This issue has been resolved. DE103536Previously, when you attempted to send TML data to a DMS Go, DMS Go+, and DMS2 datalogger devices, the data was not sent to the device if the logged in user culture was set to any culture other than English (United States). This issue has been resolved.DE94734Previously, in the Receive From section, if you received readings from the datalogger and then navigated away from the Receive From section, the readings were not retained. This issue has been resolved. DE94438Previously, if the number format of the user account that is used to run the Meridium Device Service is different from the number format of the English (United States) culture, when you received thickness measurement data from a TM Datalogger, the measurement values were incorrect. This issue has been resolved.DE92138Previously, when you performed any operation that created new records, such as renew TMLs, bulk analysis of TM assets, or other such operations, multiple scheduler jobs were created, which resulted in creation of duplicate records. This issue has been resolved.DE88871Previously, the allowable stress value for a Pressure Vessel component was populated incorrectly if you used the following combination of values::Stress Lookup Table: Pressure VesselsBase Material Construction Code: ASME VIII DIV 1Base Material Code Year: 2010Base Material Spec: SA-387Base Material Grade: Class 1 or Class 2 (for example, 11-CL2)This issue has been resolved.DE87370
+Release Date: January 25, 2019
+Table 3. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo enhance the data loading process for large amounts of data and to prevent the failure of data load batches that take longer than five minutes, the Thickness Measurement (TM) Equipment data loader and the Thickness Measurement (TM) Functional Location data loader have been enhanced. To facilitate this enhancement and to prevent timeouts, the TM Equipment Data Loader and the TM Functional Location Data loader now split large amounts of data into the following transaction scopes:Asset Level DataTML Groups in 100-count batchesThickness Measurement Locations in 100-count batchesMeasurements in 250-count batches In addition to these default values, you can modify these transaction scopes if required.US310233
+
+
+
+
+
+On this pageThickness Monitoring
+
+
+
+
+
+
+
+
+

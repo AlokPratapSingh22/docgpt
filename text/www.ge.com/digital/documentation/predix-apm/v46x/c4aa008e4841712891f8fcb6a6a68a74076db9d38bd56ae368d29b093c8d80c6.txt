@@ -1,0 +1,132 @@
+
+
+
+RBI Analysis Export | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+RBI Analysis Export
+
+
+
+
+
+
+
+RBI Analysis ExportAbout RBI Analysis ExportRBI Analysis Export workspace allows you to view analyses that can be exported with the related asset and component data. You can export the data in the RBI data loader template format for easy data modification and re-importing.Note: When exporting the existing analyses and component data in the RBI Analysis Export section, the (Picklist) sheet in the RBI data loader template is excluded. To reference the valid values for picklist fields, you can download the RBI data loader template in the Data Loaders workspace.When to Export
+
+Export is useful when you want to evergreen or re-assess existing analyses based on triggers such as time, process variations, inspection, or thickness updates. These changes can include the implementation of risk mitigation strategies or maintenance based on your inspection plan.Export is also useful for providing a quick solution to bulk edit current analyses in the Created state and their related components. After exporting the records which need to be modified, you can update the records in the resulting excel file. After updating, you can re-import using the RBI Data loader process.
+
+What to Export
+The data displayed in the RBI Analysis Export workspace is based on the catalog query \\Public\Meridium\Modules\Risk Based Inspection\Queries\Data Export Analyses - 581. By default, this query returns the analyses in the Created state that are linked to RBI Components on Assets, which fall within the selected level of the asset hierarchy. This query has the following parameters:Asset: The query returns the analyses of the assets that are available after the selected value in the asset hierarchy. By default, this parameter displays the current asset hierarchy context of the RBI Overview page when navigating to the RBI Analysis Export workspace. Analysis State: The query returns analyses for only those assets which are in the selected state, Created or Active. The default value of this parameter is Created. 
+The export tool takes the Component Entity Key, Asset Entity Key, and Analysis Entity Key from the selected query results to determine what data to export. The following families are considered on each exported worksheet:Asset: Equipment and Functional locationRBI Component:Criticality RBI Component – Cylindrical ShellCriticality RBI Component – Exchanger BundleCriticality RBI Component – Exchanger HeaderCriticality RBI Component – Exchanger TubeCriticality RBI Component – PipingCriticality RBI Component – Tank BottomRBI_581_Analysis: RBI 581 Risk AnalysisRBI_581_Consequence: RBI 581 Consequence EvaluationDME_Lining: 581-Internal Component Lining Damage Degradation Mechanisms in the RBI 581 Thinning and Lining EvaluationDME_AST: 581-Atmospheric Tank Bottom Corrosion Degradation Mechanisms in the RBI 581 Thinning and Lining Evaluation family:581-High Temperature Oxidation581-Cooling Water Corrosion581-High Temperature H2/H2S Corrosion581-Amine Corrosion581-Hydrofluoric Acid Corrosion581-Sulfuric Acid Corrosion581-Hydrochloric Acid Corrosion581-Acid Sour Water Corrosion581-High Temperature Sulfidic and Naphthenic Acid581-Alkaline Sour Water Corrosion581-Soil Side Corrosion581-Thinning DamageDME_Thinning: The following Degradation Mechanisms are available in the RBI 581 Thinning and Lining Evaluation family:DME_ExternalDamage: RBI 581 External Damage EvaluationDME_ExternalCracking: RBI 581 External Cracking Damage EvaluationDME_Cracking: RBI 581 Cracking Damage EvaluationDME_HTHA: RBI 581 HTHA Fracture Damage EvaluationDME_BrittleFracture: RBI 581 Brittle Fracture Damage Evaluation
+RBI Analysis Export Data
+The RBI Analysis Export allows you to bulk review the analyses and related data, and subsequently import it to GE Digital APM. You can export the data in the RBI 581 Data Loader format to enable importing and updating data. 
+To match the RBI 581 Data Loader format, the following lookup fields are included in each sheet:Asset: Equipment ID, CMMS System, Equipment Technical NumberRBI_Component: Asset Lookup Fields, Component, Component Type, Component FamilyRBI_Criticality_Analysis: Component Lookup Fields, Analysis Unique IDConsequence_Evaluation: Analysis Lookup Fields, ConsequenceAll DME Sheets: Analysis Lookup Fields, Damage MechanismDegradation_Mechanism: Analysis Lookup Fields, Damage Mechanism
+Following the lookup fields, datasheet fields for each family associated with the template sheet are exported with the following exceptions:System Fields: You cannot edit these fields. These fields are maintained by GE Digital APMOutput Fields: These fields are calculative. You cannot set these fields. Output fields are fields, which are not copied when an analysis is duplicated. 
+The default datasheet in the Family Management determines the fields to be exported for each family. If there is no datasheet marked as Default in Family Management for a family, then the fields from the first available datasheet is used.
+System Fields Excluded from Export
+These fields are usually disabled in the datasheet.Table 1. Component System FieldsField IDField CaptionMI_CCRBICEB_FLD_VLD_581_SH_S_FFluid Valid for 581 Analysis - Shell SideMI_CCRBICOM_EQUIP_FAMIL_CAsset FamilyMI_CCRBICOM_CALC_INV_NCalculated InventoryMI_CCRBICOM_FLD_VLD_581_FFluid Valid for 581 AnalysisMI_CCRBICOM_TOX_FLU_VLD_581_FToxic Fluid Valid for 581 AnalysisMI_RBICOMPO_COMPO_STATUS_CComponent StatusMI_RBICOMPO_EQUIP_CAssetMI_RBICOMPO_EQUIP_TYPE_CAsset TypeMI_RBICOMPO_FUNCT_LOCAT_CFunctional LocationTable 2. Analysis System FieldsField IDField CaptionMI_581RANAL_DATA_CONFIDENCE_CData ConfidenceMI_581RANAL_FLD_VLD_581_FFluid Valid for 581 AnalysisMI_581RANAL_MTRL_YLD_STRNGTH_NMaterial Yield StrengthMI_581RANAL_RELEASE_FLD_PHSE_CRelease Fluid PhaseMI_581RANAL_TOX_FLD_VLD_581_FToxic Fluid Valid for 581 AnalysisMI_AN_ANALY_ID_CHRAnalysis IDMI_AN_ANALY_TYPE_CHRAnalysis TypeMI_CRITANAL_COMP_CComponentMI_CRITANAL_COMP_TP_CComponent TypeMI_CRITANAL_EQ_ID_CAsset IDMI_CRITANAL_EQ_ITEM_TYPE_CCriticality Item TypeMI_CRITANAL_MAN_FAC_NManagement FactorMI_CRITANAL_MAN_SCOR_NManagement ScoreTable 3. Consequence System FieldsField IDField Caption
+MI_RBI_EVN0_OUTAGE_MULTI_N
+Equipment Outage Multiplier
+MI_RCONEVAL_POP_DENS_N
+Population DensityTable 4. Degradation Mechanism Evaluation System FieldsField IDField CaptionMI_581DMCHE_CRN_RTE_FCR_DM_1_NCorrosion Rate Factor Damage State 1MI_581DMCHE_CRN_RTE_FCR_DM_2_NCorrosion Rate Factor Damage State 2MI_581DMCHE_CRN_RTE_FCR_DM_3_NCorrosion Rate Factor Damage State 3MI_581DMCHE_FLOW_STRSS_VRNCE_NFlow Stress VarianceMI_581DMCHE_PRESSURE_VARINCE_NPressure VarianceMI_581DMCHE_THINNING_VARINCE_NThinning VarianceMI_581THNL_API_653_MNTE_ADT_NAPI 653 Maintenance AdjustmentMI_RBDEMEEV_DEG_MEC_DESC_CDegradation Mechanism DescriptionMI_RBDEMEEV_DF_NDF
+RBI Analysis Export Best Practices
+
+The RBI Analysis Export workspace displays the analyses in the Created state by default. Using the RBI 581 Data Loader template, you can review the data for the analyses and re-import them into GE Digital APM. When you re-import the data, any modifications that are made to the RBI Analyses and RBI Component data in GE Digital APM, are updated. The RBI Analysis, CE, and DME updated are looked up based on the defined lookup fields and the Analysis Unique ID (MI_ANALYSIS_ID). To export an active analysis with a state other than Created and re-import it as a new analysis in a Created state, consider the following steps:Select Active for the Analysis State query parameter to return the active analysis and export.Update the MI_ANALYSIS_ID column on the analysis, consequence evaluation and degradation mechanism evaluation sheets to a unique value before importing the file into GE Digital APM. This creates a new Analysis with ID matching the value provided in the data loader template.
+
+
+Note:
+Data will be exported using your login and culture settings. Important: Only users with the same unit of measure and culture settings can re-import through the Risk Based Inspection (RBI) 581 Data loader.You cannot export Custom Damage Mechanism Evaluations (DME). Only baseline DME families can be exported. RBI 581 Mechanical Fatigue Damage Evaluation records cannot be exported and are not supported through the Risk Based Inspection (RBI) 581 Dataloader.
+
+
+Access the RBI Analysis Export WorkspaceAbout This Task
+Analyses displayed for export are linked to assets related to the given functional location or process unit.Note:
+The analyses that are displayed for export are either 580 or 581 analyses. You can choose which analyses should be displayed by default by setting the value of the RBI Analysis Type Preference dropdown in the RBI Global Preferences page.RBI PRD Criticality analyses and RBI Pipeline analyses are not supported for export.
+
+ProcedureAccess the Risk Based Inspection Overview page.Select the Actions button.Select Export Analyses.Results
+The RBI Analysis Export workspace appears, displaying analyses to export. By default, the analyses will be filtered based on the asset hierarchy using the key passed from the Risk Based Inspection Overview and in Created state.
+Note:
+You can use the filter to change the default analyses displayed. When you select the filter button, a query prompt will be displayed where you can change the Asset Hierarchy Asset or the Analysis State.When both RBI 580 and RBI 581 are licensed, you can override the default preference for the type of analyses displayed for export by setting the value of the  Analysis Type dropdown in the RBI Analysis Export workspace. 
+
+Export AnalysesAbout This Task
+The RBI Export functionality allows you to export one or more analyses and its related data from the RBI Analysis Export page. The export allows you to bulk review analyses and its related data and subsequently import it back to GE Digital APM. To facilitate this functionality, the data is exported to a file which is in the RBI 581 Data Loader format to allow for importing and updating the data.
+
+Note: The RBI 581 Data Loader file that is exported will contain relevant Asset, Component, Consequence Evaluation, and Degradation Mechanism Evaluation data related to the Analyses selected for export.
+
+ProcedureAccess the RBI Analysis Export Workspace page.Select the check box next to each of the analysis that you want to export.Select .
+A message appears, asking you to confirm that you want to export one or more selected analyses.
+Select Yes.
+The selected analyses are exported to an excel file which is downloaded to the browser.Note:
+The RBI 581 Data loader excel worksheets which is exported from the Evergreening page will include all fields present on the respective family’s default datasheet. All fields that are considered calculated, system populated, or informational fields will not be exported.Exported excel worksheet field values will be updated with the logged in users culture settings and unit of measure conversion set.You can click the Open Data Loaders button to launch the APM Data Loaders workspace and re-import the exported data.
+
+
+
+
+
+
+On this pageAbout RBI Analysis ExportAccess the RBI Analysis Export WorkspaceExport Analyses
+
+
+
+
+
+
+
+
+

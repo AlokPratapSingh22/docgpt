@@ -1,0 +1,97 @@
+
+
+
+Fourth Quarter of 2018 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Users and PermissionsPermission Sets
+Permission Set Definitions
+Manage a Permission Set
+Users
+Groups
+Certificate-Based Authentication
+Release NotesFirst Quarter of 2022
+Third Quarter of 2021
+First Quarter of 2020
+Third Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Users and Permissions
+Release Notes
+Fourth Quarter of 2018
+
+
+
+
+
+
+
+Fourth Quarter of 2018Users and PermissionsThis topic provides a list of product changes released for this module on the dates listed below.Release Date: December 14, 2018
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking ID
+The User Administration pages have been rewritten using newer, faster web technologies, and redesigned using new Predix Design System’s components. This update provides improvements to overall usability, including, but not limited to:
+In the main list pages, pages for adding entities, and pages for modifying entities, the following new features have been added to data grids: You can now search, sort, and paginate on the data.You can access an action menu on a row by hovering over it and selecting the ellipses button that appears.You can select a row on the main list pages to modify that entity.You can choose how many items to display per page in a grid.Enhanced performance with loading and retrieving data.Improved form validation, both live while completing forms and upon form submission.When adding individual users via a configured identity provider, validation has been improved and more detailed messages appear to help you locate the correct user or create a new user.Consistent user experience when adding, editing, and deleting administrative entities (i.e. users, groups, permission sets).
+In addition to new features, the following major enhancements were made to the existing functionality:
+Improved feedback (e.g., loading indicators) to the user when asynchronous operations are happening in the application.Improvements to the Bulk Upload Users page:You can now download example CSV files to understand the required file format based on a specified identity source.After uploading a CSV file, the user interface provides the result, with details when possible, of the lookup for each user in the imported file.Validation has been improved and more detailed messages appear to assist you in the upload process.If any users were not able to be looked up, you can download a CSV of these users, and then proceed with the process of bulk assigning the successfully imported users to groups.In the Edit <Entity>, pages, changes are now made immediately when assigning or removing users, groups, or permission sets.In the Add <Entity> and Edit <Entity> forms, you can now multi-select entities. This allows you to add multiple users to a group or assign multiple groups to a user.When adding or editing a permission set, you can now select a permission category (e.g. Asset, Alerts, Cases) to select or clear all permissions in that category.You can now create entities from the Edit <Entity> pages. Upon completion, the page will return to where you were before creating the entity. In grids, you can now see the total number of entities the grids contain.
+
+F32139F37117F40701F35530F35529F35526
+In the Edit Group page, you can new view and search for users that are members of that group.F31724In the Add <Entity> and Edit <Entity> pages, there is now no limit to the number of permission sets and asset combinations that you can add and remove.F35524After adding a user to the tenant, the Edit User page now appears, where you can assign permission sets and groups.F35527On actions relating to removing or deleting entities, a prompt now appears for you to confirm the action before it is performed.F31723When viewing Permission Sets to assign to a User or Group, you can now hover over the Features column to view a full list of permissions included in the permission set.F31730
+Table 2. LimitationsDescriptionTracking IDFor tenants that share the same instance of UAA, if you disable a user in one tenant, that user is disabled in all tenants. DE97323To prevent potential issues, the functionality to delete a user is not currently available.DE97322When you try to assign a permission set and asset in either the Edit User or Edit Group pages, search for the User Admin or Ingestor Admin permission set and then try to select it, the permission set assignment sometimes cannot be assigned properly. If this occurs, deselect the permission set and then select it again. The Select an Asset button will disappear as expected, and the permission set can be assigned.DE96724When you select Users or Permission Sets, the page does not always display the table underneath the header. If this occurs, refresh the page to view the table.DE96620
+
+
+
+
+
+On this pageUsers and Permissions
+
+
+
+
+
+
+
+
+

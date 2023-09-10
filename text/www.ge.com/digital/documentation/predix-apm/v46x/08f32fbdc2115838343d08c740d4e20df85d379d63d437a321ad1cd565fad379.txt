@@ -1,0 +1,129 @@
+
+
+
+Asset Instances | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+InstancesAsset Instances
+Asset Attributes
+Tag Instances
+Tag Attributes
+Location Information
+Events
+
+
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Instances
+Asset Instances
+
+
+
+
+
+
+
+Asset InstancesAbout Asset InstancesAn asset instance is a single asset that is selected from the business functional hierarchy. The asset instance view can be accessed from the Context Browser. Selections from the Context Browser refer to any business functional object in the business functional hierarchy. You can load your tenant's custom asset faceplate, replacing the GE Digital APM Asset Instance faceplate. Your tenant administrator must configure through API to replace the faceplate.Asset instances can be added through ingestion, or the API.Important:
+In Predix APM, adding or modifying assets using the Legacy Predix APM user interface, APIs, or Asset Ingestion Service, or bypassing the Unified Asset Ingestion Data Loader, causes the asset databases to become out-of-sync. 
+In Predix APM:You must add or modify assets using the Unified Asset Ingestion Data Loader.You cannot delete assets.You must use the Asset Ingestion Service to add tags to assets.
+In Legacy Predix APM:You can add, modify, or delete assets in the user interface, using APIs, or using the Asset Ingestion Service.You can add tags to assets in the user interface, using APIs, or using the Asset Ingestion Service. 
+Each asset instance view contains:The Asset Name and Description for the selected asset, which are editable.The Asset ID and Classification for the selected asset. Selecting the Classification link jumps to the Classification sub-menu on the navigation menu for the selected asset.The Status drop-down list box and the Lifecycle stage drop-down list box.The Attributes link, which contains tables for both Reserved and Custom Attributes.The Tags link, which contains a table of associated tags for the selected asset.The Location Information link, which contains a Time Zone drop-down list box and a Geolocation table. The Events link, which contains events in a Timeline (list) view that are applicable to the specified asset instance. You can switch to the Grid view from the Events section.Use the asset instance view to:Modify reserved attribute values for the selected asset, and add or modify tags associated with the selected asset.Add or modify custom attributes for the selected asset, and add or modify tags associated with the selected asset.Sort, filter, or export custom attributes and reserved attributes for the selected asset.Show or hide the Reserved and Custom attributes that do not have a value.Note: If the Hide empty values check box is selected, and you remove the value of an attribute, the attribute is hidden from the Attributes section.If a new attribute is added to the instance for a business functional hierarchy, the existing child-instances will not inherit the attribute. You need to manually add the attribute to each child-instance. However, if a new child-instance is created after the attribute was added to the instance, the child-instance inherits the attribute from the instance.If you have been assigned asset resources from another tenant by your administrator, you will be able to view the tenant, enterprise, and child assets for which you have been granted access. You can then select and view an item from the Context Browser. Asset Modeler WorkflowThe asset modeler creates the business functional hierarchy through APIs or ingestion using one or more JSONs.The asset modeler can set up a tenant business functional hierarchy that includes:ClassificationsInstancesParent-child connectionsGroups for classifications or instancesTo create an asset model for a tenant, do the following:Create asset classifications, which define the asset hierarchy.Values for classification in the JSON include:idnamedescriptionccomClassThe ccomClass values for a classification represent the type (ENTERPRISE_TYPE, SITE_TYPE, SEGMENT_TYPE, or ASSET_TYPE).Next, add values for reserved attributes. Adding values for reserved attributes to a classification allows sub-classifications to inherit those values. Values for reservedProperties and properties are added under the named classification node.Create asset instances.Instances represent a specific entity associated with a type of classification. Values for instances in the JSON include:idnamedescriptionclassificationproopertiesccomClassThe classification values for an instance represent a type of named entry, such as a company name, or regional designation. The ccomClass values for an instance are predetermined according to their place in the hierarchy (ENTERPRISE, SITE, SEGMENT, ASSET).Next, add location geopoints to define the instance location. Geopoints represent coordinates that define the location of the instance. The location may include a group of geopoints. Values for location > geopoints include:nameorderlatitudelongitudealtitudeAdd connections which define the parent-child relationships between asset instances and Business Functional Objects.Connections represents a mapped connection from an instance to another instance in a parent-child relationship. Values for connection > from include:idccomClassThe ccomClass values for the from connection are predetermined according to their place in the hierarchy (ENTERPRISE, SITE, SEGMENT, or ASSET).Values for connection > to include:typeidccomClassThe type values are parent or child. The ccomClass values for the to connection are predetermined according to their place in the hierarchy (ENTERPRISE, SITE, SEGMENT, or ASSET).Add group associations for the asset instances.Group associations include classifications of one type that are related or connected in some way. Groups include member instances which can be added in the JSON. Values for groups > mappedInstances include:idnamedescriptionccomClassassociatedEntityCcomClasspropertiesThe ccomClass value is predefined as GROUP. The associatedEntityCcomClass values is the type (ASSET or TAG) of the member instance listed under the group parent node.For more information, refer to the ingestion or APIs documentation to complete the workflow.Create an Instance in the Business Functional HierarchyYou can create new instances or child-instances for each level in the business functional hierarchy.About This Task
+You can begin your creation of instances from a selection in the Context Browser. While in the process of creating an instance, it is possible to change to a different parent node and create a child-instance for that node.Important: After you have created an instance, you cannot modify the placement of the instance in the business functional hierarchy. For information on deleting an instance from a Business Functional Object, refer to  the Delete an Asset Instance section of the documentation, and begin again.
+You can create instances in the business functional hierarchy as follows:Table 1. Available Classification InstancesBeginning from hereYou can create this type of instanceEnterpriseYou can create a child-Enterprise, or a Site.SiteYou can create a child-Site, a Segment, or an Asset.SegmentYou can create a child-Segment, or an Asset.AssetYou can create a child-Asset.
+
+When you create a new instance, you must define the following:Table 2. Classification DefinitionsFieldDescriptionInstance nameThe name of the new instance.(Optional) DescriptionA description of the new instance.Source IDA unique identifier for a new instance.Note: You can assign the same source ID to different types of business functional hierarchy such as Enterprise, Site, Segment, and Asset in different cases.For example: TurbineSiteType (SiteType), turbinesitetype (AssetType), Turbinesitetype (SegmentType)Lifecycle StageYou can select a new lifecycle stage for the instance.StatusYou can select a new status for the instance.(Optional) Position in Hierarchy check boxCreates the new instance at the top level in the hierarchy. This disables the Parent Node context selection.Parent NodeAllows you to define the level in the hierarchy in which the instance is created as a child-node. Selecting  in the Parent Node box accesses the Context Browser, allowing you to select from the choices available in the hierarchy.Classification Type drop-downSpecifies the type of instance (Enterprise, Site, Segment, or Asset). If a type is not allowed for this instance, the selection is greyed out.Parent Classification drop-downThe specific classification associated with the instance. The Parent Classification is based on the Classification Type selected. If the Asset
+Type is selected as a classification type, you can search for a classification.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.An instance appears for the selected asset context.In the instance view, select .
+Note: Instances can be Enterprise, Site, Segment, or Asset.
+The New Instance page appears.Enter the required information in the new instance form:Enter an instance name in the Instance Name box.Optional: Enter a description for the new instance in the Description box.
+Note: You can add UTF-8 special characters in the Instance Name and Description boxes.
+Enter a sourcekey for the new instance in the Source ID box.Select an option from the Lifecycle Stage drop-down list box.Select an option from the Status drop-down list box.Optional: If you want the new instance to be placed into the top level of the hierarchy, select the Set as top level node check box.
+Important: Selecting this option disables the Parent Node context selector.
+If you want to change the parent node, select  in the Parent Node box to access the Context Browser, select an entry in the column in which you would like the new instance to reside as a child-node, and then select Open.
+The Parent Node option is preselected to your selection from the Context Browser. If you are creating an instance that requires a different parent node, you will need to change the selection.Parent Node and Type are disabled if the Set as top level node option is selected.
+Select an option from the Type drop-down list box.Depending upon the context set by the parent node, some of the classification types may be disabled. For more information, refer to the Available Classification Types table above.If you want to change the Parent Classification option, choose from the following:
+For an Enterprise, Site, or Segment
+Type selection, select an option from Parent Classification.For an Asset
+Type selection, select  in the Parent Classification box to access the Select Classification window. Enter your search criteria and then Select. For more information about how to select a classification, refer to the Find and Select a Parent Classification for an Asset Instance documentation.
+
+Tip:
+The Parent Classification option associated with the Type selected appears by default. The Parent Classification option is optionally preselected to your selection from the Context Browser. If you are creating an instance that requires a different parent classification, you will need to change the selection.For any Type selection, the Parent Classification may be – No Name - by default.
+
+Select Create.
+Note: Create is not available until all required fields have been completed.
+The new instance appears. The instance includes the identifier information of the classification, including any inherited attributes. Instances created using the new instance are included in the selected column in the Context Browser.Find and Select a Parent Classification for an Asset InstanceYou can search for a specific classification that is used as a parent classification for an asset instance you are creating.About This Task
+After selecting Asset as the Type option while creating an asset instance, you can search for a Parent Classification option to associate with the new asset instance.Tip: Searching for a classification is only available if you have selected Asset as the Type option while creating an asset instance. For more information, refer to the Creating an Instance in the Business Functional Hierarchy section of the documentation.
+The following search parameters are supported for asset types:urinamesourcekeydescriptionattributesreservedattributesparent
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.In the instance view, select .The New Instance page appears.Enter the required information in the new instance boxes. For more information about how to do this, refer to the Create an Instance in the Business Functional Hierarchy documentation.In the New Instance page, select Asset from the Type drop-down list box.Select  in the Parent Classification box to access the Select Classification window.Enter a search string using modifiers and wild cards, and then press ENTER to activate the string in the Search box.Scroll through the results, select an option from the list, and then select Select.The selected classification appears in the Parent Classification box.Select Create.The new asset instance appears. The asset instance includes the identifier information of the classification, including any inherited attributes. Instances created using the new classification are included in the selected column in the Context Browser.Delete an Asset InstanceYou can delete an asset instance from the business functional hierarchy.About This Task
+Use this procedure to delete an asset instance from the business functional hierarchy. You can only delete asset instances that do not have child-assets and do not have any associated tag instances. You must first delete an asset's tags before you can delete the asset instance. Asset instances can be deleted through the API. Deleting an asset instance through the API also permanently deletes all the tags, tag correlations, and group memberships in GE Digital APM.
+Tip: You can delete an enterprise, site or segment through the API. Deleting an asset in the hierarchy permanently deletes all child-assets associated with the deleted asset instance.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.In the asset instance view, select .Select Delete to confirm the deletion. ResultsThe asset instance is permanently removed from the database. Note:
+Deleting an asset instance permanently deletes the instance, all attributes, configuration, history information, and tags, tag correlations, and membership in groups.All the objects that are mapped to the deleted asset across modules in GE Digital APM such as Permissions, Alerts, Analysis Templates, SmartSignal Analytic Filters, and so on, will be unmapped and cannot be re-mapped even if the same asset is recreated.
+
+
+Related ConceptsAbout Tag ModelRelated tasksIngest Assets through the REST Client for Legacy Predix APMIngest Assets through the User Interface for Legacy Predix APMDelete an Asset Instance
+
+
+
+
+On this pageAbout Asset InstancesAsset Modeler WorkflowCreate an Instance in the Business Functional HierarchyFind and Select a Parent Classification for an Asset InstanceDelete an Asset Instance
+
+
+
+
+
+
+
+
+

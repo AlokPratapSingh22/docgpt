@@ -1,0 +1,889 @@
+
+
+
+Family Field Descriptions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Reports
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Reference
+Family Field Descriptions
+
+
+
+
+
+
+
+Family Field DescriptionsRCA Analysis Records
+RCA Analysis records store basic information about a Root Cause Analysis created to track and analyze causes of Asset failures. The following table provides an alphabetical list and description of the fields that exist for the Root Cause Analysis family and appear by default on the RCA Analysis, RCA Analysis Summary, and Plant & Equipment Info datasheets. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData Type Description Behavior Acknowledgments TextPeople who contribute to the analysis but are not members of the RCA team.
+You can enter a list of people who are not members of the RCA Team but who contributed expertise to the root cause analysis.
+For example, you may want to include the name, position, and company of each person who contributed to the development of the hypotheses, root cause, and recommendations for the pump failure that was analyzed.
+
+Analysis Name 
+
+Character
+
+A value that identifies the Root Cause Analysis throughout the GE Digital APM product.
+
+This is a required field, and it must be unique.
+
+Analysis Type 
+
+Character
+
+The type of RCA you are conducting.
+
+This field contains a list of the following values:
+Mechanical Operational Quality Safety Environmental 
+You can select the value that defines the type of analysis you are performing. This field is available on the RCA Analysis and RCA Analysis Detail datasheets.
+
+Asset Category 
+
+Character
+
+The category of equipment associated with the RCA.
+
+You can enter a value in this field to describe the Asset identified in the Asset ID field.
+This field appears on the Plant & Equipment Info datasheet and is labeled Equipment Category.
+
+Asset Class 
+
+Character
+
+The class of equipment associated with the RCA.
+
+You can enter a value in this field to describe the Asset identified in the Asset ID field.
+This field appears on the Plant & Equipment Info datasheet and is labeled Equipment Class.
+
+Asset Type 
+
+Character
+
+The type of equipment associated with the RCA.
+
+You can enter a value in this field to describe Asset identified in the Asset ID field.
+This field appears on the Plant & Equipment Info datasheet and is labeled as Equipment Type.
+
+Charter 
+
+Text
+
+The purpose of and requirements associated with conducting the RCA.
+
+You can enter a value in this field to describe the goal that the RCA Team wants to achieve by conducting an RCA.
+This value is populated automatically with the charter that you entered in the Team Charter section of the RCA Application Settings.
+
+Comments 
+
+Text
+
+Any additional information about the current analysis.
+
+You can enter comments in this field.
+
+Cost 
+
+Number
+
+The estimated cost of the failure event(s) you are analyzing. By default, the currency is set to $.
+
+You can enter a value in this field to specify the estimated cost.
+
+Date Published 
+
+Date
+
+The date on which the RCA was published.
+
+This field is disabled. When the RCA is published, this field is updated automatically with the published date.
+
+Division 
+
+Character
+
+The division of the equipment on which the RCA is being performed.
+
+You can enter a value in this field to describe the piece of equipment identified in the Asset ID field.
+This field appears on the Plant & Equipment Info datasheet.
+
+End Date 
+
+Date
+
+The end date of the analysis, if applicable.
+
+You can select a date using the Calendar tool. The date specified in the End Date field must be greater than the date specified in the Start Date field.
+
+Event Narrative 
+
+Text
+
+Information about the equipment failure.
+
+You can enter a description of the event in this field.
+
+Frequency 
+
+Number
+
+The number of times the equipment failure occurred.
+
+You can enter a value in this field.
+
+Long Description 
+
+Text
+
+A brief description of the current RCA.
+
+You can enter text in the Analysis Description dialog box.
+This field is labeled Analysis Description on the datasheet.
+
+
+Manufacturer
+
+
+Character
+
+The manufacturer of the piece of equipment on which you are performing the analysis.
+
+You can enter a value in this field to describe the manufacturer of the Asset identified in the Asset ID field.
+This field appears on the Plant & Equipment Info datasheet.
+Mechanism TextA brief description of the findings from the analysis.
+This field appears on the RCA Communicate datasheet and is labeled Summary of Findings.
+
+Plant Location 
+
+Character
+
+The plant where the equipment failure occurred.
+
+You can enter a value in this field to describe the plant location of the asset identified in the Asset ID field.
+This field appears on the Plant & Equipment Info datasheet.
+
+Start Date 
+
+Date
+
+The start date of the analysis.
+
+You can select a date using the Calendar tool.
+
+Unit 
+
+Character
+
+The ID of the unit containing the piece of equipment for which you are conducting the RCA.
+
+You can enter a value in this field to describe the unit of the asset identified in the Asset ID field.
+This field appears on the Plant & Equipment Info datasheet.
+
+RCA Event Records
+RCA Event records store basic information about a failure event. The following table provides an alphabetical list and description of the fields that exist for the RCA Event family and appear by default on the RCA Failure Event datasheet. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldType Description  Behavior and Usage 
+ Event End Date 
+
+Date
+
+The end date of the failure event, if applicable.
+
+If the Root Cause Analysis was created from a Production Event, this field will be populated automatically with the value in the End Date field of that Production Event. Otherwise, you can define this value manually when you create the RCA Event. The date specified in the End Date field must be greater than the date specified in the Start Date field.
+
+ Event ID 
+
+Character
+
+The ID for the failure event.
+
+The Event ID field is populated automatically with RCA-[Current Date] and is disabled.
+
+ Event Start Date 
+
+Date
+
+The start date of the failure event.
+
+This field is required. 
+If the RCA was created from a Production Event, this field will be populated automatically with the value in the Start Date field of that Production Event. Otherwise, you can define this value manually when you create the RCA Event.  
+
+ Label 
+
+Character
+
+The name of the failure event as you want it to appear for the Failure Event node in the diagram.
+
+If the RCA was created from a Production Event, this field will be populated automatically with the value in the Headline field of that Production Event. Otherwise, you can define this value manually when you create the RCA Event.
+
+ Long Description 
+
+Text
+
+A detailed description of the failure event.
+
+If the RCA was created from a Production Event, this field will be populated automatically with the value in the Description field of that Production Event. Otherwise, you can define this value manually when you create the RCA Event.  
+
+ Short Description 
+
+Character
+
+A brief description of the failure event.
+
+This field does not appear on the RCA Failure Event datasheet by default.
+
+RCA Hypothesis Records
+RCA Hypothesis records store basic information about root cause of a failure event. The following table provides an alphabetical list and description of the fields that exist for the RCA Hypothesis family and appear by default on the RCA Hypothesis datasheet. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and Usage Confidence Factor CharacterA value that indicates the probability that the hypothesis is true. 
+You can choose from the following values: 
+Not True (0)Somewhat true (1)Possibly True (2)Likely (3)Highly Likely (4)True (5)
+If you select a value in this field, the value that you select will appear in brackets to the right of the hypothesis name in the Logic Tree. 
+ Description TextA detailed description of the hypothesis. 
+You can define this value manually when you create the RCA Hypothesis. 
+IDCharacterThe ID for the Hypothesis.
+This field is automatically populated and is disabled.
+
+ Label 
+CharacterA description of the hypothesis as you want it to appear on the Logic Tree.
+You can define this value manually when you create the RCA Hypothesis.
+ State CharacterThe state of the Hypothesis node.
+You can choose from the following states:
+Hypothesis Hypothesis True Hypothesis Not True Cause Human Cause Latent Cause Physical 
+This field is set to Hypothesis by default.
+
+RCA Preserve Item Records
+RCA Preserve Item records store information about tasks assigned to team members to collect failure data by a certain date. The following table provides an alphabetical list and description of the fields that exist in the RCA Preserve Item family and appear by default on the RCA Preserve records datasheet. The information in the table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+ Field Data TypeDescription Behavior and Usage 
+ Alert Email Body 
+
+Text
+
+The body of the alert that will be sent via email.
+
+You can enter text to define this value manually.
+
+ Collection Strategy 
+
+Text
+
+A description of the way in which the data should be collected (e.g., acquire production logs from a line supervisor).
+
+You can enter text to define this value manually.
+
+ Completed? 
+
+Character 
+
+A value that specifies whether or not the data collection is completed.
+
+You can choose Yes or No depending on the status of the data collection. When you set this value to Yes, the Date Completed field will be populated automatically with the current date.
+
+Data Category 
+
+Character 
+
+The type of data you want a team member to collect.
+
+This field contains a list of the following values representing the 5 P's:
+Parts Paper People Position Paradigms 
+You can select the option that defines the type of data that should be collected.
+
+ Data to Collect 
+
+Character
+
+A description of the data that will be collected for the category that you selected in the Data Category field.
+
+The text that is specified in this cell will appear on the Preserve Records workspace as a hyperlink that you can select to access the RCA Preserve Records datasheet.
+
+ Date Completed 
+
+Date
+
+The date on which the data-collection was completed.
+
+When the Completed? field is set to True, the Date Completed field will be populated automatically with the current date and time. You can modify the date, as needed.
+
+ Date Due 
+
+Date
+
+The deadline for collecting the data.
+
+You can select a date using the Calendar tool.
+
+ Days Before Due Date to be Notified 
+
+Number
+
+The number of days prior to the due date that an alert message is sent to the team member to whom the record is assigned.
+
+This field is enabled only when the Send Alert on Due Date? check box is selected, and then, this field is required. You must enter a numeric value in this field, or an error message will appear. The units for this field are automatically set to Days.
+
+ Frequency of Alert After Due Date 
+
+Character
+
+The frequency after the due date that an alert message will be sent to the team member to whom the record is assigned.
+
+This field is enabled only when the Send Alert on Due Date? check box is selected and then, this field is required. This field contains a list of the following values:
+Never Daily Weekly Monthly Yearly 
+You can select the option that defines how frequently an alert should be sent after the due date of the Preserve Record.
+
+ Send Alert on Due Date? 
+
+Logical 
+
+A check box that specifies whether or not an alert email message will be sent to the team member to whom the Preserve Record is assigned.
+
+This check box is selected when there is a value in the Date Due field.  If this check box is selected, when you save the Preserve Record, an Alert will be created automatically in the GE Digital APM database. The Alert that was created automatically will not be linked automatically to the selected Root Cause Analysis.
+
+RCA Recommendation Records
+RCA Recommendation records store details of a recommendation and the progress associated with getting the recommendation approved and implemented. The following table provides an alphabetical list and description of the fields that exist for the RCA Recommendation family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and Usage Alert Assignee When Due? 
+Logical 
+
+An option that lets you send an alert to the person responsible for implementing the recommendation.
+
+If this field is selected, the GE Digital APM system will send an alert to the person in the Assigned to Name field on the date defined in the Target Completion Date field.
+This field is labeled Alert Responsible Party When Due? and is available in the Alert section of the datasheet.
+
+ Analysis ID 
+
+Character 
+
+The ID of the RCA associated with the recommendation.
+
+This field is automatically populated when an RCA Recommendation is linked to an RCA, and is disabled.
+This field is labeled RCA Analysis ID and is available in the General Information section of the datasheet.
+
+ Asset ID 
+
+Character 
+
+The ID for the Equipment associated with the recommendation.
+
+You can define this field by selecting  and searching for the required Asset. You can then select the Asset, and then select OK to link it to the RCA Recommendation.
+This field is labeled Equipment ID and is available in the General Information section of the datasheet.
+
+ Assigned to Name 
+
+Character 
+
+The name of the person responsible for ensuring the recommendation is implemented.
+
+This field is required. You can select a Human Resource from the list.
+This field is available on the General Information tab on the datasheet.
+
+ Author Name 
+
+Character 
+
+The name of the person proposing the recommendation.
+
+You can select a team member from a list of current RCA Team Members.
+This field is available in the General Information section of the datasheet.
+
+ Business Impact 
+
+Character 
+
+The impact to the manufacturing process during the recommendation implementation.
+
+You can choose this value from a list of the following options:
+
+Safety 
+
+Environmental 
+
+Production 
+
+Economic 
+
+This field is available in the General Information section of the datasheet.
+
+ Cause 
+
+Character 
+
+A description of the cause of the problem the recommendation has been created to fix.
+
+You can choose from a list of RCA Hypothesis that you have identified as causes in the Logic Tree for the RCA.
+This field is available in the General Information section of the datasheet.
+
+ Cause Type 
+
+Character 
+
+The type of cause of the problem the recommendation has been created to fix.
+
+This field is disabled and populated automatically with the value in the State field of the RCA Hypothesis identified in the Cause field.
+This field is available in the General Information section of the datasheet.
+
+
+Completed
+
+
+Logical 
+
+Indicates that the recommendation is complete.
+
+You can set this value to True to indicate that this recommendation is complete.
+
+ Completion Comments 
+
+Text 
+
+Details about the completed recommendation.
+
+This field is required if the value in the Status field is Rejected, Canceled, or Superseded.
+This field is labeled Close-Out Comments and is available on the General Information tab on the datasheet.
+
+Create SAP Notification? 
+
+Logical 
+
+Creates an SAP Notification for the corresponding recommendation.
+
+If the SAP Interfaces module has been implemented and this field is set to True, when the RCA Recommendation is saved, a notification will be created in SAP, and the Work Reference Request, Work Request Equipment, and Work Request Functional Location fields will be populated with values from the corresponding notification.
+This field is labeled Create Work Request? and is available in the General Information section of the datasheet.
+
+Creation Date 
+
+Date 
+
+The date the recommendation was created.
+
+This field is disabled and populated automatically with the date on which the RCA Recommendation was created.
+This field is available in the General Information section of the datasheet.
+
+Date Reviewed 
+
+Date 
+
+The date the recommendation status was changed to Reviewed.
+
+This field is populated automatically with the current date when the Status field is updated to Reviewed.
+
+Days Before Due Date to be Notified 
+
+Number 
+
+The numbers of days prior to the target date that the email message should be sent.
+
+This field is enabled only when the Alert Responsible Part When Due? field is set to True, in which case this field is required.
+This field is labeled Days before Due Date to be Alerted and is available in the Alert section of the datasheet.
+
+Equipment Technical Number 
+
+Character 
+
+The technical number of the piece of equipment for which the recommendation is being made.
+
+When you select a value in the Equipment ID field, this field is populated automatically with the value in the Equipment Technical Number field of the associated Equipment.
+This field is labeled Technical Number and is available in the General Information section of the datasheet.
+
+Final Action Taken 
+
+Text 
+
+The actions taken to implement the recommendation.
+
+You can define this field manually by typing a description of final actions in this field.
+
+Final Approver Name 
+
+Character 
+
+The name of the person ultimately responsible for approving the recommendation and the associated cost.
+
+You can select a Human Resource from the list. This field is required if the Alert Responsible Party When Due? field is True.
+This field is available in the General Information section of the datasheet.
+
+Frequency of Alert After Due Date 
+
+Character 
+
+The frequency after the target date that the alert will be resent.
+
+This field is enabled only when the value in the Alert Responsible Party When Due? field is True, in which case this field is required, and you can choose a value from the list of following values:
+
+Never 
+
+Daily 
+
+Weekly 
+
+Monthly 
+
+Yearly 
+
+This field is available in the Alert section of the datasheet.
+
+Functional Location ID 
+
+Character 
+
+The ID of the Functional Location that is either linked to the Equipment that appears in the Equipment ID field or linked separately to the RCA Recommendation.
+
+This value is populated automatically if a Functional Location exists and is linked to the Equipment that appears in the Equipment ID field. You can also select <insert ellipsis icon> to search for the Functional Location that you want, select it. When you select OK, the Functional Location is linked to the RCA Recommendation.
+This field is available in the General Information section of the datasheet.
+This field is labeled as Location ID on the datasheet.
+
+Hypothesis ID 
+
+Number 
+
+The ID of the hypothesis associated with the corresponding RCA.
+
+This field is populated automatically if the RCA Recommendation is linked to an RCA.
+ 
+
+Implementation Alert Text 
+
+Text 
+
+Text the user can add that will be sent in the body of the alert to the assignee to remind them the recommendation must be met by the target date.
+
+You can enter the text you wish to appear in the Alert email.
+This field is available in the Alert section of the datasheet.
+
+Implemented Date 
+
+Date
+
+The date the recommendation was implemented.
+
+This field is populated automatically when the RCA Recommendation is implemented. When this occurs, the field becomes disabled.
+This field is available in the General Information section of the datasheet.
+
+Mandatory Date 
+
+Date 
+
+The date by which the recommendation must be implemented.
+
+You can select a date using the Calendar tool.
+This field is available in the General Information section of the datasheet.
+
+Recommendation Basis 
+
+Character 
+
+Background information about why the recommendation is being made.
+
+You can enter any necessary background information in this field.
+This field is available in the General Information section of the datasheet.
+
+Recommendation Closure Date 
+
+Date 
+
+The date the recommendation status is changed to Implemented, Rejected, or Superseded.
+
+This field is populated automatically with the current date when the value in the status field is changed to Implemented, Rejected, or Superseded.
+
+Recommendation Description 
+
+Text 
+
+A detailed description of the recommendation. 
+
+You can enter a description of the recommendation in this field.
+This field is available in the General Information section of the datasheet.
+
+Recommendation Headline 
+
+Character 
+
+A brief summary of the recommendation. 
+
+You can enter a brief summary of the recommendation in this field.
+This field is available in the General Information section of the datasheet.
+
+Recommendation ID 
+
+Character 
+
+The ID for the RCA Recommendation.
+
+This field is populated automatically with a unique name (e.g., REC_888) when the recommendation is created. You can change this value if you want.
+This field is available in the General Information section of the datasheet.  
+
+Recommendation Priority 
+
+Character 
+
+A value that represents the priority or criticality level of the recommendation for implementation.
+
+You can chose from a list of the following values:
+
+High 
+
+Medium 
+
+Low 
+
+This field is available in the General Information section of the datasheet.
+
+Reevaluate? 
+
+Logical 
+
+Indicates whether team members should evaluate the recommendation again.
+
+If this check box is selected, an alert will be sent to users specified in the Reevaluation Notification List field.
+This field is available in the Alert section of the datasheet.
+
+Reevaluation Alert Body Text 
+
+Text 
+
+The message text in the body of the reevaluation alert, which will be sent to users in the reevaluation notification list.
+
+This field is enabled only when the Reevaluate? field check box is selected. Then the field is required.
+This field is available in the Alert section of the datasheet.
+
+Reevaluation Date 
+
+Date 
+
+The date on which an alert is sent out to tell the alert recipient to re-evaluate the recommendation.
+
+This field is enabled only when the Reevaluate? field is set to True. Then the field is required. You can select a date using the Calendar tool.
+This field is available in the Alert section of the datasheet.
+
+Reevaluation Notification List 
+
+Character 
+
+Individuals that will be sent to the reevaluation alert.
+
+This field is enabled only when the Reevaluate? field is set to True. Then the field is required. You can select from a list of names with Human Resources.
+This field is labeled Reevaluation Alert List and is available in the Alert section of the datasheet.
+
+Required Equipment Status 
+
+Character 
+
+The operating status the piece of equipment must be under, in order for the recommendation to be implemented.
+
+You can choose from a list of the following values:
+
+On-line 
+
+Off-line 
+
+Not Applicable 
+
+This field is available in the General Information section of the datasheet.
+
+Reviewer Name 
+
+Character 
+
+The first and last name of the person who should review the information in the Recommendation before the recommended action is performed.
+
+You can select a team member from a list of current RCA Team Members.
+This field is available in the General Information section of the datasheet.
+
+Status 
+
+Character 
+
+The status of the recommendation.
+
+You can choose from a list of the following values:
+
+Approved 
+Created 
+Pending Review 
+
+Reviewed 
+
+Rejected 
+Canceled 
+Superseded 
+
+In Progress 
+
+Implemented 
+
+When the Recommendation is created, the field is set to Created, but can be modified if needed. This field is required.
+You can send an alert only if the Status field is set to Approved or In Progress value. 
+This field is available in the General Information section of the datasheet.
+
+Status Changed By 
+
+Character 
+
+The ID of the user who last changed value in the Status field.
+
+This field is populated automatically when the Status field is updated.
+This value does not appear on the datasheet by default.
+
+Status Changed by Name 
+
+Character 
+
+The name of the person who last changed the Status field.
+
+This field is populated automatically when the Status field is updated.
+This value does not appear on the datasheet by default.
+
+Status Date 
+
+Date 
+
+The date the Status field was most recently changed.
+
+This field is populated automatically with the current date when the Status field is updated.
+This value does not appear on the datasheet by default.
+
+Target Completion Date 
+
+Date 
+
+The date the recommendation is intended to be implemented.
+
+You can select a date using the Calendar tool.  This field is required.
+This field is available in the General Information section of the datasheet.
+
+Work Order Number 
+
+Character 
+
+The ID of the work order arising from the work request.
+
+This field is populated automatically after a notification has been created in SAP.
+This value does not appear on the datasheet by default.
+
+Work Request Equipment 
+
+Character 
+
+The ID of the Asset in SAP that is associated with the SAP Notification that was created.
+
+This field is populated automatically after a notification has been created in SAP.
+This field is available in the General Information section of the datasheet.
+
+Work Request Functional Location 
+
+Character 
+
+The ID of the Asset in SAP that is associated with the SAP Notification that was created.  
+
+This field is populated automatically after a notification has been created in SAP.
+This field is available in the General Information section of the datasheet.
+
+Work Request Reference 
+
+Character 
+
+The ID of the SAP Notification.
+
+This field is populated automatically after a notification has been created in SAP.
+This field is available on the General Information tab on the datasheet.
+
+RCA Tracking Item Records
+RCA Tracking Item records store a set of conditions on which reevaluation notifications should be based. The following table provides an alphabetical list and description of the fields that exist for the Tracking Item family and appear by default on the RCA Tracking Item Details datasheet. The information in the table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field Data Type  Description  Behavior and Usage  Active Logical Indicates whether the RCA Tracking Item is included in the tracking and reevaluation process (i.e., active). When you create a new Tracking Item, the Active check box is selected by default. You can clear the check box to indicate that the Tracking Item is inactive.  Alert CharacterName of the team member to whom an alert will be sent based on the specified criteria.This field is optional. Cost Number The failure cost that must be met for a revaluation email to be sent to the team member specified in the Alert field. When you create a new Tracking Item, you can manually enter a value in this field, but the value must be numeric, or an error message will appear when you move to another field.  Count Number The number of failures that must occur before a reevaluation email is sent to the team member specified in the Alert field. When you create a new Tracking Item, you can manually enter a value in this field, but the value must be numeric, or en error message will appear when you move to another field.  Message Subject Character The text that you that want to appear in the subject line of the email message. You can manually enter the subject of the email message in this field. This is a required field. Message Text Text The text that you want to appear in the body of the email message.   
+You can manually enter text in this field. This is a required field. 
+Notification List Character The names of the team members to which a notification should be sent when the specified reevaluation criteria is met (i.e., the values stored in the Count and Cost fields). 
+You can select a team member from a list of current RCA Team Members. When you select a name in the list, the email address that is stored in the corresponding Security User appears, and after you navigate away from the Alert field, the user's name appears in the Alert field. This is a required field. 
+This field is labeled Alert on the datasheet. 
+Start Date Date The date on which the evaluation will begin. You can select a date using the Calendar tool. This is a required field. 
+RCA Verification Records
+RCA Verification records store task-related information necessary to verify a hypothesis. The following table provides an alphabetical list and description of the fields that exist for the RCA Verification family and appear by default on the RCA Verification datasheet. The information in the table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and Usage Completed?  Character  A value that specifies whether or not the task is completed.  You can choose Yes or No from the list. When you set this value to Yes, the Date Completed field will be populated with the current date. Date Completed  Date  The date on which the task was completed.  This field is populated with the current date when the Completed? field is set to Yes. Days Before Due Date to be Notified  Number  The number of days prior to the due date that an alert message is sent to the team member to whom the record is assigned.  This field is enabled only when the Send Alert on Due Date? field is set to True. Then this field is required. You must enter a numeric value in this field, or an error message will appear. The units for this field are automatically set to Days.
+ Due Date 
+ Date  The deadline for completing the task.  You can select a date using the Calendar tool. Frequency After Due Date to be Notified  Character  The frequency after the due date that an alert message will be sent to the team member to whom the record is assigned.  This field is enabled only when the Send Alert on Due Date? field is set to True. Then this field is required. This field contains a list of the following values:  Never  Daily  Weekly  Monthly  Yearly 
+You can select the option that defines how frequently an alert should be sent after the due date of the Preserve Record.
+Method  Text  How the task was completed. You can enter text manually to define this field. Notification Email Text  Text  The body of the alert that will be sent via email. 
+ You can enter text to define this field manually. 
+This field is labeled Alert Email Text on the datasheet. 
+Outcome  Text  The result of completing the task.  You can enter text manually to define this field. Send Notification on Due Date?  Logical  A value that specifies whether or not an alert email message will be sent to the team member to whom the is assigned. 
+ This field is enabled when there is a value in the Due Date field. When the Send Notification on Due Date? field is set to True, after you save the RCA Verification, an Alert will be created automatically in the GE Digital APM database and a Scheduled Item will be created automatically in the Schedule Manager. The Alert that was created automatically will not be linked automatically to the current root cause analysis. 
+This field is labeled Send Alert on Due Date? on the datasheet. 
+
+
+
+
+
+
+On this pageRCA Analysis RecordsRCA Event RecordsRCA Hypothesis RecordsRCA Preserve Item RecordsRCA Recommendation RecordsRCA Tracking Item RecordsRCA Verification Records
+
+
+
+
+
+
+
+
+

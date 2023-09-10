@@ -1,0 +1,209 @@
+
+
+
+Event Diagram | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Event Diagram
+
+
+
+
+
+
+
+Event DiagramAbout Event DiagramIn an RCA, analyzing data involves compiling the information that has been collected so far in the Root Cause Analysis and representing it visually to facilitate discussion. An Event Diagram is an organizational tool that you can use to diagram a sequence of events, which are possible causes of a failure event. 
+The Event Diagram lets you represent visually the events that are associated with a failure and the cause-and-effect relationships that may have led to a failure event. The Event Diagram depicts how the events affect each other and enables you to identify possible work process issues. Each event is represented by a labeled icon, called a node. You can add nodes to the Failure Event node that represent components of the Root Cause Analysis. For example, if you define the Failure Event node as a fire, in the Event Diagram you can add to the Failure Event node upstream nodes that depict the chain of events that preceded the failure event.
+The following list provides the types of nodes that you can use in an Event Diagram:
+
+Node IconNode NameCan be used to represent... 
+
+Start/Finish A step that marks the starting point or the ending point of the event. 
+
+References A printed document or report. 
+
+Process A single step or an entire sub-process within a larger process. 
+
+Decision A decision or branching point. 
+
+Operation Material or information entering or leaving the system, such as customer order (input) or a product (output).
+
+
+You can create connections between the nodes in the Event Diagram to establish a relationship between the nodes. Each node in the diagram canvas has two ports that are used for connecting nodes to another node. Each port is designated by a circle on the right and left of the node. You can initiate a connection only from right circle (output port) of the predecessor node to the left circle (input port) of the successor node. You can create as many connections as you need to build the Event Diagram. More than one connector can be attached to the same port of a node, allowing you to create parallel events. As you connect the nodes to build the Event Diagram, links are created between the items using a predecessor-successor relationship definition that exists between them.  
+Note: The predecessor is the node that precedes the node that is currently selected in the Event Diagram. The successor is the node that succeeds the node that is currently selected in the Event Diagram.
+About Failure EventsThe failure event is a short description of the problem that you and your team are analyzing. Your team could be analyzing a failure event that comprises several failures over a specified period of time, or one failure (e.g., a larger event, such as a fire). The first time that you access the Event Diagram workspace or the Logic Tree workspace for a given RCA, you will be prompted to define the failure event in an RCA Event, which will be used as the Failure Event node. The following image shows an example of a completed RCA Event.
+
+Each RCA will have one Failure Event node, which will always appear at the root level of the Logic Tree hierarchy and as the first node in the Event Diagram. For example, the following image shows the Failure Event node as it appears in the Logic Tree in our Cooling Water Pump example.
+
+You cannot remove the Failure Event node from the Logic Tree or the Event Diagram. You can, however, modify the RCA Event, as needed.Access an Event DiagramBefore You BeginTo access the Event Diagram, you must first configure RCA to display the Event Diagram. The Event Diagram is not configured to appear in baseline GE Digital APMProcedure
+Access the Root Cause Analysis for which you want to view an Event Diagram.In the left pane, select the Event Diagram tab.
+The Event Diagram for the selected RCA appears in the workspace. 
+
+
+
+Tip:
+Select  to display the event dates.Select  to display the diagram in full screen.
+
+Note: If you access the Event Diagram tab for the first time, the RCA Failure Event datasheet will appear in the workspace. In this datasheet, you can define an RCA Failure Event. If you previously accessed the Event Diagram tab and defined a Failure Event, you will see the Failure Event node in the main display area (i.e., the design canvas). 
+Create a Failure EventProcedure
+Access the Root Cause Analysis for which you want to create a Failure Event.In the left pane, select the Event Diagram tab.
+A blank datasheet appears.
+
+
+
+As needed, enter values in the available fields.Select .
+The RCA Failure Event is created and linked automatically to the RCA. The Failure Event node appears in the design canvas.
+What To Do Next
+
+Add a Node to the Event Diagram
+
+Create a Secondary Failure EventBefore You BeginTo create a secondary Failure Event, you must first create a primary Failure Event. Procedure
+Access the Root Cause Analysis for which you want to create a secondary Failure Event.In the left pane, select the Event Diagram tab.
+The Event Diagram workspace for the selected analysis appears.
+In the Event Diagram workspace, select 
+A blank datasheet appears.
+As needed, enter values in the available fields.Select .
+A secondary RCA Failure Event is created and linked automatically to the RCA. The Failure Event node appears in the design canvas.
+What To Do Next
+
+Add a Node to the Event Diagram
+
+Add a Node to the Event DiagramBefore You Begin
+
+Define a Failure Event
+
+Procedure
+Access the Event Diagram to which you want to add a node.In the upper portion of the workspace, in the Palette section, select the icon that represents the type of node you want to add, and then drag it to the required location on the design canvas.In the upper-right corner of the workspace, select .
+The Properties window appears, displaying the datasheet for the selected node.
+As needed, enter values in the available fields.Select .
+The node is saved and linked automatically to the selected RCA.
+What To Do Next
+
+Connect Nodes
+
+Copy a NodeAbout This Task
+After you create nodes in your Event Diagram, you can copy and paste them within the same Event Diagram. You can copy an existing node or add a node to the Event Diagram from the Palette in the design canvas.
+Procedure
+Access the Event Diagram containing the node that you want to copy.On the design canvas, select the node that you want to copy. At the top of the workspace, in the Manage Diagram section, select , and then select .
+Note: The Paste option is available only after you have copied a node.
+The node is pasted to the design canvas.
+What To Do Next
+
+Connect Nodes
+
+Connect NodesBefore You Begin
+
+Add Node to the Event Diagram
+
+Procedure
+Access the Event Diagram for which you want to connect two nodes.On the design canvas, select the circle on the node from which you want to initiate the connection, and then drag your pointer to the port of the successor node. 
+As you drag your pointer, a line appears.
+When your pointer touches the port of the successor node, release the pointer.
+An arrow appears, connecting the two nodes. A link between the two nodes is created.
+What To Do Next
+
+Track and Reevaluate the Analysis Results
+
+Modify an Event Diagram NodeProcedure
+Access the Event Diagram containing the node whose details you want to modify.On the design canvas, select the node whose details you want to modify.In the upper-right corner of the workspace, select .
+The datasheet for the selected node appears in the Properties window.
+As needed, modify the available fields, and then select .
+Your changes are saved to the database.
+Access Reference Documents for a Failure Event NodeProcedure
+Access the Event Diagram whose Reference Documents you want to access. On the design canvas, select the Failure Event node.In the upper-right corner of the workspace, select .
+The Properties window appears, displaying the datasheet for the selected Failure Event node.
+On the datasheet, select , and then select Reference Documents. 
+A list of Reference Documents linked to the selected Failure Event node appears.
+Note: For more information, refer to the Manage Reference Documents section of the documentation for additional options when working with reference documents.
+Export an Event DiagramAbout This Task
+You can export an Event Diagram as an image and save it to another location, such as your local hard drive.
+Note: The zoom factor does not affect the size of the image that you want to export. Regardless of the zoom factor that is currently applied to the Event Diagram, the entire diagram will be included in the image, even if part of the Event Diagram is cut off at the time you perform the export. 
+Procedure
+Access the Event Diagram that you want to export.In the upper portion of the workspace, in the Edit section, select . 
+The Save as window appears. 
+Navigate to the location to which you want to save an image of the Event Diagram.In the File name box, enter the name of the file.From the Save as type list, select the format in which you want to save the image, and then select Save. 
+Note: The above steps might change depending on the browser and browser settings that you use. 
+The Event Diagram is saved to the selected location in the selected image format.
+Delete Nodes from the Event DiagramAbout This Task
+When you delete a node from the Event Diagram, you are deleting the associated RCA Sequence Node and any links to the associated RCA Sequence Node.
+Tip: If you do not want to delete successor nodes, you should remove the connectors before deleting the predecessor node. If you delete a predecessor node without first deleting the connector between it and the successor nodes, the records that are associated with the successor nodes will also be deleted.
+Procedure
+Access the Event Diagram containing the node that you want to delete.On the design canvas, select the node that you want to delete.At the top of the workspace, in the Edit section, select .
+The Delete Node dialog box appears, asking you to confirm that you want to delete the selected node.
+Select Yes.
+The selected node is deleted along with any associated successor nodes.
+Delete Node ConnectorsProcedure
+Access the Event Diagram containing the node and the associated connectors that you want to delete.On the design canvas, hover or tap on the connector that you want to delete. 
+The  icon appears.
+Select .  
+The connector is deleted from the Event Diagram. The GE Digital APM system also updates the links for each node when one or more connectors attached to the node are deleted. 
+
+
+
+
+
+On this pageAbout Event DiagramAbout Failure EventsAccess an Event DiagramCreate a Failure EventCreate a Secondary Failure EventAdd a Node to the Event DiagramCopy a NodeConnect NodesModify an Event Diagram NodeAccess Reference Documents for a Failure Event NodeExport an Event DiagramDelete Nodes from the Event DiagramDelete Node Connectors
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,106 @@
+
+
+
+Baseline Policies | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Policy Examples
+Input Nodes
+Condition, Logic, and Calculation Nodes
+Action Nodes
+Baseline Policies
+Glossary
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Reference
+Baseline Policies
+
+
+
+
+
+
+
+Baseline PoliciesAbout Baseline PoliciesGE Digital APM provides the following policies that can be used as sub policies to perform calculations on dates:DateAddDateDiffImportant: You cannot modify the name of a baseline policy.DateAdd Policy
+You can use the DateAdd policy as a sub policy to add a time interval to a time stamp value. The DateAdd policy is configured as an alternative for the date add functions in queries and R scripts.
+The DateAdd policy uses the following inputs to perform the addition:Time stamp to which you want to add the time interval.Time interval that you want to add to the time stamp.Unit of time in which the interval is defined.
+How DateAdd Policy Works
+The following image illustrates the DateAdd policy:
+
+In this policy, the interval value, the unit of time in which the interval is defined, and the time stamp to which you want to add the time interval are passed as inputs from the calling policy, and they are represented by the Point Value nodes. The Case and Math node use the time interval value and its unit to calculate the number of seconds in the specified interval. The Add node then adds the number of seconds to the time stamp and the resultant date is passed back to the calling policy by the Return Value node.
+DateDiff Policy
+You can use the DateDiff policy as a sub policy to calculate the difference between dates in terms of the following units of time:YearsWeeksDaysHoursMinutes
+You can use the DateDiff policy as an alternative for the date difference functions in queries and R Scripts to calculate time difference between dates.
+How DateDiff Policy Works
+The following image illustrates the DateDiff policy:
+
+In this policy, a Subtract node is used along with a Convert Type node to calculate the number of seconds between dates. The dates are passed as inputs from the calling policy, and they are represented by the Point Value nodes in this policy. The number of seconds between the dates is then converted by the Math nodes to years, weeks, days, hours, and minutes and passed back to the calling policy via the Return Value nodes. Depending on the unit of time in which the difference between the dates is required in the calling policy, you can map the desired output from the Sub Policy node to the appropriate node in the calling policy.
+
+
+
+
+
+On this pageAbout Baseline PoliciesDateAdd PolicyDateDiff Policy
+
+
+
+
+
+
+
+
+

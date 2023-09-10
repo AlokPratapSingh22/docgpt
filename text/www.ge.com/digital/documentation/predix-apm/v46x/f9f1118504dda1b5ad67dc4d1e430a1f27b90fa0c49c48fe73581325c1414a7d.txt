@@ -1,0 +1,107 @@
+
+
+
+Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Overview
+
+
+
+
+
+
+
+OverviewOverview of the Policy Designer ModulePolicy Designer is a visual business rules design tool that enables users with no programming knowledge to automate asset management workflows to reduce the operational cost and eliminate delays in identifying and responding to asset conditions that may impact reliability, availability, productivity, or operating cost.Policy Designer allows you to define and deploy policies that apply calculations and logic to specific input records in GE Digital APM, for example, assets or health indicators, and act on the results.Policies may be executed on a schedule, on demand, or triggered by a change in an input data source.Note: For information on policies that execute when any record in an APM Family is inserted, modified or deleted, see Family Policies.Use Case Example
+Traditionally, companies attempted to improve asset performance by identifying historical trends and using them to define future actions. For example, the results of a Reliability Distribution Analysis may indicate that a motor fails about every six months, so a strategy might be implemented to replace motors of that type every five months (that is, one month prior to the next predicted failure). However, some motors could last longer than six months (for example, for eight months), and in these cases, replacing the motor too early would result in unnecessary costs. In other cases, the motor might fail before the planned replacement, resulting in more expensive repairs and lost production.
+An engineer might analyze historical reliability and performance data and determine that when the motor temperature reaches 200 degrees, it will begin to fail. Rather than implementing a strategy to replace the motor after five months, as suggested by the reliability analysis, he can create a policy to take action when the high temperature condition is met. If the policy retrieves a reading from a process historian indicating that the motor temperature has reached 200 degrees, policy logic can create a recommendation automatically for a technician to replace the motor and send an email message to notify the engineer. In this way, the company can save money by avoiding unnecessary replacements and still prevent failures that will occur if the motor is replaced too late.
+Policies can be configured to monitor asset conditions continuously and perform a variety of actions automatically based on criteria defined in the policy. In addition to creating recommendations and sending email messages, a policy can create Event records to track the occurrence of certain conditions. You can also use Policy Designer to create and update composite health indicators that indicate the overall health of a piece of equipment.
+The basic elements of a policy
+A policy model consists of a network of connected nodes:
+Input nodes that retrieve information, for example, an APM Family record, a query result, or readings from a process historian.Condition, Logic and Calculation nodes that evaluate the information.Action nodes that automate asset management workflows, for example; send an email, create a recommendation or work request, or add a value to a health indicator.
+Connections between nodes define the order in which nodes are executed. Connections from Condition and Logic nodes also define whether the successor node is executed depending on the result (true or false) of the preceding condition.
+A policy is deployed by creating policy instances that define the specific records to which the policy will be applied. At least one policy instance is required for each policy.
+Access the Policy Designer Overview PageProcedureIn the module navigation menu, select
+Tools > Policy Designer.
+The Policy Designer Overview page appears.
+
+
+The Policy Designer Overview page contains the following sections that summarize the number of Policies and Policy Recommendations:
+Policies: Contains a list of all active and inactive Policies.My Policy Recommendations: Contains a list of the Policy Recommendation records assigned to you.Overdue Policy Recommendations: Contains a list of the Policy Recommendation records that are past target completion dates with pending recommended actions.Module Workflow Policies: Contains a list of the Policies that support GE Digital APM module workflows. Note:  The module workflow Policies do not appear in the other sections of this page.
+
+Note: The Policy Designer Overview page is not updated automatically when you return to the previously opened tab. You can select  to update the page.
+
+The Count of Executions per Policy for Last 30 Days section in the Policy Designer Overview page displays a graphical summary of the execution results for the 20 Policies that were most active in the past 30 days. You can select an execution result to access the corresponding Policy.
+The average and max wait time graph displays a graphical summary of the time in queue, that is the time taken from the Trigger Sent time to the Execution Start time in the past four hours (4 hrs). 
+ Policy Designer WorkflowThis workflow provides the basic, high-level steps for using Policy Designer. The steps and links in this workflow do not necessarily reference every possible procedure.
+Begin a policy by providing a name and description for the policy.Build a policy model, which includes nodes and connections that represent the inputs, logic, and resulting actions for the policy.Note:  Interaction with the model design canvas, such as adding and moving nodes, is not available on touch-screen devices.
+Create policy instances, which define the specific records to which logic in the policy model will be applied.
+Run the validation process to confirm that the policy logic is working correctly.
+Define execution settings to specify whether you want the policy to be executed automatically or executed according to a predefined schedule (or both).Define execution history settings to specify what types of policy execution records will be created.
+Activate the policy and policy instances so that they will be executed according to your defined execution settings.
+
+
+
+
+On this pageOverview of the Policy Designer ModuleAccess the Policy Designer Overview Page Policy Designer Workflow
+
+
+
+
+
+
+
+
+

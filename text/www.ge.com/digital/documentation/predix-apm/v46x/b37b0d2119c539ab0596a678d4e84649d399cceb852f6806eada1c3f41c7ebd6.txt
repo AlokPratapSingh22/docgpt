@@ -1,0 +1,106 @@
+
+
+
+Third Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release NotesFirst Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Release Notes
+Third Quarter of 2020
+
+
+
+
+
+
+
+Third Quarter of 2020Release Date: September 18, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDAPM Asset data has been migrated to enhance the backend for better performance. To facilitate the data migration, the following enhancements have been made: If the classification and instance attributes encounter a datatype mismatch, system performs the following actions:The classification attributes are updated to match the most prevalent instance datatype.The instance attributes that do not match with the classification attribute datatype and their values that does not comply with the datatype are renamed with the prefix dtm_<attribute_name> to preserve the datatype and values of the instance attribute. You can later delete these attributes and provide values at the classification level.If the existing tags has UOM or StandardUom attribute values that does not exist in the UOMService of a tenant, they are mapped to the UnknownUOM group. To modify the tags, you must update the attribute values with the existing values in the UOMService by accessing UOMService, Asset Ingestion, or API.For more information, refer to the APM Asset Data Migration documentation.F46402The APM Asset Service has been enhanced to provide better data modeling and advanced query capabilities. To facilitate this enhancement, the following changes have been made:Attribute inheritance has been enforced such that the datatype of the attributes defined within a classification cannot be changed in the classification hierarchy. An instance inherits attributes from the Classification or Type under which it has been created.New reserved attributes, uomGroup and standardUomGroup have been added to identify the group of the UOM.Attributes defined in the root classification cannot be deleted at the child classification level. Similarly, attributes defined in the classification cannot be deleted at the instance level. Attribute datatype cannot be changed in the classification or an instance after the attribute is created.Ingestion flow has been streamlined such that the classifications must be ingested before instances.Source IDs cannot be duplicated. However, same source ID can be assigned to different types of business functional hierarchy and classifications in different cases.The attributes can only be deleted from where it was originally created, that is classification or asset instance.F46399You can now move an instance from one classification to another. However, if an attribute exists in the new classification with the same name as that of an instance, the classification attribute datatype must match the datatype of the instance attribute.US421426
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, an asset name could not contain the special characters such as _(underscore), -(hyphen), .(dot), "(quotes), even though the message that appeared when you attempted to include these characters in the asset name, indicates that the name can contain these characters. This issue has been resolved. Now, you can include these characters in an asset name.DE131028Previously, the Time Zone attributes were overwritten during reingestion of the Asset instance. This issue has been resolved.DE128549
+Table 3. Obsolete Features
+The following features are no longer available.
+DescriptionTracking IDYou can no longer update the Instance Classification. Moving a Tag from one Classification to another will result in conflict because attribute inheritance has been implemented.F46399Networks and Templates have been removed from Assets.US418997
+
+
+
+
+
+On this pageRelease Date: September 18, 2020
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+
+
+
+
+About Cross-Tenant Sharing | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About Cross-Tenant SharingYou can grant access to enterprises in your tenant and receive access to enterprises from another tenant.Note: Access to asset resources for the receiving tenant is view only by default. You cannot update or delete the shared asset resources.As a granting administrator responsible for one or more enterprises in a tenant, you can:Grant view access to one or more top-level enterprises in your tenant to an administrator in another tenant. Revoke access granted to another administrator.Accept or decline grants received.As a receiving administrator, you can:View an access list of one or more top-level enterprises granted from an administrator in another tenant.Assign access to enterprises and specified children in the hierarchy to your users. Once access is granted, a user in your tenant can access assets from another tenant.Log in to your tenant and access assets from other tenants.
+Important:
+Receiving administrators cannot grant access to received asset resources to an additional tenant.The Cross-Tenant Sharing module is only available to administrators.You cannot share assets across different GE Digital APM environments (e.g., between pre-prod and prod).
+
+Cross-Tenant Sharing provides the ability to select asset resources and to grant access to enterprises for another tenant. Cross-Tenant Sharing is currently limited to granting access only for top-level enterprises in the hierarchy. See About Permission Sets for more information.Granting cross-tenant access adds a Tenants column to the Context Browser in GE Digital APM. This column includes your own tenant and any additional shared tenants for which you have been granted access. Selecting a tenant from the Context Browser allows you, as a user, to view the enterprise and child assets for which you have been granted access. You can then select and view an item from the Context Browser.Once granted access to asset resources from one or more tenants, you will be able to read data from Asset and time series data.Once granted access to asset resources from one or more tenants, you will be able to:Read data from Asset and time series data, Dashboards and AnalysisPlot Analysis chartsAccess alerts related to the assets for which you have been granted access permission.Access cases related to the assets for which you have been granted access permission.
+
+
+
+
+
+
+
+
+
+
+

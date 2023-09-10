@@ -1,0 +1,82 @@
+
+
+
+Permission Sets | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Users and PermissionsPermission Sets
+Permission Set Definitions
+Manage a Permission Set
+Users
+Groups
+Certificate-Based Authentication
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Users and Permissions
+Permission Sets
+
+
+
+
+
+
+
+Permission SetsAbout Permission SetsPermission sets specify the actions users can take and the assets on which they can act. To control user access to GE Digital APM, as a user administrator, you assign permission sets (actions) and one or more assets to individual users or user groups. Keep the following in mind when planning for permission sets and user access:You can define multiple permission sets. Each permission set can have one or more features. You can assign one or more permission sets to a single user. For example, you can do this when you first add the user to GE Digital APM.You can assign one permission set per user group. User groups provide a convenient and powerful way to manage access for multiple users. You can assign a user to multiple user groups. When you add a user to a user group, the user receives its associated permission sets as defined in the user group definition.Default Permission SetsThe default permission sets are specified in the table. You can view the following default permission sets on the Permission Sets page. Tip: Select the permission set to view all available permissions (actions) for the permission set.
+Table 1. Permission SetsThis Permission Set:Can do this:Foundation AdminHas administrator permissions for the Predix APM application.APM Basic UserAccess APM navigation menu, tools, and basic applications.Note: If present, this permission set should be selected for all users in the tenant.User Admin
+Add more administrators for the tenant.Manage users (add, edit, and deactivate users and permission sets).Manage user groups (add, edit, and deactivate users and permission sets).
+Ingestor AdminUsers with the Ingestor Admin role have privileges for the ingestion process.M&D ManagerMay be assigned permissions to specific MicroApps, such as Alerts, Cases, Analysis, Asset, or Analytics.SmartSignalHas administrator permissions for SmartSignal.AnalyticsExecutorRoleHas permissions for the following permission sets:AlertsManage Analytics catalogAsset – View, ingest, and edit assetsCasesTemplates – Case and Alert TemplatesTimeseries – View data sources for Timeseries, Add Timeseries, View Timeseries, and Configure data sources for TimeseriesCustom
+Perform actions defined in that permission set on assigned assets.
+
+
+
+
+
+
+On this pageAbout Permission SetsDefault Permission Sets
+
+
+
+
+
+
+
+
+

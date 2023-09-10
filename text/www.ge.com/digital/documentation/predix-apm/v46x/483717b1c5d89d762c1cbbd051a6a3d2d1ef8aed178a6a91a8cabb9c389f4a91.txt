@@ -1,0 +1,183 @@
+
+
+
+Performance Record and Report Configuration | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+AdminAccess the GAA Administrator Page
+GAA Administrator Workflow
+System Codes
+Event Categories
+Event Types
+Cause Codes
+Amplification Codes
+Fuel Types
+Mapping Records
+Event Transitions
+Companies
+Plants
+Units
+Unit Capacity
+Performance Record and Report Configuration
+
+
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Admin
+Performance Record and Report Configuration
+
+
+
+
+
+
+
+Performance Record and Report ConfigurationAccess a List of Performance Records and Reports Configured for a GAA UnitBefore You Begin
+
+Add a GAA Unit
+
+Procedure
+Access the GAA Unit for which you want to view the list of configured records and reports.Select the Performance & Reports tab.
+A list of Performance records and Regulatory reports configured for the selected GAA Unit appears, displaying the following columns of information:
+
+Entity ID
+
+Is Associated 
+
+Is Report 
+
+Is Default
+
+Report Name
+
+Policy ID
+
+Report Type
+
+Weightage Type
+
+
+
+
+Configure a Performance Record or a Regulatory ReportAbout This Task
+This topic describes how to configure the following:
+Performance Record for NERCRegulatory Report: You can configure the following regulatory reports:Event Report for NERCEvent Report for CEA
+
+Procedure
+Access the GAA Administrator page.Select the Configurations tab. 
+A list of Performance records and Regulatory reports configured in GAA appears.
+
+
+
+In the upper-left corner of the Configurations section, select .
+The Add Report window appears. 
+If you want to configure a Regulatory report, enter the values in the available fields. 
+-or-
+If you want to configure a Performance record:
+In the Record Type box, select Performance.
+Clear the Is Report check box.
+The following fields are enabled:
+Policy IDAssociated Events Catalog PathPerformance TypeWeightage Type
+Enter the values in the remaining fields.
+Select .
+The specified record or report is configured.
+What To Do Next
+
+Associate a Performance Record or a Regulatory Report with a GAA Unit
+
+Modify a Performance Record or a Regulatory ReportProcedure
+Access the GAA Administrator page. Select the Configurations tab. 
+A list of Performance records and Regulatory reports configured in GAA appears.
+
+
+
+Navigate to the row containing the record or report that you want to modify.In the Entity ID column, select the link.
+The Edit Report window appears.
+
+
+As needed, modify the values in the available fields.Select .
+The Performance record or Regulatory report is configured.
+Associate a Performance Record or a Regulatory Report with a GAA UnitProcedure
+Access the list of records and reports configured for a GAA Unit with which you want to associate a record or a report.Select the row containing the record or report that you want to associate.In the upper-right corner of the Performance & Reports section, select Associate Report.
+The Associate Report dialog box appears, asking you to confirm that you want to associate the selected record or report.
+Select Yes.
+The selected record or report is associated with the GAA Unit.
+Disassociate a Performance Record or a Regulatory Report from a GAA UnitProcedure
+Access the list of records or reports configured for a GAA Unit from which you want to disassociate a record or a report.Select the row containing the record or report that you want to disassociate.In the upper-right corner of the Performance & Reports section, select Disassociate Report.
+The Disassociate Report dialog box appears, asking you to confirm that you want to disassociate the selected record or report.
+Select Yes.
+The selected record or report is disassociated from the GAA Unit.
+Delete a Performance Record or a Regulatory Report Procedure
+Access the GAA Administrator page.Select the Configurations tab. 
+A list of Performance records and Regulatory reports configured in GAA appears.
+Select the row containing the record or report that you want to delete.
+Note: You cannot delete a Performance record if it is associated with a GAA Unit.
+In the upper-right corner of the Configurations section, select .
+The Delete Report dialog box appears, asking you to confirm that you want to delete the selected record or report.
+Select Yes.
+The selected record or report is deleted and the updated list of reports appears.
+
+
+
+
+
+On this pageAccess a List of Performance Records and Reports Configured for a GAA UnitConfigure a Performance Record or a Regulatory ReportModify a Performance Record or a Regulatory ReportAssociate a Performance Record or a Regulatory Report with a GAA UnitDisassociate a Performance Record or a Regulatory Report from a GAA UnitDelete a Performance Record or a Regulatory Report 
+
+
+
+
+
+
+
+
+

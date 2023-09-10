@@ -1,0 +1,239 @@
+
+
+
+Thickness Monitoring | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health Manager
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+Thickness Monitoring
+
+
+
+
+
+
+
+Thickness MonitoringDeploy TM for the First TimeBefore You Begin
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. GE Digital recommends, however, that the tasks be completed in the order in which they are listed.
+
+Results
+StepTaskNotes
+1
+Assign Security Users to one or more of the Security Roles used in TM.
+This step is required.
+User must have permissions to the TM families in order to use the TM functionality.
+2Assign Resource Roles to users by performing the following steps:Access the Human Resource record for each user.In the Role box, select TM Technician.
+This step is required to allow a user (typically, a TM Inspector) to enter details in an Inspection record.
+3
+
+Configure Family Preference Application Settings.
+
+This step is required. 
+You must configure preferences for the families that will be used to store equipment data in Thickness Monitoring.
+The following relationships must be defined:
+For the Equipment family, the Asset to Subcomponent Relationship field must be set to Has TML Group, and the Component ID field must be set to Equipment ID. The Subcomponent to Asset Relationship field should be left blank.For the TML Group family, the Subcomponent to Asset Relationship field must be set to Has TML Group, and the Component ID field must be set to TML Group ID. The Asset to Subcomponent Relationship field should be left blank.
+4
+
+Configure Global Preference Application Settings.
+This step is required only if you want to use custom reading preferences and Nominal T-Min preferences. Baseline reading preferences and Nominal T-Min preferences will be used if you do not define your own. You can also define additional, optional global preferences that are not defined in the baseline GE Digital APM database.5
+Define additional fields that will be displayed in the header section of the TM Measurement Data Entry.
+This step is required only if default Thickness Measurement fields are displayed on the headings of these pages in the baseline GE Digital APM database. You can specify that additional fields be displayed in the header section of these pages.6
+Disable the Auto Manage Tasks setting.
+This step is required only if you are planning to use TM tasks.7
+Install the Meridium Device Service on all of the machines that will connect to devices that will be used with Thickness Monitoring.This step is required only if you will use any device to collect data that you transfer to Thickness Monitoring. If you are using HTTPS to connect to GE Digital APM, follow the instructions in https://ge-ip.my.salesforce.com/kA20h0000009SCN?srPos=0&srKp=ka2&lang=en_US. 8Install the drivers and supporting files for any devices on all of the machines that will connect to devices that will be used with Thickness Monitoring.This step is required only if you will use these devices to collect data that you transfer to Thickness Monitoring.
+Upgrade TM
+Before You Begin
+
+The following tables outline the steps that you must complete to upgrade this module to the latest version of GE Digital APM
+                    .
+                
+These tasks may be completed by multiple people in your organization. We recommend, however, that the tasks be completed in the order in which they are listed.
+
+ProcedureUpgrade to the latest version of GE Digital APM.
+StepTaskNotes1
+Revert the following Thickness Monitoring queries to baseline:
+Public\Meridium\Modules\Thickness Monitoring\Queries\TM AssetsPublic\Meridium\Modules\Thickness Monitoring\Queries\ TM Assets Requiring a CalculationPublic\Meridium\Modules\Thickness Monitoring\Queries\Assets Near or Past Retirement Public\Meridium\Modules\Thickness Monitoring\Queries\Assets with TM TasksPublic\Meridium\Modules\Thickness Monitoring\Queries\Corrosion DistributionPublic\Meridium\Modules\Thickness Monitoring\Queries\Excessive CorrosionPublic\Meridium\Modules\Thickness Monitoring\Queries\Remaining Life Less Than 180 MonthsPublic\Meridium\Modules\Thickness Monitoring\Queries\Thickness Inspections
+
+
+This step is required only if you have modified the following queries:
+TM AssetsTM Assets Requiring a CalculationAssets Near or Past Retirement.Assets with TM TasksCorrosion DistributionExcessive Corrosion.Remaining Life Less Than 180 Months.Thickness Inspections.
+2Uninstall the previous version of the  Meridium Device Service on all of the machines that will connect to devices that will be used with Thickness Monitoring.This step is required only if you will use any device to collect data that you transfer to Thickness Monitoring.3
+Install the Meridium Device Service on all of the machines that will connect to devices that will be used with Thickness Monitoring.This step is required only if you will use any device to collect data that you transfer to Thickness Monitoring. If you are using HTTPS to connect to GE Digital APM, follow the instructions in https://ge-ip.my.salesforce.com/kA20h0000009SCN?srPos=0&srKp=ka2&lang=en_US. 4If you have previously modified the following Pipe Properties records, follow the steps mentioned in https://digitalsupport.ge.com/communities/CC_Login?startURL=%2Fcommunities%2Fen_US%2FArticle%2FTM-Incorrect-entries-in-Pipe-Properties-family-records to get the updated values for the records.
+ScheduleNominal Diameter - NPSNominal Diameter - DNOutside DiameterNominal Wall Thickness (Old)Internal Diameter (Old)Nominal Wall Thickness (New)Internal Diameter (New)302.5652.875 (inches)0.125 (inches)2.625 (inches)0.188 (inches)2.499 (inches)403690036 (inches)0.688 (inches)34.624 (inches)0.75 (inches)34.5 (inches)
+This step is optional.5Update PV Stress content and stress lookup fields for Thickness Measurement Locations for Non-Piping Assets.This step is required only if you want to use the Pressure Vessel stress content with updated Material Grade in accordance with Tables 1A and 1B of ASME Section II, Part D, 2010. For more information, refer to KBA 000038584.6Update the datasheet of Thickness Measurement Location family by adding the Minimum Thickness Type Field.
+If you have customized the default datasheet of the Thickness Measurement Location family and want to see the Minimum Thickness Type data, you must do the following:Using the Family Management, edit the default datasheet of MI Thickness Measurement Location family. Remove the existing Minimum Thickness Type (Obsolete) field and add the Minimum Thickness Type field in the Datasheet.
+7Update the datasheet of Thickness Monitoring Rules Lookup family by adding the T-Min Formula Policy Field.
+If you have customized the default datasheet of Thickness Monitoring Rules Lookup family and want to see the T-Min Formula Policy data, you must do the following:Using the Family Management, edit the default datasheet of Thickness Monitoring Rules Lookup family. Add the T-Min Formula Policy field in the Datasheet.
+8Update the values in the newly added Minimum Thickness Type field from the existing Minimum Thickness Type (Obsolete) field.
+This will be automatically done by a Utility during an upgrade process. User does not need to do anything.
+Below is the mapping from the existing data to the new data:Minimum Thickness Type (Obsolete)Minimum Thickness TypeCalculatedCALCULATEDNominalNOMINALUser DefinedUSER DEFINEDDefaultDEFAULTNote: Any other values other than NULL will be mapped to USER DEFINED.
+
+Revert the Thickness Monitoring Queries to BaselineThis action is required only if you have modified the Thickness Monitoring queries.About This TaskIf you have modified the following Thickness Monitoring queries, perform the following steps to revert the queries to baseline:Assets Near or Past RetirementAssets with TM TasksCorrosion DistributionExcessive CorrosionRemaining Life Less than 180 MonthsThickness InspectionsTM AssetsTM Assets Requiring a CalculationProcedureAccess the Catalog page.Navigate to the Public folder for the query that you want to revert.For Thickness Monitoring, the public queries are stored in the following folder:
+Public/Meridium/Modules/Thickness Monitoring/QueriesSelect the check box next to the query that you want to revert, and then select .The Confirm Delete window appears, asking you to confirm if you want to delete the selected query.Select OK.The selected query is deleted.Navigate to the Baseline folder for queries.For Thickness Monitoring, the baseline queries are stored in the following folder:
+Baseline/Meridium/Modules/Thickness Monitoring/QueriesSelect the check box next to the query that you want to revert, and then select .The Catalog Folder Browser window appears.Navigate to the folder containing the public query that you deleted in step 3.Select OK. A success message appears indicating that the selected item has been copied successfully.Repeat Steps 2-8 for each query that you want to revert to baseline.Install the Meridium Device ServiceAbout This Task
+Important:  You must repeat this procedure on every machine to which a datalogger will be connected.
+Note: If you are using Predix APM or the URL is secured (https), follow the instructions in https://digitalsupport.ge.com/communities/en_US/Article/HOW-TO-V4-Thickness-Monitoring-Devices-Dataloggers-and-Secure-HTTPS-Browsers-on-Windows-Machines-1553989641712 to install the Meridium Device Service.
+Procedure
+Access the TM Dataloggers page.In the Select TMLs pane, select the check box next to a TML, and then select Apply.Select Send To Device.Note: A datalogger does not need to be connected.The Meridium Device Service Not Found window appears. 
+Select the Download link.MeridiumDevices.exe is downloaded.Run MeridiumDevices.exe, and then follow the instructions in the installer.The Meridium Device Service is installed.In the Meridium Device Service Not Found window, select Continue.Dataloggers can now be used with Thickness Monitoring.Configure the Meridium Device ServiceProcedureIn Windows Explorer, navigate to C:\Program Files\Meridium\Services.Using a text editor, open the Meridium.Service.Devices.exe.config file.In the text editor, navigate to the appSettings section (lines 24 to 28).
+
+On line 25, edit the port number used by the service. 
+Note:  The datalogger settings in Thickness Monitoring must be modified so that the port number matches the one defined in this step.
+On line 26, edit the timeout value in milliseconds. By default, the value for this setting is 60000, or 1 minute.On line 27, if your organization utilizes a different URL protocol for GE Digital APM, edit the protocol the service should use. For example, http://* can be changed to https://*.
+Save the file, and then close the text editor.Restart the Meridium Device Service.
+The Meridium Device Service configuration settings are updated.
+Thickness Measurement Location – Update DatasheetThe default datasheet of Thickness Measurement Location family has been updated to include the newly added Minimum Thickness Type field:FamilyFamily IDDatasheet Updated (Default)Thickness Measurement LocationMI Thickness Measurement LocationThickness Measurement LocationIf you have customized the default datasheet of Thickness Measurement Location family and want to see the Minimum Thickness Type data, you must do the following:Using the Family Management, modify the default datasheet of the MI Thickness Measurement Location family. Remove the existing Minimum Thickness Type (Obsolete) field and add the Minimum Thickness Type field in the Datasheet.Thickness Monitoring Rules Lookup – Update DatasheetThe default datasheet of Thickness Monitoring Rules Lookup family has been updated to include the newly added T-Min Formula Policy field:FamilyFamily IDDatasheet Updated (Default)Thickness Monitoring Rules LookupThickness Monitoring Rules LookupMI_TMIN_CRLIf you have customized the default datasheet of Thickness Monitoring Rules Lookup family and want to see the T-Min Formula Policy data, you must do the following:Using Family Management, modify the default datasheet Thickness Monitoring Rules Lookup family. Add the T-Min Formula Policy field in the Datasheet.TM Functional Security Privileges
+
+GE Digital APM provides the following baseline Security Groups for use with Thickness Monitoring and provides baseline family-level privileges for these groups:
+MI Thickness Monitoring AdministratorMI Thickness Monitoring InspectorMI Thickness Monitoring User
+Access to certain functions in GE Digital APM is determined by membership in these Security Groups. Note that in addition to the baseline family-level privileges that exist for these Security Groups, users will also need at least View privileges for all customer-defined predecessor or successor families that participate in the Thickness Monitoring relationships. Keep in mind that:
+Users who will need to create new records in TM will need Insert privileges to these families.Users who will need to modify records will need Update privileges to these families.Any user who should be allowed to delete TM records will need Delete privileges to these families.
+The following table summarizes the functional privileges associated with each group.
+FunctionCan be done by members of the MI Thickness Monitoring Administrator Group?Can be done by members of the MI Thickness Monitoring Inspector Group?Can be done by members of the MI Thickness Monitoring User Group?Configure Global PreferencesYesNoNoConfigure Family PreferencesYesNoNoUse the T-Min CalculatorNoYesNoArchive Corrosion RatesNoYesNoReset the Maximum Historical Corrosion Rate
+Yes
+NoNoExclude TMLsNoYesNoRenew TMLsNoYesNoReset User PreferencesYesNoNo
+
+
+GE Digital APM provides the following baseline Security Groups for use with Thickness Monitoring and provides baseline family-level privileges for these groups:
+MI Thickness Monitoring AdministratorMI Thickness Monitoring InspectorMI Thickness Monitoring User
+Access to certain functions in GE Digital APM is determined by membership in these Security Groups. Note that in addition to the baseline family-level privileges that exist for these Security Groups, users will also need at least View privileges for all customer-defined predecessor or successor families that participate in the Thickness Monitoring relationships. Keep in mind that:
+Users who will need to create new records in TM will need Insert privileges to these families.Users who will need to modify records will need Update privileges to these families.Any user who should be allowed to delete TM records will need Delete privileges to these families.
+The following table summarizes the functional privileges associated with each group.
+FunctionCan be done by members of the MI Thickness Monitoring Administrator Group?Can be done by members of the MI Thickness Monitoring Inspector Group?Can be done by members of the MI Thickness Monitoring User Group?Configure Global PreferencesYesNoNoConfigure Family PreferencesYesNoNoUse the T-Min CalculatorNoYesNoArchive Corrosion RatesNoYesNoReset the Maximum Historical Corrosion Rate
+Yes
+NoNoExclude TMLsNoYesNoRenew TMLsNoYesNoReset User PreferencesYesNoNo
+TM Security Groups
+
+The following table lists the baseline Security Groups available for users within this module, as well as the baseline Roles to which those Security Groups are assigned. In Predix APM, Roles are assigned to Security Users through permission sets.
+
+Important:  Assigning a Security User to a Role grants that user the privileges associated with all of the Security Groups that are assigned to that Role. To avoid granting a Security User unintended privileges, before assigning a Security User to a Role, be sure to review all of the privileges associated with the Security Groups assigned to that Role.
+                
+
+Security GroupRolesMI Thickness Monitoring Administrator
+MI Mechanical Integrity Administrator
+MI Thickness Monitoring Inspector
+MI Mechanical Integrity Administrator
+MI Mechanical Integrity Power
+MI Mechanical Integrity User
+MI Thickness Monitoring User
+MI Mechanical Integrity Administrator
+MI Mechanical Integrity Power
+MI Mechanical Integrity User
+MI Thickness Monitoring Viewer
+MI APM Viewer 
+MI Mechanical Integrity Viewer 
+
+
+The baseline family-level privileges that exist for these Security Groups are summarized in the following table.
+FamilyMI Thickness Monitoring AdministratorMI Thickness Monitoring InspectorMI Thickness Monitoring UserMI Thickness Monitoring ViewerEntity FamiliesCorrosionView, Update, InsertView, Update, InsertView, Update, InsertViewDatapointView, Update, InsertView, Update, InsertView, Update, InsertViewDatapoint MeasurementView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, InsertViewEquipmentViewViewViewViewHuman ResourceView, Update, Insert, DeleteViewViewViewInspection TaskViewView, UpdateViewViewInventory Group ConfigurationViewViewViewViewMaterials of ConstructionViewViewViewViewMeridium Reference TablesView, Update, Insert, DeleteViewViewViewRBI Inspection Auto-Selection CriteriaViewViewViewViewResource RoleView, Update, Insert, DeleteViewViewViewSecurity GroupViewViewViewViewSecurity UserViewViewViewViewSettingsView, Update, InsertView, Update, InsertViewViewTask ExecutionView, InsertView, InsertViewViewThickness Monitoring TaskView, Update, Insert, DeleteView, Update, InsertView, Update, InsertViewTML GroupView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewRelationship FamiliesBelongs to a UnitView, Update, Insert, DeleteView, Update, InsertView, Update, InsertViewEquipment Has EquipmentViewViewViewViewGroup AssignmentViewViewViewViewHas Archived Corrosion AnalysesView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Archived Corrosion Analysis SettingsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Archived Subcomponent Analysis SettingsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Archived Subcomponent Corrosion AnalysesView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Corrosion AnalysesView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Corrosion Analysis SettingsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas DatapointsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas InspectionsNoneNoneNoneViewHas MeasurementsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas RolesView, Update, Insert, DeleteViewViewViewHas Task ExecutionView, InsertView, InsertViewViewHas Task RevisionView, InsertView, InsertViewViewHas TasksView, InsertView, InsertView, InsertViewHas TML GroupView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewIs a UserViewViewViewViewUser AssignmentViewViewViewView
+
+
+The following table lists the baseline Security Groups available for users within this module, as well as the baseline Roles to which those Security Groups are assigned. In Predix APM, Roles are assigned to Security Users through permission sets.
+
+Important:  Assigning a Security User to a Role grants that user the privileges associated with all of the Security Groups that are assigned to that Role. To avoid granting a Security User unintended privileges, before assigning a Security User to a Role, be sure to review all of the privileges associated with the Security Groups assigned to that Role.
+                
+
+Security GroupRolesMI Thickness Monitoring Administrator
+MI Mechanical Integrity Administrator
+MI Thickness Monitoring Inspector
+MI Mechanical Integrity Administrator
+MI Mechanical Integrity Power
+MI Mechanical Integrity User
+MI Thickness Monitoring User
+MI Mechanical Integrity Administrator
+MI Mechanical Integrity Power
+MI Mechanical Integrity User
+MI Thickness Monitoring Viewer
+MI APM Viewer 
+MI Mechanical Integrity Viewer 
+
+
+The baseline family-level privileges that exist for these Security Groups are summarized in the following table.
+FamilyMI Thickness Monitoring AdministratorMI Thickness Monitoring InspectorMI Thickness Monitoring UserMI Thickness Monitoring ViewerEntity FamiliesCorrosionView, Update, InsertView, Update, InsertView, Update, InsertViewDatapointView, Update, InsertView, Update, InsertView, Update, InsertViewDatapoint MeasurementView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, InsertViewEquipmentViewViewViewViewHuman ResourceView, Update, Insert, DeleteViewViewViewInspection TaskViewView, UpdateViewViewInventory Group ConfigurationViewViewViewViewMaterials of ConstructionViewViewViewViewMeridium Reference TablesView, Update, Insert, DeleteViewViewViewRBI Inspection Auto-Selection CriteriaViewViewViewViewResource RoleView, Update, Insert, DeleteViewViewViewSecurity GroupViewViewViewViewSecurity UserViewViewViewViewSettingsView, Update, InsertView, Update, InsertViewViewTask ExecutionView, InsertView, InsertViewViewThickness Monitoring TaskView, Update, Insert, DeleteView, Update, InsertView, Update, InsertViewTML GroupView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewRelationship FamiliesBelongs to a UnitView, Update, Insert, DeleteView, Update, InsertView, Update, InsertViewEquipment Has EquipmentViewViewViewViewGroup AssignmentViewViewViewViewHas Archived Corrosion AnalysesView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Archived Corrosion Analysis SettingsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Archived Subcomponent Analysis SettingsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Archived Subcomponent Corrosion AnalysesView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Corrosion AnalysesView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Corrosion Analysis SettingsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas DatapointsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas InspectionsNoneNoneNoneViewHas MeasurementsView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas RolesView, Update, Insert, DeleteViewViewViewHas Task ExecutionView, InsertView, InsertViewViewHas Task RevisionView, InsertView, InsertViewViewHas TasksView, InsertView, InsertView, InsertViewHas TML GroupView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewIs a UserViewViewViewViewUser AssignmentViewViewViewView
+
+
+
+
+
+On this pageDeploy TM for the First TimeUpgrade TM
+Revert the Thickness Monitoring Queries to BaselineInstall the Meridium Device ServiceConfigure the Meridium Device ServiceThickness Measurement Location – Update DatasheetThickness Monitoring Rules Lookup – Update DatasheetTM Functional Security PrivilegesTM Security Groups
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,91 @@
+
+
+
+Failure Data | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Distribution Types
+Calculations
+Failure Data
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Reference
+Failure Data
+
+
+
+
+
+
+
+Failure DataAbout Failure DataThis topic provides a listing of all overviews and high level explanatory information to help you understand failure data.Introduction to Failure DataA failure is the inability of a piece of equipment to perform its intended function. A failure may involve the complete loss of function, a partial loss of function, or the potential loss of function.Reliability describes how likely it is that a piece of equipment will perform its intended function without failure for a given period of time. Reliability is expressed as a percentage and is expressed mathematically as (1 - The Probability of Failure).The GE Digital APM Reliability Analytics module allows you to analyze failure data so that you can draw conclusions and make predictions about the reliability of your equipment and locations. To perform an analysis in Reliability Analytics, you must first collect failure data and store it in GE Digital APM. Examples of important data include:Equipment type and location.Failure modes.Failure type, class, repair actions, and cost.Design, process, diagnostic, and work order data.After the data has been collected, you will need to format the data, and supply it to the GE Digital APM Reliability Analytics tools. Throughout this documentation, we assume that you are collecting and can access the data that is necessary to perform a Reliability Analysis.About Supplying Failure Data to Reliability AnalyticsWhen you create a new analysis in Reliability Analytics, you will need to select a query or dataset on which to base the analysis or manually enter the data that you want to analyze. One of the easiest and most efficient ways to conduct an analysis is to create one based on a query. The advantage of using queries is that each time you view the analysis, GE Digital APM will run the underlying query to retrieve the most current information from the database. Analysis based on datasets and manually entered data, on the other hand, require more manual intervention to reflect updates.Note:  Throughout this documentation, we assume you have entered all important data and will be creating analysis based on queries.The specific data that you need to create an analysis will vary, depending on the type of analysis that you are creating, the specific information that is available, and the results that you want to see. Note:  The type of failure data you collect will influence the conclusions you can make about your equipment. If you have one pump or several pumps with a specific failure mode, then you can perform a very specific analysis. If you have many pumps with many different failure modes, then your analysis will be less specific. For additional information on creating queries, refer to the Queries section of the documentation. The Importance of Failure ModesFailure modes, and the type of data that you capture will influence the conclusions you can make about your equipment. If you have one pump or several pumps with a specific failure mode, then you can perform a very specific analysis. If you have many pumps with many different failure modes, then your analysis will be less specific.For example, if you want to know the chances of a certain part on the pump failing, and in your dataset you have several pumps that have failed in that way, then your analysis will be more accurate than using data with multiple failure modes. If you are analyzing all of the pumps at your site, and you have many different reasons for failure, you will be able to determine overall failure statistics. This analysis, however, will not be particularly useful in determining the probability of failure of a specific piece of equipment.Failure modes can be classified as independent and dependent failures. An independent failure is not caused by another failure but a dependent failure is caused by another failure. As a reliability analyst, you must evaluate which failures should be part of an analysis to obtain correct and specific results. You can follow failure coding standards, such as ISO 14224:2006 for best results. These standards provide guidelines to collect reliability and maintenance data in a standard format for equipment in all facilities in an organization.About Failure ProbabilityConditional Reliability is used in GE Digital APM's Failure Probability Calculator. The calculator is available for all distribution models and uses conditional probability to compute the probability of failure at time, t.The concept of Conditional Reliability involves the following questions:  What is the probability of failure given that the item has survived until today?-or-How many days until I reach a certain % probability of failure?Understanding the results of a failure probability analysis is a learned skill that will improve the more it is used. For example, the user may find the current probability of failure for a given element to be 90% or more after 3 years of operating time. If the user were to calculate the future probability of failure 10 days from the current date, the estimate of future failure probability might be around 1%. This is accurate.  This often occurs when the future is small compared to the total life experienced by the elements under study. 
+R(T,t) = R (T+t)/R(T)The Probability of surviving (T + t) days equals the Probability of surviving (T) days and then surviving additional (t) days.
+GE Digital APM Reliability allows you to specify the operating time and calculate the probability of equipment failure. Or you can choose to specify the probability of equipment failure and then calculate the future age when the specified probability will be reached.  
+
+
+
+
+On this pageAbout Failure DataIntroduction to Failure DataAbout Supplying Failure Data to Reliability AnalyticsThe Importance of Failure ModesAbout Failure Probability
+
+
+
+
+
+
+
+
+

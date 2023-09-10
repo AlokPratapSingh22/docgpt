@@ -1,0 +1,113 @@
+
+
+
+Location Information | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+InstancesAsset Instances
+Asset Attributes
+Tag Instances
+Tag Attributes
+Location Information
+Events
+
+
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Instances
+Location Information
+
+
+
+
+
+
+
+Location InformationAbout Location InformationYou can configure the time zone and the location for a specific business functional object.Use Location to map and find non-portable business functional objects. Mapping non-portable business functional objects allows you to use GPS for service calls.An object in the business functional hierarchy may refer to an enterprise, site, segment (a specific grouping like a plant or a block in a plant), or a specific asset or child-asset. You can select a time zone and geolocation for an instance anywhere in the hierarchy. Configuring a time zone and location allows you to provide time stamps for the data supplied from the asset sensors and calculations. This information is used throughout GE Digital APM.You can specify a geological location for an object in the business functional hierarchy using latitude, longitude, and altitude. You can also define a region using two or more defined points.Location information can be accessed from the Location Information link on an instance view.Assign a Time Zone for an InstanceYou can select a time zone for a business functional object instance.About This Task
+Each UTC (Universal Time Coordinated) time zone selection describes a geographical region where the same standard time is observed. Selecting a time zone for an instance allows you to designate how the time stamp for each instance appears throughout GE Digital APM. Selected time zones observe Daylight Savings and are automatically adjusted to observe local time.
+You can select a time zone in which the selected business functional object is located, or select a time zone in which you are or other users are located. Selecting an instance time zone overrides any default time zones selected. Tip: A default time zone may be set from the tenant preferences or from the user preferences. 
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Select the Location Information link.In the Time Zone section, select an option from the Time Zone drop-down list box.The time zone for the selected instance is saved.Add a Geolocation for an InstanceYou can add multiple ordered geolocations for an instance.About This Task
+The geolocation table allows you to either map a defined point where the business functional object is located, or map a series of defined points that indicate a region where the business functional object is located. To map a region, you must define two or more locations. This allows you to find the selected physical object using GPS.
+You can add one defined location, or multiple defined locations for a selected instance. Each location can be assigned:OrderNameLatitudeLongitudeAltitude
+
+ The location specific attributes for an instance are displayed in the Geolocation table in the Location section.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Select the Location Information link.In the Geolocation section, select .Each geolocation is unique for the instance. Perform the following:
+For this optionDo thisOrderHover over and select the Order box, and then enter a numeric value.If you are defining multiple locations, select one of the following icons to add a row, then enter a numeric value in the Order box.Add a row below ().Add a row above ().Delete a row ().When you are done adding rows for defining the regional locations, continue to the Name box.NameHover over and select the Name box, then enter an alphanumeric value. For example, North West 1.LatitudeHover over and select the Latitude box, then enter a numeric value.LongitudeHover over and select the Longitude box, then enter a numeric value.AltitudeHover over and select the Altitude box, then enter a numeric value.
+A hint may appear if you enter an invalid coordinate.Select Save.The geolocation and/or region locations are saved and displayed in the Geolocation table.Modify a Geolocation for an InstanceYou can modify multiple ordered geolocations for an instance.About This Task
+The geolocation table allows you to either map a defined point where the business functional object is located, or map a series of defined points that indicate a region where the business functional object is located. To map a region, you must define two or more locations. This allows you to find the selected physical object using GPS.
+You can modify one defined location, or multiple defined locations for a selected instance. Each location can be assigned:OrderNameLatitudeLongitudeAltitude
+
+ The location specific attributes for an instance are accessible in the Geolocation table in the Location section.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Select the Location Information link.In the Geolocation section, select .Each geolocation is unique for the instance. Modify the following:
+For this optionDo thisOrderHover over and select the Order box, and then enter a numeric value.If you are defining multiple locations, select one of the following icons to add a row, then enter a numeric value in the Order box.Add a row below ().Add a row above ().Delete a row ().When you are done adding rows for defining the regional locations, continue to the Name box.NameHover over and select the Name box, then enter an alphanumeric value. For example, North West 1.LatitudeHover over and select the Latitude box, then enter a numeric value.LongitudeHover over and select the Longitude box, then enter a numeric value.AltitudeHover over and select the Altitude box, then enter a numeric value.
+A hint may appear if you enter an invalid coordinate.Select Save.The geolocation and/or region locations are saved and accessible in the Geolocation table.Delete a Geolocation from an InstanceYou can delete one or more geolocations for an instance.About This Task
+The geolocation table allows you to either map a defined point where the business functional object is located, or map a series of defined points that indicate a region where the business functional object is located. To map a region, you must define two or more locations. This allows you to find the selected physical object using GPS.
+You can delete one defined location or multiple defined locations for a selected instance. 
+ The location specific attributes for an instance are displayed in the Geolocation table in the Location section.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Select the Location Information link.On the Geolocation section, select .Tap the Order box for the location you want to remove, and select .The row is removed from the table.Select Save.The geolocation and/or region locations are saved and displayed on the Geolocation table.
+
+
+
+
+On this pageAbout Location InformationAssign a Time Zone for an InstanceAdd a Geolocation for an InstanceModify a Geolocation for an InstanceDelete a Geolocation from an Instance
+
+
+
+
+
+
+
+
+

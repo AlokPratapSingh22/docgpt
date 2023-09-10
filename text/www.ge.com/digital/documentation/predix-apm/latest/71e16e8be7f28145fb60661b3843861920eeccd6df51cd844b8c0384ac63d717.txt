@@ -1,0 +1,65 @@
+
+
+
+Schedule a Strategy Macro Run | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Schedule a Strategy Macro RunBefore You Begin
+
+Create a strategy macro.
+Procedure
+Access Strategy Macros.In the left pane, select the tab for the strategy macro whose run you want to schedule.The workspace for the selected strategy macro appears. The Schedule section contains several rows, each with a  button and a Run As box.Tip: Using the rows in the Schedule section, you can create multiple scheduled runs for a single strategy macro. In each Run As box, you can select the Security User whose account will be used to execute the associated scheduled run. This allows you to apply the site filtering associated with a particular Security User to a scheduled strategy macro run.
+Tip: For more information, refer to the Site Filtering section of the documentation.
+In the Schedule section, in the row for the scheduled run that you want to create or modify, in the Run As box, select the Security User whose account will be used to execute the scheduled run.In the same row, select .The Edit Schedule window appears.
+Select either the One Time or Recurrence check box.In the Time Zone box, select the time zone in which you want the first scheduled execution to occur.In the Start box, specify the date and time at which you want the first scheduled execution to occur.If you selected the Recurrence check box, in the Every section, specify the frequency at which you want the execution to occur.If you selected the Recurrence check box, in the End section, specify when the recurring execution should end.Select Save.The Edit Schedule window closes, and a description of the scheduled strategy macro run appears in the row.In the same row, select .The strategy macro run is scheduled.
+
+
+
+
+
+
+
+
+
+
+

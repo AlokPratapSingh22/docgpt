@@ -1,0 +1,109 @@
+
+
+
+Manage a Permission Set | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Users and PermissionsPermission Sets
+Permission Set Definitions
+Manage a Permission Set
+Users
+Groups
+Certificate-Based Authentication
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Users and Permissions
+Manage a Permission Set
+
+
+
+
+
+
+
+Manage a Permission SetCreate a Permission SetBefore You BeginYou must be logged in with administrator privileges.About This Task
+By creating a set of common permissions, you can later assign the set to users or user groups.
+ProcedureIn the module navigation menu, go to
+Administration > Permission Sets.Select Add New Permission Set. In the Permission Set Name box, enter a name for the permission set.Optional: Enter a description.In the Permissions section, select the check box next to each permission that you want to assign to the permission set.
+Tip: Select a permission category to select or clear all permissions in that category.
+Select Save.ResultsThe permission set is created and displayed in the Permission Sets table.What To Do Next
+Associate the permission set with an asset being assigned to a user.Associate the permission set with an asset being assigned to a group.
+Modify a Permission SetBefore You Begin
+You must be logged in with administrator privileges.You must have at least one permission set to modify.
+About This Task
+You can modify existing permission sets.
+Important: Removing or altering permissions to existing features can inadvertently disable user access to required features. Any changes to permission sets affects users and associated user groups.
+ProcedureIn the module navigation menu, go to
+Administration > Permission Sets.Select the row containing the permission set you want to modify.
+Tip: To freeze a column so that it remains visible when you scroll horizontally, or to hide a column, hover over the name of the column you want to freeze or hide, select , and then select your desired action.
+Make changes as needed. The permissions set must retain a valid name and at least one feature.
+Tip: Select a permission category to select or clear all permissions in that category.
+Select Save.The changes to the permission set are saved.Delete a Permission SetBefore You Begin
+You must be logged in with administrator privileges.You must have at least one permission set to delete.
+About This TaskYou can delete existing permission sets.ProcedureIn the module navigation menu, go to
+Administration > Permission Sets.In the row containing the permission set that you want to delete, select , and then select Delete Permission Set.
+Tip: To freeze a column so that it remains visible when you scroll horizontally, or to hide a column, hover over the name of the column you want to freeze or hide, select , and then select your desired action.
+The Delete Permission Set window appears.Select Confirm.ResultsThe permission set is deleted and removed from the Permission Sets table.Activate or Disable Permission Sets or Permissions for AssetsBefore You BeginYou must be logged into GE Digital APM as a user administrator.About This Task
+Deactivating a permission set for a user removes access to those features. Deactivating the permission set prevents the user from accessing features associated with that permission set. A user without any permission sets can continue to log in to GE Digital APM. However, the user is unable to use any features. You must add permission sets to the user, or assign a user to a user group, to regain access to features. You can also deactivate access to assets for users and user groups. Deactivating all assets also deactivates all asset-related features.
+ProcedureIn the module navigation menu, go to
+Administration > Users.Select the row containing the user for whom you want to activate or disable permission sets or permissions for assets.
+Tip: To freeze a column so that it remains visible when you scroll horizontally, or to hide a column, hover over the name of the column you want to freeze or hide, select , and then select your desired action.
+The Edit User page appears.In the Edit User page, do one of the following:Doing thisAchieves thisIn the row containing the permission set you want to remove, select , and then select Remove Assignment.Removes user access to those features.Select Assign Permission Set, and then select an existing permission set or create a new permission set.Grants feature access for the user.Repeat the previous step for each permission set and asset as needed.Select Done.
+Tip: To disable a user, remove all the assigned permissions sets and groups from that user.
+Results
+Changes take effect immediately. You must activate the permission set and assets for the user to have access to the assigned features of the permission set and assets.
+Sync Permission SetsBefore You BeginYou must be logged into GE Digital APM as a user administrator.ProcedureIn the module navigation menu, go to
+Administration > Permission Sets.
+Select Sync Permissions to update changes to permission sets.A window appears, stating the permission sync was successful.
+
+
+
+
+On this pageCreate a Permission SetModify a Permission SetDelete a Permission SetActivate or Disable Permission Sets or Permissions for AssetsSync Permission Sets
+
+
+
+
+
+
+
+
+

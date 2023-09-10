@@ -1,0 +1,135 @@
+
+
+
+Inspection Tasks and Recommendations | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference 
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Inspection Tasks and Recommendations
+
+
+
+
+
+
+
+Inspection Tasks and RecommendationsAbout Inspection Tasks and RecommendationsBased on the results of an inspection, you might need to suggest that further action be taken. For example, if you inspect an area of a warehouse and notice that the roof is leaking, you may want to suggest that the ceiling tiles be replaced.You can create a new Inspection Task record that indicates that the ceiling tiles need to be replaced, or you could create an Inspection Recommendation record to record the recommendation to replace the ceiling tiles. Your business processes will dictate whether you should create an Inspection Task record or a Recommendation record. For example, inspectors may need to report all recommendations to a supervisor for approval. The supervisor might then be responsible for approving the recommendation, creating an associated Inspection Task record, and assigning that Inspection Task record to the appropriate inspector.Additionally, if the Thickness Monitoring license is active and TM Analyses exist for the Equipment records that you analyze in Inspection Management, you can specify that Inspection Task records be updated based upon Thickness Measurement records that you create in Thickness Monitoring. Specifically, the value in the Last Date field in the Inspection Task record will be populated with the value in the Measurement Taken Date field in the Thickness Measurement records that you create via the TM Measurement Data Entry page.About Generating Inspections for Related Inspection TasksAfter the cost has been estimated for the work associated with all Inspection Tasks for a given Work Pack, you can determine which inspections you will perform and which you will not. You can then create Inspections to represent the approved work that you will perform.Example: Generating Inspections
+For example, suppose a Work Pack includes tasks to inspect all pieces of equipment in a particular system. If you receive an estimate from an inspector that exceeds your budget, you might need to trim the inspection work and inspect only the pieces of equipment whose previous inspections revealed defects.
+You can generate Inspections for the Inspection Tasks by:
+
+Generating an Inspection from a single Inspection Task.
+Generating Inspections from all Inspection Tasks that are linked to the Work Pack.
+Access Inspection RecommendationsAbout This Task
+Steps: Access an Inspection Recommendation from the Inspection 
+Procedure Access an Inspection Recommendation from the Inspection 
+Access the Inspection Data section.In the upper-right corner of the page, select .The Recommended Actions pane appears, displaying a list of Inspection Recommendations for the selected asset. You can now use the Recommended Actions functionality. 
+ Access an Inspection Recommendation from the Asset 
+Access the Inspection Management Overview page for the equipment containing the Inspection Recommendation that you want to access.Select the Underlying Recommendations tab. The Underlying Recommendations section appears, displaying a list of open recommendations for the selected asset. You can now use the Recommended Actions functionality. 
+Create Inspection RecommendationsProcedure
+Access the Inspection Data section. In the upper-right corner of the page, select .
+A new Inspection Recommendation datasheet appears.
+As needed, enter values in the available fields, and then, in the upper-right corner of the workspace, select .
+A message appears, confirming that you have created an Inspection Recommendation. You can now use Recommended Actions functionality.
+Modify the Date Filter for Inspection RecommendationsAbout This Task
+In the Underlying Recommendations tab, the Underlying Open Recommendations and Recommendations Due for Implementation sections can be filtered using the Target Completion Date Filter, which is based on the value in the Target Completion Date field. If you do not modify these filters when accessing tasks or recommendations, the sections may appear to be empty. You can modify the date filters to display the tasks and recommendations that you want to access. By default, the selected date filter is defined by the administrator. 
+ProcedureAccess the Underlying Recommendations section.In the Underlying Open Recommendations or Recommendations Due for Implementation section, select .
+The Target Completion Date Filter box appears, displaying a list of date filters.
+
+Note: The date filters that appear in the Target Completion Date Filter box are defined by the administrator. If some date filters do not appear, an administrator can modify the filters in the Date Filters section of the Overview Configuration page in Application Settings.
+Select the date filter that you want to use.Select Apply.
+Inspection recommendations with a Target Completion Date that matches the selected date filter parameters appear.
+Note: If you navigate away from the Underlying Open Recommendations and Recommendations Due for Implementation sections or refresh the page, the date filter you selected will no longer be applied. Instead, when you return to the Underlying Open Recommendations or Recommendations Due for Implementation section, the default filter defined by the administrator is applied.
+Access the Underlying Inspection Tasks SectionProcedure
+Access the Inspection Management Overview page for the asset associated with the Inspection whose Inspection Task you want to access. Select the Underlying Inspection Tasks tab.The Underlying Inspection Tasks section appears. 
+Note:  You can delete Inspection Tasks via Record Manager. Create an Inspection TaskProcedure
+Access the Inspection Management Overview page for the asset associated with the Inspection whose Inspection Task you want to create. In the upper-right corner of the page, select , and then select Create Inspection Task. On a new page, an Inspection Task datasheet appears. 
+As needed, enter values in the available fields, and then select .Note:  The Inspection Task datasheet inherits the required values from the selected Inspection Family. You do not have to enter any values in the Inspection Task datasheet; however, you can modify the datasheet prior to saving. The Inspection Task is saved.What To Do Next
+Create a Work Pack
+Delete an Inspection TaskProcedure
+Access the Underlying Inspection Tasks section.
+Tip: If the Inspection Task that you want to use does not appear, check the date filter configuration.
+Select the row containing the Inspection Task that you want to delete.In the upper-right corner of the section, select .
+A message appears, asking you to confirm that you want to delete the Inspection Task.
+Select Yes. 
+The selected Inspection Task is deleted. 
+Modify the Date Filter for Inspection TasksAbout This Task
+The Underlying Inspection Tasks section can be filtered using the Next Date Filter. Inspection tasks are filtered based on the value in the Task Next Date field. If you do not modify the filter when accessing tasks, the sections may appear to be empty. You can modify the date filters to display the tasks that you want to access. By default, the selected date filter is defined by the administrator. 
+ProcedureAccess the Underlying Inspection Tasks section.Select .
+The Next Date Filter box appears, displaying a list of date filters.
+
+Note: The date filters that appear in the Next Date Filter box are defined by the administrator. If some date filters do not appear, an administrator can modify the filters in the Date Filters section of the Overview Configuration page in Application Settings.
+Select the date filter that you want to use.Select Apply.
+Inspection tasks with a Next Date that matches the selected date filter parameters appear.
+Note: If you navigate away from the Underlying Inspection Tasks section or refresh the page, the date filter you selected will no longer be applied. Instead, when you return to the Underlying Inspection Tasks section, the default filter defined by the administrator is applied.
+Create an Inspection Report from an Inspection TaskProcedure
+Access the Underlying Inspection Tasks section.
+Tip: If the Inspection Task that you want to use does not appear, check the date filter configuration.
+In the row containing the Inspection Task whose report that you want to create, select the link. The Manage Task page appears, displaying the Inspection Task datasheet. 
+In the upper-right corner of the page, select Generate Report. If there is a value in the Inspection Document Type box, the Inspection report is generated automatically. -or-If there is no value in the Inspection Document Type box, the Create Inspection window appears. In the Inspection Families box, select the type of Inspection report that you want to generate, and then select Create. Note: Inspection Events are displayed according to the Taxonomy Configurations that have been defined for Checklist Configuration Templates and Inspection Families. If no Taxonomy Configurations have been defined or the selected asset’s equipment taxonomy does not match any defined Taxonomy Configurations, a full list of Inspection Families and Checklist Configuration Templates appears.A new Inspection report is generated, and the Inspection Overview page appears, displaying the Inspection Data section. 
+Results
+A new Inspection record is created for the specified Inspection Document Type. You can now access Inspection Reports. 
+
+
+
+
+
+On this pageAbout Inspection Tasks and RecommendationsAbout Generating Inspections for Related Inspection TasksAccess Inspection RecommendationsCreate Inspection RecommendationsModify the Date Filter for Inspection RecommendationsAccess the Underlying Inspection Tasks SectionCreate an Inspection TaskDelete an Inspection TaskModify the Date Filter for Inspection TasksCreate an Inspection Report from an Inspection Task
+
+
+
+
+
+
+
+
+

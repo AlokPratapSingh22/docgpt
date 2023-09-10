@@ -1,0 +1,149 @@
+
+
+
+Family Field Descriptions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Policy Examples
+Input Nodes
+Condition, Logic, and Calculation Nodes
+Action Nodes
+Baseline Policies
+Glossary
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Reference
+Family Field Descriptions
+
+
+
+
+
+
+
+Family Field Descriptions Policy Records
+
+ Policy records store basic information about policies. The following table provides an alphabetical list and description of the fields that exist in the Policy family and that are displayed on the baseline Policy datasheet (unless otherwise noted). The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive. 
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. See the Site Filtering section of the documentation for more information.
+By default, this family is configured to be included in global search and to use Rules.
+Note:  The values in Policy records cannot be modified in Record Manager or accessed via the global search. Instead, you must access the policy in the policies interface. 
+FieldData TypeDescriptionField Behavior and UsageActiveLogicalIndicates whether the policy is active or inactive.Reflects the selection of the activate/deactivate policy button in the Details workspace.Automatic EvaluationLogicalIndicates whether the policy logic will be executed automatically when records belonging to the policy instance are modified.Reflects the selection in the Automatic Execution check box in the Details workspace. Description TextA brief summary of the policy.Contains the value that you enter in the Description box on the Details workspace.Execution History SettingCharacterDefines how the execution history is recorded for the policy.Reflects the selection in the Execution History option in the Details workspace. The field is populated with the value Normal, by default. Model TextCode defining the logic that is represented by the policy model.This field is populated automatically and does not appear on the Policy datasheet.Name CharacterThe name of the policy.Contains the value that you specify in the Name box in the Details workspace.This field is required, and the value must be unique.OwnerCharacterThe owner of the policy.
+Contains the policy owner that appears at the top of the Details workspace.
+Only the owner of the policy can save changes to the policy.
+This field is required. This field is configured to track revision history by default. You can look at the revision history for this field to determine the ownership history for a particular policy.
+ScheduleCharacterCode defining the policy's schedule.This field is populated automatically and does not appear on the Policy datasheet.Schedule ExecutedBooleanIndicates whether the currently configured schedule has executed at least once.Populated automatically.ScheduledLogicalIndicates whether the policy has a defined execution schedule.Populated automatically.Time ZoneCharacterThe time zone associated with the policy.Contains the value that you specify in the Time Zone list in the Details workspace.This field contains the value (UTC) Coordinated Universal Time by default.
+Policy Instance Records
+Policy Instance records store information about policy instances that are associated with a policy. The following table provides an alphabetical list and description of the fields that exist in the Policy Instance family. The information in the table reflects the baseline state and behavior of these fields.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. See the Site Filtering section of the documentation for more information.
+By default, this family is configured to be excluded from global search and to use Rules.
+Note: The values in Policy Instance records cannot be modified in Record Manager. You must update the instance in the Policy Designer module in order to change values in the record.
+FieldData TypeDescriptionBehavior and UsageActiveLogicalIndicates whether the instance is active or inactive.Reflects the selection of the activate/deactivate policy instance button in the Instances pane.IDCharacterThe name of the instance.Populated automatically with the value that you enter in the Instance box in the Instances pane.MappingTextContains code that maps values from records belonging to the policy instance to the nodes in the associated policy model. 
+This field is disabled and does not appear on the Policy Instance datasheet.
+Policy GUIDCharacterA unique identifier that is used internally by the GE Digital APM system.
+This field is disabled and does not appear on the Policy Instance datasheet.
+
+Policy Event Records
+Policy Event records store information about events that are associated with Equipment or Functional Location records that are monitored by a policy. The following table provides an alphabetical list and description of the fields that exist in the Policy Event family and that are displayed on the baseline Policy Event datasheet (unless otherwise noted). The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site and will then only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. See the Site Filtering section of the documentation for more information on using this feature.
+By default, this family is configured to be excluded from global search and to use Rules.
+FieldData TypeDescriptionBehavior and UsageClose DescriptionTextA description of why the event was closed.
+Populated automatically based on the properties defined for the associated Create Event or Close Event node.
+DescriptionTextA description of the event.
+Populated automatically based on the properties defined for the associated Create Event node.
+End TimeDateThe date on which the event ended.
+Populated automatically based on the properties defined for the associated Create Event or Close Event node.
+This field is used only when the Has Duration field is set to True.
+Event TypeCharacterThe type of event.
+Populated automatically based on the properties defined for the associated Create Event node.
+Has DurationLogicalIndicates whether or not there is an end time associated with the event.
+Populated automatically based on the properties defined for the associated Create Event node.
+NameCharacterThe name of the event.
+Populated automatically based on the properties defined for the associated Create Event node.
+In the Execution History pane, this value will appear as a hyperlink that you can select to access the Events section in Asset Health Manager.
+Policy Instance GUIDCharacterA unique identifier that is used internally by the GE Digital APM system.On the Policy Event datasheet, this field is labeled Link to Policy and contains a link to the policy instance that created the Policy Event record.SeverityCharacterThe severity of the event.
+Populated automatically based on the properties defined for the associated Create Event node.
+Start TimeDateThe date on which the event started.
+Populated automatically based on the properties defined for the associated Create Event node.
+Time Line ResetLogicalThis field is not currently used.N/A
+Policy Recommendation Records
+Policy Recommendation records store basic information about recommendations that have been created as a result of a policy. The following table provides an alphabetical list and description of some of the fields that exist in the Policy Recommendation family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+By default, this family is configured to be included in global search and to use Rules.
+FieldData TypeDescriptionBehavior and Usage Associated Reference CharacterThe Reference ID of the event or any other entity that originated the recommendation.Populated automatically based on the properties defined for the associated Create Recommendation node.Completed Date DateThe date on which the recommended action was completed.You can use the Calendar feature to select the date on which the recommended action was completed.Completion Comments TextDetails about the completed recommendation.You can enter a value manually.Create Work Request? Boolean
+Specifies whether a work request for the EAM system that you have configured in GE Digital APM will be created from the Policy Recommendation record.
+Populated automatically based on the properties defined for the associated Create Recommendation node.Equipment ID CharacterThe Record ID of the Equipment record to which the Policy Recommendation record is linked.Populated automatically based on the properties defined for the associated Create Recommendation node.-or-Populated automatically with the Record ID of the Equipment record that is linked to the Functional Location record identified by the value in the Functional Location ID field. Functional Location ID CharacterThe Record ID of the Functional Location record to which the Policy Recommendation record is linked.Populated automatically based on the properties defined for the associated Create Recommendation node.-or-Populated automatically with the Record ID of the Functional Location record that is linked to the Equipment record identified by the value in the Equipment ID field. Recommendation Basis CharacterThe policy that created the recommendation.Populated automatically with the name of the Policy record to which the Policy Recommendation record is linked.
+This field does not appear on the Policy Recommendation datasheet.
+Recommendation Description TextInformation about the policy logic that caused the Policy Recommendation record to be created.Populated automatically. Recommendation Headline CharacterA short description of the recommended action.
+Populated automatically based on the properties defined for the associated Create Recommendation node.Recommendation ID CharacterA unique value that identifies the Policy Recommendation record.Populated automatically when the recommendation is created. Recommendation Priority CharacterThe priority value used to rank the importance of the recommendation.Populated automatically based on the properties defined for the associated Create Recommendation node.Recommendation Type CharacterThe type of recommendation record.Populated automatically with the value Policy (PCY).
+This field does not appear on the Policy Recommendation datasheet.
+Target Completion Date DateThe date by which the recommended action should be completed.
+Populated automatically based on the properties defined for the associated Create Recommendation node.This field is required.Work Request Equipment CharacterThe ID of the EAM system Equipment that is associated with the work request that was created from this Policy Recommendation record.Populated automatically when the work request is created.Work Request Functional Location CharacterThe ID of the EAM system Functional Location that is associated with the work request that was created from this Policy Recommendation record.Populated automatically when the work request is created.Work Request Reference CharacterThe ID of the EAM system work request that was created from this Policy Recommendation record.Populated automatically when the work request is created.
+
+
+
+
+
+On this page Policy RecordsPolicy Instance RecordsPolicy Event RecordsPolicy Recommendation Records
+
+
+
+
+
+
+
+
+

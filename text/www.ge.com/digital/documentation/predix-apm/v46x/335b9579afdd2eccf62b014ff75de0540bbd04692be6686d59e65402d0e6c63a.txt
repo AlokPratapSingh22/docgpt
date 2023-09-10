@@ -1,0 +1,108 @@
+
+
+
+Fourth Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Third Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Release Notes
+Fourth Quarter of 2020
+
+
+
+
+
+
+
+Fourth Quarter of 2020Release Notes: December 11, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDThe chart controls are enhanced for usabilty. To facilitate this enhancement, the following changes have been implemented:Selection of common chart controls such as zoom, cross-hair, and so on is applied across all the charts in a card and also across all the charts in any other card in the view. Any new charts added to the cards also retain the common chart controls selection made in one card. Deleting the chart or the card or moving to another card does not change the common chart controls selection. The sub configuration options of the common chart controls do not open for all the charts on which the selection is propagated.The common chart control selections are reset when you select another chart control outside the common controls and refresh the chart.When navigating to Analysis from an Alert, the selection of common chart controls is retained on the charts. The selection of common chart controls is retained on the Event Data Analysis charts.F56453The Search Browser pane for tag search results is now enhanced for usability and efficiency. To facilitate this enhancement, the following changes have been implemented:The Search button now appears below the Search box and the area of the Search box has been increased to allow more search criteria entries. The Search button is enabled only when any search criteria are added to the Search box. The Search button is disabled after the search is triggered until a new criterion is added or any existing criteria is modified.Hovering over the search criteria chip displays an information tooltip prompting you to double click the tag to modify the search criterion or click the Cancel () icon to clear the criterion.You can now search for up to 100 tags in a single search that are copied from a .CSV file or a notepad to the Search box. To facilitate this enhancement, pagination is now introduced so that you can view a maximum of 40 search results in each page.If all the search results appear on one page, the Select All check box now appears on the Search Browser. You can select all the tags from the search results to add to a chart, by selecting this check box.If the search results appear on multiple pages, the Select Visible Tags check box now appears on the Search Browser. You can select all the visible tags on the page to add to a chart by selecting this check box.You can now select multiple tags from the tag search results to add to a chart, by using the Shift key or the Control key on the keyboard. You can select a maximum of 40 tags.The search results header now displays the number of search results that are selected.The Search box scrollbar now works only when you enter more than 10 search criteria in the box.The search help icon and the help text have been updated.F56452To enhance usability in charts, the Delete Chart () icon is now added to the chart controls. The Delete Chart option is removed from the list of options under .US455243To enhance usability in the PINNED DATA pane of an Analysis chart, the Cancel () icon in now moved to the right.US450407To enhance usability on the Analysis template while navigating to Analysis from Alerts, the Template name and the Alert name now appear on the Analysis template.US449958 To enhance usability in the polar charts, the functionality to set the limits for amplitude has been added. To facilitate this enhancement, the MIN and MAX boxes have been added to the chart settings AMPLITUDE RANGE section, where you can enter the minimum and maximum limits for the amplitude. US449836You can now configure the default analysis view from an alert to show data up to the present time based on your user preference. To facilitate this enhancement, in the Chart and Marker Settings section of the My Preferences page, the Open default analysis from alerts to the current date and time check box has been added.
+US448220US444412
+You can now configure the option to skip Lazy Loading for SmartSignal Charts. To facilitate this enhancement, in the Chart and Marker Settings section of the My Preferences page, the Skip Lazy Loading for SmartSignal Charts check box has been added.
+US448210US447455
+
+
+
+
+
+
+On this pageRelease Notes: December 11, 2020
+
+
+
+
+
+
+
+
+

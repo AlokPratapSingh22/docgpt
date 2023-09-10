@@ -1,0 +1,112 @@
+
+
+
+Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+State ManagementOverview
+Manage State Assignments
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+State Management
+Overview
+
+
+
+
+
+
+
+OverviewAbout State Management
+State Management allows users to configure the statuses and operations of records and their associated information. 
+About Managing Record StatesIf an administrative user has configured states and operations to appear on the family datasheet, the state of a record and its associated information is indicated at the top of the datasheet.Conditions Required to Change the State of a Record
+When State Configuration has been defined for a family and a record is created in that family, the record will be set to a default state. This state is configured as the initial state in Configuration Manager.
+Depending on how the State Configuration is set up and the conditions that are met, you can change the state of the record.
+If the State Configuration for the family is set up in its least restrictive form, anyone can transition a record out of its current state and into any subsequent state (i.e., no conditions must be met).
+-or-
+If the State Configuration for the family is set up in its most restrictive form, all of the following conditions must be met before you can transition a record out of its current state.You must be assigned to the State Configuration Role that is assigned to the current state.You must be assigned to the current state.The state to which you want to transition the record must be assigned to a Security User that is assigned to the State Configuration Role for which the next state is assigned.
+Tip: If the Operations link is disabled, it indicates that the operation is set as reserved in Configuration Manager.
+
+There are several other levels of restriction that can be configured between the least restrictive and the most restrictive. It is important to remember that a user's ability to transition record states depends on the way in which the State Configuration has been defined.
+Throughout this documentation, the following terms are used:
+Predecessor State: The state from which a record changes.
+Successor State: The state to which a record changes.
+Tips About Changing Record States
+A record's state is changed as the result of an operation that you execute while viewing the record. GE Digital APM does not provide a way to view all possible states and operations for a record; therefore, before you change a record from one state to another, you might find it helpful to be familiar with all possible states and the operations that result in those states. For information about all states and operations, contact the administrative user who configured the states and operations via the Configuration Manager.To create a query that displays information about a record's state, you will need to query the family of the records whose state information you are interested in. Then, you will need to add the following fields to the query:
+[MI_SM_STATE_ID_C]: The current state.
+[MI_SM_STATE_ENTERED_D]: The date that the record entered the current state.
+[MI_SM_STATE_OWNER_ID_C]: The Security User that is assigned to the current state.
+
+Example: Work Order State Management
+Suppose the workflow for requesting maintenance work involves creating a Work Order record, assigning the record to the appropriate maintenance personnel, and then closing the record after the work is completed. In this case, the State Configuration that is defined for the Work Order family might allow a Work Order record to be in a state of Created, Assigned, or Closed. The possible operations, then, might be Assign (to transition the record from the Created state to the Assigned state) and Close (to transition the record from the Assigned state to the Closed state).
+Access the State Assignments Window for a RecordThis documentation addresses how to access a record's State Assignment via Record Manager. Alternatively, the module-specific documentation describes how to manage State Assignments that are accessed on datasheets by performing operations within modules.Before You BeginTo assign a state to a record, you must first enable State Assignments for that record in Configuration Manager.ProcedureAccess Record Manager, selecting the record whose State Assignment you want to view. In the upper-right corner of the Record Manager page heading, select , and then select Manage State Assignments.The State Assignments window appears.ResultsFrom this window, you can:
+Modify the State Assignment for a record.
+Assign a Security User to a state.
+View the history of all states applied to a record. About the State Assignment Window
+The 
+State Assignment window allows you to assign Security Users to states and view a history of all of the states to which the current record has been set previously.
+Details
+The State Assignment window contains two sections, which can be accessed via the corresponding tabs.
+State Assignments: Contains a grid displaying a row for each state in the State Configuration for the family of the current record(s). The grid contains the following columns:
+State: The state caption.
+Assignee: The user name of the Security User who is currently assigned to that state. In each Assignee cell, a list will appear if a State Configuration Role has been assigned to that state via Configuration Manager. You can select a value from the list to assign that Security User to the state.
+
+History: Contains a grid displaying a row for each state to which the current record has ever been set. The grid contains the following columns:
+State: The state caption.
+Last Set By: The user name of the Security User who last set the record to that state.
+Last Set On: The date on which the Security User set the record to that state.
+If you access the State Assignment window from a module or feature that allows you to manage state assignments for multiple records (e.g., Recommendation Management), the History tab does not appear.
+
+
+
+
+
+
+On this pageAbout State ManagementAbout Managing Record StatesAccess the State Assignments Window for a RecordAbout the State Assignment Window
+
+
+
+
+
+
+
+
+

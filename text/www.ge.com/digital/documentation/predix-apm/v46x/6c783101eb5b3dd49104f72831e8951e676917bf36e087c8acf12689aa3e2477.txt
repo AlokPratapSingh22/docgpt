@@ -1,0 +1,87 @@
+
+
+
+Configuration | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+European Inspection ManagementOverview
+Configuration
+Workflow
+Reference
+ Admin
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+European Inspection Management
+Configuration
+
+
+
+
+
+
+
+ConfigurationAbout Configuring European Inspection ManagementAs an administrator, you must configure the following before an Inspector uses the data to create an inspection plan for an asset:Create Fluid RecordsAdd Fluid DataAssign Assets to European Compliance Strategy TemplateCreate Fluid RecordsAbout This TaskTo create process fluid data in Fluid Data family, the fluid name must exist in the Integrity Fluid Name System Code Table. For more information on System Code Tables, refer to the System Codes and Tables documentation.ProcedureAccess the System Codes and Tables page.From the System Tables section, select Integrity Fluid Name.The details of the Integrity Fluid Name table appears.In the System Code subsection, select .The Create System Code window appears.In the ID box, enter the ID for the fluid.
+Note: The ID must be unique and must not be greater than 50 characters in length.
+In the Description box, provide a description for the fluid.
+Note: The description must not exceed 255 characters in length.
+Select one or more of the following options:Default: Select the check box if you want this fluid to be the default fluid for the Integrity Fluid Name System Code Table.Active: Select the check box if you want the System Code to be active.Select Save.The new fluid is added and appears in the System Code subsection.What To Do NextAfter you create the System Code for a fluid, do the following.Log out of the application and log back in, as the newly added fluid may not appear in the Fluid Data datasheet due to caching.Add Fluid Data to the fluid record.Add Fluid DataBefore You BeginEnsure that the fluid, for which you want to add the fluid properties, is created in the Integrity Fluid Name System Code Table. For more information, refer to the Create Fluid Records topic.About This TaskNow, you must add fluid properties for the new fluid added using Record Manager. For more information on Record Manager, refer to the Record Manager documentation. Based on the properties that you define, a group is assigned to the fluid. For more information on the fluid group assignment, refer to Table F of Annexure - 1.ProcedureUsing Record Manager, create a record in the Fluid Data family.The Fluid Data datasheet appears.Enter values in the available fields.Based on the values, a group is assigned to the fluid.Note: If required, you can change the default group assigned to the fluid.Select .The fluid properties are added to the fluid record.Assign Assets to European Compliance Strategy TemplateAbout This TaskGE Digital APM provides eight Compliance Strategy Templates for the European Inspection Compliance. Each Compliance Strategy Template is linked to a policy that enables recommendation generation based on certain guidelines. You can assign assets to the European Inspection Compliance Strategy Templates. After the assets are linked to the compliance strategy templates, Inspection Plans can be created by the MI Compliance Analyst or the MI Compliance Approver. When the Inspection Plan creation is initiated, the policy selected in the Compliance Strategy Template is executed against the assets that are linked to the template. Creating Inspection plans for assets also generates recommendations according to the guidelines specified in the policy. When an asset is linked to multiple Compliance Strategy Templates, the policy for each template executes, and the generated recommendations are linked to the Inspection Plan and the asset.ProcedureAccess the administrative features of Compliance Management.The Compliance Strategy Templates page appears, displaying all the available Compliance Strategy Templates.Select one of the following Compliance Strategy Templates:EU_PIPE_FL: Template for Piping for Functional LocationEU_PIPE_EQ: Template for Piping EquipmentEU_SB_FL: Template for Steam Boiler for Functional LocationEU_SPV_FL: Template for Simple Pressure Vessel for Functional LocationEU_PV_EQ: Template for Pressure Vessel EquipmentEU_SPV_EQ: Template for Simple Pressure Vessel EquipmentEU_PV_FL: Template for Pressure Vessel for Functional LocationEU_SB_EQ: Template for Steam Boiler EquipmentThe Compliance Strategy Template datasheet appears, displaying the Template Details section.Select the Assets tab.The Assets section appears, displaying a list of assets associated with the selected Compliance Strategy Template.In the Assets section, select , and then select one of the options listed in the following table:OptionsSubsequent steps to be performedAdd Assets via Query
+In the Add Assets to <Asset ID> window, next to each query that you want to use to search for assets to add to the Compliance Strategy Template, select the check box, and then select Next.Note:
+After you select the first query and assets, the query that you selected is stored in the Asset Lookup Query field of the Compliance Strategy Template record. Subsequent uses of the Add Asset via Query tool will use the previously selected query by default. Additionally, the results of this query are used in the Assets without Templates section of the Compliance Management Overview page. To use a different query in the Add Asset via Query tool, select Previous, and then select a query from the catalog.When you use a query to select assets, one of the output fields of the query must be the entity key for an asset. The field in the query must be named ASSET_ENTY_KEY.If you have already added assets to the Compliance Strategy Template, you can filter the query results using a WHERE parameter; the entity key of the template must be TEMP_ENTY_KEY.
+The Select Assets section appears, displaying the results of the query that you selected.In the Select Assets section, next to each asset that you want to add, select the check box.Select Finish.
+Add Assets via Finder
+In the Hierarchy Finder window, navigate to the asset that you want to add. Next to each asset that you want to add to the Compliance Strategy Template, select the .The selected assets appear in the Hierarchy Finder window.Select OK.
+The selected assets appear in the Assets section.Important:
+When you select assets to add, you must select assets that are in the same family as the defined asset family for the template. Additionally, you cannot add the same asset more than once.When you are adding assets to the Compliance Strategy Template, the assets listed in the Hierarchy Finder and the queries listed are site filtered.
+Tip: If one or more assets cannot be added to the Compliance Strategy Template, an error message will appear. You can select the error to view a list of assets that were not successfully added to the template. Create Inspection Summary Reference RecordsAbout This TaskInspection Summary Reference records are used to auto populate Inspection Summary field value for Inspection Event record using data from Inspection Summary Reference records. Inspection Summary Reference records can be added using Record Manager.ProcedureAccess Record Manager, select  Inspection Summary Reference from the list.The Inspection Summary Reference datasheet appears. In the datasheet, select or enter appropriate values in the available fields. Select .The Inspection Summary Reference record is created.
+
+
+
+
+On this pageAbout Configuring European Inspection ManagementCreate Fluid RecordsAdd Fluid DataAssign Assets to European Compliance Strategy TemplateCreate Inspection Summary Reference Records
+
+
+
+
+
+
+
+
+

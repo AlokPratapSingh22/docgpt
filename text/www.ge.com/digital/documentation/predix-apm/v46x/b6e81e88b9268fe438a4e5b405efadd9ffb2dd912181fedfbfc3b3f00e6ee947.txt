@@ -1,0 +1,98 @@
+
+
+
+Troubleshooting Scenarios | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Asset HierarchyOverview
+Workflow
+Asset Hierarchy Configuration
+Data Loader
+TroubleshootingTroubleshooting Scenarios
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Asset Hierarchy
+Troubleshooting
+Troubleshooting Scenarios
+
+
+
+
+
+
+
+Troubleshooting ScenariosTroubleshooting Scenarios
+The following topics can help you troubleshoot issues that you may have with the Asset Hierarchy module:
+Asset Hierarchy Does Not Launch
+Asset Hierarchy Does Not LaunchDescription
+In GE Digital APM, when you attempt to access the Asset Hierarchy, a message with Entities with multiple parents exist appears and the hierarchy does not display. Assume you have the following three relationships configured in Asset Hierarchy Configuration:
+Functional Location Has Functional Location as RootFunctional Location Has EquipmentEquipment Has Equipment
+In the following scenario:An Equipment EQ1 is related to Equipment EQ2 using the Equipment has Equipment relationship, where EQ2 is the predecessor and the EQ1 is the successor.The same Equipment EQ1 is related to a Functional Location FL1 using the Functional Location has Equipment, where FL1 is the predecessor and EQ1 is the successor. This results in the EQ1 having two parents EQ2 and FL1 which violates the requirement that an asset can only have a single parent in the hierarchy.
+Cause
+An Asset in the hierarchy that you are attempting to access may have multiple parent relationships.
+Solution
+Perform the following steps:
+Run the following query and analyze the results.SELECT enty_key,fmly_key,enty_id
+from MIV_MI_AST_HRCY_MV
+If only one row appears with an error message Entities with multiple parents exist, run the following query.SELECT MIV_MI_AST_HRCY_MV_DUP.parent_enty_key
+, MIV_MI_AST_HRCY_MV_DUP.parent_fmly_key
+, MIV_MI_AST_HRCY_MV_DUP.enty_key
+, MIV_MI_AST_HRCY_MV_DUP.enty_id
+, mi_families.fmly_id
+FROM MIV_MI_AST_HRCY_MV_DUP 
+ JOIN mi_families ON MIV_MI_AST_HRCY_MV_DUP.fmly_key = mi_families.FMLY_KEY
+ORDER BY MIV_MI_AST_HRCY_MV_DUP.enty_key AscAll the assets with multiple parents will be listed.Access the parent record in the Record Manager and select > to view the parent record datasheet. Select  and select Unlink this record to ensure that no multiple parent relationships exists.
+
+
+
+
+
+On this pageTroubleshooting ScenariosAsset Hierarchy Does Not Launch
+
+
+
+
+
+
+
+
+

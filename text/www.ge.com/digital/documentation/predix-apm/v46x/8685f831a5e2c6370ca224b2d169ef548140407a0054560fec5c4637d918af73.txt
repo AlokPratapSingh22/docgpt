@@ -1,0 +1,201 @@
+
+
+
+Permission Set Definitions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Users and PermissionsPermission Sets
+Permission Set Definitions
+Manage a Permission Set
+Users
+Groups
+Certificate-Based Authentication
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Users and Permissions
+Permission Set Definitions
+
+
+
+
+
+
+
+Permission Set DefinitionsDefault Permission Set Definitions
+Permissions are required for GE Digital APM modules to function. The following topics describe the entities to which each permission in a permission set grants the user access.
+Administration
+PermissionDescriptionManage Users
+Can add and deactivate usersadd and deactivate user groupscreate new permission setsassign users to user groups, permission sets, and assetscreate ingestor tokens in Setup
+
+Alerts
+PermissionDescriptionAlerts
+Allows a user to perform the following tasks:Create AlertsManage AlertsManage Internal NotesView Limited Visibility AlertsView alert details for General Visibility alerts
+Note: To create an alert, you must have either the Alerts permission, or Manage Alerts and Limited Visibility Alerts permissions.
+View Alert Detail
+Allows a user to perform the following tasks:View Disposition valueView EvidenceView the Analysis Template ChartNavigate to AnalysisView Asset faceplateView Linked Cases
+Note: When only View Internal Notes or Manage Internal Notes is selected, then the View Alert Detail permission is selected by default. In addition, the Manage permission always supersedes the View permission.
+Manage Alerts
+Allows a user to perform the following tasks:Manually create an AlertChange the Alert templateClaim an AlertView all the Alert details (see View Alert Detail permissions above) Change DispositionMark an Alert as ProcessedRelease claimAdd EvidenceCreate a Case from an AlertCreate Case bulk action in gridAdd notes in bulk editCreate reminder alertsView reminder alert criteriaNote: Users with Manage Alerts cannot view, add, or delete an Internal Note.
+View Internal Notes
+Allows a user to perform the following tasks:View all the Alert detailsView Internal Notes Note:
+Users will not see the Internal Notes section if they do not have this permission.Users have view permissions only; they cannot perform any actions.When only View Internal Notes or Manage Internal Notes is selected, then the View Alert Detail permission is selected by default. In addition, the Manage permission always supersedes the View permission.
+
+Manage Internal Notes
+Allows a user to perform the following tasks:View all the Alert Details permissionsView, add, and delete Internal Notes. Users can only delete Internal Notes that they created.Note: Admin must assign the Manage Alerts permission for a user, for that user to perform any actions on alerts.When only View Internal Notes or Manage Internal Notes is selected, then the View Alert Detail permission is selected by default. In addition, the Manage permission always supersedes the View permission.
+View Limited Visibility Alerts
+Allows a user to view alert details for limited visibility alerts and general visibility alerts.
+
+Analysis
+PermissionDescriptionAnalysis ViewUser can: Perform ad hoc Analysis on assets to which they have access, but they cannot save the analyses that they createAnalysis CreateUser can: Perform ad hoc Analysis on assets to which they have accessSave analyses as Templates to support additional research
+Analytics
+Analytics supports granular permissions to control View and Edit access to its sub-modules/apps. This replaces the default wider permission set of Manage Analytic Catalog. Users with the View only permissions can access the sub-module/app but will not be able to make or save modifications. Users with Manage permissions to a sub-module/app can access, add, and make modifications in that sub-module/app.
+PermissionDescriptionManage AnalyticsAccess and/or modify analytic templates and orchestrations.Manage Deployments and FiltersAccess and/or modify deployments and asset filters.Manage Analytic ConfigurationsAccess and/or modify asset filter configuration.View Deployments and FiltersAccess deployments and asset filters.View Analytic ConfigurationsAccess asset filter configuration.BlueprintsAccess and/or modify blueprints (applicable to Smart Signal only).
+APM Connect
+PermissionDescriptionMI Data Loader Admin
+The users have all the privileges applicable to the users having MI Data Loader User permissions. Additionally, the users can delete the data load configuration records and interface log records.
+To use a data loader specific to a module, the users need additional permissions specific to that module. For more information, refer to the appropriate Mappings documentation.
+MI Data Loader User
+The users can access to the Data Loaders feature, and can view, update, and create data load configuration records and interface log records.
+To use a data loader specific to a module, the users need additional permissions specific to that module. For more information, refer to the appropriate Requirements Mappings documentation.
+
+Asset
+Important: In GE Digital APM, assign only the View Assets permission to users to keep the data synchronized in the GE Digital APM databases.
+Note: If user has access to all resources (such as an administrator), all asset restriction policies are ignored.
+PermissionDescriptionIngest Assets apiNoneView Assets apiNoneEdit Assets apiNoneIngest AssetsUser can create and edit the asset model for the tenant. User can also view related ingestion logs.Important:  In GE Digital APM, users with Ingest Assets permission can edit asset-related data using the GE Digital APM UI. However, the users must not edit asset data other than the groups, templates, tags, geolocation, and classifications to avoid asset data in the GE Digital APM databases to become out of sync.View AssetsUser can view all data related to assets, including Asset Instances and Classifications.Edit AssetsUser can modify all editable asset data via the user interface. This permission includes: view asset and allows deletion of asset instance.
+Asset Health
+PermissionDescriptionMI Health Power
+Users can create, update, and delete policies, policy instances, policy recommendations, and health indicator values.Users can access the eLog module. If they are assigned to a Shift, they can also create log entries.
+MI Health Admin
+Users can access the eLog Administrator pages to create Shifts, Templates, and assign Teams to Shifts.
+MI Health UserUser can: Access the Rounds Data Collection mobile features.Create recommendations and acknowledge heath indicators in Asset Health Manager.View policy data.Create policy instances in Policy Designer.Create and modify AMS Asset recommendations.Access the eLog module. If they are assigned to a Shift, they can also create log entries and manage assignments.MI Rounds-Pro AdminUsers can access Rounds Pro Manager and perform all the related tasks.MI Rounds-Pro UserUsers can access Rounds Pro Mobile application and perform all the related tasks.
+Asset Strategy
+PermissionDescriptionMI Strategy PowerThe users have all the privileges applicable to the users having MI Strategy User permission, and the administrative privileges for the Asset Health Manager feature.MI Strategy AdminThe users have all the privileges applicable to the users having MI Strategy Power permissions. Additionally, the users have administrative privileges for the Reliability Centered Maintenance, Failure Modes and Effects Analysis, Asset Strategy Implementation, and Life Cycle Cost Analysis features.MI Strategy UserThe users have the view, create, update, and delete privileges for the Reliability Centered Maintenance, Failure Modes and Effect Analysis, Asset Strategy Implementation, Asset Strategy Management, and Life Cycle Cost Analysis features. Additionally, the users have the administrative privileges for Rounds feature, and view privileges for Asset Health Manager and Calibration Management features.
+Audit Logs
+PermissionDescriptionUser Management Audit LogTenant admin can view details about changes to Administration items
+BI
+PermissionDescriptionOData Extract-CasesAllows a user to extract Cases data.OData Extract-AlertsAllows a user to extract Alerts data.
+Cases
+PermissionDescriptionCasesAllows a user to perform the following tasks:View a caseClaim a caseCreate a caseChange the status of a caseUpdate the reportAdd evidence and notesCreate a case from an alertNote: To create a case, you must have the Cases and View Limited Visibility Cases permissions.View Case Detail
+Allows a user to perform the following tasks:View Case DetailsView Actions sectionView Evidence sectionView Interpretation sectionView Closure section, if availableView any custom sectionsAccess only the Export to PDF option.View the Notes section, add notes or delete notes created by the user. 
+Users cannot perform the following tasks:Claim a caseChange the case statusCreate a caseMark any similar case as reference or remove a related case from the Similar Cases section Modify the information in the Evidence, Actions, Case Info, Interpretation, or Closure sections
+Edit Case DetailAllows a user to view or edit a case. However, the user cannot create a case from an alert or create a case in Cases. Therefore, when a user with this permission claims an alert, the user will not see the Create Case button.View Limited Visibility CasesAllows a user to view case details of the limited visibility cases and general visibility cases.
+Cost Benefit Analysis
+PermissionDescriptionConfigure Asset TypeAllows the user to perform the following tasks during tenant onboarding:Create metadata related to tenantModify metadata related to tenantDelete metadata related to tenantCost Benefit AnalysisAllows the user to perform the following tasks:Create a Cost Benefit Analysis for a caseModify the Cost Benefit Analysis for a caseAccess the CBA Dashboard module
+Cross Tenancy
+PermissionDescriptionCross TenancyAdmin user can see the cross tenancy sharing tab.
+Dashboard
+PermissionDescriptionDashboard-UpdateUser can update an existing dashboard. This permission is required to create dashboards as well.Dashboard-CreateUser can create a new dashboard and save it.Class-DashboardUser can create a class level dashboard.Dashboard-ViewUser can view existing dashboards and create a private dashboard.Default-Dashboard-InstanceUser can set an instance level default dashboard.Default-Dashboard-ClassUser can set a class level default dashboard.
+eLog
+PermissionDescriptionMI eLog ViewerUsers can access the eLog module. If they are assigned to a Shift, they can also create log entries.MI eLog AdministratorUsers can access the eLog Administrator pages to create Shifts, Templates, and assign Teams to Shifts.MI eLog ContributorUsers can access the eLog module. If they are assigned to a Shift, they can also create log entries and manage assignments.
+Failure Elimination
+PermissionDescriptionMI FE PowerUser
+The users have all the privileges applicable to the users having MI FE User permission. Additionally, the users can:
+Create, update, and delete Root Cause Analyses, Production Plans, Production Events, Production Losses, Production Analyses, System Reliability Analyses, Spares Analyses, Reliability Distribution Analyses, Probability Distribution Analyses, Reliability Growth Analyses, and Automation Rules.Update Production Data and link Production Events to Root Cause Analyses.Create and update GAA Events and GAA Performance records.
+MI FE AdministratorThe users have all the privileges applicable to the users having MI FE PowerUser permissions. Additionally, the users have administrative privileges for the Generation Availability Analysis, Root Cause Analysis, Production Loss Analysis, and Reliability Analytics features.MI Analytics PowerThe users can:View, create, update, and delete cognitions.View cognition-related logs and standard lists.MI FE UserThe users can access the GAA Company, GAA Plants, GAA Units, GAA Events, GAA Performance records, Root Cause Analyses, Production Loss Analyses, Production Analyses, System Reliability Analyses, Spares Analyses, Reliability Distribution Analyses, Probability Distribution Analyses, Reliability Growth Analyses, and Automation Rules features.MI Analytics AdministratorThe users can view, create, update, and delete cognitions, cognition-related logs, and standard lists.
+Foundation
+Important: If the Foundation permission set is available in a tenant, you must assign at least one permission from this set to all the users of the tenant. We recommend that the users are assigned the MI APM Viewer permission or APM Basic User Permission set for the assets they need to access.
+PermissionDescriptionMI Foundation PowerThe users have all the privileges applicable to the users having MI Foundation User permissions. Additionally, the users can:Save data from the devices in the GE Digital APM database.Create and manage the Site Reference records.Update, add, and delete the ACA records.View the SAP System records.Add the users to the states.Remove the users from the states.MI APM ViewerThe users can view most of the GE Digital APM records.MI APMNow AdminThe users can access Tools and certain administrative features.MI Foundation UserThe users can:Send and receive data from the devices.Create and manage the recommendations.Create and update the tasks.View and create the ACA records.View the KPIs, Scorecards, and Metric Views.View the SAP System records.Administrator (Super User)The users can access all the administrative applications and GE Digital APM features and functionalities.MI Foundation AdminThe users have all the privileges applicable to the users having MI Foundation Power permissions. Additionally, the users can configure mappings for the devices and view the SAP System records. In addition, the users have administrative privileges for the Catalog, Tasks, and ACA records features.
+Generation Availability Analysis
+PermissionDescriptionMI GAA ViewerUsers have view privileges in the following families:Amplification CodesAPM EventCapacity IncidentCause CodesContributing EventGAA Code MappingGAA CompanyGAA ConfigurationGAA Event CategoriesGAA Event TransitionGAA Event TypesGAA Fuel TypesGAA PerformanceGAA Performance FuelGAA Performance IndexesGAA Performance SummaryGAA PlantGAA Report DetailsGAA Supported OrganizationsGAA Unit GAA Unit CapacityGAA Unit TypesGAA Unit StatesGeneration PoolPrimary EventPrimary Event DetailsPrimary Event HistoryRCA AnalysisReference DocumentAssociated with APM EventFunctional Location Has Generation CompanyFunctional Location Has Generation PlantFunctional Location Has Generation UnitHas Capacity HistoryHas IncidentHas PlantHas Reference DocumentsHas UnitLog has EventsPrimary Incident Has RCA AnalysisUnit Has RecordsMI GAA AdministratorUsers have view, update, insert, and delete privileges in the following families that support GAA Reporting:Amplification CodesAPM EventCapacity IncidentCause CodesContributing EventGAA Code MappingGAA CompanyGAA ConfigurationGAA Event CategoriesGAA Event TransitionGAA Event TypesGAA Fuel TypesGAA PerformanceGAA Performance FuelGAA Performance IndexesGAA Performance SummaryGAA PlantGAA Report DetailsGAA Supported OrganizationsGAA Unit GAA Unit CapacityGAA Unit TypesGAA Unit StatesGeneration PoolPrimary EventPrimary Event DetailsPrimary Event HistoryReference DocumentAssociated with APM EventFunctional Location Has Generation CompanyFunctional Location Has Generation PlantFunctional Location Has Generation UnitHas Capacity HistoryHas IncidentHas PlantHas Reference DocumentsHas UnitLog has EventsPrimary Incident Has RCA AnalysisUnit Has RecordsNote: RCA Analysis has only view privilege.MI GAA AnalystUsers have view, update, and insert privileges in the following families that support GAA Reporting:Amplification CodesAPM EventCapacity IncidentContributing EventGAA Event TypesGAA Fuel TypesGAA PerformanceGAA Performance FuelGAA Performance IndexesGAA Performance SummaryGAA Report DetailsPrimary EventPrimary Event DetailsPrimary Event HistoryReference DocumentAssociated with APM EventHas Capacity HistoryHas IncidentHas Reference DocumentsLog has EventsPrimary Incident Has RCA AnalysisMI GAA AnalystUsers have view privileges in the following families that support GAA Reporting:Cause CodesGAA Code MappingGAA CompanyGAA ConfigurationGAA Event CategoriesGAA Event TransitionGAA PlantGAA Supported OrganizationsGAA Unit GAA Unit CapacityGAA Unit TypesGAA Unit StatesGeneration PoolRCA AnalysisFunctional Location Has Generation CompanyFunctional Location Has Generation PlantFunctional Location Has Generation UnitHas PlantHas UnitUnit Has Records
+Generation Availability Analysis Wind
+PermissionDescriptionMI GAA Wind OperatorUsers have view privileges in the following families:GAA CompanyGAA Wind EventGAA Wind GroupGAA Wind IEC And NERC MappingGAA Wind IEC TypesGAA Wind Import DetailsGAA Wind NERC TypesGAA Wind PerformanceGAA Wind PlantGAA Wind Report ConfigurationGAA Wind Report DetailsGAA Wind Sub GroupGAA Wind Sub Group CapacityGAA Wind UnitFunctional Location Has GAA Wind GroupFunctional Location Has GAA Wind PlantFunctional Location Has GAA Wind Sub GroupFunctional Location Has Generation CompanyGAA Wind Company Has PlantGAA Wind Group Has Sub GroupGAA Wind Plant Has GroupGAA Wind Sub Group Has ConfigurationGAA Wind Sub Group Has UnitGAA Wind Unit Has EquipmentGAA Wind Unit Has EventsMI GAA Wind Super AdministratorUsers have view, insert, update, and delete privileges in the following families that support GAA Wind Reporting:GAA CompanyGAA Wind EventGAA Wind GroupGAA Wind IEC And NERC MappingGAA Wind IEC TypesGAA Wind Import DetailsGAA Wind NERC TypesGAA Wind PerformanceGAA Wind PlantGAA Wind Report ConfigurationGAA Wind Report DetailsGAA Wind Sub GroupGAA Wind Sub Group CapacityGAA Wind UnitFunctional Location Has GAA Wind GroupFunctional Location Has GAA Wind PlantFunctional Location Has GAA Wind Sub GroupFunctional Location Has Generation CompanyGAA Wind Company Has PlantGAA Wind Group Has Sub GroupGAA Wind Plant Has GroupGAA Wind Sub Group Has ConfigurationGAA Wind Sub Group Has UnitGAA Wind Unit Has EquipmentGAA Wind Unit Has EventsMI GAA Wind AdministratorUsers have view, insert, update, and delete privileges in the following families that support GAA Wind Reporting:GAA Wind Import DetailsGAA CompanyGAA Wind EventGAA Wind GroupGAA Wind PerformanceGAA Wind PlantGAA Wind Report ConfigurationGAA Wind Report DetailsGAA Wind Sub GroupGAA Wind Sub Group CapacityGAA Wind UnitFunctional Location Has GAA Wind GroupFunctional Location Has GAA Wind PlantFunctional Location Has GAA Wind Sub GroupFunctional Location Has Generation CompanyGAA Wind Company Has PlantGAA Wind Group Has Sub GroupGAA Wind Plant Has GroupGAA Wind Sub Group Has ConfigurationGAA Wind Sub Group Has UnitGAA Wind Unit Has EquipmentGAA Wind Unit Has EventsThe users have view privileges in the following families:GAA Wind IEC And NERC MappingGAA Wind IEC TypesGAA Wind NERC TypesMI GAA Wind AnalystUsers have view privileges in the following families that support GAA Wind Reporting:GAA Wind NERC TypesGAA Wind PerformanceGAA Wind PlantGAA Wind Report ConfigurationGAA Wind Report DetailsGAA Wind Sub GroupGAA Wind Sub Group CapacityGAA Wind UnitFunctional Location Has GAA Wind GroupFunctional Location Has GAA Wind PlantFunctional Location Has GAA Wind Sub GroupFunctional Location Has Generation CompanyGAA Wind Company Has PlantGAA Wind Group Has Sub GroupGAA Wind Plant Has GroupGAA Wind Sub Group Has ConfigurationGAA Wind Sub Group Has UnitGAA Wind Unit Has EquipmentGAA CompanyGAA Wind GroupGAA Wind IEC And NERC MappingGAA Wind IEC TypesThe users have view, insert, update, and delete privileges in the following families:GAA Wind EventGAA Wind Import DetailsGAA Wind Unit Has Events
+Knowledge Management
+PermissionDescriptionKnowledge ManagementUser can search the Knowledge Management System.
+KPI Management
+PermissionDescriptionSearch Knowledge Management SystemAllows user to search the knowledge management system.
+Life Cycle Cost Analysis
+PermissionDescriptionMI LCC AdministratorUsers have administrative privileges for Life Cycle Cost Analysis.MI LCC UserUsers have user privileges for Life Cycle Cost Analysis.MI LCC ViewerUsers have view privileges for Life Cycle Cost Analysis.
+Mechanical Integrity
+PermissionDescriptionMI Mechanical Integrity Power
+The users have all the privileges applicable to the users having MI Mechanical Integrity User permissions. Additionally, the users can access the criticality calculator family and RBI features (except data mapping).The users have the view privileges for all the RBI families.
+MI Mechanical Integrity AdministratorThe users have all the privileges applicable to the users having MI Mechanical Integrity Power permissions. Additionally, the users have the administrative privileges for the Thickness Monitoring and RBI features and can access the RBI data mapping and reference tables. MI Mechanical Integrity UserThe users can access the T-Min Calculator, Archive Corrosion Rates, Exclude TMLs, and Renew TMLs features. Additionally, the users have basic access to the Inspection and Thickness Monitoring features.SC Recommendation Management ImplementerThe users can change the status of the Recommendations from the Approved or In Progress state to the Completed state.SC Recommendation Management ReviewerThe users can change the status of the Recommendations from the Pending Approval state to one of the following states:Pending ReviewApprovedCanceledRejected
+Policy Designer
+PermissionDescriptionMI Policy Administrator
+Users can modify application settings for Policy Designer and Family Policies.Users can create, update, and delete policies, policy instances, policy recommendations, and health indicator values.Users can view policy execution results.
+MI Policy Designer
+Users can create, update, and delete policies, policy instances, policy recommendations, and health indicator values.Users can view policy execution results.
+MI Policy User
+Users can create, update, and delete policy instances, policy recommendations, and health indicator values.Users can view policies and policy execution results.
+MI Policy ViewerUsers can view policies, policy instances, and policy execution results.
+Predix Workorder Management
+PermissionDescriptionPredix Workorder ManagementNote: This permission is only for Predix APM, not Legacy Predix APM users.Users must be assigned this permission to perform the following activities:Create Recommendations from Alerts and CasesView list of recommendations in Alert and Case Details pagesView Work Orders in Alert and Case Details pagesView Criticality number in Alert and Case Details pages and Asset dashboardView open work orders, completed work orders, and recommendations data in an asset dashboard.
+Production Loss Analysis
+PermissionDescriptionProduction Loss Accounting UserUsers can update Production Plans, Production Data, and Production Events.Production Loss Accounting ViewerUsers have view privileges for Product Loss Analysis and can view Production Plans, Production Data, and Production Events. However, the users cannot update the Production Plans, Production Data, or Production Events.Production Loss Accounting ServiceUsers can perform the following operations:Access Production Plans.Enter Production Data.Reconcile Production Losses.Create Production Events.However, users cannot create Production Plans.Production Loss Accounting AdministratorUsers have administrative privileges for Production Loss Analysis and can perform the following operations:Access the PLA Administrator page.Create Plan Templates, Production Units, Production Profiles, and Products.Update Production Data.
+Reliability Analytics
+PermissionDescriptionMI Reliability AdministratorUsers have administrative privileges for Reliability Analytics workflows.MI Reliability AnalystUsers have user privileges for Reliability Analytics.MI Reliability ViewerUsers have view privileges for Reliability Analytics.
+Root Cause Analysis
+PermissionDescriptionMI PROACT AdministratorUsers have administrative privileges for Root Cause Analysis.MI PROACT Team MemberUsers have user privileges for Root Cause Analysis.MI PROACT ViewerUsers have view privileges for Root Cause Analysis.
+Rounds
+PermissionDescriptionMI Operator Rounds AdministratorUsers can access the Data Collection, Rounds Designer, and Rounds Mobile applications and perform all administrative tasks.MI Operator Rounds Mobile UserUsers can access the Rounds Mobile application and perform all the related tasks.
+Safety
+PermissionDescriptionMI Safety PowerThe user can access the following records:Initiating EventConsequence Adjustment ProbabilitiesIPL ChecklistActive IPLPassive IPLHuman IPLAsset Safety PreferencesAdditionally, the users have all the privileges applicable to the users having MI Safety User permissions, and have the ability to create, modify, and delete all other records in Calibration Management, Hazards Analysis, LOPA, and SIS Management.MI Safety AdminThe users have all the privileges applicable to the users having MI Safety Power permission. Additionally, the users can create, modify, and delete all the records in Calibration Management, Hazards Analysis, LOPA, MOC, and SIS Management.MI Safety UserThe users can access the Recommendations, Calibration Templates, Risk Threshold records, Protective Instrument Loops, SIL Assessments, and SIL Threshold records features. Additionally, the users can access, create, modify, and delete all other records in Calibration Management, Hazards Analysis, LOPA, MOC, and SIS Management. In MOC, the users can access, create, modify, and delete General Recommendations.
+Setup
+PermissionDescriptionSetupIncluded with Manage Users from AdministrationAvailable to User Admins to create and view ingestor URLs, username and passwords.  Provides the ability to reset ingestion password.
+SmartSignal
+Note: By default, GE Digital APM does not give users access to the SmartSignal microapps. An administrator must provide each user with permissions to access the SmartSignal applications, as well as modify the permissions for the ingestor user (used to upload assets into GE Digital APM).
+PermissionDescriptionSmartSignal EvidenceCan view SmartSignal Alerts and charting data for Analysis.SmartSignal Host and TenantSetup SmartSignal Hosts and Tenants User can configure SmartSignal hosts.User can configure SmartSignal tenant mappings.SmartSignal Mapping
+Setup SmartSignal Analytic – Can perform SmartSignal asset mapping.Setup SmartSignal Maintenance
+For Predix APM native client configurations, users must have the following permissions:SmartSignal EvidenceSetup SmartSignal EvidenceSmartSignal MappingSetup SmartSignal Analytic
+For GE Digital APM configurations, users must have the following permissions:
+AnalyticsManage Analytics catalogSmartSignal EvidenceSetup SmartSignal EvidenceSmartSignal MappingSetup SmartSignal Analytic
+Stuf
+PermissionDescriptionBasic group infoCan set up and edit basic group information.
+Templates
+PermissionDescriptionAlert TemplatesCan create Alert Templates.Cases TemplatesCan create Case Templates.
+Timeseries
+PermissionDescriptionView Data Sources for TimeseriesCan view data sources for Timeseries.Add TimeseriesCan ingest and update Timeseries data.View TimeseriesCan view Timeseries data.Configure Data Sources for TimeseriesCan configure data sources for Timeseries.
+Units of Measure
+PermissionDescriptionViewUoMUser can view the Units of Measure Conversion page.EditUoMUser can edit the Units of Measure Conversion page.
+
+
+
+
+
+On this pageDefault Permission Set DefinitionsAdministrationAlertsAnalysisAnalyticsAPM ConnectAssetAsset HealthAsset StrategyAudit LogsBICasesCost Benefit AnalysisCross TenancyDashboardeLogFailure EliminationFoundationGeneration Availability AnalysisGeneration Availability Analysis WindKnowledge ManagementKPI ManagementLife Cycle Cost AnalysisMechanical IntegrityPolicy DesignerPredix Workorder ManagementProduction Loss AnalysisReliability AnalyticsRoot Cause AnalysisRoundsSafetySetupSmartSignalStufTemplatesTimeseriesUnits of Measure
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+
+
+
+Rounds Pro | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health Manager
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+Rounds Pro
+
+
+
+
+
+
+
+Rounds ProDeploy Rounds Pro for the First Time
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. We recommend, however, that the tasks be completed in the order in which they are listed.
+
+StepTaskNotes1
+Review the  data model to determine which relationship definitions you will need to modify to include your custom Equipment and Functional Location families. Modify any relationship definitions as needed via Configuration Manager.
+This step is required only if you have asset data in families outside of the baseline Equipment and Functional Location families. 2 
+Assign Security Users to the following Rounds Pro
+Security Groups:
+MI Rounds-Pro Administrator MI Rounds-Pro Mobile User
+This step is required.3Install the Rounds Pro mobile application on the mobile device that you plan to use for data collection.This step is required only if you will use a mobile device for data collection. For information on installation of Rounds Pro on mobile devices see the following sections:4Set the local time zone on the mobile device that you will use for data collection, typically the user time zone.This step is required only if you will use a mobile device for data collection.
+
+
+
+
+
+On this pageDeploy Rounds Pro for the First Time
+
+
+
+
+
+
+
+
+

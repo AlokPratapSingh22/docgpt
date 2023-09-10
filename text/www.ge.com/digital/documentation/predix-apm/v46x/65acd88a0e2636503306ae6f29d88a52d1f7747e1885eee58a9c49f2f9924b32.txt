@@ -1,0 +1,134 @@
+
+
+
+Dataloggers in Thickness Monitoring | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+Workflows
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data Loaders
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+Dataloggers in Thickness Monitoring
+
+
+
+
+
+
+
+Dataloggers in Thickness MonitoringAbout Dataloggers in Thickness Monitoring (TM)Dataloggers are data collection devices, which are used to measure and record the thickness of a component. Using the Thickness Monitoring (TM) module, you can:
+Send data related to a TML to the datalogger.
+Receive data from the datalogger (after you collect measurement data in the field and record it in the datalogger).Important: If your company restricts the use of removable storage devices in USB ports, the datalogger device may not function as expected. You must request an exemption to the company policy from your IT administrator.The following dataloggers are supported in TM:GE DMS GoGE DMS Go+GE DMS2Olympus (Panametrics) 37DL Plus Ultrasonic Thickness GageOlympus (Panametrics) 38DL Plus Ultrasonic Thickness GageFor each datalogger, GE Digital APM provides:
+Baseline Datalogger Mapping records, which are used to send or receive data from the datalogger.
+Default datalogger settings, which you must review and modify if needed before you use the datalogger.To use dataloggers, you must install the latest version of the Meridium Devices Service.If you have modified the Public\Meridium\Modules\Thickness Monitoring\Queries\TM Assets query, you must revert the query to baseline or add the following SQL code for piping Asset to the query.[MI Corrosion Analysis Settings].[MI_CA_SET_PIPING_F] "Piping Asset"Access the TM Dataloggers Page for an Asset or TML GroupAbout This TaskThis topic describes how to access the TM Dataloggers page for an asset or TML Group. You can also access the TM Dataloggers page for multiple assets.Procedure
+Access the Analysis Overview workspace for the asset or TML Group for which you want to access the TM Dataloggers page.Select , and then select Dataloggers.The TM Dataloggers page appears, displaying the Send To section. In the Select TMLs pane, a hierarchical list of TMLs linked to the selected Asset or TML Group appears. The list also includes TMLs linked to any TML Groups in the asset.
+What To Do NextModify the datalogger settings.Access the TM Dataloggers Page for Multiple AssetsAbout This Task
+This topic describes how to access the TM Dataloggers page for multiple assets. You can also access the TM Dataloggers page for a single asset or TML Group.
+Procedure
+Access the Thickness Monitoring Overview page for the functional location that contains the assets for which you want to access the TM Dataloggers page.Select .The Select Assets to Load for Dataloggers window appears, displaying a list of assets that the functional location contains.Note: If you have modified the TM Assets query, revert the query to the baseline query found in the Baseline/Meridium/Modules/Thickness Monitoring/Queries/ folder.
+In the rows containing the assets for which you want to access the TM Dataloggers page, select the check boxes.
+Note: We recommend that you select the same type of assets (that is, either Equipment or Functional Locations).
+Important: The selected assets must be all non-piping assets or all piping assets.
+Select Done.The TM Dataloggers page appears, displaying the Send To section. In the Select TMLs pane, a hierarchical list containing the selected Assets appears. The list includes the TMLs linked to the Assets. In addition, it also includes TMLs linked to any TML Groups in the Assets. 
+What To Do Next
+Modify the datalogger settings.Modify Datalogger SettingsBefore You Begin
+Datalogger settings are specific to the user, data source, and browser. If you log in as a different user, switch browsers, or use a different data source, you will need to reconfigure your datalogger settings.When you send data to a GE DMS Go or GE DMS Go+ datalogger, GE Digital APM creates a folder in the USB drive. Therefore, you must have the Write permission to the USB drive on the machine that you will use to send data. 
+ProcedureAccess the TM Dataloggers page.Select .A page containing the datalogger settings appears.
+In the drop-down list box at the top of the workspace, select the datalogger whose settings you want to configure. By default, the datalogger that you used previously is selected.If you want to use the GE DMS Go or GE DMS Go+ datalogger, specify a directory in the File Directory box. Files will be sent to and received from the Meridium folder that is created in the specified directory.As needed, enter values in the remaining fields, and then select Save.The datalogger settings are modified.ResultsIf you have already selected the assets that you want to send to the datalogger, then the Send To section appears. Otherwise, the Select Assets to Load for Dataloggers window appears, allowing you to select the assets for which you want to send data to the datalogger.What To Do Next
+Send data to the datalogger.Send Data to a DataloggerBefore You Begin
+Install the Meridium Device Service on the machine that you will use with dataloggers. If you do not install it, when you attempt to send or receive data, you will be prompted to install it. Refer to the limitations when using a datalogger. If needed, modify the datalogger settings.
+ProcedureAccess the TM Dataloggers page.At the top of the page, in the drop-down list box, select the datalogger to which you want to send data. By default, the datalogger that you previously used is selected.In the Send To section, in the Select TMLs pane, perform one of the following steps:Select  to navigate through the hierarchy, and select the check boxes corresponding to the TMLs whose records you want to send to the device. To select all TMLs from an Asset, TML Group, Component, or Band, select the check box next to the item.Search for a TML using the Search box. Enter the TML ID of the TML that you want to search in the search field, and press Enter. From the list that appears, select the check boxes corresponding to the TMLs whose records you want to send to the device.
+Note: You can also search for Assets, TML Groups, Components, or Bands using their IDs to get a list of corresponding Assets, TML Groups, Components, or Bands containing the search term. If you want to select items at a different level, you must select Apply before entering the next search term.
+
+Note:
+For an Asset or TML Group, if there are more than 1000 linked TML records, a message appears, and the TMLs are not displayed in the pane. You can select the check box next to the Asset or TML Group to select all the linked TMLs.Sending TML measurement data for piping Assets, piping components, or piping bands is only supported by the Olympus 38DL Plus Ultrasonic Thickness Gage datalogger device.
+
+Select Apply.The selected TMLs appear in the Selected TMLs workspace.Note: If the total number of TMLs across all the selected assets is more than 5,000, the TMLs do not appear in the Selected TMLs workspace. However, the Confirm Send window appears, asking you to confirm that you want to send all the selected items to the device. For Oracle databases, the above-mentioned limit is 1,000 TMLs.Tip: Select  to access the Table Settings window, where you can set the column preferences.Select Send To Device.
+Note: If you are using the Olympus 38DL Plus Ultrasonic Thickness Gage datalogger device, the Send To Device window appears, displaying the file name and the TML count for each asset whose TMLs will be sent to the device. You can modify the file names if required, and then select Send to send the TML records to the device.
+Note: When sending data to the Olympus 38DL Plus Ultrasonic Thickness Gage datalogger device, for each file that is sent to the device, a Datalogger History record is created. Datalogger History records are used to uniquely identify TML records by entity keys rather than by Asset IDs and TML IDs.
+The job status appears in the page heading, displaying the progress of the job.Results
+If the job is successful, the selected TML records are sent to the device.
+If an error occurs, the Datalogger Errors window containing the error messages appears.
+If the data related to an asset was already sent to the datalogger previously, a message appears, asking you to confirm whether you want to overwrite the existing data on the datalogger. If you choose to overwrite, the data related to the asset is replaced with the data that you send. If you choose not to overwrite, the data will not be sent to the datalogger.
+Receive Data from a DataloggerBefore You Begin
+Install the Meridium Device Service on the machine that you will use with dataloggers. If you do not install it, when you attempt to send or receive data, you will be prompted to install it. 
+Procedure
+Access the TM Dataloggers page.At the top of the page, in the drop-down list box, select the datalogger from which you want to receive data. By default, the datalogger that you previously used is selected.Ensure that the datalogger settings are correct.Select the Receive From tab.The Receive From section appears.
+Select Receive.The Select Files to Receive window appears, displaying a list of files that store the measurement data. By default, the check boxes corresponding to all the files are selected. If you do not want to receive the data stored in a file, clear the corresponding check box. 
+Next to each file name representing the file whose data you want to receive, select the check box.Select Done.The job status appears in the page heading, displaying the progress of the job. If the job is successful, data is received from the datalogger, and the Thickness Measurement Location records appear in the workspace.Note: The check boxes corresponding to the Thickness Measurement Location records that contain measurement readings are automatically selected. The TML records that do not contain readings are not selected. However, if you have selected the Allow Measurements to be Skipped check box in Measurement Preferences, all records are automatically selected.Note: If you are using the Olympus 38DL Plus Ultrasonic Thickness Gage datalogger, the file name corresponding to each TML record received from the device appears in the FILENAME column. In addition, the Datalogger History records that were created when sending data to the device are updated.Select the check boxes corresponding to the required Thickness Measurement Location records, and then select Save.The Confirm Save window appears, asking you to confirm if you want to save the TML records. To change the measurement taken date for the selected measurements, select the Override Measurement Taken Date from device check box, and then select a date in the Measurement Taken Date box. Select Yes.The job status appears in the page heading, displaying the progress of the job. If the job is successful, the selected Thickness Measurement Location records that contain Thickness Measurements are saved.Results
+If you have selected the Allow Measurements to be Skipped check box in Measurement Preferences, the selected records that do not contain measurement readings appear in the Create Skipped Measurements window, and allows you to create Measurement Not Taken records.
+The following analyses are re-calculated:TML Corrosion Analysis linked to each TML whose measurement data you have received.Asset Corrosion Analysis linked to each asset whose measurement data you have received.
+Troubleshoot Datalogger IssuesYou may experience the following issues when using the datalogger in Thickness Monitoring:Datalogger device is not connected to the system.Meridium Device Service not found.Device Service is installed, but USB is not accessible due to permissions.Ultra-MATE software version compatibility Issue with DMS Go+ device.Incorrect readings are received.Meridium Device Service is not running under an authorized service account.OnDMS Go/DMS Go+ device readings with A-Scan saved do not properly load in the Datalogger interfaceDatalogger device is not connected to the systemIn the datalogger settings window, the File Directory drop-down list box is empty. Instead, the following error message appears below the File Directory drop-down list box:Invalid Input: File Directory is required. If your file directory list is empty. Check if your service port is valid.When you attempt to send TMLs, the following error message appears:The device drive could not be found. Please ensure the SD card is inserted in the device.CauseThis issue may occur because of the following reason:The Meridium Device Service is not running under an authorized service account.Note: This issue is applicable only for DMS Go/Go+ devices.SolutionTo check if the datalogger device is connected,Access the Devices and drives in windows.Verify if the USB Drive is available.If the USB Drive is not available, make sure that the datalogger device is properly connected to the system.Meridium Device Service not foundWhen you attempt to send data to a datalogger, following error is displayed on the TM Dataloggers page:Meridium Device Service Not FoundCauseThis issue may occur because of any of the following reasons:Meridium Device Service is not installed in the system.GE Digital APM uses a secured URL (https).SolutionInstall the Meridium Device Service on all the machines that connect to devices with Thickness Monitoring..Note: If you are using HTTPS to connect to GE Digital APM, follow the instructions in https://digitalsupport.ge.com/communities/en_US/Article/HOW-TO-V4-Thickness-Monitoring-Devices-Dataloggers-and-Secure-HTTPS-Browsers-on-Windows-Machines-1553989641712 to install the Meridium Device Service.Device Service is Installed, but USB is not accessible due to permissionsWhen you attempt to send TML data, the following error message appears:Error: <Directory>.dmsdr was not successfully sent to the GE DMS Go/Go+ device. Please check and make sure that all of the settings for the current device are correct. This might be due to the device having to change the file name because of limitations inherent in the device.Additionally, the following error message appears in the log file:Sending message of type ACTION_FAILED to client.Note: This issue is applicable only for DMS Go/Go+ devices.CauseThis issue may occur because of the following reason:You don’t have USB access in your system.To verify if you have USB access in your system, perform the following steps:Navigate to the USB drive folder.Access the Meridium folder.Create a text file.If you see an Access Denied message, you don't have USB access in your system.SolutionContact you system administrator to provide USB access in your system.Ultra-MATE software version compatibility Issue with DMS Go+ deviceWhen you attempt to send TML data using a DMS Go+ device, the data processing starts, but never gets completed. The loading spinner continues to spin as shown in the image below.You can also access the log file from the log folder in the service path folder to check the following error message:Exception occurred while processing the resuestLength cannot be less than zero. Parameter name: lengthCauseThe data format in DMS Go+ is changed in version 3.29. UltraMATE version older than 2.60.35 are not able to read data created with DMS Go+ version 3.29 due to the changed data format. UltraMATE version 2.60.28 or lower are able to read data created with DMS Go+ version 3.28 or lower.SolutionGE Digital recommends customers with an existing valid license of UltraMATE software to download the UltraMATE version 2.60.35 from the https://www.gemeasurement.com/download-center. Contact GE Technical Support to get the password to unzip and install the UltraMATE software.Incorrect readings are received
+If you are a non-English customer, you may receive incorrect readings from the device.
+Cause
+When you receive thickness measurement data from a TM Datalogger in a system where the Windows Region format is set to any region other than English (United States), you may receive incorrect measurement values. For example, if you are using GE Digital APM in a system where the windows culture is set to Finnish (fi-FL) culture, a value of 0.75 inches may be received as 75234724750 inches.
+Solution
+Follow the instructions in https://digitalsupport.ge.com/communities/en_US/Article/V4-3-Thickness-Monitoring-Datalogger-sends-incorrect-readings-into-APM-when-using-Finnish-culture-fi-FL-1552686877133.orUninstall the previous version and Install the Meridium Device Service on all of the machines that connect to devices with Thickness Monitoring.
+Meridium Device Service is not running under an authorized service accountWhen you attempt to send TML data, following error message appears:Error: <Directory>.dmsdr was not successfully sent to the GE DMS Go/Go+ device. Please check and make sure that all of the settings for the current device are correct. This might be due to the device having to change the file name because of limitations inherent in the device.Note: This issue is applicable only for DMS Go/Go+ devices.CauseDepending on the IT security policy of your company, Meridium Device Service may use an unauthorized system service account.Solution
+Run services.msc to open the Services Manager.From the list of services, right-click on Meridium Devices Service, and then select Properties.Access the Log On tab.Select This account.Enter your administration credentials, and then select OK.
+OnDMS Go/DMS Go+ devicereadings with A-Scan saved do not properly load in the Datalogger interfaceWhen you attempt to receive the TML data using a DMS Go/DMS Go+ device, the data processing starts, but it never gets completed.You can also access the log file from the log folder in the service path folder to check the following error message:Exception occured while processing the request Year, Month, and Day parameters describe an un-representable DateTime.CauseUsing the Thickness Monitoring module, when you collected data with the DMS Go+ device and held the Send button for more than two seconds, the device also stored an A-Scan reading. The Thickness Monitoring Datalogger interface was unable to process this file or display the readings.SolutionFollow the instructions in KBA 000034204. Note:
+This issue is applicable only for DMS Go/Go+ devices.
+
+
+
+
+
+On this pageAbout Dataloggers in Thickness Monitoring (TM)Access the TM Dataloggers Page for an Asset or TML GroupAccess the TM Dataloggers Page for Multiple AssetsModify Datalogger SettingsSend Data to a DataloggerReceive Data from a DataloggerTroubleshoot Datalogger Issues
+
+
+
+
+
+
+
+
+

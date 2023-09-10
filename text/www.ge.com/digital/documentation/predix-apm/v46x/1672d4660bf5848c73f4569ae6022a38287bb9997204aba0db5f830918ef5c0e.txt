@@ -1,0 +1,163 @@
+
+
+
+Reliability Analytics URLs | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+ReferenceGeneral ReferenceReliability Analytics Security Groups
+Reliability Analytics URLs
+Reliability Analytics System Code Tables
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+
+
+Family Field Descriptions
+Catalog Items
+Distribution Types
+Calculations
+Failure Data
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Reference
+General Reference
+Reliability Analytics URLs
+
+
+
+
+
+
+
+Reliability Analytics URLsReliability Analytics URLs
+There is one URL route associated with Reliability Analytics: reliability. The following table describes the various paths that build on the route, and the elements that you can specify for each.
+
+Tip: For more information, refer to the URLs section of the documentation.
+
+ElementDescriptionAccepted Value(s)Notes
+
+reliability/dashboard/<EntityKey>: Displays the Reliability Analytics overview page. 
+<EntityKey>Specifies Asset context for the RA Overview page.
+Any numeric Entity Key that corresponds to an existing Asset.
+Entering 0 for an Entity Key displays a generic RA overview. 
+reliability/automation/<EntityKey>/summary: Displays Automation rules. <EntityKey>Specifies which Reliability Automation Rules you want to view.The Entity Key of the desired automation rule.This parameter is required and it refers to the analysis. Without the Entity Key, then the URL will not be supported.
+reliability/probability/<EntityKey>/<WorkspaceName>: Displays Probability Distribution Analyses. <EntityKey>Specifies which Probability Distribution you want to view.The Entity Key of the desired analysis.This parameter is required and it refers to the analysis. Without the Entity Key, then the URL will not be supported.<WorkspaceName>Specifies the type of Probability Distribution Analysis information you want to view.cdfplotDisplays the CDF Plot workspace.pdfplotDisplays the PDF Plot workspace.probabilityplotDisplays the Probability Plot workspace.summaryDisplays the Analysis Summary workspace.
+reliability/production/<EntityKey>/<WorkspaceName>: Displays Production Analyses.<EntityKey>Specifies which Production Analysis you want to view.The Entity Key of the desired analysis.This parameter is required and it refers to the analysis. Without the Entity Key, then the URL will not be supported.<WorkspaceName>Specifies the type of Production Analysis information you want to view.overviewDisplays the Analysis Summary workspace.production-plotDisplays the Production Data workspace.
+reliability/distribution/<EntityKey>/<WorkspaceName>: Displays Reliability Distribution Analyses.<EntityKey>Specifies which Reliability Distribution Analysis you want to view.The Entity Key of the desired analysis.This parameter is required and it refers to the analysis. Without the Entity Key, then the URL will not be supported.<WorkspaceName>Specifies the type of Reliability Distribution Analysis information that you want to view.cdfplotDisplays the CDF Plot workspace.failureprobabilityDisplays the Failure Probability workspace.failurerateplotDisplays the Failure Rate Plot workspace.pdfplotDisplays the PDF Plot workspace.pmoptimizationDisplays the PM Optimization workspace.probabilityplotDisplays the Probability Plot workspace.summaryDisplays the Analysis Summary workspace.
+reliability/growth/<EntityKey>/<WorkspaceName>: Displays Reliability Growth Analyses.<EntityKey>Specifies which Reliability Growth Analysis you want to view.The Entity Key of the desired analysis.This parameter is required and refers to the analysis. Without the Entity Key, the URL will not be supported.<WorkspaceName>Specifies the type of Reliability Growth Analysis information that you want to view.failurerateplotDisplays the Failure Rate Plot workspace.failuresplotDisplays the Cumulative Failures Plot workspace.mtbfplotDisplays the MTBF Plot workspace.summaryDisplays the Analysis Summary workspace.
+
+reliability/spares/<EntityKey>/<WorkspaceName>: Displays Spares Analyses.
+
+reliability/spares/<EntityKey>/spareoverview/<SpareEntityKey>: Displays a Spare.
+
+reliability/spares/<EntityKey>/spareapploverview/<SpareEntityKey>/<SpareApplicationEntityKey>: Displays Spare Application. 
+<EntityKey>Specifies which Spares Analysis you want to view.The Entity Key of the desired analysis.This parameter is required and refers to the analysis. Without the Entity Key, the URL will not be supported.<WorkspaceName>Specifies the type of Spares Analysis information you want to view.overviewDisplays the Analysis Summary workspace.<SpareEntityKey>Specifies which Spare you want to view.The Entity Key of the desired Spare.
+This parameter is required and refers to the Spare. Without the Spare Entity Key, the URL will not be supported. 
+Displays the Spare workspace.
+<SpareApplicationEntityKey>Specifies which Spare Application you want to view.The Entity Key of the desired Spare Application.
+This parameter is required and refers to the Spare Application. Without the Spare Application Entity Key, the URL will not be supported. 
+ Displays the Applications section.
+
+
+reliability/system/<EntityKey>/<WorkspaceName>: Displays System Reliability Analyses.
+
+reliability/system/<EntityKey>/scenario/<ScenarioEntityKey>: Displays System Reliability Scenarios. 
+<EntityKey>Specifies which System Reliability Analysis you want to view.The Entity Key of the desired analysis.This parameter is required and refers to the analysis. Without the Entity Key, the URL will not be supported.  simulationDisplays the Simulation Results workspace.  summaryDisplays the Analysis Summary workspace.<ScenarioEntityKey>Specifies which System Reliability Scenario you want to view.The Entity Key of the desired Scenario.Displays the Scenario workspace.
+Table 1. Example URLsExample URLDestination 
+reliability/dashboard/0
+
+
+Reliability Analytics Overview page.reliability/automation/3228505/summary
+Automation page with the Entity Key 3228505.reliability/probability/3228505/summary
+
+Probability Distribution page, displaying the Analysis Summary workspace with the Entity Key 3228505.reliability/production/4924257/overview
+
+Production Analysis page, displaying the Analysis Summary workspace with the Entity Key 4924257.reliability/distribution/2842417/summary
+
+Reliability Distribution page, displaying the Analysis Summary workspace with the Entity Key 2842417.reliability/growth/2842411/summary
+
+Reliability Growth page, displaying the Analysis Summaryworkspace with the Entity Key 2842411.reliability/spares/2841956/overview
+
+Spares Analysis page, displaying the  Summary workspace with the Entity Key 2841956.reliability/spares/2841956/spareoverview/2841957
+Spare Analysis Summary workspace with the Entity Key 2841956 and the Spare Entity Key 2841957.
+reliability/spares/2841956/spareapploverview/2841957/2841959
+
+Spare Critical Applications workspace with the Entity Key 2841956, the Spare Entity Key 2841957 and the Spare Application Key 2841959.
+reliability/system/3352307/summary
+
+
+System Reliability page, displaying the Summary workspace with the Entity Key 3352307.
+reliability/system/3352307/scenario/3352304
+
+
+System Reliability Analysis page, displaying the Diagram workspace with the Entity Key 3352307 and the Scenario Entity Key 3352304.
+
+
+
+
+
+On this pageReliability Analytics URLs
+
+
+
+
+
+
+
+
+

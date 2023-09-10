@@ -1,0 +1,85 @@
+
+
+
+MOC Change Project | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Management of ChangeOverview
+WorkflowsMOC Administration
+MOC Change Project
+
+
+Change Projects
+Checklists
+Exceptions and Tasks
+Changed Elements
+Deployment
+Admin
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Management of Change
+Workflows
+MOC Change Project
+
+
+
+
+
+
+
+MOC Change ProjectManagement of Change: MoC Change ProjectThis workflow describes the process for creating Change Projects, adding Checklists, creating and managing Exceptions and Tasks, executing Tasks, and implementing the project.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Create Change Project Persona: AnalystCreate a Change Project to store the details of the Change Project, such as the change type, duration, purpose, scope, and the owner of the project. If the project is a temporary project, you must specify the date until which the change is valid.Create Team Persona: AnalystCreate a multi-disciplinary team that will perform various tasks in the Change Project. MoC Administration Persona: Solution AdministratorGo to the MoC Administration workflow.Add Checklists Persona: AnalystBased on the type of project and the project scope, add one or more Checklists to the Change Project. You can select from the Checklists that you created in the MoC Administration workflow. Copies of the selected Checklists are created and associated with the Change Project.Enter Checklist Responses Persona: AnalystFor each Checklist that you added to the Change Project, respond to the Questions in the Checklist. If the Answer Option that you selected is configured to create an Exception, an Exception is automatically created and associated with the Change Project.Create Tasks for Exceptions Persona: AnalystFor each Exception created for the Change Project, create one or more Tasks. Manage Performance Recommendations Persona: AnalystAs needed, create General Recommendations for Exceptions to provide additional suggestions for effectively managing the change. Go to the Action Management: Manage Recommended Actions Workflow.Implement Project Persona: AnalystAnalyze the summary of the Change Project to verify the percentage of Exceptions that are closed and the percentage of Tasks that are in the Completed state. When all Exceptions are closed, use state management to finalize the project.Execute or Complete Tasks Persona: AnalystRecord the progress of Tasks using the state management. For all completed Tasks, change the state of the Task to Complete. When all Tasks associated with an Exception are completed, modify the status of the Exception to Complete.
+
+
+
+
+On this pageManagement of Change: MoC Change ProjectCreate Change ProjectCreate TeamMoC AdministrationAdd ChecklistsEnter Checklist ResponsesCreate Tasks for ExceptionsManage Performance RecommendationsImplement ProjectExecute or Complete Tasks
+
+
+
+
+
+
+
+
+

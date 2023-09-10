@@ -1,0 +1,257 @@
+
+
+
+Manage Key Performance Indicators (KPIs) | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Metrics and ScorecardsOverview
+Workflow
+Manage Scorecards
+Manage Key Performance Indicators (KPIs)
+Manage Metric Views
+Manage Privileges
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Metrics and Scorecards
+Manage Key Performance Indicators (KPIs)
+
+
+
+
+
+
+
+Manage Key Performance Indicators (KPIs)Overview of Key Performance Indicators (KPIs)KPIs are metrics that an organization can use to monitor their performances. Every KPI should be linked directly to a business goal. If the variables within a metric are performing successfully, a business goal can be attained for a company. Likewise, if certain variables within the metric are not performing successfully, a company may fall short of its business goal. By closely tracking the variables within a KPI, the problem areas can be assessed and targeted, and efficient areas can continue to improve.The first step to establishing an efficient KPI monitoring process is developing KPIs. After KPIs are developed, they can be tracked and monitored on a continual basis. When developing KPIs, you must focus on:Developing a set of metrics that reflect the objectives of the company in delivering outputs. These metrics will be aligned with business unit objectives and KPIs within each relevant perspective.Developing indicators of processes and activities that measure drivers and enablers of performance and point to action.About Viewing the Details of a Key Performance Indicator
+The Key Performance Indicator (KPI) details page displays the values that are recorded for a KPI, indicating where the actual value falls within the defined limits by using the dial chart or bullet chart. It also show how the values have changed over time by using the trend-line chart. 
+On this page, you can see the following details of a KPI: 
+
+Name: Displays the name of the selected KPI. Last Modified On: Displays the date when the last scheduled update was run on the KPI and the name of the person who created or updated the KPI. This field is updated when:You manually update the KPI by selecting Update Measures. An automatic schedule is run based on the schedule defined for the KPI in the Schedule, Alerts and Privileges section.More Information: Displays links to all the associated Scorecards. The Scorecard name appears as a link that you can select to view the Scorecard details.Description: A description of the KPI. Dial chart button (): Displays the KPI values in dial chart format. The dial chart indicates the level of success for the organizational performance. The dial chart also displays the current value of a KPI and the percentage change from the previous value. The colors of the dial chart indicates the following values:Red: Below the critical valueYellow: Between the target value and critical valueLight Green: Between the target value and stretch valueDark Green: Above the stretch value Bullet Chart button (): To change the dial chart format to a bullet chart format, select the bullet chart button (). Note: You can add a KPI as a dashboard widget either in dial chart or bullet chart format. For more information, see the Dashboards documentation.
+History: Displays the KPI results in a trend line chart, for a set period of time. You can view the data for specific period of time by selecting a time period in the Zoom section or by using the trend line slider provided below the graph. When you hover or tap on the datapoints on the trend-line, it provides an indication of where each value falls within the determined range. Tabular View button (): You can change the trend line format to grid format by selecting the tabular view button (). The tabular view displays the Date and Value/Score columns. The table provides the date and the history of the measures for the selected time period. To change the tabular format to trend-line format, select the line view button ().Sub-Indicators: Displays the list of sub-indicator KPIs that are assigned to the current KPI. The sub-indicator KPIs appear in tile format and the name of the sub-indicators appear as a link. On selecting the sub-indicator KPI name, the details page for the sub-indicators KPI appears.Note: If you update a parent KPI, all other KPIs in that hierarchy will also be updated.
+In addition to this, you can also perform the following on a KPI details page:
+Modify the KPI.
+Export a KPI in .PDF format.
+Manually update the KPI.
+About Updating MeasurementsMeasurements can be updated using the following methods:By using the 
+
+ button.Through scheduled execution.When measurements are updated via either of these methods, the GE Digital APM system will:Update the measurement of the KPI with the current value.When KPIs updated by schedule job cross the threshold value, an event is triggered and notifications are sent to the associated email addresses. The user receives notification according to their subscription to the alert condition.For example, you might have a trigger that is evaluating based on schedule, but that sends notifications only when the KPI value reaches the highest of its defined ranges.About Automatically Updating MeasuresKPI measurements can be updated automatically according to a schedule. You can define the desired schedule for each KPI via the Schedule, Alerts, and Privileges section, which you can access from the KPI design page.Scheduled updates are typically performed on KPIs built from Analysis Services or Queries, or aggregated from sub-indicators. To avoid confusion and eliminate the possibility of reviewing and analyzing out-of-date information, you should schedule an update of KPI measurements at the same time that measurements are scheduled to be taken. For example, if you are going to collect measurements on the first day of each month, you should also schedule the updates to run on the first day of each month.
+KPIs can be scheduled for automatic updates one time or on a recurring basis. The following table describes the schedules by which you can configure the KPI measurements to be updated.FrequencyExampleEvery x minutes from start time or after last occurrence. Every thirty minutes from the start time.Every thirty minutes after the last update. Every x hours from start time or after last occurrence. Every one hour from the start time.Every one hour after the last update. Every x number of days from start time or after last occurrence. Every two days from the start time. Every two days after the last update. Every x day from start time or after last occurrence where you define the day of the week. Every third day from the start time.Every third day after the last update. Every x month from start time or after last occurrence. Every three months from the start time.Every three months after the last scheduled update.Every x year from start time or after last occurrence. Every two years from the start time.Every two years after the last scheduled update.
+Note: The Daylight Saving Time (DST) is supported for the schedules defined for a KPI. If you have specified the schedule for a KPI in days, weeks, months, or in years since the last occurrence, the schedules will adjust according to the DST. However, the schedules defined in n hours since last occurrence do not support DST. However, it is recommended that you avoid scheduling the jobs near to the transition hours of Daylight Savings Time.About Specifying Limits for a KPIWhen you create a KPI for a piece of equipment, you will specify the limit values for the KPI. The limits that you specify define a performance range for the KPI based on your expectations for the equipment. The actual performance of the equipment will be evaluated based on this range. For example, your monthly water bill could be a Key Performance Indicator of the plumbing system in your home. This means that, based on your expectations, a high water bill (i.e., the Actual value) could indicate leaks in your system, and a low water bill should indicate a leak-free plumbing system.The KPI limit range is essentially a scale from Worst to Best, and the limit values are essentially thresholds within that range. The following image shows the KPI ranges and where the limit values that define these ranges appear. When measurements are taken, the Actual value may fall between or equal the limit values, which indicates how well the equipment is performing (e.g., If the Actual value falls between the Target and Stretch Limit values, the KPI is in the Target-Stretch range).
+
+The limit values may vary depending on what you want to measure. For example, if you create a KPI based on your monthly water bill, the range values will be measured in dollars, and your Best value would be a low number (e.g., $30.00), while your Worst Value would be a high number (e.g., $300.00). In another case, the KPI may be based on a water heater, which would require that Best value to be a high number, and the range to be measured in degrees Fahrenheit.To continue with the water bill example, the monthly cost for water usage in your home would be the key indicator of the overall performance of the equipment involved in the plumbing system. A high water bill might indicate that the usage of water is high, that there is a leakage in a pipe, that a piece of equipment is malfunctioning, or all of the above. The KPI should serve as the first step in tracking the performance of the system.How Number Formats Are Applied to KPIs When you define a number format for a KPI, information about that format is stored in the data source (MI_KPI_DATAS_TX field ) of the KPI record. Within the KPI family, baseline rules exist on the following fields to format values in those fields according to the rules that exist in the data source (MI_KPI_DATAS_TX field):Alert Value Best value Critical Value Stretch Value Target Value Worst Value In other words, these fields contain rules that will apply any number formatting that has been defined. Because this feature is implemented via baseline rules, the number format will not be applied if you have defined custom rules for any of these fields.About KPI ScoresWhen a KPI is created, it is automatically assigned a score. A score is a normalized value between 0.0 and 1.0 representing the relative strength of the Actual Value. The formula is either:
+(Actual Value – Worst Value)/(Best Value – Worst Value)
+If the Best Value > Worst Value-or-(Actual Value – Best Value)/(Worst Value – Best Value)
+If the Best Value < Worst ValueThe closer the score is to 1.0, the higher the strength of the Actual Value.Scores are useful when comparing measures whose values cover a wide range. It becomes difficult to work with such vastly different numbers, but working with scores allows you to compare relatively close numbers. For example, when comparing ten Actual Values that range from 20 to 500, the gap is almost too large to manage. When you compare the scores of the measures, however, you only have to examine numbers between 0.0 and 1.0, thus making it easier to make comparisons and conclusions.The score is calculated using the Actual Value, Best Value, and Worst Value of the current KPI, as indicated in the specified equations. In case of Data Source Type as Manual, Analysis Services, and APM Query, when Show Score Only is selected, the Actual Value is calculated to display the score.By using the 
+Show Score Only
+
+ check box on the KPI design page, you can choose to view a KPI score instead of Actual, Target, Critical, and Stretch Values in the trend-line chart and dial sections of the KPI details page. In case of a KPI with Data Source Type as Aggregate, the Aggregate Score only option is available in the KPI designer page. Only the Score will be displayed for that KPI by aggregating scores of its sub-indicators using the selected aggregation function (i.e., Average, Weighted Average, Minimum, or Maximum). Access the KPI Details PageAbout This TaskYou can view the details of a KPI by using the KPI details page. The page displays the values that are recorded for the KPI, indicates where the values fall within the defined limits, and shows how the values have changed over time.ProcedureAccess the Metrics and Scorecards Overview Page.In the Key Performance Indicator section, select the KPI that you want to view.
+Note: To search for a specific KPI, you can select , and then enter the name of a KPI.
+The KPI details page appears as <KPI_Name>, where <KPI_Name> is the name of the selected KPI. This page displays the details for the selected KPI.
+
+For the sub-indicator, the KPI details page will contain the hyperlinked name of the parent KPI above the KPI name. You can use this hyperlink to navigate to the parent KPI.Note: When you search for a KPI by using , the KPI will appear on the KPI details page. This is because the KPI details route #metrics/kpi-viewer/{ENTY_KEY} is specified in Families Managed by Product Module in Configuration Manager for the KPI family.Access the KPI Design PageAbout This Task
+When you create a new KPI, the New KPI page appears displaying an empty form where you can enter the details of a KPI. When you save the KPI, the page name changes to the KPI name.
+Procedure
+Access the KPI details page.
+Select .
+The KPI design page appears, displaying the name of the selected KPI. The KPI design page contains two sections, , KPI Datasheet, and  Schedule, Alerts, and Privileges where you can provide or modify the details of a KPI.
+
+
+
+If needed, modify the values in the 
+KPI Datasheet
+ and Schedule, Alerts, and Privileges sections, and then, to save your changes, select .If needed, select  to view the details page for the KPI.
+The KPI details page appears.
+What To Do Next
+
+Create a KPI.
+Access the Associated Pages for a KPIAbout This TaskYou can access the list of associated pages for a KPI via KPI details page or by KPI design page.If you need to add the associated pages to a KPI, you can do so by accessing the KPI family and the Associated Pages functionality of Configuration Manager.Procedure
+Access the KPI details page.In the right side of the page, select .The Associated Pages pane appears. The Associated Pages hierarchy contains links to associated pages. In the hierarchy, when a  appears next to an associated page name, it can be expanded to view the sub pages.Access Reference Document for a KPIProcedure
+Access the details page of a KPI.Select .The Reference Documents window appears. Tip: For more information, refer to the Reference Documents section of the documentation.
+Create a KPI Before You Begin
+You must have the privilege to create a KPI.You must have the required privilege to use a cube as KPI datasource.
+ProcedureAccess the Metrics and Scorecards Overview Page.In the Key Performance Indicator section, select .The New KPI page appears, displaying the KPI Datasheet section.As needed, enter values in the available fields.Select the Schedule, Alerts, and Privileges tab.The Schedule, Alerts, and Privileges section appears.Note:  You can view the log for the scheduled status log for a KPI in the Scheduled Logs page of the Operations Manager.As needed, enter values in the available fields.
+Note: The parent KPI schedule will be saved to its sub-indicator KPIs. However, when you disassociate a sub-indicator from the parent KPI, the scheduler from the sub-indicator will be removed and you have to reschedule it.
+Select .The name of the KPI appears on the page, indicating that the new KPI is created and saved. The new KPI name also appears in the Key Performance Indicators section of the Metrics and Scorecards page.KPI Datasheet
+The 
+KPI Datasheet section contains fields where you can provide the basic information such as KPI Name, Parent KPI, Description, and so on. The following table provides information about the fields in this section.
+FieldData TypeDescriptionBehavior and Usage
+Actual
+NumberDisplays the type of aggregation that you want to use for calculating the Actual Value.
+This is a required field. This field appears in the Data Source Fields section when you select the Data Source Type as Aggregate. 
+In all these fields, you can select any of the following calculations:Sum: The addition of all the sub-indicatorsAverage: The calculated average of the sub-indicators.Weighted Average: The value of the KPI is calculated from the value of its sub-indictors (e.g., V1, V2, V3, and V4) and the value of pre-determined weight factor associated with each sub-indicator (e.g., K1, K2, K3, and K4). The weighted average is usually calculated as (K1 x V1 + K2 x V2 + K3 x V3 + K4 x V4)/(K1 + K2 + K3 + K4).Minimum: The minimum value from the sub-indicators.Maximum: The maximum value from the sub-indicators.
+
+Add Measures
+N/ADisplays the table where you can provide the values.
+This field appears in the Data Source Fields section when you select the Data Source Type as Manual.
+This field displays a table with following columns :Dates Values 
+
+Aggregate Score only
+N/AIf you want a normalized score to be calculated from sub-indicators, select the Aggregate Score Only check box. The aggregated score will be calculated and displayed depending upon the aggregation type selected in Actual field in the Data Source Fields section.
+This field appears in the Data Source Fields section when you select the Data Source Type as Aggregate.
+If you have selected the Aggregate Score only check box, then you need to determine the function used to calculate the score value in the Data Source Fields section.
+
+Best value
+N/AThe optimal output level. This field appears in the Data Source Fields section when you select the Data Source Type as APM Query.This field lists all the columns that contains number value. You can either select the value in these fields or provide the value in the Limit section. This value is used to calculate the normalized score that is assigned to the KPI when it is created.
+Bullet Chart
+N/ADisplays the KPI in bullet chart format.This field appears in the Data Source Fields section.By default, the dial chart is selected. However, you can select this option to display the KPI in a bullet chart format in the KPI details page.
+Critical
+NumberDisplays the type of aggregation that you want to use for calculating the Critical Value.This field appears in the Data Source Fields section when you select the Data Source Type as Aggregate.You can either select the value in these fields by using the drop-down list box or provide the value in the Limits section. In any of the cases, you must provide value to the Actual field.In all these fields, you can select any of the following calculations:Sum: The addition of all the sub-indicatorsAverage: The calculated average of the sub-indicators.Weighted Average: The value of the KPI is calculated from the value of its sub-indictors (e.g., V1, V2, V3, and V4) and the value of pre-determined weight factor associated with each sub-indicator (e.g., K1, K2, K3, and K4). The weighted average is usually calculated as (K1 x V1 + K2 x V2 + K3 x V3 + K4 x V4)/(K1 + K2 + K3 + K4).Minimum Maximum 
+Critical Value
+NumberThe value that indicates that the KPI is not reaching its potential target.This field appears in the Data Source Fields section when you select the Data Source Type as APM Query.This field list all the columns that contains number value. You can either select the value in these fields or provide the value in the Limit section.
+Cube
+N/AThe cubes that are registered in the Analysis Services data source are displayed as a list of values.This field appears in the Data Source Fields section when you select the Data Source Type as Analysis Services.
+Data Source Type
+N/A Contains the list of data sources that can be assigned to this KPI.The values for a KPI measurement are pulled from a specified data source. You can create KPI by using the following options. 
+Analysis Services: By using an Analysis Services, you are extracting data from a Cube that is configured in the Analysis Services.APM Query: By using a GE Digital APM query, you are extracting data from the GE Digital APM database. Aggregate: By using aggregation, you specify that the sub-indicators, or the lower level variables of the KPI, should be calculated together for the data source. An aggregation is a table or structure containing pre-calculated data for a Cube. You can aggregate sub-indicators by using a sum, an average, a weighted average, a minimum, or a maximum function. The values that can be aggregated are the actual value, the target value, the stretch value and the critical value.
+Manual: By using the data source as Manual, you define input for a KPI by providing specific values instead of using an external data source.Depending upon the data source that you select, the related fields appear.
+Dates
+DateSpecify the date for the actual values.This field appears in the Add Measures section when you select the Data Source Type as Manual. You can select the dates by using .Note: The dates must be unique. You must not enter two values for the same date.
+Description
+TextProvide a brief description of the new KPI. In this field, you can provide the description about the KPI. 
+Dial Chart
+N/ADisplays the KPI in dial chart format.This field appears in the Data Source Fields section.By default, this option is selected and the KPI appears in a dial chart format in the KPI details page.
+Hierarchy Member
+N/A
+A member from a hierarchy in the cube that you want to monitor. 
+For example, you can select Country as a hierarchy member. 
+This field appears in the Data Source Fields section when you select the Data Source Type as Analysis Services. 
+Limit
+N/ASpecifies the range of limits for a KPI. You can provide the values manually in this section. The 
+Limits
+ section contains the following fields:Worst Value Critical Value Target Value Stretch Value Best value 
+Limiting Level
+N/AThe level to which you want to view the KPI. This field appears in the Data Source Fields section when you select the Data Source Type as Analysis Services. The value in this field depends on the value that you select in the Hierarchy Member list. When you select a hierarchy member and its limiting level, the KPIs are created for every level and member in the Limiting Level. For example, If you select Country as the hierarchy member and City as the limiting level, then the KPIs are created for each state and cities in that selected country.
+Measure
+N/AThe measure that you want to use for the KPI. For example, you can select Total Maintenance Cost as a measure that you want to monitor over a period of time.This field appears in the Data Source Fields section when you select the Data Source Type as Analysis Services. This field is enabled only when you select a Cube. This is a required field. 
+Measurement Date
+DateContains a list of only Date fields from the query. This field appears in the Data Source Fields section when you select the Data Source Type as APM Query.In the Measurement Date list, you select a field from the query that represents the measurement date.
+Measurement Value
+NumberThe measure that you want to use for the KPI. This field appears in the Data Source Fields section when you select the Data Source Type as APM Query.This field is enabled only when you select a query. This is a required field.
+Name
+CharacterSpecify the name of the KPI that you want to create. This is a required field.
+Number Format
+NumberThe format for the numeric values. This field appears when you select the Data Source Type as Analysis Services, APM Query, and Aggregate. You can choose the following number formats:Number: The numeric format. Number with 0 precision: The number with no decimals.Number with 1 precision: The number with one digit after the decimal.Number with 2 precision: The number with two digit after decimal.Percentage: Specifies that the field will be formatted as a percentage, including multiplying the base value by 100 and including a percent sign (%).Currency: Specifies that numeric values will be formatted as currency, according to the browser culture on which the GE Digital APM application is being accessed and the number of digits past the decimal that you specify. When you select this option, the example that appears on the KPI Number Format dialog box uses the currency symbol associated with the browser culture on which the GE Digital APM application is being accessed.
+
+Parent KPI
+N/AContains the list of KPIs that can be assigned as parent KPI to this new KPI. If the KPI should function as a sub-indicator for another KPI, then in the Parent KPI list, select the parent KPI for which this KPI will be a sub-indicator.
+Query
+N/AThe query from which you want to extract the data. This field appears in the Data Source Fields section when you select the Data Source Type as APM Query.You can select the query from the Catalog folder.
+Show Score Only
+N/A If you want only a score to be calculated for the KPI, select the Show Score Only check box. The actual value will not be populated. Via the Show Score Only check box on the KPI design page, you can choose to view a KPI score instead of Actual, Target, Critical, and Stretch Values in the Dial chart, trend-line chart and tabular view of the KPI details page.
+Slices
+N/AThe slice members that can be used to further filter KPI data.This field appears in the Data Source Fields section when you select the Data Source Type as Analysis Services. You can add slices by selecting + Slices. The Add to Slice window appears displaying all the dimensions. You can select a dimension member from the list. 
+Stretch
+Number A much higher quantitative measurement than a Target Value, demanding breakthrough performance for achievement. This field appears in the Data Source Fields section when you select the Data Source Type as Aggregate.You can either select the value in these fields by using the drop-down list box or provide the value in the Limits section. In any of the cases, you must provide value to the Actual field.In all these fields, you can select any of the following calculations:Sum: The addition of all the sub-indicatorsAverage: The calculated average of the sub-indicators.Weighted Average: The value of the KPI is calculated from the value of its sub-indictors (e.g., V1, V2, V3, and V4) and the value of pre-determined weight factor associated with each sub-indicator (e.g., K1, K2, K3, and K4). The weighted average is usually calculated as (K1 x V1 + K2 x V2 + K3 x V3 + K4 x V4)/(K1 + K2 + K3 + K4).
+Stretch Value
+NumberA much higher quantitative measurement than a Target Value, demanding breakthrough performance for achievement.This field appears in the Data Source Fields section when you select the Data Source Type as APM Query.This field list all the columns that contains number value. You can either select the value in these fields or provide the value in the Limits section.
+Sub-Indicators
+N/A
+Contains the list of KPIs that can be assigned as the sub-indicator KPIs. 
+You cannot assign the KPI that is already assigned to another parent KPI. 
+Target
+NumberA quantitative measurement of a performance metric that is to be achieved by a given time.This field appears in the Data Source Fields section when you select the Data Source Type as Aggregate. You can either select the value in these fields by using the drop-down list box or provide the value in the Limits section. In any of the cases, you must provide value to the Actual field.In all these fields, you can select any of the following calculations:Sum: The addition of all the sub-indicatorsAverage: The calculated average of the sub-indicators.Weighted Average: The value of the KPI is calculated from the value of its sub-indictors (e.g., V1, V2, V3, and V4) and the value of pre-determined weight factor associated with each sub-indicator (e.g., K1, K2, K3, and K4). The weighted average is usually calculated as (K1 x V1 + K2 x V2 + K3 x V3 + K4 x V4)/(K1 + K2 + K3 + K4).
+Target Value
+NumberA quantitative measurement of a performance metric that is to be achieved by a given time.This field appears in the Data Source Fields section when you select the Data Source Type as APM Query.This field list all the columns that contains number value. You can either select the value in these fields or provide the value in the Limit section.
+Time Level
+N/A The period for which you want to view a KPI result. This field appears in the Data Source Fields section when you select the Data Source Type as Analysis Services. This is a required field. You can select the Time Level list to select a time level, such as year, semester, quarter, month, week or day. The time level appears in the format: Dimension/Hierarchy/Level.
+Values
+NumberDisplays a text box where you can provide the actual values.This field appears in the Add Measures section when you select the Data Source Type as Manual.To delete a row, select .
+Worst Value
+N/AThe output value that should be strictly avoided. This field appears in the Data Source Fields section when you select the Data Source Type as APM Query.This field list all the columns that contains number value. You can either select the value in these fields or provide the value in the Limit section. This value is used to calculate the normalized score that is assigned to the KPI when it is created.
+Schedule, Alerts, and Privileges
+The 
+Schedule Alerts and Privileges section contains fields that allows you to set the schedule, alerts, and privileges for the KPI. The following table provides information about the fields in this section.
+FieldData TypeDescriptionBehavior and Usage
+Alerts
+N/AThe alert options for the KPI.Note: To receive the alerts, you must configure the smtp server. The Alerts
+  section contains the following fields:Alert Conditions: You can select desired alert conditions for a KPI. You can choose to send an alert when:The Actual value is worse than the critical value.The Actual value is better than the stretch value.The Actual value is worse than a specified value. Depending on the direction of the scale, the actual value must be either higher or lower than the specified value to trigger an alert.For example, on a scale where the Stretch value is 25 and the Critical value is 100, higher values are worse than lower values. In this case, an alert will be generated when the Actual value is greater than the specified alert value. For example, if you set the alert value to 75, an alert will be triggered whenever the Actual value is greater than 75.On a scale where the Stretch value is 100 and the Critical value is 25, lower values are worse than higher values. In this case, an alert will be generated when the Actual value is less than the specified alert value. For example, if you set the alert value to 75, an alert will be triggered whenever the Actual value is less than 75.The Actual value was not automatically updated as scheduled.For example, if an Actual value is scheduled to be entered manually or populated automatically based on an Analysis Services query on January 25, 2006 at 1:00 p.m., and the KPI measures are updated after 1:00 p.m. on January 25, 2006, but the Actual value is not populated, an email message will be sent to the specified recipient(s).
+
+An alert will include the following information: You can write the alert message in the An alert will include the following information text box. To create a message with specific details, use the following syntax in the message:{KPI_NAME}: Indicates the name of the KPI.{MEASURE_DATE}: Indicates the measurement date on which the condition occurred.{ACTUAL_VALUE}: Indicates the actual value of the KPI on the specified measurement date.{TRIGGERED_CONDITIONS}: Indicates the alert condition that was met on the specified measurement date.For example, a message could be formatted as follows:An alert has been triggered while updating KPI {KPI_NAME} for the period ending on {MEASURE_DATE}. The value of {ACTUAL_VALUE} meets the following criteria: {TRIGGERED_CONDITIONS}. When this message is received in an email message, it would read as follows:An alert has been triggered while updating Financial KPI for the period ending on 2/1/2005. The value of 0 meets the following criteria: The value was not automatically updated as scheduled. 
+Add Recipient button () : You can add a list of email recipients by selecting the Add Recipient button. The Select the users window appears from which you can select the desired users.
+Privileges
+N/AThe privileges that you can grant to a user or group on accessing a KPI.You can set privileges to a User or a Group to do the perform the following operations on a KPI:
+View: Allows the user or the group to view the KPI.
+Update: Allows the user or the group to edit the KPI
+Delete: Allows the user or the group to delete the KPI.
+Schedule
+N/AThe time period for a KPI update. Note: If one of the KPIs you selected is part of a hierarchy, a message will appear stating that the schedule for the selected KPI is defined at the root level in the hierarchy of KPIs.
+Note: You can add a schedule for a KPI only after saving the KPI. 
+The summary of the KPI schedule that you have defined in the Edit Schedule window appears in the Schedule section. 
+Note:  You can view the schedule status log for a KPI in the Schedule Logs page of the Operations Manager.
+To create or edit a schedule for a KPI, you can select the . The Edit Schedule window contains the following fields:
+One time: Select this option if you want a KPI schedule to run only once. The Start field is a required field. To specify the start date, select  and to specify the time, select . 
+Recurrence: Select this option if you want a KPI schedule to run at a specific time and day on a recurring basis. You must specify the values for Start and Every field.
+Time Zone: Select this option to set the time zone. 
+Start: Select this option to specify the start date for the KPI updates. In the box, select the date by using . The KPI updates will continue to update depending upon the value provided in the End field. The frequency of the KPI updates depend upon the value provided in Every field.
+Every: This is a required field when you want to update a KPI on recurring basis. Select this box to specify the frequency of the KPI updates. Specify a number in the Every text box and select a value from the adjacent list box. The adjacent list box contains values such as, Minutes, Hours, Days, Weeks, Months and Years. For example, if you want the updates to a KPI occur at every two hour, then enter 2 in the Every text box and then select Hours from the adjacent drop-down list box. If you want an update for KPI to occur on every first day in a month, then enter 1 in Every text box and then select Month from the list box.Days: Select this option to schedule the KPI updates on selected days. To do this, in the Every field enter the days of the week and then in the adjacent box, select Days. For example, if you want the updates to a KPI occur at every two days in a week, then enter 2 in the Every text box and then select Days from the adjacent drop-down list box.From start time: Select this option to specify if the updates to the KPI should start from the start time of the KPI.From last occurrence: Select this option to specify if the updates to the KPI should start from the last updated time of the KPI.End: Select this date to specify the end date on a KPI. Note that an End Date is optional. You can select one of the following options:Never: If you do not want to specify a final date. After: If you want to specify a time when the update on the schedule must end. On selecting this option the Occurrences text box appears where you can specify the number of occurrences after which the scheduled update on the KPI must end. For example, if you want a scheduled update on a KPI to end after two update, then enter 2 in the Occurrences text box.
+
+Create a Copy of a KPIAbout This TaskYou can copy an existing KPI. You can use the copy to modify the values of the KPI as desired.Procedure
+Access the KPI design page of an existing KPI.In the upper-right corner of the page, select .Copy of <Label> page appears, where <Label> is the name of the KPI that you have selected. If needed, modify the Name box, and then select .View a KPI ScoreProcedure
+Access the Key Performance Indicator
+
+ design page.Select the Show Score Only check box.
+-or-
+Select Aggregate Score only, in case of Data Source Type as Aggregate.
+Note: On selecting Aggregate Score only, the Show Score Only check box is selected by default. 
+Select .Select  to view the KPI.The KPI is displayed on the KPI details page and only the score is displayed on the trend-line chart, tabular view, and dial chart. Note that if the Show Score Only check box is not selected, the trend-line chart, tabular view, and dial display the actual values for the given time period.Update the Measures of a KPI
+You can manually update the KPI measures that are being displayed on the KPI details page.
+Note: For better performance of KPI measure update, it is recommended to schedule KPI when the KPI data source is APM Query and the query result set contains records more than 5000 rows.
+Before You Begin
+
+Create a KPI.
+Procedure
+Access the Key Performance Indicator details page of an existing KPI.In the upper-right corner of the page, select .The KPI details page displays the updated measure for that KPI.Export a KPIAbout This TaskYou can export a KPI in a PDF file format.Procedure
+Access the KPI details page.In the upper-right corner of the page, select  to export the KPI in .PDF file format.The .PDF file appears.Delete a KPIProcedure
+Access the KPI design page.In the upper-right corner of the page, select .The Delete KPI dialog box appears.Select OK.A confirmation message appears, indicating that the KPI record is deleted. The KPI no longer appears in the Key Performance Indicator section of the Metrics and Scorecards page.
+
+
+
+
+On this pageOverview of Key Performance Indicators (KPIs)About Viewing the Details of a Key Performance IndicatorAbout Updating MeasurementsAbout Automatically Updating MeasuresAbout Specifying Limits for a KPIHow Number Formats Are Applied to KPIsAbout KPI ScoresAccess the KPI Details PageAccess the KPI Design PageAccess the Associated Pages for a KPIAccess Reference Document for a KPICreate a KPI KPI DatasheetSchedule, Alerts, and PrivilegesCreate a Copy of a KPIView a KPI ScoreUpdate the Measures of a KPIExport a KPIDelete a KPI
+
+
+
+
+
+
+
+
+

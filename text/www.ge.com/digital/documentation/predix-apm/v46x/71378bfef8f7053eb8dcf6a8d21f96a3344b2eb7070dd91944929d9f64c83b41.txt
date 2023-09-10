@@ -1,0 +1,108 @@
+
+
+
+Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Import and ExportOverview
+Import and Export
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Import and Export
+Overview
+
+
+
+
+
+
+
+OverviewAbout Import and Export The Import and Export tool allows you to export metadata from a GE Digital APM data source to a Microsoft Excel or XML file and import GE Digital APM metadata that is stored in a Microsoft Excel or XML file into a GE Digital APM data source.To perform the export and import operations, you must log in to one data source, export the metadata, log out of the GE Digital APM application, then log in to a different data source, and import the metadata.Exporting metadata is a process in which information is extracted from the current GE Digital APM data source and saved to an XML or Microsoft Excel file. Export files provides a "snapshot" of the metadata in your database. For example, to see all the privileges that are configured for a particular Security User or Security Group, you can export their privileges. To see a full list of all the fields defined for multiple families, you can export those families and fields.When exporting metadata, you can select all items or some of the items, and when importing metadata, you can select all or some of the items.Note: In most cases, throughout the GE Digital APM documentation, we do not provide lists of families, fields, System Codes, and other information that can be obtained by exporting the associated metadata. Keep in mind that you can do an export anytime you need to see a snapshot of the metadata in your database.About Exporting MetadataExporting metadata is a process in which information is extracted from the current GE Digital APM data source and saved to an XML or Microsoft Excel file. When exporting metadata, you can select all items or some of the items in a data type. You can export metadata from a GE Digital APM data source to a Microsoft Excel or XML file.Data Types Available for Import and Export
+You can use the Import and Export tool in the Configuration Manager to import or export metadata for the certain data types. 
+The following table lists the data types that can be imported or exported.Data typeNotesAssociated Pages
+All Associated Pages will be exported exactly as they are defined. If the URL parameters contain values that are specific to the source schema (e.g., entity or family keys), if they are then imported into a different target schema that does not contain those values, the links may not work properly.If you attempt to import Associated Pages from a spreadsheet where a row for a subfamily occurs before the family row, the Associated Pages will not be imported successfully. The log, however, will indicate that the import was successful. When you import Associated Pages, be sure that the family exists before the subfamily within the import file.
+Dashboards When you export or import a dashboard, you can also automatically export or import the graphs and underlying queries that have been used to configure dashboard sections. We recommend that whenever you export or import a dashboard that you also export or import the associated queries and graphs. DataLoader TemplatesYou can choose to export or import all the DataLoader Templates or only some of them.Datasets You can choose to export or import all the Datasets or only some of them.Datasheets
+When you import a datasheet that already exists in the target data source, the existing datasheet will always be automatically overwritten by the new one.  Action indicators are not included in the export file for datasheets.If you are exporting a custom-layout datasheet, make sure that you also export the associated system preference.
+Families, Fields, and Field Behaviors 
+This data type includes: All the family and field metadata for the selected families The field behaviors defined for that field, 
+The GE Digital APM system requires the caption defined for each family and field to be unique. When you import families and fields, if the GE Digital APM system determines that a family or field caption is a duplicate of an existing caption, an underscore will be appended to the end of the caption, and a warning will be written to the import log. When you import families and fields, the physical storage for those families and fields will be created automatically.When you try to import a file containing multiple families with State Configurations, a warning message appears, indicating that the file cannot be imported. You can successfully import a State Configuration only if the import file contains one family.If you export a family whose State Configuration includes a state to which a State Configuration Role is assigned, this assignment will be available in the Roles section of the export file.
+Family PoliciesThe Import and Export feature will allow you to import and export the Family Policy configured for a family. However, the following are few points that you must consider.When you select the Family Policy metadata, the list of family for which the family policy are defined, appears in the Available Items section.Selecting a family will import or export all the family policies existing for that family.When you import a Family Policy that already exists in the target data source, the existing family policy will always be automatically overwritten by the new one.  Action indicators are not included in the export file for Family Policy.Folders 
+Exporting a folder exports only the folder structure, not the folder content. When you import or export a folder, any folder-level permissions that are assigned to that folder will also be imported or exported along with the folder.While main-level personal, public, and baseline folders can be exported, only subfolders within these folders can be imported into GE Digital APM. 
+Graphs When you export or import a graph, you can also automatically export or import the underlying queries that have been used to configure the graph. We recommend that whenever you export or import a graph that you also export or import the associated queries. If you import a graph into a database where the associated queries do not exist, error messages will be displayed when Security Users attempt to use the graph.KPIThe Import and Export feature will allow you to export and import the KPIs that are created by using the data source Analysis Services, Manual, or APM Query. However, the following are few points that you must consider.For the KPIs that are using the data source as APM Query, all the queries will also get imported or exported.The KPIs that are created by using the data source Analysis Services (Cube), the history will not get imported.The KPIs that are using the data source as of type Manual, the data will not get imported.The schedules and the privileges associated with a KPI will also get imported or exported.Metric Views The Import and Export feature will allow you to import Metric Views regardless of whether or not the associated Cubes exist, but to avoid encountering problems when working with imported Metric Views, you should create all the necessary Cubes before importing the associated Metric Views.Offline FormsYou can import and export all or only some of the Offline Form configured for a family. However, the following are few points that you must consider.When you import an Offline Form that already exists in the target data source, the existing form will always be automatically overwritten by the new one.  Action indicators are not included in the export file for Offline Form.Policies
+You can import and export all or only some of the standard policies configured for a family.When you import or export the policies, the security permissions assigned to the policies will also be imported or exported. 
+QueriesWhen you export or import a query, you can choose to export all the queries or some of them.R ScriptsYou can choose to export or import all the R Scripts or only some of them.Records and Links
+When you export records, only existing links to successor records are also exported with the records. If a relationship family includes fields, any links between records that use that relationship family will not be exported. When the records and links are exported, one file will be created for each family for which you exported records. Importing a KPI fails to set the proper data definitions for the KPI if the KPI gets its data from a cube.When you import records and links from an XML file, you can choose to import all the records and links in the file or only some of them. If you choose to import only some of the records, depending upon the version from which the records and links were exported, the GE Digital APM system may require you to import all the records and links from the file instead.
+Records and Links - CGU
+This data type appears when you import the Records and Links from a CGU file.When you import records and links from an CGU file, you can choose to import all the records and links in the file or only some of them. When you import records and links from a CGU file, the existing relationships in the file will be imported if the predecessor and successor families exist in the database. However, the relationship between the records will not appear in the application. 
+Relationship DefinitionsNoneReports 
+When you export a report that contains a subreport, the subreport is not exported automatically. You must export the main report and all of its subreports manually.When you import a report, the GE Digital APM system will attempt to publish the report to the GE Digital APM SQL Server Report Server. If the report cannot be published to the GE Digital APM SQL Server Report Server, the report will still be imported into the GE Digital APM database and placed in the Catalog folder.
+ScriptsYou can choose to export or import all the Scripts or only some of them.Security Groups and PrivilegesSecurity Groups are exported in alphabetical order. During the export, the hierarchy of the Security Groups will not be considered. If you import Security Groups from a file that was created by an export, the hierarchy of the imported groups will not match the hierarchy that existed in the original data source.Note: Only Super Users and members of MI Security Role group can import or export this metadata.Security Roles
+Exporting Security Roles will create a Role Definitions section in the export file.
+Exporting Security Roles will export the user and group assignment for that role.
+Importing the Security Roles will import the user and the group assignment for a Security Role. However, the user and the group must exist in the target data source. If the user and group do not exist in the target data source, then the Security Role will get imported but the assignment of the user and group will not occur. The Import log file will contain a warning message displaying the list of users and the groups that were not assigned to a Security Role.
+Note: Only Super Users and members of MI Security Role or MI Configuration Role group can import or export this metadata.
+System Code Tables You can choose to export or import all the System Code Tables or only some of them.System Codes and ReferencesTo import System Codes, the System Code Table to which they belong must exist in the target data source. If the System Code Table does not exist, the associated System Codes will not be imported, and an error message will be written to the import log.System Preferences  When you export a custom-layout datasheet, you must also export the associated system preference, whose preference ID appears in the format [Family ID]-[DatasheetID], where [Family ID] is the ID of the family for which the custom-layout datasheet is defined and [DatasheetID] is the ID of the custom-layout datasheet. Units of Measure and Conversions You can choose to export or import all the Units of Measure and Conversion or only some of them.Units of Measure Conversion SetsYou can choose to export or import all the Units of Measure Conversion Set or only some of them.Users, Privileges, and Assignments If you import a Security User with a user ID that is already assigned to a Security User that exists in the system, the GE Digital APM system will overwrite the information associated with the existing user with the information stored in the import file, including any user information, group assignments, and family privileges associated with that Security User.Note: Only Super Users and members of MI Security Role group can import or export this metadata.
+About the Excel File When you export GE Digital APM metadata, you have the option of exporting it to a Microsoft Excel or XML file. When you choose to export data to a Microsoft Excel file, a Microsoft® Excel spreadsheet file (XLSX) is created that contains the metadata that you chose to export.The specific content of the spreadsheet will depend upon what you chose to export. Every spreadsheet will contain an Information worksheet, which contains general information about the export operation, including:MERIDIUM_VERSION: The GE Digital APM version used to perform the export.EXPORT_CREATION_DATE: The date and time that the export operation was performed.USER_ID: The user ID of the user who performed the export.USER_NAME: The name of the user who performed the export.MERIDIUM_DATASOURCE: The name of the GE Digital APM data source on which the export was performed.In addition to the Information worksheet, one or more worksheets will appear for every data type that you chose to export.Note: Some data type selections will result in the creation of more than one worksheet. For example, when you export Families, Fields, and Field Behaviors.The content of each tab will be specific to that data type. Each column in the spreadsheet will contain a header with a name that indicates the type of data that the column contains. The column heading names should be self-explanatory for each data type, provided that you are familiar with that data type. About the XML FileAs an alternative to exporting metadata to a Microsoft Excel file, you can export it to an XML file as the XML file format is more flexible for data manipulation. The XML file contains the same information that is included in the Microsoft Excel file but in a different format.Instead of being formatted into columns and rows, the metadata is formatted with XML tags. To interpret the file, you must be familiar with XML. As with the Microsoft Excel format, to interpret the XML export file, you must be familiar with the data type that was exported. Additionally, being familiar with the Microsoft Excel file for a particular data type should help you to interpret the XML file for the same data type.If you are familiar with exported Microsoft Excel files and you have a basic understanding of XML, you should be able to interpret the exported XML file.About the Files FolderWhen you export GE Digital APM metadata, the GE Digital APM system creates two items, the export file (either a Microsoft Excel or XML file) and a subfolder for storing files associated with the export.The subfolder is named [File Name] Files, where [File Name] is the name that you specify for the export file. For example, if you name the export file Dataset Export, the subfolder will be called Dataset Export Files.This folder is created for every export but will not always contain files. Files are saved to this folder only when they are needed to support the export. Support files will be exported along with the selected metadata for the following data types:Family Rule Rule Library ProjectsStrategies, Rules, and SchedulesSearchesConfigured explorersReportsGraphsDatasetsQueriesMetric ViewsSystem Preferences Whenever a file is exported to support the export of metadata, its file name will appear in the export file as a property for that item.Whenever a file is exported along with the selected metadata, you should not modify the file, delete the file, or edit the file name that appears in the export file. When you import metadata using an XML or Microsoft Excel file that references support files, those files will need to be available for the import. Moving the files to a different location will cause the import to fail or to produce unexpected results.About Action IndicatorsDepending on the type of data you export, the export file may contain one or more action indicators. In a Microsoft Excel file, the action indicators appear in the ACTION_INDICATORS column. In an XML file, action indicators appear within the ACTION_INDICATORS tag.Action indicators tell the GE Digital APM system what action to take when metadata is imported. When you export metadata, any item that requires an action indicator for an import will be assigned a default value. The value will used only when the metadata is imported back into GE Digital APM. If you want to change the default action, you can modify the value in the export file before importing the data into GE Digital APM.If the ACTION_INDICATOR tag or column contains only one value, that value applies to the entire item. If the ACTION_INDICATOR tag or column contains more than one value, then each value corresponds to each property (column or tag) associated with that item.For example, in the following example, the figure shows a portion of an export spreadsheet created from exporting query. The ACTION_INDICATORS column contains nine values as IU. The first value specifies the action to take on the property in the first column (QUERY_ID). The second value specifies the action to take on the property in the second column (QUERY_CAPTION), and so on. Similarly, in the XML file, the ACTION_INDICATORS tag would also contain nine values, each of which would correspond to a specific item property.Possible Values for Action Indicators
+The value of an action indicator tells the GE Digital APM system what to do with a given item or item property when metadata is imported into GE Digital APM. The values of the action indicators are specific to the data type. The following lists contain the valid values for action indicators and descriptions of how the values are interpreted during an import.
+Values used by most data types:IU (Insert or Update): Insert the item if it does not exist, or update it if it does already exist.IO (Insert Only): Insert the item if it does not exist. If the item already exists, do not update it.UO (Update Only): Update the item if it already exists. If the item does not exist, do not insert it.
+About Importing MetadataYou can import GE Digital APM metadata into any GE Digital APM data source, either the one from which it was exported or a different one. When you import GE Digital APM metadata from a file, you can choose which items of each supported data type within the file to import. You can choose to import all or only some of the data in the file, and you can choose any combination of data types.
+GE Digital APM metadata can be imported into any GE Digital APM data source, either the one from which it was exported or a different one.If you import the metadata into a data source where that same metadata already exists, the action indicators in the import file will tell the GE Digital APM system what to do with the metadata.If you import metadata into a data source in which that metadata does not exist, you need to consider dependencies for the metadata you are importing. For example, you cannot import permissions for a Security User until that Security User exists in the target database. If you attempt to import metadata without the necessary prerequisites, the import operation will fail and error messages will be written to the import log.Access the Export PageAbout This TaskYou can use the Export page to export the metadata associated with a data type to a Microsoft Excel or XML file. Procedure
+In the module navigation menu, select
+Admin > Configuration Manager > Export.The Export page appears.
+Note: You can select Save as Template option in the export page to save the selected metadata items into an export template or add the items manually. You can also view a saved template using the Select a Template option.
+ If you select a template, the items available for exporting gets listed in the Selected Items window.
+Note: You can add or remove items to the existing template using the < . You can also save a new template or overwrite the existing template by adding or removing from Available Items using the > and < respectively. You can save the existing template with the new items or rename the template by using the Save as Template option while saving the modified template. 
+Access the Import PageAbout This TaskThe Import page allows you to select an exported GE Digital APM file for the import process. You can use the Export  page to export the metadata from one data source, make the necessary changes in the exported Microsoft Excel or XML file, and then import the modified file into one or more other data sources by using Import page.Procedure
+In the module navigation menu, select
+Admin > Configuration Manager > Import.The Import page appears.
+
+
+
+
+On this pageAbout Import and Export About Exporting MetadataData Types Available for Import and ExportAbout the Excel FileAbout the XML FileAbout the Files FolderAbout Action IndicatorsPossible Values for Action IndicatorsAbout Importing MetadataAccess the Export PageAccess the Import Page
+
+
+
+
+
+
+
+
+

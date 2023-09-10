@@ -1,0 +1,111 @@
+
+
+
+Second Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Third Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Release Notes
+Second Quarter of 2019
+
+
+
+
+
+
+
+Second Quarter of 2019AnalysisThis topic provides a list of product changes released for this module on the dates listed below.Release Date: June 28, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDYou can now plot up to 60 tags on a single SmartSignal card in the analysis view.F45091You can now view the diagnostics markers on the residual charts if only the residual chart is plotted for a tag, and the actual and estimates charts are not plotted for the tag.F43839In the Analysis view, in addition to the name, alias, and description of the contributing or noncontributing tag, you can now view the name of the asset and the name of the alert associated with the tag.F43838For SmartSignal charts, you can now configure your preferred mode of visualization of data plotting as either date and time mode or points mode. To facilitate this enhancement, in the SmartSignal Chart and Marker Settings section of the My Preferences page, the Plotting Preferences section has been added.F43836You can now plot a Time-Series (Scatter) chart in Analysis templates. This new chart type has the same functionality as that of the Time-Series (Line) chart.F43750You can now view the name of the parent asset in addition to the name of the asset in context when you access the analysis information related to an Alert. If the asset belongs to a complex hierarchy, you can also open the Context Browser in the view mode.F43740You can now define the diagnostics markers in your SmartSignal Analytics and show them on the Analysis charts when you view the data associated with the analytics tags. You can also point to the diagnostics markers in the charts to view the details of the diagnostics events. F43723The performance in loading Analysis templates from Alerts and Cases has now been improved.F43722You can now use infinite scrolling instead of pagination in the data table view in an Analysis template.F42051You can now zoom in on the bar charts in an EBQ Analysis template.F42051You can now set the y-axis limits on Parallel Axis and Spider charts.F42051You can now search for an element in any drop-down list box of an Analysis that has more than 10 elements.F42051You can now add an asset to the analysis view from an Alert to allow you to use the data from additional assets in your analysis of the Alert.F42051You can now view SmartSignal Cycle Watch Events in an Analysis and plot analytics tags based on Event Frames.F41913
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, with the cross-hair mode enabled on an Analysis template, if you added a new chart to the Analysis template, the cross-hair information did not appear on the new chart, and the cross-hair markers did not appear on the existing charts. This issue has been resolved.DE99126
+Table 3. Known Issues and Limitations
+The following issues have not been resolved in this release.
+DescriptionTracking IDIf you point to a diagnostic marker on a SmartSignal chart, no information appears. To exit the mode and view the information about the marker, refresh the charts.DE101633When you have multiple y-axes enabled on a Time-Series chart, Y zoom and XY zoom provide an inconsistent user experience because all the axes do not scale correctly to reflect the zoomed-in state.DE104375When you delete tags on a Time-Series chart after you have plotted pin markers, the deleted tags appear in the marker data table. To prevent this issue, delete the tags, and then set the pins on the charts. DE95436While modifying the Time-Series chart in multiple y-axes mode, if you select Apply, your changes are neither applied nor visible in the chart settings. To prevent this issue, select Cancel, and then create the template for an ad hoc view. Alternatively, you can save the template, and then modify the existing template as needed. DE93811You must now use Google Chrome to add multiple charts to a SmartSignal card.Note: Other browsers, including Internet Explorer, do not support adding multiple charts to a single SmartSignal card.
+None
+
+
+
+
+
+On this pageAnalysis
+
+
+
+
+
+
+
+
+

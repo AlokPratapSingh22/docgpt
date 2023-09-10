@@ -1,0 +1,183 @@
+
+
+
+Policy Designer | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health Manager
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+Policy Designer
+
+
+
+
+
+
+
+Policy DesignerDeploy Policy DesignerThe checklists in this section of the documentation contain all the steps necessary for deploying and configuring this module whether you are deploying the module for the first time or upgrading from a previous module.Deploy Policy Designer for the First TimeBefore You Begin
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. GE Digital recommends, however, that the tasks be completed in the order in which they are listed.
+
+Important: The Policy Execution Service uses the MIJOB user account. MIJOB should be a Super User, should have its time zone set to UTC, and must not be locked out of any data source configured on the GE Digital server. Any modifications to the security privileges of the MIJOB user account may lead to failure of the Policy Execution Service.
+Table 1. ProcedureStepTaskNotes1Assign Security Users to one or more of the Policy Designer Security Roles.This step is required.2Review the Policy Designer data model to determine which relationship definitions you will need to modify to include your custom equipment and location families, and as needed, modify the relationship definitions using Configuration Manager.
+
+This step is required only if you store equipment and location information in families other than the baseline Equipment and Functional Location families.
+
+
+Upgrade Policy DesignerBefore You Begin
+
+The following tables outline the steps that you must complete to upgrade this module to the latest version of GE Digital APM
+                    .
+                
+These tasks may be completed by multiple people in your organization. We recommend, however, that the tasks be completed in the order in which they are listed.
+
+ProcedureUpgrade to the latest version of GE Digital APM., and then perform the following step, if needed:
+StepTaskNotes1Configure the alternative query for the Policy Designer Overview page.This step is optional. You can perform this step if you are facing performance issues with the Policy Designer Overview page.
+About Policy ExecutionPolicy designers can configure a policy to be executed on a schedule or automatically when records or reading values associated with the policy are updated. Policies may also be executed on demand. This topic describes the ways that the items configured in the first-time deployment workflow facilitate each type of policy execution.Note:  Only the active instances of active policies are executed.Automatic Execution
+When any record or reading value is updated by the GE Digital APM Server, or when a reading value for a tag associated with one or more policies is updated on the process historian, a message is added to the policy trigger queue. The Policy Trigger Service monitors the trigger queue. When it receives a message, it determines which policy instances should be executed for the message, if any. Only active policy instances associated with the record or reading update will be executed. The Policy Trigger Service then sends corresponding messages to the policy execution queue for each relevant policy instance. Finally, a Policy Execution Service executes each policy instance that was added to the policy execution queue in turn.
+Scheduled Execution
+When a scheduled policy is due, a scheduled job adds a message to the policy trigger queue. The Policy Trigger Service monitors the trigger queue and sends messages to the policy execution queue for each active instance of the policy. Finally, a Policy Execution Service executes each active instance that was added to the policy execution queue in turn.
+On Demand Execution
+When you request a policy or policy instance execution from the Policy Designer user interface, or select a hyperlink configured to execute a policy or policy instance, a message is added to the policy trigger queue. The Policy Trigger Service monitors the trigger queue and sends messages to the policy execution queue for each active instance of the policy. Finally, a Policy Execution Service executes each active instance that was added to the policy execution queue in turn.
+Configure Queue Settings for Policy Execution ServiceAbout This TaskThe Policy Execution Service on each GE Digital APM Server is configured to use a single shared ActiveMQ queue service. Available queue configuration options include retries, redelivery attempts and interval, and concurrency limit.ProcedureOn the GE Digital APM Server, access the folder that contains the Policy Execution Service files.
+Note: If you have installed GE Digital APM in the default location, you can locate the folder in C:\Program Files\Meridium\ApplicationServer\policy-execution.
+Access the appsettings.json file in an application that can be used to modify JSON files (for example, Notepad++).In the file, locate the following text:
+"notificationMessageSettings": {
+  "concurrencyLimit": 16,
+  "retries": 10,
+  "redeliveryAttempts": 3,
+  "redeliveryMinInterval": 1,
+  "redeliveryMaxInterval": 2440,
+  "redeliveryDelta": 5
+},
+"executionMessageSettings": {
+  "concurrencyLimit": 8,
+  "retries": 5,
+  "redeliveryAttempts": 3,
+  "redeliveryMinInterval": 1,
+  "redeliveryMaxInterval": 2440,
+  "redeliveryDelta": 5
+}
+Update the key values as desired.Save and close the file.The updated settings will be applied when the Meridium Policy Execution service is stopped and restarted.Configure Queue Settings for Policy Trigger ServiceAbout This TaskThe Policy Trigger Service is configured to use a single shared ActiveMQ queue service. Queue configuration options include retries, redelivery attempts and interval, concurrency limit, and duplicate Measurement Location reading trigger elimination timeout.ProcedureOn the GE Digital APM Server, access the folder that contains the Policy Trigger Service files.
+Note: If you have installed GE Digital APM in the default location, you can locate the folder in C:\Program Files\Meridium\ApplicationServer\policy-trigger.
+Access the appsettings.json file in an application that can be used to modify JSON files (for example, Notepad++).In the file, locate the following text:
+ "DuplicateTriggerTimeout": 5000,
+
+"notificationMessageSettings": {
+  "concurrencyLimit": 16,
+  "retries": 10,
+  "redeliveryAttempts": 3,
+  "redeliveryMinInterval": 1,
+  "redeliveryMaxInterval": 2440,
+  "redeliveryDelta": 5
+},
+"triggerMessageSettings": {
+  "concurrencyLimit": 16,
+  "retries": 5,
+  "redeliveryAttempts": 3,
+  "redeliveryMinInterval": 1,
+  "redeliveryMaxInterval": 2440,
+  "redeliveryDelta": 5
+},
+"readingMessageSettings": {
+  "concurrencyLimit": 16,
+  "retries": 5,
+  "redeliveryAttempts": 3,
+  "redeliveryMinInterval": 1,
+  "redeliveryMaxInterval": 2440,
+  "redeliveryDelta": 5
+}
+Update the key values as desired.Save and close the file.The updated settings will be applied when the Meridium Policy Trigger service is stopped and restarted.Configure the Time Limit for Policy Execution About This TaskThe Policy Execution Service limits the amount of time allocated to execute each policy instance. This ensures that the Policy Execution Service queue is not backlogged when a poorly designed policy takes too long to execute. If a policy execution is canceled as a result of the time limit, an error message appears in the policy execution history indicating that the time limit was exceeded. By default, the policy execution time limit is set to 15 minutes per policy instance. The minimum time limit is 1 minute, and the maximum time limit is 1 hour. This topic describes how to modify the Policy Execution Service configuration to change the time limit for policy execution.ProcedureOn the GE Digital APM Server, access the folder that contains the Policy Execution Service files.
+Note: If you have installed GE Digital APM in the default location, you can locate the folder in the following directory:C:\Program Files\Meridium\ApplicationServer\policy-execution
+Access the appsettings.json file in an application that can be used to modify JSON files (for example, Notepad++).In the file, locate the following text:
+"PolicyExecutionTimeoutMs": 900000
+Replace 900000 with the time limit value in milliseconds, that you want to apply to policy executions.
+Note: The value you enter should be between the minimum time limit of 60000 milliseconds (that is, 1 minute) and the maximum time limit of 3600000 milliseconds (that is, 1 hour).
+Save and close the file.The modified settings are applied when the Policy Execution Service is restarted. If the execution time of a policy instance exceeds the time limit that you have specified, the execution is canceled, and an error message is added to the policy execution history.On the GE Digital APM Server, access the folder that contains the Meridium configuration files.
+Note: If you have installed GE Digital APM in the default location, you can locate the folder in the following directory:C:\Program Files\Meridium
+Go to C:\Program Files\Meridium\ApplicationServer\api.Access the appsettings file in an application that can be used to modify JSON files (for example, Notepad++).Repeat steps 3 through 5.The modified settings are applied when Meridium Policy Execution service is stopped and restarted on each policy execution server and IIS is reset on the GE Digital APM Server.Configure Execution Time Out Value for Math NodeAbout This TaskIf the execution of a Math node in a policy takes a very long time, the execution times out after a pre-defined duration. By default, the execution times out after 1 minute. However, you can configure the interval after which the execution must time out for the Math node.ProcedureOn the Policy Execution Server, go to C:\Program Files\Meridium\ApplicationServer\policy-execution.Access the appsettings.json file in an application that can be used to modify JSON files (for example, Notepad++).In the file, locate the following text:
+"MathNodeExecutionTimeout": 60000
+Replace 60000 with the interval value in milliseconds at which the execution of the Math node must time out.Save and close the file.On the GE Digital APM Server, go to C:\Program Files\Meridium\ApplicationServer\api.Access the appsettings file in an application that can be used to modify JSON files (for example, Notepad++).Repeat steps 3 through 5.The updated settings will be applied when the Policy Execution Service is stopped and restarted on the Policy Execution Server and IIS is reset on the GE Digital APM Server.Configure Alternative Query for the Policy Designer Overview PageAbout This TaskTo optimize the performance of the Policy Designer Overview page in the systems with a large volume of policy execution history records, the Policies tab displays a simplified view which does not display the latest policy execution results. If you want to see the latest results in the Policies list, you can configure the Policy Designer Overview page to use the alternative query (Policy Overview – Policies Alternate Query) that is provided in the GE Digital APM Catalog.Note: When you configure an alternative query for Policy Designer Overview page, you might face some performance issues.ProcedureAccess the GE Digital APM using the super user account.Access the Catalog page.In the Catalog section, select Public > Meridium > Modules > Policy Manager > Queries.The Queries workspace appears, displaying the catalog items of the Queries folder in a table.Select the check box corresponding to the Policy Overview – Policies query.In the same row, select .The Catalog Item Properties window appears, displaying the properties of the Policy Overview – Policies query.In the Name box, modify the value to rename the query.Select Done.The Policy Overview – Policies query is renamed.Select the check box corresponding to the alternative query (Policy Overview – Policies Alternate Query).In the same row, select .The Catalog Item Properties window appears, displaying the properties of the alternative query.In the Name box, delete the existing value, and then enter Policy Overview – Policies.Select Done.The alternative query is configured for the Policy Designer Overview page.
+
+
+
+
+On this pageDeploy Policy DesignerDeploy Policy Designer for the First TimeUpgrade Policy DesignerAbout Policy ExecutionConfigure Queue Settings for Policy Execution ServiceConfigure Queue Settings for Policy Trigger ServiceConfigure the Time Limit for Policy Execution Configure Execution Time Out Value for Math NodeConfigure Alternative Query for the Policy Designer Overview Page
+
+
+
+
+
+
+
+
+

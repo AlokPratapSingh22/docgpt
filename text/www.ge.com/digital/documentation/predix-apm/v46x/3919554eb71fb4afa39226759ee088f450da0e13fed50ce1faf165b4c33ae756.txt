@@ -1,0 +1,106 @@
+
+
+
+Fourth Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+Release Notes
+Fourth Quarter of 2021
+
+
+
+
+
+
+
+Fourth Quarter of 2021Release Date: December 17, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in SIL Analysis, when you defined a negative value for Trip Point in the Proof Test Template Details and performed a Proof Test task, the calculated result appeared as Fail in the Pass/Fail column. This issue has been resolved.DE171455Previously, for a Protective Instrument Loop, when you set a Logic Solver device (for example, Triconex Tricon) for which one or more failure rates were not defined in the Analog Input, Analog Output, Digital Input, or Digital output modules, an error appeared. This issue has been resolved.DE170898Previously, when you added a custom device with a linked equipment to the Final Element or a Sensor, and then attempted to update the related sensor group or final element group, an error occurred. This issue has been resolved.DE168136
+Release Date: October 8, 2021This topic provides a list of product changes released for this module on this date.
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when you attempted to add a team member to an SIL Analysis, users across all sites were displayed. This issue has been resolved. Now, only the users linked with the site of the SIL Analysis are displayed.US483318Previously, in the Definition tab of the SIL Verification section, if IEC 61508 was selected from the drop-down list of the Test Architecture Constraints, SIL-Achieved value was not calculated correctly for a Protective Instrument Loop. This issue has been resolved.DE165806Previously, for a Protective Instrument Loop that used the ExSILentia V4 Calculation Engine, the SIL-Achieved and Architectural Constraints fields were not displayed correctly. This issue has been resolved.DE164599Previously, when you attempted to save a Protective Instrument Device, if any error occurred, an incorrect error message was displayed. This issue has been resolved.DE164133Previously, when you created a new or updated an existing SIL Analysis, Instrumented Function, Safety Instrumented System, or Protective Instrument Loop Element, the Modified By and the Modified Date fields did not display correct values. This issue has been resolved.DE164107Previously, the following fields in LOPA did not display the accurate values:Mitigated Consequence FrequencyUnmitigated Consequence FrequencyRequired PIF Risk Reduction Factor This issue has been resolved. Now, these fields are displayed in exponential value, if the output has more than 15 decimal digits.DE162635Previously, when a user assigned to SIS Administrator or SIS Engineer security group attempted to create a Risk Assessment Recommendation, an error occurred. This issue has been resolved.DE162163Previously, in the Risk Assessment Recommendation datasheet, the Interval and Interval Units fields appeared in the Alert tab instead of the General Information tab. This issue has been resolved.DE161964Previously, when you created a new or updated an existing SIS Proof Test Template, SIS Proof Test Template Detail, or SIS Proof Test, the following fields were not populated with the correct values: Modified ByModified DateTest IDThis issue has been resolved. DE161957Previously, after importing a Protected Instrument loop into the GE Digital APM, when you attempted to modify the Protected Instrument loop record, an error occurred. This issue has been resolved.DE160394Previously, when you updated the state of a Protective Instrument Loop to a state other than Design, the fields in the Protective Instrument Device datasheet were still available for editing. This issue has been resolved.DE160302Previously, when you used the Import from Exida functionality in SIL Analysis, the performance of the GE Digital APM was not as expected if there were many analyses present in APM. This issue has been resolved.DE158244Previously, in the SIL Assessments, when you entered values for the Probability of Failure on Demand (PFD) and Risk Reduction Factor (RRF) fields, the associated SIL level value was not displayed correctly. This issue has been resolved.DE157711Previously, when you attempted to promote a recommendation to ASM, a blank message appeared in the following scenarios:If the Recommendation Headline was missing and you attempted to Promote to ASM.If the Recommendation was Accepted by ASM and you attempted to promote it again.These issues have been resolved.DE157630Previously, when you entered values for the Risk Reduction Factor (RRF) field for an External SIL assessment, an incorrect validation error occurred. This issue has been resolved.DE157629Previously, Promote To ASM operation failed for Recommendations in which the Instrumented Function was linked to a LOPA Assessment or External Assessment. This issue has been resolved.DE157627Previously, in SIL verification, when you selected a sensor, a final element, or a logic solver device for a protective instrument loop, an error may have occurred. This issue has been resolved.DE157621Previously, when you used the Export to Exida functionality in SIL Analysis, the performance of the GE Digital APM was not as expected, if there were many analyses present in APM. This issue has been resolved.DE157620
+
+
+
+
+
+On this pageRelease Date: December 17, 2021Release Date: October 8, 2021
+
+
+
+
+
+
+
+
+

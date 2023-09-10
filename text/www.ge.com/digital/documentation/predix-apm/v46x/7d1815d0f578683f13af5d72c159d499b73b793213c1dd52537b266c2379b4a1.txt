@@ -1,0 +1,93 @@
+
+
+
+Asset Hierarchy | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset HierarchyAsset Hierarchy
+Administrator Actions
+User Actions
+Legacy User Actions
+
+
+Workflows
+Instances
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Asset Hierarchy
+Asset Hierarchy
+
+
+
+
+
+
+
+Asset HierarchyAbout the Asset HierarchyUse the asset hierarchy to select business objects with which you want to work.Within GE Digital APM, there are multiple functional locations that can be organized in a hierarchy to represent how your business is set up. These relationships create the Asset Hierarchy.The asset hierarchy consists of business objects that include functional locations, assets, and child assets associated with the assets. Tags are associated with business objects on the asset hierarchy, but are not visible on the hierarchy itself.The GE Digital APM modules include a Hierarchy icon () that opens the asset hierarchy component. The Hierarchy component includes a Groups tab. Asset groups are collections of assets grouped together for analysis. The asset hierarchy for a tenant can be ingested or created using the user interface. For more information refer to https://www.ge.com/digital/documentation/predix-apm/asset-hierarchy-overview.html documentation.The Legacy Predix APM include a Context Browser in the Assets, Analysis, and Dashboards modules that displays business objects in a hierarchical form in the Hierarchy tab. The Context Browser is integrated into the displayed instances. The Hierarchy component has a limitation of 1000 assets for the enterprise level, and 250 assets for each subsequent level. If your hierarchy contains more than the allotted number of assets, depending upon the level, only the first 1000 or 250 assets will appear in the Context Browser. The Groups tab in Legacy Predix APM is disabled at this time.Legacy Predix APM support S95 asset model and contains predefined relationships between parent and child classification as represented in the following asset model and relationship diagram:Before creating instances, you must define custom classifications for each of the S95 hierarchy CCOM type (Enterprise, Site, Segment, Asset, Tag). You can create or ingest classification instances for the asset hierarchy as follows:Beginning from hereYou can create this type of instanceEnterpriseYou can create a child-enterprise or a site.SiteYou can create a child-site, a segment, or an asset.SegmentYou can create a child-segment, or an asset.AssetYou can create a child-asset.Once an asset hierarchy is created, you can:Expand each level and select the business object for which you would like to access.Search the asset hierarchy for a specific business object.Select and apply an asset classification to filter the possibilities from which to select a business object.When you select a business object from the asset hierarchy, you are selecting an instance from which you can view details. The context browser link appears at the top of the page.Navigate the Asset HierarchyThe asset hierarchy allows you to browse assets from the top-level functional location.About This Task
+As you navigate through the asset hierarchy in Legacy Predix APM, selecting a hierarchy item displays the corresponding instance.
+For all other modules, at each level, information about the Health, Reliability, Strategy, and Integrity of that instance is displayed on the selected instance page. The instance page provides a snapshot of all the data in GE Digital APM related to the asset selected in the asset hierarchy. For each Health, Reliability, Strategy and Integrity instance, there is a hyperlink displaying the number and type of analysis performed against that asset. The hyperlinks, once selected, open the analyses or inspections in a new tab while maintaining the selection in the asset hierarchy.
+
+Note: As a standard practice, it is assumed that your assets are installed at locations that exist on the lowest level of your location hierarchy.
+
+ProcedureIn the module navigation menu, navigate to Assets, Analysis, or Dashboards.Select the Context Browser.Search, filter, or scroll through the hierarchy in the browser, and then complete one of the following actions:Select an asset context.Select the Expand arrow () next to an asset context to view the next level in the asset hierarchy. Repeat the hierarchy level expansion if needed, and then select an asset context.The selected instance page appears.
+Related tasksCreate an Instance in the Business Functional HierarchyCreate a Classification
+
+
+
+
+On this pageAbout the Asset HierarchyNavigate the Asset Hierarchy
+
+
+
+
+
+
+
+
+

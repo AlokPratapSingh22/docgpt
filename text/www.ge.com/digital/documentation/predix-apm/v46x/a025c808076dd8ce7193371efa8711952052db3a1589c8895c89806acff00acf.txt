@@ -1,0 +1,107 @@
+
+
+
+Fourth Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release NotesFirst Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Release Notes
+Fourth Quarter of 2019
+
+
+
+
+
+
+
+Fourth Quarter of 2019AssetThis topic provides a list of product changes released for this module on the specified dates.Release Date: December 13, 2019
+Table 1. Known Issues and Limitations
+The following known issues and limitations exist.
+DescriptionTracking IDReserved attributes for instances and tags are overwritten by default values, if no reserved attributes are specified in the re-ingestion file.DE123372
+Release Date: November 21, 2019
+Table 2. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking ID You can sort and filter tags by tag attributes in the Tags section, and export the tags to a CSV file for a single Monitored Entity. F46927You can sort and filter attributes of an instance in the Attributes section, and you can export the attributes to a CSV file.US367227In the Search page, you can navigate back to the search results after you select one of the tags in the search results to review or edit.US367227
+Table 3. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDThe Delete Asset Instance button remained disabled even after the Delete Reason  box was populated. This issue has been resolved, To facilitate this fix, the user interface is now updated to guide the user to populate the Asset Name and Delete Reason boxes.DE120700Previously, creating a Tag Instance with special characters in the TimeSeries Link box did not display errors and the Tag Instance button remained disabled. This issue has been resolved.DE96140
+
+
+
+
+
+On this pageAsset
+
+
+
+
+
+
+
+
+

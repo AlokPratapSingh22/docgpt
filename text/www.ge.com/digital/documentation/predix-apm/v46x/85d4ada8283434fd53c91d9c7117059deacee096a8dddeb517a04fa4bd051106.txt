@@ -1,0 +1,334 @@
+
+
+
+About Asset Model | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About Asset ModelAn asset is a digital abstraction of something in the physical world. It can be an enterprise, organization, site, machine train, or equipment. Creating an asset model in GE Digital APM enables an application built on GE Digital APM consistently derive data for these common assets.The asset model elements consist of the following:Classifications - Defines the hierarchical levels of the asset model. Instances - Relates node (levels in the hierarchy tree) with classification and ccomClass.Connections - Defines parent-child relationships among nodes.Tag Classifications - Defines classification types for tags.Tag Associations - Associate a tag instance to a node instance and specify the tag classification for the tag instance.
+From a global perspective, you can define and report on your company's overall asset performance or report from a regional or local level. GE Digital APM allows you to create multiple levels in the hierarchy. You can model your assets as follows:Beginning from hereYou can create this type of classification instanceEnterpriseYou can create a child-Enterprise, or a Site.SiteYou can create a child-Site, a Segment, or an Asset.SegmentYou can create a child-Segment, or an Asset.AssetYou can create a child-Asset.TagYou can create a Tag instance anywhere in the hierarchy.
+Asset Classification
+A classification is a reusable definition of a specific entity in your business object hierarchy. You can also represent multiple entities that are essentially the same and define it as a single classification. For example, you can create a classification machine to identify machinery that have common attributes and properties. You can create sub-classifications such as turbines, compressors, and shafts from this broader class machine. Sub-classifications inherit all properties from the parents and can have their own specialized properties.
+
+Classification Rules
+A classification is governed by the following rules:It must contain an id that is unique per classification. If you ingest a model with the same classification ID the existing data will be overwritten with the new data.It must be tied to one of the four classification types (ccomClass).It may or may not be derived from a parent classification.The classification and its parent must have the same classification type.The classification inherits all properties from its parent classification. Any custom properties defined in the child classification are customized to the child.
+JSON Fields
+Make sure your {"classifications": []} block in the JSON has the following fields:Table 1. JSON Fields for ClassificationFieldRequirementidMust be unique per classification and can only contain alphabets (a-z, A-Z), digits (0-9), underscores _, hyphens -, dots . and quotes ""id":"3BCL"nameThe name of the classification."name":"3MCL"descriptionThe general description for the classification.id."description":"3MCL model of centrifugal compressor"parentIf inherited from an existing class, provide the parent classification id. Not required, if base class."parent":"Centrifugal_Compressor"comClassThe GE Digital APM s95 adapter uses four ccomClass to represent the levels within the asset model hierarchy. Each classification must be tied to one of the four ccomClasses such as ENTERPRISE_TYPE, SITE_TYPE, SEGMENT_TYPE, and ASSET_TYPE . If inherited, must match the ccomClass of the parent classification."ccomClass":"ASSET_TYPE"propertiesDefine properties for the classification in key-value pairs. If inherited from an existing class, only enter properties customized to the sub-classification. Each property block contains type, id and value. You can define multiple blocks with properties: [ ]A best practice is to define static properties as part of the classification."properties":[  
+            {  
+               "type":"string",
+               "id":"customer_address",
+               "value":[  
+                  "2336 Camino Ramon"
+               ]
+            }]reservedPropertiesDefine reserved properties aka system defined attributes and default values for the asset classification. Each reservedProperties block contains the list of expected reserved properties defined at the asset framework level. If you do not define the reserved properties block in your model, the system will automatically insert any required reserved attributes and set it to the default values."reservedProperties": {
+    "familyType": "",
+    "equipmentType": "",
+    "make": "GE",
+    "model": "GTX-50",
+    "series": "GTX",
+    "serialNumber": null,
+    "maintenanceCriticalityRiskScore": 7,
+    "faultMode" : ""
+  }
+Example Classification
+enterprise > site > segment > segment > segment > asset:Company (enterprise_type)Region (site_type)Plant Location (segment_type)Production Line (segment_type)Production Line Assembly (segment_type)Compressor (asset_type)
+The following code sample shows a sample classification for the structure listed above:{ "classifications":[ { "id":"Company", "name":"Company", "description":"Company or Enterprise", "ccomClass":"ENTERPRISETYPE", "properties":[ { "type":"string", "id":"customeraddress", "value":[
+] }, { "type":"string", "id":"contract_information", "value":[
+] }, { "type":"string", "id":"city", "value":[
+] }, { "type":"string", "id":"contracttype", "value":[ "Warranty", "Transactional", "Null" ] }, { "type":"double", "id":"contract_duration", "value":[
+] } ] }, { "id":"Region", "name":"Region", "description":"Regional information", "ccomClass":"SITE_TYPE", "properties":[ { "type":"string", "id":"country", "value":[
+] }, { "type":"string", "id":"state", "value":[
+] }, { "type":"string", "id":"county", "value":[
+] } ] }, { "id":"Plant", "name":"Plant", "description":"Plant Location or site", "ccomClass":"SEGMENTTYPE", "properties":[ { "type":"string", "id":"locationid", "value":[
+] }, { "type":"string", "id":"Address", "value":[
+] }, { "type":"string", "id":"City", "value":[
+] }, { "type":"string", "id":"Note", "value":[
+] }, { "type":"string", "id":"Customer_Duns", "value":[
+] }, { "type":"string", "id":"CONTINENTID", "value":[ "Africa", "America", "Asia", "Europe", "Oceania" ] }, { "type":"double", "id":"Delta_Dst", "value":[
+] }, { "type":"string", "id":"Last_Timestamp", "value":[
+] }, { "type":"string", "id":"DateStartDst", "value":[
+] }, { "type":"string", "id":"DateEndDst", "value":[
+] } ] }, { "id":"ProdLine", "name":"Production Line", "description":"Production Line", "ccomClass":"SEGMENTTYPE", "properties":[ { "type":"string", "id":"ReportTo", "value":[
+] }, { "type":"string", "id":"TrainId", "value":[
+] }, { "type":"string", "id":"TriplogConfigurationStatus", "value":[
+] }, { "type":"string", "id":"Triplog_Note", "value":[
+] }, { "type":"string", "id":"Note", "value":[
+] }, { "type":"string", "id":"Lineup_Code", "value":[
+] }, { "type":"string", "id":"Replication", "value":[
+] }, { "type":"string", "id":"VIBRMONITORTYPE", "value":[ "System1" ] }, { "type":"string", "id":"VIBRMONACCESSTYPE", "value":[ "Partial", "NA", "Complete", "Missing" ] }, { "type":"double", "id":"ReplicationActivation_Date", "value":[
+] }, { "type":"double", "id":"ReplicationContractFrequency", "value":[
+] }, { "type":"double", "id":"ReplicationActivationFrequency", "value":[
+] }, { "type":"double", "id":"FirstReplicationContract_Date", "value":[
+] }, { "type":"double", "id":"FirstReplicationActivation_Date", "value":[
+] }, { "type":"double", "id":"ReplicationContractCOV_Start", "value":[
+] }, { "type":"double", "id":"ReplicationContractCOV_End", "value":[
+] }, { "type":"double", "id":"ReplicationActivationCOV_Start", "value":[
+] }, { "type":"double", "id":"ReplicationActivationCOV_End", "value":[
+] }, { "type":"double", "id":"ReplicationpenalityMax", "value":[
+] }, { "type":"double", "id":"JobCCNNCM", "value":[
+] }, { "type":"string", "id":"TripStartDate", "value":[
+] }, { "type":"string", "id":"TripEndDate", "value":[
+] } ] }, { "id":"AssemblyLine", "name":"Production Assembly Line", "description":"Production Assembly Line", "ccomClass":"SEGMENTTYPE", "properties":[] }, { "id":"Machine", "name":"Machine", "description":"Machine", "ccomClass":"ASSETTYPE", "properties":[ { "type":"string", "id":"Version", "value":[
+] }, { "type":"string", "id":"Low_Nox", "value":[
+] }, { "type":"string", "id":"Supplier_ID", "value":[
+] }, { "type":"string", "id":"NPJobNumber", "value":[
+] }, { "type":"string", "id":"Note", "value":[
+] }, { "type":"string", "id":"Supplier", "value":[
+] }, { "type":"string", "id":"GIBSerialNumber", "value":[
+] }, { "type":"string", "id":"OEMSerialNumber", "value":[
+] }, { "type":"string", "id":"SKEDAMACerailNumber", "value":[
+] }, { "type":"string", "id":"Equipment_Code", "value":[
+] }, { "type":"string", "id":"Technology_Code", "value":[
+] }, { "type":"string", "id":"GIB_Status", "value":[
+] }, { "type":"string", "id":"Cost_ID", "value":[
+] }, { "type":"string", "id":"Channel_ID", "value":[
+] }, { "type":"string", "id":"Installation_Date", "value":[
+] }, { "type":"string", "id":"CSAContractID", "value":[
+] }, { "type":"string", "id":"RMDServiceLevel", "value":[
+] }, { "type":"string", "id":"RMDContractService_Type", "value":[
+] }, { "type":"string", "id":"RMDContractID", "value":[
+] }, { "type":"string", "id":"PerformanceCalculationPlatform", "value":[
+] }, { "type":"string", "id":"PerformanceCalculationConfigured", "value":[
+] }, { "type":"string", "id":"Static_Pulsations", "value":[
+] }, { "type":"string", "id":"PerformancedataAcquisition", "value":[
+] }, { "type":"string", "id":"Sesimic_Vibration", "value":[
+] }, { "type":"string", "id":"SesimicVibrationfequency_Analysis", "value":[
+] }, { "type":"string", "id":"Radial_Vibration", "value":[
+] }, { "type":"string", "id":"RadialVibrationfequency_Analysis", "value":[
+] }, { "type":"string", "id":"Axial_Displacements", "value":[
+] }, { "type":"string", "id":"Vibration_Notes", "value":[
+] }, { "type":"string", "id":"Note", "value":[
+] }, { "type":"string", "id":"CompressionPhaseNo", "value":[
+] }, { "type":"string", "id":"id", "value":[
+] }, { "type":"string", "id":"MANUFACTURER_ID", "value":[
+] }, { "type":"string", "id":"MODELID", "value":[
+] }, { "type":"double", "id":"TripInternalLimit", "value":[
+] }, { "type":"double", "id":"TripNotificationPenality", "value":[
+] }, { "type":"double", "id":"AnomalyNotificationTimelimit", "value":[
+] }, { "type":"double", "id":"AnomalyInternalLimit", "value":[
+] }, { "type":"double", "id":"AnomalyNotificationPenality", "value":[
+] }, { "type":"string", "id":"MonitoringActivationStart_Date", "value":[
+] }, { "type":"string", "id":"MonitoringContractStart_Date", "value":[
+] }, { "type":"string", "id":"MonitoringActivationEnd_Date", "value":[
+] }, { "type":"string", "id":"MonitoringContractEnd_Date", "value":[
+] } ] }, { "id":"Compressors", "name":"Compressors", "description":"Compressors", "ccomClass":"ASSET_TYPE", "parent":"Machine", "reservedProperties": { "familyType": "", "equipmentType": "", "make": "", "model": "", "series": "", "serialNumber": null, "maintenanceCriticalityRiskScore": 7, "faultMode" : "" }, "properties":[
+] }, { "id":"RotatingCompressor", "name":"Rotating Compressor", "description":"Rotating Compressor", "ccomClass":"ASSETTYPE", "parent":"Compressors", "reservedProperties": { "familyType": "Compressors", "equipmentType": "Rotating Compressors" }, "properties":[
+] }, { "id":"CentrifugalCompressor", "name":"Centrifugal Compressor", "description":"Centrifugal Compressor", "ccomClass":"ASSETTYPE", "parent":"Rotating_Compressor", "reservedProperties": { "familyType": "Compressors", "equipmentType": "Centrifugal Compressors" }, "properties":[
+] }, { "id":"2BCL", "name":"2BCL", "description":"2BCL", "ccomClass":"ASSETTYPE", "parent":"CentrifugalCompressor", "reservedProperties": { "make": "GE", "model": "BCL", "series": "2BCL", "maintenanceCriticalityRiskScore": 7 }, "properties":[
+] }, { "id":"2MCL", "name":"2MCL", "description":"2MCL", "ccomClass":"ASSETTYPE", "parent":"CentrifugalCompressor", "reservedProperties": { "make": "GE", "model": "MCL", "series": "2MCL", "maintenanceCriticalityRiskScore": 7 }, "properties":[
+] }, { "id":"3BCL", "name":"3BCL", "description":"3BCL", "ccomClass":"ASSETTYPE", "parent":"CentrifugalCompressor", "reservedProperties": { "make": "GE", "model": "BCL", "series": "3BCL", "maintenanceCriticalityRiskScore": 7 }, "properties":[
+] }, { "id":"3MCL", "name":"3MCL", "description":"3MCL", "ccomClass":"ASSETTYPE", "parent":"CentrifugalCompressor", "reservedProperties": { "make": "GE", "model": "MCL", "series": "3MCL", "maintenanceCriticalityRiskScore": 7 }, "properties":[
+] } ] }
+Asset Instances
+After you define your classifications, you can create instances of those classifications.
+Example Instance
+The general structure of this asset model is given by:
+
+The following code samples illustrate instances for classes Company and Region.
+{  
+   "instances":[  
+      {  
+         "id":"c4837964-27fb-4f98-91a2-2c6e406ca1fe",
+         "name":"Acme Inc.",
+         "description":"",
+         "classification":"Company",
+         "properties":[  
+            {  
+               "type":"string",
+               "id":"customer_address",
+               "value":[  
+                  "2336 Camino Ramon"
+               ]
+            },
+            {  
+               "type":"string",
+               "id":"contract_information",
+               "value":[  
+                  ""
+               ]
+            },
+            {  
+               "type":"string",
+               "id":"city",
+               "value":[  
+                  "San Ramon"
+               ]
+            },
+            {  
+               "type":"string",
+               "id":"contracttype",
+               "value":[  
+                  ""
+               ]
+            },
+            {  
+               "type":"double",
+               "id":"contract_duration",
+               "value":[  
+                  ""
+               ]
+            }
+         ],
+         "ccomClass":"ENTERPRISE"
+      },
+      {  
+         "id":"rnk6fdj98-Hkshdnks67",
+         "name":"North America",
+         "description":"Regional information",
+         "classification":"Region",
+         "properties":[  
+            {  
+               "type":"string",
+               "id":"country",
+               "value":[  
+                  "USA"
+               ]
+            },
+            {  
+               "type":"string",
+               "id":"state",
+               "value":[  
+                  "CA"
+               ]
+            },
+            {  
+               "type":"string",
+               "id":"county",
+               "value":[  
+                  "Contra Costa"
+               ]
+            }
+         ],
+         "ccomClass":"SITE"
+      }
+   ]
+}
+JSON Fields
+Make sure your {"instances": []} block in the JSON has the following fields:Table 2. JSoN Fields for InstancesFieldReequirementidMust be unique and can only contain alphabets (a-z, A-Z), digits (0-9), underscores _, hyphens -, dots . and quotes ""id":"c4837964-27fb-4f98-91a2-2c6e406ca1fe"nameMust be provided to view or search by name in the APM application."name":"Acme Inc."classificationMust be an existing classification in the model"classification":"Company"comClassThe APM s95 adapter uses four ccomClass to represent the levels within the asset model hierarchy. Each class instance must be tied to one of the four ccomClasses ENTERPRISE, SITE, SEGMENT, and ASSET. It should also match the classification ccomclass. For example, if the ccomClass for the classification is Enterprise_type then the instance of that classification must have the ccomClass Enterprise."ccomClass":"ENTERPRISE"propertiesid within properties is mandatory and can only contain alphabets (a-z, A-Z), digits (0-9), underscores _, hyphens -, dots . and quotes ". If the same property is defined at both class and instance levels, the property defined for the instance takes precedence over the class. For example, if the property color has the default value black at the classification level, the instance value red for color takes precedence for that instance.You can add properties directly to an instance. Therefore,the instance is not limited to properties defined in its classification.A best practice is to define static properties as part of the classification, and to define dynamic properties as part of the instance."properties":[  
+            {  
+               "type":"string",
+               "id":"customer_address",
+               "value":[  
+                  "2336 Camino Ramon"
+               ]
+            }]If you wish to add an asset alias, you can define it as a property as in the code example below.Note: If the property type is not defined as a string and ID as alias for an asset instance, the aliases will not be available on the APM user interface."properties":[  
+            {  
+               "type":"string",
+               "id":"alias",
+               "value":[  
+                  "Asset Alias 1"
+               ]
+            }]reservedPropertiesDefine reserved properties aka system defined attributes and default values for the asset instances only (instances with the ccomClass ASSET). Each reservedProperties block contains the list of expected reserved properties defined at the asset framework level. If you do not define the reserved properties block in your model, the system will automatically insert any required reserved attributes and set it to the default values."reservedProperties": {
+        "state": "06",
+        "status": "03",
+        "familyType": "",
+        "equipmentType": "",
+        "make": "GE",
+        "model": "EX8863",
+        "series": "EX1",
+        "serialNumber": "123456ABC",
+        "faultMode": "5",
+        "maintenanceCriticalityRiskScore": 7
+  },locationStores the geographical location of a company, a device, an equipment a site, a plant, a specific area (group of geolocation points)."location": {
+        "geoPoints": [
+            {
+                "name": "geo point 1",
+                "order": 1,
+                "latitude": 37.7799,
+                "longitude": -121.978,
+                "altitude": 150
+            },
+            {
+                "name": "geo point 2",
+                "order": 2,
+                "latitude": 37.4965,
+                "longitude": -121.7759,
+                "altitude": 138
+            },
+            {
+                "name": "geo point 3",
+                "order": 3,
+                "latitude": 37.5841,
+                "longitude": -123.7578,
+                "altitude": 138
+            },
+            {
+                "name": "geo point 4",
+                "order": 4,
+                "latitude": 38.1133,
+                "longitude": -120.4214,
+                "altitude": 138
+            }
+        ]
+    }
+Relationships
+Connections establish relationships among two or more instances. In a simple asset hierarchy, you can identify an individual asset by specifying its path in the hierarchy. You can have a parent-child relationship between instances. You define connection from one instance to one or more instances. You would start from the top of the hierarchy and traverse down to connect.Important: You must define the instances before you can connect them.
+Parent-Child Connection
+Before connecting two instances, consider the following:An enterprise object is the parent of one or more site objects.A site object is the parent of at least one segment or asset object. A site object cannot be a parent of another site object.A segment object is the parent of at least one segment or asset object.An asset object can be the parent of zero or more asset objects.
+The following code example shows connections from between North America (Class: Region) and Acme, Inc (Class: Company) . You must define the child in the from {} block and the parent in the to{} block. The type field is parent and is defined in the to{} block.
+"connections": [
+        {
+            "from": {
+                "id": "rnk6fdj98-Hkshdnks67",
+                "ccomClass": "SITE"
+            },
+            "to": [
+                {
+                    "type": "parent",
+                    "id":"c4837964-27fb-4f98-91a2-2c6e406ca1fe",
+                    "ccomClass": "ENTERPRISE"
+                }
+            ]
+        
+        }
+    ]
+
+
+
+
+
+
+
+
+
+
+
+

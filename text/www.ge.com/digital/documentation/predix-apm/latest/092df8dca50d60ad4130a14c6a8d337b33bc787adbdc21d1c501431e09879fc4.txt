@@ -1,0 +1,70 @@
+
+
+
+
+Add a New State to a Family | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Add a New State to a FamilyWhen defining the State Configuration for a family, keep in mind the workflow that you want users to follow. Then, create states and operations that facilitate that workflow and decrease the possibility of error. After defining the workflow between the states, you can display the states on the datasheet and manually move the states defined in a workflow.Procedure
+Access the State Configuration section.
+
+Depending on your requirement: If you are at parent family level, select Enable State Functionality.If you are at the subfamily level and you want to use the state configuration defined at the parent level, select Use Parent's Configuration check box and then select Enable State Functionality.If you are at the subfamily level and you want to define a new State Configuration, then select Enable State Functionality.The Show States on Datasheets check box and the Add State button appears enabled.Select Add State to define a new state.The Properties-New State window appears.As needed, specify the values in the following fields:
+
+ID: Delete the text that was generated automatically, and type an ID for the new state.
+Caption: By default, when you select the Caption box, it is populated automatically with the value that you typed in the ID box. You can change the caption if required. Initial State: Select the option if you want this state to be the initial state in the workflow. Note: You must have one state defined as the initial state and the initial state appears in dotted circle.
+Reserved State: This option is available only for the baseline states. If the state is marked as Reserved State, then you cannot delete that state. You can, however, modify the Caption of the state.Require a specific user to be assigned for a state: Select the option to assign a user for the state. When the record gets transitioned to that state, then you must assign specific user from the Selected Roles.
+If you want the state to appear on the datasheet, select Show States on Datasheets check box.By default, the check box is selected. If you do not want the state to appear on the datasheet, clear the Show States on Datasheets check box, and then select Save.Note: You can now hide or show the state configuration on a datasheet for a subfamily, even if the state configuration is inherited from the parent family.For the Roles:
+To assign roles, in the Available Roles box, select the roles, and then select .The selected roles appear in the Selected Role box.To remove the assigned roles, in the Selected Roles box, select the role and then select .The selected role is removed from the Selected Roles box.
+Note: You can select  to search for a role.
+Select OK.The Properties window closes and the new state appears on the workspace.Select Save to save the State Configuration.Your changes are saved.Note: The newly created state will be available for you in Family Management, whereas to access the state from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the created state will be available only when they log in to the application again.
+
+
+
+
+
+
+
+
+
+
+

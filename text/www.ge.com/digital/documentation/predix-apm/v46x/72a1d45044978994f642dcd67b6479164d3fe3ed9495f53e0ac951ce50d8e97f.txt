@@ -1,0 +1,112 @@
+
+
+
+First Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+Fourth Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Release Notes
+First Quarter of 2019
+
+
+
+
+
+
+
+First Quarter of 2019Root Cause AnalysisThis topic provides a list of product changes released for this module on the dates listed below.Release Date: March 29, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo enhance usability, a new analysis type, the 5 Whys Analysis, has been added to Root Cause Analysis. Using this analysis, you can ask a series of questions to determine how an issue was reached and the root cause of that issue.To facilitate this enhancement, five Why fields and five Reason fields have been added to the baseline RCA Event Records family and appear in the Event datasheet when viewing a 5 Whys Analysis.F42438To enhance usability, the Event Timeline has been added to the Analysis Summary page. Using this timeline, you can view Failure Events and plot them by their dates and times. F39698To enhance usability, 5 Whys Analyses now appear in the Comprehensive Analysis Report. 
+US329110US325806
+The RCA Administrator page has been enhanced. A new workspace, Event Color Setting, has been added. In the Event Color Setting workspace, you can select and map specific colors to event types in the Event Timeline. US316991The RCA Administrator page has been enhanced. A new workspace, RCA Pages Setting, has been added. In the RCA Pages Setting workspace, you can select the specific diagrams and process pages that you want to appear in the RCA module.US316744In the Email Settings workspace of the RCA Administrator page, you can now define the source email address for a user to receive alerts for Preserve records. US315309To enhance usability, in the RCA Analysis Summary page, in the Overview section, if you select the Recommendations chart, a list of recommendations for the selected analysis appears in the grid.US279567
+To enhance security, to update, insert, or delete an RCA Recommendation record, you must now be a member of either the MI PROACT Administrator Security Group or a member of the MI PROACT Team Member Security Group for the selected analysis.
+ 
+Note: All members of RCA Security Groups can view RCA Recommendation records. 
+US254542Table 2. Resolved Issues
+The following issues that existed in one or more previous releases have been resolved.
+DescriptionTracking IDPreviously, in the Track workspace, if you added a Tracking Item and then navigated to the Analysis Summary page, the Track Item chart was not updated with Tracking Item that you added. This issue has been resolved. DE103448Previously, when viewing the Logic Tree diagram in the Comprehensive Analysis Report, the diagram appears in multiple pages. This issue has been resolved. Now, the Logic Tree diagram appears in a single page in the Comprehensive Analysis Report. DE103237Previously, when viewing the Logic Tree Diagram, depending on the size of your screen, the Auto Arrange check box overlapped other elements in the Manage Diagram section. This issue has been resolved. To facilitate this fix, the Auto Arrange option has been moved to the More Options () menu.DE101794Previously, after successfully processing data, the data loader log displayed a record count of 0. Now, the data loader log displays the correct record count.DE100707Previously, in a Logic Tree Diagram, you could reposition the nodes even if the Auto Arrange check box was selected. This issue has been resolved. Now, if the Auto Arrange check box is selected, the nodes in the Logic Tree cannot be repositioned. DE100121Previously, in the Analysis Summary page for an RCA Analysis that had more than two linked Recommendation records, if you selected the Recommendations chart, the grid that appeared below the chart only included two Recommendations records because the grid did not include a vertical scroll bar. This issue has been resolved. Now, a vertical scroll bar appears, and all linked Recommendation records appear in the grid. DE91498Previously, in an RCA Logic Tree, if you enabled the Show Logic Gates option, an OR Logic Gate appeared below each node in the Logic Tree by default. This behavior occurred even if there was only one child node below the parent node. This issue has been resolved. Now, if you enable the Show Logic Gates option when there is only one child node below a parent node, the OR Logic Gate does not appear. DE90271Previously, in an RCA Logic Tree, if the Show Logic Gates option was enabled, and if you added a single child Hypothesis node under either a parent Hypothesis node or a Failure Mode node, the Logic Gate incorrectly appeared between the single child and the parent nodes. This issue has been resolved. Now, if the Show Logic Gates option is enabled and you add a single child Hypothesis node under either a parent Hypothesis node or a Failure Mode node, the Logic Gate does not appear between the single child and the parent nodes. DE90090Previously, when viewing reports in RCA, the Logic Tree Diagram contained in the report was often disjointed and spanned multiple pages. This issue has been resolved. Now, when viewing a Logic Tree Diagram within an RCA report, the Logic Tree Diagram appears on a single page. DE90089Previously, if you exported a Logic Tree diagram, the exported diagram did not load properly, and you could not save the exported diagram. This issue has been resolved. DE89932Previously, when viewing the Logic Tree workspace in a browser in full-screen mode, the text from the Auto Arrange check box overlapped the Properties button (). This issue has been resolved. DE89929Previously, when viewing an RCA Analysis, if you selected the Event Diagram tab, the Decision node was not available in the Palette section, and no other nodes could be dragged from the Palette section. This issue has been resolved. Now, if you access the Event Diagram tab from an existing RCA Analysis, all nodes appear and can be dragged from the Palette section as expected. DE89734
+
+
+
+
+On this pageRoot Cause Analysis
+
+
+
+
+
+
+
+
+

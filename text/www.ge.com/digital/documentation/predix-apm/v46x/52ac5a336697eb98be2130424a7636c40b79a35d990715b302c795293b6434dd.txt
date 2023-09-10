@@ -1,0 +1,159 @@
+
+
+
+Compliance Management | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health Manager
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+Compliance Management
+
+
+
+
+
+
+
+Compliance ManagementDeploy Compliance ManagementThe checklists in this section of the documentation contain all the steps necessary for deploying and configuring this module whether you are deploying the module for the first time or upgrading from a previous version.Important: You must have an active license in Compliance Management, Inspection Management, and Policy Designer to use this module.Deploy Compliance Management for the First TimeBefore You Begin
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. GE Digital recommends, however, that the tasks be completed in the order in which they are listed.
+
+Results
+StepTaskNotes1Review the Compliance Management data model to determine which relationship definitions you will need to modify to include your custom equipment and location families. Via Configuration Manager, modify the relationship definitions as needed.
+This step is required only if you store equipment and location information in families other than the baseline Equipment and Functional Location families.
+2Assign users to the MI Inspection Security Group to provide privileges to the Compliance Management families.This step is required. 3
+Assign Security Users to one or more of the Security Roles used in Compliance Management.
+
+This step is required. 
+Security Users will need permissions to the Compliance Management families before they can use the Compliance Management features.
+4Create Inspection Strategy records using Record Manager. This step is required. You should create Compliance Strategy records that adhere to the compliance standards of a regulatory body that requires inspections.5Design a policy to use for a Compliance Strategy Template.This step is required. You can create this policy using the Policy Designer.6Create a query that will return the assets that you want to link to the Compliance Strategy Template.This step is optional. You can also add assets to the Compliance Strategy Template by individual asset.7Create a Compliance Strategy Template using the administrative features of Compliance Management. This step is required.8Link assets to the Compliance Strategy Template.This step is required.9Map the Policy to the Compliance Strategy Template that you created.This step is required.
+Upgrade Compliance ManagementBefore You Begin
+
+The following tables outline the steps that you must complete to upgrade this module to the latest version of GE Digital APM
+                    .
+                
+These tasks may be completed by multiple people in your organization. We recommend, however, that the tasks be completed in the order in which they are listed.
+
+After you upgrade to the latest version of GE Digital APM, following updates are automatically available: 
+The MI Compliance Approver security role caption will be updated to MI Inspection Plan Approver.All security users who belong to the MI RBI Analyst security group will belong to the MI Inspection Plan Approver security role.The MI Inspection Plan Approver security role will have the MI ASM Analyst security group assigned. Compliance Recommendation Revision family will be renamed to Recommendation Revision. The datasheet for this family will be renamed to Recommendation Revision.The query Compliance Recommendation by Plan for Compliance will be renamed to Recommendation by Plan.The relationship family caption Has Compliance Recommendation will be updated to Inspection Plan Has Recommendation.
+ProcedureUpgrade to the latest version of GE Digital APM.
+StepTaskNotes1Revert the following Compliance Management query to baseline:Public/Meridium/Modules/Inspection/Compliance/Queries/Recommended Actions by Selected PlansThis step is required if you want to use the RBI Inspection Grouping functionality.2Revert the following Compliance Management query to baseline:Public/Meridium/Modules/Inspection/Compliance/Queries/Active Recommendations of Plan for UnitPublic/Meridium/Modules/Inspection/Compliance/Queries/All Inspection Plans for UnitPublic/Meridium/Modules/Inspection/Compliance/Queries/Assets with Inspection PlansPublic/Meridium/Modules/Inspection/Compliance/Queries/Compliance Superseded RecommendationsThis step is required only if you have modified the following queries:Active Recommendations of Plan for UnitAll Inspection Plans for UnitAssets with Inspection PlansCompliance Superseded Recommendations (Caption: Linked Recommendations)
+
+StepTaskNotes1Revert the following Compliance Management query to baseline:Public/Meridium/Modules/Inspection/Compliance/Queries/Recommended Actions by Selected PlansThis step is required if you want to use the RBI Inspection Grouping functionality.2Revert the following Compliance Management query to baseline:Public/Meridium/Modules/Inspection/Compliance/Queries/Active Recommendations of Plan for UnitPublic/Meridium/Modules/Inspection/Compliance/Queries/All Inspection Plans for UnitPublic/Meridium/Modules/Inspection/Compliance/Queries/Assets with Inspection PlansPublic/Meridium/Modules/Inspection/Compliance/Queries/Compliance Superseded RecommendationsThis step is required only if you have modified the following queries:Active Recommendations of Plan for UnitAll Inspection Plans for UnitAssets with Inspection PlansCompliance Superseded Recommendations (Caption: Linked Recommendations)
+Revert the Compliance Management Query to BaselineThis action is required only if you want to use the RBI Inspection Grouping functionality.About This TaskIf you have modified the Recommended Actions by Selected Plans query, perform the following steps to revert the query to baseline:ProcedureAccess the Catalog page.Navigate to the following Public folder:
+Public/Meridium/Modules/Inspection/Compliance/Queries/Select the check box next to the Recommended Actions by Selected Plans query, and then select .The Confirm Delete window appears, asking you to confirm if you want to delete the selected query.Select OK.The selected query is deleted.Navigate to the following Baseline folder.
+Baseline/Meridium/Modules/Inspection/Compliance/Queries/Select the check box next to the Recommended Actions by Selected Plans query, and then select .The Catalog Folder Browser window appears.Navigate to the Public folder containing the query that you deleted in step 3.Select OK. A success message appears indicating that the selected item has been copied successfully.Compliance Strategy Template Datasheet - Revert to BaselineAbout This Task
+The default datasheet for Compliance Strategy Template family has been updated. The field Policy Name is included and the deprecated field Policy Key is removed from the datasheet.FamilyFamily IDDatasheet Updated (Default)Compliance Strategy TemplateMI_COMP_STRAT_TEMPCompliance Strategy Template
+
+If you have customized the default datasheet for Compliance Strategy Template family, then you must do one of the following:Using Family Management, edit the default datasheet for the Compliance Strategy Template family. Replace the Policy field to Policy Name field in the datasheet.Run Revert to Baseline for each family.
+Important: Running this utility overwrites your current datasheet and replaces it with the baseline version. You must be a super user in GE Digital APM to run the Revert to Baseline utility. 
+ProcedureLog in to the server where GE Digital APM is installed.Navigate to <Installation Directory>\Meridium\Upgrade\DBUpgrade.Run the RevertToBaselineApp.exe file as administrator.The Revert To Baseline Login window appears.In the Meridium Data Source box, enter the data source name that you want to access.Enter your login credentials, and then select Next.The available families that can be reverted to baseline appear.Select the Compliance Strategy Template family, and then select Revert to Baseline.The Various Options For Revert window appears.Select Datasheets.Select the Default Datasheet from the drop-down list, and then select Ok.Compliance Recommendation - Revert to BaselineAbout This Task
+The default datasheet for Compliance Recommendation family has been updated and it includes the Certification and the Chamber fields.FamilyFamily IDDatasheet Updated (Default)Compliance RecommendationMI_COMP_RECOMMCompliance Recommendation
+
+If you have customized the default datasheet for the Compliance Recommendation family, and want to view Certification and Chamber-related data, then you must do one of the following:Using Family Management, edit the default datasheet for the Compliance Recommendation family. Next, add the Certification, Chamber, and Applicable Regulation fields in the datasheet.Run Revert to Baseline for each family.
+Important: Running this utility overwrites your current datasheet and replaces it with the baseline version. You must be a super user in GE Digital APM to run the Revert to Baseline utility. 
+ProcedureLog in to the server where GE Digital APM is installed.Navigate to <Installation Directory>\Meridium\Upgrade\DBUpgrade.Run the RevertToBaselineApp.exe file as administrator.The Revert To Baseline Login window appears.In the Meridium Data Source box, enter the data source name that you want to access.Enter your login credentials, and then select Next.The available families that can be reverted to baseline appear.Select the Compliance Recommendation family, and then select Revert to Baseline.The Various Options For Revert window appears.Select Datasheets.Select the Default Datasheet from the drop-down list, and then select Ok.Compliance Management Security Groups and Roles
+
+The following table lists the baseline Security Groups available for users within this module, as well as the baseline Roles to which those Security Groups are assigned. In Predix APM, Roles are assigned to Security Users through permission sets.
+
+Important:  Assigning a Security User to a Role grants that user the privileges associated with all of the Security Groups that are assigned to that Role. To avoid granting a Security User unintended privileges, before assigning a Security User to a Role, be sure to review all of the privileges associated with the Security Groups assigned to that Role.
+                
+
+Security GroupsThe following families adhere to the security groups listed in the table below:Asset Has Compliance TemplateAsset Has Inspection PlanCompliance RecommendationRecommendation RevisionCompliance Policy MappingCompliance StrategyCompliance Strategy TemplateCompliance Template Has MappingInspection Plan Has RecommendationsHas Inspection Plan RevisionImplements Compliance RecommendationInspection PlanInspection Plan RevisionSuggested Compliance TemplatesSecurity GroupPermissionsMI Inspection
+ViewInsertUpdateDelete
+MI Inspection ViewerViewMI RBI AdministratorViewMI RBI AnalystViewMI RBI ViewerViewMI Thickness Monitoring AdministratorViewMI Thickness Monitoring InspectorViewMI Thickness Monitoring UserViewMI Thickness Monitoring ViewerViewSecurity RolesCompliance Management security roles can perform the following tasks:TaskDescriptionApproveChange the state of an Inspection Plan to Approved.Apply TemplatesApply suggested Compliance Strategy Templates to assets in the Assets without Templates section of the Compliance Management Overview page. CreateCreate an Inspection Plan or Compliance Strategy Template.ModifyModify Inspection Plans and Compliance Recommendations by changing States, deleting Compliance Recommendations, and implementing Compliance Recommendations as Inspection Tasks.Suggest TemplatesSuggest Compliance Strategy Templates to be linked to assets in the Assets without Templates section of the Compliance Management Overview page. ViewAccess a Compliance Recommendation, Inspection Plan, or Compliance Strategy Template.The following security roles are available in Compliance Management:Security RoleInspection Plan PrivilegesCompliance Strategy Template PrivilegesAssigned Security GroupMI Compliance AdministratorView
+Apply TemplatesCreateModifySuggest Templates
+MI Compliance Analyst
+CreateModify
+
+Apply TemplatesSuggest TemplatesView
+MI Inspection Plan ApproverNote: You would have to be assigned to the permission set MI Compliance Approver.
+CreateModifyApprove
+
+Apply TemplatesSuggest TemplatesView
+
+MI ASM Analyst
+
+
+
+
+
+On this pageDeploy Compliance ManagementDeploy Compliance Management for the First TimeUpgrade Compliance ManagementRevert the Compliance Management Query to BaselineCompliance Strategy Template Datasheet - Revert to BaselineCompliance Recommendation - Revert to BaselineCompliance Management Security Groups and Roles
+
+
+
+
+
+
+
+
+

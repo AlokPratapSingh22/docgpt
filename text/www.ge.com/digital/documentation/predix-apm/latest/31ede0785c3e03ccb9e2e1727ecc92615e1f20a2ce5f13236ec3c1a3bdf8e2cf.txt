@@ -1,0 +1,474 @@
+
+
+
+Components in a Hazards Analysis | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Hazards AnalysisOverview
+Workflows
+Hazards Analysis
+Components in a Hazards Analysis
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Hazards Analysis
+Components in a Hazards Analysis
+
+
+
+
+
+
+
+Components in a Hazards AnalysisAbout Components in a Hazards AnalysisA Hazards Analysis is made up of records and links as defined by the Hazards Analysis data model. Groups of records and links make up the main elements of the analysis.A Hazards Analysis consists of the following components:Process: A series of actions that are performed by multiple pieces of equipment or locations in a single system.
+Risk: An event that might occur that threatens safety, either human or environmental.
+Scenario: For a given process, the combination of a risk and its risk assessment and the negative outcome associated with that event (e.g., human injury). You can define multiple scenarios for a single process.
+While at a high level a scenario is a combination of a risk and its risk assessment, each scenario can be broken down into the following more granular parts:
+
+Deviation: A condition that deviates from the normal behavior of the process and directly leads to a risk.What If: A condition that can potentially deviate from the normal behavior of the process and directly leads to a risk.Cause: The event that results from the deviation and leads to a negative safety or environmental outcome.
+Consequence: The negative safety or environmental outcome that results from the cause. Together, the cause and the consequence define the risk.
+
+Risk Assessment: Identifies the probability that the risk will have a negative safety or environmental impact and the severity of that negative safety or environmental impact.Safeguard: A system or device that prevents the risk from occurring or lowers the probability or severity identified by the risk assessment.About Defining Components for a HAZOP AnalysisTo define components for a HAZOP Analysis, the HAZOP Analysis team will:Review the hazardous processes that take place in a facility.Identify the steps in those processes that cause abnormal or unsafe results.Create records to represent the various scenarios for each process. These scenarios are the components of the analysis.As part of defining the components, the HAZOP analysis team will:Assess the risk associated with the components.Determine actions that should be taken to mitigate the risk associated with the component and create records to represent those actions.For example, assume the HAZOP Analysis team has discussed a process that is controlled by System 1A. During the discussion, the team describes the following scenario for System 1A:When the pressure monitor stops working, the pressure switch is not triggered to open or close appropriately, causing hazardous chemicals to leak out of the connector, which may result in human injury. To prevent this condition, a toxicity detector is in place, which sounds an alarm when the toxicity levels in the facility reach a high-risk level.To define this scenario within a hazards analysis, the team creates one record in each family described in the following table. The third column contains an item from the previous example and serves as a reference for the type of information that record represents in the HAZOP Analysis.
+A record in this family...
+
+Stores...
+
+In this example, this record represents...
+
+Hazards Analysis System/Node 
+
+Details on the asset, asset group, or functional location that is used to perform the process.
+
+System 1A 
+
+HAZOP Deviation 
+
+Details about the condition that deviates from the normal behavior of that process and directly leads to a risk. This condition is referred to as a deviation or guideword. A Deviation is linked to a Cause.
+
+Pressure switch is not triggered to open or close appropriately. 
+Hazards Analysis Cause Details on what has caused the deviation, including how frequently it may occur, and the asset that is associated with it. Causes can include human error, equipment failure, or other factors. Chemicals leak Hazards Analysis Consequence Details on the negative outcome that results from the event that is defined in the Cause. Multiple fatalities Hazards Analysis Safeguard Details on the safety precautions that are currently in place to prevent or lessen the impact of the negative outcome that is defined in the Consequence.Additional details about a safeguard defined in a Safeguard that is considered to be an independent layer of protection. Not all safeguards are independent layers of protection.Toxicity detector Note: If the safeguard is an instrumented function that exists within a safety system and is represented by an Instrumented Function in the GE Digital APM database, you can link that Instrumented Function to the Safeguard. For more details on instrumented functions and safety systems, refer to the SIS Management section of this Help system.In addition to the records described in the table, the HAZOP Analysis team creates two Risk Assessments, where:One is linked to the Consequence to store the unmitigated risk value associated with the scenario without a safeguard in place. In other words, the team will define the risk value that is associated with that scenario without the toxicity detector.One is linked to the Safeguard to store the mitigated risk rank value of the scenario with that safeguard in place. In other words, the team will define the risk value associated with a scenario when the toxicity detector is in place.Once all the safeguards that are available have been applied, the team determines if additional risk mitigation is required to meet tolerable level of risk. If the risk is to be mitigated further, then the team proposes one or more recommendations to reduce the risk to tolerable limits. A Recommendation created in a Hazards Analysis is called a strategic recommendation. It can be leveraged within a strategy to define Actions that will mitigate the risk further.About Defining Components for a What If AnalysisTo define components for a What If Analysis, the What If Analysis team will:Hypothesize about the hazardous processes that take place in a facility.Identify steps in those processes that have the potential to cause abnormal or unsafe results.Create records to represent the various scenarios for each process.As part of defining the components, the What If Analysis team will:Assess the risk associated with the components.Determine actions that should be taken to mitigate the risk associated with the component and create records to represent those actions.For example, assume the What If Analysis team has discussed a process that is controlled by System 1A. During the discussion, the team defines the following scenario, which is a scenario that could occur.When the pressure monitor stops working, the pressure switch is not be triggered to open or close appropriately, causing hazardous chemicals to leak out of the connector, which may result in environmental degradation. To prevent this condition, a toxicity detector is in place, which sounds an alarm when the toxicity levels in the facility reach a high-risk level.To define this scenario within a hazards analysis, the team creates one record in each family described in the following table. The third column contains an item from the previous example and serves as a reference for the type of information that record represents in the What If Analysis.
+A record in this family...
+
+Stores...
+
+In this example, this record represents...
+
+Hazards Analysis System/Node 
+
+Details on the asset, asset group, or functional location that is used to perform the process.
+
+System 1A
+
+What If 
+
+Details about the condition that may deviate from the normal behavior of that process and directly leads to a risk. This condition is referred to as a what if. A What If is linked to a Cause.
+
+Pressure increases
+Hazards Analysis Cause Details on what could cause the deviation described in the What If, including how frequently it may occur, and the asset that is associated with it. Causes can include human error, equipment failure, or other factors. Chemicals leakHazards Analysis Consequence Details on the negative outcome that results from the event that is defined in the Cause. Multiple fatalitiesHazards Analysis Safeguard Details on the safety precautions that are currently in place to prevent or lessen the impact of the negative outcome that is defined in the Consequence. Additional details about a safeguard defined in a Safeguard that is considered to be an independent layer of protection. Not all safeguards are independent layers of protection.Toxicity detector Note: If the safeguard is an instrumented function that exists within a safety system and is represented by an Instrumented Function in the GE Digital APM database, you can link that Instrumented Function to the Safeguard. For more details on instrumented functions and safety systems, refer to the SIS Management section of this Help system.In addition to the records described in the table, the What If Analysis team creates two Risk Assessments, where:One is linked to the Consequence to store the unmitigated risk value associated with the scenario without a safeguard in place. In other words, the team will define the risk value that is associated with that scenario without the toxicity detector.One is linked to the Safeguard to store the mitigated risk rank value of the scenario with that safeguard in place. In other words, the team will define the risk value associated with a scenario when the toxicity detector is in place.Once all the safeguards that are available have been applied, the team determines if additional risk mitigation is required to meet tolerable level of risk. If the risk is to be mitigated further, then the team proposes one or more recommendations to reduce the risk to tolerable limits. A Recommendation created in a Hazards Analysis is called a strategic recommendation. It can be leveraged within a strategy to define Actions that will mitigate the risk further.About Assessing RisksWhen you conduct a Hazards Analysis, you will assess the risk associated with a given hazardous scenario to help you determine what actions should be taken to prevent or lessen the consequences of that scenario. Using a risk matrix, you will specify the following risk rank values for each scenario:Unmitigated: The risk level associated with that scenario before any safeguards have been put in place. Based on this risk level, the analysis team may decide on the safeguards that would mitigate the risk. To do this, the team conducts a LOPA to determine if the safeguards that are currently in place reduce the risk to tolerable levels. For example, the team may create a Risk Assessment Recommendation to recommend that a safety system be put in place. The unmitigated risk rank is stored in a Risk Assessment that is linked to the Consequence.Mitigated: The risk level associated with that scenario after safeguards have been put in place. The safeguards lessen the risk of a hazardous scenario or prevent the scenario from occurring. Based on this risk level, the analysis team may decide that additional actions need to be taken to further mitigate the risk. The mitigated risk rank is stored in a Risk Assessment that is linked to the Safeguard.To assess the risk associated with a scenario, you will create the following records:A Risk Assessment record, which will store the unmitigated risk rank value and is linked to the Consequence. The unmitigated risk rank value indicates the probability and consequence of the risk if it occurs.
+A Risk Assessment record, which will store the mitigated risk rank value and is linked to a Safeguard. The mitigated risk rank value indicates the probability and consequence of the risk occurring if:
+The safeguard represented by the Hazards Analysis Safeguard is in place to mitigate the risk.The safeguard is also an independent layer of protection (IPL). 
+When you create the Risk Assessments, if the Hazards Analysis for the current analysis is associated with a specific site, the Risk Assessment interface will display the Risk Matrix that is associated with that site. If the analysis is not associated with a specific site, the default Risk Matrix will be used.Note: For additional options when working with the Risk Matrix, refer to the Overview of the Risk Matrix section of the documentation.About Independent Layers of ProtectionAn independent layer of protection is a system, action, or an item that mitigates the risk associated with a hazardous scenario. All independent layers of protection are safeguards, but not all safeguards are independent layers of protection. By default, the following criteria are required to be true for a safeguard to be considered as an independent protection layer:The safeguard must be independent of the initiating event such that a failure associated with the risk will not cause the safeguard to fail.The safeguard must be testable and verifiable using an industry standard (e.g., a risk based inspection).The safeguard must be specific in detecting a potential hazard and taking action to prevent the hazard from occurring.The safeguard must be capable and available at least 90 percent of the time.The safeguard must increase the Risk Reduction Factor (RRF) of the LOPA to a value greater than or equal to 10.These criteria can be modified in the administrative settings for the LOPA administrative settings for LOPA. In HAZOP Analyses and What If Analyses, Safeguards that are independent layers of protection will store additional information about the risk reduction provided by the safeguard. For additional information about Safeguards and IPLs, refer to the LOPA section of the documentation.Independent Layer of Protection in a Hazards Analysis
+Suppose that in a hazardous scenario a high pressure separator releases liquid to downstream equipment. If the liquid level in the high pressure separator decreases to a certain level, pressure could be released to downstream equipment and cause it to rupture. In this scenario, a controller monitors the liquid level. If the level gets too low, the controller closes a valve so that the pressure is not released to downstream equipment.
+An independent layer of protection for this scenario would be a low level alarm because it meets all the following criteria: 
+The safeguard is independent because if the first controller fails, the low level alarm has independent process connections and independent BPCS hardware from the failed controller. The safeguard is auditable because the low level alarm can be routinely inspected. The safeguard is capable because it is available at least 90 percent of the time. The safeguard is specific because the alarm detects potential hazards by measuring the liquid level and will alert the operator when the potential failure is detected. The safeguard increases the Risk Reduction Factor (RRF) to a value greater than or equal to 10.
+Therefore, the level alarm along with an operator response can reduce the risk associated with the hazards scenario.
+About Defining the Mitigated Risk RankWhen the Risk Assessment that will store the mitigated risk rank is created, the GE Digital APM system will populate values in the Risk Assessment interface based on criteria defined in other records.The GE Digital APM system uses the relationship between the Consequence and the Safeguard to:Automatically populate the Risk Matrix with the unmitigated risk rank value that you specified in the Risk Assessment that is linked to the Consequence. Disable the cells in the Risk Matrix that represent a risk rank that is higher than the unmitigated risk.Before you select a mitigated risk value, the unmitigated and mitigated risk values are the same, and the  icon and  icon appear in the same cell. When you select the mitigated risk value, the  icon appears in the selected cell. Mitigated Risk
+Assume that you have:
+One Risk Assessment with the unmitigated risk rank value 830 that is linked to the Consequence, Flame out which could lead to explosion.One Hazards Analysis Safeguard High Gas Pressure Indicator and Alarm that is a Frequency Reducing IPL, which is linked to the Consequence Flame out which could lead to explosion.
+If you create a Risk Mitigation Assessment to link to the Safeguard High Gas Pressure Indicator and Alarm, the unmitigated risk rank value will be populated automatically in the Risk Matrix.
+About Asset Groups in Hazards AnalysisWhen you create a Cause or a Safeguard, you can link it to an Asset (a piece of Equipment and a Functional Location). Similarly, when you create a System/Node, you link it to one or more Assets. In addition to the Assets that you have linked to the System/Node, the GE Digital APM system links the System/Node to the Assets linked to each Cause and Safeguard in the System/Node. All the Assets linked to a System/Node form an Asset Group. This group is named in the following format: <ID of the Hazards Analysis>/<ID of the System Node> Asset Group. You can also access a list of these Assets in the Linked Assets section of a System/Node.Asset Groups in Hazards Analysis
+Assume that you have created a Hazards Analysis, a System/Node, Deviation, Cause, Consequence, and a Safeguard with the following IDs:
+Hazards Analysis 1System/Node 1Deviation 1Cause 1Consequence 1Safeguard 1
+Suppose you have linked Equipment and Functional Locations to System/Node 1, Cause 1, and Safeguard 1 as shown in the following image.
+
+
+
+The GE Digital APM system links Equipment 3 and Functional Location 3 to System/Node 1, although you have not linked them directly to System/Node 1.
+
+
+
+The GE Digital APM system also creates an Asset Group with the ID Hazards Analysis 1/ System/Node 1 Asset Group. This group contains all the Equipment and Functional Locations linked to System/Node 1.
+About Integration with SIS ManagementAfter you assess risk for a scenario in a hazards analysis, you can use that information in the SIS Management module as a Safety Integrity Level (SIL) Assessment for an instrumented function within an SIL Analysis. Risk assessments from Hazards Analysis that are used in SIS Management in this way cannot be modified via SIS Management. If you want the changes that you made to a risk assessment in the Hazards Analysis module to also appear in the SIS Management module, you must assess the SIL value using the modified PHA Internal Risk Assessment.Create a System/NodeBefore You Begin
+
+Create a Hazards Analysis.
+About This Task
+This topic describes how to create a System/Node using a blank datasheet. You can also copy a System/Node. 
+Tip: You can create a System/Node only if the corresponding Hazards Analysis is in the Planning state.
+Procedure
+Access the Hazards Analysis for which you want to create a System/Node.In the left pane, select , and then select Create New.
+A blank datasheet for the System/Node appears.
+
+
+
+As needed, enter values in the available fields. Select Save.
+The System/Node is created.
+Results
+An Asset Group is created for the System/Node.
+What To Do Next
+
+Create a Component
+
+Link Assets to a System/Node
+
+Access a System/NodeProcedure
+Access the Hazards Analysis that is linked to the that you want to access.In the left pane, select the System/Node that you want to access.
+Tip: You can also filter and search for the System/Node by selecting . 
+The datasheet for the selected System/Node appears.
+
+
+
+As needed, modify values in the available fields.
+Note: You can modify a System/Node only if the corresponding Hazards Analysis is in the Planning state.
+In the upper-right corner of the datasheet, select .
+The changes made to the System/Node are saved.
+Copy a System/NodeAbout This Task
+This topic describes how to copy a System/Node. You can also create a new System/Node. When you copy a System/Node, the related Deviations or What Ifs, Causes, Consequences, Safeguards, and Risk Assessments are also copied and associated with the copy of the System/Node.
+Tip: You can copy a System/Node only if the Hazards Analysis into which you want to copy the System/Node is in the Planning state.
+Note: When you copy a System/Node, the linked assets are not copied.
+Procedure
+Access the Hazards Analysis to which you want to copy the System/Node.In the left pane, select , and then select 
+Copy.
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of Systems/Nodes appears.
+
+
+
+Select the System/Node that you want to copy, and then select OK.
+A copy of the System/Node is created and associated with the Hazards Analysis. All related Deviations or What Ifs, Causes, Consequences, Safeguards, and Risk Assessments are also copied and associated with the copy of the System/Node.
+What To Do Next
+
+Link Assets to a System/Node
+
+Link Assets to a System/NodeAbout This Task
+This topic describes how to link one or more Assets (Equipment and Functional Locations) to a System/Node.
+Tip: You can link Assets to a System/Node only if the corresponding Hazards Analysis is in the Planning state.
+Procedure
+Access the System/Node that you want to link to Assets.In the workspace, select the Linked Assets tab.
+The Linked Assets section appears, displaying a list of Assets linked to the System/Node and also to all the Causes and Safeguards in the System/Node.
+
+
+
+In the upper-left corner of the section, select .
+The Asset Finder window appears.
+
+
+
+Navigate to the Assets that you want to link to the System/Node, and then select  next to the Asset ID.
+The selected Assets appears in the right pane of the Asset Finder window.
+Note: You can only select assets that belong to the same site as that of the Hazards Analysis.
+
+
+
+Select Done.
+The selected Assets are linked to the System/Node.
+Results
+The Assets that you have linked to the System/Node are automatically linked to the corresponding Hazards Analysis.The Asset Group that corresponds to the System/Node is updated with the newly added Assets. 
+Unlink Assets from a System/NodeAbout This Task
+This topic describes how to unlink one or more Assets (Equipment and Functional Locations) from a System/Node.
+Tip: You can unlink Assets from a System/Node only if the corresponding Hazards Analysis is in the Planning state.
+Note:
+You cannot unlink an Asset that is linked to the System/Node through a Cause or a Safeguard. You can, however, link the Cause or the Safeguard to a different Asset, which will also: 
+Unlink the Asset from the Hazards Analysis.Unlink the Asset from the System/Node.Remove the Asset from the corresponding Asset Group.
+
+Procedure
+Access the System/Node from which you want to unlink Assets. In the workspace, select the Linked Assets tab.
+The Linked Assets section appears, displaying a list of Assets linked to the System/Node (which also includes the Assets linked to all the Causes and Safeguards in the System/Node).
+
+
+
+Select the check boxes that correspond to the Assets that you want to unlink.In the upper-right corner of the section, select .
+A dialog box appears, asking if you want to unlink the Assets.
+Select OK.
+The selected Assets are unlinked from the System/Node.
+Results
+The Assets that you have unlinked from the System/Node are automatically unlinked from the corresponding Hazards Analysis and the Asset Group.
+Delete a System/NodeAbout This Task
+Note: You can delete a System/Node only if the corresponding Hazards Analysis is in the Planning state.
+Important:  Deleting a System/Node deletes the following associated records: Deviations or What Ifs, Causes, and Consequences. If the Consequence is linked to a LOPA, the related Safeguards are not deleted. The LOPA records associated with the Consequences and the Risk Assessments and Recommendations associated with the System/Nodes are not deleted.
+Procedure
+Access the Hazards Analysis that is linked to the System/Node that you want to delete.In the upper-right corner of the datasheet, select , and then select 
+Delete.
+A confirmation message appears, asking you if you really want to delete the System/Node and its components.
+Select Yes. 
+The System/Node and its components are deleted.
+Results
+All the Assets that are linked to the System/Node are unlinked from the Hazards Analysis. 
+Access a ComponentAbout This Task
+This topic describes how to access the datasheet of the following types of components of a hazards analysis:
+Deviation (in case of a HAZOP Analysis)What If (in case of a What If Analysis)Cause Consequence Safeguard 
+Procedure
+Access the System/Node that is linked to the component that you want to access.Select the Hazards Worksheets tab.
+The Hazards Worksheets section appears, displaying a hierarchical view of the components (Deviations or What Ifs, Causes, Consequences, and Safeguards) associated with the System/Node.
+Select the component that you want to access, and then, in the upper-left corner of the workspace, select .
+The datasheet for the selected component appears.
+
+
+
+If needed, modify values in the available fields for Deviation, What If, Cause, Consequence, or Safeguard.
+Tip: You can modify a Component only if the corresponding Hazards Analysis is in the Planning state.
+ In the upper-right corner of the datasheet, select .
+The changes made to the component are saved.
+Tip: You can select  in the upper-left corner of the workspace to return to close the datasheet.
+Create a ComponentBefore You Begin
+
+Create a System/Node.
+About This Task
+This topic describes how to create the following components of a hazards analysis using a blank datasheet: Deviation (in case of a HAZOP Analysis)What If (in case of a What If Analysis)Cause Consequence Safeguard 
+
+You can also copy a Component.
+Procedure
+Access the System/Node for which you want to create a component.Select the Hazards Worksheets tab.
+The Hazards Worksheets section appears, displaying a hierarchical view of the components (Deviations or What Ifs, Causes, Consequences, and Safeguards) associated with the System/Node.
+
+
+
+In the hierarchical level that corresponds to the component that you want to create, select , and then select Create New <type of the component>. 
+Where <type of component> can be one of the following values:
+Deviation (in case of a HAZOP Analysis)What If (in case of a What If Analysis)Cause Consequence Safeguard 
+For example, if you want to create a new Deviation, then in the Deviations hierarchical level, select , and then select Create New Deviations.
+A blank datasheet for the type of component appears. 
+
+
+
+As needed, enter values in the available fields for Deviation, What If, Cause, Consequence, or Safeguard. Select Save.
+A new component is created and listed in the corresponding hierarchical level. For example, if you have created a new Deviation, it will be listed in the Deviations hierarchical level.
+What To Do Next
+If you have created a Consequence, then assess the unmitigated risk for the Consequence.
+If you have created a Safeguard, then assess the mitigated risk for the Safeguard.
+Create a LOPA From a ConsequenceAbout This Task
+This topic describes how to create a LOPA from a Consequence. 
+When you create a LOPA from a Cause-Consequence pair in Hazards Analysis, the LOPA that is created is automatically linked to the Consequence. You can also create a LOPA from the LOPA module in GE Digital APM. 
+Note: You can create, or link a LOPA to a Consequence only if the associated Hazards Analysis is in the Planning State.
+Procedure
+Access the System/Node that is linked to the Consequence that you want to access.Select the Hazards Worksheets tab.
+The Hazards Worksheets section appears, displaying a hierarchical view of the components (Deviations or What Ifs, Causes, Consequences, and Safeguards) associated with the System/Node.
+
+
+
+Select the Consequence for which you want to perform the LOPA.
+
+
+
+In the Consequence that you selected, select Create.
+Note: If a Consequence is already linked to a LOPA, the links Edit and Unlink appear. You can either select another Consequence, or unlink the LOPA from the Consequence, and then create a new LOPA for the Consequence.
+A blank datasheet for LOPA appears, displaying the Definition section.
+Note: The Initiating Event field and the Frequency of Initiating Event field in the LOPA record are populated with the values in the CCPS Cause Type field and Cause Frequency (per year) field in the Hazards Analysis Cause record associated with the Consequence.
+
+
+
+As needed, enter values in the LOPA Records.In the upper-right corner of the Definition section, select .
+The LOPA is created. 
+
+
+
+Note: You can select Edit to modify the LOPA, or Unlink to unlink the LOPA from the Consequence. 
+Results
+The LOPA is linked to the Consequence and the LOPA ID appears in the Consequence. You can select the LOPA ID to view the summary of the LOPA.The LOPA that you created for the Consequence appears in the list of LOPA in the LOPA Overview page, in the Under Review tab.The Safeguards that are associated with the LOPA are automatically linked to the Consequence. They appear in the Hazards Worksheet section of the Hazards Analysis. Similarly, the Safeguards that are associated with the Consequence are automatically linked to the LOPA. Hence, you can modify the Safeguard only if the associated LOPA and the Hazards Analysis are in the Planning state.
+Copy a ComponentAbout This Task
+This topic describes how to copy the datasheet of the following types of components of an analysis:
+Deviation (in case of a HAZOP Analysis)What If (in case of a What If Analysis)Cause Consequence Safeguard 
+Tip: You can copy a Component only if the Hazards Analysis into which you want to copy the Component is in the Planning state.
+The ID of the copied component is appended with the word Copy at the end. For example, if the ID of the Cause that you want to copy is Gas Pipe Leakage, the name of the copied Cause is Gas Pipe Leakage Copy. However, when you copy a Deviation, the ID of the copied record is the same as that of the original record.
+You can also create a component using a blank datasheet.
+Procedure
+Access the System/Node into which you want to copy the component.Select the Hazards Worksheets tab.
+The Hazards Worksheets section appears, displaying a hierarchical view of the components (Deviations or What Ifs, Causes, Consequences, and Safeguards) associated with the System/Node.
+
+
+
+In the hierarchical level that corresponds to the type of component that you want to copy, select , and then select Copy <type of the component>. For example, if you want to copy a Deviation, then in the Deviations hierarchical level, select , and then select Copy Deviations. 
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of records of the selected component type appears.
+
+
+
+Select the check box that corresponds to the component that you want to copy, and then select OK.
+The component is added to the System/Node. 
+Assess the Unmitigated RiskBefore You Begin
+
+Create a Consequence.
+About This Task
+This topic describes how to perform an unmitigated risk assessment for a Consequence in a hazards analysis. 
+Note: You can assess the unmitigated risk for a Consequence only if the corresponding Hazards Analysis is in the Planning state.
+Procedure
+Access the Consequence for which you want to assess the unmitigated risk.
+ If you have already performed a risk assessment for the Consequence, the overall risk rank and the risk ranks for each category appear above the datasheet. 
+
+
+
+Above the datasheet for the Consequence, select the section that displays the unmitigated risk rank.
+The Unmitigated Risk Assessment window appears, displaying the risk matrix for each category.
+
+
+
+Specify the unmitigated risk rank for each category as applicable, and then select Save. 
+The overall unmitigated risk rank and the risk ranks for individual categories are displayed above the datasheet for the Consequence. Depending on your configuration, the overall risk rank can be the highest or the sum of all the ranks for all the categories.
+Note: For additional options when working with the risk matrix, refer to the Overview of the Risk Matrix section of the documentation .
+Results
+Important: If you change the unmitigated risk rank after assessing the mitigated risk rank, the previously completed mitigated risk assessments for all Safeguards are deleted. You will need to assess the mitigated risk rank again.
+What To Do Next
+
+Assess the Mitigated Risk
+
+Link an Asset to a Cause or a Safeguard
+
+Assess the Mitigated RiskBefore You Begin
+
+Assess the unmitigated risk of the Consequence that is linked to the Safeguard.
+Create a Safeguard.
+About This Task
+This topic describes how to perform a mitigated risk assessment for a Safeguard in a hazards analysis. 
+Note: You can assess the mitigated risk for a Safeguard only if the corresponding Hazards Analysis is in the Planning state.
+Procedure
+Access the Safeguard for which you want to assess the mitigated risk.
+If you have already performed a risk assessment for the Safeguard, the overall risk rank and the risk ranks for each category are displayed above the datasheet for the Safeguard. If a risk assessment has not yet been performed for the Safeguard, then only the unmitigated risk ranks are displayed. 
+
+
+
+Above the datasheet for the Safeguard, select the section that displays the risk rank.
+The Mitigated Risk Assessment window appears, displaying the risk matrix for each category.
+
+
+
+Specify the mitigated risk rank for each category as applicable, and then select Save.
+The overall mitigated risk rank and risk ranks for individual categories are displayed above the datasheet for the Safeguard. Depending on your configuration, the overall risk rank can be the highest or the sum of all the ranks for all the categories.
+Note: For additional options when working with the risk matrix, refer to the Overview of the Risk Matrix section of the documentation .
+What To Do Next
+
+Link an Asset to a Cause or a Safeguard.
+Link an Asset to a Cause or a Safeguard About This Task
+You can link only one asset (one Equipment and one Functional Location) to a Cause or a Safeguard. If an asset is already linked to the Cause or the Safeguard and you link another asset, only the latter one is linked to the Cause or the Safeguard.
+Tip: You can link an asset to a Cause or a Safeguard only if the corresponding Hazards Analysis is in the Planning state.
+Procedure
+Access the Cause or the Safeguard that you want to link to an Asset.
+The datasheet for the selected Cause or Safeguard appears. The following image shows the datasheet for a Cause.
+
+
+
+If you want to link an Equipment, follow these steps:
+On the datasheet, in the Equipment ID box, select .The Asset Finder window appears.
+
+Navigate to the Equipment that you want to link to the Cause or Safeguard, and then select  next to the Equipment ID. In the right pane of the Asset Finder window, the selected Equipment appears.
+
+Select Done.The Equipment is linked to the Cause or the Safeguard. Note: When you link an Equipment to the Cause or Safeguard, the Functional Location to which the Equipment belongs is automatically linked to the Cause or Safeguard, and appears in the Functional Location ID box on the datasheet. 
+If you want to link a Functional Location, follow these steps:
+In the Functional Location ID box on the datasheet, select .The Asset Finder window appears.Navigate to the Functional Location that you want to link to the Cause or Safeguard, and then select  next to the Functional Location ID.In the right pane of the Asset Finder window, the selected Functional Location appears.
+
+Select Done.The Functional Location is linked to the Cause or the Safeguard. 
+Results
+The asset that you have linked to the Cause or the Safeguard is also linked to the corresponding System/Node and the Hazards Analysis, and thus added to the Asset Group created for the System/Node.
+What To Do Next
+Add Team Members to the Hazards Analysis
+Link a LOPA to a ConsequenceBefore You Begin
+Create the LOPA that you want to link with the Consequence.
+About This Task
+This topic describes how to link a LOPA to a Consequence in Hazards Analysis.
+Note: You can create or link a LOPA to a Consequence only if the associated Hazards Analysis is in the Planning State.
+Procedure
+Access the System/Node that is linked to the Consequence that you want to access.Select the Hazards Worksheets tab.
+The Hazards Worksheets section appears, displaying a hierarchical view of the components (Deviations or What Ifs, Causes, Consequences, and Safeguards) associated with the System/Node.
+
+
+
+Select the Consequence to which you want to link the LOPA.
+
+
+
+In the Consequence that you selected, select 
+Link.
+Note: If a Consequence is already linked to a LOPA, the link Unlink will appear. You can either select another Consequence, or unlink the LOPA from the Consequence, and then link to a different LOPA.
+The LOPA window appears, displaying a list of LOPA that belong to the same site as that assigned to the Hazards Analysis.
+
+
+
+Select the row containing the LOPA that you want to link to the Consequence.Select Link.
+The LOPA is linked to the Consequence. 
+
+
+
+Results
+The LOPA ID appears in the Consequence. You can select the LOPA ID to view the summary of the LOPA, or you can select Edit to modify the LOPA.The Safeguards that are associated with the LOPA are automatically linked to the Consequence. They appear in the Hazards Worksheet section of the Hazards Analysis. Similarly, the Safeguards that are associated with the Consequence are automatically linked to the LOPA. You can add or modify a Safeguard only if the associated LOPA and the Hazards Analysis are in the Planning state.
+Unlink a LOPA From a ConsequenceBefore You Begin
+
+Link a LOPA to a Consequence.
+Procedure
+Access the System/Node that is linked to the Consequence that you want to access.Select the Consequence from which you want to unlink the LOPA.
+Note: You can unlink a LOPA from a Consequence only if the associated Hazards Analysis is in the Planning State.
+In the Consequence that you selected, select 
+Unlink.
+The LOPA is unlinked from the Consequence.
+Results
+
+GE Digital APM system creates copies of the Safeguards associated with the LOPA, and then links them to the Consequence. The copied Safeguards appear in the Hazards Worksheet section of the Hazards Analysis.
+Delete a ComponentAbout This Task
+This topic describes how to delete the following types of components of a hazards analysis:
+Deviation (in case of a HAZOP Analysis)What If (in case of a What If Analysis)Cause Consequence Safeguard 
+Tip: You can delete a component only if the corresponding Hazards Analysis is in the Planning state.
+Important: Deleting a component deletes all the subordinate records.
+Procedure
+Access the System/Node that is linked to the component that you want to delete.In the hierarchical level that corresponds to the component that you want to delete, select the component, and then in the upper-right corner of the workspace, select .
+A confirmation message appears, asking if you really want to delete the component.
+Select OK.The component and its subordinate records are deleted.
+
+
+
+
+On this pageAbout Components in a Hazards AnalysisAbout Defining Components for a HAZOP AnalysisAbout Defining Components for a What If AnalysisAbout Assessing RisksAbout Independent Layers of ProtectionAbout Defining the Mitigated Risk RankAbout Asset Groups in Hazards AnalysisAbout Integration with SIS ManagementCreate a System/NodeAccess a System/NodeCopy a System/NodeLink Assets to a System/NodeUnlink Assets from a System/NodeDelete a System/NodeAccess a ComponentCreate a ComponentCreate a LOPA From a ConsequenceCopy a ComponentAssess the Unmitigated RiskAssess the Mitigated RiskLink an Asset to a Cause or a Safeguard Link a LOPA to a ConsequenceUnlink a LOPA From a ConsequenceDelete a Component
+
+
+
+
+
+
+
+
+

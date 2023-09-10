@@ -1,0 +1,143 @@
+
+
+
+Manage Bulk Data Form | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Record ManagerOverview
+Manage Records
+Manage Linked Records
+Manage Bulk Data Form 
+Manage Reference Documents
+Manage Conditional Alerts
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Record Manager
+Manage Bulk Data Form 
+
+
+
+
+
+
+
+Manage Bulk Data Form About the Bulk Data FormThe Bulk Data Form lets you view the details of multiple records assigned to the same family and which belong to the same family. This can be useful if you want to compare data for multiple entities without having to switch between records and remember the information in each record.If a master/detail datasheet is designated as the default datasheet for a family, at least one non-custom form datasheet must exist for a family before that family can be opened in the Bulk Data Form. If a master/detail datasheet is specified as the default datasheet for a family and you try to open that family in the Bulk Data Form, the Bulk Data Form will display the family using the first non-custom form that appears after the default datasheet in that family's list of datasheets.Using the Bulk Data Form, you can filter the records that appear in results, create new records, modify existing records, or delete records from the database. Like in the Record Manager, to create, modify, or delete records in the Bulk Data Form, you must have the necessary privileges to create, update, and delete the relevant family.Regardless of whether you open one record or multiple records, the Record Manager  lets you view only one datasheet at a time. So, even if the record hierarchy displays multiple records, you can view the details only of the selected record.
+
+Using the Bulk Data Form, you can add new records and modify existing records in the database.About Freezing and Unfreezing Columns on the Bulk Data FormWhen you view records in the Bulk Data Form, more columns may be available than the number of columns that can be displayed on one screen. In this case, you will need to scroll to the right to view all the columns. In some cases, the first column or the first few columns in the grid may contain information that you need to reference while you view information that appears in subsequent columns. In this case, you can freeze the columns that should remain visible as you are scrolling. When you freeze a column, that column and any column that appears to the left of it will remain in their current positions on the screen, even as you scroll through subsequent columns that appear to the right of the frozen column(s).After a column or set of columns is frozen, if you want to freeze different columns, you will need select the columns to freeze. You can freeze a maximum of four columns on the Bulk Data Form page. Also, if you change the page setting to view a different page for the records, any columns that were frozen will be unfrozen automatically. Additionally, after you navigate away from the Bulk Data Form, the next time that you view records in that family in the Bulk Data Form, the settings for the column are saved as a user preference for the user, and will be frozen the next time the user accesses the form.Access the Bulk Data FormProcedure
+Access Record Manager.In the Record Explorer pane, in the Related Families section, select a family to expand its contents.
+
+
+
+Select , and then select Manage All Related Records.
+
+
+
+All records related to the record you initially opened appear in a Bulk Data Form.
+Freeze and Unfreeze Rows on the Bulk Data Form PageProcedure
+Access the Bulk Data Form page.On the Bulk Data Form page, in the grid, select the row that you want to freeze.On the upper-right corner of the page, select , and then select Freeze Row.
+The row is frozen, and the scroll bar moves from that row to the next row. 
+Note: You can freeze a maximum of three rows on the Bulk Data Form.
+Note: The Freeze Row option is only available if sequential rows at top of form are selected or freeze row behavior applies to everything above the bottom most selected row. 
+To unfreeze a frozen row, select the row that you want to unfreeze, and then select. Select Unfreeze Row.
+The row is now unfrozen.
+Freeze and Unfreeze Columns on the Bulk Data FormProcedure
+Access the Bulk Data Form page.On the Bulk Data Form page, in the grid, select the column that you want to freeze.On the upper-right corner of the page, select , and then select Freeze Column.
+The column is frozen, and the scroll bar moves from that column to the next column. 
+Note: You can freeze a maximum of four columns in the Bulk Data Form. However, you will not be able to select and freeze the Site column.
+To unfreeze a frozen column, select the column that you want to unfreeze, and then select .Select Unfreeze Column.
+Note: You will not be able to select and unfreeze the Site column.
+The column is now unfrozen.
+Choose Columns in Bulk Data FormProcedure
+Access the Bulk Data Form.On the upper-right corner, select , and then select Column Chooser.
+The Choose Columns window appears.
+Depending on the columns that you want in the Bulk Data Form datasheet, select or clear the check boxes next to the columns.Select Re-order.
+The columns now appear as selected in the datasheet. The settings are saved as a user preference for the user.
+Modify an Existing Record in Bulk Data FormProcedure
+Access the Bulk Data Form.
+The bulk data form appears.
+As needed, enter values directly into the cells for the record that you want to modify.Select .
+The changes are saved.
+Add Reference Documents to a Record on the Bulk Data Form PageProcedure
+Access the Bulk Data Form page.On the Bulk Data Form datasheet, in the grid, select the check box next to the record that you want to add the reference document.
+Note:  You can add a reference document to one record at a time.
+
+
+
+Select , and then select Reference Documents.
+The Reference Documents window appears.
+Select .
+The Add Reference Documents datasheet appears.
+As needed, enter the values for ID and Description.In the Document Path field, select .
+The Edit Document Path window appears.
+
+
+
+Note: You can either upload a file from the local network by selecting Browse, and navigating to the path of the file or you can link to an external network file.
+Select Save.
+The Reference Document is added to the selected record in Bulk Data Form.
+Copy a Record on the Bulk Data FormProcedure
+Access the Bulk Data Form page.On the Bulk Data Form datasheet, in the grid, select the check box beside the record which you want to copy.On the upper-right corner of the page, select , and then select Copy.
+A copy of the record appears at the bottom of the list. 
+Select .
+A copy of the record is saved.
+Delete a Record on the Bulk Data FormProcedure
+Access the Bulk Data Form page.On the Bulk Data Form page, in the grid, select the check box beside the record which you want to delete.On the upper-right corner of the page, select , and then select Delete.
+The Alert dialog box appears, asking you to confirm that you want to delete the record.
+Select Yes.
+The record is removed from the Bulk Data Form.
+Print a Bulk Data FormProcedure
+Access the Bulk Data Form page.On the upper-right corner of the page, select .
+The Bulk Data Form is downloaded and appears in .pdf format, and is ready to be printed as needed.
+
+
+
+
+
+On this pageAbout the Bulk Data FormAbout Freezing and Unfreezing Columns on the Bulk Data FormAccess the Bulk Data FormFreeze and Unfreeze Rows on the Bulk Data Form PageFreeze and Unfreeze Columns on the Bulk Data FormChoose Columns in Bulk Data FormModify an Existing Record in Bulk Data FormAdd Reference Documents to a Record on the Bulk Data Form PageCopy a Record on the Bulk Data FormDelete a Record on the Bulk Data FormPrint a Bulk Data Form
+
+
+
+
+
+
+
+
+

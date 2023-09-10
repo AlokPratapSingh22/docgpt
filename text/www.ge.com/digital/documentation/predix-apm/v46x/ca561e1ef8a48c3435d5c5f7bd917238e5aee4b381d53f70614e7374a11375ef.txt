@@ -1,0 +1,111 @@
+
+
+
+First Quarter of 2023 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Release Notes
+First Quarter of 2023
+
+
+
+
+
+
+
+First Quarter of 2023Release Date: February 24, 2023This topic provides a list of product changes released for this module on this date.RBI 580
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, if the Design Temperature value was less than the minimum value of Metal Temperature in the Piping Stress or PV Stress reference table records, the Allowable Stress field in an RBI Criticality Analysis was calculated incorrectly. This issue has been resolved. Now, if the Design Temperature value is less than the minimum value of Metal Temperature, then the Allowable Stress field is calculated based on the minimum value of Metal Temperature.DE190851
+RBI 581
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, if the Design Temperature value was less than the minimum value of Metal Temperature in the Piping Stress or PV Stress reference table records, the Allowable Stress and Flow Stress fields in an RBI 581 Risk Analysis were calculated incorrectly. This issue has been resolved. Now, if the Design Temperature value is less than the minimum value of Metal Temperature, then the Allowable Stress and Flow Stress fields are calculated based on the minimum value of Metal Temperature.DE190851
+
+
+
+
+
+On this pageRelease Date: February 24, 2023
+
+
+
+
+
+
+
+
+

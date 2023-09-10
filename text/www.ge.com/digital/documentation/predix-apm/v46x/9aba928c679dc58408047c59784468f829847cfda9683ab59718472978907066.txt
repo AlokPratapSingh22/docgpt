@@ -1,0 +1,335 @@
+
+
+
+Diagrams | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System ReliabilitySystem Reliability: Overview
+System Reliability: Workflow
+System Reliability Analyses 
+Resources
+System Scenario
+Diagrams
+Risks
+Actions
+Global Events
+Grid View
+Simulations
+
+
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+System Reliability
+Diagrams
+
+
+
+
+
+
+
+DiagramsAbout DiagramsA Diagram represents one option for the physical layout and construction of a system. A Diagram consists of a root System Subsystem record, which is linked to System Subsystem, System Sensor, System Buffer, System Link, System Asset, and System Switch records that together make up the Diagram.When you create a System Scenario record, a System Subsystem record is created automatically and linked to the System Scenario record. Therefore, after you have created a Scenario, there is no manual step required to create a Scenario Diagram. You can build out the Scenario Diagram by adding the necessary elements and connections.Elements of a Diagram
+The following table lists the elements that are available in a Diagram and the associated records that are created automatically in the GE Digital APM database when you add each element to the Diagram. Select the element in the Element column in the following table to view the properties associated with that element.
+
+Icon ElementRecordDescription
+
+
+
+Start None
+Represents the starting point for all paths in the Diagram. This element is created by default when you create a new Diagram. You cannot enter data for this element in the Properties pane because no record is associated with this element.
+
+
+
+
+End NoneRepresents the ending point for all paths in the Diagram. This element is created by default when you create a new Diagram. You cannot enter data for this element in the Properties pane because no record is associated with this element. 
+
+
+
+
+Asset
+System Asset Represents a piece of equipment or location in the system. An Asset element can either be imported from an Equipment or Functional Location record that exists within the GE Digital APM database, or it can be added manually. 
+
+
+
+
+Buffer
+System Buffer 
+Represents an intermediate storage container between two other elements. For example, consider Scenario A in our System Reliability Analysis example without a Water Tank element. The Water Pump produces output (water) that is fed into the Bottling Subsystem. If the Water Pump were to fail, the Bottling Subsystem would not receive any input (water) and the entire system would fail. Similarly, if the Bottling Subsystem were to fail, then the output of the Water Tank would have nowhere to go, and the entire system would fail.
+Alternatively, and as is constructed in the Scenarios in our System Reliability Analysis example, a Buffer element (Water Tank) is inserted between the Water Pump and the Bottling Subsystem. If the Water Pump were to fail, the Bottling Subsystem could continue to function as long as input (water) was available from the Water Tank. If the Bottling Subsystem were to fail, the Water Tank could serve as storage for output (water) until the Bottling Subsystem could be restored or until the Water Tank could accept no more additional output. In either case, a failure of the entire system could be avoided or minimized.
+
+
+
+
+
+Link
+System Link 
+Connects other elements that work together to produce output. For example, consider the Bottling Subsystem in our System Reliability Analysis example. Each of the three Bottling Lines produces bottles filled with water. In the Link element, the Bottling Lines combine their respective outputs into one stream of output for further use beyond our example. A Link represents the "hub" where the outputs of equipment and locations meet before connecting to the rest of the Diagram.
+
+
+
+
+
+Sensor
+System Sensor 
+Detects the failure of a piece of equipment or location and notifies Switches of the failure. A Sensor cannot be connected to any other elements in the Diagram. If an Asset element in the Diagram fails, the Sensor that is monitoring that element will activate designated Switches to start elements running and deactivate other Switches to put other elements in standby. If the Asset element is deleted from the Diagram, then the connection between the Asset element and the Sensor will be deleted as well.
+For example, consider Scenario C in our System Reliability Analysis example. Sensor 1 monitors Water Tank 1 for failures. When a failure is detected, Sensor 1 deactivates Switch 1, which deactivates the failed Water Tank 1, and activates Switch 2, which activates the available Water Tank 2.
+
+
+
+
+
+Switch
+System Switch 
+Represents a component that is activated or deactivated by a Sensor when a failure occurs. Switches allow you to connect or disconnect an entire branch of the Diagram when failures are detected.
+For example, consider Scenario C in our System Reliability Analysis example. Switch 1 is deactivated by Sensor 1 when a failure of Water Pump 1 is detected.
+
+
+
+
+
+Subsystem
+System Subsystem 
+Represents an entire system of equipment and locations. You can build Subsystems within other Subsystems within the main Diagram to model production units. 
+
+
+Connecting Elements
+After you add elements to a Diagram, you must connect the elements to create the Diagram. Depending on the structure of the system for which you are creating a Diagram, you will want to connect elements to each other in a series or parallel to one another.
+Note: Interaction with diagramming and design canvases is not available on touch-screen devices.
+Elements Connected in a Series 
+When you connect elements to each other in a series, every element has one preceding connection and one succeeding connection, with only one path from the Start element to the End element. For example, in the following image of Scenario A in the System Reliability Analysis example, the elements in the Diagram for Scenario A root subsystem are connected in a series: every element between the Start and End elements has one connection from an element and one connection to an element, and you can reach the End element from the Start element in only one way.
+
+
+
+Elements Connected in Parallel 
+When you connect elements in parallel to one another, one or more elements will be connected to multiple elements, and there will be multiple paths from the Start element to the End element. For example, in the System Reliability Analysis example, the Bottling Line elements in the Bottling Subsystem root subsystem are connected in parallel. In this case, the Start element and the Linkelement are connected to three Subsystem elements: Bottling Line 1, Bottling Line 2, and Bottling Line 3. Therefore, there are three different paths from the Start element to the End element, depending on which of the three Bottling Lines that you pass through.
+
+
+
+Access a DiagramProcedure
+Access the System Scenario for which you want to view system diagram.In the workspace, select the Diagram tab.A list of system subsystems, a design canvas, and the Properties pane appear.
+
+In the pane to the left of the design canvas, select the root system subsystem for which you want to view the diagram.
+The diagram associated with the selected system subsystem appears in the design canvas.
+Tip: Select  to display the diagram in full screen.
+Access an ElementYou can access an element for a Subsystem to view the properties of that element.Procedure
+Access the Diagram that contains the System Subsystem for which you want to view properties of an element.
+The Diagram associated with the selected System Subsystem appears in the design canvas.
+
+
+
+In the design canvas, select the element whose properties you want to view.
+The properties of the selected element appear in the Properties pane.
+
+
+
+Results
+Depending on the element that is selected in the workspace, different fields are displayed in the Properties pane. When you select an element, the Properties pane will display the fields that belong to the record that is associated with the selected element. 
+You can select any of the following elements to view the fields in the associated record in the Properties pane:
+
+Asset
+
+Buffer
+
+Link
+
+Sensor
+
+Subsystem
+
+Switch
+
+Add an ElementAbout This Task
+After you create a Scenario, you can build the Diagram by adding elements and connections. This topic describes how to add an element to a diagram. You can also import existing elements to a diagram.
+Procedure
+Access the Diagram to which you want to add an element.In the Palette section, select the icon that represents the element that you want to add and use the drag-and-drop method to add the element to the required location on the design canvas.The element appears on the design canvas. It is selected automatically, and the Properties pane displays the properties of the new element. 
+
+Depending on the element that you selected, different fields appear in the Properties pane. You can select any of the following elements:
+Asset
+
+Buffer
+
+Link
+
+Sensor
+
+Subsystem
+
+Switch
+In the Properties pane, in the upper-right corner, select .The fields are enabled. As needed, enter the values in the available fields, and then select .The details of the element are saved. An appropriate record will be created in the GE Digital APM database to store information for that element. The new record is linked to the System Subsystem that represents the Diagram.What To Do Next
+
+Connect Elements
+
+Connect ElementsBefore You Begin
+
+Add an Element
+
+About This TaskAfter you add elements to a Diagram, you must connect the elements to create the Diagram. Depending on the structure of the system for which you are creating a Diagram, you will want to connect elements to each other in a series or parallel to one another.Procedure
+Access the Diagram within which you want to connect elements.In the design canvas, select the circle on the element from which you want to initiate the connection, and then drag your pointer to the required destination (i.e., the circle on the element that will serve as the end of the connection). An arrow is drawn automatically in the direction that you drag your pointer.When your pointer touches the port of the required destination, release the pointer to set the connection.The connection will be completed automatically.Import a Reliability Growth AnalysisAbout This Task
+You can create new Asset elements by importing existing Reliability Growth Analyses into a Diagram. You can import one or multiple analyses in a single operation. One Asset element will be created for each record that you import, and a new System Asset record will be created to store information for that element. Fields from the Reliability Growth record will be mapped to the System Asset record, as described in the Results section.
+This topic describes how to add an element by importing a Reliability Growth Analysis. You can also add an element directly to a diagram.
+Procedure
+Access the Diagram within which you want to import a Reliability Growth Analysis.In the Import section, select .
+A list of available Reliability Growth Analyses appears.
+
+
+
+Select check box to the left of the Reliability Growth Analysis that you want to import. 
+Tip: You can select more than one Reliability Growth Analysis.
+In the upper-right corner of the workspace, select Import.
+A new Asset element is added to the Diagram for each selected Reliability Growth Analysis.
+Results
+When you import an existing Reliability Growth record into the Diagram, a new System Asset record is created, and information from the imported record is mapped to the System Asset record. Information is also mapped to System Risk and Distribution records, which are created when a record is imported and linked to the System Asset record.
+The following table contains the values that are imported from fields in a Reliability Growth record and the System Analysis record and fields to which they are mapped. All other values in System Analysis records are populated automatically with default values.
+Note: If you import an asset and import the Reliability Growth Analysis associated with that asset, all of the fields in the following table will be mapped except the Analysis ID field. The Analysis ID field will not be mapped to the Name field in the System Asset record.
+Reliability Growth Record Field System Analysis Record System Analysis Record Field NotesAnalysis ID System AssetName NoneAnalysis ID System RiskName NoneShort Description Distribution Short Description This value is mapped to the TTF Distribution record that is linked to the System Risk record and appears in the TTF column in the Risks section. Final MTBF ExponentialMTBF This value is mapped to the TTF Distribution record that is linked to the System Risk record and appears in the TTF column in the Risks section. Time Units DistributionUnits This value is mapped to the TTF Distribution record that is linked to the System Risk record and appears in the TTF column in the Risks section. 
+Import a Reliability Distribution AnalysisAbout This Task
+You can create new Asset elements by importing existing Reliability Distribution Analyses into a Diagram. You can import one or more analyses in a single operation. One Asset element will be created for each record that you import, and a new System Asset record will be created to store information for that element. Fields from the Reliability Distribution record will be mapped to the System Asset record, as described in the Results section.
+This topic describes how to add an element by importing a Reliability Distribution Analysis to a Diagram. You can also add an element directly to a diagram.
+Procedure
+Access the Diagram within which you want to import a Reliability Distribution Analysis.In the Import section, select .
+A list of available Reliability Distribution Analyses appears.
+
+
+
+Select check box to the left of the Reliability Distribution Analysis that you want to import. 
+Tip: You can select more than one Reliability Distribution Analysis.
+In the upper-right corner, select Import.
+A new Asset element is added to the Diagram for each selected Reliability Distribution Analysis.
+Results
+When you import an existing Reliability Distribution record into the Diagram, a new System Asset record is created, and information from the imported record is mapped to the System Asset record. Information is also mapped to System Risk and Distribution records, which are created when a record is imported and linked to the System Asset record.
+The following table contains the values that are imported from fields in records from a Distribution Analysis and the System Analysis record and field to which they are mapped. All other values in System Analysis records are populated automatically with default values.
+Note: If you import an asset and import the Reliability Distribution Analysis associated with that asset, all of the fields in the following table will be mapped except the Analysis ID field will not be mapped to the Name field in the System Asset record.
+Reliability Distribution Analysis Record Reliability Growth Record Field System Analysis Record System Analysis Record Field NotesReliability Distribution Analysis ID System AssetName NoneReliability Distribution Analysis ID System RiskName NoneReliability Distribution Failures Without Replacement System RiskFailures Without Replacement NoneDistribution Short Description Distribution Short Description This value is mapped from the TTF and TTR Distribution records that are linked to the Reliability Distribution record to the corresponding TTF and TTR Distribution records that are linked to the System Risk records. Distribution Distribution Type DistributionDistribution Type This value is mapped from the TTF and TTR Distribution records that are linked to the Reliability Distribution record to the corresponding TTF and TTR Distribution records that are linked to the System Risk records. Distribution Units DistributionUnits This value is mapped from the TTF and TTR Distribution records that are linked to the Reliability Distribution record to the corresponding TTF and TTR Distribution records that are linked to the System Risk records. ExponentialMTBF ExponentialMTBF This value is mapped from the TTF and TTR Distribution records with a Distribution Type of Exponential that are linked to the Reliability Distribution record to the TTF and TTR Distribution records with a Distribution Type of Exponential that are linked to the System Risk records. Lognormal
+Mu 
+Sigma 
+Gamma 
+Lognormal
+Mu 
+Sigma 
+Gamma 
+This value is mapped from the TTF and TTR Distribution records with a Distribution Type of Lognormal that are linked to the Reliability Distribution record to the TTF and TTR Distribution records with a Distribution Type of Lognormal that are linked to the System Risk records. Normal
+Mean 
+Standard Deviation 
+Normal
+Mean 
+Standard Deviation 
+This value is mapped from the TTF and TTR Distribution records with a Distribution Type of Normal that are linked to the Reliability Distribution record to the TTF and TTR Distribution records with a Distribution Type of Normal that are linked to the System Risk records. Weibull
+Beta 
+Eta 
+Gamma 
+Weibull
+Beta 
+Eta 
+Gamma 
+This value is mapped from the TTF and TTR Distribution records with a Distribution Type of Weibull that are linked to the Reliability Distribution record to the TTF and TTR Distribution records with a Distribution Type of Weibull that are linked to the System Risk records. 
+Import an AssetAbout This Task
+You can also import the Reliability Distribution Analysis or Reliability Growth Analysis associated with the Asset record that you selected. Values from fields in the Reliability Growth or Reliability Distribution record will be mapped to System Risk and Distribution records, which are created when the corresponding record is imported and linked to the System Asset record, as described in the Results section.
+This topic describes how to add an element by importing an Asset to a Diagram. You can also add an element directly to a diagram.
+Procedure
+Access the Diagram within which you want to import an asset.In the Import section, select .
+The Search window appears. 
+Enter the search criteria. 
+A list of available assets appears.
+Select check box to the left of the asset that you want to import. 
+The Import Asset window appears. 
+
+
+
+Tip: You can select more than one asset.
+Select OK.
+A new Asset element is added to the Diagram for each selected asset.
+Results
+When you import an Asset record into the Diagram, a new System Asset record is created, and information from the imported record is mapped to the System Asset record.
+The following table contains the values that are imported from fields in Asset records and the System Analysis record and field to which they are mapped. All other values in System Analysis records are populated automatically with default values.
+Asset Record Field System Analysis Record System Analysis Record Field NotesID System AssetName None
+When you are importing an Asset record, if you choose to import the Reliability Distribution Analysis or Reliability Growth Analysis associated with the Asset record that you selected, values from records in Reliability Distribution Analyses or Reliability Growth Analyses will also be mapped to records in the System Reliability Analysis.
+The values that will be mapped are the same values that are mapped when a Reliability Distribution Analysis or Reliability Growth Analysis is imported without an Asset record, with the following exception:
+The value in the ID field of the Asset record will be mapped to the Name field in the System Asset record. The values in the Analysis ID field in the Reliability Growth or Reliability Distribution record will not be mapped to the System Asset record.
+Import a SubsystemAbout This Task
+This topic describes how to add an element by importing a System Subsystem to a Diagram. You can also add an element directly to a diagram.
+Procedure
+Access the Diagram within which you want to import a Subsystem.In the Import section, select .
+A list of available Subsystems appears.
+
+
+
+Select the check box to the left of the Subsystem that you want to import. 
+Tip: You can select more than one Subsystem.
+In the upper-right corner of the workspace, select Import.
+A new Subsystem element is added to the Diagram for each selected System Subsystem.
+Results
+For each System Subsystem that you import:
+An element will be created in the diagram.A copy of the record will be created and linked to the System Analysis record.All related records within the subsystem (e.g., System Asset records) will also be imported. An element and copy of each record will be created for each related record.
+Delete an ElementAbout This Task
+You can delete any element from a Diagram. As you delete elements from a Diagram, note that:
+If you delete an Asset element that was created by importing an Equipment or Functional Location record, when you delete the Asset element, only the Asset element will be deleted. The source record will not be deleted. Additionally, if the source record is linked to the System analysis, the link will also be deleted.You cannot delete the Start or the End node.
+Procedure
+Access the Diagram containing an element that you want to delete.Select the element that you want to delete. In the Diagram section, select  , and then select  . A confirmation message appears, asking you to confirm that you want to delete the selected element.Select Yes.The element is deleted from the Diagram.Delete a Connection Between ElementsAbout This TaskWhen you delete a connector between two nodes in the Diagram, you are deleting the link between the two records.Procedure
+Access the Diagram containing the elements and the associated connectors that you want to delete.In the design canvas, point to the connection that you want to delete, and then select . 
+A message appears, asking you to confirm that you want to delete the selected connection.
+Select Yes.
+The connection is deleted from the Diagram.
+
+
+
+
+
+On this pageAbout DiagramsAccess a DiagramAccess an ElementAdd an ElementConnect ElementsImport a Reliability Growth AnalysisImport a Reliability Distribution AnalysisImport an AssetImport a SubsystemDelete an ElementDelete a Connection Between Elements
+
+
+
+
+
+
+
+
+

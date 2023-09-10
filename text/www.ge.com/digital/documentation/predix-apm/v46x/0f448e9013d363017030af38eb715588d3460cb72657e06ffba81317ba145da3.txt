@@ -1,0 +1,99 @@
+
+
+
+Offline Forms | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Family ManagementRules
+Overview
+Entity and Relationship Families
+Fields
+Datasheets
+Offline Forms
+Family Reports
+Relationship Definition
+State Configuration
+Associated Pages
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Family Management
+Offline Forms
+
+
+
+
+
+
+
+Offline FormsAbout Offline Forms
+GE Digital APM customers can access data when executing product workflows offline. You can create, read, update, and delete GE Digital APM product data in a location without connecting to a server. Using Offline Forms, you can now modify and define an offline data collection UI for GE Digital APM families.Offline Forms can be accessed through Configuration Manager and the UI can be specifically configured for offline display. More than one offline form can be configured for a family. This form creation is available only for Entity Families. To configure a form, you can select a field from a list for the family and drag it onto a grid based canvas. Fields can be setup to occupy an entire row or you can have two fields in a row. The configuration will need to be exported and delivered as part of the Family content delivery.The following field behaviors are supported in offline forms:RequiredDisabledDefaultMasked FieldPicklistValidate (depends on the input type)Access the Offline Form BuilderProcedureAccess the Family Management Page.On the Family Management page, in the left pane, select Entity, and then select the entity whose datasheet you want to configure.The workspace for the selected entity family appears.In the workspace, select the Datasheets tab, and then select Manage Offline Forms.The Create New Form window appears.Note: If there is an existing offline form for the entity, the offline form for that entity appears. If there is more than one offline form, the default offline form for that entity appears.Create an Offline FormProcedure
+Access the Offline Form Builder.Enter values in the Caption, Default ID, and a Description boxes, and then select OK.
+Note: If you want your offline form to be the default offline form for this family, then select the Default check box.
+The offline form is created, and the list of available fields that can be added to the form appears.In the Available Fields pane, select the field that you want and drag it to the workspace for that offline form.The field is added to the workspace for that offline form. If you want to rearrange the fields for the offline form, then select and drag the items that you want to remove back to the Available Fields pane, and then select and drag the fields back to the workspace as needed.If you want to delete the fields in the offline form, drag and drop fields from the datasheet back to the Available Fields pane as needed.Select .The offline form is saved.Access or Modify an Offline FormProcedure
+Access the Offline Form Builder.
+Note: If there is an existing offline form for the entity, the offline form for that entity appears. If there is more than one Offline form, the default offline form for that entity appears.
+To select an offline form, then in the upper-right corner of the workspace, select 
+
+, and then select the offline form that you want to edit.The workspace for the offline form appears, displaying the fields of the offline form.For information on the selected offline form, select .The Form Information window appears.As needed, enter or modify the values in the Caption and Description boxes on the Form Information window.Select Update.The Offline form is saved. Add an Offline FormProcedure
+Create an offline form.Select .The Offline Form Builder appears.Enter values in the Caption, Default ID, and Description boxes, and then select OK.
+Note: If you want your offline form to be the default offline form for this family, then select the Default check box.
+The offline form is created, and the list of available fields that can be added to the form appears.In the Available Fields pane, select the field that you want, and then drag it to the workspace for that offline form.The field is added to the workspace for that offline form. If you want to rearrange the fields for the offline form, then select and drag the items that you want to remove back to the Available Fields pane, and then select and drag the fields back to the workspace as needed.If you want to delete the fields in the offline form, then drag and drop fields from the datasheet back to the Available Fields pane as needed.Select .The offline form is saved.Add or Delete Columns in Offline Forms
+Columns can be added or deleted in offline forms.
+ProcedureAdd columns:Access or Edit an offline form.Select the column to the right of which you want to add the additional column. Select . An additional column is added to the offline form.Note: You may add up to four columns to an offline form.Select 
+
+.The offline form is saved.Delete columns:Select the column that you want to delete. Select . The column is deleted.Select 
+
+.The offline form is saved.Delete Fields in Offline FormsProcedureIn the Offline Datasheet Builder workspace for the form to which you want to delete fields, add the columns and rows that you need for your datasheet.Drag and drop fields from the datasheet back to the Available Items pane as needed.Change the Default Offline Form for the FamilyProcedureAccess the Family Management Page.On the Family Management page, in the left pane, select Entity, and then select the entity whose datasheet you want to configure.
+The workspace for the selected entity family appears.
+In the workspace, select Datasheets, and then select Manage Offline Forms.The default offline form appears.Note: If there is an existing offline form for the entity, the offline form for that entity appears. If there is more than one offline form, the default offline form for that entity appears.In the upper-right corner of the offline form, select .The Form Information window appears.Clear the Default check box, and then select the Update button.The offline form is no longer the default form.In the upper-right corner of the offline form, select  , and then select the Offline form that you want to set as default.The offline form for the selected Entity family appears.In the upper-right corner of the offline form, select .The Form Information window appears.Select the Default check box, and then select Update.This offline form is now the default form.
+
+
+
+
+On this pageAbout Offline FormsAccess the Offline Form BuilderCreate an Offline FormAccess or Modify an Offline Form Add an Offline FormAdd or Delete Columns in Offline FormsDelete Fields in Offline FormsChange the Default Offline Form for the Family
+
+
+
+
+
+
+
+
+

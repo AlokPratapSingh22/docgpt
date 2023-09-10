@@ -1,0 +1,111 @@
+
+
+
+Asset Reserved Attributes | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+InstancesAsset Instances
+Asset AttributesAsset Reserved Attributes
+Asset Custom Attributes
+
+
+Tag Instances
+Tag Attributes
+Location Information
+Events
+
+
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Instances
+Asset Attributes
+Asset Reserved Attributes
+
+
+
+
+
+
+
+Asset Reserved AttributesAbout Reserved Attributes for an Asset InstanceGE Digital APM reserves certain attribute names in order to standardize similar functionality across all applications. As a result, specific default attribute names are reserved for system use.Reserved attributes are predefined properties commonly used for node asset instances when they are ingested. Reserved attributes for an asset instance are inherited from the associated asset classification. You can add or edit values for the predefined attributes in an asset instance.Values can be single or multiple. Multiple values are only available for the reserved attributes that show the List values link. List values options are created during asset configuration and cannot be added by you. The value format must match the data type configured for the asset instance. The data type for a reserved attribute cannot be changed by you.Values for reserved attributes may be left blank.For more information on the different scenarios, refer to the Expected Behavior for Reserved Attributes documentation.Sort Reserved Attributes for an Asset InstanceYou can sort reserved attributes for an asset instance by the attribute name.About This TaskThe reserved attributes appear in ascending order of the attribute name, by default. You can, however, sort the attributes in the desired order. ProcedureIn the module navigation menu, go to Assets > Asset Instances.Select an asset context using the context browser.In the Reserved Attributes section, select Attribute Name. ResultsThe reserved attributes are sorted in the reverse order.Export Reserved Attributes for an Asset InstanceProcedureIn the module navigation menu, go to Assets > Asset Instances.Select an asset context using the context browser.In the Attributes section, select Export All Attributes. ResultsThe reserved attributes and custom attributes are downloaded and saved to a .csv file.Add or Modify Reserved Attribute Values for an Asset InstanceYou can enter or modify reserved attribute values for an asset instance. About This Task
+You can enter a new value or modify an existing value for a reserved attribute. Some reserved attributes may have multiple values, in which case the attribute includes  displaying a drop-down list in place of a single value. You can select the icon to display the list of values as a table. You can select  to modify the displayed values.
+Reserved attributes have predefined formatting which cannot be modified. You cannot add or delete a reserved attribute.
+GE Digital APM Asset has identified a list of reserved attributes for Asset Instances. To ensure that you don't add custom attributes from the reserved attributes list, the following tables list the reserved attributes used for Asset Instances:Table 1. Asset Instance Reserved AttributesField NameDisplay NameTypeDefault ValuestateStateKeyValue
+{
+     "key": "06",
+     "value": "Operate"
+}
+statusStatusKeyValue
+{
+     "key": "03",
+     "value": "Normal"
+}
+
+Procedure To enter or modify a single value for a reserved attribute:In the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.In the Reserved Attributes section, hover over a reserved attribute value, and select the Value box to enter a value. The value must match the data type for the attribute. A hint may appear if you enter a value incorrectly.Alternatively, you can hover over a reserved attribute value, select , and then enter a value in the Attribute Value Definition box.Note: You cannot change the datatype of the attribute.Select Save.The entered value is saved and appears in the Value column for the selected reserved attribute. To enter or modify multiple values for a reserved attribute:In the Reserved Attributes section, hover over a reserved attribute value, and select . Enter a value in the Attribute Value Definition box. The value must match the data type for the attribute. A hint may appear if you enter a value incorrectly.Select .Enter an additional value in the new Attribute Value Definition box.Continue selecting  and entering values as needed.Select Save.The entered values are saved and populate the  drop-down list in the Value column for the selected reserved attribute.Remove Values from Reserved Attributes for an Asset InstanceYou can remove values from a reserved attribute for an asset instance. About This Task
+You can remove an existing value for a reserved attribute. You can remove multiple existing values for a reserved attribute that contains . Reserved attributes have predefined formatting which cannot be modified. You cannot add or delete a reserved attribute.
+Procedure To remove an existing value for a reserved attribute:In the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.In the Reserved Attributes section, hover over a reserved attribute value, and select the Value box to select and delete a value. Alternatively, you can hover over a reserved attribute value and select , then select and delete a value in the Attribute Value Definition box.Select Save.The null value is saved and appears as blank in the Value column for the selected reserved attribute. To remove multiple existing values for a reserved attribute:In the Reserved Attributes section, hover over a reserved attribute value, and select .  Select the X next to an existing Attribute Value Definition box to delete it. Select and delete the last value from the Attribute Value Definition box if needed.Select Save.The values are removed from the  drop-down list in the Value column for the selected reserved attribute.
+Related ConceptsExpected Behavior for Reserved Attributes
+
+
+
+
+On this pageAbout Reserved Attributes for an Asset InstanceSort Reserved Attributes for an Asset InstanceExport Reserved Attributes for an Asset InstanceAdd or Modify Reserved Attribute Values for an Asset InstanceRemove Values from Reserved Attributes for an Asset Instance
+
+
+
+
+
+
+
+
+

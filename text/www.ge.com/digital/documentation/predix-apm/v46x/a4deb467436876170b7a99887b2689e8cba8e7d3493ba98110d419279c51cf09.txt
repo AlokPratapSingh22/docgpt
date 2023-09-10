@@ -1,0 +1,94 @@
+
+
+
+Fourth Quarter of 2022 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Record ManagerOverview
+Manage Records
+Manage Linked Records
+Manage Bulk Data Form 
+Manage Reference Documents
+Manage Conditional Alerts
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Third Quarter of 2019
+First Quarter of 2019
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Record Manager
+Release Notes
+Fourth Quarter of 2022
+
+
+
+
+
+
+
+Fourth Quarter of 2022Release Date: November 18, 2022This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, if you had configured an Associated Page Link to create a New Family Record and if the Family ID contained any spaces in the ID, and you attempted to access the Associated Pages from the Record Manager, an error occurred. This issue has been resolved.DE187823Previously, in the Record Explorer Details page, when you selected the hide icon on the Record Explorer pane, in the Master Detail datasheet the fields with a drop-down list were misaligned. This issue has been resolved.DE187118Previously, when you updated the value of a field in a record, causing the previously selected drop-down list option in a dependent field to become invalid, the dependent field value was labelled as inactive. This issue has been resolved. Now, in this case, the dependent field value is cleared. As a result of this change, if you delete or inactivate a predefined value used in the drop-down list for a field, and you view an existing record using that value, a null value is displayed in the datasheet. This reverts the change implemented in V4.6.0 with Tracking ID DE137420.DE184974
+
+
+
+
+
+On this pageRelease Date: November 18, 2022
+
+
+
+
+
+
+
+
+

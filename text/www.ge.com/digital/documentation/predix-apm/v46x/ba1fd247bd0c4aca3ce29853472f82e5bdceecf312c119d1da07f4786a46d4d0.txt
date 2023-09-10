@@ -1,0 +1,208 @@
+
+
+
+Reliability Growth | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field DescriptionsReliability Recommendation Records
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+
+
+Catalog Items
+Distribution Types
+Calculations
+Failure Data
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Reference
+Family Field Descriptions
+Reliability Growth
+
+
+
+
+
+
+
+Reliability GrowthReliability Growth Records
+A Reliability Growth record stores information about an analysis that tracks changes in Mean Time Between Failure (MTBF) over a specified period of time to determine strategies or repairs necessary to increase the reliability of a product. The following table provides an alphabetical list and description of the fields that exist for the Reliability Growth family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and UsageAnalysis End Date DateThe date on which the Reliability Growth Analysis will end. 
+This field is only used for analyses based on dates. This value is populated with the value in the End Date section of the Set Analysis Period window. 
+This field does not exist by default on the Reliability Growth datasheet. 
+Analysis End Time Number The cumulative operating time at which the analysis will end. 
+This field is only used for analyses based on cumulative operating time. This value is populated with the value in the End Time section of the Set Analysis Period window. 
+This field does not exist by default on the Reliability Growth datasheet. 
+Analysis Name CharacterThe name of the Growth Analysis. 
+This field is populated with the value that you entered in the Analysis Name box when you save the Growth Analysis. 
+This field does not exist by default on the Reliability Growth datasheet. 
+Analysis Start Date Date The date on which the Reliability Growth Analysis will begin. 
+This field is only used for analyses based on dates. This value is populated automatically with the value in the Start Date section of the Set Analysis Period window. 
+This field does not exist by default on the Reliability Growth datasheet. 
+Analysis Start Time TimeThe cumulative operating time at which the Reliability Growth Analysis will begin. 
+This field is only used for analyses based on cumulative operating time. This value is populated automatically with the value in the Start Time section of the Set Analysis Period window. 
+This field does not exist by default on the Reliability Growth datasheet. 
+Asset Installation Field Character The name of the field in the query or dataset that contains Asset installation data. 
+This field is populated automatically with the value you select in the Installation Date list on the Select Data Fields screen in the Reliability Growth Builder when you create an analysis based on dates. 
+This field does not exist by default on the Reliability Growth datasheet. 
+Date Based Extrapolation LogicalIndicates if the user specified the extrapolation based on a date. 
+If you extrapolate the analysis results based on failure dates, this value is set automatically to True. If you choose to extrapolate based on time or there is no extrapolation at all, this value is set to False. 
+Description Character A brief description of the analysis. 
+This field is populated automatically with the value that you entered in the Analysis Description box when you save the Growth Analysis. 
+This field does not exist by default on the Reliability Growth datasheet. 
+Downtime Units Character The units associated with downtime. 
+This field is populated automatically with the value you select in the Time Units list on the Provide Information for Downtime screen when you create an analysis based on dates. You can select one of the following options:
+Hours Days Weeks Months Quarters Years 
+This field does not exist by default on the Reliability Growth datasheet. 
+Extrapolated LogicalIndicates if the analysis results will be extrapolated beyond the analysis end date. If you choose to extrapolate the results, this value will be set to True. Extrapolation Date DateIndicates the date and time you extrapolated the analysis. If the Date Based Extrapolation field is set to True, this field is populated automatically with the date and time you extrapolated the analysis in the GE Digital APM Framework. Extrapolation Time NumericIndicates the total operating time that will be cumulated when the extrapolation point is reached. If the Extrapolated field is set to True and the Date Based Extrapolation field is set to False, this field is populated with the cumulative operating time that corresponds with the extrapolation time you set in the Select Extrapolation window. Failure Date Field Character The name of the field in the query or dataset that contains the dates on which the Asset failed. 
+This field is populated with the value you select in the Date list on the Select Data Fields screen when you create an analysis based on dates. 
+This field does not exist by default on the Reliability Growth datasheet. 
+Failure Number Field Character The name of the field in the query or dataset that contains the number of failures recorded at each measurement. 
+This field is populated with the value you select in the <Measurement> list on the Select Data Fields screen when you create an analysis. 
+This field does not exist by default on the Reliability Growth datasheet. 
+Failure Rate Plot BinaryContains an image of the <Measurement> Rate Trend plot. 
+This field is used to display the <Measurement> Rate Trend graph in the Plots section in the Reliability Growth report. 
+This field does not exist by default on the Reliability Growth datasheet. 
+Failures Text Contains the data that is displayed in the Reliability Growth Data window. 
+This field is used to populate the Assets and <Measurement> Data sections in the Reliability Growth report. 
+This field does not exist by default on the Reliability Growth datasheet. 
+Failures Plot BinaryContains an image of the Cumulative <Measurement> plot. 
+This field is used to display the Cumulative <Measurement> plot in the Plots section in the Reliability Growth report. 
+This field does not exist by default on the Reliability Growth datasheet. 
+Failure Time Field Character The name of the field in the query or dataset that contains the cumulative operating time at which the piece of equipment or location failed. 
+This field is populated with the value you select in the Cumulative Operating Time list on the Select Data Fields screen when you create an analysis based on cumulative operating time. 
+This field does not exist by default on the Reliability Growth datasheet. 
+Is Grouped Data LogicalIndicates whether or not the data is grouped. 
+If this value is True, the data is grouped data and contains more than one failure at each measurement. If this value is False, the data is not grouped and contains only one failure at each measurement. This value depends on the type of data that is mapped to the Failure Number field. 
+This field does not exist by default on the Reliability Growth datasheet. 
+Is Non-Event Data LogicalIndicates whether or not the data is event count. 
+If this value is True, the data is not event count (e.g., cost). If this value is False, the data is event count (e.g., number of failures). This field is populated depending on the value you select in the Measurement Data Format section of the Select Data Format screen when you create the analysis. 
+This field does not exist by default on the Reliability Growth datasheet. 
+Measurement Name Character The name of the data you are measuring throughout the analysis (e.g., cost, events). 
+This field is populated automatically with the value you enter in the Measurement Name box on the Select Data Format screen when you create an analysis. After you create an analysis, you can change the value in the Measurement Name field via the Select Growth Data Format window. The measurement name is displayed throughout the analysis results. 
+This field does not exist by default on the Reliability Growth datasheet. 
+MTBF Plot BinaryContains an image of the MTB<Measurement> Trend plot. 
+This field is used to display the MTB<Measurement>Trend plot in the Plots section in the Reliability Growth report. 
+This field does not exist by default on the Reliability Growth datasheet. 
+
+Growth Model Records
+A Growth Model record stores information about the Reliability Growth model used to develop a Reliability Growth Analysis. The following table provides an alphabetical list and description of the fields that exist for the Growth Model family, which appear by default on the Growth Model datasheet. The information in the table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and UsageAnalysis ID Character The name of the Reliability Growth Analysis. This field is populated with the value in the Analysis ID field of the Reliability Growth record to which the Growth Model is linked. Beta Number A value that represents the slope of the Cumulative Failures plot. This feld is populated with the Beta value calculated by the GE Digital APM system. The Beta value indicates whether the MTBF is increasing, decreasing, or remaining constant. GOF Critical Value Number The value used to determine whether the analysis passed the goodness of fit (GOF) test. This value is calculated by the GE Digital APM system. If the value in this field is greater than the value in the GOF Statistic field, the Passed GOF field is set to True. GOF Statistic Number A value that demonstrates the preciseness of fit. This value is calculated by the GE Digital APM system. If the value in this field is less than the value in the GOF Critical Value field, the Passed GOF field is set to True. Lambda Number The scale parameter that equals the Y-intercept of the Cumulative Failures Plot at time t =1. This field is populated with the value calculated by the GE Digital APM system. Model Start Date DateThe date the model was started. This field is populated with the start date of the segment. Number of Failures Number The total number of failures in the dataset used to calculate the growth model. This field is populated with the total number of failures in the Failure Data grid. Offset Number The operating time offset for this model relative to the beginning of the analysis. If there beginning operating time and the beginning observation time are the same, this field will be populated with 0. If there is a difference, this field will be populated with the difference between beginning operating time and beginning observation time. Passed GOF LogicalIndicates whether the model passed the Goodness-of-Fit test or not. The analysis passes the GOF test when the value in the GOF Statistic field is less than the value in the GOF Critical Value field. Sequence Number The chronological order of this model in the analysis. This field is populated with the segment number that corresponds to the Growth Model record. If there is only one segment, this field is populated automatically with 1 (None). Time Terminated LogicalIndicates if the end date of the model is time-based. If this field is set to True, then the end of the model is time-based. Otherwise, the end of the model is failure-based. Total Observation Time Number The total amount of time that the equipment is in operation during the specified analysis period. This field is populated automatically with the total operating time calculated from your dataset. This value appears in the Analysis Period section of the Reliability Growth page and is the t value in the AMSAA Reliability Growth Model. 
+Measurement Data Records
+
+<Measurement> Data record stores information about the Reliability Growth Analysis, which is a data format used to create a Reliability Growth Analysis. The following table provides an alphabetical list and description of the fields that exist for the Reliability Growth Analysis family, which appear when you manually enter data on the Reliability Growth Analysis window. The information in the table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Data for event-based analysis using failure dates
+<Measurement Name>Tab
+
+Field CaptionData TypeDescriptionBehavior and UsageAsset ID Character The ID of the Asset that failed.This value is mapped from a query or dataset or manually entered when you create the analysis. Cumulative Time <units> Number The Cumulative Time to Failure, which is the total runtime for a population of Assets at the moment that a failure occurs in one of them.Values in this field are calculated by the GE Digital APM system and are read-only. Date Date The date on which the failure occurred.
+This value is mapped from a query or dataset or manually entered when you create the analysis and is required. If you delete a value in the Date field for an event-based analysis that is based on dates, when you select Finish, an error message will appear.
+Downtime Units Number The amount of time that passed from the time the Asset failed until it was returned to service.This information helps determine the total operating time of a piece of equipment or location. <Units> corresponds with the value selected in the Time Units list on the Provide Information for Downtime screen for the analysis.Failures Number The number of failures represented by each datapoint. Cells in this column will contain the value 1 (one) by default, which indicates that the analysis data is not grouped, and one datapoint represents one failure. A value that is not equal to 1 (one) indicates that the analysis data is grouped, and each datapoint represents more than one failure or an amount of data.This value can optionally be mapped from a query or dataset or manually entered when you create the analysis.Ignore LogicalA check box field that indicates whether or not the data on the selected row is ignored.When selected, the data in the associated row will be excluded from the analysis. When cleared, data in the selected row will be included in the analysis. You can modify this value manually. Remarks Character Comments about the failure.You can enter a value in this field manually.Segment LogicalThe segment to which the data belongs. Values displayed in this field are read-only. Time <units> Number The Time to Failure, which is the amount of time between the date the Asset was put into service until the date that it failed. If the data includes an installation date for the Asset , this value is calculated from the installation date. If the data does not include an installation date, this value is calculated from the first failure. <Units> corresponds to the value selected in the Operating Time Units list on the Time Unit field for the analysis.This value is calculated automatically by the GE Digital APM system. If the value in this field is greater than the value in the GOF Statistic field, the Passed GOF field is set to True. 
+
+Assets Tab
+
+Field CaptionData TypeDescriptionBehavior and UsageAsset IDCharacter The Record ID of the Asset that is being analyzed.This value is mapped from a query or dataset or manually entered when you create the analysis.Installation Date Date The date on which the Asset was installed.This field appears only for analyses based on failure dates. This value is mapped from a query or dataset or manually entered when you create the analysis.Last Replacement Date Number  The last date or time at which the Asset failed.Values in this column are calculated by the GE Digital APM system and are read-only. For data that contains cumulative operating time, this field is Last Replacement <Measurement>.
+
+Data for event-based analysis using cumulative operating time
+<Measurement Name> Tab
+
+Field CaptionData TypeDescriptionBehavior and UsageAsset IDCharacter The ID of the Asset that failed.This value is mapped from a query or dataset or manually entered when you create the analysis. COT <units> Number The Cumulative Operating Time, which is the total amount of time that has passed since the Asset was placed into service.
+
+<Units> corresponds with the value selected in the Time Units list on the Select Data Fields screen for the analysis. This field is sorted in ascending order by default. This value is mapped from a query or dataset or manually entered when you create the analysis, and is required.
+Note: For analyses based on cumulative operating time, if the values in the Failure Date column are not in the same order as the values in the COT (units) column (e.g., if the Failure Date 1/1/2012 has a COT of 1000 and the Failure date 1/2/2012 has a COT of 990), when you select OK, a message will appear, stating that sorting cumulative operating time values from smallest to largest will result in failure dates that are not in order from earliest to latest. As a result, no dates will be shown in the analysis results; only cumulative operating time will be shown.
+Cumulative Time <units> Number The Cumulative Time to Failure, which is the total runtime for a population of Assets at the moment that a failure occurs in one of them.
+Values in this field are calculated by the GE Digital APM system and are read-only. 
+Note: The Cumulative Time is the total runtime for a piece of equipment or location after the analysis has started. This may be different from the COT, which is the total runtime of the piece of equipment or location since it was created. In our example, the haul truck has a mileage of 11,028 before the analysis starts, and fails at a mileage of 27,393. The COT is the total mileage on the truck, 27,293. The Cumulative Time is the mileage the truck has run since the analysis started (27,393-11,028=16,365). If the piece of equipment or location is brand new (i.e., the truck has a mileage of 0), the Cumulative Time and the COT will be the same. 
+Date Date The date on which the failure occurred.
+This value is mapped from a query or dataset or manually entered when you create the analysis and is required. If you delete a value in the Date field for an event-based analysis that is based on dates, when you select Finish, an error message will appear. 
+This value is optional, but in order for dates to be displayed throughout the analysis, ALL failures must have a failure date. If one or more failure dates are missing, then no dates will be shown in the analysis; only cumulative operating time will be shown. For instance, in Example 2, the data does not include dates on which the haul truck broke down, so the analysis results will be able to predict the next failure in cumulative operating times only (e.g., the next failure will occur at 324,001 miles).
+Failures Number The number of failures represented by each datapoint. Cells in this column will contain the value 1 (one) by default, which indicates that the analysis data is not grouped, and one datapoint represents one failure. A value that is not equal to 1 (one) indicates that the analysis data is grouped, and each datapoint represents more than one failure or an amount of data.This value can optionally be mapped from a query or dataset or manually entered when you create the analysis.Ignore LogicalA check box field that indicates whether or not the data on the selected row is ignoredWhen selected, the data in the associated row will be excluded from the analysis. When cleared, data in the selected row will be included in the analysis. You can modify this value manually. Remarks Character Comments about the failure.You can enter a value in this field manually.Segment LogicalThe segment to which the data belongs. Values displayed in this field are read-only. 
+
+Assets Tab
+
+Field CaptionData TypeDescriptionBehavior and UsageAsset ID Character The Record ID of the Asset that is being analyzed.This value is mapped from a query or dataset or manually entered when you create the analysis.Last Replacement Number  The last date or time at which the Asset failed.Values in this column are calculated by the GE Digital APM system and are read-only. For data that contains cumulative operating time, this field is Last Replacement <Measurement>.
+
+Data for grouped non-event based analysis
+<Measurement Name> Tab
+
+Field CaptionData TypeDescriptionBehavior and UsageCostNumber The cost measured at each datapoint. For grouped data, values in this column represent the amount of data (e.g., cost) recorded between that datapoint and the previous datapoint. For non-grouped data, which is used in Examples 1 and 2, the values in this field are always 1 (one). For grouped data, the values can be greater than or less than 1 (one) but must be greater than 0 (zero).
+This value is mapped from a query or dataset or manually entered when you create the analysis. The name of this column depends on the measurement name you are using for your analysis.
+
+
+Assets Tab
+
+Field CaptionData TypeDescriptionBehavior and UsageAsset ID Character The Record ID of the Asset that is being analyzed.This value is mapped from a query or dataset or manually entered when you create the analysis.Installation Date Date The date on which the Asset was installed.This field appears only for analyses based on failure dates. This value is mapped from a query or dataset or manually entered when you create the analysis.Last Replacement Number  The last date or time at which the Asset failed.Values in this column are calculated by the GE Digital APM system and are read-only. For data that contains cumulative operating time, this field is Last Replacement <Measurement>.
+
+
+
+
+
+
+On this pageReliability Growth RecordsGrowth Model RecordsMeasurement Data Records
+
+
+
+
+
+
+
+
+

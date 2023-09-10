@@ -1,0 +1,91 @@
+
+
+
+Performance | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+WorkflowsAdministration
+Event Management
+Performance
+Reporting
+
+
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Workflows
+Performance
+
+
+
+
+
+
+
+PerformanceGAA Performance WorkflowThis workflow describes the process for creating and reviewing the Performance records for a GAA Unit.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+GAA Administration Persona: Solution AdministratorDefine an event when operating status or capability of a GAA Unit changes. Go to the GAA Administration workflow.UnitPersona: Solution AdministratorDefining GAA Unit provides GAA Unit record, Unit Capacity record, and GAA Report record.Create Performance Record Persona: AnalystCreate a Performance record for the selected GAA Unit. Review or Approve Performance Record Persona: Solution AdministratorUse state management to review or approve the Performance record for the selected GAA Unit. GAA Reporting Persona: Solution Administrator or AnalystGenerate Regulatory or Management reports based on events or performance. Go to the GAA Reporting.
+
+
+
+
+On this pageGAA Performance WorkflowGAA AdministrationUnitCreate Performance RecordReview or Approve Performance RecordGAA Reporting
+
+
+
+
+
+
+
+
+

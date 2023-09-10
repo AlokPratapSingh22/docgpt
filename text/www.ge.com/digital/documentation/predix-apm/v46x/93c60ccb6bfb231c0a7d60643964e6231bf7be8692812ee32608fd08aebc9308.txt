@@ -1,0 +1,92 @@
+
+
+
+RBI Recommendation Implementation | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+WorkflowsDefine Component
+Perform an RBI Analysis
+RBI Recommendation Management
+RBI Recommendation Implementation
+
+
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Workflows
+RBI Recommendation Implementation
+
+
+
+
+
+
+
+RBI Recommendation ImplementationRBI: Recommendation ImplementationThis workflow describes the process of: Reviewing the recommendations linked to an asset.Deciding if you want to implement the approved RBI Recommended Actions through Inspection Plan or Asset Strategy Management.Reviewing the inspection tasks linked to an asset.Modifying or creating tasks.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+Recommendation Management Persona: AnalystGo to the Recommendation Management workflow.Implement the action in ASM?Persona: AnalystAfter you approve an Inspection Plan, you can choose to implement the RBI Recommended Actions through Inspection Plan or Asset Strategy Management. This decision needs to be made by the owner operator depending on the corporate philosophy of implementing RBI Recommendations.Review Asset Strategy Persona: AnalystAfter you approve an Inspection Plan, an Asset Strategy is created or updated for the asset. The RBI recommendations linked to the asset are converted into actions and the damage mechanisms are converted into risks.You can review the risks and Actions created in Asset Strategy Management to verify that implementing the suggested actions will mitigate the risk (to values below the risk threshold). You cannot modify the unmitigated risk assessment for the risk and the mitigated risk assessment for the Action inherited from an RBI Analysis. You can, however, add an ad hoc Action to mitigate the risk.If the suggested Actions does not mitigate the risk (to values below the risk threshold), create an ad hoc Action in the Asset Strategy that was created after approving the Inspection Plan for the asset.Approve Asset Strategy Persona: AnalystAfter you review the risk and its associated Actions, when the Actions are ready for implementation, you must approve the Asset Strategy so that its state changes to Active.Review Approved Recommended Actions through Inspection Plan Persona: AnalystReview the approved RBI Recommended Actions through Inspection Plan, if you want to implement the Actions through Inspection Plan and not Asset Strategy Management.Review Approved Recommended Actions through Asset Strategy Management Persona: AnalystReview the approved RBI Recommended Actions through Asset Strategy Management to evaluate the implementation options, if you want to implement the Actions through Asset Strategy Management.Link Recommended Action to Existing Task Persona: AnalystIf an existing Inspection Task provides the same instructions as a Recommended Action, link the Recommended Action to the task. You can modify the task if needed. You can link only one Inspection Task to a Recommended Action. If you have performed an RBI 580 analysis, these tasks must be recurring. If you have performed an RBI 581 analysis, these tasks must not be recurring. Similarly, you can link an RBI sourced Action to an existing task if you choose to implement from Asset Strategy Management.Create Task and Link to Recommended Action Persona: AnalystIf an appropriate Task does not exist, create a task to implement a Recommended Action. Link the Task to the Recommended Action. The new Task is populated with appropriate information from the Recommended Action. If you have performed an RBI 580 analysis, then these tasks must be recurring. If you have performed an RBI 581 analysis, then these tasks must not be recurring. Similarly, you can create a new Task from Asset Strategy Management to implement the RBI sourced action, and the new Task will be populated with appropriate information from the RBI sourced action.Inspection Tasks Persona: AnalystThe asset strategy may be implemented as Tasks that have been defined directly from Recommended Actions through Inspection Plan or Asset Strategy Management. These Tasks can be managed from the Inspection Management or Thickness Monitoring module.Inspection Planning Persona: AnalystGo to the Inspection Planning Workflow.
+
+
+
+
+On this pageRBI: Recommendation ImplementationRecommendation ManagementImplement the action in ASM?Review Asset StrategyApprove Asset StrategyReview Approved Recommended Actions through Inspection PlanReview Approved Recommended Actions through Asset Strategy ManagementLink Recommended Action to Existing TaskCreate Task and Link to Recommended ActionInspection TasksInspection Planning
+
+
+
+
+
+
+
+
+

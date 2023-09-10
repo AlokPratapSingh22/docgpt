@@ -1,0 +1,117 @@
+
+
+
+Manage Conditional Alerts | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Record ManagerOverview
+Manage Records
+Manage Linked Records
+Manage Bulk Data Form 
+Manage Reference Documents
+Manage Conditional Alerts
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Record Manager
+Manage Conditional Alerts
+
+
+
+
+
+
+
+Manage Conditional AlertsAbout Conditional AlertsConditional Alert records store information about emails that you want to send to various users. Before you can create a Conditional Alert that specifies when to send an email message and to whom, you must create and save a query that returns the data you want to send in the email message.Note: You can configure the email address from which the Conditional Alert emails are sent in the From field in the Email Settings page.For example, suppose there are two inspectors in your company to whom Inspection Task records are assigned. You might want to create a query that returns a list of those Inspection Task records and the user to whom each is assigned. Then, you could create a Conditional Alert record that determines when an email message will be sent to those inspectors and the type of data that the email message will contain.After you create a Conditional Alert, you must compile and execute the strategy rule MI_ProcessCondtionalAlerts, which is provided as part of the baseline GE Digital APM content. This strategy rule searches the database for all Conditional Alert records. If it finds any records, it then uses the information in those records (i.e., interval at which to send the email message, date the email message was last sent, and so on) to determine if an email message should be sent at that time.The creation of Conditional Alert records is part of the Inspection Management workflow. Note that, based upon your needs, you can create Conditional Alert at any time.Create a Conditional AlertProcedureOn the upper-right corner of any page in GE Digital APM, select .
+A search menu appears with a list of families below it.
+In the search bar, enter Conditional Alerts, and then select Conditional Alerts from the list of families.
+A blank datasheet for a new Conditional Alert record appears.
+As needed, enter values in the available fields, and then select .
+Note: Required fields are marked in red.
+Send an Email Using a Conditional AlertProcedureIn the upper-right corner of any page in GE Digital APM, select , and then enter the name of the conditional alert in the search bar.Select the conditional alert record that you want to modify.
+The record opens.
+Select  to enable editing of the fields.
+The datasheet toolbar is displayed.
+In the Fixed Distribution List drop-down menu, select the email recipients that you would like to receive that alert.
+-or-
+In the Additional Distribution List box, enter additional email addresses for new recipients.
+
+
+
+Select .
+The conditional alert will be sent to the recipients you added.
+Note: The default email subject line is Predix APM: Conditional Alert - Alert ID . Here, the Alert ID is the ID that was set in the Conditional Alert Datasheet.
+Use the Group By Functionality in Conditional AlertsAbout This TaskIf the query in your conditional alert has an Email ID field and multiple conditional alert records have the same email address, you can use the Group By field to group the records according to the email address. This avoids sending multiple messages to the same email address.ProcedureSort your query by the Email ID field column.If the records in your query are not sorted by email ID, they will be considered as single records and separate email messages will be sent.Select the Email ID field in the Variable Distribution Source drop-down list box.Select the Email ID field in the Group By drop-down list box.
+Note: If the values in the Variable Distribution Source and Group By fields do not match, then GE Digital APM does not send an email message for the conditional alert records.
+ResultsThe recipient will receive a single email message listing all the conditional alert records associated with that email address. Note:
+If the recipient has blocked emails from GE Digital APM, the email message will still be sent to the address mentioned in the query. However, it will go to the recipient’s spam folder.If the wrong email address is entered or if the email ID field for a record is blank, an exception entry will be listed in the log file.
+Configure alert interval for scheduling strategy macroBefore You BeginCreate a Conditional AlertProcedureIn the main navigation bar, select , and then enter the name of the conditional alert in the search bar.Select the conditional alert record that you want to schedule based on the frequency set in the Strategy Macros page. The record appears in a new tab.In the Interval drop-down list box, select Strategy Macro Schedule option.Select the Active check box. Select .
+The conditional alert record is updated, and the alert appears in the Active Alerts drop-down list box of the Strategy Macros page.
+What To Do NextSchedule a Strategy Macro RunTroubleshoot Conditional Alerts
+The following list describes some issues that you may encounter while working with the Conditional Alerts process. Select the appropriate drop-down section to view an explanation of what may be causing the issue.
+Example: Error Indicating that a Query Cannot be Found
+When you execute the strategy rule MI_ProcessConditionalAlerts, the rule searches for Conditional Alerts records and tries to send an email message containing the results of queries that are referenced in those Conditional Alerts record. If one or more Conditional Alerts records does not reference a query, an error will appear, indicating that the query is missing.
+What could cause this to happen? 
+One or more Conditional Alerts records contains an empty Query Name field.
+What can I do? 
+Create a query to locate the Conditional Alerts record(s) that contains an empty Query Name field. Open the Conditional Alerts records that are returned by the query, and select the desired query in the Query Name field.
+Example: Error Indicating that a Recipient is Required but Not Found
+When you execute the strategy rule MI_ProcessConditionalAlerts, the rule searches for Conditional Alerts records and tries to send an email message to the recipients referenced in the records. If one or more Conditional Alerts records does not indicate the email address to which the email message should be sent, an error will appear, indicating that one or more recipients is required but none were found.
+What could cause this to happen? 
+One or more Conditional Alerts records is missing values in all of the following fields:
+Fixed Distribution ListAdditional Distribution ListOptional DistributionVariable Distribution Source
+What can I do? 
+Create a query to locate the Conditional Alerts record(s) where these fields are empty. Open the Conditional Alerts records that are returned by the query, and select at least one email address in at least one of the empty fields.
+
+
+
+
+
+On this pageAbout Conditional AlertsCreate a Conditional AlertSend an Email Using a Conditional AlertUse the Group By Functionality in Conditional AlertsConfigure alert interval for scheduling strategy macroTroubleshoot Conditional Alerts
+
+
+
+
+
+
+
+
+

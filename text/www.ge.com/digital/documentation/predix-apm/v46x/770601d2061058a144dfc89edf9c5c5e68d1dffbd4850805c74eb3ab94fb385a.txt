@@ -1,0 +1,64 @@
+
+
+
+
+About the Unified Asset Ingestion Data Loader | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About the Unified Asset Ingestion Data LoaderThe Unified Asset Ingestion data loader allows a user to import data from an Excel workbook to populate GE Digital APM with equipment and functional location data.
+Important:
+In GE Digital APM, you should use this data loader to load equipment and functional location data into the database.The Unified Asset Ingestion data loader should not be used for:File sizes greater than 10 MB in a single load.Greater than 10,000 records in a single load. 
+
+More Details
+GE Digital APM contains two underlying databases with different structures: the Predix database and the Meridium database. When data is loaded into GE Digital APM using the Unified Asset Ingestion Data Loader, the data is populated in both databases. This creates is a single point of ingestion through APM Connect as shown in the following image. 
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,86 @@
+
+
+
+Tag Modeler Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+WorkflowsAsset Modeler Workflow
+Tag Modeler Workflow
+
+
+Instances
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Workflows
+Tag Modeler Workflow
+
+
+
+
+
+
+
+Tag Modeler WorkflowTag Modeler WorkflowThe tag modeler creates standard tag classifications and instances through APIs or ingestion for one or more JSONs.
+
+The tag modeler can set up tags that include:ClassificationsInstances and connections to assetsGroups for classifications or instancesTo create a tag model for a tenant, do the following:Create tag classifications, which define the standard instances with common characteristics.Values for tagclassifications in the JSON include:idnamedescriptionNext, add values for reserved attributes. Adding values for reserved attributes to a classification allows sub-classifications to inherit those values. Values for reservedProperties and properties are added to the named tag classification node. Static attributes should be defined as part of the tag classification.Create tag instances and tag correlations.Tag instances represent specific tags associated with a type of tag classification, and connect to an asset instance.Note: You can associate a tag classification with an asset classification. When an asset instance is created from an asset classification, the asset instance automatically creates an appropriate tag instance where the tag classification was associated to the asset classification.Values for tagAssociations > monitoredEntity in the JSON include:idccomClassThe ccomClass vaue for monitoredEntity is predetermined according to their place in the hierarchy (ENTERPRISE, SITE, SEGMENT, or ASSET).Values for tagAssociations > tags in the JSON include:idnameclassificationreservedPropertiesaliasesnextRelatedTagValues for reservedProperties are added under the named tag instance. Dynamic attributes should be defined as part of the tag instance.Note: If the same attribute is defined at the class and instance levels, the attribute value defined in the instance takes precedence over the class.Values for classification are the tag classification. Values for aliases are alternative tag names. Values for nextRelatedTag are correlated tag names. Correlated tags capture the same measurement data but are labeled differently and may have different quality and density.Add group associations for the tag instances.Group associations include classifications of one type that are related or connected in some way. Groups include member tag instances which can be added in the JSON.Values for groups include:idnamedescriptionccomClassassociatedEntityCcomClasspropertiesassociatedEntityIdsThe ccomClass value is predefined as GROUP. The associatedEntityCcomClass value is the type (ENTERPRISE_TYPE, SITE_TYPE, SEGMENT_TYPE, or ASSET_TYPE) of the member instance listed under the group parent node. The members of the group are added using the sourcekey for associatedEntityIds.For more information, refer to the APIs or ingestion documentation to complete the workflow.
+
+
+
+
+On this pageTag Modeler Workflow
+
+
+
+
+
+
+
+
+

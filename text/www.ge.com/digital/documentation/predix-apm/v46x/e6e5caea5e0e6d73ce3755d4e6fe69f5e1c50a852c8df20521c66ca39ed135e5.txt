@@ -1,0 +1,116 @@
+
+
+
+System Scenario | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System ReliabilitySystem Reliability: Overview
+System Reliability: Workflow
+System Reliability Analyses 
+Resources
+System Scenario
+Diagrams
+Risks
+Actions
+Global Events
+Grid View
+Simulations
+
+
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+System Reliability
+System Scenario
+
+
+
+
+
+
+
+System ScenarioAccess a System ScenarioProcedure
+Access the System Reliability Analysis for which you want to view a scenario. In the left pane, select the System Scenario whose details you want to view.The details of the selected Scenario appear in the workspace in the following sections:
+Diagram
+
+
+Definition: This section is displayed by default. 
+Note: As needed, in the Definition section, you can select  to modify the values in the available fields, and then select  to save your changes. 
+
+Risks
+
+Actions
+
+Global Events
+
+Grid View
+
+
+Create a System ScenarioAbout This TaskEach System Reliability Analysis must contain at least one Scenario.Procedure
+Access the System Reliability Analysis for which you want to create a new Scenario.In the left pane, select New Analysis.A new System Scenario is created. The name of the Scenario appears in the left pane in the following format:New Scenario <n>Where, <n> is the number of the Scenario that you created.Note: If you want to change the name of the System Scenario, in the Definition section, select . To save your changes, select . The name of each System Scenario must be unique to the root record.Delete a System ScenarioAbout This TaskDeleting a Scenario from a System Reliability Analysis will delete the System Scenario record and all Diagrams that are associated with it.Procedure
+Access the System Reliability Analysis for which you want to delete a scenario.In the left pane, select the scenario that you want to delete, and then select .A confirmation message appears.Select Yes.The selected System Scenario is deleted. Results
+Any of the following associated components are deleted:ElementsResourcesRisksActionsGlobal Events
+
+
+
+
+
+
+On this pageAccess a System ScenarioCreate a System ScenarioDelete a System Scenario
+
+
+
+
+
+
+
+
+

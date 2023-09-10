@@ -1,0 +1,205 @@
+
+
+
+Analysis Charts | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage ChartsCharts
+Analysis Charts
+SmartSignal Charts
+Chart Types
+
+
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Manage Charts
+Analysis Charts
+
+
+
+
+
+
+
+Analysis ChartsAbout Analysis ChartsAnalysis charts appear on cards contained in a view. Up to eight charts can exist on a card. Charts appear on an Alert Analysis or Analysis View and can be modified and saved as an Analysis Template. You can select or co-render multiple groups containing multiple charts.When a chart is saved as a template and added to an Alert Template, any triggered alerts appear in the Alerts module, where they can be examined.Analysis allows you to access private or public templates, or a new Time Series Analysis or Event Data Analysis view in the View Selector after you have chosen an asset context.Analysis allows you to access data of assets that are not available in GE Digital APM. You can upload a CSV or XLXS file containing data of assets using the New CSV Template. This data is used to create the appropriate tags in the Analysis Tag Browser. Using these tags you can plot charts to perform the CSV analysis.If you update or save a new template, the Context Ribbon appears, where you can change the template name, designate the template as public or private, and determine if the template is for an instance or a class.The selected configuration or the default value for the Time Zone (), Data Resolution (), Data Source (), System of Measure (), and Data Quality () drop-down list boxes appears for each settings option. You can select different options in these list boxes. These options are not available for SmartSignal charts.The default date range for an Alert Analysis has a start date seven days before the event date and an end date seven days after the event date. If the current date is earlier than the computed end date (seven days after event date), the end date defaults to the current date.The default date range for a Time Series Analysis View has a start date of 15 days before the current date.The Event Data Analysis View uses a selected number of events prior to a date and time selected by you to determine the time range for the selected event type. You can also select the number of seconds pre- and post-events to refine the amount of data surrounding the selected events.As you plot tags for an Alert Analysis View or a Time Series Analysis View, a Plotted Tags list appears in the Tag Tree Browser. The list appears as a hierarchy with nodes for cards and charts, and plotted tags or plotted tag series listed below. Event Data Analysis view chart types are limited to X-Y or Polar charts. After you have selected the number of events for an Event Data Analysis view, added two tags, and selected View Data, an Event Frames list appears in the Tag Tree Browser that contains the number of events selected. Each event is identified by a date and time, and is global for the all charts on the view. As you add cards and plot tags, a Plotted Tags list appears. Tags are represented below the main card node. You cannot manipulate tags in the Plotted Tags list. Muting and unmuting of data is controlled in the listed event frames, not the plotted tags. The Event Data Analysis View does not support multiple assets. The Timeline Slider beneath a chart allows narrowing of the time range on the x-axis without affecting the selected date range.Note: The Timeline Slider does not appear on an Event Data Analysis View.The asset, asset tag, and color depicted on the chart appear on the Chart Register. Scroll through the Chart Register to view plotted tags not immediately visible. Changing the time zone affects how the timestamp and time zone designation appears. The data values for the plotted tag on the chart appear when hovering over a colored line on the Chart Register.Note: The Chart Register does not appear on an Event Data Analysis View.The tag name, correlated tags, unit of measure, a description, and the asset appear on the Tag Information Table. Tag information is hidden by default. Note: The Tag Information Table does not appear on an Event Data Analysis View.You can select Sort by from Tag Register to execute the following actions: Sort by muted tags.Sort by tag name. Sort by value.You can select Pagination to execute the following actions: Use the left or right arrow to page through multiple pages.Show combined data. Select the arrow down or up to view in ascending or descending order.Show muted data.You can select  to execute the following actions:Show tag information.Add a chart below the selected chart.Modify a chart.Arrange a chart.You can select  to delete a chart. Adding a new chart to a card creates an empty chart below the selected chart.Note:
+Selection of common chart controls such as zoom, cross-hair, and so on is applied across all the charts in a card and also across all the charts in any other card in the view. Any new charts added to the cards also retain the common chart controls selection made in one card. Deleting the chart or the card or moving to another card does not change the common chart controls selection. The sub configuration options of the common chart controls do not open for all the charts on which the selection is propogated.The common chart control selections are reset when you select another chart control outside the common controls and refresh the chart.When navigating to Analysis from an Alert, the selection of common chart controls is retained on the charts. The selection of common chart controls is retained on the Event Data Analysis charts.
+Create a Time Series Analysis ChartUse Time Series Analysis to review data requests, or to create new analysis view templates.About This Task
+You can select the type of ad hoc analysis charts with which you want to work. The Time Series Analysis uses time series data for the asset context you select. You can save a Time Series Analysis view as a template, which can then be applied to an Alert Template, triggering an alert in the Alert module.
+You can add additional assets, add cards and charts, select a layout, change the date range, mute and unmute tags, plot tags, filter tags, plot tag expressions, and make other necessary modifications.
+Note: Enable Timestamps mode to view one vertical and all horizontal lines on the chart. By default, Points mode is enabled that displays one vertical and one horizontal line on the chart.
+You can create a new ad hoc analysis without saving the one on which you are currently working. When you navigate away from the current ad hoc analysis, a message appears, indicating that you will lose unsaved changes to the current ad hoc analysis view. Select Continue to create a new view with no tags plotted.Note: Consider saving the current ad hoc analysis as a template prior to navigating away.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select New Time Series Analysis.The Time Series Analysis view appears with no tags plotted.Select a chart type in the Chart Type drop-down list box.Plot tags in the Tag Tree Browser.Modify the charts as needed.Select Time Zone, Data Resolution or Data Source drop-down list box to select a configuration.Create an Event Data Analysis ChartUse Event Data Analysis to review event data, or create new analysis view templates.About This Task
+Event Data Analysis allows you to compare the same event occurrence over time to see if it indicates a gradual degradation of an asset.
+You can select the type of ad hoc analysis with which you want to work. The Event Data Analysis uses event-based data for the asset context you select. You can save an Event Data Analysis view as a template.Note: You cannot save an Event Data Analysis template to an Alert Template.
+You can save an Event Data Analysis view as a template, which can then be applied to an Alert Template, triggering an alert in the Alerts module.
+The Event Data Analysis charts rely on the selection of an Event Type. Event Types are garnered from Alert Types, which are created for Alert Templates during tenant on-boarding.
+Just as with Time Series Analysis charts, you can add cards and charts, select a layout, mute and unmute events, plot tags, filter tags, plot tag expressions, and make other necessary modifications. Event Data Analysis charts are event-frame-centric instead of tag-centric. Event Frames are the timestamped, prior instances of the selected Event Type.
+You can select the number of events in the charts, determine the number of seconds prior to and after each event, and determine the date and time ending the event search to appear. The default ending time is the present date and time.
+If you change any of the settings for the charts, you must select Update to make the changes in the charts.
+Event Data Analysis charts have some limitations:You cannot add multiple assets in the Tag Tree Browser, Tag Expressions or Search Browser panes.There is no Chart Register.There is no Timeline Slider below the chart.There is no Tag Information Table below the chart.You are limited to 40 events per tag.
+Note: Enable Timestamps mode to view all vertical and all horizontal lines on the chart. By default, Points mode is enabled that displays one vertical and one horizontal line on the chart.
+You can create a new ad hoc analysis without saving the one on which you are currently working. When you navigate away from the current ad hoc analysis, a message appears, indicating that you will lose unsaved changes to the current ad hoc analysis view. Select Continue to create a new view with no tags plotted.Note: Consider saving the current ad hoc analysis as a template prior to navigating away.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select New Event Data Analysis.The Event Data Analysis view appears with no tags plotted.Select a chart type in the Chart Type drop-down list box.Select the Event Type drop-down box, and then select an option.Enter a numerical value in the Events field, or use the + and - controls to determine the number of events.Use  to select an end date.The default end date is the current date and time.The default end date is the event time. Enter a numerical value in the Pre-Event and Post-Event fields, or use the + and - controls to determine the number of seconds of data before and after the event to appear.You can enter up to 14400 seconds (that is, four hours) before and after the event time, respectively.Plot tags in the Tag Tree Browser.Modify the charts as needed.Select Time Zone, Data Resolution, Data Source, System of Measure, or Data Quality Filter drop-down list box to select a configuration.Optional: Select Update if you have changed any of the settings above to update the data in the charts.Data for the number of selected events appears on the chart, and each event is listed in the Event Frames section in the Tag Tree Browser. The Plotted Tags section contains the card names, chart names, and tags that are plotted for each card and chart.Modify a Chart NameYou can change a chart name to better suit the information on a card.About This Task
+When a chart is created, it is automatically named Chart <#>, where (#) is an assigned, incremental numerical value. You cannot remove a chart's name.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Hover over the current chart name, and then select .Enter the new name in the Chart Name field, and then select ENTER, or tap outside the field.The chart name updates to reflect your changes.Add a Cross-Hair to a ChartAbout This Task
+You can point on a data point in a chart and have that same time reflected as a cross hair across all the charts in the template. It provides the ability for values of the tags appear at mouse point in multiple charts.
+The cross hairs applies across all chart types across all cards. 
+Note: Cross-hair is a common chart control and the selection is applied across all the charts in the card and also across all charts in any other card in the view. Any new charts added to the cards also retain the cross-hair selection made in one card. Deleting the chart or the card or moving to another card does not change the cross-hair selection. 
+ProcedureTo create and access cross hairs for chartsIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context for the primary asset.In the View selector, select New Time Series Analysis.Select Time Series (line) in the Chart Type drop-down list box.Add secondary assets as needed.
+Note: You cannot save the card as a class template if you have added secondary assets.
+Use the Date Picker to select a date and time range.Plot at least one tag or tag expression.Select over a point on a chart. The selected chart and all the other charts appear on the same card .
+Tip: When you hover over a point in the chart, the time stamp appears in a dynamic tool tip. You can also select a specific point on the chart to see its time stamp. When you select a point on the chart, the time stamp appears in a static tool tip. If you have selected a point in the chart, you can navigate to and hover over other points in the chart for comparison. 
+Select on the chart area to access the time stamp on the upper-right hand corner.You can update the tag register below the chart for the time stamp and tag values appear at that time stampDelete a ChartYou can delete a time-series chart in the Ad hoc Analysis instance when two or more charts are present on the card. About This Task
+If you delete a chart, all tags, reference curves and tag expressions unique to the deleted chart are removed from the plotted tags list. If all charts are deleted from a card, you will be able to select a chart type.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.
+Select .You are prompted to confirm if you want to delete the charts.
+Select DeleteThe chart is removed in the card and all its unique tags are removed from Plotted Tags on the Tag Tree Browser.Resize an Analysis ChartAbout This Task
+You can increase the height of an Analysis chart to improve the vertical resolution and view a clearer picture.You can also save the chart size settings to the template. The changes are applicable for all the charts in the template. Note: This feature is applicable to Chart views in One-Up, Two-Up, and Preview layouts only.
+ProcedureIn the module navigation menu, go to
+Analysis.Access the analysis chart, which you want to resize.On the card that includes the selected chart, select  to increase the chart size.The chart height increases to fit in the available space. The maximum value that the chart height can be increased to is twice the actual chart height. Select , and then select Save as New Template or Update Template.For more information on saving templates, see Save an Analysis Template.The chart settings with the changes to the chart size are saved to the template.Change the Tag Color or StyleAbout This TaskThe Tag Style list box allows you to select the color, symbol and connector line type for tags on a chart. It provides the user with the information on a single chart while being able to differentiate between the tags on the charts. You can only select a single color. ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.In a view with at least one chart with plotted tags, select the drop-down arrow from the Plotted Tags for the Tag Style options to appear for all the charts on the view.From the Tag Color section, select the color you want to use.From the Line Style section, select the check box next to the line you want to use.From the Point Shape section, select the check box next to the shape you want to use.Select Submit. If you do not want to change the current settings, you can select Cancel to return to the previous screen without any changes.Display Tag InformationYou can view information about plotted and unplotted tags in various ways.About This Task
+You can view a template and where the tags are plotted on the charts. You can hover over the plotted tags to view additional information about tags, tag name, and asset name that appears in the tree.
+You can view information about an unplotted tag in the Tag Tree Browser, and you can view information about a plotted tag in the Plotted Tags section on the Tag Tree Browser, and on an Alert Analysis chart or an analysis chart. There are several ways to view information about a tag:
+You can view information about an unplotted tag in the Tag Tree Browser, and you can view information about a plotted tag on an Alert Analysis chart or an Analysis chart. 
+There are several ways to view information about a tag:
+
+Table 1. Tag InformationDoing thisAllows you to view thisHover over the data on a chart.
+For all tags listed in the chart Register: 
+The date and time the data was plotted.Line color for each tag.Tag name.Data value for each tag.Unit of measure.Both source and standard unit of measure.
+Note: Changing the time zone affects how the timestamp is displayed.
+Hover over tags in the chart Register.Each tag plotted in the chart has an entry in the Tag Register. When you hover over the name of a tag in the register, the following details appear:Name of the tagName of the asset associated with the tagHover over tags in the Plotted Tags section of the Tag Tree Browser.
+For a selected sensor generated tag on the Tag Tree Browser:Tag name.Tag description.Unit of measure.Alias, if any.Correlated tags, if any.
+Hover over an unplotted sensor generated tag in the Tag Tree Browser.
+For a selected sensor generated tag on the Tag Tree Browser:Tag name.Tag description.Unit of measure.Alias, if any.Correlated tags, if any.
+Hover over an unplotted asset attribute in the Tag Tree Browser.For a selected asset attribute on the Tag Tree Browser:Attribute name.Reference type.Contains - comma delimited attributes.Hover over an unplotted tag expression in the Tag Tree Browser.For a selected tag expression on the Tag Tree Browser:Tag name.Tag Description.Unit of measure.Formula.Use the Chart Option to view a table of plotted tag information on a chart.
+For all tags listed in the chart Register:
+Tag name.Correlated tags.Unit of measure.Tag description.Asset link to the Asset Faceplate.
+
+Note: If any of the fields do not have data, it is not accessed in the tooltip.
+
+ProcedureTo access an Alert Analysis chart's tag information table for all plotted tags in the chart Register:In the module navigation menu, go to
+Analysis.Select an Alert Inbox filter, and then select an alert.Access an alert analysis chart.In an existing chart, select , and then select Show Tag Information.A table below the chart tag information appears for all plotted tags listed in the chart Register. If there are tag expressions or reference curves plotted, you can view that information here. Select Hide Tag Information to hide the table from view. To access an Analysis chart's tag information table for all plotted tags in the chart Register:In the module navigation menu, go to
+Analysis.Access an existing Analysis chart.In an existing chart, select , and then select Show Tag Information.A table below the chart tag information appears for all plotted tags listed in the chart Register. If there are tag expressions or reference curves plotted, you can view that information here. Select Hide Tag Information to hide the table from view. To access data information, select , and then hover over the data on a chart.A tooltip appears for all plotted tags in the chart Register.To access unplotted tag information, hover over a tag in the Tag Tree Browser.A tooltip appears for the selected tag.Mute Tags on a ChartAbout This Task
+You can mute multiple tags at a time on a chart to access the data for selected set of tags. The data for the muted tags does not appear on the chart. The changes are applicable only for the selected chart and not the other charts in the template. Note:
+This feature is applicable only to the following views: Ad hoc and saved template views for Time Series Analysis. Ad hoc view for CSV Analysis.This feature is not applicable to SmarSignal cards.
+
+ProcedureIn the module navigation menu, go to
+Analysis.Access an existing Analysis chart and select .The  icon appears only in the Time Series Analysis and CSV Analysis views.The Plotted Tag Visibility pane appears, displaying the chart name and all the tags plotted on the chart as uniquely colored active circles.Note: Tags that are not configured for an asset or do not have data do not appear on the Plotted Tag Visibility pane.As needed, select the tags for which you want to view the data on the chart, and then select .
+Note:
+You can select multiple tags in the pane in the following ways: Select the plotted tag group.Use the Shift key or the Control key on the keyboard.The Show Plotted Tags icon () is enabled only when any of the tags in the Plotted Tag Visibility pane are selected.
+
+Data for the plotted tags that are selected appears on the chart. The tags that are not selected are muted and the colored line in the chart register and the colored circle in the Plotted Tag Visibilty pane become inactive.Note:
+You must unmute the tags for them to appear on the chart again.Select  to reset the visibility of the tags. All the tags are unmuted.
+For more information on muting tags using the Tag Browser, see Mute the Chart Data.Select , and then select Save as New Template.For more information on saving templates, see Save an Analysis Template.The chart settings with the muted tag states are saved to the template.Access Data DeltaAbout This Task
+ You can view the time stamps and the difference in time between the two points selected on the Time Series charts. You can also view the delta between the values of the tags for the selected time stamps. 
+ProcedureIn the module navigation menu, go to
+Analysis.Access an analysis chart, a Time Series (line) or Time Series Scatter Plot, displaying plotted tags.Select Calculate Delta on the chart.Select two points and plot the pin markers.Select Toggle markers panel.The PINNED DATA pane appears displaying the time stamps for the two pins and the time difference between the pins. You can also view the values of all the tags on the chart for the selected time stamps, as well as the delta between the values of the tags for the selected time stamps in both absolute and percentages.Note: You can drag the PINNED DATA pane to increase the width and enable you to view all the data in the table.Pan the Chart DataUse panning to display data earlier or later than the date range displayed on the chart.About This Task
+You can pan chart data for both a Time Series Analysis and an Event Data Analysis view.
+When you pan chart data, the timeline slider moves in the direction of your pan, displaying data from before or after the date range selected for the X-axis. The date range selected for the view does not change.Tip: You can zoom multiple times prior to panning.
+ProcedureTo pan an Alert Analysis chart:In the module navigation menu, go to
+Analysis.Select an Alert Inbox filter, and then select an alert.Access an alert analysis chart displaying plotted tags.Select  on a chart.The reset panel appears.Tap and drag your cursor across a chart segment in either direction, and then release.The X-axis moves in the direction you panned, displaying data from before or after the current X-axis and timeline slider date range. To pan an Analysis chart:In the module navigation menu, go to
+Analysis.Access an analysis chart displaying plotted tags.Select  on a chart.The reset panel appears.Tap and drag your cursor across a chart segment in either direction, and then release.The X-axis moves in the direction you panned, displaying data from before or after the current X-axis and timeline slider date range. To reset the pan to the date range selected, in an alert analysis chart or an analysis chart, select , and then select  to hide the reset panel.Reorder Axes on a ChartWhen you drag tags into a Parallel Axis chart, the order in which you plotted the tags matches the displayed order of the axes on the chart. About This Task
+You can change the order of the Y-axes after you have plotted at least three tags. 
+Note: Some tags may have no data for the time period selected in the chart.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select:A previously-saved, Parallel-Axis chart.In Ad Hoc Analysis, select Parallel Axis in the Chart Type drop-down list box, and then plot at least three tags.Select , hover over a vertical axis on the chart, and then select and drag it to a new location on the chart.All axes move over to accommodate the relocated axis. Emphasize Data on Vertical Axes for a ChartTo manage tags, you can emphasize data on multiple chart axes, and select multiple areas on one axis to emphasize.About This Task
+You can de-emphasize extraneous data for Y-axes, displaying the irrelevant data as faded lines. You also can resize the selector boxes added to an axis.
+ProcedureTo select a data portion to emphasize:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a view containing a chart:
+A previously-saved, Parallel Axis chart.In Ad Hoc Analysis, select Parallel-Axis in the Chart Type drop-down list box, and then plot at least three tags.
+Select , and then drag your cursor over a selected portion of a vertical axis.A selector box appears. Data within the scope of the selector box is emphasized. Data not in scope is de-emphasized.To enlarge or reduce the area, select one end of the selector box and drag to make the area larger or smaller.Change Chart DirectionPolar charts are directional (clockwise or counter-clockwise).ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.
+Note:
+When selecting an item returned from the Context Browser: If the result is an asset, the context is automatically set to the selected asset, and a new analysis appears.  If the result is an enterprise, site, or segment, the context is automatically set to your selection. 
+
+In the View Selector, select a view containing a Polar chart.Select  on the Polar chart.In Chart Settings, select the Chart Direction drop-down list box.Select Clockwise or Counter-Clockwise, and then select Apply.The Polar chart updates to the new direction.Access Data Points on ChartsAbout This TaskYou are able to select a section of data points in a chart and have that same time reflected across all the charts in a template. This is available for Time Series charts , X-Y charts, and Polar charts. ProcedureTo access data points on an analysis chart:In the module navigation menu, go to
+Analysis.Access an analysis chart displaying plotted tags.Select Lasso selection, and then highlight the data points you want to access.When you select a period of time on a chart by marking a block on the chart, all the other charts in the card highlight the same period of time represented by the points selected on the chart. You can only highlight one chart at a time.To clear all access data points on an analysis chart:In the module navigation menu, go to
+Analysis.Access an analysis chart displaying plotted tags.Select Clear lasso data on a chart, and then highlight the data points you want to access.All the data points are removed from all the charts within the card. Filter Data Points on ChartsAbout This Task
+You can filter selected data points in a chart and have the same time reflected across all charts in a template. You can filter data such that the selected data is visible in all the charts or excluded in the charts. This helps you to focus on the relevant data based on the selected data points and filter options in lasso selection. You can also use the lasso selection on a chart to filter out data in combination with other filters such as condition and  value based filters, zoom options, and mute tags options. This feature is available for Time Series charts, Parallel Axis, X-Y charts, Spiderweb, and Bar charts. You can enable this functionalty only in the Time Series Analysis and the CSV Analysis views. 
+ProcedureIn the module navigation menu, go to
+Analysis.Access the analysis chart for which you want to filter data points.Select .By default, the  selection is enabled. Using this option, you can select data points on both the x-axis and the y-axis.Select the data points you want to filter.Alternatively, select  or  to enable the selection along the required axis only.Select  or  to include or exclude the selected data points in the visualization.
+Note:
+The filter options become active only when you select and apply either xy-axes, x-axis, or y-axis options in the chart.The highlights on the data points based on earlier selections in the chart are removed when you select filter-in or filter-out.
+
+Redraw data points in the chart and axis labels.Based on the axis and filter options, the selected values appear or are excluded in the visualization. A message appears on the chart indicating that the lasso filter is applied to the chart. If you navigate to analysis from alerts or cases and apply lasso filter selection to the data in the chart, you can save the selection state as an evidence to an alert or a case. You can access the chart evidence from the alert or case, modify the lasso filters and update the evidence, and save it again to the alert or case by overwriting the existing evidence or save it as a new evidence.You can filter data for lasso selections on a chart for selected time ranges, such that the selected data is visible in all the charts or excluded from the charts. The same time range is reflected on all the charts in a template.You can zoom the chart if the selected time range is at the beginning or end of the chart time range.The Lasso Filter Applied indicator appears for all charts in the card, that are synchronized when the lasso filter is applied.Upload a CSV fileYou can upload a CSV file with data using the New CSV Template that is available in the Analysis view templates drop-down list. About This Task
+Using the CSV upload feature you can view data of assets that are not available in the APM server and visualize the data using the tags that are created for the uploaded data. 
+The CSV file must contain the data in a specific format following certain conditions, without which the upload fails. Based on the data that is uploaded, the tags are created in the Analysis Tag Browser. The tags are used to plot and export charts to visualize the data. The following is a sample of the CSV file.
+The CSV file must include the following data:Tag NameNote:
+The tag name can include special characters.Each AssetName can be combined with the TagName, for example G12.DWATT.
+Date and Time Data for each tag
+The CSV file must meet the following conditions:The columns between the tag keywords and tag name must not be empty. All other columns can be empty.Some rows can be empty.The Tags and description keywords columns must have the timestamps for the tag data in the column that follows the tags.The Tag column names must be prefaced with the keyword Tag/Tags.The UoM column names must be prefaced with the keyword Unit/Units.The tag description column name must be prefaced with the keyword Description.The keyword prefixed rows must be prior to the timestamp data rows.The file format must be .csv or .xlsx. Row with a NaN timestamp is not considered.For an empty or a non-numeric data row, the column data for the tag is considered as NaN.
+
+Note: When you upload an XLXS file, the timestamp that appears does not show the seconds and milli-seconds. Hence, if the timestamp values are required, you must format the values in the excel column and save it before you  upload the file. mm/dd/yyyy hh:mm:ss AM/PM is a sample format you can use to format the timestamp values.
+
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select the New CSV Template view.A File Upload window appears prompting you to select a data extract file.Select Choose File, browse through the files on the computer, select the .csv or .xlxs file you want to upload, and then select Apply.
+ After the file is uploaded successfully, the CSV Visualization Asset appears in the Tag Browser.
+Expand the CSV Visualization Asset to view the tags that are created based on the data available in the CSV or XLXS file.
+Note:
+You can plot the charts using the tags to analyse the data for the virtual assets. For information on plotting charts, refer Add Additional Charts to a Card. You can only view the chart and cannot save it.You can export the chart as a .png or .pdf file. For more information on exporting charts, refer Export a Chart.
+
+
+
+
+
+
+On this pageAbout Analysis ChartsCreate a Time Series Analysis ChartCreate an Event Data Analysis ChartModify a Chart NameAdd a Cross-Hair to a ChartDelete a ChartResize an Analysis ChartChange the Tag Color or StyleDisplay Tag InformationMute Tags on a ChartAccess Data DeltaPan the Chart DataReorder Axes on a ChartEmphasize Data on Vertical Axes for a ChartChange Chart DirectionAccess Data Points on ChartsFilter Data Points on ChartsUpload a CSV file
+
+
+
+
+
+
+
+
+

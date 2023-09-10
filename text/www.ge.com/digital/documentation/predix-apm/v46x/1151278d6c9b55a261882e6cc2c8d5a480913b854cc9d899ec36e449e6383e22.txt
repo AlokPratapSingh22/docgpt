@@ -1,0 +1,100 @@
+
+
+
+Classifications Custom Attributes | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+Groups
+ClassificationsClassifications Overview
+Classifications AttributesClassifications Reserved Attributes
+Classifications Custom Attributes
+Classifications Inherited Attributes
+
+
+
+
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Classifications
+Classifications Attributes
+Classifications Custom Attributes
+
+
+
+
+
+
+
+Classifications Custom AttributesAdd a Custom Attribute for a ClassificationYou can add a custom attribute to a selected classification.About This Task
+Creating a new custom attribute allows you to define properties for the selected classification. Some attributes may include a list of values created via ingestion. All custom attributes are modifiable on the classification view.
+When a child-classification is created, all the custom attributes available in the root-classification are copied to the inherited attributes in the child-classification.
+ProcedureIn the module navigation menu, go to
+Assets >  Classifications.Find and select classification in the Classification results table.In the Custom Attributes section on the classification view, select .The Create New Attribute window appears.Each custom attribute can be uniquely configured. Use the following options to configure the custom attribute:
+For this optionDo thisNameEnter the attribute name. This field is case sensitive and cannot be empty or NULL. The name cannot exceed 100 characters and can contain alphanumeric, underscore, dash, ampersand, or hash characters.DatatypeSelect a data type from the drop-down list. The following values are available:CharacterYou can only enter a single alphanumeric character in the Value box.ShortYou can only enter up to five numeric characters in the Value box.IntegerYou can only enter numeric characters in the Value box.FloatYou can only enter up to 38 numeric characters and one decimal symbol in the Value box.DoubleYou can only enter numerical characters and one decimal symbol in the Value box.BooleanYou can select between True and False from the Value drop-down list box.TimestampThe Time Zone drop-down list box appears under Value where you can select a time zone. The displayed time stamp is converted based on your choices in the user preferences.StringYou can add up to 100 alphanumeric or special characters to the Value box.ValueEnter the attribute value. Value formats may change based on your Datatype selection. Hints may appear to help with your entries.
+Select Create to save the new attribute. The new attribute appears in the Custom Attributes section for the selected asset.Modify Custom Attribute for a ClassificationYou can modify a custom attribute value for a selected classification. However, you cannot modify the datatype of a custom attribute. In case, if you have created an attribute with an incorrect datatype, and you want to change it, the only option is to delete the attribute and recreate it.About This TaskBased on the following scenarios, you can delete the attribute and create a new attribute with the correct datatype:If you have created a classification and added an attribute to the classification. You have also created instances based on the classification. By default, all the classification attributes are inherited to all the instances. Now, if you realized that the classification attribute datatype is incorrect and you want to modify the datatype of the attribute. In this case, you must first delete all the instances, and then delete the attribute from the classification and recreate a new attribute with the desired datatype.If you have created a classification and added an attribute to the classification. You have also created instances based on the classification. The classification attributes are inherited to all the instance. Now, you have added a new attribute to the classification and did not create any new instance after that. At this stage, if you realized that the attribute datatype is incorrect, you can delete the attribute directly from the classification and recreate it with the desired datatype. In this case, you need not delete the instances, because the new attribute was defined after the instances were created.ProcedureTo modify a value in custom attributes for a classification:In the module navigation menu, go to
+Assets >  Classifications.Find and select a classification in the Classification results table.In the Custom Attributes section on the classification view, hover over and select an attribute value.Enter a new value in the Value box, then press ENTER or select outside the box.The new value is confirmed with a message.Alternatively, you can hover over a reserved attribute value, select , and then enter a value in the Attribute Value Definition box.Note: You cannot change the datatype of the attribute.Select Save.The entered value is saved and appears in the Value column for the selected reserved attribute.Delete a Custom Attribute from a ClassificationYou can delete a custom attribute for a selected classification. However, if an attribute is defined in the root-classification, and has been inherited to the child-classification, you cannot delete the attribute from the child-classification. When you delete a classification attribute which has instances, the attribute is soft deleted, which means the attribute will not be seen either in the classification nor on the instances, but still exists in the database. In that case, you will not be able to create another attribute with the same name and different datatype. You must either create an attribute with a different name or recreate an attribute with the same name and datatype as that of the deleted classification attribute.About This Task
+Use this procedure to delete a custom attribute from a classification. 
+ProcedureIn the module navigation menu, go to
+Assets >  Classifications.Find and select a classification on the Classifications results table.In the Custom Attributes section on the classification view, hover over and select  for an attribute entry.A confirmation window appears.Select Delete to delete the attribute, configuration, and history information permanently from the system.The attribute is removed from the Custom Attributes results table. 
+Related ReferenceAttribute Data Types and Values
+
+
+
+
+On this pageAdd a Custom Attribute for a ClassificationModify Custom Attribute for a ClassificationDelete a Custom Attribute from a Classification
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,170 @@
+
+
+
+Datasheets | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Family ManagementRules
+Overview
+Entity and Relationship Families
+Fields
+DatasheetsDatasheets
+Manage Custom Form Datasheet
+Custom Layout
+Tabular Layout
+
+
+Offline Forms
+Family Reports
+Relationship Definition
+State Configuration
+Associated Pages
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Family Management
+Datasheets
+Datasheets
+
+
+
+
+
+
+
+DatasheetsAbout Types of Datasheets
+GE Digital APM offers the following types of datasheets:Master/Detail datasheet: A form that lets you display a record and all the records that are linked to it through a given relationship definition. The following image shows a master/detail datasheet that is configured by default for the Calibration Template family.
+
+
+Custom datasheet: Datasheets that can be customized to display fields in a more advanced form. GE Digital APM provides two types of layouts for custom datasheets, the tabular layout and the custom layout.Tabular layout organizes the datasheet content in a standard arrangement of up to four columns (first column is always row labels), rows, and cells of equal size.Custom layout allows for less uniform datasheet configurations with more custom options for item resizing and grouping items.
+About Multiple Datasheets
+GE Digital APM lets you define more than one datasheet for a given family. For example, members of the Pump family have many pieces of data that can be recorded for them (e.g., maintenance, engineering, reliability, cost, inspection, design, drawing, project, etc.). A datasheet containing all of these data fields would be very large and difficult to navigate.To make data entry easier, an administrative user can create subsets of the data based on specific purposes (e.g., engineering data in one datasheet, inspection data in another, cost data in a third, and so forth). When you access a record, you can select the datasheet that represents your needs.When more than one datasheet exists for a family, you will be able to select the appropriate datasheet when you create and view a record. The name of the currently selected datasheet appears at the top of any record you are viewing.About Field RulesThe field properties and rules that you define for family fields determine how fields will behave when users view them in datasheets.If you have defined a rule for a field that will affect the way it appears or behaves in a datasheet, you may want to test the field rule. To do so, follow this workflow:Configure the family field properties as needed. Add the field to the datasheet. Compile the family. Open a new datasheet for the family. If you need to make additional changes to a field, repeat this workflow, but omit step 2. After you add the field to the datasheet, any changes you make to the field rule will be applied automatically to the datasheet.About Master/Detail DatasheetsA master/detail datasheet is a custom form that lets you display a record and all the records that are linked to it through a given relationship definition. Master/detail datasheets can be configured for any entity family using any relationship definition that relates it to another entity family.For example, in the baseline GE Digital APM database, the Calibration Template family is related to the Calibration Template Detail family through the Has Template Details relationship. The GE Digital APM product includes a master/detail datasheet that allows you to open a Calibration Template record while simultaneously viewing, creating, and modifying linked Calibration Template Detail records.Privileges for Master/Detail Datasheets
+Like standard datasheets, access to records displayed using master/detail datasheets is controlled by family-level security privileges. But because a master/detail datasheet displays records belonging to two entity families that are related to one another through a relationship family, the security considerations for master-detail datasheets are somewhat more complex. Specifically:
+To access records in a master/detail datasheet, at least View privileges are required on the master family. Even if users have privileges on the detail family, without privileges on the master family, they will not be able to access records that are displayed in master/detail datasheets.To view existing detail records, users must have View privileges on the detail family and the relationship family that relates the master family to the detail family.To create new detail records in a master/detail datasheet, users must have View, Insert, and Update privileges on the detail family.
+In addition to family-level privileges, the ability to manage records in master/detail datasheets is controlled by datasheet-level privileges. You can define datasheet-level privileges on the Create New Master Form window, which appears when you create a master/detail datasheet.
+
+
+
+Five datasheet-level permissions options are available and control users' ability to manage detail records in a master/detail datasheet:
+Allow for Deletion: Determines whether users will be allowed to delete detail records.
+When this check box is selected, users with Delete privileges on the detail family will be allowed to delete detail records.
+When this check box is cleared, users with Delete privileges on the detail family will not be allowed to delete detail records.
+Regardless of whether this check box is selected or cleared, users without Delete privileges on the detail family will not be allowed to delete detail records.
+
+Allow for Insertion: Determines whether users will be allowed to create detail records.When this check box is selected, users with Insert privileges on the detail family will be allowed to create detail records.When this check box is cleared, users with Insert privileges on the detail family will not be allowed to create detail records.Regardless of whether this check box is selected or cleared, users without Insert privileges on the detail family will not be allowed to create detail records.
+Allow for Editing: Determines whether users will be allowed to modify detail records.When this check box is selected, users with Update privileges on the detail family will be allowed to modify detail records.When this check box is cleared, users with Update privileges on the detail family will not be allowed to modify detail records.Regardless of whether this check box is selected or cleared, users without Update privileges on the detail family will not be allowed to modify detail records.
+Allow for Linking: Determines whether users will be allowed to link new detail records to the master record.When this check box is selected, users will be allowed to link detail records to the master record if they have Insert privileges on the relationship family that relates the detail family to the master family.When this check box is cleared, users will not be allowed to link detail records to the master record even if they have Insert privileges on the relationship family that relates the detail family to the master family.Regardless of whether this check box is selected or cleared, users without Insert privileges on the relationship family that relates the detail family to the master family will not be allowed to link detail records to the master record.
+Allow for Unlinking: Determines whether users will be allowed to unlink existing detail records from the master record.When this check box is selected, users will be allowed to unlink detail records from the master record if they have Delete privileges on the relationship family that relates the detail family to the master family.When this check box is cleared, users will not be allowed to unlink detail records from the master record even if they have Delete privileges on the relationship family that relates the detail family to the master family.Regardless of whether this check box is selected or cleared, users without Delete privileges on the relationship family that relates the detail family to the master family will not be allowed to unlink detail records from the master record.
+
+Custom-Layout DatasheetsA custom-layout datasheet is a form-based datasheet whose layout can be configured via GE Digital APM. Unlike standard datasheets, custom-layout datasheets provide more flexibility in the layout of fields. For example, they can contain grouped fields, fields that appear side-by-side, and so on. When you create a custom-layout datasheet, you will need to select a Security Group. Only members of that Security Group will be able to modify the layout of the datasheet via GE Digital APM.Note: All users with the appropriate family-level security privileges will be able to modify field values via the datasheet even if they cannot modify the layout of the datasheet itself.Note that beyond changing the ID, caption, description, default status, and default field order, which is based on the field sequence order, you cannot modify a custom-layout datasheet via the Configuration Manager. The layout of the datasheet must be configured via GE Digital APM.About the Text EditorThe text editor is available in various text fields throughout the GE Digital APM. You can use the text editor to enter text into a desired field and then use the Spell Check feature to locate and correct misspelled words within the text. The text editor is especially useful for entering large amounts of text, such as descriptions, into text fields.The text editor is not available in all fields. You will know that the text editor is available for a given field if  appears in the field. When you select the button, the text editor appears, as shown in the following image. The name of the field from which the text editor is accessed will appear in the title bar of the text editor window.
+
+Details
+ To use the text editor: In GE Digital APM, in a datasheet, select the field whose text you want to modify.The Text Editor window appears.Enter the desired text in the text box.Select Done.The text editor closes and the text that you entered appears in the field from which you accessed the text editor.
+About the Calendar FeatureThe Calendar feature appears throughout GE Digital APM and provides the ability to select a date and time. In most cases, the Calendar feature appears in date fields on datasheets. The Calendar feature is not available, however, in all fields that store date and time values. There are three possible configurations for the Calendar feature:Date and timeDate onlyTime onlyDate and Time
+When you select a date field that has the date and time feature enabled, the  button will appear. When you select the button, the calendar will appear, as shown in the following image:
+
+
+
+When you select , the time picker will appear. Depending on your settings, the time picker may or may not have seconds enabled, as shown in the following image:
+
+
+
+When you select , the calendar will appear again.
+Date Only
+When you select a date field that has only the date picker enabled, the  button will appear. When you select the button, the calendar will appear, as shown in the following image:
+
+
+
+Time Only
+When you select a date field that has only the time picker enabled, the  button will appear. When you select the button, the time picker will appear. Depending on your settings, the time picker may or may not have seconds enabled, as shown in the following image:
+
+
+
+Access the Datasheet BuilderProcedureAccess the Family Management Page.In the left pane, in the Entity section, select the entity whose datasheet you want to configure.The workspace for the selected entity appears.In the workspace, select the Datasheets tabs.Select Manage Datasheets.The Datasheet Builder page appears.Create a DatasheetAbout This TaskWhen creating a datasheet in Configuration Manager, you can create the following types of datasheets:Master/Detail DatasheetCustom DatasheetProcedureCreate a Master/Detail Datasheet:
+Access the Datasheet Builder for the family for which you want to create a datasheet.Select , and then select Master/Detail datasheet.The Create New Datasheet window appears.Enter a caption, default ID, and a description for the new datasheet, and then select OK.
+Note: If you want your datasheet to be the default datasheet for this family, select the Default check box.
+The Datasheet Builder page appears.As needed, enter values in the available fields.Select Save.The Master/Detail datasheet is created.Note: The newly created datasheet will be available for you in Family Management, whereas to access the family from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the created datasheet will be available only when they log in to the application again.Create a Custom Datasheet:
+Access the Datasheet Builder for the family for which you want to create a datasheet.Select , and then select Custom datasheet.The Create New Datasheet window appears.Enter a caption, default ID, and description for the new datasheet, and then select OK.
+Note: If you want your datasheet to be the default datasheet for this family, then select the Default check box.
+In the datasheet, select .
+The Datasheet Builder workspace appears.
+Select Custom Layout or Tabular Layout depending on your preference.As needed, enter values in the available fields.Select Save.The Custom datasheet is created.Note: The newly created datasheet will be available for you in Family Management, whereas to access the family from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the created datasheet will be available only when they log in to the application again.What To Do Next
+
+Add fields to a datasheet.
+
+Add a section to a datasheet.
+Modify a DatasheetProcedure
+Access the Datasheet Builder page  for the family containing the datasheet that you want to modify.Next to the Datasheet Caption label, select , and then select the datasheet that you want to modify.The selected datasheet appears.Select .The Datasheet Information window appears.As needed, modify the fields in the Datasheet Information window, and then select Update.The datasheet is modified.Note: The modified details of the datasheet will be available for you in Family Management, whereas to access the datasheet from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the modified details of the datasheet will be available only when they log in to the application again.Designate a Datasheet as the Default DatasheetThe default datasheet is the datasheet that is used by default when a user opens a record belonging to a given family in the Record Manager. A user can select a datasheet other than the default datasheet after the record has been opened. In addition, via the URL, you can specify that a datasheet other than the default datasheet be used. Because the default datasheet will be used unless a different datasheet is selected, the datasheet that you designate as the default datasheet the one that will be most meaningful to most users.You can designate a datasheet as the default datasheet when you create the datasheet. After you set a datasheet as the default, you can change which datasheet for a given family, is designated as the default.Before You Begin
+If another datasheet currently has the default designation, you must clear the Default check box for that datasheet before you can designate another datasheet as default.
+ProcedureModify the datasheet that you want to designate as the default datasheet, and ensure that the Default check box is selected before you select Update.
+
+ResultsThe datasheet is designated as the default datasheet.Delete a DatasheetProcedure
+Access the Datasheet Builder page for the family containing the datasheet that you want to delete.Next to the Datasheet Caption label, select , and then select the datasheet that you want to delete.The selected datasheet appears.Select .The Alert window appears.Select Yes.The datasheet is deleted.Note: The deleted datasheet will no longer be available for you in Family Management, whereas to ensure that the datasheet is not accessible from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the deleted datasheet will not be available only when they log in to the application again.Add a Section to a DatasheetProcedure
+Access the Datasheet Builder page.Next to the Datasheet Caption label, select , and then select the datasheet to which you want to add a section.The selected datasheet appears.Select .A new section appears in the datasheet, displaying the caption new section.
+
+Select the caption new section to modify the name of the new section.The workspace for the new section appears.In the workspace, select a custom or tabular layout.Select Save.The new section is saved on the datasheet.Note: The newly created section will be available for you in Family Management, whereas to access the section from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the created section will be available only when they log in to the application again.Rename a Datasheet Section or a FieldProcedure
+Access the Datasheet Builder page.Next to the Datasheet Caption label, select , and then select the datasheet whose section or field you want to rename.The selected datasheet appears.Select the section name or field name that you want to modify, and then enter the new name.Select Save.The section or field is renamed.Note: The section or field with a new name will be available for you in Family Management, whereas to access the section or field from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the section or field will be available only when they log in to the application again.Import and Export DatasheetsAbout This Task
+After you have configured a custom-layout datasheet, you can export the configuration via the Configuration Manager so that it can be imported into another database that contains the same family. If you do so, the user who imports the datasheet configuration will not need to save it after the import procedure is completed. If you export the datasheet configuration using the following instructions, however, the user who imports it will need to save the configuration as part of the import procedure.
+After a datasheet configuration has been exported, you can import the configuration into another database, assuming that the following conditions have been met:The target database contains the same family for which the datasheet was configured in the source database.A custom-layout datasheet has been defined for this family in the target database.The Security User performing the import is a member of the Security Group that is associated with the custom-layout datasheet in the target database.
+Delete a Datasheet SectionAbout This Task
+Note: If there is only one section in the datasheet, you cannot delete this section.
+Procedure
+Access the Datasheet Builder page.Next to the Datasheet Caption label, select , select the datasheet that you want to modify.The selected datasheet appears.In the datasheet section that you want to delete, select .
+
+
+
+The section is deleted.
+Select Save.
+Note: The deleted section will no longer be available for you in Family Management, whereas to ensure that the section is not accessible from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the deleted section will not be available only when they log in to the application again.
+Reset the Current DatasheetProcedure
+In the Datasheet Builder page, for the datasheet that you want to reset, select .The datasheet, including all fields and sections, is cleared of its content. However, the name that you originally gave the datasheet is retained.
+
+
+
+
+On this pageAbout Types of DatasheetsAbout Multiple DatasheetsAbout Field RulesAbout Master/Detail DatasheetsPrivileges for Master/Detail DatasheetsCustom-Layout DatasheetsAbout the Text EditorAbout the Calendar FeatureAccess the Datasheet BuilderCreate a DatasheetModify a DatasheetDesignate a Datasheet as the Default DatasheetDelete a DatasheetAdd a Section to a DatasheetRename a Datasheet Section or a FieldImport and Export DatasheetsDelete a Datasheet SectionReset the Current Datasheet
+
+
+
+
+
+
+
+
+

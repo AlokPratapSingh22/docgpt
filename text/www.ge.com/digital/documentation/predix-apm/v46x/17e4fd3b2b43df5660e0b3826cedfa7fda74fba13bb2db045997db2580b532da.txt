@@ -1,0 +1,612 @@
+
+
+
+Data Loader | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Data Loader
+
+
+
+
+
+
+
+Data LoaderAbout the Root Cause Analysis (RCA) Data LoaderThe Root Cause Analysis (RCA) Data Loader allows both primary and third-party content to be delivered to GE Digital APM through either the RCA Data Model. The imported data can then be used to maintain relationships between the RCA data and the Failure Modes and Hypotheses. Users can deploy the data loader to import:Legacy analysis data for performance comparisons.Third-party template content.The Root Cause Analysis (RCA) Data Loader transfers data from a fixed-format Excel workbook into either the RCA Data Model or the RCA Logic Tree. The imported data can be:An RCA Analysis.An RCA Event.A Failure Mode.A Logic Gate.An RCA Hypothesis.An RCA Diagram Relationship.Note:  The Root Cause Analysis (RCA) Data Loader will not be backwards compatible to earlier versions of GE Digital APM.About the Root Cause Analysis (RCA) Data Loader RequirementsTo use the Root Cause Analysis (RCA) Data Loader, your organization must have completed the deployment of the Root Cause Analysis module.Security Settings
+The Security User performing the data load operation must be associated with either the MI Data Loader User or MI Data Loader Admin Security Role, and must also be associated with the MI PROACT Administrator Security Group or a Security Role that is associated with this Security Group.
+About the Root Cause Analysis (RCA) Data Loader Data ModelsRCA Data Model
+
+
+
+RCA Logic Tree Data Model
+
+
+
+About the Root Cause Analysis (RCA) Data Loader General Loading StrategyBest Practices
+When importing data using the Root Cause Analysis (RCA) Data Loader, you must use the following best practices:
+ID fields (row 2 of each worksheet) must not include special characters or spaces.Columns in the worksheets should be formatted as either text or dates.The first two rows of each worksheet should not be edited.Only import a maximum of 500 analyses in each data load.
+Limitations
+This section documents a list of the limitations for the Root Cause Analysis (RCA) Data Loader:
+The user must use the Root Cause Analysis (RCA) Data Loader workbook (Root Cause Analysis (RCA).xlsx). Any modifications made by the user to the values in column headings in any of the worksheets will not be imported.Note:  Any column values in a customized format will not be imported by the Root Cause Analysis (RCA) Data Loader.If the user imports the same data multiple times, the most recently imported data is included in the database. If a record currently resides in the database and is then reimported, the newly imported file will replace the existing file in the database. The Root Cause Analysis (RCA) Data Loader does not append the existing record.
+Load Sequence
+Create an RCA Analysis.Create an RCA Event.Link the RCA Event to the RCA Analysis through the RCA Analysis Relationship.Create and link one or more Failure Modes to the RCA Event through the RCA Analysis Relationship.Create and link one or more Logic Gates to a specific Failure Mode through the Has Analysis Relationship, where the Failure Mode is the predecessor of the Logic Gate.Create and link one or more Hypotheses to a specific Logic Gate, through the Has Analysis Relationship, where the Hypothesis is the successor of the Logic Gate.
+About the RCA Template Data Loader Workbook Layout and Use
+In order to import data using the Root Cause Analysis (RCA) Data Loader, GE Digital provides an Excel workbook (Root Cause Analysis (RCA).xlsx) that supports baseline Root Cause Analysis in GE Digital APM. This template must be used to perform the data load. Using custom changes in code and in design, you can modify the Excel template to include custom fields used by your organization.
+The following table lists the worksheets that are included in the Root Cause Analysis (RCA).xlsx workbook:WorksheetDescriptionRCA_Analysis_TemplateThis worksheet is used to define Analysis records.RCA_EventThis worksheet is used to define Event records.RCA_Failure_ModeThis worksheet is used to specify Failure Mode details.RCA_Logic_GateThis worksheet is used to specify Logic Gate details.RCA_HypothesisThis worksheet is used to specify Hypothesis details.RCA_Diagram_RelationshipThis worksheet is used to specify Diagram Relationship details.
+Example: RCA Diagram Relationship
+The following Logic Tree diagram depicts an RCA Diagram Relationship for a Pump Failure. The Logic Tree displays two distinct parent nodes and their subsequent child nodes:
+
+
+
+Using the Logic Tree diagram, you can parse the parent/child relationships into the RCA_Diagram_Relationship worksheet provided by the Root Cause Analysis (RCA) Data Loader workbook. Once the workbook is complete, the Root Cause Analysis (RCA) Data Loader can be employed.
+RCA Template KeyParent Node KeyChild Node KeyParent Node TypeChild Node Type
+RCA_TEMPLATE_KEY
+
+PARENT_NODE_KEY
+
+CHILD_NODE_KEY
+
+PARENT_NODE_TYPE
+
+CHILD_NODE_TYPE
+
+1234
+
+None
+
+101
+
+RCA_Analysis_Template
+
+RCA_Event
+
+1234
+
+101
+
+201
+
+RCA_Event
+
+RCA_Failure_Mode
+
+1234
+
+101
+
+202
+
+RCA_Event
+
+RCA_Failure_Mode
+
+1234
+
+201
+
+301
+
+RCA_Failure_Mode
+
+RCA_Logic_Gate
+
+1234
+
+202
+
+302
+
+RCA_Failure_Mode
+
+RCA_Logic_Gate
+
+1234
+
+301
+
+401
+
+RCA_Logic_Gate
+
+RCA_Hypothesis
+
+1234
+
+ 301
+
+402
+
+RCA_Logic_Gate
+
+RCA_Hypothesis
+
+1234
+
+302
+
+403
+
+RCA_Logic_Gate
+
+RCA_Hypothesis
+System Code Tables
+The following table lists the fields from the RCA System Codes table that must be configured:
+
+Field Name
+
+Field ID
+
+Analysis Type
+
+MI_AN_ANALY_TYPE_CHR
+
+Hypothesis Confidence Factors
+
+MI_RCA_HYPOTHESIS_CONFIDENCE_FACTORS
+
+Hypothesis State
+
+RCA_Hypothesis_State
+
+RCA_Analysis_Template Worksheet
+RCA Analysis records store basic information about a Root Cause Analysis created to track and analyze causes of Asset failures.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+ Analysis Description 
+
+MI_AN_SHORT_DESCR_CHR
+
+Character (255)
+
+None
+
+Analysis ID 
+
+MI_AN_ANALY_ID_CHR
+
+Character (255)
+
+This field is required and must be unique.
+
+Analysis Type 
+
+MI_AN_ANALY_TYPE_CHR
+
+Character (50)
+
+This field contains a list of the following values:
+ MechanicalOperationalQualitySafetyEnvironmental 
+You can select the value that defines the type of analysis you are performing.
+
+Comments 
+
+MI_RCA_ANALY_COMME_TX
+
+Text 
+
+None
+
+Cost Number 
+
+MI_RCA_ANALY_COST_NBR
+
+Numeric
+
+This field specifies the estimated cost of the failure event(s) you are analyzing. By default, the currency is set to $.
+
+End Date 
+
+MI_RCA_ANALY_END_DATE_DT
+
+Date
+
+You can select a date using the Calendar tool. The date specified in the End Date field must be greater than the date specified in the Start Date field.
+ 
+The value that you enter in this field must be formatted in the following way based on your local time zone: YYYY-MM-DD HH:mm:ss (e.g. 2015-01-31 17:30:00).
+
+Event Narration 
+
+MI_RCA_ANALY_EVENT_NARRA_TX
+
+Text
+
+The value of this field is information about the equipment failure.
+
+Frequency Number
+
+MI_RCA_ANALY_FREQU_NBR
+
+Numeric
+
+None
+
+RCA Template Key 
+
+RCA_TEMPLATE_KEY
+
+Numeric
+
+This field is required and must be unique.
+
+Start date 
+
+MI_RCA_ANALY_START_DATE_DT
+
+Date
+
+The value that you enter in this field must be formatted in the following way, dependent on your local time zone: YYYY-MM-DD HH:mm:ss (e.g., 2015-01-31 17:30:00).
+
+
+RCA_Event Worksheet
+RCA Event records store basic information about a failure event.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Event End Date 
+
+MI_EVENT_END_DT
+
+Date
+
+If the Root Cause Analysis was created from a Production Event, this field will be populated automatically with the value in the End Date field of that Production Event. Otherwise, you can define this value manually when you create the RCA Event. The date specified in the End Date field must be greater than the date specified in the Start Date field.
+
+Event Label 
+
+MI_RCA_EVENT_LABEL_CHR
+
+Character (255)
+
+If the RCA was created from a Production Event, this field will be populated automatically with the value in the Headline field of that Production Event. Otherwise, you can define this value manually when you create the RCA Event. 
+This field is required. 
+
+Event Long Description 
+
+MI_EVENT_LNG_DSC_TX
+
+Text
+
+If the RCA was created from a Production Event, this field will be populated automatically with the value in the Description field of that Production Event. Otherwise, you can define this value manually when you create the RCA Event. 
+
+Event Start Date 
+
+MI_EVENT_STRT_DT
+
+Date
+
+If the RCA was created from a Production Event, this field will be populated automatically with the value in the Start Date field of that Production Event. Otherwise, you can define this value manually when you create the RCA Event. 
+
+Event X Position Number 
+
+MI_RCA_EVENT_XPOSI_NBR
+
+Numeric
+
+The RCA Event Node is placed in the diagram at a predefined position, where the X Position Number is 350. A different value can be entered, but 350 is recommended.
+
+Event Y Position Number 
+
+MI_RCA_EVENT_YPOSI_NBR
+
+Numeric
+
+The RCA Event Node is placed in the diagram at a predefined position, where the Y Position Number is 30. A different value can be entered, but 30 is recommended.
+
+RCA Event Key 
+
+RCA_EVENT_KEY
+
+Numeric
+
+This field is required and must be unique.
+
+RCA Template Key 
+
+RCA_TEMPLATE_KEY
+
+Numeric
+
+This field is required and must match the template key provided in the RCA_Analysis_Template worksheet.
+
+
+RCA_Failure_Mode Worksheet
+RCA Failure Mode records are possible causes associated with failure events.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Failure Mode Description
+
+MI_RCA_FAILU_MODE_DESCR_TX
+
+Text
+
+The value of this field is a detailed description of the failure mode.
+
+Failure Mode Label 
+
+MI_RCA_FAILU_MODE_LABEL_CHR
+
+Character (255)
+
+The name of the failure mode that you want to appear on the Logic Tree. 
+
+RCA Failure Mode Key
+
+RCA_FAILU_MODE_KEY
+
+Numeric
+
+This field must contain a unique value that identifies a RCA Failure Mode.
+This field is required. 
+
+RCA Template Key 
+
+RCA_TEMPLATE_KEY
+
+Numeric
+
+This field is required and must match the template key provided in the RCA_Analysis_Template worksheet.
+
+
+RCA_Logic_Gate Worksheet
+RCA Logic Gate records define connections between logic nodes.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Logic Gate Type 
+
+MI_RCA_LOGIC_GATE_GATE_TYPE_CH
+
+Character (50)
+
+The value in this field must be either:
+ andor 
+This field is required. 
+
+Long Description 
+
+MI_RCA_LOGIC_GATE_LONG_DESCR_T
+
+Text
+The value of this field is a detailed description of the logic gate.
+RCA Logic Gate Key
+
+RCA_LOGICGATE_KEY
+
+Numeric
+
+This field is required and must be unique. 
+
+RCA Template Key 
+
+RCA_TEMPLATE_KEY
+
+Numeric
+
+This field is required and must match the template key provided in the RCA_Analysis_Template worksheet.
+
+Short Description 
+
+MI_RCA_LOGIC_GATE_SHORT_DESCR_CHR
+
+Character (255)
+
+None
+
+
+RCA_Hypothesis Worksheet
+RCA Hypothesis records store basic information about the root cause of a failure event.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Confidence Factor Number 
+
+MI_RCA_HYPOT_CONFI_FACTO_NBR
+
+Numeric
+
+You can choose from the following values: 
+ Not True (0) Somewhat true (1)PossiblyTrue (2) Likely (3)Highly Likely (4) True (5) 
+If you select a value in this field, the value that you select will appear in brackets to the right of the hypothesis name in the Logic Tree.
+
+Description 
+
+MI_RCA_HYPOT_DESCR_TX
+
+Text
+
+The value of this field is a detailed description of the hypothesis.
+
+Hypothesis State
+
+MI_RCA_HYPOT_STATE_CHR
+
+Character (255)
+
+You can choose from the following states:
+Hypothesis Hypothesis TrueHypothesis Not TrueCause Human Cause LatentCause Physical 
+This field is set to Hypothesis by default.
+
+Label 
+
+MI_RCA_HYPOT_LABEL_CHR
+
+Character (255)
+
+The value of this field is a description of the hypothesis as you want it to appear on the Logic Tree.
+
+RCA Hypothesis Key
+
+RCA_HYPOTHESIS_KEY
+
+Numeric
+
+This field is required and must be unique. 
+
+RCA Template Key 
+
+RCA_TEMPLATE_KEY
+
+Numeric
+
+This field is required and must match the template key provided in the RCA_Analysis_Template worksheet.
+
+
+RCA_Diagram_Relationship Worksheet
+RCA Diagram Relationship records display the parent-child relationship of the RCA families in Logic Tree diagrams.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+RCA Template Key 
+
+RCA_TEMPLATE_KEY
+
+Numeric
+
+This field is required and must match the template key provided in the RCA_Analysis_Template worksheet.
+
+Parent Node Key 
+
+PARENT_NODE_KEY
+
+Numeric
+
+The value of this field is the node key of the parent node. The parent node key is blank only when the parent-child relationship is created by an RCA Event. 
+
+Child Node Key 
+
+CHILD_NODE_KEY
+
+Numeric
+
+This field is required and must be unique. 
+
+Parent Node Type 
+
+PARENT_NODE_TYPE
+
+Character (50)
+
+This field is required. 
+
+Child Node Type 
+
+CHILD_NODE_TYPE
+
+Character (50)
+
+This field is required. 
+
+
+About the Root Cause Analysis (RCA) Data Loader Load VerificationAbout This TaskFollowing a successful data load, you can navigate to the RCA Overview page and view any of the imported workbooks, to view the details and logic tree associated with the workbook, and to import workbook content into an analysis.A successful import can also be defined as an event where partial data on a worksheet was loaded into GE Digital APM, and where the user was given appropriate messaging that enabled him or her to identify and correct issues resulting from the import.
+
+
+
+
+On this pageAbout the Root Cause Analysis (RCA) Data LoaderAbout the Root Cause Analysis (RCA) Data Loader RequirementsAbout the Root Cause Analysis (RCA) Data Loader Data ModelsAbout the Root Cause Analysis (RCA) Data Loader General Loading StrategyAbout the RCA Template Data Loader Workbook Layout and UseAbout the Root Cause Analysis (RCA) Data Loader Load Verification
+
+
+
+
+
+
+
+
+

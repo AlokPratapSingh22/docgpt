@@ -1,0 +1,102 @@
+
+
+
+Second Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+First Quarter of 2019
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Release Notes
+Second Quarter of 2021
+
+
+
+
+
+
+
+Second Quarter of 2021Release Date: June 4, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New FeaturesThe following enhancements and new features have been added.DescriptionTracking IDTo enhance usability, in the HEADER and TRAILER records of the CEA Event Report, value from the Primary Utility Code field is included instead of value from the Company Name field.US484647To enhance performance, in CEA events and reports, you can now include a Common Mode Outage in the Event datasheet, Performance Record, and Event Reports. To facilitate this enhancement, when creating a new Event, you can now select the type of Common Mode Outage for that Event. For more information on how to add the Common Mode Outage, refer to KBA 000037694.
+US484342US482251
+To enhance performance, in CEA Events, when the state of the event is moved to Unit Approved, for the CEA Event Types 11-1,11-2,14,14-1,14-2, the Cause Code System, Cause Code Component, Cause Code, Amplification Code, and Verbal Description fields in the Primary Event datasheet are no longer required fields. For more information on modifying the query, refer to KBA 000037693.US481224You can now see a warning message displayed for all types of Events when there is an Overlapping Event. To facilitate this enhancement, you can now select the Flag Overlapping Events option under Filter in the Events List of Unit Summary workspace. This records the overlapping events and you can find an indicator which lists the overlapping events linked to the Event.US478289
+Table 2. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, if the time zone associated with your user account was different than the time zone of the plant, and you created an event, calculations in the performance record did not consider events in the following scenarios:An event for which the start or end date was the last date of the year.An event for which the start or end date was the first date of the year.This issue has been resolved. Now, when you create an event, the event Start Date and End Date fields are automatically adjusted according to the time zone of the plant while creating a Performance record.For more information, refer to KBA 000037696.US481943Previously, when generating single or bulk Performance Record and Regulatory Reports, no error or warning messages were displayed. This issue has been resolved. Now, error or warning messages appear in the following scenarios:If the Performance Record is already in the approved state for a particular month and year, a warning appears when you regenerate a Performance Record.If the Performance Record or an Event does not exist for a particular month and year, an error message appears when you regenerate a Performance Report or an Event Report.If the Performance Record exists for a particular month and year and is not in the approved state, a warning message appears.
+DE157355DE157354DE156297
+Previously, when calculating the duration of events in performance calculation, Daylight Saving Time was not considered that resulted in incorrect values. This issue has been resolved.DE157289Previously, in the Performance Summary section of the Performance Record, the Synchronous Condensing Hours field was populated with calculations based on the hours of Non Curtailing Events. The Synchronous Condensing Hours and Service Hours were not calculated as expected. This issue has been resolved.The following changes have been made:Synchronous Condensing Hours field is now converted to an input field, so that you can enter the hours in this field.Non Curtailing Event Hours field is now added to the datasheet. If there are any Non Curtailing Events, the hours are shown in the Non Curtailing Event Hours field after calculations.Synchronous Condensing Hours is now included in the warning message along with Pumping Hours and Capacity Values, to indicate the changed values after manual entry.For more information, refer to KBA 000037695.DE157275
+
+
+
+
+
+On this pageRelease Date: June 4, 2021
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,102 @@
+
+
+
+Second Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesFirst Quarter of 2023
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Release Notes
+Second Quarter of 2020
+
+
+
+
+
+
+
+Second Quarter of 2020Release Date: May 8, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in some reliability modules, the charts in a report did not contain legends. This issue has been resolved.US384858Previously, as a Reliability User in Reliability Analytics, you could not reload data from the chart pages for Analyses based on a query or dataset. This issue has been resolved.DE130909Previously, in a Reliability Distribution Analysis or Reliability Growth Analysis, in the Analysis Period window, when you modified the values in the Start Date and End Date boxes, and then accessed the Analysis Period window, the start and end date values were modified according to another time zone. This issue has been resolved.DE129711Previously, if your language setting in GE Digital APM was not English, the options in the Frequency of Alert after due date list of an RCA Verification contained unknown values. This issue has been resolved. Now, the list contains the translated values based on your language setting.DE128988Previously, in System Reliability, you could not run a simulation for a System Analysis with frequent failures in risks or with a value in the Last Failure field. An error message appeared, stating that the p parameter must contain a value between zero and one. This issue has been resolved.DE128031Previously, if your culture was set to Russian, when creating an analysis, you could not assign an asset to the analysis in the <Analysis Type> Data Editor window. This issue has been resolved.DE128027Previously, when creating a Reliability Distribution Analysis from a query containing parameters, an error message appeared when opening an analysis chart. This issue has been resolved.DE125965Previously, when creating a Reliability Analysis from a Query, if a parameter (for example; start date) had no ID, an error occurred. This issue has been resolved.DE123880Previously, when an SAP notification was created for a Reliability Recommendation, the Work Request Reference field was not automatically populated with the corresponding value in the notification. This issue has been resolved.DE121857Previously, when using Internet Explorer, if you attempted to access the diagram for a System Scenario associated with a System Reliability Analysis, the diagram intermittently took longer than expected to appear and there was no indication that the operation of loading the diagram was in progress. This issue has been resolved. Now, a spinner appears while the diagram is being loaded.DE121668Previously, in a Reliability Recommendation record, if you selected the Create Work Request check box, and then saved the record, the SAP Notification that was created did not contain the Equipment and Functional Location values associated with the record. This issue has been resolved.DE119938
+
+
+
+
+
+On this pageRelease Date: May 8, 2020
+
+
+
+
+
+
+
+
+

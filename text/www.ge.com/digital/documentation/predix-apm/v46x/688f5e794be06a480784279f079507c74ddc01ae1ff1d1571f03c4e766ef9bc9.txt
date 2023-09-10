@@ -1,0 +1,102 @@
+
+
+
+First Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release NotesFirst Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Release Notes
+First Quarter of 2021
+
+
+
+
+
+
+
+First Quarter of 2021Release Date: March 26, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Known Issues and Limitations
+The following known issues and limitations exist.
+DescriptionTracking ID
+Although the Assets microapp allows you to create an instance with any UTF-8 special character in the Instance Name and Sourcekey, all other GE Digital APM modules support only the following special characters in the Instance Names and Sourcekeys:Alphanumeric characters&(ampersand).(dot)—(em dash)–(en dash)#(number sign)“(quotation marks)_(underscore)Tag Names associated with the Tag instances support only the following special characters even though the Tag instances in the Assets microapp support all the UTF-8 special characters:α(alpha)\(backslash)β(beta):(colon),(comma)$(dollar sign)-(hyphen)µ(micro sign)#(number sign)Ω(omega)£(pound sign)¥(yen sign)
+F57949
+
+
+
+
+
+On this pageRelease Date: March 26, 2021
+
+
+
+
+
+
+
+
+

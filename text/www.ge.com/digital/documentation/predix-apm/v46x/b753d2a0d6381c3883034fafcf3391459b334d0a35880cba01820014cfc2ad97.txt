@@ -1,0 +1,92 @@
+
+
+
+Thickness Monitoring Planning Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+WorkflowsThickness Monitoring Planning Workflow
+Thickness Monitoring: Thickness Assessment Workflow
+Thickness Monitoring Piping Rotation Workflow
+
+
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data Loaders
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+Workflows
+Thickness Monitoring Planning Workflow
+
+
+
+
+
+
+
+Thickness Monitoring Planning WorkflowThickness Monitoring Planning WorkflowThe TM Planning process requires defining all of the elements required to implement and execute a comprehensive TM inspection plan. This includes identifying the relevant assets for TM and how they are subject to different corrosion environments.For example, a heat exchanger is typically subject to two different process streams. One stream may be a fluid or gas with minimal corrosive properties, while the other may be a fluid or gas with highly corrosive properties. In this case, the Corrosion Analyst may define two corrosion groups with different analysis properties to assess wall thickness. Once the corrosion groups have been established, the Corrosion Analyst will identify the measurement locations needed to properly assess the current wall thickness and project future remaining life.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Create or Update Inspection Task from Asset Strategy Persona: AnalystThe need for TM is defined as part of a well-developed Asset Strategy that mitigates risk of failure. TM typically mitigates the risk of loss of containment for stationary assets.Asset Set-up for TM? Persona: AnalystThe Analyst will be notified to set up the asset for TM.If the asset is already set up for TM inspections, then validate the strategy recommended scope and schedule for TM inspection.If the asset is not set up for TM inspections, then the additional information relative to the corrosive environments of the asset needs to be collected in order to determine TM inspection scope and schedule.Identify Asset for Thickness Monitoring Persona: AnalystStarting at the asset level, defines all TM information.Examples of assets in this context include stationary equipment such as piping, vessels, exchangers, tanks, and boilers.Set Up Analysis Settings Persona: AnalystDefine Corrosion Analysis preferences for each corrosion group.These preferences establish how the corrosion rate will be calculated using standard Short Term, Long Term, and/or Least Squares methods. It also defines how that data is used to determine the Controlling Rate for the Corrosion Group and overall Asset.In addition, a minimum task interval should be defined that is typically based on a risk-based strategy analysis or compliance to a regulatory code.All of this information is used to determine the next inspection date from measurement readings taken in the field.Determine Corrosion Groupings Persona: AnalystDefine corrosion groups associated with the asset. Examples of this are:A heat exchanger subject to two different process streams on the shell and tube sides.
+A column that produces multiple distillate streams that may be subject to different corrosion environments.
+In either case, the Corrosion Analyst may define corrosion groups with different analysis properties to assess the wall thicknesses of the affected asset components.Create Thickness Measurement Locations (TMLs) Persona: AnalystCreate TMLs, which are locations where TM data will be acquired in the field, trended, and analyzed.TMLs are typically defined for each Corrosion Group.TMLs are defined to adequately assess the wall thickness of the asset based on the asset configuration, corrosion group, and fluid stream properties.All TMLs Created? Persona: AnalystDetermine if all TMLs have been defined. After all TMLs are defined, initial readings and corrosion analysis will be conducted to determine the proper TM inspection task.Validate TML Analysis Settings Persona: AnalystAssign each TML to a Corrosion Group, which will cause the TML to inherit that group's preferences. These preferences will be validated at the TML level, and will be adjusted as needed for the specific location.Document Initial Measurements Persona: AnalystFor new TMLs, document initial measurements to determine next inspection date and provide a baseline for future readings.Calculate Corrosion Analysis Persona: AnalystBased on the initial readings, conduct a full corrosion analysis to determine the controlling corrosion rate, remaining life, and next inspection date.Corrosion Analysis Persona: AnalystThe result is a corrosion analysis summary by asset, a corrosion group, and an individual TML.Validate Task Scope and Schedule Persona: AnalystThe analysis will produce a Task scope and schedule for the next inspection date.Validate that the scope defined by the analysis fully supports any existing asset strategy defined by risk analysis or code compliance.Also, review the analysis results to ensure that it is based on good measurements and correct preference settings.Acceptable? Persona: AnalystBased on the review of the analysis results in the previous step, determine if the analysis is acceptable.Modify Preferences and Update Measurements Persona: AnalystIf the results are not acceptable, then the Corrosion Analyst may elect to take some action to update the analysis to be more accurate.This may include updating the preferences. For example, if the next inspection date does not support an existing risk-based asset strategy, the minimum interval preference may need to be updated.This may also include updating measurements. For example, the accuracy of one measurement may be suspect. In this case, the Corrosion Analyst will acquire a new measurement reading to ensure that the analysis results are accurate.TM AssessmentPersona: AnalystIf the analysis results are acceptable, then the Task is scheduled and will be executed as part of the Thickness Monitoring: Thickness Assessment workflow.Go to the Thickness Assessment workflow. Recommendation Management Persona: AnalystAs a result of the TM Assessment, the Corrosion Analyst may recommend an asset or component replacement when it is determined that end of life is imminent or near term.Go to the Manage Performance Recommendations workflow.Implement Recommendation for Replacement Persona: AnalystImplement a recommendation for replacement of the asset or component. This recommendation will be managed through the Manage Performance Recommendations workflow and tracked through implementation.Renew Associated TMLs Persona: AnalystRenew the TMLs associated with the replacement asset or component and initiate them for future TM inspections.Archive History Persona: AnalystThe prior TM measurement data is archived for historical purposes.Preference Change Required? Persona: AnalystDetermine if any preference change is required due to the new asset or component properties.If a change is required, the TMLs will be updated with the change, and then the TM task validation process will be repeated.If a change is not required, the TM task validation process will be repeated with the existing preferences defined for the previous TMLs.
+
+
+
+
+On this pageThickness Monitoring Planning WorkflowCreate or Update Inspection Task from Asset StrategyAsset Set-up for TM?Identify Asset for Thickness MonitoringSet Up Analysis SettingsDetermine Corrosion GroupingsCreate Thickness Measurement Locations (TMLs)All TMLs Created?Validate TML Analysis SettingsDocument Initial MeasurementsCalculate Corrosion AnalysisCorrosion AnalysisValidate Task Scope and ScheduleAcceptable?Modify Preferences and Update MeasurementsTM Assessment Recommendation ManagementImplement Recommendation for ReplacementRenew Associated TMLsArchive HistoryPreference Change Required?
+
+
+
+
+
+
+
+
+

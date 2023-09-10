@@ -1,0 +1,78 @@
+
+
+
+
+Editing and Deleting Tags | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Editing and Deleting TagsYou can edit an existing tag instance within the context of an asset, including tag information, attribute values, and aliases.Before You BeginYou have permissions to manage, edit, and delete tags for your APM tenant. ProcedureIn the module navigation menu, go to
+Assets.Use the context browser to navigate to an enterprise, site, segment, or asset, and then click Open. The respective faceplate opens in the Asset Instance page.Click the Tags tab, and click a tag link to open it in the details page.Click the Edit icon to open the Edit Tag page.Perform one or more of the following sub-tasks.Sub-Task to performDescriptionTag Name or Description
+Hover and click in the text field for Tag Name or Description to edit either field. Select text and delete it, or type the change in the field. Important: You cannot edit the source ID or Tag Class.
+Tag Instance Status
+Select the tag status drop-down to change the status. The available status are: Active, Inactive, and Unknown. 
+Reserved Attributes
+Hover over the value to edit. Click the Edit icon next to the reserved attribute to edit. The Value field becomes active and can be edited. Click inside the field to edit the value. After you have completed editing, click an empty space on the details page outside the text box or press the Enter key. If the updated value is valid, then the text changes are reflected immediately. Otherwise, an error message appears.
+Custom Attributes
+Hover over the value to edit. Click the Edit icon next to the custom attribute to edit. The Value field becomes active and can be edited. Click inside the field to edit the value. After you have completed editing, click an empty space on the details page outside the text box or press the Enter key. If the updated value is valid, then the text changes are reflected immediately. Otherwise, an error message appears.
+Tag Aliases
+Hover over the value to edit.  Click the Edit icon next to the tag alias to edit. The Value field becomes active and can be edited. Click inside the field to edit the value. After you have completed editing, click an empty space on the details page outside the text box or press the Enter key. If the updated value is valid, then the text changes are reflected immediately. Otherwise, an error message appears.
+Tag Correlation
+Hover over the value to edit.  Click the Edit icon next to the tag correlation to edit. The Value field becomes active and can be edited. Click inside the field to edit the value. After you have completed editing, click an empty space on the details page outside the text box or press the Enter key. If the updated value is valid, then the text changes are reflected immediately. Otherwise, an error message appears.
+Add tag aliases
+Click the Add () icon to add an alias name. It must contain only alphanumeric characters and spaces. Click the black check mark to the right of the alias name to add it. Repeat these steps for each  alias.
+Delete tag aliases
+Click the Delete (X) icon next to the alias name to remove it. Press Enter key or click outside the text field to delete the tag alias. 
+Click Save to save your changes, or click Cancel. The screen returns to the tag instance details page.Optionally, to delete a tag:
+Click the  (delete) icon in the upper-right corner of the screen. A message appears asking you to confirm the deletion.Click Delete to confirm. The tag is removed from the list of tags for the selected asset. The view returns to the respective asset faceplate page selected at the beginning of the procedure.
+
+
+
+
+
+
+
+
+
+
+
+

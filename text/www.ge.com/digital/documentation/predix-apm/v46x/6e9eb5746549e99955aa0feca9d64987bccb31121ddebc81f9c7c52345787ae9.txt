@@ -1,0 +1,90 @@
+
+
+
+Thickness Monitoring: Thickness Assessment Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+WorkflowsThickness Monitoring Planning Workflow
+Thickness Monitoring: Thickness Assessment Workflow
+Thickness Monitoring Piping Rotation Workflow
+
+
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data Loaders
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+Workflows
+Thickness Monitoring: Thickness Assessment Workflow
+
+
+
+
+
+
+
+Thickness Monitoring: Thickness Assessment WorkflowThickness Monitoring: Thickness Assessment WorkflowThe Thickness Assessment process includes complying with the execution of TM Tasks to acquire thickness measurements to evaluate asset integrity. A Technician will perform the inspections specified by the TM Tasks at the scheduled intervals. The Technician will typically use a data logger device to facilitate the field data collection.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+TM Planning Persona: AnalystTM Planning includes defining all of the elements required to implement and execute a comprehensive TM inspection plan. This includes identifying the relevant assets for TM and if they are subject to different corrosion environments. For example, a heat exchanger is typically subject to two different process streams. One stream may be a fluid or gas with minimal corrosive properties, while the other may be a fluid or gas with highly corrosive properties. In this case, the Corrosion Analyst may define two corrosion groups with different analysis properties to assess wall thickness. Once the corrosion groups have been established, the Corrosion Analyst will identify the measurement locations needed to properly assess the current wall thickness and project remaining life.Go to the TM Planning workflow.Review Scope of Task(s) Persona: TechnicianFor upcoming TM inspections, review the task scope to ensure that the proper thickness measurement method is used for the inspection.Data Logger? Persona: TechnicianInformation can be collected in the field either manually or using a data logger device. Determine if a data logger will be used for collection, and then proceed down the appropriate workflow path.Download TMLs to Data Logger Persona: TechnicianIf a data logger is used, download TMLs scheduled for inspection from the asset definition.Perform TM Inspection with Data Logger Persona: TechnicianUsing the data logger device, perform the TM inspection.Upload TMLs from Data LoggerPersona: TechnicianWhen all TMLs have been inspected, upload the measurements from the data logger device for review and analysis.List TMLs for Manual Data Collection Persona: TechnicianIf a data logger is not used, manually list the TMLs scheduled for inspection from the asset definition.Perform TM Inspection Persona: TechnicianIf a data logger is not used, use a measurement device and manually record measurements in the field at predefined locations.Enter TMLs from Inspection Persona: TechnicianWhen all TMLs have been inspected, if a data logger has not been used, manually enter measurements for review and analysis.Thickness Measurements Created Persona: TechnicianThe result of executing TM inspections is new measurements for each TML for review and analysis.Thickness Measurement Persona: TechnicianThe result of executing a TM inspection is new measurements for each TML for review and analysis.Calculate Corrosion AnalysisPersona: AnalystUse the new measurements to perform a full corrosion analysis to determine the controlling corrosion rate, remaining life, and next inspection date. Updated Corrosion Analysis Persona: AnalystThe resultant corrosion analysis is created, and the associated TM task is updated with the next inspection date.Review Corrosion Analysis Results Persona: AnalystReview the results to determine if any follow-up action is necessary to ensure the integrity of the asset or improve asset performance.Compliance Management Reports Persona: AnalystTM Inspection program compliance is an important part of the overall workflow.Compliance Management Reports based on the defined TM Tasks provide a means to identify upcoming inspections so that they are scheduled and executed appropriately.Take Action? Persona: AnalystDetermine if a follow-up action is necessary. If it is, a proposal will be made by the analyst to business management. This could be a proposed change to an asset strategy, procedure, process, or policy.Recommendation Needed? Persona: AnalystDetermine if a recommendation is needed.If a recommendation is not needed, the proposal requires immediate attention, and action is taken immediately.If a recommendation is needed, the proposed change requires formal review and approval, as well as traceability through implementation. In this case, a recommendation will be created and managed forward.Manage Performance Recommendations Persona: AnalystThe new recommendation is managed for approval and implementation through the Manage Performance Recommendation workflow.Go to the Manage Performance Recommendations workflow.Corrosion History Persona: AnalystThe overall result of TM inspections is to provide Corrosion History, which is used primarily for long-term strategy evaluation and development.This corrosion history can be evaluated through Core Analysis workflows or advanced strategy development methods, such as Risk Based Inspection (RBI).Other APM Workflows Persona: AnalystFor follow-up analysis, use Core Analysis.Go to the Core Analysis: Asset Event Analysis workflow.Go to the Core Analysis: Graph Analysis workflow.Go to the Core Analysis: Query Analysis workflow.Go to the Core Analysis: Report Analysis workflow.
+
+
+
+
+On this pageThickness Monitoring: Thickness Assessment WorkflowTM PlanningReview Scope of Task(s)Data Logger?Download TMLs to Data LoggerPerform TM Inspection with Data LoggerUpload TMLs from Data LoggerList TMLs for Manual Data CollectionPerform TM InspectionEnter TMLs from InspectionThickness Measurements CreatedThickness MeasurementCalculate Corrosion AnalysisUpdated Corrosion AnalysisReview Corrosion Analysis ResultsCompliance Management ReportsTake Action?Recommendation Needed?Manage Performance RecommendationsCorrosion HistoryOther APM Workflows
+
+
+
+
+
+
+
+
+

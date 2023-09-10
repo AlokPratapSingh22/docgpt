@@ -1,0 +1,150 @@
+
+
+
+Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+European Inspection ManagementOverview
+Configuration
+Workflow
+Reference
+ Admin
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+European Inspection Management
+Workflow
+
+
+
+
+
+
+
+WorkflowEuropean Inspection Management WorkflowAbout This Task
+This workflow provides the basic, high-level steps for using European Inspection Management. The steps and links provided in the workflow do not necessarily reference every possible procedure.
+ProcedureIdentify an AssetView or Modify Asset Technical DataApply the Suggested Compliance Strategy templates for an AssetCreate an Inspection PlanApprove an Inspection PlanImplement an Inspection PlanManage Inspection TasksReschedule an Inspection TaskManage Inspection EventsIdentify an AssetThis topic describes how to identify the certification requirements for the inspectors based on the criticality of the assets.ProcedureAccess the Assets page.The Asset Hierarchy appears in the Assets page.In the Hierarchy section, in the Search box, enter the Asset ID for which you want to create or edit Asset Technical Data, and then press Enter.The asset appears in the Hierarchy section.Select the Integrity tab, and then select Inspection Assets for Inspection Management to view and edit the Inspection Management Overview page for the related asset.
+Note: For better workflow walkthrough, we are using asset E0110A-097  from Asset Hierarchy as an example. The steps in the below workflow are based on the E0110A-097  asset.
+
+
+In the Integrity tab, no inspections appear for the selected asset. The image shows, 0 Inspection.Select the link on the 0 Inspections. The Inspection Management Overview page appears for the related asset.View or Modify Asset Technical DataThis topic describes how to view or modify the Asset Technical Data to determine the certification requirements of the inspectors based on the criticality of the assets.ProcedureAccess the Inspection Management Overview page. Select  and then select View Asset Technical Data. The Asset Technical Data pane appears, displaying the assets and the related families for Asset Technical Data and NR13 Technical Data.Note: All the families for an asset are displayed in the Has Technical Data relationship family. To modify a record for Asset Technical Data or NR13 Technical Data, select the related asset from the Technical Data pane.To add a new Asset Technical Data datasheet, select , and then select the Asset Technical Data from the list displayed.A blank Asset Technical Data datasheet for the selected asset appears. As needed, enter values in the available fields. Based on the fields entered in the datasheet, the certification field is calculated. Example
+Example: Identify certification requirement for a Pressure Vessel
+In this example, two records in Asset Technical Data family are created for the Shell Chamber and the Tube Chamber for the Pressure Vessel asset.
+FieldValue for Shell ChamberValue for Tube ChamberChamberShellTubeFluidC1C2Fluid Group12Fluid PhaseGasLiquidProtected Pressure (P)50 [Bar]30 [Bar]Volume (V)1200 [Litre]500 [Litre]Outer Diameter (DN)This field is blank as values for this field are used for the certification calculation of Asset Type is Piping.This field is blank as values for this field are used for the certification calculation of Asset Type Piping.PV (Protected Pressure*Volume)6000 [Bar.Litre]15000 [Bar.Litre]PDN (Protected Pressure*Outer Diameter)This field is disabled as the Asset Type is Pressure Vessel.This field is disabled as the Asset Type is Pressure Vessel.CertificationZUSBP
+Note:
+For Shell Chamber, refer to Reference Table 4 for the certificate calculation.For Tube Chamber, refer to Reference Table 5 for the certification calculation. 
+
+Certification calculation for Asset type Pressure Vessel for a Shell chamber:
+
+Certification calculation for Asset type Pressure Vessel for a Tube chamber:
+
+Example: Identify certification requirement for a Simple Pressure Vessel
+In this example, a single record is created for the Simple Pressure Vessel asset.
+FieldValue FluidC2Fluid Group2Fluid PhaseGasProtected Pressure (P)20 [Bar]Volume (V)400 [Litre]Outer Diameter (DN)This field is blank as values for this field is used for the certification calculation of Asset Type Piping.PV (Protected Pressure*Volume)8000 [Bar.Litre]PDN (Protected Pressure*Outer Diameter)This field is disabled as the Asset Type is Simple Pressure Vessel.CertificationZUS
+Note: For Simple Pressure Vessel, refer to Reference Table 7 for certificate calculation.
+
+Example: Identify certification requirement for Piping
+In this example, a single record is created for the Piping asset.
+FieldValueFluidC3Fluid Group2Fluid PhaseGasProtected Pressure (P)12 [Bar]Volume (V)This field is blank as values for this field is used for the certification calculation of Asset Type Pressure Vessel, Simple Pressure Vessel, and Steam Boiler.Outer Diameter (DN)114.3 [mm]PV (Protected Pressure*Volume)This field is disabled as the Asset Type is Piping.PDN (Protected Pressure*Outer Diameter)1371.6 [Bar.mm]CertificationbP
+Note: For Piping, refer to Reference Table 9 for certificate calculation.
+
+Example: Identify certification requirement for a Steam Boiler
+In this example, a single record is created for the Steam Boiler asset.
+FieldValueFluidTestFluid Group1Fluid PhaseLiquidProtected Pressure (P)35 [Bar]Volume (V)100 [Litre]Outer Diameter (DN)This field is blank as values for this field is used for the certification calculation of Asset Type Piping.PV (Protected Pressure*Volume)3500 [Bar.Litre]PDN (Protected Pressure*Outer Diameter)This field is disabled as the Asset Type is Steam Boiler.CertificationZUS
+Note: For Steam Boiler, refer to Reference Table 9 for certificate calculation.
+
+What To Do NextAfter you have entered all the details, Save the Asset Technical Data for an asset. You can create multiple Asset Technical Data for an asset. The steps above are based on Asset Type Pressure Vessel with a Shell Chamber selection.Apply Suggested Compliance Strategy Templates for an AssetUsers can get suggested Compliance Strategy Templates for assets that are in the Assets without Templates section of the Compliance Management Overview page. This section contains assets that do not have linked Compliance Strategy Templates, but match queries attached to Compliance Strategy Templates. Before You BeginProcedureAccess the Compliance Management Overview page, and then select the Assets without Templates tab.The Assets without Templates section appears.Select Suggest Templates.A window appears, stating that the current Suggested Compliance Template records will be deleted if you proceed.Select Yes.The Suggest Templates process executes. A scheduled job is created.Optional: If you want to view the status of the job, select . The Schedule Logs page appears, displaying a list of all the operations in GE Digital APM that are in progress, along with the percentages of completion. You can also access a list of operations that have been successful or have failed.After selecting Suggested Template, refresh the page. Select the check boxes next to the Asset IDs, and then select Apply Template. The Confirm Apply Template window appears asking you to confirm if you want to apply the suggested templates to the selected assets.Select Yes.The templates are applied to the selected assets, and the assets appear in the Assets without Inspection Plans section of the Compliance Management Overview page.Results
+Note: For European Inspection Compliance, GE Digital APM has 8 Compliance Strategy Templates that are available for use. When assets are added, the query is added to the Compliance Strategy Template record and is saved for later use. If a Compliance Strategy Template does not have a query attached to the record, it is excluded from the Suggest Templates job. Additionally, if an asset does not match a query that is attached to a Compliance Strategy Template, it will not receive a suggested Compliance Strategy Template.
+Create an Inspection Plan from the Compliance Management Overview PageYou can create an Inspection Plan for assets that are linked to Compliance Strategy Templates.Before You BeginThe assets must have one or more Compliance Strategy Templates linked to them.ProcedureAccess Compliance Management, and then select the Assets without Inspection Plans tab.The Assets without Inspection Plans section appears, displaying a list of available assets based on the current filter.In the Assets section, select the check boxes against the rows containing the asset to create an Inspection Plan.The selected assets are highlighted.Select Create Inspection Plans.The job status appears in the page heading, displaying the progress of the Inspection Plan creation.Note: When the process is complete, you can select  to access the Schedule Logs page.Approve an Inspection Plan ProcedureAccess the Inspection Plan that you want to approve.Once an Inspection Plan is created for an asset, the asset along with other assets appears in Assets with Inspection Plans tab.Select the asset.The Inspection Plan page appears for the selected asset.Select Proposed, followed by Approve and then Done.A message appears, stating that the Inspection Plan has been approved. Note:
+The inspection plan is promoted as a strategy in ASM. You can view the strategy in ASM by selecting Open Strategy.After you approve an Inspection Plan, you cannot delete, supersede, or designate recommendations as Not Required. You must first move them to the Modified state.While the Inspection Plan is being modified, you cannot delete, supersede, or designate recommendations as Not Required. 
+Implement an Inspection PlanBefore You Begin
+Ensure that the Implement Recommended Actions to Tasks in ASM setting is set to False in the Inspection Configuration section of the IM Admin Preferences page.You must have an Inspection Plan that is in the Approved state.
+About This Task
+This task describes how to implement an Inspection Plan to an Inspection Task. When you implement an Inspection Plan, all the Compliance Recommendations associated with the Inspection Plan are implemented to an Inspection Tasks.
+ProcedureYou can view if the state of the Inspection Plan from the top-right corner of the page. Select the check box against the recommendation that you want to implement and select Implement from the top-right corner of the page.
+Note: You can perform only one implementation at a time. Select a recommendation using the check box to implement. Bulk implemented is not allowed. For more information on Recommendation Details, see Recommendation ID.
+The Implement as Inspection Task dialog appearsYou can implement as a new task or link it to an existing task.Here, we are implementing all the three tasks as new tasks.
+
+As needed, modify the details for the Recommended Actions that you selected.All the three recommendations of the asset have been implemented as new task and are visible in Existing Tasks section of the page.The Inspection Plan page appears. Manage Inspection TasksBefore You Begin
+Ensure that you have implemented an Inspection Plan. For more information on Implementing an Inspection Task, refer to the Implement an Inspection Plan topic.
+About This Task
+This topic describes how to create and manage a European Inspection Task. The European Inspection Task is introduced to the Inspection Task family to manage the European Inspection tasks, according to the Compliance regulation.
+ProcedureSelect any one task from the Task ID column in Inspection Plan.The Inspection Task datasheet appears.Select the European Inspection Task datasheet from the Datasheet ID drop-down list.The European Inspection Task record appears for the asset.As needed, enter values in the available fields  of the datasheet.
+For more information on the Mappings, refer to the European Technical Data and Compliance Recommendation Mappings topic. The following fields are available as part of the Inspection Event.FieldValueSourceApplicable Regulation If the inspection is a European Inspection, then you need to select European Inspection Regulation. The values in this field are populated from the MI_INTGY_REGULATION system code table. Compliance RecommendationCertification The values in this field are populated from the MI_COMPLIANCE_STANDARDS system code table. By default, it shows ZUS and BP.Compliance RecommendationPrevious Next DateThis field is populated automatically by the GE Digital APM system. This filed stores the Next Date before the rescheduling occurs. This field is always disabled.European InspectionTask Rescheduling BasisThis field captures the information based on how the Next Date field is calculated. The field can be calculated either by the Completion Date or the Previous Next Date. European InspectionCompliance WindowThis field stores the information about the duration of compliance in months.European Admin SettingsInspection Documentation WindowThis field stores information about the duration in months for documenting an inspection report.European Admin Settings
+Compliance Min Date
+The earliest date on which an inspection may be performed.European InspectionCompliance Max DateThe time between the Last Date and the Max Date.European Inspection
+Note:
+The Applicable Regulation and Certification field values are mapped from the related Compliance Recommendation record from which the Inspection Task was created.The Applicable Regulation value is set to European Inspection Regulation and the Certification field value is set to ZUS, then the Inspectors with respective certification or Inspection Administrators will be able to select the Modifiable Task field. If the Certification field value is set to ZUS, certification for the inspector will not be checked to select the modifiable task attribute. Value in the fields Compliance Window and Inspection Documentation Window in European Inspection Task datasheet are auto populated from European Admin Settings. These values must be pre-defined at a Site Level.If the Certification field value is set, then Modifiable field will set to false before updating the Inspection Task.
+
+Reschedule an Inspection Task You can reschedule an Inspection Task after completing an Inspection Event. For an Inspection Task that have the Applicable Regulation set to European Inspection Regulation, the Next Date is updated in an Inspection Task based on the following two scenarios: 
+Scenario 1: For Completion Date before Compliance Min Date
+Next Date field on Inspection Task is set based on the value in the Completion Date + Desired Interval. Task Rescheduling Basis field on Inspection Task will be updated to Next Date  based on Last Date.
+
+Scenario 2: For Completion Date after Compliance Min Date
+Next Date field on Inspection Task is set based on the value in the Previous Next Date + Desired
+Interval. Task Rescheduling Basis field on Inspection Task will be updated to  Next Date based on Next Date.
+The above two scenarios are explained in a form of an example. The following table is used as an example to calculate the Next Date of an Inspection Task Details before any rescheduling. FieldLast Date (mm/dd/yyyy)Desired Interval (Months)Next Date (mm/dd/yyyy)Compliance Window (Months)Compliance Min Date (mm/dd/yyyy)Compliance Max Date (mm/dd/yyyy)Value02-12-20193602-12-2022311-01-202105-31-2022BehaviourThis is the date in the Inspection Task which will be same as Completion date in Inspection Event. This is a Modifiable field. The Next Date is updated based on the Last Date + Desired Interval. Predefined in EU Admin SettingsThe date is updated to the First Date of Month for Next Date -Compliance WindowThe date is updated to the Last Date of Month for Next Date + Compliance WindowUsing the above example, rescheduling will be done in the following two scenarios.Scenario 1: Completion Date in Inspection Event is before the Compliance Min Date in the Inspection Task. Next Date = Last Date + Desired intervalFieldCompliance Min Date (mm/dd/yyyy)Completion Date in Inspection Event (mm/dd/yyyy)Last Date (mm/dd/yyyy)Previous Next Date (mm/dd/yyyy)Desired Interval (Months)Next Date (mm/dd/yyyy)Task Rescheduling BasisCompliance Window (Months)Compliance Min Date (mm/dd/yyyy)Compliance Max Date (mm/dd/yyyy)Value11-01-202103-20-202003-20-202002-12-20223603-20-2023Next Date Based on Last Date312-01-202206-30-2023BehaviourCompliance Min Date Before ReschedulingAs Provided by the user.Same as the Completion DateThis was the Next date before Rescheduling Date obtained by adding 36 Months to the Last Date  Compliance Min Date After ReschedulingCompliance Max Date After ReschedulingScenario 2: Completion Date in Inspection Event is after the Compliance Min Date in Inspection Task. Next Date = Previous Next date + Desired intervalFieldCompliance Min Date (mm/dd/yyyy)Completion Date in Inspection Event (mm/dd/yyyy)Last Date (mm/dd/yyyy)Previous Next Date (mm/dd/yyyy)Desired Interval (Months)Next Date (mm/dd/yyyy)Task Rescheduling BasisCompliance Window (Months)Compliance Min Date (mm/dd/yyyy)Compliance Max Date (mm/dd/yyyy)Value12-01-202205-24-202305-25-202303-20-20233603-20-2026Next Date Based on Previous Next Date312-01-202506-30-2026BehaviourCompliance Min Date from Scenario-1As Provided by UserSame as Completion DateNext Date from Scenario-1 Date obtained by adding 36 Months to the Previous Next Date   Compliance Min Date After Rescheduling Compliance Max Date After ReschedulingManage Inspection EventsAbout This Task
+This task describes how to create and manage an Inspection Event. The European Inspection Report is added to the Full Inspection family to manage an Inspection event for an Asset.  
+ProcedureAccess the Inspection Management Overview page and select an asset for which you want to create an Inspection Event. Select , and then select Create Inspection.The Create Inspection window appears.In the Inspection Event box, select the Inspection Event.In the Inspection Tasks box, select the Inspection Tasks.
+
+
+Note:
+You can create an Inspection without selecting any value in the Inspection Tasks box.You can select either a single Inspection Task or multiple Inspection Tasks using the check box.
+
+Select Create.The Inspection Details workspace appears, displaying the Full Visual Inspection datasheet.Select EU Inspection Report from the drop-down list.The EU Inspection Report datasheet appears.For more information on the Mappings, refer to the Inspection Task and Inspection Event Mappings topic. The following fields are available as part of the Inspection Event.FieldValueSourceApplicable Regulation If the inspection is a European Inspection, then you need to select European Inspection Regulation. The values in this field are populated from the MI_INTGY_REGULATION system code table. Inspection TaskCertification The values in this field are populated from the MI_COMPLIANCE_STANDARDS system code table. By default, it shows ZUS and BP. Inspection TaskInspection Document Category
+The field populates the following values: 
+Test Certificate by ZUSTest Record by Company InspectorTest Report by Subcontractor
+European InspectionInspection InstructionThis field stores a list of instructions for an inspector. The list is populated in a drop-down list box.European InspectionNote:
+Inspection Report Owner field will display all the users who satisfy following conditions:If the value in the Certification field is ZUS:The Inspector role with a valid matching Certification can perform inspection.The Team Member with a valid matching Certification can perform inspection.If the Certification field does not have a value:The inspector role can perform the inspection.The Team member can perform the inspection.Reviewer Name field will display all the users who satisfy following conditions:If the Certification field has a value:The Inspector Supervisor role with a valid matching Certification can perform the inspection.The Team Member with a valid matching Certification can perform the inspection.If the certification field has a value, then the check boxes Inspection Lock and Inspection Task Complete can be selected by either the Inspector or any Team Member provided they have the respective certification.If the Application Regulation is European Inspection Regulation, Certification is ZUS then Inspection Document Category is set to Test Certificate by ZUS and disabled. If the Certification is not ZUS, then the Inspection Document Category field would be enabled.An Inspection Summary appears based on the Inspection Document Category and Inspection Instructions selected. Select the values based on the available fields.
+In the datasheet, enter values in the available fields. An Inspection is created for an asset in a European Inspection Report an asset.
+
+
+
+
+On this pageEuropean Inspection Management WorkflowIdentify an AssetView or Modify Asset Technical DataApply Suggested Compliance Strategy Templates for an AssetCreate an Inspection Plan from the Compliance Management Overview PageApprove an Inspection Plan Implement an Inspection PlanManage Inspection TasksReschedule an Inspection Task Manage Inspection Events
+
+
+
+
+
+
+
+
+

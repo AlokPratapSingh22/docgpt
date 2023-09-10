@@ -1,0 +1,284 @@
+
+
+
+RBI Components | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+RBI Components
+
+
+
+
+
+
+
+RBI ComponentsAbout RBI ComponentsIn Risk Based Inspection, you can divide asset into components whose risk you want to analyze using an RBI 581 Risk Analysis. You can divide a piece of asset into components based on shared degradation mechanisms. Each sub-part of the asset that shares the same degradation mechanisms will belong to the same RBI Component.In GE Digital APM, the information related to an RBI component is stored in the following Criticality Calculator RBI Component records: Criticality RBI Component - Cylindrical Shell  Criticality RBI Component - Exchanger Bundle  Criticality RBI Component - Exchanger Header  Criticality RBI Component - Exchanger Tube  Criticality RBI Component - Piping  Criticality RBI Component - Pump Compressor Casing  Criticality RBI Component - Tank Bottom  Criticality RBI Pipeline Segment (only if the Pipeline Management license is active)Heat Exchanger
+Consider a Heat Exchanger, which is a piece of asset that contains the following components:
+A Cylindrical Shell that makes up the Heat Exchanger Shell section.A Cylindrical Shell that makes up the Heat Exchanger Channel section.Any number of small tubes that make up the Heat Exchanger Bundle section.
+Each of the components can contain items such as Nozzles, Flanges, or Piping.
+In RBI, to analyze the ways in which the exchanger can fail, you must divide the components into logical groups that represent common failure characteristics. Each group of components is a separate component and is represented by a single RBI Component record. Keep in mind that some of these groups are involved in the overhead system, and others are involved in the cooling water system.
+For example, you might group the asset's components as follows:
+
+
+
+ Heat Exchanger Shell: Includes a cylindrical shell, an inlet nozzle, an outlet nozzle, and a head, often referred to as a shell cover. The Shell is part of the Cooling Water System (blue) because the purpose of the shell is to allow water to flow over the tubes and cool the process fluid running through the channel and bundle section of the exchanger. Heat Exchanger Channel: Includes a cylindrical shell, an inlet nozzle an outlet nozzle and a flat head, often referred to as a dollar plate. The Channel is part of the OVHD System (yellow) because the purpose of the Channel is to funnel the process fluid in to the tubes and allow cooling of the process fluid running through the channel and bundle section of the exchanger. Heat Exchanger Bundle: Includes tubes, baffles, and a tubesheet. The Bundle is part of the OVHD System (yellow) because the purpose of the bundle is to provide as much surface area as possible for the process fluid in to the tubes and allow cooling of the process fluid running through the bundle section of the exchanger.
+If you create an RBI 581 Risk Analysis using this example, your database contains the following records:
+Unit / Area (Functional Location record)Overhead System (Corrosion Loop record)Cooling Water System (Corrosion Loop record)Heat Exchanger (Asset record)Heat Exchanger Shell (Criticality Calculator RBI Components record)Heat Exchanger Channel (Criticality Calculator RBI Components record)Heat Exchanger Bundle (Criticality Calculator RBI Components record)
+Note:  If you have already created Functional Location records to represent the OVHD System and Cooling Water System using the recommended asset hierarchy, you must create additional Corrosion Loop records to represent these same systems. The existing Functional Location records need not be linked to the Corrosion Loop records.
+About Integration with Thickness Monitoring (TM)
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+About Using TM Analysis Values at the Thickness Monitoring Location (TML) Group LevelThis topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.About Using TM Analysis Values at the Asset LevelThis topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.Access an
+RBI Component Procedure
+Access the Asset Summary workspace for the asset that contains the RBI Component that you want to access. 
+-or-
+
+Access the Corrosion Loop that contains the RBI Component that you want to access.
+Below the graph, select the link corresponding to the component that you want to access.
+-or-
+In the left pane, select the component that you want to access. 
+The workspace for the selected component appears, displaying the Component Overview section.
+
+
+
+Select the Component Details tab. 
+The Component Details section appears, displaying the datasheet of the Component.
+
+
+
+Note: If needed, modify values in the available fields, and then select  to save your changes.
+Create an
+RBI ComponentAbout This Task
+This topic describes how to create a new RBI Component and link it to an Asset or a Corrosion Loop. You can also link an existing RBI Component to an Asset or a Corrosion Loop.
+Procedure
+Access the Asset Summary workspace of the asset in which you want to create an
+RBI Component. 
+-or-
+
+Access the Corrosion Loop in which you want to create an
+RBI Component.
+In the left pane, select , and then select Create New Component. 
+The Create New RBI Component window appears. 
+
+
+
+Enter values in the following fields:
+ Asset: This field is automatically populated with the asset for which you are creating an
+RBI Component. Component Family: Select the component family for the Component that you want to create. 
+ Component Type: Select the component type for the RBI Component that you want to create. 
+Note: You can use only the following component types with the component family Criticality RBI Component – Tank Bottom:Storage Tank Bottom
+Select Create.
+A new RBI Component is created, and is automatically linked to the selected Asset and the Corrosion Loop. The Component Details section appears, displaying the component datasheet.
+
+
+
+Enter values in the available fields. In the RBI-581 section of the datasheet, enter values in the available fields. In the upper-right corner of the datasheet, select .
+The changes made to the RBI Component are saved.
+Results
+The RBI Component inherits linked Potential Degradation Mechanisms from the RBI Corrosion Loop. 
+What To Do Next
+
+Link Potential Degradation Mechanisms (PDMs) to an
+RBI Component.
+Access the Inventory Group of a ComponentAbout This Task
+You can also access all the inventory groups in a process unit.
+Procedure
+Access the Component that is linked to the inventory group.In the upper-right corner of the page, select , and then select Inventory Group.
+The RBI 581 Inventory Groups workspace appears on a new page, displaying the following information:
+
+If the component is linked to an inventory group, then the Inventory Group Configuration datasheet for the inventory group associated with the component appears. 
+
+
+
+Tip:  If you want to access a list of components linked to the inventory group, select the Linked Components tab.
+
+If the component is not linked to an inventory group, then the Process Units with Inventory Groups graphs appears. A list of process units appear in the left section in the workspace.
+
+
+
+Tip:  If you are a member of the RBI Admin Security Group, you can create an Inventory Group Configuration record in the RBI 581 Inventory Groups workspace.
+
+Link RBI Components to an RBI Corrosion LoopAbout This Task
+This topic describes how to link existing RBI Components to an Asset or Corrosion Loop. You can also create a new RBI Component.
+Procedure
+Access the Corrosion Loop that you want to link to an
+RBI Component.In the left pane, select , and then select Link Existing Component. 
+The Select RBI Components window appears, displaying a list of components in the same site that are not linked to a Corrosion Loop.
+
+
+
+Select the check boxes that correspond to the components that you want to link, and then select Done.
+The selected RBI Components are linked to the Corrosion Loop.
+Results
+
+The PDMs that are linked to the Corrosion Loop are linked to the RBI Components, in addition to the ones that are directly linked to the component.
+
+What To Do Next
+
+Link Potential Degradation Mechanisms (PDMs) to an
+RBI Component.
+Unlink an
+RBI Component from an RBI Corrosion LoopProcedure
+Access the Corrosion Loop from which you want to unlink the RBI Component.In the left pane, select the RBI Component that you want to unlink from the Corrosion Loop, and then select .
+-or-
+Below the graph, next to the RBI Component that you want to unlink from the Corrosion Loop, select the check box, and then select .
+A message appears, asking you to confirm that you want to unlink the selected RBI Component.
+Select Yes.
+The RBI Component is unlinked from the selected Corrosion Loop.
+Link Potential Degradation Mechanisms (PDMs) to an
+RBI ComponentAbout This Task
+If the RBI Component is linked to a Corrosion Loop, then all the PDMs linked to the Corrosion Loop are also linked to the Component. You can, however, link additional PDMs to the Component. 
+This topic describes how to link one or more PDMs to an
+RBI Component. You cannot create PDMs; you can only link them. Therefore, a PDM must already exist to be linked to an
+RBI Component.
+Procedure
+Access the RBI Component  to which you want to link PDMs. Select the Potential Degradation Mechanisms tab. 
+The Potential Degradation Mechanisms section appears, displaying a list of PDMs linked to the RBI Component.
+
+
+
+Select Add PDM.
+A list of PDMs appears, displaying the methodology type of each PDM.
+
+
+
+Tip:  If you select the link that corresponds to a PDM, the PDM record appears in Record Explorer on a new page.
+Next to each PDM that you want to link to the RBI Component, select the check box, and then select OK.
+Note:  PDMs that can be used with an RBI 581 Risk Analysis contain a 581 prefix (e.g., 581-Amine Cracking).
+The selected PDMs are linked to the RBI Component. 
+What To Do Next
+
+Create an RBI 581 Risk Analysis.
+Unlink a Potential Degradation Mechanism (PDM) from an
+RBI ComponentProcedure
+Access the RBI Component  from which you want to unlink a PDM. Select the Potential Degradation Mechanisms tab. 
+The Potential Degradation Mechanisms section appears, displaying a list of PDMs linked to the RBI Component.
+In the row that contains the PDM you want to unlink from the RBI Component, select .
+A message appears, asking you to confirm that you want to unlink the selected PDM. 
+Select Yes.
+The PDM is unlinked from the RBI Component. 
+Link an RBI Component to a TML GroupBefore You Begin
+The value in the Source of Calculated Corrosion Rates field in the RBI Component must be Component.The parent Asset of the RBI Component must not be a Thickness Monitoring Piping Asset. You must have an active license for the Thickness Monitoring module. 
+Procedure
+Access the RBI Component to which you want to link a TML group.In the upper-right corner of the workspace, select .
+The Manage TML Groups window appears.
+
+
+
+Next to the TML Groups that you want to link to the RBI Component, select the check boxes, and then select OK.
+The selected TML Groups are linked to the RBI Component. 
+Note: If the Source of Calculated Corrosion rate is set to Asset or Component on the related component and the related TML asset has more than 1000 TMLs where the related TML Corrosion Analysis has not been calculated, you need to calculate the asset in the Thickness Monitoring module before continuing.
+Results
+
+An RBI Component linked to a TML Group inherits the TM corrosion rate values from the TML Group. If the component contains an RBI 581 Thinning and Lining Damage Mechanism Evaluation, the resulting damage factor value will be based on the corrosion rate determined by the value in the 
+Selected Corrosion Rate field.
+
+Apply an
+RBI ComponentAbout This Task
+When you apply an
+RBI Component, you make a copy of the original record. The applied RBI Component is not automatically linked to the original RBI Component's Corrosion Loop. Instead, the applied RBI Component can be linked to the same or a different asset and then to a Corrosion Loop.
+Procedure
+Access the RBI Component that you want to apply. In the upper-right corner of the page, select .
+The Hierarchy Finder window appears.
+
+
+
+Navigate through the Hierarchy Finder to select the asset to which you want to apply the RBI Component. Select OK.
+The RBI Component is applied to the selected asset.
+What To Do Next
+
+Link RBI Components to an RBI Corrosion Loop
+
+Delete an
+RBI ComponentBefore You Begin
+
+
+Unlink all the Potential Degradation Mechanisms (PDMs) linked to the RBI Component. 
+Delete all the RBI Analyses linked to the RBI Component.
+
+Procedure
+Access the Asset Summary workspace of the asset that is linked to the RBI Component that you want to delete. 
+-or-
+
+Access the Corrosion Loop that is linked to the RBI Component that you want to delete.
+Next to the Component what you want to delete, select the check box next, and then select .
+A message appears, asking you to confirm that you want to delete the selected RBI Component.
+Select Yes.
+The RBI Component is deleted, and all links to existing related entities are removed.
+
+
+
+
+
+On this pageAbout RBI ComponentsAbout Integration with Thickness Monitoring (TM)About Using TM Analysis Values at the Thickness Monitoring Location (TML) Group LevelAbout Using TM Analysis Values at the Asset LevelAccess an
+RBI Component Create an
+RBI ComponentAccess the Inventory Group of a ComponentLink RBI Components to an RBI Corrosion LoopUnlink an
+RBI Component from an RBI Corrosion LoopLink Potential Degradation Mechanisms (PDMs) to an
+RBI ComponentUnlink a Potential Degradation Mechanism (PDM) from an
+RBI ComponentLink an RBI Component to a TML GroupApply an
+RBI ComponentDelete an
+RBI Component
+
+
+
+
+
+
+
+
+

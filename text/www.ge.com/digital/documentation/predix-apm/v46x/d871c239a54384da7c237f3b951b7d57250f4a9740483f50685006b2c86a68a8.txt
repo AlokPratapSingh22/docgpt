@@ -1,0 +1,179 @@
+
+
+
+RBI 581 ISO Risk Plot | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+RBI 581 ISO Risk Plot
+
+
+
+
+
+
+
+RBI 581 ISO Risk PlotAbout the RBI 581 ISO Risk PlotThe RBI 581 ISO Risk Plot is a graph that plots the SHE risk and financial risk of:
+A single RBI 581 Risk Analysis.All RBI 581 Risk Analyses in a process unit, asset, corrosion loop, or component. In this scenario, the risk data of all the analyses in Risk Completed, Accepted by ASM, Pending Approval, or Approved state are plotted on the graph.Note: The maximum number of Assets that can be plotted on the RBI 581 ISO Risk plot is 10,000.By default, the graph for the SHE risk appears. If you want to view the graph for the financial risk, you must select the Financial Risk tab.For SHE risk:Consequence of Failure (in square feet) is plotted on the horizontal axis, using a logarithmic scale.Probability of Failure (in events per year) is plotted on the vertical axis, using a logarithmic scale.For financial risk:Consequence of Failure (in USD) is plotted on the horizontal axis, using a logarithmic scale.Probability of Failure (in events per year) is plotted on the vertical axis, using a logarithmic scale.Note: The units of measure can vary depending on the UOM Conversion Set that you use. For example, if you use the Metric conversion set, the Consequence of Failure will be measured in square meters instead of square feet.
+
+By default, the risk on the RBI date is plotted. If you want the without plan risk or the with plan risk to be plotted, then on the upper-right corner of the page, in the Risk Data box, select the appropriate option.The background color for various sections in the graph indicate the risk levels as defined by the International Organization for Standardization (ISO).Background colorRisk LevelRedHighOrangeMedium HighYellowMediumGreenLowIf you hover over a data point, then the ID of the analysis, the ID of the associated asset, the consequence of failure, probability of failure, and risk data of the analysis appear. If you select the data point, the Asset Summary page appears, displaying the analysis datasheet in the Analysis Details section.Note: If you want to specify a different set of values to be plotted on this graph, or modify the ranges for each axis and risk level, then access the RBI 581 ISO-Risk Plot Preferences workspace.Fields Used in Plotting Risk Data
+The following fields provides a list of fields that are used to plot risk data on the RBI 581 ISO-Risk Plot.
+
+FamilyFieldsRBI 581 Risk Analysis Total Financial Risk Without Plan Total POF Without Plan Total SHE Risk Without Plan Total Financial Risk With Plan Total POF With Plan Total SHE Risk With Plan Total Financial Risk - RBI Date Total POF - RBI Date Total SHE Risk - RBI Date RBI 581 Consequence Evaluation Final Consequence Area Total Financial Consequence 
+
+Access the Inventory Groups in a Process UnitAbout This Task
+You can also access the inventory group of a component.
+Procedure
+Access the Unit Summary workspace for the process unit for which you want to access inventory groups.In the upper-right corner of the workspace, select , and then select Inventory Group.
+The RBI 581 Inventory Groups workspace appears on a new page, displaying a list of inventory groups in the process unit in the left section and the datasheet for the corresponding Functional Location in the details section.
+
+
+
+Tip:  If you are a member of the RBI Admin Security Group, you can create an Inventory Group Configuration record in the RBI 581 Inventory Groups workspace.
+Access the RBI 581 ISO Risk Plot Page of a Functional LocationAbout This Task
+You can also access the RBI 581 ISO Risk Plot page for an asset, corrosion loop, component, or analysis.
+Note:
+The risk data of an analysis is plotted on the ISO risk plot only if the analysis is in one of the following states: Risk CompletedAccepted by ASM
+
+Procedure
+Access the Risk Based Inspection Overview page for the functional location for which you want to access the ISO risk plot.In the upper-right corner of the page, select the Actions button.Select the RBI 581 ISO-Risk Plot option.
+The RBI 581 ISO-Risk Plot page appears, displaying the SHE Risk. 
+
+
+
+Note: By default, the risk on the RBI date is plotted. If you want the without plan risk or the with plan risk to be plotted, then on the upper-right corner of the page, in the drop-down list box, select the appropriate option.
+ If you want to view the Financial Risk, then select the Financial Risk radio button. If you want to access the datasheet of the analysis that corresponds to a data point, then select the data point.If you want to select a different functional location, then:
+
+On the upper-left corner of the page, select .
+The Enter Parameter Values window appears.
+
+
+
+
+Select the process unit that is already set as the context.
+The Hierarchy window appears.
+
+
+
+
+Navigate to the process unit whose ISO risk plot you want to access, and then select Done.
+The Hierarchy window closes.
+
+On the Enter Parameter Values window, select Done.
+The ISO risk plot for the selected functional location appears.
+
+Access the RBI 581 ISO Risk Plot Page of an AssetAbout This Task
+You can also access the RBI 581 ISO Risk Plot page for a functional location, corrosion loop, component, or analysis. Note:
+The risk data of an analysis is plotted on the ISO risk plot only if the analysis is in one of the following states: Risk CompletedAccepted by ASM
+
+Procedure
+Access the Asset Summary workspace of the asset for which you want to access the ISO Risk plot. On the upper-right corner of the page, select , and then select RBI 581 ISO-Risk Plot.
+The RBI 581 ISO-Risk Plot page appears, displaying the SHE Risk. 
+
+
+
+Note: By default, the risk on the RBI date is plotted. If you want the without plan risk or the with plan risk to be plotted, then on the upper-right corner of the page, in the drop-down list box, select the appropriate option.
+If you want to view the Financial Risk, then select the Financial Risk radio button.If you want to access the datasheet of the analysis that corresponds to a data point, select the data point.Access the RBI 581 ISO Risk Plot Page of a Corrosion LoopAbout This Task
+You can also access the RBI 581 ISO Risk Plot page for a functional location, asset, component, or analysis.Note:
+The risk data of an analysis is plotted on the ISO risk plot only if the analysis is in one of the following states: Risk CompletedAccepted by ASM
+
+Procedure
+Access the Corrosion Loop containing the ISO risk plot that you want to access.
+On the upper-right corner of the page, select .
+The RBI 581 ISO-Risk Plot page appears, displaying the SHE Risk. 
+
+
+
+Note: By default, the risk on the RBI date is plotted. If you want the without plan risk or the with plan risk to be plotted, in the upper-right corner of the page, select the appropriate option in the drop-down list box.
+To view the Financial Risk, select the Financial Risk radio button. To access the datasheet of the analysis that corresponds to a data point, select the data point.Access the RBI 581 ISO Risk Plot Page of a ComponentAbout This Task
+You can also access the RBI 581 ISO Risk Plot page for a functional location, asset, corrosion loop, or analysis.Note:
+The risk data of an analysis is plotted on the ISO risk plot only if the analysis is in one of the following states: Risk CompletedAccepted by ASM
+
+Procedure
+Access the Component whose ISO risk plot you want to access.On the upper-right corner of the page, select .
+The RBI 581 ISO-Risk Plot page appears, displaying the SHE Risk. 
+
+
+
+Note: By default, the risk on the RBI date is plotted. If you want the without plan risk or the with plan risk to be plotted, then on the upper-right corner of the page, in the drop-down list box, select the appropriate option.
+ If you want to view the Financial Risk, then select the Financial Risk radio button. If you want to access the datasheet of the analysis that corresponds to a data point, then select the data point.Access the RBI 581 ISO Risk Plot Page of an AnalysisAbout This Task
+You can also access the RBI 581 ISO Risk Plot page for a functional location, asset, corrosion loop, or component.
+Procedure
+Access the RBI 581 Risk Analysis whose ISO risk plot you want to access. In the workspace heading, select the Risk Matrix tab.
+The Risk Matrix section appears, displaying the ISO risk plot.
+
+
+
+Note: By default, the risk on the RBI date is plotted. If you want the without plan risk or the with plan risk to be plotted, then on the upper-right corner of the page, in the drop-down list box, select the appropriate option.
+If you want to view the Financial Risk, then select the Financial Risk radio button.If you want to view the default risk matrix, then select the Risk Matrix tab that appears above the ISO risk plot.
+Note: By default, RBI 581 Risk Analyses are only mapped to the default Risk Matrix. The Standard Practice Risk Matrix is not supported by RBI 581 Risk Analyses.
+
+
+
+
+
+On this pageAbout the RBI 581 ISO Risk PlotAccess the Inventory Groups in a Process UnitAccess the RBI 581 ISO Risk Plot Page of a Functional LocationAccess the RBI 581 ISO Risk Plot Page of an AssetAccess the RBI 581 ISO Risk Plot Page of a Corrosion LoopAccess the RBI 581 ISO Risk Plot Page of a ComponentAccess the RBI 581 ISO Risk Plot Page of an Analysis
+
+
+
+
+
+
+
+
+

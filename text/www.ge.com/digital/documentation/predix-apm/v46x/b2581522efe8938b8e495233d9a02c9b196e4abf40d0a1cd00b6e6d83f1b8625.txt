@@ -1,0 +1,100 @@
+
+
+
+Second Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference 
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+ First Quarter of 2019 
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Release Notes
+Second Quarter of 2021
+
+
+
+
+
+
+
+Second Quarter of 2021Release Date: June 4, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New FeaturesThe following enhancements and new features have been added.DescriptionTracking IDTo enhance the usability of the mobile Field Data Collection feature, using the mobile application, the following enhancements have been made:For images captured against Checklist Findings using the mobile application in the Field Data Collection feature, the resulting Reference Documents created after the data is synced are now linked to both the original record against which it was taken and the root inspection event record.Note: The reference document stored against the Checklist Findings from the browser based workflow will not be related to the root inspection event record.An image gallery button is added to the inspection event header which displays all the images taken for that inspection in a consolidated location. The image gallery button also displays a count of collected images and it is disabled when there are no images.For checklist inspections, similar functionality is added for each checklist category and an image button is found to the right side of each category header. All images collected against finding items within that category are displayed in the image gallery.For images against Checklist Findings, the image gallery dialog displays both the description of the Reference Document as well as the Finding Summary value from the finding record.Note: The height of individual Checklist Finding rows has been increased for more visibility of the summary text.US483605
+Table 2. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, when you attempted to print a large number of inspection reports at a time, the print job took a long time to complete, and some of the reports were not printed. This issue has been resolved. Now, in this scenario, the failed reports will be processed automatically.DE149838
+
+
+
+
+
+On this pageRelease Date: June 4, 2021
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,94 @@
+
+
+
+First Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Record ManagerOverview
+Manage Records
+Manage Linked Records
+Manage Bulk Data Form 
+Manage Reference Documents
+Manage Conditional Alerts
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Third Quarter of 2019
+First Quarter of 2019
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Record Manager
+Release Notes
+First Quarter of 2019
+
+
+
+
+
+
+
+First Quarter of 2019Record ManagerThis topic provides a list of product changes released for this module on the dates listed below.Release Date: March 29, 2019
+Table 1. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, if you had uploaded a reference document that had a file name with Chinese characters and then downloaded the same document using the Internet Explorer browser, the name of the downloaded document was incorrect. This issue has been resolved.DE90473Previously, while creating or modifying a record, the drop-down list boxes available in the datasheet were not highlighted with red borders, although a value was required for each drop-down list box. This issue has been resolved.DE90469Previously, if a query had a field displaying date and time, if you used the query as a data source for a record that belonged to the Conditional Alerts family and scheduled the conditional alert, the time for a specific date displayed in the query result did not match the corresponding time displayed in the email that was sent when the conditional alert was executed. This issue has been resolved. DE87509Previously, when you attempted to upload a reference document that had a file name with Russian characters, an error message appeared, indicating that the file type was not supported. This issue has been resolved. Now, you can upload a reference document with a Russian file name. DE87014Previously, in the Record Explorer page, when you attempted to access a record that had a large number (approximately 30000) of successor records that are associated with the same family, an error occurred. This issue has been resolved.US316553
+
+
+
+
+
+On this pageRecord Manager
+
+
+
+
+
+
+
+
+

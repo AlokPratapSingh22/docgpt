@@ -1,0 +1,77 @@
+
+
+
+Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Asset HierarchyOverview
+Workflow
+Asset Hierarchy Configuration
+Data Loader
+Troubleshooting
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Asset Hierarchy
+Workflow
+
+
+
+
+
+
+
+WorkflowCore Analysis: Asset Event Analysis WorkflowCore Analysis processes leverage GE Digital APM data to identify opportunities for business improvement. When the process identifies such an opportunity, a Performance Recommendation is raised to communicate the need and track the required work. You can use the Asset Event Analysis Workflow process to identify opportunities or needs for improvement based on unexpected or undesirable events related to specific assets.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Start Persona: AnalystTo satisfy a specific business problem, a GE Digital APM User initiates a core analysis that applies standard data analysis techniques.Search Asset Persona: AnalystSearch for a specific asset (Functional Location or Equipment) for which Event records are required.Review Event History Persona: AnalystReview individual Event records for the selected asset. Identify unexpected or undesirable events that may require further analysis for elimination. Consult other forms of GE Digital APM data in the analysis of Event records.Opportunity Exists? Persona: AnalystIf a GE Digital APM User identifies an opportunity or need for improvement, then a Performance Recommendation is raised to communicate the need and track the required work. Otherwise, the workflow ends.Manage Performance Recommendations Persona: AnalystIf a GE Digital APM User identifies an opportunity or need for improvement, then a Performance Recommendation is raised to communicate the need and track the required work.
+
+
+
+
+On this pageCore Analysis: Asset Event Analysis WorkflowStartSearch AssetReview Event HistoryOpportunity Exists?Manage Performance Recommendations
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,173 @@
+
+
+
+Risk Based Inspection 580 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health Manager
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+Risk Based Inspection 580
+
+
+
+
+
+
+
+Risk Based Inspection 580Deploy RBI for the First TimeBefore You Begin
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. GE Digital recommends, however, that the tasks be completed in the order in which they are listed.
+
+Results
+StepTaskNotes
+1
+Assign Security Users to one or more of the Security Roles used in RBI.
+This step is required.
+
+2
+
+Assign the following types of RBI users to at least one TM Security Group: 
+Users who are responsible for completing the steps necessary to use TM Analysis values to calculate RBI 580 corrosion rates. Users who should be able to navigate to TM via RBI 580. 
+This step is required only if you are using the integration between the RBI and Thickness Monitoring modules.
+3
+
+Modify the MI_DEGRADATION_MECHANISM_TYPES System Code Table.
+This step is required only if you want to create your own Potential Degradation Mechanisms records.
+4
+Select the Recommendation Creation Enabled check box in the 
+Global Preferences workspace.
+
+This step is required only if you do not want to create Recommendations in RBI, but want to use the Asset Strategy Management (ASM) module to recommend actions and manage mitigated risk. This check box is selected by default.
+
+5
+Select the Enable Recommendations to be Generated at Created State check box in the 
+Global Preferences workspace.
+This step is required only if you want to create RBI Recommendation records while RBI Analysis records are in the Created state. This check box is cleared by default. 
+6
+Select the Allow Override of Calculated Unmitigated Risk Values check box in the 
+Global Preferences workspace.
+This step is required only if you want to override the calculated values of unmitigated risk because you use a custom calculator. This check box is cleared by default. 
+7
+Select the Consider Half-Life when Determining Inspection Task Interval check box in the 
+Global Preferences workspace.
+
+This step is required only if you want additional values such as half-life to determine the inspection task interval. This check box is cleared by default. 
+
+8
+Select the Is a Unit? check box in Functional Location records that represent units in your facility.
+This step is required to mark Functional Location records as Process Units.
+
+9
+Using the Belongs to a Unit relationship, link Equipment records to Functional Location records representing units to which that equipment belongs (i.e., the Is a Unit? check box is selected).This step is optional.
+10
+Configure the GE Digital APM system to generate RBI Recommendation records automatically.This step is optional.
+11
+
+Create Potential Degradation Mechanisms records.
+This step is required only if you want to use additional Potential Degradation Mechanisms records that are not provided in the baseline GE Digital APM database.
+12
+
+Assign a ranking to all Qualitative Potential Degradation Mechanisms records.
+This step is required only if you want the Probability Category field in certain Criticality Degradation Mech Evaluation records to be populated automatically based on this ranking.
+13
+Add existing RBI Component Types to the MI RBI COMPONENT TYPES system code table.This step is required only if you want to use additional RBI Component type records that are not provided in the baseline GE Digital APM database.
+Upgrade RBIBefore You Begin
+
+The following tables outline the steps that you must complete to upgrade this module to the latest version of GE Digital APM
+                    .
+                
+These tasks may be completed by multiple people in your organization. We recommend, however, that the tasks be completed in the order in which they are listed.
+
+After you upgrade: 
+All RBI Assets with Active Analyses will have a related Inspection Plan record created.All RBI recommendations for an RBI Asset will be related to Inspection Plan record of the RBI Asset.The state caption for RBI Recommendation family with State ID MI_ACCEPTED will be updated to “Approved”.The Recommendation Methodology field on RBI Recommendation will be updated to RBI 580 where previously the field had the value of "Criticality Calculator”.All security users who belong to the 'MI RBI Analyst' security group will belong to the MI Inspection Plan Approver security role.The MI Inspection Plan Approver security role will have the MI ASM Analyst security group assigned.Piping Stress updatedIn some of the Piping Stress records for B31.3, WPB was misspelled as WFB. These records are now updated based on ASME standards.In some of the Piping Stress records for B31.3 and B31.1 for the year 2014, where the Material Specification field contained the value B366 and B622, the Material Grade had the value NS instead of N/A. These records are now updated based on ASME standards.RBI 580 Representative Fluid contents have been updated for the following fluids to match the API 581, 3rd Edition, Addendum 1 specification:C13-16 (Diesel)C17-25 (Gas Oil)C25+ (Resid)C5ChlorineCOEOH2H2O (Water)H2SHClHFMEOH (Methanol)NH3PhosgeneSteamFor information on the updated RBI 580 Representative Fluid Contents, refer to the  topic.The Data Mapping Group record that satisfies the following conditions, along with its child records, will be reverted to baseline: The value in the Source Family field is Criticality RBI Component - Exchanger Bundle.The value in the Target Family field is RBI Criticality Analysis.
+In some of the PV Stress records that contain the value SA/AS 1548, SB-187, SB-308, or SB-211 in the Material Specification field, values in the Minimum Yield Strength field are updated based on ASME 2010 standards.
+ProcedureUpgrade to the latest version of GE Digital APM.
+StepTaskNotes1Add existing RBI Component Types to the MI RBI COMPONENT TYPES system code table.This step is required only if you have additional RBI Component type records that are not provided in the baseline GE Digital APM database.2Revert the following Risk Based Inspection queries to baselinePublic\Meridium\Modules\Mechanical Integrity\Queries\Dashboard Queries folder.Equipment Outside Risk PolicyPendingRecommendationsRBI Risk Matrix QueryRiskMatrix Public\Meridium\Modules\Mechanical Integrity\Report Queries folder.MI RBI Analysis Summary QueryMI Inspection Management Summary QueryMI Thickness Monitoring Summary QueryPublic\Meridium\Modules\Risk Based Inspection\Queries  folder.Active Analyses for Evergreening – 580Analyses Created For Evergreening – 580Analyses Ready For Evergreening – 580Asset Corrosion Analysis More Current Than All AnalysesAsset Corrosion Analysis More Current Than AnalysesAsset Counts for UnitsAssets with No RecommendationsAssets with No Recommendations (580 Only)Current RiskCurrent Risk OverviewInspections More Current Than All AnalysisInspections More Current Than AnalysisPast RiskPast Risk OverviewRBI Asset Risk QueryRBI Assets for a Functional LocationRBI Components for UnitSelect Protected AssetsSelect RBI ComponentsView Protected RBI ComponentsReview Analyses by AssetReview Analyses by Asset 580Review Analyses by Corrosion LoopReview Analyses by Corrosion Loop 580Process Unit QueryAnalyses Ready For Evergreening for Unit - 580This step is required only if you have previously modified the queries and you want to support Functional Location as an Asset.3Revert the following Risk Based Inspection queries to baselinePublic\Meridium\Modules\Risk Based Inspection\Queries folder.Inspections More Current Than All AnalysisInspections More Current Than AnalysisThis step is required only if you have modified the queries that are used for the Inspection Updates section of the Inspection/TM Updates tab, in the Risk Based Inspection Overview page.4Update PV Stress content and stress lookup fields for RBI Criticality Analyses in created state.This step is required only if you want to use the Pressure Vessel stress content with updated Material Grade in accordance with Tables 1A and 1B of ASME Section II, Part D, 2010. For more information, refer to KBA 000038584.
+Revert the Risk Based Inspection Queries to BaselineThis action is required only if you have modified the Risk Based Inspection queries.About This TaskIf you have modified the following Risk Based Inspection queries, perform the following steps to revert the queries to baseline:Active Analyses for Evergreening - 580Analyses Created for Evergreening - 580Select RBI ComponentsProcedureAccess the Catalog page.Navigate to the Public folder for the query that you want to revert.For Risk Based Inspection 580, the public queries are stored in the following folder:
+Public/Meridium/Modules/Risk Based Inspection/QueriesSelect the check box next to the query that you want to revert, and then select .The Confirm Delete window appears, asking you to confirm if you want to delete the selected query.Select OK.The selected query is deleted.Navigate to the Baseline folder for queries.For Risk Based Inspection 580, the baseline queries are stored in the following folder:
+Baseline/Meridium/Modules/Risk Based Inspection/QueriesSelect the check box next to the query that you want to revert, and then select .The Catalog Folder Browser window appears.Navigate to the folder containing the public query that you deleted in step 3.Select OK. A success message appears indicating that the selected item has been copied successfully.Repeat Steps 2-8 for each query that you want to revert to baseline.Revert the Compliance Management Query to BaselineThis action is required only if you want to use the RBI Inspection Grouping functionality.About This TaskIf you have modified the Recommended Actions by Selected Plans query, perform the following steps to revert the query to baseline:ProcedureAccess the Catalog page.Navigate to the following Public folder:
+Public/Meridium/Modules/Inspection/Compliance/Queries/Select the check box next to the Recommended Actions by Selected Plans query, and then select .The Confirm Delete window appears, asking you to confirm if you want to delete the selected query.Select OK.The selected query is deleted.Navigate to the following Baseline folder.
+Baseline/Meridium/Modules/Inspection/Compliance/Queries/Select the check box next to the Recommended Actions by Selected Plans query, and then select .The Catalog Folder Browser window appears.Navigate to the Public folder containing the query that you deleted in step 3.Select OK. A success message appears indicating that the selected item has been copied successfully.Revert Datasheets to BaselineAbout This TaskIf you have customized the default datasheet, then you must perform the following steps.Note: Running this utility overwrites your current datasheet and replaces it with the baseline version. You must be a super user in GE Digital APM to run the Revert to Baseline utility.ProcedureLog in to the GE Digital APM Server.Navigate to the \Meridium\Upgrade\DBUpgrade folder.Run the RevertToBaselineApp.exe file as an administrator.The Revert To Baseline Login Screen window appears. In the Meridium Data Source box, enter the data source name that you want to access.Enter your login credentials, and then select Next.The available families that can be reverted to baseline appear.Select Design tab.The available families that can be reverted to baseline appear.Select the family and then select Revert to Baseline.The Various Options For Revert window appears.Select Datasheets.Select the default datasheet from the drop-down list box, and then select Ok.Add RBI Component TypesBefore You BeginAbout This TaskProcedureLog in to GE Digital APM as an administrator.Go to Admin > Configuration Manager > System Codes and Tables.Search for MI RBI COMPONENT TYPES.In the System Code section, select .The Create System Code window appears.Add the RBI Component Types to the system code table.Select Save.Log out of GE Digital APM and log in.To add existing RBI Component Types to the MI RBI COMPONENT TYPES system code table, perform the following steps:Select , and enter EquipmentTypes.A blank EquipmentTypes datasheet appears.In the CriticalityItemType box, select the existing RBI Component Type that you have added.Enter values in the required boxes, and then select  to save the record.
+
+
+
+
+On this pageDeploy RBI for the First TimeUpgrade RBIRevert the Risk Based Inspection Queries to BaselineRevert the Compliance Management Query to BaselineRevert Datasheets to BaselineAdd RBI Component Types
+
+
+
+
+
+
+
+
+

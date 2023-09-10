@@ -1,0 +1,111 @@
+
+
+
+First Quarter of 2022 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+Fourth Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Release Notes
+First Quarter of 2022
+
+
+
+
+
+
+
+First Quarter of 2022Release Date: March 4, 2022This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking ID
+To enhance flexibility when assigning user permissions in Root Cause Analysis, additional feature permissions have been added. You can now choose from the following newly added permissions:
+MI Root Cause Analysis Team MemberMI Root Cause Analysis ViewerMI Root Cause Analysis Administrator
+US512878
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when you created an RCA Verification and saved it, the verification was assigned automatically to the Principal Analyst. This issue has been resolved. Now, when you attempt to save the verification, a window appears prompting you to assign the verification to a team member.US523412Previously, in RCA Verifications, when you entered more than 150 characters in the Method field, an error occurred, and the value was not updated. This issue has been resolved.DE175040Previously, in an RCA analysis, the SSRS Comprehensive Analysis Report included the logic image in the older logic tree design format. This issue has been resolved. Now, the SSRS report displays the logic tree in the current version user interface format. DE174682Previously, if you deleted or marked an RCA Verification record as complete, you continued to receive the email alerts on the due date set. This issue had been resolved. DE173828
+
+
+
+
+
+On this pageRelease Date: March 4, 2022
+
+
+
+
+
+
+
+
+

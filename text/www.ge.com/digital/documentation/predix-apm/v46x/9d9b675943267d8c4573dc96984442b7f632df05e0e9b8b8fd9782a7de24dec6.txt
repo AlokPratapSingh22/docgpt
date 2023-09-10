@@ -1,0 +1,120 @@
+
+
+
+Fourth Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Release Notes
+Fourth Quarter of 2021
+
+
+
+
+
+
+
+Fourth Quarter of 2021Release Date: December 17, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDPerformance, while you perform search on the policy instance has been significantly improved. To facilitate this enhancement, the following changes have been made:The search scope for instances in the Instances,
+Execution History pane and Validation workspaces is now restricted only to instance IDs.The delay between typing in the search box and starting the search has been increased.DE170376
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, the default datasheet for Policy Recommendations displayed the Alert tab, even though email notifications were not supported for Policy Recommendations. This issue has been resolved. Now, the default datasheet does not display the Alert tab. Note: If you have previously modified the default datasheet configuration, this change will not be applied automatically. US515201Previously, when you executed a policy that called a sub policy that contained a Create Entity node, if the entity was not created due to an error on another node, the execution details in the Create Entity node were incorrect. This issue has been resolved.DE168085
+Release Date: October 8, 2021This topic provides a list of product changes released for this module on this date.
+Table 3. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo enhance usability, the execution duration for each node is now displayed in a policy. When you select each node of a policy in Validation mode or in Execution History view mode, the Node Execution Details window displays the Execution duration.US491145You can now copy a policy instance from an existing saved policy instance. To facilitate this enhancement, a Duplicate option has been added to the Instance workspace. US491141To enhance usability, a new dashboard, Recent Policy Executions has been added to the General Dashboards. Using this dashboard, you can monitor the completion of policy executions and queue wait times. To facilitate this enhancement, the new dashboard and supporting queries have been added to the Catalog folder \\Public\Meridium\Modules\Policy Manager.
+US500241
+US486832
+You can now pass a Time Series Tag ID to a node from a prior node. To facilitate this enhancement, the Query Time Series node has been added to the Input toolbar.US485578You can now view a graph showing the average and maximum Time in Queue (time taken from Trigger Sent Time to Execution Start Time) for policies executed in the last 4 hours on the Policy Designer Overview page. To facilitate this enhancement, new graphs and queries are added to the catalog.US485566To improve performance, the Email node has been enhanced. You can now:Define a collection (for example, the output from a Query node) to be displayed as a table (a maximum of 500 rows only) in the email body or attach to the email as a .csv file, or both.Define the subject line of the email.Suppress the automatic email text that shows details of the policy logic.
+US482988US402799
+You can now query aggregate values (average and sum), interpolated values, and raw values in the Predix Time Series node. To facilitate this enhancement, in the Query Operation section, Raw, Interpolated, Average, and Sum options have been added in the Predix Time Series node properties window. The Use Interpolated Data option is removed from the Predix Time Series node properties window.Note: If you previously configured a Predix Time Series node to query interpolated data the policy is automatically upgraded to use the new option.US481681To improve the usability of the Execution History pane, the execution summary now displays links to the first five entities created by a Create Entity node. Note: You can access the links to all the created entities by selecting the Create Entity node in the execution history details displayed on the policy canvas.US475170You can now confirm before saving the security setting updates that will limit your access to a policy. To facilitate this enhancement, when you select Save, the Confirm Security Settings window is displayed.US474235
+Table 4. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, if your GE Digital APM system contained many policy execution history records, when you accessed the Policies tab on the Policy Designer Overview, the list of policies did not load. This issue has been resolved. To facilitate this update, the default query used by the Policies tab has been modified. The following columns are no longer displayed:Last Execution DateLast Execution ResultLast Execution SummaryNote:
+If you have previously customized the Public\Meridium\Modules\Policy Manager\Queries\Policy Overview - Policies query, you must copy the new query from the Baseline folder to the Public folder and apply the customizations, if required, to apply this update.If you have not experienced performance issues and prefer to retain the previous layout of the Policies tab, follow the steps for deploying the alternate query: Configure Alternative Query for the Policy Designer Overview Page. 
+US500043Previously, when you attempted to search for a Time Series Tag name containing a colon (:), pipe (|), equal (=), or backslash (\) character, in the Select a Time Series Tag window for an instance of a Predix Time Series node, an error occurred, and the results displayed were incorrect. This issue has been resolved. US442461Previously, when you selected the link in an email message sent by a policy, the policy was opened, but the Predix Time Series, Query Alerts and Create Alert options were not available in the toolbar in the Design workspace. This issue has been resolved. DE165405Previously, the Constant node icon size did not match with the other icons in the application. This issue has been resolved. The icon for the Constant node has been updated to .DE163680Previously, when you selected an asset as the primary record for an instance of a Predix Time Series node, and the asset had time series tags, the Predix Time Series drop-down list box displayed No Suggestions. This issue has been resolved. Now, the Predix Time Series drop-down list box displays Select... when the asset you select as primary record has time series tags.DE163156Previously, in the Policy Instance Data Loader, when you attempted to assign a record in a family where the Family ID differed from the Physical Table Name to a Point Value node, the policy instance was not created correctly. This issue has been resolved.DE160265Previously, if you executed a policy where a Close Event node followed an Or node, and a calculation or comparison node preceding the same Or node was not executed due to the policy logic, an error occurred, and the policy event was not closed. This issue has been resolved.DE159541Previously, in an Edit Entity node, if any of the specified entity keys were not found in the specified family, an incorrect error message appeared, and the policy execution resulted in an error. This issue has been resolved. Now, a correct warning message is displayed, and the policy execution is successful. DE157112Previously, when you executed a policy that contained a Time Series node, if an error occurred in the time series query, the policy execution history indicated that the time series node executed successfully but no data was retrieved, and the policy execution resulted in success. This issue has been resolved. Now, the policy execution history indicates that the time series query failed, and the policy execution results in error.DE156628Previously, when you selected Policy Recommendation, Production Event or Health Indicator Value in the Family ID section of a Create Entity node, and then added a new Create Recommendation, Create Production Event or Add Value to Health Indicator node, respectively, the fields in the new node were not displayed as expected. This issue has been resolved.DE144639Previously, when you added a new reading to a measurement location which was the triggering input for a policy instance, multiple executions were triggered. This issue has been resolved.DE141928Previously, when you mapped an input with Integer datatype to an input of a Math node or a Comparison node, and an input with undefined datatype, for example, a calculated query column, to the other input, an incorrect error message appeared in the notification bar and the policy could not be activated. This issue has been resolved.DE132771Previously, in a policy that used a Time Series tag node, if the Entity node that represented the asset (that is, Equipment or Functional Location) was set as the Primary Node, and you did not have permissions to access the tags for the asset referenced in an instance, a generic error message was displayed when you accessed the instance. This issue has been resolved. Now, a specific error message is displayed that indicates that you do not have the required permissions.DE101898
+
+
+
+
+
+On this pageRelease Date: December 17, 2021Release Date: October 8, 2021
+
+
+
+
+
+
+
+
+

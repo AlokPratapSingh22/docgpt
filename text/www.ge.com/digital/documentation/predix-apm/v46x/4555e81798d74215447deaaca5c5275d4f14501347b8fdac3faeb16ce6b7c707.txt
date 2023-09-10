@@ -1,0 +1,237 @@
+
+
+
+Global Preferences | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+Workflows
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data Loaders
+AdminGlobal Preferences
+Family Preferences
+Datalogger Mappings
+
+
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+Admin
+Global Preferences
+
+
+
+
+
+
+
+Global PreferencesAccess TM Admin PreferencesProcedureIn the module navigation menu, select
+Admin > Application Settings > Thickness Monitoring.The TM Admin Preferences page appears.  The following information appears in the page:Global Preferences: Lets you configure settings that apply throughout Thickness Monitoring. This section appears by default.Family Preferences: Lets you configure settings for the Equipment or TML Group families, or any other family that you use to store equipment or component data.TM Rules Lookup: Lets you view and modify the reference table values as needed.Datalogger Mappings: Lets you define the family field mappings for devices used to take measurements.Tip: You can modify the Global Preferences by selecting .Enable InterpolationBefore You Begin
+Multiple records with varying temperatures and stress values may exist for a given combination of Material Specification, Material Grade, and Design Code values. So, after a match is found on Material Specification, Material Grade, and Design Code, Thickness Monitoring (TM) evaluates Design Temperature.
+If the Design Temperature in the TML is an exact match to a temperature value in a Piping Stress or PV Stress record, TM will simply use the corresponding Allowable Stress value. For example, consider a TML that contains the following values:
+Material Specification = SA-216Material Grade = BDesign Code = ASME B31.3Design Temperature = 100
+Now, consider a Piping Stress record that contains the following values:
+Material Specification = SA-216Material Grade = BDesign Code = ASME B31.3Design Temperature = 100Allowable Stress = 20000
+In this case, the values in the TML are an exact match to the values in the Piping Stress record. Therefore, TM will use the Allowable Stress value of 20000 to calculate Maximum Allowable Working Pressure and T-Min.
+Thickness Monitoring uses reference tables to look up the Allowable Stress values for performing T-Min calculations and for calculating Maximum Allowable Working Pressure. You have two choices regarding how the stress reference tables will be used to determine Allowable Stress when an exact match cannot be found:
+You can specify that the lowest temperature in the established range should be used.You can specify that Thickness Monitoring should use linear interpolation to determine the Allowable Stress.
+By default, interpolation is disabled.
+Procedure
+Access the TM Admin Preferences page.In the upper-right corner of the Global Preferences workspace, select .
+The boxes and check boxes in the Global Preferences workspace are enabled.  is replaced with .
+In the T-Min Calculator Preferences section, select the Use Interpolation for Stress Reference Tables check box.In the upper-right corner of the workspace, select .
+The setting is saved, along with any other changes you have made to the preferences in the Global Preferences workspace.
+Interpolation ExamplesInterpolation is Enabled
+If TM cannot find an exact match in the Piping Stress or PV Stress reference table, and the Application Settings specify that interpolation should be used, TM will calculate the interpolated Allowable Stress value using the temperature and stress values that make up a range that includes the TML Design Temperature.
+For example, consider a Piping Stress reference table that contains the following two records.
+
+Record #1Record #2Material SpecificationSA-403SA-403Material GradeWP316WP316Design CodeASME B31.3ASME B31.3Design Temperature100200Allowable Stress2000018000
+
+Now, consider a TML that contains the following values:
+Material Specification = SA-403Material Grade = WP316Design Code = ASME B31.3Design Temperature = 150
+The TML Design Temperature falls within the range established by the two Piping Stress records in the table. Linear interpolation assumes that stress varies linearly as a function of temperature within the defined range. Using this assumption, the Allowable Stress at 150 degrees can be calculated using the following formula:
+
+Sx = S1 - (T1 - Tx) / (T1 - T2) * (S1 - S2)
+
+Where:
+
+Sx = Allowable Stress for the TML
+S1 = Allowable Stress at Lower Boundary
+S2 = Allowable Stress at Upper Boundary
+T1 = Temperature at Lower Boundary
+Tx = Temperature defined for TML
+T2 = Temperature at Upper Boundary
+Given the values from our example, we calculate Sx as:
+
+Sx = 20000 - ((100 - 150) / (100 - 200) * (20000 - 18000))
+
+So:
+
+Sx = 19000
+
+This interpolated Allowable Stress value will then be used to populate the Allowable Stress field in the TML.
+Note: For TM to determine Allowable Stress in this way, the Piping Stress and PV Stress reference tables must contain records that establish the range that includes the TML Design Temperature.
+Interpolation is Disabled
+If TM cannot find an exact match in the Piping Stress or PV Stress reference table, and the Application Settings specify that interpolation should not be used, TM will use an Allowable Stress value that corresponds to the lowest temperature value in the temperature range that includes the TML Design Temperature.
+For example, consider a Piping Stress reference table that contains the following two records.
+
+ Record #1Record #2Material SpecificationSA-403SA-403Material GradeWP316WP316Design CodeASME B31.3ASME B31.3Design Temperature100200Allowable Stress2000018000
+
+Now, consider a TML that contains the following values:
+Material Specification = SA-403Material Grade = WP316Design Code = ASME B31.3Design Temperature = 150
+In this case, the Design Temperature in the TML is not an exact match to a Piping Stress record. The TML Design Temperature, however, does fall within the temperature range established by the two Piping Stress records in the table. So, in this case, TM will use the record that contains the most conservative (i.e., lowest) Allowable Stress value. Therefore, in this case, an Allowable Stress value of 18,000 will be used in the TML.
+Note: For TM to determine Allowable Stress in this way, the Piping Stress and PV Stress reference tables must contain records that establish the range that includes the TML Design Temperature.
+Auto Manage TasksBefore You Begin
+Thickness Monitoring Tasks will be created automatically when you create Corrosion Analysis Settings for an asset or TML Group, or a record that stores equipment or component data for a Corrosion Analysis. GE Digital APM provides an option that allows Thickness Monitoring Tasks to be updated automatically when you make changes to a Thickness Measurement Location (TML) record.
+The Auto Manage Tasks setting is disabled by default.
+Note: TM will create and update Thickness Monitoring Tasks automatically only if the Component ID setting is defined for family to which the TML is directly linked. If this setting is not defined, an error message will appear when TM attempts to create the Thickness Monitoring Task.
+Procedure
+Access the Global Preferences workspace.
+In the upper-right corner of the workspace, select .
+The boxes and check boxes in the Global Preferences workspace are enabled.  is replaced with .
+In the Tasks Preferences section, select the Auto Manage Tasks? check box.In the upper-right corner of the workspace, select .
+The setting is saved, along with any other changes you have made to the preferences in the Global Preferences workspace.
+Results
+When the Auto Manage Tasks setting is enabled, the following fields in Thickness Monitoring Task records will be updated when you make changes to a TML. The following list is not comprehensive.
+
+
+Last Date: The value in the Last Date field is populated with the most recent measurement date that is associated with the first TML referenced in the NID TMLs field in the associated Asset Corrosion Analysis record.
+For example, if the NID TMLs field contained the Entity Keys of the following TMLs in the following order, the most recent measurement date (the value in the Measurement Taken Date field in the linked Thickness Measurement records) associated with TML 03 would be used to populate the Last Date field in the Thickness Monitoring Task record:
+TML 03TML 14TML 01
+
+
+Desired Interval: The value in the Desired Interval field is populated with the difference, in days, between the values in the Next Date and Last Date fields in the Thickness Monitoring Task record.
+For example, if the value in the Next Date field is 9/5/2017 and the value in the Last Date field is 3/6/2015, the Desired Interval field would be populated with the value 914.
+
+Use Minimum Measurement Interval for Corrosion RatesBefore You Begin
+This option enables you to determine which Thickness Measurements are used for calculating (either Short Term or Long Term Corrosion Rates) based on a defined interval provided. Once enabled, you can define either a global minimum interval for measurements or you may also provide site-specific minimum intervals.
+The Use Minimum Measurement Interval for Corrosion Rates setting is disabled by default.
+About This TaskProcedure
+Access the Global Preferences workspace.
+In the upper-right corner of the workspace, select .
+The options in the Global Preferences workspace are enabled.  is replaced with .
+In the Custom Corrosion Rate Options section, select the Use Minimum Measurement Interval for Corrosion Rates option.The Measurement Interval grid appears with an initial row for Global (all) sites. By default, the Measurement Interval value is set to 12 Months.In the Measurement Interval column, as required, define the interval for all the sites.If settings for a specific site are needed, select . A new row is added with a default interval of 12 Months and an empty Sites list.In the Measurement Interval column, as required, enter the interval values, and then select the required site(s) in the Sites list.In the upper-right corner of the workspace, select .The setting is saved along with any other changes you have made to the preferences in the Global Preferences workspace.Results
+When this setting is enabled, and the TML Corrosion Analyses are calculated, if the Short Term and Long Term options are enabled in the TML’s Corrosion Analysis Settings, the minimum measurement intervals provided are used to determine the corrosion rate calculations. 
+For example, if the Use Minimum Measurement Interval for Corrosion Rates option is enabled and the default 12-month interval is saved for all the sites, consider the following two scenarios:
+Short Term
+The following measurements are captured on a TML:
+1.24 IN – 4/15/20081.22 IN – 10/26/20151.18 IN – 2/18/20171.15 IN – 10/15/2017
+When the Short Term corrosion rate is calculated for this TML, the calculation identifies the Last Measurement as the one on 10/15/2017 and the Near Measurement as the one on 2/18/2017. However, when the setting is enabled and the interval between the two measurements is not at least 12 months, the calculation moves to the next closest measurement for evaluation. The next measurement occurred is on 10/26/2015 and is valid for the measurement interval criteria. This measurement is then used as the Near Measurement when calculating the Short Term Corrosion Rate value. If the calculation needs to skip a measurement, the Short Term Based on Minimum Measurement Interval field on the TML Corrosion Analysis is set to true.
+Note: The calculation continues to move back in the history of measurements looking for the valid measurement interval criteria. If valid interval is not found, the Short Term Corrosion Rate value is set to null and the Short Term Based on Minimum Measurement Interval field on the TML Corrosion Analysis is set to true.
+Long Term
+The following measurements are captured on a TML:
+1.18 IN – 2/18/20171.15 IN – 10/15/2017
+When the Long Term corrosion rate is calculated for this TML, the calculation identifies the Last Measurement as the one on 10/15/2017 and the Base Measurement as the one on 2/18/2017. However, when the setting is enabled and the interval between the two measurements is not at least 12 months, the calculation determines there is no valid Long Term Corrosion Rate, and the value is set to null. Also, the Long Term Based on Minimum Measurement Interval field on the TML Corrosion Analysis is set to true.
+Note: In this scenario, the Short Term corrosion rate is also set to null as the measurement interval criteria is not valid. Therefore, the Minimum Corrosion Rate as defined in the Corrosion Analysis Settings of the TML is used as the Controlling Corrosion Rate for the TML.
+What To Do NextDefine Readings PreferencesProcedure
+Access the Global Preferences workspace.
+Select .The boxes and check boxes in the Global Preferences workspace are enabled.  is replaced with .In the Readings Preferences section, in the Reading Tolerance box, enter the value that defines the range within which readings must fall in order to pass evaluation.
+In the Readings Calculation Method box, select the value that indicates how you want Thickness Measurement values to be calculated based on the values in the Readings field. You can choose Average, Minimum, Maximum, or Custom.Note: For more information on how the Readings Tolerance value is used in calculation, refer to the Reading Tolerance topic.If you select Custom, perform the following steps:Next to the Custom Rule for Readings Calculation box, select .The Select a Project and Method from the Catalog window appears.In the pane containing the project folders, navigate to and select the Rules Library folder that contains the project that you want to use for the reading calculation rule.A list of projects that exist in the selected folder appears.In the pane containing the projects, select the project that contains the method that you want to use for the readings calculation rule.A list of valid methods within the project appears.Select the method.Select Done.The Select a Project and Method from the Catalog window closes.Select .The settings in the Global Preferences workspace are updated.Configure Nominal T-Min LookupBefore You Begin
+Nominal T-Min is a value that represents the minimum thickness of a pipe based upon accepted industry standards. The Nominal T-Min value takes into account various design specifications and determines the minimum thickness associated with that criteria. The Nominal T-Min value is retrieved using values from Thickness Measurement Location records and records in the Piping Nominal T-Min reference table. Using the Nominal T-Min Preferences section, you can configure which fields you want to use for retrieving the Nominal T-Min value for Thickness Measurement Location records that are linked to Equipment or TML Group records that represent pipes, or records that store equipment or component data for pipes.
+In the Nominal T-Min Preferences section, under the Fields for Nominal T-Min Lookup heading is a list of all these fields that exist in the Piping Nominal T-Min family.
+Each field in the Piping Nominal T-Min family corresponds to a field in the Thickness Measurement Location family. By selecting a field in the Fields for Nominal T-Min Lookup list, you are indicating that you want to use that field for looking up Nominal T-Min values. This means that values in the associated fields in Thickness Measurement Location records will be compared to values in the Piping Nominal T-Min reference table and that a Nominal T-Min value will be returned only if a match is found. Any field that is not selected in the Fields for Nominal T-Min Lookup list will not be used for looking up the Nominal T-Min value. In other words, values in those fields of Thickness Measurement Location records are not required to match values in corresponding field in the Piping Nominal T-Min reference table.
+Note: If no fields are selected in the Fields for Nominal T-Min Lookup list, the Nominal T-Min Lookup feature will be disabled. In other words, a Nominal T-Min value will never be retrieved automatically for any Thickness Measurement Location record.
+Procedure
+Access the Global Preferences workspace.
+In the upper-right corner of the workspace, select .
+The boxes and check boxes in the Global Preferences workspace are enabled.  is replaced with .
+In the Nominal T-Min Preferences section, in the Fields for Nominal T-Min Lookup list, select the fields that you want to use for retrieving Nominal T-Min values.In the upper-right corner of the workspace, select .
+The setting is saved, along with any other changes you have made to the preferences in the Global Preferences workspace.
+Define Measurement PreferencesBefore You Begin
+If you enable this option and create Measurement Not Taken records and then later disable this option, any Measurement Not Taken records that you created will be ignored in the Corrosion Analysis (i.e., all calculations will be performed as if the Measurement Not Taken records did not exist).
+Procedure
+Access the Global Preferences workspace.
+In the upper-right corner of the workspace, select .
+The boxes and check boxes in the Global Preferences workspace are enabled.  is replaced with .
+Select the Allow Measurements to be Skipped check box.
+The Allow Consecutive Skipped Measurements check box is enabled.
+If you want to be able to create back-to-back Measurement Not Taken records, select the Allow Consecutive Skipped Measurements check box.In the upper-right corner of the workspace, select .
+The setting is saved, along with any other changes you have made to the preferences in the Global Preferences workspace.
+Map Common Measurement Data FieldsBefore You BeginWhen you make changes to the Common Measurement Data Field Mappings section, the new fields you map will be made available on the Measurement Data Entry workspace, in the common measurement data section. By default, Measurement Comment and Measurement Status Indicator fields are available to map. Additionally, any custom fields you create for the Thickness Measurement family will appear in the list of available fields.For example, if you select the Measurement Comment and Measurement Status Indicator fields to be mapped to the common measurement data section, the following screenshot illustrates how they will appear on the Measurement Data Entry workspace. Procedure
+Access the Global Preferences workspace.
+In the upper-right corner of the workspace, select .The boxes and check boxes in the Global Preferences workspace are enabled.  is replaced with .In the Common Measurement Data Field Mappings section, select up to three fields you want to appear in the common measurement data section of the Measurement Data Entry workspace.In the upper-right corner of the workspace, select .The setting is saved, along with any other changes you have made to the preferences in the Global Preferences workspace.Modify the High Loss ValueProcedure
+Access the Global Preferences workspace.
+In the upper-right corner of the workspace, select .
+The boxes and check boxes in the Global Preferences workspace are enabled.  is replaced with .
+In the Color-Coding Preferences section, in the High Loss box, enter a value between 0 and 100.In the upper-right corner of the page, select .
+The High Loss value is modified.
+Results
+When you create or update a Thickness Measurement, if the percentage of decrease in the measurement value from the previous measurement is greater than or equal to the new High Loss value, then, in the Analysis Overview workspace, in the TMLs section,  appears in the row containing the TML. This, however, happens only if the TML does not meet the criteria for the categories Below T-Min or Overdue.
+Define Pipe Rotation PreferencesAbout This TaskIf you select this option, the piping rotation workflow is enabled and the Piping Asset check box appears in the Corrosion Analysis Settings workspace for an asset.Procedure
+Access the Global Preferences workspace.
+Select .
+The boxes and check boxes in the Global Preferences workspace are enabled.  is replaced with .
+In the Pipe Rotation Preferences section, select the Enable Pipe Rotation  check box.The Enable Pipe Rotation window appears, confirming that for the TML Group family, the Asset to Subcomponent Relationship field will be set to Has TML Group.Select Yes.Select .
+The setting is saved, along with any other changes that you have made to the preferences in the Global Preferences workspace. In the family preference, the Asset to Subcomponent Relationship field for the TML Group family is set to Has TML Group.
+Define Wall Ratio PreferencesAbout This TaskThe Alert Levels in TML Trends graphs, Band Trends graphs, and Heat Maps and Piping Rotation widgets are determined using two parameters, that is, Alert Level 1 Max and Alert Level 2 Max. The default values for Alert Level 1 Max and Alert Level 2 Max are 1.5 and 1.2 respectively. You can modify these values from the Wall Ratio Preferences section.Procedure
+Access the Global Preferences workspace.
+Select .
+The boxes and check boxes in the Global Preferences workspace are enabled.  is replaced with .
+In the Wall Ratio Preferences section, for the alert levels whose maximum wall ratio value you want to modify, enter values in the Alert Level 2 Max box and the Alert Level 1 Max box.
+Note: The minimum value that can be entered in the Alert Level 1 Max box and the Alert Level 2 Max box is 1.
+Select .The Alert Level 2 Max and the Alert Level 1 Max values are modified.Manage Thickness Monitoring Rules Lookup RecordsBefore You Begin
+Thickness Monitoring Rules Lookup records create a reference table of values that are used by GE Digital APM Thickness Monitoring for performing certain calculations. Like all reference table records, Thickness Monitoring Rules Lookup records can be viewed most easily in the Bulk Data Form or through a query. For your convenience, the TM Administrative Tasks page contains a link that allows you to open Thickness Monitoring Rules Lookup records in the Bulk Data Form, where you can view and modify the reference table values as needed.
+Procedure
+Access the TM Admin Preferences page.
+Select the TM Rules Lookup tab.A list of all TM Rules Lookup records are displayed in the bulk data form.Note:  Unsaved changes to the TM bulk data form result in a  appearing in the first column. After saving, the  becomes a .
+
+Make any necessary changes, and then select .Any changes to or new TM Rules Lookup records are saved.
+
+
+
+
+On this pageAccess TM Admin PreferencesEnable InterpolationInterpolation ExamplesAuto Manage TasksUse Minimum Measurement Interval for Corrosion RatesDefine Readings PreferencesConfigure Nominal T-Min LookupDefine Measurement PreferencesMap Common Measurement Data FieldsModify the High Loss ValueDefine Pipe Rotation PreferencesDefine Wall Ratio PreferencesManage Thickness Monitoring Rules Lookup Records
+
+
+
+
+
+
+
+
+

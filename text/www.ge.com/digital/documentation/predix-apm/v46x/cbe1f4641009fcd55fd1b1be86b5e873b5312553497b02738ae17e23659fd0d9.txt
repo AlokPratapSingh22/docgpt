@@ -1,0 +1,102 @@
+
+
+
+Cards | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage CardsCards
+Analysis Cards
+SmartSignal Cards
+
+
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Manage Cards
+Cards
+
+
+
+
+
+
+
+CardsExport a CardAbout This Task
+You can export a card into multiple formats to share it with others using any means of communication outside of GE Digital APM. You can also attach it as an evidence to an Alert or Case. The export feature allows you to perform the following actions:Export as a PNG imageExport as a PDF documentCopy to clipboard
+ProcedureNavigate to the desired card. For SmartSignal cards, ensure that all the charts are loaded before trying to export the card.In the Analysis card, select  to access the options, and then select Export All Charts On This Card. For a SmartSignal card, in the card which you want to export, select .The export options appear.Select one of the options listed in the following table:
+OptionResultAs an ImageA message appears indicating that the images are being created and it may take time depending on the number of charts in the card. After the completion of the process, a PNG file is downloaded to the browser that includes images of all the charts in the card. The tag registers on the images of each chart displays the tag names and the asset names.Note: For Smart Signal charts, all the tag names are grouped at the top of the image as they are common across all the charts. This provides a compressed view of all the charts. The tag registers on the images of each chart displays only the tag names.As a PDFA message appears indicating that the PDF file is being created and it may take time depending on the number of charts in the card. After the completion of the process, a PDF file is downloaded to the browser that includes images of all the charts in the card. The tag registers on the images of each chart displays the tag names and the asset names.Note: For Smart Signal charts, all the tag names are grouped at the top of the image as they are common across all the charts. This provides a compressed view of all the charts. The tag registers on the images of each chart displays only the tag names.To ClipboardA message appears indicating that the images are being created and it may take time depending on the number of charts in the card. After the completion of the process, all the chart images are copied to the clipboard. You can then paste the contents of the clipboard to any application. The tag registers on the images of each chart displays the tag names and the asset names.Note: For Smart Signal charts, all the tag names are grouped at the top of the image as they are common across all the charts. This provides a compressed view of all the charts. The tag registers on the images of each chart displays only the tag names.
+
+Note: If you try to embed a large set of charts that have been saved as an image or copied to a clipboard in the body on an email message, Outlook compresses any images beyond a certain resolution that leads to a distorted image in the email for the recipient. To avoid this issue, it is recommended to attach the images to the email if the number of charts is more than four.
+Delete a CardYou can delete cards that are no longer necessary from a view.About This TaskDeleting an Analysis or SmartSignal card deletes all its associated charts. This action cannot be undone. If you delete all cards on a view, a default Analysis card appears where you can select a chart type.ProcedureNavigate to an analysis view using one of the following methods:
+MethodActionNavigate from a SmartSignal Alert
+In the module navigation menu, go to
+Alerts.Select an Alert Inbox filter, such as Unclaimed, or SmartSignal.Select an Alert from the Alert Inbox.In the details page, select an Analysis View chart.Select  to expand the Tag Panel.
+Navigate from an Analysis Alert
+In the module navigation menu, go to
+Alerts.Select an Alert Inbox filter, such as Unclaimed, or a filter containing an Analysis View.Select an Alert from the Alert Inbox.In the details page, select an Analysis View chart.Select  to expand the Tag Panel.
+Navigate to a SmartSignal Ad Hoc Analysis
+In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the card view workspace, select , and then select SmartSignal Card.Enter a name for the card in the Name box, and then select Create.Select  to expand the Tag Panel.Plot a model or set of tags.
+Navigate to an Ad Hoc Analysis
+In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Select , select Add Card, and then select Card.Enter a name for the card in the Name box, and then select Create.Select an option from the Select a Chart Type drop-down list.Select  to expand the Tag Panel.Plot a model or set of tags.
+
+On a selected card, select , and then select Delete Card. For a SmartSignal card, in the card which you want to delete, select .In the Delete window, select Delete.The selected card is deleted in the view.
+
+
+
+
+On this pageExport a CardDelete a Card
+
+
+
+
+
+
+
+
+

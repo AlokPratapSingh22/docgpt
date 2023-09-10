@@ -1,0 +1,92 @@
+
+
+
+Second Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Compliance ManagementOverview
+Workflows
+Inspection Plans
+Inspection Plan Management
+Compliance Recommendations
+Inspection Plan Revision History
+Suggested Compliance Strategy Templates
+Admin
+Deployment
+Reference 
+Release NotesFourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Third Quarter of 2019
+ Second Quarter of 2019 
+ First Quarter of 2019 
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Compliance Management
+Release Notes
+Second Quarter of 2021
+
+
+
+
+
+
+
+Second Quarter of 2021Release Date: June 4, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, when creating or updating an Inspection Plan based on a Compliance Strategy Template, if the policy associated with the template was executed for an asset and returned output nodes whose values did not match the Compliance Strategy ID field of the associated Compliance Strategy records, the status of the scheduled job incorrectly indicated that the Inspection Plan was created or updated successfully and no error message was added to the log file. This issue has been resolved.DE156745
+
+
+
+
+
+On this pageRelease Date: June 4, 2021
+
+
+
+
+
+
+
+
+

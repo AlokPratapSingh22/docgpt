@@ -1,0 +1,94 @@
+
+
+
+Spares Analysis: Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares AnalysisSpares Analysis: Overview
+Spares Analysis: Workflow
+Spares Analyses
+Spares
+Spare Applications
+Spare Application Populations
+Failure Distributions
+Monte Carlo Simulations
+
+
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Spares Analysis
+Spares Analysis: Workflow
+
+
+
+
+
+
+
+Spares Analysis: WorkflowReliability Analytics: Spares Analysis WorkflowThis workflow describes the process for determining the optimum stock holdings of spares in relation to the reliability distributions for the subject assets.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+View Existing Analysis Persona: AnalystView the details of an existing analysis.Create Analysis Persona: AnalystCreate an analysis based on production data or event data.Define Spare Persona: AnalystFor a new analysis, define each category of spare to be modeled within the workflow.Define Applications, Populations, and Failure Rates Persona: AnalystCreate one or more spares applications, populations, or failure rates based on the usage base to determine the optimal spares value. Run Simulation Persona: AnalystQueue the simulation service to run a selected number of iterations based on the applications, populations, failure rates, and uncertainties associated with the analysis parameters to find the optimal spares values. View Report Persona: AnalystView and save the analysis report.Manage Performance Recommendations Persona: AnalystCreate any number of performance recommendations and Approve them using state management. Note:  Performance recommendations are not required.Go to the Manage Performance Recommendations workflow.Other Workflows Persona: AnalystOther workflows provide production data from SAP, EAM, and Recommendations. 
+
+
+
+
+On this pageReliability Analytics: Spares Analysis WorkflowView Existing AnalysisCreate AnalysisDefine SpareDefine Applications, Populations, and Failure RatesRun SimulationView ReportManage Performance RecommendationsOther Workflows
+
+
+
+
+
+
+
+
+

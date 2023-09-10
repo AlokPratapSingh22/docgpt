@@ -1,0 +1,189 @@
+
+
+
+State Configuration | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Family ManagementRules
+Overview
+Entity and Relationship Families
+Fields
+Datasheets
+Offline Forms
+Family Reports
+Relationship Definition
+State Configuration
+Associated Pages
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Family Management
+State Configuration
+
+
+
+
+
+
+
+State ConfigurationAbout the State ConfigurationState Configuration provides a way for GE Digital APM users to indicate the status of a record and its associated information. For example, the workflow for requesting maintenance work involves creating a Work Order record, assigning the record to the maintenance personnel, and then closing the record after the work is completed. In this case, it might be useful to show the status of the Work Order record as either Created, Assigned, or Closed. You can use the Configuration Manager to define State Configuration for a family so that GE Digital APM users can apply status to records in those families. A family's state configuration consists of the combination of:
+States: These identify the status of a record. For example: Proposed, Rejected, Assigned, In Progress and so on.Operations: These define the available transition between the states. Operations help users to determine what steps should be taken next. For example: Reject, Approve, Assign and so on. In most cases, the same user will not be performing all operations. Instead, one user will be responsible for one operation or a small set of operations, while another user will be responsible for another small set of operations. In this way, the operations guide users to perform the tasks for which they are responsible while prohibiting them from performing tasks that they should not participate in.
+Rules: These dictate a record's available states and the transitions that change the state.You will define a family's state configuration by accessing the State Configuration section from the top navigation bar. You can use the State Configuration workspace to define a state and modify the workflow between the states.
+GE Digital APM provides a baseline State Configuration for several GE Digital APM families. You can define a State Configurations for any families of your choice. As you define the State Configuration for a family, keep in mind the workflow that you want users to follow. Then, create states and operations that facilitate that workflow and decrease the possibility of user error.After State Configuration is defined for a family, you can also assign Security Users to State Configuration Roles and states to limit the users that are allowed to change a record's state.Baseline State Configurations
+
+GE Digital APM provides a baseline State Configuration for several families. If required, you can extend a baseline State Configuration by adding new states and operations. You cannot, however, remove baseline states and operations that are flagged as Reserved in the Properties window of the state or operations. This limitation ensures that any baseline functionality that you can perform in the GE Digital APM using states and operations does not get modified or removed. 
+Note: If an operation is reserved, the users will not be able to select that operation from the datasheet in the Record Manager.
+You can, however, modify or remove any baseline states or operations that are not flagged as Reserved.
+Example of State Configuration
+ Consider the following example of states and operations that you might configure for the Work Order family.
+Note that in the following image, a square represents a state, and a line represents an operation. The square at the beginning of an arrow represents a predecessor state, and a square to which the arrow points represents a successor state.
+
+
+
+From this diagram, you can see that a Work Order record can be set to any of the following states:ProposedRejectedApprovedAssignedIn ProgressCompleted
+The operations that cause a record to change from one state to another are:
+Reject: Changes the state from Proposed to Rejected.
+Approve: Changes the state from Proposed to Approved.
+Assign: Changes the state from Approved to Assigned.
+Begin Work: Changes the state from Assigned to In Progress.
+Close: Changes the state from In Progress to Completed.
+The states are intended to provide a visual indicator of the status of a certain record and its associated information. In addition, operations help users determine what steps should be taken next. In most cases, the same user will not be performing all operations. Instead, one user will be responsible for one operation or a small set of operations, while another user will be responsible for another small set of operations. In this way, operations help guide users to perform the tasks for which they are responsible while prohibiting them from performing tasks that they should not participate in.
+For example, based on the diagram shown above, for a Work Order record that is Approved, the only available operation to a GE Digital APM user would be Assign. This operation indicates that the record has been approved and is ready to be assigned to the required user. Likewise, an Assigned record is ready to be implemented, which the operation Begin Work indicates. It is unlikely that the user assigning the work order would be the same who does the work.
+As you define the State Configuration for a family, keep in mind the workflow that you want users to follow. Then, create states and operations that facilitate that workflow and decrease the possibility of user error.
+About Enabling or Disabling the State Functionality
+Note: To define a State Configuration for a family, it depends on the level where you want to define it. 
+ProcedureTo define the state configuration, at any level, you need to select the Enable State Functionality button. On selecting this button:Three new fields will be created automatically if you are enabling the State Configuration for the first time for the selected family: State, Owner, and Last Entered Date. You can add these fields to any datasheet if you want GE Digital APM users to be able to see the values in places such as the Record Manager.Note: If you add the fields to a datasheet, we recommend that you modify the datasheet captions. If you do not modify the captions, the default captions will be MI_SM_STATE_ID_C, MI_SM_STATE_OWNER_ID_C, and MI_SM_STATE_ENTERED_D.If you are defining State Configuration at parent family level, you can define the states and the operations. If you are defining the State Configuration at the subfamily level, you can:Inherit the configuration defined at the parent family level and make no changes to the defined state configuration.For this, you can select the Use Parent's Configuration check box. The state Configuration defined for the parent will appear disabled on the workspace and you cannot modify the defined State Configuration. Inherit the configuraation defined at the parent family level and update the defined State Configuration.To do this, you can select the Enable State Functionality button. The copy of the State Configuration defined for the parent family will appear on the workspace and you can add, delete or modify the State Configuration copy. You cannot, however, modify the ID for the copied states and operations.
+To disable the state configuration for a family or subfamily, select the Disable State Functionality button. On selecting this button:
+All the record of a family will be moved to null state. The state assignments for all records of this family will also be cleared. When you enable it again by selecting the Enable State Functionality button, the records will start from the initial state.If the state configuration is defined for a family and you had selected the Disable State Functionality button, then if you select the Enable State Functionality button again, the last saved State Configuration will appear in the workspace.
+State Configuration WorkflowThe State Configuration workflow consist of defining State Configuration for a family and ensuring that the Security Users can transition records belonging to that family. You can define the state configuration workflow by using Configuration Manager and transition from one state to another state.The following table outlines the complete State Configuration workflow.StepsTaskLocation1
+Identify or create the family for which you want to define the State Configuration.Configuration Manager2
+Create State Configuration for families.Configuration Manager3If desired, for the families for which you defined State Configuration, assign Security Roles to states.Configuration Manager
+4
+If you selected the Require a specific user check box to be assigned to any state, assign Security Users to those states.Configuration ManagerActions That are Required in Configuration Manager
+The following table explains the actions that you can perform in the Configuration Manager regarding Security Roles. Specifically, it lists the following actions, their results, and an example of each action and result:Assigning State Configuration Roles to predecessor states with the Require a specific user to be assigned to a state check box selected.ActionExampleResultYou assign a Security Role to a predecessor state.  -and- You select the Require a specific user to be assigned to a state check box. For the Asset Strategy family, you assign the Security Role Asset Strategy Reviewers to the predecessor state Pending Review. -and- You select the Require a specific user to be assigned to a state check box. Example Result:Only the Security User who is assigned to the Pending Review state for a particular Asset Strategy record will be allowed to transition the Asset Strategy record out of the Pending Review state.Assigning State Configuration Roles to Predecessor States with the Require a specific user to be assigned to a state check box cleared.ActionExampleResultYou assign a Security Role to a predecessor state.  -and- You clear the Require a specific user to be assigned to a state check box. For the Asset Strategy family, you assign the Security Role Asset Strategy Reviewers to the predecessor state Pending Review.-and-  You clear the Require a specific user to be assigned to a state check box. Any Security User who is assigned to that State Configuration Role can transition a record out of that state. Example Result:Any Security User who is assigned to the Asset Strategy Reviewers Security Role can transition an Asset Strategy record out of the Pending Review state.Assigning Security Role to Successor States with the Require a specific user to be assigned to a state check box selected.ActionExampleResultYou assign a State Configuration Role to a successor state. -and-  You clear the Require a specific user to be assigned to a state check box. For the Asset Strategy family, you assign the Security Role Asset Strategy Reviewers to the successor state Active. -and- You select the Require a specific user to be assigned to a state check box. Any Security User can transition a record to that state, assuming that:  That user meets the criteria defined by the predecessor state selections. The state is assigned to a Security User who is assigned to that Security Role. Example Result:A Security User can transition an Asset Strategy record to the Active state if:The user meets the criteria defined by the predecessor state.The Active state is assigned to any Security User who is assigned to the Asset Strategy Reviewers Security Role.Assigning State Configuration Roles to Successor States with the Require a specific user to be assigned to a state check box cleared.ActionExampleResultYou assign a Security Role to a successor state.-and-  You clear the Require a specific user to be assigned to a state check box. For the Asset Strategy family, you assign the State Configuration Role Asset Strategy Reviewers to the successor state Active.  -and- You clear the Require a specific user to be assigned to a state check box. Any Security User can transition a record to that state, assuming that the user meets the criteria defined by the predecessor state selections. In other words, because the check box is cleared, the Security Role that is assigned to the successor state is ignored. Example Result:Any Security User that meets the criteria defined by the predecessor state selections can transition an Asset Strategy record to the Active state.Assigning Security Users to Security Role.ActionExampleResultYou assign a Security User to a Security Role. You assign the Security User John Smith to the State Configuration Role Asset Strategy Reviewers. 
+That Security User can transition records: 
+From any predecessor states to which that Security Role is assigned. To any successor states that are assigned to a Security User that is assigned to that Security Role. 
+Example Result:
+John Smith can transition a record:
+From any predecessor states to which the Asset Strategy Reviewers Security Role is assigned.To any successor states that are assigned to a Security User that is assigned to the Asset Strategy Reviewers Security Role.
+Assigning Security Users to Security Roles.ActionExampleResultFor a given record, you assign a Security User to a state.  For an Asset Strategy record, you assign the Security User John Smith to the Draft state. 
+Only that Security User can transition that record from that state. 
+Example Result:
+Only John Smith can transition the Asset Strategy record from the Draft state.
+
+About Baseline State Configurations
+GE Digital APM provides a baseline State Configuration for several families. If desired, you can extend a baseline State Configuration by adding new states and operations. You cannot, however, remove baseline states and operations that are flagged as Reserved in the State Configuration section. This limitation ensures that any baseline functionality that you can perform in the GE Digital APM system using states and operations does not get modified or removed. Note that if an operation is reserved, GE Digital APM users will not be able to select that operation from the datasheet in the Record Manager.Tip: You can modify or remove any baseline states or operations that are not flagged as Reserved.Baseline State Configuration RolesThe following Security Roles are available in the baseline GE Digital APM:MI ACA OwnerMI ASM AnalystMI HA FacilitatorMI HA OwnerMI RBI AnalystMI RCM UserMI Recommendation Management UserMI SIS AdministratorMI SIS EngineerAbout Assigning Security Roles to Predecessor States
+You can assign Security Roles to successor states to define when users are allowed to transition a record to that state. For example, consider the State Configuration for the GE Digital APM General Recommendation family, which contains the following predecessor and successor states for the Cancel operation:Predecessor: ReviewedSuccessor: Cancelled
+You can confirm the predecessor and successor state for any operation by viewing the Properties window of that operation. In the following image, you can see on the Properties - Cancel window that for the Cancel operation, the predecessor state is Reviewed and the successor state is Cancelled. In the following image, you can see on the Properties window that for the Cancel operation, the predecessor state is Reviewed and the successor state is Cancelled.
+In the following image, you can see on the Properties-Reviewed window that the State Configuration Role, MI Recommendation Management User, is assigned to the predecessor state: Reviewed.
+As a result of this assignment, any user who is assigned to the Security Role, MI Recommendation Management User, will be allowed to transition a GE Digital APM General Recommendation record out of the Reviewed state.
+Notice that in the preceding image where the Recommendation Manager Role is outlined, the Require a specific user to be assigned to a state check box is selected. If it were selected, an additional layer of protection would be applied to GE Digital APM General Recommendation records in the Reviewed state.
+When the check box is cleared:Any user who is assigned to the Recommendation Manager Role can transition a record out of the Reviewed state.
+When the check box is selected:For each individual record, only the user who is assigned to the Reviewed state for that record will be allowed to transition it out of the Reviewed state.In other words, the Security Role that is assigned to the state determines which Security Users are eligible to transition the record out of that state. Only the specific user that is assigned to the Reviewed state for a given record, however, will be allowed to move the record out of the Reviewed state.
+About Assigning Security Roles to Successor StatesYou can assign State Configuration Roles to successor states to define when users are allowed to transition a record to that state. For example, consider the State Configuration for the GE Digital APM General Recommendation family, which contains the following predecessor and successor states for the Cancel operation:Predecessor: ReviewedSuccessor: CancelledYou can confirm the predecessor and successor state for any operation by viewing the Properties window of that operation. In the following image, you can see on the Properties - Cancel window that for the Cancel operation, the predecessor state is Reviewed and the successor state is Cancelled.In the following image, you can see on the Properties-Cancelled window of the state that the Security Role, MI Recommendation Management User, is assigned to the successor state: Cancelled.As a result of this assignment, a user can transition a GE Digital APM General Recommendation record to the Cancelled state if the Cancelled state is assigned to a user who is assigned to the Recommendation User Security Role.Notice that in the preceding image where the Recommendation Manager Role is outlined, the Require a specific user to be assigned to a state check box is selected. If it were cleared, a layer of protection would be removed from GE Digital APM General Recommendation records entering the Cancelled state.When the check box is selected:A GE Digital APM General Recommendation record can be set to the Cancelled state when any user who is assigned to the Recommendation User State Configuration Role is assigned to the Cancelled state.When the check box is cleared:No one is required to be assigned to the Cancelled state in order for a user to transition it to the Cancelled state.Examples of Assigning Security Roles to States
+Consider the following examples of assigning Security Roles to states and selecting or clearing the Require a specific user to be assigned to a state check box. All examples assume that:You are working with the GE Digital APM General Recommendation family.The predecessor state is Reviewed.The successor state is Cancelled.
+Example 1:
+StateAssigned RoleRequire a specific user to be assigned to a state?Reviewed  Recommendation Manager  Yes (check box is selected) Cancelled  Recommendation User Yes (check box is selected) 
+In this scenario, if a GE Digital APM General Recommendation record is in the Reviewed state, you can change it to the Cancelled state if:You are assigned to the Recommendation Manager Security Role.You are assigned to the Reviewed state for the GE Digital APM General Recommendation record.Any member of the Recommendation User Security Role is assigned to the Cancelled state for the GE Digital APM General Recommendation record.
+Example 2:
+StateAssigned RoleRequire a specific user to be assigned to a state?Reviewed  Recommendation Manager  No (check box is cleared) Cancelled  Recommendation User  No (check box is cleared) 
+In this scenario, if a GE Digital APM General Recommendation record is in the Reviewed state, you can change it to the Cancelled state if:You are assigned to the Recommendation Manager Security Role.
+Note that:You are not required to be assigned to the Reviewed state for the GE Digital APM General Recommendation record.No one is required to be assigned to the Cancelled state for the GE Digital APM General Recommendation record.
+Example 3:
+StateAssigned RoleRequire a specific user to be assigned to a state?Reviewed  Recommendation Manager  Yes (check box is cleared) Cancelled  Recommendation User  Yes (check box is selected) 
+In this scenario, if a GE Digital APM General Recommendation record is in the Reviewed state, you can change it to the Cancelled state if:You are assigned to the Recommendation Manager Security Role.Any member of the Recommendation User Security Role is assigned to the Cancelled state for the GE Digital APM General Recommendation record.
+Note that:You are not required to be assigned to the Reviewed state for the GE Digital APM General Recommendation record.
+Example 4:
+StateAssigned RoleRequire a specific user to be assigned to a state?Reviewed  Recommendation Manager  Yes (check box is selected) Cancelled  Recommendation User  No (check box is cleared) 
+In this scenario, if a GE Digital APM General Recommendation record is in the Reviewed state, you can change it to the Cancelled state if:You are assigned to the Recommendation Manager Security Role.You are assigned to the Reviewed state for the GE Digital APM General Recommendation record.
+Note that:No one is required to be assigned to the Cancelled state for the GE Digital APM General Recommendation record.
+Example 5:
+StateAssigned RoleRequire a specific user to be assigned to a state?Reviewed  None Yes (check box is selected) Cancelled  None Yes (check box is selected) 
+In this scenario, if a GE Digital APM General Recommendation record is in the Reviewed state, no one will be able to change it to the Cancelled state because a specific user must be assigned to the Cancelled state but there are no Security Roles assigned to this state, meaning that no one is even eligible to be assigned to the Cancelled state.
+Example 6:
+StateAssigned RoleRequire a specific user to be assigned to a state?Reviewed  None No (check box is cleared) Cancelled  None No (check box is cleared) 
+In this scenario, if a GE Digital APM General Recommendation record is in the Reviewed state, anyone will be able to change it to the Cancelled state because there are no State Configuration Role restrictions and a specific user is not required to be assigned.
+Access the State Configuration SectionAbout This TaskYou can use the State Configuration section to define a new state or operation, or modify an existing state or operation for an Entity family.ProcedureAccess the Family Management Page.In the left pane, select Entity. The associated family list appears.Select the family for which you want to define a State Configuration.The workspace for the selected family appears displaying the Information section.At the top of the workspace, select State Configuration.The State Configuration section appears. Add a New State to a FamilyWhen defining the State Configuration for a family, keep in mind the workflow that you want users to follow. Then, create states and operations that facilitate that workflow and decrease the possibility of error. After defining the workflow between the states, you can display the states on the datasheet and manually move the states defined in a workflow.Procedure
+Access the State Configuration section.
+
+Depending on your requirement: If you are at parent family level, select Enable State Functionality.If you are at the subfamily level and you want to use the state configuration defined at the parent level, select Use Parent's Configuration check box and then select Enable State Functionality.If you are at the subfamily level and you want to define a new State Configuration, then select Enable State Functionality.The Show States on Datasheets check box and the Add State button appears enabled.Select Add State to define a new state.The Properties-New State window appears.As needed, specify the values in the following fields:
+
+ID: Delete the text that was generated automatically, and type an ID for the new state.
+Caption: By default, when you select the Caption box, it is populated automatically with the value that you typed in the ID box. You can change the caption if required. Initial State: Select the option if you want this state to be the initial state in the workflow. Note: You must have one state defined as the initial state and the initial state appears in dotted circle.
+Reserved State: This option is available only for the baseline states. If the state is marked as Reserved State, then you cannot delete that state. You can, however, modify the Caption of the state.Require a specific user to be assigned for a state: Select the option to assign a user for the state. When the record gets transitioned to that state, then you must assign specific user from the Selected Roles.
+If you want the state to appear on the datasheet, select Show States on Datasheets check box.By default, the check box is selected. If you do not want the state to appear on the datasheet, clear the Show States on Datasheets check box, and then select Save.Note: You can now hide or show the state configuration on a datasheet for a subfamily, even if the state configuration is inherited from the parent family.For the Roles:
+To assign roles, in the Available Roles box, select the roles, and then select .The selected roles appear in the Selected Role box.To remove the assigned roles, in the Selected Roles box, select the role and then select .The selected role is removed from the Selected Roles box.
+Note: You can select  to search for a role.
+Select OK.The Properties window closes and the new state appears on the workspace.Select Save to save the State Configuration.Your changes are saved.Note: The newly created state will be available for you in Family Management, whereas to access the state from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the created state will be available only when they log in to the application again.Add a New Operation to a FamilyBefore You Begin
+To add an operation, you must have added at least two states.
+Procedure
+Define the states.The Add Operation appears enabled.Select Add Operation.The Properties-New Operation window appears.As needed, enter the values in the following fields:
+
+ID: Delete the text that was generated automatically, and type an ID for the new operation.
+Caption: The Caption box is populated automatically with the value that you typed in the ID text box. You can change the caption if desired. 
+Predecessor State: Select the state that should serve as the predecessor state, or the state from which this operation will transition a record. For example, if a record can go from Created to Assigned via the Assign operation, to add the Assign operation, you would need to select the Created state as the predecessor state.
+Successor State: Select the state that should serve as the successor state, or the state to which this operation will transition a record. For example, if a record can go from Created to Assigned via the Assign operation, to add the Assign operation, you would need to select the Assigned state as the successor state.
+Is Reserved: This option is available only for the baseline operation. If the operation is marked as Is Reserved, then you cannot delete that operation. You can, however, modify the Caption of the operation.
+Select OK.The new operation appears on the workspace.Select Save to save the State Configuration.The changes are saved.Note: The newly added operation will be available for you in Family Management, whereas to access the operation from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the operation will be available only when they log in to the application again.Modify a StateYou can modify the properties of an existing state. For example, you can change the caption of a state Draft to Draft 1, mark an existing state as initial state, remove the roles assigned to a state, and so on.Before You Begin
+
+The state exists in the workspace.
+ProcedureAccess the State Configuration section
+In the Manage State Configuration workspace, select the state that you want to modify.The Properties-<Label> window appears, where the <Label> is the name of the state that you want to modify.As needed, modify the available fields.To remove the assigned roles, in the Selected Roles box, select the role, and then select .The selected role is removed from the Selected Roles box.Select OK.The updated state appears in the workspace.Select Save.The state is modified.Note: The state with the modifications will be available for you in Family Management, whereas to access the state with the modifications from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the state with the modifications will be available only when they log in to the application again.Modify an OperationYou can modify the properties of an existing operation. For example, you can update the predecessor or successor state of an operation.Before You Begin
+The operation exists in the workspace.
+Procedure
+Access the State Configuration section.
+Select the operation you want to modify.The Properties-<Label> window appears, where the <Label> is the name of the operation that you want to modify. Modify the fields as required.Select OK.The updated operation appears in the workspace.Select Save.The State Configuration operation is modified.Note: The operation with the modifications will be available for you in Family Management, whereas to access the operation with the modifications from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the operation with the modifications will be available only when they log in to the application again.Delete a StateBefore You Begin
+ You cannot delete a state if it is the predecessor or successor state in an operation. Before you delete a state that is used in an operation, you must delete the operation. In addition, you can delete a state only if no records are currently set to that state.
+Procedure
+Access the State Configuration section.In the workspace, select the state that you want to delete.The Properties-<Label> window appears, displaying the properties of the state, where <Label> is the name of the state that you want to delete.Select Remove.The Delete State window appears asking if you want to delete the state.Select Yes.The state is removed and no longer appears in the workspace.Select Save.The State Configuration for the family is deleted.Note: The deleted state will no longer be available for you in Family Management, whereas to ensure that the state is not accessible from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the deleted state will not be available only when they log in to the application again.Delete an OperationProcedure
+Access the State Configuration section.In the Manage State Configuration workspace, select the existing operation.The Properties-<Label> window appears, where <Label> is the name of the operation. Select Remove.The Delete Operation window appears asking if you want to delete the operation.Select Yes.The operation is removed and no longer appears in the workspace.Select Save.The State Configuration operation for the family is deleted.Note: The deleted operation will no longer be available for you in Family Management, whereas to ensure that the operation is not accessible from other modules, you must log out and log in to GE Digital APM. For other users who are being logged in to GE Digital APM, the deleted operation will not be available only when they log in to the application again.
+
+
+
+
+On this pageAbout the State ConfigurationExample of State ConfigurationAbout Enabling or Disabling the State FunctionalityState Configuration WorkflowActions That are Required in Configuration ManagerAbout Baseline State ConfigurationsBaseline State Configuration RolesAbout Assigning Security Roles to Predecessor StatesAbout Assigning Security Roles to Successor StatesExamples of Assigning Security Roles to StatesAccess the State Configuration SectionAdd a New State to a FamilyAdd a New Operation to a FamilyModify a StateModify an OperationDelete a StateDelete an Operation
+
+
+
+
+
+
+
+
+

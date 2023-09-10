@@ -1,0 +1,96 @@
+
+
+
+Second Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Asset HierarchyOverview
+Workflow
+Asset Hierarchy Configuration
+Data Loader
+Troubleshooting
+Release NotesFirst Quarter of 2023
+Second Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Asset Hierarchy
+Release Notes
+Second Quarter of 2020
+
+
+
+
+
+
+
+Second Quarter of 2020Release Date: May 8, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo improve the performance of GE Digital APM, the data of the <Asset Name> workspace is no longer refreshed automatically when you navigate away from the workspace, and then access the data in the <Asset Name> workspace. However, you can now manually refresh the data of the <Asset Name> workspace. To facilitate this enhancement, a new button, Refresh (), has been added to the <Asset Name> workspace.US397034To improve usability, the following enhancements have been made to the Asset Hierarchy panel:A new icon, , has been added to the Asset Hierarchy panel to collapse the panel.A new icon, , has been added to the <Asset Name> workspace to expand the panel.A breadcrumb containing the full hierarchy path now appears on the panel, indicating the level of an equipment or functional location within the Asset Hierarchy. The breadcrumb also allows you to easily navigate to the parent functional location of an equipment or functional location.You can now resize the panel by dragging the border of the panel to the required width.US394566
+Table 2. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, you could not create an Asset Hierarchy for an equipment or a functional location that contained multiple parent equipment or functional locations, and no error message appeared to indicate the same. Now, in this scenario, an error message appears indicating that there are multiple parent-level equipment or functional locations for the equipment or functional location and the Asset Hierarchy cannot be created.DE132361Previously, when you created an Asset Group based on a query, you could add a maximum of 25 assets to the group. This limitation has been removed. Now, you can add all the assets that are part of a query result.DE124562Previously, when the name of an asset contained a long string, the asset name was truncated in GE Digital APM. This issue has been resolved. Note: In the Asset Hierarchy panel, you can view the complete name of such assets in a tooltip only when you hover over the asset name.DE119251
+
+
+
+
+
+On this pageRelease Date: May 8, 2020
+
+
+
+
+
+
+
+
+

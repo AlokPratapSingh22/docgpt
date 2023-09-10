@@ -1,0 +1,179 @@
+
+
+
+Charts | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage ChartsCharts
+Analysis Charts
+SmartSignal Charts
+Chart Types
+
+
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Manage Charts
+Charts
+
+
+
+
+
+
+
+ChartsAbout ChartsUse and modify charts to suit special circumstances during analysis.You can use charts to evaluate asset data using different views.When you select an asset, the system retrieves the default view for assets of this class. To plot tags from the default view, you must search for tags using the Search field. You can save the analysis view, making it available as an Analysis Template in the view selector.When creating a chart, you can plot data for one or more assets and child assets. You can plot tags that use a different unit of measure, displaying multiple y-axis numbering systems. You can select a data source, timezone preference, and chart resolution. Charts can be zoomed or panned.Important: Data resolution and date range selected are related. You can create multiple different chart-types on a single card in the Ad Hoc Analysis view.When a plotted tag is assigned a color, that color is associated with that tag. The tag is plotted with that color on every chart for which it is displayed.Access a Chart from an AlertYou can use an Analysis View template to review performance charts associated with an alert and to gather evidence to help resolve the alert. About This Task
+When an asset source connects to the time-series database, designated analytics parse the data using threshold values. If one or more threshold values are not met, GE Digital APM generates an alert. The system checks for an associated alert template as it creates the alert. When you navigate to the Alert Inbox and select the alert, a list of associated chart views under the Analysis section appear. Select a chart to access the Analysis View in a new page.
+Asset Data and SmartSignal alerts both use analysis chart templates to create an Analysis View chart. 
+Analysis View templates automatically populate an asset, a time range, and a default view for the chart. The list of plotted tags is based on the alert template in use. When an alert template does not exist, the list of plotted tags is retrieved in the alert.
+You can share a filter from an Analysis View Chart. Filters can be value-based or conditional and are shared to other analysis templates.
+You can add predefined or custom threshold lines to a chart. Custom threshold lines are configurable.
+SmartSignal alerts include both contributing tags (tags that have contributed to the alert) and non-contributing tags (participated in the analytic for which the advisory was created).
+When you select a SmartSignal Analysis View chart in an alert, all of the generated alerts for the selected asset are visible in the Tag Browser.
+Some of the modification options you can use are listed below:Find additional tags.Plot additional tags.Change the date range.Mute or unmute data on the chart.Zoom in on an area on a chart.View data in a tooltip.Display tag information.Save a chart as evidence to an alert.Display only the real values for tags.Display only analytics predicted value for tags.Add threshold lines to a chart.Update the Analysis View template.
+ProcedureNavigate to an analysis view using one of the following methods:
+MethodActionNavigate from a SmartSignal Alert
+In the module navigation menu, go to
+Alerts.Select an alert Inbox filter, such as Unclaimed or SmartSignal.Select an alert from the Alert Inbox.In the details page, select an Analysis View chart.Select  to expand the Tag Panel.
+Navigate from an Analysis Alert
+In the module navigation menu, go to
+Alerts.Select an alert Inbox filter, such as Unclaimed, or a filter containing an Analysis View chart.Select an alert from the Alert Inbox.In the details page, select an Analysis View chart.Select  to expand the Tag Panel.
+
+One or more charts depending upon your alert and analysis chart template selection appear in the Analysis module. Customer Data Center data renders as a single chart, while SmartSignal data renders as a dynamic stack of charts. When you access the charts, if one or more charts fail to load, a notification bar appears displaying the count of the charts that failed to load for the selected card. Select Retry to reload the charts completely and only the failed charts are reloaded. You can also retry loading the data for a specific failed chart.Note: Select  to close the notification bar of the charts that failed to load.Modify the chart as needed.
+Tip:
+If you have created a case in the alert, you can access the chart evidence from a case.You can add a chart as evidence in an alert or case. See Add a Chart As Evidence in an Alert.
+
+Add Additional Charts to a CardYou can add multiple Analysis and SmartSignal charts to a card.About This Task
+You can add a chart to a card in an analysis view through .Note: Chart options are available when creating charts in a Time Series Analysis or Event Data Analysis view.
+When you add a chart to a card, you can modify the chart name and select a chart type, then begin plotting for the chart.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.On an existing card with a chart on it, select , and then select Add Chart Below.An empty chart appears below the current chart.Delete a ChartYou can delete a time-series chart in the Ad hoc Analysis instance when two or more charts are present on the card. About This Task
+If you delete a chart, all tags, reference curves and tag expressions unique to the deleted chart are removed from the plotted tags list. If all charts are deleted from a card, you will be able to select a chart type.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.
+Select .You are prompted to confirm if you want to delete the charts.
+Select DeleteThe chart is removed in the card and all its unique tags are removed from Plotted Tags on the Tag Tree Browser.Arrange the Chart Order on a CardYou have the ability to move one chart up and another chart down, if there are more than two charts on the card. ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a view containing a chart.In the chart, select , and then select Arrange.Select Move to top to move the selected chart up. Or, select Move to bottom to move the selected chart down.Alternatively, select the chart header and drag to move the chart to the required location.
+Note: This feature is available for all analysis views and to Chart views in One-Up, Two-Up, Three-Up, and Four-Up layouts.
+The chart order is updated accordingly.Resize a ChartYou can increase the height of a chart to improve the vertical resolution and view a clearer picture.ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Select Resize. Hover over the current SmartSignal chart, and then select  to increase the size up to two times. Hover over the current chart, and then select  to return to default size. Enable Chart NavigatorAbout This Task
+You can show or hide the chart navigator in a chart as needed. Hiding the chart navigator maximizes the space in which you access the chart. 
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select , and then select Enable Chart Navigator.The chart navigator is shown in the chart. Note: Select Disable Chart Navigator, to hide the chart navigator in the chart.Export a Chart as an ImageAbout This Task
+You can export a single chart as an image, or a series of charts on a card as images. The images are exported as a .PNG file. The default file name is the same as chart name. The chart Timeline Slider is not exported. The .PNG file standard UoM appears for the chart if it has been converted, otherwise it the source UoM appears.
+ Images can be exported from both the Time Series Analysis and Event Data Analysis views. You must select an action for each card to export all the charts on separate cards in the view.
+Each .PNG file includes:The chart image.All legends on the axes.The Chart Registers with the tag names and asset names.Note: The Chart Register does not appear in the Event Data Analysis view.
+ProcedureTo export a single chart as an image:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select , and then select Export as Image.In the browser prompt, enter a new name in the Save As field, select a destination on your hard drive, and then select ENTER.An individual chart is exported to your desktop as a .PNG file. The tag registers on the image of the chartdisplays the tag names and the asset names. To export a series of charts on a card as images:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a System Templates or My Templates view.Select , and then select Export All Charts On This Card as Images.All the charts on the card are exported to your hard drive as a .zip file containing the associated .PNG files. The tag registers on the images of each chart displays the tag names and the asset names.Add Threshold Lines to a ChartYou can add predefined or custom threshold lines to a SmartSignal or Analysis chart.About This Task
+After you have added a threshold line to a chart, it appears in the Plotted Tags section. You can edit the line by hovering over the plotted threshold in the Plotted Tags section and selecting an option.
+
+Important: You must define threshold limits for the tags on a chart to use the Predefined Threshold option.
+
+When you add threshold lines to a chart you have created, you can save the chart as a template. See Save an Analysis Template. When you add threshold lines to an existing template, you can update the template to save the changes. See Modify an Analysis Template.
+You can add the new chart to an alert or case as evidence. See Add a Chart as Evidence in an Alert and Add a Chart as Evidence in a Case.
+ProcedureNavigate to an analysis view using one of the following methods:
+MethodActionNavigate from a SmartSignal Alert
+In the module navigation menu, go to
+Alerts.Select an Alert Inbox filter, such as Unclaimed, or SmartSignal.Select an Alert from the Alert Inbox.In the details page, select an Analysis View chart.Select  to expand the Tag Panel.
+Navigate from an Analysis Alert
+In the module navigation menu, go to
+Alerts.Select an Alert Inbox filter, such as Unclaimed, or a filter containing an Analysis View.Select an Alert from the Alert Inbox.In the details page, select an Analysis View chart.Select  to expand the Tag Panel.
+
+In the plotted charts section on a card, select, and then select Add Threshold Lines.In the Threshold Limits window, use one of the following methods:
+MethodActionPredefined Threshold Lines
+In the Threshold Lines pane, open the Group 1 node and select Use Predefined Thresholds.In the Select box, select a tag option.Note: If there is no predefined threshold for the selected option, a message indicating that you must select a different option appears.Select a named value check box.Enter a name for the selected value in the Threshold Line Name box.Select another named value check box and enter a name, if appropriate.Select Add Group to add another available tag option from the Select drop-down list. Select a named value check box and enter a name, as before.Select Apply.
+Custom Threshold Lines
+In the Threshold Lines panel, open the Group 1 node and select Customize.Enter a name for the new threshold line value in the Threshold Line Name box.Enter a value in the Value box.Select  to add additional threshold lines, and then enter a name and value, as before.Select Add Group to add additional threshold lines, and then enter a name and value, as before.Select Apply.
+
+The threshold selections are added to the selected chart, and the threshold values appear in the plotted tags list.Zoom in Chart DataUse zooming to magnify a data selection along both its X- and Y-axis. Use the timeline slider to zoom, narrowing the date range and eliminating extraneous chart data. Use the zoom panel to zoom incrementally along the X-axis, Y-axis, or both axes.About This Task
+You can zoom chart data for both a Time Series Analysis and an Event Data Analysis view.
+When you zoom in on chart data by selecting the data, the date range on the timeline slider adjusts to the narrowed parameters. The date range selected for the view does not change.
+The zoom panel allows to you zoom in or out incrementally for the X-axis, Y-axis, or both axes, expanding or contacting in the center of the chart. Note: When you zoom in to any chart, by default the chart gets magnified in the XY mode.You can undo the last zoom command or reset the zoom in the zoom panel. Zooming on the Y-axis only allows you to control the range of values that are relevant for the analysis. Zooming on the X-axis only allows you to control the time range available for analysis. Zooming for individual axes is limited to Time Series and X-Y charts only.
+The chart timeline slider, located at the bottom of each chart, mirrors the date range selected for the chart. You can hide some of the data visible on the chart by narrowing the time range. 
+Zooming resets the data resolution to default or the actual number of data points, whichever is less. 
+If there are multiple charts in the view, zooming one of the charts magnifies the remaining charts.
+ProcedureTo zoom an Alert Analysis' chart data by selecting the data:In the module navigation menu, go to
+Analysis.Select an Alert Inbox filter, and then select an alert.Access an alert analysis chart displaying plotted tags.Select  on a chart.The zoom panel appears. By default, the XY in the panel is highlighted in blue.Tap and drag your cursor across a chart segment, then release.
+Note: You can zoom multiple times.
+The view zooms according to the data selected for both the X- and Y-axis. The X-axis and timeline slider both reflect the zoomed data.To zoom an Analysis chart's data by selecting the data:In the module navigation menu, go to
+Analysis.Access an analysis chart displaying plotted tags.Select  on a chart.The zoom panel appears. By default, the XY in the panel is highlighted in blue.Tap and drag your cursor across a chart segment, and then release.
+Note: You can zoom multiple times.
+The view zooms according to the data selected for both the X- and Y-axis. The X-axis and timeline slider both reflect the zoomed data.To zoom using the zoom panel:Access an alert analysis chart or an analysis chart displaying plotted tags.Select  on a chart.The zoom panel appears. By default, the XY in the panel is highlighted in blue.To change the zoom option: 
+Select x on the panel to incrementally zoom the X-axis only. This selection synchronizes with all the other charts for X-axis on time series only.Select y on the panel to incrementally zoom the Y-axis only. Select xy on the panel to incrementally zoom both axes. This selection synchronizes with all the other charts for XY-axis on time series only on the X-axis.
+Perform one or both of the following steps:
+Select  to contract the selected axes and magnify your view of the data within the contracted time.Select  to expand the selected axes and get a larger view of the data.
+The view zooms in or out for the axes according to your selections. The timeline slider matches the X-axis.To zoom using the chart timeline slider:Access an alert analysis chart or an analysis chart displaying plotted tags.Select a handle on the outside of the slider on either side and slide inward.The view zooms to the date range specified along the X-axis.Reset Zoom for Chart DataResetting the zoom for a chart removes all the zooming effects applied.About This Task
+You can reset the chart data zoom for both a Time Series Analysis and an Event Data Analysis view.
+Resetting the zoom for a chart resets both the X and Y-axis to the original date range selected. You can undo the last zoom applied multiple times.
+Adding a new tag resets the zoom automatically. Muting or unmuting a tag does not reset the zoom.
+ProcedureTo undo the last zoom on an Alert Analysis chart:In the module navigation menu, go to
+Analysis.Select an Alert Inbox filter, and then select an alert.Select an alert analysis chart that has been zoomed.Select , and then select  to hide the zoom panel.To undo the last zoom on an Analysis chart:In the module navigation menu, go to
+Analysis.Select an analysis chart that has been zoomed.Select , and then select to hide the zoom panel.To reset the zoom to the date range selected: Select an alert analysis chart or an analysis chart that has been zoomed.Select , and then select  to hide the zoom panel.Add a Chart as Evidence in an AlertYou can save an Analysis chart as evidence in an alert so that others can see the health of the asset without having to access the Analysis page.About This TaskWhen you create a case from an alert that has a saved analysis chart, the analysis is attached as evidence to the case detail page. ProcedureTo save an Analysis chart as evidence:In the module navigation menu, go to
+Analysis.Select an Alert Inbox filter, and then select an alert.On an alert details page, in the Analysis section, select the link for an analysis view. You can access the selected analysis view in another tab.Perform an analysis using chart functionality.Select  on the analysis view, and then select Save Current State as Evidence.Enter a name for the alert evidence in the Name box, and then select Save.
+Important:  Make sure that the name selected for the alert evidence is unique to prevent confusion. GE Digital APM permits duplicate names between alerts.
+The named analysis view is saved to the Evidence section in the original alert detail page. If the analysis image and view are not successfully saved to the alert an error message appears.To access the saved analysis evidence, select its associated link. You can access the saved analysis chart under the link.To delete analysis evidence:In the module navigation menu, go to
+Analysis.Select an Alert Inbox filter, and then select an alert.In an alerts detail page, select  next to the evidence to delete it.Add a Chart as Evidence in a CaseYou can save an Analysis chart as evidence in a case so that others can see the health of the asset without accessing the Analysis page.Before You BeginYou must have permissions for Cases and read/write permissions for Analysis.About This Task
+You can view all analysis templates that are associated with a case based on the generated alert entered in the Case Detail page, and save an analysis template in the Evidence section of that case. The following scenarios apply here:When an analysis template associated with a certain alert triggers the alert, it creates a case in the alert. You can view the case that is generated by the alert. You can then navigate to the Analysis section in the Case Detail page where you can view the templates associated with the alert and the name of the alert.When a large number of analysis templates (for example, 20) are associated with an alert, if the alert triggers and a case is created from that alert, you can view the Analysis section in the Case Detail page, which lists all of the analysis templates with the alert name as the source.
+
+ProcedureIn the module navigation menu, go to
+Analysis.Select a Cases filter.Select a case in the list.The Case Detail page appears in the right pane.Select the Analysis tab.The analysis templates are listed, and a link to the associated alert appears inline.Select one of the linked analysis templates.The template appears in a new page in your browser.Perform an analysis using chart functionality.In the upper-right corner of the page, select List, and then select Save Current State as Evidence.The Save Evidence box appears above the template information.Enter a name for the case evidence in the text box, and then select Save.A message appears in the upper-right corner of the screen, indicating that the file was saved.Return to the Case Detail page and refresh your browser. The saved evidence appears as a link in the Evidence section of the Case Detail page, and when selected, the chart appears below the link.Optional: Select the alert name to the right of the Analysis template (in the Analysis section). The alert associated with the analysis template is opened in a new browser window. The Analysis section of the alert appears in the analysis template(s) associated with the alert. The Evidence section in the alert appears in all of the evidence provided in the Case Detail page.
+Related tasksAdd a Chart as Evidence in an AlertSave an Analysis TemplateModify an Analysis TemplateAdd a Chart as Evidence in an AlertAdd a Chart as Evidence in a CaseEnable Filtering for SmartSignal Charts by Threshold
+
+
+
+
+On this pageAbout ChartsAccess a Chart from an AlertAdd Additional Charts to a CardDelete a ChartArrange the Chart Order on a CardResize a ChartEnable Chart NavigatorExport a Chart as an ImageAdd Threshold Lines to a ChartZoom in Chart DataReset Zoom for Chart DataAdd a Chart as Evidence in an AlertAdd a Chart as Evidence in a Case
+
+
+
+
+
+
+
+
+

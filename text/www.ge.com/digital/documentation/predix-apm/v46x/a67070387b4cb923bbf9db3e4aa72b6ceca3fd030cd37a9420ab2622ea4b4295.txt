@@ -1,0 +1,89 @@
+
+
+
+Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Metrics and ScorecardsOverview
+Workflow
+Manage Scorecards
+Manage Key Performance Indicators (KPIs)
+Manage Metric Views
+Manage Privileges
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Metrics and Scorecards
+Workflow
+
+
+
+
+
+
+
+WorkflowMetrics and Scorecards: Manage SSAS Cubes WorkflowThis workflow describes the process of connecting to an SSAS Cube.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Start Persona: Solution AdministratorThis process will associate the predefined SSAS data cubes with a particular instance of GE Digital APM, and initiate cube management.Design Cube Persona: Solution AdministratorCreate OLAP cube in SQL Server Analysis Services. The cube stores data in an optimized way to provide a quick response to various types of complex queries by utilizing dimensions and measures. Set up SSAS Server Persona: Solution AdministratorSet up an SSAS Server to host solutions. For example, Analysis Services is an analytical database server that hosts multidimensional cubes that you can access from the GE Digital APM Metrics and Scorecards module. SSAS Cube Persona: Solution AdministratorA list of registered cubes that the user has access to based on the cube privileges.Associate SSAS Cube Persona: Solution AdministratorAssociate the predefined SSAS data cube with a particular instance of GE Digital APM. Metrics and Scorecards: Manage Metric Views WorkflowThis workflow describes the process for designing and analyzing Metric Views.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Start Persona: AnalystThis process will create a Metric View by applying standard data analysis techniques to analyze a specific business problem, and initiate Metric Views.Manage SSAS Cubes Persona: Analyst A cube record registered in the Manage SSAS Cubes workflow will be used as a data source to design a Metric View.Go to the Manage SSAS Cubes workflow.SSAS Cube Persona: AnalystA list of registered cubes that the user has access to based on the cube privileges.Design Metric View Persona: AnalystDesign a Metric View to display specific data from existing SSAS cubes to analyze a specific business need. The dimension and measure will display all the dimensions pertaining to the selected cube. Analyze Metric View Result Persona: AnalystAnalyze the Metric View results. The Metric View can identify bad actors or high impact failures for further analysis.Opportunity Identified? Persona: AnalystReview the Metric View to determine if there is an opportunity or need for improvement. If such an opportunity is determined to exist, then a Performance Recommendation is raised to communicate the need and track the required work. Otherwise, the workflow ends.Manage Performance Recommendations Persona: AnalystIf an opportunity or need for improvement is identified in Metrics View, then raise a Performance Recommendation to communicate and track the required work.Refer to the Manage Performance Recommendations workflow documentation for more information..Metrics and Scorecards: Manage KPIs WorkflowThis workflow describes the process of designing, analyzing, and updating Key Performance Indicators (KPIs).In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Start Persona: AnalystThis process will create a KPI by applying standard data analysis techniques to evaluate the success of reaching targets, and initiate Key Performance Indicators (KPIs).Query Analysis Persona: Analyst The GE Digital APM query created for the analysis can be used as a data source for a KPI.Refer to the Query Analysis workflow for more information.Query Persona: Analyst The GE Digital APM Query that will serve as a data source for the Key Performance Indicator (KPI).Manage SSAS Cubes Persona: AnalystA cube record registered in the Manage SSAS Cube workflow can be used as a data source for a KPI.Go to the Manage SSAS Cubes workflow.SSAS Cube Persona: Analyst The SSAS Cube that will serve as a data source for the Key Performance Indicators (KPIs).Design KPI Persona: AnalystDesign a Key Performance Indicator (KPI) to display specific data from existing SSAS cubes or a GE Digital APM Query that satisfies a specific business need. Measures are used to create KPIs.Schedule KPI Persona: AnalystSchedule the Key Performance Indicator (KPI) to run at a particular date and time, either once or on a repeating basis, to update KPI measures. Add the recipients to whom the KPI updates will be sent.Review KPI Results Persona: AnalystAnalyze the Key Performance Indicator (KPI) measure. The KPI query can identify bad actors or high impact failures for further analysis. If needed, you can add the KPI as a dashboard widget. As a dashboard widget, the KPIs will be easily accessible and will provide users with a comprehensive view of data.Opportunity Identified? Persona: AnalystReview a Key Performance Indicator (KPI) to determine if there is an opportunity or need for improvement. If such an opportunity is determined to exist, then a Performance Recommendation is raised to communicate the need and track the required work. Otherwise, the workflow ends.Manage Performance Recommendations Persona: AnalystIf an opportunity or need for improvement is identified from a KPI, then raise a Performance Recommendation to communicate and track the required work.Refer to the Manage Performance Recommendations workflow documentation.Metrics and Scorecards: Manage Scorecards WorkflowThis workflow describes the process for designing and analyzing Scorecards.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Start Persona: AnalystThis process will measure the business Perspectives and Objectives that result from adding Key Performance Indicators (KPIs) to the Scorecard, and initiate Scorecard.Manage KPIs Persona: Analyst The KPIs created in the Manage KPIs workflow will be used to create the Scorecard.Go to the Metrics and Scorecards: Manage KPIs workflow.KPI Persona: AnalystThe KPI from the existing repository that will be added as an Objective to the Scorecard.Design Scorecard Persona: AnalystDesign a Scorecard to display specific KPIs from the existing KPI repository. The user can assign View privileges for a Scorecard.View Scorecard Persona: AnalystAnalyze the perspective and objectives of a Scorecard. The KPIs in a Scorecard can identify bad actors or high impact failures for further analysis. If needed, you can add the Scorecard as a homepage.Opportunity Identified? Persona: AnalystReview a Scorecard to determine if there is an opportunity or need for improvement. If such an opportunity is determined to exist, then a Performance Recommendation is raised to communicate the need and track the required work. Otherwise, the workflow ends.Manage Performance Recommendations Persona: Analyst If an opportunity or need for improvement is identified in Scorecard, then raise a Performance Recommendation to communicate and track the required work.Refer to the Manage Performance Recommendations workflow documentation.
+
+
+
+
+On this pageMetrics and Scorecards: Manage SSAS Cubes WorkflowStartDesign CubeSet up SSAS ServerSSAS CubeAssociate SSAS CubeMetrics and Scorecards: Manage Metric Views WorkflowStartManage SSAS CubesSSAS CubeDesign Metric ViewAnalyze Metric View ResultOpportunity Identified?Manage Performance RecommendationsMetrics and Scorecards: Manage KPIs WorkflowStartQuery AnalysisQueryManage SSAS CubesSSAS CubeDesign KPISchedule KPIReview KPI ResultsOpportunity Identified?Manage Performance RecommendationsMetrics and Scorecards: Manage Scorecards WorkflowStartManage KPIsKPIDesign ScorecardView ScorecardOpportunity Identified?Manage Performance Recommendations
+
+
+
+
+
+
+
+
+

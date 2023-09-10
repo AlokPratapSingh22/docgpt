@@ -1,0 +1,84 @@
+
+
+
+Third Quarter of 2018 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SearchOverview
+Advanced Search
+Search Configuration
+Release NotesSecond Quarter of 2022
+Fourth Quarter of 2021
+First Quarter of 2021
+Third Quarter of 2019
+First Quarter of 2019
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Search
+Release Notes
+Third Quarter of 2018
+
+
+
+
+
+
+
+Third Quarter of 2018SearchThis topic provides a list of product changes released for this module on the dates listed below.Release Date: September 21, 2018
+Table 1. Enhancements and New FeaturesSearch ConfigurationNoteTracking ID(s)The Search feature has been enhanced to allow users to configure the search index to provide more precise results based on customer data. To facilitate this enhancement, in the Search Configuration page, a new button, Settings, has been added. After selecting this button, in the Edit Settings window, an Administrator can now adjust the values in the Minimum Index Size and the Maximum Index Size drop-down list boxes. These fields determine how the Search indices are created. US280404
+Table 2. Resolved IssuesAdvanced SearchNoteTracking ID(s)Previously, if you entered values in the Search In, Linked To, and Through boxes and added one or more field conditions to an advanced search, an error occurred when you selected a hyperlink in the Linked To column in the search results. This issue has been resolved.DE82374Search ConfigurationNoteTracking ID(s)Previously, even if you had deleted a scheduled job, the job was displayed in the Successful section of the Schedule Logs page. This issue has been resolved.DE63687
+
+
+
+
+
+On this pageSearch
+
+
+
+
+
+
+
+
+

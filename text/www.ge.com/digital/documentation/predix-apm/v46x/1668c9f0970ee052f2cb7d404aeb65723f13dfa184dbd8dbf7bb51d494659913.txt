@@ -1,0 +1,82 @@
+
+
+
+Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Compliance ManagementOverview
+Workflows
+Inspection Plans
+Inspection Plan Management
+Compliance Recommendations
+Inspection Plan Revision History
+Suggested Compliance Strategy Templates
+Admin
+Deployment
+Reference 
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Compliance Management
+Overview
+
+
+
+
+
+
+
+OverviewOverview of the Compliance Management Module Depending on your geographical location, regulatory bodies and industry authorities have different standards for inspections on various pieces of equipment. Many dictate when and how often equipment should be inspected. To integrate these requirements with GE Digital APM, you can use the Compliance Management module to track when your equipment should be inspected to comply with these standards. More Details
+Compliance Management functionality is fully integrated with Inspection Management to allow you to manage reoccurring Inspection Tasks.
+Access Compliance ManagementProcedureIn the module navigation menu, select Integrity > Compliance Management.ResultsThe Compliance Management Overview page appears, displaying the following information:The Assets without Templates section: Contains a list of assets that do not have linked Compliance Strategy Templates and match query results for any queries in Compliance Strategy Templates.The Assets without Inspection Plans section: Contains a list of assets that do not have associated Inspection Plans. The assets in this section have linked Compliance Strategy Templates.The Assets with Inspection Plans section: Contains a list of assets that have an associated Inspection Plan and linked Compliance Strategy Template.The Inspection Plan Summary widget: Contains a graph of Inspection Plans, grouped by state.The Active Recommendation Summary widget: Contains a graph of Compliance Recommendations from Inspection Plans that are in the Approved state. The Compliance Templates widget: Contains a list of Compliance Strategy Templates. Note: The Compliance Management Overview page is not updated automatically when you return to the previously opened tab. You can select Refresh () button to update the page.Compliance Management Workflow This workflow provides the basic, high-level steps for using this module. The steps and links in this workflow do not necessarily reference every possible procedure.Access the Compliance Management administrative features.Create a Compliance Strategy Template.Map a policy to a Compliance Strategy Template.Add assets to the Compliance Strategy Template.Suggest Compliance Strategy Templates for assets without templates.Apply suggested Compliance Strategy Templates to assets without templates.Create an Inspection Plan.Review the Inspection Plan and Compliance Strategy Recommendations.Approve an Inspection Plan.Link an Inspection Task to a Compliance Recommendation.
+
+
+
+
+On this pageOverview of the Compliance Management Module Access Compliance ManagementCompliance Management Workflow
+
+
+
+
+
+
+
+
+

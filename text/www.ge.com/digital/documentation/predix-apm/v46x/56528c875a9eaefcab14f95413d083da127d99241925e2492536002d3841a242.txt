@@ -1,0 +1,159 @@
+
+
+
+Inspection Profiles | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference 
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Inspection Profiles
+
+
+
+
+
+
+
+Inspection ProfilesAbout Inspection Profile An Inspection Profile is a combination of an Equipment record, Inspection Profiles, and Inspection Methods that together determine which equipment subcomponents need to be inspected and the methods that will be used to inspect them. Specifically:The Equipment record represents the equipment that needs to be inspected.Inspection Profiles represent subcomponents of the equipment that need to be inspected. Each Inspection Profile is linked directly to the Equipment record.Inspection Methods represent how you plan to inspect each subcomponent. Each Inspection Method is linked to an Inspection Profile.Details
+After you define the Inspection Profile for an Equipment record, when you create an Inspection Task to use for inspecting the equipment, you can define the scope of that individual inspection event by selecting which subcomponents (Inspection Profiles) and methods (Inspection Methods) you want to include in the inspection. In other words, after an Inspection Profile exists for an Equipment record, you can pick and choose which parts of the profile you want to include in each future inspection of the equipment.
+If the Event Configuration is set up correctly, when you create an Inspection that is linked to an Equipment record, General Findings will be created automatically according to the Inspection Scope for the Equipment record. 
+Additionally, if the Application Configuration is set up correctly, Inspection Profiles will be created automatically for Equipment records that are not yet linked to Inspection Profiles.
+Note:  You do not need to define Inspection Profiles if you plan to create records only in the Inspection families whose captions contains the word Checklist. The process for recording subcomponent findings for these families does not rely on Inspection Profiles or Inspection Methods.
+About Inspection ScopeWhile each piece of equipment has one Inspection Profile, each time that you identify a need to inspect a piece of equipment, you will need to define the Inspection Scope for that individual inspection event. Each Inspection Scope defines the equipment subcomponents that need to be inspected in a given inspection, and the methods that should be used to inspect them.What is an Inspection Scope?
+An Inspection Scope consists of the following items:
+An Equipment record, which defines the equipment that should be inspected.An Inspection Task, which provides details about the inspection event that should be performed, including information such as the desired inspection date and any minimum or maximum date ranges for the inspection event. The Inspection Task is linked to the Equipment.One or more Inspection Profiles, which define the subcomponents that should be inspected.One or more Inspection Methods, which define the methods that should be used to inspect the individual subcomponents.
+To define an Inspection Scope, you will need to create an Inspection Task or find an existing Inspection Task to link to the Inspection Profile. 
+Note:  You do not need to define an Inspection Scope if you plan to create records only in the Inspection families whose captions contain the word Checklist. The process for recording subcomponent findings for these families does not rely on Inspection Profiles or Inspection Methods.
+How is an Inspection Scope Used?
+Each Inspection Scope consists of an Equipment record, an Inspection Task, one or more Inspection Profiles, and one or more Inspection Methods.
+When you create an Inspection that is linked to an Equipment Record, the GE Digital APM system generates General Findings automatically. The number of findings that are created automatically is based on the Inspection Profiles and Inspection Methods included in the Inspection Scope.
+Note:  If you plan to only create records in the Inspection families whose captions contain the word Checklist, you do not need to define an Inspection Scope. The process for recording subcomponent findings for these families does not rely on Inspection Profiles or Inspection Methods.
+About Creating and Modifying Inspection ScopeWhen you create a new Inspection Scope, you will need to:
+Select the equipment for which you want to create a new Inspection Scope.
+
+Select the subcomponents (i.e., Inspection Profiles that you want to inspect).
+
+Select the Inspection Methods that you want to use for the selected subcomponents. 
+
+Create a new Inspection Task that you want to include in the new Inspection Scope.
+Details
+If more than one inspection interval is defined for a particular task type, the Desired Interval field will be populated with the most conservative (i.e., lowest), non-zero inspection interval.
+Example: Inspection Scope
+ For example, suppose that you define an Inspection Scope that includes the Inspection Task type CUI, which is associated with the following GE Digital APM records and families:
+The Functional Location record that represents Unit A.Criticality Calculator RBI Components families Criticality RBI Component - Exchanger Bundle and Criticality RBI Component - Exchanger Header.The Equipment record with the Record ID HXST 55.
+Now, suppose that the time-based inspection settings listed in the following table have been created:
+
+Time-Based Inspection SettingUnitComponent FamilyEquipmentTask TypeInspection Interval 1N/ACriticality RBI Component - Exchanger Bundle N/ACUI482Unit A N/AN/ACUI363Unit A Criticality RBI Component - Exchanger Bundle N/ACUI244Unit A Criticality RBI Component - Exchanger Header N/ACUI105Unit A N/AHXST 55 CUI12
+
+In this case, the Desired Interval field in the associated Inspection Task record will be populated automatically with the value 10 (i.e., the most conservative inspection interval).
+Access the Inspection Profile Details Section Procedure
+Access the Inspection Methods
+
+ section for the Inspection whose Inspection Profile you want to access. In the workspace, select the Inspection Profile Details tab. The Inspection Profile Details section appears, displaying the Inspection Profile datasheet. 
+Create an Inspection ProfileProcedure
+Access the Inspection Methods
+
+ section for the Inspection whose Inspection Profile you want to access. 
+Note:  If the selected Inspection does not have any existing Inspection Profiles, the Inspection Profile Details section appears with a blank datasheet. If this occurs, skip to step 3.
+In the left pane, select , and then select Create New Profile. A new Inspection Profile datasheet appears.
+In the Item Category box, select the type of the profile.In the Item ID box, enter a unique name for the profile. As needed, enter values in the remaining available fields. Select .The Inspection Profile is saved. What To Do Next
+Add an Inspection Method
+Add an Existing Inspection ProfileProcedure
+Access the Inspection Profile Details section for the Inspection to which you want to add an existing Inspection Profile.
+Note:  If the selected Inspection does not have any existing Inspection Profiles, the Inspection Profile Details section appears with a blank datasheet. If this occurs, skip to step 3.
+In the left pane, select , and then select Add Existing Profile. The Add Existing Profile window appears. 
+Enter values in the search fields, and then select .The existing Inspection Profiles that can be added to the selected Inspection appear.
+Select .The existing Inspection Profile is added to the Inspection and appears as the last list item in the Manage Inspection Profiles pane.Manage Sequence Definitions for an Inspection Profile About This TaskInspections Tasks are completed in a specific order based on the constraints of the task's Inspection Profile. You can rearrange these tasks on the Inspection Profile to best fit the needs of your organization.Procedure
+Access the Inspection Profile Details section that you want to sequence. In the left pane, select .The Sequence Definition window appears. 
+In the grid, select the row for the Inspection Profile whose Sequence Definition you want to modify. To the right of the grid, select either  or Select Done.The Sequencing Definition for the selected Inspection Profile is modified. Delete an Inspection ProfileProcedure
+Access the Inspection Profile Details section for the Inspection Profile that you want to delete.In the upper-right corner of the workspace, select .
+A message appears, asking you to confirm that you want to delete the selected Inspection Profile and all its links to other records. 
+Select Yes.
+The selected Inspection Profile is deleted.
+Access the Inspection Methods SectionProcedure
+Access the Inspection Management Overview page for the equipment associated with the Inspection whose Inspection Method that you want to access. Select the Inspections tab.The Inspections section appears. 
+In the upper-right corner of the page, select , and then select Manage Equipment Profiles.The Manage Inspection Profiles page appears. The left pane contains a list of Inspection Profiles linked to the Equipment. The workspace displays the Inspection Methods section for the first Inspection Profile in the list.
+Add an Inspection MethodBefore You Begin
+
+Create an Inspection Profile.
+Procedure
+Access the Inspection Methods section for the selected asset.
+In the Inspection Methods section, in the Category column, select the blank row. A drop-down list appears, displaying the available types of inspections for the new Inspection Method.In the Category box, select the type of Inspection for the new Inspection Method.
+Note:  The only field required to add a new inspection method is the Category field. Once you select a Category value, a new row appears in the grid. You can then add additional Inspection Methods. You can, however, complete any of the additional fields. Select .The Inspection Methods are saved. What To Do Next
+Define Inspection Scope
+Delete Inspection MethodsProcedure
+Access the Inspection Methods section containing the Inspection Method that you want to delete. In the upper-right corner of the workspace, select .A new column of check boxes appears in the Inspection Methods grid. In the Inspection Method grid, select the check boxes next to one or more Inspection Methods that you want to delete.
+In the upper-right corner of the workspace, select , and then select Delete.A message appears, asking you to confirm that you want to delete the selected Inspection Methods. Select Yes. The selected Inspection Methods are deleted.Access an Inspection ScopeProcedure
+Access the Inspection Tasks workspace for the asset associated with the Inspection whose Inspection Scope you want to access. In the row containing the Inspection Task whose scope you want to access, select the link. 
+In the upper-right corner of the page, select Define Scope. The Manage Scope for Task page appears, displaying the Inspection Scope for the task. 
+Define the Inspection ScopeBefore You Begin
+
+Create an Inspection Profile.
+Procedure
+Access the Inspection Scope that you want to define. 
+Next to the Inspection Method for the Category that you want to define as the Inspection Scope, select . The Inspection Method appears.As needed, define the Inspection Scope, and then select Done. The Inspection Scope is defined.What To Do Next
+Create an Inspection Task
+
+
+
+
+
+On this pageAbout Inspection Profile About Inspection ScopeAbout Creating and Modifying Inspection ScopeAccess the Inspection Profile Details Section Create an Inspection ProfileAdd an Existing Inspection ProfileManage Sequence Definitions for an Inspection Profile Delete an Inspection ProfileAccess the Inspection Methods SectionAdd an Inspection MethodDelete Inspection MethodsAccess an Inspection ScopeDefine the Inspection Scope
+
+
+
+
+
+
+
+
+

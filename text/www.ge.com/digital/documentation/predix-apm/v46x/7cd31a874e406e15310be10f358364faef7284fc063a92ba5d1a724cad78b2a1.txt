@@ -1,0 +1,107 @@
+
+
+
+Third Quarter of 2022 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Third Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Release Notes
+Third Quarter of 2022
+
+
+
+
+
+
+
+Third Quarter of 2022Release Date: September 30, 2022This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo enhance productivity, you can now export data directly to a CSV file from GE Digital APM without using a data table chart. To facilitate this enhancement, you can create a new chart type using the Export Tag Data button, which is now available in the View Selector workspace for Time Series Analysis.US558909
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, if you opened a saved template for an asset in the Context Browser and then attempted to switch to another asset, the template information was not retained, and the New Time Series Analysis view was displayed. This issued has been resolved. Now, you can toggle assets that belong to the same classification type and retain the template along with the plotted charts. Additionally, for All Resources templates, you can toggle assets irrespective of the classification type.US559304Previously, for a time series chart, when you attempted to configure a large number of tags for a specific asset, you were unable to configure more than 40 tags at a time. This issue has been resolved. Now, the tag limit is increased to 70 tags. US558913Previously, in SmartSignal charts, when you dragged and dropped nodes in the Tag Browser section, the chart did not reload. This issue has been resolved. DE180770Previously, in an Analysis template associated with an Alert, the condition based filter did not load. This was because the condition or value based filter query failed to retrieve the data and you had to refresh the browser to re-query the data. This resulted in re-query of all data in the analysis template. This issue has been resolved. Now, the retry option is added to re-query only the failed condition based filter or value based filter. DE173581
+
+
+
+
+
+On this pageRelease Date: September 30, 2022
+
+
+
+
+
+
+
+
+

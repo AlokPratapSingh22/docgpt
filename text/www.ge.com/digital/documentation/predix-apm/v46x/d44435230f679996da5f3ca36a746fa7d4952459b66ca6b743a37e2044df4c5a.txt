@@ -1,0 +1,111 @@
+
+
+
+Fourth Quarter of 2018 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Release Notes
+Fourth Quarter of 2018
+
+
+
+
+
+
+
+Fourth Quarter of 2018Policy DesignerThis topic provides a list of product changes released for this module on the dates listed below.Release Date: December 14, 2018
+Table 1. Resolved IssuesDescriptionTracking IDPreviously, when you executed a policy that contained a Create Relationship node and a Create Entity node configured to create multiple records, the subsequent relationships were not created after the creation of the relationship between the first combination of records. This issue occurred if you specified one of the following inputs for the Create Relationship node:Duplicate predecessor entity keys and the output of the Create Entity node as the successor entity key.The collection output of a Create Entity node as the predecessor or successor entity key.This issue has been resolved.
+DE94996DE94795
+Previously, if a policy contained a Math node with a variadic function, and the variables of the variadic function represented the columns of a collection, the validation and execution of the policy failed. This issue has been resolved.DE94085Previously, when you attempted to access a policy containing a large number of nodes, one of the following issues occurred:The policy took a long time to load.The policy did not load.This issue has been resolved.DE93538Previously, if you mapped the time stamp output of a node to an input field of a successor node, and then executed the policy, in the Execution Details window for the successor node, the time stamp appeared in the time zone specified for your GE Digital APM user account instead of the policy time zone. This issue has been resolved.DE91644Previously, if you executed a policy containing a Create Alert node, the following issues occurred even though the policy was successfully executed:The execution result did not appear in the Execution Details window for the Create Alert node.The execution summary of the policy indicated that the policy was successfully executed but did not trigger any actions.These issues have been resolved.DE90675
+Release Date: November 16, 2018
+Table 2. Resolved IssuesNoteTracking IDPreviously, if a policy was executed by a family-level rule or another GE Digital APM module multiple times within a short duration, the execution results for the Math and Text nodes were intermittently incorrect after the first execution. This issue has been resolved.DE89726Previously, if you had specified a time zone other than Coordinated Universal Time (UTC) for a policy with a Predix Time Series node, and then executed the policy, the time stamp values provided by the Predix Time Series node to the successor nodes were offset by the time difference between UTC and the policy time zone. This issue has been resolved.DE86461
+Release Date: November 16, 2018
+Table 3. Enhancements and New FeaturesNoteTracking ID(s)The Asset UUID field in the Properties window for the Create Alert and Query Alerts nodes has been renamed Asset Unique ID.
+DE90491DE90280
+
+Table 4. Resolved IssuesDescriptionTracking IDPreviously, if you executed a policy that was configured to perform an action on a recently added, modified, or deleted family or family field, the execution failed even though you could successfully validate the policy. This issue has been resolved.DE91301Previously, if you mapped the output of a Health Indicator node to a Comparison node, and then mapped the logical result of the Comparison node to an And or Or node, validation and execution of the policy failed. This issue has been resolved.DE90937Previously, in the Properties window, if you attempted to map a column of a query result to an input field, the drop-down list box to specify the column of the query result did not appear for the following nodes:Create RelationshipDelete EntityDelete RelationshipEdit EntityR ScriptThis issue has been resolved.DE90835Previously, in the Properties window for the Create Alert node, if you mapped the value in the Unique ID box of an Equipment or a Functional Location record to the Asset UUID box, and then executed the policy, the Create Alert node did not create any alerts. This issue has been resolved.DE90491Previously, in the Properties window for the Query Alerts node, if you mapped the value in the Unique ID box of an Equipment or a Functional Location record to the Asset UUID box, and then executed the policy, the Query Alerts node did not retrieve any alerts. This issue has been resolved.DE90280Previously, in the Properties window for the Create Relationship node, if you specified duplicate predecessor or successor entity keys to create multiple one-to-one relationships, and then validated or executed the policy, a validation error occurred for the node. This issue has been resolved.DE89330
+Release Date: October 12, 2018
+Table 5. Resolved IssuesDescriptionTracking IDPreviously, in the Properties window, if you attempted to map a column of a query result to an input field, the drop-down list box to specify the column of the query result did not appear for the following nodes:Create RelationshipDelete EntityDelete RelationshipEdit EntityR ScriptThis issue has been resolved.DE90835Previously, if you mapped the output of a Health Indicator node to a Comparison node, and then mapped the logical result of the Comparison node to an And or Or node, validation and execution of the policy failed. This issue has been resolved.DE90785
+
+
+
+
+
+On this pagePolicy Designer
+
+
+
+
+
+
+
+
+

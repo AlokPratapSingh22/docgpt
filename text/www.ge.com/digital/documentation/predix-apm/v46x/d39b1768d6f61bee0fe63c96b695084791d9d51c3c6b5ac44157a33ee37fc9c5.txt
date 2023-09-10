@@ -1,0 +1,102 @@
+
+
+
+Tag Reserved Attributes | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+InstancesAsset Instances
+Asset Attributes
+Tag Instances
+Tag AttributesTag Reserved Attributes
+Tag Custom Attributes
+Tag Alias
+
+
+Location Information
+Events
+
+
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Instances
+Tag Attributes
+Tag Reserved Attributes
+
+
+
+
+
+
+
+Tag Reserved AttributesAdd or Modify Reserved Attributes Values for a Tag InstanceYou can enter or modify new reserved attribute values for a tag instance. About This Task
+Tag instance reserved attributes appear on the selected tag instance page. You can access a tag instance from the Tag link for an asset instance. You can enter a new value or modify an existing value for a reserved attribute. You can add new values or modify existing values for a reserved attribute that contains multiple options in . Reserved attributes have predefined formatting that cannot be modified. You cannot add or delete a reserved attribute.
+GE Digital APM Asset has identified a list of reserved attributes for Tag Instances. To ensure that you don't add custom attributes from the reserved attributes list, the following tables list the reserved attributes used for Tag Instances:Table 1. Tag Instance Reserved AttributesField NameDisplay NameTypeDefault ValuestatusStatusKeyValue
+{
+     "key": "01",
+     "value": "Unknown"
+}
+timeseriesLinkTimeseries LinkStringshiOutlierLimitsLowSHI Outlier Limits LowDoublenullshiOutlierLimitsHighSHI Outlier Limits HighDoublenullsensorHealthIndexSensor Health IndexDoublenullsensorHealthStatusSensor Health StatusBooleannullstandardUomStandard Unit of MeasurementUnitOfMeasurenulluomGroupUnit of Measurement GroupUnitOfMeasurenullstandardUomGroupStandard Unit of Measurement GroupUnitOfMeasurenullpaintBrushingTestWeightPaint Brushing Test WeightDoublenulltimeseriesDataSourceTimeseries Data Source IdentifierStringnull
+Procedure To enter or modify a single value for a reserved attribute:In the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Select the Tag link.In the Reserved Attributes section, hover over a reserved attribute value, and select the Value box to enter a value. The value must match the data type for the attribute. A hint may appear if you enter a value incorrectly.Some reserved attributes do not allow direct modifying. Alternatively, you can hover over a reserved attribute value and select , then enter a value in the Attribute Value Definition box.Select Save.The entered value is saved and appears in the Value column for the selected reserved attribute. To add and enter or modify multiple values for a reserved attribute:In the Tags link in the Reserved Attributes section, hover over a reserved attribute value, and select . Enter a value in the Attribute Value Definition box. The value must match the data type for the attribute. A hint may appear if you enter a value incorrectly.Select Add Value.Enter an additional value in the new Attribute Value Definition box.Continue selecting Add Value and entering values as needed.Select Save.The entered values are saved and populate the List values drop-down list box in the Value column for the selected reserved attribute.To select a value for reserved attributes that use a drop-down list box:In the Tags link in the Reserved Attributes section, hover over a reserved attribute value, and select . Select the Attribute Value Definition box and select an option.Select Save.The selected value is saved and appears in the Value column for the selected reserved attribute.
+
+
+
+
+On this pageAdd or Modify Reserved Attributes Values for a Tag Instance
+
+
+
+
+
+
+
+
+

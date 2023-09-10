@@ -1,0 +1,182 @@
+
+
+
+Reference | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Mobile Proof TestingMobile Proof Testing
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Mobile Proof Testing
+Reference
+
+
+
+
+
+
+
+ReferenceSIS Functional Test Detail Records
+This topic provides an alphabetical list and description of the fields that exist in the SIS Functional Test Detail family. When you apply a Proof Test Template to a Proof Test, a Functional Test Detail is created for each Proof Test Template Detail. The values in most of these fields are populated with the values in the corresponding fields in the related Proof Test Template Detail. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+As Found Travel Time NumericThe time taken by the Final Element to reach the safe state from its normal operating state. This value is measured in seconds.
+This field is enabled only if the value in the Step Type field is Final Element. 
+ If the value in this field exceeds the value in the Travel Time Limit field, then the proof test step fails. 
+As Found Trip Point NumericA number that defines when the element has activated an SIS shutdown. 
+This value is used to calculate the As Found Trip Point Error.
+As Found Trip Point Error NumericThe error value calculated for the value that you have entered in the As Found Trip Point field.
+This value is disabled and calculated as follows:
+
+As Found Trip Point Error = [(As Found Trip Point - Trip Point) *100] / Trip Point
+
+If this value is less than the value in the Trip Point Error Limit field, then the proof test step has passed. Otherwise, it has failed.
+As Left Travel Time NumericThe time taken by the Final Element to reach the safe state from its normal operating state, after repairing the element. This value is measured in seconds.
+ This field is enabled only if the value in the Step Type field is Final Element. 
+As Left Trip Point NumericA number that defines when the element has activated an SIS shutdown after repairing the element.This value is used to calculate the As Left Trip Point Error.As Left Trip Point Error NumericThe error value calculated for the value that you have entered in the As Left Trip Point field.
+This value is disabled and calculated as follows:
+
+As Left Trip Point Error = [(As Left Trip Point - Trip Point) *100] / Trip Point
+
+Comments CharacterComments about the proof test.
+None
+
+Equipment ID 
+
+Character
+
+The ID of the Equipment against which the step is performed. 
+This field is disabled and populated with the value in the Equipment ID field in the corresponding Proof Test Template Detail.Executed By CharacterThe ID of the user who conducted the proof test.This field is disabled and populated with the ID of the current user.Execution Date DateThe date on which the proof test was conducted.This field is disabled and populated with the date and time on which the Functional Test Detail is saved.Failure Condition CharacterThe condition in which the proof test step failed.NoneFailure Type CharacterThe type of the failure.
+This field contains the following values:
+Safe Dangerous No Effect 
+Location ID CharacterThe ID of the Functional Location against which the step is performed. This field is disabled and populated with the value in the Location ID field in the corresponding Proof Test Template Detail.Pass/Fail CharacterIndicates whether the proof test step has passed or failed based on the pass/fail criteria that you have specified in the corresponding Proof Test Template Detail.
+This field contains the following values:
+Pass Fail Skip Complete 
+Result Criteria TextA description of what is considered to be an acceptable result of the step. This field is disabled and populated with the value in the Result Criteria field in the corresponding Proof Test Template Detail. Step Sequence Number NumericA number that represents the order in which the step should be performed, relative to other steps. This field is disabled and populated with the value in the Step Sequence Number field in the corresponding Proof Test Template Detail. Step Type CharacterThe type of the step. This field is disabled and populated with the value in the Step Type field in the Proof Test Template Detail. Template Detail ID CharacterAn alphanumeric value that identifies the SIS Functional Test Detail. 
+This field is disabled and populated with the value in the Template Detail ID field in the corresponding Proof Test Template Detail.
+Test Criteria CharacterThe criteria or conditions for conducting the proof test.This field is disabled and populated with the value in the Test Criteria field in the corresponding Proof Test Template Detail.Travel Time Limit NumericA number that quantifies the maximum acceptable travel time for this step, in seconds. This field is enabled only in SIS Proof Test Template Details that are linked to records representing final elements. Trip Point NumericA number that defines when the element should activate an SIS shutdown. This field is enabled only in SIS Proof Test Template Details that are linked to records representing sensors, final elements, or logic solvers. Trip Point Direction CharacterThe trend of Trip Point values. This field is disabled and populated with the value in the Trip Point Direction field in the corresponding Proof Test Template Detail.Trip Point Error Limit NumericA value that defines the range, plus or minus, within which the Trip Point value must fall to be acceptable. This field is disabled and populated with the value in the Trip Point Error Limit field in the corresponding Proof Test Template Detail.Trip Point Units CharacterThe unit of measure associated with the value in the Trip Point field. This field is disabled and populated with the value in the Trip Point Units field in the corresponding Proof Test Template Detail.
+Risk Assessment Recommendation Records
+Recommendation records store details about the recommendation that you have proposed to mitigate the risk. This topic provides an alphabetical list and description of the fields that exist for the Recommendation family. These fields appear on the Recommendation datasheet, unless otherwise specified. The information in this table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Alert Assignee When Due? LogicalIndicates whether an email notification must be sent to the user selected in the Assigned To Name field when the recommendation is due.This field appears in the Alert datasheet.Assigned To Name CharacterThe name of the user who is assigned the Recommendation.You can select a user from the list.Author Name CharacterThe first and last name of the Security User who created the Recommendation.This field is populated with the name of the user who was logged in while creating the Recommendation. Business Impact CharacterThe impact to the business if the recommended action is performed. 
+This field contains a list of System Codes that exist in the MI BUSINESS IMPACT System Code Table. You can choose from the following baseline values: 
+Facility Shutdown (FACILITY SHUTDOWN) Facility Slowdown (FACILITY SLOWDOWN) Unit Shutdown (UNIT SHUTDOWN) Unit Slowdown (UNIT SLOWDOWN) System Shutdown (SYSTEM SHUTDOWN) System Slowdown (SYSTEM SLOWDOWN)
+Completed Date DateThe date on which the recommended action was performed.This field contains a  button, which you can select to access the Calendar feature.Create SAP Notification? LogicalIndicates whether a notification should be created in an external EAM system when this Recommendation is saved.NoneDays Before Due Date to be Notified NumericThe number of days before the Target Completion Date that an email notification must be sent to the user selected in the Assigned To Name field.This field appears in the Alert datasheet. This field is required when the Alert Assignee When Due check box is selected.Equipment ID CharacterThe Equipment that is associated with the Instrumented Function for which you are proposing the Recommendation.This field is disabled and populated with the value stored in the Equipment ID field in the Instrumented Function datasheet.Final Approver Name CharacterThe name of the user who must grant the final approval for the Recommendation.You can select a user from the list.Frequency of Alert After Due Date NumericSpecifies how often email messages will be sent after the completion date has passed. 
+You can choose any of the following options: 
+Never Daily Weekly Monthly Yearly 
+This field appears in the Alert datasheet. This field is required when the Alert Assignee When Due check box is selected.
+Functional Location ID CharacterThe Functional Location that is associated with the Instrumented Function for which you are proposing the Recommendation.This field is disabled and populated with the value stored in the Functional Location ID field in the Instrumented Function datasheet.Implementation Alert Text CharacterThe text that will be included in the email notification sent to the approver.This field appears in the Alert datasheet.Interval NumericThe interval at which the Action related to the Recommendation needs to be performed. This Action is created as part of an Asset Strategy after the Recommendation is promoted to ASM.For example, if the value in this field is 4, and if the value in the Interval Units field is Days, then that Action must be performed every four days. Interval Units CharacterThe units of the interval at which the Action related to the Recommendation needs to be performed. This Action is created as part of an Asset Strategy after the Recommendation is promoted to ASM.For example, if the value in this field is Days, and if the value in the Interval field is 4, then that Action must be performed every four days.Mandatory Date DateThe date by which the recommended action must be completed if it was not completed by the target completion date.This field contains a  button, which you can select to access the Calendar feature.Recommendation Basis CharacterThe basis for the Recommendation.NoneRecommendation Description CharacterA description of the Recommendation.NoneRecommendation Headline CharacterA short description of the Recommendation.
+If you select the Alert Assignee When Due check box, the value that you provide in the Recommendation Headline field becomes the subject of the alert email.
+
+Recommendation ID 
+
+Character
+
+The ID for the Recommendation
+
+This value must be unique.
+Recommendation Priority CharacterThe priority of the recommended action.
+This field contains a list of System Codes that exist in the MI_PRIORITY System Code Table. You can choose from the following baseline values: 
+ High (HIGH) Medium (MEDIUM) Low (LOW)
+Reevaluate? LogicalIndicates whether you want to reevaluate the Recommendation.This field appears in the Alert datasheet.Reevaluation Alert Body Text CharacterThe text that will be included in the reevaluation email message.This filed appears in the Alert datasheet. This field is enabled only when the Revaluate? check box is selected.Reevaluation Date DateThe date on which a reevaluation email message will be sent to the users selected in the Reevaluation Notification List field.This field appears in the Alert datasheet. This field is required when the Reevaluate? check box is selected.Reevaluation Notification List CharacterThe users to whom the reevaluation email message will be sent.This field appears in the Alert datasheet. This field is enabled and is required when the Reevaluate? check box is selected.Required Equipment Status CharacterThe state in which the equipment should exist before performing the recommended action against it. 
+This field contains a list of System Codes that exist in the MI_STATUS System Code Table. You can choose from the following baseline values: 
+ ON-LINE (ON-LINE) Off-Line (OFF-LINE) Not Applicable (N/A)
+Reviewer Name CharacterThe name of the user who will review the Recommendation.You can select a user from the list.Status CharacterThe status of the Recommendation.
+This field contains a list of the following states:
+Created (CREATED)Pending Review (PENDING REVIEW)Reviewed (REVIEWED)Rejected (REJECTED)Cancelled (CANCELLED)Superseded (SUPERSEDED)
+Target Completion Date DateThe date by which the recommended action should be completed.This field contains a  button, which you can select to access the Calendar feature.Work Request Equipment CharacterThe work request number when a recommendation is converted from a notification within the EAM to a work order. (e.g., using functionality provided with the SAP Interfaces, Oracle EBS eAM Interfaces, and Maximo Interfaces). This field is disabled and populated after the external work request is created.Work Request Functional Location CharacterThe work request number when a recommendation is converted from a notification within the EAM to a work order. (e.g., using functionality provided with the SAP Interfaces, Oracle EBS eAM Interfaces, and Maximo Interfaces). This field is disabled and populated after the external work request is created.Work Request Reference CharacterThe ID of the external work request that was created from this Recommendation(e.g., using functionality provided with the SAP Interfaces, Oracle EBS EAM Interfaces, and Maximo Interfaces).This field is disabled and populated after the SAP Notification or Oracle EBS EAM Work Request is created.
+SIS Proof Test Records
+SIS Proof Test records store details about a proof test that is executed, including the results of the proof test. This topic provides an alphabetical list and description of the fields that exist for the SIS Proof Test family and appear on the SIS Proof Test datasheet, unless otherwise specified. The information in the table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Actual Work TimeNumericThe number of hours required to complete the SIS Proof Test.If the SIS Proof Test is integrated with Work Management, the value in this field is used to create a confirmation record when the SIS Proof Test is closed.Cleared All Bypasses and Forced LogicLogicalIndicates whether or not you have cleared all bypasses and forced logic while performing the proof test.NoneCommencement Date DateThe date on which the proof test was started.NoneCompletion Date DateThe date on which you completed the proof test. NoneEquipment Operating State CharacterThe current state of the equipment that you are testing. 
+This field contains the System Codes that exist in the MI EQUIP OP STATE System Code Table. You can choose from the following baseline values: 
+ON-LINE (ON-LINE) Off-Line (OFF-LINE) Not Applicable (NA)
+Functional Test Closed LogicalA value that indicates whether or not the proof test has been completed. If you select this check box, all fields on the SIS Proof Test datasheet are disabled. Functional Test Status CharacterStores the current status of the proof test. 
+This field contains the System Codes that exist in the MI FUNCTIONAL TEST STATUS System Code Table. You can choose from the following baseline values: 
+Active Complete  Closed
+Functional Test Template CharacterThe ID of the SIS Proof Test Template that was used to create the SIS Proof Test. This field contains a list of proof test templates that are approved and linked to the instrumented function on which you are conducting the proof test. This field is required. After you select a template from the list and save the record, this field is disabled. The Proof Test Template Detail records linked to the selected template are listed in the Analysis Details section. SIS Or PIF Key NumericThe Entity Key of the Instrumented Function or the Logic Solver to which the SIS Proof Test record is linked. This field does not appear on the datasheet by default. SIS Tester Name CharacterThe name of the user who is responsible for performing the proof test. 
+This field contains the names of: 
+The Security User who created the SIS Proof Test -and- Members of the MI SIS Administrator, MI SIS Engineer, or MI SIS User Security Groups
+Task Addressed Numeric The inspection task that is addressed by the proof test. This field contains the inspection tasks that are linked to the instrumented function or the logic solver on which you have performed the proof test. Test Description CharacterA description of the proof test. NoneTest ID CharacterThe ID for the proof test. 
+None
+Test Summary TextA summary of the proof test that you have performed. NoneType of Test CharacterThe type of the proof test that you have performed. 
+This field contains the following baseline values: 
+Functional Test  System Validation
+
+
+
+
+
+
+On this pageSIS Functional Test Detail RecordsRisk Assessment Recommendation RecordsSIS Proof Test Records
+
+
+
+
+
+
+
+
+

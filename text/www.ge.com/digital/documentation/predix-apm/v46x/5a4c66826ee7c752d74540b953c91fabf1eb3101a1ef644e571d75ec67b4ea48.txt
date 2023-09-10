@@ -1,0 +1,100 @@
+
+
+
+Manage Log Entries from GAA | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Manage Log Entries from GAA
+
+
+
+
+
+
+
+Manage Log Entries from GAAAccess a Log Entry from an EventBefore You Begin
+Ensure that your eLog license is active.Ensure that you belong to the MI eLog Administrator or MI eLog Contributor Security Group.Note: For more information, refer to the eLog Security Groups topic in the General Reference section of the eLog documentation.In the eLog module, sign in to the Shift whose log entry you want to access. For more information, refer to the Sign in to a Shift topic in the Overview section of the eLog documentation.Note: If you attempt to access a log entry without signing in to a Shift, the Sign In window appears.
+About This Task
+This topic describes how to access an eLog Generation Event record (that is, a generation event log entry) from a Primary Event.
+Procedure
+Access the table of Primary Events associated with the GAA Unit that contains the Primary Event for which you want to access a generation event log entry.In the Associated eLog column, select the link in the row the contains the Primary Event for which you want to access the log entry.The Generation Event Log page appears in a new tab, displaying the datasheet of the generation event log entry. Note: As needed, you can modify the values in the available fields, and then select  to save your changes. For more information about the available fields, refer to the eLog Generation Event Records section (that is, in the eLog Entry Records topic) in the Family Field Descriptions section of the eLog documentation.Create a Log Entry for an EventBefore You Begin
+Ensure that your eLog license is active.Ensure that you belong to the MI eLog Administrator or MI eLog Contributor Security Group.Note: For more information, refer to the eLog Security Groups topic in the General Reference section of the eLog documentation.In the eLog module, sign in to the Shift for which you want to create a log entry. For more information, refer to the Sign in to a Shift topic in the Overview section of the eLog documentation.Note: If you attempt to create a log entry without signing in to a Shift, the Sign In window appears.Create a Primary Event.
+About This Task
+This topic describes how to create an eLog Generation Event record (that is, a generation event log entry) for a Primary Event.Note: You can create only one generation event log entry for a Primary Event.
+Procedure
+Access the Primary Event for which you want to create a generation event log entry.Select . Select Create, and then select Create Log Entry.The Generation Event Log page appears in a new tab.Tip: If you are signed in to multiple Shifts, in the Shifts drop-down list box, select the Shift for which you want to create a log entry.
+As needed, enter values in the available fields.
+Note: For more information about the available fields, refer to the eLog Generation Event Records subsection (that is, in the eLog Entry Records topic) in the Family Field Descriptions section of the eLog documentation.
+Select .
+The generation event log entry is created.
+Note: To access the new generation event log entry, select the Navigate to eLog Summary Page link.
+Results
+The new generation event log entry appears in:The Associated eLog column for the Primary Event in the Events workspace (that is, in the Unit Summary page for the associated GAA Unit).The All Log Entries section in the eLog Overview page, in the eLog module.The Shift Log workspace in the Shift Summary page for the associated Shift, in the eLog module.
+
+
+
+
+
+On this pageAccess a Log Entry from an EventCreate a Log Entry for an Event
+
+
+
+
+
+
+
+
+

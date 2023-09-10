@@ -1,0 +1,117 @@
+
+
+
+R Scripts | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health Manager
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+R Scripts
+
+
+
+
+
+
+
+R ScriptsDeploy R Scripts for the First TimeBefore You Begin
+After you have installed and configured the basic GE Digital APM system architecture, including the R server of your choice, you will need to perform some configuration steps specifically for R Scripts.
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. GE Digital recommends, however, that the tasks be completed in the order in which they are listed.
+
+Results
+StepTaskNotes1Ensure that your R Server is configured according to the R Scripts system requirements. For more information, refer to the APM System Requirements documentation.This step is required.2In GE Digital APM, specify the R Server credentials.This step is required.
+Upgrade R Scripts
+Before You Begin
+
+The following tables outline the steps that you must complete to upgrade this module to the latest version of GE Digital APM
+                    .
+                
+These tasks may be completed by multiple people in your organization. We recommend, however, that the tasks be completed in the order in which they are listed.
+
+ProcedureUpgrade to the latest version of GE Digital APM.This module will be upgraded to GE Digital APM automatically. No additional steps are required.Specify R Server CredentialsBefore You BeginYou must be a Super User or member of the MI Configuration Role security group to modify the R Server credentials.ProcedureIn the module navigation menu, select
+Admin > Operations Manager > Connections.The Connections page appears.Select R Server.The R Server workspace appears.In the R Server Version box, specify the version of R Server.In the Server Address box, enter the URL of the R Server (for example, http://MyRServer:7400/deployr).In the User Name and Password boxes, enter the user name and password that you want to use for the connection.Select Save. The R Server credentials are saved.Select Perform Connection Test to confirm that the connection is valid.
+
+
+
+
+On this pageDeploy R Scripts for the First TimeUpgrade R Scripts
+Specify R Server Credentials
+
+
+
+
+
+
+
+
+

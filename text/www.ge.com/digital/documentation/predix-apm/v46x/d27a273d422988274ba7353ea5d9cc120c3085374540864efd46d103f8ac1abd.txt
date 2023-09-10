@@ -1,0 +1,479 @@
+
+
+
+Reference Information: Query Expressions, Clauses, Prompts, and Operators | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+QueriesWorkflow
+Query Creation
+Query Results
+Query Sources, Fields, Joins, and Hyperlinks
+Query Expressions, Clauses, and Prompts
+Query Timeouts
+ReferenceReference Information: Query Types
+Reference Information: Query Results
+Reference Information: Query Joins, Functions, and Hyperlinks
+Reference Information: Query Expressions, Clauses, Prompts, and Operators
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Queries
+Reference
+Reference Information: Query Expressions, Clauses, Prompts, and Operators
+
+
+
+
+
+
+
+Reference Information: Query Expressions, Clauses, Prompts, and OperatorsAbout the Expression Builder Window
+The Expression Builder window contains various fields and controls to assist you in constructing an expression for your query criteria.
+The Expression Builder window is divided into two sections, Simple and Advanced. You can toggle between the two sections by using the Simple and Advanced tabs at the top of the window.
+If you access the Expression Builder window from the Field cell, the Advanced section is selected by default, and the Simple button is disabled. If you access the Expression Builder window from the Criteria cell or the Or cell, the Simple section is selected by default, and the Advanced button is enabled.
+Simple Section
+
+The Simple section of the Expression Builder window lets you define a simple expression using conditions on the field from which you accessed the Expression Builder window.
+
+
+
+The Simple section of the Expression Builder window contains the following features:
+
+And/Or: A list that appears for all rows except the first. You can use the And and Or options to establish relationships between expressions.
+
+Field : A read-only text box that displays the value in the Field cell for the field you selected.
+
+
+Operator: A list that displays the valid operators to use in the expression, depending on the type of field on which the expression is built.
+
+Field typeOptions
+ Text 
+-or-
+ Character 
+-or-
+ Numeric 
+equalsnot equalscontainsdoes not containstarts withends withis nullis not null Date 
+equals
+is at mostis at leastnot equalsis less thanis greater thanis betweenis nullis not null Logical is trueis falseis nullis not null
+
+
+Value: A text box where you can enter the value you want to include in the expression.
+Add Condition : A button that displays another row of options which you can use to create additional expressions on the field.
+ Advanced Section
+
+The Advanced section of the Expression Builder window is divided into five main sections, as shown in the following image. These labels correspond to the numbered list following the image.
+
+
+
+A text box that displays the expression itself. To build the expression manually, you can enter text directly into the text box. Otherwise, the expression will be built dynamically when you select tabs and values in the Expression Builder window.Buttons that insert symbols to establish a relationship between parts of an expression, or that insert symbols to group those parts. Selecting a button will insert the corresponding symbol into the expression.Note:
+ If you are using date to build an expression, note that date can be entered in any of the acceptable formats. However, always be sure to select the date in the expression, and then select the Date button. Selecting the Date button converts the date in the expression to yyy-mm-dd format.The  button opens the 
+Prompt Settings
+ section of the Expression Builder window, which has options that let you add a prompt to a query.
+A list of tabs that you can use to toggle between categories for the valid components of the expression, which can include the following:
+System Codes: This option appears only if a System Code Table Valid Values list has been defined for the selected field in the Rules Editor (i.e., if no Valid Values list has been defined, if the Valid Values list uses a static list of values, or if the Valid Values list is By Rule, this option does not appear). If this option appears and you select it, list 5 displays the following:All the codes and descriptions for the appropriate System Code Table if the Valid Values rule is defined as System Code Table Only.Only the codes and descriptions that meet the literal value criteria if the Valid Values rule is defined as System Code Table with Literal Reference. Additionally, if a literal reference has been defined, the reference value will appear in parentheses beside the table ID in list 4.
+All the codes and descriptions for the appropriate System Code Table if the Valid Values rule is defined as System Code with Field Reference (i.e., in the absence of a field value to use as the reference, there is no way to limit the list).
+Note: When you select a System Code to include in your expression, the System Code ID (rather than the description) will be used. Even though System Code descriptions appear in the datasheet, the IDs are actually stored in the database. By using the ID instead of the description in the expression, your criteria will apply to all System Codes, including those with different, translated descriptions.
+
+Tables: The database tables from which you can select fields to include in the expression. When you select the Tables option in list 3, list 4 displays the query source families, and list 5 displays all the fields in those families.
+Functions: The three types of functions that you can include in the expression: GE Digital APM, Oracle, or SQL Server. When you select a function category in list 3, list 4 displays the types of functions in that category, and list 5 displays all the available functions.
+Constants: The constants that you can include in the expression. A constant is a static value provided for comparative reasons. When you select the Constants option in list 3, list 4 displays the query source families, and list 5 displays all the fields in those families.
+Operators: The symbols that you use to join parts of the expression. When you select the Operators option in list 3, list 4 displays different classifications of operators, and list 5 displays all the valid operators.A list that displays a subset of options based on your selection in list 3. Selecting an item in this list limits the options in list 5.A list that displays a subset of values based on your selections in lists 3 and 4. Selecting any item in this list will insert the value into the expression. The value will be inserted wherever the cursor is currently positioned.
+What is an Expression?
+An expression is a string of characters that, together, define a certain set of conditions to be applied to a query. In other words, an expression is the code that GE Digital APM reads in order to determine what you want to retrieve from the database and how you want to display the query results.
+Details
+You can build simple expressions that limit the query results based on criteria that is applied to a single field, or you can build complex expressions that can be used to perform calculations, reformat stored values, concatenate stored values, and so on. As long as you understand the stored data and the way in which you want to present it to users, you can construct expressions to perform simple to very complex operations on the query data.
+You can think of an expression as the combination of any of the following items that together define the conditions by which you want to limit the query results:
+
+Functions
+Clauses
+Operators
+Any other data required to yield results
+In the grid in the Conditions section, you can construct an expression in the 
+Criteria cell, the Or cell, and the Field cell. Expressions can be constructed manually, or using the 
+Expression Builder
+ window, which is accessible from the FieldField, Criteria, and Or cells of the grid in the Conditions section.
+When building expressions, you must use the base (i.e., stored) values for Units of Measure, formatted values, and translated strings. For example, consider a query that contains an expression in a field that stores numeric values in inches. To filter your query results on that field, you must specify values as they are stored in that field (i.e., in inches) rather than as they are displayed when the query is run in formatted mode (e.g., in centimeters).
+For instance, to return only the records in which 25 inches has been recorded in this field, your query expression must contain the value 25, not 63.5, which is the stored value converted to centimeters, and which might be displayed to some users. To determine how you should construct values in your expressions, you can run the query in unformatted mode.
+Example: Expressions using Functions
+The following text is an example of an expression:
+TO CHAR([Shell and Tube Heat Exchanger].[Asset Installation Date], 'yyyy')
+This expression combines the TO CHAR function, the Asset Installation Date field, and the text 'yyyy,' which yields a result that is formatted as a four-digit year.
+The following text is another example of an expression:
+DECODE([Air Cooled Heat Exchanger].[Asset Status], 'Active', 'A', 'Inactive', 'I', 'No Status')
+This expression combines the DECODE function, the Asset Status field, and additional data that indicates that a stored value of Active should return the value A, a stored value of Inactive should return the value I, and any other stored value (including null values) should return the value No Status.
+Example: Expressions Within Clauses
+Expressions can exist within SELECT statements, WHERE clauses, or HAVING clauses, or they can exist outside of these SQL components. For example, consider the following WHERE clause:
+WHERE [Asset].[ASSET MANUF CHR] = 'GOULDS'
+The expression [Asset].[ASSET MANUF CHR] = 'GOULDS' is contained within the WHERE clause.
+About Formatted Expressions on Character Fields
+This topic contains syntax suggestions and requirements for expressions on character fields, as well as details about how GE Digital APM reformats expressions on character fields.
+When you create an expression on a character field, the actual field value(s) must be within single quotation marks.
+Example: Expression Syntax on Character Fields
+If you want to return records where the Asset Status field contains the value Active, the syntax would be:
+WHERE [Asset].[ASSET STAT CHR] = 'Active'
+...where Active is within single quotation marks because it is the stored value that you want to use for limiting the query results.
+If you want to search on multiple values, such as Centrifugal Pump and Rotating Pump, you would again place the actual values within single quotation marks. The syntax would be:
+WHERE ([Asset].[ASSET TYPE CHR] = 'Centrifugal Pump' AND 
+[Asset].[ASSET TYPE CHR] = 'Rotating Pump')
+...where Centrifugal Pump and Rotating Pump are within single quotation marks because they are the actual values to be used in the query criteria.
+Note:  When you are using an Oracle schema, the value is case sensitive by default. This means, for example, that if you enter WHERE_[Asset].[ASSET_STAT_CHR]_=_'ACTIVE' for a field where values are stored in the database as Active, the query will not return any results.
+About Automatic Reformatting on Character Fields
+If you enter something in the Criteria cell or the Or cell of the grid in the Conditions section of the Design workspace for a character field, and you do not enter single quotation marks yourself, GE Digital APM will insert them automatically for you. For example, if you want to search for records where the Asset Status is Active, you can enter either 'Active' or Active, GE Digital APM will insert the single quotation marks automatically, reformatting the entered text as 'Active'.
+If the expression contains multiple words, or if you want to use operators other than is equal to, and you do not enter the single quotation marks yourself, GE Digital APM will insert the single quotation marks around the entire phrase, including the operators. Depending on the values stored in the database, this may or may not return the appropriate results.
+For example, suppose you create a query on the Shell and Tube Heat Exchanger family, and you add the Asset Manufacturer field to the grid in the Conditions section. If there are five different manufacturers of Shell and Tube Heat Exchangers, but you want to return Shell and Tube Heat Exchangers manufactured by only two of those manufacturers, Alco and Whitlock, the query expression on the Manufacturer field must be formatted as follows:
+='Alco' or 'Whitlock'
+If you enter Alco or Whitlock in the Criteria cell for the Asset Manufacturer field, GE Digital APM will reformat the expression as 'Alco or Whitlock'. The query will not return any results because the syntax suggests that you want to find Shell and Tube Heat Exchangers whose manufacturer is Alco or Whitlock, which does not exist in the database.
+Likewise, if you enter =Alco or Whitlock, GE Digital APM will reformat the expression as ='Alco' or 'Whitlock', which, again, would not return any results because there is no manufacturer named =Alco or Whitlock in the database.
+To return the appropriate results, you should enter 'Alco or Whitlock' in the Criteria cell, or enter Alco in the Criteria cell and Whitlock in the Or cell.
+Note:  If you enter an entirely numeric value (e.g., 123) or an expression that can be interpreted as a mathematical equation (e.g., 123-12), GE Digital APM will not insert single quotation marks automatically. This will cause the expression to be invalid, and when you run the query, the system will display an error. To resolve this problem, add the single quotation marks manually.
+About Formatted Expressions on Text Fields
+This topic contains syntax suggestions and requirements for expressions on text fields, as well as details about how GE Digital APM reformats expressions on text fields.
+When you create an expression on a text field, the value(s) within the expression must be placed within single quotation marks.
+Note:  When you are using Oracle schema, if a text field is exists in a query and the Unique Records Only check box is selected when the query is run, an error message will appear. If you are using an Oracle database and want to run a query with a text field, do not select the Unique Records Only check box.
+Example: Expression Syntax on Text Fields
+If you want to create an expression for the Asset Description field to return the records where the field contains the value This is a test, the expression would be:
+WHERE [Asset].[ASSET DESC CHR] LIKE 'This is a test'
+...where This is a test is within single quotation marks because it is the stored value that you want to use to limit the query results.
+Note that text fields are stored in the database differently than character fields and are, therefore, handled differently. One difference is that you cannot use the = operator with text fields. Instead, you must use the like operator. When creating text field expressions, be sure to specify the like operator.
+Note:  When you are using an Oracle schema, the value is case sensitive by default. This means, for example, that if you enter WHERE [Asset].[ASSET DESC CHR] LIKE 'This is a test' in a field where values are stored in the database as This is a test, the query will not return any results.
+About Automatic Reformatting on Text Fields
+If you enter something for a text field in the Criteria cell or the Or cell of the grid in the Conditions section, and you do not enter single quotation marks yourself, GE Digital APM will insert them automatically for you. For example, if you want to search for records where the Asset Additional Information field contains the text This asset exists for testing purposes, you can enter the phrase with or without the single quotation marks. If you omit the single quotation marks, GE Digital APM will insert them for you.
+Note:  While GE Digital APM will insert the single quotation marks automatically, it will not insert the like operator. When creating text field expressions, be sure to specify the like operator. Otherwise, GE Digital APM will assume the is equal to (=) operator and return an error.
+About Formatted Expressions on Date Fields
+This topic contains syntax suggestions and requirements for expressions on date fields, as well as details about how GE Digital APM reformats expressions on date fields.
+When you create an expression on a date field, you should use the following syntax:
+(# :D 'yyyy-mm-dd')
+Note:  You will need to use the syntax yyyy-mm-dd on all workstations, regardless of your GE Digital APM Culture setting or your Windows Regional and Language options. Even if we input the date in the mm-dd-yyyy format, the expression should still use the yyyy-mm-dd format. However, always be sure to select the date in the expression, and then select the Date button. Selecting the Date button converts the date to yyyy-mm-dd format. 
+Example: Expression Syntax on Date Fields
+If you want to create an expression on the Asset Installation Date field to return the records where the field contains the value 05-04-2005 (where 05 represents May, and 04 represents the fourth day of the month), the expression would be:
+WHERE [Asset].[ASSET INSL DT] = (# :D '2005-05-04')
+About Formatted Expressions on Logical Fields
+This topic contains syntax suggestions and requirements for expressions on logical fields, as well as details about how GE Digital APM reformats expressions on logical fields.
+A logical field represents a value of True or False. When you create an expression for a logical field, the exact syntax to use is either 'Y' (True) or 'N' (False).
+Example: Expression Syntax on Logical Fields
+If you want to create an expression on the Spared field to return records where the check box is selected (the value is True), the expression would be:
+WHERE [Asset].[ASSET SPRD IND] = 'Y'
+About Automatic Reformatting on Date Fields
+Some common syntax options that GE Digital APM will reformat to match the syntax required for logical fields are:
+
+True (using any case combination, such as true or TRUE)
+False (using any case combination, such as false or FALSE)
+Yes (using any case combination, such as yes or YES)
+No (using any case combination, such as no or NO)
+About Formatted Expressions on Numeric Fields
+This topic contains syntax suggestions and requirements for expressions on numeric fields.
+Details
+When you create an expression on a numeric field, you must use the exact numeric value that are stored in the database. Some numeric values may be displayed differently than they are stored. For example, numbers may be formatted to display a certain number of decimal places, to include a currency symbol, or to be converted to a different unit of measure (UOM).
+To determine how values are stored in the database, run the query in unformatted mode. Then, format numeric values in your query expressions exactly as they are displayed in the unformatted query results.
+Unlike character and text field expression values, which require single quotation marks, the actual numeric values that you want to return do not need to be formatted in a particular way in your expression. Specifying the value as it is stored is sufficient to return the expected results. For example, an acceptable way to express that returned records should contain a value of 5 in the Number of Storage Tanks field in the Criticality Analysis family is:
+WHERE [Criticality Analysis].[No of Storage Tanks] = 5
+Expressions in the Field, Criteria, and Or Cells
+You can build expressions in the Field, Criteria, and Or cells in the grid within the Conditions section in the Design workspace. This topic includes formatting tips for creating expressions in each of those cells.
+Expressions in the Field Cell
+When you access the Expression Builder window from the Field cell, the Advanced tab is selected by default, and the Simple tab is disabled. You can construct an expression on the Field cell to reformat the results that are returned by the query.
+For example, suppose that you want to display an installation date in two formats: the stored format and a modified format. In this case, you would add the Installation Date field to the query twice. The first would return the stored value, and the second could contain a Date function in the Field cell to indicate how you want the date to appear in the results.
+If you add an expression to the Field cell, you must enter the exact syntax that is required in order to run the query. GE Digital APM will not reformat any text that you enter in the Expression Builder window for a Field cell.
+Expressions in the Criteria Cell
+When you access the Expression Builder window from the Criteria cell, the Simple tab is selected by default, but the Advanced tab is enabled. You can construct an expression in the Criteria cell to limit the results that are returned by the query.
+Note:  Anything you add to the Criteria cell will have the text WHERE or HAVING appended in front of the expression in the SQL code. WHERE and HAVING do not appear in the grid in the Conditions section.
+For example, suppose that you want to return only those pieces of equipment manufactured by GOULDS. In this case, you would add the Manufacturer field to the query. You can then construct an expression in the Criteria cell using either the Simple or Advanced section.
+If you access the SQL workspace, you will see the following code:
+SELECT [MI_EQUIP000].[MI_EQUIP000_MFR_C] "Manufacturer"
+FROM [MI EQUIP000]
+WHERE [MI EQUIP000].[MI EQUIP000 MFR C] = 'GOULDS'
+The expression WHERE [MI EQUIP000].[MI EQUIP000 MFR C] = 'GOULDS' is inserted automatically into the WHERE clause at the end of the SQL code.
+Note:  When you construct an expression in the Criteria cell, you can enter the exact syntax that is required to run the query, or you can enter something that is close to the required syntax, and then let the GE Digital APM system reformat it automatically.
+Constructing an expression in the Simple section
+In the Simple section of the Expression Builder window, you could use the options to construct an expression that looks something like the following image:
+
+
+
+Constructing an expression in the Advanced section
+In the Advanced section of the Expression Builder window, you could construct an expression that looks something like the following code:
+('GOULDS')
+While this text alone does not constitute an entire expression, GE Digital APM interprets the data in the remaining cells to construct a valid expression. The equal (=) operator is understood, and the Field and Table cells indicate the locations from which you want to retrieve data.
+Expressions in the Or Cell
+When you access the Expression Builder window from the Or cell, the Simple tab is selected by default, but the Advanced tab is enabled. You can construct an expression in the Or cell to limit the results that are returned by the query.
+Note:  Anything you add to the Or cell will have the text WHERE or HAVING appended in front of the expression in the SQL code. WHERE and HAVING do not appear in the grid in the Conditions section.
+For example, suppose you want to return only those pieces of equipment manufactured by JENSEN or WESTERN SUPPLY. In this case, you would add the Manufacturer field to the query. You can then construct an expression in the Or cell using either the Simple or Advanced section.
+If you access the SQL workspace, you will see the following code:
+SELECT [MI_EQUIP000].[MI_EQUIP000_MFR_C] "Manufacturer"
+FROM [MI EQUIP000]
+WHERE ([MI EQUIP000].[MI EQUIP000 MFR C] = 'JENSEN'
+OR [MI EQUIP000].[MI EQUIP000 MFR C] = 'WESTERN SUPPLY')
+The expression [MI EQUIP000].[MI EQUIP000 MFR C] = 'JENSEN' OR [MI EQUIP000].[MI EQUIP000 MFR C] = 'WESTERN SUPPLY' is inserted automatically into the WHERE clause at the end of the SQL code.
+Note:  When you construct an expression in the Criteria cell, you can enter the exact syntax that is required to run the query, or you can enter something that is close to the required syntax, and then let the GE Digital APM system reformat it automatically.
+Constructing an expression in the Simple section
+In the Simple section of the Expression Builder window, you could use the options to construct an expression that looks something like that shown in the following image:
+
+
+
+Constructing an expression in the Advanced section
+In the Advanced section of the Expression Builder window for the Criteria cell, you could construct an expression that resembles the following code:
+('JENSEN')
+Then, you could construct an expression in the Advanced section of the Expression Builder window for the Or cell that resembles the following code:
+('WESTERN SUPPLY')
+While this text alone does not constitute an entire expression, GE Digital APM interprets the data in the remaining cells to construct a valid expression. The equal (=) operator is understood, and the Field and Table cells indicate the locations from which you want to retrieve data.
+About the WHERE Clause
+ A WHERE clause defines conditions that you want to apply to a query.
+Details
+In a non-aggregate query, WHERE clauses are used instead of HAVING clauses. In an aggregate query, WHERE clauses are used to define conditions that you want to apply to the query before the calculation dictated by the aggregate function has been performed.
+Example: WHERE Clause
+You might want to calculate the total failure cost for all pieces of equipment, but you want to include in the calculation only failures with a total failure cost greater than $5,000.00. You could create a query like this:SELECT [Asset].[ASSET_ID_CHR] "Asset ID", Sum([Failure].[EFAIL_TOTCST_FRM]) "Total Failure Cost"
+FROM [Asset] JOIN SUCC [Failure] ON {Asset Has Failure}
+WHERE [Failure].[EFAIL TOTCST FRM] > 5000
+GROUP BY [Asset].[ASSET ID CHR]
+In this query, you can see that the WHERE clause is:WHERE [Failure].[EFAIL TOTCST FRM] > 5000
+This WHERE clause returns the total failure cost for all pieces of equipment, but calculates only the failures with a total failure cost greater than $5,000.00.
+A piece of equipment might have failures whose failure costs were $5,050.00, $1,000.00, and $500.00. Because the WHERE clause indicates that you want to return the total failure cost for all pieces of equipment but only calculate the failures with a total failure cost greater than $5,000.00, the total failure cost returned for this piece of equipment would be $5,050.00 (the failures with a cost of $1,000.00 and $500.00 are not included in the calculation because they are less than $5,000.00 each).
+About the HAVING Clause
+ A HAVING clause defines conditions that you want to apply to an aggregate query.
+Details
+In an aggregate query, HAVING clauses are used instead of WHERE clauses. HAVING clauses are used to define conditions that you want to apply to each aggregate value after the calculation dictated by the aggregate function has been performed.
+Example: HAVING Clause
+You might want to see all pieces of equipment whose failures resulted in a total failure cost greater than $5,000.00. To do so, you could create a query like this:
+SELECT [Asset].[ASSET_ID_CHR] "Asset ID", Sum([Failure].[EFAIL_TOTCST_FRM]) "Total Failure Cost", Count([Failure].[MI_EVENT_ID]) "Failure Count"
+ FROM [Asset] JOIN SUCC [Failure] ON {Asset Has Failure}
+ GROUP BY [Asset].[ASSET ID CHR]
+ HAVING Sum([Failure].[EFAIL TOTCST FRM]) > 5000
+In this query, you can see that the HAVING clause is:
+HAVING Sum([Failure].[EFAIL TOTCST FRM]) > 5000
+This HAVING clause returns pieces of equipment whose failures resulted in a total failure cost greater than $5,000.00.
+A piece of equipment might have failures whose failure costs were $3000.00, $1,000.00, and $500.00. If you add these values together, you can see that the total failure cost for failures associated with the piece of equipment is $4,500.00. Because the HAVING clause indicates that you want to return only pieces of equipment with a total failure cost greater than $5,000.00, this piece of equipment would not be returned.
+About Prompts on Queries
+You can construct a query that will, when run, prompt the user to enter or select values by which the results will be filtered.
+Details
+You can create a prompt on a character, numeric, date, or logical field in any type of query (Select, Crosstab, Append, Update, or Delete). Like all query options, you can construct prompts by modifying the SQL code directly, but GE Digital APM provides the Prompt Settings section of the Expression Builder window, which guides you step-by-step through the process of creating prompts. This documentation focuses primarily on that feature.
+Note:  There are special considerations to take into account when you create a prompt on a date field.
+When a user runs a query by opening it from the catalog, prompts appear in a window that disappears when the query results are returned.
+Example: Limiting Results Based on the Manufacturer
+If you create a prompt on the Asset Manufacturer field to limit the query results based on the manufacturer, when the query is run, a window appears, prompting the user to supply the desired value for the manufacturer.
+About the Prompt Settings Section
+Using the Prompt Settings section of the Expression Builder window, you can define the basic settings for the prompt that you want to create.
+
+
+
+Prompt Settings
+The following table includes details on the available settings on the prompt builder. After you have defined the prompt settings you want, you can select Next to further define the prompt. The content that appears on subsequent screens in the Prompt Builder depends on your selection in the Valid Values section. These screens are documented in more detail in the topics that explain how to create specific types of prompts.
+
+SettingDescriptionNotes
+Prompt Caption
+A label that will indicate to the user what type of value to enter or select for the prompt. The prompt caption will appear on the Enter parameter values window to identify the prompt.
+Prompt captions are optional.
+If you do not provide a prompt caption, the prompt ID will be displayed on the Enter parameter values window, where spaces are replaced with underscores. For example, a prompt ID of Task Type would be displayed as Task_Type.If you do not specify a prompt caption or a prompt ID, the text Enter Parameter Value will be displayed on the Enter parameter values window.
+
+Prompt Data Type
+
+A property that identifies type of data that exists in the field at the time the query is run. Expressions may exist that convert the stored value to a runtime value (e.g., numeric values may be converted to character values or strings). You will want to choose a data type for the prompt that is appropriate for the runtime value. When you access the Prompt Builder, this setting will be set by default to the data type that corresponds to the stored value of the field from which you accessed the Expression Builder. You may need to change the default setting. The following options are available:
+
+Logical: For logical values (i.e., True and False).
+Character: For character values.
+Number: For numeric values.
+Date/Time: For date values.
+
+When you create a prompt that allows multiple selections, you can select multiple default values for that prompt. Multiple default selections will be allowed only when the Character option is selected for this setting.For prompts on numeric fields, the corresponding UOM will be displayed in the Enter parameter values window for that field if the Number option is selected for this setting. If you select any other option, the UOM will not be displayed.The Logical option is enabled only if you accessed the Prompt Builder from a Logical field.The Ignore Time check box is enabled only if you select the Date/Time data type. If you select the Ignore Time check box, the prompt will require only that you select a date. If you do not select this check box, the prompt will require that you select both a date and time.
+
+Prompt ID
+A unique, alphanumeric ID for the prompt. This value is used internally by GE Digital APM to identify the prompt.This setting is optional, but we recommend that you specify an ID for each prompt.
+Valid Values
+
+An option that defines the type of user-input value that will be required for the prompt. You can require users to specify a value manually, or you can present them with a list of valid options. Specifically, you have the following options for determining user-input values:
+
+
+No Valid Values: The prompt will not offer a list of values. Rather, the prompt will display a text box into which users can type the value by which they want to limit the results.
+
+Static List of Values: The prompt will display a static list of values that you define specifically for the prompt.
+
+Values from a System Code Table: The prompt will display a list of values that you define specifically for the prompt.
+
+Values from a Query: The prompt will display a list of values taken from the query results of a query that you select.
+
+Distinct List of Values From [X]: The prompt will display a list of values pulled from field X of all records in a given family.
+When the Logical option is selected for the Prompt Data Type selection, the Valid Values options will be disabled, and a list of valid values will be created automatically, providing the options True, False, and All (i.e., both True and False) when the query is run.
+
+About Prompts on Date Fields
+All date fields contain both a date and time value. When you apply specific criteria to a field, you can omit the time to return all the records that contain the specified date and any time.
+Details
+For example, specifying the criteria =(#:D '2000-03-10') would return records from any time in the same day, for example, 12:00:00 A.M., 2:00:00 P.M., 5:00:17 P.M., or any other time. In other words, when you define date criteria and do not specify a time, GE Digital APM assumes that the time is unimportant and does not take it into account when retrieving results.
+In prompts, however, the time is always taken into account. It's suggested that you always create date prompts using the 
+Distinct List of Values from <Field> option. This way, the list of available dates and times will always represent valid dates and times that exist in records in the database. You will not need to know what values are stored in the database or how to enter dates in the proper format in order to return the desired results.
+Otherwise, if you create a prompt on a date field and do not define a list of valid values, you will need to know how to enter a date that will retrieve the desired results:
+If you enter a date with no time, the query will return records where the time is 12:00 A.M. Records that contain any other time will not be included in the results.
+If you enter a date and a specific time, the query will return records that contain that specific date and time.
+Note:  You must specify the seconds value as 00. Entering any other value will cause the query to not return any results.
+If you use the Calendar to select a date, you will need to modify the time manually in order to include seconds, which are required to return results. Either enter a different time, or delete the existing time (to use a time of 12:00:00 A.M.).
+All dates and times in GE Digital APM are stored in UTC format, and, the time values will be displayed using the appropriate conversion from UTC to the time zone that is associated with the Security User who is logged in when the query is run. This allows any user who runs the query to provide a local date and time in the prompt.
+About Prompts on Numeric Fields
+Units of measure (UOMs) can be associated with numeric fields. UOM Conversion Sets can be defined on fields, and will convert stored numeric values to different values and UOMs.
+Details
+If a query has a prompt on a numeric field, when the query is accessed via the Catalog or a URL, the associated UOM will appear on the Enter parameter values window. For example, you would define a prompt on the Measurement Value field of the Thickness Measurement family to display returned values in inches.
+Note:  This behavior applies only to prompts on fields where the stored data type is numeric, has a UOM defined, and is not converted at runtime. If a numeric field is converted to a character field at runtime, the UOM will not appear. Similarly, if a character field is converted to a numeric field at runtime, no UOM will appear.
+If you run a query in formatted mode, the Enter parameter values window will display the appropriate UOM, based on the UOM Conversion Set that is associated with your Security User account. In order for the query to return results, you will need to enter numeric values associated with the UOM that is displayed.
+If you run a query in unformatted mode, the Enter parameter values window will display the stored values, and the base UOM will always be displayed.
+About Configuring a Prompt to Accept a Percent Wildcard
+Query prompts can help users limit the results that will be returned by the query. In some cases, however, users might not know what to select or type in a query prompt. This might be especially true if the prompt does not present a list of values and the user must enter the value as it is stored in the database in order to return any results.
+To address this concern, you can configure a query prompt to accept the percent (%) wildcard. When a user enters only a percent symbol in the prompt text box, the query will return records where the field on which the prompt was built contains any value. When a user enters a combination of text and the percent symbol, the query will return records where the field on which the prompt was built contains a value that contains the specified text, preceded or followed by any combination of characters (depending on where the percent symbol is placed in the prompt text box).
+To configure a prompt to accept a percent wildcard, you must use the Like operator instead of the equal (=) operator in the expression that defines the prompt.
+For example, suppose you build a prompt on the Asset Manufacturer field with no list of valid values. The expression for the prompt would look like this:
+[Asset].[ASSET MANUF CHR] = (? :s :caption='Manufacturer' :id=Manufacturer)
+If you want users to be able to enter a percent symbol in the prompt to return records where the Asset Manufacturer field contains any value, you can replace the equal operator (=) with the Like operator. The expression for the prompt would look like this:
+[Asset].[ASSET MANUF CHR] Like (? :s :caption='Manufacturer' :id=Manufacturer)
+When you run the query, you could enter the percent symbol (%) in the Manufacturer box on the prompt window. In this case, the results would display records where the Asset Manufacturer field contains any value.
+Additionally, you could enter SEI%, and the query would display records where the value in the Asset Manufacturer field begins with the letters SEI, followed by any combination of characters, such as SEIMENS-AL and SEIGER.
+About Configuring a Prompt to Return Null Values
+In some cases, records might contain fields that do not contain values. If you want to return a query with a prompt on these fields to see all records where the field is empty, you must construct the query in a certain way.
+This query construction is best understood through an example. The following example assumes that you want to return records where the Asset Description field of Air Cooled Heat Exchanger records is empty. It also assumes that you want to see the Asset ID, Asset Description, and Asset Installation Date of the returned records.
+To configure a prompt to return records where the Asset Description field is empty, you would need to add the following fields to the query:
+ Asset ID  Asset Description  Asset Installation Date 
+You would need to add two prompts to the Asset Description field. In the Criteria cell, you would need to add the prompt (? :s :caption='Description' :id=Description), and in the Or cell, you would need to add the prompt IS NULL.
+The design grid would look like the following image: 
+
+
+
+When the query is run, the Description box appears in the prompt window. If a user selects Done without entering a value in the prompt, the results will display records where the Asset Description field is empty, like the ones in the following image:
+
+
+
+About Operators to Use with Character Fields
+This topic describes the operators that can be used to manipulate values in character fields.
+Details
+
+When you enter anything in the Criteria cell or the Or cell, the is equal to (=) operator is assumed at the beginning of the text unless a different operator is specified.
+
+It is not necessary to enter the = operator at the beginning of the expression in a given cell. If you do not enter the operator, will insert it automatically, but it will not be displayed. In addition, inserts but does not display the text  or  before the beginning operator (either an implied = operator or an explicit alternate operator). This means that the SQL code will contain either a clause or a  clause as a result of the text that you enter in the Criteria cell or the Or cell.
+Available Operators for Character Fields
+The following table provides examples of operators that you can use to manipulate values returned in character fields.
+
+PurposeOperatorExampleOutcome of ExampleReturn records that have an exact value stored in a given field.=='Rotating Pump'Returns records where the field contains the exact value Rotating Pump. (See note)Return records that have one value or another stored in a single field.Or='Rotating Pump' or 'Centrifugal Pump'Returns records where the value stored in the field is Rotating Pump, and records where the value stored in the field is Centrifugal Pump.Returns records that do not have a specified value in a given field.
+Not
+!=
+<>
+
+Not 'Centrifugal Pump'
+!= 'Centrifugal Pump'
+<> 'Centrifugal Pump'
+Returns records where the field does not contain the value Centrifugal Pump.Returns records where a given field contains the specified value.LikeLike '%Pump'Returns records where the specified field contains the term Pump, preceded by any number of characters, such as Centrifugal (Centrifugal Pump) or Rotating (Rotating Pump).Returns records where a given field contains the specified value.LikeLike 'Pump_'Returns records where the specified field contains the term Pump, followed by any one character, such as 1 (Pump1).Returns records where a given field does not contain the specified value.Not LikeNot Like 'Centrifugal%'Returns records where the field value does not contain Centrifugal followed by any number of characters. For example, this would eliminate Centrifugal Pump, Centrifugal Pump A, and Centrifugal Pump1.Returns records where a given field does not contain the specified value.Not LikeNot Like 'Pump_'Returns records where the field value does not contain Pump followed by any one character. For example, this would eliminate PumpA and Pump1.Return records that have multiple, specified values stored in a given field (see note).| (Pipe)Like 'Bob|John'Returns records where the field contains both the value Bob and the value John.Return records that contain any values in a given field.Is Not NullIs Not NullReturns records where the field contains any value.Returns records that do not contain any values in a given field.Is NullIs NullReturns records where the field is empty.
+
+Note:  Use like instead of = in multi-value character fields. Using = will return an error. Using like, however, will return the same results that you would expect to get using the = operator. In multi-value character fields, use the pipe (|) to separate multiple values.
+About Operators to Use with Text Fields
+This topic describes the operators that can be used to manipulate values in text or multi-value character fields.
+It is not necessary to enter the = operator at the beginning of the expression in a given cell. If you do not enter the operator, will insert it automatically, but it will not be displayed. In addition, inserts but does not display the text  or  before the beginning operator (either an implied = operator or an explicit alternate operator). This means that the SQL code will contain either a clause or a  clause as a result of the text that you enter in the Criteria cell or the Or cell.
+Multi-value character fields are stored like text fields. The values are stored as a continuous string, where each value is separated by the pipe (|) character. Therefore, instead of using the operators allowed for character fields, when querying on a multi-value character field, use the one of the available operators for text fields.
+Available Operators for Text Fields
+The following table provides examples of operators that you can use to manipulate values returned in character fields.
+
+PurposeOperatorExample ExpressionOutcome of ExampleReturn records where a given field contains the specified value.LikeLike '%Pump'Returns records where the field contains the term Pump, preceded by any number of characters, such as Centrifugal (Centrifugal Pump) or Rotating (Rotating Pump).Return records where a given field contains the specified value.LikeLike 'Pump_'Returns records where the field contains the term Pump, followed by any one character, such as 1 (Pump1).Return records where a given field does not contain the specified value.Not LikeNot Like 'Centrifugal%'Returns records where the field value does not contain Centrifugal followed by any number of characters. For example, this would eliminate Centrifugal Pump, Centrifugal Pump A, and Centrifugal Pump1.Return records where a given field does not contain the specified value.Not LikeNot Like 'Pump_'Returns records where the field value does not contain Pump followed by any one character. For example, this would eliminate PumpA and Pump1.Return records that have multiple, specified values stored in a given field.| (Pipe)LIke 'Bob|John'Returns records where the field contains both the value Bob and the value John. This example applies only to multi-value character fields.Return records that contain any values in a given field.Is Not NullIs Not NullReturns records where the field contains any value.Return records that do not contain any values in a given field.Is NullIs NullReturns records where the field is empty.
+
+About Operators to Use with Date Fields
+
+When you enter anything in the Criteria cell or the Or cell, the is equal to (=) operator is assumed at the beginning of the text unless a different operator is specified.
+
+It is not necessary to enter the = operator at the beginning of the expression in a given cell. If you do not enter the operator, will insert it automatically, but it will not be displayed. In addition, inserts but does not display the text  or  before the beginning operator (either an implied = operator or an explicit alternate operator). This means that the SQL code will contain either a clause or a  clause as a result of the text that you enter in the Criteria cell or the Or cell.
+Available Operators for Date Fields
+The following table provides examples of operators that you can use to manipulate values returned in date fields.
+
+PurposeOperatorExampleOutcome of ExampleReturn records that have an exact date stored in a field.= =(#:D '2000-03-10') Returns records where the date is March 10, 2000 and the time is any time.Return records that have an exact date and time stored in a field.= =(# :dt '2006-01-01 17:00:00') Returns records where the date is January 1, 2006 and the time is 5:00 P.M.Return records that have a date greater than the specified date in a given field.> >(#:D '2000-03-10') Returns records where the date is after March 10, 2000.Return records that have a date less than the specified date in a given field.< <(#:D '2000-03-10') Returns records where the date is before March 10, 2000.Return records that have a date greater than or equal to the specified date in a given field.>= >=(#:D '2000-01-10') Returns records where the date is on or after March 10, 2000.Return records that have a date less than or equal to the specified date in a given field.<= <=(#:D '2000-03-10') Returns records where the date is on or before March 10, 2000.Return records that do not have the specified date in a given field.
+Not
+!=
+
+ Not (#:D '2000-03-10') 
+ != (#:D '2000-03-10') 
+Returns records where the date is not March 10, 2000.Return records that have multiple dates in a given field.And (#:D '2000-03-10') And (#:D '2003-06-20') Returns records where the dates are March 10, 2000, and June 20, 2003 for a specified field.Return records that have one date or another.Or (#:D '2000-03-10') Or (#:D '2000-03-11') Returns records where the date is March 10, 2000, or March 11, 2000.Return records that contain any values in a given field.Is Not Null Is Not Null Returns records where the field contains any date.Return records that do not contain any values in a given field.Is Null Is Null Returns records where the field is empty.Return records that have a date that falls within a certain range with respect to the current date.
+ Now()+ 
+ Now()-365 
+ Now()-365 Returns records where the date is one year before the current date. The numeric value can be any number of days before or after the current date (see note).Return records falling within a defined range of dates.BETWEENBETWEEN (? :d :caption='Start Date' :id=startdate) AND (? :d :caption='EndDate' :id=enddateReturns records whose dates fall within the defined range.
+
+Note:  If you use an expression to return records where the date is a certain number of days before or after some date, even if you do not specify a time along with the date, GE Digital APM will assume that you want to return records where the time is exactly 12:00:00 A.M. on that date. For example, if you enter the expression (#:D '1997-01-05') +1, the query will return records where the date is January 06, 1997, and the time is exactly 12:00:00 A.M.
+About Operators to Use with Logical Fields
+This topic describes the operators that can be used to manipulate values in logical fields.
+Details
+
+When you enter anything in the Criteria cell or the Or cell, the is equal to (=) operator is assumed at the beginning of the text unless a different operator is specified.
+
+It is not necessary to enter the = operator at the beginning of the expression in a given cell. If you do not enter the operator, will insert it automatically, but it will not be displayed. In addition, inserts but does not display the text  or  before the beginning operator (either an implied = operator or an explicit alternate operator). This means that the SQL code will contain either a clause or a  clause as a result of the text that you enter in the Criteria cell or the Or cell.
+Available Operators for Logical Fields
+The following table provides examples of operators that you can use to manipulate values returned in logical fields.
+
+PurposeOperatorExampleOutcome of ExampleReturn records that have an exact value in a given field.=='Y''Returns records where the field value is True.Return records that do not contain any values in a given field.Is NullIs NullReturns records where the field is empty.Return records that do not have a specified value in a given field.
+Not
+<>
+!=
+
+Not 'Y'
+<> 'Y'
+!= 'Y'
+Returns records where the field value is not True (i.e., False or Null).
+
+About Operators to Use with Numeric Fields
+This topic describes the operators that can be used to manipulate values in numeric fields.
+Details
+
+When you enter anything in the Criteria cell or the Or cell, the is equal to (=) operator is assumed at the beginning of the text unless a different operator is specified.
+
+It is not necessary to enter the = operator at the beginning of the expression in a given cell. If you do not enter the operator, will insert it automatically, but it will not be displayed. In addition, inserts but does not display the text  or  before the beginning operator (either an implied = operator or an explicit alternate operator). This means that the SQL code will contain either a clause or a  clause as a result of the text that you enter in the Criteria cell or the Or cell.
+Available Operators for Numeric Fields
+The following table provides examples of operators that you can use to manipulate values returned in numeric fields.
+
+PurposeOperatorExampleOutcome of ExampleReturn records that have an exact value in a given field.==10Returns records where the specified field value is 10.Return records where the value in a given field is the sum of the specified values.+=8+2Returns records where the specified field value is the sum of 8 and 2, or 10.Return records where the value in a given field is the difference between the specified values.-=11-1Returns records where the specified field value is the difference between 11 and 1, or 10.Return records where the value in a given field is the outcome of the specified values after they are divided./=20/2Returns records where the specified field value is the outcome of 20 divided by 2, or 10.Return records where the value in a given field is the outcome of the specified values after they are multiplied.*=5*2Returns records where the specified field value is the product of 5 multiplied by 2, or 10.Return records that have a value greater than the specified value in a given field.>>9Returns records where the specified field value is greater than 9.Return records that have a value less than the specified value in a given field.<<11Returns records where the specified field value is less than 11.Return records that have a value greater than or equal to the specified value in a given field.>=>=10Returns records where the specified field value is greater than or equal to 10.Return records that have a value less than or equal to the specified value in a given field.<=<=10Returns records where the specified field value is less than or equal to 10.Return records that do not have the specified value in a given field.
+Not
+!=
+<>
+
+Not 10
+!= 10
+<> 10
+Returns records where the specified field value is not 10.Returns records that have multiple values in a given field.And<5 And >1Returns records where the specified field value is less than 5 and greater than 1.Return records that have one value or another in a given field.Or5 Or 10Returns records where the specified field value is 5 or 10.Return records that have a value similar to the specified value.LikeLike '10%'Returns records where the specified field value starts with the digits 10, followed by any number of other digits, such as 234 (10234).Return records that have a value similar to the specified value.LikeLike '10_'Returns records where the specified field value starts with the digits 10 followed by any one digit, such as 0 (100).Return records that do not have a value similar to the specified value.Not LikeNot Like '10%'Returns records where the specified field value does not start with the digits 10 followed by any number of additional digits. For example, this would eliminate values 100 and above. Return records that do not have a value similar to the specified value.Not LikeNot Like '10_'Returns records where the specified field value does not start with the digits 10 followed by any one digit. For example, this would eliminate values 100 through 109. Return records where a given field contains a value that results from a specified grouping.()(1000+1)-1Returns records where the specified field value is equal to 1000 plus 1, or 1001, minus 1, which equals 1000.Return records that contain any value in a given field.Is Not NullIs Not NullReturns records where the field is not empty.Return records that do not contain any values in a given field.Is NullIs NullReturns records where the field is empty.Return records that contain the specified values in a given field.InIn (5, 10, 20)Returns records where the specified value is 5, 10, or 20.Return records that do not contain the specified values in a given field.Not InNot In (5, 10, 20)Returns records where the specified field value is not 5, 10, or 20.Return records falling within a defined range of dates.BETWEENBETWEEN (? :d :caption='Start Date' :id=startdate) AND (? :d :caption='EndDate' :id=enddateReturns records whose dates fall within the defined range.
+
+
+
+
+
+
+On this pageAbout the Expression Builder WindowWhat is an Expression?About Formatted Expressions on Character FieldsAbout Formatted Expressions on Text FieldsAbout Formatted Expressions on Date FieldsAbout Formatted Expressions on Logical FieldsAbout Formatted Expressions on Numeric FieldsExpressions in the Field, Criteria, and Or CellsAbout the WHERE ClauseAbout the HAVING ClauseAbout Prompts on QueriesAbout the Prompt Settings SectionAbout Prompts on Date FieldsAbout Prompts on Numeric FieldsAbout Configuring a Prompt to Accept a Percent WildcardAbout Configuring a Prompt to Return Null ValuesAbout Operators to Use with Character FieldsAbout Operators to Use with Text FieldsAbout Operators to Use with Date FieldsAbout Operators to Use with Logical FieldsAbout Operators to Use with Numeric Fields
+
+
+
+
+
+
+
+
+

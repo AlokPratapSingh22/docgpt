@@ -1,0 +1,97 @@
+
+
+
+Tag Alias | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+InstancesAsset Instances
+Asset Attributes
+Tag Instances
+Tag AttributesTag Reserved Attributes
+Tag Custom Attributes
+Tag Alias
+
+
+Location Information
+Events
+
+
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Instances
+Tag Attributes
+Tag Alias
+
+
+
+
+
+
+
+Tag AliasAdd or Modify a Tag Alias for a Tag InstanceYou can add or modify an alias to a tag instance.About This Task
+You can create or modify an alias for a tag instance that can be used throughout GE Digital APM to help recognize a particular tag.Note: The following applies when updating an alias:You cannot update an alias with an existing alias name. The alias name cannot be blank.The alias name can contain up to 100 characters.Parameter names are case sensitive. 
+ProcedureTo add a new tag alias to a tag instance:In the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Select the Tag link.In the Tag Aliases section, select .Enter an alias for the tag instance in the New Alias box, then select Create.The alias name is associated with the tag instance.To modify an existing tag alias for a tag instance:In the Tag section in the Tag Aliases table, hover over an alias name and select the box.Enter a new alias name in the Alias Name box, then press ENTER, or select outside the field.The alias name is associated with the tag instance.Delete a Tag Alias from a Tag InstanceYou can delete a tag alias from a tag instance.ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.In the Tag section, in the Tag Alias table, hover over an alias name and select .Select Delete at the confirmation message.The alias name is removed from the tag instance.
+
+
+
+
+On this pageAdd or Modify a Tag Alias for a Tag InstanceDelete a Tag Alias from a Tag Instance
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,110 @@
+
+
+
+Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Overview
+
+
+
+
+
+
+
+OverviewAbout AssetsYou can create and define an asset hierarchy that encompasses the enterprise level to subdivisions of a single asset within the hierarchy.GE Digital APM Assets allows you to create and define a business functional hierarchy that can then be used as a basis throughout GE Digital APM. Applications built using the business functional hierarchy can utilize common data derived from each asset category.Important:
+In Predix APM, adding or modifying assets using the Legacy Predix APM user interface, APIs, or Asset Ingestion Service, or bypassing the Unified Asset Ingestion Data Loader, causes the asset databases to become out-of-sync. 
+In Predix APM:You must add or modify assets using the Unified Asset Ingestion Data Loader.You cannot delete assets.You must use the Asset Ingestion Service to add tags to assets.
+In Legacy Predix APM:You can add, modify, or delete assets in the user interface, using APIs, or using the Asset Ingestion Service.You can add tags to assets in the user interface, using APIs, or using the Asset Ingestion Service. 
+You can filter the asset hierarchy to narrow options for selection. For more information, refer to the Filter the Context Browser section for the documentation.You can search the asset hierarchy to rapidly find an asset of interest. For more information, refer to the Search the Context Browser section of the documentation.You can create multiple level iterations within the business functional hierarchy. For example, you might want to use multiple sites within an enterprise, or child-assets of an asset. Assets are added to GE Digital APM through ingestion when you are setting up your GE Digital APM tenant. Before you can use GE Digital APM, you must:Model an asset hierarchy.Create or reuse asset and tag classifications.Add or modify reserve attributes to each asset instance in the hierarchy, if needed.Add custom attributes to each asset instance in the hierarchy.Add tag instances to each asset instance in the hierarchy.Designate a time zone and geolocation for the physical assets in your asset hierarchy.Optionally, make asset instances a member of a group.If you have been assigned asset resources from another tenant by your administrator, you will be able to view the tenant, enterprise, and child assets for which you have been granted access. You can then select and view an item from the Context Browser. Note: Cross-Tenant Sharing is limited to Legacy Predix APM Asset, Time Series Data, Analysis, Alerts, Cases, and GE Dashboards.The following definitions are helpful for understanding Assets:Business Functional HierarchyThe asset categorization as delineated in the asset model where the categories are connected in a parent-child relationship. The business functional hierarchy consists of Enterprise, Site, Segment, and Asset. The business functional hierarchy has two uses, business functional object and asset context. Multiple child-iterations of any category may exist, creating child-categories. You can access the business functional hierarchy in the Context Browser.Business Functional ObjectThe business categorization as delineated in the asset model. The business functional object consists of Enterprise, Site, and Segment. Multiple child-iterations of any business functional object may exist. These business functional objects have business rules associated with them that are different from assets.Asset ContextThe asset categorization as delineated in the asset model. The asset context consists of Assets selected in the business functional hierarchy. business functional object selections are not included. Multiple child-iterations of any asset context may exist.AssetA digital representation of any type of physical entity. GE Digital APM uses a business functional hierarchy to distinguish asset categories.TagName for a sensor or calculated time-series data. Tags are associated with a specific asset instance and tag classification, contain a tag classification link, and may contain a time series link. Tags cannot be selected from the business functional hierarchy.InstanceA single business functional object or asset found within the business functional hierarchy. Tag instances are associated with an asset and can be found on the asset detail page.ClassificationMultiple asset or tag instances that share common characteristics.Asset GroupCompilations of similar business objects that form a common type. Search filters for asset groups contain a category for each group when it's created.Custom AttributesProperties that allow you to create a value definition and format for the business object you are modeling.Reserved AttributesPredefined properties containing common information related to assets and tags. Reserved attributes are inherited from a classification.You can access more information about managing tenant-level configuration for life-cycle stage and status, cascade delete entities, and associating or disassociating tags to enterprise, site, and segments in the related developer documentation.Modify an Asset NameYou can modify an asset name.About This Task
+Asset names are visible in the business functional hierarchy through the Context Browser. Once you have selected an asset in the Context Browser, you can modify the name. The new name for the asset is propagated throughout GE Digital APM.Note: You must use the Unified Asset Ingestion Data Loader to modify an asset name or description in Predix APM.
+ProcedureIn the module navigation menu, go to
+Assets.Use the Context Browser to select an asset context.In the asset instance, hover over, then select the asset name.Enter a new name in the Asset Name box, then press ENTER or select outside the field.The new name appears for the asset on the asset instance page. Note: You can add UTF-8 special characters in the asset name. The new asset name is visible in the Context Browser in place of the old name.Modify an Asset DescriptionYou can modify an asset description.About This Task
+Once you have selected an asset in the Context Browser, you can modify the description. The new description for the asset is propagated throughout GE Digital APM.Note: You must use the Unified Asset Ingestion Data Loader to modify an asset name or description in Predix APM.
+ProcedureIn the module navigation menu, go to
+Assets.Use the Context Browser to select an asset context.In the asset instance, hover over, then select the asset description.Enter a new description in the Asset Description box, then press ENTER or select outside the field.The new description appears for the asset on the asset instance page. Navigate to a Classification from an Asset InstanceYou can navigate to an associated asset classification from an asset instance.About This Task
+Asset classifications are groupings of similar or related assets. 
+ProcedureIn the module navigation menu, go to
+Assets.Use the Context Browser to select an asset context.Select the Classification link on the asset instance view.The view navigates to the specified classification for the selected asset instance in the Classification navigation menu.Navigate to a Classification from a Tag InstanceYou can navigate to an associated asset classification from a tag instance.About This Task
+Tag classifications are groupings of similar or related tags. Tag instances are associated with asset instances. 
+ProcedureIn the module navigation menu, go to
+Assets.Use the Context Browser to select an asset context.Select the Tags link.Select a tag instance link on the Tags table.Select the Classification link on the tag instance view.The view navigates to the specified classification for the selected tag instance in the Classification navigation menu.Navigate to an Associated Asset Instance from a Tag InstanceYou can navigate to the associated asset instance view from a tag instance view.About This Task
+Tag instances are associated with asset instances. You must add a tag instance to an asset instance for the associated asset link to appear or be active.
+ProcedureIn the module navigation menu, go to
+Assets.Use the Context Browser to select an asset context.Select the Tags link.Select a tag instance link on the Tags table.Select the Associated Asset link on the tag instance view.The view navigates to the specified asset instance for the selected tag instance.Select an Instance StatusYou can select a status for an instance in the business functional hierarchy.About This Task
+The status of an instance determines how GE Digital APM will categorize the asset when an analytic triggers an alert. GE Digital APM provides default status categories which can be set by an analytic, custom code, or manually by you. Categories for Status may be added, updated, modified, and deleted by a tenant administrator using the API. Categorization may include alert or case severity defaults. Table 1. Default Status OptionsThis statusMeans thisNormalNormal asset or process operation.FailureIndicates the asset is in failure mode.WarningIndicates a warning on the asset's current status.External Help RequestIndicates an external request for help is needed.User-Defined ConditionIndicates a condition other than a failure, warning, or external request. Defined by the user.
+ProcedureIn the module navigation menu, go to
+Assets.Use the Context Browser to select an asset context.Asset context refers to any business functional object in the business functional hierarchy.Select an option from the Status drop-down list box.The status for the instance is saved.Select a Tag Instance StatusYou can select a status for a tag instance.About This Task
+The status of a tag instance designates if the tag is active or inactive within the associated instance.Table 2. Status OptionsThis statusMeans thisUnknownThe tag or sensor's data transmission is unknown.ActiveThe tag or sensor is transmitting data to the system.InactiveThe tag or sensor is not transmitting data to the system.
+ProcedureIn the module navigation menu, go to
+Assets.Use the Context Browser to select an asset context.Asset context refers to any business functional object in the business functional hierarchy.Select the Tags link.Select a tag instance link from the Tags table.Select an option from the Status drop-down list box.The status for the tag instance is saved.Select an Instance Lifecycle StageYou can select a lifecycle stage for an instance in the business functional hierarchy.About This Task
+The lifecycle stage of an instance determines how GE Digital APM classifies the instance with regard to design, purchasing, maintenance, and disposition of the physical equipment. GE Digital APM provides default Lifecycle Stage categories which can be set by an analytic, custom code, or manually by you. Categories for Lifecycle Stage may be added, updated, modified, and deleted by a tenant administrator using the API.
+Selecting one of these options can help an operations engineer plan the equipment installation, operation, and replacement. These stages refer to the lifecycle of the (asset) equipment.Table 3. Default Lifecycle stage OptionsThis optionMeans thisPlanBudgeting for the production of the asset is in the planning stage.DesignEngineers are designing the asset blueprints.ProcureSupply chain for building the asset on the production line.BuildAssets are being built on the production line.CommissionThe asset is in the review stage, where the asset design must meet the specified performance parameters after the asset has been installed and connected.OperateThe asset has been deployed and installed in the field.MaintainThe asset is scheduled for maintenance. The asset may or may not be in use.MonitorThe asset is operational and is under monitoring for health and performance.UpgradeThe asset is being upgraded. Sometimes this is triggered by regulatory requirements.DecommissionThe asset is not performing as expected and is scheduled to be replaced or disposed of.ReplaceThe decision has been made to replace the asset with a different asset.DisposeThe asset is decommissioned.
+ProcedureIn the module navigation menu, go to
+Assets.Use the Context Browser to select an asset context.Asset context refers to any business function object in the business functional hierarchy.Select an option from the Lifecycle stage drop-down list box.The selected option for the instance is saved.
+Related ConceptsAbout Asset ModelAbout Cross-Tenant SharingRelated tasksFilter the Context BrowserSearch the Context Browser
+
+
+
+
+On this pageAbout AssetsModify an Asset NameModify an Asset DescriptionNavigate to a Classification from an Asset InstanceNavigate to a Classification from a Tag InstanceNavigate to an Associated Asset Instance from a Tag InstanceSelect an Instance StatusSelect a Tag Instance StatusSelect an Instance Lifecycle Stage
+
+
+
+
+
+
+
+
+

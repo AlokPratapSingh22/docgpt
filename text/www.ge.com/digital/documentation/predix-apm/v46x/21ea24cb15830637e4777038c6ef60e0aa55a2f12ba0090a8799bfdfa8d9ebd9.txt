@@ -1,0 +1,69 @@
+
+
+
+Ingest Assets through the User Interface for Legacy Predix APM | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ingest Assets through the User Interface for Legacy Predix APMBefore You Begin
+Important: You must ingest the enterprise, site, segment, and asset data using the Asset Ingestion Loader (Tools > Data Loaders). For more information on using the Asset Ingestion Loader, refer to Unified Loaders documentation in the About Data Loaders section of the help. 
+Important:
+In Predix APM, adding or modifying assets using the Legacy Predix APM user interface, APIs, or Asset Ingestion Service, or bypassing the Unified Asset Ingestion Data Loader, causes the asset databases to become out-of-sync. 
+In Predix APM:You must add or modify assets using the Unified Asset Ingestion Data Loader.You cannot delete assets.You must use the Asset Ingestion Service to add tags to assets.
+In Legacy Predix APM:You can add, modify, or delete assets in the user interface, using APIs, or using the Asset Ingestion Service.You can add tags to assets in the user interface, using APIs, or using the Asset Ingestion Service. 
+ You must have the Asset ZIP file containing one or more valid JSON files. You must have access to the Asset Ingestion module in your application.About This TaskIngest only the following asset data through the user interface:Reserved attributesCustom attributesGeo locationGroupsTagsClassificationsAs an administrator or asset modeler, you can ingest the asset model and asset data through the user interface. You must do this before adding assets to users.Important:
+When ingesting classifications, instances, connections, tagClassifications, and tagAssociations as separate files, you must ingest the <your_classifications_filename>.zip file first. You can then repeat this procedure to ingest each of the remaining files in the following order: <your_instances_filename>.zip, <your_connections_filename>.zip, <your_tagClassfications_filename>.zip, and <your_tagAssociations_filename.zip>.If you ingest data with an existing id the new data replaces the existing data in GE Digital APM. This applies all data types.
+The following limitations exist for asset ingestion:Same file cannot be reingested until completed. Unless, the file has been in progress for more than 30 minutes.Ingestion zip file size is limited to 10 MB.
+The following table displays a summary of the last 100 ingestions:Field DescriptionFile NameDisplays the name of the ingestion file. StatusDisplays the status of the ingestion. The status can be any of the following:Uploading Files - The files are being uploaded. File upload failed - The file upload has failed.In queue - The file is in queued to be processed.Failed - The ingestion did not complete successfully.Completed with errors - The ingestion completed with errors.Task ProgressDisplays the percentage of the ingestion. Start TimeDisplays the date and time the ingestion started. End TimeDisplays the date and time the ingestion ended. File SizeDisplays the size of the ingestion file. ProcedureIn the module navigation menu, go to
+ Ingestion Setup.Select Upload Data in the Asset Ingestion page.Select anywhere in the text field. In the dialog box, navigate to the location of the ZIP file and select it. Make sure you upload a zip file containing only one JSON file. Select Open to select the file for upload. The Upload button becomes enabled only after you select a valid ZIP file for upload. An error message appears if you select an invalid file type.Select the Check for existing objects before creating new check box for the ingestion process to check the system for any existing objects and update the record in the system. Note that selecting this check box may cause the ingestion to take longer to process. If the file selected for upload is already in progress, the File ingestion is already in progress message appears. Select Close to prevent re-uploading the same file. Select Upload to initiate the upload process. The file is added to the upload log that appears on the Asset Ingestion page. Note that the ingestion happens asynchronously, which means that on selecting Upload, the file is not processed immediately but is queued for the server to process it. Select on the file name link to access the detailed information:
+ElementDescriptionStart TimeDisplays the date and time the ingestion started. End TimeDisplays the date and time the ingestion ended. Ingestion StatusDisplays the status of the ingestion. For more details on each status, refer the table below. Task ProgressDisplays the percentage of the task completed. Ingested FilesDisplays the number of files ingested.Files with ErrorsDisplays the number of files ingested with errors.Skipped ItemsDisplays the number of items skipped during the ingestion.Completed ObjectsDisplays the number of objects completed during the ingestion.Failed ObjectsDisplays the number of objects failed during the ingestion.Pending ObjectsDisplays the number of objects pending.ErrorsThis section appears any errors that have occurred during the ingestion. The following information appears:Time Stamp - Date and time of the error.Resource - Appears the file name of the ingestion.Action - Appears the action of the ingestion.Message - Appears a detailed message of the error. Recommendation - Appears a recommendation for the error. Enter a parameter to filter the search. Rows per pageSelect the drop-down error to change number of rows. The options are: 10, 20, 50, and 100. Skipped ItemsDisplays any items that were skipped during the ingestion.
+ResultsThe following legends display:LegendDescriptionCompletedThe ingestion completed successfully. You should be able to see the ingested asset data in the Assets module.Completed with ErrorsThe ingestion completed with errors. Review the error(s) for details and possible resolution. Some of these errors can be related to data validation issues. In ProgressThe file ingestion into the application asset store is currently in progress. Ingested assets will be available in the application after the ingestion completes.Skipped The file ingestion was skipped due to the file being already in progress from a previous ingestion. Wait for the previous ingestion to complete or wait 30 minutes to re-ingest the file. 
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,109 @@
+
+
+
+Third Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Third Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Release Notes
+Third Quarter of 2020
+
+
+
+
+
+
+
+Third Quarter of 2020Release Notes: September 25, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo enhance usability in the time series charts, the functionality to set the limits for Y- axes has been added. You can now set the Y- axes limits for a time series chart in the multiple Y- axes mode. To facilitate this enhancement, the MIN and MAX boxes have been added to the chart settings in multiple Y-axes mode, where you can enter the minimum and maximum limits for the Y- axes. By default, Y-axes limits are set to Automatic in both the single Y- axis and multiple Y- axes modes. The axes on the chart scale based on the tag data. If the maximum or minimum values are entered, the Y- axes scale based on the entered values.F54045To enhance usability in charts, the functionality to increase the chart size and view data in a higher resolution has been added. To facilitate this enhancement, the Resize Charts () icon has been added to the card menu.F54043To enhance usability in charts, the functionality to filter data for lasso selections has been added. You can now filter data for lasso selections in a chart for selected time ranges, such that the selected data is visible in all the charts or excluded from the charts. The same time range is reflected in all the charts in a template. To facilitate this enhancement, the Lasso filter in () and Lasso filter out () icons have been added to Lasso selection in charts. If you navigate to analysis from alerts or cases and apply lasso filter selection to the data in the chart, you can save the state as an evidence to an alert or a case. You can access the chart evidence from the alert or case, modify the lasso filters and update the evidence, and save it again to the alert or case by overwriting the existing evidence or save it as a new evidence.You can now use the lasso selections on a chart to highlight both XY axis points on timeseries charts. To facilitate this enhancement, the () icon has been added to Lasso selection in charts. F54042To enhance usability, on an Analysis chart, you can mute multiple tags at a time to access the data for selected set of tags. To facilitate this enhancement, the Plotted Tag Visibility icon () has been added to the chart.Tags that are not configured for an asset or do not have data do not appear on the Plotted Tag Visibility pane. You can save the chart settings with the muted tag states to a template. You can select  to reset the visibility of the tags.F54041To enhance usability, when you export data from an Analysis chart, the Time Zone value now appears in the header of the exported file.US426925To enhance usability, you can now plot up to 4000 data points on a SmartSignal chart. US426876To enhance usability, you can now show or hide the chart navigator as needed. To facilitate this enhancement, the Disable Chart Navigator and Enable Chart Navigator options have been added to the card settings ().US424088To enhance usability, when one or more tags plotted on the chart become NC (not configured to an asset) or ND (no data), if the number of tags that can show data on the chart reduces to less than the minimum tags required, a message appears indicating that the minimum criteria for the chart is not met. The mode in which the charts appear changes:Parallel Axis chart appears in the overlay mode.Polar chart appears blank without any data.X-Y chart does not display the time series.Spiderweb chart appears in the overlay mode.
+US423803US423802US423801US423800
+To enhance usabilty, in an ad hoc or saved template analysis view, the tags that do not have any data do not appear on the chart or the tag register. These tags now, appear only in the Plotted Tags list on a chart with a no data (ND) indicator.US423798To enhance usability, the tags that are not configured for an asset do not appear on the chart or the tag register. These tags now, appear only in the Plotted Tags list on a chart with a not configured (NC) indicator.US423797To improve performance, you can now apply multiple filters to a chart at a time. To facilitate this enhancement, the Apply button has been added to the Filter section in the chart.US422921
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, you could not see the values on the charts completely if the unit for the values was very long. This issue has been resolved.DE136512Previously, you could not scroll through the chart to view all the tag expressions of an analysis template. This issue has been resolved. Now, a scroll bar has been added to the Tag Expression pane.DE132410
+
+
+
+
+
+On this pageRelease Notes: September 25, 2020
+
+
+
+
+
+
+
+
+

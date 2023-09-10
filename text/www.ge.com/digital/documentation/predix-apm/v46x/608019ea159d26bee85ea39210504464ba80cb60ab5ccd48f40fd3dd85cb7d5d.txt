@@ -1,0 +1,153 @@
+
+
+
+Third Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Release Notes
+Third Quarter of 2019
+
+
+
+
+
+
+
+Third Quarter of 2019Risk Based Inspection (RBI)This topic provides a list of product changes released for this module on the dates listed below.RBI 580 and RBI 581Release Date: September 27, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDSecurity Users who were members of the MI RBI Analyst Security Group are now automatically assigned the MI Inspection Plan Approver Role.US360378To enhance usability when superseding RBI Recommendations, the Completion Comments box has now been added to the RBI Recommendation datasheet.US358589You can now re-promote an asset from Risk Based Inspection (RBI) to Asset Strategy Manager (ASM) when the asset has been previously promoted to ASM and the resulting actions have been consolidated on the Asset Strategy. To facilitate this enhancement, any consolidated actions on the Asset Strategy will now be unlinked during the promotion of an asset.US353336To enhance usability and readability, the Process Unit navigation in the RBI 581 Inventory Groups workspace has been updated to display the Functional Location Entity ID instead of the Functional Location ID.US348279To enhance performance, the queries used in the Risk Based Inspection Overview page, which referenced MI_ENTITIES directly, now reference the Equipment family. To facilitate this enhancement, the following queries have been updated:
+QueryPathRBI Assets for a Functional LocationPublic\Meridium\Modules\Risk Based Inspection\Queries\Asset Counts for UnitsPublic\Meridium\Modules\Risk Based Inspection\Queries\Analyses Ready For Evergreening – 580Public\Meridium\Modules\Risk Based Inspection\Queries\Analyses Ready For Evergreening - 581Public\Meridium\Modules\Risk Based Inspection – 581\Queries\
+US343930You can now implement RBI recommendations that belong to an Inspection Plan in:Asset Strategy Management.Inspection Plan as Inspection Task.To facilitate this enhancement, a new option, Implement Recommended Actions to Tasks in ASM, has been added to the Global Preferences section of the RBI Admin Preferences page.US335134
+Table 2. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, for a Criticality RBI Component - Exchanger Bundle, when you copied an RBI Criticality Analysis or created a What-If Analysis from an RBI Criticality Analysis, and then calculated the analysis, the Final Phase and Final Phase Shell Side fields in the related Criticality Consequence Evaluation record were not populated. This issue has been resolved.DE117340Previously, the value in the Desired Interval field in an Inspection Task was recalculated when the related RBI Recommendation was either deleted or transitioned to the Archived state. This issue has been resolved.DE117062Previously, when calculating inventory for the Criticality RBI Component – Cylindrical Shell component that contained the value Storage Tank in the Component Type field, an error occurred. This issue has been resolved. Now, the Calculated Inventory field is populated with the correct inventory value.DE100794Previously, when you attempted to finalize risk of multiple analyses that belonged to multiple Assets or Corrosion Loops, the operation failed completely when there were multiple analyses that belonged to a single component. This issue has been resolved. Now, in this scenario, the analyses that belong to different components are updated to Risk Completed and an error message appears to indicate the number of failed analyses.DE95713Previously, you could unexpectedly modify unmitigated risk values on Failure Risks with a source of RBI in Asset Strategy Manager (ASM). This issue has been resolved.DE83069
+Release Date: July 26, 2019
+Table 3. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking ID(s)Previously, when you applied a Criticality RBI Component – Cylindrical Shell component that contained the value Storage Tank in the Component Type box, an error message appeared. This issue has been resolved. DE113179
+RBI 580Release Date: September 27, 2019
+Table 4. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo enhance usability of the Risk Based Inspection (RBI) 580 Data Loader, the following values are now updated in the Interface Log record generated by the data loader:Number of Record Processed: This value is incremented by one for each asset processed by the data loader.Number of Records Rejected: This value is incremented by one for each RBI Criticality Analysis record that encounters an error when processed by the data loader, thus resulting in the record not being created or updated.Number of Records Created: This value is incremented by one for each RBI Criticality Analysis record that is created.Number of Records Updated: This value is incremented by one for each existing RBI Criticality Analysis record that is updated.US366675To enhance usability, in the RBI Recommendation, the value in the RBI Recommendation Methodology field has been changed from Criticality Calculator to RBI 580.US353694To enhance usability when using a UOM conversion set, the values within numeric fields are rounded off according to the type of the numeric field as follows:
+Numeric Field TypeNumber of Decimal PlacesPressure, Temperature, Stress, Length, Diameter, Area, Mass, Percent, Age, Cost, Risk2Thickness, Corrosion Rate, Damage Factor4Probability of Failure
+Exponential if value is less than 1 8 decimal places if value is greater than 1
+
+ This change is applicable to the fields from the following families:All RBI Component FamiliesRBI Criticality AnalysisRBI Consequence EvaluationCriticality Int. Corr. Deg. Mech. Eval.Criticality Ext. Corr. Deg. Mech. Eval.RBI Degradation MechanismsUS352458The properties of the following representative fluids that are valid for RBI Criticality Analysis have been updated as per the API 581, 3rd Edition, Addendum 1 specification:C13-16 (Diesel)C17-25 (Gas Oil)C25+ (Resid)C5ChlorineCOEOH2H2O (Water)H2SHClHFMEOH (Methanol)NH3PhosgeneSteamUS349921
+Table 5. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, if the Override Minimum Required Thickness check box was selected for an RBI Criticality Analysis, the value specified in the Specified Tmin box was not considered while calculating the Estimated Half-Life for the Criticality Calculator External Corrosion Degradation Mechanism Evaluation. This issue has been resolved.DE117296Previously, in the Risk Based Inspection (RBI) 580 Data Loader template, in the Consequence_Evaluation worksheet, the Consequence field contained the default value RBI. Due to this, an error occurred when importing data using the data loader. Now, the default value in the Consequence field has been changed to RBI Consequence.Note: The error message that appears when importing data using the Risk Based Inspection (RBI) 580 Data Loader that contains an invalid value in the Consequence field has now been updated to include the invalid value and the associated Analysis ID.DE111087
+Previously, in Criticality Calculator RBI Components, the value in the Calculated Inventory field was rounded off to the nearest whole number. Due to this behavior, if the value in the Calculated Inventory field was less than or equal to 0.5, the value was rounded off to 0, which resulted in incorrect calculations. This issue has been resolved. Now, the calculated inventory field displays up to two decimal values.
+A similar change has been made to the Inventory field in the Criticality Consequence Evaluation and Criticality Calculator RBI Components.
+DE107865Previously, the Material Grade boxes in the records of the following families contained incorrect values:Piping StressRBI ComponentsRBI Criticality AnalysisThis issue has been resolved. Now, the correct values appear in the Material Grade boxes, as specified in the following table.
+Design CodeCode YearMaterial SpecificationMaterial Grade (Incorrect Value)Material Grade (Correct Value)B31.32014A234WFBWPBB31.12014B366/B622A value that begins with NSA value that begins with N/AB31.32014B366/B622A value that begins with NSA value that begins with N/A
+DE96435Previously, in an RBI Criticality Analysis for a Heat Exchanger Bundle component, the values in the following drop-down list boxes were not translated:Flammable Leak TypeToxic Leak TypeThis issue has been resolved.DE94111Previously, when creating a What-If Analysis, the Long Term Avg. Corr. Rate, Short Term Avg. Corr. Rate, and Controlling Corrosion Rate fields in the Criticality Calculator Internal Corrosion Degradation Mechanism were not populated with the calculated values from the Thickness Monitoring module. This issue has been resolved.DE86408
+RBI 581Release Date: September 27, 2019
+Table 6. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo enhance usability of the Risk Based Inspection (RBI) 581 Data Loader, the following values are now updated in the Interface Log record generated by the data loader:Number of Record Processed: This value is incremented by one for each asset processed by the data loader.Number of Records Rejected: This value is incremented by one for each RBI 581 Risk Analysis record that encounters an error when processed by the data loader, thus resulting in the record not being created or updated.Number of Records Created: This value is incremented by one for each RBI 581 Risk Analysis record that is created.Number of Records Updated: This value is incremented by one for each existing RBI 581 Risk Analysis record that is updated.US366675To enhance usability, in the RBI Recommendation, the value in the RBI Recommendation Methodology field has been changed from RBI 581 Recommendation to RBI 581.US353694To enhance usability when using a UOM conversion set, the values within numeric fields are rounded off according to the type of the numeric field as follows:
+Numeric Field TypeNumber of Decimal PlacesPressure, Temperature, Stress, Length, Diameter, Area, Volume, Mass, Velocity, Percent, Age, Cost, Risk2Thickness, Corrosion Rate, Damage Factor4Strength Ratio8Probability of Failure
+Exponential if value is less than 1 8 decimal places if value is greater than 1
+
+ This change is applicable to the fields from the following families:All RBI Component FamiliesRBI 581 Risk AnalysisRBI 581 Consequence EvaluationAll RBI 581 Degradation Mechanism Evaluation FamiliesRBI Degradation MechanismsUS352458The properties of the following representative fluids that are valid for RBI 581 Risk Analysis have been updated as per the API 581 3rd Edition, Addendum 1 specification:AcidEOHClHFNH3SteamUS349921You can now generate recommendations irrespective of the value in the Inspection Will Mitigate field. To facilitate this enhancement, the Inspection Will Mitigate check has been removed from the following module workflow policies:RBI 581 External Damage Inspection RecommendationRBI 581 Env Cracking Insp RecommendationRBI 581 Tank Bottom Insp RecommendationRBI 581 Tank Shell Ext Corrosion RecommendationRBI 581 Tank Shell Int Corrosion RecommendationRBI 581 Thinning and Lining Insp RecommendationUS343660
+Table 7. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, in an RBI 581 Analysis, when the Representative Fluid field was changed to a fluid with ambient state other than Liquid or Gas, the Release Fluid Phase field was not cleared. This issue has been resolved.DE112859Previously, in the Risk Based Inspection (RBI) 581 Data Loader template, in the RBI_581_Consequence worksheet, the Consequence field contained the default value RBI. Due to this, an error occurred when importing data using the data loader. Now, the default value in the Consequence field has been changed to RBI Consequence.Note: The error message that appears when importing data using the Risk Based Inspection (RBI) 581 Data Loader that contains an invalid value in the Consequence field has now been updated to include the invalid value and the associated Analysis ID.DE111087
+Previously, in an RBI 581 Risk Analysis, if you selected a fluid in the Representative Fluid box that did not have a value in any of the following tables, the analysis calculation failed:
+Personnel Injury Flammable Consequence Equation Constants table (Table 4.9/4.9M, API 581 3rd edition)Component Damage Flammable Consequence Equation Constants table (Table 4.8/4.8M , API 581 3rd edition)
+This issue has been resolved. Now, in this scenario, the analysis calculation proceeds considering the constant values as 0.
+DE103262Previously, the Material Grade boxes in the records of the following families contained incorrect values:Piping StressRBI 581 Risk AnalysisRBI ComponentsThis issue has been resolved. Now, the correct values appear in the Material Grade boxes, as specified in the following table.
+Design CodeCode YearMaterial SpecificationMaterial Grade (Incorrect Value)Material Grade (Correct Value)B31.32014A234WFBWPBB31.12014B366/B622A value that begins with NSA value that begins with N/AB31.32014B366/B622A value that begins with NSA value that begins with N/A
+DE96435Previously, if the Insulated check box was selected, you could not generate RBI Recommendations for the RBI 581 Risk Analyses with the following degradation mechanisms:581-Ferritic Component Atmospheric Corrosion581-Ferritic Component Corrosion Under Insulation581-Austenitic Component Atmospheric Cracking581-Austenitic Component Cracking Under InsulationThis issue has been resolved.DE82239Previously, in an RBI 581 Risk Analysis, if you selected a Toxic fluid in the Representative Fluid field, the application did not calculate the Weighted Component Damage Consequence and Weighted Personnel Injury Consequence even if the fluid had a value in the following tables:Personnel Injury Flammable Consequence Equation Constants table (Table 4.9/4.9M, API 581 3rd edition)Component Damage Flammable Consequence Equation Constants table (Table 4.8/4.8M, API 581 3rd edition)Now, the application calculates the Weighted Component Damage Consequence and Weighted Personnel Injury Consequence for any fluid selected in the Representative Fluid field.US337384
+Release Date: July 26, 2019
+Table 8. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+NoteTracking ID(s)Previously, the formula for calculating the Expected Metal Loss Fraction (Art) for components with or without cladding or weld overlay did not adhere to API RBI 3rd Edition Addendum 1. This issue has been resolved.DE113180Previously, irrespective of the Unit of Measure (UOM) Conversion Set configured for your user account, the Consequence of Failure and Risk Values on the RBI 581 ISO-Risk Plot appeared in imperial units. This issue has been resolved.DE113033
+
+
+
+
+
+On this pageRisk Based Inspection (RBI)RBI 580 and RBI 581RBI 580RBI 581
+
+
+
+
+
+
+
+
+

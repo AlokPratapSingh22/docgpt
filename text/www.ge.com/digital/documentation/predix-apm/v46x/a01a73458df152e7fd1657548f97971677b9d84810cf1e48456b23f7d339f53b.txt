@@ -1,0 +1,367 @@
+
+
+
+Production Analyses | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production AnalysisProduction Analysis: Overview
+Production Analysis: Workflow
+Production Analyses
+Production Data
+Production Lines
+
+
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Production Analysis
+Production Analyses
+
+
+
+
+
+
+
+Production AnalysesAbout Production AnalysisProduction Analysis provides a visual representation of production output and allows you to quantify production losses and the cost associated with them. With regular use of Production Analysis, your company can determine where you are losing the most money and then take corrective actions that will help yield higher production and earn greater profits.Production Analysis allows you to evaluate the reliability of manufacturing processes. GE Digital APM Production Analysis analyzes production output data to help you see patterns in the output and determine the reliability of those processes. Often, a great amount of profit is lost due to production problems, rather than just Asset problems. Therefore, analyzing losses due to operational problems is necessary for conducting a comprehensive analysis of production losses. To quantify losses due to operational problems, in addition to analyzing individual Asset, you must also analyze the process in which they are involved. To do this, you can use a Production Analysis.Within a Production Analysis, you can plot production output data and then:Define the observed production output with a Demonstrated Line.Determine the reliability of the production process by defining a Process Reliability Line.Define the ideal production output with a Nameplate Line.Draw one or more Custom Lines to exhibit losses and gains compared to other observed production output or based on theoretical scenarios.Compare the observed output to the ideal output to calculate the efficiency and utilization costs.Production Process
+The following example explains a simple production process.
+Consider the process of manufacturing bottled water, which might consist of the following steps:
+Collect water from spring.Fill bottles.Attach labels.Attach caps.Sort bottles, discard any that fail quality inspection, and package for shipping.
+All of these steps must be completed to produce a finished product. In our example, the production unit consists of the individual pieces of equipment that together perform the steps in the process. The production output of this unit is bottles of water ready to be sold.
+For our example, we will assume that we collect production output as the number of bottles produced per day. We will also assume that we began producing bottled water on January 1, 2000. Once a year we generate a Production Analysis to evaluate the actual production output, to calculate losses compared to the ideal production output, and to establish goals for improving production the following year.
+About BreakpointOn a Production Data Plot, you will draw the Process Reliability Line to identify your Reliability Loss Region. Datapoints below the Process Reliability Line help make up the Reliability Loss Region. Typically, the Reliability Loss Region will show large variations in output that can be attributed to problems that impact the production process significantly, such as equipment and location failures, system shutdowns, and intentional cutbacks. For example, if you collect production output data daily and the system is shut down completely for five days during your collection period, then five datapoints will have near-zero values. These values should be easily distinguishable from the rest of the values in the Reliability Loss Region.To calculate your Reliability Losses accurately, you may want to separate the datapoints associated with shutdowns from the datapoints where losses are attributed to actual equipment slowdowns or intentional cutbacks. You can use the breakpoint tool to separate the Reliability Loss Region into these categories. The breakpoints will be taken into account in calculations so that your Reliability Losses represent losses due to actual equipment and location problems. Breakpoints also can be used to identify areas of distinct change in output when you do not know the reason for the change.Breakpoints for Bottled Water Production Process
+Consider our example of a bottled water production process. In the following example, you can view the datapoints associated with unplanned shutdowns due to uncontrollable issues (e.g., lack of raw material), where the production output is near zero.
+
+
+
+To separate this region from the rest of the reliability losses, we can create a breakpoint on the highest Reliability value within that distinct region. After the breakpoint has been created, GE Digital APM automatically shades the different regions of production output.
+Now two shaded Reliability Loss regions are visible on the Production Data Plot. The gray area represents losses associated with unplanned and planned shutdowns, and the purple area represents the losses due to equipment and location failures and intentional cutbacks. All reliability losses will be calculated for each region and will appear as Sub Reliability Loss regions on the Production Loss Regions section. 
+
+Note:  You can create more than one breakpoint when your production output displays more than two regions of shutdowns, Asset failures, intentional cutbacks, or other unknown variations.
+About Results of a Production AnalysisAfter you have created your Production Analysis, defined your production lines, defined a Process Reliability Line, created any desired breakpoints, and customized the analysis to your liking, you can interpret the results to determine where to take corrective actions. Consider the following completed Production Analysis for our bottled water process.In the previous image, we have labeled three shaded regions:
+Sub Reliability Loss Region 1 (gray): The area between the first datapoint above the breakpoint datapoint and the Demonstrated Line, below the Process Reliability Line. This represents the production from all unintentional equipment slowdowns and intentional cutbacks.
+Sub Reliability Loss Region 2 (purple): The area between the breakpoint datapoint below the breakpoint datapoint and the Demonstrated Line, below the Process Reliability Line. This represents the production from all intentional and unintentional shutdowns.
+Efficiency/Utilization Losses (pink): The area between the Demonstrated Line (blue) and the Nameplate Line (green).Each area represents the production losses associated with the corresponding set of datapoints. The losses are calculated and appear on the Production Loss Regions pane. In the following table, we list our losses from least to greatest.RegionQuantity LostCostEfficiency/Utilization Losses 279,586.89 $838,762 Sub Reliability Loss Region 1 214,000.54 $642,002 Sub Reliability Loss Region 2 31,447.89 $94,344 Note: The shaded regions in the plot can sometimes be misleading. For example, in this case the Sub Reliability Loss Region 2 is the largest region on the graph. If you look at the loss calculations, however, this region is associated with the second least amount of loss. You should always refer to the loss calculations to determine which region is responsible for the highest loss.The loss calculations can help you determine where to focus your attention to make improvements. You should focus first on the area that is responsible for the greatest amount of loss.Many companies automatically focus their attention on Asset failures. In this example, however, Asset reliability problems account for less loss than process problems. Therefore, in this case, we should focus on improving the process before we focus on improving equipment and location reliability. The analysis indicates that even if we repair the equipment, we will probably still experience losses due to process problems.If, as in our example, your analysis indicates that you should focus on correcting process problems, the steps you take will vary, depending upon the process itself and what you suspect the problems to be. For example, if we suspect that poor employee performance is the cause of our process problems, attempts at lowering the process problems for our bottled water process example might begin with monitoring the employees and possibly creating individual Production Analyses with production output for each employee every month. Also, we might ask a manager to monitor the work of the employees and report any observed problems. Employees might need to be replaced based on production numbers and observations. This would be the first step in helping us achieve the stretch goal for the end of 2007.If, on the other hand, the analysis indicated that equipment and location problems were responsible for the greatest production loss, then conducting a Reliability Distribution Analysis on the piece of equipment or location may be useful to predict the next Time to Failure and make repairs or replacements before failures occur.Access a Production AnalysisProcedure
+Access the RA Overview page. Select the Production Analyses tab.
+A list of Production Analyses available in the database appears.
+
+
+
+Select the Production Analysis whose details you want to view.
+The Analysis Summary workspace for the selected analysis appears, displaying the following tabs:
+
+Definition: Displays the details of the selected Production Analysis.
+Summary: This tab is selected by default and contains the following information:
+Production Data Plot
+
+: Contains a plot based on the production output values. The range of dates that the datapoints represent is displayed above the plot. 
+Production Lines
+
+: Contains a grid that shows a row for each Production Line, displaying its Beta and Eta values in the Production Data Plot. 
+Production Loss Regions
+
+: Contains a grid that displays the results of the cost calculations for each specified loss region. Tip:  You can hide the Production Lines and Loss Regions panes by selecting . You can also view them in full screen by selecting .
+The left pane contains the following tab:
+
+Production Data
+: Contains the 
+Production Data Plot.
+
+
+
+
+Access Multiple Production AnalysesAbout This Task
+You can access multiple Production Analyses and compare multiple plots for the selected analyses. You cannot modify the details of the analyses from which the Comparison Plot is generated.
+Procedure
+Access the RA Overview page. Select the Production Analyses tab.
+A list of Production Analyses available in the database appears.
+
+
+
+Select two or more Production Analyses whose plots you want to compare.
+Note: You can select up to 20 analyses to compare plots.
+In the upper-right corner of the grid, select .
+The Multiple Production Analyses page appears, displaying the Comparison Plot.
+Note: You cannot save the plot as a separate entity.
+
+
+
+Collect Data for a Production Analysis
+To create a Production Analysis, you must collect production output information, which consists of numeric values representing the output of a process over some period of time. How you collect the output data and how often you collect it is up to you and may be determined based on a variety of factors, including the type of process, how often the process produces measurable output, and how often you want to record it. While the amount of time between output readings is up to you, you must collect the output data at regular intervals (e.g., hourly, daily, weekly, or monthly) to create a meaningful analysis. This will ensure that you are able to compare the output values to one another.
+Details
+When you create a Production Analysis from within the Production Analysis module, you can supply data to the analysis using a 
+GE Digital APM query or dataset, or you can enter data manually. To use a query as the basis for your analysis, the production output data must be stored in the GE Digital APM database so that it can be queried. For example, you might store production data in custom Production Output records that you create and associate with the systems for which you record regular output readings.
+You can also create a Production Analysis from within the Production Loss Analysis (PLA) module. PLA allows you to create production plans and then record daily production output against the plan. You can use these production output values as the starting point for a Production Analysis.
+Note: If you are using PLA to collect production data, the GE Digital APM system provides the Production Data family to store the output readings.
+The production output data is collected for a process, not for individual pieces of equipment. A single process may involve one or more pieces of equipment. Throughout this documentation and in the GE Digital APM Production Analysis tool, we refer to this collection of equipment as the production unit. The term unit refers to the process and all the pieces of equipment involved in it. It does not imply a GE Digital APM family or a specific record in the database.
+Note: If you are using PLA to collect production data, the GE Digital APM system provides the Production Unit family for use within the PLA workflow.
+Production Data
+If you are using a query or dataset to store production output data, the following table lists the fields whose values you can provide to the analysis (through the Production Analysis Builder). The source data must include at least production output values.
+
+DataDescriptionNotesProduction Output Values representing the amount of output produced by the unit during the specified period of time (e.g., hourly, daily, weekly, or monthly). These values must be numeric. You can define the units of measure for the output values after you create the analysis. Production Output values are required for creating a Production Analysis. Production Date The date on which the production output value was recorded. If you have a date field within your query or dataset and you choose not to map it to the Production Analysis Builder, you can see the dates used to build the analysis in the 
+Production Analysis Points Editor window. Production Dates are optional. Unit ID A value that describes the production unit, which consists of the individual pieces of equipment that work together to produce the production output. You may have more than one Unit ID value within the Production Analysis and may group your datapoints by that specific value. Units are optional. 
+
+Create a Production Analysis from an Existing Query or DatasetProcedure
+Access the RA Overview page.In the upper-right corner, select New Analysis, and then select Production Analysis.
+The Production Analysis Builder window appears. 
+
+
+
+Note: All required information is provided, but for additional information, consult the Production Analysis topic.
+Enter values in the Analysis Name and Description fields for the new analysis, and then select Next.
+The Select Data Source Type screen appears. 
+
+
+
+If you want to load data using an existing query, select Data will be based on an existing Query, and then select Next. 
+The Select Query screen appears.
+
+
+
+-or-
+If you want to load data using an existing dataset, select Data will be based on an existing Dataset, and then select Next.
+The Select Dataset screen appears.
+
+
+
+Select Browse to search for an existing query or dataset in GE Digital APM Catalog. 
+The Select a query from the catalog or Select a dataset from the catalog window appears, depending on whether you selected Data will be based on an existing Query or Data will be based on an existing Dataset in the previous step. 
+Select the needed query or dataset, and then select Open. 
+The complete path to the query or dataset is displayed in the Query or Dataset box. The fields that exist for the selected query or dataset appear in the Available Fields list.
+In the Includes Data From the Following Sites list, select the site(s) whose data from which you want to create an analysis.
+If you are creating an analysis in a database that has only one site stored in the Site Reference family, then the Includes Data From the Following Sites list will not appear on the Select Query screen.
+Select Next.
+The Select Product Fields screen appears. 
+
+
+
+In the Production Output list, select the value that represents the production amount that you want to use in your analysis. The list displays all the numeric fields that exist in your query or dataset; the first numeric field is selected by default. This is a required field.In the Production Date list, select the value that will be used as the date of production for the analysis. The list displays all date fields that exist in your query or dataset, the first date field is selected by default. This is an optional field.In the Unit ID field, select the value that identifies the production unit for which the production data has been recorded. The list displays all character fields but is not populated. This is an optional field.Select Finish.
+The Production Analysis Builder window closes. 
+If GE Digital APM finds zeros or negative numbers for the Production Output value in the dataset or the query results, the Set Minimum Production Output window appears.
+
+
+
+In the Minimum Production Output box, enter the value that you want to use to replace zero and negative production output values. The suggested value is calculated based on the highest production output. Zero and negative values cannot be plotted and will instead be plotted using the value specified here. You can also change the Minimum Production value after the Production Analysis has been created.
+Note: To determine the suggested value, 0.00001 is multiplied by the highest production output value and then rounded up. For example, if the highest production output value is 823, that value is multiplied by 0.00001 to equal .00823. That value is then rounded up to one at the first non-zero decimal place, or 0.001 in this example, to become the default value in the Minimum Production Output box.
+Select OK.
+The Production Analysis page appears, displaying the results of the analysis. 
+Create a Production Analysis From Manually Entered DataProcedure
+Access the RA Overview page.In the upper-right corner, select New Analysis, and then select Production Analysis.
+The Production Analysis Builder appears. 
+
+
+
+Note: All required information is provided, but for additional information, consult the Production Analysis topic.
+Enter values in the Analysis Name and Description fields for the new analysis, and then select Next.
+The Select Data Source Type screen appears. 
+
+
+
+Select I will manually enter data, and then select Finish. 
+The Production Data Editor window appears, displaying a blank grid.
+
+
+
+Select .
+A new row appears.
+Enter the information in the following fields:
+
+
+Production Output: Enter the first production output value. This field is required. 
+Note: If you do not have any data for a given date, you must type 0 (zero). If you enter a null value, it will be converted to the minimum selected value.
+
+Date: Select or enter a date associated with the first production output value. This is field is optional.
+Ignore: Select the check box if you want to exclude this output value from calculations performed by the Production Analysis. The datapoint will be plotted but will be displayed as an X.
+Note: You can add more rows of data by selecting  at the top of the Production Data Editor window. You can remove any row of data by selecting the row, and then selecting . 
+
+Select OK.
+The Production Data Editor window closes. 
+If you entered zeros or negative numbers for the Production Output values, the Set Minimum Production Output window appears.
+
+
+
+In the Minimum Production Output box, enter the value that you want to use to replace zero and negative production output values. The suggested value is calculated based on the highest production output. Zero and negative values cannot be plotted and will instead be plotted using the value specified here. You can also change the Minimum Production value after the Production Analysis has been created.
+Note: To determine the suggested value, 0.00001 is multiplied by the highest production output value and then rounded up. For example, if the highest production output value is 823, that value is multiplied by .00001 to equal .00823. That value is then rounded up to one at the first non-zero decimal place, or .001 in this example, to become the default value in the Minimum Production Output box.
+Select OK.
+The Production Analysis page appears, displaying the results of the analysis. 
+Create a BreakpointProcedure
+Access a Production Analysis for which you want to create a breakpoint.In the left pane, select Production Data.
+The Production Data workspace appears.
+
+
+
+On the Production Analysis plot, select the datapoint where you want to insert the breakpoint.
+The Point Tooltip window appears.
+
+
+
+Select Break.
+
+GE Digital APM separates the Production Loss region into two shaded regions. The Production Loss Regions
+ pane includes the values for the Sub Reliability Loss regions and the Total Loss region.
+Tip:  If you want to remove the breakpoint, select the data point to open the Point Tooltip window, and then select Unbreak. 
+Change the Margin CurrencyAbout This Task
+In the Production Loss Regions section, values in the Cost column represent the cost associated with the calculated production losses. For the cost calculations to be accurate, the values must be displayed in the correct currency. If you want to modify the currency that is currently associated with the analysis, you can change it on the Set Currency window.
+Note:  When you create a new Production Analysis, if you are logged in as a user with a GE Digital APM Culture setting that has an associated currency, the Margin Currency will be set by default to that currency and saved with the analysis. 
+Procedure
+Access the Production Analysis, whose Margin Currency you want to change.In the left pane, select the Production Data tab.
+The Production Data workspace appears.
+
+
+
+In the upper-right corner of the workspace, select Analysis Tasks, and then select Margin Currency.
+The Set Currency window appears.
+
+
+
+In the Currency box, enter the desired currency code, and then select OK.
+The Production Loss Regions section displays the new currency code in the Cost column heading.
+Change the Minimum Production OutputAbout This Task
+The Minimum Production Output is the value used to replace all zeros and negative numbers in the Production Analysis. When you create a new analysis, if the source data contains zeros or negative numbers, you will be prompted to specify a Minimum Production Output value. You will also be prompted to set the Minimum Production Output value if you modify or reload the data to contain zeros and negative numbers in an existing analysis that did not previously contain zeros or negative numbers. You can use the following instructions to modify the value that is currently saved with the analysis.
+Procedure
+Access the Production Analysis whose Minimum Production Output you want to change.In the left pane, select the Production Data tab.
+The Production Data workspace appears.
+
+
+
+In the upper-right corner of the workspace, select Analysis Tasks, and then select Minimum Production Output.
+The Set Minimum Production Output window appears. By default, the Minimum Production Output value is set to the value that was selected when the analysis was last saved.
+
+
+
+In the Minimum Production Output box, enter the value that you want to use to replace zeros and negative numbers, and then select OK.
+The Production Analysis is generated with the new Minimum Production Output value.
+Rename a Production AnalysisProcedure
+Access the Production Analysis, whose name you want to change.In the left pane, select the Production Data tab.
+The Production Data workspace appears.
+
+
+
+In the upper-right corner of the workspace, select Analysis Tasks, and then select Rename.
+The Set Analysis Name window appears.
+
+
+
+In the Analysis Name box, enter a new name for the analysis.In the Analysis Description box, enter a new description for the analysis, and then select OK.
+The analysis name is updated in any appropriate sections on the Production Analysis page to reflect the change. In addition, the Description field in any appropriate sections will reflect any changes.
+Change the Unit of MeasureAbout This Task
+When viewing the results of a Production Analysis, Production Output is displayed in the Production Data plot and in the Production Loss Regions section. If the data is from a query, the unit of measure is taken into account for production data when the analysis is first created. If the data is from a dataset or manually entered data, then there is no unit of measure associated with the Production Analysis and it has to be set manually. After the analysis exists, you can label the output for the production data with the appropriate unit by setting the unit of measure.
+Procedure
+Access the Production Analysis for which you want to change the unit of measure.In the left pane, select the Production Data tab.
+The Production Data workspace appears.
+
+
+
+In the upper-right corner of the workspace, select Analysis Tasks, and then select Unit Of Measure.
+The Set Unit Of Measure window appears.
+
+
+
+In the Unit Of Measure box, enter the value that characterizes the unit of measure used to collect the data for the Production Analysis, and then select OK.
+The Production Analysis is updated. The unit of measure is displayed on the x-axis of the Production Data plot and in the Production Loss Region section on the Quantity column heading. The values in the Quantity column change appropriately.
+Change the Margin ValueAbout This Task
+In the Production Loss Regions section, values in the Cost column represents the expense associated with the production loss. By default, GE Digital APM assumes a one-to-one ratio of lost production to cost. For example, if your production loss data is recorded in tons, then GE Digital APM assumes one dollar of cost for every ton of lost production. To make the Cost value accurate, you may want to change the default loss-to-cost ratio.
+Procedure
+Access the Production Analysis whose Margin value you want to change.In the left pane, select the Production Data tab.
+The Production Data workspace appears.
+
+
+
+In the upper-right corner of the workspace, select Analysis Tasks, and then select Margin Value.
+The Set Margin window appears.
+
+
+
+In the Margin Value box, enter the value by which GE Digital APM will multiply the production loss to determine the cost. For example, if each ton of lost production costs two dollars, enter 2 in the Margin Value box.Select OK.The Production Loss Regions section displays the new calculations for the Cost values.Delete a Sub Reliability Loss RegionProcedure
+Access the Production Analysis within which you want to delete a Sub Reliability Loss region. Locate the row containing the Sub Reliability Loss region that you want to delete, and then select Delete.
+The Delete Sub Reliability Loss Region dialog box appears, asking you to confirm that you want to delete the selected Sub Reliability Loss region.
+Select OK.
+The selected Sub Reliability Loss region is deleted.
+Access Production Analysis ReportProcedure
+Access a Production Analysis whose report you want to access.In the upper-right corner of any workspace within the selected Production Analysis, select Report.
+The Production Analysis report appears in a new browser tab. 
+By default, the report contains the following sections:
+
+Analysis Summary
+
+Production Lines
+
+Production Loss Regions
+
+Production Weibull Plot
+
+Production Data
+
+Delete a Production AnalysisProcedure
+Access the RA Overview page. Select Production Analyses.
+A list of Production Analyses available in the database appears.
+
+
+
+Select the Production Analysis that you want to delete, and then select . 
+The Delete Production Analysis dialog box appears, asking you to confirm that you want to delete the selected analysis.
+Select Yes. 
+The selected analysis is deleted. 
+
+
+
+
+
+On this pageAbout Production AnalysisAbout BreakpointAbout Results of a Production AnalysisAccess a Production AnalysisAccess Multiple Production AnalysesCollect Data for a Production AnalysisCreate a Production Analysis from an Existing Query or DatasetCreate a Production Analysis From Manually Entered DataCreate a BreakpointChange the Margin CurrencyChange the Minimum Production OutputRename a Production AnalysisChange the Unit of MeasureChange the Margin ValueDelete a Sub Reliability Loss RegionAccess Production Analysis ReportDelete a Production Analysis
+
+
+
+
+
+
+
+
+

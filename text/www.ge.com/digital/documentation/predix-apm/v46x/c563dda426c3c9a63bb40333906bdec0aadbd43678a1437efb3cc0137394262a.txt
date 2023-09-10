@@ -1,0 +1,112 @@
+
+
+
+Changed Elements | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Management of ChangeOverview
+Workflows
+Change Projects
+Checklists
+Exceptions and Tasks
+Changed Elements
+Deployment
+Admin
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Management of Change
+Changed Elements
+
+
+
+
+
+
+
+Changed ElementsAbout Changed ElementsWhen a change is being implemented, it directly or indirectly has an impact on other families in GE Digital APM. In MOC, you can associate a Change Project with records from other families in GE Digital APM that are possibly impacted by the change. Such records are called Changed Elements. For example, when the change involves replacing the existing pressure relief devices that were identified as Independent Protection Layers, with a different manufacturer's device, the LOPA assessment with which the equipment is associated may be impacted. In this case, the affected LOPA record is a changed element and you can associate the LOPA record with the Change Project.Changed elements help keep track of all affected processes and records in one place, which you can then analyze to assess the advantages and disadvantages of implementing the change. An approver can review the changed elements to understand the impact of the change and make decisions on whether to approve or request rework of the Change Project. Changed elements provide your organization with a means of associating impacted areas as changed elements, thus making MOC a fully auditable tool.Associating Records from GE Digital APM Families as Changed Elements
+By default, you can associate SIL Analysis, Hazards Analysis, and LOPA records as changed elements to a Change Project. If you want to add records from other families, you must modify the Change Project Has Element relationship family by adding the families, whose records you want to add as changed element, as Successors to the MI MOC Change Project family. For more information, refer to the Create a Relationship Definition section of the documentation.
+Access the List of Changed Elements Associated with a Change ProjectProcedure
+Access the Change Project for which you want to view the associated changed elements.In the left pane, select the Changed Elements tab.
+The Changed Elements section appears, displaying the following columns of information for the list of changed elements associated with the Change Project. 
+
+Element ID: Contains the identification of the changed element that is associated with the Change Project. You can select the link in the Element ID column to view details about the selected record in the Record Manager.
+Family: Contains the name of the family to which the changed element belongs.
+
+
+
+Add a Changed Element to the Change ProjectBefore You Begin
+
+Modify the Change Project Has Elements relationship family to include families, whose records you want to add as changed elements.
+Procedure
+Access the Changed Elements section for the Change Project to which you want to associate a changed element.In the upper-left corner of the section, select .
+The Search window appears.
+
+
+
+In the Look in box, select the family to which the record you want to add as a changed element belongs.
+The list of records belonging to the family appears.
+
+
+
+Select the record that you want to associate with the project as changed element, and then select OK.
+The selected record is added as a changed element to the Change Project. In the Changed Elements section, the updated list of records appear.
+Remove a Changed Element from the Change ProjectProcedure
+Access the Changed Elements section for the Change Project from which you want to remove a changed element.In the row for each record that want to remove from the Change Project, select the check box.
+ In the upper-right corner of the section, the  button is enabled.
+Select .
+The Delete Changed Element dialog box appears, asking you to confirm that you want to remove the association between the Change Project and the changed element. 
+Select OK.
+Each selected changed element is removed from the Change Project.
+
+
+
+
+
+On this pageAbout Changed ElementsAccess the List of Changed Elements Associated with a Change ProjectAdd a Changed Element to the Change ProjectRemove a Changed Element from the Change Project
+
+
+
+
+
+
+
+
+

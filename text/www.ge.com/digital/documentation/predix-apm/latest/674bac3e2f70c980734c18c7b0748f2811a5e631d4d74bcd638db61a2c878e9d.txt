@@ -1,0 +1,412 @@
+
+
+
+Comprehensive Analysis Report | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+ReportsComprehensive Analysis Report
+PROACT® RCA Analysis-At-A-Glance Overview
+Individual Reports
+
+
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Reference
+Reports
+Comprehensive Analysis Report
+
+
+
+
+
+
+
+Comprehensive Analysis ReportAbout RCA Reports
+The baseline RCA module provides the following types of baseline reports:
+
+
+
+Comprehensive
+: The Comprehensive Analysis report includes information about the entire RCA. You can customize the data that appears in the report to display data associated with all stages of the RCA. The Comprehensive Analysis report is stored in the following folder in the GE Digital APM Catalog: \\Public\Meridium\Modules\RCA\SSRS.
+Important: This report is built from the queries and reports stored in the SSRS folder. You should not change the name of the SSRS Catalog folder, the name or content of any item within the folder, or remove from the folder any item that is being used by the comprehensive report. Modifying or moving any of these items could cause the Comprehensive Analysis Report to stop working.
+
+ Individual : Multiple reports that display data associated with specific areas of an RCA Analysis. The individual reports are stored in the GE Digital APM Catalog folder \\Public\Meridium\Modules\RCA. Keep in mind that the Reports List page displays all reports that are stored in the RCA folder.
+Note:  All items in the Public folder are also available in the corresponding Baseline folder. Throughout this documentation, however, we refer to items in the Public folder.
+About the Comprehensive Analysis ReportThe Comprehensive Analysis report contains the following sections:
+Cover Page
+
+Topics Included in this Report
+
+Preserve (5 P's)
+
+Data Collection
+
+Data Collection File Links
+
+Order
+
+Team Members
+
+Charter
+
+Critical Success Factors
+
+Analyze
+
+Event Diagram
+Event Timeline5 Whys
+Logic Tree
+
+Verification Logs
+
+Verification Log File Links
+
+Communicate
+
+Event Summary
+
+Summary of Findings
+
+Executive Summary Recommendations
+
+Recommendation File Links
+
+Acknowledgments
+
+Track
+
+Tracking Item Summary 
+
+Analysis-At-A-Glance
+
+PROACT RCA Analysis-At-A-Glance Overview
+Cover Page
+The cover page displays introductory information for the Comprehensive Analysis Report. The cover page is always included in the Comprehensive Analysis Report. 
+The following image shows an example of the cover page as it appears in the Comprehensive Analysis Report for the example RCA. 
+
+
+
+The cover page displays the name of the report, which is always Comprehensive Analysis Report, and the following information:
+
+Analysis Name: Contains the name of the RCA. This value is stored in the Analysis Name field of the RCA Analysis record.
+Principal Analyst: Contains the name of the Principal Analyst. This value is stored in the First Name and Last Name fields of the Human Resource record that is linked to the RCA Team Member record that contains the value Principal Analyst.
+Printed: Contains the date on which the report was generated.
+Topics Included in this Report
+The Topics Included in this Report section displays the titles of the sections that are included in the Comprehensive Analysis report. The Topics Included in this Report section will always be included in the Comprehensive Analysis Report and cannot be excluded from the report.
+The following image shows an example of the Topics Included in this Report section as it appears in the Comprehensive Analysis Report for the example RCA.
+
+
+
+Preserve (5P's)
+The Preserve (5 P's) section of the Comprehensive Analysis report displays a description of the Preserve step of a Root Cause Analysis. 
+ 
+The following image shows an example of the Preserve (5 P's) section as it appears in the Comprehensive Analysis Report for the example RCA Analysis.
+
+
+
+Data Collection
+The Data Collection section of the Comprehensive Analysis report displays information that is stored in each RCA Preserve Item record that is linked to the RCA Analysis record. It also displays information stored in the Human Resource record that is linked to the RCA Team Member record that is linked to each RCA Preserve Item record. 
+ 
+The following image shows an example of the Data Collection section as it appears in the Comprehensive Analysis report for the example RCA.
+
+
+
+Data Collection File Links
+The Data Collection File Links section of the Comprehensive Analysis report displays a list of the Reference Document records that are linked to the RCA Preserve Item records that are linked to the RCA Analysis record. 
+ 
+The following image shows an example of the Data Collection File Links section as it would appear in a Comprehensive Analysis report.
+
+
+
+The following table lists each item in the Data Collection File Links section and the corresponding RCA Preserve Item, Human Resource, or Reference Document record field whose data is displayed in the report.
+Report ColumnRecord FamilyRecord Field
+Category 
+
+RCA Preserve Item 
+Data Category 
+Data 
+
+RCA Preserve Item 
+Data to Collect 
+Team Members 
+
+Human Resource 
+First Name, Last Name 
+Document Path 
+Reference Document Document Path 
+ID 
+Reference Document ID 
+Order
+The Order section of the Comprehensive Analysis report displays a description of the Order step of a Root Cause Analysis. 
+ 
+The following image shows an example of the Order section as it appears in the Comprehensive Analysis Report for the example RCA.
+
+
+
+Team Members
+The Team Members section of the Comprehensive Analysis report displays information that is stored in Human Resource records that are linked to RCA Team Member records that are linked to the RCA Analysis record. 
+The following image shows an example of the Team Members section as it appears in the Comprehensive Analysis report.
+
+
+
+Note:  In order for a team member's information to appear in the Comprehensive Analysis report, in addition to the Human Resource record, the Team Member must also have a Security User record. Using the GE Digital APM system, you can promote a Human Resource record to a Security User record.
+The following table lists each item in the Team Members section and the corresponding Human Resource record field whose data is displayed in the report.
+Report ItemRecord Field
+Principal Analyst 
+
+First Name, Last Name
+Note: These values are stored in the Human Resource record that is linked to the RCA Team Member record that contains the value Principal Analyst. 
+
+Name 
+
+First Name, Last Name
+
+Facility 
+
+Facility
+
+E-mail 
+Email Address Phone Phone
+Charter
+The Charter section of the Comprehensive Analysis report displays the value that is stored in the Charter field of the RCA Analysis record. 
+The following image shows an example of the Charter section as it appears in the Comprehensive Analysis report for the example RCA.
+
+
+
+Critical Success Factors
+The Critical Success Factors section of the Comprehensive Analysis report displays information that is stored in RCA Critical Success Factor records and important dates that are stored in the RCA Analysis record (e.g., the start date and publish date). 
+ 
+The following image shows an example of the Critical Success Factors section, outlined in red, as it appears in the Comprehensive Analysis report for the example RCA.
+
+
+
+The following table lists each item in the Critical Success Factors section and the corresponding RCA Critical Success Factor or RCA Analysis record field whose data is displayed in the report.
+Report ItemRecord FamilyRecord Field
+
+Critical Success Factors
+
+
+RCA Critical Success Factor 
+CSF 
+Analysis Start Date 
+
+RCA Analysis 
+Start Date 
+Analysis End Date 
+RCA Analysis End Date 
+Date Published 
+RCA Analysis Date Published 
+Comments 
+RCA Analysis Comments 
+Analyze
+The Analyze section of the Comprehensive Analysis report displays a description of the Analyze step of a Root Cause Analysis. 
+ 
+The following image shows an example of the Analyze section as it appears in the Comprehensive Analysis report for the example RCA.
+
+
+
+Event Diagram
+The Event Diagram section of the Comprehensive Analysis report displays an image of the Event Diagram that exists for the RCA. 
+ 
+The following image shows an example of the Event Diagram section as it appears in the Comprehensive Analysis report for the example RCA.
+
+
+
+Event TimelineThe Event Timeline section of the Comprehensive Analysis report displays an image of the Event Timeline that exists for the RCA.  The following image shows an example of the Event Timeline section as it appears in the Comprehensive Analysis report for the example RCA.5 WhysThe 5 Whys section of the Comprehensive Analysis report displays an image of the 5 Whys Analysis that exists for the RCA. The following image shows an example of the 5 Whys section as it appears in the Comprehensive Analysis report for the example RCA.Logic Tree
+The Logic Tree section of the Comprehensive Analysis report displays an image of the Logic Tree that exists for the RCA Analysis. 
+The following image shows an example of the Logic Tree section as it appears in the Comprehensive Analysis for the example RCA.
+
+
+
+Verification Logs
+The Verification Logs section of the Comprehensive Analysis report displays information that is stored in each RCA Verification record and the RCA Hypothesis record that is linked to an RCA Verification record. It also displays information stored in the Human Resource record that is linked to the RCA Team Member record that is linked to the RCA Verification record. 
+ 
+The following image shows an example of the Verification Logs section as it appears in the Comprehensive Analysis report for the example RCA.
+
+
+
+The following table lists each item in the Verification Logs section and the corresponding RCA Verification, RCA Hypothesis, or Human Resource record field whose data is displayed in the report.
+Report ColumnRecord FamilyRecord Field
+Hypothesis 
+RCA Hypothesis ID 
+Description 
+RCA Hypothesis Description 
+Team Member 
+Human Resource First Name, Last Name 
+Verification Method 
+RCA Verification Method 
+Outcome 
+RCA Verification Outcome 
+Verification Log File Links
+The Verification Log File Links section of the Comprehensive Analysis report contains a list of the Reference Document records that are linked to the RCA Verification records that are linked to the RCA Analysis record. It also displays information stored in the Human Resource record that is linked to the RCA Team Member record that is linked to the RCA Verification record. 
+ 
+The following image shows an example of the Verification Log File Links section as it would appear in a Comprehensive Analysis Report.
+
+
+
+The following table lists each item in the Verification Log File Links section and the corresponding RCA Verification, Human Resource, or Reference Document record field whose data is displayed in the report.
+Report ColumnRecord FamilyRecord Field
+Method 
+
+RCA Verification 
+Method 
+Team Members 
+
+Human Resource 
+Start Date 
+Document Path 
+Reference Document Document Path 
+ID 
+Reference Document ID 
+Communicate
+The Communicate section of the Comprehensive Analysis report displays a description of the Communicate step of a Root Cause Analysis. 
+ 
+The following image shows an example of the Communicate section as it appears in the Comprehensive Analysis report for the example RCA.
+
+
+
+Event Summary 
+The Event Summary section of the Comprehensive Analysis report displays the value that is stored in the Event Narrative field in the RCA Analysis record. 
+ 
+The following image shows an example of the Event Summary section as it appears in the Comprehensive Analysis report for the example RCA.
+
+
+
+Summary of Findings
+The Summary of Findings section of the Comprehensive Analysis report displays the value that is stored in the Mechanism field of the RCA Analysis record. This field is labeled Summary of Findings on the RCA Communicate datasheet. 
+The following image shows an example of the Summary of Findings section as it appears in the Comprehensive Analysis Report for the example RCA.
+
+
+
+Executive Summary RecommendationsThe Executive Summary Recommendations section of the Comprehensive Analysis report displays information that is stored in RCA Recommendation records that are linked to the RCA Analysis record.  The following image shows an example of the Executive Summary Recommendations section.
+
+The following table lists each item in the Executive Summary Recommendations section and the corresponding RCA Recommendation record field whose data is displayed in the report.Report ColumnRecord FieldRoot Cause Cause 
+Type 
+Cause Type 
+Recommendation 
+Recommendation Headline 
+Team Members 
+Assigned to Name, Assigned To User ID 
+Target Completion Date 
+Target Completion Date Implemented Date Implemented Date Recommendation File Links
+The Recommendation File Links section of the Comprehensive Analysis report contains a list of the Reference Document records that are linked to the RCA Recommendation records that are linked to the RCA Analysis record. 
+The following table lists each item in the Recommendation File Links section and the corresponding RCA Recommendation or Reference Document record field whose data is displayed in the report.
+Report ColumnRecord FamilyRecord Field
+Cause 
+RCA Recommendation Cause 
+Team Members 
+RCA Recommendation Assigned to Name, Assigned To User ID 
+Document Path 
+Reference Document Document Path 
+ID 
+Reference Document ID 
+Acknowledgments
+The Acknowledgments section of the Comprehensive Analysis report displays the value that is stored in the Acknowledgments field in the RCA Analysis record. 
+The following image shows an example of the Acknowledgments section as it appears in the Comprehensive Analysis Report for the example RCA.
+
+
+
+Track
+The Track section of the Comprehensive Analysis report displays a description of the Track step of a Root Cause Analysis. 
+The following image shows an example of the Track section as it appears in the Comprehensive Analysis Report for the example RCA.
+
+
+
+Tracking Item Summary
+The Tracking Item Summary section of the Comprehensive Analysis report contains information that is stored in an RCA Tracking Item record and the Equipment or Functional Location record that is linked to the RCA Tracking Item record. 
+ 
+The following image shows an example of the Tracking Item Summary section as it would appear in the Comprehensive Analysis report.
+
+
+
+The following table lists each item in the Tracking Items Summary section and the corresponding RCA Tracking Item record whose data is displayed in the report.
+Report ColumnRecord FamilyRecord Field
+Related Equipment 
+
+Equipment or Functional Location
+Record ID 
+Start Date 
+RCA Tracking Item Start Date 
+Count 
+RCA Tracking Item Count 
+Cost 
+RCA Tracking Item Cost 
+Analysis-At-A-Glance
+The Analysis-At-A-Glance section of the Comprehensive Analysis report contains an introduction to the PROACT RCA Analysis-At-A-Glance Overview section, which includes information such as the names of the RCA Analysis Team members and the status of Communicate stage of the RCA. 
+The following image shows an example of the Analysis-At-A-Glance section as it appears in the Comprehensive Analysis Report for the example RCA.
+
+
+
+
+
+
+
+
+On this pageAbout RCA ReportsAbout the Comprehensive Analysis ReportCover PageTopics Included in this ReportPreserve (5P's)Data CollectionData Collection File LinksOrderTeam MembersCharterCritical Success FactorsAnalyzeEvent DiagramEvent Timeline5 WhysLogic TreeVerification LogsVerification Log File LinksCommunicateEvent Summary Summary of FindingsExecutive Summary RecommendationsRecommendation File LinksAcknowledgmentsTrackTracking Item SummaryAnalysis-At-A-Glance
+
+
+
+
+
+
+
+
+

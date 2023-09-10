@@ -1,0 +1,246 @@
+
+
+
+Family Field Descriptions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Management of ChangeOverview
+Workflows
+Change Projects
+Checklists
+Exceptions and Tasks
+Changed Elements
+Deployment
+Admin
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Management of Change
+Reference
+Family Field Descriptions
+
+
+
+
+
+
+
+Family Field DescriptionsMI MOC Change Project Records
+MI MOC Change Project records store information about the Change Project. This topic provides an alphabetical list and description of the fields that exist for the MI MOC Change Project family and appear on the MI MOC Change Project datasheet. The information in the table reflects the baseline state and behavior of these fields. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Change Duration CharacterIndicates whether the change is a permanent change or a temporary change.
+This field appears as a list that is populated by the MI_Change_Project_Duration System Code Table. 
+Change Project ID CharacterThe identification for the Change Project.
+This field is required. You must enter a unique value in this field. 
+Change Type CharacterIndicates the type of change managed by the Change Project.
+This field appears as a list that is populated by the MI_Change_Project_Type System Code Table. 
+Change Valid Until DateThe date up to when the change is valid.
+This field is enabled only if the value in the Change Duration field is Temporary. 
+You can select a date in this field.
+Description CharacterA description for the Change Project.You can enter a value manually.End DateDateIndicates the date when the Change Project was completed.You can select a date in this field. The date that you select in this field must be later than the date specified in the Start Date field.Owner CharacterThe name of the team member who is responsible for managing the Change Project.
+You can enter a value manually.
+Purpose Character
+A description of the goal of the Change Project. 
+You can enter a value manually.Scope CharacterA description of the intended scope of change to be accomplished through the Change Project.You can enter a value manually.Start DateDateIndicates the date when the Change Project was started.By default, this field contains the date on which the Change Project was created. You can modify the date.
+MI MOC Checklist Records
+MI MOC Checklist records store information about Checklists associated with Change Projects. The MI MOC Checklist family is also used to store information about the Checklists that you created using the Application Settings for MOC. This topic provides an alphabetical list and description of the fields that exist for the MI MOC Checklist family and appear on the MI MOC Checklist datasheet. The information in the table reflects the baseline state and behavior of these fields. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Checklist ID CharacterThe identification for the Checklist.
+ This field is automatically populated with a unique value.
+Description CharacterThe description of the Checklist.This field is populated with the value in the Description field of the MI MOC Checklist record whose copy is being created.Is Admin Setting BooleanIndicates whether the Checklist represents a record created in the Application Setting.
+This field does not appear on the datasheet.
+This field is True if you create the record using the Application Settings for MOC. 
+This field is False if GE Digital APM automatically created the record as a copy of the Checklist that you created.
+
+MI MOC Checklist Question Records
+MI MOC Checklist Question records store information about the Checklist Questions that are associated with a Checklist of a Change Project. When you add a Checklist to a Change Project, MI MOC Checklist Question records are created automatically by copying the Checklist Question records that you created in the application Settings for MOC. This topic provides an alphabetical list and description of the fields that exist for the MI MOC Checklist Question family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Checklist Question ID CharacterThe identification for the Checklist Question.
+ This field is automatically populated with a unique value.
+Description CharacterThe text of the Checklist Question.
+This field is populated with the value in the Description field of the MI MOC Checklist Question record whose copy is being created.
+Is Admin Setting BooleanIndicates whether the Checklist Question represents a record created in the Application Setting.
+This field does not appear on the datasheet.
+This field is True if you created the record using the Application Settings for MOC. 
+This field is False if GE Digital APM automatically created the record as a copy of the Checklist Question that you created.
+Question Text CharacterThe text for the Checklist Question.
+This field is populated with the value in the Question Text field of the MI MOC Checklist Question record whose copy is being created.
+
+MI MOC Answer Option Records
+MI MOC Answer Option records store information about an Answer Option for a Question and the corresponding Exception that must be created for the Answer Option. When MI MOC Checklist Question records are created by copying the Checklist Question records that you created in the Application Settings for MOC for the Checklist, the associated Answer Option records are also copied. This topic provides an alphabetical list and description of the fields that exist for the MI MOC Answer Option family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Answer CharacterIdentifies the response that triggers an Exception.
+This field is populated with the value in the Answer field of the MI MOC Answer Option record whose copy is being created.
+Exception ID CharacterThe identification of the Exception that will be triggered on selection of the response indicated in the Answer field.
+This field is populated with the value in the Exception ID field of the MI MOC Answer Option record whose copy is being created.
+Exception Key NumericThe Entity Key of the Exception indicated in the Exception ID field.
+This field is populated with the value in the Exception Key field of the MI MOC Answer Option record whose copy is being created.
+This field does not appear on the datasheet. 
+Is Admin Setting BooleanIndicates whether the Answer Option represents a record created in the Application Setting.
+This field does not appear on the datasheet.
+This field is True if you created the record using the Application Settings for MOC. 
+This field is False if GE Digital APM automatically created the record as a copy of the Answer Option that you created.
+
+MI MOC Exception Records
+MI MOC Exception records store information about the Exceptions. For a Checklist added to the Change Project, when the selected Answer Option for a Question is associated with an Exception, a copy of the Exceptions created in MOC Application Settings is created. This topic provides an alphabetical list and description of the fields that exist for the MI MOC Exception family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Description CharacterContains a description about the Exception.This field is populated with the value in the Description field of the MI MOC Exception record whose copy is being created.Exception ID CharacterThe identification of the Exception.
+ This field is automatically populated with a unique value.
+Exception Type CharacterThe type of Exception.This field is populated with the value in the Exception Type field of the MI MOC Exception record whose copy is being created.Is Admin Setting BooleanIndicates whether the Exception represents a record created in the Application Setting.
+This field does not appear on the datasheet.
+This field is True if you created the record using the Application Settings for Management of Change. 
+This field is False if GE Digital APM automatically created the record as a copy of the Exception that you created.
+Status CharacterIndicates the status of the exception.
+This field appears as a list that is populated by the MI_EXCEPTIONS_STATE System Code Table. 
+
+Operations Task Records
+Operations Task records store information about the tasks that are associated with Exceptions in a Change Project. This topic provides an alphabetical list and description of the fields that exist for the Operations Task family. The information in the table reflects the baseline state and behavior of the fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Asset ID CharacterThe identification of the Asset to which the task is associated. You can search and select an asset to associate with the task.Desired Interval NumericA number indicating how often the task should be performed. 
+By default, this field contains the value 0.
+You must enter a value between the Min Interval and Max Interval values. 
+The value in this field is used in calculating the value in the Next Date field.
+Desired Interval UOM CharacterThe unit of measurement for the value in the Desired Interval field.
+This field contains a list of the following values:
+Days (DAYS)Months (MON)Weeks (WEEKS)Years (YEARS)
+By default, the value Months (MON) is selected.
+The units that you select for the desired interval are also applicable to the Max Interval UOM and Min Interval UOM fields.
+Last Date DateDate on which the task is completed.
+By default, this field contains the date on which the task was created. You can, however, modify the date.
+The date that you select in this field is used in determining the values in the Next Date, Min Date, and Max Date fields.
+Max Date DateThe date by which the task must be performed. You can compare this date with the current date to determine by the overdue period for the task. 
+This field is disabled and populated automatically with a value calculated as follows:
+Max Date = Last Date + Max Interval 
+Max Interval Numeric
+The maximum interval to perform the task.
+
+If the value in this field is 0, and you entered a value in the Desired Interval field, this field is automatically populated with the value in the Desired Interval field.
+If the value you enter in this field is lesser than the value in the Desired Interval field, an error message appears, indicating that the maximum interval must be greater than the desired interval.
+Max Interval UOM CharacterThe unit of measurement for the value in the Max Interval field.This field is disabled and populated automatically with the value in the Desired Interval UOM field.Min Date DateThe earliest date by which you must perform the task next time.
+ This field is disabled and populated automatically with a value calculated as follows:
+Min Date = Last Date + Min Interval 
+Min Interval Numeric
+The minimum interval to perform the task next time.
+
+By default, this field contains the value 0.
+You must enter a value lesser than the value in the Max Interval field.
+Min Interval UOM CharacterThe unit of measurement for the value in the Min Interval field.This field is disabled and populated automatically with the value in the Desired Interval UOM field.Next Date Date
+The date when you must perform the task next time.
+
+This field is disabled and calculated as follows:
+Next Date = Last Date + Desired Interval 
+Reoccurring BooleanIndicates whether the task is recurring.
+This field contains a check box. 
+If the task is a recurring task, select the check box.
+If the task is a not a recurring task, clear the check box.
+
+By default, this field is selected.
+Task Assigned To CharacterThe team member to whom the task has been assigned.This field contains a list of Security Users who belong to the Security Group MI MOC User or the Security Role MI Safety User.Task Description CharacterA description for the task.You can enter a value manually.Task Details CharacterThe details of the task.You can enter a value manually.Task ID CharacterThe identification of the task.This field is required. You must enter a unique value in this field. Task State CharacterThe state associated with the task. 
+This field is disabled and is automatically populated with the current state of the task.
+Task Type CharacterIndicates the type of task.
+This field contains a list of values defined in the Task Types records.
+
+
+
+
+
+
+On this pageMI MOC Change Project RecordsMI MOC Checklist RecordsMI MOC Checklist Question RecordsMI MOC Answer Option RecordsMI MOC Exception RecordsOperations Task Records
+
+
+
+
+
+
+
+
+

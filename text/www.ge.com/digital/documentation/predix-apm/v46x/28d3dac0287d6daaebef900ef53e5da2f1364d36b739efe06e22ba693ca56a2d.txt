@@ -1,0 +1,86 @@
+
+
+
+Family Reports | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Family ManagementRules
+Overview
+Entity and Relationship Families
+Fields
+Datasheets
+Offline Forms
+Family Reports
+Relationship Definition
+State Configuration
+Associated Pages
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Family Management
+Family Reports
+
+
+
+
+
+
+
+Family ReportsAbout Associating Reports with FamiliesEach entity family can be associated with one or more reports, which will be available for selection when a user chooses to print a record in that family in the Record Manager. The main benefit of using family reports is the ability to display the record in a customized layout that is designed using a report.Note: Before you can associate reports with families in your database, you must first create the reports, any necessary queries and save them in the Catalog.While any report can be associated with a family, the intent is for administrative users to build reports based upon queries that contain an entity key prompt. When you open a record in the Record Manager, the entity key from the current record will be passed in to the query prompt, thereby limiting the report content to that of the current record.Access the Family Report SectionAbout This TaskYou can view the reports that are associated with a family on the Family Report page.ProcedureAccess the Family Management Page.In the left pane, select Entity.The associated family list appears.Select the family to which you want to add a new report.The workspace for the selected family appears, displaying the available tabs. By default, the Information section appears.At the top of the workspace, select Family Reports.The Family Reports section appears. On the Family Reports section, you can associate a family with a report or delete family reports.Associate Reports with a FamilyBefore You Begin
+Make sure that the report that you want to associate with the family exists in the Catalog folder.
+Procedure
+Access the Family Report section.In the Family Reports section, select  .The Select Report to Link window appears, where you can search for the report and associate the report to a family.Specify the criteria to search for the report that you want to associate with the family:In the Search for items named box, enter the name of the report that you want to associate with the family.In the In folders(s) box, select .The Catalog Folder Browser window appears.Navigate to the folder that contains the report, select the folder, and then select Done.The path of the folder appears in the In folder(s) box.In the Of type box, select the type of the report that you want to associate. If you want to search for the report in the sub folders, select Include sub folders.Select Search.A list of the reports based on the search criteria appears in the Results section.Select the report that you want to associate with the family, and then select Open.The selected report appears in the Family Reports section.Select .The report is associated with the family. If required, you can mark the report as default for the family.Note:
+The first report that you associate with the family becomes the default report for the family.If there are multiple reports in the Family Reports section, the latest report appears first in the list of associated reports.
+Designate a Report as the Default ReportAbout This TaskWhen a report is set as the default report for a family, that report will be selected automatically to print a record in the Record Manager. If required, you can change the selection.Procedure
+Access the Family Reports section.In the row that contains the report, select the family report and then select the  button appearing next to the Default box. The selected report becomes the default report for that family.Remove the Reports Linked to a FamilyAbout This TaskRemoving a report removes the association between the report and the family. It does not delete the report from the Catalog folder. When a report is associated with a family, it cannot be deleted from the Catalog. If you want to delete a report from the Catalog folder, you must first remove the report from the family.Procedure
+Access the Family Report section.From the list of reports, select the report that you want to delete and select .A confirmation dialog box appears, asking if you really want to remove the associated report.Select OK.The report is no longer associated with the family and is removed from the list of family reports.
+
+
+
+
+On this pageAbout Associating Reports with FamiliesAccess the Family Report SectionAssociate Reports with a FamilyDesignate a Report as the Default ReportRemove the Reports Linked to a Family
+
+
+
+
+
+
+
+
+

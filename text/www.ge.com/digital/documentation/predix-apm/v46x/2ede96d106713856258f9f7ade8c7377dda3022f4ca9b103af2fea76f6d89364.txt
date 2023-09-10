@@ -1,0 +1,305 @@
+
+
+
+Automation Rules | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation RulesAutomation Rules: Overview
+Automation Rules: Workflow
+Automation Rules
+
+
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Automation Rules
+Automation Rules
+
+
+
+
+
+
+
+Automation RulesAbout Automation RulesReliability Distribution and Reliability Growth Analyses can be generated interactively or through Reliability Automation Rules. These rules can generate multiple Reliability Analyses for an entire hierarchy of equipment and locations that have related events or for a list of equipment that are returned by a query.Using Reliability Automation Rules, you can analyze an entire family or elements of several families in a single step. Based on the parameters that you define for the automation rule query, the system will automatically generate the analysis calculations and generate the appropriate reliability analyses. The calculations can be based on an entire selected family, or on the results of a query, which could contain members of multiple families. Note: To generate a Reliability Analysis, equipment and location families and failure data for the equipment and location must already be defined in the database.About Creating Queries for Use with the Automation Rule BuilderIn the Reliability Automation Rule Builder window, you can select an existing query to provide the data on which auto-generated Reliability Analyses will be built for a query-based Automation Rule. Before you can use the Reliability Automation Rule Builder window, one or more appropriate queries must be defined.Note: After these queries have been created and used to build rules, they should not be deleted. Without the queries, the Automation Rules that are based on them cannot update the analyses that they generated.Details
+Automation Rule queries must contain:
+
+All of the fields needed for mapping to the selected analysis type (Reliability Distribution, Reliability Growth). For all analysis types, the following fields should be selected:
+Asset ID (required).Asset Installation Date (optional).Failure Date (required).Downtime (optional).
+The fields that will be used for grouping populations of events (including system fields such as Family ID and Family Key and the entity family caption)Filtering criteria.
+Note: Filtering is disabled in the Reliability Automation Rule Builder if a query is used to build analyses.
+We recommend that you use a query that contains the metadata information in the Asset ID and Failure Date fields (which are required fields) and that these two fields are defined in two separate entity families. This precludes the use of Group By queries, complex (non metadata-based) queries in the SQL Editor, and system fields or calculated fields for Asset ID and Failure Date information.
+The master query cannot contain parameters. The master query should be stored in a public directory in the Catalog and must not be deleted. We recommend that you store this query in the GE Digital APM Catalog in the following folder: \\Public\Meridium\Modules\ReliabilityManager.
+If you require additional fields for mapping or population grouping in the Reliability Automation Rule, you must change the master query. The master query should be accessible to members of the MI Reliability Administrators Security Group who will be working with Reliability Automation Rules. When the Reliability Automation Rule is executed to generate the analyses, sub-queries will be created using the master query as the source. If the master query is deleted, the sub-queries will cease to operate.
+Access an Automation RuleProcedure
+Access the RA Overview page. Select the Automation Rules tab.
+A list of Reliability Automation Rules available in the database appears.
+
+
+
+In the list, select the hyperlink of a Reliability Automation Rule that you want to view.
+The Automation page appears, displaying the following tabs:
+
+
+Definition: Contains a description of the criteria that identifies the rule, including the type of analysis that will be generated from the rule. 
+If the rule is based on a query, the Rule Basis field will read Query and the Query field that specifies the related query the rule uses. 
+If the rule is based on Asset-Event data structure, the name of the family for Family-based events (i.e. Rule Basis, Asset Family, Event Family, and the relationship between the Asset and Event families) will be displayed in this section. If filters or groupings have been applied to the rule, they will also be included in this section. 
+
+Rule Information
+: Contains a list of analyses that will be generated when you run the rule. This tab is selected by default. The following columns provide details on each of the analyses:
+Analysis Name: Contains the list of analyses. You can select the name of the desired analysis.
+Number of Assets: Contains the number of assets included in the analysis.
+Number of Failure Events: Contains the number of Failure events for the specified Asset.
+A Reliability Analysis will be created for each potential analysis listed that contains a minimum of two failure events the next time the automated rule is executed. You can select any link in the list to view a preview of the data that will be included in that analysis.
+
+For Reliability Automation Rules based on an Asset-Event data structure, the name of the analysis is populated automatically by the GE Digital APM system based on the name of the Asset family that you selected on the Choose an Asset Family builder screen.
+
+If you made no selections on the Select Population Grouping screen, the GE Digital APM system will use only the Asset family name as the name of the analysis.
+If you make Group By selections on the Select Population Grouping screen, the GE Digital APM system will append the name of each member of the selected population group(s) on this screen to the name of the analysis. For example, suppose that Equipment is the name of the selected equipment/location family. If you selected the Manufacturer field for population grouping, the name of each manufacturer is listed next to the Equipment family name.
+
+
+For Reliability Automation Rules based on a query, the name of the analysis is populated automatically using values that correspond to the fields you selected on the Select Population Grouping screen. If you did not select any groupings, the new analysis will be named New Analysis.
+
+
+Create an Automation Rule Based on a QueryBefore You Begin
+To create a Reliability Automation Rule based on a query, the query must exist in the Catalog.
+Procedure
+Access the RA Overview page. In the upper-right corner of the page, select New Analysis, and then select Automation Rule.
+The Reliability Automation Rule Builder window appears, displaying the Welcome screen.
+
+
+
+Select Next. 
+The Select Analysis Type screen appears. You can use this screen to determine whether the rule will be created for a Reliability Distribution Analysis or a Reliability Growth Analysis. 
+
+
+
+If you want to create an Automation Rule for a Reliability Distribution Analysis, accept the default selection, and then select Next. 
+-or-
+If you want to create an Automation Rule for a Reliability Growth Analysis, select Reliability Growth Analysis, and then select Next.
+The Define New Rule screen appears.
+
+
+
+Enter values in the Rule Name and Rule Description boxes for the new rule, and then select Next. The Rule Name is a required field.
+The Select Data Source Type screen appears. The Use Query to provide data on top of which all analyses will be built option is selected automatically.
+
+
+
+Select Next. 
+The Select Query screen appears.
+
+
+
+Select Browse to search for an existing query in the GE Digital APM Catalog. 
+The Select a query from the catalog window appears. 
+Select the needed query, and then select Open. 
+The complete path to the query or dataset is displayed in the Query box. The fields that exist for the selected query appear in the Available Fields list.
+
+
+
+In the Includes Data From the Following Sites list, select the site(s) whose data from which you want to create an analysis.
+If you are creating an analysis in a database that has only one site stored in the Site Reference family, then the Includes Data From the Following Sites list will not appear on the Select Query screen.Select Next.
+The Identify the Fields that are Necessary for the Analysis screen appears. 
+
+
+
+As needed, specify values in the following fields:
+In the Asset ID list, select the name of the field in the query that contains the Asset ID. This is a required field and must be a character field.In the Asset Installation Date list, select the field in the query that contains the date when the piece of equipment was installed. This is an optional field.In the Failure Date list, select the field from your query that contains the date when the piece of equipment or location failed. This is a required field.In the Downtime list, select the field from your query that contains the downtime. The downtime is the amount of time that a piece of equipment or location is not available for any reason. This is an optional field.
+Select Next.
+The Select Population Grouping screen appears.
+
+
+
+Select the check box(es) next to the fields that will allow you to create populations of events for analyses. 
+Note: You are not required to select any population grouping(s). If you select a population grouping, the data will be filtered by that population into different groups. For example, if you select the Asset ID field to be a population field, a potential analysis will be generated on the Automation Rule Information page for every piece of equipment and location. The fields listed on the Select Population Grouping screen consist of fields from the equipment/location family, relationship family, and event family selected in the query.
+Select Finish.
+The new Reliability Automation Rule is created. The Automation page appears, displaying the Definition and Rule Information tabs. The Rule Information tab is selected by default, displaying a list of analyses that will be generated when the rule is executed.
+Note: Based on the selections that you choose in the Reliability Automation Rule Builder window, a query is generated for an analysis. If you want to access the query containing the failure data for the analysis that will be generated when the Reliability Automation Rule is executed, in the Rule Information section, in the Analysis Name column, select the name of the desired analysis. The View Query and Failure Data window appears. The Analysis Failure Data Query section displays the query that is being used to retrieve the failure data for the selected analysis. The grid displays the result set of the query based on the mapping fields you selected in the Reliability Automation Rule Builder window. You cannot edit the fields listed in the query results.
+Create an Automation Rule Based on Asset-Event Data StructureAbout This Task
+This topic describes how to create an Automation Rule based on Asset-Event Data structure. You can also create an Automation Rule Based on a Query. 
+Procedure
+Access the RA Overview page.In the upper-right corner of the page, select New Analysis, and then select Automation Rule.
+The Reliability Automation Rule Builder window appears, displaying a welcome screen.
+
+
+
+Select Next. 
+The Select Analysis Type screen appears. You can use this screen to determine whether the rule will be created for a Reliability Distribution Analysis or a Reliability Growth Analysis. 
+
+
+
+If you want to create an Automation Rule for a Reliability Distribution Analysis, accept the default selection, and then select Next. 
+-or-
+If you want to create an Automation Rule for a Reliability Growth Analysis, select Reliability Growth Analysis, and then select Next.
+The Define New Rule screen appears.
+
+
+
+Enter values in the Rule Name and Rule Description boxes for the new rule, and then select Next. This field is required.
+The Select Data Source Type screen appears. 
+
+
+
+Select the Select entity families that will form an Asset-Event data structure check box, and then select Next. 
+The Choose an Asset Family screen appears. 
+
+
+
+In the Select Asset Family list, select the desired family. Alternatively, you can select 
+Determine the level at which to perform the analysis by selecting one of the following options, and then select Next:
+If you want to generate an analysis only for the selected family, accept the default selection, Generate analyses for selected family.
+If you want to include all of the subfamilies of the selected family in the analysis, select the Generate analyses for selected family and all of its sub-families option. If you choose to include subfamilies, the Generate analyses only for the sub-families located at the bottom of the selected hierarchy check box below this option will become enabled. Select the check box if you want to generate analyses only for the subfamilies that are located at the bottom of the hierarchy for the selected family.
+Note: If you select this option and then choose to add filters or grouping to the Reliability Automation Rule later in the builder, you must select the appropriate filters or grouping to ensure that the data is grouped or filtered correctly. This will result in analyses based on data that matches the desired criteria. If you are not able to get correct results, you may need to create automation rules individually for families at the bottom of a family hierarchy.
+The Choose Relationship and Event Family screen appears.
+
+
+
+
+As necessary, specify values in the following fields, and then select Next:
+In the Select Relationship Family list, select the relationship family that identifies the relationship that should exist between the family that you selected on the previous screen and the Event family that you will select on this screen.In the Select Event Family list, select the desired family. If you want to include assets that do not include event data in the analysis, select the Include assets even if they do not include event data check box. The Select Event Family list is disabled until you select a relationship family in the Select Relationship Family list.
+In the Includes Data From the Following Sites list, select the site(s) whose data from which you want to create an analysis.
+If you are creating an analysis in a database that has only one site stored in the Site Reference family, then the Includes Data From the Following Sites list will not appear on the Select Query screen.
+
+The Identify the Fields that are Necessary for the Analysis screen appears.
+
+
+
+As necessary, specify values in the following fields, and then select Next:
+In the Asset ID list, select the name of the field from your query that contains the Asset ID. This is a required field and must be a character field.
+In the Asset Installation Date list, select the field from your query that contains the date when the piece of equipment was installed. This is an optional field.
+Note: Mean Time Between Failures (MTBF) can be calculated based on different dates only. If installation date is not listed or is not known, the analysis can only count the time between the first failure and any subsequent failures. In such cases, the time between the analysis start and the first failure will be automatically censored.
+In the Failure Date list, select the field from your query that contains the date when the piece of equipment or location failed. This is a required field.In the Downtime list, select the field from your query that contains the downtime. The downtime is the amount of time that a piece of equipment or location is not available for any reason. This field is required only if you need to calculate the TTF values.
+The Apply any Desired Filters screen appears.
+
+
+
+In the Define Filters list, select a field.In the Condition list, select one of the field condition operators. The field conditions that you can select are the same as those that are available in the Advanced search. The list of operators will change depending on the type of field that you select (i.e., numeric, character, date, or logical).In the Value box, enter the value that should meet the condition specified in the previous step. When entering dates or a number in this field, insert single quotes around the value.Select Add Filter. 
+The filter criteria appears in the Define Filters box.
+Tip: You can apply multiple filters by repeating step 10 to 14. After specifying new filter criteria, you must select Add Filter each time.
+In the Match section, select either All Conditions or Any Conditions to apply to the filter results, and then select Next.
+The Select Population Grouping screen appears.
+Select Next.
+The Select Population Grouping screen appears. 
+
+
+
+Select the check box(es) next to the fields that will allow you to create populations of events for analyses. 
+Note: You do not need to select any population grouping(s). If you select a population grouping, the data will be sorted into groups by that population. For example, if you select the Asset ID field to be a population grouping field, a potential analysis will be displayed in the Rule Information section for every piece of equipment. The fields listed on the Select Population Grouping screen consist of fields from the equipment family, relationship family, and event family selected in the query.
+Select Finish.
+The new Reliability Automation Rule is created. The Automation page appears, displaying the Definition and Rule Information tabs. The Rule Information tab is selected by default. This section displays a list of analyses that will be generated when the rule is executed.
+Note: Based on the selections that you choose in the Reliability Automation Rule Builder, a query is generated for analysis. If you want to access the query containing the failure data for the analysis that will be generated when the Reliability Automation Rule is executed, in the Rule Information section, in the Analysis Name column, select the name of the desired analysis. The View Query and Failure Data window appears. The Analysis Failure Data Query section displays the query that is being used to retrieve the failure data for the selected analysis. The grid displays the result set of the query based on the mapping fields you selected in the Reliability Automation Rule Builder. You cannot edit the fields listed in the query results.
+Modify an Automation RuleProcedure
+Access an Automation Rule that you want to modify. In the Rule Information section, in the upper-left corner, select .
+The Reliability Automation Rule Builder window appears, displaying a welcome message.
+
+
+
+Proceed through the Reliability Automation Rule Builder window to modify the details of the Automation Rule.
+The Reliability Automation Rule is updated.
+Merge AnalysesAbout This Task
+If two or more analyses share similar characteristics, you may find it useful to merge them and produce one analysis instead of separate analyses. Also, if an analysis does not have the minimum number of failure events required to create an analysis, you can merge it with another analysis.
+Procedure
+Access an Automation Rule for which you want to merge the analyses.In the Rule Information section, select check box to the left of at least two analyses that you want to merge.In the upper-right corner of the section, select . 
+The Merge Analysis Grouping Fields window appears.
+
+
+
+In the Grouping Name section, select a grouping for the analyses.
+The fields related to the selected grouping appear in the Grouping Value section.
+
+
+
+In the Grouping Value section, select a field to act as a reference field. The field(s) that you do not select are the alternate field(s).Select OK.
+The reference field now contains the values for the alternate field(s), and one analysis will be generated based on the reference field when the rule is executed. The system updates the list of analyses in the Rule Information section.
+Unmerge AnalysesProcedure
+Access an Automation Rule for which you want to unmerge analyses.In the Rule Information section, select the check box to the left of a merged analysis.In the upper-right corner of the section, select .
+The Unmerge Analyses window appears, displaying the list of existing merge conditions.
+Select the desired merge condition(s), and then select OK.
+The merge conditions are deleted, and the updated list of analyses appears in the Rule Information section. The separate analyses appear in the list.
+Execute an Automation RuleAbout This Task
+When a rule is executed, only the potential analyses that contain the minimum number of failure points for an analysis will be created or updated. The following number of failure points is required for each analysis that can be created from a Reliability Automation Rule.
+Reliability Growth Analysis: 3 failure pointsReliability Distribution Analysis: 2 failure points
+If the potential analysis does not contain the corresponding number of failures or more, when the rule is executed, the analysis will not be created.
+Note: Before you use a rule to create an analysis, you should review the data required for the type of analysis you are creating. If you use invalid data, the analysis will still be created, but the results will not be valid.
+Procedure
+Access an Automation Rule that you want to execute.On the Automation page, in the upper-right corner, select Execute Rule.
+The status of the rule execution appears below the Execute Rule button, indicating the progress of execution in percentage.
+Note: You can select  to view the details of the execution. When you select , the 
+GE Digital APM
+ page appears in a new tab, displaying the In Progress, Successful, and Failed tabs. The number on each tab indicates the number of executions in the corresponding state. 
+The system executes the rule(s) and generates the resulting analyses.
+Tip: At the bottom of the page, you can view the Information related to the selected Automation Rule. 
+Delete an Automation RuleProcedure
+Access the RA Overview page.Select the Automation Rule tab.
+A list of Reliability Automation Rules available in the database appears.
+
+
+
+Select the check box in the row for each the Automation Rule that you want to delete, and then select . 
+The Delete Reliability Automation Rule dialog box appears, asking you to confirm that you want to delete the selected Rules and all of the analyses created by the Rules.
+Select Yes.
+The selected Automation Rules and all of the analyses created by the Rules are deleted. 
+
+
+
+
+
+On this pageAbout Automation RulesAbout Creating Queries for Use with the Automation Rule BuilderAccess an Automation RuleCreate an Automation Rule Based on a QueryCreate an Automation Rule Based on Asset-Event Data StructureModify an Automation RuleMerge AnalysesUnmerge AnalysesExecute an Automation RuleDelete an Automation Rule
+
+
+
+
+
+
+
+
+

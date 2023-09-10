@@ -1,0 +1,141 @@
+
+
+
+Companies | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+AdminAccess the GAA Administrator Page
+GAA Administrator Workflow
+System Codes
+Event Categories
+Event Types
+Cause Codes
+Amplification Codes
+Fuel Types
+Mapping Records
+Event Transitions
+Companies
+Plants
+Units
+Unit Capacity
+Performance Record and Report Configuration
+
+
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Admin
+Companies
+
+
+
+
+
+
+
+CompaniesAbout GAA Company, Plant, and UnitBefore you can begin creating Primary Events, Contributing Events, or Performance records, the following records must exist in your database:
+
+GAA Company:
+ Represents the highest level of organization within your business: the company under which plants and units operate. In general, a GAA Company represents a company that owns the plants and units for which generation data and fuel consumption data will be collected. You must define GAA Company, GAA Plant, and GAA Unit before you can start recording event data. GAA Company is stored in a GAA Company record. You will need to add a GAA Company whenever you want to record data about any company that has not yet been identified within your system. Each GAA Company, however, can be associated with only one functional location and vice versa.
+
+GAA Plant:
+ Represents a plant in which generation units reside. GAA Plants can store information about the plant itself and the company that owns the plant. In addition, GAA Plants determine whether or not Primary Event and Contributing Events associated with those GAA Plants will account for Daylight Saving Time. GAA Plants are linked to GAA Companies and should be created after GAA Company have been created but before you create GAA Units. You will need to add a GAA Plant whenever you want to record data about any plant that has not yet been identified within your system. Each GAA Plant, however, can be associated with only one functional location and vice versa.
+
+GAA Unit:
+ Represents a unit that generates power. A GAA Unit can store information about a unit's power-generation capabilities and the fuel that the unit consumes. Before you can create GAA Units, you must create the GAA Plants to which they will be linked. You will need to add a GAA Unit whenever you want to record data about any unit that has not yet been identified within your system. Each GAA Unit, however, can be associated with only one functional location and vice versa.Access a GAA CompanyProcedure
+Access the GAA Administrator page.In the left pane, select the GAA Company that you want to access. 
+The datasheet for the selected GAA Company appears in the workspace. A list of GAA Plants associated with the selected GAA Company appears in the left pane. 
+
+
+Note: As needed, you can modify the values in the available fields, and then select  to save your changes.
+Add a GAA CompanyAbout This Task
+GAA Company represents the highest level of organization within your business and represents the root level of the GAA business hierarchy. Before you can begin adding GAA Plants and GAA Units, you must first add GAA Companies.
+Procedure
+Access the GAA Administrator page.In the left pane, select .
+A blank datasheet for GAA Company appears in the workspace.
+In the Asset ID cell, select .
+The Asset Finder window appears.
+Select the Functional Location to which you want to associate the GAA Company, and then select Done. 
+The selected Functional Location appears in the Asset ID box as a link. You can select the link to access the details of the Functional Location. 
+As needed, enter values in the available fields.In the upper-right corner of the workspace, select Site:.
+Note: A user can be assigned to multiple sites. By default, the user's default site appears.
+Select the site to which you want to assign the GAA Company.
+Note: If the GAA Company is assigned to the default site, then it can be accessed only by users who have been assigned to the same site. The site selector component becomes read-only after it is saved. 
+Select .
+The GAA Company is saved. 
+What To Do Next
+
+Add a GAA Plant
+
+Delete a GAA CompanyProcedure
+Access the GAA Administrator page.In the left pane, select the GAA Company that you want to delete. 
+The datasheet for the selected GAA Company appears in the workspace. A list of GAA Plants associated with the selected GAA Company appears in the left pane. 
+In the left pane, select .
+The Delete dialog box appears, asking you to confirm that you want to delete the selected GAA Company.
+Select Yes.
+The GAA Company is unlinked from the associated functional location and the associated record is deleted from the database. 
+Note: You cannot delete a GAA Company if it has an associated GAA Plant.
+
+
+
+
+
+On this pageAbout GAA Company, Plant, and UnitAccess a GAA CompanyAdd a GAA CompanyDelete a GAA Company
+
+
+
+
+
+
+
+
+

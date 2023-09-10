@@ -1,0 +1,108 @@
+
+
+
+First Quarter of 2018 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Third Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Release Notes
+First Quarter of 2018
+
+
+
+
+
+
+
+First Quarter of 2018Analysis Release Notes for March 30, 2018Provides a list of new and updated features for this release, as well as any resolved issues, limitations, and known issues.Release Information
+Module NameAnalysisRelease DateMarch 30, 2018Documentation Build DateMarch 22, 2016
+New and Updated Features
+Ability to import asset classification based on analysis.Ability to export asset classification based on analysis.Ability to save SmartSignal charts as PNG images.Ability to export SmartSignal template data in CSV format.Ability to change the size of a SmartSignal chart.Ability to drag and drop multiple tags on to a SmartSignal card.Ability to toggle SmartSignal chart titles between tag name and tag path.Ability to view the formula of calculated tags in SmartSignal AnalyticsAbility to differentiate between external tags and calculated tags in SmartSignal AnalyticsAbility to set the permissions on Analysis templates to restrict access to Enterprises or User Groups.Ability to use user preferred display name in analysis for assets and tags.Ability to set the System of Measure and UoM for tags on a chart.Highlight Data Points across Cards.Cross Hair across Cards.Enabled Cross Hair on SmartSignal Charts.Ability to search by tag description in advanced search.Display gaps for filtered data points in charts.Cannot plot data points with bad data quality.Displays UoM to tag popover.Removed UoM restrictions on XY charts.
+Limitations
+This section provides limitation in this release.Numeric constants used in tag expressions are only supported in English format and not internationalized.
+Known Issues
+Known issues are those issues that affect this release, and may be fixed in a future release.DefectDescriptionDE67005 Zoom across charts does not work for charts that have not been loaded.
+
+
+
+
+
+On this pageAnalysis Release Notes for March 30, 2018
+
+
+
+
+
+
+
+
+

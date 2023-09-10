@@ -1,0 +1,85 @@
+
+
+
+Field Mappings | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+European Inspection ManagementOverview
+Configuration
+Workflow
+ReferenceGeneral Reference
+Data Models
+Annexure-1
+Family Field Descriptions
+Field Mappings
+Policies
+System Code Tables
+Queries
+
+
+ Admin
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+European Inspection Management
+Reference
+Field Mappings
+
+
+
+
+
+
+
+Field MappingsEuropean Technical Data and Compliance Recommendation MappingsWhen you create an Inspection Plan for an Asset that has related Asset Technical Data, following field values are mapped to the Compliance Recommendation from the Asset Technical Data family. The following table lists the Compliance Recommendations fields that are populated automatically from these sources.FamilyAsset Technical Data Compliance RecommendationFieldsChamberChamberCertificationCertificationApplicable RegulationApplicable RegulationThe following table lists the mappings from Compliance Recommendation to the Inspection Task. FamilyCompliance RecommendationInspection TaskFieldsCertificationCertificationApplicable RegulationApplicable RegulationInspection Task and Inspection Event MappingsWhen you generate an Inspection Report from an Inspection Task, following field values are mapped to the Inspection Event family from the Inspection Task family. The following table lists the Inspection Event fields that are populated automatically.FamilyInspection TaskInspection EventFieldsCertificationCertificationApplicable RegulationApplicable Regulation
+
+
+
+
+On this pageEuropean Technical Data and Compliance Recommendation MappingsInspection Task and Inspection Event Mappings
+
+
+
+
+
+
+
+
+

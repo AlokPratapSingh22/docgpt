@@ -1,0 +1,103 @@
+
+
+
+First Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+Release Notes
+First Quarter of 2021
+
+
+
+
+
+
+
+First Quarter of 2021Release Date: March 26, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New FeaturesThe following enhancements and new features have been added.DescriptionTracking ID You can now unlink one or more Proof Test Task from Instrumented Functions and Logic Solvers. To facilitate this enhancement, the Unlink button is added to the Proof Test Tasks section in the Instrumented Function and Logic Solver workspaces.DE153711
+Table 2. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, when you ran the SRS Upgrade Utility as part of the GE Digital APM database upgrade activity, the system ran out of memory when fetching analysis records from the GE Digital APM database. This issue has been resolved. Additional logging and error checks have been added.DE154276Previously, when you tried to link a Sensor, Final Element, Sensor Group, Final Element Group, Sensor System, Final Element System, or a Logic Solver in a Protective Instrument Loop, an error occurred. Also, the success or failure message did not appear after the operation. This issue has been resolved.DE154271Previously, when you added an existing proof test task for a record, an error occurred and the proof test task list in the Proof Test Tasks section did not get refreshed. This issue has been resolved. DE153705 Previously, when importing an .exp file, if a custom device was present in the Protective Instrument Loop, an error occurred in the calculation of the loop. This issue has been resolved.DE153291
+Release Date: January 8, 2021This topic provides a list of product changes released for this module on this date.
+Table 3. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, when you ran SIL Assessment Upgrade Utility as part of the database upgrade activity, the following issues occurred:The system ran out of memory when clearing the values in the Loop Diagram column in the Protective Instrument Loop table.Record creation failed when processing external SIL Assessments.Additional parsing errors appeared in the log.These issues have been resolved. Additional logging and error checks have been added.DE146764
+
+
+
+
+
+On this pageRelease Date: March 26, 2021Release Date: January 8, 2021
+
+
+
+
+
+
+
+
+

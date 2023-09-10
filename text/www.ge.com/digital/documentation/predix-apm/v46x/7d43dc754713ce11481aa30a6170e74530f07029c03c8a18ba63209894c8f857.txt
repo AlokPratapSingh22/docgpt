@@ -1,0 +1,73 @@
+
+
+
+Manage System Codes | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+System Codes and TablesOverview
+Manage System Code Tables
+Manage System Codes
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+System Codes and Tables
+Manage System Codes
+
+
+
+
+
+
+
+Manage System CodesAbout System CodesSystem Codes are codes that are defined in a System Code Table. Each table can have an unlimited number of System Codes defined in it. You can manage the codes associated with a System Code Table via the System Codes and Tables page. When you select a table from the System Tables section, it displays table name along with the audit information, i.e., the last modified date and the last modified by in the Last Modified On section. In case of a System Code, when you select , the window with System Code name appears, displaying the audit information. On the Create System Code window, this information will not appear as no audit information exists for a new system code.Add System Codes to a TableProcedureAccess the System Codes and Tables Page.From the System Tables section, select the System Code Table for which you want to add System Codes.The details of the table appears.In the System Code subsection, select .The Create System Code window appears.In the ID box, provide ID for the System Code.The ID must be unique and must not 50 characters in length.In the Description box, provide a description for the System Code.The description must not exceed 255 characters in length.Select one of the option: Default: Select the check box if you want this System Code to be the default code for the current System Code Table.Active: Select the check box if you want System Code to be active.Select Save to save the new System Code that you have created.The new System Code is added and appears in the System Code subsection.Add References to the System CodeProcedureAccess the System Codes and Tables page.In the System Tables section, select the System Code Table that contains the System Code to which you want to add a reference.The properties of the table appears.In the System Code subsection, select the System Code for which you want to add a reference.The References subsection appears.In the References subsection, select .The Add System Code as Reference window appears, displaying the list of references.Select the references that you want to add.Select Add.The references that you have selected are added and appear in the list of references for the System Code in the References subsection.Modify the System Code PropertiesProcedureAccess the System Codes and Tables page.In the System Tables section, select the System Code Table for which you want to modify the System Codes.The properties of the table appear.In the System Code subsection, select the System Code that you want to view or modify.Select .A window appears, displaying the details of the System Code.Modify the System Code properties as required.Select Save.Your changes are saved.Change the Sequence Order of the System CodesAbout This TaskWhen you create a System Code, a sequence number is assigned for that code. This sequence number defines the order of that System Code relative to other codes in the same System Code Table. You can modify the sequence order of the System Codes within a given System Code Table.ProcedureAccess the System Codes and Tables page.In the System Tables section, select the System Code Table that contains the System Codes for which you want to change the sequence.The properties of the table appear.In the System Code subsection, select Change Sequence.The Sequence Change window appears, displaying the list of System Codes.Modify the order of the System Code by using one of the following methods:Select the Ascending option to sort the System Codes in ascending alphanumeric order.Select the Descending option to sort the System Codes in descending alphanumeric order.Select any System Code in the list, and then select  or  to modify the sequence order of the System Codes.After arranging the System Codes in the required order, select Save.Your changes are saved, and the System Code section is updated to reflect the new sequence order for the System Code.Delete System Codes From a TableProcedureAccess the System Codes and Tables page.In the System Tables section, select the System Code Table for which you want to delete the System Code.The Table Properties section appears.In the System Code subsection, select the code that you want to delete. Select .The System Codes and Tables dialog box appears, asking if you want to delete the selected System Code.Select Yes.A confirmation message appears indicating that the System Code has been deleted.Delete System Code ReferencesProcedureAccess the System Codes and Tables page.In the System Tables section, select the System Code Table for which you want to delete the System Code reference.The properties of the table appear.In the System Code subsection, select the code that contains the reference that you want to delete.The references for that System Code appears in the References section.Select the reference that you want to delete, and then select .The System Codes and Tables dialog box appears, asking if you want to delete the selected System Code reference.Select Yes.A confirmation message appears, indicating that the reference has been deleted.
+
+
+
+
+On this pageAbout System CodesAdd System Codes to a TableAdd References to the System CodeModify the System Code PropertiesChange the Sequence Order of the System CodesDelete System Codes From a TableDelete System Code References
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,76 @@
+
+
+
+Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+GraphsOverview
+Workflow
+Graphs
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Graphs
+Workflow
+
+
+
+
+
+
+
+WorkflowCore Analysis: Graph Analysis WorkflowCore Analysis processes leverage GE Digital APM data to identify opportunities for business improvement. When the process identifies such an opportunity, a Performance Recommendation is raised to communicate the need and track the required work. You can use the Graph Analysis Workflow process to identify opportunities or needs for improvement based on generated graphs that identify bad actors or high-impact failures.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Start Persona: AnalystTo satisfy a specific business problem, a GE Digital APM User initiates a core analysis that applies standard data analysis techniques.Design a Graph Persona: AnalystTo satisfy a specific business need, design a graph to display specific data from GE Digital APM entities. Graph design is based on predefined query designs.Run the Graph Persona: AnalystExecute the graph to produce results, and modify the graph design to achieve the desired result.Review Graph Results Persona: AnalystAnalyze the graph results. The graph can identify bad actors or high-impact failures for further analysis. In the analysis of graph results, consult other forms of GE Digital APM data.Opportunity Exists? Persona: AnalystIf a GE Digital APM User identifies an opportunity or need for improvement, then a Performance Recommendation is raised to communicate the need and track the required work. Otherwise, the workflow ends.Manage Performance Recommendations Persona: AnalystIf a GE Digital APM User identifies an opportunity or need for improvement, then a Performance Recommendation is raised to communicate the need and track the required work.Go to the Manage Performance Recommendations workflow.
+
+
+
+
+On this pageCore Analysis: Graph Analysis WorkflowStartDesign a GraphRun the GraphReview Graph ResultsOpportunity Exists?Manage Performance Recommendations
+
+
+
+
+
+
+
+
+

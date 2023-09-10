@@ -1,0 +1,228 @@
+
+
+
+Input Nodes | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Policy Examples
+Input Nodes
+Condition, Logic, and Calculation Nodes
+Action Nodes
+Baseline Policies
+Glossary
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Reference
+Input Nodes
+
+
+
+
+
+
+
+Input NodesAbout Input Nodes in Policies Input nodes represent various items and values that you can use as inputs to the policy logic. Primarily, Input nodes represent the records whose values are evaluated by a policy.With the exception of Query and Constant nodes, you must use policy instances to assign specific records to each Input node in a policy. For a Point Value node, you can also use policy instances to assign specific values to the node. Because Input nodes provide successor nodes with values to evaluate, the first node in a policy model must be an Input node. A Query node, however, cannot be the first node in a policy model. Input Nodes
+
+Constant
+
+Entity
+
+Health Indicator
+
+Measurement Location
+
+Point Value
+
+ Predix Time Series 
+
+ Query Alerts
+Query Time Series
+Query
+
+User
+
+Note: You must have the appropriate licenses and family-level privileges to view and use nodes that are associated with specific families. For example, to view a Measurement Location node, the Operator Rounds license must be active and you must have View permissions on the Measurement Location family. Otherwise, the button for the Measurement Location node will be disabled.
+Constant Nodes in Policy Designer
+A Constant node is an Input node that represents a specific value that does not change from instance to instance. You can use a Constant node for input values that are the same for all instances and are used in multiple places in the policy model.
+The output of a Constant node is the value that you specify in the Value section of the node's Properties window.
+Node Properties
+The Properties window for a Constant node contains the items that are described in the following table.
+ItemDescriptionNotesData Type listSpecifies the type of data that the node represents.This property is not required, but selecting a value can help catch errors and facilitate policy execution.Value boxSpecifies the value that the node represents.If the data type for the Constant node is a Data Frame, then, on the Properties window,  <DATAFRAME> appears in the Value box. You can select  to access the Edit Data Frame window, in which you can view the Data Frame or configure its input values.
+Consider the following nodes and connections.
+As shown in the following image, you can use the Properties window for the Condition node to select the A Constant node and its value, which is A. With these options selected, the Condition node evaluates whether or not the value in the Criticality Indicator field of a specified Equipment record is A.
+
+Regardless of the Equipment records specified via policy instances, the Condition node will always compare the value in the Criticality Indicator field to A.Entity Nodes in Policy Designer
+An Entity node is an Input node that represents any GE Digital APM entity family. You can use the Entity node to access information that is stored in a record belonging to any GE Digital APM entity family.
+Note: The Entity node displays only the entity families for which your GE Digital APM system has active licenses, and for which you have access permissions.
+An Entity node generates the following outputs:
+Any field in the family that the Entity node represents.The following system fields that the Entity node represents: Entity Key, Content GUID, Entity ID, and Site Key.
+Node Properties
+The Properties window for an Entity node contains the items that are described in the following table.
+ItemDescriptionNotesPrimary RecordSpecifies whether the node represents a primary record.NoneTriggerSpecifies whether changes to the record that is associated with the node will result in policy execution.NoneFamily ID listSpecifies the family that the Entity node represents.The Family ID list contains all of the GE Digital APM entity families from which you can access record information.This value is required.Important: Ensure that the family you select has not be excluded from the global search. If it has, you will not be able to assign records from that family to a policy instance.
+Entity nodes are often the starting point in policy models because they provide successor nodes with fields to evaluate. For example, consider the following nodes and connection.
+In this example, the Equipment Entity node provides the Condition node with a field, Criticality Indicator, to evaluate.Health Indicator Nodes in Policy Designer
+A Health Indicator node is an Input node that represents the Health Indicator family. You can use the Health Indicator node to access records in the Health Indicator family and information about the readings associated with a Health Indicator's source record.
+When you associate a policy instance with a Health Indicator node, you can assign an existing Health Indicator record to the node or create a new Health Indicator record without a source and assign it to the node. For Health Indicator records without sources, you can use an Add Value to Health Indicator node to create Health Indicator Value records and link them to the related Health Indicator record.
+A Health Indicator node generates the following outputs:
+Readings, which represents the collection of all readings associated with the Health Indicator's source record. This output contains a value and timestamp for each reading in the collection and can be used only with successor nodes capable of handling collections.Any field in the Health Indicator family.The following system fields in the Health Indicator family: Entity Key, Content GUID, Entity ID, and Site Key.
+Node Properties
+The Properties window for a Health Indicator node contains the items that are described in the following table.
+ItemDescriptionPrimary RecordSpecifies whether the node represents a primary record.TriggerSpecifies whether changes to the record that is associated with the node will result in policy execution.
+The following example illustrates how you can use the Health Indicator node with successor nodes to evaluate fields in a Health Indicator record and the associated collection of readings. Consider the following nodes and connections.In this example, the Health Indicator node is connected to the Average Reading Value Average node and to a Greater Than or Equal Condition node.As shown in the following image, you can use the Properties window for the Average node to select the Health Indicator node and the Reading option. When these options are selected, this node evaluates the readings that are associated with the Health Indicator record and returns the average reading value.You can also select a field from the Health Indicator family as an input for a successor node. As shown in the following image, you can use the Properties window for the Greater Than or Equal node to select the Alert Level field in the Health Indicator family. This node, therefore, evaluates whether or not the value in the Alert Level field of the corresponding Health Indicator record is greater than or equal to 1, which would indicate that the Health Indicatorrecord meets the Warning or Alert status criteria.Measurement Location Nodes in Policy Designer
+A Measurement Location node is an Input node that represents the Measurement Location family. You can use the Measurement Location node to access records in the Measurement Location family and information about related readings.
+A Measurement Location node generates the following outputs:
+Readings, which represents the collection of all measurement readings that are associated with a specified Measurement Location record. This output contains a value and timestamp for each reading in the collection and can be used only with successor nodes capable of handling collections.Any field in the Measurement Location family.The following system fields in the Measurement Location family: Entity Key, Content GUID, Entity ID, and Site Key.
+Node Properties
+The Properties window for a Measurement Location node contains the items that are described in the following table.
+ItemDescriptionPrimary RecordSpecifies whether the node represents a primary record.TriggerSpecifies whether changes to the record that is associated with the node will result in policy execution.
+The following example illustrates how you can use the Measurement Location node with successor nodes to evaluate fields in a Measurement Location record and the collection of readings associated with a Measurement Location record. Consider the following nodes and connections.In this example, the Measurement Location node is connected to a Max Calculation node and an Equal Condition node.As shown in the following image, you can use the Properties window for the Max node to select the Measurement Location node and the Readings option. When this option is selected, the Max node evaluates the readings that are associated with the Measurement Location record and returns the reading with the highest value.You can also select a field from the Measurement Location family as an input for a successor node. As shown in the following image, you can use the Properties window for the Equal node to select the ML Type field in the Measurement Location family. This node evaluates whether or not the ML Type field contains the exact value Numeric.Point Value Nodes in Policy Designer
+A Point Value node is an Input node that represents a value that you specify using a policy instance. You can use the Point Value node to represent:
+Constant values that are used more than once in a policy model but are not the same value for each policy instance.Values from fields in different families for each policy instance.
+The output of a Point Value node is the value that you specify in each policy instance.
+Node Properties
+The Properties window for a Point Value node contains the items that are described in the following table.
+ItemDescriptionNotesTrigger check boxSpecifies whether or not changes to the record that is associated with the node will result in policy execution.None.Data Type listSpecifies the type of data that the node represents.This property is not required, but selecting a value can help catch errors and facilitate policy execution.Note: The Data Frame option exists only for use by certain module workflow policies.
+Point Value nodeThe following example illustrates how you can use the Point Value node to represent values from fields in different families for each policy instance. Consider the following nodes and connection.In this example, the Point Value node Cost represents cost values of various types. This model evaluates each cost value to determine whether or not it is greater than 150.The particular record and field containing each cost value are defined by policy instances. For example, you might create two policy instances, where:One policy instance maps the Cost field from the Action family to the Cost Point Value node.The other policy instance maps the Total Cost field from the Work History family to the same Cost Point Value node.By using the Point Value node in this way, the policy can use one Input node to access values in multiple families and evaluate them against the same criteria.Predix Time Series Nodes in Policy Designer
+
+A Predix Time Series node is an Input node that represents Time Series data for an asset that uses the Predix Time Series service. You can use the Predix Time Series node to retrieve readings from the default Time Series data source.
+A Predix Time Series node generates the following outputs:
+Time stamp, which represents the time stamp value for the most recent reading.Value, which represents the most recent reading value.Quality, which represents the quality of the most recent reading. The quality of the reading is indicated by one of the values described in the following table. Numeric ValueDescription0Bad Quality1Uncertain Quality2Not Applicable3Good QualityNote: You must use the numeric value when you configure the nodes in the policy to operate on Quality values. However, in a policy output (for example, the text output from an Email Contact node), the description will be displayed. The example in this topic shows how to use the Quality value in a Collection Filter node.Collection, which represents all readings associated with the Time Series service within the specified time frame and maximum number of readings. Each reading in the collection includes time stamp, value, and quality details.Tag, which represents the ID of the Tag.
+Node Properties
+The Properties window for a Predix Time Series node contains the items described in the following table.
+ItemDescriptionNotesStart TimeSpecifies the beginning of the period within which the readings that you want to retrieve were recorded.This is not a required field. However, we recommend that you specify an appropriate value in this field to retrieve the most relevant data.End TimeSpecifies the end of the period within which the readings that you want to retrieve were recorded.This is not a required field. However, we recommend that you specify an appropriate value in this field to retrieve the most relevant data.Max ReadingsSpecifies the maximum number of readings that you want to retrieve from the Time Series data source.By default, 10000 readings are retrieved from the Time Series data source. However, as needed, you can specify any value up to the maximum number of points supported by the Time Series data source.Note: For best performance, we recommend that you specify the minimum number of readings required for the policy.Query OperationSpecifies the type of data you want to retrieve from the Time Series data source.By default, raw is selected. However, as needed, you can select interpolated, average, or sum to retrieve the required data.
+Type of DataDescriptionRawRetrieves data as it was ingested. Supported for all Time Series data sources.InterpolatedRetrieves one interpolated value for each interval within the specified time range. Supported for all Time Series data sources.AverageRetrieves one average value for each interval within the specified time range. Supported for Predix data sources only.SumRetrieves either, one value which is the sum of the raw data values in the specified time-range, or, one value which is the sum of the raw data values for each interval within the specified time range. Supported for Predix data sources only.
+Interval (seconds)Specifies the time interval in seconds.This is required when query mode is Interpolated or Average; it is an optional field for Sum. This is the time interval in seconds that the query for interpolated or average data is based on.Interpolated ModeSpecifies  the interpolation mode.Interpolated mode field is required when query mode is Interpolated.
+Depending on the values specified in the Properties window, the collection of returned readings varies as described in the following table.Start TimeEnd Time Max ReadingsResultDate 1No valueNo valueReturns up to 10,000 earliest points starting on Date 1.Date 1No valueNReturns up to N earliest points starting on Date 1.No valueDate 2No valueReturns up to 10,000 latest points ending on Date 2.No valueDate 2NReturns up to N latest points ending on Date 2.Date 1Date 2NReturns up to N points starting on Date 1 and ending on Date 2.No valueNo valueNo valueReturns up to 10,000 latest points ending on the current date.No valueNo valueNReturns up to N latest points ending on the current date.
+Value   Predix Time Series nodeThe following is an example of how you can use the Predix Time Series node with other nodes in a policy model to access and analyze Time Series data.
+
+In this example, the Predix Time Series node collects data from the current week, as shown by the values specified in the following image of the Properties window for the Predix Time Series node.
+
+The Collection Filter node filters the data designated as 0 from the Predix Time Series output collection.
+
+Finally, this example policy is configured so that the user receives an email notification if the count of the readings with bad quality exceeds three instances.Query Alerts Nodes in Policy Designer 
+A Query Alerts node is an Input node that represents the results of a query configured to retrieve the alerts for all or one specified asset, site, segment, or enterprise that are generated within a specific period. In the Properties window for the node, you can specify the asset, site, segment, or enterprise and the period for which you want to retrieve the alerts.
+The output of a Query Alerts node is a collection of data from up to 1,000 alerts that are generated within the specified period. The collection contains the following columns:
+Alert AttributesAlert ActiveAlert Create DateAlert IDAlert Template NameAlert SourceAlert StateAlert Unique IDAsset NameDensityDispositionDisposition DescriptionDisposition NameEvent Start DateIs TripLast Occurrence DateLatch CountLimited VisibilityNumber of NotesOwner Unique IDRecurringSeverityStored Time
+Note:
+If the collection of data is truncated because the number of alerts during the specified period exceeds 1,000 then:The earliest 1,000 results are retrieved.The execution history detail for the node shows that the query result is truncated.A Query Alerts node cannot be the first node in a policy model.
+
+Node Properties
+The Properties window for a Query Alerts node contains the items that are described in the following table.
+FieldDescriptionNoteTriggerSpecifies whether new alerts generated for the asset, site, segment, or enterprise associated with the node must result in execution of the policy.The new alerts generated for the asset, site, segment, or enterprise that is associated with the node cannot trigger the execution of a policy. Hence, this check box is cleared and disabled by default.Asset Unique IDSpecifies the unique ID of the asset, site, segment, or enterprise for which you want to retrieve the alerts.If you do not specify any value in this field, the alerts generated for all assets, sites, segments, or enterprises within the specified period are retrieved and represented by the node.Note: If Equipment and Functional Location records are configured to represent assets, sites, segments, or enterprises you can use the value in the Unique ID field of these records as the Asset Unique ID value for the node.Start TimeSpecifies the beginning of the period within which the alerts that you want to retrieve were generated.None.End TimeSpecifies the end of the period within which the alerts that you want to retrieve were generated.None.
+Query Alerts nodeThe following example illustrates a policy that is scheduled for daily execution and configured to notify a user about the active alerts generated for an asset:In this example, the Query Alerts node is used to retrieve all the alerts generated for an asset within the 24 hours. A Collection Filter node is used to filter the active alerts that have a Severity greater than 2. The Count node and Greater Than nodes are used to evaluate if any active alert with severity greater than 2 has been generated for the asset. If such alerts have been generated for the asset, an email notification with information on the asset and the number of alerts generated for the asset is sent to a specified user.The following image illustrates the Properties window of the Query Alerts node described in the example.Query Time Series Nodes in Policy Designer
+
+A Query Time Series node is an Input node that queries Time Series data for an asset that uses the Predix Time Series service. You can use the Query Time Series node to retrieve readings from the default Time Series data source. 
+The Query Time Series node, unlike the Predix Time Series node, requires you to provide the Tag ID as an input to the node, rather than in the Policy Instance. For example, the Tag ID to query could be retrieved from other records in the GE Digital APM database using a Query node, or, determined by the policy logic and constructed from other node outputs using a Text node.
+A Query Time Series node generates the following outputs:
+Time stamp, which represents the time stamp value for the most recent reading.Value, which represents the most recent reading value.Quality, which represents the quality of the most recent reading. The quality of the reading is indicated by one of the values described in the following table. Numeric ValueDescription0Bad Quality1Uncertain Quality2Not Applicable3Good QualityNote: You must use the numeric value when you configure the nodes in the policy to operate on Quality values. However, in a policy output (for example, the text output from an Email Contact node), the description will be displayed. The example in this topic shows how to use the Quality value in a Collection Filter node.Collection, which represents all readings associated with the Time Series service within the specified time frame and maximum number of readings. Each reading in the collection includes time stamp, value, and quality details.Tag, which represents the ID of the Tag.
+Node Properties
+The Properties window for a Query Time Series node contains the items described in the following table.
+ItemDescriptionNotesTime Series TagSpecifies the ID of the Predix Time Series tag for which data will be retrievedYou can select  to specify the output of a predecessor node in this section.Start TimeSpecifies the beginning of the period within which the readings that you want to retrieve were recorded.This is not a required field. However, we recommend that you specify an appropriate value in this field to retrieve the most relevant data.End TimeSpecifies the end of the period within which the readings that you want to retrieve were recorded.This is not a required field. However, we recommend that you specify an appropriate value in this field to retrieve the most relevant data.Max ReadingsSpecifies the maximum number of readings that you want to retrieve from the Time Series data source.By default, 10000 readings are retrieved from the Time Series data source. However, as needed, you can specify any value up to the maximum number of points supported by the Time Series data source.Note: For best performance, we recommend that you specify the minimum number of readings required for the policy.Query OperationSpecifies the type of data you want to retrieve from the Time Series data source.By default, raw is selected. However, as needed, you can select interpolated, average, or sum to retrieve the required data.
+Type of DataDescriptionRawRetrieves data as it was ingested. Supported for all Time Series data sources.InterpolatedRetrieves one interpolated value for each interval within the specified time range. Supported for all Time Series data sources.AverageRetrieves one average value for each interval within the specified time range. Supported for Predix data sources only.SumRetrieves either, one value which is the sum of the raw data values in the specified time-range, or, one value which is the sum of the raw data values for each interval within the specified time range. Supported for Predix data sources only.
+Interval (seconds)Specifies the time interval in seconds.This is required when query mode is Interpolated or Average; it is an optional field for Sum. This is the time interval in seconds that the query for interpolated or average data is based on.Interpolated ModeSpecifies the interpolation mode.Interpolated mode field is required when query mode is Interpolated.
+Depending on the values specified in the Properties window, the collection of returned readings varies as described in the following table.Start TimeEnd Time Max ReadingsResultDate 1No valueNo valueReturns up to 10,000 earliest points starting on Date 1.Date 1No valueNReturns up to N earliest points starting on Date 1.No valueDate 2No valueReturns up to 10,000 latest points ending on Date 2.No valueDate 2NReturns up to N latest points ending on Date 2.Date 1Date 2NReturns up to N points starting on Date 1 and ending on Date 2.No valueNo valueNo valueReturns up to 10,000 latest points ending on the current date.No valueNo valueNReturns up to N latest points ending on the current date.
+Query Time Series nodeThe example below explains how to use a Query Time Series node in a sub policy, to retrieve average reading values from a standard list of tags for an asset without needing to configure a large number of inputs for each policy instance. The example assumes that you have a coherent tag naming strategy in your GE Digital APM system.For example, Tag ID = <asset id>_<parameter name>
+
+The main policy contains a Constant node named Parameter List with Data Type configured as Data Frame and Value configured to contain a single column of parameter names that you want to use in the policy. The Properties window of the Sub Policy node is shown in the following images.
+
+The Sub Policy node is configured to iterate over collection. Since the Tag Name input to the node is configured to use the Value (i.e. collection) output and Parameter Name column from the Constant node, the sub policy is executed for each parameter name.The Asset ID, Start Time, and End Time inputs are all configured to use single value outputs from the prior nodes. These values remain the same for all iterations of the sub policy. After the sub policy has executed for each parameter name, the main policy continues to execute additional logic on the collection of values returned from the sub policy. For example, the output from the Sub Policy node could be passed directly into a data frame input of an R Script node.The sub policy design is shown in the following image.
+
+A Text node in the sub policy concatenates the Asset ID value with the required tag name to create the Tag ID value to be used in the Query Time Series node. The Properties window of the Text node is shown in the following image.The calculated Tag ID value is passed into the Query Time Series node, which retrieves the raw Time Series data. The Properties window of the Query Time Series node is shown in the following image.An Average node computes the average value of readings that were retrieved by the Query Time Series node. An Is Null node is used to insert the value NA in case the Average node output is null, which happens if no readings are found within the time range. The Return Value nodes pass the Average value, Start Time, End Time and Tag ID for each iteration back to the main policy for further processing. In the main policy, these values are accessed as a single collection containing four columns with one row for each parameter name that was processed.Query Nodes in Policy Designer
+A Query node is an Input node that represents a query that is stored in the GE Digital APM Catalog. You can use a Query node to access the results of a specific query. The query will run each time the policy is executed so that the latest results are used in the policy execution. If the specified query contains prompts, you must use the node's Properties window to identify the values that should be provided to the prompts.
+A Query node generates the following outputs:
+Result Set, which represents the full results of the specified query. This output can be used only with successor nodes that are capable of handling collections.Any value in the top row of the specified query.
+Note:
+A Query node cannot be the first node in a policy model.The Result Set is restricted to the 10000 rows of the query results.
+
+Node Properties
+The Properties window for a Query node contains the items that are described in the following table.
+ItemDescriptionNotesQuery PathSpecifies the path to the query that will run when the policy is executed.
+You can enter the path manually, or you can browse to the query by selecting .
+The query that you choose must meet the following criteria:
+It must have an ID and a caption.It must be a Select query (that is, not a Crosstab, Update, Append, or Delete query).Any parameters within the query must contain a unique ID.
+Query sectionProvides values to any query prompts.One Query section appears for each prompt in the selected query. The label that appears after Query: identifies the prompt caption.You can select  to specify the output of a predecessor node in this section.
+Query nodeThe following example illustrates how you can use the Query node with other nodes in a policy model to access and analyze Policy Event records using the Events Query in the baseline GE Digital APM Catalog.Consider the following nodes and connections.
+In this example, the Policy Events Query Query node is connected to the Equipment Entity node and to a Collection Filter node, which is then connected to various additional Condition, Calculation, and Action nodes.As shown in the following image, you can use the Properties window for the Query node to specify the query whose results you want to use in the policy model. You can also see that the specified query contains a prompt, Asset Key, and that a system field from the Equipment Entity node, Entity Key, is used to supply values to the prompt. When you connect the Query node to a successor node, in the Properties window of the successor node, you can select the Result Set option to evaluate the full query results.In this example, the Collection Filter node is used to filter the query results. As you can see in the following image of the Properties window for the Collection Filter node, the query results are filtered to include only the policy events that lasted longer than 10 seconds, occurred within the last month, and have the name IOW Excursion.
+The subsequent Calculation and Condition nodes evaluate the filtered query results and trigger actions when the specified conditions are met. Specifically, the remaining nodes in this policy work together to send an email message and to create a recommendation if the filtered query contains more than two results or if the total duration of the query results exceeds 4 minutes.User Nodes in Policy Designer
+A User node is an Input node that represents the Security User and Human Resource families. You can use a User node to access user information that is stored in records belonging to either of these families.
+A User node generates the following outputs:
+Any field in the Security User family or Human Resource family.The following system fields in the Security User family: Entity Key, Content GUID, and Entity ID.
+Note: When you assign records to a User node via policy instances, you will assign Security User records only. The Human Resource records that are associated with each Security User record will be mapped automatically.
+Node Properties
+The Properties window for a User node contains the items that are described in the following table.
+ItemDescriptionPrimary RecordSpecifies whether the node represents a primary record.TriggerSpecifies whether changes to the record that is associated with the node will result in policy execution.
+User node
+The following example illustrates how you can use the User node to access the email address, which exists in the Human Resource family, and the User ID, which exists in the Security User family, for the same person. Consider the following nodes and connections.
+In this example, the Engineer User node is connected to an Email Contact node and a Create Recommendation node.As shown in the following image, you can use the Properties window for the Email Contact node to select the User node and the Email Address field in the Human Resource family.
+Additionally, as shown in the following image, you can use the Properties window for the Create Recommendation node to select the User node and, in this case, a field in the Security User family, User ID.
+
+
+
+
+
+On this pageAbout Input Nodes in Policies Constant Nodes in Policy DesignerEntity Nodes in Policy DesignerHealth Indicator Nodes in Policy DesignerMeasurement Location Nodes in Policy DesignerPoint Value Nodes in Policy DesignerPredix Time Series Nodes in Policy Designer
+Query Alerts Nodes in Policy Designer Query Time Series Nodes in Policy Designer
+Query Nodes in Policy DesignerUser Nodes in Policy Designer
+
+
+
+
+
+
+
+
+

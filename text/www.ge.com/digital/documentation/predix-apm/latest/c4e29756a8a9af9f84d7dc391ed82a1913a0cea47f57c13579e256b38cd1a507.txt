@@ -1,0 +1,117 @@
+
+
+
+LOPA Records | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LOPA Records
+ LOPA records store details about the LOPA that they represent. This topic provides an alphabetical list and description of the fields that exist for the LOPA family and appear on the LOPA datasheet, unless otherwise specified. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and Usage Analysis Type 
+Character
+The type of the analysis that you are performing.This field does not appear on the datasheet and is populated automatically with the value LOPA. Calculated SIL 
+Numeric
+The SIL value that is required to mitigate the risk that is associated with the Consequence to which this LOPA is linked.This field is disabled and populated with the SIL value that is associated with the value in the Required PIF PFD field.  Comments TextAdditional information about the LOPA.You can enter a value manually. Description TextA description for the LOPA. You can enter a value manually. Description of Initiating Event CharacterA description of the initiating event that is specified in the Initiating Event Type field. You can enter a value manually. Enabling Event/Condition Description CharacterA description of the enabling event, which is a condition that must occur simultaneously with an initiating event to allow the specific cause for a scenario to propagate to a consequence. (e.g., an explosive atmosphere acts as an enabling event that can increase the probability of the flammable gas being released). This field does not appear on the datasheet. Enabling Event/Condition Probability NumericA number that represents the probability of occurrence of the enabling event. This value is used to determine the probability of an unmitigated event occurring. You can enter a value manually. The value must be greater than 0 and less than or equal to 1. For example, if the equipment operates only for nine months a year, then provide a value of 0.75 in this field. This value is multiplied by the value in the Frequency of Initiating Event field to determine the value in Unmitigated Consequence Frequency field. If this field is empty, a default value of 1 will be used in that calculation. Equipment ID CharacterA unique value that identifies the Equipment that you want to link to the LOPA. 
+You can select an Equipment to associate with the LOPA.
+After you select an Equipment, the Equipment Technical Number appears as a link in this field. You can select the link to access the datasheet for the Equipment.
+When you create a LOPA from a Hazards Analysis Consequence, this field is populated with the Equipment Technical Number of the Equipment that is linked to the corresponding Hazards Analysis Cause record.
+ Equipment Key NumericThe Entity Key of the Equipment that is linked to this Instrumented Function.
+This field does not appear on the datasheet. When you link an Equipment to the LOPA, the details of the Equipment are retrieved based on the value in this field.
+ Frequency of Initiating Event NumericA number representing the number of times per year that the initiating event specified in the Initiating Event Type field will occur. 
+This field is disabled. 
+A baseline rule exists to populate this field with the default value of frequency specified in the Initiating Event record based on your selection in the Initiating Event Type field. 
+This value is multiplied by the value in the Enabling Event/Condition Probability field to determine the value in Unmitigated Consequence Frequency field.
+ Functional Location ID CharacterA unique value that identifies the Functional Location that is linked to the LOPA. 
+You can select a Functional Location to associate with the LOPA. 
+After you select a Functional Location, the Functional Location ID appears as a link in this field. You can select the link to access the datasheet for the Functional Location.
+When you create a LOPA from a Hazards Analysis Consequence, this field is populated with the Functional Location ID of the Functional Location that is linked to the corresponding Hazards Analysis Cause record.
+ Functional Location Key NumericThe Entity Key of the Functional Location that is linked to this LOPA. 
+This field does not appear on the datasheet. When you link a Functional Location to the LOPA, the details of the Functional Location are retrieved based on the value in this field.
+ Initiating Event Type CharacterA brief description of the event that could cause the risk that is described in the Unacceptable Consequence field to be mitigated. 
+This field with the values in the Initiating Event ID field in the Initiating Event records.
+If the Frequency of Initiating Event field does not contain a value, then a value is required in this field.
+When you create a LOPA from a cause-consequence pair in the Hazards Analysis module, this field is disabled and populated automatically with the value in the CCPS Cause Type field in the associated Consequence. 
+ LOPA ID CharacterThe ID for the Layer of Protection Analysis.
+This field is required and must be unique among all the LOPA records linked to an instrumented function. 
+You can enter your own value manually. 
+The value in this field appears in the list of assessments for an instrumented function and is used to distinguish the LOPA from the others.
+ Mitigated Consequence Frequency NumericIndicates the frequency of the mitigated consequence (i.e., the frequency of consequence after layers of protection have been added). 
+This field is disabled and populated automatically. 
+The value is calculated by multiplying the value in the Unmitigated Consequence Frequency field by the value in the Total IPL PFD field. 
+ Required Mitigated Consequence Frequency NumericThe maximum allowable frequency at which the initiating event can occur for the risk that is described in the Unacceptable Consequence field. 
+This field is required. 
+This field appears in the LOPA Definition section of the LOPA datasheet as a list and contains the following hard-coded values: 
+ 1E-04  1E-05  1E-06 
+ You can select a value from the list or enter your own value that is greater than 0 (zero). If you modify this value to be less than 0 (zero), a message will appear, and when you select OK, the modified value will revert to its original value. If you enter a value other than the baseline values in the list, it will then be added to the list.   
+ Required PIF PFD NumericA number representing the target probability that a failure will occur. 
+This field is disabled and populated automatically. 
+This value is calculated automatically by dividing the value in the Required Mitigated Consequence Frequency field by the value in the Mitigated Consequence Frequency field. 
+This value is used to determine the values in the Required PIF Risk Reduction Factor and Calculated SIL Level fields.
+ Required PIF Risk Reduction Factor NumericA number representing the factor by which the risk should be reduced.This field is disabled and populated automatically with the inverse of the value in the Required PIF PFD field. Risk Category CharacterThe category of the driving risk associated with the initiating event.
+This field appears as a list that is populated with the values in the Category Name field in Risk Category records associated with the Risk Matrix for the site to which the LOPA belongs.
+Note:  This field does not contain the Financial Risk Category associated with the Risk Matrix.
+If you change the value in this field, you must reselect a value in the Risk Severity field.
+ Risk Severity CharacterThe level of severity of the driving risk associated with the initiating event.
+This field appears as a list that is populated with the values in the Description field in Consequence records associated with the category that you selected in the Risk Category field.
+ Total IPL PFD NumericThe PFD value that is associated with all the IPLs in place for this consequence.
+This field is disabled and populated in the Definition section of the LOPA datasheet.
+The value is calculated by multiplying the values in the PFD fields of each Independent Layer of Protection associated with the LOPA together. 
+ Unacceptable Consequence CharacterA description of the risk for which you are conducting the Layer of Protection Analysis. 
+This field is populated with the value in the Consequence Description field in the associated Instrumented Function. 
+You can modify this value if needed. 
+ Unmitigated Consequence Frequency NumericIndicates the frequency of unmitigated consequence (i.e., the frequency consequence before the layers of protection have been added). 
+This field is disabled and populated automatically. 
+This value is calculated by multiplying the value in the Frequency of Initiating Event field by the value in the Enabling Event/Condition Probability field. 
+
+
+
+
+
+
+
+
+
+
+
+
+

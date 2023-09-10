@@ -1,0 +1,105 @@
+
+
+
+First Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+First Quarter of 2019
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Release Notes
+First Quarter of 2021
+
+
+
+
+
+
+
+First Quarter of 2021Release Date: March 26, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New FeaturesThe following enhancements and new features have been added.DescriptionTracking IDTo enhance usability in the GAA Unit page, the CEA reporting format has been improved when you enter a single digit for the Primary Unit Code instead of two digits. To facilitate this enhancement, the single digit entered in the Primary Unit code is now prefixed with 0 and appears as two digits in the CEA Event Report.US472806
+Table 2. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, in the Regulatory Reports section, when you tried generating reports for contributing events, the event reports displayed incorrect formatting. This issue has been resolved.DE155818
+Release Date: January 8, 2021This topic provides a list of product changes released for this module on this date.
+Table 3. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDIn an Event report, the events are now truncated based on the following time spans:
+ScenarioStart Date in the reportEnd Date in the reportEvent start date and end date are within the reporting monthActual event start dateActual event end dateEvent start date is within the reporting month and end date is beyond the reporting monthActual event start dateLast day of the reporting monthEvent start date is within the reporting month and the end date is NULLActual event start dateLast day of the reporting monthEvent start date is in the previous year and the end date is within the reporting month of the reporting yearFirst day of the reporting yearActual event end dateEvent start date is in the previous year and the end date is beyond the reporting monthFirst day of the reporting yearLast day of the reporting monthEvent start date is in the previous year and the end date is NULLFirst day of the reporting yearLast day of the reporting month
+US457946You can now generate Performance Records and Reports in bulk for a GAA Unit record. Additionally, you can download Event and Performance Reports in bulk. To facilitate this enhancement, the following changes have been made: The Bulk Generation button has been added to the GAA Overview page. This allows you to access the Bulk Generation window that contains the following sections:Generate: Allows you to generate Reports or Performance Records for the selected GAA Unit(s).Download: Allows you to download Event and Performance Reports to a single file or to multiple files.The Bulk Generation Logs button has been added to the Bulk Generation page, that allows you to view the progress of the jobs.US457946
+Table 4. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, when you generated Event or Performance report for a GAA Unit, if the primary regulatory organization was CEA, both CEA and NERC reports were generated. This issue has been resolved. Now, the Event or Performance reports are generated only for the primary regulatory organization.US457946
+
+
+
+
+
+On this pageRelease Date: March 26, 2021Release Date: January 8, 2021
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,216 @@
+
+
+
+Admin | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Admin
+
+
+
+
+
+
+
+AdminOverview of the Root Cause Analysis (RCA) ModuleThe GE Digital APM Root Cause Analysis (RCA) module lets you conduct a root cause analysis, which allows you to analyze causes of failures. A root cause analysis also allows you to track the performance of the equipment by following implementation of recommendations. When you create a Root Cause analysis, you are using GE Digital APM tools to facilitate a standard process that is based on the PROACT® for Meridium methodology.Note: The RCA module is based on the PROACT® RCA Methodology, © Copyright 1996 - 2017, RCI-Reliability Center Incorporated. All rights reserved. Used with Permission. More Details
+A root cause analysis is the process of analyzing failures down to their root causes, which can include but is not limited to physical causes, human causes, and latent causes of the failure.
+In the GE Digital APM system, elements of a Root Cause analysis store all the information necessary for the team to identify a root cause for failure of and asset. 
+When the Root Cause analysis is complete, it can be published and made available to users who are not members of the analysis team, allowing them to view the results using GE Digital APM tools.
+When a failure occurs in your facility, there could be any number of causes that led to the failure. If you investigate the causes, you might find that each failure is caused by another higher-level cause. If this root cause remains unidentified, the failures will likely persist.
+For instance, consider an example of a car that has had trouble starting every month for the past three months. In this case, you might determine that:
+In the first month, the cold weather caused the failure.In the second month, the battery was low.In the third month, the warning to check engine was displayed in the dashboard.
+If you were to conduct a root cause analysis on the car, you may find that while each month's failure had its own apparent cause, the root cause of each failure was that a voltage regulator was malfunctioning.
+To help you identify the root causes of failures in your facility, you can assemble an RCA Team that will:
+Collect data relevant to the failure.Analyze the data.Develop hypotheses about the root cause.Develop recommendations for preventing the failure from occurring or lessen the impact of the failure in the future.Implement recommended solutions.Track implemented solutions and re-evaluate them, as needed. 
+Access the RCA Administrator PageAbout This Task
+To access the RCA Administrator page, you must be a Super User or a member of the MI PROACT Administrator Security Group.
+ProcedureIn the module navigation menu, select
+Admin > Application Settings > Root Cause Analysis.
+The RCA Administrator page appears, displaying the following tabs:
+
+Team Charter: Contains the default Team Charter. You can specify the Team Charter that will appear when you access the Team Charter section for an RCA.
+Critical Success Factors: Contains a list of the Critical Success Factors (CSFs) that will appear by default in the Available CSF section when you access a CSF for an RCA.Default Settings: Contains the following settings:Queries: Contains the Catalog path to the Tracking Evaluation Query that is provided in the baseline GE Digital APM database. Logic Tree Auto-Arrange: Allows you to determine whether or not the nodes on a Logic Tree can be repositioned.Recommended Status and State: Allows you to select how the state of a recommendation is determined.Restricted Access: Allows you to decide whether or not access is restricted. Email Settings: Contains the alert settings for  and State Management emails.Event Color Settings: Contains color mappings for events on the Event Timeline.RCA Pages Setting:  Contains a selections for the diagram and process pages that appear in the RCA module.
+
+
+
+Modify the Default Team CharterProcedure
+Access the RCA Administrator page.
+The default Team Charter appears in the workspace.
+
+
+
+In the upper-right corner of the workspace, select . 
+The default Team Charter appears in a box. 
+As needed, modify the text, and then select .
+Your changes are saved. 
+Results
+After you modify the default Team Charter, your changes will appear in:
+The Team Charter workspace on the 
+RCA Administrator page.The Team Charter section in the 
+Analysis Summary workspace, if you use the default Team Charter in an RCA. 
+Create a New Default Critical Success FactorAbout This TaskYou can create default Critical Success Factors that are specific to a certain RCA or that are generic to any RCA.Procedure
+Access the RCA Administrator page.Select the Critical Success Factors tab.
+A list of default Critical Success Factors appears in the workspace.
+
+
+
+In the upper-left corner of the workspace, select .
+The Add Critical Success Factor window appears.
+
+
+
+As needed, enter the text that defines the Critical Success Factor, and then select Save.
+A new default Critical Success Factor is created. 
+Results
+After you create a default Critical Success Factor, it appears in:
+The Default Critical Success Factors list in the Critical Success Factors workspace on the 
+RCA Administrator page.The Available CSFs list in the Analysis Summary workspace, when you try to create a new Critical Success Factor. 
+Modify a Default Critical Success FactorAbout This TaskYou can modify a default Critical Success Factor to make it more relevant to a specific RCA, or you can modify a default Critical Success Factor to make it generic to your work process.Procedure
+Access the RCA Administrator page. Select the Critical Success Factors tab.
+A list of default Critical Success Factors appears in the workspace.
+
+
+
+In the CSF column, select the hyperlink to the Critical Success Factor that you want to modify.
+The Edit Critical Success Factor window appears.
+
+
+
+As needed, modify the text, and then select Save.
+The Critical Success Factor is updated. 
+Results
+After you modify a default CSF, your changes will appear in:
+The Default Critical Success Factors list in the Critical Success Factors workspace on the 
+RCA Administrator page.The Available CSFs list in the Analysis Summary workspace, when you try to create a new Critical Success Factor. 
+Delete a Default Critical Success FactorAbout This TaskIf desired, you can delete a default Critical Success Factor that you do not want use for any RCA.Procedure
+Access the RCA Administrator page. Select the Critical Success Factors tab.
+A list of default Critical Success Factors appears in the workspace.
+
+
+
+Select the check boxes in the rows containing the Critical Success Factor that you want to delete.
+Tip: You can select more than one Critical Success Factor to delete.
+In the upper-right corner of the workspace, select .
+The Delete Critical Success Factor dialog box appears, asking you to confirm that you want to delete the selected Critical Success Factor.
+Select Yes.
+The selected Critical Success Factors are deleted. 
+Results
+When you delete a default Critical Success Factor, it will be removed from:
+The Default Critical Success Factors list in the Critical Success Factors workspace on the 
+RCA Administrator page.The Available CSFs list in the Analysis Summary workspace, when you try to create a new Critical Success Factor. 
+Specify the Tracking Evaluation QueryAbout This TaskIf you do not want to use the baseline Tracking Evaluation Query, then you can specify a custom Tracking Evaluation Query to track the success of a recommendation that was implemented as the result of an RCA.Procedure
+Access the RCA Administrator page. Select the Default Settings tab.
+The default Tracking Evaluation Query appears in the workspace.
+
+
+
+In the upper-right corner of the workspace, select . 
+The default Tracking Evaluation Query appears in a box. 
+
+
+
+Select Browse. 
+The Select a query from the catalog window appears.
+
+
+
+Navigate to the desired query, and then select Open.
+The path and file name of the query appears in the Tracking Evaluation Query box.
+Select .
+Your changes are saved. 
+Specify Logic Tree Auto-ArrangeProcedure
+Access the RCA Administrator page.Select the Default Settings tab.
+The Default Settings workspace appears.
+
+
+
+Select , and then select the Logic Tree Auto-Arrange setting that you want to apply. Select one of the following options:
+
+Auto-Arrange On: The Logic Tree diagram will auto-arrange by default.
+Auto-Arrange Off: The Logic Tree diagram will auto-arrange only when the Auto-Arrange check box on the Logic Tree diagram in an RCA Analysis is selected.
+Select .
+The Logic Tree Auto-Arrange setting is saved.
+Configure the Email SettingProcedure
+Access the RCA Administrator page.Select the Email Settings tab.The Email Settings workspace appears. In the From field, enter a valid email address, and then select .The email is saved and will now appear when you send a summary of Preserve records, findings, and Recommendation Alerts via email.Add an Event Color SettingYou can select map specific colors to appear for different event types in the Event Timeline. After mapping a color to an event type, any Event records of that type appear in the Event Timeline in the selected color. Procedure
+Access the RCA Administrator page.Select the Event Color Settings tab.
+The Event Color Setting workspace appears, displaying the default event type settings.
+Select .The Add New Event Color Mapping window appears.In the Add New Event Color Mapping window: In the Event Type drop-down list box, select an event type. In the Event Color drop-down list box, select a color to map to the selected event type.Select . The selected color is mapped to the event type.Modify an Event Color SettingProcedure
+Access the RCA Administrator page.Select the Event Color Settings tab.
+The Event Color Setting workspace appears, displaying a list of event type settings.
+In the Event Color Setting workspace, select the Event Type setting that you want to modify.The Edit Event Color Mapping window appears.edIn the Edit Event Color Mapping window: In the Event Type drop-down list box, select an event type. In the Event Color drop-down list box, select a color to map to the selected event type.Select . The event color mapping is modified.Delete Event Color SettingsProcedure
+Access the RCA Administrator page.Select the Event Color Setting tab.
+The Event Color Setting workspace appears, displaying a list of event type settings.
+In the Event Color Setting workspace, next to each event color settings that you want to delete, select the check box, and then select .A window appears, asking if you want to delete the selected event color setting.Select Yes.The selected event color settings are deleted.Configure RCA Pages SettingYou can configure which diagrams and processes appear by default within the RCA module.Procedure
+Access the RCA Administrator page.Select the RCA Pages Setting tab.
+The RCA Pages Setting workspace appears.
+In the RCA Pages Settings workspace, next to each diagram and process that you want to appear in the RCA module, select the check box.Select . The diagrams and processes page preferences are saved.
+
+
+
+
+On this pageOverview of the Root Cause Analysis (RCA) ModuleAccess the RCA Administrator PageModify the Default Team CharterCreate a New Default Critical Success FactorModify a Default Critical Success FactorDelete a Default Critical Success FactorSpecify the Tracking Evaluation QuerySpecify Logic Tree Auto-ArrangeConfigure the Email SettingAdd an Event Color SettingModify an Event Color SettingDelete Event Color SettingsConfigure RCA Pages Setting
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,259 @@
+
+
+
+Asset Developer Documentation | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Asset Developer Documentation
+
+
+
+
+
+
+
+Asset Developer DocumentationAbout Asset Developer DocumentationAsset developer documentation provides information and instructions to developers who are using GE Digital APM Asset ingestion or APIs. Currently asset developer documentation covers:Event-Hub subscriptionALM tenant-specific lifecycle stage and status configurationsExporting tenant dataClassificationsInstancesAsset groupsAsset restrictions
+Note: When adding entries to a JSON, a name value is required for all asset business functional objects so that the end-users can differentiate between objects. 
+For more information on Asset API documentation, refer to the https://apm-asset-apidoc-svc-prod.app-api.aws-usw02-pr.predix.io/docs/index.html.About Event Hub SubscriptionsYou can subscribe to the Event Hub Java SDK to enable asset change notifications.The Event Hub allows you to connect your application, and receive notifications of changes via a subscription.Note: As per design, GE Digital APM Asset publishes a change of events to the Eventhub and Auditlog service at least once. If there is a service failure, the events may get published more than once.Make sure you have read the Event Service information provided on the Predix Developer Network prior to subscription.Information to help you set up a subscription is provided in the https://www.ge.com/digital/documentation/predix-services/IMmU1N2EyMDUtMTRhYy00Mzg4LTk5ZTgtMGFjMjMwOTQxYmRl.html#concept_aec15819-b3d2-4df0-a58a-5032d91052e0 documentation.To subscribe to Asset Event Hub:Refer to Predix Event Hub information provided in the links above for a general understanding of how to publish and subscribe to the service.Make a tenancy service call to get information about the Event Hub Service Instance, which is associated to the GE Digital APM Asset Tenant.You should construct the EventhubConfiguration from the subscribe section of the response, using "zone-http-header-value", "uri", and "zone-token-scope". Use grpc as the value for "protocol".Sample response from REST call:
+ "subscribe": {
+          "zone-http-header-name": "Predix-Zone-Id",
+          "zone-http-header-value": "286144a4-e721-40f1-b697-b1462e7da8d6",
+          "protocol_details": [
+            {
+              "uri": "event-hub-aws-usw02.data-services.predix.io:443",
+              "zone-token-scope": [
+                "predix-event-hub.zones.286144a4-e721-40f1-b697-b1462e7da8d6.user",
+                "predix-event-hub.zones.286144a4-e721-40f1-b697-b1462e7da8d6.grpc.subscribe"
+              ],
+              "protocol": "grpc"
+            }
+          ]
+        }
+      },
+Sample messages include CREATE, UPDATE, and DELETE.Example 1 - CREATE
+msg {
+id: "359c3187-2817-4acf-9d49-f5dc8ca70621"
+body: "MessageBody(objectId=537b87db-f066-4f42-9d3a-62bc07879bf8, tenantId=f743b7ef-42df-4d7e-89dd-90dc3b53b0ac, sourceKey=EventTagType, monitoredEntityUri=null, monitoredEntitySourceKey=null, modifiedData={\"id\":\"537b87db-f066-4f42-9d3a-62bc07879bf8\",\"name\":\"EventTagType\",\"label\":\"EventTagType\",\"tenantId\":null,\"createdBy\":null,\"sourceKey\":\"EventTagType\",\"jsonSchema\":{},\"superTypes\":null,\"createdDate\":null,\"description\":\"EventTagType\",\"superTypeId\":\"203d4660-702c-3cc9-8399-5663b9378408\",\"typeSemantics\":{},\"lastModifiedBy\":null,\"attributeSchema\":{\"attributes\":{\"Test Empty\":{\"type\":\"String\",\"value\":[]},\"Test Number\":{\"type\":\"Number\",\"value\":[-9223372036854775808,-2147483648,2147483647]},\"Test String\":{\"type\":\"String\",\"value\":[\"EVENTTAGTYPE\",\"AbC\",\"dEf\"]},\"Test Boolean\":{\"type\":\"Boolean\",\"value\":[true]},\"model_number\":{\"type\":\"String\",\"value\":[\"PowerLogic ION8600 Form 947S STD\"]},\"serialNumber\":{\"type\":\"String\",\"value\":[\"GE12345\"]},\"std_model_number\":{\"type\":\"String\",\"value\":[\"PowerLogic ION8600 Form 947S STD\"]}},\"reservedAttributes\":{\"state\":{\"key\":\"47\"},\"status\":{\"key\":\"47\"},\"faultMode\":47,\"Test Multi\":{\"key\":\"06\"},\"familyType\":\"47\",\"Test Multi2\":{\"key\":\"-12.345\"},\"Test Number\":-2147483648,\"Test String\":\"abc\",\"Test Boolean\":true,\"serialNumber\":47,\"Test Number Array\":[2147483647,-2147483648,9223372036854775807],\"Test String Array\":[\"DeF\",\"aBc\",\"JkL\"],\"InstanceScenario-7\":\"47\",\"InstanceScenario-8\":\"47\",\"Test Boolean Array\":[true,false],\"maintenanceCriticalityRiskScore\":47}},\"lastModifiedDate\":null,\"coreAssetTypeName\":null}, objectType=TagType, eventType=CREATE, user=TEST_USER, createOrUpdatedDate=2017-07-11T17:58:07.113932-07:00)"
+}
+
+Example 2 - UPDATEmsg {
+id: "184522f5-4ade-434d-a3a6-3ad432754d73"
+body: "MessageBody(objectId=537b87db-f066-4f42-9d3a-62bc07879bf8, tenantId=f743b7ef-42df-4d7e-89dd-90dc3b53b0ac, sourceKey=EventTagType, monitoredEntityUri=null, monitoredEntitySourceKey=null, modifiedData={\"id\":\"537b87db-f066-4f42-9d3a-62bc07879bf8\",\"name\":\"EventTagType-Modified\",\"label\":\"EventTagType\",\"tenantId\":\"f743b7ef-42df-4d7e-89dd-90dc3b53b0ac\",\"createdBy\":\"TEST_USER\",\"sourceKey\":\"EventTagType\",\"jsonSchema\":{},\"superTypes\":{\"ids\":[\"203d4660-702c-3cc9-8399-5663b9378408\"]},\"createdDate\":{\"hour\":17,\"nano\":258000000,\"year\":2017,\"month\":\"JULY\",\"minute\":58,\"offset\":{\"id\":\"-07:00\",\"rules\":{\"fixedOffset\":true,\"transitions\":[],\"transitionRules\":[]},\"totalSeconds\":-25200},\"second\":6,\"dayOfWeek\":\"TUESDAY\",\"dayOfYear\":192,\"dayOfMonth\":11,\"monthValue\":7},\"description\":\"EventTagType\",\"superTypeId\":\"203d4660-702c-3cc9-8399-5663b9378408\",\"typeSemantics\":{},\"lastModifiedBy\":\"TEST_USER\",\"attributeSchema\":{\"attributes\":{\"Test Empty\":{\"type\":\"String\",\"value\":[]},\"Test Number\":{\"type\":\"Number\",\"value\":[-9223372036854775808,-2147483648,2147483647]},\"Test String\":{\"type\":\"String\",\"value\":[\"EVENTTAGTYPE\",\"AbC\",\"dEf\"]},\"Test Boolean\":{\"type\":\"Boolean\",\"value\":[true]},\"model_number\":{\"type\":\"String\",\"value\":[\"PowerLogic ION8600 Form 947S STD\"]},\"serialNumber\":{\"type\":\"String\",\"value\":[\"GE12345\"]},\"std_model_number\":{\"type\":\"String\",\"value\":[\"PowerLogic ION8600 Form 947S STD\"]}},\"reservedAttributes\":{\"state\":{\"key\":\"47\"},\"status\":{\"key\":\"47\"},\"faultMode\":47,\"Test Multi\":{\"key\":\"06\"},\"familyType\":\"47\",\"Test Multi2\":{\"key\":\"-12.345\"},\"Test Number\":-2147483648,\"Test String\":\"abc\",\"Test Boolean\":true,\"serialNumber\":47,\"Test Number Array\":[2147483647,-2147483648,9223372036854775807],\"Test String Array\":[\"DeF\",\"aBc\",\"JkL\"],\"InstanceScenario-7\":\"47\",\"InstanceScenario-8\":\"47\",\"Test Boolean Array\":[true,false],\"maintenanceCriticalityRiskScore\":47}},\"lastModifiedDate\":{\"hour\":17,\"nano\":258000000,\"year\":2017,\"month\":\"JULY\",\"minute\":58,\"offset\":{\"id\":\"-07:00\",\"rules\":{\"fixedOffset\":true,\"transitions\":[],\"transitionRules\":[]},\"totalSeconds\":-25200},\"second\":6,\"dayOfWeek\":\"TUESDAY\",\"dayOfYear\":192,\"dayOfMonth\":11,\"monthValue\":7},\"coreAssetTypeName\":\"TagType\"}, objectType=TagType, eventType=UPDATE, user=TEST_USER, createOrUpdatedDate=2017-07-11T17:58:07.113932-07:00)"
+}
+Example 3 - DELETEmsg {
+id: "0f7d5683-2ff9-4509-b67a-1141f878f427"
+body: "MessageBody(objectId=537b87db-f066-4f42-9d3a-62bc07879bf8, tenantId=f743b7ef-42df-4d7e-89dd-90dc3b53b0ac, sourceKey=EventTagType, monitoredEntityUri=null, monitoredEntitySourceKey=null, modifiedData=null, objectType=TagType, eventType=DELETE, user=TEST_USER, createOrUpdatedDate=2017-07-11T17:58:07.113932-07:00)"
+}
+About ALM Tenant-Specific ConfigurationsYou can use the Asset APIs to perform application-specific configurations.The ALM tenant-specific API is used to enable reading, editing, and deleting the reserved attribute configurations.The tenant-specific reserved attribute configurations are: enterprise lifecycle stageenterprise statussite lifecycle stagesite statussegment lifecycle stagesegment statusasset lifecycle stageasset statustag statusThe changes made using APIs are applicable to the entire tenant. Each configuration has the following properties associated:ElementTypeDescriptioncontextStringALM reserved context to identify the appropriate configuration.codeStringALM system internal code (001 to 100 is system reserved).displayNameStringDisplay Name for the configurable reserved attribute value.descriptionStringDescription of the reserved attribute value.isActiveBooleanFlag to either display or hide the configurable reserved attribute value in the user interface.isDefaultBooleanFlag to configure reserved attribute value as default.semanticNameStringALM default name for the reserved attribute value.valueStringConfigurable string value for the context. The context for the default properties are:enterprise-statussite-statussegment-statusasset-statustag-statusenterprise-statesite-statesegment-stateasset-stateTo enable or disable UI flags, use the following configuration context:enterprise_state_ui_editsite_state_ui_editsegment_state_ui_editasset_state_ui_editenterprise_status_ui_editsite_status_ui_editsegment_status_ui_editasset_status_ui_edittag_status_ui_editLifecycle Stage and Status
+The Lifecycle Stage and Status API is part of the ALM Tenant-Specific Configurations.
+The business functional hierarchy, (Enterprise, Site, Segment, and Assets), includes the lifecycle stage and status reserved attributes, while tags include only the status reserved attribute.
+The lifecycle stage and status API is used to enable reading, updating, editing, and deleting the default list of values provided for tenant-specific configuration.
+You can change the default list items that appear in the drop-down lists in the user interface, add new list items, and delete list items. Additionally, you can enable or disable the user interface for the list items.
+The default list of values for the Lifecycle Stage options for each selection in the business functional hierarchy are:PlanDesignProcureBuildCommissionOperateMaintainMonitorUpgradeDecommissionReplaceDispose
+The default list of values for Status options for each selection in the business functional hierarchy are:FailureWarningNormalExternal Help RequestUser Defined Condition
+The default list of values for Status foptions or each Tag selection are:UnknownActiveInactive
+Read Supported Configuration Values
+You can use API to read values of the ALM tenant configurations. The API provides tenant-specific reserved attribute information and the status of other ALM configurations. In addition, you can use filters to read specific information from the tenant configurations. 
+Each configuration has the following associated properties:
+ElementTypeDescriptioncontextStringALM reserved context to identify the appropriate configuration.codeStringALM system internal code (001 to 100 is system reserved).displayNameStringDisplay Name for the configurable reserved attribute value.descriptionStringDescription of the reserved attribute value.isActiveBooleanFlag to either display or hide the configurable reserved attribute value in the user interface.isDefaultBooleanFlag to configure reserved attribute value as default.semanticNameStringALM default name for the reserved attribute value.valueStringConfigurable string value for the context. 
+Add Supported Configurations
+As a user, you can use the API to add lifecycle stage and status with tenant specific values for configurable reserved attributes. The added values are available to the entire tenant. Important: To prevent ingestion failure, do the following:All user-provided active attribute values for State and Status must be set to true.All active attributes that are set to true for State and Status must have a supported user-provided value.
+Update Supported Configurations
+As a user, you can use the API to update the values of the ALM configurable reserved attributes. The changes made using APIs are applicable to the entire tenant. 
+All tenant-specified elements are editable, but a code that is already in use cannot be changed. 
+The following limitations apply to the system defined default values:You can only update isActive, Display Name, and isDefault elements.You cannot update Code, Semantic Name, and Description elements. 
+Important: To prevent ingestion failure, do the following:All user-provided active attribute values for State and Status must be set to true.All active attributes that are set to true for State and Status must have a supported user-provided value.
+Delete Supported Configurations
+As a tenant, you can use the API to delete tenant-specific ALM configuration based on the context and code. The deleted ALM tenant configurations will be removed from the entire tenant.
+The following limitation applies:You cannot delete system-defined default values. The reserved configuration (code 1-100) cannot be deleted.All tenant-specified elements can be deleted.A code that is already in use cannot be deleted. 
+Enable or Disable the User Interface Edit Option
+You can use the APIs to enable or disable the tenant configurable reserved attribute drop-downs to prohibit changes on the user interface. The changes made using APIs are applicable to the entire tenant.
+To enable or disable the state and status, use UI flag configuration contexts.
+Export Tenant Data
+You can export classification JSON files for any business functional object (Enterprise, Site, Segment, or Asset) or Tag classifications to one or more zip files using the Asset APIs. A zip file can hold thousand classifications, which is a configurable value. Each export logs a task in the persistent store for tracking the export status. Once the export is completed, the blob url is provided to the user as part of the task response.
+You can use the Asset APIs to export tenant classifications. You can use the UUID from the export request JSON response to check the status of the export task.
+Use the following API requests:This requestDoes thisGETExports tenant classifications. The request is queued on the server. Check the export progress. You must save the uuid from the JSON response for tracking purposes.
+The downloaded zip files can be directly ingested to another tenant using the existing upload mechanism. 
+About Exporting Tenant DataYou can export tenant data, which can then be imported to another tenant using ingestion or APIs.You can export classification JSON files for any business functional object (Enterprise, Site, Segment, or Asset) or Tag classifications to one or more zip files using the Asset APIs. A zip file can hold thousand classifications, which is a configurable value. Each export logs a task in the persistent store for tracking the export status. Once the export is completed, the blob url is provided to the user as part of the task response.You can use the Asset APIs to export tenant classifications.A JSON is required when using an API to export a classification. Use the following API requests:This requestDoes thisGETExports tenant classifications. The request is queued on the server. Check the export progress. You must save the uuid from the JSON response for tracking purposes.The downloaded zip files can be directly ingested to another tenant using the existing upload mechanism. About ClassificationsA classification is a reusable definition based on the process of classifying something according to shared qualities or characteristics. Classifications can represent multiple instances of the same type that have common characteristics. For example, you can create a classification to identify equipment with common reserved attributes. You can create sub-classifications, such as turbines, gas turbines, and high-availability turbines from the parent equipment class. Sub-classifications inherit reserved attributes from the parent, and can be assigned their own custom attributes. You can create classifications for:EnterpriseSiteSegmentAssetTagYou can use the Asset APIs or ingestion to:Create a classification.List classifications by criteria and URI.List inherited classifications.List parent classifications.Update a classification.Delete a classification.A JSON is required when using an API or ingesting a classification. The JSON structure for ingestion or APIs is different.Use the following API requests:This requestDoes thisPOST
+Create a classification and link member instances to the classification. 
+Bulk ingestion is supported via the asset ingestion endpoint, /v1/asset/upload.
+GETList the classifications using the Asset APIs. You can list by criteria or URI. PATCHUpdate the classification using the Asset APIs.DELETEDelete a specific classification by UUID, and remove instances from a classification.
+Important: When you delete a classification, use the APIs to first remove all member instances.
+To use the API to configure a classification, refer to the the Asset APIs documentation. Classification Rules
+Use classification rules when creating a classification.A classification must contain an id that is unique per classification. Multiple classifications using the same id can overwrite each other.A classification must be one of the classifications types (ccomClass).A classification may have child classifications that are derived from the classification parent.A classification must be the same classification type as its parent.A classification inherits all properties from its parent classification. Any custom properties defined in the child classification are customized to the child.
+Create a Classification Type
+You can create a classification type using a parent node in the JSON. Use your Asset Model to determine placement of the classification. The JSONs for ingestion and API are different.You will need to add values under classifications into the JSON for ingestion.idnamedesciptionparent (used if a sub-classification)ccomClass (define as one of the following types: ENTERPRISE_TYPE, SITE_TYPE, SEGMENT_TYPE, or ASSET_TYPE).properties (includes sub-values)typeidvaluereservedProperties (inherited from parent classification)Note: You can define attributes in key-value pairs. Each key is a type of String and value is an object with variables type, and value (array of values). You cannot define the attribute key with special characters such as !@#$%^&*?().Repeat the previous step for any classification you want to add.Save the JSON, then ingest it using the REST client.
+You are ready to add instances for the classifications.
+Add Instances to a Classification
+After you define your classifications, you can create instances for those classifications.You will need to add values under instances into the JSON for ingestion.idnamedesciptionclassificationccomClass (define as one of the following: ENTERPRISE, SITE, SEGMENT, or ASSET).properties (includes sub-values)typeidvaluereservedProperties (for ccomClass: ASSET only)Note: You can define attributes in key-value pairs. Each key is a type of String and value is an object with variables type, and value (array of values). You cannot define the attribute key with special characters such as !@#$%^&*?().location (for ccomClass: ASSET only; includes sub-values)nameorderlatitudelongitudealtitudeRepeat the previous step for any instance you want to add.Save the JSON, then ingest it using the REST client.Note: Ingestion file must be UTF-8 encoded. You can add UTF-8 special characters in the field values including the sourcekey.
+Create a Tag Classification Type
+You can create a tag classification using a parent node in the JSON. Use your Asset Model to determine placement of the tag classification. The JSONs for ingestion and API are different.You will need to add values under tagClassifications in the JSON for ingestion.idnamedescriptionunitGroupparentproperties (includes sub-values)typeidvalueRepeat the previous step for any tag classification you want to add.Save the JSON, then ingest it using the REST client.
+You are ready to add tag associations. For more information, refer to the About Instances documentation.
+List Classifications
+You can retrieve a list of classifications by criteria or URI using the APIs.
+You can use the API to retrieve a list of classifications, classification types, inherited classification types, and parent classification types.
+Use the API request parameters to narrow the list by criteria (e.g., sourceKey).
+The following search parameters are supported for asset and tag types:urinamesourcekeydescriptionattributesreservedattributesparent
+
+Note: Enterprise, site and segment types have not been enabled.
+
+Delete a Classification
+You can delete a classification from the JSON.Important: A classification may be connected to multiple instances. If you are deleting the classification entirely, make sure that all instances connected to the classification are removed or moved prior to deleting the classification.Find the instances connected to the classification and remove or move them to a different classification.Remove the classification id, name, description, parent, ccomClass, properties, and reservedProperties using the API.
+About InstancesYou can add, modify, search, and delete instances, and add and remove instances in the Business Functional Hierarchy.An instance represents a single business functional object within the business functional hierarchy, a physical asset, and tag components in the Asset Model. You can create and assign instances to a business functional object, or another instance in the business functional hierarchy. Instances can be created for:EnterpriseSiteSegmentAssetTagImportant:
+In Predix APM, adding or modifying assets using the Legacy Predix APM user interface, APIs, or Asset Ingestion Service, or bypassing the Unified Asset Ingestion Data Loader, causes the asset databases to become out-of-sync. 
+In Predix APM:You must add or modify assets using the Unified Asset Ingestion Data Loader.You cannot delete assets.You must use the Asset Ingestion Service to add tags to assets.
+In Legacy Predix APM:You can add, modify, or delete assets in the user interface, using APIs, or using the Asset Ingestion Service.You can add tags to assets in the user interface, using APIs, or using the Asset Ingestion Service. 
+When you create an instance, you can add reserved attributes to the instance that are inherited by instances directly lower in the hierarchy. Reserved attributes are added to a parent node in the JSON.You can use the Asset APIs or ingestion to:Create an instance.List instances by criteria and URI.List child nodes link to an instance.List tags associated with an instance.Add tags to an instance.Note: When using the API, you must set the nextRelatedTag section tagUri field to null in order to remove the correlation.Remove tags from an instance.Update an instance.Delete an instance.A JSON is required when using an API or ingesting an asset group. The JSON structure for ingestion or APIs is different.Use the following API requests:This requestDoes thisPOSTCreate an instance and link tags to the instance.GETList the instances using the Asset APIs. You can list by criteria or URI. You can also list directly linked child nodes using UUID, and list tag associations. Browse instances, all instances, or accessible resources. Parent instances are included in the accessible resources response.For more information specific to the endpoints, refer to  Escape Special Characters for Endpoints. PATCHUpdate the instance using the Asset APIs.DELETEDelete a specific instance by UIID, and remove tags from an instance. The next page link is not supported for the /browse endpoint. This is our API to populate the context browser only. Instead we recommend the following approach:For the direct objects underneath the enterprise use /enterprises/{{uuid}}/children.For all the sites underneath an enterprise use /enterprises/{{uuid}}/children?deepSearch=true&childPrefix=/sites. An alternate approach is /sites/query?q=parent->uri=/enterprise/{{uuid}}.Note: If you are looking for just a single type of object, it is more efficient to use the specific /sites or /assets endpoint with the query parameters.For all the sites, segments, and assets underneath an enterprise, use /enterprises/{{uuid}}/children?deepSearch=true.For all the assets underneath a specific enterprise, use:/assets/query?q=parent->name={{name of the enterprise}}/assets/query?q=parent->uri={{uri of the enterprise}}Note: The asset and tag instances support the usage of all the UTF-8 special characters. You can search the asset and tag instances that contains UTF-8 special characters. However, if the value that you are searching contains ,:\=()|’* special characters, you must escape the character with a \(backslash). Special characters to be escaped differs for different endpoints. For more information specific to the endpoints, refer to Escape Special Characters for Endpoints. For example, if you have a special character in the name of the enterprise or uri of the enterprise (that is, valuepart1*part2), you must escape the special character with a \(backslash) (that is, valuepart1\*part2).If the value itself contains a \(backslash), you must escape it by adding another backslash (that is, valuepart1\\part2).For all the assets underneath a specific site, replace id of enterprise with the id of site.
+Important: When you delete an instance, use the APIs to first remove it from all associated Business Functional Objects.
+To use the API to configure an instance, refer to the Asset APIs documentation.Example: Maximum number of resultsThe maximum number of results in the set for the /browse API is 250, and not changeable. If you use our other endpoints, you can configure it from 1-1000./v1/assets?pageSize=250Instance Rules
+Use instance rules when creating an instance.You must have edit permissions.You cannot add a parent instance to itself or a descendant.If a business functional object or an asset instance is removed from the business functional hierarchy, it is orphaned and only an administrator can view it.
+Create an Instance
+You can create an instance using a parent node in the JSON. Use your Asset Model to determine placement of the instance. The JSON's for ingestion and API are different.You will need to add the following values to instances in the JSON for ingestion.nameiddescriptionclassification (names classification type)ccomClass (names Business Functional Hierarchy; ENTERPRISE, SITE, SEGMENT, ASSET).associatedEntityCcomClassproperties (includes sub-values)idvaluetypeRepeat the previous step for any instance you want to add.Save the JSON, then ingest it using the REST client.
+You are ready to add the instance to the business functional hierarchy.
+Note: You can add UTF-8 special characters while creating an instance.
+Add an Instance to the Business Functional Hierarchy
+You can add an enterprise, site, segment, or asset instance to the business functional hierarchy. Tag instances are added to an existing instance.
+You can move an existing site, segment, or asset instance to another site, segment, or asset instance in the business functional hierarchy. Use your Asset Model to determine placement of the instance. You can add or move an instance to a node that is higher in the business functional hierarchy.
+When you provide an ingestion file with a connection to that business functional object, then the system stores the association.You will need to add the following values to connections in the JSON for ingestion:from (includes sub-values)idccomClass (names originating connection; SITE, SEGMENT, ASSET)to (includes sub-values)type (predefined as parent)idccomClass (names parent object; ENTERPRISE, SITE, SEGMENT, ASSET)Repeat the previous step for each instance you want to connect to the business function hierarchy.Save the JSON, then ingest it using the REST client.
+Move an Instance within the Business Functional Hierarchy
+You can move an instance from one area in the business functional hierarchy to another.
+You can move entails using PATCH or ingestion to update and replace the classification for an instance.
+Note: You can move only the instances with type Enterprise, Site, Segment, and Asset to a different classification. An asset instance can only be moved within the same business functional hierarchy.
+Based on the following scenarios, an instance is moved within the business functional hierarchy as follows:
+If the custom attribute of the new classification has same name but different datatype than that of an instance attribute, an error message appears. In this case, you must either delete the instance attribute or delete the classification attribute to resolve the conflict.If the custom attribute of the new classification has same name and same datatype of an instance attribute, the attribute that matches the new classification will be inherited to the instance from the new classification. However, the instance attribute values will not be updated even if the classification has the same attribute as that of the instance.If the new classification contains attributes that are not available in the instance, the classification attributes are inherited to the instance along with their default values.
+To move an instance:Find the business functional object node from which you want to move the instance.Change the following parameters using PATCH or ingestion:[{
+"op" : "replace",
+"path" : "/type"
+"value" : "new type URI"
+}]Save the JSON, and then update it using the APIs.
+Remove an Instance from the Business Functional Hierarchy
+You can remove instances from a business functional object.
+You can use the API to remove the association when an instance no longer has a relationship to the business functional object.Find the business functional object node from which you are removing the instance.Remove the association between the asset instance URI and the business functional object URI.Save the JSON, then update it using the APIs.
+Add Tags to an Instance
+You can add tag instances to an instance (enterprise, site, segment, or asset). A tag instance cannot be added to more than one business functional object. You can create a tag instance using tagAssociations in the JSON.You will need to add values under tagAssociations for ingestion:monitoredEntity (includes sub-values)id (names the instance in the business functional hierarachy for which the tag is associated)ccomClass (names the classification type; e.g., ENTERPRISE)tags (includes sub-values)name (tag name)id descriptionclassification (names associated tag type classification)aliases (names one or more tag aliases)nextRelatedTag (includes sub-value)idNote: You must set the ID field to null in order to remove the correlation.Repeat the previous step for any tag associations you want to add.Save the JSON, then ingest it using the REST client.
+Note: You can add UTF-8 special characters while adding tags to an instance.
+Remove Tags from an Instance
+You can remove tag instances from an instance using the APIs.Find the instance node from which you are removing the tag instances.Remove the association between the tag instance URI and the instance URI.Save the JSON, then update it using APIs.
+Search for Instances and Tags
+You can retrieve a list of instances by criteria or URI using the APIs.
+You can use the API to retrieve the instances associated to a business functional object. 
+Use the API request parameters to narrow the list by criteria (e.g., sourceKey).Note: Parameter names are case sensitive. If there are ,:\=()|’* special characters in the sourceKey or the value in the query that you are searching, you must escape the characters with a \(backslash). For more information, refer to Escape Special Characters for Endpoints.
+The following search parameters are supported for enterprise, site, and segment instances:urinamesourcekeydescriptionattributesreservedattributestypeparent
+The following search parameters are supported for tag instances:urinamesourcekeydescriptionattributesreservedattributestypemonitoredentityurimonitoredentitynamemonitoredentitysourcekeyNote:
+The following endpoints can be used for searching tags:/v3/tags/query?q=x=y
+/v3/tags?sourceKeys=xyz,abc
+v3/assets/uuid/tags?sourceKey=xyz&name=abc
+v3/assets/uuid/tags/download?q=x=y
+
+For example:If you want to search using sourcekey:value, and you have :(colon) within the value, the value must be provided as sourcekey:valuepart1\:part2 to escape the special character.If you want to search multiple query string with comma separated values, and you have a ,(comma) within the value, you must escape the ,(comma) by adding a \(backslash) in the value.For example, value1,value2,valuepart1\part2,value4If the value itself contains a \(backslash), you must escape it by adding another backslash.For example, value1,value2,valuepart1\\part2, value4
+Note:
+Querying a tag by alias is not supported at this time.All the search parameters support UTF-8 special characters except uri, type, and monitoredentityuri. While searching for a value that contains ,:\=()|’* special characters, you must add a \(backslash) before the special character to escape the character. 
+
+Delete an Instance
+You can delete an instance using an API. Using API, you can delete one instance at a time by providing the UUID of the instance.Note: There are APIs to delete only the asset and tag instances, and not Site, Segment, or Enterprise instances.
+Cascade Delete of Instances
+If you submit a request for cascade deletion with the SourceKey of a specific object in the tree, then the system validates against all the rules. Once all the validations pass, then the system deletes the object and all of its children at level of the hierarchy and Audit Logs page gets updated.Note: Removing business functional objects via ingestion is not supported.Note: The Cascade Delete API can delete up to 2000 objects in the child hierarchy including Tags and Groups. When you attempt to delete an object that has more than 2000 children, an error message appears with the reason for the call rejection. In this case, you must delete the lowest level objects before deleting the higher level.
+You must use precautionary measures when using the API to delete an asset or tag instance. The delete functionality permanently removes all child-assets, group associations, and the actual instance. 
+Upon successful deletion, the Audit Logs page updates the following information: Timestamp, UserName, Name, Resource, Resource Type, Action, Reason, and Detail. For example, Deleted Asset Instance-1234 (ID212434). 
+The following rules apply:Delete all objects in the entire hierarchy including tag instances associated to the objects.Cannot delete if an object has more than one parent in the deletion path.Cannot delete if the tag instance is associated to any object not in the deletion path.
+The API performs the following actions when deleting an enterprise instance:Deletes all the site, segment, and asset instances under the segmentDeletes all the association with groups for the enterpriseDeletes the object (enterprise)
+The API performs the following actions when deleting a site instance:Deletes all the segment and asset instances under the segmentDeletes all the association with groups for the siteDeletes the object (site)
+The API performs the following actions when deleting a segment instance: Deletes all the asset instances under the segmentDeletes all the association with groups for the segmentDeletes all the segment instances under the segmentDeletes the object (segment)
+The API performs the following actions on the asset instance and all its children when you execute cascade delete on an asset instance object:Deletes all the tag instances of the asset Deletes all the association with groups for the assetDeletes the object (asset)
+The API deletes the tag instance association and the tag instance. 
+Upon deletion the following HTTP status codes provide information that help with troubleshooting:
+Status CodeDescription202Confirms that the request is accepted for processing. The deletion activity is asynchronous and runs in the background. 404The cascade delete entity is not found.
+About Asset GroupsYou can add, modify, search, and delete asset groups, add and remove asset group members, and add and remove asset groups in the business functional hierarchy.Asset groups are used to organize business functional objects, assets, or tags into manageable units that are related and have value to you when you perform tasks. You can create groups from instances, classifications, enterprises, sites, or segments.Asset groups are comprised of business functional objects, assets or tags that are related or connected in some way (physical or logical). For example:You can assign membership in a group to asset instances that are all of the same type (e.g., gas turbines).You can assign membership in a group to different types of asset instances that are all members of a functional unit that performs a specific task, such as a block of assets that are physically connected to complete a process.You can assign membership in a group to different types of asset instances that all use a specific analytic.You can assign membership in a group to all asset instances that are physically present on a site.You can assign membership in a group to all sites in an enterprise.You can assign membership in a group to all tag instances that perform the same function (e.g., temperature).You can add an instance, classification, enterprise, site, or segment to multiple groups. You can add multiple groups to a single business functional object, and similarly, you can add a single group to multiple business functional objects. Associations are two-way.Note: When you delete a group, use the APIs to first remove it from all associated business functional objects and then delete all of its members.You can use the Asset APIs or ingestion to:Create an Asset Group.List Groups by criteria and URI.List Group members using UUID.List Group Associations.Update Group.Add Group members to a Group.Remove Group members from a Group.Add a Group to a business functional object.Remove a Group from a business functional object.Delete a Group.A JSON is required when using an API or ingesting an asset group. The JSON structure for ingestion or APIs is different.Use the following API requests:This requestDoes thisPOSTCreate a group, add group members to a group, and add a group to the business functional hierarchy using the Asset APIs.GETList the groups using the Asset APIs. You can list by criteria or URI. You can also list group members using UUID, and list group associations.PATCHUpdate the groups using the Asset APIs.DELETEDelete a specific group by UIID, and delete group members from a group.To use the API to configure a group, refer to the Asset APIs documentation.Asset Group Rules
+Use group rules when creating groups.All members of a group must be homogenous. i.e., If you are assigning tag instances, then only tag instances may be a member of the group.There are no permissions involved in accessing groups, however you can only view the assets for which you have access, even if there are other assets in the group you are viewing.An asset can be added to multiple groups.A group can be added to multiple business functional objects.A group cannot contain another group.Groups populated from a query are not supported.Instances must be a member of a group to be associated to a business functional object.
+Create an Asset Group
+You can create a group using a parent node in the JSON. Use your Asset Model to determine placement of the asset group. The JSONs for ingestion and API are different.You will need to add the following values into the JSON for ingestion.nameiddescriptionccomClass (predefined as GROUP).associatedEntityCcomClasspropertiesRepeat the previous step for any group you want to add.Save the JSON, then ingest it using the REST client.
+You are ready to add the asset members.
+Example 1: Diagnose an IssueAn experienced M&D analyst determines that by creating a group containing tags from several different assets, which are connected together can be used to diagnose an issue. By associating the group to a segment or site within the business functional hierarchy where the assets are modeled, allows the M&D analyst to locate and drag-and-drop the data for visualization.Example 2: Identify potential problemsAn analytic developer has determined by creating a group containing several assets in the plant that they use this group as input for an analytic, which identify potential problems at the plant. By associating the group to a segment or site within the business functional hierarchy, allows the analytic to be programmed to search for group and apply it to the assets within the group.Add Members to an Asset Group
+You can add members to an asset group in the JSON. All members of a group must be the same type.
+For example, you can add tag instances that determine temperature, pressure, frequency, and vibration to a group, then add the group to a specific asset instance in the business functional hierarchy.Find the group node to which you are adding the members.Add the associatedEntityIds values for each member to the group parent node:Repeat the previous step for each group to which you are adding members.Save the JSON, then update it using ingestion.
+You are ready to add asset groups to the business functional hierarchy.
+Remove Members from an Asset Group
+If an asset is obsolete, no longer connected to a parent asset, or simply no longer in use, you can remove the member from an asset group without affecting the remaining members.Find the group node from which you are removing the member.Remove the child node containing the member’s information.Save the JSON, then update it using the APIs.
+Add Asset Groups to the Business Functional Hierarchy
+You can add asset groups to a business functional object using a parent node in the JSON.
+Use your Asset Model to determine placement of the asset group. For example, you can add a group of asset instances to a segment, site, or asset instance node that is higher in the business functional hierarchy. Similarly, a group of sites instances can only be added to an enterprise node.
+You can add a group to multiple parent nodes, or add multiple groups to a single parent node in the business functional hierarchy.
+When you provide an ingestion file with a group containing tag(s), asset(s), segment(s), or sites(s) with a connection to that business functional object, then the system stores the association.Find the business functional object name to which you are adding a connection to the group.Add a connection using the following:mappedInstances (to a business functional object, i.e., enterprise, site, segment, asset) specifying ccomClass and id.Repeat the previous step for each group you want to connect to the business functional hierarchy.Save the JSON, then ingest it using the REST client.
+Remove Asset Groups from the Business Functional Hierarchy
+You can remove asset groups from a business functional object.
+You can use the API to remove the association when a group no longer has a relationship to the business functional object.Find the business functional object node from which you are removing the group.Remove the association between the asset group URI and the business functional object URI.Save the JSON, then update it using APIs.
+To verify the removal, search Groups to determine the existence of the group connection to the business functional object.Important: A group may be connected to multiple business functional objects. Make sure you are removing the correct association. If you are deleting the group entirely, make sure that all associations for the group are removed prior to deleting the group.
+List Asset Groups
+You can retrieve a list of groups by criteria or URI using the APIs.
+You can use the API to retrieve the groups associated to a business function object. Use the API with the group URI.
+Use the API request parameters to narrow the list by criteria (e.g., sourceKey).
+The following search parameters are supported for asset groups:urinamesourcekeydescriptionattributesreservedattributescategory
+Delete Asset Groups
+You can delete an asset group from the JSON.Important: A group may be connected to multiple business functional objects. If you are deleting the group entirely, make sure that all associations for the group are removed prior to deleting the group.Find the group node and remove the group members.Remove the group node from the JSON using APIs.
+
+Related ConceptsAbout Asset ModelAbout Tag ModelRelated tasksIngest Assets through the REST Client for Legacy Predix APMIngest Assets through the User Interface for Legacy Predix APM
+
+
+
+
+On this pageAbout Asset Developer DocumentationAbout Event Hub SubscriptionsAbout ALM Tenant-Specific ConfigurationsAbout Exporting Tenant DataAbout ClassificationsAbout InstancesAbout Asset Groups
+
+
+
+
+
+
+
+
+

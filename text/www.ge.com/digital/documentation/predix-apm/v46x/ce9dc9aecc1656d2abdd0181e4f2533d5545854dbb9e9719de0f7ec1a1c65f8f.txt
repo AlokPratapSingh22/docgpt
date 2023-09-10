@@ -1,0 +1,1189 @@
+
+
+
+TM Piping Data Loaders | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+Workflows
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data LoadersTM Data Loaders
+TM Piping Data Loaders
+
+
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+Data Loaders
+TM Piping Data Loaders
+
+
+
+
+
+
+
+TM Piping Data LoadersAbout the Thickness Monitoring (TM) Piping Data LoadersThe following Piping Data Loaders are available in Thickness Monitoring:Thickness Monitoring (TM) Piping Equipment Data LoaderThickness Monitoring (TM) Piping Functional Location Data LoaderThese data loaders help you manage Piping Assets.Throughout the documentation, these Piping Data Loaders are collectively called the Thickness Monitoring (TM) Piping Data Loaders or just Piping Data Loaders. You can use them to implement Thickness Monitoring when you have thickness measurement data for piping in a legacy system. To import data using these Data Loaders, GE Digital APM provides the following Excel templates:Thickness Monitoring (TM) Piping Equipment.xlsxThickness Monitoring (TM) Piping Functional Location.xlsxThese templates support baseline Thickness Monitoring in GE Digital APM. You must export measurement data from your legacy system so that the data can be used to populate the templates. The data from the templates will then be imported into GE Digital APM using the corresponding Piping Data Loaders.Note: The Excel templates are referred to throughout this documentation as the piping data loader workbooks.The piping data loader workbooks allow you to: Create or update Corrosion Analysis Settings (CAS) records for a piping Asset that can be Equipment or Functional Location.Create or update Piping Component records, and link each of them to an Asset.Create or update Piping Band records, and link each of them to a Piping Component. When you create Piping Bands, the Piping Data Loader will automatically create TMLs that correspond with the number of positions in the Piping Band.Update TML records that are linked to a Piping Band.Create or update Thickness Measurement records and link them to a position.About the Thickness Monitoring (TM) Piping Data Loaders RequirementsBefore you use the data loader workbooks, you must complete the following steps:Ensure that the Thickness Monitoring module is deployed.Ensure that the following licenses are active:APM Connect PlusThickness Monitoring
+
+Ensure that the following data is present:Equipment and Functional Location Families
+Stress Tables (GE Digital APM provides Stress Tables for Piping, Pressure Vessels, and Tanks. If you want to use values from these Stress Tables with the data loader workbook, you must ensure that the records are imported into your database prior to performing the data load.)
+
+
+Ensure that you have set up appropriate relationships and key fields. To do so, you must login as a member of the MI Thickness Monitoring Administrator Security Group.Ensure that the Enable Pipe Rotation feature is selected in the Global Preferences section available in the Thickness Monitoring Admin Preferences
+Create a relationship between TML Groups and Assets. To do so, configure family preferences.
+Configure the Piping Equipment Data Loader with the following values:
+Family Preferences: EquipmentAsset-to-Subcomponent Relationship: Has TML GroupComponent ID Field: Equipment IDFamily Preferences: TML GroupSubcomponent-to-Asset Relationship: Has TML GroupComponent ID Field: TML Group ID
+Configure the Piping Functional Location Data Loader with the following values:
+Family Preferences: Function LocationAsset-to-Subcomponent Relationship: Has TML GroupComponent ID Field: Function LocationFamily Preferences: TML GroupSubcomponent-to-Asset Relationship: Has TML GroupComponent ID Field: TML Group ID
+Note: By default, the relationship is created between Equipment and TML Groups. If you want to use the Thickness Monitoring (TM) Functional Location Data Loader, in the drop-down list box at the top of the workspace, select Functional Location.
+
+The Security User loading the data must be associated with either the MI Data Loader User or MI Data Loader Admin Security Role, and must also be associated with the MI Thickness Monitoring Administrator or the MI Thickness Monitoring Inspector Security Group or a Security Role that is associated with at least one of these Security Groups.
+The data loader workbooks contain sample data in each column. It is only for your reference. You must remove this data before using the data loader workbooks.About the Thickness Monitoring (TM) Piping Data Loaders Data Model
+The Thickness Monitoring (TM) Piping Data Loaders do not load the entire data model illustrated in the normal help documentation. The following data model illustrates which records the Data Loaders support. Assets (Equipment or Functional Location records) must exist prior to importing data.
+About the Thickness Monitoring (TM) Piping Data Loaders General Loading StrategyThis topic describes the best practices to loading the data and the order in which the data will be loaded.Best Practices
+For Oracle databases, valid cell values are case-sensitive.The import data must load in a specific sequence in order to successfully populate fields, to create records, and to link them to the predecessor and successor records. If a data loader worksheet contains any blank cells:When you create new records, the fields with blank cells are updated with the default values, if any.When you update existing records, the fields with the blank cells are not updated.The link between Piping Bands and TMLs is by the position number of the TML. So, when the piping data loader automatically creates TMLs for a band, it assigns the first one with position 1, the second one with position 2, and so on. Therefore, you must use these matching position numbers in TMLs, the TML Analysis Settings, and measurements in order to properly link them.The Thickness Monitoring (TM) Piping Data Loaders map the datasheet columns in the piping data loader workbooks to fields in GE Digital APM families by their position. Therefore, you must not change the column positions and IDs. You can, however, change the captions if needed. ID fields must not include special characters or spaces.Columns (including columns representing custom fields) in the worksheets should be formatted as Text.You must consider the rules described in the Workbook Layout and Use section of this document while using the piping data loader workbooks.Details related to an Equipment that is linked to a Piping Component, Piping Band or a TML must always be entered on the assets and Asset_CAS worksheets of the Thickness Monitoring (TM) Piping Equipment Data Loader even if the asset has already been loaded earlier. Similarly, details related to a Functional Location that is linked to a Piping Component, Piping Band, or a TML must always be entered on the Functional_Location and Functional_Location_CAS worksheets of the Thickness Monitoring (TM) Piping Functional Location Data Loader even if the Functional Location has already been loaded earlier.
+In addition to the fields included in the piping data loader workbooks, if you want to add values for more fields for a record, you can add columns for those fields on the appropriate worksheet.
+Note:  The fields that you want to add to the piping data loader workbooks must already exist in the corresponding family. If not, you must add the fields to the family via Configuration Manager.
+Do not delete any worksheet in the piping data loader workbooks.It is recommended to delete the TML_ID column from the TML worksheet when loading measurement data after performing a rotation or flip.
+Load Sequence
+The data must be loaded in the following sequence to successfully populate fields, create records, and link them to the predecessor and successor records:
+The Assets or the Functional_Location worksheet is processed. If you are using the Thickness Monitoring (TM) Piping Equipment Data Loader, it searches for the Equipment that corresponds to the Equipment ID, CMMS System, and Equipment Technical Number information that you provide on the Assets worksheet. If you are using the Thickness Monitoring (TM) Functional Location Data Loader, it searches for the Functional Location that corresponds to the Functional Location ID and CMMS System information that you provide on the Functional_Location worksheet. If an asset specified on the worksheet does not exist, it will not be loaded. In addition, the Piping Components, Piping Bands, and TMLs linked to the asset are not loaded.The Asset_CAS or the Functional_Location_CAS worksheet is processed. If you entered values in all the mandatory cells, and if the details of an asset in this worksheet match the details on the Assets or Functional_Location worksheet, thenIf the Corrosion Analysis Settings record does not exist yet, then a record is created and linked to the asset using the Has Corrosion Analysis Settings relationship. For optional values that are left blank, the default values are used.If the Corrosion Analysis Settings record already exists, then the record gets updated. For optional values that are left blank, the values from the existing record are retained.The Piping_Component worksheet is processed. For each Piping Component, if the details of an asset in this worksheet match the details on the Assets or Functional_Location worksheet, thenIf a Piping Component record does not exist, then a record is created and linked to the asset using the Has TML Group relationship. For optional values that are left blank, the default values will be populated.If a Piping Component record already exists, then the existing record is updated. For optional values that are left blank, the values from the existing record are retained.The Piping_Component_CAS worksheet is processed. For each Piping_ComponentIf the Corrosion Analysis Settings does not exist, then a record is created and linked to the Piping Component using the Has Corrosion Analysis Settings relationship. The values in the Corrosion Analysis Settings record are pre-populated with the corresponding values on the Asset_CAS or the Functional_Location_CAS worksheet. Any values that you enter in the Piping_Component_CAS worksheet replaces the values that were pre-populated.If the Corrosion Analysis Settings record already exists, then the record is updated with the values that you provide. For optional values that are left blank, the values from the existing record are retained.
+The Piping_Band worksheet is processed. For each Piping Band, if the columns of the asset and component match the columns in the Piping_Component worksheet, thenIf the Piping Band record does not exist, a record is created and linked to the Piping_Component using the Has Piping Band relationship. TMLs matching the number of positions for the Piping Band are automatically created. For example, 4 TMLs are created for a Piping Band with 4 positions.If a Piping Band record already exists, then the record is updated. For optional values that are left blank, the values from the existing record are retained.
+The Piping_Band_CAS worksheet is processed. For each Piping Band CAS, if the columns of the asset and component match the columns in the Piping_Component worksheet, thenIf the Corrosion Analysis Settings record does not exist, then a record is created and linked to the Piping Band using the Has Corrosion Analysis Settings relationship. The values in the Corrosion Analysis Settings record is pre-populated with the corresponding values in the Piping_Component_CAS worksheet. If you entered any values then those will replace the pre-populated values. Any values that you enter in the Piping_Band_CAS worksheet replaces the values that were pre-populated.If the Corrosion Analysis Settings record already exists, then an Asset Corrosion Analysis record is created and linked to the Piping Component using the Has Corrosion Analyses relationship.The TML worksheet is processed. Each TML has a Position field. You must number the Position for each TML in a Piping Band from 1 to the number of positions for each band. The position column is the link between the rows in the TML worksheet and the TML records that were created automatically when each band was created while processing the Piping_Band worksheet.If you have entered any values in the optional fields, then those values will overwrite the default values that were populated when the TML was automatically created from the Piping_Band worksheet.You may also leave the TML ID column blank to use the default TML ID or replace it with your own TML IDs that must be unique within each band. The default TML IDs are TML-1, TML-2, and so on.Important: After a rotation or flip is performed, the TMLs change positions. Because of this, the TML ID associated with each position changes. For example, suppose TML-1 is situated at Position 1 before a rotation or flip. After the movement, a different TML will occupy Position 1.If you want to load updated measurements after a rotation or flip, it is recommended that you delete the TML_ID column from the TML worksheet or update the TML IDs for each position in the TML worksheet before loading the updated measurements.The TML_CAS worksheet is processed. For each TMLIf the Corrosion Analysis Settings record does not exist, then a record is created and linked to the TML using the Has Corrosion Analysis Settings relationship. The fields in the Corrosion Analysis Settings record are populated with the corresponding values in the Piping_Band_CAS worksheet.A TML Corrosion Analysis record is created and linked to the TML using the Has Corrosion Analyses relationship.If you have entered values in this worksheet, the values in the Corrosion Analysis Settings record linked to the TML are replaced with the values in the TML_CAS worksheet. The Measurements worksheet is processed. For each row on this worksheet, a Thickness Measurement record is created or modified and linked to the TML using the Has Measurements relationship.
+After you load the data, the updated assets appear in the Assets and Assets Requiring a Calculation sections on the Thickness Monitoring Overview page. You must calculate all the analyses that you have loaded because they are not calculated automatically after you load the data.
+Note: The data loaders used in TM split large amount of data into the following transaction scopes:Asset level dataPiping Components in 50-count batchesPiping Bands in 50-count batchesThickness Measurement Locations in 100-count batchesMeasurements in 250-count batchesThe guardrail for piping rotation or flip is set to 1 Asset, 100 components, and 17 bands. If an error occurs while loading data, you can reduce the transaction scopes as per your requirement. For information on modifying the transaction scopes, refer to the Configure Data Loader Transaction Scopes topic.
+After you load the data, you can view the following information in the Interface Log datasheet:Number of Records ProcessedNumber of Records RejectedNumber of Records CreatedNumber of Records Updated
+To access the Interface Log datasheet, in the Data Loaders page, select a link in the JOB ID column.
+About the Thickness Monitoring (TM) Piping Data Loaders Workbook Layout and UseColor Coding
+Certain columns on the worksheets have different functions and requirements. To illustrate this, certain columns are color-coded. The following table lists the colors and what they represent.
+
+Color
+
+Description
+
+Comments
+
+Light Grey Fields and Heading
+
+Required Key Fields
+
+Indicates columns that contain values that are used by the Thickness Monitoring (TM) Piping Data Loader to look up and create records. If these columns are removed from the worksheets, the data load will fail. While the worksheets require that these columns be present, check each column to determine which ones require a value.
+
+ White Fields with Pink Heading
+
+ Fields Required for Calculation 
+
+Indicates columns that contain values that are required to perform calculations in Thickness Monitoring. Some cells only require values in certain cases. Such cases are found in parentheses in the first row of each worksheet.
+
+White Fields with Blue Heading 
+
+ Recommended Fields 
+
+Indicates columns that, according to GE Digital APM Best Practice for Thickness Monitoring, should contain values.
+
+Limitations
+The Thickness Monitoring (TM) Data Loaders have the following limitations:
+If you modify the format of the values in columns on any of the worksheets, you will not be able to import data.You cannot create or update nominal measurements using the data loader workbooks. You can only create or update actual measurements.The values that you enter in the data loader workbooks are case-sensitive.You cannot link an RBI Component to a TML Group using the data loader workbooks.You cannot relocate, renew, or organize TMLs using the data loader workbooks.You cannot skip measurements using the data loader workbooks.
+If you reimport data, the records that have been created by the Thickness Monitoring (TM) Data Loaders will be updated. Therefore, while reimporting data related to a record, if you remove the data for a field in the data loader workbooks, the value for the corresponding field in GE Digital APM will be either a default value or blank. 
+Tip:  If you do not want to update a field value, you can remove the corresponding column from the data loader workbooks. You cannot, however, remove columns that correspond to required fields.
+
+Assets Worksheet
+On the Assets worksheet, you will specify Equipment to which you want to link Piping Components. The Assets worksheet only appears on the Thickness Monitoring (TM) Piping Equipment Data Loader but not on the Thickness Monitoring (TM) Piping Functional Location Data Loader. The columns that appear on this worksheet also appear on every subsequent worksheet in the Thickness Monitoring (TM) Piping Equipment Data Loader. They are used to identify the records that will be linked, directly or indirectly, to the Equipment. The combination of values in the three columns on this worksheet must be unique.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+ Equipment ID 
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+This column requires at least one cell to have a value.
+
+CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+If the Equipment record for an asset has a value in the CMMS System field, enter that value in this column.
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+If you are required to enter a value for the CMMS System cell for a piece of equipment, and the Equipment record has a value in the Equipment Technical Number field, enter that value in this column.
+If there is no value in the CMMS System field, this column can be blank, even if the Equipment record contains a value for the Equipment Technical Number field.
+
+
+Functional_Location Worksheet
+On the Functional_Location worksheet, you will specify Functional Locations to which you want to link to Piping Components. This worksheet is included only in the Thickness Monitoring (TM) Piping Functional Location Data Loader. The columns that appear on this worksheet also appear on every subsequent worksheet in the Thickness Monitoring ™ Piping Functional Location Data Loader. They are used to identify the records that will be linked, directly or indirectly, to the Functional Locations. The combination of values in the two columns on this worksheet must be unique.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Functional Location ID
+
+MI_FNCLOC00_FNC_LOC_C
+
+Character (255)
+
+This column requires at least one cell to have a value.
+
+CMMS System
+
+MI_FNCLOC00_SAP_SYSTEM_C
+
+Character (255)
+
+If the Functional Location record for an asset has a value in the CMMS System field, enter that value in this column.
+
+
+Asset_CAS Worksheet
+On the Asset_CAS worksheet, you will specify Corrosion Analysis Settings records for an Equipment. If you do not enter values on this worksheet, the default values are used. This worksheet is included only in the Thickness Monitoring (TM) Piping Equipment Data Loader.
+In addition, the values that you enter on this worksheet are used to specify Corrosion Analysis Settings for associated Piping Components, Piping Bands, and TMLs. You can, however, overwrite these values by specifying different values on the Piping_Component_CAS, Piping_Band_CAS and TML_CAS worksheets.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Equipment ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+This column requires at least one cell to have a value.
+
+ CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+If the Equipment record for an asset has a value in the CMMS System field, enter that value in this column.
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+If you are required to enter a value for the CMMS System cell for an asset, and the Equipment record for the asset has a value in the Equipment Technical Number field, enter that value in this column.
+If there is no value in the CMMS System field, this column can be blank, even if the Equipment record contains a value for the Equipment Technical Number field.
+Inspection TypeMI_CA_SET_ANALY_TYPE_CHRCharacter (50)
+If you do not enter a value in this cell, then data in this row is not loaded. 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+
+System Code IDInspection TypeUT
+Ultrasonic Thickness
+RTRadiographic ThicknessTMLThickness Measurement Location
+
+The list in this field is populated by the CITP System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table. 
+Controlling Corrosion RateMI_CA_SET_CR_ROLL_OPT_CHRCharacter (50)
+This cell may only contain one of the following values:
+ Average Formula Maximum 
+The default value is Maximum.
+CommentsMI_CA_SET_COM_CON_COR_RAT_CHRCharacter (2500)NoneApply CCR to TML Rem Life Next Insp Date CalcMI_CA_SET_APPLY_CR_FLGBoolean Enter True or False. The default value is False.Safety FactorMI_CA_SET_AVG_CR_SFTY_FCTR_NBRNumericThe default value is 1.Minimum Number of TMLsMI_CA_SET_AVG_CR_MN_TML_NBRNumeric The default value is 1.PercentileMI_CA_SET_AVG_CR_PERC_NBRNumeric
+The default value is 100. 
+Std Deviation FactorMI_CA_SET_STD_DEV_FCTR_NBRNumericThe default value is 2.Remaining Life Critical Number of TMLsMI_CA_SET_RM_LIF_CRIT_TMLS_NBRNumericThe default value is 1. Enter a value between 0 and 1.Corrosion Rate Options - Least SquaresMI_CA_SET_CR_OPT_LS_FLGBooleanEnter True or False. The default value is False.Corrosion Rate Options - Short TermMI_CA_SET_CR_OPT_ST_FLGBooleanEnter True or False. The default value is True.Corrosion Rate Options - Long TermMI_CA_SET_CR_OPT_LT_FLGBooleanEnter True or False. The default value is True.Corrosion Rate Options - Custom AMI_CA_SET_CR_OPT_A_FBooleanEnter True or False. The default value is False.Corrosion Rate Options - Custom BMI_CA_SET_CR_OPT_B_FBooleanEnter True or False. The default value is False.Default Inspection Interval (Months)MI_CA_SET_INSP_INTRVL_NBRNumericThe default value is 0.Inspection Interval Options - Factor Remaining Life MI_CA_SET_INSP_INT_OPT_FRL_FLGBooleanEnter True or False. The default value is True.Inspection Interval Options - Inspection Interval MI_CA_SET_INSP_INT_OPT_II_FLGBooleanEnter True or False. The default value is True.Default T-Min (Inches)MI_CA_SET_REF_TMIN_NBRNumericThe default value is 0.Minimum Corrosion Rate (Mils/year)MI_CA_SET_MN_CR_NBRNumericThe default value is 5.Use Minimum Corrosion Rate MI_CA_SET_USE_MN_CR_FLGBooleanEnter True or False. The default value is False.Remaining Life FactorMI_CA_SET_REM_LIFE_FCTR_NBRNumericThe default value is 0.5. Enter a number between 0 and 1.Allowable Measurement Variance (inches)MI_CA_SET_ALLOW_VARIA_NBRNumericThe default value is 0.Corrosion Rate VarianceMI_CA_SET_CRV_NNumericThe default value is 0.
+
+Functional_Location_CAS Worksheet
+On the Functional_Location_CAS worksheet, you will specify Corrosion Analysis Settings records for a Functional Location. If you do not enter values on this worksheet, the default values are used. This worksheet is included only in the Thickness Monitoring (TM) Functional Location Data Loader.
+In addition, the values that you enter on this worksheet are used to specify Corrosion Analysis Settings for associated Piping Components, Piping Bands, and TMLs. You can, however, overwrite these values by specifying different values in the Piping_Component_CAS, Piping_Band_CAS, and TML_CAS worksheets.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Functional Location ID
+
+MI_FNCLOC00_FNC_LOC_C
+
+Character (255)
+
+This column requires at least one cell to have a value.
+
+ CMMS System
+
+MI_FNCLOC00_SAP_SYSTEM_C
+
+Character (255)
+
+If the Functional Location record for an asset has a value in the CMMS System field, enter that value in this column.
+Inspection TypeMI_CA_SET_ANALY_TYPE_CHRCharacter (50)
+If you do not enter a value in this cell, then data in this row is not loaded. 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+
+System Code IDInspection TypeUT
+Ultrasonic Thickness
+RTRadiographic ThicknessTMLThickness Measurement Location
+
+The list in this field is populated by the CITP System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table. 
+Controlling Corrosion RateMI_CA_SET_CR_ROLL_OPT_CHRCharacter (50)
+This cell may only contain one of the following values:
+ Average Formula Maximum 
+The default value is Maximum.
+CommentsMI_CA_SET_COM_CON_COR_RAT_CHRCharacter (2500)NoneApply CCR to TML Rem Life Next Insp Date CalcMI_CA_SET_APPLY_CR_FLGBoolean Enter True or False. The default value is False.Safety FactorMI_CA_SET_AVG_CR_SFTY_FCTR_NBRNumericThe default value is 1.Minimum Number of TMLsMI_CA_SET_AVG_CR_MN_TML_NBRNumeric The default value is 1.PercentileMI_CA_SET_AVG_CR_PERC_NBRNumeric
+The default value is 100. 
+Std Deviation FactorMI_CA_SET_STD_DEV_FCTR_NBRNumericThe default value is 2.Remaining Life Critical Number of TMLsMI_CA_SET_RM_LIF_CRIT_TMLS_NBRNumericThe default value is 1.Corrosion Rate Options - Least SquaresMI_CA_SET_CR_OPT_LS_FLGBooleanEnter True or False. The default value is False.Corrosion Rate Options - Short TermMI_CA_SET_CR_OPT_ST_FLGBooleanEnter True or False. The default value is True.Corrosion Rate Options - Long TermMI_CA_SET_CR_OPT_LT_FLGBooleanEnter True or False. The default value is True.Corrosion Rate Options - Custom AMI_CA_SET_CR_OPT_A_FBooleanEnter True or False. The default value is False.Corrosion Rate Options - Custom BMI_CA_SET_CR_OPT_B_FBooleanEnter True or False. The default value is False.Default Inspection Interval (Months)MI_CA_SET_INSP_INTRVL_NBRNumericThe default value is 0.Inspection Interval Options - Factor Remaining Life MI_CA_SET_INSP_INT_OPT_FRL_FLGBooleanEnter True or False. The default value is True.Inspection Interval Options - Inspection Interval MI_CA_SET_INSP_INT_OPT_II_FLGBooleanEnter True or False. The default value is True.Default T-Min (Inches)MI_CA_SET_REF_TMIN_NBRNumericThe default value is 0.Minimum Corrosion Rate (Mils/year)MI_CA_SET_MN_CR_NBRNumericThe default value is 5.Use Minimum Corrosion Rate MI_CA_SET_USE_MN_CR_FLGBooleanEnter True or False. The default value is False.Remaining Life FactorMI_CA_SET_REM_LIFE_FCTR_NBRNumericThe default value is 0.5. Enter a number between 0 and 1.Allowable Measurement Variance (inches)MI_CA_SET_ALLOW_VARIA_NBRNumericThe default value is 0.Corrosion Rate VarianceMI_CA_SET_CRV_NNumericThe default value is 0.
+
+Piping_Component Worksheet
+On the Piping_Component worksheet, you will specify the Piping_Components (which are or will be represented by TML Group family records) that you want to create or update.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Equipment ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+This column requires at least one cell to have a value. This column appears only in the Thickness Monitoring (TM) Equipment Data Loader.
+
+Functional Location ID
+
+MI_FNCLOC00_FNC_LOC_C
+
+Character (255)
+
+This column requires at least one cell to have a value. This column appears only in the Thickness Monitoring (TM) Functional Location Data Loader.
+
+CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+If the Equipment or the Functional Location record for an asset has a value in the CMMS System field, enter that value in this column.
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+This column appears only in the Thickness Monitoring (TM) Equipment Data Loader. If you are required to enter a value for the CMMS System cell for an asset, and the Equipment record for the asset has a value in the Equipment Technical Number field, enter that value in this column.
+If there is no value in the CMMS System field, this column can be blank, even if the Equipment record contains a value for the Equipment Technical Number field.
+
+Component ID
+
+MI_TMLGROUP_COMP_ID_C
+
+Character (255)
+
+A value is required and must be unique among all the Piping Components linked to an Asset.
+Note:  Although the Component ID field is disabled and populated automatically in GE Digital APM, you can override the value using the data loader workbook.
+Component TypeMI_TMLGROUP_COMP_TYPE_C
+Character (255)
+This column can contain any of the following values:STRAIGHT SPOOLBENT ELBOWMITERED ELBOWDescriptionMI_TMLGROUP_DESCR_CCharacter (255)NoneCorrosion GroupMI_TMLGROUP_CORRO_GROUP_CCharacter (255)NoneCommentsMI_TMLGROUP_COMME_TCharacter (2500)None
+
+Piping_Component_CAS
+On the Piping_Component_CAS worksheet, you will specify Corrosion Analysis Settings records for a Piping_Component. If you do not enter values in this worksheet, the values on the Asset_CAS or Functional_Location_CAS worksheet for the associated asset are used. Otherwise, the values that you enter on the Piping_Component_CAS are used for the TML Group.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Equipment ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+This column requires at least one cell to have a value. This column appears only in the Thickness Monitoring (TM) Equipment Data Loader.
+
+Functional Location ID
+
+MI_FNCLOC00_FNC_LOC_C
+
+Character (255)
+
+This column requires at least one cell to have a value. This column appears only in the Thickness Monitoring (TM) Functional Location Data Loader.
+
+CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+If the Equipment or the Functional Location record for an asset has a value in the CMMS System field, enter that value in this column.
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+This column appears only in the Thickness Monitoring (TM) Equipment Data Loader. If you are required to enter a value for the CMMS System cell for an asset, and the Equipment record for the asset has a value in the Equipment Technical Number field, enter that value in this column. 
+If there is no value in the CMMS System field, this column can be blank, even if the Equipment record contains a value for the Equipment Technical Number field.
+
+Component ID
+
+MI_TMLGROUP_COMP_ID_C
+
+Character (255)
+
+A value is required and must match one of the value in the corresponding cell on the Piping_Component worksheet.
+Inspection TypeMI_CA_SET_ANALY_TYPE_CHRCharacter (50)If you do not enter a value in this cell, then data in this row is not loaded. This cell may only contain a value that you entered in the Inspection Type cell for the associated asset on the Asset_CAS or Functional_Location_CAS worksheet.Controlling Corrosion RateMI_CA_SET_CR_ROLL_OPT_CHRCharacter (50)
+This cell may only contain one of the following values:
+ Average Formula Maximum 
+
+Comments
+
+MI_CA_SET_COM_CON_COR_RAT_CHR
+
+Character (2000)
+NoneApply CCR to TML Rem Life Next Insp Date CalcMI_CA_SET_APPLY_CR_FLGBoolean
+Enter True or False.
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Safety FactorMI_CA_SET_AVG_CR_SFTY_FCTR_NBRNumeric
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Minimum Number of TMLsMI_CA_SET_AVG_CR_MN_TML_NBRNumeric
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+PercentileMI_CA_SET_AVG_CR_PERC_NBRNumeric
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Std Deviation FactorMI_CA_SET_STD_DEV_FCTR_NBRNumeric
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Remaining Life Critical Number of TMLsMI_CA_SET_RM_LIF_CRIT_TMLS_NBRNumeric
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Corrosion Rate Options - Least SquaresMI_CA_SET_CR_OPT_LS_FLGBoolean
+Enter True or False. 
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Corrosion Rate Options - Short TermMI_CA_SET_CR_OPT_ST_FLGBoolean
+Enter True or False.
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Corrosion Rate Options - Long TermMI_CA_SET_CR_OPT_LT_FLGBoolean
+Enter True or False.
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Corrosion Rate Options - Custom AMI_CA_SET_CR_OPT_A_FBoolean
+Enter True or False.
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Corrosion Rate Options - Custom BMI_CA_SET_CR_OPT_B_FBoolean
+Enter True or False.
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Default Inspection Interval (Months)MI_CA_SET_INSP_INTRVL_NBRNumeric
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Inspection Interval Options - Factor Remaining Life MI_CA_SET_INSP_INT_OPT_FRL_FLGBoolean
+Enter True or False.
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Inspection Interval Options - Inspection Interval MI_CA_SET_INSP_INT_OPT_II_FLGBoolean
+Enter True or False.
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Default T-Min (Inches)MI_CA_SET_REF_TMIN_NBRNumeric
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Minimum Corrosion Rate (Mils/year)MI_CA_SET_MN_CR_NBRNumeric
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Use Minimum Corrosion Rate MI_CA_SET_USE_MN_CR_FLGBoolean
+Enter True or False.
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Remaining Life FactorMI_CA_SET_REM_LIFE_FCTR_NBRNumeric
+Enter a number between 0 and 1.
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Allowable Measurement Variance (inches)MI_CA_SET_ALLOW_VARIA_NBRNumeric
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Corrosion Rate VarianceMI_CA_SET_CRV_NNumeric
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+
+
+Piping_Band Worksheet
+On the Piping_Band worksheet, you will specify the Piping Bands (which are or will be represented by TML Group family records) that you want to create or update.
+Field CaptionField IDData Type (Length)CommentsEquipment IDMI_EQUIP000_EQUIP_ID_CCharacter (255)This column requires at least one cell to have a value. This column appears only in the Thickness Monitoring (TM) Piping Equipment Data Loader.Functional Location IDMI_FNCLOC00_FNC_LOC_CCharacter (255)This column requires at least one cell to have a value. This column appears only in the Thickness Monitoring (TM) Piping Functional Location Data Loader.CMMS SystemMI_EQUIP000_SAP_SYSTEM_CCharacter (255)If the Equipment or the Functional Location record for an asset has a value in the CMMS System field, enter that value in this column.Equipment Technical NumberMI_EQUIP000_EQUIP_TECH_NBR_CCharacter (255)
+This column appears only in the Thickness Monitoring (TM) Piping Equipment Data Loader. If you are required to enter a value for the CMMS System cell for an asset, and the Equipment record for the asset has a value in the Equipment Technical Number field, enter that value in this column.
+If there is no value in the CMMS System field, this column can be left blank, even if the Equipment record contains a value for the Equipment Technical Number field.
+Component IDMI_TMLGROUP_COMP_ID_CCharacter (255)A value is required and must match one of the value in the corresponding cell on the Piping_Component worksheet.Piping Band IDMI_TMLGROUP_BAND_ID_CCharacter (255)A value is required and must be unique among all the Piping Bands linked to a Piping Component.Number of Band PositionsMI_TMLGROUP_NUM_POS_NNumericA value is required and can have values of 4, 12, or 24Band TypeMI_TMLGROUP_BAND_TYPE_CCharacter (255)This column can contain any of the following values:MIRROREDCENTEREXTRADOSODD
+This column can also be blank.Mirrored BandMIRRORED_BANDCharacter (255)Only valid if the Band Type is MIRRORED. This field can contain the Band ID of the band that is the mirror of this band.Note: This is not an actual family field. It is used to relate two mirrored bands using the Has Mirrored Band relationship family. Distance From InletMI_TMLGROUP_DIST_INLET_CNumericContains a value that denotes the distance (in feet) from the inlet side of the pipe to the position of the Piping Band.Corrosion GroupMI_TMLGROUP_CORRO_GROUP_CCharacter (255)DescriptionMI_TMLGROUP_DESCR_CCharacter (255)CommentsMI_TMLGROUP_COMMENTCharacter (2000)
+Piping_Band_CAS
+On the Piping_Component_CAS worksheet, you will specify the Corrosion Analysis Settings records for a Piping_Component. If you do not enter values in this worksheet, the values in the Asset_CAS or Functional_Location_CAS worksheet for the associated asset are used. Otherwise, the values that you enter in the Piping_Component_CAS are used for the TML Group.
+Field CaptionField IDData Type (Length)CommentsEquipment IDMI_EQUIP000_EQUIP_ID_CCharacter (255)This column requires at least one cell to have a value. This column appears only in the Thickness Monitoring (TM) Equipment Data Loader.Functional Location IDMI_FNCLOC00_FNC_LOC_CCharacter (255)This column requires at least one cell to have a value. This column appears only in the Thickness Monitoring (TM) Functional Location Data Loader.CMMS SystemMI_EQUIP000_SAP_SYSTEM_CCharacter (255)If the Equipment or the Functional Location record for an asset has a value in the CMMS System field, enter that value in this column.Equipment Technical NumberMI_EQUIP000_EQUIP_TECH_NBR_CCharacter (255)
+This column appears only in the Thickness Monitoring (TM) Equipment Data Loader. If you are required to enter a value for the CMMS System cell for an asset, and the Equipment record for the asset has a value in the Equipment Technical Number field, enter that value in this column.
+If there is no value in the CMMS System field, this column can be blank, even if the Equipment record contains a value for the Equipment Technical Number field.
+Component IDMI_TMLGROUP_COMP_ID_CCharacter (255)A value is required and must match one of the value in the corresponding cell on the Piping_Component worksheet.Inspection TypeMI_CA_SET_ANALY_TYPE_CHRCharacter (50)If you do not enter a value in this cell, then data in this row is not loaded. This cell can only contain a value that you entered in the Inspection Type cell for the associated asset in the Asset_CAS or Functional_Location_CAS worksheet.Piping Band IDMI_TMLGROUP_BAND_ID_CCharacter (255)A value is required and must match one of the value in the corresponding cell on the Piping_Band worksheet.Controlling Corrosion RateMI_CA_SET_CR_ROLL_OPT_CHRCharacter (50)This cell may only contain one of the following values:AverageFormulaMaximumCommentsMI_CA_SET_COM_CON_COR_RAT_CHRCharacter (2000)Apply CCR to TML Rem Life Next Insp Date CalcMI_CA_SET_APPLY_CR_FLGBooleanEnter True or False.If you do not enter a value in this cell, the value in the corresponding cell in the Asset_CAS or the Functional_Location_CAS worksheet is used.Safety FactorMI_CA_SET_AVG_CR_SFTY_FCTR_NBRNumericIf you do not enter a value in this cell, the value in the corresponding cell in the Asset_CAS or the Functional_Location_CAS worksheet is used.Minimum Number of TMLsMI_CA_SET_AVG_CR_MN_TML_NBRNumericIf you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.PercentileMI_CA_SET_AVG_CR_PERC_NBRNumericIf you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.Std Deviation FactorMI_CA_SET_STD_DEV_FCTR_NBRNumericIf you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.Remaining Life Critical Number of TMLsMI_CA_SET_RM_LIF_CRIT_TMLS_NBRNumericIf you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.Corrosion Rate Options - Least SquaresMI_CA_SET_CR_OPT_LS_FLGBooleanEnter True or False.If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.Corrosion Rate Options - Short TermMI_CA_SET_CR_OPT_ST_FLGBooleanEnter True or False.If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.Corrosion Rate Options - Long TermMI_CA_SET_CR_OPT_LT_FLGBooleanEnter True or False.If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.Corrosion Rate Options - Custom AMI_CA_SET_CR_OPT_A_FBooleanEnter True or False.If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.Corrosion Rate Options - Custom BMI_CA_SET_CR_OPT_B_FBooleanEnter True or False.If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.Default Inspection Interval (Months)MI_CA_SET_INSP_INTRVL_NBRNumericIf you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.Inspection Interval Options - Factor Remaining LifeMI_CA_SET_INSP_INT_OPT_FRL_FLGBooleanEnter True or False.If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.Inspection Interval Options - Inspection IntervalMI_CA_SET_INSP_INT_OPT_II_FLGBooleanEnter True or False.If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.Default T-Min (Inches)MI_CA_SET_REF_TMIN_NBRNumericIf you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.Minimum Corrosion Rate (Mils/year)MI_CA_SET_MN_CR_NBRNumericIf you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.Use Minimum Corrosion RateMI_CA_SET_USE_MN_CR_FLGBooleanEnter True or False.If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.Remaining Life FactorMI_CA_SET_REM_LIFE_FCTR_NBRNumeric
+Enter a number between 0 and 1.
+If you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Allowable Measurement Variance (inches)MI_CA_SET_ALLOW_VARIA_NBRNumericIf you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.Corrosion Rate VarianceMI_CA_SET_CRV_NNumericIf you do not enter a value in this cell, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+TML Worksheet
+On the TML worksheet, you will specify the TMLs (that are or will be represented by Thickness Measurement Location records) that you want to modify. For some of the cells, if you do not enter a value on this worksheet, after you load data, the corresponding fields are populated automatically in GE Digital APM.
+
+Field CaptionField IDData Type (Length)Comments
+Equipment ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+This column requires at least one cell to have a value. This column appears only in the Thickness Monitoring (TM) Equipment Data Loader.
+
+Functional Location ID
+
+MI_FNCLOC00_FNC_LOC_C
+
+Character (255)
+
+This column requires at least one cell to have a value. This column appears only in the Thickness Monitoring (TM) Functional Location Data Loader.
+
+CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+If the Equipment or the Functional Location record for an asset has a value in the CMMS System field, enter that value in this column.
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+This column appears only in the Thickness Monitoring (TM) Equipment Data Loader. If you are required to enter a value for the CMMS System cell for an asset, and the Equipment record for the asset has a value in the Equipment Technical Number field, enter that value in this column. 
+If there is no value in the CMMS System field, this column can be blank, even if the Equipment record contains a value for the Equipment Technical Number field.
+Component IDMI_TMLGROUP_COMP_ID_C
+Character (255)
+A value is required and must match one of the value in the corresponding cell on the Piping_Component worksheet.Piping Band IDMI_TMLGROUP_BAND_ID_C
+Character (255)
+A value is required and must match one of the value in the corresponding cell on the Piping_Band worksheet.
+Position
+
+MI_TMLGROUP_POSITION_N
+
+Numeric
+
+A value is required, and must be unique among all the TMLs linked to a Piping Band. The numbers start from 1 to the number of positions per band.
+
+TML Analysis Type
+
+MI_TML_TYPE_CHR
+
+ Character (50) 
+A value is required. This cell may only contain one of the values that you entered in the Inspection Type cell in the Asset_CAS, Functional_Location_CAS, or TML_Group_CAS worksheet, whichever is linked to the TML.
+Component Type
+
+MI_TML_COMP_TYPE_CHR
+
+Character (10)
+
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+Piping Pressure Vessel  Tank 
+LocationMI_DP_LOCTN_CHR Character (50) NoneISO Drawing NumberMI_DP_ISO_DRAW_CHRCharacter (50)None
+Access
+
+MI_DP_ACCESS_CHR
+
+Character (50)
+
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+LADDERMANLIFTSCAFFOLD
+The list in this field is populated by the DPAC System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table. 
+
+Inspection Sequence Number
+
+MI_DP_INSP_SEQ_NBR
+
+Numeric
+None
+Insulated Flag
+
+MI_TML_INSLTED_FLG
+
+Boolean
+
+Enter True or False. The default value is False.
+TML CommentMI_DP_COMMNT_CHRCharacter (255)None
+ Minimum Thickness 
+
+MI_TML_MIN_THICK_NBR
+
+Numeric
+If you do not enter a value in this cell, the value in the Default T-Min (Inches) cell on the TML_CAS worksheet is used. 
+Additional Thickness
+
+MI_THICK_MEASU_LOCAT_ADDIT_THI
+
+Numeric
+NoneExcluded From AnalysisMI_DP_EXCL_FROM_ANALYSIS_FLGLogicalEnter True or False. The default value is False.
+Number of Readings
+
+MI_TML_READ_NUM_N
+
+Numeric
+Enter a number between 1 and 26. The default value is 1.
+Design Code
+
+MI_TML_DSGN_CODE_CHR
+
+Character (50)
+
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs based on the value in the Component Type cell:
+
+Component TypeDesign CodePiping
+B31.1
+B31.3
+Pressure VesselASME VIII DIV 1TankAPI 653
+
+The list in this field is populated by the DSCD System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table. 
+
+Code Year (T-Min Formula)
+
+MI_TML_CODE_YEAR_C
+
+Character (4)
+
+A value is required if the value in the Design Code cell is not N/A. This cell may only contains one of the following values:
+N/A1995
+
+Code Year (Allowable Stress Lookup)
+
+MI_TML_CODE_YEAR_STRESS_C
+
+Character (4)
+
+A value is required if the value in the Design Code cell is not N/A. The following table provides the valid values that you can enter in this cell based on the value in the Design Code cell.
+
+Design CodeCode Year (Allowable Stress Lookup)API 6532008ASME VIII DIV 1
+1998
+2010
+B31.1
+2014
+B31.3
+2014
+
+
+
+Material Specification
+
+MI_TML_MAT_SPEC_CHR
+
+Character
+
+A value is required if the value in the Override Allowable Stress cell is False, and if you want GE Digital APM to calculate T-min values. Refer to the (Picklist) worksheet in the data loader workbook for valid values that you can enter in this cell based on the values in the Design Code and Code Year (Allowable Stress Lookup) cells.
+
+Material Grade
+
+MI_TML_MAT_GRADE_CHR
+
+Character (50)
+
+A value is required if the value in the Override Allowable Stress cell is False, and if you want GE Digital APM to calculate T-min values. Refer to the (Picklist) worksheet in the data loader workbook for valid values that you can enter in this cell based on the values in the Design Code, Code Year (Allowable Stress Lookup), and Material Specification cells.
+
+Material Type
+
+MI_TML_MATER_TYPE_CHR
+
+Character
+None
+Design Pressure
+
+MI_TML_DSGN_PRESS_NBR
+
+Numeric
+A value is required if you want GE Digital APM to calculate T-min values.
+Design Temperature
+
+MI_TML_DSGN_TEMP_NBR
+
+Numeric
+A value is required if you want GE Digital APM to calculate T-min values.
+ Nominal Thickness 
+
+MI_TML_NOM_THICK_NBR
+
+Numeric
+NoneOverride Allowable StressMI_TML_OVRD_ALLOW_STRES_FBoolean
+Enter True or False.
+
+Allowable Stress
+
+MI_TML_ALLOWABLE_STRESS_N
+
+Numeric
+
+A value is required if the value in the Override Allowable Stress cell is True, and you want GE Digital APM to calculate T-min values.
+
+Outside Diameter
+
+MI_TML_OUTSD_DIAM_NBR
+
+Numeric
+
+A value is required if all of the following conditions are satisfied:
+ The value in the Vessel Type cell is CON_HEAD (Conical Head), ELLIP_HEAD (Ellipsoidal Head), PIPENOZZ (Pipe nozzle),TORCC_HEAD (Toriconical Head), or TORCK_HEAD (Toriconical Head, Knuckle Portion).The value in the PV Formula cell is Outside. You want GE Digital APM to calculate T-min values.
+
+Inside Diameter
+
+MI_TML_INSD_DIAM_NBR
+
+Numeric
+
+A value is required if all of the following conditions are satisfied:
+ The value in the Vessel Type cell is CON_HEAD (Conical Head), ELLIP_HEAD (Ellipsoidal Head), TORCC_HEAD (Toriconical Head), or TORCK_HEAD (Toriconical Head, Knuckle Portion).The value in the PV Formula cell is Inside. You want GE Digital APM to calculate T-min values.
+
+Joint Factor
+
+MI_TML_JOINT_EFF_NBR
+
+Numeric
+
+A value is required if all of the following conditions are satisfied:
+The value in the Design Code cell is API 653.The value in the Tank Type cell is RIVSHELL (Rivited Shell) or WELDSHELL (Welded Shell). You want GE Digital APM to calculate T-min values.
+The default value is 1. 
+
+Corrosion Allowance
+
+MI_TML_CORR_ALLOW_NBR
+
+Numeric
+None
+Piping Nominal Diameter - NPS
+
+MI_TML_NOM_DIAM_NBR
+
+Numeric
+
+Refer to the (Picklist) worksheet in the data loader workbook for a list of values that you can enter in this cell. 
+The values in the Piping Nominal Diameter - NPS and Piping Nominal Diameter - DN cells are mapped using the Piping Properties reference table. Therefore, if you enter a value in one of these cells, the other field is populated with the mapped value after you load data. 
+If you enter a value that is not mapped to the value in the Piping Nominal Diameter - DN cell, then the value in this cell is ignored, and the corresponding field is populated with the value mapped to the value in the Piping Nominal Diameter - DN cell. For example, if the value in the Piping Nominal Diameter - DN cell is 6, then the value in this cell must be 0.125. If you enter a different value in this cell or leave it blank, then the value 0.125 is used to populate the corresponding field in GE Digital APM.
+
+Piping Nominal Diameter - DN
+
+MI_TML_PIPING_NOM_DIAM_DN_N
+
+Numeric
+
+Refer to the (Picklist) worksheet in the data loader workbook for a list of values that you can enter in this cell. 
+The values in the Piping Nominal Diameter - NPS and Piping Nominal Diameter - DN cells are mapped using the Piping Properties reference table. Therefore, if you enter a value in one of these cells, the other field is populated with the mapped value after you load data. 
+
+Schedule
+
+MI_TML_SCHED_CHR
+
+Character (50)
+A value is required if you have entered a value in the Piping Nominal Diameter - NPS cell. Refer to the (Picklist) worksheet in the data loader workbook for a list of values that you can enter in this cell based on the value in the Piping Nominal Diameter - NPS cell.
+Piping Formula
+
+MI_TML_PIPING_FORMULA_C
+
+Character (4)
+
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs based on the values in the Design Code cell: 
+
+Design CodePiping FormulaNo value
+A
+B
+C
+D
+B31.3 
+A
+B
+C
+D
+Any value other than B31.3N/A
+
+The list in this field is populated by the PIPFMU System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table. 
+
+Mechanical Allowance
+
+MI_TML_MECH_ALLOWANCE_N
+
+Numeric
+The default value is 0.
+Design Factor
+
+MI_TML_DESIGN_FACTOR_N
+
+Numeric
+
+A value is required if all of the following conditions are satisfied:
+The value in the Component Type cell is Piping.The value in the Design Code cell is B31.8. You want GE Digital APM to calculate T-min values. 
+The default value is 1.
+
+Temperature Factor
+
+MI_TML_TEMP_FACTOR_N
+
+Numeric
+A value is required if the value in the Component Type cell is Piping, and if you want GE Digital APM to calculate T-min values. The default value is 1. 
+Tank Type
+
+MI_TML_TANK_TYPE_C
+
+Character (50)
+
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDTank TypeANNRINGAnnular RingFLRPLATEFloor PlateRIVSHELLRivited ShellROOFPLATERoof PlateWELDSHELLWelded Shell
+
+The list in this field is populated by the TNKT System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table. 
+
+Shell Type
+
+MI_TML_SHELL_TYPE_C
+
+Character (50)
+None
+API Method
+
+MI_TML_API_METHOD_C
+
+Character (50)
+None
+Plate Thickness
+
+MI_TML_PLATE_THICKNESS_N
+
+Numeric
+
+A value is required if all of the following conditions are satisfied:
+The value in the Design Code cell is API 653.The value in the Tank Type cell is ANNRING (Annular Ring). You want GE Digital APM to calculate T-min values.
+
+Minimum Yield Strength
+
+MI_TML_MIN_YIELD_STR_N
+
+Numeric
+
+A value is required if all of the following conditions are satisfied:
+The value in the Design Code cell is API 653.The value in the Tank Type cell is WELDSHELL (Welded Shell). You want GE Digital APM to calculate T-min values.
+
+Minimum Tensile Strength
+
+MI_TML_MIN_TENSILE_STR_N
+
+Numeric
+
+A value is required if all of the following conditions are satisfied:
+The value in the Design Code cell is API 653.The value in the Tank Type cell is WELDSHELL (Welded Shell). You want GE Digital APM to calculate T-min values.
+
+Course Height
+
+MI_TML_COURSE_HEIGHT_N
+
+Numeric
+None
+Course Number
+
+MI_TML_COURSE_NUMBER_N
+
+Numeric
+
+A value is required if all of the following conditions are satisfied:
+The value in the Design Code cell is API 653.The value in the Tank Type cell is WELDSHELL (Welded Shell). You want GE Digital APM to calculate T-min values.
+
+Fill Height
+
+MI_TML_FILL_HEIGHT_N
+
+Numeric
+None
+Specific Gravity
+
+MI_TML_SPECIFIC_GRAVITY_N
+
+Numeric
+
+A value is required if all of the following conditions are satisfied:
+The value in the Design Code cell is API 653.The value in the Tank Type cell is ANNRING (Annular Ring), RIVSHELL (Rivited Shell), or WELDSHELL (Welded Shell). You want GE Digital APM to calculate T-min values.
+
+Floor Plate has Detection?
+
+MI_TML_FLR_PLATE_DETECTION_L
+
+Boolean
+
+Enter True or False. The default value is False. 
+
+Floor Plate has Reinforced Lining?
+
+MI_TML_FLR_PLATE_REINFORCED_LINING_L
+
+Boolean
+
+Enter True or False. The default value is False. 
+
+Maximum Operating Fill Height
+
+MI_TML_MAX_OP_FILL_HEIGHT_N
+
+Numeric
+
+A value is required if all of the following conditions are satisfied:
+The value in the Design Code cell is API 653.The value in the Tank Type cell is ANNRING (Annular Ring), RIVSHELL (Rivited Shell), or WELDSHELL (Welded Shell). You want GE Digital APM to calculate T-min values.
+
+Distance From the Bottom
+
+MI_TML_DIST_FROM_BOTT_NBR
+
+Numeric
+None
+Tank Diameter
+
+MI_TML_TANK_DIAMETER_N
+
+Numeric
+
+A value is required if all of the following conditions are satisfied:
+The value in the Design Code cell is API 653.The value in the Tank Type cell is ANNRING (Annular Ring), RIVSHELL (Rivited Shell), or WELDSHELL (Welded Shell). You want GE Digital APM to calculate T-min values.
+
+Vessel Type
+
+MI_TML_VESSEL_TYPE_C
+
+Character (50)
+
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDTank TypeCON_HEADConical HeadCYL_SHELLCylindrical ShellELLIP_HEADEllipsoidal HeadHEM_HEADHemispherical HeadPIPENOZZPipe NozzleSPH_SHELLSpherical ShellTORCC_HEADToriconical HeadTORCK_HEADToriconical Head, Knuckle PortionTORSP_HEADTorispherical Head
+
+The list in this field is populated by the VSTP System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table. 
+
+PV Formula
+
+MI_TML_PV_FORMULA_C
+
+Character (10)
+
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+InsideOutside
+The list in this field is populated by the PVFMU System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table. 
+
+Dish Radius
+
+MI_TML_DISH_RADIUS_N
+
+Numeric
+
+A value is required if:
+
+ The value in the Vessel Type cell is TORSP_HEAD (Torispherical Head).
+-and-
+ You want GE Digital APM to calculate T-min values.
+
+Knuckle Radius
+
+MI_TML_KNUCKLE_RADIUS_N
+
+Numeric
+
+A value is required if:
+
+ The value in the Vessel Type cell is TORCK_HEAD (Toriconical Head, Knuckle Portion) or TORSP_HEAD (Torispherical Head).
+-and-
+ You want GE Digital APM to calculate T-min values.
+
+apex_angle
+
+MI_TML_APEX_ANGLE_N
+
+Numeric
+
+A value is required if:
+
+ The value in the Vessel Type cell is CON_HEAD (Conical Head), TORCC_HEAD Toriconical Head), or TORCK_HEAD (Toriconical Head, Knuckle Portion).
+-and-
+ You want GE Digital APM to calculate T-min values.
+
+Inside Radius
+
+MI_TML_INSIDE_RADIUS_N
+
+Numeric
+
+A value is required if all of the following conditions are satisfied:
+ The value in the Vessel Type cell is CYL_SHELL (Cylindrical Shell), HEM_HEAD Hemispherical Head), or SPH_SHELL (Spherical Shell).The value in the PV Formula cell is Inside. You want GE Digital APM to calculate T-min values.
+
+Outside Radius
+
+MI_TML_OUTSIDE_RADIUS_N
+
+Numeric
+
+A value is required if all of the following conditions are satisfied:
+ The value in the Vessel Type cell is CYL_SHELL (Cylindrical Shell), HEM_HEAD Hemispherical Head), or SPH_SHELL (Spherical Shell).The value in the PV Formula cell is Outside. You want GE Digital APM to calculate T-min values.
+
+Head Diameter
+
+MI_TML_HEAD_DIAMETER_N
+
+Numeric
+None
+
+TML_CAS Worksheet
+On the TML_CAS worksheet, you will specify Corrosion Analysis Settings records for a TML. If you do not enter values in this worksheet, then the values on the Piping_Band_CAS worksheet for the associated Piping Band are used. Otherwise, the values in the TML_CAS worksheet are used.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Equipment ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+This column requires at least one cell to have a value. This column appears only in the Thickness Monitoring (TM) Equipment Data Loader.
+
+Functional Location ID
+
+MI_FNCLOC00_FNC_LOC_C
+
+Character (255)
+
+This column requires at least one cell to have a value. This column appears only in the Thickness Monitoring (TM) Functional Location Data Loader.
+
+CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+If the Equipment or the Functional Location record for an asset has a value in the CMMS System field, enter that value in this column.
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+This column appears only in the Thickness Monitoring (TM) Equipment Data Loader. If you are required to enter a value for the CMMS System cell for an asset, and the Equipment record for the asset has a value in the Equipment Technical Number field, enter that value in this column. 
+If there is no value in the CMMS System field, this column can be blank, even if the Equipment record contains a value for the Equipment Technical Number field.
+Inspection TypeMI_CA_SET_ANALY_TYPE_CHRCharacter (50)If you do not enter a value in this cell, then data in this row is not loaded. If the TML is linked to a TML Group, then this cell may only contain a value that you have entered in the Inspection Type cell for the associated TML Group in the TML_Group_CAS worksheet. Otherwise, this cell may only contain a value that you have entered in the Inspection Type cell for the associated asset on the Asset_CAS worksheet.Component IDMI_TMLGROUP_COMP_ID_C
+Character (50)
+A value is required and must match one of the values in the corresponding cell in the Piping_Component worksheet.Band IDMI_TMLGROUP_BAND_ID_CCharacter (50)A value is required and must match one of the values in the corresponding cell in the Piping_Band worksheet.
+Position
+
+MI_TMLGROUP_POSITION_N
+
+Numeric
+
+A value is required and must match one of the values in the corresponding cell in the TML worksheet.
+Std Deviation FactorMI_CA_SET_STD_DEV_FCTR_NBRNumeric
+If you do not enter a value in this cell, and if the TML is linked to a TML Group, then the value in the corresponding cell on the TML_Group_CAS worksheet is used. Otherwise, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Default Inspection Interval (Months)MI_CA_SET_INSP_INTRVL_NBRNumeric
+If you do not enter a value in this cell, and if the TML is linked to a TML Group, then the value in the corresponding cell on the TML_Group_CAS worksheet is used. Otherwise, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Minimum Corrosion Rate (Mils/year)MI_CA_SET_MN_CR_NBRNumeric
+If you do not enter a value in this cell, and if the TML is linked to a TML Group, then the value in the corresponding cell on the TML_Group_CAS worksheet is used. Otherwise, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Allowable Measurement Variance (inches)MI_CA_SET_ALLOW_VARIA_NBRNumeric
+If you do not enter a value in this cell, and if the TML is linked to a TML Group, then the value in the corresponding cell on the TML_Group_CAS worksheet is used. Otherwise, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+Corrosion Rate VarianceMI_CA_SET_CRV_NNumeric
+If you do not enter a value in this cell, and if the TML is linked to a TML Group, then the value in the corresponding cell on the TML_Group_CAS worksheet is used. Otherwise, the value in the corresponding cell on the Asset_CAS or the Functional_Location_CAS worksheet is used.
+
+
+Measurements Worksheet
+On the Measurements worksheet, you will specify the TMs (that are or will be represented by Thickness Measurement records) that you want to create or update.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Equipment ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+This column requires at least one cell to have a value. This column appears only in the Thickness Monitoring (TM) Equipment Data Loader.
+
+Functional Location ID
+
+MI_FNCLOC00_FNC_LOC_C
+
+Character (255)
+
+This column requires at least one cell to have a value. This column appears only in the Thickness Monitoring (TM) Functional Location Data Loader.
+
+CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+If the Equipment or the Functional Location record for an asset has a value in the CMMS System field, enter that value in this column.
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+This column appears only in the Thickness Monitoring (TM) Equipment Data Loader. If you are required to enter a value for the CMMS System cell for an asset, and the Equipment record for the asset has a value in the Equipment Technical Number field, enter that value in this column. 
+If there is no value in the CMMS System field, this column can be blank, even if the Equipment record contains a value for the Equipment Technical Number field.
+Component IDMI_TMLGROUP_COMP_ID_CCharacter (255)
+A value is required and must match one of the values in the corresponding cell in the Piping_Component worksheet.
+Piping Band IDMI_TMLGROUP_BAND_ID_CCharacter (255)A value is required and must match one of the values in the corresponding cell in the Piping_Band worksheet.
+Position
+
+MI_TMLGROUP_POSITION_N
+
+Numeric
+
+A value is required and must match one of the values in the corresponding cell in the TML worksheet.
+
+
+Readings
+
+
+MI_THICK_MEASU_READI_C 
+
+Character (2000) 
+
+A value is required. Enter a number greater than 0. If you have multiple readings, separate them with semicolons.
+If you do not enter a value in this cell, the data in this row is not loaded.
+
+Measurement Date
+
+MI_DP_MEAS_TAKEN_DT
+
+Date
+
+Enter a value in the following format: YYYY-MM-DD hh:mm:ss
+If you do not enter a value, the current date is used. 
+Measurement Taken ByMI_DP_MEAS_TAKEN_BY_CHRCharacter
+Enter a value in the following format: <Last Name>, <First Name> ~ <User ID>
+When you want to create a Thickness Monitoring record using the data loader workbook, and if your user ID appears in the Measurement Taken By field on a Thickness Measurement datasheet, then you need not enter a value in this cell. The appropriate value is automatically populated in the Measurement Taken By field after you load data. If not, enter a value that matches the user ID of a Security User in GE Digital APM. Otherwise, the data in this row is not loaded.
+If, however, you do not want the Measurement Taken by field to be populated automatically, using the data loader workbook, update the Thickness Monitoring record by leaving the Measurement Taken By cell blank.
+
+Measurement Comment
+
+MI_DP_MEAS_COMMENT_CHR
+
+Character (255)
+None
+Temperature
+
+MI_THICK_MEAS_TEMP_TAKEN_AT_N
+
+Numeric
+None
+
+About the Thickness Monitoring (TM) Piping Data Loaders Load VerificationAbout This TaskAfter you load data, perform the following steps in GE Digital APM to confirm the integrity and accuracy of the data that you have loaded: ProcedureAccess the details of the import job. These details indicate if any errors were encountered during the data load. The log may help account for any records that are not loaded. In Thickness Monitoring or Record Manager, access the assets specified in the data loader workbook, and then verify that the expected TML Groups and TMLs are present or updated, and that any associated records that you expected to be created are also present in the database. To view a list of TML Groups created after a specific date, run the following query:For an SQL database: SELECT [MI_TMLGROUP].[MI_TMLGROUP_ID_C] "TML Group ID", [MI_TMLGROUP].[MI_TMLGROUP_DESCR_C]
+ "Description", [MI_TMLGROUP].LAST_UPDT_DT "LAST_UPDT_DT" FROM [MI_TMLGROUP] WHERE 
+[MI_TMLGROUP].LAST_UPDT_DT >= CONVERT(VARCHAR(255), (? :d :caption='Enter a Date'), 110)For an Oracle database:SELECT [MI_TMLGROUP].[MI_TMLGROUP_ID_C] "TML Group ID", [MI_TMLGROUP].[MI_TMLGROUP_DESCR_C]
+ "Description", [MI_TMLGROUP].LAST_UPDT_DT "LAST_UPDT_DT", [MI_TMLGROUP].ENTY_ID "ENTY_ID" 
+FROM [MI_TMLGROUP] WHERE [MI_TMLGROUP].LAST_UPDT_DT >= to_date(to_char((? :d :caption='Enter 
+a Date'), 'mm/dd/yyyy'), 'mm/dd/yyyy')To view a list of TMLs created after a specific date, run the following query: For an SQL database: SELECT [MI Thickness Measurement Location].[MI_DP_ID_CHR] "TML ID", [MI Thickness Measurement Location].
+[MI_DP_ASSET_ID_CHR] "TML Asset ID", [MI Thickness Measurement Location].LAST_UPDT_DT "LAST_UPDT_DT" 
+FROM [MI Thickness Measurement Location] WHERE [MI Thickness Measurement Location].LAST_UPDT_DT >= 
+CONVERT(VARCHAR(255), (? :d :caption='Enter a Date'), 110)For an Oracle database: SELECT [MI Thickness Measurement Location].[MI_DP_ID_CHR] "TML ID", [MI Thickness Measurement Location].
+[MI_DP_ASSET_ID_CHR] "TML Asset ID", [MI Thickness Measurement Location].LAST_UPDT_DT "LAST_UPDT_DT", 
+[MI Thickness Measurement Location].ENTY_KEY "ENTY_KEY" FROM [MI Thickness Measurement Location] WHERE 
+[MI Thickness Measurement Location].LAST_UPDT_DT >= to_date(to_char((? :d :caption='Enter a Date'), 
+'mm/dd/yyyy'), 'mm/dd/yyyy')To view a list of Thickness Measurements created after a specific date, run the following query: For an SQL database: SELECT [MI Thickness Measurement].[MI_THICK_MEASU_ID_CHR] "Measurement ID", [MI Thickness Measurement].
+[MI_DP_MEAS_TAKEN_BY_CHR] "Measurement Taken By", [MI Thickness Measurement].[MI_THICK_MEAS_TML_KEY_C] 
+"TML Key", [MI Thickness Measurement].LAST_UPDT_DT "LAST_UPDT_DT" FROM [MI Thickness Measurement] WHERE 
+[MI Thickness Measurement].LAST_UPDT_DT >= CONVERT(VARCHAR(255), (? :d :caption='Enter a Date'), 110)For an Oracle database: SELECT [MI Thickness Measurement].[MI_THICK_MEASU_ID_CHR] "Measurement ID", [MI Thickness Measurement].
+[MI_DP_MEAS_TAKEN_BY_CHR] "Measurement Taken By", [MI Thickness Measurement].[MI_THICK_MEASU_READ_PF_C] 
+"Readings Pass/Fail", [MI Thickness Measurement].[MI_THICK_MEAS_TML_KEY_C] "TML Key", 
+[MI Thickness Measurement].LAST_UPDT_DT "LAST_UPDT_DT", [MI Thickness Measurement].ENTY_KEY "ENTY_KEY" 
+FROM [MI Thickness Measurement] WHERE [MI Thickness Measurement].LAST_UPDT_DT >= 
+to_date(to_char((? :d :caption='Enter a Date'), 'mm/dd/yyyy'), 'mm/dd/yyyy')Configure Piping Data Loader Transaction ScopesBefore You BeginYou must be an administrator of the server where GE Digital APM is installed.About This TaskBy default, the Piping data loaders used in TM split large amounts of data into the following transaction scopes:Asset level dataPiping Components and Piping Bands in 50-count batchesThickness Measurement Locations in 100-count batchesMeasurements in 250-count batchesThe guardrail for piping rotation or flip is set to 1 Asset, 100 components, and 17 bands.However, based on the speed of your network connection, configuration of the GE Digital APM Server, or other such factors, you may notice transaction scope errors while uploading large batches of data. To resolve this issue, you can configure the transaction scopes to reduce the number of Piping Components, Piping Bands, TMLs, and Measurements per batch.ProcedureAccess the server where GE Digital APM is installed.Navigate to the following folder:C:\ProgramData\Meridium\Access the MeridiumAppSettings.xml file.As required, modify the following parameters:
+ParameterDescriptionpipingBandDataloaderBatchSizeDefines the batch size of Piping Bands.pipingComponentDataloaderBatchSizeDefines the batch size of Piping Components.tmlDataloaderBatchSizeDefines the batch size of TMLs.thicknessMeasurementDataloaderBatchSizeDefines the batch size of thickness measurements.
+Save the file.Restart the following services:
+RedisIIS
+The transaction scopes are updated.
+
+
+
+
+On this pageAbout the Thickness Monitoring (TM) Piping Data LoadersAbout the Thickness Monitoring (TM) Piping Data Loaders RequirementsAbout the Thickness Monitoring (TM) Piping Data Loaders Data ModelAbout the Thickness Monitoring (TM) Piping Data Loaders General Loading StrategyAbout the Thickness Monitoring (TM) Piping Data Loaders Workbook Layout and UseAbout the Thickness Monitoring (TM) Piping Data Loaders Load VerificationConfigure Piping Data Loader Transaction Scopes
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,285 @@
+
+
+
+Inspections | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference 
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Inspections
+
+
+
+
+
+
+
+InspectionsAbout InspectionsInspections are a way to document, manage, and analyze data associated with the inspections of equipment and locations in your facility.About Types of InspectionsYou will record the results of each inspection in an Inspection and its linked successors. The baseline GE Digital APM database contains Inspection families that you can use for recording the results of each type of inspection.Details
+Using Inspection Management, you can record inspection results for the following types of inspections:
+Shell and tube heat exchanger inspections.General routine inspections performed against any piece of equipment or location for compliance purposes.General routine inspections performed against any piece of equipment or location by operators versus inspectors (does not necessarily meet compliance standards).Hydrostatic tests (i.e., the process of filling a pressure vessel with liquid, such as water, and increasing the internal pressure to test for leaks).External and internal pressure vessel inspections (following API 510 standards).Internal exchanger inspections (following API 510 standards).External piping inspections (following API 570 standards).External and internal tank inspections (following API 653 standards).External visual inspections of pressure relief devices (PRDs).External functional inspections of PRDs (following API 576 standards).
+Baseline Inspection Families
+The following table lists the baseline Inspection families and the type of inspection to which each corresponds.
+
+FamilyInspection Type
+Bundle Inspection 
+Bundle Sub-Inspection 
+Shell and tube heat exchanger inspections. Full Inspection General routine inspections performed against any piece of equipment or location for compliance purposes. General Inspection General routine inspections performed against any piece of equipment or location by operators versus inspectors (does not necessarily meet compliance standards). 
+Pressure Test Inspection 
+Pressure Test Sub Inspection Report 
+Hydrostatic tests. 
+API 510 External Checklist 
+API 510 Internal Exchanger Checklist 
+API 510 Internal Checklist 
+External and internal pressure vessel inspections and internal exchanger inspections (following API 510 standards). API 570 External Checklist External piping inspections (following API 570 standards). 
+API 653 External Checklist 
+API 653 Internal Checklist 
+External and internal tank inspections (following API 653 standards). External PRD Checklist External visual inspections of PRDs. PRD Pop Test Checklist External functional inspections of PRDs (following API 576 standards). 
+
+About Inspection Reports
+The baseline Inspection Management module includes reports that can be used to view information about an inspection. When you view an Inspection report, you are viewing a main report and various subreports that exist in the Catalog. These reports are based on supporting queries that gather information from the Inspection record and records to which it is linked.
+The following table lists the main reports that correspond with each Inspection subfamily, the query and subreports that are associated with each main report, and the sections that are included in each main report. Note that the subreports are not meant to be run independently of the associated main report.
+Inspection SubfamilyQuery Behind Main ReportMain Report(s)Contributing ReportsSections Included in Main ReportBundle Inspection MI INSPBUND Bundle Inspection Report 
+Asset Corrosion Analysis Report Finding Report Inspection Recommendation Report Inspection Team Member Report Reference Document Report 
+
+Bundle Inspection Asset Corrosion Analysis Findings Pressure Test Sub Inspections Recommendations  Inspection Team MembersReference Documents 
+Checklists Checklist Report QueryChecklist Inspection Report 
+Asset Corrosion Analysis Report  Bundle Sub Inspection ReportChecklist Finding Report Finding Report Inspection Recommendation Report Inspection Team Member Report Pressure Test Sub Inspection Report Reference Document Report 
+
+Asset Corrosion Analysis  Bundle Sub-InspectionChecklist Findings Findings Recommendations Inspection Team Members Pressure Test Sub Inspections Reference DocumentsReference images
+Checklists Checklist Report QueryBlank Checklist Inspection Report Checklist Finding Report Checklist Findings Full Inspection MI INSPFULL Full Inspection Report 
+Asset Corrosion Analysis Report Bundle Sub Inspection Report Finding Report Inspection Recommendation Report Inspection Team Member Report Pressure Test Sub Inspection Report Reference Document Report 
+
+Full Inspection Asset Corrosion Analysis Findings Recommendations Pressure Test Sub Inspections Bundle Sub-Inspections Inspection Team Members Reference Documents Reference Images
+General Inspection MI INSP GEN General Inspection Report 
+Asset Corrosion Analysis Report Finding Report Inspection Recommendation Report Pressure Test Sub Inspection Report Inspection Team Member Report Reference Document Report 
+
+General Inspection Asset Corrosion Analysis Findings Recommendations Pressure Test Sub Inspections Bundle Sub-Inspections Inspection Team Members Reference Documents Reference Images
+Pressure Test Inspection MI INSPPTST Pressure Test Inspection Report 
+Asset Corrosion Analysis Report  Finding ReportInspection Recommendation Report Inspection Team Member Report Reference Document Report 
+
+Pressure Test Inspection Asset Corrosion Analysis Findings Recommendations Inspection Team Members Reference Documents 
+
+Interpreting Inspection Reports 
+In the baseline database, one report is provided for each of the following Inspection families:
+Checklists Bundle Inspection Full Inspection General Inspection Pressure Test Inspection 
+Note:  The Checklist Inspection report is configured for each Checklists subfamily (for example, API 510 External Checklist).
+While each family has its own report, many of the sections in the reports are common to all of the reports. This section of the documentation describes the sections that are included in the baseline reports and indicates whether or not the section is common to all reports.
+Asset Corrosion AnalysisThe Asset Corrosion Analysis section appears when an Asset Corrosion Analysis in Thickness Monitoring is linked to the inspection for which you are generating a report. This section displays information that is stored in the Asset Corrosion Analysis. An example of the Asset Corrosion Analysis section is shown in the following image.The following table lists the items that are included in the Asset Corrosion Analysis section and their corresponding fields. Note that the table displays field captions, which may differ from datasheet captions.Report itemAsset Corrosion Analysis fieldControlling Corrosion RateControlling Corrosion RateControlling Next Inspection DateControlling Next Inspection DateControlling Remaining LifeControlling Remaining LifeControlling Retire DateControlling Retire DateBundle Inspection The Bundle Inspection section appears only if you are viewing a report for a Bundle Inspection record. This section displays information that is stored in the Bundle Inspection record. An example of the Bundle Inspection section is shown in the following image. The following table lists the items that are included in the Bundle Inspection section and their corresponding Bundle Inspection fields. Note that the table displays field captions, which may differ from datasheet captions.Report itemBundle Inspection fieldAsset ID Asset ID Bundle Inspection Summary Inspection Summary Functional Location ID Functional Location ID Inspection Finish Date )Completion Date Inspection Headline Inspection Headline Inspection Reference Inspection Reference Inspection Start Date Commencement Date Inspection Summary Inspection Summary Inspection Report Owner Inspection Report Owner Percentage Heat Transfer Area Loss Percentage Heat Transfer Area Loss Reason for Inspection Reason for Inspection Reviewer Comments Reviewers Comments Reviewer Name Reviewers Name Total Number of Tubes in Bundle Total Number of Tubes in Bundle Total Number of Tubes Replaced Total Number of Tubes Replaced at Inspection End Tubes (Previously Plugged) Replaced Tubes (Plugged At Start) Replaced Tubes Plugged at Inspection End Total Number of Tubes Plugged at Inspection End Tubes Plugged at Inspection Start Tubes Plugged at Inspection Start Tubes Replaced Not Previously Plugged Tubes (Not Previously Plugged) Replaced Type of Inspection Type of Inspection Bundle Sub InspectionThe Bundle Sub Inspections section appears if you are viewing a report for one of the following records:Checklists (unless you are viewing a blank Checklist Inspection report)Full Inspection This section displays information that is stored in the Bundle Sub-Inspection records that are linked to the Full Inspection or Checklists record. An example of the Bundle Sub-Inspections section is shown in the following image.
+Report itemBundle Sub-inspection fieldBundle Inspection Summary Inspection Summary Bundle Tag Asset ID Percentage Heat Transfer Area Loss Percentage Heat Transfer Area Loss Total Number of Tubes in Bundle Total Number of Tubes in Bundle Total Number of Tubes Replaced Total Number of Tubes Plugged at Inspection End Tubes (Previously Plugged) Replaced Tubes (Plugged At Start) Replaced Tubes Plugged at Inspection End Total Number of Tubes Plugged at Inspection End Tubes Plugged at Inspection Start Tubes Plugged at Inspection Start Tubes Replaced Not Previously Plugged Tubes (Not Previously Plugged) Replaced Checklist FindingsThe Checklist Findings section appears only if you are viewing a Checklist Inspection report. The items that appear in this section depend upon the finding sections that are associated with the Inspection family for which you ran the report and will vary based on what type of Checklist Inspection report you are viewing. If you are viewing a Checklist Inspection report that is:Associated with a particular Inspection record, this section displays values that are stored in the Checklist Finding records that are linked to the Inspection record.A blank Checklist Inspection report, the finding sections associated with the Inspection family for which you ran the report will appear, but the cells in the Value and Finding Summary columns will be empty.The following image shows an example of the Checklist Findings section that is displayed when you run a Checklist Inspection Report for a particular Inspection record.
+Findings The Findings section appears in all reports except blank Checklist Inspection reports and displays information that is stored in the General Finding records that are linked to the Inspection record. An example of the Findings section is shown in the following image.
+Report itemGeneral Finding fieldAction Taken Code Action Taken Code Action Taken Description Action Taken Description Deterioration Mechanism Deterioration Mechanism Deterioration Mode Deterioration Mode Headline Headline Location Details Location Details Predictable Predictable Predicted Predicted Profile Item Inspection Profile Item Summary Finding Summary Type Type Full InspectionThe Full Inspection section appears only if you are viewing a report for a Full Inspection record. This section displays information that is stored in the Full Inspection record. An example of a Full Inspection section is shown in the following image. The following table lists the items that are included in the Full Inspection section and their corresponding Full Inspection fields. Note that the table displays field captions, which may differ from datasheet captions.Report itemFull Inspection fieldAsset ID Asset ID Functional Location ID Functional Location ID Inspection Finish Date Completion Date Inspection Headline Inspection Headline Inspection Reference Inspection Reference Inspection Start Date Commencement Date Inspection Summary Inspection Summary Inspection Report Owner Inspection Report Owner Reason for Inspection Reason of Inspection Reviewer Comments Reviewers Comments Reviewer Name Reviewers Name Type of Inspection Type of Inspection Report itemReference Document FieldID ID Description DescriptionGeneral Inspection The General Inspection section appears only if you are viewing a report for a General Inspection record. This section displays information that is stored in the General Inspection record. An example of a General Inspection section is shown in the following image. The following table lists the items that are included in the General Inspection section and their corresponding General Inspection fields. Note that the table displays field captions, which may differ from datasheet captions.Report itemGeneral Inspection fieldAsset ID Asset ID Functional Location ID Functional Location ID Inspection Finish Date Completion Date Inspection Headline Inspection Headline Inspection Reference Inspection Reference Inspection Start Date Commencement Date Inspection Summary Inspection Summary Inspection Report Owner Inspection Report Owner Reason for Inspection Reason of Inspection Reviewer Comments Reviewers Comments Reviewer Name Reviewers Name Type of Inspection Type of Inspection Report itemReference Document FieldIDIDDescription DescriptionInspection Team MembersThe Inspection Team Members section appears in all reports except blank Checklist Inspection reports and displays information that is stored in the Inspection Team Member records that are linked to the Inspection record. An example of the Inspection Team Members section is shown in the following image.
+Pressure Test InspectionThe Pressure Test Inspection section appears only if you are viewing a report for a Pressure Test Inspection record. This section displays information that is stored in the Pressure Test Inspection record. An example of the Pressure Test Inspection section is shown in the following image. The following table lists the items that are included in the Pressure Test Inspection section and their corresponding Pressure Test Inspection fields. Note that the table displays field captions, which may differ from datasheet captions.Report itemPressure Test Inspection field# of Gauges Used No. of Gauges Used (Shell) # of Gauges Used No. of Gauges Used (Tube) Asset ID Asset ID Functional Location ID Functional Location ID Inspection Finish Date Completion Date Inspection Headline Inspection Headline Inspection Reference Inspection Reference Inspection Start Date Commencement Date Inspection Summary Inspection Summary Inspection Report Owner Inspection Report Owner Reason for Inspection Reason for Inspection Reviewer Comments Reviewers Comments Reviewer Name Reviewers Name SRV Set Pressure SRV Set Pressure (Shell) SRV Set Pressure SRV Set Pressure (Tube) Test Comments Test Comments (Shell) Test Comments Test Comments (Tube) Test Duration Test Duration (Shell) Test Duration Test Duration (Tube) Test Media Test Media (Shell) Test Media Test Media (Tube) Test Media Temp. Test Media Temperature (Shell) Test Media Temp. Test Media Temperature (Tube) Test Pressure Test Pressure (Shell) Test Pressure Test Pressure (Tube) Type of Inspection Type of Inspection Witnessed By Witnessed By (Shell) Witnessed By Witnessed By (Tube) Pressure Test Sub Inspections SectionThe Pressure Test Sub Inspections section appears if you are viewing a report for one of the following records:Bundle Inspection Checklists (except blank Checklist Inspection reports)Full Inspection General Inspection This section displays information that is stored in the Pressure Test Sub-Inspection records that are linked to the Inspection record. An example of the Pressure Test Sub Inspections section is shown in the following image. The following table lists the items that are included in the Pressure Test Sub Inspections section and their corresponding Pressure Test Sub-Inspection fields. Note that the table displays field captions, which may differ from datasheet captions.Report itemPressure Test Sub-Inspection field# of Gauges Used No. of Gauges Used (Shell) # of Gauges Used No. of Gauges Used (Tube) SRV Set Pressure SRV Set Pressure (Shell) SRV Set Pressure SRV Set Pressure (Tube) Test Comments Test Comments (Shell) Test Comments Test Comments (Tube) Test Duration Test Duration (Shell) Test Duration Test Duration (Tube) Test Media Test Media (Shell) Test Media Test Media (Tube) Test Media Temp. Test Media Temperature (Shell) Test Media Temp. Test Media Temperature (Tube) Test Pressure Test Pressure (Shell) Test Pressure Test Pressure (Tube) Witnessed By Witnessed By (Shell) Witnessed By Witnessed By (Tube) RecommendationsThe Recommendations section is included in all reports except blank Checklist Inspection reports and displays information that is stored in the Inspection Recommendation records that are linked to the Inspection record. An example of the Recommendations section is shown in the following image. The following table lists the items that are included in the Recommendations section and their corresponding Inspection Recommendation fields. Note that the table displays field captions, which may differ from datasheet captions.Report itemInspection Recommendation fieldAuthor Name Author Name Basis Recommendation Basis Description Recommendation Description Headline Recommendation Headline Profile Item Inspection Profile Item Recommendation ID Inspection Recommendation ID Target Completion Date Target Completion Date Reference Documents The Reference Documents section is included in all reports except blank Checklist Inspection reports and displays information that is stored in the Reference Document records that are linked to the Inspection record. An example of the Reference Documents section is shown in the following image.  The following table lists the items that are included in the Reference Documents section and their corresponding Reference Document fields. Note that the table displays field captions, which may differ from datasheet captions.Report itemReference Document fieldDescription Description Document Path Document Path Reference Document ID ID About Inspection ChecklistsThe Inspection Finding Checklist represents subcomponents belonging to the item that you are inspecting. Since the subcomponents that you will need to inspect will differ based upon the type of inspection that you are performing, the items that appear in the Inspection Finding Checklist will differ based upon the Inspection subfamily.Checklist Details 
+The baseline Inspection families are:
+Checklist Inspection TemplateExternal Checklist Internal Checklist Internal Exchanger Checklist PRD Pop Test Checklist 
+Each of these families is hard-coded to use a particular System Code Table to create the finding sections and rows that appear in the grid on the Inspection Findings Checklist page. The sections and rows on the Inspection Findings Checklist page are built from System Code Tables and referenced System Codes.
+Note: The Checklist Inspection Template family is not hard-coded to include specific Checklist Findings. The Checklist Findings are defined by the checklist categories and items for the Checklist Configuration Template.
+Tip:  If you create custom Checklists subfamilies, you must add the Checklist System Code Table ID field (i.e., a field in the Checklists family) to the custom family. 
+Example: API 653 External Checklist Findings
+The baseline GE Digital APM database contains the following System Code Table:
+
+ID: MI API 653 EXTERNAL CHECKLIST FINDING SECTIONS
+Description: API 653 External Checklist Finding Section
+This System Code Table contains the following System Codes:
+General Connections Supports 
+Each of the System Codes that belong to this System Code Table contain referenced System Codes. For example, the System Code Supports contains the following referenced System Codes:
+Anchor Bolts Dike/Retaining Wall Foundation Other 
+Together, the System Code Tables, System Codes, and referenced System Codes determine which sections and rows you will see on the Inspection Finding Checklist page. Using this example:
+Each System Code belonging to the System Code Table MI API 653 EXTERNAL CHECKLIST FINDING SECTIONS becomes a finding section.In each finding section, each referenced System Code becomes a separate row.
+Each field within the checklist can be modified by the user to best fit the work process.
+About Active and Archived InspectionsInspections that are still in the process of being completed or reviewed are referred to as Active Inspections.Archived Inspections are Inspections that have been reviewed, locked, and archived. Locking the Inspection record ensures that the information that you supplied will not be deleted or modified. After you lock an Inspection record, you cannot unlock it. You can lock Inspection records defined for any of the following families by accessing Record Manager. Bundle InspectionFull InspectionGeneral InspectionPressure Test Sub-InspectionAbout Inspection Intervals An inspection interval identifies the length of time between Equipment inspections. Various factors will impact the inspection intervals that you will define at various levels in your location hierarchy.About Inspection Intervals
+When populating the value in the Desired Interval field in Inspection Tasks, the GE Digital APM System uses the value stored in the Time-Based Inspection Interval Settings that you defined.
+Example: Inspection Intervals
+For example, jurisdictional regulations might dictate that a particular inspection must be conducted every two months. However, your organizational policy might dictate that this particular inspection be conducted every 30 days. In this case, you would define an inspection interval of 30 days.
+About Inspection Health EvaluationsInspection Health Evaluations allow you to assign Health Assessment values to Inspections and Inspection Checklist Categories. When the Health Evaluations admin setting is enabled for an Inspection Event Family, the Health Evaluation icon is available for new inspections created in the same Inspection Event Family.Note: When updating a Health Assessment for a Checklist Category, the Health Assessment of the root Inspection is updated to the worst-case indicator level of the Checklist Categories that are associated with it.About Image GalleryYou can access the images stored within reference documents of a record in the image gallery. The gallery is provided in the inspection, its related records, and checklist categories. The image gallery displays images that have either been directly stored as reference documents within GE Digital APM or provided as a reference document with an external network path.The Description text box contains the value entered in the Description field of the currently selected reference document. This text box is disabled. If the currently selected reference document is related to either a General Finding or a Checklist Finding record, the Finding Summary text box contains the value entered in the Finding Summary field of the finding record. This text box is disabled.Access the Inspection Data SectionProcedure
+Access the Inspection Management Overview page for the equipment whose inspection data you want to access. Select the Inspections tab.In the row containing the Inspection whose data you want to access, select the link. The Inspection Overview workspace for the selected Inspection appears, displaying the Inspection Data section. 
+Note: The Inspection record and all related Inspection Confidence Evaluations, Team Members, sub-inspection records, and recommendations are read-only when an inspection is downloaded for Inspection Field Data Collection.Access Inspection ChecklistProcedure
+Access the Inspection Data section.In the left pane, select the inspection type containing the checklist Inspection that you want to view. A list of checklist inspections appears under the selected inspection type.Next to the checklist title, select  to view the checklist. The selected checklist appears in the workspace.Note: As needed, you can modify the values in the available fields, and then select  to save your changes.Results
+You can now make adjustments to the Inspection Checklist section by accessing the Record Manager. 
+Create an InspectionBefore You Begin
+If the asset that you are using does not have any existing inspections, you must access it through the Asset Hierarchy. 
+Note: The following steps apply to both creating an inspection and creating a checklist inspection.
+Procedure
+Access the Inspection Management Overview page for the asset for which you want to create an Inspection. Select , and then select Create Inspection.The Create Inspection window appears. 
+Note: Inspection Events are displayed according to the Taxonomy Configurations that have been defined for Checklist Configuration Templates and Inspection Families. If no Taxonomy Configurations have been defined or the selected asset’s equipment taxonomy does not match any defined Taxonomy Configurations, a full list of Inspection Families and Checklist Configuration Templates appears.Note:  If a Checklist Configuration Template with the Enable Asset Mapping option is selected in the Inspection Event box, an Asset Mapping section appears in the Create Inspection window. The Asset Mapping section allows you to map the existing assets to the Checklist Categories of the selected Checklist Configuration Template.Note: If the Health Evaluation option is enabled for the selected inspection family, Inspection Health Evaluation records will be created and are associated to the newly created inspection.In the Inspection Event box, select the type of checklist to attribute to the new inspection.In the Inspection Tasks box, select any tasks that you want to add to the new inspection.Select Create. A new Inspection is created for the selected asset.Note:
+If you create a Full Inspection or General Inspection, the Inspection appears in the following format:If you create an Inspection using a different Inspection Family or Inspection Checklist, the Inspection appears in the following format:
+Results
+Inspection findings will be generated based on your Inspection Scope and your Inspection Profile settings.The new inspection is saved. You can modify the inspection by accessing the datasheet, and then selecting  to save your changes.Full Inspection Event Family findings will be generated automatically.Checklist Inspections will never be generated automatically.Other Event Families will require event configurations.If you selected an Inspection Event that represents a Checklist Configuration Template, the Inspection Event from the family defined for the Checklist Configuration Template is generated, and all Checklist Findings defined by the Checklist Configuration Template are created.
+What To Do Next
+
+Add an inspection profile
+
+Assign Inspections to a UserProcedure
+Access the Inspection Data
+
+ section for the Inspection record that you want to assign to a user.In the Inspection Report Owner box, select the name of the user to whom you want to assign the selected inspection. Select .
+The Inspection is assigned to the selected user. 
+Delete an InspectionBefore You Begin
+If the Inspection that you want to delete is associated with any of the following records, unlink or delete the record:Asset Corrosion AnalysisBundle Sub-InspectionGeneral FindingInspection RecommendationsInspection TaskInspection Team MemberPressure Test Sub-InspectionReference Document
+About This Task
+Note:  You cannot delete locked Inspections.
+Procedure
+Access the Inspection Management Overview page for the equipment that is linked to the Inspection you want to delete.Select the Inspections tab.
+ The Inspections section appears.
+
+
+
+Select the row containing the Inspection that you want to delete.In the upper-right corner of the section, select .
+A message appears, asking you to confirm that you want to delete the Inspection.
+Select Yes. 
+The Inspection is deleted. 
+Approve Bulk Review InspectionsBefore You Begin
+You must be set as the reviewer in the Reviewer's Name field of the Inspection Data record.You must also have a Human Resource record and a Resource Role of Inspection Supervisor .
+Procedure
+Access the Inspection Management Overview page for the equipment that is linked to the Inspections that you want to approve.In the upper-right corner of the workspace, select , and then select Bulk Review Inspections. The Bulk Review Inspections workspace appears, displaying a list of all inspections pending your review. 
+Next to the Inspection IDs of one or more inspections that you want to approve, select the check boxes.In the upper-right corner of the workspace, in the Inspection Document Status box, select , and then select Approved (APPROVED).Note:  You can choose any available state in the Inspection Document Status box.The Bulk Review Inspections window appears, asking you to confirm that you want to change the document status. 
+Tip: In the Reviewer's Comments box associated with each inspection, you can enter comments about the inspections.Select Save. The document status for the selected inspections is approved and the inspections are removed from the list of available inspections. Lock an InspectionAbout This Task
+After you create an Inspection record, you can lock it so that others cannot modify it. Locking the Inspection record ensures that the information that you provided is not deleted or modified.
+Important: After an Inspection is locked, only an Inspection Report Owner of that Inspection can unlock it.
+Procedure
+Access the Inspection Data
+
+ section for the Inspection record that you want to lock. Select the Inspection Lock check box, and then select Save.
+The Inspection is now locked and cannot be deleted or modified. 
+Note:  You can select the Inspection Lock check box only if your name is selected in the Inspection Report Owner field.
+Optional: Select the Final Inspection Lock check box, and then select Save. This indicates that the inspection has been properly reviewed.Results
+All fields except for the following become disabled:
+Inspection Document StatusInspection LockReviewers NameReviewers CommentsFinal Inspection LockPublished
+Add a Related RecordProcedure
+Access the Inspection Data section.
+In the left pane, select , and then select the related record type that you want to create.The datasheet for the related record appears. 
+In the upper-right corner of the workspace, select .The related record is saved and added to the inspection.ResultsYou can modify the inspection by accessing the datasheet, and then selecting  to save your changes. Link a Related Record to an InspectionProcedure
+Access the Inspection Data section.In the left pane, select , and then select the related record type that you want to link to the Inspection. The Link <Type of Related Inspection> to <Asset> window appears. 
+Search for the related record that you want to link, and then, next to that record, select the radio button.
+Note:  Only related families that can be linked to the selected Inspection will appear in the list. 
+Select OK.The related record is linked to the selected Inspection.Access Image Gallery for a Related RecordProcedure
+Access the Inspection Data section.In the left pane, select the family of the related record that you want to access.Select the related record that you want to view.Select .The images stored within the related record appear.Note: The badge at the right corner of the image gallery button indicates the number of images associated with the related record.Link Reference Document to an InspectionProcedure
+Access the Inspection Data section. 
+Select , and then select Reference Documents.
+As needed, enter values in the available fields. All required information is provided, but for additional information, refer to the Inspection Records topic.A list of all the linked reference documents appears in the Inspection Data section.
+Select .The Add Reference Document window appears. 
+In the ID box, enter an ID for the reference document.In the Description box, enter a description of the reference document.In the Document Path box, select  .The Edit Document Path window appears. 
+Do one of the following:
+If the document that you want to link is in your local drive, then select Upload a Local File, and then select the required document or provide a path to it.Note:  If you upload an image file, the images are displayed in the Reference Images section of the following event reports:Full InspectionGeneral InspectionAPI 510 External ChecklistAPI 510 Internal ChecklistAPI 510 Internal Exchanger ChecklistAPI 570 External ChecklistAPI 653 Internal ChecklistChecklist Inspection TemplateExternal PRD ChecklistIt supports .jpeg, .png, .tif, and .bmp image file formats.If the document that you want to link is in an external location, select Link to an External Network File, and then provide the link of the file with its extension.Note:  If you link an image from an external location, the images are not displayed in the reports.
+Select Save.The Document Path box is populated with the path to the selected file.Select .The new Reference Document record is linked to the inspection and appears in the Reference Documents section.ResultsThe linked referenced images are displayed in the Reference Images section of Full Inspection and Generation Inspection reports.Access Images for a Reference Document Procedure
+Access the Inspection Data section.Select . The images associated with the reference document of the inspection appear in the image gallery. Note:  Images shown in the Image Gallery from the Inspection Data section also include images linked to the root inspection from other related records such as General Findings or Checklist Findings.Any image created or linked to a Checklist Finding either manually through the datasheet or when syncing data from Inspection Field Data Collection, is also linked to the root inspection. If an image reference document is manually unlinked from a Checklist Finding, it remains linked to the root inspection. You can manually unlink the image from the Inspection record. 
+Unlink a Related Record from an InspectionProcedure
+Access the Inspection Data section.In the left pane, navigate to and select the related record that you want to unlink. In the left pane, select , and then select Unlink.
+A message appears, asking you to confirm that you want to unlink the related record. 
+Select Yes. 
+The related record is unlinked from the selected Inspection. 
+Delete a Related RecordProcedure
+Access the Inspection Data section. In the left pane, navigate to and select the related record that you want to delete. In the heading of the left pane, select , and then select Delete.
+A message appears, asking you to confirm that you want to delete the related record and all of its links to other records. 
+Select Yes. 
+The related record has been deleted from the selected Inspection. 
+Select Yes. Access Inspection ReportsProcedure
+Access the Inspection Data section. In the upper-right corner of the section, select , and then select Print.The Select a Report to Print window appears. 
+Select the Print a report check box, and then select the type of inspection report that you want to access.Select OK. The selected Inspection Report appears on a new page.Access Reference DocumentsProcedure
+Access the Inspection Data section for the Inspection containing the Reference Documents that you want to view. In the upper-right corner of the section, select , and then select Reference Documents. 
+The Reference Documents for the selected Inspection appear. 
+Tip: For Checklist Inspections, you must access Reference Documents through the Bulk Data Form. 
+Tip: For more information, refer to the Reference Documents section of the documentation.
+Add Inspection Confidence EvaluationsProcedure
+Access the Inspection Data section. 
+Select the Inspection Confidence Evaluation tab. The Inspection Confidence Evaluation section appears. 
+As needed, enter values in the available fields. All required information is provided, but for additional information, refer to the Inspection Records topic.
+In the RBI Component field, select the RBI Component that you want to add to the Inspection Confidence Evaluation.Note: Only the RBI Components that are linked to the related Asset are displayed in this field. If the Asset does not have RBI Components, then this list is empty.The Filter check-box is selected and the degradation mechanisms are filtered based on the selected RBI component.Optionally, clear the Filter check box to display all the degradation mechanisms.Note: Note: This field is disabled if there is no value in RBI Component field.In the Degradation Mechanism field, select the degradations mechanism that you want to add to the Inspection Confidence Evaluation.In the Type of Inspection field, select the inspection type that you want to add to the Inspection Confidence Evaluation. In the Extent field, select the extent that you want to add to the Inspection Confidence Evaluation. 
+Select .A new Inspection Confidence Evaluation is added to the selected inspection, and a new row appears.Tip:  As needed, you can repeat steps 3 and 4 to add additional records to Inspection Confidence Evaluation. ResultsYou can now link an Inspection Confidence Evaluation to an RBI Degradation Mechanism Evaluation.Review Inspection Confidence EvaluationBefore You Begin
+Make sure that the Risk Analyst resource role is assigned to you.Make sure that the Allow Risk Analyst to Review Inspection Confidence Evaluation Records check box is selected in Application Configurations section of the Inspection Configuration workspace.
+Procedure
+Access the Inspection Data section.Select Inspection Confidence Evaluation. The Inspection Confidence Evaluation section appears, displaying a list of Inspection Confidence Evaluations that have been added to the Inspection.Verify the Inspection Confidence Evaluation records.Select the button that indicates the current state of the Inspection Confidence Evaluation records. For example, if the current state of the Inspection Confidence Evaluation records is Not Reviewed, then select the Not Reviewed button. A menu appears, displaying a list of available states.
+Select Reviewed. The Inspection Confidence Evaluation records are locked. 
+Results
+Any user who does not have the Risk Analyst resource role cannot add, update, or modify the Inspection Confidence Evaluation records.Your user name appears above the section to indicate other users about who locked the Inspection Confidence Evaluation records.
+Delete Inspection Confidence EvaluationsProcedure
+Access the Inspection Data section.Select the Inspection Confidence Evaluation tab. The Inspection Confidence Evaluation section appears, displaying a list of Inspection Confidence Evaluations that have been added to the Inspection.
+Select .In the grid, a new column of check boxes appears to the left of the RBI Component column.
+In the row for each Inspection Confidence Evaluation that you want to remove from the selected Inspection, select the check box.Select, and then select Delete.  A message appears, asking you to confirm that you want to delete the selected Inspection Confidence Evaluation records.Select Yes. The selected Inspection Confidence Evaluations records are deleted from the selected Inspection.Update an Inspection Health AssessmentProcedure
+Access the Inspection Data section.To the right of the Inspection ID, select .A window appears displaying all the available Health Assessments.Note: The icon may vary depending on the currently assigned Health Assessment.Select the new Health Assessment value.The Health Assessment is updated.Note: The Health Assessment icons appear only if the Health Evaluation option was enabled for the current Inspection family, when you created the Inspection.Update a Checklist Category Health AssessmentProcedure
+Access the Inspection Data section.To the right of the Checklist Category name, select .A window appears displaying all the available Health Assessments.Note: The icon may vary depending on the currently assigned Health Assessment.Select the new Health Assessment value.The Health Assessment is updated.Note: The Health Assessment icons appear only if the Health Evaluation option was enabled for the current Inspection family, when you created the Inspection.Note: When updating a Health Assessment for a Checklist Category, the Health Assessment of the root Inspection is updated to the worst-case indicator level of the Checklist Categories that are associated with it.Bulk Printing of Inspection ReportsUsing the bulk print functionality, you can generate multiple Inspection Reports at a time. The generated reports are stored in a location configured in SQL Server Reporting Services (SSRS). After you successfully generate the reports, you can download the reports as a .zip file.Note: If you have a pop-up blocker enabled on your browser, disable it to download the report.The bulk printing process consists of the following steps:Print Bulk Inspection ReportsBefore You Begin
+Make sure that following fields are configured in SQL Server Reporting Services:Bulk Report Storage PathBulk Report Storage User NameBulk Report Storage User PasswordBulk Report Storage Threshold (Days)Make sure that a default report is configured in the Family Reports section of the family associated to the Inspection.Make sure that the families of the selected Inspections contain only SSRS reports with a single parameter.
+ProcedureAccess the Inspection Management Overview page for the Functional Location that is linked to the Inspections for which you want to generate the reports.Select the Underlying Open Inspections tab.
+The Underlying Open Inspections section appears, displaying a list of open inspections for the selected asset.
+Note: You can also access the Inspection Management Overview for the asset that is linked to the Inspections for which you want to generate the reports. In this case, you must select the Inspections tab to see the list of inspections.
+Next to the Inspection IDs of the inspection for which you want to print the reports, select the check boxes.The  icon is enabled.Select .A message appears, asking you to confirm that you want to print the inspection reports.Select Yes.The report generation process starts, and the Downloads page appears. After the reports are generated, they are stored in the location defined in the Bulk Report Storage Path field of the SQL Server Reporting Services.Note: The generated reports are available for download only for the threshold period specified in SQL Server Reporting Services.Important: The print job may fail in any of the following scenarios:The bulk report storage parameters in the SQL Server Reporting Services are not configured correctly. The family associated with the inspection is not configured with a default report. No reports are defined for the family.The families of the Inspection records contain SSRS reports with multiple parameters.Note: The %TimeOut; within the SSRS section in appsettings.json is configurable. The default TimeOut is set to 60 minutes.What To Do Next
+View Bulk Printing Status.Download Bulk Inspection Reports.
+View Bulk Printing StatusAbout This Task
+You can view the status of the print jobs that you have generated. The generated reports are placed in the following three sections based on their status:In progress: Contains the print jobs that are currently in progress.Successful: Contains the print jobs that are successfully completed. You can download the reports and the log files from this section.Failed: Contains the print jobs that failed. The print job fails if any of the selected Inspection Report generation fails. From this section, you can download the error log and the Inspection Reports that are successfully generated.
+ProcedureAccess the Inspection Management Overview page.Select , and then select View Bulk Printing Status.The Downloads page appears, displaying the jobs that are in progress.Download Bulk Inspection ReportsBefore You Begin
+Access the Report Configuration page and complete the configurations to store the generated reports.Make sure that a default report is configured in the Family Reports section of the family associated to the Inspection.
+About This TaskYou can download the reports for the print jobs that are successfully completed or partially failed.ProcedureAccess the Inspection Management Overview page.Select  to download report.The Download window appears, displaying the following options to download the report:Combined Report: downloads all the inspections as one single PDF file.Individual Reports: downloads each inspection as a single PDF file.Select the Combined Report option.Enter the File Name for the downloaded file.Select Download.The download starts and you can see the progress of the Download Reports job in the View Log section. After the Download Reports job is complete, the browser will download the file.Extract the .zip file.
+For Individual Reports,
+The Inspection Report of each Inspection record appears as a single PDF file. The file name of the Inspection Report is the Inspection ID of the respective Inspection record.
+For Combined Report,
+The Inspection Report of all the Inspection records appears as a single PDF file. The file name of the report is the name specified when downloading the combined report.
+What To Do Next
+View Download Status.Download generated Inspection Reports.
+View Download StatusProcedureAccess the Inspection Management Overview page.Select View Log.The Downloads page appears displaying the status of the print jobs that you have generated. The following are the different sections for each state of the report generated.In progress: Displays all the jobs that are currently in progress.Successful: Displays all the jobs that are successfully completed. You can download the Report and the Log for the corresponding job.Failed: Displays all the jobs that failed. You can download the error log and the Inspection Reports that are successfully generated.Note: The print job fails if any of the selected Inspection Report generation fails.What To Do NextDownload generated Inspection Reports.Download the Generated Inspection ReportsAbout This TaskYou can download the reports from the successfully completed print jobs.ProcedureAccess the Inspection Management Overview page.Select View Log.The Downloads page appears displaying the status of the print jobs that you have generated. The following are the different sections for each state of the report generated.In progress: Displays all the jobs that are currently in progress.Successful: Displays all the jobs that are successfully completed. You can download the Report and the Log for the corresponding job.Failed: Displays all the jobs that failed. You can download the error log and the Inspection Reports that are successfully generated.Note: The print job fails if any of the selected Inspection Report generation fails.Select Successful.The print jobs that are successfully completed are displayed as a table.In the Report column of the print job you wanted to download, select .The report associated with the print job is downloaded as a .zip file.Extract the .zip file.
+For Individual Reports,
+The Inspection Report of each Inspection record appears as a single PDF file. The file name of the Inspection Report is the Inspection ID of the respective Inspection record.
+For Combined Report,
+The Inspection Report of all the Inspection records appears as a single PDF file. The file name of the report is the name specified when downloading the combined report.
+
+
+
+
+
+On this pageAbout InspectionsAbout Types of InspectionsAbout Inspection ReportsAbout Inspection ChecklistsAbout Active and Archived InspectionsAbout Inspection Intervals About Inspection Health EvaluationsAbout Image GalleryAccess the Inspection Data SectionAccess Inspection ChecklistCreate an InspectionAssign Inspections to a UserDelete an InspectionApprove Bulk Review InspectionsLock an InspectionAdd a Related RecordLink a Related Record to an InspectionAccess Image Gallery for a Related RecordLink Reference Document to an InspectionAccess Images for a Reference Document Unlink a Related Record from an InspectionDelete a Related RecordAccess Inspection ReportsAccess Reference DocumentsAdd Inspection Confidence EvaluationsReview Inspection Confidence EvaluationDelete Inspection Confidence EvaluationsUpdate an Inspection Health AssessmentUpdate a Checklist Category Health AssessmentBulk Printing of Inspection ReportsPrint Bulk Inspection ReportsView Bulk Printing StatusDownload Bulk Inspection ReportsView Download StatusDownload the Generated Inspection Reports
+
+
+
+
+
+
+
+
+

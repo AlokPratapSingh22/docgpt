@@ -1,0 +1,177 @@
+
+
+
+Units | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+AdminAccess the GAA Administrator Page
+GAA Administrator Workflow
+System Codes
+Event Categories
+Event Types
+Cause Codes
+Amplification Codes
+Fuel Types
+Mapping Records
+Event Transitions
+Companies
+Plants
+Units
+Unit Capacity
+Performance Record and Report Configuration
+
+
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Admin
+Units
+
+
+
+
+
+
+
+UnitsAbout Fuel CodesIn GAA Unit records, the fuel code fields store values that identify the types of fuel used by a given unit. For each unit, the GE Digital APM system supports defining up to four levels of fuel that will be used, depending on availability.
+Primary Fuel: The unit's first choice of fuel types. As long as this type of fuel is available, it will be used. This fuel type represents the fuel code for the fuel that made the greatest contribution to heat generation during the specified period. 
+Secondary Fuel: The type of fuel that will be used if the primary fuel is not available. This fuel type represents the fuel code for the fuel that made the second greatest contribution to heat generation during the specified period. 
+Tertiary Fuel: The type of fuel that will be used if the primary and secondary fuels are not available. This fuel type represents the fuel code for the fuel that made the third greatest contribution to heat generation during the specified period. 
+Quaternary Fuel: The type of fuel that will be used if the primary, secondary, and tertiary fuels are not available. This fuel type represents the fuel code for the fuel that made the fourth greatest contribution to heat generation during the specified period. In GAA Unit records, fuel types are identified through codes. The GE Digital APM system supports the use of NERC fuel codes scheme.In GAA Unit records, fuel types are identified through codes. The GE Digital APM system supports the use of fuel codes specified by the Regulatory Organization.Note: Fuel code values are defined in  GAA Fuel Types records. To see a list of these records, you can run the query GAA Fuel Types, which is stored in the following Catalog folder: \\Public\Meridium\Modules\Generation Management\Queries.About Determining When an APM Event is CreatedIn GAA Unit records, the APM Event Creation field stores a value that determines whether an APM Event will be created when a new Primary Event is created and linked to a given GAA Unit. The APM Event Creation field can be set to:
+All Primary Capacity Events: If this option is selected, then an APM Event will be created each time a Primary Event is created and linked to the GAA Unit. The APM Event will be linked automatically to the Primary Event.
+MWH Loss Exceeds Reference: If this option is selected, then an APM Event will be created when a Primary Event is created and linked to the GAA Unit if the value in the Total Equivalent Derate MWh w/out Shadowing field of the Primary Event exceeds the value in the APM Event Creation Reference Value field in the GAA Unit. The APM Event will be linked automatically to the Primary Event.
+Production Loss Exceeds Reference: If this option is selected, then an APM Event will be created when a Primary Event is created and linked to the GAA Unit if the value in the Total Equivalent Derate Hours w/out Shadowing field in the Primary Event exceeds the value in the APM Event Creation Reference Value field of the GAA Unit. The APM Event will be linked automatically to the Primary Event.About Populating the Fuel Code FieldsFuel code fields in GAA Units are populated using values in GAA Fuel Types records, which store information about the various fuels that can be used by units. Each GAA Fuel Types record represents a unique fuel type.For example, in GAA Unit records, the Primary Fuel Code field will contain a list of values from the Fuel Description fields in GAA Fuel Types records. The following table shows how the lists in the fuel code fields in GAA Units are populated using values in GAA Fuel Types records.This Field in GAA Unit Records: ...Is Populated Using These Fields and Format in GAA Fuel Types record: Primary Fuel Code Fuel Description (Fuel Code) Quaternary Fuel Code Fuel Description (Fuel Code) Secondary Fuel Code Fuel Description (Fuel Code) Tertiary Fuel Code Fuel Description (Fuel Code) The baseline GE Digital APM database contains GAA Fuel Types records that are already populated with values that identify fuels as they are defined by the Regulatory Organization. We recommend that you:Do not modify the baseline GAA Fuel Types records so that they match what is defined by Regulatory Organization.Do not create your own GAA Fuel Types records.Access a GAA UnitProcedure
+Access the GAA Plant for which you want to access a GAA Unit.In the left pane, select the GAA Unit that you want to access. 
+The datasheet for the selected GAA Unit appears in the workspace. 
+
+
+Note: As needed, you can modify the values in the available fields, and then select  to save your changes.
+Access a Reference DocumentAbout This Task
+This topic describes how to access the list of reference documents via the Unit Summary workspace. You can also access the list of reference documents when accessing a GAA Unit.
+Procedure
+Access the Unit Summary workspace for the GAA Unit whose reference documents you want to access.In the pane, select Reference Documents.
+The Reference Documents workspace appears, displaying a list of reference documents that are linked to the selected GAA Unit. 
+Note: The file that was used for importing existing data will be added as reference documents for the selected Unit.
+Tip: For more information, refer to the Reference Documents section of the documentation.
+Import Existing DataAbout This Task
+You can import existing Events, Performance, and reporting data, which have been submitted to a supported regulatory organization (NERC or CEA), into a GAA Unit. 
+Note: If you have a pop-up blocker enabled on your browser, you need to disable it to import data.
+Procedure
+Access the GAA Unit to which you want to import existing data.In the upper-right corner of the workspace, select Import Data.
+The Import Data window appears.
+In the Select the file box, select the file from which you want to import the data. In the Select Year box, select the year for which you want to import the data. By default, the current year is selected in this field. In the Regulatory Organization box, select the Regulatory Organization to which the data will be reported. By default, NERC is selected in this field. 
+Note: You can import data only for the primary regulatory organization of a unit.
+In the Import Type box, select the type of the record. By default, Event is selected in this field.
+Note:
+When importing data for an Event, Events are considered related events if the following conditions are met:
+
+The value in the Event End Date field of an existing Primary Event matches the value in the Event Start Date field of a new Primary Event.
+
+There is a valid event transition between the two events.
+
+During the import, the Start Date and End Date of the events will be considered in the time zone of the GAA plant. The time zone of the GAA Plant and timezone in which you have logged in to GE Digital APM should be the same while importing existing data.
+You can import the Performance data for a selected GAA Unit only:
+If all the months, previous years to current year, contain a Performance record. If no Performance record exists for one of the months, the data will not be imported.If, in the current year, all the months to the current month contain a performance record.
+
+Select Start Import.
+You are redirected to a new tab in the browser. You must navigate back to the GE Digital APM tab where status and log file is present.
+Note:
+When importing data: 
+For Event records, if the selected GAA Unit has existing Events, a Delete dialog box appears, asking you to confirm that you want to delete the existing Events. For Performance records, if the selected GAA Unit has existing Performance records, an Update dialog box appears, asking you to confirm that you want to update the existing Performance records.
+
+The data is imported. A text file is generated containing the details of the log created during data import.
+Note: When importing data for Performance records, if the selected GAA Unit contains existing Events, after importing the data, the Performance reports for months that contain Events will be in OUT OF SYNC status. You can regenerate the Performance record.
+Add a GAA UnitBefore You Begin
+
+Add a GAA Plant
+
+Procedure
+Access the GAA Plant for which you want to add a GAA Unit.In the left pane, select . 
+A blank datasheet for GAA Unit appears in the workspace.
+
+
+
+In the Asset ID cell, select .
+The Asset Finder window appears.
+Select the Functional Location to which you want to associate the GAA Unit, and then select Done. 
+The selected Functional Location appears in the Asset ID box as a link. You can select the link to access the details of the Functional Location. 
+As needed, enter values in the available fields.In the upper-right corner of the workspace, select Site:.
+Note: A user maybe assigned to multiple sites. By default, the user's default site appears.
+Select the site to which you want to assign the GAA Unit.
+Note: If the GAA Unit is assigned to the default site, then it can be accessed only by users who have been assigned to the same site. The site selector component becomes read-only after it is saved. 
+Select .
+The GAA Unit is saved.
+Delete a GAA UnitProcedure
+Access the GAA Plant from which you want to delete a GAA Unit.
+The datasheet for the selected GAA Plant appears in the workspace. A list of GAA Units associated with the selected GAA Plant appears in the left pane. 
+In the left pane, select the GAA Unit that you want to delete. 
+The datasheet for the selected GAA Unit appears in the workspace. 
+Note: You cannot delete a GAA Unit if it has an associated Primary Event or Performance record.
+In the left pane, select .
+The Delete dialog box appears, asking you to confirm that you want to delete the selected GAA Unit.
+Select Yes.
+The GAA Unit is unlinked from the associated functional location and the associated record is deleted from the database. 
+
+
+
+
+
+On this pageAbout Fuel CodesAbout Determining When an APM Event is CreatedAbout Populating the Fuel Code FieldsAccess a GAA UnitAccess a Reference DocumentImport Existing DataAdd a GAA UnitDelete a GAA Unit
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+
+
+
+Classifications Reserved Attributes | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+Groups
+ClassificationsClassifications Overview
+Classifications AttributesClassifications Reserved Attributes
+Classifications Custom Attributes
+Classifications Inherited Attributes
+
+
+
+
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Classifications
+Classifications Attributes
+Classifications Reserved Attributes
+
+
+
+
+
+
+
+Classifications Reserved AttributesAdd or Modify Reserved Attribute Values for a ClassificationYou can enter or modify reserved attribute values for an asset or tag classification. About This Task
+Reserved attributes are system defined attributes. These attributes only appear for asset or tag classifications. You can enter a new value or modify an existing value for a reserved attribute. You can add new values or modify existing values for a reserved attribute that contains . Reserved attributes have predefined formatting which cannot be modified. You cannot add or delete a reserved attribute, or modify the name of the reserved attribute.
+GE Digital APM Asset has identified a list of reserved attributes for Asset and Tag classifications. To ensure that you do not add custom attributes from the reserved attributes list, the following tables list the reserved attributes used for Asset and Tag Classifications:Table 1. Asset Classification Reserved AttributesField NameDisplay NameTypeDefault ValuefamilyTypeFamily TypeStringnullequipmentTypeEquipment TypeStringnullmakeMakeStringnullmodelModelStringnullseriesSeriesStringnullserialNumberSerial NumberStringnullmaintenanceCriticalityRiskScoreMaintenance Criticality Risk ScoreIntegernullfaultModeFault ModeStringnullTable 2. Tag Classification Reserved AttributesField NameDisplay NameTypeDefault ValueuomUnit of MeasureUnitOfMeasurenulldataTypeData TypeStringStringresolutionData ResolutionStringnullshiLowThresholdSensor Health Index Low ThresholdDouble0.0shiHighThresholdSensor Health Index High ThresholdDouble1.00shiFlatLineNumberSensor Health Index Flat Line NumberInteger720shiFlatLineEpsilonSensor Health Index Flat Line EpsilonDouble0.00000001badObservationPersistentBad Observation Persistent / Penalty WindowInteger2880falseAlarmProbabilityFalse Alarm ProbabilityDouble0.001missedAlarmProbabilityMissed Alarm ProbabilityDouble0.001sampleFailureMagnitudesMeanSAMPLE FAILURE MAGNITUDES MEANInteger10sampleFailureMagnitudesVarianceSample Failure Magnitudes VarianceInteger40nullHypothesisVarianceNull Hypothesis VarianceDouble0.0025nanTestWeightNaN Test WeightDouble1outlierTestWeightOutlier Test WeightDouble1flatTestWeightFlat Test WeightDouble1categoryCategoryStringnullhighestThresholdValueHighest Threshold ValueDoublenulllowestThresholdValueLowest Threshold ValueDoublenullmaxOperatingValueMax Operating ValueDoublenullminOperatingValueMin Operating ValueDoublenullaliasesAliasesStringnull
+Procedure To enter or modify a single value for a reserved attribute:In the module navigation menu, go to
+Assets >  Classifications.Find and select an Asset Classification or Tag Classification in the Classification results table.
+Tip: You must use the fieldName to search.
+In the Reserved Attributes section, hover over a reserved attribute value, and select the Value box to enter a value. The value must match the data type for the attribute. A hint may appear if you enter a value incorrectly.Alternatively, you can hover over a reserved attribute value and select , then enter a value in the Attribute Value Definition box.Note: You cannot change the datatype of the attribute.Select Save.The entered value is saved and appears in the Value column for the selected reserved attribute. To add and enter or modify multiple values for a reserved attribute:In the Reserved Attributes section, hover over a reserved attribute value, and select . Enter a value in the Attribute Value Definition box. The value must match the data type for the attribute. A hint may appear if you enter a value incorrectly.Select .Enter an additional value in the new Attribute Value Definition box.Continue selecting  and entering values as needed.Select Save.The entered values are saved and populate the  drop-down list box in the Value column for the selected reserved attribute.Remove Values from Reserved Attributes for a ClassificationYou can remove values from a reserved attribute for an asset or tag classification. About This Task
+Reserved attributes only appear for asset or tag classifications. You can remove an existing value for a reserved attribute. You can remove multiple existing values for a reserved attribute that contains . Reserved attributes have predefined formatting that cannot be modified. You cannot add or delete a reserved attribute.
+Procedure To remove an existing value for a reserved attribute:In the module navigation menu, go to
+Assets >  Classifications.Find and select an Asset Classification or Tag Classification in the Classification results table.
+Tip: You must use the fieldName to search.
+In the Reserved Attributes section, hover over a reserved attribute value, and select the Value box to delete a value. Alternatively, you can hover over a reserved attribute value and select , then select and delete a value in the Attribute Value Definition box.Select Save.The null value is saved and appears as blank in the Value column for the selected reserved attribute. To remove multiple existing values for a reserved attribute:In the Reserved Attributes section, hover over a reserved attribute value, and select .  Select the X next to an existing Attribute Value Definition box to delete it. Select and delete the last value from the Attribute Value Definition box if needed.Select Save.The values are removed from the  drop-down list box in the Value column for the selected reserved attribute.
+
+
+
+
+On this pageAdd or Modify Reserved Attribute Values for a ClassificationRemove Values from Reserved Attributes for a Classification
+
+
+
+
+
+
+
+
+

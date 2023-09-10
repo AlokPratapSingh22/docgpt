@@ -1,0 +1,91 @@
+
+
+
+Reporting | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+WorkflowsAdministration
+Event Management
+Performance
+Reporting
+
+
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Workflows
+Reporting
+
+
+
+
+
+
+
+ReportingGAA Reporting WorkflowThis workflow describes the process for generating reports for a GAA Unit.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Regulatory Report Persona: Solution Administrator or AnalystChoose whether to generate a Regulatory report or Management report for the selected GAA Unit. Event Report Persona: Solution Administrator or AnalystChoose whether to generate a report based on events or performance of the selected GAA Unit. GAA Administration Persona: Solution AdministratorDefine an event when operating status or capability of a GAA Unit changes. Go to the GAA Administration workflow.UnitPersona: Solution AdministratorDefining GAA Unit provides GAA Unit record, Unit Capacity record, and GAA Report record.GAA Event Management Persona: Operator or SupervisorDefine an event when operating status or capability of a GAA Unit changes. Go to the GAA Event Management workflow.GAA Performance Persona: Solution Administrator or AnalystCreate a Performance record for the selected GAA Unit. Go to the GAA Performance workflow.Generate Regulatory Event Report Persona: Solution Administrator or AnalystGenerate Regulatory report based on events (07 report) for the selected GAA Unit for submittal to NERC. Generate Regulatory Performance Report Persona: Solution Administrator or AnalystGenerate Regulatory report based on performance (05 report) for the selected GAA Unit for submittal to NERC. Generate Event Report Persona: Solution Administrator or AnalystGenerate Management report based on events for the selected GAA Unit for internal use. Generate Performance Report Persona: Solution Administrator or AnalystGenerate Management report based on performance of the selected GAA Unit for internal use. 
+
+
+
+
+On this pageGAA Reporting WorkflowRegulatory ReportEvent ReportGAA AdministrationUnitGAA Event ManagementGAA PerformanceGenerate Regulatory Event ReportGenerate Regulatory Performance ReportGenerate Event ReportGenerate Performance Report
+
+
+
+
+
+
+
+
+

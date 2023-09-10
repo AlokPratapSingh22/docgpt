@@ -1,0 +1,219 @@
+
+
+
+Templates | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage TemplatesTemplates
+Analysis Templates
+SmartSignal Templates
+Template Sharing
+
+
+Analysis Troubleshooting
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Manage Templates
+Templates
+
+
+
+
+
+
+
+TemplatesDisplay Tags as AliasSelecting a default tag name or tag alias maintains the frame of reference for an Alert Analysis chart or an Analysis chart when assisting a customer. You can add an alias for an asset through ingestion. About This Task
+Search results for assets and tag names are based on a Default Tag Name or a Tag Alias. Alias selections affect the current Analysis view only. Saving the Analysis view as a template saves the alias setting for the view.
+Selections affect all tag types in the Tag Tree Panel, including:Tags in the Tag Tree Browser.Search Browser results.Tag names in the Tag Filter.Tag names in the Register chart.Chart titles.Multiple aliases can be defined for the same tag in different assets. If so, the tag appears more than once for different aliases.Default Tag NameAsset and tag names assigned by GE Digital APM.Tag AliasAsset and tag names assigned by the customer.
+Note: You can globally change the asset alias context by modifying the Asset Display Name in your user profile.
+ProcedureTo select a default tag name:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Select , and then select Display Tags as Default Tag Names.The associated tag names in the Tag Tree Browser and Search Browser results change to reflect your selection.To select a tag alias, select , and then select Display Tags as Tag Alias.The associated tag names in the Tag Tree Browser and Search Browser results change to reflect your selection.Display Template InformationYou can display information about saved templates.About This Task
+The Template Information bar provides more information about the asset and the template settings on each analysis view. For more information on the categories of information that appears in the Template Information bar, refer to the Template Information Categories topic.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select the asset used to save the view.Select the View Selector drop-down list box, and then select the view.
+Note:
+If you select Public Templates, the All Resources classification type is displayed along with all the other Public template.If you select My Templates, the All Resources classification type is displayed along with all your Private templates.
+
+Select , and then select Show Template Information.
+The Template Information bar displays the Asset attributes, default values.
+Note:
+You can configure the Preferred attributes from the Custom Attributes in the Asset Classification page. The Template Information bar displays the attribute values from the Reserved or Custom Attributes. To configure  preferred attributes, select  and enter ANALYSIS_DISPLAY_ATTRIBUTE key in the Attribute Name field and the list of asset attributes separated by comma in the Values field.
+The attributes and values that appear in the Template Information bar depend on the following conditions:If the ANALYSIS_DISPLAY_ATTRIBUTE is not configured for an asset classification, then the values from the Reserved and Custom Attributes of the asset appear in the Template Information bar.If the configured attribute names are not found in the Reserved or Custom Attributes list, then the attribute values do not appear in the Template Information bar.If the ANALYSIS_DISPLAY_ATTRIBUTE key is empty or not configured for the asset classification, then the values from the Asset Context Attributes such as Make, Asset Type, Analysis Type, Applied To, and Published To appear in the Template Information bar.
+
+Connect or Disconnect Data PointsAbout This Task
+You must enable condition based filter in the Analysis module to be able to connect or disconnect data points. Note: This feature is not supported on SmartSignal templates. 
+ProcedureTo connect data points:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Select the View Selector drop-down list box, and then select the view.Select , and then select Connect Gaps.Save the template. To disable connected data points:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Select the View Selector drop-down list box, and then select the view.Select , and then select Disconnect Gaps.Save the template. Export the Chart DataYou can export the data in an existing chart or analysis template to a CSV file. About This Task
+The ability to export the data in the charts allows you to create artifacts and capture the underlying data that was used to arrive at a decision during analysis of your assets.
+You can export data from a selected unsaved chart or an analysis template. Analysis templates may contain multiple cards and charts, and can be a private or system templates, and class or instance analysis templates. The file contains all data for all tags plotted within the current date and time range. Tag expressions and reference curves are treated similarly to tags while exporting the data.
+If you have set a preferred time zone for the template, the Start Date, End Date, and Time timestamps are exported for the selected time zone. 
+The downloaded file is named GE Digital APM_<current asset instance name>_<current YYYY-MM-DDThh:mm:ss>.csv. The downloaded file must be configured to appear properly.
+The CSV file includes the following data:Time Zone Start Date/TimeEnd Date/TimeData Resolution valueData Resolution value (raw, if selected)Tag names (in columns) Note: Tag expressions and reference curves are considered tags.Tag Description (in columns)Alias names when defined (in columns)Units of Measure for tags (in columns)Note: The standard unit of measure for plotted tags appears. Quality of data filter Time stamp for each row.Tag values if present (in columns)
+The standard unit of measure for plotted tags appears if the source unit of measure has been converted to standard unit of measure. If the source unit of measure is not converted, then the source unit of measure does not appear.
+ProcedureTo export the data in a chart or template:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a System Templates or My Templates view:
+Containing a previously saved chart.Ad Hoc Analysis, then select a chart type and create a chart with plotted tags.
+Select List
+, and select Export Data.GE Digital APM exports the chart data to a CSV file on your local drive.To view the downloaded CSV file in Microsoft Excel:On a blank Excel page, select File, choose Open, and then navigate to the CSV file you downloaded and select Open.In the Text Wizard dialog box, select Delimited, and then select Next.In the Set Delimiters dialog box, select Tab and Comma, and then select Next.
+Note: You can preview how the data looks at the bottom of the dialog box.
+The file imports into Excel.Select Open with Microsoft Excel, and then save the file.Access a Card on a ViewUse Jump menu to navigate to a specific card in the view.About This Task
+You can create an analysis view with multiple cards that allow you to logically group the charts within the analysis view. Jump allows you to move from one card with a set of charts to another. 
+When you add and save a card on an analysis view, the name of the new card is saved and it can be accessed to navigate to a specific card in the view. The card names appear in the order they appear on the view.
+When you select an analysis view, the first card in the view, containing up to four charts, loads and its associated charts appear. You must use Jump to access additional cards.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select , and then select a card name.The view automatically loads and the selected card appears.Modify the Date RangeYou can modify the date range for all charts on a view to access details for different periods.About This Task
+When investigating an issue, you might want to view a chart for different date ranges or durations. GE Digital APM provides a way to set the date range for the analysis. This impacts all the charts in that template.
+The plotted data over a range of time selected appears on the Date Range Calendars, including the selected time zone. The calendars allow you to enter clock times based on twelve-hour-ranges for AM and PM Date ranges affect the data resolution, data available, and timeline zoom capability. Date Range Calendars have the following preset date ranges available:Last 1 DayLast weekLast monthLast 3 monthsLast 6 monthsLast 12 months
+Tags that do not have data available for the time range selected do not plot on the charts; however, they are still available in the Plotted Tags list in the Tag Tree Browser. Filters are not saved on a template for plotted tag expressions when the date range is changed. Changing the time zone affects how the date range appears.
+Date ranges are saved when creating an Analysis Template. Date ranges may be preset in the Alert Template. You can still change a date range that is set using the Alert Template.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Complete one of the following actions:
+MethodActionAnalysis Charts Ad Hoc
+In the View Selector, select New Time Series Analysis or New Event Data Analysis.Select a chart type in the Chart Type list.
+SmartSignal Ad Hoc
+In the View Selector, select New Time Series Analysis.In the default card, select  and then select Add Card from the options list.Select SmartSignal Card.
+Analysis or SmartSignal Charts Template
+In the View Selector, select Public Templates or My Templates.Select a template from the list.
+Alerts
+In an Alert Detail page, select the Default Analysis View link in the Analysis section.
+
+In a view with at least one chart with plotted tags, select one of the Date Range Calendars to select the range and time selections for all the charts on the view.
+Note: In the Analysis workspace, if the fields do not have enough space to align in the same line, they appear as icons. The From label of the Date Range calendar is hidden and the To label appears in between the calendars.
+Select your preferred dates on the calendars to select a custom date range for the data appears in the charts, and then select Apply. You can also select one of the Presets and change the Start and End times using the list. Alternatively, you can enter dates and times directly in the Date Range From and To fields.Note: This step applies to both Analysis and SmartSignal.Tip: If the data times out during retrieval, you can select Continue Waiting or Stop.Select , to refresh the charts to load the latest data for the latest time. This option is enabled only when you select the date range from the PRESETS. If you select the date range from the calendars, the refresh option will be disabled. This option is enabled only for the non-SmartSignal charts.Example: When you load data for 7 days, from 10 Jan, 2022 0915 AM to 17 Jan, 2022 0915 AM and use the chart for 15 min. If you want to refresh the data to the current time, the date or time refresh option would update to 10 Jan, 2022 0930 AM to 17 Jan, 2022 0930 AM.
+Note:
+For a SmartSignal card, when you modify the date range using the calendar in a non-points mode, selecting Apply on the calendar refreshes the data automatically. However, when you modify the date range using the calendar in the SmartSignal template, you must select Apply on the template to view the refreshed data.In the points mode of a SmartSignal card, select Today to set the date to the current day.
+
+The date range changes based on your selections.About Saving TemplatesYou can create custom analysis views associated with an asset instance or class and save them as templates for use with specific alert types.You can save both a Time Series Analysis or an Event Data Analysis view as a template. Templates are saved to the System Templates or My Templates list, for public or private templates. Templates can be saved as an iteration or class. You can save a template that includes special characters in the tag names. Once created, you can associate a new analysis view as a template with an alert template, automating the view for that type of alert.When you create and save an analysis view, the view also records information about asset applicability and accessibility. Analysis views can be updated and deleted.Note: Before deleting an analysis view, make sure that there are no alert template associations. This action cannot be undone.The Context Ribbon on the analysis view includes options and displays information about its state.You can save an analysis view with tags containing no data for the current date range. When you add a tag with no data to a chart, the plotted tags list displays the tag as disabled. The  icon indicates that no data is available. When the date range is changed to include tag data, the plotted tags list displays the tag as enabled, and the view plots the data. Filtering for plotted tags and tag expressions can be saved as part of an analysis template, however, when a date range is changed for a plotted tag expression on a template, the filter is not saved.The  icon indicates that tags may not be present for different assets in the same classification.Applicable scenarios include the following outcomes: Table 1. Tag Data ScenariosScenarioOutcomeAdd a tag with no data for the current date range to a chart.No data is plotted on the chart, and the tag name is displayed as disabled with an ND (no data) indicator in the plotted tag list.Access a chart saved with tags containing no data for the current date range.No data is plotted on the chart, and the tag name is displayed as disabled with an ND (no data) indicator in the plotted tag list.Change the date range for a chart containing tags with no data, allowing data to become available.The tag data is plotted to all charts that use the tag, and the tag name is displayed as enabled in the plotted tag list.Change the date range for a chart containing tags with data, making data unavailable.No data is plotted on the chart, and the tag name is displayed as disabled with an ND (no data) indicator in the plotted tag list.Access a class-level template and the current class instance does not contain one or more of the tags that have been saved in the template.No data is plotted on the chart, the tag name is displayed as disabled with an ND (no data) indicator in the plotted tag list, and text for each tag that tells the user the tag is not configured. Format of text is "Not configured for < name of current asset instance>." Tags saved with the template that do not exist for the current asset are not plotted even if data is present for the asset or tag.When you save an analysis view, the system saves the charts. A prompt notifies you when the following modifications to charts cannot be saved:Tag alias settings.Date range modifications for a chart.The chart's zoom state.Tags and child tags selected for two or more assets if saved as a class. Remove all tags in the second asset to save the chart.Save an Analysis TemplateYou can create a custom view or modify an existing view, and then save it as a template for use with specific alert types.About This Task
+Analysis views allow you to view a single asset instance or class with multiple charts in Analysis or SmartSignal.
+When a template is associated with one or more alerts, the name of the saved template is listed for each associated alert.
+When you save a template for an asset instance that contains multiple assets, it cannot be saved as a class template.
+Note: When you navigate to Analysis from Alerts, the Template name and the Alert name appear on the Analysis template.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Complete one of the following actions:
+MethodActionAnalysis Charts Ad Hoc
+In the View Selector, select New Time Series Analysis or New Event Data Analysis.Select a chart type in the Chart Type list.
+SmartSignal Ad Hoc
+In the View Selector, select New Time Series Analysis.In the default card, select , and then select Add Card.Select SmartSignal Card.
+Analysis or SmarSignal Charts Template
+In the View Selector, select Public Templates or My Templates.Select a template from the list.
+Alerts
+In the module navigation menu, go to
+Alerts.Select an Alert Inbox filter, such as Unclaimed, or a filter containing an Analysis View chart.Select an Alert from the Alert Inbox.In the details page, select an Analysis View chart.
+Note: this selection requires you to update the template prior to saving.
+
+Create or change the analysis view, as needed.Select , and then select Save as New Template.Select from the following options, as needed:
+For this optionDo thisApplied To drop-downSelect from:Just <instance> to save a template for the current asset instance.All <class> to save a template for all asset instances associated with the parent class.All Resources to save a template for all the assets associated with any classification type.Published To drop-downSelect from: Public Templates to save a template available publicly.My Templates to save a template available to only you.Name boxEnter a unique name in the Name box. You must select a unique name, or the template cannot be saved.
+
+Tip:
+Changing the asset application changes the template target (asset instance or asset class).Asset Type and Analysis Type derive their displayed information from asset metadata, and cannot be selected.If you are modifying an existing template, overwriting the template name does not create a new template. Any associated alert template is updated with the asset analysis view template name, and is available in the Add Template to Alert Template list.If you are saving a template with multiple assets, you should select Just <instance> in the Applied To drop-down list box. Class level charts with multiple assets cannot be saved as a template.
+
+Select Save.The analysis view is listed on the View Selector. The template information fields reflect the asset instance or class information.The template is not listed in the View Selector for any secondary asset instances.Set a Default TemplateYou can set a public class template as the default analysis template for the asset classification.Before You BeginYou must have permission to modify class templates.About This Task
+When you select an asset context in Analysis, a new Time Series Analysis view or the designated default class template view appears.
+Default class templates appear as the first view when you select an asset context that includes the associated class template. You can create a public, class template, and then designate it as the default for the selected asset; or, you can use an existing public, class template to designate as the default for the selected asset. Once a default template is set, it persists as the default for asset instances that belong to the selected asset class.
+Default templates apply to public, class templates only. You cannot apply a default designation to a private or instance template.
+If a default template is updated to a private or instance template, the default designation is removed from the template.
+You can create or select a new public or class template for the selected asset if a default is already designated. In this case, the new designation supersedes the old designation.Note: Only one default designation is possible for a selected asset.
+ProcedureTo create a default public, class template from a new ad hoc view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Plot a Time Series Analysis or Event Data Analysis chart.Select , and then select Save as New Template.In the Template Save page, do the following:
+Enter a new template name in the New Template box.In the Applied To box, select All <asset_name> to designate a class template.Select the Published To box, and then select Public Templates.
+Select Save.The selected class template is designated default for the selected asset, and a check mark appears next to Set as Default Template in the List box.To designate a default template from an existing public, class template:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a System Templates view containing a previously saved chart.Select , and then select Set as Default Template.The selected class template is designated as the default for the selected asset, and a check mark appears next to Set as Default Template in the List.To remove an existing default designation for an asset context, select , and then, if it has a check mark next to it, select Set as Default Template.The default designation for the selected asset context is removed, and the check mark next to Set As Default Template in the List box is removed.Modify an Analysis TemplateOnce updated, the analysis views allow you to view a single-asset instance or class with multiple charts in Analysis. About This Task
+You can modify an analysis view template that contains multiple assets in an instance or a single asset in a class.
+When the template is associated with one or more alerts, then the new name of the template is listed for each associated alert. The updated list of templates available for the Alert Template displays the new template name.
+When you update an analysis chart template for an asset instance that contains multiple assets, it cannot be saved as a class template.
+ProcedureTo update an asset instance or class template:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select , and then select Update Template.Change the analysis view as needed.Select from the following options, as needed:
+For this optionDo thisApplied To drop-downSelect from:Just <instance> to save a template for the current asset instance.All <class> to save a template for all asset instances associated with the parent class.All Resources to save a template for all the assets associated with any classification type.Note: By default, the option selected when the template was created is displayed. You can select any other option from the drop-down list.Published To drop-downSelect from:System Templates to save a template available publicly.My Templates to save a template available to only you.View Name fieldEnter a unique name in the View Name field. You must select a unique name, or the template cannot be saved.
+
+Tip:
+Changing the asset application changes the template target (asset instance or asset class).Asset Type and Analysis Type derive their displayed information from asset meta data, and cannot be selected.Overwriting the template name does not create a new template. Any associated alert template is updated with the asset analysis view template name, and is available in the Add Template to Alert Template list.
+
+Select Update.The updated analysis view is listed on the View Selector. The template information fields reflect the asset instance or class information.To update an asset instance template with multiple assets:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select , and then select Update Template.Change the analysis view as needed.Select the Applied To drop-down list box, and then select Just <instance>.You should not select All <class>. Class-level charts with multiple assets cannot be saved as a template.Select the Published To drop-down list box, and select:
+My Templates to save a template available only to you.Public Templates to save a template available to the public.
+Select Update.The updated analysis view is listed on the View Selector. The template is not listed in the View Selector for any secondary asset instances. The template information fields reflect the asset instance information.Delete an Analysis TemplateYou can delete an analysis template that is not associated with an Alert Template.About This Task
+Deleting an analysis template cannot be undone. You cannot delete a template that is associated with an alert template. You must first remove the analysis template from all associated alert templates.
+ProcedureTo delete a saved asset instance or class-analysis view that is not associated with an alert template:
+Important: Before deleting an analysis view, make sure that you have removed the view from any alert templates. You cannot complete this action until you do so.
+In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select , and then select Delete Template.The Delete Analysis Template dialog box appears.Enter the full name of the template in the Template Name field, and then select Delete.If you do not enter the full template name, the Delete button is not enabled.The analysis view is deleted, and is removed in the View Selector. To delete a saved asset instance or class-analysis view that is still associated with an alert template:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select , and then select Delete Template.The Delete Analysis Template dialog box appears with a message that you must disassociate the analysis view from all alert templates.Note: There is a list of alert templates displayed in the message.Select Templates on the navigation bar, then find the relevant alert templates listed in the message.Select Open Alert Templates.Alert Templates appears in a new tab.Remove the analysis view from each associated alert template, then return to the analysis view in Analysis.On the Delete Analysis Template dialog box, enter the full name of the template in the Template Name field, and then select Delete.The analysis view is deleted, and is removed from the View Selector. Display the Saved Analysis ViewsOnce you have saved one or more analysis views as a template for a selected asset context, the analysis view name appears in the View Selector drop-down list box in the same context for which it was saved. Before You BeginMake sure you have saved at least one analysis view for the current asset context.About This Task
+A saved analysis view can contain multiple charts on a one or more cards.
+You can display a saved view when you select the same asset context in the context browser. Each view for the selected context appears in the View Selector drop-down list box. Changing the time zone affects how the date range designation is displayed.
+ProcedureTo display a saved view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select the asset used to save the view.
+Note:
+When selecting an item returned from the Context Browser: If the result is an asset, the context is automatically set to the selected asset, and a new analysis appears.  If the result is an enterprise, site, or segment, the context is automatically set to your selection. 
+
+Select the View Selector drop-down list box, and then select the view.
+Note: The template is not listed in the View Selector for any secondary asset instances.
+To display a different view for the same asset context, select View Selector, and then select the view.Changing the asset context allows you to display only the views saved for that context.
+Note: In the Context Browser, you can toggle assets that belong to the same asset classification template type and retain the selected template. For All Resources templates, you can toggle assets irrespective of the classification type and retain the selected template.
+Display and Hide Template Information on a ViewYou can access or hide template information for a view.About This Task
+You can review the applicability, availability, and asset information for the associated template from a view.
+ProcedureTo access template information:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a Public Templates or My Templates view.Select , and then select Show Template Information.The template information bar for the selected view appears above the cards.To hide the view's template information:On a selected view in Analysis, select , and then select Hide Template Information.The template information bar for the selected view is hidden.Apply Permissions for a TemplatePermissions give you the ability to control Visibility, Privileges and Ownership of specific charts or groups of charts.About This Task
+This procedure applies to both Analysis and SmartSignal.
+ProcedureIn the workspace select  and then select Permissions.A window will appear with tabs for Visibility, Privileges and Ownership. Visibility is the default when opened.
+Visibility allows you to determine if one or more users have chart groups and/or card visibility by checking or unchecking the boxes next to the associated names and selecting Apply.Privileges allows you to determine if the chart groups or cards will be accessible to a select group or all users. If no user group box is checked, then viewer access is provided to all users. To select a group, check a box next to the associated group name and select Apply.Ownership allows you to determine if one or more users have editing capabilities as well as the ability to extend template permissions or delete the template. To select an owner, check the box next to the associated groups or profiles and select Apply.
+After selecting Apply a temporary prompt will appear that reads "Permissions and Ownership Updated Successfully."
+
+
+
+
+
+On this pageDisplay Tags as AliasDisplay Template InformationConnect or Disconnect Data PointsExport the Chart DataAccess a Card on a ViewModify the Date RangeAbout Saving TemplatesSave an Analysis TemplateSet a Default TemplateModify an Analysis TemplateDelete an Analysis TemplateDisplay the Saved Analysis ViewsDisplay and Hide Template Information on a ViewApply Permissions for a Template
+
+
+
+
+
+
+
+
+

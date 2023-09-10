@@ -1,0 +1,123 @@
+
+
+
+Events | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+InstancesAsset Instances
+Asset Attributes
+Tag Instances
+Tag Attributes
+Location Information
+Events
+
+
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Instances
+Events
+
+
+
+
+
+
+
+EventsAbout Asset EventsYou can display past events that affected the selected asset instance in a Timeline or Grid view.All events that affected the selected asset instance in the past are listed in the Event section in date order (Timeline view) with the newest date first, by default. GE Digital APM displays the first 10 events in the list and allows you to continue scrolling for additional events.Information displayed for each event in the Timeline view is as follows:This event typeDisplays thisAlert
+Severity and event name link.Date created.Date last updated and the user name.Status.Disposition.Alert type.
+Note: Alerts that belong to another tenant will not appear in the Events section.
+Case
+Severity and event name link.Date created.Date last updated and the user name.Status.
+Note: Cases that belong to another tenant will not appear in the Events section.
+You can expand an Alert Event in the Timeline view to display the history of actions taken for that alert.You can navigate between the Timeline and Grid view.Selecting the Grid view allows you to display and navigate to the events in a table, where you can sort and filter the entries. The Grid view displays all event types and includes the following searchable fields:SeverityEvent NameEvent IDEvent TypeEvent OwnerEvent TimestampLast UpdatedYou can search within the listed events in the Timeline or Grid view. All criteria entered into the Search box provides results that match the data in the view.You can select a custom or preset time-range to display events using . The  displays events for the current timestamp through the past week by default.Selecting an alert or case link from the list in the Timeline or Grid view accesses the selected alert or case in a new window.Search for an EventYou can search for events that match selected criteria.About This Task
+You can search all of the displayed events, including comments, in both the Timeline or Grid views.
+Results are displayed by matching criteria to the data in the fields available in the view. Search results for alert and case name or alert type are based on the date range selected.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Select the Events link.Enter a search string for the event criteria in the Search box.After you press ENTER, all instances that have a match appear.Select a Date Range for EventsYou can display events in the Timeline or Grid view that occur within a custom or preset time-range. About This Task
+Events display for the current timestamp through the past week by default.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Select the Events link.Optional: Select  to open the Grid view.Select  to select the range and time selections for all the events on the view.Select a date on the left and right calendars to select a custom date range for the events list, and then select Apply.You can also select one of the Presets using this window. Alternatively, you can enter dates and times directly in the Date Range From and To boxes.The date range changes based on your selections. Events are displayed within the set date range.Access Event Types in the Timeline ViewYou can narrow the events listed for the selected asset instance by selecting an Event Type.About This Task
+The following Event Types apply:This event typeLists these events (Alerts)Displays all alert type events within the selected date range. Is expandable to display all applicable history for a selected alert. (Cases)Displays all case type events within the selected date range.AllDisplays all event types within the selected date range.Note: The numerical count of possible events displays in the Event Type section.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Select the Events link.Select one of the following Event Types:All (Alerts Events) (Cases Events)A list of events matching your selection displays.Expand an Alert Event in the Timeline ViewYou can display associated Alert timeline events for a selected Alert Event.About This Task
+Alert timeline events include the following:Associated casesAlert dispositionsNotes with expandable comments
+Each event in the Alert timeline includes the name of the event, the type of event, the date and time of the event, and the owner of the event.Tip: You can navigate to an associated Case from the expanded Alert timeline event.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Select the Events link.Select the date range for the events.Select .Optional: In a Timeline view, select the Alert Event Type.The All Event Type is selected by default.Find an Alert Event in the Timeline view list.Select  next to the Alert Event.The selected Alert Event expands to display the associated Alert timeline events.Navigate Between the Timeline and Grid ViewYou can display events in a Timeline or Grid view.About This Task
+Timeline views list events in ascending date order with newest first. You can expand alerts entries to display a history of actions taken for the selected alert.
+Grid views display events in a table, allowing you to sort and filter the entries.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Select the Events link.Select one of the following View Modes:(Timeline view)(Grid view)The events display within the selected date range.Filter Events in the Grid ViewYou can filter the entries in the Grid view, narrowing the possible entries.About This Task
+Each column in the grid can be filtered to narrow the displayed event entries. Multiple filters can be used to further narrow the displayed events.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Select the Events link.Select .At the top of one or more columns, enter at least three characters in the Filter box.As you type, all matching instances of the entered criteria appear.Sort Events in the Grid ViewYou can sort the entries in the Grid view by column. About This Task
+Entries are displayed in descending order by default.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Select the Events link.Select .Select a column header.
+The event entries are sorted in ascending order by the selected header. Selecting the column header again sorts the events in descending order.
+Navigate to an EventYou can navigate to a selected event from the Timeline or Grid view.About This Task
+You can open a selected event in another GE Digital APM module to examine it more closely.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Select the Events link.Select the date range for the events.Select or .Optional: From a Timeline view, select an Event Type.The All Event Type is selected by default.Find a named Event in the Timeline view list or Grid view table.Select a named Event link.The selected event opens in another window.
+
+
+
+
+On this pageAbout Asset EventsSearch for an EventSelect a Date Range for EventsAccess Event Types in the Timeline ViewExpand an Alert Event in the Timeline ViewNavigate Between the Timeline and Grid ViewFilter Events in the Grid ViewSort Events in the Grid ViewNavigate to an Event
+
+
+
+
+
+
+
+
+

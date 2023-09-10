@@ -1,0 +1,57 @@
+
+
+
+Recommendation Family Field Descriptions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Recommendation Family Field DescriptionsThe following table provides a list and description of some of the fields that exist in General Recommendation records and are available on the baseline General Recommendation datasheet. Most of these fields also exist in other Recommendation families and on their baseline datasheets. Regardless of the record in which you see the fields, they behave similarly to the descriptions in the table.The following table defines how these fields behave when you create a Recommendation record from scratch using the  button in either the Recommended Action pane or the Action Management module in GE Digital APM, assuming that you have not customized the behavior of the fields. In some modules that use Recommendation records, the behavior of these fields is customized to fit the needs of that module. Some baseline Recommendation datasheets contain alert fields, which are sometimes separated into their own Alert tab. The Behavior and Usage field will specify if the field is an alert field. If you create a Recommendation record using a module-specific workflow, there can be changes in the behavior and the number of fields from how they are described in the table. You can find details on those changes in that module's documentation.The table lists datasheet captions, not field captions.FieldData TypeDescriptionBehavior and UsageAlert Assignee When Due? Boolean Indicates whether or not you want to send an email message to the person who is responsible for implementing the Recommendation (the user that appears in the Assigned To field). This is an alert field. To send an email to the responsible person, place a check in this box. If not, leave the box blank. Asset ID Character The Record ID of the Equipment record to which the Recommendation record is linked. This value is unique. Assigned to Name Character The name that the Recommendation is assigned to. In the database, values in this field are stored in the following format:<Last Name>, <First Name> ~ <User Name>For example, a name stored in the database would be Smith, Jane ~ jsmith.Associated Reference Character Stores the Reference ID of the event or any other entity that originated the Recommendation.This field is populated automatically by system.Create Work Request? Boolean Specifies whether or not a work request should be created in an external EAM system when this record is saved (e.g., using functionality provided with the SAP Interfaces, Oracle EBS eAM Interfaces, and Maximo Interfaces). N/ACriticalityCharacterThe degree to which an asset is functionally or economically important.This field is read-only and populated automatically by the system.Days Before Due Date to be Notified Numeric Specifies how many days before the Target Completion Date that the email message will be sent. This field is required when the Alert Assignee When Due check box is selected. This is an alert field. This field is only required if the Alert Assignee When Due box is selected. Final Approver Name Character Full Name of person who approves the Recommendation. In the database, values in this field are stored in the following format:<Last Name>, <First Name> ~ <User Name>For example, a name stored in the database would be Smith, Jane ~ jsmith.Frequency of Alert After Due Date Character Specifies how often email messages will be sent after the completion date has passed. You can choose any of the following options: Never, Daily, Weekly, Monthly, or Yearly.This is an alert field. This field is only required if there is a value in the Days Before Due Date to be Notified box has a value in it. Functional Location ID Character The Record ID of the Functional Location record to which the Recommendation record is linked. -or-  The Record ID of the Functional Location record that is linked to the Equipment record that appears in the Asset ID field. N/ARecommendation Description Text A short description of the Recommended Action. N/ARecommendation Headline Character A short description of the Recommended Action. If you select the Alert Assignee When Due check box, the text that you type in the Recommendation Headline field will become the subject of the email. This field is required.Recommendation ID Character A value that identifies the Recommendation record. This field is required.Recommendation Priority Character The priority of the Recommended Action. On the datasheet, this field contains a list of System Codes that exist in the MI_PRIORITY System Code Table. You can choose from the following baseline values: High (HIGH)  Medium (MEDIUM) Low (LOW) Enter the value from the picklist that best represents the priority of this Recommended Action.Reevaluate? Boolean Indicates whether or not you want to send an email message suggesting a reevaluation of the Recommended Action. This is an alert field. A selection is required for this field. Reevaluation Alert Body Text Text The text that will be included in the re-evaluation email message. This is an alert field. This field is required when the Reevaluate check box is selected. Reevaluation Date Date The date that a reevaluation email message will be sent.This is an alert field. This field is required when the Reevaluate check box is selected. Reevaluation Notification List Character The users to whom the re-evaluation email message will be sent. This field is required when the Reevaluate check box is selected. Related Alert Character The invariant alert ID for the alert related to the Recommended Action.This field is read-only. If the field contains a value, it will contain a hyperlink to access the alert record in a new tab.Related Case Character The invariant case ID for the case related to the Recommended Action.This field is read-only. If the field contains a value, it will contain a hyperlink to access the case record in a new tab.Reviewer Name Character The name of the person responsible for reviewing the Recommended Action. In the database, values in this field are stored in the following format:<Last Name>, <First Name> ~ <User Name>For example, a name stored in the database would be Smith, Jane ~ jsmith.State AssigneeCharacterThe recommendation assignee name.This field displays the name of the person to whom the recommendation is assigned.Status Character Records the status of the Recommendation as selected by the user.This field indicates the status of the Recommended Action. Technical Number Numeric The identification number provided by SAP or another Computerized Maintenance Management System (CMMS) This field is imported into the system.Target Completion Date Date The date by which the Recommendation should be completed. This field is required.Work Request Reference Character The ID of the external work request that was created from this Recommendation record (e.g., using functionality provided with the SAP Interfaces, Oracle EBS eAM Interfaces, and Maximo Interfaces). This field is disabled and populated automatically after the SAP Notification or Oracle EBS eAM Work Request is created. N/A
+
+
+
+
+
+
+
+
+
+
+

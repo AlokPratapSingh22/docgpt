@@ -1,0 +1,111 @@
+
+
+
+Users | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Users and PermissionsPermission Sets
+Permission Set Definitions
+Manage a Permission Set
+Users
+Groups
+Certificate-Based Authentication
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Users and Permissions
+Users
+
+
+
+
+
+
+
+UsersAdd a UserYou can add users to GE Digital APM directly or add individuals who are registered with a supported identity provider as new users.About This Task
+When adding a user from your identity provider currently linked with GE Digital APM, ensure that the user information entered matches your identity management system.Important: User information such as the username, password, first and last names, and email address are subject to any limitations implemented by your identity provider.
+ProcedureIn the module navigation menu, go to
+Administration > Users.Select Add New User.The Add User To Tenancy page appears.In the Identity Source drop-down list box, select an identity provider from the list of identity providers currently linked with your tenant.In the UserID box, enter the username for the individual, and then select Find.
+Note: The following steps assume that the user does not already exist in GE Digital APM. If a matching user exists, the user is listed in the Search Results section, and you can select Select to access the Edit User page for that user.
+Enter the first name, last name, email address, and phone number of the user.
+Note: If you selected UAA in the Identity Source drop-down list box, the domain name of the email address cannot match that of another identity provider.
+In the Password box, enter a password, and then reenter the password in the Confirm Password box. This step is required for users directly added to GE Digital APM.
+Note: The password must be at least 8 characters long and contain a minimum of the following:2 uppercase letters1 lowercase letter2 numbers1 special character
+Select Add to add the new user account.The Edit User page appears, displaying the new user.What To Do Next
+Add assets to the user.
+After the user has been added, the user must log into GE Digital APM at least once before their account becomes available for certain assignment operations.
+Note: This step is not required in Legacy Predix APM.
+
+Upload Multiple User AccountsBefore You Begin
+Ensure that at least one user group is added to GE Digital APM.Create a CSV file with the user information of the users that you want to upload.Important: If you select GE SSO in the Identity Source drop-down list box, the CSV file should contain only one column with SSO IDs. This column is case-sensitive. The following image shows an example of this type of CSV file:If you select another identity provider, the CSV file should contain multiple columns with the same information you would input when manually creating each user.
+About This Task
+You can add multiple users to GE Digital APM through CSV upload. 
+ProcedureIn the module navigation menu, go to
+Administration > Users.The Users page appears.Select Bulk Upload.The Bulk Upload Users page appears.Select an identity source from the Identity Source drop-down list box.Select Select File, and then navigate to the CSV file, and then select the file.Select Upload.The User Validation section appears, displaying a list of users and the upload status.An X in the Upload Status column indicates an invalid entry or duplicate record. These records are not added to your tenant.A check mark in the Upload Status column indicates that the valid records will be added to the selected user group in your tenant.Select Continue with Successful Users.The Add Users to Tenancy section appears. In the User Group drop-down list box, select the user group to which you want to add the users.Select Upload.Results User accounts are uploaded. The Users page displays the users that were added.Add Assets to UsersBefore You Begin
+You must be logged in with administrator privileges.You must have added at least one user.
+About This Task
+You can add individual assets to each user. You can also assign users to any level in the context browser. For example, assigning an Enterprise gives the user access to all levels (sites, segments, and assets) within that Enterprise.Important: If the Foundation permission set is available in a tenant, you must assign at least one permission from this set to all the users of the tenant. We recommend that the users are assigned the MI APM Viewer permission for the assets they need to access.
+ProcedureIn the module navigation menu, go to
+Administration > Users.Select the row containing the user to which you want to add assets.
+Tip: To freeze a column so that it remains visible when you scroll horizontally, or to hide a column, hover over the name of the column you want to freeze or hide, select , and then select your desired action.
+The Edit User page appears.Select Assign Permission Set.The Assign Permission Set and Asset to <user> window appears.Select Select an asset.The Select Context window appears.In the Select Context window, in the pane containing assets, in the row containing the asset that you want to select, select , and then select one of the following:OptionDescriptionSelect allSelects the asset and the hierarchy of assets below it.Select all childrenSelects only the hierarchy of assets below the asset.Tip: Select this option when you want to assign permissions to most but not all assets in a hierarchy. You can then remove undesired assets individually.
+Note: Assigning permissions to an asset also assigns permissions to the hierarchy of assets below it.
+In the Select Context window, select Select.The selected assets are associated with the user.In the Assign Permission Set and Asset to <user> window, select the permission set that you want to associate with the asset being assigned to the user.Optional: Select Create New Permission Set to access the Add New Permission Set page, in which you can create a new permission set to then select in the Assign Permission Set and Asset to <user> window.
+Tip: Hover over the Features column to view a full list of permissions included in the permission set.
+Select Assign.The selected assets with the selected permission set are assigned to the user.Select Done.ResultsThe user has access to the associated assets and features as defined.Remove an Asset from a UserBefore You Begin
+You must be logged in with administrator privileges.You must have added at least one user and at least one asset to that user.
+ProcedureIn the module navigation menu, go to
+Administration > Users.Select the row containing the user from which you want to remove an asset.
+Tip: To freeze a column so that it remains visible when you scroll horizontally, or to hide a column, hover over the name of the column you want to freeze or hide, select , and then select your desired action.
+The Edit User page appears.In the Permission Sets & Assets section, in the row containing the asset that you want to remove from the user, select , and then select Remove Assignment.The asset is no longer assigned to the user.
+
+
+
+
+On this pageAdd a UserUpload Multiple User AccountsAdd Assets to UsersRemove an Asset from a User
+
+
+
+
+
+
+
+
+

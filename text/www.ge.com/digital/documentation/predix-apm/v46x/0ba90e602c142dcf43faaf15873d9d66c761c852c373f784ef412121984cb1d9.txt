@@ -1,0 +1,354 @@
+
+
+
+Admin | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Admin
+
+
+
+
+
+
+
+AdminAccess the Global Preferences WorkspaceBefore You Begin
+You can access the Global Preferences workspace only if you are a member of the MI RBI Administrator Security Group or a super user.
+ProcedureIn the module navigation menu, select
+Admin > Application Settings > Risk Based Inspection.
+The RBI Admin Preferences page appears, displaying the Global Preferences workspace. 
+
+If you want to modify the value in a field:
+Select .All the fields in the workspace are enabled.As needed, modify values in the available fields.Select .
+The value in the field is modified.
+About Global PreferencesAbout RBI Preferences
+The Global Preference settings for Risk Based Inspection contain items for the following settings:
+Use Interpolation for Stress Reference Tables: If you select this check box, linear interpolation is used to calculate the allowable stress based on the value in the Design Temperature field. Note: In RBI 581 Risk Analysis, linear interpolation is also used to calculate the flow stress based on the value in the Yield Strength and Tensile Strength fields.If you do not select this check box, and the value in the Design Temperature field is not an exact match of the metal temperature value available in the stress table, the value in the Allowable Stress is populated based on the following conditions:If the design temperature is less than the highest temperature available in the stress table, the next highest temperature value is used to determine the allowable stress value.If the design temperature is greater than the highest temperature available in the stress table, the allowable stress value for the highest temperature is populated from the stress table. By default, this check box is cleared. 
+Recommendation Creation Enabled: If you select this check box, you can create RBI Recommendation records in RBI. By default, this check box is selected. If you want to recommend actions and manage mitigated risk in ASM, you must modify the baseline configuration by clearing this check box.
+
+Enable Recommendations to be Generated at Created State: Ideally, you must generate Recommendations only for analyses in Risk Completed state. If, however, you want to generate Recommendations for analyses in Created state, you must select this check box. 
+If you select this check box:
+You can create Recommendations for an analysis in the Created state.You cannot create Recommendations for an analysis in the Risk Completed state.
+By default, this check box is cleared. You can select it only if the Recommendation Creation Enabled check box is selected.
+
+
+Allow Override of Calculated Unmitigated Risk Values: By default, the unmitigated risk is calculated automatically and displayed on a Degradation Mechanism datasheet, and you cannot modify this value. If, however, you use a custom calculator to calculate unmitigated risk and display it on the Risk Matrix, and you want users to be able to modify the calculated unmitigated risk, then you must select this check box.
+
+Hide RBI Risk Matrix: This setting determines the visibility of the RBI Risk Matrix on RBI 580 Analyses. 
+
+
+Consider Half-Life when Determining Inspection Task Interval: This setting determines how the Desired Interval field in ASM action is populated. 
+The value in the Desired Interval field in ASM action is determined by the minimum values of the following fields:RBI Recommendation Interval Scope ValueRBI Half-Life from Criticality Calculator Internal CorrosionTM Half-Life of the Asset
+You can select this check box only if the Thickness Monitoring license is active. By default, this check box is cleared.
+
+Evaluate all RBI 581 Risk Targets: This setting allows you to enable or disable Evaluation of All Risk Targets. When you enable the Evaluation of All Risk Targets feature and calculate an RBI 581 analysis, the Safety Health and Environmental (SHE) Risk, the Financial Risk, and the Damage Factor targets are evaluated to determine a new value in the Target Inspection Date field. The Target Inspection Date field is then used to determine the value in the Driving Risk Target field, and the value for Driving Risk Target field is set to the risk target that has the most conservative Target Inspection Date value. The resulting target and Target Inspection Date are also used to determine mitigation of risk.Implement Recommended Actions to Tasks in ASM: This setting allows you to specify where the recommended actions are implemented.If you select this check box, the RBI sourced Recommended Actions are implemented in Tasks in ASM.If you do not select this check box, the RBI sourced Recommended Actions are implemented in Tasks in Inspection Plan page for the Asset.Note: This setting is mapped to the Implement Recommended Actions to Tasks in ASM setting in the Inspection Management module. Any change in this setting is updated to the corresponding setting in the Inspection Management module.Enable Inspection Grouping: If you select this check box, the Inspection Grouping workflow is enabled and the Open Inspection Group button appears in the Process Units section of the Risk Based Inspection Overview page.RBI Analysis Type Preference: This setting allows you to select the type of analyses that should be used for evergreening and data export.Enable Release type calculation as per RFI-8388:RBI 581 calculator is currently certified to API 581, 3rd edition, Addendum 1. A suggestion to change the release type calculation was presented in the 2021 API 581 sub-committee spring meeting. Since it will take time for the specification to be updated with the proposed changes, GE Digital is providing an optional setting to calculate the release type as per the proposed ballot. If you opt for this change, the calculation will not be certified to API 581, 3rd edition, Addendum 1.
+Important: With the exception of modifying your administrative settings to use new functionality, you should not modify the administrative settings after you have configured them and users have started creating RBI Analyses using those settings.
+About RBI Overview Preferences
+The RBI Overview Preference settings for Risk Based Inspection contains the following settings:
+RBI Overview Graph Preference: This allows you to specify which type of analyses to be used to plot risk values on the graphs that appear in the Asset Overview, Component Overview, and Corrosion Loop Overview sections in RBI.You can select one of the following values in the drop-down list box:RBI 580: If you select this value, the risk values of only RBI Criticality Analyses, RBI PRD Criticality Analyses, and RBI Pipeline Analyses are plotted.RBI 581: If you select this value, the risk values of only RBI 581 Risk Analyses are plotted.580 and 581: If you select this value, the risk values of all types of analyses in RBI are plotted.
+About Evaluation of All Risk Targets in RBI 581In an RBI 581 analysis, users can select a Driving Risk Target which is used to calculate a Target Inspection Date. When you enable Evaluation of All Risk Targets in the Global Preferences and calculate an RBI 581 analysis, GE Digital APM will determine which risk target to use for a Target Inspection Date based on which risk target is exceeded first. The risk target that is used is also the Driving Risk Target.Evaluation of All Risk Targets uses the following risk targets to calculate a Target Inspection Date:Safety, Health, and Environmental (SHE) RiskFinancial RiskDamage FactorAfter evaluation, the Target Inspection Date is used to determine the Driving Risk Target, and the value for Driving Risk Target is set to the risk target that had the most conservative Target Inspection Date.If two or more risk targets have the same calculated Target Inspection Date, the risk targets are prioritized as follows:Safety, Health, and Environmental (SHE) RiskDamage FactorFinancial RiskApplying Evaluation of All Risk Targets
+To use this feature, the following fields must be added to the Planning Targets section in the 581 Risk Analysis datasheet:
+Target Inspection Date based on Damage Factor Maximum. Target Inspection Date based on Financial Risk. Target Inspection Date based on SHE Risk
+If the user selects a Driving Risk Target in the analysis while this setting is enabled, their selection is overridden, and the Driving Risk Target is selected based on the Evaluation of All Risk Targets. 
+Note: This feature does not apply to Tank Bottoms. The Driving Risk Target for a Tank Bottom will always be the Financial Risk.
+About RBI 581 Admin Options The RBI 581 Admin Options workspace allows you to define default field values in the following families:RBI 581 Risk AnalysisRBI 581 Consequence EvaluationRBI 581 Thinning and Lining EvaluationRBI 581 External Damage EvaluationRBI 581 External Cracking Damage EvaluationYou can define these settings to:
+All the records of a family (i.e., globally)
+-or-
+Only the records in a specific process unitA setting for a specific process unit will take precedence over a global setting. For example, if the global setting for Population Density for RBI 581 Consequence Evaluation records was set to 100, and another setting existed specifically for the FCC REACTOR & REGENERATOR Process Unit, which set Population Density to 80, RBI 581 Consequence Evaluation records created for RBI 581 Risk Analyses linked to the FCC REACTOR & REGENERATOR Process Unit would have the Population Density field set to 80.Each individual setting appears as a node under the RBI581AdminOptions parent node. You will define the settings based on the specific requirements of your organization.For each node, the following fields are available:
+Target Family: The family of records for which you want to define a default field value.
+
+Target Field: The field in the target family for which you want to define a default value. 
+Tip: The list of values in this field is not alphabetical. To search for a field , enter the name of the field directly into the Target Field field. The list will be filtered.
+
+Data Type of Field: The data type of the target field. This field is disabled and populated automatically.
+
+Numeric Field Value: The default value for the target field. This field is enabled only if the value in the Data Type of Field column is Numeric. 
+
+Process Unit: The specific Process Unit to which this setting will apply. This property is enabled only if the Is Global Setting check box is cleared. The list is populated with Functional Locations for which the Is a Process Unit? check box is selected.
+Is Global Setting: When this check box is selected, this setting will apply to all the new records in the target family.
+Character Field Value: The absolute value for the target field. This property is enabled only if the value in the Data Type of Field field is Character.Settings in the RBI 581 Admin Options Workspace
+The following table provides a list of settings in the RBI 581 Admin Options workspace. For numeric fields, you must enter values only in English standard units.
+
+Target FieldIs Global SettingField ValueNotesTarget Family: RBI 581 Consequence Evaluation Population DensitySelected0.0001This setting populates the Population Density field in all RBI 581 Consequence Evaluation records with the value 0.0001.Target Family: RBI 581 Thinning and Lining EvaluationThinning VarianceSelected0.2This setting populates the Thinning Variance field in all RBI 581 Thinning and Lining Evaluation records with the value 0.2.Pressure VarianceSelected0.05This setting populates the Pressure Variance field in all RBI 581 Thinning and Lining Evaluation records with the value 0.05. Flow Stress VarianceSelected0.2This setting populates the Flow Stress Variance field in all RBI 581 Thinning and Lining Evaluation records with the value 0.2. Corrosion Rate Factor Damage State 3Selected4This setting populates the Corrosion Rate Factor Damage State 3 field in all RBI 581 External Damage Evaluation records with the value 4.Corrosion Rate Factor Damage State 2Selected2This setting populates the Corrosion Rate Factor Damage State 2 field in all RBI 581 External Damage Evaluation records with the value 2.Corrosion Rate Factor Damage State 1Selected1This setting populates the Corrosion Rate Factor Damage State 1 field in all RBI 581 External Damage Evaluation records with the value 1.Target Family: RBI 581 Risk AnalysisManagement ScoreSelected500This setting populates the Management Score field in all the RBI 581 Risk Analysis records with the value 500.Target Thinning and Lining Minimum Damage FactorSelected5This setting populates the Target Thinning and Lining Minimum Damage Factor field in all the RBI 581 Risk Analysis records with the value 5.Target External Minimum Damage FactorSelected5This setting populates the Target External Minimum Damage Factor field in all the RBI 581 Risk Analysis records with the value 5.Target Cracking Minimum Damage FactorSelected5This setting populates the Target Cracking Minimum Damage Factor field in all the RBI 581 Risk Analysis records with the value 5.Target Damage Factor MaxSelected1000This setting populates the Target Damage Factor Max field in all the RBI 581 Risk Analysis records with the value 1000.Target SHE RiskSelected35This setting populates the Target SHE Risk field in all the RBI 581 Risk Analysis records with the value 35.Target Financial RiskSelected10000This setting populates the Target Financial Risk field in all the RBI 581 Risk Analysis records with the value 10000.Plan PeriodSelected10This setting populates the Plan Period field in all the RBI 581 Risk Analysis records with the value 10.Driving Risk TargetSelectedSafety, Health and Environmental RiskThis setting populates the Driving Risk Target field in all the RBI 581 Risk Analysis records with the value Safety, Health and Environmental Risk.Data ConfidenceSelectedLow Confidence DataThis setting populates the Data Confidence field in all the RBI 581 Risk Analysis records with the value Low Confidence Data.Target Family: RBI 581 External Damage EvaluationThinning VarianceSelected0.2This setting populates the Thinning Variance field in all the RBI 581 External Damage Evaluation records with the value 0.2.Pressure VarianceSelected0.05This setting populates the Pressure Variance field in all the RBI 581 External Damage Evaluation records with the value 0.05.Flow Stress VarianceSelected0.2This setting populates the Flow Stress Variance field in all the RBI 581 External Damage Evaluation records with the value 0.2.Corrosion Rate Factor Damage State 3Selected4This setting populates the Corrosion Rate Factor Damage State 3 field in all the RBI 581 External Damage Evaluation records with the value 4.Corrosion Rate Factor Damage State 2Selected2This setting populates the Corrosion Rate Factor Damage State 2 field in all the RBI 581 External Damage Evaluation records with the value 2.Corrosion Rate Factor Damage State 1Selected1This setting populates the Corrosion Rate Factor Damage State 1 field in all the RBI 581 External Damage Evaluation records with the value 1.Atmospheric ConditionSelectedTemperateThis setting populates the Atmospheric Condition field in all the RBI 581 External Damage Evaluation records with the value Temperate.Target Family: RBI 581 External Cracking Damage EvaluationAtmospheric ConditionSelectedTemperateThis setting populates the Atmospheric Condition field in all the RBI 581 External Cracking Damage Evaluation records with the value Temperature.
+
+About RBI 581 ISO-Risk Plot Preferences The RBI 581 ISO-Risk Plot Preferences workspace allows you to modify the default values of the following parameters that are used in the RBI 581 ISO Risk Plot.The values that you enter must satisfy the following conditions:All values must be numeric.All values must be greater than 0 because the graph is plotted on a logarithmic scale.The lower limits must be less than the upper limits.The upper limits for each risk level must be in ascending order. For example, the upper limit for the Low risk level must be less than the upper limit for the Medium risk level.Note: The units of measure can vary depending on the UOM Conversion Set that you use. For example, if you use the Metric conversion set, the Consequence of Failure will be measured in square meters instead of square feet.ParameterDescriptionDefault ValueThe SHE Risk sectionRBI 581 ISO-Risk Plot Minimum Probability (Events/Year)The lower limit for the Probability of Failure values that are plotted on the vertical axis of the SHE Risk graph.0.00000306RBI 581 ISO-Risk Plot Maximum Probability (Events/Year)The upper limit for the Probability of Failure values that are plotted on the vertical axis of the SHE Risk graph.0.306RBI 581 ISO-Risk Plot Minimum Consequence (Square Feet)The lower limit for the Consequence of Failure values that are plotted on the horizontal axis of the SHE Risk graph.10RBI 581 ISO-Risk Plot Maximum Consequence (Square Feet)The upper limit for the Consequence of Failure values that are plotted on the horizontal axis of the SHE Risk graph.1000000RBI 581 ISO-Risk Plot Low Category Limit (Square Feet Per Year)The upper limit for the risk level, Low. 0.1RBI 581 ISO-Risk Plot Medium Category Limit (Square Feet Per Year)The upper limit for the risk level, Medium.10RBI 581 ISO-Risk Plot Medium-High Category Limit (Square Feet Per Year)The upper limit for the risk level, Medium High. If a data point contains a value higher than this limit, the risk level is High.1000The Financial Risk sectionRBI 581 ISO-Risk Plot Minimum Probability (Events/Year)The lower limit for the Probability of Failure values that are plotted on the vertical axis of the Financial Risk graph.0.00000306RBI 581 ISO-Risk Plot Maximum Probability (Events/Year)The upper limit for the Probability of Failure values that are plotted on the vertical axis of the Financial Risk graph.0.306RBI 581 ISO-Risk Plot Minimum Consequence (United States Dollar)The lower limit for the Consequence of Failure values that are plotted on the horizontal axis of the Financial Risk graph.1000RBI 581 ISO-Risk Plot Maximum Consequence (United States Dollar)The upper limit for the Consequence of Failure values that are plotted on the horizontal axis of the Financial Risk graph.100000000RBI 581 ISO-Risk Plot Low Category Limit (USD/Year)The upper limit for the risk level, Low.10RBI 581 ISO-Risk Plot Medium Category Limit (USD/Year)The upper limit for the risk level, Medium.1000RBI 581 ISO-Risk Plot Medium-High Category Limit (USD/Year)The upper limit for the risk level, Medium High. If a data point contains a value higher than this limit, the risk level is High.100000About Inspection Auto-SelectionThe Inspection Auto-Selection feature allows you to automatically assign an Inspection to a Degradation Mechanism Evaluation (DME) in RBI 581. By default, this feature is disabled. You can enable the feature by accessing the Inspection Auto-Selection workspace.For each DME for which you want GE Digital APM to assign Inspections automatically, an RBI Inspection Auto-Selection Criteria record must exist. This record stores the following details:The analysis that is performed on the DMThe DM methodology of the DM The equivalent DM methodologyThe years of Inspection History to be considered while linking InspectionsThe following table provides a list of baseline RBI Inspection Auto-Selection Criteria records and their field values. You can access these records only after you enable the Inspection Auto-Selection feature.Analysis FamilyDM MethodologyEquivalent DM MethodologyDegradation MechanismYears of Inspection HistoryRBI 581 Risk AnalysisRBI 581 External Cracking Damage EvaluationBlankBlank20RBI 581 Risk AnalysisRBI 581 External Damage EvaluationCriticality Ext. Corr. Deg. Mech. Eval.Blank20RBI 581 Risk AnalysisRBI 581 Thinning and Lining EvaluationCriticality Int. Corr. Deg. Mech. Eval.Blank20RBI 581 Risk AnalysisRBI 581 Cracking Damage EvaluationCriticality Env. Crack. Deg. Mech. Eval.Blank20RBI 581 Risk AnalysisRBI 581 Thinning and Lining EvaluationCriticality Int. Corr. Deg. Mech. Eval.581-Atmospheric Tank Bottom Corrosion20When you create, duplicate, or apply an RBI 581 Risk Analysis, all the Inspections that meet the criteria specified in the RBI Inspection Auto-Selection Criteria record are assigned to the DME automatically. The maximum number of Inspections that can be assigned to RBI 581 Cracking Damage Evaluation or RBI 581 External Cracking Damage Evaluation is six. Therefore, among the Inspections that meet the criteria specified in the RBI Inspection Auto-Selection Criteria record, only the latest six Inspections are assigned to the DME. Similarly, the maximum number of Inspections that can be assigned to the 581-Atmospheric Tank Bottom Corrosion DM is one. Therefore, only the latest Inspection (among the ones that meet the criteria) is assigned to the corresponding DME.Note: Inspections are also assigned automatically when you create an RBI 581 Risk Analysis using the Risk Based Inspection (RBI) 581 Data Loader.Even after you delete an RBI Inspection Auto-Selection Criteria record, Inspections are automatically assigned to a DME. These Inspections, however, are not filtered based on the criteria specified in the record.Example
+Suppose you have created an RBI 581 Risk Analysis on 17th March, 2017, which is linked to the 581-Amine Corrosion DM.
+The following RBI Criticality Auto-Selection Criteria record is used to assign Inspections to all the DMs that are linked to RBI 581 Thinning and Lining Evaluation (which includes 581-Amine Corrosion).
+
+FieldValueAnalysis FamilyRBI 581 Risk AnalysisDM MethodologyRBI 581 Thinning and Lining EvaluationEquivalent DM MethodologyCriticality Int. Corr. Deg. Mech. Eval.Degradation MechanismBlankYears of Inspection History20
+
+Suppose the following Inspections appear in the Inspection History for 581-Amine Corrosion:
+
+Inspection IDInspection ConfidenceDegradation MechanismCompletion DateInsp-1A581-Amine Corrosion06/15/2012 00:00:00Insp-2A581-Cooling Water Corrosion08/18/2014 10:30:00Insp-3BCriticality Calculator Internal Corrosion11/25/1995 05:00:00Insp-4C581-Amine Corrosion01/15/2000 06:00:00Insp-5C581-Acid Sour Water Corrosion01/28/1990 04:45:00Insp-6B581-High Temperature Oxidation06/02/2012 06:15:00Insp-7ACriticality Calculator Internal Corrosion10/13/2012 07:30:00
+
+Among the Inspections in the previous table, the following Inspections are not assigned to 581-Amine Corrosion because they were completed more than 20 years ago:
+Insp-3Insp-5
+The remaining Inspections are automatically assigned to 581-Amine Corrosion because they satisfy the following conditions: 
+They are linked to a DM that belongs to either RBI 581 Thinning and Lining Evaluation or Criticality Int Corr. Deg. Mech. Eval.They were completed less than 20 years ago.
+Now, suppose you have created an RBI Inspection Auto-Selection Criteria record with the following details:
+
+FieldValueAnalysis FamilyRBI 581 Risk AnalysisDM MethodologyRBI 581 Thinning and Lining EvaluationEquivalent DM MethodologyCriticality Int. Corr. Deg. Mech. Eval.Degradation Mechanism581-Amine CorrosionYears of Inspection History10
+
+Suppose you have created another RBI 581 Risk Analysis on 17th March, 2017, which is linked to 581-Amine Corrosion.
+ In this case, only Insp-1 will be assigned to 581-Amine Corrosion. Although Insp-4 is also linked to 581-Amine Corrosion, it will not be automatically assigned to the DM because the Inspection was completed more than 10 years ago.
+RBI 581 Inspection Auto-Selection WorkflowThis workflow provides the basic, high-level steps for the Inspection Auto-Selection feature. The steps and links in this workflow do not necessarily reference every possible procedure. For more procedures, see the links in the Related Information section.
+Access the Inspection Auto-Selection workspace.In the upper-right corner of the workspace, select the Inspection Auto-Selection check box.Review the baseline RBI Inspection Auto-Selection Criteria records.In RBI, create an RBI Component, and link it to Potential Degradation Mechanisms (PDMs).
+
+Create an RBI 581 Risk Analysis.
+ Inspections are automatically assigned to the DMEs based on the criteria in the RBI Inspection Auto-Selection Criteria record.
+
+Review the Inspections assigned automatically to the DMEs.
+For RBI 581 Thinning and Lining Evaluation (only if evaluating 581-Atmospheric Tank Bottom Corrosion), RBI 581 Cracking Damage Evaluation, and RBI 581 External Cracking Damage Evaluation, the following fields are populated automatically:
+Use Combined ConfidenceNumber of Highest Effective InspectionsHighest Effective Inspection Level
+For RBI 581 Thinning and Lining Evaluation (if evaluating a Damage Mechanism (DM) other than 581-Atmospheric Tank Bottom Corrosion) and RBI 581 External Damage Evaluation, the following fields are populated automatically:
+Use Related InspectionsNumber of A Level InspectionsNumber of B Level InspectionsNumber of C Level InspectionsNumber of D Level Inspections
+RBI 581 Inventory Grouping WorkflowThe Inventory Grouping feature allows you to group RBI Components that belong to a process unit. After you group the components, GE Digital APM calculates the value in the Inventory Group Mass field for the inventory group.This workflow provides the basic, high-level steps for the Inventory Grouping feature. The steps and links in this workflow do not necessarily reference every possible procedure. For more procedures, see the links in the Related Information section.
+Access the RBI 581 Inventory Groups workspace.
+Create an Inventory Group Configuration record for the appropriate process unit. This record stores the details of the name and description of the group, and the process unit that is associated with the group.
+Link RBI Components to the inventory group.In RBI, access the components that belong to the inventory group.Create an RBI 581 Risk Analysis for each component linked to the inventory group.
+Access the RBI 581 Consequence Evaluation record associated with each analysis that you have created in the previous step, and then, in the Common section of the datasheet, select the Use Calculated Inventory check box.
+The Inventory Group and Inventory Group Mass fields in the RBI 581 Consequence Evaluation are populated automatically.
+Tip: If the Use Calculated Inventory check box is already selected, clear the check box, and then select it. This will update the inventory group mass value.
+Access the RBI 581 Admin Options WorkspaceBefore You Begin
+You can access the RBI 581 Admin Options workspace only if:  The RBI 581 license is active.You are a member of the MI RBI Administrator Security Group or a super user.
+
+ProcedureIn the module navigation menu, select
+Admin > Application Settings > Risk Based Inspection.
+The RBI Admin Preferences page appears, displaying the Global Preferences workspace. 
+
+
+
+In the left pane, select RBI 581 Admin Options.
+The RBI 581 Admin Options workspace appears, allowing you to modify the settings.
+
+
+
+Access the RBI 581 ISO-Risk Plot Preferences WorkspaceBefore You Begin
+You can access the RBI 581 ISO-Risk Plot Preferences workspace only if: The RBI 581 license is active.You are a member of the MI RBI Administrator Security Group or a super user.
+
+ProcedureIn the module navigation menu, select
+Admin > Application Settings > Risk Based Inspection.
+The RBI Admin Preferences page appears, displaying the Global Preferences workspace. 
+ 
+In the left pane, select RBI 581 ISO Risk Plot Preferences.
+The RBI 581 ISO-Risk Plot Preferences workspace appears.
+
+
+
+If you want to modify any of the settings, then:
+
+In the upper-right corner of the workspace, select .
+
+As needed, modify values in the available fields.
+Note: You must enter a numeric value greater than 0.
+In the upper-right corner of the workspace, select .
+The RBI 581 ISO-Risk Plot settings are modified.
+Access the Inspection Auto-Selection WorkspaceBefore You Begin
+You can access the Inspection Auto-Selection workspace only if:  The RBI 581 license is active.You are a member of the MI RBI Administrator Security Group or a super user.
+
+ProcedureIn the module navigation menu, select
+Admin > Application Settings > Risk Based Inspection.
+The RBI Admin Preferences page appears, displaying the Global Preferences workspace. 
+
+
+
+In the left pane, select the Inspection Auto-Selection tab.
+The Inspection Auto-Selection workspace appears. By default, the Inspection Auto-Selection check box in the upper-right corner of the workspace is cleared.
+
+
+
+If you select the Inspection Auto-Selection check box, the Inspection Auto-Selection feature is enabled, and your preference is saved. A list of baseline RBI Inspection Auto-Selection Criteria records appears in a grid in the workspace.
+
+
+
+You can modify or delete the baseline records, or create a new one. If Inspection Auto-Selection Criteria records do not exist, then all the applicable Inspections are assigned to the DME automatically.
+Access the RBI 581 Inventory Groups WorkspaceBefore You Begin
+You can access the RBI 581 Inventory Groups workspace only if the RBI 581 license is active.
+ProcedureIn the module navigation menu, select
+Admin > Application Settings > Risk Based Inspection.
+The RBI Admin Preferences page appears, displaying the Global Preferences workspace. 
+
+
+
+In the left pane, select the RBI 581 Inventory Groups tab.
+The RBI 581 Inventory Groups workspace appears, displaying the following information:
+ The left section: Provides a list of all the process units (i.e., Functional Location records in which the Is Unit check box is selected) in GE Digital APM. The  icon next to a process unit indicates that the process unit contains an inventory group. If you select a process unit, a list of inventory groups in the process unit appears in the left section.
+ The details section: Displays the following information based on what you select in the left section:
+If you select Process Units in the left section, the details section displays the Process Units with Inventory Groups graph, which plots the number of inventory groups in each process unit. If you pause on a bar on the graph, the name of the process unit and the number of inventory groups in the unit appear. If you select a bar on the graph, the datasheet for the associated Functional Location appears.If you select a process unit in the left section, the details section displays the datasheet for the associated Functional Location. If you select an inventory group in the left section, then the details section displays the datasheet of the Inventory Group Configuration record. You can also access a list of components associated with the inventory group by selecting the Linked Components tab.
+
+
+
+
+What To Do Next
+
+Create an Inventory Group Configuration Record.
+Create an Inventory Group Configuration RecordBefore You Begin
+You can create or modify an Inventory Group Configuration record only if you are a super user or a member of the MI RBI Administrator Security Group.
+Procedure
+Access the RBI 581 Inventory Groups workspace.In the list on the left side of the workspace, select the process unit in which you want to create an Inventory Group Configuration record.
+The inventory groups in the process unit appear. 
+
+
+
+In the list on the left side of the workspace, select .
+A blank datasheet for the Inventory Group Configuration appears in the Details section. 
+
+
+
+As needed, enter values in the available fields.In the upper-right corner of the datasheet, select .
+The Inventory Group Configuration record is created. The newly created group is listed on the left side of the workspace.
+Results
+The Linked Components tab is enabled.
+What To Do Next
+
+Link components to the inventory group.
+Delete an Inventory Group Configuration RecordBefore You Begin
+You can delete an Inventory Group Configuration record only if you are a super user or a member of the MI RBI Administrator Security Group.
+Procedure
+Access the RBI 581 Inventory Groups workspace.In the list on the left side of the workspace, select the process unit that is linked to the Inventory Group Configuration record that you want to delete.
+The inventory groups in the process unit appear. 
+
+
+
+In the list on the left side of the workspace, select the Inventory Group Configuration that you want to delete.
+The datasheet for the Inventory Group Configuration appears in the Details section. 
+In the upper-right corner of the datasheet, select .
+The Confirm Delete dialog box appears, asking you to confirm that you want to delete the inventory group.
+Select Yes.
+The Inventory Group Configuration record is deleted. 
+Results
+If you create an RBI 581 Risk Analysis for components that once belonged to the deleted inventory group, the value in the Inventory Group Mass field will no longer be populated automatically. 
+Link Components to an Inventory GroupBefore You Begin
+
+Create an Inventory Group Configuration record.
+Procedure
+Access the RBI 581 Inventory Groups workspace.In the list on the left side of the workspace, select the process unit that is linked to the inventory group to which you want to link components.
+A list of inventory groups in the process unit appears in the list on the left side of the workspace.
+
+
+
+Select the inventory group to which you want to link components.
+The datasheet of the Inventory Group Configuration appears in the Details section.
+
+
+
+Select the Linked Components tab.
+The Linked Components section appears, displaying a list of components linked to the inventory group.
+
+
+
+In the upper-left corner of the section, select .
+The Select RBI Components window appears, displaying a list of components associated with the process unit.
+
+
+
+In the row containing each component that you want to link, select the check box, and then select Done.
+The RBI Components are linked to the inventory group, and appear in the Linked Components section.
+If you want to access the datasheet of a linked component, then select the link in the Component ID column. 
+The component datasheet appears on a new page.
+Results
+
+In the RBI Component records that you have linked, the Inventory Group field is populated with the value in the Inventory Group Name field of the inventory group.
+If you create an RBI 581 Risk Analysis for a component that you have linked to the inventory group, then in the associated RBI 581 Consequence Evaluation, the Use Calculated Inventory check box is selected, and the value in the Inventory Group Mass field is calculated.
+The value in the Inventory Group Mass field in the RBI 581 Consequence Evaluation associated with the remaining components in the inventory group is updated. 
+Tip: To view the updated value in the Inventory Group Mass field, you must clear the Use Calculated Inventory check box, and then select it. 
+
+Unlink Components from an Inventory GroupProcedure
+Access the RBI 581 Inventory Groups workspace.In the list on the left side of the workspace, select the process unit that is linked to the inventory group from which you want to unlink components.
+The inventory groups in the process unit appear in the list on the left side of the workspace.
+
+
+
+Select the inventory group from which you want to unlink a component.
+The datasheet for the Inventory Group Configuration appears in the Details section.
+
+
+
+Select the Linked Components tab.
+The Linked Components section appears, displaying a list of components linked to the inventory group.
+
+
+
+Select the check box that corresponds to each component that you want to unlink.In the upper-right corner of the datasheet section, select .
+The Confirm Unlink dialog box appears, asking you to confirm that you want to unlink the selected components.
+Select Yes.
+The components are unlinked from the inventory group.
+Results
+
+The value in the Inventory Group Mass field in the RBI 581 Consequence Evaluation of the remaining components in the inventory group is updated.
+Tip: To view the updated value in the Inventory Group Mass field, you must clear the Use Calculated Inventory check box, and then select it. 
+
+Use the Upgrade APM Version 3 Active Analyses UtilityUsing the Upgrade APM Version 3 Active Analyses Utility, you can create Risk Assessment records for existing RBI 580 and RBI 581 analyses that are in active state and do not have existing Risk Assessment records. Also, for RBI 580 active analyses, the utility will calculate and set Half-Life for any related Ext. Corr. Deg. Mech Evaluations where the value is blankBefore You Begin
+You must be an administrator to perform the following steps.If you are using a custom Risk Matrix, you must configure your Risk Matrix mappings.
+ProcedureIn the module navigation menu, select
+Admin > Application Settings > Risk Based Inspection.In the Global Preferences workspace, select Upgrade Analyses.The Upgrade Analyses Confirmation window appears, asking you to confirm that you want to create Risk Assessment records for all RBI 580 and RBI 581 active analyses.Select Yes.The Upgrade Analyses window appears, stating the job was successfully scheduled. Optional: Select View Scheduling.The Schedule Logs page appears, displaying a list of all the operations in GE Digital APM that are in progress, along with the percentages of completion. You can also access a list of operations that have been successful or have failed. 
+
+
+
+
+On this pageAccess the Global Preferences WorkspaceAbout Global PreferencesAbout Evaluation of All Risk Targets in RBI 581About RBI 581 Admin Options About RBI 581 ISO-Risk Plot Preferences About Inspection Auto-SelectionRBI 581 Inspection Auto-Selection WorkflowRBI 581 Inventory Grouping WorkflowAccess the RBI 581 Admin Options WorkspaceAccess the RBI 581 ISO-Risk Plot Preferences WorkspaceAccess the Inspection Auto-Selection WorkspaceAccess the RBI 581 Inventory Groups WorkspaceCreate an Inventory Group Configuration RecordDelete an Inventory Group Configuration RecordLink Components to an Inventory GroupUnlink Components from an Inventory GroupUse the Upgrade APM Version 3 Active Analyses Utility
+
+
+
+
+
+
+
+
+

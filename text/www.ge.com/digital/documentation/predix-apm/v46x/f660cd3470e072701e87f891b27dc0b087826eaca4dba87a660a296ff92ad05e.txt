@@ -1,0 +1,186 @@
+
+
+
+Policy Models | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Policy Models
+
+
+
+
+
+
+
+Policy ModelsPolicy Model Basic PrinciplesA policy model is made up of nodes and connections that define the policy logic. In order to build a functioning policy model, you must understand several basic principles.Configuring a Policy Model
+The following principles apply to working with a policy model:
+Policy models do not reference specific records. Rather, they contain nodes that reference families. You must use policy instances to identify the individual records whose values are evaluated when the policy is executed.The first node in a policy model must be an Input node rather than a Query node.A node can use an input from any predecessor node in the same logic path, even if the nodes are not directly connected.Any number of nodes can use an input from the same predecessor node.With the exception of the Or node and the Case node, a node will be executed only when all necessary preceding nodes have been successfully executed.A policy model can often be arranged in various configurations without impacting the execution results. You may want to arrange the policy model in the configuration that provides the best visual representation of the policy.
+Connections that start at a Condition or Logic
+                                    node can be configured to create separate logic paths in a
+                                    policy model. Specifically: If the connection property is Yes, the corresponding
+                                            path will be followed when the logical result of the
+                                            Condition of Logic node is yes. If you do not configure
+                                            a logic path for a connection, a Yes path is assumed but
+                                            does not appear on the model.If the connection property is No, the corresponding path
+                                            will be followed when the logical result of the
+                                            Condition or Logic node is no.
+
+Configuring Node Properties
+Most nodes have outputs that successor nodes can use as inputs. You must specify inputs for each successor node using the Properties window that appears when you select the node in the policy model.Note: Outputs and inputs may represent either a single value or a collection of values. The types of outputs that each node generates and the types of inputs that each node accepts is different for each node. When building a policy model, you must use corresponding input and output types.Any numeric values entered in Calculation nodes should be entered in the format matching the user's culture setting. For example, a user with German culture would enter 4,5 to represent four and a half, whereas a user with US-English culture would enter 4.5.There are specific formats in which you can enter dates and times and amounts of time (that is, time spans). Refer to the respective topics for details.When using a policy node to update values in a record:If a field has complex behavior defined by field-level rules (for example, rules for valid values) and field-level behaviors, this behavior will not be reflected in the Properties window or detected by policy validation. Therefore, you are responsible for ensuring that the values you specify are valid according to any baseline or custom field-level rules for the corresponding field.If a field value is defined by a system code, the value that
+                                        you specify in the corresponding section must be the system
+                                        code, not the value that is displayed to the end user.
+Policy Model Principles Illustrated
+The principles for working with a policy model can be illustrated through the following example model:
+
+In this example model, the node named Temperature is an OT Connect Tag node which represents a process historian tag. When this policy is executed, if the Latest Reading Value that is associated with the process historian tag is greater than or equal to 200, the GE Digital APM system will send an email message to the email address that is specified in the Human Resource record that is associated with the Analyst User node.
+The following table describes each of the policy model basic principles in the context of this example:
+Policy Model PrincipleExamplePolicy models do not reference specific records. Rather, they contain nodes that reference families. You must use policy instances to identify the individual records whose values are evaluated when the policy is executed.The Temperature and Analyst nodes represent families. The specific records whose values are evaluated are determined by policy instances.The first node in a policy model must be an Input node rather than a Query node.The Temperature node is an OPC Tag node, which is a type of Input node.Most nodes have outputs that successor nodes can use as inputs. You must specify inputs for each successor node using the Properties window that appears when you select the node in the policy model. Note: Outputs and inputs may represent either a single value or a collection of values. The types of outputs that each node generates and the types of inputs that each node accepts is different for each node. When building a policy model, you must use corresponding input and output types.The output Latest Reading Value from the Temperature node is used as an input to the Condition node. This output represents a single value, which corresponds to the type of input that the Condition node accepts.The value 200 is used as the second input to the Condition node, but it is not an output from another node. Instead, it is a constant value that is specified directly in the Properties window for the Condition node.A node can use an input from any predecessor node in the same logic path, even if the nodes are not directly connected.The Email Contact node can use an input from the Temperature node even though the two nodes are not directly connected.Any number of nodes can use an input from the same predecessor node.The Email Contact node and the Condition node can both use inputs from the Temperature node.With the exception of the Or node and the Case node, a node will be executed only when all necessary preceding nodes have been successfully executed.The Email Contact node will be executed only when all of the nodes preceding it have been successfully executed. If, for example, the condition defined in the Condition node was not met or if an error occurred when executing the Analyst node, the Email Contact node would not be executed.A policy model can often be arranged in various configurations without impacting the execution results. You may want to arrange the policy model in the configuration that provides the best visual representation of the policy.The execution results of the policy would be identical even if the Analyst node were connected to the Temperature node or the Condition node. The current configuration, however, provides a clear visual representation of the policy because the Email Contact node is the only node in the model that uses an input value from the Analyst node.
+Connections that start at a Condition or Logic
+                                    node can be configured to create separate logic paths in a
+                                    policy model. Specifically: If the connection property is Yes, the corresponding
+                                            path will be followed when the logical result of the
+                                            Condition of Logic node is yes. If you do not configure
+                                            a logic path for a connection, a Yes path is assumed but
+                                            does not appear on the model.If the connection property is No, the corresponding path
+                                            will be followed when the logical result of the
+                                            Condition or Logic node is no.
+A property is not defined for the connection between the Condition node and the Email Contact node, therefore, a value of Yes is assumed. This means that an email message is sent only if the preceding condition is true. If the condition is false, policy execution will not continue.
+Add Nodes to the Model Canvas Before You Begin
+
+Create a policy.Make sure you understand the basic principles of working with a policy model.
+Procedure
+Access the policy to which you want to add nodes.In the Design workspace, in the section of the toolbar for the type of node that you want to add, select the button for the node and drag it to the model canvas.For example, if you want to add a Constant node, on the Inputs toolbar, select the  button and drag it to the model canvas.
+
+Tip:  In each section of the toolbar, you can select the  button to see additional nodes and to see what each button represents.In the location where you want the node to appear, release the pointer. The node appears on the model canvas and the Properties window for the node is displayed. 
+Select Save.The policy is saved.Enable Grid in Model CanvasAbout This TaskYou can enable the grid in the model canvas. The grid allows you to easily align the nodes in the policy model with the help of the alignment lines that appear on moving the nodes on the canvas.Procedure
+Access the policy containing the policy model for which you want to enable the grid.In the Design workspace, on the model canvas, select .The grid appears in the model canvas.Connect Nodes in a Policy ModelBefore You Begin
+Make sure you understand the basic principles of working with a policy model.
+Add at least two nodes to the model canvas.Note the following limitations with connections between nodes:You cannot connect nodes in a circular execution path (for example, if Node 1 is connected to Node 2, and Node 2 is connected to Node 3, you cannot connect Node 3 to Node 1).You cannot connect a node to itself.There cannot be more than one connections between two nodes.
+
+Procedure
+Access the policy in which you want to connect the nodes.In the Design workspace, select the node that you want to connect to another node.The  icon appears for the node.Select , and then drag the connector to the centre of the successor node.
+The nodes are connected.
+Note: You can select a point on the connector to add a vertex and bend the connector. You can also drag the vertex to any position on the model canvas.
+Select Save.The policy is saved.Configure Node Properties Before You Begin
+Make sure you understand the basic principles of working with a policy model.
+Add and connect nodes in the policy model.
+Procedure
+Access the policy that contains the node whose properties you want to configure.In the Design workspace, select the node whose properties you want to configure.
+The Properties window for the node appears. The following image shows an example of the Properties window for a Threshold Statistics node.
+
+If the Properties window contains a Name text box and you want to use a name other than the default name, enter a name for the node. For some nodes, the name that you specify also appears as the node label in the policy model.
+Define any input values for the node.Configure any additional properties that are specific to the node. 
+Tip:  For details about the properties that you can configure for each node, refer to the following sections in this documentation: Input Nodes, Condition, Logic, and Calculation Nodes, and Action Nodes.
+Repeat these steps for each node in the policy model.Select Save.Define Input Values Before You Begin
+Make sure you understand the basic principles of working with a policy model.If you want the input value to be defined by a predecessor node, the nodes must be connected, either directly or indirectly.
+About This TaskFor each node that requires an input, in each input section of the node's Properties window, you can specify a user-defined constant value or a value or collection that is the output of a predecessor node.Steps: ProcedureSpecify a user-defined constant value
+Access the policy that contains the node for which you want to define an input value.On the Properties window for the node, verify that the  icon appears next to the input text box.In the input text box, enter or select the value that you want to use as an input.
+Note:  If the input section supports multiple values, you must separate each value with a comma.
+The following image shows an example of a constant input value.
+
+
+
+In the Policy section of the toolbar, select .The policy is saved.Specify a value or collection that is an output of a predecessor node:
+Access the policy that contains the node for which you want to define an input value.On the Properties window for the node, select the  icon that appears next to the input text box.
+The icon changes to  and the text box changes to a drop-down list. This list contains the node's predecessor nodes.
+In the list, select the node that is associated with the value or collection that you want to use as the input.
+A second list appears. This list contains the output options that are associated with the selected predecessor node.
+In the second list, select the field or collection that you want to use as the input.The following image shows an example of an input value that is defined by a predecessor node. 
+In this image:The input node is Equipment.The input value comes from the value in the Criticality Indicator field in the Equipment record (the specific Equipment record will be defined by a policy instance).Some input fields allow you to map a specific value from a collection. In this case, a third list appears.If applicable, in the third list, select the column in the collection that contains the values that you want to use as inputs.In the Policy section of the toolbar, select .The policy is saved.Define Input Values
+To illustrate the different ways to define input values, consider the following nodes and connections. 
+In this example, the Equipment Entity node is connected to an Equal Condition node. The Properties window for the Condition node, therefore, allows you to select the Equipment family and one of its fields. As shown in the following image:The  icon appears in the first input section, indicating that the input is defined by a predecessor node.The  icon appears in the second input section, indicating that the input is a user-defined constant value.
+Together, the Equipment Entity node and the Condition node to which it is connected indicate that an email message should be sent when an Equipment record has a value of A in the Criticality indicator field.
+Note: You will use policy instances to identify the specific record(s) whose values you want to use in the policy. For the example provided in this topic, you would use a specific Equipment record in each policy instance that is associated with the policy.
+Configure Logic PathsBefore You Begin
+Make sure you understand the basic principles of working with a policy model.
+Add and connect nodes in the policy model.
+About This TaskConnections that start at nodes that have a logical result output can be configured to create separate logic paths in a policy model. Specifically, you can specify whether or not a successor node will be executed based on the logical result of the preceding node. The GE Digital APM system will execute only the branches of a policy model where the logical result of a node matches the logic path defined for the corresponding connection. Note: If you do not configure a logic path for a connection, a Yes path is assumed but does not appear on the model.Procedure
+Access the policy within which you want to configure logic paths.In the Design workspace, perform one of the following steps:Select the connection for which you want to specify a logic path.Point to the connection for which you want to specify a logic path, and then select .
+The Properties window for the connection appears.
+
+
+
+In the Logic Path box, specify whether the connection should be followed if the logical result of the preceding condition is true or false. Specifically:Select Yes to specify that the connection should be followed when the logical result of the preceding node is true.Select No to specify that the connection should be followed when the logical result of the preceding node is false.Select Save.The policy is saved.Separate Logic Paths
+Consider the following policy model:
+
+
+
+In this example, you can see that: The Condition node evaluates the DA Reading Value that is associated with the OPC Tag record to determine if it is greater than or equal to 900.The Condition node is connected to the following nodes:Email Analysis (through the Yes connection)Create Recommendation (through the No connection) Based on the connection properties, the following logic will be applied when the policy is executed:If the DA Reading Value is greater than or equal to 900, an email message will be sent. The logic is determined by the Yes logic path specified for the connection to the Email Analyst node.If the DA Reading Value is not greater than or equal to 900, a Policy Recommendation record will be created. This logic is determined by the No logic path specified for the connection to the Create Recommendation node.
+Copy and Paste Nodes and Connections Before You Begin
+Make sure you understand the basic principles of working with a policy model.Note the following:If you copy a node that contains a mapped field value from another node, the mapped field value will not be copied unless you also copy the node from which the values are mapped and the connector node between the two nodes.Connections will be copied only if you select the connection and both nodes that it connects.After you paste a node that requires a unique name (example; Point Value node), you must change the name of the copied node before you can save the policy.You cannot copy nodes and connections from one policy to another. 
+Procedure
+Access the policy containing the nodes that you want to copy and paste.In the Design workspace, on the model canvas, press the Ctrl key and select all the nodes and connections that you want to copy.Tip:
+You can press Ctrl + A to select all nodes and connectors in the policy model.You can select a point on the model canvas and then drag the pointer to select all nodes and connections within a rectangular region.
+The selected nodes and connections are outlined in blue, as shown in the following image.
+
+In the Edit section of the toolbar, select .
+The selected nodes and connections are copied.
+In the Edit section of the toolbar, select .Copies of the selected nodes and connections are pasted to the model canvas and are selected automatically.
+
+Drag the pasted nodes and connections to a new location as necessary.Connect and configure the pasted nodes as needed.Select Save.The policy is saved.Download Image of Policy ModelAbout This TaskYou can download the image of a policy model to your local drive.ProcedureAccess the policy containing the policy model for which you want to download the image.In the Design workspace, on the model canvas, select .The image of the policy model is downloaded in the Portable Network Graphics (PNG) format to the default download location specified for your internet browser.
+
+
+
+
+On this pagePolicy Model Basic PrinciplesAdd Nodes to the Model Canvas Enable Grid in Model CanvasConnect Nodes in a Policy ModelConfigure Node Properties Define Input Values Configure Logic PathsCopy and Paste Nodes and Connections Download Image of Policy Model
+
+
+
+
+
+
+
+
+

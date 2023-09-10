@@ -1,0 +1,104 @@
+
+
+
+Reference | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+GraphsOverview
+Workflow
+Graphs
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Graphs
+Reference
+
+
+
+
+
+
+
+ReferenceGraph URLs
+There are two URL routes associated with graphs: graph and graph-preview. The following table describes the various paths that build on the route, and the elements that you can specify for each.
+ElementDescriptionAccepted Value(s)Notes
+ graph: Displays the Graphs page.
+ <Catalog Item Key> Specifies the Catalog Item Key of the graph that you want to open in the Graph tool.Numeric Catalog Item Key#graph/Catalog Item Key
+ <Catalog Item Path> Specifies the path and name of the graph that you want to open in the Graph tool.Catalog item path#graph?path=Catalog Path\Graph name
+
+p0, p1, p2 etc. (specifying a literal value)Specifies a literal value that will be passed into a graph containing a prompt.Any value that is acceptable for the prompt type (e.g., numeric values for numeric prompts)
+#graph/Catalog Item Key?p0=Literal Value
+
+#graph?path=Catalog Path\Graph name&p0=Literal Value
+
+
+p0, p1, p2 etc. (specifying a variable value)Specifies a variable value from a specified column key in a graph that will be passed from a query into a graph containing a prompt.Any value that is acceptable for the prompt type (e.g., numeric values for numeric prompts)
+#graph/Catalog Item Key?p0={Column Key}
+
+#graph?path=Catalog Path\Graph name&p0={Column Key}
+
+graph-preview/<Catalog Item Key>: Displays the graph in a new, view-only page. Parameter Name = Parameter Value Specifies the Parameter Name and Parameter Value of the query that you want to open in a new, view-only page.Parameter Names and Parameter Values#graph-preview/Catalog Item Key?Parameter Name=Parameter Value
+
+Example: Graph URLs
+
+Example URLDestination#graph/3223198
+Opens the graph with the Catalog Item Key of 3223198 in the Graph tool.#graph?path=Public\Meridium\Modules\Core\Graphs\APM Graph
+Opens the graph named 'APM Graph' in the Graph tool that is found in the specified Catalog folder.#graph/3223198?p0=Literal Value
+Opens the graph with the Catalog Item Key of 3223198 in the Graph tool and passes the specified literal value into the first prompt of the query associated with the graph.#graph?path=Public\Meridium\Modules\Core\Graphs\APM Graph&p0=Literal Value
+Opens the graph named 'APM Graph' in the Graph tool that is found in the specified Catalog folder and passes the specified literal value into the first prompt of the query associated with the graph.#graph/3223198?p0={1}
+ Opens the graph with the Catalog Item Key of 3223198 in the Graph tool and passes the specified variable from an existing query into the first prompt of the query.#graph?path=Public\Meridium\Modules\Core\Queries\APM Graph&p0={1}
+Opens the Query named 'APM Query' in the Query tool that is found in the specified Catalog folder and passes the specified variable value from an existing query into the first prompt of the query.#graph-preview/64261561529?Site=MI-ASM-SC&Area=MI-ASM-A007&Unit=MI-ASM-U0071
+Opens the graph with the Catalog Item Key of 64261561529, Parameter Name Site, Parameter Value MI-ASM-SC, Parameter Name Area, Parameter Value MI-ASM-A007, Parameter Name Unit, and Parameter Value MI-ASM-U0071 in a new, view-only page.
+
+
+
+
+
+
+On this pageGraph URLs
+
+
+
+
+
+
+
+
+

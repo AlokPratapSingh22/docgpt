@@ -1,0 +1,130 @@
+
+
+
+Family Field Descriptions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Compliance ManagementOverview
+Workflows
+Inspection Plans
+Inspection Plan Management
+Compliance Recommendations
+Inspection Plan Revision History
+Suggested Compliance Strategy Templates
+Admin
+Deployment
+Reference General Reference
+Data Models
+Family Field Descriptions
+Family Search Configuration
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Compliance Management
+Reference 
+Family Field Descriptions
+
+
+
+
+
+
+
+Family Field DescriptionsCompliance Policy Mapping RecordsThe Compliance Policy Mapping family stores information related to the Compliance policy that is mapped to the Compliance Strategy Template.
+The table below provides an alphabetical list and description of the fields that exist for the Compliance Policy Mapping family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData Type DescriptionBehavior and Usage FamilyCharacterDefines the asset entity family to be mapped to the policy.This field is required. This field is disabled and populated with the value of the asset family from Compliance Strategy Template records. FK_COTE_HM_COST_T_COPO_M_NNumericThe Foreign Key field that is used to relate the mapping to the Compliance Strategy Template. This field is disabled. This field does not appear in the datasheet.Policy NodeCharacterDefines the policy input node into which the defined entity will be mapped.This field is user-defined. This field contains the node name of the input node in the mapped policy.Template IDCharacterStores the Template ID to which the mapping is related.This field is populated with the Strategy Template ID field value.Template CategoryCharacterStores the Template Category to which the mapping record is related.This field is populated with the Strategy Template Category field value.This field does not appear in the datasheet.
+Compliance Recommendation RecordsThe Compliance Recommendation family stores details related to Compliance Recommendations. 
+The table below provides an alphabetical list and description of the fields that exist for the Compliance Recommendation family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData Type DescriptionBehavior and Usage Applicable RegulationCharacter (255)Stores the regulation type that is applicable to a task.This field is populated from the Asset Technical Data. It contains a list of regulations which are linked to a task. This field is populated with a description of system codes stored in MI_INTGY_REGULATION system code table. This field is always disabled.CertificationCharacter (255)Stores the certification value. The values in this field are populated from a drop-down list box and contains a list of system codes that exist in the MI_COMPLIANCE_STANDARDS system code table. In baseline, the Certification field populates the values which are referenced by MI_INTGY_REGULATION system code table. By default, it shows ZUS and BP.ChamberCharacter (255)Stores information about the type of chamber.This field contains a list of system codes that exist in the MI_CHAMBER system code table. The values in this field are populated from a drop-down list box.Note: The values are copied from Asset Technical Data.CommentsCharacter (255)Stores the reason that a Compliance Recommendation is marked as Not Required.When a Compliance Recommendation is marked Not Required, this field stores the reason that is entered by the user.This field is disabled when the Compliance Recommendation is in the Implemented state.Damage MechanismCharacter (50) Stores the Damage Mechanism from the Compliance Strategy record.This field is disabled.Inspection Strategy IDCharacter (255)Stores the ID of the Compliance Strategy record that generated the recommendation.This field is disabled.Recommendation IDCharacter (255)The unique ID assigned to the recommendation. This field is populated automatically by business rules. This field is disabled.Recommended Interval ScopeNumeric (Months)Stores the Interval Scope value from the Compliance Strategy record.This field is disabled when the Compliance Recommendation is in the Implemented state.Recommended Inspection ScopeTextStores the Inspection Scope from the Compliance Strategy record.This field is disabled when the Compliance Recommendation is in the Implemented state.SourceNumericStores the entity key of the source Compliance Strategy Template.This field is populated with the Compliance Strategy Template name. This field is disabled.Task TypeCharacter (50)Stores the Task Type from the Compliance Strategy record.This field is disabled when the Compliance Recommendation is in the Implemented state.
+Compliance Strategy RecordsThe Compliance Strategy family stores information related to a compliance-based regulation or specification. The Compliance Strategy ID of these records are returned by policies to create Compliance Recommendations when creating or updating an Inspection Plan.
+The table below provides an alphabetical list and description of the fields that exist for the Compliance Strategy family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData Type DescriptionBehavior and Usage Compliance Strategy DescriptionCharacterStores the description of the Compliance Strategy record.This value in this field is user-defined.Compliance Strategy IDCharacterStores the ID of the Compliance Strategy record.The value in this field must be unique.This field is required.This field is disabled after saving.
+Degradation MechanismCharacterStores the Degradation Mechanism associated with the Compliance Strategy record.This field is populated by the MI_DEGRADATION_MECHANISM_TYPES system code table.Inspection Task TypeCharacterStores the Task Type of the Tasks contained in the Compliance Strategy record.This field is populated by a list of values from the Task Type ID field of the Task Types family where the reference field is INSPECTION_STRATEGY.Recommendation Inspection IntervalNumeric (Months)Stores the Inspection Interval of the Compliance Strategy Record.This field can be overridden by the user.Recommended Inspection ScopeTextStores the Inspection Scope of the Compliance Strategy record.None
+Compliance Strategy Template RecordsThe Compliance Strategy Template family stores information related to Compliance Strategy Templates that are created by the user. When linked to an asset, these records indicate which policy to execute to generate an Inspection Plan.
+The table below provides an alphabetical list and description of the fields that exist for the Compliance Strategy Template family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData Type DescriptionBehavior and Usage Asset FamilyCharacterLists families that are included in the Asset Has Compliance Template relationship. This field is populated by a list of families that are included in the Asset Has Compliance Template relationship. The value in this field is used to enforce asset records that are linked to that template.When a new record is created, this field is enabled. When the record is saved, this field is disabled.Asset Lookup QueryCharacterStores the catalog path for the query to look up assets. This field is disabled and populated automatically when you select a catalog query for a Compliance Strategy Template. CategoryCharacterStores the name of the compliance category. This field is populated by a list of all available Compliance Strategy Template Categories. Users can add new categories using the Add Caption field.After the user saves the Compliance Strategy Template, this field is disabled.This field is required. DescriptionTextContains the user-defined description for a Compliance Strategy Template. By default, this field does not contain a value.Optionally, you can enter a value in this field. NameCharacterDefines the name of a specific template.This field is required. This field is populated by the user-defined name of the Compliance Strategy Template. The value in this field must be unique. Policy NameCharacterContains the name of the policy that is selected for the strategy.This field is required. This field is populated by a list of all available policies in GE Digital APM. The value in this field is the policy name of the selected policy record.
+Policy LinkCharacterContains the hyperlink that is used to navigate to the selected policy.This field is populated by the hyperlink that navigates to the Policy Designer page for the selected policy.
+Inspection Plan RecordsThe Inspection Plan family stores details of Inspection Plans. This family stores the states of recommendations that are on the Inspection Plans.
+The table below provides an alphabetical list and description of the fields that exist for the Inspection Plan family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData Type DescriptionBehavior and Usage MI_SM_STATE_ENTERED_DDateStores the date of the Inspection Plan state change.This field is populated automatically.MI_SM_STATE_ID_CCharacterStores the ID of the current state of the Inspection Plan.This field is populated automatically.MI_SM_STATE_KEY_NNumericStores the key of the current state of the Inspection Plan.This field is populated automatically.MI_SM_STATE_OWNER_ID_CCharacterStores the ID of the user who has been assigned to the state.This field is populated only if a user assigns the state to another user.
+Inspection Plan States
+The following values are used to define the states of Inspection Plans.
+State IDCaptionInitial State?MI_PROPOSEDProposedTrueMI_APPROVEDApprovedFalseMI_MODIFIEDModifiedFalse
+Inspection Plan State Operations
+The following operations can be performed on Inspection Plans to change the states.
+Operation IDCaptionPredecessor StateSuccessor StateIs ReservedMI_APPROVEApproveProposedApprovedFalseMI_APPV_MODIFIEDApproveModifiedApprovedFalseMI_MODIFYModifyApprovedModifiedTrue
+Inspection Plan Revision RecordsThe Inspection Plan Revision family stores information regarding revisions of Inspection Plans.
+The table below provides an alphabetical list and description of the fields that exist for the Inspection Plan Revision family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData Type DescriptionBehavior and Usage Basis for RevisionTextStores the text that is entered by the user when updating an Approved Inspection Plan.This field is populated by entering a Reason for Revision in the dialog box that appears when updating an Inspection Plan that is in the Approved state. This field is disabled in the datasheet.FK_HAIN_PR_INPL_INPL_R_NNumericForeign Key fields that stores the entity key of the Inspection Plan,This field is disabled.This field does not appear in the datasheet.
+Revised ByNumericStores the entity key of the user who modified the Inspection Plan.This field is populated by the name of the user who modified the Inspection Plan. This field is disabled.Revision DateDateStores the date of the revision of the Inspection Plan.This field is disabled.
+Suggested Compliance Templates RecordsThe Suggested Compliance Template family stores information related to assets and their suggested Compliance Strategy Templates.
+The table below provides an alphabetical list and description of the fields that exist for the Suggested Compliance Templates family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData Type DescriptionBehavior and Usage Asset KeyNumericThe entity key of an asset for which Compliance Strategy Templates are suggested.This field does not appear in the datasheet.Suggested Template KeyNumericThe entity key of the suggested Compliance Strategy Template.This field does not appear in the datasheet.
+Recommendation Revision RecordsThe Recommendation Revision family stores information from the related RBI and Compliance Recommendation records and their related Inspection Tasks. These records store information when an Inspection Plan that is in the Approved state is moved to the Modified state.
+This topic provides an alphabetical list and description of the fields that exist for the Recommendation Revision family and appear in the Recommendation Revision datasheet unless otherwise specified. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData Type DescriptionBehavior and Usage Damage MechanismCharacter (50)Stores the Damage Mechanism of the original Recommendation.This field is disabled.Inspection Strategy IDCharacter (255)Stores the ID of the Inspection Strategy record from which the original Recommendation was generated.This field is disabled.Inspection Task TypeCharacter (255)Stores the Task Type from the related Inspection Task.This field is disabled.Non Recurring?BooleanIndicates whether the Recommendation is to recur.This field is disabled.RBI Recommendation MethodologyCharacter (255)Indicates the methodology used to create the Recommendation.
+For RBI Recommendations, the value in this field can be RBI 580 or RBI 581.For Compliance, the value in this field is set to the name of the Compliance Strategy Template.
+Recommendation IDCharacter (255)Indicates the unique ID that is assigned to the Recommendation. This field is populated by automatically by business rules.This field is disabled.
+Recommended Inspection ScopeTextStores the Inspection Scope that populated the original Recommendation. This field is disabled.StateCharacter (255)Stores the State ID of the original Recommendation.This field is populated by the caption of the state. The field is disabled and does not appear in the datasheet.Task DescriptionTextStores the description from the related Inspection Task.This field is disabled.Task Desired IntervalNumericStores the Desired Interval field value from the related Inspection Task.This field is disabled.Task Desired Interval BasisCharacter (1000)Stores the Desired Interval Basis from the related Inspection Task.The value in this field is the description of the corresponding system code from the INSM System Code Table. The field is disabled.Task Desired Interval UOMCharacter (50)Stores the Desired Interval UOM from the related Inspection Task.This field is disabled.Task DetailsTextStores the details from the related Inspection Task.This field is disabled.Task IDCharacter (255)Stores the Task ID from the related Inspection Task.This field is disabled.Task Last DateDateStores the Last Date from the related Inspection Task.This field is disabled.Task Override IntervalBooleanStores the Override Interval from the related Inspection Task.This field is disabled.Task Next DateDateStores the Next Date from the related Inspection Task.This field is disabled.Task ReoccurringBooleanStores the Reoccurring flag value from the related Inspection Task.This field is disabled.
+
+
+
+
+
+On this pageCompliance Policy Mapping RecordsCompliance Recommendation RecordsCompliance Strategy RecordsCompliance Strategy Template RecordsInspection Plan RecordsInspection Plan Revision RecordsSuggested Compliance Templates RecordsRecommendation Revision Records
+
+
+
+
+
+
+
+
+

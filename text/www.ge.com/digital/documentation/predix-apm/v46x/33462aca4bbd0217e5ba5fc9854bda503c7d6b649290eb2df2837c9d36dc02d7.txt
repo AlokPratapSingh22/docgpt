@@ -1,0 +1,94 @@
+
+
+
+First Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Metrics and ScorecardsOverview
+Workflow
+Manage Scorecards
+Manage Key Performance Indicators (KPIs)
+Manage Metric Views
+Manage Privileges
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2019
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Metrics and Scorecards
+Release Notes
+First Quarter of 2019
+
+
+
+
+
+
+
+First Quarter of 2019Metrics and ScorecardsThis topic provides a list of product changes released for this module on the dates listed below.Release Date: March 29, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo improve usability, GE Digital APM users can now map the event and asset criticality data available in their database to the standard event and asset criticality data defined for a work history cube using the corresponding families. To facilitate this enhancement, the following baseline families have been created in Family Management. You can run an update query for each of these families to modify and map the Event and Asset criticality data available in your database to the standard data available in GE Digital APM.Event Type DimensionEvent Breakdown DimensionEvent Detection Method DimensionEvent Priority DimensionAsset Criticality DimensionUS297906
+Table 2. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, if your culture setting had a culture other than English and you accessed the following windows while creating a metric view or a Key Performance Indicator (KPI), the names of the windows were not translated to the appropriate language for your culture setting.Add to MeasuresAdd to RowsAdd to ColumnsAdd to SlicesSelect an APM Query from the catalogThis issue has been resolved.DE93383
+
+
+
+
+
+On this pageMetrics and Scorecards
+
+
+
+
+
+
+
+
+

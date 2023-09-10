@@ -1,0 +1,98 @@
+
+
+
+Catalog Items | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Policy Examples
+Input Nodes
+Condition, Logic, and Calculation Nodes
+Action Nodes
+Baseline Policies
+Glossary
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Reference
+Catalog Items
+
+
+
+
+
+
+
+Catalog ItemsPolicy Manager Folder
+The Catalog folder \\Public\Meridium\Modules\Policy Manager contains the following items used by the Policy Designer module.
+ItemItem TypeBehavior and UsagePolicy OverviewDashboardDisplays the Policy Designer Overview page.Policy Overview - ExecutionGraphDisplays a summary of the execution results for the 20 most active policies within the past 30 days.  This graph is based on the query Policy Overview- Execution and is displayed in the Policy Designer Overview page. Policy Overview -Average and Max timeGraphDisplays a summary of the Time in Queue, that is, the time taken from the Execution Start time to the Trigger Sent time in the past four hours (4 hrs).This graph is displayed in the Policy Designer Overview page.
+Queries Folder
+The Catalog folder \\Public\Meridium\Modules\Policy Manager\Queries contains the following items.
+QueryBehavior and UsageEmail Address QueryReturns values in the First Name, Last Name, and Email Address fields in Human Resource records whose Email Address field contains a value. This query is used to display results in the grid on the Choose User window.Events QueryReturns information about the Severity, Name, Description, Type, Start Time, End Time, and Duration (in seconds) of Policy Events. This query can be used with the Query node in the policy diagram to bring in policy events related to pieces of equipment or functional locations. The Events Query includes an Asset Key prompt, which can be passed to the Query node via the Entity Key system field of a family-based predecessor node. By default, the results of the Events Query are sorted in ascending order by start time. This query works with an SQL database. See Events Query (Oracle) for use with an Oracle database. Events Query (Oracle)Returns the same values as the Events query. This query, however, works in an Oracle database.Policy Overview - ExecutionDisplays a summary of the execution results for the 20 most active policies within the past 30 days. The results of this query are used by the Policy Overview- Execution graph which is displayed on the Policy Designer Overview page. Policy Overview - Overdue Recommendations TileReturns the Policy Recommendations assigned to any user for which the Target Completion Date has passed. The results of this query are displayed in the Overdue Policy Recommendations list in the Policy Designer Overview page. Policy Overview - Recommendations TileReturns the Policy Recommendations that are open and assigned to the current user. The results of this query are displayed in the My Policy Recommendations list in the Policy Designer Overview page. Source TagsReturns a list of all Source Tags, including the Tag ID, Description, Source (i.e. process historian), Type (e.g. String), UOM (i.e. Unit of Measure, as defined in the process historian), and Historical Readings Available (i.e. whether the process historian for this tag support querying for historical readings). This query is used to display results in the grid on the Search window when selecting a record to associate with an OT Connect Tag node.
+
+
+
+
+
+On this pagePolicy Manager FolderQueries Folder
+
+
+
+
+
+
+
+
+

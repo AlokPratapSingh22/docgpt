@@ -1,0 +1,150 @@
+
+
+
+Human Resources | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+AdminInspection Configuration
+Taxonomy Configuration
+Overview Configuration
+Compliance Configuration
+Human Resources
+
+
+Data Loaders
+Deployment
+Reference 
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Admin
+Human Resources
+
+
+
+
+
+
+
+Human ResourcesAccess Human ResourcesAbout This Task
+Important:   To access Human Resources, you must be associated with either the MI Inspection or the MI Power Security Group, and you must have the Inspection Administrator Resource Resource Role.
+Procedure
+Access the Inspection Configuration workspace.
+In the left pane, select Manage Human Resources.The Manage Human Resources workspace appears, displaying a list of available Human Resources. 
+In the row containing the Human Resource whose Resource Roles you want to manage, select Manage Resource Roles. The Human Resource with Role Details datasheet for the selected Human Resource appears, displaying the Master section. 
+Add a New Human ResourceProcedure
+Access Human Resources.In the upper-right corner of the workspace, select , and then select 
+Add.
+The Resource Information datasheet appears. 
+As needed, enter values in the available fields, and then select .
+The new Human Resource record is saved. 
+Note:  Although you accessed an existing Human Resource to create a new Human Resource, the new record is not linked to the old record. 
+Copy a Human ResourceProcedure
+Access the Human Resource that you want to copy.In the upper-right corner of the workspace, select , and then select 
+Copy.In the upper-right corner of the workspace, select , and then select 
+Add.
+The Resource Information datasheet appears. 
+In the upper-right corner of the workspace, select , and then select 
+Paste.
+The fields from the source record are copied to the new Human Resource record. 
+As needed, modify values in the available fields. Select .
+The copied Human Resource record is saved. 
+Delete a Human ResourceProcedure
+Access the Human Resource that you want to delete. In the upper-right corner of the workspace, select , and then select 
+Delete.
+A message appears, asking you to confirm that you want to delete the Human Resource. 
+Select Yes. 
+The Human Resource record is deleted. 
+Add a Resource Role to an Existing Human ResourceProcedure
+Access the Human Resource to which you want to add a Resource Role. Select the Detail tab. The Detail section appears. 
+Enter values in the following fields:
+In the Category field, select the type of role the human resource will have.
+In the Role field, select the user's position within the organization.
+
+Select .The Resource Role is saved and added to the existing Human Resource record.Modify a Resource RoleProcedure
+Access the Human Resource whose Resource Role that you want to modify.As needed, modify values in the available fields, and then select .
+The Resource Role is saved. 
+Unlink Resource RolesProcedure
+Access the Human Resource from which you want to unlink Resource Roles. Select the Detail tab. The Detail section appears.
+In the upper-right corner of the Detail section, select .A column of check boxes appear next to the Category field.
+Next to each Resource Role that you want to unlink, select the check box. In the upper-right corner of the Detail section, select , and then select Unlink.A message appears, asking you to confirm that you want to unlink the selected Resource Roles. Select Yes. The selected Resource Roles are unlinked from the Human Resource record.Delete Resource RolesProcedure
+Access the Human Resource containing the Resource Roles that you want to delete.Select the Detail tab. The Detail section appears. 
+In the upper-right corner of the Detail section, select .A column of check boxes appears next to the Category column.
+Next to each Resource Role that you want to delete, select the check box. In the upper-right corner of the Detail section, select , and then select 
+Delete.A message appears, asking you to confirm that you want to delete the selected Resource Roles. Select Yes. The selected Resource Roles are deleted from the Human Resource record.Access Resource CertificationsProcedure
+Access the Inspection Configuration workspace.
+In the IM Admin Preferences pane, select Manage Human Resources.The Manage Human Resources workspace appears, displaying a list of available Human Resources.
+In the row containing the Human Resource whose certifications you want to manage, select Manage Resource Certifications. The Human Resource with Cert Details datasheet for the selected resource appears, displaying the Master section. 
+Add Resource Certifications to an Existing Human ResourceProcedure
+Access the Resource Certifications of the Human Resource to which you want to add a Resource Certification.Select the Detail tab. The Detail section appears. 
+In the Certification Type box, select the type of Resource Certification that you want to add to the Human Resource, and:
+In the Cert ID box, enter an ID number associated with the certification type.
+In the Cert Expiry Date box, using the calendar function, select the date on which the certification expires.
+
+Select .The Resource Certification is saved and added to the existing Human Resource record.Modify Resource CertificationsProcedure
+Access the Resource Certification that you want to modify.Modify values in the available fields, and then select .
+The Resource Certification is saved. 
+Unlink Resource CertificationsProcedure
+Access the Resource Certifications that you want to unlink from the Human Resource record. Select the Detail tab. The Detail section appears. 
+In the upper-right corner of the Detail section, select .A column of check boxes appears next to the Certification Type column.Next to each Resource Certification that you want to unlink, select the check box. In the upper-right corner of the Detail section, select , and then select Unlink.A message appears, asking you to confirm that you want to unlink the selected Resource Certifications. Select Yes. The selected Resource Certifications are unlinked from the Human Resource record.Delete Resource CertificationsProcedure
+Access the Resource Certification that you want to delete from the Human Resource record.Select the Detail tab. The Detail section appears. 
+In the upper-right corner of the Personnel Certification section, select .A column of check boxes appears next to the Certification Type column.Next to each Resource Certification that you want to delete, select the check box. In the upper-right corner of the Detail section, select , and then select 
+Delete.A message appears, asking you to confirm that you want to delete the selected Resource Certifications. Select Yes. The selected Resource Certifications are deleted from the Human Resource record.
+
+
+
+
+On this pageAccess Human ResourcesAdd a New Human ResourceCopy a Human ResourceDelete a Human ResourceAdd a Resource Role to an Existing Human ResourceModify a Resource RoleUnlink Resource RolesDelete Resource RolesAccess Resource CertificationsAdd Resource Certifications to an Existing Human ResourceModify Resource CertificationsUnlink Resource CertificationsDelete Resource Certifications
+
+
+
+
+
+
+
+
+

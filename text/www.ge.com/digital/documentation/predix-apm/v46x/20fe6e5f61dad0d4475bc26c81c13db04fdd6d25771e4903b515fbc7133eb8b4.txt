@@ -1,0 +1,91 @@
+
+
+
+Fourth Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Metrics and ScorecardsOverview
+Workflow
+Manage Scorecards
+Manage Key Performance Indicators (KPIs)
+Manage Metric Views
+Manage Privileges
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2019
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Metrics and Scorecards
+Release Notes
+Fourth Quarter of 2020
+
+
+
+
+
+
+
+Fourth Quarter of 2020Release Date: October 2, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, if there were multiple perspectives and objectives for a Scorecard in the <Scorecard Name> page, and you added multiple Key Performance Indicators (KPI) to an objective: The KPIs incorrectly appeared in the <Objective Name> section. Some KPIs intermittently appeared in other <Perspective Name> sections.This issue has been resolved.DE132537Previously, when you accessed a scorecard, the time stamp indicating the date and time when the scorecard was modified did not appear based on the time zone associated with your user account. This issue has been resolved.DE132537Previously, when you attempted to modify a KPI, the data in the <KPI Name> page took longer than expected to appear and there was no indication that the operation of loading the data was in progress. This issue has been resolved. Now, a spinner appears when the data in the <KPI Name> page is being loaded.DE132537
+
+
+
+
+
+On this pageRelease Date: October 2, 2020
+
+
+
+
+
+
+
+
+

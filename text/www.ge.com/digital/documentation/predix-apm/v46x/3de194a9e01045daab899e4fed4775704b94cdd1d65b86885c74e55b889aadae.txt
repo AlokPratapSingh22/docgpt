@@ -1,0 +1,108 @@
+
+
+
+Fourth Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesFirst Quarter of 2023
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Release Notes
+Fourth Quarter of 2021
+
+
+
+
+
+
+
+Fourth Quarter of 2021Release Date: December 17, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when you added content in the Reliability Spares Analysis, and then changed the application name, the content was lost. This issue has been resolved.DE169546Previously, if event dates were not added for all the datapoints, the extrapolation method failed to estimate the number of measurements. This issue has been resolved. Now, only a minimum number of datapoints are required to execute extrapolation of failure dates.DE165958
+Release Date: October 8, 2021This topic provides a list of product changes released for this module on this date.
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when you navigated quickly between the tabs in the Reliability Analytics module, an error occurred. This issue has been resolved.US483938Previously, in the Reliability Analysis charts, when you hovered over the extrapolated line, the tooltip did not provide the correct data. This issue has been resolved.DE165880Previously, in Automation Rules section, as an APM user restricted to view-only permissions for Reliability, you were able to select . This issue has been resolved.DE164770Previously, in Spares Analysis, an error appeared when you tried to navigate quickly between pages. This issue has been resolved.DE163425Previously, when you executed a new Automation, the target reliability analyses were not updated with the most current data. This issue has been resolved.DE162462Previously, you were unable to ignore the datapoints by clicking the datapoints on the chart. This issue has been resolved.DE162409Previously, when you executed new Automation rules for existing reliability growth records,  duplicate records were created instead of updating existing records. This issue has been now resolved. DE162405Previously, when you created a Production Analysis from a query, if the data contained many records, the operation exceeded the timeout period and failed. This issue has been resolved. Now, to avoid the timeout issue, the query results have been restricted to 5000 records. If there are more than 5000 records, a warning message appears asking you to modify the query.DE162231Previously, when you executed a rule in Reliability Analytics Automation Rule, and if the calculated value was very small, an error message appeared for Oracle database users, stating that the Distribution could not be saved. This issue has been resolved.DE161495Previously, in System Reliability, when you added a Risk, Action, or Global Event and then selected the Save button multiple times in quick succession, multiple Risks, Actions, or Global Events were created with an error message. This issue has been resolved. Now, entities can only be saved once, irrespective of the number of times the Save button is selected.DE160662Previously, in Spares Analysis section, if your culture setting had a culture other than English, when you generated a report, multiple fields were not translated to the language based on your culture setting. This issue has been resolved.Note:
+Abbreviations are not localized.User defined fields are not localized.
+DE160212Previously, in Reliability Distribution, the icons displayed next to each of the entry in the Chart Legend, and the icons displayed in the actual chart did not match. This resulted in incorrect data interpretation. This issue has been resolved.DE158351Previously, when you attempted to delete a Reliability Analysis without delete privileges, a generic error message appeared saying internal server error. This issue has been fixed. Now, if you attempt to delete an analysis without delete privileges, an error message appears saying, you do not have delete privileges for this application.DE158185Previously, in System Reliability section, as an APM user restricted to view-only permissions for Reliability, you were unable to see the details in a Global Event. This issue has been resolved.DE158174Previously, in a System Reliability Analysis, when you linked a planned resource to a scenario in the analysis, the resource was automatically unlinked from the planned resource list and you could not add the resource back.  This issue has been resolved.DE157864
+
+
+
+
+
+On this pageRelease Date: December 17, 2021Release Date: October 8, 2021
+
+
+
+
+
+
+
+
+

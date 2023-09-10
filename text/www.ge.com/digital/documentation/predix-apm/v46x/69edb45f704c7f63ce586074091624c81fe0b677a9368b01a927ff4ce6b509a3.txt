@@ -1,0 +1,94 @@
+
+
+
+Restriction Policies | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset RestrictionsAsset Restrictions Overview
+Restriction Policies
+
+
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Asset Restrictions
+Restriction Policies
+
+
+
+
+
+
+
+Restriction PoliciesDecommission an Asset InstanceYou can decommission an asset instance in the business functional hierarchy. About This Task
+Decommissioning an asset instance also decommissions all its child asset instances and it associated tags. Once decommissioned, The asset instance is removed from the business functional hierarchy for users that do not have the View decommissioned assets option applied. The ingestor user and user admin can also view the decommissioned asset. You cannot make any changes to the asset instance, any child instances, or associated tag intances.
+You can access decommissioned assets if you have the All resources permission.
+Only a root asset instance can be decommissioned. Child asset instances cannot be separately decommissioned.
+The following scenarios do not allow you to decommission a selected asset instance:The selected asset instance is a member of a group. You must remove the asset instance from the group before you can proceed.The selected asset instance includes a tag that is a member of a group. You must remove the tag from the group before you can proceed.The selected asset instance is a member of a group which is associated with a business functional hierarchy. You must disassociate the group from the business functional hierarchy before you can proceed.You do not have permissions to view or edit the selected asset instance.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Asset context refers to an actual asset in the business functional hierarchy.Select the Decommission option from the Lifecycle stage drop-down list box.The selected asset instance, any child instances, and any associated tag instances are decommissioned.Recommission an Asset InstanceYou can recommission an asset instance that has been decommissioned in the Lifecycle stage drop-down list box.About This Task
+Recommissioning an asset instance also recommissions all its child asset instances and its associated tags. The child asset instances and associated tags Lifecycle stage option is reset to match the selection for the recommissioned asset instance. If the Lifecyle stage option for any child assets instances or associated tags is different from the recommissioned asset instance selection, you will need to manually adjust them.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.Asset context refers to an actual asset in the business functional hierarchy.Select an option from the Lifecycle stage drop-down list box.The selected asset instance, any child instances, and any associated tag instances are recommissioned and the selected Lifecycle stage option is saved for all.Note: It is now possible to make changes to the asset instance, any child instances, or associated tag instances.
+Related ConceptsAbout Asset Restrictions
+
+
+
+
+On this pageDecommission an Asset InstanceRecommission an Asset Instance
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+
+
+
+Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+System Codes and TablesOverview
+Manage System Code Tables
+Manage System Codes
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+System Codes and Tables
+Overview
+
+
+
+
+
+
+
+Overview About System Codes and TablesSystem Codes are used to generate value lists in datasheets. By using System Codes, you can create a list of codes and then reference the list from any record or relationship field. These lists, when displayed in datasheets, can assist users in selecting the proper value for a given field.For example: Consider an Equipment Type field that has 20 values that the users can select. You can create a valid values rule to generate a list with the 20 values. If you use Equipment Type field in different equipment families, you can create a System Code Table and put the 20 Equipment Type codes in it instead of typing the valid values choices for each individual family. After creating the table and its codes, you can call the System Code Table from your valid values rule so that the lists are populated from the System Codes. If you need to change one of the Equipment Type codes, you can update it in the System Codes table, so that the next time the System Codes are called from a valid values rule, the changed code will appear without making any changes to the rule.Additionally, you can choose to display System Codes in one of three ways: Code Only, Description Only, or Code & Description. When making these decisions, it is important to keep in mind the types of users who will be using the lists. For example, if you display only the codes, some users may not understand what each code represents. The most thorough selection would be Code & Description so that users can view both the properties simultaneously.It is important to keep in mind that the organization of the list becomes more important when there are numerous entries. If a System Code Table contains a large number of System Codes, it may be a good idea to organize them into groups. By doing so, you are narrowing down the user’s search. The user can first choose from the references before making a final selection from the valid values list. For example, if you have created a System Code Table that contains a System Code for every API code used in a field. With so many choices, it would be hard to decide. If you referenced the codes by breaking them up into different types, however, you could create two valid values lists: one in which the user selects the code type and another that references the first list and displays only those codes of the type selected in the first list. Also, System Codes can be sequenced to control their display order.Note: Members of the MI APMNow Admin Security Group has full access to System Codes and Tables.About System Codes and References
+System Codes are the codes defined in a System Code Table. Each table can have an unlimited number of codes. For example: System Code Table named Activity may contain all the System Codes related to activities such as High, Low, Medium, and None. 
+
+A System Code reference is a way of associating a System Code in one System Code Table with a System Code in another System Code table. 
+Consider an example where you have two System Code Tables: Equipment Type (EQPT) and Manufacturer (MFGR). The Equipment Type table contains the following values:CompressorHeat ExchangerMotorPump
+The Manufacturer table contains the following values:ACMEBURNSSMITH
+If the manufacturer ACME produces only motors and pumps, within the Manufacturer System Code Table, you can add a reference to the ACME System Code that references the Pump and Motor System Codes in the Equipment Type System Code table. This indicates that only the equipment types Pump and Motor are associated with the manufacturer ACME.
+System Code references can be useful for developing Valid Values rules, where the values available in a given field are filtered based upon references to other System Codes. Keep in mind that the direction of the references will have an impact on how they can be used in rules. Before you begin creating references, you will want to think about how you plan to use them for developing rules so that you set them up properly.
+Access the System Codes and Tables PageAbout This TaskThe System Codes and Tables page displays a list of all the System Code Tables that are defined for the database and the properties that are defined for each table.ProcedureIn the module navigation menu, select
+Admin > Configuration Manager > System Codes and Tables.The System Codes and Tables page appears, displaying the list of System Code Tables defined in the database. On the System Codes and Tables page, you can add a new System Code table, view and modify the properties of an existing table, define System Codes for a table, or delete a System Code Table.
+
+
+
+
+
+
+On this page About System Codes and TablesAbout System Codes and ReferencesAccess the System Codes and Tables Page
+
+
+
+
+
+
+
+
+

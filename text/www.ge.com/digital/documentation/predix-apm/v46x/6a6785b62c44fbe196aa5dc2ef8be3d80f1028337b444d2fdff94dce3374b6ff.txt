@@ -1,0 +1,100 @@
+
+
+
+Manage Root Cause Analysis (RCA) from GAA | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Manage Root Cause Analysis (RCA) from GAA
+
+
+
+
+
+
+
+Manage Root Cause Analysis (RCA) from GAAAccess an RCA from GAAAbout This Task
+Important: You can view the list of RCAs created from GAA only if the license for Root Cause Analysis is active.
+Procedure
+Access a list of Primary Events associated with a GAA Unit that contains the Primary Event for which you want to access an associated RCA.Locate the row containing the RCA that you want to access.In the Associated RCA column, select the link.
+The Analysis Summary workspace for the selected RCA opens in a new tab. 
+Create an RCA from GAABefore You Begin
+Ensure that the license for the Root Cause Analysis (RCA) module is active.Ensure that you are assigned to one of the following Security Groups:MI PROACT AdministratorMI PROACT Team MemberCreate a Primary Event.
+About This TaskGE Digital APM provides the Root Cause Analysis (RCA) module, which allows you to conduct an in-depth analysis to evaluate and determine the underlying cause of the capacity event and associated asset impacts. By creating an RCA, you can determine the cause of an event, implement corrective actions to prevent future events, and track associated actions related to the event.You can perform various tasks in this page based on your membership in the GAA Security Groups.Procedure
+Access a list of Primary Events associated with a GAA Unit that contains the Primary Event for which you want to create an RCA.Select the check box containing the Primary Event for which you want to create an RCA. In the Events workspace, select Create RCA. 
+The Create RCA window appears. The Analysis Details tab is selected by default.
+Note: The Analysis Name and Analysis Description fields in the RCA are automatically populated based on the values in the selected Primary Event. The Start Date field is automatically populated with the current date. 
+
+
+
+As needed, enter values in the available fields.
+Note: For more information about these available fields, refer to the RCA Analysis Records section of the documentation.
+Select .
+The Primary Event and the RCA are automatically linked. The associated RCA appears in the Associated RCA column.
+
+
+
+
+
+On this pageAccess an RCA from GAACreate an RCA from GAA
+
+
+
+
+
+
+
+
+

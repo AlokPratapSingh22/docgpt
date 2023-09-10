@@ -1,0 +1,138 @@
+
+
+
+Production Analysis | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field DescriptionsReliability Recommendation Records
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+
+
+Catalog Items
+Distribution Types
+Calculations
+Failure Data
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Reference
+Family Field Descriptions
+Production Analysis
+
+
+
+
+
+
+
+Production AnalysisProduction Analysis Records
+A Production Analysis record stores information about an analysis used to determine the reliability of a production process. The following table provides an alphabetical list and description of the fields that exist for the Production Analysis family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field Caption
+Data TypeDescriptionBehavior and UsageAnalysis End Date DateThe last date that production output is measured for the analysis. 
+This field is populated with the latest date in your dataset in the field defined in the Production Date list on the Select Production Fields screen of the Production Analysis Builder. 
+This field is labeled End Date on the datasheet. hidden
+Analysis Name Character The name of the Production Analysis. 
+This value is populated with the value that you type in the Analysis Name box when you save or rename the Production Analysis. 
+This field is labeled Analysis ID on the datasheet.
+Analysis Start Date DateThe first date that production output is measured for the analysis. 
+This field is populated with the earliest date in your dataset in the field defined in the Production Date list on the Select Production Fields screen of the Production Analysis Builder. 
+This field is labeled Start Date on the datasheet.
+Analysis Type Character The type of analysis being conducted. This field is populated with the value Production Analysis. You can modify this value to something more specific. Description DescriptionA text field that stores any additional information about the analysis. You can define this value by entering text manually. Ignored Points NumberThe number of datapoints that were ignored because they would inaccurately skew the Reliability Loss calculations. This field is populated with the number of points that have been ignored via the Point Tooltip window. Margin Unit NumberThe unit, or currency, of the cost associated with the calculated production losses. 
+This field is set to $ by default. Alternatively, you can change the margin units via the Set Unit Of Measure window.
+This field is labeled Margin Value Unit on the datasheet. 
+Margin Value NumberThe value by which the GE Digital APM system will multiply the Production Loss to determine the cost. For example, if production was lost for 10 cases of bottles, and a production loss for one case costs 10 dollars, the Margin Value would be 10. Production Loss (10 cases) x Margin Value ($10) = a cost of $100. This field is populated with the value 1 by default. Alternatively, you can change the margin value via the Set Margin window. Minimum Production Output NumberThe minimum production value, or the value that is to replace data that cannot be plotted (i.e., zero or negative output values). If your data contains zeros or negative values, they will be replaced with the minimum production value. If your dataset contains zeros or negative values, this field is populated automatically with the minimum production value you chose when you created the analysis. Alternatively, you can change the minimum production value via the Set Minimum Production Output. Pro Reliability NumberThe percentage of time in the Analysis Period that the process is reliable. For example, if the Pro Reliability value is 65%, the process would be reliable 65% of the time. 
+This field is populated with the value of the Process Reliability line that you define on the Production Analysis plot. 
+ 
+Production Date DateThe date on which the production output value was recorded. If you have a date field within your query or dataset and you choose not to map it to the Production Analysis Builder, you can see the dates used to build the analysis in the 
+Production Analysis Points Editor window. This field is optional.Production Output NumberValues representing the amount of output produced by the unit during the specified period of time (e.g., hourly, daily, weekly, or monthly). This field is required. You can define the units of measure for the output values after you create the analysis. Total Points NumberThe total number of datapoints in the analysis. This field is populated with the number of points in the dataset that you defined when creating the analysis. Unit ID CharacterThe name of the unit on which the analysis is being performed. This field is populated with values from your dataset in the field defined in the Unit ID list on the Select Product Fields screen of the Production Analysis Builder. Unit Of Measure CharacterThe units of production output (e.g., barrels). This value will be populated with the value you define in the Set Unit Of Measure window. This value will be the basis for the units along the x-axis in the Production Analysis plot and in the Production Loss Regions pane. 
+Data Mapped to the Production Data Editor Window
+When you create a Production Analysis from a query or dataset, the Production Analysis Builder will prompt you to map values from columns in the query or dataset to certain values in the Production Analysis. The values that you select to map on the Select Product Fields  screen in the Production Analysis Builder will then appear in the associated columns in the Production Data Editor window.
+Note: If the analysis is based on a query or a dataset and contains additional columns that are not mapped to columns in the analysis dataset, those columns will appear in the Production Data Editor window with the column name in parentheses.
+The following table contains which columns are mapped from fields in the Production Analysis Builder to columns in the Edit Production Data window.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Production Analysis Builder Screen Production Analysis Builder Field Production Data Editor Window Column Select Product Fields Production Output Production Output Select Product Fields 
+Production Date 
+Date 
+Production Losses Records
+A Production Losses record stores information about a loss of production and the cost associated with it. The following table provides an alphabetical list and description of the fields that exist for the Production Losses family, which appear by default on the Production Losses datasheet. The information in the table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Field CaptionData TypeDescriptionBehavior and UsageArea End Number The end of the area measured for losses. This field depends on the value identified in the Losses Type field. This field is applicable only to Sub-Reliability Losses. Area Start Number The value of the datapoint that marks the beginning of the area measured for losses. The value in this field depends on the value identified in the Losses Type field. This field is applicable only to Reliability and Sub-Reliability Losses. Losses Cost Number The total monetary amount that was lost as a result of the production loss. This field is populated with the cost of the production loss, which is calculated by multiplying the production loss in the defined region with the Margin Value. This value also appears in the Cost column of the 
+Production Loss Regions window for the corresponding loss. Losses Type CharacterA description of the type of production loss calculated by the Production Analysis. 
+The value in this field is populated with one of the following values:
+Efficiency/Utilization Loss Reliability Loss Sub Reliability Loss Total Loss 
+The value in this field will also serve as the Record ID for the Production Loss record.
+Production Losses Number The amount of production that was lost as a result of the reliability of the production process. This field is populated with the amount of production output that was lost in the defined region. This value also appears in the Quantity column in 
+Production Loss Regions window for the corresponding loss. Unit of Cost CharacterThe unit, or currency, of the cost associated with the production loss. This value is populated with $ by default. Alternatively, you can change the margin units via the Set Currency window. Unit Of Measure CharacterThe units of production output (e.g., barrels). This value will be populated with the value you define in the Set Unit Of Measure window. 
+
+
+
+
+
+On this pageProduction Analysis RecordsData Mapped to the Production Data Editor WindowProduction Losses Records
+
+
+
+
+
+
+
+
+

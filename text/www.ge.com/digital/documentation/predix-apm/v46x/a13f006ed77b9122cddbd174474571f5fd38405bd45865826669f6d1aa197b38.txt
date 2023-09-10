@@ -1,0 +1,302 @@
+
+
+
+General Reference | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Mappings
+Allowable Event Types in Related Events 
+Fields that can be Populated from one of the Three Related Records 
+Fuel Code Fields 
+Fuel Information Fields 
+Inactive Hours Field 
+Overlapping between an Outage Event and a Derate Event
+Capacity Event Types Affecting Performance Records
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Reference
+General Reference
+
+
+
+
+
+
+
+General ReferenceGAA Data Model
+The following diagram shows how the families used in GAA are related to one another. 
+
+
+
+Note: In the diagram, boxes represent entity families and arrows represent relationship families that are configured in the baseline database. You can determine the direction of the each relationship definition from the direction of the arrowhead: the box from which the arrow originates is the predecessor, and the box to which the arrowhead points is the successor.
+In addition to the families shown in the GAA data model, the following additional families are used for GAA reference:
+Amplification CodesCause CodesGAA Code MappingGAA Event CategoriesGAA Event TransitionGAA Event TypesGAA Fuel TypesGAA Supported OrganizationsGAA Unit Types
+GAA Security Groups
+
+The following table lists the baseline Security Groups available for users within this module, as well as the baseline Roles to which those Security Groups are assigned. In Predix APM, Roles are assigned to Security Users through permission sets.
+
+Important:  Assigning a Security User to a Role grants that user the privileges associated with all of the Security Groups that are assigned to that Role. To avoid granting a Security User unintended privileges, before assigning a Security User to a Role, be sure to review all of the privileges associated with the Security Groups assigned to that Role.
+                
+
+Security GroupRolesMI GAA Viewer
+MI APM Viewer
+MI GAA Administrator
+MI GAA Analyst
+MI GAA Operator
+MI GAA Supervisor
+MI GAA Administrator
+MI GAA Administrator
+MI GAA Analyst
+MI GAA Analyst
+MI GAA Operator
+MI GAA Supervisor
+
+Note:
+ To access the Health Summary page for an Asset, you must be member of one of the following Asset Health Manager Security Groups:
+
+MI AHI Administrator
+
+MI AHI User
+
+MI AHI Viewer
+
+
+The baseline family-level privileges that exist for these Security Groups are summarized in the following table.
+FamilyMI GAA Viewer
+MI GAA Administrator
+MI GAA AnalystEntity FamiliesAmplification CodesViewView, Update, Insert, DeleteView, Update, InsertAPM EventViewView, Update, Insert, DeleteView, Update, InsertCapacity IncidentViewView, Update, Insert, DeleteView, Update, InsertCause Codes ViewView, Update, Insert, DeleteViewContributing EventViewView, Update, Insert, DeleteView, Update, InsertGAA Code MappingViewView, Update, Insert, DeleteViewGAA Company ViewView, Update, Insert, DeleteViewGAA ConfigurationViewView, Update, Insert, DeleteViewGAA Event CategoriesViewView, Update, Insert, DeleteViewGAA Event TransitionViewView, Update, Insert, DeleteViewGAA Event TypesViewView, Update, Insert, DeleteView, Update, InsertGAA Fuel TypesViewView, Update, Insert, DeleteView, Update, InsertGAA PerformanceViewView, Update, Insert, DeleteView, Update, InsertGAA Performance FuelViewView, Update, Insert, DeleteView, Update, InsertGAA Performance IndexesViewView, Update, Insert, DeleteView, Update, InsertGAA Performance SummaryViewView, Update, Insert, DeleteView, Update, InsertGAA Plant ViewView, Update, Insert, DeleteViewGAA Report DetailsView View, Update, Insert, DeleteView, Update, InsertGAA Supported OrganizationsViewView, Update, Insert, DeleteViewGAA Unit ViewView, Update, Insert, DeleteViewGAA Unit CapacityViewView, Update, Insert, DeleteViewGAA Unit TypesViewView, Update, Insert, DeleteViewGAA Unit StatesViewView, Update, Insert, DeleteViewGeneration PoolViewView, Update, Insert, DeleteViewPrimary Event ViewView, Update, Insert, DeleteView, Update, InsertPrimary Event DetailsViewView, Update, Insert, DeleteView, Update, Insert, DeletePrimary Event HistoryViewView, Update, Insert, DeleteView, InsertRCA AnalysisViewViewViewReference DocumentViewView, Update, Insert, DeleteView, Update, InsertRelationship FamiliesAssociated with APM Event ViewView, Update, Insert, DeleteView, Update, Insert, DeleteFunctional Location Has Generation CompanyViewView, Update, Insert, DeleteViewFunctional Location Has Generation PlantViewView, Update, Insert, DeleteViewFunctional Location Has Generation UnitViewView, Update, Insert, DeleteViewHas Capacity History ViewView, Update, Insert, DeleteView, Update, Insert, DeleteHas Incident ViewView, Update, Insert, DeleteView, Update, Insert, DeleteHas Plant ViewView, Update, Insert, DeleteViewHas Reference Documents ViewView, Update, Insert, DeleteView, Update, Insert, DeleteHas Unit ViewView, Update, Insert, DeleteViewLog has EventsViewView, Update, Insert, DeleteView, Update, InsertPrimary Incident Has RCA AnalysisViewView, Update, Insert, DeleteView, Update, Insert, DeleteUnit Has RecordsViewView, Update, Insert, DeleteView
+GAA URLs
+There is one URL route associated with Generation Availability Analysis: gaa. The following table describes the various paths that build on the route, and the elements that you can specify for each.
+
+Tip: For more information, refer to the URLs section of the documentation.
+
+ElementDescriptionAccepted Value(s)Notes
+gaa/dashboard/0: Displays the GAA Overview page.
+gaa/<UnitKey>/performance/0
+: Displays the Performance & Reports workspace for the specified GAA Unit.
+<UnitKey>
+Specifies the GAA Unit for which you want to access the Performance records and Reports.Any numeric Unit Key that corresponds to an existing GAA Unit.Opens the workspace in a new tab.
+gaa/<UnitKey>/unitsummary/0: Displays the Unit Summary workspace for the specified GAA Unit.
+<UnitKey>
+
+Specifies the GAA Unit whose summary you want to view.
+Any numeric Unit Key that corresponds to an existing GAA Unit.Opens the workspace in a new tab.
+gaa/<PrimaryEventKey>/primaryevent/null/null/0: Displays the Event datasheet in Events workspace for the specified Primary Event. 
+<PrimaryEventKey>
+Specifies the Primary Event whose datasheet you want to view. Any numeric Primary Event Key that corresponds to an existing Primary Event.Opens the workspace in a new tab.
+gaa/<UnitKey>/null/null/eventlists: Displays the list of Events in the Events workspace for the specified GAA Unit.
+<UnitKey>
+Specifies the GAA Unit for which you want to access the list of Events.Any numeric Unit Key that corresponds to an existing GAA Unit.Opens the workspace in a new tab.
+Example URLs
+
+Example URLDestinationgaa/dashboard/0 The GAA Overview page.
+gaa/64256144022/performance/0 
+The Performance & Reports workspace for the specified GAA Unit with Unit Key 64256144022
+gaa/64256144022/unitsummary/0 
+The Unit Summary workspace for the specified GAA Unit with Unit Key 64256144022
+gaa/64256144030/primaryevent/null/null/0 
+
+The Event datasheet in Events workspace for the specified Primary Event with Primary Event Key 64256144030
+
+gaa/64256133930/null/null/eventlists 
+
+The list of Events in the Events workspace for the specified GAA Unit with Unit Key 64256133930
+
+
+GAA System Code Tables
+The following table lists the System Code Tables that are used by Generation Availability Analysis:
+Table IDTable DescriptionFunctionMI_GAA_COMMON_MODE_OUTAGE_TYPESHolds values for types of Common Mode Outage.Populates the Common Mode Outage field in the Primary Event record.MI_GAA_EVENT_CONTR_CODE Event Contribution Code.Populates the Event Contribution Code field in the Contributing Event record.
+MI_GAA_MODULE_TYPE
+Holds values for types of GAA Company.Populates the GAA Type field.MI_GAA_REVIS_N Revision number.Populates the Revision field in the Primary Event record. MI_GAA_UNIT_APM_EVENT_CRT Holds values for APM Events.Populates the APM Event Creation field in the Unit record.MI_GAA_UNIT_DRT_CALCU_METH Holds values for Calculation Method.Populates the Derating Calculation Method field in the Unit record. MI_GAA_UNIT_GENER_COST_MODEL Holds values for Cost Model.Populates the Generation Cost Model field in the Unit record. MI_GAA_UNIT_RPT_CAP_DATA Holds values for reporting the capacity data.Populates the Report Capacity Data field in the Unit record.MI_GM_FAILURE_MECHANISM Holds values for Failure Mechanism.Populates the Failure Mechanism code field in the Primary Event record. MI_GM_NERC_REPORT_FORMAT Holds values for Report Format.Populates the Report Format field in GAA Report records. MI_GM_NERC_REPORT_TYPE Holds values for Report Type.Populates the Report Type field in GAA Report records.MI_GM_POWER_PRICE_ZONE Holds values for Zone.Populates the Zone field in GAA Unit records.MI_GM_POWER_REGION Holds values for Region.Populates the Region field in GAA Unit records. MI_GM_POWER_SUBREGION Holds values for Subregion.Populates the Subregion field in GAA Unit records. MI_GM_STATE Holds values for State.
+Populates the State field in the following records:
+GAA CompanyGAA Plant
+MI_GM_UNIT_LOADING Holds values for Default Unit Loading.Populates the Default Unit Loading field in GAA Unit records.
+GAA State Management for Primary Events
+When you are working with Primary Event records, you can use state management to facilitate a workflow that tracks the progress of the events. When you access a Primary Event, options appear that you can use to manage the states for Primary Events. You can follow the standard procedure for managing record states. The following baseline record states are configured for the Primary Event family:New: Indicates that a new Primary Event is created. You can modify or delete a Primary Event that is in this state.In Progress: Indicates that the Primary Event is ready to be proposed to the supervisor. You can modify or delete a Primary Event that is in this state.Pending Review: Indicates that the Primary Event needs to be reviewed. You can modify or delete a Primary Event that is in this state.Reviewed: Indicates that the Primary Event has been reviewed and is awaiting Unit approval. You can modify or delete a Primary Event that is in this state.Unit Approved: Indicates that all the data in a GAA Unit associated with the Primary Event has been approved. You can modify or delete a Primary Event that is in this state.Approved: Indicates that the Primary Event has been approved and is ready to be submitted to NERC. After the state of a Primary Event is changed to Approved, you cannot modify or delete the Primary Event.
+Illustration of Primary Events State Configuration
+
+
+
+Reserved States and Operations
+The following table lists the baseline states and operations and indicates which of these states and operations are reserved. You cannot remove or modify reserved states or operation. You can, however, add your own states and operations to the State Configuration. 
+StateIs Reserved?New NoIn Progress YesPending Review NoReviewed NoUnit Approved YesApproved Yes
+OperationIs Reserved?Create YesPropose to Supervisor 
+Yes
+Note: You can rename the Propose to Supervisor operation but cannot remove it.
+Reject 
+Yes
+Note: You can rename the Reject operation but cannot remove it.
+Approve NoRework NoUnit Approval YesRevise 
+Yes
+Note: You can rename the Revise operation but cannot remove it.
+Corporate Approved YesAlter Yes
+State Configuration Roles
+The following table lists the baseline states and indicates which State Configuration Roles are assigned to each state and corresponding operation:
+StateOperationPrimary RoleOptional RoleNew Create 
+MI GAA Operator
+
+MI GAA Supervisor
+MI GAA Analyst
+MI GAA Administrator
+In Progress Propose to Supervisor MI GAA Operator
+MI GAA Supervisor
+MI GAA Analyst
+MI GAA Administrator
+Pending Review 
+Approve 
+
+MI GAA Supervisor
+
+MI GAA Analyst
+MI GAA Administrator
+Reject MI GAA OperatorReviewed 
+Unit Approval 
+
+MI GAA Analyst
+
+MI GAA Administrator
+Rework MI GAA SupervisorUnit Approved 
+Corporate Approved 
+
+MI GAA Administrator
+N/ARevise MI GAA AnalystApproved Alter 
+MI GAA Administrator
+N/A
+GAA State Management for Performance Records
+When you are working with Performance records, you can use state management to facilitate a workflow that tracks the progress of the Performance records. When you access a Performance record, options appear that you can use to manage the states for Performance records. You can follow the standard procedure for managing record states. The following baseline record states are configured for the GAA Performance family:New: Indicates that a new Performance record is created. You can modify or delete a Performance record that is in this state.In Progress: Indicates that the Performance record is ready to be sent for Unit Approval. You can modify or delete a Performance record that is in this state.Unit Approved: Indicates that all the data in a GAA Unit associated with the Performance record has been approved. This record can now be sent for Corporate Approval. You can modify or delete a Performance record that is in this state.Approved: Indicates that the Performance record has been approved and is ready to be submitted to NERC. After the state of a Performance record is changed to Approved, you cannot modify or delete the Performance record.
+Illustration of Performance Records State Configuration
+
+
+
+Reserved States and Operations
+The following table lists the baseline states and operations and indicates which of these states and operations are reserved. You cannot remove or modify reserved states or operation. You can, however, add your own states and operations to the State Configuration. 
+StateIs Reserved?New NoIn Progress YesUnit Approved YesApproved Yes
+OperationIs Reserved?Create YesUnit Approval YesRevise 
+Yes
+Note: You can rename the Revise operation but cannot remove it.
+Corporate Approval YesAlter Yes
+State Configuration Roles
+The following table lists the baseline states and indicates which State Configuration Roles are assigned to each state and corresponding operation:
+StateOperationPrimary RoleOptional RoleNew Create 
+MI GAA Analyst
+
+MI GAA Administrator
+In Progress 
+Unit Approval 
+MI GAA Analyst
+MI GAA Administrator
+Unit Approved 
+Revise 
+
+MI GAA Analyst
+N/A
+Corporate Approval 
+MI GAA AdministratorApproved Alter 
+MI GAA Administrator
+N/A
+GAA Site Filtering
+Site filtering in GAA is achieved by specifying a Site Reference Key for a record. Users must have privileges for the relevant site to access records for the specified site. Users can be assigned to one or many sites. They will be able to see only the records that are assigned to their site(s) or that are global records.
+Site filtering is enabled for the following families:
+
+Contributing Event: A new Contributing Event record will inherit the site from the associated Primary Event and GAA Unit. After a Contributing Event record is created, you cannot modify the site assigned to the Contributing Event record.
+GAA Company: You can assign any site to GAA Company record from the available sites. After you save the changes, you cannot modify the site.
+GAA Performance: A new Performance record will inherit the site from the associated GAA Unit. After a Performance record is created, you cannot modify the site assigned to a Performance record.
+GAA Plant: You can assign any site to GAA Plant from the available sites. This site could be different than the site assigned to a GAA Company record. After you save the changes, you cannot modify the site.
+GAA Report Details: A new record will inherit the site from the associated GAA Unit. After a record is created, you cannot modify the site assigned to the record.
+GAA Unit: You can assign any site to GAA Unit from the available sites. This site could be different than the site assigned to a GAA Company record or a GAA Plant record. After you save the changes, you cannot modify the site.
+GAA Unit Capacity: A new Unit Capacity record will inherit the site from the associated GAA Unit. After a Unit Capacity record is created, you cannot modify the site assigned to the Unit Capacity record.
+Primary Event: A new Primary Event record will inherit the site from the associated GAA Unit. After a Primary Event record is created, you cannot modify the site assigned to the Primary Event record. 
+Primary Event History: The information that appears on the Revision History page will inherit the site from the associated GAA Unit.
+Primary Event Details: The information that appears in the Unit Summary workspace will inherit the site from the associated GAA Unit. 
+Reference Document: A new Regulatory Report record will inherit the site from the associated GAA Unit. After a record is created, you cannot modify the site assigned to the record.
+Site filtering is not enabled for the following families. The records in these families are considered as Global records.
+GAA ConfigurationAmplification Code Cause Code GAA Fuel Types
+
+Consider an organization that has three sites, Site X, Site Y, and Site Z and contains the following records:
+Event 1: Assigned to Site XEvent 2: Assigned to Site YEvent 3: Assigned to Site Z
+
+Scenario 1: User assigned to only Site X
+
+When this user accesses the GAA Overview page, the user will be able to see the records that are assigned to Site X:
+Event 1: Assigned to Site X
+
+Scenario 2: User assigned to both Site X and Site Y
+
+When this user accesses the GAA Overview page, the user will be able to see the records that are assigned to Site X and Site Y:
+Event 1: Assigned to Site X
+Event 2: Assigned to Site Y
+
+Scenario 3: Super User
+
+When this user accesses the summary of a GAA Unit, the user will be able to see the records that are assigned to any of the sites:
+Event 1: Assigned to Site XEvent 2: Assigned to Site YEvent 3: Assigned to Site Z
+
+
+
+
+
+On this pageGAA Data ModelGAA Security GroupsGAA URLsGAA System Code TablesGAA State Management for Primary EventsGAA State Management for Performance RecordsGAA Site Filtering
+
+
+
+
+
+
+
+
+

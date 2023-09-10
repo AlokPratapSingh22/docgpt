@@ -1,0 +1,102 @@
+
+
+
+Second Quarter of 2022 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+Release Notes
+Second Quarter of 2022
+
+
+
+
+
+
+
+Second Quarter of 2022Release Date: June 24, 2022This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in the Protective Instrument Loop diagram, when you selected Logic Solver, the Architectural Type field was not populated. Additionally, loop results for Sensor Group and Final Element Group were mapped incorrectly to system results. These issues have been resolved.DE177101Previously, when you applied template for Protective Instrument Loop, there was a performance issue and sometimes the process timed out. This issue has been resolved.DE177097Previously, in the Details section of a Proof Test Template, when you accessed a Proof Test Template Detail, the Delete, Add New, and Add Existing buttons were enabled even when the State field value for the Proof Test Template was set to a value other than Development. This issue has been resolved. DE177091
+
+
+
+
+
+On this pageRelease Date: June 24, 2022
+
+
+
+
+
+
+
+
+

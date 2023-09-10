@@ -1,0 +1,100 @@
+
+
+
+RBI Inspection Plans | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection PlansRBI Inspection Plans
+Inspection Plan Management
+Managing Recommended Actions in Inspection Plan
+Implement Recommended Actions to Inspection Tasks
+Inspection Plan Revision History
+
+
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Inspection Plans
+RBI Inspection Plans
+
+
+
+
+
+
+
+RBI Inspection PlansAbout Inspection PlansAn Inspection Plan allows you to view, manage, approve, and implement all RBI Recommended Actions related to an Asset. Inspection Plans are created for RBI Assets when one of the related components has an analysis that is moved to the Risk Completed state. When a user generates recommendations for RBI Analyses, the RBI Recommended Actions are added to Inspection Plans. An RBI Analyst can perform actions like supersede, mark as not required, or delete RBI Recommended Actions before approving the inspection plan.After an Inspection Plan is approved, organizations can decide if they want to implement the approved RBI Recommended Actions through Inspection Plan or Asset Strategy Management. If an organization decides to implement the approved Recommended Actions through Inspection Plan, RBI Analysts can create a new inspection task or link an existing task to a Recommended Action. The Inspection Plan also displays the existing inspection tasks for an asset.States of an Inspection PlanProposed
+When an Inspection Plan is created, it will be in the Proposed state. An Inspection Plan is created for an RBI Asset when one of the related components has an analysis that is moved to the Risk Completed state. For Assets with multiple RBI Components, Inspection Plans are created when you finalize risk of an analysis for a single component.
+Approved
+After an analyst has reviewed all the Recommended Actions in an Inspection Plan, they can approve the Inspection Plan by transitioning it to the Approved state. This will also create or update the asset strategy for the Asset automatically, by creating or updating any Risks and Actions sourced from RBI. After an Inspection Plan is approved, all the related RBI Recommended Actions will move to the Approved state. An analyst can approve the Inspection Plan if all the RBI Components related to the asset have at least one active RBI Analysis.
+Modified
+An Inspection Plan is modified whenever reassessment or evergreening of RBI is done for the Asset. If the Inspection Plan is in the Approved state, and an analyst finalizes the risk for an analysis of an RBI Component, the Inspection Plan state is changed to Modified. When the state of an Inspection Plan is changed from Approved to Modified, GE Digital APM creates an Inspection Plan history record containing a snapshot of the Recommended Actions associated with the approved plan along with its implementation history.
+About Inspection Plan ApprovalAn MI Inspection Plan Approver can approve Inspection Plans. Approving an Inspection Plan also integrates the related asset with Asset Strategy Manager (ASM). When an Inspection Plan is approved:Degradation Mechanisms (DMs) are used to create Risks in ASM.Recommendations are used to create Actions.For more information on ASM Integration, see About Asset Strategy Management (ASM) Integration.When an Inspection Plan is in the Approved state, users can create or link Inspection Tasks to the related RBI Recommendations.If the MI RBI Analyst transitions another RBI Criticality Analysis for an RBI Component linked to the asset related to the Inspection Plan to the Risk Completed state, the Inspection Plan will be moved to the Modified state.An MI Inspection Plan Approver or MI Compliance Analyst can then delete, mark as not required, or supersede Compliance Recommendations.Each time the Inspection Plan is changed from the Approved to Modified state, an Inspection Plan Revision record is created and linked to the existing Inspection Plan. For each existing RBI Recommendation record, a Recommendation Revision record is created and linked to the Inspection Plan Revision.Additionally, the MI Inspection Plan Approver must change the state of the Inspection Plan to Approved before linking more Inspection Tasks to the plan.About Modifying an Inspection PlanAn MI RBI Analyst can modify an Inspection Plan associated with an Asset by changing the state of an RBI Criticality Analysis for an RBI Component that is linked to the Asset to the Risk Completed state. This will archive the previous Risk Completed Analysis and its related RBI Recommendations. The archived RBI Recommendations will be unlinked from the Inspection Plan.When an analyst modifies an Inspection Plan by finalizing the risk of an analysis for an RBI Component:Any existing RBI Recommendations on the active analysis of the component are unlinked from the Inspection Plan and moved to the Archived state.Note: If the parent asset has multiple components, the RBI Recommendations linked to the other components are unaffected and remain in the Approved state.The Inspection Tasks previously linked to the recommendations are unlinked from the recommendations. However, the tasks remain linked to the asset.If RBI Recommendations are created or generated, the resulting recommendations populate the Inspection Plan.If the Inspection Plan is in the Approved State:The plan is moved from the Approved to Modified state.An Inspection Plan Revision record is created and linked to the existing Inspection Plan.For each existing recommendation record linked to the Inspection Plan, a Recommendation Revision record is created and linked to the Inspection Plan Revision.Access an Inspection PlanYou can access an Inspection Plan for an asset, component, and RBI Criticality Analysis.ProcedureAccess the Asset Summary workspace for the asset for which you want to access the Inspection Plan.The Asset Summary workspace appears.Note: You can also access the related Inspection Plan for a component and Criticality Analysis. Select the Inspection Plan link.The Inspection Plan workspace appears.Note: If an Inspection Plan does not exist, a message stating so appears. Inspection Plans are created and linked to an asset when an analysis for at least one associated component is moved to the Risk Completed state.Delete an Inspection PlanYou can delete Inspection Plans that are obsolete or unnecessary.Before You BeginYou must have one of the following Security Roles:MI Inspection Plan ApproverMI Compliance AnalystProcedureAccess the Inspection Plan that you want to delete.In the Inspection Plan page, select .The Confirm Delete window appears, asking you to confirm that you want to delete the Inspection Plan.Select Yes.The Inspection Plan is deleted. Note: An Inspection Plan cannot be deleted if it has recommendations.Approve an Inspection Plan Any user with the MI Inspection Plan Approver Security Role can move an Inspection Plan to the Approved state. After the Inspection Plan is approved, recommendations can be implemented as tasks.About This TaskWhen an Inspection Plan is in the Approved state, you can create new Inspection Tasks or link existing Inspection Tasks to the related recommendations. The Inspection Tasks are transferred to the Inspection Management module.ProcedureAccess the Inspection Plan that you want to approve.In the Proposed box, select Approve, and then select Done.A message appears, stating that the Inspection Plan has been approved.Note:
+After you approve an Inspection Plan, you cannot delete, supersede, or designate recommendations as Not Required. You must first move them to the Modified state.While the Inspection Plan is being modified, you cannot delete, supersede, or designate recommendations as Not Required. 
+
+
+
+
+
+On this pageAbout Inspection PlansStates of an Inspection PlanAbout Inspection Plan ApprovalAbout Modifying an Inspection PlanAccess an Inspection PlanDelete an Inspection PlanApprove an Inspection Plan 
+
+
+
+
+
+
+
+
+

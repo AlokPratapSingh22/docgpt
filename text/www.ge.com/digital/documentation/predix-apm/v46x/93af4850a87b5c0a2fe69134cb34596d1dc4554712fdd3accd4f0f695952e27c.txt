@@ -1,0 +1,130 @@
+
+
+
+Catalog Items | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+ReferenceGeneral Reference
+Data Models
+Family Field Descriptions
+Calculations
+Family Search Configuration
+ASM Integration
+Inspection Strategies
+RBI Policies
+Catalog Items
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Reference
+Catalog Items
+
+
+
+
+
+
+
+Catalog ItemsRBI 581 Queries Folder
+The Catalog folder \\Public\Meridium\Modules\Risk Based Inspection - 581\Queries contains the following items.
+Item NameBehavior and UsageActive Analyses for Evergreening - 581Returns a list of the RBI 581 Risk Analysis records for RBI Components linked to RBI assets that satisfy the following conditions:Are related to the given Functional Location or Process Unit key. Are in the active state.Have an evergreening Batch ID.This query is used on the RBI Bulk Evergreening page, in the Active section when the RBI Analysis Type Preference is set to RBI 581.Analyses Created For Evergreening - 581
+Returns a list of the RBI 581 Risk Analysis records for RBI Components linked to RBI assets that satisfy the following conditions:Are related to the given Functional Location or Process Unit key. Are in the Created state.Have an evergreening Batch ID.This query is used on the RBI Bulk Evergreening page, in the Created section when the RBI Analysis Type Preference is set to RBI 581.
+Important: Do not modify the following columns: Analysis ID, Component, Component Entity Key, Asset ID, ENTY_KEY, Analysis Entity Key, and Risk Category. Modifying these columns may affect the Calculate functionality during the evergreening process.
+Analyses Ready for Evergreening -581
+Returns a list of the RBI 581 Risk Analysis records for RBI Components linked to RBI assets that satisfy the following conditions:Are related to the given Functional Location or Process Unit key.Are in the active state.Have not been evergreened.Have not been calculated in the last five years.This query is used on the Risk Based Inspection Overview  page, in the Pending Reassessment section when the RBI Analysis Type Preference is set to RBI 581.
+
+Important: Do not modify the ENTY_KEY column. Modifying this column may affect the duplicate functionality during the evergreening process.
+
+Analyses Ready for Evergreening for Unit - 581
+Returns a list of the RBI 581 Risk Analysis records for RBI Components linked to RBI assets that satisfy the following conditions:Are related to the given Functional Location or Process Unit key.Are in the active state.Have not been evergreened.This query is used on the RBI Bulk Evergreening page, in the Pending Evergreening section when the RBI Analysis Type Preference is set to RBI 581.
+
+Important: Do not modify the ENTY_KEY column. Modifying this column may affect the duplicate functionality during the evergreening process.
+
+Asset Corrosion Analysis More Current Than RBI 581 AnalysesReturns a list of all the assets linked to a Functional Location that have a TM Asset Corrosion Analysis more current than the active RBI analysis in the component. This query is used on the Risk Based Inspection Overview  page, in the Inspection/TM Updates pane if you do not have an active RBI 580 license.Assets with No Recommendations (581 Only)Returns a list of all assets linked to a Functional Location that have no RBI Recommendations and have at least one component with a Risk Completed analysis. This query is used on the Risk Based Inspection Overview  page, in the No Recommendations pane if you do not have an active RBI 580 license.Important: Do not modify the Asset Entity Key field. Modifying this field may affect the generate recommendation functionality.Data Export Analyses - 581Returns a list of the RBI 581 Risk Analyses available for export and that meets the following conditions:Are related to the given Functional Location or Process Unit key.Are in the active state.Are in the Created state.This query is used on the RBI Analysis Export page, when the RBI Analysis Type Preference is set to RBI 581.Display RBI Components for Inventory GroupReturn a list of RBI Components related to Inventory Groups.Important: Do not modify the ENTY_KEY column. Modifying this column may affect the functionality.Inspections More Current Than RBI 581 AnalysisReturns a list of all the assets linked to a Functional Location that have Inspections more current than the active RBI analysis in the component. This query is used on the Risk Based Inspection Overview  page, in the Inspection/TM Updates pane if you do not have an active RBI 580 license.Process Units with Inventory GroupsReturns a list of process units that are linked to at least one inventory group and a count of how many inventory groups are related. This query is used to display the Process Units with Inventory Groups graph under the RBI Admin Preferences for Inventory Groups. This query is used to display the Process Units with Inventory Groups graph under the RBI Admin Preferences for Inventory Groups.RBI 581 Consequence EvaluationReturns the RBI 581 Consequence Evaluation records that are associated with the RBI 581 Analysis. This query is used on the Consequence Evaluations tab when viewing an RBI 581 Analysis. Important: Do not modify the ENTY_KEY column. Modifying this column may affect the functionality.RBI Components for Inventory GroupReturns a list of RBI Components related to Inventory Groups. Important: Do not modify the ENTY_KEY column. Modifying this column may affect the functionality.RBI-581 DM QueryReturns a list of Degradation Mechanism records that are linked to an RBI 581 Analysis. This query is used on the Degradation Mechanisms tab when viewing an RBI 581 Analysis. Important: Do not modify the following columns:UnmitigatedRiskKeyMitigatedRiskkeyDMEntityKeyModifying these columns may affect the functionality. 
+Inspection Plan Queries
+The Catalog folder \\Public\Meridium\Modules\Inspection\Compliance\Queries contains the following queries used in the Inspection Plan workflow.
+ Query  Behavior and Usage Compliance Recommendations by PlanDisplays Recommendations based on the Inspection Plan.The following columns in the query must be used, and the aliases must contain the following values.ColumnAlias[MI_COMP_RECOMM].ENTY_ID AND [MI_RBIRECOM].ENTY_IDREC_ENTY_ID[MI_COMP_RECOMM].ENTY_KEY AND [MI_RBIRECOM].ENTY_KEYREC_ENTY_KEY[MI_TASKINSP].[MI_TASK_ID]Task IDa."SUCC_ENTY_KEY"Linked Actions[MI_TASKINSP].ENTY_KEYTASK KEY{MIR_RBICRAN}.PRED_ENTY_KEYNote: For Compliance Recommendations, the column must be set to NULL. For RBI Consolidated Recommendations, the column must be set to 0.Comp KeyPRED_ENTY_KEYNote: For Compliance Recommendations, the column must be set to NULL. For RBI Consolidated Recommendations, the column must be set to 0.Analysis KeyMI_SM_STATES.SMST_IDSTATE_ID[MI_COMP_RECOMM].FMLY_KEY AND [MI_RBIRECOM].FMLY_KEYFMLY_KEY[MI_RBIRECOM].[MI_RBIRECOM_NONRE_FLG]NonRecurring?Important: \\Public\Meridium\Modules\Inspection\Compliance\Queries\Compliance Superseded Recommendation Counts is a subquery and must not be removed from the parent query. In this subquery, the SUCC_ENTY_KEY column is required, and the alias must not be modified. Compliance Recommendations to SupersedeDisplays Recommendations for a given entity keys. This query is used to select the master Recommended Action while superseding Compliance Recommendations in the Recommendation section of the Inspection Plan page.Important: The [MI_RBIRECOM].ENTY_KEY column must not be removed, and the alias REC_ENTY_KEY must not be modified.Compliance Superseded RecommendationsDisplays a list of Consolidated and Superseded Recommendations. This query is used to access the linked actions in the Inspection Plan page.Note: The [MI_RBIRECOM].ENTY_KEY column must not be removed, and the alias REC_ENTY_KEY must not be modified.Inspection Tasks for AssetDisplays the Inspection Tasks for an asset. This query is used to access the Existing Tasks in the Inspection Plan page. Important: In the WHERE criteria, the ID of the parameter must be ASSET_ENTY_KEY.Compliance Superseded Recommendation CountsReturns the count of Consolidated and Superseded Recommendations. This query is used in the Recommendation section of the Inspection Plan page.Inspection Tasks Available to ImplementDisplays the Inspection Tasks available to implement for a Compliance Recommendation. This query is used to access the Inspection tasks after selecting the Implement button in the Inspection Plan page.Recommended Actions by Selected PlansDisplays unimplemented actions from a given Inspection Plan. This query is used in the Inspection Plan page. The following columns in the query must be used, and the aliases must not be changed.
+ColumnAlias[MI_COMP_RECOMM].ENTY_ID AND [MI_RBIRECOM].ENTY_IDREC_ENTY_ID{MIR_ASST_HAS_INSP_PLAN}.PRED_ENTY_KEYASSET_KEY
+Important: In the WHERE clause, the ID of the parameter must be ENTY_KEYS.
+Link Existing Task to Recommended ActionReturns an Inspection Task to link to a given Recommendation based on Asset and Task Type. This query is used in the Inspection Plan page. The following columns in the query must be used, and the aliases must not be changed.
+ColumnAlias[MI_TASKINSP].ENTY_KEYENTY_KEY
+Important: In the WHERE clause, the following parameter IDs must be provided and not modified:TASK_TYPEASSET_KEY
+
+All Inspection Plans for UnitReturns all Inspection Plans for the selected location in the hierarchy. This query is used to access all the Inspection plans in the Inspection Plan Management page.Active Recommendations of Plans for UnitReturns all active recommendations for Inspection Plans for the selected location in the hierarchy. This query is used to view active recommendations in the Inspection Plan Management page.Inspection Plan RevisionsDisplays the Inspection Plan Revisions for a given Inspection Plan. This query is used to retrieve the revisions for an Inspection Plan.Important:
+The column [MI_INSP_PLAN_REV].[MI_INSP_PLAN_REV_REVI_DATE_D] must not be removed and its alias must not be changed.In the WHERE clause, the ID of the parameter must be PLAN_ENTY_KEY.
+Compliance Recommendation Revisions for Inspection PlanDisplays the Recommendation Revision records for a given Inspection Plan Revision. This query is used in the Inspection Plan page to view the revisions for a Recommendation.Important:
+The column [MI_COMP_REC_REV].[MI_REC_ID] must not be removed and its alias must not be changed.In the WHERE clause, the ID of the parameter must be PLAN_REV_ENTY_KEY.
+
+Risk Based Inspection Queries Folder
+The Catalog folder \\Public\Meridium\Modules\Risk Based Inspection\Queries contains the following queries which are relevant to the RBI 581 workflow.
+ Query  Behavior and Usage Asset Corrosion Analysis More Current than All AnalysesReturns a list of all the assets linked to a Functional Location that have a TM Asset Corrosion Analysis more current than the active RBI analysis in the component. This query is used on the Risk Based Inspection Overview page under the Inspection/TM Updates pane when both Risk Based Inspection and RBI 581 are licensed.Assets with No RecommendationsReturns a list of all the assets linked to a Functional Location that have no RBI Recommendations and have at least one component with a Risk Completed analysis.This query is used on the Risk Based Inspection Overview page under the No Recommendations pane when both Risk Based Inspection and RBI 581 are licensed.Important:  Do not modify the Asset Entity Key field. Modifying this field may affect the generate recommendation functionality.Current RiskReturns a list of the current rolled-up risk for each asset linked to a Functional Location. This query is used under the Current Risk query widget on the Risk Based Inspection Overview page.Current Risk OverviewReturns a list of the highest Risk Category for each asset linked to a Functional Location and gives a count.This query is used under the Current Risk Overview graph widget on the Risk Based Inspection Overview page.Inspections More Current Than All AnalysisReturns a list of all the assets linked to a Functional Location that have Inspections more current than the active RBI analysis in the component.This query is used on the Risk Based Inspection Overview under the Inspection/TM Updates tile when both Risk Based Inspection and RBI 581 licenses are active.
+Past RiskReturns a list of the past rolled-up risk for each asset under a Functional Location. This query is used under the Past Risk query widget on the Risk Based Inspection Overview page.Past Risk OverviewReturns a list of the highest Risk Category for each asset Under a Functional Location and gives a count.This query is used under the Past Risk Overview graph widget on the Risk Based Inspection Overview page.Process Unit QueryReturns a list of the underlying Process Units for the selected level of the asset hierarchy.This query is used on the Risk Based Inspection Overview page under the Process Units tile.RBI Assets for a Functional LocationReturns a list of all the assets linked to a Functional Location.This query is used on the Risk Based Inspection Overview under the Assets tile.RBI Components for an AssetReturns a list of all the RBI Components for a given asset.This query is used under the Asset Hierarchy Navigation menu to display the count of components on the Risk Based Inspection hyperlink.Review Analyses by Asset 581Returns a list of all the RBI 581 Risk Analysis records that are calculated in the Created state for the Equipment or Functional Location record for which you accessed the RBI asset.This query is used when Finalizing Risk from the Risk Based Inspection Overview page under the Assets pane.Review Analysis by Corrosion Loop 581Returns a list of all the RBI 581 Risk Analysis records that are calculated in Created state for the Corrosion Loop record for which you accessed the RBI asset.This query is used when Finalizing Risk from the Process Unit Overview page.Select RBI ComponentsReturns a list of the RBI Components that are:Linked to Asset records.Not linked to Corrosion Loop record.This query is used to display available components which can be linked to corrosion loops.
+
+
+
+
+
+On this pageRBI 581 Queries Folder
+
+
+
+
+
+
+
+
+

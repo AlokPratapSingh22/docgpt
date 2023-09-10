@@ -1,0 +1,402 @@
+
+
+
+Catalog Items | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Reports
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Reference
+Catalog Items
+
+
+
+
+
+
+
+Catalog ItemsAbout the Catalog Items Used by PROACT Reports
+The Catalog folders \\Public\Meridium\Modules\RCA and \\Public\Meridium\Modules\RCA\SSRS contain items that are used to support RCA reports. The Catalog items used by the Comprehensive Analysis Report are located in the SSRS folder, and the catalog items used by the individual reports are located in the RCA folder. 
+Note:  A copy of the catalog items used by the individual reports also exists in the SSRS folder, but the GE Digital APM system does not use these items.
+Catalog Items Used by the Comprehensive Analysis Report
+The following table lists the name and description of the subreports that are used to generate the Comprehensive Analysis Report, any queries that support the subreports, and the Comprehensive Analysis Report sections that the subreports and supporting queries are used to generate.
+SubReport NameSupporting QueryBehavior and UsageComprehensive Analysis Report Section
+AAAGPage
+
+None
+
+Provides an introduction to the PROACT RCA Analysis-At-A-Glance Overview section.
+
+
+Analysis-At-A-Glance
+
+
+AAAGReview
+
+
+HypothesisCount
+
+RecommendationMatrix Query
+
+RootCauseCountTaskAssignedCount Query
+
+TaskAssignedCount Query
+
+TaskCompletedCount Query
+
+VerificationAssignedCount
+
+VerificationCompletedCount
+
+
+Provides a summary of the RCA, which includes data such as the name of the RCA, the name of the Principal Analyst, the start date, and the estimated completion date.
+
+
+PROACT RCA Analysis-At-A-Glance Overview
+
+
+AnalzyePage
+
+None
+
+Provides information about the Analyze step of a Root Cause Analysis.
+
+
+Analyze
+
+
+CommunicatePage
+
+None
+
+Provides information about the Communicate step of a Root Cause Analysis.
+
+
+Communicate
+
+
+Comprehensive Report
+
+None
+
+Provides necessary input for the Comprehensive Analysis Report.
+
+None
+
+Cover
+
+Cover Query
+
+Provides basic analysis information, such as the Analysis Name, Principal Analyst, and the date on which the report was generated.
+
+
+Cover Page
+
+
+CSF
+
+CSF Query
+
+Provides a list of the Critical Success Factors that are defined for the RCA.
+
+
+Critical Success Factors
+
+
+CSFMain
+
+CSF Query
+
+Provides the charter and the Critical Success Factors that are defined for the RCA.
+
+
+
+Charter
+
+
+
+Critical Success Factors
+
+
+
+DataCollection
+
+DataCollection Query
+
+Provides a list of the RCA Preserve Items that are included in the RCA.
+
+
+Data Collection
+
+
+DataCollectionFileLink
+
+DataCollectionFileLink Query
+
+Provides a list of the RCA Preserve Items that are included in the RCA.
+
+
+Data Collection File Links
+
+
+EventDiagram
+
+EventDiagramImage Query
+
+Provides an image of the Event Diagram that exists for the RCA
+
+
+Event Diagram
+
+
+EventSummary
+
+None
+
+Provides information stored in the Event Narrative and the Mechanism fields of the Root Cause analysis.
+
+
+Event Summary
+
+
+LogicTree
+
+LogicTreeImage Query
+
+Provides an image of the Logic Tree that exists for the RCA.
+
+
+Logic Tree
+
+
+OrderPage
+
+None
+
+Provides information about the Order step of a Root Cause Analysis.
+
+
+Order
+
+
+PreservePage
+
+None
+
+Provides information about the Preserve step of a Root Cause Analysis.
+
+
+Preserve (5 P's)
+
+
+RecommendationFileLinks
+
+RecommendationFileLinks Query
+
+Provides a list of the Reference Documents that are linked to the RCA Recommendations that are included in the RCA.
+
+
+Recommendation File Links
+
+
+RecommendationSummary
+
+None
+
+Provides a list of the RCA Recommendations that are included in the RCA.
+
+
+Executive Summary Recommendations
+
+
+TableOfContent
+
+None
+
+Provides a list of the titles of the sections that are included in the Comprehensive Analysis Report.
+
+
+Topics Included in this Report
+
+
+TeamMemberPrincipal
+
+TeamMemberPrincipal Query
+
+Identifies the Principal Analyst and identifying information from the associated Human Resource (e.g., name and contact information).
+
+
+Team Members
+
+
+TeamMembers
+
+TeamMember Query
+
+Provides a list of the team members who belong to the RCA Team, including various identifying information from the associated Human Resources (e.g., name and contact information).
+
+
+Team Members
+
+
+TrackingSummary
+
+Tracking Query
+
+Provides information from the RCA Tracking Items that are linked to the RCA.
+
+
+Tracking Item Summary
+
+
+TrackPage
+
+None
+
+Provides information about the Track step of a Root Cause Analysis.
+
+
+Track
+
+
+VerificationFileLinks
+
+VerificationFileLink Query
+
+Provides a list of the Reference Documents that are linked to the RCA Verifications that are included in the RCA.
+
+
+Verification Log File Links
+
+
+VerificationLogs
+
+Verification Query
+
+Provides a list of the RCA Verifications that are included in the RCA.
+
+
+Verification Logs
+
+
+Each supporting query that is listed in this table contains a prompt on the ENTY_KEY field of the RCA family. When you run a report from the Reports List page, the ENTY_KEY of the RCA associated with the current RCA is passed automatically to the prompt. After the ENTY_KEY is passed, the results for the current RCA are displayed. If you run an RCA report or query from the Catalog, however, you will need to supply the ENTY_KEY for an RCA manually to retrieve results.
+Catalog Items Used by the Individual Reports
+The following table provides a description of the baseline individual RCA reports. Each report is built upon a supporting query or dataset that is stored in the same folder as the report itself. Each report is a formatted view of the corresponding query or dataset. For additional details on the data that is included in the report, you can run the query itself.
+Report NameSupporting QueryBehavior and Usage
+Analysis Summary Report
+
+Analysis Summary Query
+
+Provides a summary of the information that is stored in a given RCA, including information about the piece of equipment or location associated with the RCA.
+
+Cause Report
+
+Analyze - Cause Query
+
+For a given RCA, provides a list of the associated RCA Hypotheses whose State field contains the value Cause Human, Cause Latent, or Cause Physical. 
+
+Logic Tree Summary Report
+
+Analyze - Logic Tree Summary Query
+
+Provides a summary of the RCA Hypotheses that exist in the Logic Tree of a given RCA. This report includes a graph that provides a visual representation of the number of RCA Hypotheses that are designated as Cause Human, Cause Latent, and Cause Physical and a count of the total number of RCA Hypotheses not designated as any "cause."
+
+Verification Report
+
+Analyze - Verification Query
+
+Provides a list of the RCA Verifications that are associated with an RCA, including the outcome of each verification and the name of the RCA Hypothesis to which it is linked.
+
+Team Member Report
+
+Order - Team Member Query
+
+Provides a list of the team members who belong to an RCA Team, including various identifying information from the associated Human Resource (e.g., name and contact information).
+
+Preserve Items Report - Group by Category
+
+Preserve - Report Query
+
+Provides a list of the RCA Preserve records that are linked to an RCA, grouped according to the following Data Categories: Parts, Paper, People, Position, Paradigms.  
+
+Preserve Items Report - Group by Team Member
+
+Preserve - Report Query
+
+Provides a list of the RCA Preserve records that are linked to an RCA, grouped according to the team member who is responsible for the item.
+
+Each supporting query contains a prompt on the ENTY_KEY field of the RCA family. When you run a report from the Reports List page, the ENTY_KEY of the RCA associated with the current RCA is passed automatically to the prompt. After the ENTY_KEY is passed, the results for the current RCA are displayed. If you run an RCA report or query from the Catalog, however, you will need to supply the ENTY_KEY for an RCA manually to retrieve results.
+
+
+
+
+
+On this pageAbout the Catalog Items Used by PROACT ReportsCatalog Items Used by the Comprehensive Analysis ReportCatalog Items Used by the Individual Reports
+
+
+
+
+
+
+
+
+

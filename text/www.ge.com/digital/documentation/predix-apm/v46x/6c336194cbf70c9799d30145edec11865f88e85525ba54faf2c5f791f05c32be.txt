@@ -1,0 +1,145 @@
+
+
+
+Event Transitions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+AdminAccess the GAA Administrator Page
+GAA Administrator Workflow
+System Codes
+Event Categories
+Event Types
+Cause Codes
+Amplification Codes
+Fuel Types
+Mapping Records
+Event Transitions
+Companies
+Plants
+Units
+Unit Capacity
+Performance Record and Report Configuration
+
+
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Admin
+Event Transitions
+
+
+
+
+
+
+
+Event TransitionsAbout Event TransitionEvent transition is the concept of starting an event only if another event ends. The first event is called the parent event; the second event is called the related event. The related event starts immediately after the parent event ends. Therefore, the value in the Event Start field in the related event is the same as the value in the Event End field in the parent event.The following image shows how the two events in a transition are related.
+
+North American Electric Reliability Corporation (NERC) and Canadian Electricity Association (CEA) provide details on whether two events can be included in a transition based on their event types. Therefore, before you add an Event Transition for two events, you must determine which one of the following conditions exists:It is acceptable for the events to be in transition.It is not acceptable for the events to be in transition.It is acceptable for the events to be in transition only if certain conditions are satisfied (only for CEA).Example: Event Transition from a Parent Event to a Related Event
+Suppose that an event, D1 must be followed by an event, D2 only. When you create an Event Transition, in the From Event Type field, select D1 and in the To Event Type field, select D2. When you create a Related Event for D1, the Capacity Event Type drop-down box will contain the value D2.
+Event Transition Workflow
+This topic provides a basic workflow for using the Event Transition feature, as well as links to the available procedures, concepts, and reference topics.
+
+Add an Event Type for each event in the transition.
+Create an Event Transition such that:In the From Event Type field, select the value that matches the value in the Event Type Code field in the Event Type of the parent event.In the To Event Type field, select the value that matches the value in the Event Type Code field in the Event Type of the related event.
+
+Create an Event record for the parent event. In the Capacity Event Type field, select the value that matches the value in the Event Type Code field in the Event Type of the parent event.
+
+Create a Related Event for the parent event. In the Capacity Event Type field, select the value that matches the value in the Event Type Code field in the Event Type of the related event.
+Note: The list of values in the Capacity Event Type field in the related event is filtered based on the value in the Capacity Event Type field in the parent event.
+If you have entered a condition in the Validation Rule field in the Event Transition, then GE Digital APM determines if the condition is satisfied. If it is not, a message appears below the Capacity Event Type, Cause Code, and Net Derate Amount fields on the Related Event datasheet, specifying the condition that must be satisfied. 
+
+Access an Event TransitionProcedure
+Access the GAA Administrator page.Select the Mappings tab, and then select Event Transition.
+The Event Transition subsection appears, displaying the following columns of information:
+From Event TypeTo Event TypeValidation Rule
+
+
+
+Locate the row for the Event Transition that you want to access.In the From Event Type column, select the link.
+The Edit Event Transition window appears, displaying the datasheet of the selected Event Transition. 
+Note: As needed, you can modify the values in the available fields, and then select  to save your changes.
+Create an Event TransitionBefore You Begin
+
+Add an Event Type for each event in the transition.
+Procedure
+Access the GAA Administrator page.Select the Mappings tab, and then select Event Transition.
+The Event Transition subsection appears.
+
+
+
+In the upper-left corner of the subsection, select .
+The Add Event Transition window appears.
+As needed, enter values in the available fields.Select .
+The Event Transition is created. 
+Delete an Event TransitionProcedure
+Access the GAA Administrator page.Select the Mappings tab, and then select Event Transition.
+The Event Transition subsection appears.
+Select the row for the Event Transition that you want to delete.In the upper-right corner of the section, select .
+The Delete Event Transition dialog box appears, asking you to confirm that you want to delete the selected Event Transition.
+Select Yes.
+The selected Event Transition is deleted, and the updated list of Event Transitions appears.
+
+
+
+
+
+On this pageAbout Event TransitionEvent Transition WorkflowAccess an Event TransitionCreate an Event TransitionDelete an Event Transition
+
+
+
+
+
+
+
+
+

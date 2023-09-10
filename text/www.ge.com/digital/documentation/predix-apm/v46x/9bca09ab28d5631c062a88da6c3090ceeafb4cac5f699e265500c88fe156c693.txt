@@ -1,0 +1,102 @@
+
+
+
+Resources | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System ReliabilitySystem Reliability: Overview
+System Reliability: Workflow
+System Reliability Analyses 
+Resources
+System Scenario
+Diagrams
+Risks
+Actions
+Global Events
+Grid View
+Simulations
+
+
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+System Reliability
+Resources
+
+
+
+
+
+
+
+ResourcesAbout ResourcesResources are optional components in a System Reliability Analysis that represent physical parts or materials, such as spare bearings or seals, or human resources, such as mechanics or technicians, that you may want to use within the analysis. Associating a Resource with an Action or a Risk will create a System Resource Usage Record, which is linked to the appropriate System Action or System Risk record, which will store information that specifics how the resource will be used (e.g., the quantity and duration).Access a ResourceProcedure
+Access the System Reliability Analysis whose resource you want to view.In the Analysis Summary workspace, select the Resources tab.
+The Resources section appears, displaying a list of resources for the selected System Reliability Analysis.
+
+
+
+Create a ResourceProcedure
+Access the Resources section.Select .The Add New Resource subsection appears.As needed, enter values in the available fields.Select .The resource is created.Delete a ResourceProcedure
+Access the Resources section.Select the row containing the resource that you want to delete, and then select .A dialog box with a confirmation message appears.Select OK.The selected resource is deleted.
+
+
+
+
+On this pageAbout ResourcesAccess a ResourceCreate a ResourceDelete a Resource
+
+
+
+
+
+
+
+
+

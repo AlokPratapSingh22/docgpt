@@ -1,0 +1,1322 @@
+
+
+
+SIL Verification | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+SIL Verification
+
+
+
+
+
+
+
+SIL VerificationAbout Safety Integrity Level (SIL) VerificationAfter you assess the SIL level of an instrumented function, you must verify if the safety instrumented system meets the targeted SIL level. To facilitate this verification, the SIL Verification feature allows you to create a protective instrument loop, and then calculate the SIL level for the loop.About Protective Instrument LoopsA protective instrument loop consists of interconnected instruments that work together to serve a function that is defined for the safety instrumented system within which they exist. When you create a protective instrument loop in SIS Management, you are creating a Protective Instrument Loop record. When you define the elements of the protective instrument loop (i.e., the interconnected instruments), you are creating records in the Protective Instrument Loop Element family and its subfamilies, and linking them to the Protective Instrument Loop. Throughout this documentation, when we refer to the protective instrument loop, we are referring to the Protective Instrument Loop and all the records that are linked to it. When we refer to Protective Instrument Loop Elements, we are referring to the records that are linked to the Protective Instrument Loop.Protective Instrument Loop Elements
+Each instrument in a protective instrument loop is called an element. The following protective instrument loop elements are defined in the GE Digital APM system:
+Logic SolverSensor System Sensor Group Sensor Final Element System Final Element Group Final Element 
+By default, every protective instrument loop consists of at least one of each element. When you create a Protective Instrument Loop, the GE Digital APM system creates one record for each of these elements, and links to the Protective Instrument Loop as shown in the data model.
+Protective Instrument Loop Diagram
+A protective instrument loop diagram is a visual representation of the number of each type of elements in the protective instrument loop. The following image shows the baseline protective instrument loop diagram.
+
+
+
+To access or modify the datasheet of a protective instrument loop element, you must select the corresponding node in the diagram. 
+Important: If you have provided incorrect or insufficient information for a protective instrument loop element, then the GE Digital APM system cannot calculate the loop results. This is indicated by a  icon that appears in the diagram for that element. You must then review the details of the element in the datasheet.
+About Protective Instrument Loop Calculation EngineGE Digital APM supports the following calculation engines for the calculation of loop results in an SIL analysis:exSILentia v3exSILentia v4The usage of exSILentia v4 calculation engine in GE Digital APM provides improved accuracy in the calculated results. In addition, the following functionalities are provided:You can specify if redundant I/O channels must be on separate modules for an instrumented function.You can specify group level Mission Time for a Sensor Group, Logic Solver, and Final Element Group.
+The ability to specify a Proof Test Scope for Final Elements is available. The exSILentia v4 calculation engine includes updates as per the latest revision of IEC 61511. The basis for Architectural Constraints only includes IEC 61511:2016 and IEC 61508:2010.To enable a Protective Instrument Loop or Protective Instrument Loop Template to use the exSILentia v4 calculation engine, you must upgrade the loop.Safety Integrity Level (SIL) Verification WorkflowThis workflow provides the basic, high-level steps for performing a Safety Integrity Level (SIL) verification. The steps and links in this workflow do not necessarily reference every possible procedure.Performing an SIL Verification includes the following steps:
+Create a Protective Instrument Loop. After you create a Protective Instrument Loop, the GE Digital APM system creates one record for each of its elements.
+Provide the details of the following elements of the loop in the corresponding records:
+ Sensor System  Sensor Group  Sensor  Logic Solver  Final Element System  Final Element Group  Final Element 
+ If there are additional elements in the loop apart from the default ones, create records for them. The GE Digital APM system builds the diagram based on the elements that you have added. 
+Compare the calculated results of the loop to verify if the Safety Integrity Level (SIL) target is achieved.About Asset Groups in SIS ManagementWhen you create an Instrumented Function in SIS Management, you can associate it with a piece of Equipment and a Functional Location. The piece of Equipment and the Functional Location together form an Asset. The Asset that is associated with the Instrumented Function is the asset that you are protecting. Similarly, when you create a Protective Instrument Loop, you can associate each element in the loop with a piece of Equipment and a Functional Location. The Assets that are associated with the individual Protective Instrument Loops are the ones that are required to protect the Asset associated with the Instrumented Function.The GE Digital APM system creates an asset group for each Protective Instrument Loop. This group contains all the Equipment and Functional Locations associated with each sensor, logic solver, and final element in the loop. This group is named in the following format: <The ID of the SIL Analysis ID>/<ID of the Instrumented Function>/<ID of the Protective Instrument Loop> Asset Group. The GE Digital APM system updates this group when you add a new element to the loop, remove an element from the loop, or associate an existing element with a new Equipment or Functional Location.You can search for these groups on the Assets page.About Validation Failure Rate Reference DataFailure rate reference data refers to data that exists to record trends in failure rates for categories of elements that exist in a protective instrument loop. These elements can be categorized by application, technology, size, or any other technical characteristic. Before you add an element to a protective instrument loop, you can consider the failure rate reference data that is associated with that element type, and then make a decision on whether or not to use that particular element.Validation failure rate reference data is available for the following records:Sensor Logic Solver Final Element The Is Reference Data check box in these records is set to True. Note: By default, the Is Reference Data check box is not included on the datasheet. This field is used by the GE Digital APM system, and is not meant to be modified manually.When you create a Protective Instrument Loop Element via the Validation Failure Rate Reference Data feature, the GE Digital APM system will automatically select the Is Reference Data check box in that record.About Approving a Device for Use
+You can use the Validation Failure Rate Reference Data feature to determine which elements are approved for use with a protective instrument loop. After you have determined that a given element is approved, you can select the Approve button in the upper-right corner of the datasheet. When you do so, the GE Digital APM system will automatically select the Approved Custom Device check box in that record, and it will be available for selection in the SIL Verification feature.
+If you later determine that an element is no longer approved for use in a protective instrument loop, you can revoke that approval in the record. 
+Note: To approve a Protective Instrument Loop Element, you must be a member of the SIS Administrator or SIS Engineer Security Group.
+About Copying a Protective Instrument Loop ElementWhen you copy a Protective Instrument Loop Element:The values in each field of the copied record are overwritten by those of the original record that you copy.The value in the Element ID field in the copied record is appended with 1.All the child records linked to the original record also become a part of the record that you copy, replacing the existing ones. For example, consider two protective instrument loops, Loop 1 and Loop 2, with the following sensor systems, sensor groups, and sensors:
+
+Suppose you copy Sensor Group 3 into Sensor Group 1: The values for all the fields in Sensor Group 1 are overwritten by those in Sensor Group 3.The ID for Sensor Group 1 becomes Sensor Group 3 1.Sensor 1 and Sensor 2 are replaced by Sensor 3. If Sensor 1 and Sensor 2 are not part of another protective instrument loop, they are deleted. Otherwise, they are unlinked from Loop 1.The following image illustrates the changes in Loop 1 after you copy Sensor Group 3 :
+
+About Dangerous Combination of OutputsWhen you define a Protective Instrument Loop Final Element, you must define the potential hazards that can occur if the output state associated with the final element is combined with the output state associated with another final element. While the output state associated with individual final elements is safe, in some cases, when output states associated with multiple final elements are combined, a hazardous event can occur. For example, if the output state associated with Final Element A has the potential to fill a tank half full, and the output state associated with Final Element B has the potential to fill the same tank half full, these combined output states have the potential to overflow the tank. In this way, Final Element A and Final Element B have a combined output state hazard.You can document combined output state hazards that exist for final elements in the Dangerous Combination of Outputs section in the Protective Instrument Loop Final Element. In other words, for each final element that participates in a potentially hazardous relationship, you will need to define the combined output state hazard(s) for that final element.Steps in Defining Dangerous Combination of Outputs
+To define combined output state hazards for a final element, you must:
+Link the Protective Instrument Loop Final Element to the other Protective Instrument Loop Final Element representing the final element whose output state can cause a hazard when combined with the output state of the current final element. Protective Instrument Loop Final Elements can be linked to one or more other Protective Instrument Loop Final Elements through the Has Hazardous Event relationship.Describe the hazardous event that can occur when the output states are combined. Since some final elements can participate in multiple combined output state hazard scenarios, in each Protective Instrument Loop Final Element, you will need to describe the hazardous events that are associated with that final element. In other words, describing the hazardous event in one Protective Instrument Loop Final Element will not populate the linked Protective Instrument Loop Final Element with the same description.
+Access a Protective Instrument LoopProcedure
+Access the Instrumented Function that is linked to the Protective Instrument Loop that you want to access.In the workspace, select the SIL Verification tab.
+The SIL Verification section appears, displaying a list of Protective Instrument Loops in the Instrumented Function.
+
+
+
+Select the Protective Instrument Loop that you want to access.
+The datasheet for the Protective Instrument Loop appears.
+
+
+
+If needed, modify values in the available fields.In the upper-right corner of the datasheet, select .
+The changes made to the Protective Instrument Loop are saved.
+If you want to access the loop diagram and calculations, in the upper-right corner of the workspace, select Loop Diagram & calculation.
+The loop diagram and calculations appear.
+
+
+
+Create a Protective Instrument LoopBefore You Begin
+
+Assess the Safety Integrity Level (SIL) for the Instrumented Function.
+Procedure
+Access the Instrumented Function for which you want to create a Protective Instrument Loop.In the workspace, select the SIL Verification tab.The SIL Verification section appears, displaying a list of Protective Instrument Loops in the Instrumented Function.
+In the upper-right corner of the section, select .A blank datasheet for the Protective Instrument Loop appears.
+As needed, enter values in the available fields. In the upper-right corner of the datasheet, select .
+The Protective Instrument Loop is created.
+Results
+
+The GE Digital APM system creates one record for each of the following elements:
+Sensor SystemSensor GroupSensorLogic SolverFinal Element SystemFinal Element GroupFinal Element
+
+What To Do Next
+If there are additional elements in the loop apart from the ones created by the GE Digital APM system, create records for them. Provide the details of the elements in the corresponding records.
+Create a Proven In Use Justification RecordProcedureAccess one of the following subsystems associated with the device for which you want to create the Proven In Use Justification record:
+
+A Sensor in a Protective Instrument Loop
+
+A Final Element in a Protective Instrument Loop
+
+A Custom Device (i.e., a Custom Sensor or a Custom Final Element)
+A Sensor in a Protective Instrument Loop Template 
+
+A Final Element in a Protective Instrument Loop Template
+
+At the end of the datasheet for the selected subsystem, in the section that contains the list of associated Protective Instrument Devices, select the link in the ID column.
+The Device Details window appears, displaying the datasheet for the selected Protective Instrument Device.
+
+
+
+In the lower-right corner of the window, select Justification Details.
+The datasheet for Proven In Use Justification appears.
+
+
+
+As needed, enter values in the available fields.In the lower-right corner of the window, select Save. 
+The Proven In Use Justification record is created and associated with the device. 
+Tip: In the upper-right corner of the window, select  to view the datasheet for the Protective Instrument Device.
+Apply a Template to a Protective Instrument LoopThis topic describes how to apply a Protective Instrument Loop Template while creating or modifying a loop.Before You Begin
+Create a Protective Instrument Loop Template.
+About This Task
+When you apply a template to a Protective Instrument Loop, the GE Digital APM system overwrites the information of the loop with that of the template.
+Note: After you apply the template, any subsequent changes made to the template will not be reflected in the loop.
+Procedure
+Access the Protective Instrument Loop to which you want to apply a template.In the upper-right corner of the page, select , and then select Apply Template.
+A window appears, displaying a list of Protective Instrument Loop templates.
+
+
+
+Select the check box that corresponds to the template that you want to apply, and then select OK.
+The template is applied to the Protective Instrument Loop.
+Results
+
+ The GE Digital APM system overwrites the information of the loop with that of the template.
+
+Delete a Protective Instrument LoopAbout This Task
+Important: Deleting a Protective Instrument Loop also deletes all the Protective Instrument Loop Elements that are linked to the loop. Deleting a Protective Instrument Loop Element that is shared across other loops results in a change in the related SIL calculations. In that case, you must review the calculations.
+Procedure
+Access the Instrumented Function that is linked to the Protective Instrument Loop that you want to delete.In the workspace, select the SIL Verification tab.
+The SIL Verification section appears, displaying a list of Protective Instrument Loops in the Instrumented Function.
+
+
+
+Select the Protective Instrument Loop that you want to delete.
+The datasheet for the Protective Instrument Loop appears.
+
+
+
+In the upper-right corner of the datasheet, select , and then select Delete.
+A message appears, asking you if you really want to delete the Protective Instrument Loop.
+Select Yes.
+The Protective Instrument Loop is deleted.
+Upgrade a Protective Instrument LoopThis topic describes how to upgrade a Protective Instrument Loop to support the exSILentia v4 Calculation Engine.About This Task
+Important: After you upgrade a Protective Instrument Loop to exSILentia v4, you cannot revert the loop to exSILentia v3.
+Procedure
+Access the Instrumented Function that is linked to the Protective Instrument Loop that you want to upgrade.In the workspace, select the SIL Verification tab.
+The SIL Verification section appears, displaying a list of Protective Instrument Loops in the Instrumented Function.
+
+
+
+Select the Protective Instrument Loop that you want to upgrade.The datasheet for the Protective Instrument Loop appears.
+Select Upgrade Loop.
+Note: The Upgrade Loop button is only available for loops that use the exSILentia v3 Calculation Engine.
+The Upgrade Loop? window appears asking you to confirm if you want to upgrade the Protective Instrument Loop.Select Yes.The Protective Instrument Loop is upgraded to exSILentia v4.ResultsAfter the loop is upgraded, the value in the IO channels on separate module field of the Protective Instrument Loop record is set to False. In addition, for the associated Sensor Group, Logic Solver, and Final Element Group records, the value in the Has Independent Mission Time field is set to False, and any value in the Group Mission Time field is reset, and populated from the value in the Mission Time field of the Protective Instrument Loop record. The value in the Proof Test Duration field is populated with a default value of 1 hour.Access a Protective Instrument Loop Sensor SystemBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+Note:
+There is only one sensor system in a Protective Instrument Loop. When you create a Protective Instrument Loop, a Protective Instrument Loop Sensor System is created automatically and added to the loop. You cannot delete this record.
+
+Procedure
+Access the Protective Instrument Loop that is linked to the Protective Instrument Loop Sensor System that you want to access.In the workspace, select the Loop Diagram & calculation tab.
+The Loop Diagram & calculation section appears.
+
+
+
+In the diagram, select the Sensor System node, which is represented by the voting architecture. 
+The datasheet for the Sensor System appears, along with a list of Sensor Groups in the Sensor System.
+
+
+
+If needed, modify values in the available fields.In the upper-right corner of the datasheet, select .
+The changes made to the Protective Instrument Loop Sensor System are saved.
+Results
+The changes you have made may alter the calculated results for the SIL analysis. The GE Digital APMsystem calculates the results again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Copy a Protective Instrument Loop Sensor SystemBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+Note: Copying a Protective Instrument Loop Sensor System alters the calculations of the loop. Therefore, you must verify the calculations again in the GE Digital APM system.
+Procedure
+Access the Protective Instrument Loop Sensor System into which you want to copy another Sensor System.In the upper-right corner of the datasheet, select Copy.
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of Protective Instrument Loop Sensor Systems appears.
+
+
+
+Select the check box that corresponds to the Sensor System that you want to copy, and then select OK.
+The Protective Instrument Loop Sensor System is copied.
+Results
+The values in each field of the copied record are overwritten by those of the original record that you copied.The value in the Sensor System ID field in the copied record is appended with a 1.All the Sensor Groups and Sensors linked to the original Sensor System also become a part of the Sensor System that you copied, replacing the existing ones. If these existing records are not part of another protective instrument loop, they are deleted. Otherwise, they are just unlinked from the loop.
+Copying a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Link a Protective Instrument Loop Sensor SystemBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+Important: If you modify a Protective Instrument Loop Element that is linked to more than one Protective Instrument Loop, the changes that you have made are reflected in all the associated loops.
+Note: Linking a Protective Instrument Loop Sensor System alters the calculations of the loop. Therefore, you must verify the calculations again in the GE Digital APM system.
+Procedure
+Access the Protective Instrument Loop Sensor System to which you want to link another Sensor System. In the upper-right corner of the datasheet, select Link.
+The Search window appears.
+
+
+
+In the upper-right corner of the datasheet, select .
+A list of Protective Instrument Loop Sensor Systems appears.
+
+
+
+Select the check box that corresponds to the Protective Instrument Loop Sensor System that you want to link, and then select OK.If the Protective Instrument Loop Sensor System that you want to replace is also linked to another loop, select Proceed.
+Note: If you want to access a list of Protective Instrument Loops linked to the Protective Instrument Loop Sensor System that you want to replace, select Show Details.
+-or-
+If the Protective Instrument Loop Sensor System that you want to replace is not linked to any other loop, a message appears, indicating that the Protective Instrument Loop Sensor System will be deleted. Select OK.
+The original Protective Instrument Loop Sensor System is replaced by the one that you have selected.
+Results
+The existing Protective Instrument Loop Sensor System is replaced by the one that you have linked. If the existing Sensor System is not a part of another loop, then the record is deleted. Otherwise, the record is unlinked from the loop.In addition to the Sensor System that you have linked, all the Sensor Groups and Sensors in the loop also become a part of the loop, replacing the existing ones. If these existing records are not part of another loop, then they are deleted. Otherwise, the records are unlinked from the loop.Linking a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Unlink a Protective Instrument Loop Sensor SystemAbout This Task
+Note: Unlinking a Protective Instrument Loop Sensor System record alters the calculations of the loop. Hence, you must verify the calculations again in the GE Digital APM system.
+Procedure
+Access the Protective Instrument Loop Sensor System from which you want to unlink a Protective Instrument Loop Sensor System.In the upper-right corner of the datasheet, select Unlink.
+Note: The Unlink button is enabled only if the Sensor System is a linked element.
+If the Protective Instrument Loop Sensor System that you want to replace is not linked to any other loop, a message appears, indicating that the Protective Instrument Loop Sensor System will be deleted. Select OK.
+Select OK. 
+The Protective Instrument Loop Sensor System is replaced by a default record.
+Results
+The existing Protective Instrument Loop Sensor System is replaced by a default record. If the existing Sensor System is not a part of another loop, then the record is deleted. Otherwise, the record is unlinked from the loop.In addition to the Sensor System that you have unlinked, all the Sensor Groups and Sensors in the loop are also unlinked, and replaced by default records. If these Sensor Groups and Sensors are not part of another loop, then the records are deleted. Otherwise, the records are unlinked from the loop.Unlinking a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Access a Protective Instrument Loop Sensor GroupProcedure
+Access the Protective Instrument Loop that is linked to the Protective Instrument Loop Sensor Group that you want to access.In the workspace, select the Loop Diagram & calculation tab.
+The Loop Diagram & calculation section appears.
+
+
+
+In the diagram, select the Sensor Group node that represents the Protective Instrument Loop Sensor Group that you want to access.
+The datasheet for the Sensor Group appears.
+
+
+
+If needed, modify values in the available fields.In the upper-right corner of the datasheet, select .
+The changes made to the Protective Instrument Loop Sensor Group are saved.
+Results
+The changes you have made may alter the calculated results for the SIL analysis. The GE Digital APM system calculates the results again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Create a Protective Instrument Loop Sensor GroupBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+This topic describes how to create a Protective Instrument Loop Sensor Group as part of SIL verification. You can also copy or link a Protective Instrument Loop Sensor Group that is associated with another loop.
+Note: By default, when you create a Protective Instrument Loop, a Protective Instrument Loop Sensor Group is already created. You can, however, create a maximum of four Protective Instrument Loop Sensor Groups in a loop.
+Procedure
+Access the Protective Instrument Loop in which you want to add a Protective Instrument Loop Sensor Group.In the workspace, select the Loop Diagram & calculation tab.
+The Loop Diagram & calculation section appears.
+
+
+
+In the diagram, select the Sensor System node, which is represented by the voting architecture.
+The datasheet for the Sensor System appears.
+
+
+
+In the workspace, select Sensor Groups.
+The Sensor Groups section appears, displaying a list of Sensor Groups in the Sensor System.
+
+
+
+In the upper-right corner of the section, select .
+A new Protective Instrument Loop Sensor Group is added to the list of Sensor Groups with a default ID.
+Select the newly added record.
+A blank datasheet for the Sensor Group appears.
+
+
+
+As needed, enter values in the available fields. In the upper-right corner of the datasheet, select .
+The Protective Instrument Loop Sensor Group is created.
+Results
+Along with the Protective Instrument Loop Sensor Group, a Protective Instrument Loop Sensor is also created.The newly created Protective Instrument Loop Sensor Group and Protective Instrument Loop Sensor are shown in the diagram.The voting architecture in the Protective Instrument Loop Sensor System is updated both in the datasheeet and also in the diagram.
+Copy a Protective Instrument Loop Sensor GroupBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+Note: Copying a Protective Instrument Loop Sensor Group alters the calculations for the protective instrument loop. Hence, you must view the calculations again.
+Procedure
+Access the Protective Instrument Loop Sensor Group into which you want to copy another Sensor Group. In the upper-right corner of the datasheet, select Copy.
+The Search window appears.
+
+
+
+In the upper-right corner of the datasheet, select .
+A list of Protective Instrument Loop Sensor Groups appears.
+
+
+
+Select the record that you want to copy, and then select OK.
+The Protective Instrument Loop Sensor Group is copied.
+Results
+The values in each field of the copied record are overwritten by those of the original record that you copy.The value in the Sensor Group ID field in the copied record is appended with 1.All the Sensors linked to the original Sensor Group also become a part of the Sensor Group that you copy, replacing the existing ones. If these existing records are not part of another loop, they are deleted. Otherwise, they are unlinked from the loop.
+Copying a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Link a Protective Instrument Loop Sensor GroupBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+Important: If you modify a Protective Instrument Loop Element that is linked to more than one loop, the changes that you have made are reflected in all the associated loops.
+Note: Linking a Protective Instrument Loop Sensor Group alters the calculations of the loop. Therefore, you must verify the calculations again.
+Procedure
+Access the Protective Instrument Loop Sensor Group to which you want to link another Sensor Group.In the upper-right corner of the datasheet, select Link.
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of Protective Instrument Loop Sensor Group appears.
+
+
+
+Select the check box that corresponds to the Sensor Group that you want to link, and then select OK.Depending on the message that appears, select Proceed or OK.
+If the Protective Instrument Loop Sensor Group that you want to replace is also linked to another loop, select Proceed.
+Note: If you want to access the list of Protective Instrument Loops linked to the Protective Instrument Loop Sensor Group that you want to replace, select Show Details.
+-or-
+If the Protective Instrument Loop Sensor Group that you want to replace is not linked to any other loop, a message appears, indicating that the Protective Instrument Loop Sensor Group will be deleted. Select OK.
+The original Protective Instrument Loop Sensor Group is replaced by the one that you have selected.
+Results
+The existing Protective Instrument Loop Sensor Group is replaced by the one that you have linked. If the existing sensor group is not a part of another loop, then it is deleted. Otherwise, it is just unlinked from the loop.In addition to the sensor group that you have linked, all the sensors in the group also become a part of the loop, replacing the existing ones. If these sensors are not part of another loop, then they are deleted. Otherwise, they are just unlinked from the loop.Linking a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Unlink a Protective Instrument Loop Sensor GroupAbout This Task
+Note: Unlinking a Protective Instrument Loop Sensor Group alters the calculations of the loop. Hence, you must access the calculations again.
+Procedure
+Access the Protective Instrument Loop Sensor Group from which you want to unlink a Protective Instrument Loop Sensor Group.In the upper-right corner of the datasheet, select Unlink.
+Note: The Unlink button is enabled only if the sensor group is a linked element.
+If the Protective Instrument Loop Sensor Group that you want to replace is not linked to any other loop, a message appears, indicating that the Protective Instrument Loop Sensor Group will be deleted. Select OK.
+The Protective Instrument Loop Sensor Group is replaced by a default record.
+Results
+If the Protective Instrument Loop Sensor Group that you have unlinked is the only one in the loop, it is replaced by a default record. If the Sensor Group is not a part of another loop, then it is deleted. Otherwise, it is unlinked from the loop.In addition to the Sensor Group that you have unlinked, all the Sensors in the loop are also unlinked, replaced by a default record. If these Sensors are not part of another loop, then they are deleted. Otherwise, they are just unlinked from the loop.Unlinking a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Delete a Protective Instrument Loop Sensor GroupAbout This Task
+Important: Deleting a Protective Instrument Loop Sensor Group also deletes all the associated Protective Instrument Loop Sensors. Protective Instrument Loops must contain atleast one sensor, sensor group, and sensor system. If the Protective Instrument Loop Sensor Group that you want to delete is the only Sensor Group in the loop, then you cannot delete it.
+Note: Deleting a Protective Instrument Loop Sensor Group alters the calculations of the loop. Hence, you may need to review the calculations again. 
+Procedure
+Access the Protective Instrument Loop Sensor System associated with the Protective Instrument Loop Sensor Group that you want to delete.In the workspace, select the Sensor Groups tab.
+The Sensor Groups section appears, displaying a list of Sensor Groups in the Sensor System.
+
+
+
+Select the  button next to the Protective Instrument Loop Sensor Group that you want to delete.
+A message appears, asking if you really want to delete the Sensor Group.
+Select OK.
+The Protective Instrument Loop Sensor Group is deleted.
+Results
+The Sensors that are linked to the Sensor Group are also deleted.The voting architecture is changed to reflect the updated number of Sensor Groups.The GE Digital APM system calculates the results for the loop again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Access a Protective Instrument Loop SensorProcedure
+Access the Protective Instrument Loop Sensor Group that is linked to the Protective Instrument Loop Sensor that you want to access.In the workspace, select the Sensors tab.
+The Sensors section appears, displaying a list of Sensors in the Sensor Group.
+
+
+
+Select the Protective Instrument Loop Sensor that you want to access.
+The datasheet for the Sensor appears.
+
+
+
+As needed, modify values in the available fields.In the upper-right corner of the datasheet, select .
+The changes made to the Protective Instrument Loop Sensor are saved.
+Results
+If the Diverse field in the Sensor Group is cleared, the modifications to values in the sensor are reflected in other Sensors within the Sensor Group.The changes you have made may alter the calculated results for the loop. The GE Digital APM system calculates the results again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Create a Protective Instrument Loop SensorBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+This topic describes how to create a Protective Instrument Loop Sensor as part of Safety Integrity Level (SIL) verification. You can also copy or link a Protective Instrument Loop Sensor that is associated with another loop.
+Note: By default, when you create a Protective Instrument Loop or a Protective Instrument Loop Sensor Group, a Protective Instrument Loop Sensor is already created. You can, however, create as many Protective Instrument Loop Sensors as required.
+Procedure
+Access the Protective Instrument Loop Sensor Group in which you want to create a Protective Instrument Loop Sensor.In the workspace, select the Sensors tab.
+The Sensors section appears, displaying a list of Sensors in the Sensor Group.
+
+
+
+In the upper-right corner of the section, select .
+A Protective Instrument Loop Sensor is created and added to the list of Sensors. If the Diverse field in the Sensor Group is cleared, the sensor will contain the same values as those in the default record.
+For the newly added record, in the ID column, select the link.
+A blank datasheet for the Sensor appears.
+
+
+
+As needed, enter values in the available fields.In the upper-right corner of the datasheet, select .
+The Protective Instrument Loop Sensor is created.
+Results
+The voting architecture in the Protective Instrument Loop Sensor Group record is updated both in the datasheet and also in the diagram.
+ If the Diverse field in the Sensor Group is cleared, the modifications to values in the sensor are reflected in other Sensors within the Sensor Group.
+The GE Digital APM system calculates the results again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Create a Proven In Use Justification record
+
+Copy a Protective Instrument Loop SensorBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+Note: Copying a Protective Instrument Loop Sensor alters the calculations for the protective instrument loop. Therefore, you must verify the calculations again.
+Procedure
+Access the Protective Instrument Loop Sensor that you want to replace.In the upper-right corner of the datasheet, select Copy.
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of Protective Instrument Loop Sensors appears.
+
+
+
+Select the check box that corresponds to the Sensor that you want to copy, and then select OK.
+The Protective Instrument Loop Sensor is copied.
+Results
+The values in each field of the copied record are overwritten by those of the original record that you copied.The value in the Sensor ID field in the copied record is appended with a 1.
+Copying a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Link a Protective Instrument Loop SensorBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+Important: If you modify a Protective Instrument Loop Element that is linked to more than one loop, the changes that you have made are reflected in all the associated loops.
+Note: Linking a Protective Instrument Loop Sensor alters the calculations for the loop. Therefore, you must verify the calculations again.
+Procedure
+Access the Protective Instrument Loop Sensor to which you want to link another Sensor.In the upper-right corner of the datasheet, select Link.
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of Protective Instrument Loop Sensors appears.
+
+
+
+Select the check box that corresponds to the Sensor that you want to link, and then select OK.Depending on the message that appears, select Proceed or OK.
+If the Protective Instrument Loop Sensor that you want to replace is also linked to another loop, select Proceed.
+Note: If you want to access the list of Protective Instrument Loops linked to the Protective Instrument Loop Sensor that you want to replace, select Show Details.
+-or-
+If the Protective Instrument Loop Sensor that you want to replace is not linked to any other loop, a message appears, indicating that the Protective Instrument Loop Sensor will be deleted. Select OK.
+The original Protective Instrument Loop Sensor is replaced by the one that you have selected.
+Results
+The existing Protective Instrument Loop Sensor is replaced by the one that you have linked. If the existing Sensor is not a part of another loop, then the record is deleted. Otherwise, the record is just unlinked from the loop.Linking a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Unlink a Protective Instrument Loop SensorAbout This Task
+Note: Unlinking a Protective Instrument Loop Sensor alters the calculations of the loop. Hence, you must access the calculations again.
+Procedure
+Access the Protective Instrument Loop Sensor that you want to unlink.In the upper-right corner of the datasheet, select Unlink.
+Note: The Unlink button is enabled only if the Sensor that you have selected in a linked element.
+If the Protective Instrument Loop Sensor that you want to replace is not linked to any other loop, a message appears, indicating that the Protective Instrument Loop Sensor will be deleted. Select OK.
+The Protective Instrument Loop Sensor is unlinked. 
+Results
+
+If the existing Protective Instrument Loop Sensor is the only one in the group, it is replaced by a default one. 
+If the existing Sensor is not a part of another loop, then the record is deleted. Otherwise, the record is unlinked from the loop.
+Unlinking a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Delete a Protective Instrument Loop SensorAbout This Task
+Important: Protective Instrument Loops must contain atleast one sensor, sensor group, and sensor system. If the Protective Instrument Loop Sensor that you want to delete is the only Sensor in the Sensor Group, then you cannot delete it. 
+Note: Deleting a Protective Instrument Loop Sensor alters the calculations of the loop. Hence, you may need to access the calculations again. 
+Procedure
+Access the Protective Instrument Loop Sensor Group that is linked to the Protective Instrument Loop Sensor that you want to delete.In the workspace, select the Sensors tab.
+The Sensors section appears, displaying a list of Sensors in the Sensor Group.
+
+
+
+Select the  button next to the Protective Instrument Loop Sensor that you want to delete.
+A message appears, asking if you really want to delete the Protective Instrument loop Sensor.
+Select OK.
+The Protective Instrument Loop Sensor is deleted.
+Results
+The voting architecture is changed to reflect the updated number of Sensors.The GE Digital APM system calculates the results for the loop again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Access a Protective Instrument Loop Final Element SystemBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+Note:
+There is only one final element system in a Protective Instrument Loop. When you create a Protective Instrument Loop, a Protective Instrument Loop Final Element System is automatically created and added to the loop. You cannot delete this record.
+
+Procedure
+Access the Protective Instrument Loop that is linked to the Protective Instrument Loop Final Element System that you want to access.In the workspace, select the Loop Diagram & calculation tab.
+The Loop Diagram & calculation section appears, displaying the diagram for the Protective Instrument Loop.
+
+
+
+In the diagram, select the Final Element System node, which is represented by the voting architecture.
+The datasheet for the Final Element System appears, along with a list of Final Element Groups in the Final Element System.
+
+
+
+If needed, modify values in the available fields.In the upper-right corner of the datasheet, select .
+The changes made to the Protective Instrument Loop Final Element System are saved.
+Results
+The changes you have made may alter the calculated results for the loop. The GE Digital APM system calculates the results again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Copy a Protective Instrument Loop Final Element SystemBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+Note: Copying a Protective Instrument Loop Final Element System alters the calculations of the loop. Therefore, you must verify the calculations again in the GE Digital APM system.
+Procedure
+Access the Protective Instrument Loop Final Element System into which you want to copy another Final Element System.In the upper-right corner of the datasheet, select Copy.
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of Protective Instrument Loop Final Element Systems appears.
+
+
+
+Select the check box that corresponds to the Final Element System that you want to copy, and then select OK.
+The Protective Instrument Loop Final Element System is copied.
+Results
+The values in each field of the copied record are overwritten by those of the original record that you copied.The value in the Final Element System ID field in the copied record is appended with a 1.All the Final Element Groups and Final Elements linked to the original Final Element System also become a part of the Final Element System that you copied, replacing the existing ones. If these existing records are not part of another protective instrument loop, they are deleted. Otherwise, they are just unlinked from the loop.
+Copying a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Link a Protective Instrument Loop Final Element SystemBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+Important: If you modify a Protective Instrument Loop Element that is linked to more than one Protective Instrument Loop, the changes that you have made are reflected in all the associated loops.
+Note: Linking a Protective Instrument Loop Final Element System alters the calculations of the loop. Therefore, you must verify the calculations again in the GE Digital APM system.
+Procedure
+Access the Protective Instrument Loop Final Element System that you want to replace. In the upper-right corner of the datasheet, select Link.
+The Search window appears.
+
+
+
+In the upper-right corner of the datasheet, select .
+A list of Protective Instrument Loop Final Element Systems appears.
+
+
+
+Select the check box that corresponds to the Protective Instrument Loop Final Element System that you want to link, and then select OK.Depending on the message that appears, select Proceed or OK.
+If the Protective Instrument Loop Final Element System that you want to replace is also linked to another loop, select Proceed.
+Note: If you want to access a list of Protective Instrument Loops linked to the Protective Instrument Loop Final Element System that you want to replace, select Show Details.
+-or-
+If the Protective Instrument Loop Final Element System that you want to replace is not linked to any other loop, a message appears, indicating that the Protective Instrument Loop Final Element System will be deleted. Select OK.
+The original Protective Instrument Loop Final Element System is replaced by the one that you have selected.
+Results
+The existing Protective Instrument Loop Final Element System is replaced by the one that you have linked. If the existing Final Element System is not a part of another loop, then the record is deleted. Otherwise, the record is unlinked from the loop.In addition to the Final Element System that you have linked, all the Final Element Groups and Final Elements in the loop also become a part of the loop, replacing the existing ones. If these existing records are not part of another loop, then they are deleted. Otherwise, the records are just unlinked from the loop.Linking a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Unlink a Protective Instrument Loop Final Element SystemAbout This Task
+Note: Unlinking a Protective Instrument Loop Final Element System record alters the calculations of the loop. Hence, you must verify the calculations again in the GE Digital APM system.
+Procedure
+Access the Protective Instrument Loop Final Element System that you want to unlink.In the upper-right corner of the datasheet, select Unlink.
+Note: The Unlink button is enabled only if the Final Element System is a linked element.
+If the Protective Instrument Loop Final Element System that you want to replace is not linked to any other loop, a message appears, indicating that the Protective Instrument Loop Final Element System will be deleted. Select OK.
+The Protective Instrument Loop Final Element System is replaced by a default record.
+Results
+The existing Protective Instrument Loop Final Element System is replaced by a default record. If the existing Final Element System is not a part of another loop, then the record is deleted. Otherwise, the record is unlinked from the loop.In addition to the Final Element System that you have unlinked, all the Final Element Groups and Final Elements in the loop are also unlinked, replaced by default records. If these Final Element Groups and Final Elements are not part of another loop, then the records are deleted. Otherwise, the records are unlinked from the loop.Unlinking a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Access a Protective Instrument Loop Final Element GroupProcedure
+Access the Protective Instrument Loop that is linked to the Protective Instrument Loop Final Element Group that you want to access.In the workspace, select the Loop Diagram & calculation tab.
+The  Loop Diagram & calculation  section appears.
+
+
+
+In the diagram, select the Final Element Group node that represents the Protective Instrument Loop Final Element Group that you want to access.
+The datasheet for the Final Element Group appears.
+
+
+
+If needed, modify values in the available fields.In the upper-right corner of the datasheet, select .
+The changes made to the Protective Instrument Loop Final Element Group are saved.
+Results
+The changes you have made may alter the calculated results for the SIL analysis. The GE Digital APM system calculates the results again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Create a Protective Instrument Loop Final Element GroupBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+This topic describes how to create a Protective Instrument Loop Final Element Group using a blank datasheet as part of SIL verification. You can also copy or link a Protective Instrument Loop Final Element Group that is associated with another loop.
+Note: By default, when you create a Protective Instrument Loop, a Protective Instrument Loop Final Element Group is already created. You can, however, create as maximum of four Protective Instrument Loop Final Element Groups in a loop.
+Procedure
+Access the Protective Instrument Loop in which you want to add a Protective Instrument Loop Final Element Group.In the workspace, select the Loop Diagram & calculation tab.
+The Loop Diagram & calculation section appears.
+
+
+
+In the diagram, select the Final Element System node, which is represented by the voting architecture.
+The datasheet for the Final Element System appears.
+
+
+
+In the workspace, select Final Element Groups.
+The Final Element Groups section appears, displaying a list of Final Element Groups in the Final Element System.
+
+
+
+In the upper-right corner of the section, select .
+A new Protective Instrument Loop Final Element Group is added to the list of Final Element Groups with a default ID.
+Select the newly added record.
+A blank datasheet for the Final Element Group appears.
+
+
+
+As needed, enter values in the available fields. In the upper-right corner of the datasheet, select .
+The Protective Instrument Loop Final Element Group is created.
+Results
+Along with the Protective Instrument Loop Final Element Group, a Protective Instrument Loop Final Element is also created.The newly created Protective Instrument Loop Final Element Group and Protective Instrument Loop Final Element are shown in the diagram.The voting architecture in the Protective Instrument Loop Final Element System is updated both in the datasheet and also in the diagram.
+Copy a Protective Instrument Loop Final Element GroupBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+Note: Copying a Protective Instrument Loop Final Element Group alters the calculations for the protective instrument loop. Hence, you must review the calculations.
+Procedure
+Access the Protective Instrument Loop Final Element Group into which you want to copy another Final Element Group. In the upper-right corner of the datasheet, select Copy.
+The Search window appears.
+
+
+
+In the upper-right corner of the datasheet, select .
+A list of Protective Instrument Loop Final Element Groups appears.
+
+
+
+Select the record that you want to copy, and then select OK.
+The Protective Instrument Loop Final Element Group is copied.
+Results
+The values in each field of the copied record are overwritten by those of the original record that you copy.The value in the Final Element Group ID field in the copied record is appended with 1.All the Final Elements linked to the original Final Element Group also become a part of the Final Element Group that you copy, replacing the existing ones. If these existing records are not part of another loop, they are deleted. Otherwise, they are unlinked from the loop.
+Copying a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Link a Protective Instrument Loop Final Element GroupBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+Important: If you modify a Protective Instrument Loop Element that is linked to more than one loop, the changes that you have made are reflected in all the associated loops.
+Note: Linking a Protective Instrument Loop Final Element Group alters the calculations of the loop. Therefore, you must verify the calculations again.
+Procedure
+Access the Protective Instrument Loop Final Element Group that you want to replace.In the upper-right corner of the datasheet, select Link.
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of Protective Instrument Loop Final Element Group appears.
+
+
+
+Select the check box that corresponds to the Final Element Group that you want to link, and then select OK.Depending on the message that appears, select Proceed or OK.
+If the Protective Instrument Loop Final Element Group that you want to replace is also linked to another loop, a message appears. Select Proceed.
+Note: If you want to access the list of Protective Instrument Loops linked to the Protective Instrument Loop Final Element Group that you want to replace, select Show Details.
+-or-
+If the Protective Instrument Loop Final Element Group that you want to replace is not linked to any other loop, a message appears, indicatingthat the Protective Instrument Loop Final Element Group will be deleted. Select OK.
+The original Protective Instrument Loop Final Element Group is replaced by the one that you have selected.
+Results
+The existing Protective Instrument Loop Final Element Group is replaced by the one that you have linked. If the existing final element group is not a part of another loop, then it is deleted. Otherwise, it is just unlinked from the loop.In addition to the final element group that you have linked, all the final elements in the group also become a part of the loop, replacing the existing ones. If these final elements are not part of another loop, then they are deleted. Otherwise, they are just unlinked from the loop.Linking a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Unlink a Protective Instrument Loop Final Element GroupAbout This Task
+Note: Unlinking a Protective Instrument Loop Final Element Group alters the calculations of the loop. Hence, you must review the calculations.
+Procedure
+Access the Protective Instrument Loop Final Element Group that you want to unlink.In the upper-right corner of the datasheet, select Unlink.
+Note: The Unlink button is enabled only if the sensor group is a linked element.
+If the Protective Instrument Loop Final Element Group that you want to replace is not linked to any other loop, a message appears, indicating that the Protective Instrument Loop Final Element Group will be deleted. Select OK.
+The Protective Instrument Loop Final Element Group is replaced by a default record.
+Results
+If the Protective Instrument Loop Final Element Group that you have unlinked is the only one in the loop, it is replaced by a default record. If the Final Element Group is not a part of another loop, then it is deleted. Otherwise, it is unlinked from the loop.In addition to the Final Element Group that you have unlinked, all the Final Elements in the loop are also unlinked, replaced by a default record. If these Final Elements are not part of another loop, then they are deleted. Otherwise, they are just unlinked from the loop.Unlinking a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Delete a Protective Instrument Loop Final Element GroupAbout This Task
+Important: Deleting a Protective Instrument Loop Final Element Group also deletes all the associated Protective Instrument Loop Final Elements. Protective Instrument Loops must contain atleast one final element, final element group, and final element system. If the Protective Instrument Loop Final Element Group that you want to delete is the only Final Element Group in the loop, then you cannot delete it.
+Note: Deleting a Protective Instrument Loop Final Element Group alters the calculations of the loop. Hence, you may need to review the calculations again. 
+Procedure
+Access the Protective Instrument Loop Final Element System associated with the Final Element Group you want to delete.In the workspace, select the Final Element Groups tab.
+The Final Element Groups section appears, displaying a list of Final Element Groups.
+
+
+
+Select the  button next to the Protective Instrument Loop Final Element Group that you want to delete.
+A message appears, asking if you really want to delete the Final Element Group.
+Select OK.
+The Protective Instrument Loop Final Element Group is deleted.
+Results
+The Final Elements that are linked to the Final Element Group are also deleted.The voting architecture is changed to reflect the updated number of Final Element Groups.The GE Digital APM system calculates the results for the loop again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Access a Protective Instrument Loop Final ElementProcedure
+Access the Protective Instrument Loop Final Element Group that is linked to the Protective Instrument Loop Final Element that you want to access.In the workspace, select the Final Elements tab.
+The Final Elements section appears, displaying a list of Final Elements in the Final Element Group.
+
+
+
+Select the Protective Instrument Loop Final Element that you want to access.
+The datasheet for the Final Element appears.
+
+
+
+If needed, modify values in the available fields.In the upper-right corner of the datasheet, select .
+The changes made to the Protective Instrument Loop Final Element are saved.
+Results
+If the Diverse field in the Final Element Group is cleared, the modifications to values in the Final Element are reflected in other Final Elements within the Final Element Group.The changes you have made may alter the calculated results for the Protective Instrument Loop. The GE Digital APM system calculates the results again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Create a Protective Instrument Loop Final ElementBefore You Begin
+
+Create a Protective Instrument Loop.
+About This TaskThis topic describes how to create a Protective Instrument Loop Final Element using a blank datasheet as part of Safety Integrity Level (SIL) verification. You can also copy or link a Protective Instrument Loop Final Element that is associated with another loop.Note:  By default, when you create a Protective Instrument Loop or a Protective Instrument Loop Final Element Group, a Protective Instrument Loop Final Element is already created. You can, however, create as many Protective Instrument Loop Final Elements as required.Procedure
+Access the Protective Instrument Loop in which you want to create a Protective Instrument Loop Final Element.In the workspace, select the Loop Diagram & calculation tab.
+The Loop Diagram & calculation section appears.
+
+
+
+In the diagram, select the Final Element Group node in which you want to create a Final Element.
+The datasheet for the Final Element Group appears.
+
+
+
+In the workspace, select the Final Elements tab.
+The Final Elements section appears, displaying a list of Final Elements in the Final Element Group.
+
+
+
+In the upper-right corner of the section, select .
+A Protective Instrument Loop Final Element is created and added to the list of Final Elements. If the Diverse field in the Final Element Group is cleared, the final element will contain the same values as those in the default record.
+Select the newly added record.
+A blank datasheet for the Final Element appears.
+
+
+
+As needed, enter values in the available fields. In the upper-right corner of the datasheet, select .
+The Protective Instrument Loop Final Element Group is created.
+Results
+The voting architecture in the Protective Instrument Loop Final Element Group record is updated both in the datasheet and also in the diagram.If the Diverse field in the Final Element Group is cleared, the modifications to values in the Final Element are reflected in other Final Elements within the Final Element Group.The GE Digital APM system automatically recalculates the results.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Create a Proven In Use Justification record
+
+Copy a Protective Instrument Loop Final ElementBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+Note: Copying a Protective Instrument Loop Final Element alters the calculations for the protective instrument loop. Therefore, you must verify the calculations again.
+Procedure
+Access the Protective Instrument Loop Final Element into which you want to copy another Final Element.In the upper-right corner of the datasheet, select Copy.
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of Protective Instrument Loop Final Elements appears.
+
+
+
+Select the check box that corresponds to the Final Element that you want to copy, and then select OK.
+The Protective Instrument Loop Final Element is copied.
+Results
+The values in each field of the copied record are overwritten by those of the original record that you copied.The value in the Final Element ID field in the copied record is appended with a 1.
+Copying a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Link a Protective Instrument Loop Final ElementBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+Important: If you modify a Protective Instrument Loop Element that is linked to more than one loop, the changes that you have made are reflected in all the associated loops.
+Note: Linking a Protective Instrument Loop Final Element alters the calculations for the loop. Therefore, you must verify the calculations again.
+Procedure
+Access the Protective Instrument Loop Final Element to which you want to replace.In the upper-right corner of the datasheet, select Link.
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of Protective Instrument Loop Final Elements appears.
+
+
+
+Select the check box that corresponds to the Final Element that you want to link, and then select OK.Depending on the message that appears, select Proceed or OK.
+If the Protective Instrument Loop Final Element that you want to replace is also linked to another loop, select Proceed.
+Note: If you want to access the list of Protective Instrument Loops linked to the Protective Instrument Loop Final Element that you want to replace, select Show Details.
+-or-
+If the Protective Instrument Loop Final Element that you want to replace is not linked to any other loop, a message appears, indicating that the Protective Instrument Loop Final Element will be deleted. Select OK.
+The original Protective Instrument Loop Final Element is replaced by the one that you have selected.
+Results
+The existing Protective Instrument Loop Final Element is replaced by the one that you have linked. If the existing Final Element is not a part of another loop, then the record is deleted. Otherwise, the record is unlinked from the loop.Linking a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Unlink a Protective Instrument Loop Final ElementAbout This Task
+Note: Unlinking a Protective Instrument Loop Final Element alters the calculations of the loop. Hence, you must access the calculations again.
+Procedure
+Access the Protective Instrument Loop Final Element that you want to unlink.In the upper-right corner of the datasheet, select Unlink.
+Note: The Unlink button is enabled only if the Final Element that you have selected in a linked element.
+If the Protective Instrument Loop Final Element that you want to replace is not linked to any other loop, a message appears, indicating that the Protective Instrument Loop Final Element will be deleted. Select OK.
+The Protective Instrument Loop Final Element is unlinked. 
+Results
+
+If the existing Protective Instrument Loop Final Element is the only one in the group, it is replaced by a default one. 
+If the existing Final Element is not a part of another loop, then the record is deleted. Otherwise, the record is unlinked from the loop.
+Unlinking a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Define a Dangerous Combination of OutputsBefore You Begin
+
+Create a Protective Instrument Loop Final Element for each of the final elements that form a dangerous combination.
+About This TaskThis topic describes how to link two or more final elements, which can be hazardous when their outputs are combined. For example, if a pump was functioning (i.e., output) and the downstream valve was closed (i.e., second output) the pump runs the risk of mechanical damage due to overheating, cavitating, or vibrating. If left unattended, the pump could develop a leak which could lead to a larger hazard. This can be defined as a dangerous combination of outputs.Procedure
+Access the Protective Instrument Loop Final Element.Select the Dangerous Combination of Outputs tab.
+The Dangerous Combination of Outputs section appears.
+
+
+
+In the upper-right corner of the section, select .
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of Protective Instrument Loop Final Elements appears.
+
+
+
+Select the check box that corresponds to the Final Element that you want to link, and then select OK.
+The selected Protective Instrument Loop Final Element is listed in the Individual Output States section.
+
+
+
+In the Potential Dangerous Combination of Outputs Description box, provide a description of the dangerous output, and then select Save.
+The two Protective Instrument Loop Final Elements are linked to each other as a dangerous combination of outputs. To link another record to this combination, repeat steps 7-10.
+Unlink a Dangerous Combination of OutputsAbout This Task
+This topic describes how to unlink two or more final elements, that have been linked together as a dangerous combination of outputs.
+Procedure
+Access the Protective Instrument Loop Final Element.In the workspace, select the Dangerous Combination of Outputs tab.
+The Individual Output States section appears, displaying a list of Final Elements that are linked to the selected one.
+
+
+
+In the Individual Output States section, select the  button that corresponds to the Final Element that you want to unlink.
+A confirmation message appears, asking if you really want to remove the Protective Instrument Loop Final Element.
+Select OK.
+The selected Protective Instrument Loop Final Element is unlinked from the current record.
+Delete a Protective Instrument Loop Final ElementAbout This Task
+Important: Protective Instrument Loops must contain atleast one final element, final element group, and final element system. If the Protective Instrument Loop Final Element that you want to delete is the only Final Element in the Final Element Group, then you cannot delete it.
+Note: Deleting a Protective Instrument Loop Final Element alters the calculations of the loop. Hence, you may need to access the calculations again. 
+Procedure
+Access the Protective Instrument Loop Final Element Group that is linked to the Final Element that you want to delete.In the workspace, select the Final Elements tab.
+The Final Elements section appears, displaying a list of Final Elements in the Final Element Group.
+
+
+
+Select the  button next to the Protective Instrument Loop Final Element that you want to delete.
+A message appears, asking if you really want to delete the Protective Instrument loop Final Element.
+Select OK.
+The Protective Instrument Loop Final Element is deleted.
+Results
+The voting architecture is changed to reflect the updated number of Final Elements.The GE Digital APM system calculates the results for the loop again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Access a Protective Instrument Loop Logic SolverBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+Note:
+There is only one logic solver in a protective instrument loop. When you create a Protective Instrument Loop, a Protective Instrument Loop Logic Solver is automatically created and added to the loop. You cannot delete this record.
+
+Procedure
+Access the Protective Instrument Loop that is linked to the Protective Instrument Loop Logic Solver that you want to access.In the workspace, select the Loop Diagram & calculation tab.
+The Loop Diagram & calculation section appears.
+
+
+
+In the diagram, select the Logic Solver node.
+The datasheet for the Logic Solver appears.
+
+
+
+If needed, modify values in the available fields. 
+Note:
+To select a logic solver device from Exida's Safety Equipment Reliability Handbook (SERH): 
+In the upper-right corner of the Logic Solver Details section, select Set Logic Solver Device.
+The Select a Logic Solver window appears, displaying a list of logic solvers from Exida's Safety Equipment Reliability Handbook (SERH).
+
+Select the logic solver that you want to apply for the Protective Instrument Loop Logic Solver, and then select OK.
+The fields in the Logic Solver datasheet are updated with the values for the selected logic solver device.
+
+
+In the upper-right corner of the datasheet, select .
+The changes made to the Protective Instrument Loop Logic Solver are saved.
+Results
+The changes you have made may alter the calculated results for the SIL analysis. The GE Digital APM system calculates the results again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Copy a Protective Instrument Loop Logic SolverBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+Note: Copying a Protective Instrument Loop Logic Solver alters the calculations for the protective instrument loop. Therefore, you must access the calculations again.
+Procedure
+Access the Protective Instrument Loop Logic Solver into which you want to copy another Logic Solver. In the upper-right corner of the datasheet, select Copy.
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of Protective Instrument Loop Logic Solvers appears.
+
+
+
+Select the check box that correspond to the Logic Solver that you want to copy, and then select OK.
+The Protective Instrument Loop Logic Solver is copied.
+Results
+The values in each field of the copied record are overwritten by those of the original record that you copied.The value in the Logic Solver ID field in the copied record is appended with a 1.Copying a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Link a Protective Instrument Loop Logic SolverBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+Important: If you modify a Protective Instrument Loop Element that is linked to more than one protective instrument loop, the changes that you have made are reflected in all the associated protective instrument loops.
+Note: Linking a Protective Instrument Loop Logic Solver alters the calculations for the protective instrument loop. Therefore, you must access the calculations again.
+Procedure
+Access the Protective Instrument Loop Logic Solver that you want to replace.In the upper-right corner of the datasheet, select Link.
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of Protective Instrument Loop Logic Solvers appears.
+
+
+
+Select the check box that corresponds to the Logic Solver that you want to link, and then select OK.Depending on the message that appears, select Proceed or OK.
+If the Protective Instrument Loop Logic Solver that you want to replace is also linked to another loop, select Proceed.
+Note: If you want to access the list of Protective Instrument Loops linked to the Protective Instrument Loop Logic Solver that you want to replace, select Show Details.
+-or-
+If the Protective Instrument Loop Logic Solver that you want to replace is not linked to any other loop, a message appears, indicating that the Protective Instrument Loop Logic Solver will be deleted. Select OK.
+The original Protective Instrument Loop Logic Solver is replaced by the one that you have selected.
+Results
+The existing Protective Instrument Loop Logic Solver is replaced by the one that you have linked. If the existing logic solver is not a part of another protective instrument loop, then the record is deleted. Otherwise, the record is unlinked from the protective instrument loop.Linking a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Unlink a Protective Instrument Loop Logic SolverBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+Note: Unlinking a Protective Instrument Loop Logic Solver alters the calculations for the protective instrument loop. Hence, you must review the calculations again.
+Procedure
+Access the Protective Instrument Loop Logic Solver that you want to unlink.In the upper-right corner of the datasheet, select Unlink.
+Note: The Unlink button is enabled only if the logic solver is a linked element.
+If the Protective Instrument Loop Logic Solver that you want to replace is not linked to any other loop, a message appears, indicating that the Protective Instrument Loop Logic Solver will be deleted. Select OK.
+The Protective Instrument Loop Logic Solver is unlinked. 
+Results
+The Protective Instrument Loop Logic Solver that you have unlinked is replaced by a default one. If the logic solver is not a part of another protective instrument loop, then the record is deleted. Otherwise, the record is unlinked from the protective instrument loop.Unlinking a record alters the calculations for the loop. The GE Digital APM system performs the calculations again.
+What To Do Next
+
+Access the Results of a Protective Instrument Loop
+
+Access a Protective Instrument Loop Logic Solver ChannelProcedure
+Access the Protective Instrument Loop Logic Solver that is linked to the Protective Instrument Loop Logic Solver Channel that you want to access.In the workspace, select the Channels/Modules tab.
+The Channels/Modules section appears, displaying a list of Protective Instrument Loop Logic Solver Channels. 
+
+
+
+Select the Protective Instrument Loop Logic Solver Channel that you want to access.
+The datasheet for the Protective Instrument Loop Logic Solver Channel appears.
+
+
+
+As needed, modify values in the available fields. In the lower-right corner of the datasheet, select Save.
+The changes made to the Protective Instrument Loop Logic Solver are saved.
+Create a Protective Instrument Loop Logic Solver ChannelAbout This Task
+Note: You can create a Protective Instrument Loop Logic Solver Channel only if the Manual Entry check box in the Protective Instrument Loop Logic Solver datasheet is selected.
+Procedure
+Access the Protective Instrument Loop Logic Solver for which you want to create a Protective Instrument Loop Logic Solver Channel.In the workspace, select the Channel/Modules tab.
+The Channel/Modules section appears, displaying a list of Protective Instrument Loop Logic Solver Channels.
+
+
+
+In the upper-right corner of the section, select .
+A blank datasheet for the Protective Instrument Loop Logic Solver Channel appears.
+
+
+
+As needed, enter values in the available fields. In the lower-right corner of the datasheet, select Save.
+The Protective Instrument Loop Logic Solver is created.
+Delete a Protective Instrument Loop Logic Solver ChannelAbout This Task
+Note: You can delete a Protective Instrument Loop Logic Solver Channel only if the Manual Entry check box in the Protective Instrument Loop Logic Solver datasheet is selected.
+Procedure
+Access the Protective Instrument Loop Logic Solver that is linked to Protective Instrument Loop Logic Solver Channel that you want to delete.In the workspace, select the Channels/Modules tab.
+The Channels/Modules section appears, displaying a list of Protective Instrument Loop Logic Solver Channels.
+
+
+
+ For each row that contains the Protective Instrument Loop Logic Solver Channel that you want to delete, select the check box.In the upper-right corner of the section, select .
+A message appears, asking if you really want to delete the Logic Solver Channel.
+Select OK.
+Each selected Protective Instrument Loop Logic Solver Channel is deleted.
+Access a Protective Instrument Loop TemplateProcedure
+Access the SIS Management Overview page.In the workspace, select the PIL Templates tab.
+The PIL Templates appears, displaying a list of Protective Instrument Loop Templates.
+
+
+
+Select the template that you want to access.
+The datasheet for the template appears.
+
+
+
+If needed, modify values in the available fields.In the upper-right corner of the datasheet, select .
+The changes made to the Protective Instrument Loop Template are saved.
+If you want to access the diagram of the template, select the Loop Diagram & calculation tab.
+The Loop Diagram & calculation section appears.
+
+
+
+If you want to access the datasheets of the elements of the template, select the corresponding element in the diagram.Create a Protective Instrument Loop TemplateBefore You Begin
+
+Create a Protective Instrument Loop.
+About This Task
+To create a Protective Instrument Loop Template, you must first create a Protective Instrument Loop, and then save it as a template.
+When you save a Protective Instrument Loop as a template, the GE Digital APM system:
+Creates a copy of each record in the loop (including the elements).Appends the word Template to the ID of the loop and all the elements.
+Note: Any changes made to the original Protective Instrument Loop do not reflect in the copied record that you have saved as a template.
+Procedure
+Access the Protective Instrument Loop that you want to save as a template.In the upper-right corner of the page, select , and then select Save As Template.
+The Protective Instrument Loop is saved as a template.
+Results
+ The GE Digital APM system: Creates a copy of each record in the loop (including the elements).Appends the word Template next to the ID of the loop and all the elements.Lists the newly created template in the PIL Templates section of the SIS Management Overview page.
+
+What To Do Next
+
+Apply a Template to a Protective Instrument Loop
+
+Copy a Protective Instrument Loop TemplateProcedure
+Access the Protective Instrument Loop Template that you want to copy.In the upper-right corner of the datasheet, select , and then select Save As.
+A copy of the template is created. The ID of the copied template is in the following format: <ID of the original template> - Copy.
+Note: If you create another copy of the same template, the ID of the copied template will be in the following format: <ID of the original template> - Copy 1.
+Access a Sensor in the Protective Instrument Loop TemplateProcedure
+Access the Protective Instrument Loop Template with which the Protective Instrument Loop Sensor that you want to access is linked.In the diagram, select the Sensor Group node associated with the Sensor that you want to access.
+The datasheet for the Sensor Group appears.
+
+
+
+In the workspace, select the Sensors tab.
+The Sensors section appears, displaying a list of Sensors in the Sensor Group.
+
+
+
+Select the Protective Instrument Loop Sensor that you want to access.
+The datasheet for the Sensor appears.
+
+
+
+As needed, modify values in the available fields.In the upper-right corner of the datasheet, select .
+The changes made to the Protective Instrument Loop Sensor are saved.
+Access a Protective Instrument Loop Final ElementProcedure
+Access the Protective Instrument Loop Template with which the Protective Instrument Loop Final Element that you want to access is linked.In the diagram, select the Final Element Group node associated with the Final Element that you want to access.
+The datasheet for the Final Element Group appears.
+
+
+
+In the workspace, select the Final Elements tab.
+The Final Elements section appears, displaying a list of Final Elements in the Final Element Group.
+
+
+
+Select the Protective Instrument Loop Final Element that you want to access.
+The datasheet for the Final Element appears.
+
+
+
+If needed, modify values in the available fields.In the upper-right corner of the datasheet, select .
+The changes made to the Protective Instrument Loop Final Element are saved.
+Delete a Protective Instrument Loop TemplateProcedure
+Access the SIS Management Overview page.In the workspace, select the PIL Templates tab.
+The PIL Templates section appears, displaying a list of Protective Instrument Loop Templates.
+
+
+
+For each row that contains the template that you want to delete, select the check box.
+In the upper-right corner of the section, the  button is enabled.
+Select .
+A confirmation message appears, asking if you really want to delete the protective instrument loop template.
+Select OK.
+The Protective Instrument Loop Template is deleted.
+Upgrade a Protective Instrument Loop TemplateThis topic describes how to upgrade a Protective Instrument Loop Template to support the exSILentia v4 Calculation Engine.About This Task
+Important: After you upgrade a Protective Instrument Loop Template to exSILentia v4, you cannot revert the template to exSILentia v3.
+Procedure
+Access the Protective Instrument Loop Template that you want to upgrade.The datasheet for the template appears.
+Select Upgrade Loop.
+Note: The Upgrade Loop button is only available for templates that use the exSILentia v3 Calculation Engine.
+The Upgrade Template? window appears asking you to confirm if you want to upgrade the Protective Instrument Loop Template.Select Yes.The Protective Instrument Loop Template is upgraded to exSILentia v4.Access a Custom DeviceAbout This Task
+This topic describes how to access the following types of custom devices:
+SensorsLogic SolversFinal Elements
+Procedure
+Access the SIS Management Overview page.In the workspace, select the Custom Failure Data tab.
+The Custom Failure Data section appears, displaying a list of custom devices.
+
+
+
+Tip: You can filter the list by selecting a particular type of custom devices from the drop-down list box in the upper-right corner of the section.
+Select the custom device that you want to access.
+The datasheet for the selected custom device appears.
+
+
+
+If needed, modify values in the available fields for the Sensor, Logic Solver, or the Final Element.
+Note: Modifying the details of a custom device that is linked to a Protective Instrument Loop may alter the calculations of the loop. Therefore, you must verify the calculations again.
+In the upper-right corner of the datasheet, select Save.
+The changes made to the selected custom device are saved.
+Create a Custom DeviceAbout This Task
+This topic describes how to create Failure Rate Reference Data for the following types of custom devices:
+SensorsLogic SolversFinal Elements
+Procedure
+Access the SIS Management Overview page.In the workspace, select the Custom Failure Data tab.
+ The Custom Failure Data section appears, displaying a list of Failure Rate Reference Data records for all types of custom devices.
+
+
+
+In the upper-left corner of the section, select , and then select the type of the custom device that you want to create.
+A blank custom device datasheet of the selected type appears. The following image shows the datasheet for a Custom Sensor.
+
+
+
+As needed, enter values in the available fields for the Sensor, Logic Solver, or Final Element. Select the interfaces, connections, channels, and elements as applicable, and then select Save.
+The custom device is created.
+What To Do Next
+
+Create a Proven In Use Justification record
+
+Approve a Custom Device
+
+Approve a Custom DeviceAbout This Task
+This topic describes how to approve the following types of custom devices:
+SensorsLogic SolversFinal Elements
+Procedure
+Access the Custom Device that you want to approve.In the upper-right corner of the datasheet, select Approve.
+The custom device is approved.
+Revoke the Approval of a Custom DeviceAbout This Task
+Note: If you revoke the approval of a custom device that is part of a protective instrument loop, it does not affect the loop.
+Procedure
+Access the Custom Device whose approval you want to revoke.In the upper-right corner of the datasheet, select Revoke Approval.
+The approval of the custom device is revoked.
+Delete a Custom DeviceAbout This Task
+This topic describes how to delete the following types of custom devices:
+SensorsLogic SolversFinal Elements
+Important: Deleting a custom device that is linked to a Protective Instrument Loop alters the calculations of the loop. Therefore, you must review the calculations again.
+Procedure
+Access the SIS Management Overview page.
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level.
+In the workspace, select the Custom Failure Data tab.
+The Custom Failure Data section appears, displaying a list of custom devices.
+
+
+
+Tip: You can filter the list by selecting a particular type of custom devices from the drop-down list box in the upper-right corner of the section.
+Select the check box that corresponds to the custom device that you want to delete.
+In the upper-right corner of the section, the  button is enabled.
+Select .
+A confirmation message appears, asking if you really want to delete the custom device.
+Select OK.
+The custom device is deleted.
+Access the Results of a Protective Instrument LoopProcedure
+Access the Protective Instrument Loop for which you want to access the results.In the workspace, select the Loop Diagram & calculation tab.
+The Loop Diagram & calculation section appears, displaying the loop calculations and results for the Protective Instrument Loop.
+
+
+
+
+
+
+
+
+On this pageAbout Safety Integrity Level (SIL) VerificationAbout Protective Instrument LoopsAbout Protective Instrument Loop Calculation EngineSafety Integrity Level (SIL) Verification WorkflowAbout Asset Groups in SIS ManagementAbout Validation Failure Rate Reference DataAbout Copying a Protective Instrument Loop ElementAbout Dangerous Combination of OutputsAccess a Protective Instrument LoopCreate a Protective Instrument LoopCreate a Proven In Use Justification RecordApply a Template to a Protective Instrument LoopDelete a Protective Instrument LoopUpgrade a Protective Instrument LoopAccess a Protective Instrument Loop Sensor SystemCopy a Protective Instrument Loop Sensor SystemLink a Protective Instrument Loop Sensor SystemUnlink a Protective Instrument Loop Sensor SystemAccess a Protective Instrument Loop Sensor GroupCreate a Protective Instrument Loop Sensor GroupCopy a Protective Instrument Loop Sensor GroupLink a Protective Instrument Loop Sensor GroupUnlink a Protective Instrument Loop Sensor GroupDelete a Protective Instrument Loop Sensor GroupAccess a Protective Instrument Loop SensorCreate a Protective Instrument Loop SensorCopy a Protective Instrument Loop SensorLink a Protective Instrument Loop SensorUnlink a Protective Instrument Loop SensorDelete a Protective Instrument Loop SensorAccess a Protective Instrument Loop Final Element SystemCopy a Protective Instrument Loop Final Element SystemLink a Protective Instrument Loop Final Element SystemUnlink a Protective Instrument Loop Final Element SystemAccess a Protective Instrument Loop Final Element GroupCreate a Protective Instrument Loop Final Element GroupCopy a Protective Instrument Loop Final Element GroupLink a Protective Instrument Loop Final Element GroupUnlink a Protective Instrument Loop Final Element GroupDelete a Protective Instrument Loop Final Element GroupAccess a Protective Instrument Loop Final ElementCreate a Protective Instrument Loop Final ElementCopy a Protective Instrument Loop Final ElementLink a Protective Instrument Loop Final ElementUnlink a Protective Instrument Loop Final ElementDefine a Dangerous Combination of OutputsUnlink a Dangerous Combination of OutputsDelete a Protective Instrument Loop Final ElementAccess a Protective Instrument Loop Logic SolverCopy a Protective Instrument Loop Logic SolverLink a Protective Instrument Loop Logic SolverUnlink a Protective Instrument Loop Logic SolverAccess a Protective Instrument Loop Logic Solver ChannelCreate a Protective Instrument Loop Logic Solver ChannelDelete a Protective Instrument Loop Logic Solver ChannelAccess a Protective Instrument Loop TemplateCreate a Protective Instrument Loop TemplateCopy a Protective Instrument Loop TemplateAccess a Sensor in the Protective Instrument Loop TemplateAccess a Protective Instrument Loop Final ElementDelete a Protective Instrument Loop TemplateUpgrade a Protective Instrument Loop TemplateAccess a Custom DeviceCreate a Custom DeviceApprove a Custom DeviceRevoke the Approval of a Custom DeviceDelete a Custom DeviceAccess the Results of a Protective Instrument Loop
+
+
+
+
+
+
+
+
+

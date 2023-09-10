@@ -1,0 +1,195 @@
+
+
+
+Global Events | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System ReliabilitySystem Reliability: Overview
+System Reliability: Workflow
+System Reliability Analyses 
+Resources
+System Scenario
+Diagrams
+Risks
+Actions
+Global Events
+Grid View
+Simulations
+
+
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+System Reliability
+Global Events
+
+
+
+
+
+
+
+Global EventsAbout Global EventsA Global Event is an optional component of a System Reliability Analysis that groups together Actions requiring a system shutdown so that they will be performed at the same time, thereby maximizing the availability of the system. When you create a Global Event, you select Actions that may be rescheduled and performed as part of the Global Event. The execution of the selected Actions is called a Global Event. To be performed with the Global Event, Actions must occur during the time period defined by the Max Delay and Max Advance values in the System Global Event record. Actions assigned to the Global Event that are performed outside of this time period will not be included in the Global Event, and their occurrence is not be affected by the occurrence of the Global Event. The next occurrence of any recurring Actions that have been rescheduled and performed as part of a Global Event will be performed according to the values in the Interval and Interval Units fields in the System Action record.Note: Actions that are represented by a System Condition Monitor occur continuously and cannot be assigned to a Global Event. All other Actions can be performed in a Global Event.
+Consider Scenario B in our System Reliability Analysis Example, which contains two Actions that require a system shutdown: Redesign Impellers and Replace Seals. The Redesign Impellers Action has a duration of one week, and the Replace Seals Action has a duration of one day. Performed independently of one another, they would result in a system shutdown lasting a total of eight days.
+Now, assume that you group the two Actions together using a Global Event with a Max Delay value of 3 months and a Max Advance value of 4 weeks. This Global Event specifies that the two Actions will be rescheduled and performed together during the same system shutdown, as long as the Actions fall into the time period from 3 months before the Global Event and 4 weeks after the Global Event. Managing the Actions in this way would result in a shutdown lasting the longest of the two durations, or seven days. This approach is preferable, as it would save one day of costs associated with the system shutdown.
+Types of Global Events
+System Reliability Analyses support the use of two types of Global Events:
+
+
+Action-driven Global Events: A collection of Actions that may occur based on the occurrence of a driving Action. When the driving Action occurs, any Actions that fall into the time range specified by the Max Advance and Max Delay values are triggered to be rescheduled and performed with the driving Action. Action-driven Global Events can occur only one time in a simulation. If you select a recurring Action as the driving Action, the Global Event will occur the first time that the driving Action occurs. If you select more than one Action as the driving Action, then the first driving Action that occurs will trigger the other Actions in the Global Event.
+For example, in Scenario B of our System Reliability Analysis Example, you might create an Action-driven Global Event, which is assigned both the Redesign Impellers and Replace Seal Actions, with the Redesign Impellers Action designated as the driving Action. In this case, when the Redesign Impellers Action occurs according to the properties specified in the System Action record that represents it, the Global Event will trigger any Replace Seals Action that falls within the time period specified by the Max Delay and Max Advance values to be rescheduled and completed with the occurrence of the Redesign Impellers Action.
+
+
+Date-driven Global Events: A date-driven Global Event is a collection of Actions that may occur on a certain date. When the simulation reaches the date of the Global Event, any assigned Actions that fall into the time range specified by the Max Advance and Max Advance Duration values are triggered to be performed on the date of the Global Event. A date-driven Global Event can occur one or more times throughout the simulation period.
+For example, in Scenario B of our System Reliability Analysis Example, you might create a date-driven Global Event and specify that it should occur on a date halfway through the simulation. To this Global Event you would assign the Redesign Impellers and Replace Seals Actions. In this case, the Global Event would trigger both of the Actions that fall into the time period specified by the Max Advance Duration and Max Delay Duration values, almost three and a half years into the simulation, regardless of what properties existed in the System Action records that represent the Redesign Impellers and Replace Seal Actions.
+
+Note: While Global Events limit downtime and the history of a Global Event can be seen in the Event Logs generated from a System Reliability Analysis which contains a Global Event, the effects of Global Events are not presented explicitly anywhere in the simulation results. The effects of the Global Events are expressed as less downtime for the system, which means lower lost production costs.
+Access a Global EventProcedure
+Access the System Scenario for which you want to view details of a Global Event.In the workspace, select the Global Events tab.
+A list of Global Events associated with the selected System Scenario appears. 
+
+
+
+The grid contains the following columns of information:
+
+Name
+
+Description
+
+Driver Type
+
+Select the row containing the Global Event that you want to view, and then select .
+The Edit Global Event section appears, displaying the details of the selected Global Event.
+
+
+
+Note: As needed, you can modify the values in the available fields, and then select  to save your changes.
+Create a Global EventProcedure
+Access the System Scenario for which you want to add a Global Event.Select the Global Events tab.
+A list of Global Events associated with the selected Scenario appears.
+
+
+
+Select .
+The datasheet for new Global Event appears in the workspace.
+
+
+
+As needed, enter the values in the available fields, and then select .
+The Global Event is saved.
+What To Do Next
+
+Assign Actions to Global Events
+
+Access Actions Assigned to a Global EventProcedure
+Access the System Scenario which contains the desired Global Event.In the workspace, select the Global Events tab.
+A list of Global Events associated with the selected System Scenario appears. 
+
+
+
+Select the row containing the Global Event for which you want to view the assigned Actions.In the upper-right corner of the Global Events section, select Show Actions to Align.
+The Align Actions grid appears, displaying a list of Actions that are assigned to the selected Global Event. 
+
+
+
+The following columns appear in the Align Actions workspace:
+
+Action Name
+
+Action Type
+
+Element
+
+Is Driver?
+
+Assign Actions to Global EventsAbout This TaskWhen you assign Actions to a Global Event, you select the Actions that will be executed at the same time, as defined by the Global Event. Any Actions that should be performed during the qualifying time period, as defined by the values in the Max Delay Duration and Max Advance Duration fields, will be executed together. Procedure
+Access the Actions assigned to a Global Event to which you want to assign Actions.In the upper-right corner, select Add/Edit Actions.
+The Select Actions From and the Selected Actions sections appear. The Select Actions From section contains a list of Actions available for the selected System Scenario. The Selected Actions section contains a list of Actions assigned to the selected Global Event.
+
+
+
+In the Select Actions From section, select the check box to the left of an action that you want to assign.Select . 
+The selected action appears in the Selected Actions section.
+In the upper-right corner, select Assigned Actions to return to Align Actions grid. 
+The selected action appears in the list of Actions that are assigned to the selected Global Event.
+Remove Actions from Global EventsAbout This TaskWhen you remove an Action from a Global Event, it will no longer be delayed or advanced in time to be executed with the other grouped Actions in the Global Event.Procedure
+Access the Actions assigned to a Global Event from which you want to remove Actions.In the upper-right corner, select Add/Edit Actions.
+The Select Actions From and the Selected Actions sections appear. The Select Actions From section contains a list of Actions available for the selected System Scenario. The Selected Actions section contains a list of Actions assigned to the selected Global Event.
+
+
+
+In the Selected Actions section, select the check box to the left of an Action that you want to remove.Select . 
+The selected Action is removed and appears in the Select Actions From section.
+In the upper-right corner, select Assigned Actions to return to Align Actions grid. 
+The selected action does not appear in the list of Actions that are assigned to the selected Global Event.
+Delete a Global EventDeleting a Global Event removes the properties of the Global Event, such as the interval at which the Global Event may be repeated and which Actions may be performed with the Global Event, but the System Actions that exist in the Scenario are not modified or deleted.Procedure
+Access the System Scenario from which you want to delete a Global Event. Select the Global Events tab.
+A list of Global Events associated with the selected Scenario appears.
+
+
+
+In the grid, select the Global Event that you want to delete, and then select .
+The selected Global Event is deleted.
+
+
+
+
+
+On this pageAbout Global EventsAccess a Global EventCreate a Global EventAccess Actions Assigned to a Global EventAssign Actions to Global EventsRemove Actions from Global EventsDelete a Global Event
+
+
+
+
+
+
+
+
+

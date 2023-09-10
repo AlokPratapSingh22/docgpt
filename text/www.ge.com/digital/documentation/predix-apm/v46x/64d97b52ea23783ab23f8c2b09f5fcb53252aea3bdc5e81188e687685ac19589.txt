@@ -1,0 +1,96 @@
+
+
+
+First Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Asset HierarchyOverview
+Workflow
+Asset Hierarchy Configuration
+Data Loader
+Troubleshooting
+Release NotesFirst Quarter of 2023
+Second Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Asset Hierarchy
+Release Notes
+First Quarter of 2019
+
+
+
+
+
+
+
+First Quarter of 2019Asset HierarchyThis topic provides a list of product changes released for this module on the dates listed below.Release Date: March 29, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDIn the Hierarchy section, for the following scenarios, a message appears at the bottom of the hierarchy, indicating that there are too many records available in the hierarchy, and you can use the search or filter option to find the required equipment or functional location.If more than or equal to 500 top-level records are available in the hierarchy.If more than or equal to 500 child equipment or functional locations are available for a parent functional location.If you search for an equipment or a functional location, and the search results contain 500 or more equipment or functional locations.US322281
+Table 2. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, while accessing the data for an asset in the <Asset Name> workspace, if you navigated away from the workspace and then attempted to access the data for the asset, an error occurred. This issue has been resolved. DE92693Previously, if you specified filter criteria and selected an asset to view the data in the <Asset Name> workspace, when you navigated away from the workspace, and then attempted to access the data in the <Asset Name> workspace, the filter criteria that you specified was cleared. This issue has been resolved.DE92877
+
+
+
+
+
+On this pageAsset Hierarchy
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,381 @@
+
+
+
+General Reference | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Calculations
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+Reference
+General Reference
+
+
+
+
+
+
+
+General ReferenceSIS Management Data Model
+The following diagram shows how the families used in SIS Management are related to one another.
+
+
+
+Note: In the diagram, boxes represent entity families and arrows represent relationship families that are configured in the baseline database. You can determine the direction of each relationship definition from the direction of the arrow head: the box from which the arrow originates is the predecessor. The box to which the arrow head points is the successor.
+All SIL Analyses begin with an SIL Analysis record. Each SIL Analysis can be linked to:
+One Equipment or Functional Location record.One or more Human Resource records.One or more Reference Document records.One or more Instrumented Function records.One or more Logic Solver records.
+Each Logic Solver is linked to:
+One or more Instrumented Function records.One or more SIS Proof Test records.One or more SIS Proof Test Template records.
+Each Instrumented Function is linked to:
+One Equipment or Functional Location record.One or more Protective Instrument Loop records.One or more Inspection Task records.
+One Risk Assessment record.One LOPA Assessment record. One Process Hazards Analysis (PHA) Assessment record.One or more External Assessment records.One or more SIS Proof Test records.One or more SIS Proof Test Template records.
+To simplify the data model images, the following families are not included:
+
+Risk Assessment Recommendation: Within the SIS Management data model, the Risk Assessment Recommendation family participates as the successor in the Has Recommendations relationship definition with the following families:Instrumented FunctionProtective Instrument LoopSIS Proof TestSIS Proof Test Template
+
+
+Hazards Analysis: The Hazards Analysis family participates as the successor in the Has HAZOP Reference relationship definition with the SIL Analysis and Instrumented Function families.
+SIL Analysis Data Model
+The following diagram shows how the families used in an SIL Analysis are related to one another.
+
+
+
+Note: In the diagram, boxes represent entity families and arrows represent relationship families that are configured in the baseline database. You can determine the direction of the each relationship definition from the direction of the arrow head: the box from which the arrow originates is the predecessor, and the box to which the arrow head points is the successor.
+You can see that records in the following families are linked directly to an SIL Analysis:
+
+Human Resource : Stores information about the people who will participate in the analysis as SIL analysis team members.
+Reference Document : Stores the URL path to a document that is external to GE Digital APM and contains reference information related to the SIL analysis.
+Instrumented Function : Stores information about the instrumented functions of the safety instrumented system that you are analyzing.
+Logic Solver : Stores information about the safety instrumented systems that you are analyzing.
+Additionally, Logic Solver) records and Instrumented Function) records are linked to one another through the Has IF relationship. In addition to the relationships described above, an SIL analysis includes records in the families that are linked to the Logic Solvers and Instrumented Functions.
+Instrumented Function Data Model
+The following diagram shows how the families used to create an Instrumented Function are related to one another.
+
+
+
+Note: In the diagram, boxes represent entity families and arrows represent relationship families that are configured in the baseline database. You can determine the direction of each relationship definition from the direction of the arrow head: the box from which the arrow originates is the predecessor, and the box to which the arrow head points is the successor.
+Instrumented Function records are linked directly to records in the following families:
+
+Inspection Task: Stores details on when a proof test should be performed on the Equipment that is linked to the Inspection Task, including the due date for the task.
+SIS Proof Test: Stores details about a test that is performed on a logic solver or an instrumented function and serves as a record of the event.
+SIS Proof Test Template: Stores details about the steps that should be taken when testing an instrumented function. When you create an SIS Proof Test, you must select an SIS Proof Test Template, and the details from the SIS Proof Test Template will be populated in the SIS Proof Test.
+SIS Proof Test Task: Stores details of proof test tasks that are scheduled for logic solvers or instrumented functions. SIS Proof Test Tasks can be linked to SIS Proof Tests.
+Risk Assessment: Stores the unmitigated risk associated with the item represented by the record to which the Risk Assessment record is linked.
+Protective Instrument Loop: Stores the details of the protective instrument loop and its components, including the calculated results of the proof test associated with the Logic Solver that is linked to the Protective Instrument Loop.
+LOPA Assessment: Stores the details of the Layer of Protection Analysis (LOPA) that conducted, including a description of the initiating event that is indicative of a process failure. The LOPA stores details of the risk assessment that is determined after conducting the Layer of Protection Analysis. The LOPA Assessment is linked to a LOPA record and the LOPA records are linked to Risk Assessment record.
+PHA Internal Assessment: Stores the details of the Process Hazards Analysis (PHA) assessment that you want to conduct, including the target Safety Integrity Level (SIL), Required Probability of Failure, Risk Reduction Factor, and the SIL Mode. These values are calculated based on the overall risk rank of the selected Hazards Analysis Consequence.
+Risk Matrix Internal Assessment: Stores the details of the risk matrix assessment that you want to conduct, including the target Safety Integrity Level (SIL), Required Probability of Failure, Risk Reduction Factor, and the SIL Mode. These values are calculated based on the risk rank that you specify using the risk matrix.
+External Assessment: Stores the details of the external assessment that you want to conduct, including the target SIL, Required Probability of Failure, Risk Reduction Factor, and the SIL Mode. 
+SIF Common Cause Failure: Stores the details of a failure that affects the operation of multiple instrumented functions.
+Instrumented Function: Indicates that if both the instrumented functions represented by the two records are in their safe states at the same time, a hazardous event may occur.
+Logic Solver Data Model
+The following diagram shows how the families used to create a Logic Solver are related to one another.
+
+
+
+ In the diagram, the relationships between the Instrumented Function family and the SIS Proof Test, SIS Proof Test Task, and SIS Proof Test Template families are not included.
+Note: In the diagram, boxes represent entity families and arrows represent relationship families that are configured in the baseline database. You can determine the direction of the each relationship definition from the direction of the arrow head: the box from which the arrow originates is the predecessor, and the box to which the arrow head points is the successor.
+As shown in the image, Logic Solvers are linked to Instrumented Functions, which store information about the specific functions associated with the Logic Solver. Logic Solvers are also linked to records in the following families:
+
+SIS Proof Test
+: Stores details of proof tests that are performed on logic solvers or instrumented functions. SIS Proof Tests can be linked to Functional Test Details, which store the detailed steps that need to be performed during proof tests.
+SIS Proof Test Task
+: Stores details of proof test tasks that are scheduled for logic solvers or instrumented functions. SIS Proof Test Tasks can be linked to SIS Proof Tests.
+SIS Proof Test Template
+: Stores details of the steps that should be taken when testing a logic solver or an instrumented function. When you create an SIS Proof Test, you can select an SIS Proof Test Template and the details from the SIS Proof Test Template will be populated in the SIS Proof Test.
+SIS Proof Test Template ) records can be linked to SIS Proof Test Template Detail) records, which store details on the steps that need to be performed during the proof test.
+The SIS Proof Test, SIS Proof Test Template, and Reference Document families participate as successors in other relationships within the SIS Management data model. This means that these families appear in another portion of the data model.
+Protective Instrument Loop Data Model
+The following diagram shows how the families used in a Protective Instrument Loop are related to one another.
+
+
+
+Note: In the diagram, boxes represent entity families and arrows represent relationship families that are configured in the baseline database. You can determine the direction of the each relationship definition from the direction of the arrow head: the box from which the arrow originates is the predecessor, and the box to which the arrow head points is the successor.
+The following protective instrument loop elements are defined in the GE Digital APM system:
+Logic Solver Sensor System Sensor Group Sensor Final Element System Final Element Group Final Element 
+By default, every protective instrument loop consists of at least one of each element. When you create a Protective Instrument Loop, the GE Digital APM system creates one record for each of these elements, and links to the Protective Instrument Loop as shown in the data model.
+SRS Project Data Model
+The following diagram shows how the families used in an SRS Project are related to one another.
+
+
+
+Note: In the diagram, boxes represent entity families and arrows represent relationship families that are configured in the baseline database. You can determine the direction of the each relationship definition from the direction of the arrow head: the box from which the arrow originates is the predecessor, and the box to which the arrow head points is the successor.
+SRS Project records are linked directly to records in the following families:
+EnvironmentGeneral DataElectricalHardwareIF SRSInterfacesOperationsPerformance DataSIL SRSSoftwareTesting/FaultsSIL AnalysisInstrumented FunctionLogic SolverProtective Instrument Loop
+SIS Management Security Groups
+
+The following table lists the baseline Security Groups available for users within this module, as well as the baseline Roles to which those Security Groups are assigned. In Predix APM, Roles are assigned to Security Users through permission sets.
+
+Important:  Assigning a Security User to a Role grants that user the privileges associated with all of the Security Groups that are assigned to that Role. To avoid granting a Security User unintended privileges, before assigning a Security User to a Role, be sure to review all of the privileges associated with the Security Groups assigned to that Role.
+                
+
+Security GroupRolesMI SIS Administrator
+MI Safety Admin
+MI SIS Administrator
+MI SIS Engineer
+MI Safety Admin
+MI Safety Power
+MI Safety User
+MI SIS Engineer
+MI SIS User
+MI Safety Admin
+MI Safety Power
+MI Safety User
+MI SIS User
+MI SIS Viewer
+MI APM Viewer
+MI Safety Admin 
+MI Safety Power 
+MI Safety User 
+MI SIS Engineer 
+MI SIS Viewer
+
+ 
+The baseline family-level privileges that exist for these Security Groups are summarized in the following table.
+Note: The baseline family-level privileges available in the LOPA module are also applicable to Security Groups in SIS Management module.
+FamilyMI SIS AdministratorMI SIS EngineerMI SIS UserMI SIS ViewerEntity FamiliesAsset Criticality AnalysisViewNoneNoneViewAsset Criticality Analysis SystemView NoneNoneViewConsequenceView, Update, Insert, DeleteViewViewViewEquipmentViewViewViewViewExternal AssessmentView, Update, Insert, DeleteView, Update, Insert, DeleteNoneViewFunctional LocationViewViewViewViewFunctional SystemsView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewFunctional Test DetailView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHuman ResourceView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewInstrumented FunctionView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewLOPA AssessmentView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewProven In Use JustificationView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewSafety Integrity LevelView, Update, Insert, DeleteViewViewViewRelationship FamiliesAnalysis Has Human ResourceView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewAsset Criticality Analysis Has SystemViewNoneViewViewEquipment Has EquipmentViewViewViewViewFunctional Location Has EquipmentViewViewViewViewFunctional Location Has Functional LocationViewViewViewViewHas EquipmentView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas Functional LocationView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas Functional Location DetailView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas Functional TestView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas_Functional_Test_DetailView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Hazard EventView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas HAZOP ReferenceView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas IFView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas Instrumented Function RevisionView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas Instrument LoopView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas Instrument Loop RevisionView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas LOPAView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas LOPA RevisionView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas PIL DeviceView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas PIL Device RevisionView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas PIL GroupView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas PIL Group RevisionView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas PIL SubsystemView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas PIL Subsystem RevisionView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas Proven In Use JustificationView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas RBI ComponentsView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas RecommendationsView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas Reference DocumentsView, Update, Insert, DeleteView, Update, Insert, DeleteView, InsertViewHas Reference ValuesView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas RiskView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas Risk CategoryView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas Risk MatrixView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas SIF Common Cause FailuresView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas SIL AssessmentView, Update, Insert, DeleteView, Update, Insert, DeleteNoneViewHas SIS Analysis RevisionView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas SIS RevisionView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas SIS Trip Report DetailView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas Site ReferenceView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas Task HistoryView, Update, Insert, DeleteView, Update, Insert, DeleteView, InsertViewHas TasksView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas Task RevisionViewViewViewViewHas Template DetailView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas TemplatesView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewHas Time Based Inspection IntervalViewViewViewViewMigrates RiskView, Update, Insert, DeleteView, Update, Insert, DeleteViewViewWas Promoted to ASMView, Update, Insert, DeleteView, Update, Insert, DeleteViewView
+Security Permissions for SRS Families
+The security permissions for the SRS Project and SRS Template families are summarized in the following table.
+Security GroupTypePermissionsMI SIS Administrator Group View, Update, Insert, DeleteMI SIS EngineerGroup View, Update, Insert, DeleteMI SIS UserGroup View
+SIS Management URLs
+There is one URL route associated with SIS Management: asset-safety/sis. The following table describes the various paths that build on the route, and the elements that you can specify for each.
+
+Tip: For more information, refer to the URLs section of the documentation.
+
+ElementDescriptionAccepted Value(s)Notes
+asset-safety/sis/overview: Displays the SIS Management Overview page.asset-safety/sis/sil/<EntityKey>: Displays the Analysis Summary workspace of the SIL Analysis with the specified Entity Key.
+<EntityKey>
+Specifies the Entity Key of the analysis that you want to access.Any numeric Entity Key that corresponds to an existing analysis.
+Opens the specified SIL Analysis in a new tab.
+This value is required to access an existing analysis from a URL.
+asset-safety/sis/sil/prooftesttask/<EntityKey1>/<EntityKey2>: Displays the Proof Test Task datasheet with the specified Entity Key and linked to the the specified Instrumented Function or the Logic Solver.
+<EntityKey1>
+Specifies the Entity Key of the Instrumented Function or the Logic Solver that is linked to the Proof Test Task that you want to access.Any numeric Entity Key that corresponds to an existing Instrumented Function or Logic Solver.None
+<EntityKey2>
+Specifies the Entity Key of the Proof Test Task that you want to access.0Opens the blank datasheet of a Proof Test Task, allowing you to create a new one.Any numeric Entity Key that corresponds to an existing Proof Test Task.
+Opens the specified Proof Test Task in a new tab.
+This value is required to access an existing Proof Test Task from a URL.
+asset-safety/sis/sil/verification/<EntityKey>: Displays the Protective Instrument Loop Template with the specified Entity Key. 
+<EntityKey>
+Specifies the Entity Key of the Protective Instrument Loop Template that you want to access.Any numeric Entity Key that corresponds to an existing Protective Instrument Loop Template.
+Opens the specified Protective Instrument Loop Template in a new tab.
+This value is required to access an existing Protective Instrument Loop Template from a URL.
+asset-safety/sis/FDM/<CustomDeviceType>/<EntityKey>: Displays the datasheet of a Custom Device of the specified type and Entity Key.
+<CustomDeviceType>
+ Specifies the type of the Custom Device whose Failure Data you want to access.All Nonesensorlogic-solverfinal-element
+<EntityKey>
+Specifies the Entity Key of the Custom Device whose Failure Data you want to access.Any numeric Entity Key that corresponds to an existing Custom Device.
+Opens the specified Custom Device in a new tab.
+This value is required to access an existing Custom Device from a URL.
+
+
+
+Example URLDestination
+asset-safety/sis/overview
+The SIS Management Overview pageasset-safety/sis/sil/2355677
+The Analysis Summary workspace of the SIL Analysis with the Entity Key 2355677asset-safety/sis/sil/prooftesttask/73443556/34545566
+The Proof Test Task datasheet with the Entity Key 34545566, linked to an Instrumented Function or a Logic Solver with the Entity Key 73443556asset-safety/sis/sil/verification/35945456
+The Protective Instrument Loop Template datasheet with the Entity Key 35945456asset-safety/sis/FDM/sensor/75334565
+The Sensor Custom Device datasheet with the Entity Key 75334565
+
+SIS Management System Code Tables
+ The following table lists the System Code Tables that are used by SIS Management.
+
+Table ID
+
+Table Description
+
+Function
+MI_IPL_TYPE  LOPA IPL TYPE Populates the Type field in an Independent Layer of Protection. MI_SIL_ASSESSMENT_METHOD SIL Assessment Method Populates the SIL Assessment Method field in an Instrumented Function. MI_SIL_FINALELEMVOTE  SIL FinalElement Vote Populates the Voting field in a Protective Instrument Loop Final Element Group.MI_SIL_SENSORVOTE  SIL Sensor Vote Populates the Voting field in a Protective Instrument Loop Sensor Group. UOME Unit of Measure Populates the Trip Point Units field in a SIS Proof Test Template Detail. 
+About SIL Analysis State Configuration
+This topic describes attributes of the State Configuration that is defined for the SIL Analysis family in the baseline GE Digital APM database.
+The following baseline states are defined in the GE Digital APM application:
+Planning Active Review Pending Approval Complete 
+The following baseline operations are defined in theGE Digital APM application:
+Begin Propose Submit Accept Reject Modify/Reassess 
+These baseline states and operations are reserved, which means you cannot modify or remove them. You can, however, add your own states and operations to the state configuration.
+The following flow diagram illustrates the State Configuration for the SIL Analysis family. In this image, a box represents a state, and an arrow represents an operation. The state to which an arrow points represents a successor state.
+
+
+
+By default, the MI SIS Administrator and MI SIS Engineer State Configuration roles are assigned to all states in the SIL analysis state configuration. You can assign State Configuration roles to any state. In addition, for each state, the Require a specific user to be assigned to a state check box is selected.
+About Protective Instrument Loop State Configuration
+This topic describes attributes of the State Configuration that is defined for the Protective Instrument Loop family in the baseline GE Digital APM database.
+The following baseline states are defined in the GE Digital APM application:
+Design Pending Approval Approval In Service Out of Service 
+The following baseline operations are defined in the GE Digital APM application:
+Submit Accepted Rejected Commissioned Modify Reinstate 
+These baseline states and operations are reserved, which means you cannot modify or remove them. You can, however, add your own states and operations to the state configuration.
+The following flow diagram illustrates the State Configuration for the SIL Analysis family. In this image, a box represents a state, and an arrow represents an operation. The state to which an arrow points represents a successor state.
+
+
+
+By default, the MI SIS Administrator and MI SIS Engineer State Configuration roles are assigned to all states in the SIL analysis State Sonfiguration. You can assign State Configuration roles to any state.
+Note:
+If Baseline or Custom State Management is used, the Protective Instrument Family Datasheet is enabled only in the Initial state defined in the State Machine Configuration. Datasheet is disabled for editing in the subsequent states. Additionally, the related records exhibit the following behaviour:Link and Copy buttons for Sensor Group details tab is disabledProtected Instrument Loop Sensor Datasheet is disabledLink and Copy buttons for Protective loop Sensor is disabledLink and Copy buttons for Final Element group details tab is disabledProtected Instrument Loop Final Element Datasheet is disabledLink and Copy buttons for Protective Instrument Loop Final Element is disabledProtective Instrument Device Datasheet is disabledProven In Use Justification Datasheet is disabledIf State Management is disabled for Protective Instrumented Loop family, the restriction to modify the Protected Instrument Loop and related records based on the state is removed.
+
+About the SIS Trip Report State ConfigurationThis topic describes attributes of the State Configuration that is defined for the SIS Trip Report family in the baseline GE Digital APM database.
+The following State Configuration is defined for the SIS Trip Report family. In this image, a box represents a state, and an arrow represents an operation. The state to which an arrow points represents a successor state.
+
+
+
+None of these states and operations are reserved, which means you can remove or modify any of them. You can also add your own states and operations to the state configuration.
+State Configuration Roles
+By default, the MI SIS Administrator and MI SIS Engineer State Configuration roles are assigned to all states in the SIS Trip Report state configuration. You can assign State Configuration roles to any state. In addition, for each state, the Require a specific user to be assigned to a state check box is selected.
+About State Management of an SRS Project
+The following states are configured for an SRS Project:
+In Progress: Indicates that the SRS Project is in progress or yet to be sent for approval. You can modify an SRS Project only if it is in the In Progress state. After you have entered all the required information in the SRS Project, you can send it for approval by changing the state to Pending Approval.Pending Approval: Indicates that the SRS Project has been sent for approval. If you approve the SRS Project, the state of the SRS Project changes to Approved. If you reject the SRS Project, the state of the SRS Project changes to In Progress.Approved: Indicates that the SRS Project has been approved. After the state of an SRS Project is set to Approved:The associated SRS Project is cycled. That is, the Last Date field is set to the date on which the state of the SRS Project is set to Approved. The Next Date field is set to the date on which the SRS Project must be performed again (in case of a recurring task).
+Illustration of the State Management of SRS Projects 
+By default, the following states exists for an SRS Project:
+
+
+
+About State Management of SRS Templates
+The following states are configured for SRS templates:
+In Progress: Indicates that the SRS Template is in progress or yet to be sent for approval. You can modify an SRS Template only if it is in the In Progress state. After you have entered all the required information in the SRS Template, you can send it for approval by changing the state to Pending Approval.Pending Approval: Indicates that the SRS Template has been sent for approval. If you approve the SRS Template, the state of the SRS Template changes to Approved. If you reject the SRS Template, the state of the SRS Template changes to In Progress.Approved: Indicates that the SRS Template has been approved. After the state of an SRS Template is set to Approved:The associated SRS Template is cycled. That is, the Last Date field is set to the date on which the state of the SRS Template is set to Approved. The Next Date field is set to the date on which the SRS Template must be performed again (in case of a recurring task).
+Illustration of the State Management of SRS Templates 
+By default, the following states exists for SRS Templates:
+
+
+
+SIS Management Site Filtering
+In SIS Management, an SIL Analysis is assigned a site on the Definition workspace and spread to all the related records, such as Instrumented Function records and Logic Solver records.
+
+Tip: For more information, refer to the Site Filtering section of the documentation.
+
+In SIS Management, users will see only SIL Analysis that are assigned to their site(s) or that are global records.
+
+Consider an organization that has three sites, Site X, Site Y, and Site Z. The following SIL Analysis records exist:
+SIL Analysis A: Assigned to Site XSIL Analysis B: Assigned to Site YSIL Analysis C: Assigned to Site ZSIL Analysis D: No site assigned (global records)
+
+Scenario 1: User assigned to only Site X
+
+This user will see SIL Analysis A and SIL Analysis D.
+
+Scenario 2: User assigned to both Site X and Site Y
+
+This user will see SIL Analysis A, B and D.
+
+Scenario 3: Super User
+
+This user will see SIL Analysis A, B, C and D.
+Important: If a multi-site user, or a Super User, links child records from multiple sites to a parent record designated as Global, another user who does not have access to all sites may only see a portion of the data associated with that record. In the example above, if a child record assigned to Site X and a child record assigned to Site Y are linked to SIL Analysis D, the Site X user will not be able to see all the records associated with SIL Analysis D.
+About Reports in SIS ManagementThe SIS Management module provides the following types of baseline reports.
+SIL Analysis Report
+
+ The SIL Analysis report contains the information from the following fields stored in the SIL Analysis records:
+Report ColumnField Name in SIL Analysis RecordAnalysis DescriptionAnalysis DescriptionAnalysis IDAnalysis IDAnalysis Long DescriptionLong DescriptionAnalysis Owner NameOwnerEnd DateAnalysis End DateLast Modified ByLast Modified ByLast Modified DateLast Modified DateProcess Hazards Analysis ReferenceHazards Analysis ReferenceProcess Hazards Analysis Rev DateHazards Analysis DateProcess Hazards Analysis Rev NoHazards Analysis RevisionSite DescriptionSite DescriptionSite IDSite IDStart DateAnalysis Start DateUnit DescriptionUnit DescriptionUnit IDUnit ID
+
+SRS Project Report
+
+The SRS report contains all the details from an SIL Analysis that are required to meet compliance for IEC standard 61511. You can use this report to:
+Provide proof of compliance with IEC 61511.Identify gaps in compliance with IEC 61511.
+The SRS report displays values that are stored in the SIL Analysis records, and related records that comprise an SIL Analysis. Information in the SRS report is organized in the following sections:
+IntroductionGeneral Requirements for the Safety Instrumented SystemGeneral Requirements for the Safety Instrumented FunctionsSummary of Safety Instrumented FunctionsSIF Safety Requirement SpecificationProcess & Operational RequirementsLoop ComponentsSensor PartLogic Solver Part
+Final Element Part
+
+
+Instrumented Function Report
+The Instrumented Function report contains information from the following fields stored in the Instrumented Function records:
+Report ColumnField Name in Instrumented Function RecordAvailability TargetAvailability TargetConsequence DescriptionConsequence DescriptionFailure Rate UOMFailure Rate UOMFrequency of Initiating Event (per yr)Frequency of Initiating Event (per yr)Function TypeFunction TypeHazardous EventHazardous EventHazards Analysis RefHazards Analysis ReferenceHazards Analysis Rev DateHazards Analysis DateIF DescriptionPIF DescriptionIF IDPIF IDInitiating EventInitiating EventInitiating Event DescriptionInitiating Event DescriptionLast Modified ByLast Modified ByLast Modified DateLast Modified DateMaximum Probability of FailureRequired Probability of FailureProcess SpeedProcess SpeedResponse TimeResponse TimeRisk Reduction FactorRisk Reduction FactorSafe State DescriptionSafe State DescriptionSelected SIL LevelSelected SIL LevelSIL Assessment MethodSIL Assessment MethodSIL ModeSIL ModeSIS System IDSIS System IDSite IDSite IDSpurious Trip LimitSpurious Trip Limit (per yr)Unit IDUnit ID
+Protective Instrument Loop Report
+The Protective Instrument Loop report contains a summary of results for the selected Protective Instrument Loop (PIL). This report also includes a summary of calculated results for the Logic Solver, Sensor System, and Final Element System associated with the Protective Instrument Loop.
+The PIL report displays the following information from the Protective Instrument Loop records:
+Report ColumnField Name in Protective Instrument Loop Record Achieved SIL Achieved SIL Evaluated Systematic CapabilitiesCalculated SIL Systematic Capabilities Last Modified By Last Modified By MTTS (years)MTTFS Status Changed ByStatus By Systematic Capability Validation Systematic Capability ValidationDescriptionDescriptionEvaluated Architectural ConstraintsCalculated SIL Architectural ConstraintsLast Modified DateLast Modified DateLong DescriptionLong DescriptionLoop ClassLoop ClassLoop IDIDLoop TypeLoop TypeMeets SIL RequirementsMeets SIL Requirement?Mission TimeMission TimeProbability of FailureLoop PFHRequired SILRequired SILRisk Reduction FactorRisk Reduction FactorSIL Demand ModeDemand ModeSIL Validation MethodSIL Validation MethodStartup TimeStartup TimeStatusStatusStatus Changed DateStatus DateTest Architectural ConstraintsTest Architecture Constraints
+The Protective Instrument Loop report also includes a table, which contains the following information that is stored in the Protective Instrument Loop Logic Solver records, and Protective Instrument Loop System records linked to the Protective Instrument Loop record:
+Report Column  Field Name in Protective Instrument Loop Logic Solver RecordField Name in Protective Instrument Loop System Recordfor Sensor Systemfor Final Element SystemArch ConsSIL Architectural ConstraintsSIL Architectural ConstraintsSIL Architectural ConstraintsAvailAvailabilityAvailabilityAvailabilityMTTFSMTTFSMTTFSMTTFSMTTFS ContMTTFS ContributionMTTFS ContributionMTTFS ContributionPFD AvgCalculated PFD AvgCalculated PFD AvgCalculated PFD AvgPFD ContPFD ContributionPFD ContributionPFD ContributionPFHCalculated PFHCalculated PFHCalculated PFHPTIProof Test IntervalN/AN/ASys CapSIL Systematic CapabilitySIL Systematic CapabilitySIL Systematic Capability
+Family Fields that are Updated While Importing Data from ExidaThis topic maps the exSILentia fields with the corresponding Family Fields that gets updated when you import data from Exida.The Protective Instrument Loop family
+Property NameField IDField CaptionexSILentia Class/FieldCalculatorNoneNoneNoneDiagramMI_PRE_I_LP_DIAGRAM_BDiagramNoneDemandModeMI_PRE_I_LP_DEMAND_MODE_CDemand_ModeclsSILverData_DemandModeLoopIDMI_FNCL_SYS_ID_CIDNoneMissionTimeMI_PRE_I_LP_MISSION_TIME_NMission_TimeclsSILverData_calctime StartupTimeMI_PRE_I_LP_STARTUP_TIME_NStartup_TimeclsSILverData_startupTestArchitectureContraintsMI_PRE_I_LP_TST_ARCHTCTE_CNS_CTest_Architecture_ConstraintsNoneSystematicCapabilityValidationMI_PRE_I_LP_SYSTMTC_CPBY_VLN_LSystematic_Capability_ValidationclsSILverData_ConsiderSILCapabilitySensorMCIMI_PRE_I_LP_SENSOR_MCI_NSensor_MCIclsSILverData_MCI_SensorsFinalElementMCIMI_PRE_I_LP_FINALELEMENT_MCI_NFinal_Element_MCIclsSILverData_MCI_FinalElementsLogicSolverMCIMI_PRE_I_LP_LOGICSOLVER_MCI_NLogic_Solver_MCIclsSILverData_MCI_LogicSolverRequiredSILMI_PRE_I_LP_REQUIRED_SIL_NRequired_SILclsSILverData_TargetSILV
+The Protective Instrument Loop Final Element family
+Property NameField IDField CaptionexSILentia Class/FieldGUIDMI_PRE_ELT0_GUID_CGUIDNoneRAVMI_PRE_FLT0_RAV_LRemote_Actuated_ValveclsFinalElemLegData_RAV_TightShutOffRequiredMI_PRE_FLT0_TIGHT_SHTFF_RQRD_LTight_Shutoff_RequiredclsFinalElemLegData_TShutoffReq_UncleanServiceMI_PRE_FLT0_UNCLEAN_SERVICE_LSevere_ServiceclsFinalElemLegData_UncleanServiceUseCombinationMI_PRE_FLT0_USE_COMBINATION_LUse_CombinationclsFinalElemLegData_UseActValCombo UsePVSTMI_PRE_FLT0_USE_PVST_LPartial_Valve_Stroke_TestingclsFinalElemLegData_UsePVST_UsePVSTCovMI_PRE_FLT0_USE_PVSTCOV_LUse_Custom_PVST_CoverageclsFinalElemLegData_UsePVSTCovValveTripOpenMI_PRE_FLT0_VALVE_TRIP_OPEN_LValve_Trip_OpenclsFinalElemLegData_ValveTripOpen CustomPVSTCoverageMI_PRE_FLT0_CUSTM_PVST_CVRGE_NCustom_PVST_CoverageclsFinalElemLegData_AT_Coverage_CustomPVSTIntervalMI_PRE_FLT0_PVST_INTER_NPVST_IntervalclsFinalElemLegData_AT_IntervalCustomPVSTIntervalUOMMI_PRE_FLT0_PVST_INTER_UOM_CPVST_Interval_UOMNone
+The Protective Instrument Loop System family
+Property NameField IDField CaptionexSILentia Class/FieldSystemTypeMI_PRE_SYM0_SYSTEM_TYPE_CSystem_TypeNoneGUIDMI_PRE_ELT0_GUID_CGUIDNoneParentNoneNoneNoneCommonCauseBetweenGroupsBetaMI_PRE_SYM0_COMMON_CAUSE_NCommon_Cause_(Beta)clsSILverData_GroupBetaSensNumberofGroupsMI_PRE_SYM0_NUMBEROF_GROUPS_NNumber_of_GroupsclsSILverData_numsensorsGroupVotingMI_PRE_SYM0_VOTING_BTWN_GRPS_CVoting_Between_GroupsclsSILverData_sensorvote_
+The Protective Instrument Loop Sensor family
+Property NameField IDField CaptionexSILentia Class/FieldGUIDMI_PRE_ELT0_GUID_CGUIDNoneIsAnalogMI_PRE_SNR0_ISANALOG_LAnalog_InputNoneAnalogTripMI_PRE_SNR0_ANALOG_TRIP_NAnalog_TripclsSensorLegData_AnalogTrip ExternalComparisonMI_PRE_SNR0_EXTERNAL_COMPRSN_LExternal_ComparisonclsSensorLegData_ExternalComp_ExternalComparisonValueMI_PRE_SNR0_EXTER_COMPA_VALUE_NExternal_Comparison_ValueclsSensorLegData_ExternalCompCovAlarmSettingMI_PRE_SNR0_HIGH_ALARM_LAlarm_Setting(High/Low)clsSensorLegData_JumperRangeCheckingMI_PRE_SNR0_RANGE_CHECKING_LOver/Under_RangeclsSensorLegData_RangeCheckingInputFiltersMI_PRE_SNR0_INPUT_FILTER_LAlarm_FilterclsSensorLegData_InputFilteringSensorTripOnAlarmMI_PRE_SNR0_SNSR_TRP_ON_ALRM_LAlarm_Voted_as_TripclsSensorLegData_TripOnAlarmSensorTypeMI_PRE_SNR0_SENSOR_TYPE_CSensor_TypeclsSensorLegData_SensTypeEnableTripMI_PRE_SNR0_ENABLETRIP_LEnableTripNone
+The Protective Instrument Loop Group family
+Property NameField IDField CaptionexSILentia Class/FieldGUIDMI_PRE_ELT0_GUID_CGUIDNoneParentNoneNoneNoneGroupTypeMI_PRE_GRP0_GROUP_TYPE_CGroup_TypeNoneLegsNumberMI_PRE_GRP0_SUBSYSTEM_NUMBER_NSubsystem_NumberNoneNMI_PRE_GRP0_N_NCustom_Vote_NclsFinalElemGroupData_CustVoteNMMI_PRE_GRP0_M_NCustom_Vote_MclsFinalElemGroupData_CustVoteM_FinalElementVoteMI_PRE_GRP0_VOTING_CVotingclsFinalElemGroupData_Vote CommonCauseBetaMI_PRE_GRP0_COMMON_CAUSE_BTA_NCommon_Cause_(Beta)clsFinalElemGroupData_BetaMTTRMI_PRE_GRP0_MTTR_NMTTRclsFinalElemGroupData_MTTR_ProofTestCoverageMI_PRE_GRP0_PROOF_TEST_CVRGE_NProof_Test_CoverageclsFinalElemGroupData_ProofTestCovPrrofTestIntervalMI_PRE_GRP0_PROOF_TST_INTRVL_NProof_Test_IntervalclsFinalElemGroupData_ProofTestIntVoteTypeMI_PRE_GRP0_DIVERSE_LDiverseclsFinalElemGroupData_IsVoteDiverse
+The Protective Instrument Loop Logic Solver Channel family
+Property NameField IDField CaptionexSILentia Class/FieldParentNoneNoneNoneEntityNoneNoneNoneChannelTypeMI_PRE_CHL0_CHANNEL_TYPE_CChannel_TypeclsLogicSolverPartData_ChannelType ExidalDMI_PRE_DVE0_EXIDA_ID_NExida_IDclsLogicSolverPartData_EIDDangerousDetectedMI_PRE_DVE0_DANGEROUS_DETCTD_NDangerous_DetectedclsLogicSolverPartData_FailDDDangeroudUndetectedMI_PRE_DVE0_DANGEROS_UNDTCTD_NDangerous_UndetectedclsLogicSolverPartData_FailDUFailureAnnunciationDetectedMI_PRE_DVE0_FLRE_ANNNCTN_DTD_NFailure_Annunciation_DetectedclsLogicSolverPartData_FailADFailureAnnunciationUndetectedMI_PRE_DVE0_FLRE_ANNNCTN_UND_NFailure_Annunciation_undetectedclsLogicSolverPartData_FailAUFailureDetectedMI_PRE_DVE0_FAILURE_DETECTED_NFailure_DetectedclsLogicSolverPartData_FailDetectedFailureHighMI_PRE_DVE0_FAILURE_HIGH_NFailure_highclsLogicSolverPartData_FailHighFailureLowMI_PRE_DVE0_FAILURE_LOW_NFailure_LowclsLogicSolverPartData_FailLowResidualMI_PRE_DVE0_RESIDUAL_NResidualclsLogicSolverPartData_FailNoEffect SafeDetectedMI_PRE_DVE0_SAFE_DETECTED_NSafe_DetectedclsLogicSolverPartData_FailSD SafeFailureFractionMI_PRE_DVE0_SSF_NSafe_Failure_FractionclsLogicSolverPartData_SFFSafeUndetectedMI_PRE_DVE0_SAFE_UNDETECTED_NSafe_UndetectedclsLogicSolverPartData_FailSUChannelsNoneNoneclsLogicSolverPartData_Channels NameMI_PRE_DVE0_NAME_CModule_NameclsLogicSolverPartData_ModelReferenceDateSourceTitleMI_PRE_ELT0_REFRNCE_DTA_SRCE_CReference_Data_SourceNoneReferenceDateSourceMI_PRE_ELT0_RFRNCE_DTA_RFRNE_CReference_Data_ReferenceNoneReferenceDataDateMI_PRE_ELT0_REFERNCE_DTA_DTE_DReference_Data_DateNoneReferenceRevisionMI_PRE_ELT0_REFRNCE_DTA_RVSN_CReference_Data_RevisionNone
+The Protective Instrument Loop Logic Solver family
+Property NameField IDField CaptionexSILentia Class/FieldGroupTypeMI_PRE_GRP0_GROUP_TYPE_CGroup_TypeNoneGUIDMI_PRE_ELT0_GUID_CGUIDNoneParentNoneNoneNoneMTTRMI_PRE_GRP0_MTTR_NMTTR.clsSILverData_LogicSolver.MTTR ProofTestCoverageMI_PRE_GRP0_PROOF_TEST_CVRGE_NProof_Test_CoverageclsSILverData_LogicSolver.ProofTestCoverage ProofTestIntervalMI_PRE_GRP0_PROOF_TST_INTRVL_NProof_Test_IntervalclsSILverData_LogicSolver.ProofTestIntervalEnableAutoPTSMI_PRE_SLR0_ATMTC_PRFTST_SWR_LAutomatic_Prooftest_SwitchoverclsSILverData_LogicSolver.AT_EnabledAutoPTSIMI_PRE_SLR0_ATMC_PRT_SWR_INL_NAutomatic_Prooftest_Switchover_IntervalclsSILverData_LogicSolver.AT_Interval AutoPTSICovMI_PRE_SLR0_ATMC_PRT_SWR_INL_NAutomatic_Prooftest_Switchover_ConverageclsSILverData_LogicSolver.AT_CoverageArchitecturalConstraintsMI_PRE_GRP0_SL_ARCHTCTRL_CNS_NSIL_Architectural_ConstraintsclsSILverData_LogicSolver.HFTEquipmentFailureModeTypeAsPerIEC61508MI_PRE_SLR0_EQUIPMENT_TYPE_CArchitectural_TypeclsSILverData_LogicSolver.ArchType CommonCauseBetaMI_PRE_GRP0_COMMON_CAUSE_BTA_NCommon_Cause_(Beta)clsSILverData_LogicSolver.BetaSILCapabilityMI_PRE_GRP0_SIL_CAPABILITY_NSIL_Systematic_CapabilityclsSILverData_LogicSolver.LimitingSILVotingMI_PRE_GRP0_VOTING_CVotingclsSILverData_LogicSolver.MyVotingIsCustomerizedMI_PRE_SLR0_ISCUSTOMERIZED_LManual_EntryNoneExidaIDMI_PRE_SLR0_EXIDA_ID_NExida_IDclsSILverData_LogicSolver.EquipmentIDExidaNameMI_PRE_SLR0_EXIDA_NAME_CExida_NameclsSILverData_LogicSolver.exidaNameReferenceDateSourceTitleMI_PRE_ELT0_REFRNCE_DTA_SRCE_CReference_Data_SourceNoneReferenceDateSourceMI_PRE_ELT0_RFRNCE_DTA_RFRNE_CReference_Data_ReferenceNoneReferenceDataDateMI_PRE_ELT0_REFERNCE_DTA_DTE_DReference_Data_DateclsSILverData_LogicSolver.SERHVerReferenceRevisionMI_PRE_ELT0_REFRNCE_DTA_RVSN_CReference_Data_RevisionclsSILverData_LogicSolver.SERHVer AutomaticMI_PRE_SLR0_AUTOMATIC_LAutomatic_Channel_CountclsSILverData_LogicSolver.AutomaticLogicSolverChannelsNoneNoneNone
+The Protective Instrument Device family
+Property NameField IDField CaptionexSILentia Class/FieldExidalDMI_PRE_DVE0_EXIDA_ID_NExida_IDclsSILverDeviceData_EquipmentIDIsCustomerizedMI_PRE_DVE0_ISCUSTOMED_LManual_EntryNoneTagMI_PRE_DVE0_DEVICE_TAG_CDevice_TagNoneIsApprovedMI_PRE_ELT0_APPROVEDTOUSE_LApproved_Custom_DeviceNoneAnalogAI_AOMI_PRE_DVE0_ANALOG_CHANNELS_NAnalog_ChannelsclsSILverDeviceData_ChannelCount DigitalDI_DOHighMI_PRE_DVE0_DIGTL_HGH_CHNNLS_NDigital_High_ChannelsclsSILverDeviceData_ChannelCountDigitalDI_DOLowMI_PRE_DVE0_DIGITL_LW_CHNNLS_NDigital_Low_ChannelsclsSILverDeviceData_ChannelCountNameMI_PRE_DVE0_NAME_CExida_NameclsSILverDeviceData_exidaName ArchitecturalTypeMI_PRE_DVE0_ARCHITECTRL_TYPE_CArchitectural_TypeclsSILverDeviceData_ArchType CertifiedSILMI_PRE_DVE0_CERTIFIED_SIL_NCertified_SILclsSILverDeviceData_CertifiedForSILDangerousDetectedMI_PRE_DVE0_DANGEROUS_DETCTD_NDangerous_DetectedclsSILverDeviceData_FailDDDangerousUndetectedMI_PRE_DVE0_DANGEROS_UNDTCTD_NDangerous_UndetectedclsSILverDeviceData_FailDUDeviceTypeMI_PRE_DVE0_DEVICE_TYPE_CDevice_TypeclsSILverDeviceData_DeviceTypeFailureAnnunciationDetectedMI_PRE_DVE0_FLRE_ANNNCTN_DTD_NFailure_Annunciation_DetectedclsSILverDeviceData_FailADFailureAnnunciationUndetectedMI_PRE_DVE0_FLRE_ANNNCTN_UND_NFailure_Annunciation_undetectedclsSILverDeviceData_FailAUFailureDetectedMI_PRE_DVE0_FAILURE_DETECTED_NFailure_DetectedclsSILverDeviceData_FailDetectedFailureHighMI_PRE_DVE0_FAILURE_HIGH_NFailure_highclsSILverDeviceData_FailHigh FailureLowMI_PRE_DVE0_FAILURE_LOW_NFailure_LowclsSILverDeviceData_FailLowResidualMI_PRE_DVE0_RESIDUAL_NResidualclsSILverDeviceData_FailNoEffectSafeDetectedMI_PRE_DVE0_SAFE_DETECTED_NSafe_DetectedclsSILverDeviceData_FailSD SafeUndetectedMI_PRE_DVE0_SAFE_UNDETECTED_NSafe_UndetectedclsSILverDeviceData_FailSUSuggestedPTCMI_PRE_DVE0_SUGGESTEDPTC_NSuggested_PTCclsSILverDeviceData_SuggestPTC TripRestrictMI_PRE_DVE0_TRIPRESTRICT_CTrip_RestrictclsSILverDeviceData_TripRestrict ReferenceDataSourceTitleMI_PRE_ELT0_REFRNCE_DTA_SRCE_CReference_Data_SourceNoneReferenceDataDateMI_PRE_ELT0_REFERNCE_DTA_DTE_DReference_Data_DateclsSILverDeviceData_SERHVerReferenceRevisionMI_PRE_ELT0_REFRNCE_DTA_RVSN_CReference_Data_RevisionclsSILverDeviceData_SERHVer
+The Protective Instrument Loop Element family
+Property NameField IDField CaptionexSILentia Class/FieldParentNoneNoneNoneConstantineNoneNoneNoneDisplayInfoMI_PRE_ELT0_VISUAL_ATTRIBUTS_TVisual_AttributesNone
+The Instrumented Function family
+Property NameField IDField CaptionexSILentia Class/FieldSafetyLoopsNoneNoneNoneUnitIDMI_PIF00000_UNIT_ID_CUnit_IDclsSILverData_UnitName DescriptionVS)MI_PIF00000_DESC_CPIF_DescriptionclsSILverData_SIFDescHazardousEventMI_PIF00000_HAZAR_EVENT_CHazardous_EventclsSILverData_HazardDescConsequenceDescriptionMI_PIF00000_CONS_DESC_TConsequence_DescriptionclsSILverData_ConseqDescSafeStateDescriptionMI_PIF00000_SAFE_STATE_DESCR_TSafe_State_DescriptionclsSILverData_SafeStateResponseTimeMI_PIF00000_RESPO_TIME_NResponse_TimeclsSILverData_RespTime SpuriousTripLimitMI_PIF00000_SPURI_TRIP_LIMIT_NSpurious_Trip_Limit_(per_yr)clsSILverData_ReqSTR_SelectedSILLevelMI_PIF00000_SELEC_SIL_LEVEL_NSelected_SIL_LevelclsSILverData_TargetSILSILModeMI_PIF00000_SIL_MODE_CSIL_ModeNoneSILAssessmentMethodMI_PIF00000_SIL_ASSES_METHO_CSIL_Assessment_MethodNoneProcessHazardsAnalysisReferenceMI_PIF00000_PROC_HAZ_AN_REF_CHazards_Analysis_ReferenceNoneProcessHazardsAnalysisDateMI_PIF00000_PROC_HAZ_AN_DATE_DHazards_Analysis_DateNoneSiteIDMI_PIF00000_SITE_ID_CSite_IDNoneSILAnalysisKeyMI_PIF00000_SIL_ANALY_KEY_NSIL_Analysis_KeyNone
+
+
+
+
+
+On this pageSIS Management Data ModelSIL Analysis Data ModelInstrumented Function Data ModelLogic Solver Data ModelProtective Instrument Loop Data ModelSRS Project Data ModelSIS Management Security GroupsSecurity Permissions for SRS FamiliesSIS Management URLsSIS Management System Code TablesAbout SIL Analysis State ConfigurationAbout Protective Instrument Loop State ConfigurationAbout the SIS Trip Report State ConfigurationAbout State Management of an SRS ProjectAbout State Management of SRS TemplatesSIS Management Site FilteringAbout Reports in SIS ManagementFamily Fields that are Updated While Importing Data from Exida
+
+
+
+
+
+
+
+
+

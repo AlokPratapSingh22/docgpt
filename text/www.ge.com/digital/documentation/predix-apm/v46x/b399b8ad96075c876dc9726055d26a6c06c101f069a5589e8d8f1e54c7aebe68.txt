@@ -1,0 +1,104 @@
+
+
+
+Third Quarter of 2018 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+Fourth Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Release Notes
+Third Quarter of 2018
+
+
+
+
+
+
+
+Third Quarter of 2018Root Cause AnalysisThis topic provides a list of product changes released for this module on the dates listed below.Release Date: September 21, 2018
+Table 1. Enhancements and New FeaturesNoteTracking ID(s)To enhance usability, you can now publish or unpublish an RCA Template from the Template section. To facilitate this enhancement, the Status column and the Is RCI Template column have been added to grid in the Is RCI Template section.US264029To enhance usability, when viewing a Logic Tree Diagram, if you select a Hypothesis node, Verification records linked to the selected node now appear within the Verifications pane.US254555
+Table 2. Resolved IssuesNoteTracking ID(s)Previously, if you created a custom error message for RCA Analysis Relationship in the relationship definition for the RCA Analysis family, and if you attempted to create a relationship between an RCA Analysis record and record in another RCA family, the custom error message did not appear. This issue has been resolved.DE87687
+
+
+
+
+
+On this pageRoot Cause Analysis
+
+
+
+
+
+
+
+
+

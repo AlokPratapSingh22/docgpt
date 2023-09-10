@@ -1,0 +1,327 @@
+
+
+
+Troubleshooting | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+IngestionOverview
+Troubleshooting
+
+
+
+
+
+
+
+
+
+
+Home
+Ingestion
+Troubleshooting
+
+
+
+
+
+
+
+TroubleshootingTroubleshoot Asset Ingestion ErrorsBefore You BeginYou must have ingested at least one ZIP file containing the asset model to the tenant.About This TaskThis procedure will help you troubleshoot ingestion errors from the APM application.ProcedureSign in to GE Digital APM.In the module navigation menu, go to
+ Ingestion Setup.
+Note:
+In the Legacy Predix APM module navigation menu, navigate to Asset Ingestion.
+
+The Asset Ingestion page appears, displaying the Ingestion Logs table.
+Note:  The table displays the last 100 ingestion transactions for that tenant. If you want to view transactions prior to that, you can use the REST endpoint to get the status for a specific ingestion job.
+Review the ingestion log. Use one of the following methods to locate the ingestion file.Use the text search filters on top of each column to search for a specific file. You can search by the ZIP
+File Name, Start Time or File Size. Enter your search criteria in the text field. The filter results are updated as you enter characters. The search is text-based and does not accept regular expression. If you enter multiple filters, the search applies the AND operator and returns results that match all filters. If you have multiple pages of results, use the page navigation at the bottom of the page to navigate to the file.After you have located the ZIP file select the file link to open the ingestion log details page. The title of the page is same as the ingestion file name. Analyze the Errors and Skipped Items sections in the page for troubleshooting any issues.What To Do Next
+Refer to the Asset Ingestion Error Log to fix any errors.
+Reingest the updated asset model and data after resolving the errors.
+Asset Ingestion Error Log
+The asset ingestion error log gives you a list of asset ingestion status and error messages that helps you take the required corrective actions before reingesting the asset model and data. 
+Look at each error message; it contains a message string with embedded variables to help troubleshoot a specific area in the ingestion JSON file. For example, in the error message, Invalid ccomClass "ENTTYPE" specified for Classification: "Company" contains text within doublequotes (""), which are values provided for a specific field. In the example message, ENTTYPE is an invalid value for the field ccomClass. The message suggests that the Classification object defined with the ID value Company does not have a valid ccomClass value.
+In the application user interface, actual values will replace the variable names represented within square brackets [ ] in the error messages below.
+Table 1. Ingestion Error Messages and Corrective ActionsError MessageCorrective ActionJSON file [filename] is not well formed.Make sure that the JSON contained within the ZIP file is properly formatted. Before zipping the file for upload, use a JSON validator such as jsonlint or jsonformatter to check for JSON validity. Also make sure that the JSON conforms to the expected asset model schema.Missing ID for Classification: [Name], Type: [ccomClass]Make sure that the ID field does not contain an empty string or null value. You must fill the ID field for all elements in the classifications block.Missing ID for Instance: [Name], Type: [ccomClass] Make sure that the ID field does not contain an empty string or null value. You must fill the ID field for all elements in the instances block.Missing ID for Tag Classification: [Name]Make sure that the ID field does not contain an empty string or null value. You must fill the ID field for all elements in the tagClassfications block.Missing ID for Tag: [Name], Monitored Entity: [ID]Make sure that the ID field does not contain an empty string or null value. You must fill the ID field for all elements in the tagAssociations block.Missing ID for Connection: From [From ID] - Type [ccomClass] To: [To ID] - Type [ccomClass]You must define the instances before you can connect them. You can have a parent-child relationship between instances. You define connection from one instance to one or more instances. Make sure that the ID field does not contain an empty string or null value. You must fill the ID field for all instances linked in the connections block. You must enter a valid and existing ID for already ingested instances only.Invalid field length for Attribute: [Attribute Name], Instance: [ID] The ID field limits values to 32768 characters (32KB) long. Make sure that the ID values are no longer than the allowed limit.Invalid field length for Attribute: [Attribute Name], Classification: [ID] The ID field limits values to 32768 characters (32KB) long. Make sure that the ID values are no longer than the allowed limit.Invalid field length for Attribute: [Attribute Name], Tag: [ID] The ID field limits values to 32768 characters (32KB) long. Make sure that the ID values are no longer than the allowed limit.Invalid field length for Attribute: [Attribute Name], Tag Classification: [ID] The ID field limits values to 32768 characters (32KB) long. Make sure that the ID values are no longer than the allowed limit.Invalid data type for Attribute: [Attribute Name], Instance: [ID]Enter one of the following supported datatypes in the property object within the instances block.Refer to Refer to "Attribute Data Types and Values" for the list of supported data-types and expected values. Make sure that the value is within the expected range of the datatype defined. For example, if the attribute has the datatype INTEGER then the value provided must be of type integer only. Otherwise, validation would fail.Invalid data type for Attribute: [Attribute Name], Classifcation: [ID]Enter one of the following supported datatypes in the property object within the classifications block. Refer to Refer to "Attribute Data Types and Values" for the list of supported data-types and expected values. Make sure that the value is within the expected range of the datatype defined. For example, if the attribute has the datatype INTEGER then the value provided must be of type integer only. Otherwise, validation would fail.Invalid data type for Attribute: [Attribute Name], Tag: [ID]Enter one of the following supported datatypes in the property object within the tags block. Refer to "Attribute Data Types and Values" for the list of supported data-types and expected values. Make sure that the value is within the expected range of the datatype defined. For example, if the attribute has the datatype INTEGER then the value provided must be of type integer only. Otherwise, validation would fail.Invalid data type for Attribute: [Attribute Name], Tag Classification: [ID]Enter one of the following supported datatypes in the property object within the tagClassifications block. Refer to "Attribute Data Types and Values" for the list of supported data-types and expected values. Make sure that the value is within the expected range of the datatype defined. For example, if the attribute has the datatype INTEGER then the value provided must be of type integer only. Otherwise, validation would fail.Invalid ccomClass "ABC" specified for Instance: [ID]The APM s95 adapter uses four ccomClasses to represent the levels within the asset model hierarchy. Each class instance must be tied to one of the four ccomClasses: ENTERPRISE, SITE, SEGMENT, and ASSET. It should also match the classification ccomclass. For example, if the ccomClass for the classification is Enterprise_type then the instance of that classification must have the ccomClass
+Enterprise."ccomClass":"ENTERPRISE"Invalid ccomClass "ABC" specified for Classification: [ID]The APM s95 adapter uses four ccomClasses to represent the levels within the asset model hierarchy. Each classification must be tied to one of the four ccomClasses: ENTERPRISE_TYPE, SITE_TYPE, SEGMENT_TYPE, and ASSET_TYPE. If inherited, must match the ccomClass of the parent classification. "ccomClass":"ASSET_TYPE"Invalid ccomClass "ABC" specified for Connection From [From ID] - Type [ccomClass] To: [To ID] - Type [ccomClass]Make sure that ccomClass of the parent and child instances in the connections block are correctly defined. Keep in mind the following before connecting two instances:An enterprise object is the parent of one or more site objects.A site object is the parent of at least one segment or asset object. A site object cannot be a parent of another site object.A segment object is the parent of at least one segment or asset object.An asset object can be the parent of zero or more asset objects.
+Prolonged Ingestion TimeAsset ingestion requests get queued for more than 15 minutes even for a small amount of data. Condition
+While using the POST method (command line or REST client) to ingest assets or alarms into APM, the request gets queued and no POST response is received for more than 15 minutes. The system does not display a progress message, and the request times out after several minutes. A sample time-out error is shown below:
+ERROR: Failed to transform entity - G07893_InletBleedHeating.
+      org.springframework.data.redis.RedisConnectionFailureException:
+      java.net.SocketTimeoutException: Read timed out; nested exception is
+      redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read
+      timed outFailed to transform entity - G07893_Standard.
+      org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection;
+      nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Could not get a
+      resource from the poolFailed to transform entity - G07893_WasteHeatrecoveryUnit.
+      org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection;
+      nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Could not get a
+      resource from the pool
+Cause
+Possible causes include the following:
+Communication loss between the adapter service in APM and RabbitMQ messaging server.Redis configuration issue. This leads to the message getting stuck in RabbitMQ without getting pushed to APM.
+Remedy
+Wait a few minutes, and then try to perform the ingestion again.If the issue recurs, select the following link to enter a support ticket: http://www.ge.com/digital/support.
+Error: Illegal Character ((CTRL-CHAR, code 0))You encounter an error when trying to retrieve the asset ingestion status.Condition
+You encounter an error message when you are trying to retrieve the status of asset ingestion progress through an HTTP request or Curl command.
+Example of the curl command used to retrieve the ingestion status:
+curl -X GET -H "Authorization: Bearer {token}" -H "Cache-Control: no-cache" -H
+      "Postman-Token: 25c17ca8-7c2e-03ab-5d3a-c98e1a45764b" "http://apm-adapter-config-provider-qa.grc-apps.svc.ice.ge.com/v1/tasks/cc8c7c8d-2e39-4bd6-8c5a-d74d6ed490b1”
+A sample error in the response is shown below:
+{
+  "tenantUuid": "54E3F6572FB24AEAAA7A7B7925289FAB",
+  "uuid": "cc8c7c8d-2e39-4bd6-8c5a-d74d6ed490b1",
+  "description": "Upload S95 assets from zip file: data.json.zip, size: 1762 bytes",
+  "status": "ERROR: Error in child task",
+  "createdOn": 1457650900569,
+  "updatedOn": 1457650900623,
+  "children": [
+    {
+      "tenantUuid": "54E3F6572FB24AEAAA7A7B7925289FAB",
+      "uuid": "20baa545-4c10-43cb-8ea7-8fcbb41affe5",
+      "description": "Process S95 assets file: __MACOSX/._data.json",
+      "status": "ERROR: Illegal character ((CTRL-CHAR, code 0)): only regular white space (\r, \n, \t) is allowed between tokens\n at [Source: java.io.InputStreamReader@67db3666; line: 1, column: 2]",
+      "createdOn": 1457650900608,
+      "updatedOn": 1457650900620,
+      "children": []
+    },
+    {
+      "tenantUuid": "54E3F6572FB24AEAAA7A7B7925289FAB",
+      "uuid": "39935989-547d-4a2e-b805-060d15317da0",
+      "description": "Process S95 assets file: data.json",
+      "status": "COMPLETED",
+      "createdOn": 1457650900587,
+      "updatedOn": 1457650905490,
+      "children": []
+    }
+  ]
+}
+Cause
+Using a compression utility that is built in with your operation system such as MAC OS inadvertently adds the control character (CTRL-CHAR) to the end of each line in the JSON before compressing it. The ZIP files compressed and created this way will fail asset ingestion into APM.
+Remedy
+Make sure you use a compression utility that produces ZIP files without introducing the control character (CTRL-CHAR). You can use one of the following that applies to you:
+In Mac OS, compress the JSON into a ZIP file using command line compression utility.zip -r archive_name.zip folder_to_compressIn Windows, use utilities such as 7-Zip or WinZip to create a ZIP file.
+Verification
+Perform the asset ingestion with the corrected ZIP file.
+Cannot See Ingested Time-series Data on Analysis PageThe time-series data ingested for ingested tags do not appear in the Analysis page.Condition
+You ingested assets into APM, then ingested tagClassifications, then ingested tagAssociations, and then the time series data for tags that were added, but the time series data does not appear on the Analysis page.
+Cause
+It is possible that the tagId value in the time-series data does not match with the id value in the ingested tags{}. 
+Remedy
+Make sure that the id value in the tags and tagId value in time-series data match. 
+In tagAssociations JSON definition make sure that the tag id field matches that of the time-series data. For example, if you are ingesting times-series data for the tagId value Inverter1-ASSET-TYPE1.Tag_Length your tags{} segment should look like the example code sample below.{
+"tagAssociations": [
+        {
+            "monitoredEntity": {
+                "id": "Inverter1-ASSET-TYPE1",
+                "ccomClass": "ASSET"
+            },
+            "tags": [
+                {
+                    "id": "Inverter1-ASSET-TYPE1.Tag_Length",
+                    "name": "Tag Length",
+                    "classification": "Tag_Length",
+                    "unit": "inch",
+                    "properties": [
+                        {
+                            "id": "alias",
+                            "value": ["TAG_1"],
+                            "type": "string"
+                        }
+                   	]
+                }
+			]
+}Delete the discrepant tags.Reingest the tag associations and tags.If needed, ingest new time-series data for the defined tags and make sure they have the correct tagId value. 
+Verification
+After ingesting assets, tags, and time-series data; login to the APM and access the Analysis page to see the time-series data. 
+Cannot Edit Tag Instance Through REST CallIf you add a new tag instance with source key id that already exists, the new tags will not be added or updated.Condition
+You ingest tags {} using the POST method with an existing tag id in your APM tenant. The tag instance is not ingested into APM.
+Cause
+You cannot use the POST method to update tag instances. The tag fields are not updated with the changed details as this is the expected behavior. You can use POST to add new tags but cannot use it to update tags. 
+RemedyUse the APM user interface to edit tag details: Manage Assets > Select a tag > Edit tag. Follow the Editing Tags procedure.Error Ingesting TagsYou encounter an error after ingesting tagClassifications and tagAssociations using the HTTP POST methodCondition
+You try ingesting tags using an older version of s95 JSON format like shown in the code example below:
+{
+  "tags": [
+    {
+      "id": "ASSET_TAG_ID_operMode",
+      "name": "operMode",
+      "description": "Oper Mode tag",
+      "unitGroup": "string",
+      "properties": [
+        {
+          "id": "GId",
+          "type": "string",
+          "value": [
+            "Oper Mode"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "value": [
+            "enum"
+          ]
+        },
+        {
+          "id": "writable",
+          "type": "boolean",
+          "value": [
+            true
+          ]
+        },
+        {
+          "id": "enum",
+          "type": "string",
+          "value": [
+            "Off",
+            "Cooling",
+            "Heating"
+          ]
+        }
+      ]
+    }
+  ],
+  "tagAssociations": [
+    {
+      "monitoredEntity": {
+        "id": "ASSET_INSTANCE_xyz123",
+        "ccomClass": "ASSET"
+      },
+      "tags": [
+        {
+          "id": "ASSET_TAG_ID_operMode",
+          "classification": "ASSET_TAG_ID_operMode",
+          "unit": "string"
+        }
+      ]
+    }
+  ]
+}
+
+You encounter the following error:
+{
+      "tenantUuid": "C783D57F24DA4705B612366B3A50219B",
+      "uuid": "e297ed0d-6c65-4fdd-9cf7-b5ef5ca3c886",
+      "description": "Process S95 assets file: tag.json",
+      "status": "ERROR: Expected END_OBJECT but was START_OBJECT\n at [Source: java.io.InputStreamReader@5c5f2a31; line: 6, column: 6]",
+      "createdOn": 1459366516959,
+      "updatedOn": 1459366517184,
+      "children": []
+    }
+Cause
+The tag classification was missing for the ingested tag instance. For example, in the sample code below, the tag classification id referenced in the "tags": [ ] block has not yet been created. Due to the missing tag classification, the ingestion fails.
+"tags": [
+        {
+          "id": "ASSET_TAG_ID_operMode",
+          "classification": "ASSET_TAG_ID_operMode",
+          "unit": "string"
+        }
+Remedy
+Make sure that "tagClassifications": [ ] block is labeled appropriately in your JSON. Tag classifications must be ingested before ingesting tagAssociations. The "tags": [ ] block must be included inside the "tagAssociations": [ ] block. If you are using an older version (2.0 or before) of the s95 JSON file. Make sure you have the "tagClassifications": [ ] block as shown in the code example below:
+{
+  "tagClassifications": [
+    {
+      "id": "ASSET_TAG_ID_operMode",
+      "name": "operMode",
+      "description": "Oper Mode tag",
+      "unitGroup": "string",
+      "properties": [
+        {
+          "id": "GId",
+          "type": "string",
+          "value": [
+            "Oper Mode"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "value": [
+            "enum"
+          ]
+        },
+        {
+          "id": "writable",
+          "type": "boolean",
+          "value": [
+            true
+          ]
+        },
+        {
+          "id": "enum",
+          "type": "string",
+          "value": [
+            "Off",
+            "Cooling",
+            "Heating"
+          ]
+        }
+      ]
+    }
+  ]
+Verification
+Reingest the tagClassifications and tagAssociations using the HTTP POST and make sure it gets processed correctly.
+Server Error Upon Updating a Tag GroupYou receive a server error upon updating a tag group.Condition
+Using the PATCH method to update a tag group with a non-existing URI gives a internal server error.
+Ideally, when updating the tag group with URI which doesn't exist, the service should throw 404 NOT FOUND exception, and return the error message in the response body. 
+Instead, the service throws 500 INTERNAL SERVER ERROR with the following error message: 
+{
+	"path": "/v1/groups/0678912f-871e-4e70-bb2c-a24e1a9148b0-notexists",
+	"requestId": "85b626ed-2200-4d06-902e-8d9de8bce9f7",
+	"errorId": "UPDATE_SINGLE",
+	"errorMessage": "Failed to create for uri: /groups/0678912f-871e-4e70-bb2c-a24e1a9148b0-notexists",
+	"timestamp": 1456967581879
+}
+Curl command to reference: curl-X PATCH-H"Authorization: Bearer eyJhbGciOiJSUzI1NiJ9..."-H"Tenant: 54E3F6572FB24AEAAA7A7B7925289FAB"-H"Content-Type: application/json"-H"Cache-Control: no-cache"-H"Postman-Token: dea2d406-6701-79f5-4733-2b7793864524"-d'[{
+	"op": "replace",
+	"path": "/name",
+	"value": "Updated"
+}]'"http://apm-asset-qa.grc-apps.svc.ice.ge.com/v1/groups/0678912f-871e-4e70-bb2c-a24e1a9148b0-notexists"
+Cause
+The service returns the 500 INTERNAL SERVER ERROR instead of 404 NOT FOUND. 
+Remedy
+When you perform a tag group update using the PATCH method, make sure that URI exists in the data store.
+Verification
+On successful update, you receive the 200 OK response.
+
+
+
+
+
+On this pageTroubleshoot Asset Ingestion ErrorsAsset Ingestion Error LogProlonged Ingestion TimeError: Illegal Character ((CTRL-CHAR, code 0))Cannot See Ingested Time-series Data on Analysis PageCannot Edit Tag Instance Through REST CallError Ingesting TagsServer Error Upon Updating a Tag Group
+
+
+
+
+
+
+
+
+

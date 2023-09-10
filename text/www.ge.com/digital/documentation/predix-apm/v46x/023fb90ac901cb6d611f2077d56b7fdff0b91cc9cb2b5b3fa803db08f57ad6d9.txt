@@ -1,0 +1,105 @@
+
+
+
+Third Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesFirst Quarter of 2023
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Release Notes
+Third Quarter of 2019
+
+
+
+
+
+
+
+Third Quarter of 2019Reliability AnalyticsThis topic provides a list of product changes released for this module on the dates listed below.Release Date: September 27, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDYou can now define the complete System Reliability diagram in the System Reliability Data Loader. To facilitate this enhancement, the following changes have been made to the System Reliability Data Loader:The following worksheets have been added:System BufferSystem LinkSystem SwitchSystem SensorThe following worksheets have been modified:System AnalysisSystem SubsystemSystem AssetSystem DiagramSystem RiskSystem ActionUS324023
+Table 2. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, in Spares Analysis, an error occurred when you attempted to associate a Reliability Distribution with a Spare Application. This issue has been resolved.DE118879Previously, when you attempted to apply any filters using the Reliability Automation Rule Builder, the Define Filters drop-down list box displayed an insufficient number of characters for you to make a selection. This issue has been resolved.DE117508Previously, in the Reliability Analytics page, the record counts on the tabs did not correspond to the selected filter in the Asset Hierarchy. This issue has been resolved. Now, the record counts are as follows:When the Asset Hierarchy is set to Home, the record count indicates the number of all the analyses, whether they are linked to the Asset Hierarchy or not.When the Asset Hierarchy is set to any other level, the record count indicates the asset context for each Reliability module.DE115896Previously, in a Probability Plot, when you modified the start date of the Analysis Period, an error message appeared. This issue has been resolved.DE115718Previously, in the System Reliability Analysis page, when you attempted to delete an action, and then selected No in the confirmation window, the action was still deleted. This issue has been resolved. Now, in this scenario, the delete workflow is canceled and the action is retained.DE115717Previously, in the Reliability Analytics Overview page, when you changed the asset hierarchy level from home to another level, the counts that appeared on the tabs did not change according to the new level. This issue has been resolved.DE114824Previously, when you accessed a Reliability Analysis, in the workspace for the selected analysis, the site reference was initially displayed as Global. The correct site name was displayed after some delay. This issue has been resolved. DE114231Previously, in the Production Analysis page, when reviewing the production output data using the Show Data button (), the values in the X and Y columns were not based on the value in the POINTDATE column. This issue has been resolved. Now, the values in the X and Y columns are based on the value in the POINTDATE column.DE113748Previously, when you attempted to access the Reliability Analytics page, the page took longer to load because duplicate API calls were made to the GE Digital APM server. This issue has been resolved.DE109380Previously, in the Failure Probability workspace of a Reliability Distribution Analysis, if you modified the bounds of the axes, and then modified the Future Probability value for that asset contained within that analysis, the new Future Probability value was not retained for the selected asset. DE107174Previously, in the Failure Rate Plot workspace of a Reliability Distribution Analysis, if you modified the bounds of either the Adjust Axes or Confidence Level distribution options for that plot and then navigated away from the plot, your selections were not retained.DE107173Previously, in the Definition workspace of a System Reliability Analysis, if the Time Analysis Type field was set to Monthly, when you accessed the Simulation Results workspace of that analysis, the Trend Plot displayed the data in years (for example, YYYY) instead of months (for example, MM). DE105521Previously, when you created an RCA for a Production Event from the Production Loss Analysis (PLA) module, in the Analysis Summary workspace, in the Linked Assets section, the Causing Asset associated with the Production Event did not appear in the Record ID column.DE103249
+
+
+
+
+
+On this pageReliability Analytics
+
+
+
+
+
+
+
+
+

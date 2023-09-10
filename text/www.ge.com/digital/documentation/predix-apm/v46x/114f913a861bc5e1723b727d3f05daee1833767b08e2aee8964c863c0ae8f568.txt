@@ -1,0 +1,123 @@
+
+
+
+Analysis Templates | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage TemplatesTemplates
+Analysis Templates
+SmartSignal Templates
+Template Sharing
+
+
+Analysis Troubleshooting
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Manage Templates
+Analysis Templates
+
+
+
+
+
+
+
+Analysis TemplatesAbout Analysis Templates Analysis templates are created by naming the template, adding cards and charts, and then saving them. You can view a saved analysis template using the View Selector.Analysis templates allow you to create customized charts for the time series data that is stored in Predix Time Series or a central Historian / OSM. An Analysis template allows you to organize the charts in logical groups within the cards and associate them with various asset instances or classifications across the hierarchy. The Analysis templates can also be associated with an alert or case, or used to compare events across time to analyze the degradation of an asset.The Analysis view controls the primary asset context and date range that allows you to select between saved views. Each view contains at least one card, which in turn contains at least one chart. Analysis views consist of an Alert Analysis view redirected from the Alerts module, or a Time Series Analysis or Event Data Analysis view.Alert Analysis views are created from triggered sensor data for an asset, and can be accessed in the Alert module. Note: When you access an Analysis from an Alert template, the analytic deployment name must match the deployment name of the analytic that appears in the Alert for the analytic that generates the alert.The Time Series Analysis view uses time series data for the asset context you select. The Event Data Analysis view uses time series data within event frames for the asset context you select. All analysis views can be updated and saved as templates. Analysis templates are viewable in the View Selector, and can be added to an Alert template to automatically add the selected Analysis template to a triggered alert.You can set a default Analysis view with an asset that allows you to load the default visualization for an asset. The default Analysis template exists for both SmartSignal Analytics and non-SmartSignal Analytics. When you select an Analysis view, the first card in the view, containing up to four charts, appears. You must select the  button to access additional cards.The  button allows you to:Display the tag aliases for tags.Show template information.Add a card to the view.Export data on the view as a CSV file.Save or update the view as a new template.Delete a template. Connect all the remaining data points after filter is applied to all the time series charts. The button allows you to:Change your personal time preferences.Select a chart resolution.Select a data source.Selecting the  button accesses the Tag Tree panel. As you add cards to your view, the Jump Menu is enabled, allowing you to jump to a card in the list.When you save a view as a template, the Context Ribbon appears. Using the Context Ribbon, you can name the template, designate the template as public or private, and select between class and instance templates. Change the Time Preference SettingsYou can view assets based on time zone.About This Task
+When looking at chart data, you may want to view the data in the local time zone for a customer or asset. 
+Time Zone preferences, which are set in My Preferences, defines the default. If other options are not available, they will be gray. The time preference settings are available for all Analysis views and chart types. You can select a time zone for a view that is different from your default preference.Tip: If you set the time zone to a local or preferred selection, and then add an asset whose time zone is outside of the selected time zone, when you plot a tag from the new asset, the time zone defaults to UTC.
+Changing the time preference impacts:The Date Picker dates.The date and time on the x-axis.The chart Timeline Slider.The Chart Register timestamps and time zone designation.Note: The Chart Register and Timeline Slider do not appear in the Event Data Analysis view.
+Time zone selection consists of:UTC (universal time zone) Site LocalUser Preference
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Complete one of the following actions:In the View Selector select New Time Series Analysis or New Event Data Analysis, and then select a chart type in the Chart Type list.In the View Selector, select a Public Templates or My Templates view in the available options.Access an Alert Analysis chart from an Alert detail page.In the Time Zone list, select an option.The time zone for all your assets changes to your selected option.Select the Chart ResolutionTo refine the view for data in a selected date range, you can increase or decrease the number of data points sampled on charts for a selected date range. About This Task
+When you create a Time Series Analysis or Event Data Analysis, you can select the chart resolution for the selected asset context. GE Digital APM limits the data points for larger date ranges to manage readability and performance. Changing the resolution affects all charts in the view. 
+Data resolution is saved when you save the chart as a template.
+Chart resolution is calculated as one data point per interval. For example, selecting 10 sec data (max 1 day) results in a calculation of 86,400 seconds in a day, divided by 10 seconds. This determines the maximum of 8,640 points permitted in the chart. 
+All charts use a default resolution of 1000 points per tag.
+Data resolution selection consists of:Default Data Resolution1 hr data (max 2 years)30 min data (max 2 years)10 min data (max 1 year)5 min data (max 92 days)1 min data (max 30 days)10 sec data (max 14 days)5 sec data (max 7 days)2 sec data (max 2 days)1 sec data (max 1 day)Raw DataNote: When you select Last Month from the PRESETS for Date Range, and the selected month has 31 days, the option 1 min data (max 31 days) appears in the Data Resolution drop-down list instead of the option 1 min data (max 30 days). 
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Complete one of the following actions:In the View Selector, select New Time Series Analysis or New Event Data Analysis, and then select a chart type in the Chart Type box.In the View Selector, select a Public Templates or My Templates view in the available options.In an Alert Detail page, select an Analysis icon in the Analysis section to view an Alert Analysis chart.Select a date range in the From and To boxes.Modify the chart and plot tags as needed.In the Data Resolution drop-down list, select an option.Select a Data SourceYou can select a time series data source when you create a chart.About This Task
+When looking at chart data, you may want to view the data in the source OSM system, especially when isolating trips. This capability allows you to switch the data source for a view.
+When you create a Time Series Analysis or Event Data Analysis chart in the Analysis view, you can select a data source for the selected asset context.
+The options available in the Data Source box in Analysis views are determined by the selected asset in the Time Series Data Sources module.
+The selections available in the Data Source box populate when you select the options menu.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Complete one of the following actions:In the View Selector, select New Time Series Analysis or New Event Data Analysis, and then select a chart type in the Chart Type box.In the View Selector, select a Public Templates or My Templates view in the available options.Access an Alert Analysis chart from an alert detail page.In the Data Source box, select an option. Modify the chart and plot tags as needed.The selected data source is used to retrieve data for your charts.Select a System of MeasureAbout This TaskYou can select a system of measure in the chart.The available systems of measure are:NoneMetricUser Preference (None)Note: This option has flexibility to apply the units of measure based on the selected system of measure of your preference. The value within the parentheses displays the system of measure you have selected or none if you have not selected anything. If you select a different system of measure as your preference the value will change accordingly.The selections available in the System of Measure box populate when you select the options menu.ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Navigate to a chart using one of the following methods:
+MethodActionAnalysis Charts Ad Hoc
+In the View Selector, select New Time Series Analysis or New Event Data Analysis.Select a chart type in the Chart Type box.
+SmartSignal Ad Hoc
+In the View Selector, select New Time Series Analysis.In the default card, select , and then select Add Card.Select SmartSignal Card.
+Analysis or SmartSignal Charts Template
+In the View Selector, select Public Templates or My Templates.Select a template from the list.
+Alerts
+In an Alert Detail page, select an Analysis icon in the Analysis section.
+
+Select a date range in the From and To boxes.Modify the chart and plot tags as needed.In the System of Measure box, select an option.
+Note: If UoM conversion fails for one or more tags in a chart, then UoM Conversion Error message appears in the chart. In addition, a banner is diplayed that provides details on the number of charts that have failed due to UoM conversion error. If the conversion fails for the second time, the message in the error banner advises you to refresh the page.
+What To Do NextSave the view as a template.Load a Template Only After Selecting Template OptionsAbout This TaskYou should select all the options on a template before the template is loaded.Note: The template will still autoload if the timeframe in the template is set using presets.The selections available in the System of Measure box populate when you select the options menu.ProcedureIn the module navigation menu, navigate to Analysis.Use the Context Browser to select an asset context.Navigate to a saved Analysis template in your Public or Private templates.Select a date range in the From and To boxes.Select any of the other options available on the template such as, System of Measure, Data Resolution, Data Source, Time Zone.Select Apply
+The charts will load with the selected data.Select a Data QualityYou can select a time series data quality when you create a chart. About This Task
+When looking at chart data, you may want to view all the data or only the good quality data. Using this feature, when you create a Time Series Analysis or Event Data Analysis chart in the Analysis view, you can select the data quality filter for a view. 
+The options available in the Data Quality Filter box in Analysis views are based on the user preferences.
+Data Quality Filter selection consists of:
+Show All DataShow Good Quality DataUser Preference
+Note: By default, User Preference is the selected option for an Analysis view.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Complete one of the following actions:In the View Selector, select New Time Series Analysis or New Event Data Analysis, and then select a chart type in the Chart Type box.In the View Selector, select a Public Templates or My Templates view in the available options.Access an Alert Analysis chart from an alert detail page.In the Data Quality Filter box, select an option. The selected option is saved in the template. When you plot the charts, the data based on the selected quality filter appears in the charts. 
+
+
+
+
+On this pageAbout Analysis TemplatesChange the Time Preference SettingsSelect the Chart ResolutionSelect a Data SourceSelect a System of MeasureLoad a Template Only After Selecting Template OptionsSelect a Data Quality
+
+
+
+
+
+
+
+
+

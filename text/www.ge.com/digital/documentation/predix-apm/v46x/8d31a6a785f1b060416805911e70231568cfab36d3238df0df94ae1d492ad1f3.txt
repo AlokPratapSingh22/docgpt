@@ -1,0 +1,95 @@
+
+
+
+Define Component | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+WorkflowsDefine Component
+Perform an RBI Analysis
+RBI Recommendation Management
+RBI Recommendation Implementation
+
+
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Workflows
+Define Component
+
+
+
+
+
+
+
+Define ComponentRBI: Define ComponentsThis workflow describes the process of identifying and creating records for the following elements of a process unit:Corrosion loopsComponentsPotential degradation mechanisms for each component In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Define Process Unit Persona: AnalystDefine the Process Unit record that corresponds to the unit on which you want to perform an RBI analysis. A Functional Location record for which the Is Unit check box is selected is the Process Unit record.Corrosion Loop Needed? Persona: AnalystIdentify whether the process unit can be divided into corrosion loops in the process unit. Although this is not always required, defining corrosion loops allows components in the loop to inherit Potential Degradation Mechanisms (PDMs) from the loop. Defining a corrosion loop is not applicable in the case of a storage tank.Define Corrosion Loop Persona: AnalystCreate a Corrosion Loop record for each corrosion loop that you have identified in the process unit. Groups of assets or components that are subject to similar degradation mechanisms can be part of a single corrosion loop.Identify Potential Degradation Mechanisms (PDMs)Persona: AnalystPDMs are processes that induce deleterious micro and macro material changes over time that are harmful to material condition or mechanical properties. Damage mechanisms are usually incremental, cumulative, and, in some instances, unrecoverable. Common damage mechanisms include corrosion, chemical attack, creep, erosion, fatigue, fracture, and thermal aging. 
+GE Digital APM provides a library of PDMs that you can link to a corrosion loop. The available PDMs differ between RBI 580 and RBI 581. They store the details of the damage mechanisms to which the assets or components in the corrosion loop are vulnerable. PDMs also provide details on how the damage mechanisms will be evaluated while performing an RBI analysis.Identify RBI Component Persona: AnalystIdentify RBI Components, each of which is a part of an asset that is modeled for the purpose of performing an RBI Risk Assessment. Create a Criticality Calculator RBI Component record for each component that you have identified.These RBI Components may be comprised of one or more subcomponents. For example, a Column top RBI Component might consist of the head, nozzle, and shell asset subcomponents.Define Static Data for RBI Component Persona: AnalystProvide process and design data of the component such as operating pressure, operating temperature, and so on in the Criticality Calculator RBI Component record that you have created. This information is used to calculate an RBI analysis. If you want to perform an RBI 581 Risk Analysis, then you should also provide details in the RBI 581 section of the RBI Component datasheet.Link RBI Component to Corrosion Loop Persona: AnalystLink the RBI Components that have been created to the corresponding Corrosion Loop. PDMs created in a corrosion loop are inherited by the RBI Components in that loop. These PDMs serve as a starting point when you perform an RBI analysis on the component.Validate PDMs Inherited from Corrosion Loop Persona: AnalystFor each RBI Component, validate the PDMs that have been inherited from the corrosion loop. This will help you decide whether additional PDMs need to be linked to the RBI Component, or if existing PDMs can be removed.Identify Additional PDMs Specific to RBI Component Persona: AnalystIdentify additional PDMs that may need to be added to the RBI Component based on its specific conditions, design, or process. Link the RBI Component to the appropriate PDM by selecting from the library of PDMs available. The available PDMs differ between RBI 580 and RBI 581.Associate RBI Component with Inspection Profile Persona: AnalystTo utilize data from the Inspection History and Corrosion History records of an RBI Component, associate the related RBI Component with the Inspection Profile. This information can be used to perform an RBI analysis on the component.Perform RBI Analysis Persona: AnalystGo to the Perform RBI Analysis workflow.Identify PDMs with RBI Component Persona: AnalystIf you have not defined a corrosion loop in the process unit, PDMs will not be inherited by the RBI Components. Therefore, you have to link the RBI Component to applicable PDMs. The PDMs used in RBI 580 differ from those used in RBI 581.
+
+
+
+
+On this pageRBI: Define ComponentsDefine Process UnitCorrosion Loop Needed?Define Corrosion LoopIdentify Potential Degradation Mechanisms (PDMs)Identify RBI ComponentDefine Static Data for RBI ComponentLink RBI Component to Corrosion LoopValidate PDMs Inherited from Corrosion LoopIdentify Additional PDMs Specific to RBI ComponentAssociate RBI Component with Inspection ProfilePerform RBI AnalysisIdentify PDMs with RBI Component
+
+
+
+
+
+
+
+
+

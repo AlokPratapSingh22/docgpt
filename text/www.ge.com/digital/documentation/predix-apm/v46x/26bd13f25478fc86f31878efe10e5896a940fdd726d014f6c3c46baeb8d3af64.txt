@@ -1,0 +1,111 @@
+
+
+
+Fourth Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+QueriesWorkflow
+Query Creation
+Query Results
+Query Sources, Fields, Joins, and Hyperlinks
+Query Expressions, Clauses, and Prompts
+Query Timeouts
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+First Quarter of 2019
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Queries
+Release Notes
+Fourth Quarter of 2021
+
+
+
+
+
+
+
+Fourth Quarter of 2021Release Date: December 17, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo enhance usability, in edit mode, you can now open the selected query in the query design page from the Edit Widget window of a Calendar widget. To facilitate this enhancement, a new button, Open in New Tab () has been added to the Edit Widget window.US508133
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in the Query Designer page, the new fields that were added to the family when you selected Spread to Sub Families, were not displayed in the query columns (family fields). This issue has been resolved.DE171705Previously, in the Query Designer page, when you created a manual join between two families, and then selected the fields in the query from the second family, an error occurred. This issue has been resolved.DE170804Previously, in the Results workspace, when you attempted to search for a date in the Date column with hyperlink, the search failed to filter the results. Similarly, in the Results workspace, when you attempted to sort the Date column with hyperlink, the results did not get sorted. This issue has been resolved.DE169088Previously, when you updated a Predecessor Join field parameter and attempted to open the properties again, the Predecessor Join field parameter reverted to the original field parameter. This issue has been resolved.DE167376Previously, when you attempted to use Page-Up or Page-Down keys within the SQL text area in the query designer, the header disappeared. This issue has been resolved.DE167357
+Release Date: October 8, 2021This topic provides a list of product changes released for this module on this date.
+Table 3. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo enhance usability, you can now open a query in the Design workspace from the results-only view. To facilitate this enhancement, a new Open in Query Editor button () has been added to the results-only view.US497980To enhance usability, you can now export a query to a file from the results-only view. To facilitate this enhancement, a new Export to a File button () has been added to the results-only view.US470779To improve usability, in GE Digital APM, when you execute an append query, the query now returns error messages specific to the error.Note: If there are more than one errors, the next error message appears only when you have resolved the error that is already displayed.US186085
+Table 4. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when you exported a query to a dataset using the Export to a Dataset option, the Catalog Items folder was provided as the default location to save the query results. This issue has been resolved. Now, when you export a query to a dataset, the most recent folder location is retained and provided in the Save As window.US186122Previously, when you executed a query that used a ROUND expression that referenced a stored query, an error occurred when you attempted to sort or filter the values in the query result. This issue has been resolved.DE163524
+Previously, in GE Digital APM, if you reopened a criterion for a Crosstab query, an error message appeared. This issue has been resolved.
+DE163612Previously, when you changed a Crosstab query into a Select query, and then changed back to the Crosstab query and executed this query, an unknown error appeared. This issue has been resolved.DE163421Previously, when you attempted to sort the column values in the Results workspace of a distinct or union query, an error occurred. This issue has been resolved.DE163216Previously, if you added a hyperlink in a Query, and the query result used as a parameter by the hyperlink included a special character such as &, the hyperlink did not work as expected. This issue has been resolved.DE149786
+Table 5. Known Issues and Limitations
+The following known issues and limitations exist.
+DescriptionTracking IDWhen you select the Export to Dataset option for a Query, the Save As window displays the last selected Catalog folder, but the Save button is not available. If you select the Catalog folder that is shown as selected, the Save button appears.DE167658
+
+
+
+
+
+On this pageRelease Date: December 17, 2021Release Date: October 8, 2021
+
+
+
+
+
+
+
+
+

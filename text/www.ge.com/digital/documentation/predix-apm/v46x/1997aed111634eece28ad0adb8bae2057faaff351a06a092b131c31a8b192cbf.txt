@@ -1,0 +1,124 @@
+
+
+
+Third Quarter of 2018 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Release Notes
+Third Quarter of 2018
+
+
+
+
+
+
+
+Third Quarter of 2018Policy DesignerThis topic provides a list of product changes released for this module on the dates listed below.Release Date: September 21, 2018
+Table 1. Enhancements and New FeaturesNoteTracking ID(s)You can now specify a null value as the test value to validate a Policy. US274590For a Policy, you can now retrieve and use the data of the alerts for an asset or all assets that were generated within a specific period. To facilitate this enhancement, the Query Alerts node has been added to the Input section of the toolbar in the Design workspace.US268590You can now identify the Policy instances that are not imported due to duplicate IDs. To facilitate this enhancement, the data loader log has been modified to display a warning message indicating the instances that are skipped. US264577You can now configure a hyperlink to execute specific active instances or all the active instances associated with an active policy.US260150You can now export the instances associated with a Policy to a Microsoft Excel file. To facilitate this enhancement, the Export Instances button has been added to the Instances section in the Design workspace of Policy Designer.US260122You can now access all active and inactive Policies from a single section in the Policy Designer Overview page. To facilitate this enhancement, the Active Policies, Inactive Policies, and Recent Policies tabs are combined into a single tab labeled Policies.US260114You can now configure the Sub Policy node to iterate the execution of a sub policy for evaluating a collection of input values.US259940You can now configure a Sub Policy node to execute a specific instance associated with the sub policy.US255681You can now use an entity ID in the Policy Instance Data Loader workbook to map a record to an Input node of a Policy. US255678
+You can now specify Policy and Instance names with up to 255 characters. To facilitate this enhancement, the character limit of the following fields has been increased from 50 to 255:
+Name box in the Details workspaceInstance box in the Instances pane
+
+US255677US255676
+You can now add numeric values to and subtract numeric values from time stamp and time span values, where the numeric values represent time in seconds.US229153To enhance usability when performing complex calculations involving multiple input values, a Math node can now perform operations on mathematical expressions where a single variable represents a collection of numeric values derived from the output of a predecessor node.US204329You can now configure the time for which the execution history of Policies must be stored in the GE Digital APM database. To facilitate this enhancement, Policy Designer has been added to the Application Settings page.
+US192152US165727
+A new Security Group, MI Policy Administrator, has been added and assigned to the MI Health Admin role, with exclusive rights to configure the execution history retention settings for the Policy Designer module.US192151You can now use a Policy to create an alert for an asset. To facilitate this enhancement, the Create Alert node has been added to the Actions section of the toolbar in the Design workspace.US183677
+Table 2. Resolved IssuesNoteTracking ID(s)Previously, if you had used an Average node in a Policy to calculate the average value of a collection of very large numbers, the output of the node was intermittently incorrect. This issue has been resolved.US246552Previously, when you started the Policy Trigger Service or Policy Execution Service, the service did not connect to data sources after it failed to check the Policy Designer license for a data source. This issue has been resolved.DE87835
+Previously, when you attempted to access a Policy where the value in a calculated column of a Query was mapped to a node in the Policy model, the Policy did not load if you modified one of the following details in the Query:
+NameCatalog pathColumn ID of the calculated columnContent of a column to a calculated value
+This issue has been resolved. Now, in this scenario, the Policy loads as expected. Additionally, an error message appears in the notification bar if you access the Policy after modifying the name, catalog path, or column ID of the calculated column, in the Query.
+DE87006
+Previously, when you attempted to configure a Sub Policy node to pass one of the following values to a Point Value node, which is configured to represent a Data Frame value in the sub policy, an error message indicating incorrect data type appeared in the notification bar and you could not activate the Policy:
+The Readings collection output of a Health Indicator node.The Readings collection output of a Measurement Location node.The HDA Readings collection output of an OPC Tag node.
+However, you could successfully validate the Policy. This issue has been resolved. Now, in this scenario, the error message does not appear in the notification bar and you can activate the Policy.
+DE85420Previously, in the Analysis Details page, if you modified the Decision Logic of a Failure Effect, the changes were not saved. This issue has been resolved.DE84022Previously, in the Properties window for a Predix Time Series node, if you attempted to specify the output of a Case or an Is Null node as an input for the Start Time or End Time field, an error message appeared in the notification bar and the Policy could not be activated. This issue has been resolved.DE83033Previously, if the Data Frame, Matrix, or Vector input configured for an R Script node contained a null value, validation and execution of the Policy failed. This issue has been resolved.DE80649Previously, when you upgraded GE Digital APMfrom v3.5 or v3.6 to a later version, and then accessed a Policy to view the execution details of a Create Recommendation node that was executed before the upgrade, you could not access the associated Policy Recommendation record using the hyperlink in the Execution Details window. This issue has been resolved. DE80648Previously, in a Policy model, if you did not specify the data type of the value represented by a Constant node and configured another node to use the output of the Constant node as an input, validation of the Policy failed. However, the validation was successful if you had previously validated the same Policy with a data type for the Constant node. This issue has been resolved. Now, irrespective of the previous validations, you can successfully validate the Policy without specifying any data type for the value represented by a Constant node.DE80646Previously, if you specified a collection of date and time values expressed as strings to be the input of an Average node, and then validated or executed the Policy, a warning appeared in the notification bar and the string values for date and time were not included in calculating the average value. This issue has been resolved.DE80645Previously, in the Properties window for a Predix Time Series node, if you specified the output of a Constant node representing a positive integer value of Integer data type as the input for the Max Readings field, the Predix Time Series tag values of instances did not appear in the Validation section. This issue has been resolved.DE80644Previously, in the Properties window for a Constant node, if you did not specify any values in the Data Type and Value boxes, and then configured an Is Null node to use the output of the Constant node as the input, the validation and execution of the Policy failed. This issue has been resolved.DE80638Previously, when you attempted to copy an existing Policy with the associated instances, in the Save Policy With Instances As window, after you selected OK, there was no indication that the operation of saving the new Policy was in progress. This issue has been resolved. Now, a loading spinner appears while the new Policy is being saved.DE80637Previously, if you attempted to validate a Policy using an ad hoc test value with more than three digits for a Point Value node configured to represent integer data, the validation failed. This issue has been resolved.DE80633Previously, if you copied and pasted all the nodes and connections of a Policy containing a Case node, in the pasted Policy model, the mappings between the predecessor nodes and the fields in the If Input and Else sections of the Case node were not retained. This issue has been resolved.DE80630
+Previously, if the Policy Trigger Service failed to start due to one of the following reasons, an error message did not appear in the Policy Trigger Service log:
+An invalid Data Source.An offline Data Source.Inactive Policy Designer license.
+This issue has been resolved. Now, in this scenario, an error message appears in the Policy Trigger Service log, providing the reason for the failure of the Policy Trigger Service.
+DE76472Previously, if you deleted a module workflow Policy or a baseline Policy associated with a family, the deleted Policy could not be restored. This issue has been resolved. Now, the Delete button () is disabled for the module workflow Policies and baseline Policies associated with families.DE51859Previously, in the Properties window for a node, if you specified a fractional value of hours, minutes, or seconds as a timespan value, a notification indicating invalid data appeared in the notification bar and validation of the Policy failed. This issue has been resolved.DE51850
+Previously, while validating a Policy using ad hoc test values, the unspecified test values were considered as follows:
+An empty string, if no values were specified.A null value, if an existing test value for the Input node was deleted.
+These issues have been resolved. Now, if you validate the Policy without specifying a test value for an Input node, the unspecified value represents an empty string, and it represents a null value only when you specify the test value as null.
+DE51823
+
+
+
+
+
+On this pagePolicy Designer
+
+
+
+
+
+
+
+
+

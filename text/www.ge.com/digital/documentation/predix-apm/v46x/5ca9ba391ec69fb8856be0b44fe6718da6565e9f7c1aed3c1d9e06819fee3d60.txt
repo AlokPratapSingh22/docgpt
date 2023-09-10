@@ -1,0 +1,606 @@
+
+
+
+General Reference | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+ReferenceGeneral Reference
+Data Models
+Family Field Descriptions
+Calculations
+Family Search Configuration
+ASM Integration
+Inspection Strategies
+RBI Policies
+Catalog Items
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Reference
+General Reference
+
+
+
+
+
+
+
+General ReferenceFields Required to Calculate an RBI 581 Risk Analysis
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+Fields Required for Consequence of Failure (COF) Calculations 
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+About Potential Degradation Mechanisms (PDM)
+Potential Degradation Mechanisms (PDM) records are used to represent ways in which a component might fail (e.g., mechanical fatigue). These records can be linked to RBI Components and are used to predict and prevent mechanical failure. Each Potential Degradation Mechanisms record that is linked to a Corrosion Loop represents a degradation mechanism, or a way in which the components in that Corrosion Loop might fail.
+After a Corrosion Loop is linked to PDMs, as you link RBI Components to the Corrosion Loop, those RBI Components will be linked automatically to all of the Potential Degradation Mechanisms that are linked to the Corrosion Loop. Each PDM that is linked to an RBI Component represents a way in which that component can fail.
+Baseline Potential Degradation Mechanisms (PDMs)
+
+GE Digital APM provides several quantitative Potential Degradation Mechanisms.
+
+All of the PDMs apply to RBI Components. 
+
+GE Digital APM provides the following Potential Degradation Mechanisms:
+581-885F Embrittlement581-Acid Sour Water Corrosion581-Alkaline Carbonate Stress Corrosion Cracking581-Alkaline Sour Water Corrosion581-Amine Corrosion581-Amine Cracking581-Atmospheric Tank Bottom Corrosion581-Austenitic Component Atmospheric Cracking581-Austenitic Component Cracking Under Insulation581-Brittle Fracture581-Caustic Cracking581-Chloride Stress Corrosion Cracking581-Cooling Water Corrosion581-Ferritic Component Atmospheric Corrosion581-Ferritic Component Corrosion Under Insulation581-HIC/SOHIC - H2S581-HIC/SOHIC - HF581-High Temperature H2/H2S Corrosion581-High Temperature Hydrogen Attack581-High Temperature Oxidation581-High Temperature Sulfidic and Napthenic Acid581-Hydrochloric Acid Corrosion581-Hdrofluoric Acid Corrosion581-Hydrogen Stress Cracking581-Internal Component Lining Damage581-Low Alloy Steel Embrittlement581-Other Cracking581-Piping Mechanical Fatigue581-Polythionic Acid Cracking581-Sigma Phase Embrittlement581-Soil Side Corrosion581-Sulfide Stress Cracking581-Sulfuric Acid Corrosion
+Valid Fluids for an RBI 581 Risk Analysis
+This topic provides a list of valid representative fluids and toxic fluids for RBI 581. On the datasheet of an RBI 581 Risk Analysis, in the Representative Fluid and Toxic Model boxes, if you select a fluid that is not valid for RBI 581, an error message appears when you calculate the analysis. 
+When you select a Representative Fluid that is valid for RBI 581, the Fluid Valid for 581 Analysis check box is selected, indicating that you have selected a valid fluid. Similarly, when you select a toxic model that is valid for RBI 581, the Toxic Fluid Valid for 581 Analysis check box is selected, indicating that you have selected a valid toxic fluid.
+Valid Representative Fluids
+The following Representative Fluids are valid for RBI 581:
+AcidALCL3C1-C2C3-C4C6-C8C9-C12C13-16 (Diesel)C17-25 (Gas Oil)C25+ (Resid)C5ChlorineCODEEEEEEAEGEOH2H2O (Water)H2SHCIHFMEOH (Methanol)NH3Nitric AcidNO2PhosgenePOPyrophoricSteamStyrene (Aromic)TDI
+Valid Toxic Models
+The following Toxic Models are valid for RBI 581:
+ALCL3ChlorineCOEO EEHCl HFH2SNH3Nitric AcidNO2PhosgenePropylene OxideTDI
+RBI 581 Representative FluidsNew RBI 581 Representative Fluids
+
+FluidMolWtLiquid DensityBoilPtAmbient StateSpecific Heat Equation ReferenceIdeal Gas Const AIdeal Gas Const BIdeal Gas Const CIdeal Gas Const DIdeal Gas Const EAITFluid Type 581Is Valid for 581 AnalysisIs valid toxic model for 581Acid-LP1862.3212LiquidNote 32.76E+05-2.09E+038.125-1.41E-029.37E-060Type0YNAcid-MP1862.3212LiquidNote 32.76E+05-2.09E+038.125-1.41E-029.37E-060Type0YNAcid-HP1862.3212LiquidNote 32.76E+05-2.09E+038.125-1.41E-029.37E-060Type0YNC1-C22315.639-193GasNote 112.31.150E-01-2.87E-05-1.30E-09 1036Type0YNC3-C45133.61-6.3GasNote 12.6320.3188-1.347E-041.466E-08 696Type0YNC6-C810042.702210LiquidNote 1-5.1466.762E-01-3.65E-047.658E-08 433Type0YNC9-C1214945.823364LiquidNote 1-8.51.01E+00-5.56E-041.180E-07 406Type0YN
+
+Updated RBI 581 Representative Fluid Contents in GE Digital APM Version V4.3.1.0.0
+
+FluidMolWtLiquid DensityBoilPtAmbient StateSpecific Heat Equation ReferenceIdeal Gas Const AIdeal Gas Const BIdeal Gas Const CIdeal Gas Const DIdeal Gas Const EAITFluid Type 581Is Valid for 581 AnalysisIs valid toxic model for 581C13-16 (Diesel)20547.728502LiquidNote 1-11.71.39E+00-7.72E-041.67E-07 396Type0YNC17-25 (Gas Oil)28048.383651LiquidNote 1-22.41.94E+00-1.12E-03-2.53E-07 396Type0YNC25+ (Resid)42256.187981LiquidNote 1-22.41.94E+00-1.12E-03-2.53E-07 396Type0YNC57239.0397LiquidNote 1-3.6260.4873-2.60E-045.30E-08 544Type0YNCO2850-312GasNote 22.91E+048.77E+033.09E+038.46E+031.54E+031128Type1YYEO445551GasNote 23.35E+041.21E+051.61E+038.24E+047.37E+02804Type1YYH224.433-423GasNote 127.19.27E-03-1.38E-057.65E-09NULL752Type0YNH2O (Water)1862.3212LiquidNote 32.76E+05-2.09E+038.125-1.41E-029.37E-060Type0YNH2S3461.993-75GasNote 131.91.44E-032.43E-05-1.18E-08NULL500Type0YYHCl3674-121GasNote 129.244-2.62E-031.12E-064.97E-09-2.50E-123200Type0YYHF2060.3768GasNote 129.16.61E-04-2.03E-062.50E-09NULL0Type0YYMEOH (Methanol)3250149LiquidNote 23.93E+048.79E+041.92E+035.37E+048.97E+02867Type1YNNH317.0338.55-28.2GasNote 127.262.31E-042.24E-072.17E-105.41E-143200Type0YYPhosgene9986181LiquidNULLNULLNULLNULLNULLNULL0Type0YYSteam1862.3212GasNote 23.34E+042.68E+042.61E+038.90E+031.17E+030Type0YN
+
+RBI 581 Representative Fluid Contents in GE Digital APM Versions Older than V4.3.1.0.0
+
+FluidMolWtLiquid DensityBoilPtAmbient StateSpecific Heat Equation ReferenceIdeal Gas Const AIdeal Gas Const BIdeal Gas Const CIdeal Gas Const DIdeal Gas Const EAITFluid Type 581Is Valid for 581 AnalysisIs valid toxic model for 581C13-16 (Diesel)20047500LiquidNote 1-11.71.39E+00-7.72E-041.67E-07 400Type0YNC17-25 (Gas Oil)30048700LiquidNote 1-22.41.94E+00-1.12E-03-2.53E-07 400Type0YNC25+ (Resid)40049800LiquidNote 1-22.41.94E+00-1.12E-03-2.53E-07 400Type0YNC5714092LiquidNote 1-3.6260.4873-2.60E-045.30E-08 500Type0YNCO2850.79-312GasNote 22.91E+048.77E+033.09E+038.46E+031.54E+030Type1YYEO4455.3756GasNote 23.35E+041.21E+051.61E+038.24E+047.37E+020 YYH224.4-423GasNote 127.19.27E-03-1.38E-057.65E-09 500Type0YNH2O (Water)1862.4212LiquidNote 32.76E+05-2.09E+038.125-1.41E-029.37E-060Type0YNH2S346.64-76GasNote 131.91.44E-032.43E-05-1.18E-08 0Type0YYHCl36.4774.5-114Gas      0Type0YYHF2061.6567GasNote 129.16.61E-04-2.03E-062.50E-09 0Type0YYMEOH (Methanol)3249.6148LiquidNote 23.93E+048.79E+041.92E+035.37E+048.97E+02400Type1YNNH31750.9-28Gas      0Type0NYPhosgene9986.8647Liquid      0Type0YYSteam1862.4212GasNote 33.34E+042.68E+042.61E+038.90E+031.17E+030 YN
+
+New Component Damage Flammable Records
+
+FluidFluid TypeCAINLACAINLBCAILACAILBIAINLAIAINLBIAILAIAILBC1-C2Gas430.982800.95410.6710790.62C1-C2Liquid00000000C3-C4Gas49.481313.6127.960.72522.90.63C3-C4Liquid00000000C6-C8Gas290.98312.4113.980.66275.70.61C6-C8Liquid1820.895250.954.350.78570.55C9-C12Gas120.983910.957.10.662810.61C9-C12Liquid1300.95600.953.30.7660.53
+
+Component Damage Flammable Fluid Contents in GE Digital APM Version V4.3.1.0.0
+
+FluidFluid TypeCAINLACAINLBCAILACAILBIAINLAIAINLBIAILAIAILBEELiquid173.100072.21000EEALiquid11700069100EGGas7.7210.973006.5250.66700EGLiquid10800069000Styrene (Aromatic)Liquid10300070.120701.20
+
+Component Damage Flammable Fluid Contents in GE Digital APM Versions Older Than V4.3.1.0.0
+
+FluidFluid TypeCAINLACAINLBCAILACAILBIAINLAIAINLBIAILAIAILBEELiquid173.110072.21100EEALiquid11710069100EGGas7.7210.973006.5240.66700EGLiquid10810069100Styrene (Aromatic)Liquid10310070.121701.21
+
+New Personal Injury Flammable CE Constants Records
+
+FluidFluid TypeCAINLACAINLBCAILACAILBIAINLAIAINLBIAILAIAILBAcid-HPGas66900.2469000000Acid-HPLiquid66900.2469000000Acid-LPGas2699.50.2024000000Acid-LPLiquid2699.50.2024000000Acid-MPGas3366.20.2878000000Acid-MPLiquid3366.20.2878000000C1-C2Gas1100.967450.92790.6731000.63C1-C2Liquid00000000C3-C4Gas125.21836.7157.720.7517690.63C3-C4Liquid00000000C6-C8Gas680.96828.7126.720.67962.80.63C6-C8Liquid5160.8913150.9212.70.782240.54C9-C12Gas290.969810.92130.669880.63C9-C12Liquid3730.8914010.929.50.76200.54
+
+New Toxic Release Constants HFH2S Records
+
+FluidRelease TypeContinuous Release DurationConstant CConstant DH2SContinuous000HFContinuous000
+
+Toxic Release Constants HFH2S in GE Digital APM Version V4.3.1.0.0
+
+FluidRelease TypeContinuous Release DurationConstant CConstant DH2SContinuous10.2280.7137H2SContinuous20.4561.4273H2SContinuous30.68412.141H2SContinuous40.91212.8546H2SContinuous12.51.09773.908325H2SContinuous151.09243.97355H2SContinuous301.08794.21675HFContinuous10.248220.79372HFContinuous20.496441.58744HFContinuous30.744662.38116HFContinuous40.992883.17488HFContinuous12.51.244.1306HFContinuous151.2394.1664HFContinuous201.08164.104HFContinuous301.233354.3003
+
+Toxic Release Constants HFH2S in GE Digital APM Version Older Than V4.3.1.0.0
+
+FluidRelease TypeContinuous Release DurationConstant CConstant DH2SContinuous10.248220.79372H2SContinuous20.496441.58744H2SContinuous30.744662.38116H2SContinuous40.992883.17488H2SContinuous12.51.244.1306H2SContinuous151.2394.1664H2SContinuous301.233354.3003HFContinuous10.2280.7137HFContinuous20.4561.4273HFContinuous30.68412.141HFContinuous40.91212.8546HFContinuous12.51.09773.908325HFContinuous151.09243.97355HFContinuous201.08794.21675HFContinuous301.08164.104
+
+New Toxic Consequence Equation Constants (Ammonia, Chlorine) Records
+
+FluidRelease TypeContinuous Release DurationConstant CConstant DChlorineContinuous000ChlorineContinuous3.5106050.7679NH3Continuous000NH3Continuous3.518830.8281
+
+Toxic Consequence Equation Miscellaneous Chemicals in GE Digital APM Version V4.3.1.0.0
+
+ChemicalRelease DurationGas Release Constant EGas Release Constant FLiquid Release Constant ELiquid Release Constant FEE1.53.81.17100EO1.52.0831.22200Phosgene14386.70.40811610.3604Phosgene28644.30.8042287.90.7102Phosgene5229761.296857.11.1
+
+Toxic Consequence Equation Miscellaneous Chemicals in GE Digital APM Version Older Than V4.3.1.0.0
+
+ChemicalRelease DurationGas Release Constant EGas Release Constant FLiquid Release Constant ELiquid Release Constant FEE23.81.17100EO22.11.22200Phosgene14386.70.411610.4Phosgene28644.30.82287.90.7Phosgene5229761.29212151.12
+
+New Toxic Consequence Equation Miscellaneous Chemicals Records
+
+ChemicalRelease DurationGas Release Constant EGas Release Constant FLiquid Release Constant ELiquid Release Constant FCO304131.41.100EE30137.9130.11.1EO302744.51.200HCl302457.31.200Phosgene301764841.31211011.2Propylene Oxide302.81.21151.1TDI30004865.41.1
+
+RBI Risk Matrix Mapping
+Note: The RBI Risk Matrix Mapping family supports RBI 581 Risk Analyses. These mappings support only the default Risk Matrix.
+ The records in the RBI Risk Matrix Mapping family are used to specify which Policies are used to populate the default Risk Matrix, using data contained in RBI 581 Risk Analyses and related records. The information in the following table reflects the baseline state and behavior of fields that exist in the RBI Risk Matrix Mapping family.
+RBI Risk Matrix Mapping 
+Field IDField CaptionData TypeDescriptionBehavior and Usage MI_RMMPG_ANALY_FAMIL_CAnalysis FamilyCharacterThe Family ID of the analysis. For baseline RBI Risk Matrix Mapping records, this will always correspond to MI_581RANAL (the RBI 581 Risk Analysis family).This field is populated automatically in baseline RBI Risk Matrix Mapping records.
+MI_RMMPG_POLICY_NM_C
+Policy NameCharacterThe name of the Policy that will be used to populate the default Risk Matrix.This field is populated automatically in baseline RBI Risk Matrix Mapping records.MI_RMMPG_RISK_CTG_CRisk CategoryCharacterThe Risk Category that will be populated on the default Risk Matrix (Operations or Safety).This field is populated automatically in baseline RBI Risk Matrix Mapping records.MI_RMMPG_POLIC_IN_NODE_NM_CPolicy Input Node NameCharacterThe name of the input node that will be used to deliver values from the Source Field and Family to the Policy.This field is populated automatically in baseline RBI Risk Matrix Mapping records.MI_RMMPG_SOURCE_FML_CSource FamilyCharacterThe Family ID of the family from which values will be taken.This field is populated automatically in baseline RBI Risk Matrix Mapping records.MI_RMMPG_SOURCE_FLD_CSource FieldCharacterThe Field ID of the field that belongs to the Source Family from which values will be taken.This field is populated automatically in baseline RBI Risk Matrix Mapping records.
+The Policy Input Nodes that are used by the RBI Risk Matrix Mapping family to populate the default Risk Matrix depend on the Risk Category that you choose. The information in the following tables indicates which policy nodes and input fields will be used when populating the default Risk Matrix. 
+Risk Category - Operations
+The following table provides a list of policy nodes and input fields that are used to plot risk on the default Risk Matrix for the risk category Operations. 
+
+Policy Input NodeSource Family IDSource Family CaptionSource Field IDSource Field CaptionFinancial ConsequenceMI_RBI_EVN0RBI 581 Consequence EvaluationMI_RBI_EVN0_CALCULATD_TTL_FC_NCalculated Total Financial ConsequencePOFMI_RBDEMECHRBI Degradation MechanismsMI_RBDEMECH_TOTAL_PF_RBI_DTE_NTotal POF – RBI DateRisk CategoryMI_RRSKMAPRisk Analysis MappingMI_RRSKMAP_RISK_CTG_CRisk Category
+
+Consequence of Failure (COF) Mapping Values: The following table provides the COF value based on the Total Financial Consequence (FC) value.
+
+CategoryCOF ValueRangeVery High1000FC > 10,000,000High5001,000,000 < FC < 10,000,000Medium100100,000 < FC < 1,000,000Low1010,000 < FC < 100,000Very Low1FC <= 10,000
+
+Probability of Failure (POF) Mapping Values: The following table provides the POF value based on the POF value that is derived from Damage Mechanism records.
+
+CategoryPOF ValueRangeFrequent5POF > 0.0306Probable10.0306 < POF < 0.00306Possible0.30.00306 < POF < 0.000306Remote0.10.000306 < POF < 0.0000306Improbable0.05POF <= 0.0000306
+
+Risk Category - Safety
+The following table provides a list of policy nodes and input fields that are used to plot risk on the default Risk Matrix for the risk category Safety. 
+
+Policy Input NodeSource Family IDSource Family CaptionSource Field IDSource Field CaptionConsequence AreaMI_RBI_EVN0RBI 581 Consequence EvaluationMI_RBI_EVN0_FL_CEAR_INJ_NFinal Consequence AreaPOFMI_RBDEMECHRBI Degradation MechanismsMI_RBDEMECH_TOTAL_PF_RBI_DTE_NTotal POF – RBI DateRisk CategoryMI_RRSKMAPRisk Analysis MappingMI_RRSKMAP_RISK_CTG_CRisk Category
+
+Consequence of Failure (COF) Mapping Values: The following table provides the COF value based on the Consequence Area (CA) value.
+
+CategoryCOF ValueRangeVery High1000CA > 100,000High50010,000 < CA < 100,000Medium1001,000 < CA < 10,000Low10100 < CA < 1,000Very Low1CA <= 100
+
+Probability of Failure (POF) Mapping Values: The following table provides the POF value based on the POF value derived from Damage Mechanism records.
+
+CategoryPOF ValueRangeFrequent5POF > .0306Probable1.0306 < POF < .00306Possible.3.00306 < POF < .000306Remote.1.000306 < POF < .0000306Improbable.05POF <= .0000306
+
+RBI Strategy Mapping ConfigurationRBI Strategy Mapping Configuration Details
+FieldData TypeDescriptionBehavior and UsageDegradation Mechanism CharacterThe value in the Degradation Mechanism field linked to the RBI Analysis for which you are generating RBI Recommendations.This field is populated by default in each RBI Strategy Mapping Configuration that is delivered to the baseline GE Digital APM database.Policy Name CharacterThe Record ID of the Policy used to generate an RBI Recommendation. This field is populated by default in each RBI Strategy Mapping Configuration that is delivered to the baseline GE Digital APM database.
+RBI Strategy Mapping Details define the Policy Input nodes that are used to generate RBI Recommendation records automatically from RBI Analyses. The information in the table reflects the baseline state and behavior of fields in the RBI Strategy Mapping Details family.
+RBI Strategy Mapping Details
+FieldData TypeDescriptionBehavior and UsagePolicy Input Node Name CharacterThe ID of the Input node in the Policy that is defined by the RBI Strategy Mapping Configuration to which the RBI Strategy Mapping Details is linked.This field is populated by default in each RBI Policy that is delivered to the baseline GE Digital APM database.Source Family CharacterThe family of the source record whose values are used to determine the output of the Input node.This field is populated by default in each RBI Strategy Mapping Details that is delivered to the baseline GE Digital APM database.Source Field CharacterThe field whose source value is used to determine the output of the Input node.This field is populated by default in each RBI Strategy Mapping Details that is delivered to the baseline GE Digital APM database.
+RBI 581 Security Groups
+
+The following table lists the baseline Security Groups available for users within this module, as well as the baseline Roles to which those Security Groups are assigned. In Predix APM, Roles are assigned to Security Users through permission sets.
+
+Important:  Assigning a Security User to a Role grants that user the privileges associated with all of the Security Groups that are assigned to that Role. To avoid granting a Security User unintended privileges, before assigning a Security User to a Role, be sure to review all of the privileges associated with the Security Groups assigned to that Role.
+                
+
+Security GroupRolesRBI Security GroupsMI RBI Administrator
+MI Mechanical Integrity Administrator
+MI RBI Analyst
+MI Mechanical Integrity Administrator
+MI Mechanical Integrity Power
+MI RBI Viewer
+MI APM Viewer
+MI Mechanical Integrity Viewer
+RBI Policy Security GroupsMI RBI Calculation Policy DesignerNoneMI RBI Calculation Policy Viewer
+MI Mechanical Integrity Administrator
+MI Mechanical Integrity Power
+MI RBI Recommendation Policy DesignerNoneMI RBI Recommendation Policy Viewer
+MI Mechanical Integrity Administrator
+MI Mechanical Integrity Power
+MI RBI Risk Mapping Policy DesignerNoneMI RBI Risk Mapping Policy Viewer
+MI Mechanical Integrity Administrator
+MI Mechanical Integrity Power
+
+The baseline family-level privileges that exist for these Security Groups are summarized in the following table.
+Security GroupPrivileges to the Policy FamilyMI RBI Calculation Policy DesignerView, Update, Insert, DeleteMI RBI Calculation Policy ViewerViewMI RBI Recommendation Policy DesignerView, Update, Insert, DeleteMI RBI Recommendation Policy ViewerViewMI RBI Risk Mapping Policy DesignerView, Update, InsertMI RBI Risk Mapping Policy ViewerView
+For more information about the State Management process for Inspection Plans, refer to Compliance Management State Management.
+The baseline family-level privileges that exist for the MI RBI Administrator, MI RBI Analyst, and MI RBI Viewer Security Groups are summarized in the following table.
+Note:  If you have activated only the RBI 581 license (and not the Risk Based Inspection license), then privileges to some of the following families do not exist for the MI RBI Administrator, MI RBI Analyst, and MI RBI Viewer Security Groups.
+FamilyMI RBI AdministratorMI RBI AnalystMI RBI Viewer Entity Families Asset GroupView, Update, Insert, DeleteView, Update, Insert, DeleteViewCompliance RecommendationViewView, Update, Insert, DeleteViewConsequence Evaluation FactorsView, Update, Insert, DeleteViewViewCorrosionViewViewViewCorrosion Analysis SettingsViewViewViewCriticality Consequence EvaluationView, Update, Insert, DeleteView, Update, Insert, DeleteViewCriticality Env. Crack. Deg. Mech. Eval.View, Update, Insert, DeleteView, Update, Insert, DeleteViewCriticality Ext. Corr. Deg. Mech. Eval.View, Update, Insert, DeleteView, Update, Insert, DeleteViewCriticality Int. Corr. Deg. Mech. Eval.View, Update, Insert, DeleteView, Update, Insert, DeleteViewCriticality Other Damage Mech. Eval.View, Update, Insert, DeleteView, Update, Insert, DeleteViewCriticality RBI Component - Cylindrical Shell View, Update, Insert, DeleteView, Update, Insert, DeleteViewCriticality RBI Component - Exchanger BundleView, Update, Insert, DeleteView, Update, Insert, DeleteViewCriticality RBI Component - Exchanger HeaderView, Update, Insert, DeleteView, Update, Insert, DeleteViewCriticality RBI Component - Exchanger TubeView, Update, Insert, DeleteView, Update, Insert, DeleteViewCriticality RBI Component - PipingView, Update, Insert, DeleteView, Update, Insert, DeleteViewCriticality RBI Component - Tank BottomView, Update, Insert, DeleteView, Update, Insert, DeleteViewData Mapping Column-Field PairView, Update, Insert, DeleteViewViewData Mapping GroupView, Update, Insert, DeleteViewViewData Mapping Query View, Update, Insert, DeleteViewViewDegradation Mechanisms Evaluation FactorsView, Update, Insert, DeleteView, Update, Insert, DeleteViewEquipmentView, Update, Insert, DeleteView, Update, Insert, DeleteViewFunctional LocationView, Update, Insert, DeleteView, Update, Insert, DeleteViewGrouping ElementView, Update, Insert, DeleteView, Update, Insert, DeleteViewInspection PlanViewView, Update, Insert, DeleteViewInspection Plan RevisionViewView, Update, Insert, DeleteViewInspection TaskView, Update, Insert, DeleteView, Update, Insert, DeleteViewInventory Group ConfigurationView, Update, Insert, DeleteViewViewGeneral RecommendationViewView, Update, Insert, DeleteViewMeridium Reference TablesView, Update, Insert, Delete
+View
+ViewPolicyViewViewViewPotential Degradation MechanismsView, Update, Insert, DeleteViewViewRBI 581 Admin OptionsView, Update, Insert, DeleteViewViewRBI 581 Brittle Fracture Damage EvaluationView, Update, Insert, DeleteView, Update, Insert, DeleteViewRBI 581 Consequence EvaluationView, Update, Insert, DeleteView, Update, Insert, DeleteViewRBI 581 Cracking Damage EvaluationView, Update, Insert, DeleteView, Update, Insert, DeleteViewRBI 581 Damage Mechanism EvaluationView, Update, Insert, DeleteView, Update, Insert, DeleteViewRBI 581 External Cracking Damage EvaluationView, Update, Insert, DeleteView, Update, Insert, DeleteViewRBI 581 External Damage EvaluationView, Update, Insert, DeleteView, Update, Insert, DeleteViewRBI 581 HTHA Damage EvaluationView, Update, Insert, DeleteView, Update, Insert, DeleteViewRBI 581 Mechanical Fatigue Damage EvaluationView, Update, Insert, DeleteView, Update, Insert, DeleteViewRBI 581 Risk AnalysisView, Update, Insert, DeleteView, Update, Insert, DeleteViewRBI 581 Thinning and Lining EvaluationView, Update, Insert, DeleteView, Update, Insert, DeleteViewRBI Criticality AnalysisView, Update, Insert, DeleteView, Update, Insert, DeleteViewRBI Custom DM Evaluation Configuration View, Update, Insert, DeleteViewViewRBI Custom DM Evaluation Configuration DetailsView, Update, Insert, DeleteViewViewRBI Custom DM Evaluation ValidationView, Update, Insert, DeleteViewViewRBI Custom DM Evaluation Validation DetailsView, Update, Insert, DeleteViewViewRBI Degradation MechanismsView, Update, Insert, DeleteView, Update, Insert, DeleteViewRBI Inspection Auto-Selection CriteriaView, Update, Insert, DeleteViewViewRBI RecommendationView, Update, Insert, DeleteView, Update, Insert, DeleteViewRBI Risk Matrix MappingView, Update, Insert, DeleteView, Update, Insert, DeleteViewRBI Strategy Mapping ConfigurationView, Update, Insert, DeleteView, Update, Insert, DeleteViewRBI Strategy Mapping DetailsView, Update, Insert, DeleteView, Update, Insert, DeleteViewRBI SystemView, Update, Insert, DeleteView, Update, Insert, DeleteViewRecommendation RevisionViewView, Update, Insert, DeleteViewReference DocumentView, Update, Insert, DeleteView, Update, Insert, DeleteViewRisk AssessmentView, Update, Insert, DeleteView, Update, Insert, DeleteViewRisk RankView, Update, Insert, DeleteView, Update, Insert, DeleteViewRisk TranslationView, Update, Insert, DeleteView, Update, Insert, DeleteViewSAP System ViewViewViewStrategy Logic CaseView, Update, Insert, DeleteViewViewStrategy Reference TableView, Update, Insert, DeleteView, Update, Insert, DeleteViewTask TypeView, Update, Insert, DeleteView, Update, Insert, DeleteViewTime Based Inspection IntervalView, Update, Insert, DeleteView, Update, Insert, DeleteViewTime Based Inspection SettingView, Update, Insert, DeleteView, Update, Insert, DeleteView Relationship Families Asset Has Inspection PlanViewView, Update, Insert, DeleteViewBelongs to a UnitView, Update, Insert, DeleteView, Update, Insert, DeleteViewData Mapping has Column-Field PairView, Update, Insert, DeleteViewViewData Mapping has QueryView, Update, Insert, DeleteViewViewData Mapping has SubgroupView, Update, Insert, DeleteViewViewHas Asset GroupView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Child RBI Criticality AnalysisView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Consequence EvaluationView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas Consolidated RecommendationsViewView, Update, Insert, DeleteViewHas Corrosion AnalysesView ViewViewHas Corrosion Analysis SettingsView ViewViewHas DatapointsViewViewViewHas Degradation MechanismsView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas InspectionsViewView, Update, Insert, DeleteViewHas Inspection Plan RevisionViewView, Update, Insert, DeleteViewHas Inspection ScopeViewViewViewHas Potential Degradation MechanismsView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas RBI ComponentsView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas RBI Criticality AnalysisView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas RBI Custom DME ConfigurationView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas RBI Custom DME Validation View, Update, Insert, DeleteViewViewHas RBI Degradation Mechanisms EvaluationView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas RBI Strategy Mapping ConfigurationView, Update, Insert, DeleteView, Update, Insert, DeleteViewHas RBI SystemsView, Update, Insert, DeleteView, Update, Insert, DeleteViewImplements Compliance RecommendationViewView, Update, Insert, DeleteViewInspection Plan Has RecommendationsViewView, Update, Insert, DeleteViewHas TasksView, Update, Insert, DeleteView, Update, Insert, DeleteView
+Note:  Security privileges for all modules and catalog folders can be found in the APM documentation. 
+The following families are not used elsewhere in the RBI module. Privileges to these families support integration with the Inspection Management module:
+Has Inspection ScopeHas Time Based Inspection IntervalTime Based Inspection IntervalTime Based Inspection Setting
+Specifically, certain features of the Time-Based Inspection Settings functionality, which you can use if the Inspection Management license is active, are facilitated by these privileges.
+State Management for Inspection PlansThe following state changes can be applied to the Inspection Plans based on user Security Roles.
+The diagram below shows the workflow of the baseline State Management process as it applies to Inspection Plans. 
+Details
+The Proposed state is the initial state of all Inspection Plans.When you change the state of an Inspection Plan from Approved to Modified, an Inspection Plan Revision History record is created.
+Reserved States and Operations for Inspection Plans
+The following tables indicate whether the baseline states and operations are reserved. You cannot remove or modify reserved states or operations. 
+State CaptionReserved StateSecurity RolesApprovedNoMI Inspection Plan ApproverModifiedYes
+MI Compliance AnalystMI Inspection Plan Approver
+ProposedNo
+MI Compliance AnalystMI Inspection Plan Approver
+
+Note: In GE Digital APM the Compliance Approver Permission set should be added in place of the MI Inspection Plan Approver Role.
+Operation IDReserved OperationPredecessorSuccessorMI_APPROVENoProposedApprovedMI_APPV_MODIFIEDNoModifiedApprovedMI_MODIFYYesApprovedModified
+RBI Recommendation State Management
+The following state changes can be applied to RBI Recommendation.
+The diagram below shows the workflow of the baseline State Management process as it applies to RBI Recommendations.
+
+Reserved States and Operations for RBI Recommendations
+State CaptionState IDReserved StateProposed (Initial State)MI_PENDINGYesApprovedMI_ACCEPTEDYesConsolidatedMI_CONSOLIDATEDYesSupersededMI_SUPERSEDEDYesNot RequiredMI_NOTREQUIREDYesArchivedMI_ARCHIVEDYes
+OperationOperation IDReserved OperationPredecessor StateSuccessor StateApproveMI_PROMOTEYesProposedApprovedUnlink from MasterMI_UN_PROMOTEYesApprovedProposedMark Not RequiredMI_NOTREQUIREDYesProposedNot RequiredSupersedeMI_SUPERSEDEYesProposedSupersededUnlink from MasterMI_UN_SUPERSEDEYesSupersededProposedConsolidateMI_CONSOLIDATEYesProposedConsolidatedUnlink from MasterMI_UN_CONSOLIDATEYesConsolidatedProposedArchivedMI_PARCHIVEDYesProposed Archived
+RBI URLs
+There is one URL route associated with Risk Based Inspection: rbi. The following table describes the various paths that build on the route, and the elements that you can specify for each.
+ElementDescriptionAccepted Value(s)Notes
+
+rbi/unit : Opens the Risk Based Inspection Overview page.
+
+rbi/unit/<UnitEntityKey> : Displays the selected unit on the Risk Based Inspection Overview page.
+ <UnitEntityKey> Specifies the level of the Asset Hierarchy for the RBI unit that you want to view. Any Unit Entity Key that corresponds to an asset in the Asset Hierarchy.The Unit Entity Key must be present in the URL to display the correct page. 
+
+rbi/processunit/<ProcessUnitEntityKey> : Opens the Unit Summary page for the selected process unit. 
+
+rbi/processunit/<ProcessUnitEntityKey>/corrosionloop/<CorrosionLoopEntityKey>: Displays the Corrosion Loop Overview section. 
+
+rbi/processunit/<ProcessUnitEntityKey>/corrosionloop/<CorrosionLoopEntityKey>/component/<ComponentEntityKey>: Displays the selected Component Overview section. 
+
+rbi/processunit/<ProcessUnitEntityKey>/corrosionloop/<CorrosionLoopEntityKey>/component/<ComponentEntityKey>/analysis/AnalysisEntityKey: Displays the selected Analysis Details section. 
+
+rbi/processunit/<ProcessUnitEntityKey>/corrosionloop/<CorrosionLoopEntityKey>/component/<ComponentEntityKey>/protectedasset/<ProtectedAssetEntityKey>: Displays the selected protected asset on the Asset Summary page. 
+
+rbi/processunit/<ProcessUnitEntityKey>/corrosionloop/<CorrosionLoopEntityKey>/component/<ComponentEntityKey>/protectedcomponent/<ProtectedComponentEntityKey>: Displays the Component Overview section for the selected protected component. 
+<ProcessUnitKey>Specifies the level of the Asset Hierarchy for the RBI Process Unit that you want to view. Any Process Unit Entity Key that corresponds to an asset in the Asset Hierarchy.The Process Unit Entity Key must be present in the URL to display the correct page. <CorrosionLoopEntityKey>Specifies the level of the Asset Hierarchy for the Corrosion Loop that you want to view. Any Corrosion Loop Entity Key that corresponds to a Corrosion Loop in the Asset Hierarchy.The Corrosion Loop Entity Key must be present in the URL to display the correct page. <ComponentEntityKey>Specifies the level of the Asset Hierarchy for the RBI Component that you want to view. Any Component Entity Key that corresponds to an RBI Component in the Asset Hierarchy.The Component Entity Key must be present in the URL to display the correct page. <AnalysisEntityKey>>Specifies the level of the Asset Hierarchy for the RBI Analysis that you want to view. Any Analysis Entity Key that corresponds to an RBI Analysis in the Asset Hierarchy.The Analysis Entity Key must be present in the URL to display the correct page. <ProtectedAssetEntityKey>Specifies the level of the Asset Hierarchy for the protected asset that you want to view. Any Protected Asset Entity Key that corresponds to a protected asset in the Asset Hierarchy.The Protected Asset Entity Key must be present in the URL to display the correct page. <ProtectedComponentEntityKey>Specifies the level of the Asset Hierarchy for the Protected Component that you want to view. Any Protected Component Entity Key that corresponds to an Protected Component in the Asset Hierarchy.The protected Component Entity Key must be present in the URL to display the correct page. 
+
+rbi/asset/<AssetEntityKey> : Displays the selected asset on the Asset Summary page.
+
+rbi/asset/<AssetEntityKey>/component/<ComponentEntityKey> : Displays the selected Component Details section of the Asset Summary page.
+
+rbi/asset<AssetEntityKey>/component/<ComponentEntityKey>/analysis/<AnalysisEntityKey> :Displays the Analysis Details section of the Asset Summary page. 
+
+rbi/analysis/<AnalysisEntityKey> : Displays the Analysis Details section of the Asset Summary page. 
+ <AssetEntityKey> Specifies the level of the Asset Hierarchy for the RBI asset that you want to view. Any Asset Entity Key that corresponds to an asset in the Asset Hierarchy.The Asset Entity Key must be present in the URL to display the correct page.  <ComponentEntityKey> Specifies the level of the Asset Hierarchy for the RBI Component that you want to view. Any Component Entity Key that corresponds to an RBI Component in the Asset Hierarchy.The Component Entity Key must be present in the URL to display the correct page.  <AnalysisEntityKey> Specifies the level of the Asset Hierarchy for the RBI Analysis that you want to view. Any Analysis Entity Key that corresponds to an RBI Analysis in the Asset Hierarchy.The Analysis Entity Key must be present in the URL to display the correct page. 
+rbi/<Context>/<ContextEntityKey>/isorisk: Displays the RBI 581 ISO-Risk Plot page for the selected process unit, asset, or corrosion loop.<Context>Specifies whether the Entity Key that you have entered corresponds to a process unit, asset, or corrosion loop.
+unitassetcorrosionloop
+None<ContextEntityKey>Specifies the Entity Key of the process unit (i.e., Functional Location), Asset, or the Corrosion Loop for which you want to access the RBI 581 ISO-Risk Plot page.The Entity Key of a Functional Location (set as a process unit), Asset, or a Corrosion Loop in the Asset Hierarchy. The Entity Key must be present in the URL to display the correct page. 
+rbi/<Context/<ContextEntityKey>/component/<ComponentEntityKey>/isorisk: Displays the RBI 581 ISO-Risk Plot page for the selected component linked to an asset or a corrosion loop.<Context>Specifies whether the component is linked to an asset or a corrosion loop.
+assetcorrosionloop
+None<ContextEntityKey>Specifies the Entity Key of the Asset or the Corrosion Loop that is linked to the Component for which you want to view the RBI 581 ISO-Risk Plot page.The Entity Key of a Functional Location (set as a process unit), Asset, or a Corrosion Loop in the Asset Hierarchy. The Entity Key must be present in the URL to display the correct page. <ComponentEntityKey>Specifies the Entity Key of the Component for which you want to access the RBI 581 ISO-Risk Plot page.The Entity Key of the component.The Entity Key must be present in the URL to display the correct page. 
+
+rbi/corrosionloop/<CorrosionLoopEntityKey> :Displays the Corrosion Loop Summary page. 
+ <CorrosionLoopEntityKey> Specifies the level of the Asset Hierarchy for the Corrosion Loop that you want to view. Any Corrosion Loop Entity Key that corresponds to a Corrosion Loop in the Asset Hierarchy.The Corrosion Loop Entity Key must be present in the URL to display the correct page. rbi/evergreen/<ContextEntityKey>: Accesses the Ready for Evergreening tab in the Evergreening workspace.rbi/evergreen/<ContextEntityKey>/<JobKey>: Accesses the Created tab in the Evergreening workspace.<ContextEntityKey>Specifies the Entity Key of the process unit or Functional Location.The Entity Key of a Functional Location or process unit in the Asset Hierarchy.The Entity Key must be present in the URL to display the correct page. A value of -1 can be used to access the home level of the Asset Hierarchy.<JobKey>Specifies the scheduled job that processes an RBI analysis duplication.The Job Key of a scheduled job for an RBI analysis duplication.None.
+URLs
+
+Example URLDestination
+ rbi/unit 
+The Risk Based Inspection Overview page. rbi/unit/2305330 The Risk Based Inspection Overview page for the specified unit.
+ rbi/processunit/64253024663 
+The Unit Overview section for the specified process unit. 
+rbi/processunit/64253024663/corrosionloop/64253024702 
+The Corrosion Loop Overview section for the specified process unit. 
+rbi/processunit/64253024663/corrosionloop/64253024702/component/64253024704 
+The Component Overview section for the specified process unit. 
+rbi/processunit/64253024663/corrosionloop/64253024702/component/64253024704/analysis/64253024712
+The Analysis Details section for the specified process unit.
+rbi/processunit64253024663/corrosionloop/64253024702/component/64253024704/protectedasset/2509506
+The protected Asset Summary page for the specified process unit. 
+ rbi/processunit/64253024663/corrosionloop/64253024702/component/64253024704/protectedcomponent/64253024705
+The protected Component Overview page for the specified process unit.  rbi/asset/2509505 The Asset Summary page for the specified asset. rbi/asset/2509505/component/3476094 The Component Details section of the Asset Summary page for specified RBI Component. 
+ rbi/asset/2509505/component/3476094/analysis/3221498 
+-or-
+ rbi/analysis/3221498 
+The Analysis Details section of the Asset Summary page for the specified RBI Analysis.  rbi/corrosionloop/4842819 The Corrosion Loop Summary page for the specified Corrosion Loop. rbi/25926450/isoriskanalysis/corrosionloopThe RBI 581 ISO Risk Plot page for the specified Corrosion Loop.rbi/evergreening/25926450The Ready for Evergreening tab in the Evergreening workspace.rbi/evergreening/25926450/5617a312-6b47-402c-8766-1c5d854aa87aThe Created tab in the Evergreening workspace.
+
+Inspection Plan URLs
+The following table describes the various paths that are used for the Inspection Plan workflow.
+ElementDescriptionAccepted Value(s)Notescm/asset/<assetKey>: Accesses the Inspection Plan for the specified asset.cm/plans: Accesses the Inspection Plan Management page. <assetKey>Specifies the entity key of the asset record which you want to view.Any asset key that is associated with an asset in the Asset HierarchyYou should use the asset key of an asset that has an Inspection Plan created. If you select an asset that does not have an Inspection Plan, a warning message appears.
+URLs
+Example URLDestination cm/asset/3290820029The Inspection Plan for the selected asset. 
+RBI 581 System Code Tables
+The following table lists the System Code Tables that are used by RBI 581.
+Table IDTable DescriptionFunction  581_AST_BOTTOM_TYPE  581_AST_BOTTOM_TYPE Populates the AST Bottom Type field in RBI 581 Thinning and Lining Evaluation records. 581_AST_Cathodic Protection  581_AST_Cathodic Protection Populates the Cathodic Protection field in RBI 581 Thinning and Lining Evaluation records. 581_AST_DRAINAGE_TYPE  581_AST_DRAINAGE_TYPE Populates the AST Drainage field in RBI 581 Thinning and Lining Evaluation records. 581_AST_PAD_MAT_TYPE  581_AST_PAD_MAT_TYPE Populates the AST Pad field in RBI 581 Thinning and Lining Evaluation records.
+ 581_Coating_Quality 
+581 Coating Quality
+Populates the Coating Quality field in the following records:
+ RBI 581 External Cracking Damage Evaluation  RBI 581 External Damage Evaluation 
+ 581_Coating_Type  581_Coating_Type Populates the Coating Type field in RBI 581 Thinning and Lining Evaluation records.
+ 581_CORR_TYPE 
+581 Corrosion typesPopulates the Selected Base Material Corrosion Rate and Selected Cladding Material Corrosion Rate fields in RBI 581 Thinning and Lining Evaluation records.
+ 581_Detection 
+581 Detection System 
+Populates the Detection System field in the following records:
+ RBI 581 Consequence Evaluation RBI Component
+
+ 581_Isolation 
+ 581_Isolation 
+Populates the Isolation System field in the following records:
+ RBI 581 Consequence Evaluation RBI Component
+
+ 581_Mitigation_System 
+Mitigation System 
+Populates the Mitigation System field in the following records:
+ RBI 581 Consequence Evaluation RBI Component
+ 581_Primary_Soil_Type  581_Primary_Soil_Type Populates the Soil Type field in RBI 581 Thinning and Lining Evaluation records. 581_Product_Side_Condition  581_Product_Side_Condition Populates the Product Side Condition field in RBI 581 Thinning and Lining Evaluation records.
+ 581_Release_Hole_Sizes 
+Release Hole SizesProvides the values for hole sizes in RBI 581 Consequence Evaluation records. CORROSION TYPES Corrosion Types
+Populates the Thinning Type field in the following records:
+RBI 581 External Damage Evaluation RBI 581 Thinning and Lining Evaluation
+ FLUID TYPES Fluid Types
+Populates the Initial Fluid Phase field in the following records:
+RBI 581 Risk Analysis RBI Component
+ FOUNDATION TYPES Foundation Types
+Populates the Foundation Type field in the following records:
+RBI 581 Thinning and Lining Evaluation RBI Component
+ MI_581_Adjustment_Branch_Diameter MI 581 Adjustment Branch DiameterPopulates the Branch Diameter field in RBI 581 Mechanical Fatigue Damage Evaluation records. MI_581_Adjustment_Condition_for_Pipe MI 581 Adjustment for Condition of PipePopulates the Pipe Condition field in RBI 581 Mechanical Fatigue Damage Evaluation records. MI_581_Adjustment_Corrective_Action MI 581 Adjustment Corrective ActionPopulates the Corrective Action field in RBI 581 Mechanical Fatigue Damage Evaluation records. MI_581_Adjustment_Joint_Type_Branch_ Design MI 581 Adjustment Joint Type Branch DesignPopulates the Joint Type or Branch Design field in RBI 581 Mechanical Fatigue Damage Evaluation records. MI_581_Adjustment_Pipe_Complexity MI 581 Adjustment Pipe ComplexityPopulates the Pipe Complexity field in RBI 581 Mechanical Fatigue Damage Evaluation records. MI_581_AdminOption_Families MI_581_AdminOption_FamiliesPopulates the drop-down list box in the Target Family column in the RBI 581 Admin Options page. MI_581_Amine_Solution_Types RBI 581 Amine Solution TypesPopulates the Amine Solution Type field in RBI 581 Cracking Damage Evaluation records. MI_581_Amine_Types RBI 581 Amine Types
+Populates the Amine Type field in the following records:
+RBI 581 Cracking Damage EvaluationRBI 581 Thinning and Lining Evaluation
+ MI_581_AST_STEAMCOIL_WATERDRWASOFF  MI_581_AST_STEAMCOIL_WATERDRWASOFF Populates the AST Steam Coil Heater field and Water Product Draws field in RBI 581 Thinning and Lining Evaluation records. MI_581_Cathodic Protection Effectiveness Factors MI 581 Cathodic Protection Effectiveness FactorsPopulates the Cathodic Protection Effectiveness field in RBI 581 Thinning and Lining Evaluation records. MI_581_Caustic_Types RBI 581 Caustic TypesPopulates the Caustic Type field in RBI 581 Cracking Damage Evaluation records. MI_581_Coating_Quality RBI 581 Coating QualityPopulates the Immersion Grade Coating Quality field in RBI 581 Thinning and Lining Evaluation records. MI_581_Coefficient_Materials RBI 581 Coefficient Y Materials List (Used to determine Coefficient Y)Populates the Coefficient Y Material field in RBI 581 Risk Analysis records. MI_581_Component_Geometry_Types RBI 581 Component Geometry Types
+Populates the Geometry Type field in the following records:
+ RBI 581 Risk Analysis  RBI Component
+ MI_581_Cooling_System  MI_581_Cooling_System Populates the Cooling System Type field in RBI 581 Thinning and Lining Evaluation records. MI_581_Corrosion_Rate MI 581 Corrosion Rate
+Populates the following fields:
+Selected External Corrosion Rate field in RBI 581 External Damage Evaluation records Selected Base Material Corrosion Rate field in RBI 581 Thinning and Lining Evaluation records
+ MI_581_Cracking_Susceptibility RBI 581 Cracking Susceptibility
+Populates the Susceptibility field in the following records:
+ RBI 581 Cracking Damage Evaluation  RBI 581 External Cracking Damage Evaluation 
+ MI_581_Cracking_Susceptibility_Types RBI 581 Cracking Susceptibility Types
+Populates the Susceptibility Type field in the following records:
+ RBI 581 Cracking Damage Evaluation  RBI 581 External Cracking Damage Evaluation 
+ MI_581_Damage_States RBI 581 Damage States
+Provides the damage states in the following records:
+ RBI 581 External Damage Evaluation  RBI 581 Thinning and Lining Evaluation 
+ MI_581_Data_Confidence RBI 581 Data Confidence LevelsPopulates the Data Confidence field in RBI 581 Risk Analysis records. MI_581_Driving_Risk_Target RBI 581 Driving Risk Targets for Inspection PlanningPopulates the Driving Risk Target field in RBI 581 Risk Analysis records. MI_581_Environmental_Sensitivity RBI 581 Environmental SensitivityPopulates the Environmental Sensitivity field in RBI 581 Consequence Evaluation records. MI_581_Environmental_Severity RBI 581 Environmental SeverityPopulates the Environmental Severity field in RBI 581 Cracking Damage Evaluation records. MI_581_Environmental_Severity RBI 581 Failure Hole Size (gff as a function of Hole Size in calculating failures/yr)Displays the hole sizes that are used in an RBI 581 Consequence Evaluation. MI_581_GOV_THINNING_DAMAGE MI Gov Thinning DamagePopulates the Governing Thinning Damage Mechanism field in RBI 581 Thinning and Lining Evaluation records. MI_581_H2S_Content_Of_Water RBI 581 H2S Content of WaterUsed to categorize H2S Content of Water based on a the value in the H2S Content of Water field in RBI 581 Cracking Damage Evaluation records. MI_581_Heat_Treatment_History RBI 581 Heat Treatment HistoryPopulates the Thermal History (Heat Treatment History) field in RBI 581 Cracking Damage Evaluation records. MI_581_HTHA_Delta_Temperature MI_581_HTHA_Delta_TemperaturePopulates the Delta Temperature field in RBI 581 HTHA Damage Evaluation records. MI_581_HYDROCARBON_TYPES MI 581 HYDROCARBON TYPESPopulates the Hydrocarbon Type field in RBI 581 Thinning and Lining Evaluation records. MI_581_Inspection_Effectiveness RBI 581 Inspection Effectiveness
+Populates the Highest Effective Insp field in the following records:
+ RBI 581 Cracking Damage Evaluation  RBI 581 External Cracking Damage Evaluation 
+Populates the Highest Effective Inspection Level field in RBI 581 Thinning and Lining Evaluation records.
+ MI_581_Lining_Condition RBI 581 Lining ConditionsPopulates the Liner Condition field in RBI 581 Thinning and Lining Evaluation records. MI_581_Lining_Types_And_Resistance RBI 581 Lining Types and Resistance
+Populates the Liner Type field in the following records:
+
+ RBI 581 Thinning and Lining Evaluation 
+RBI Component
+ MI_581_Material_Groups RBI 581 Material GroupsUsed to categorize the material of the component based on the value in the Base Material field in RBI Components. MI_581_Material_Temperature_Exemption_Curves  MI_581_Material_Temperature_Exemption_Curves Populates the Material Exemption Curve field in RBI 581 Brittle Fracture Damage Evaluation records. MI_581_Max_Brinnell_Hardness RBI 581 Max Brinnell HardnessUsed to categorize the value in the Maximum Brinnell Hardness field in RBI 581 Cracking Damage Evaluation records. MI_581_Mechanical_Fatigue_Cyclic_Loading MI 581 Mechanical Fatigue Cyclic LoadingPopulates the Cyclic Loading field in RBI 581 Mechanical Fatigue Damage Evaluation records. MI_581_Mechanical_Fatigue_Failures MI 581 Mechanical Fatigue FailuresPopulates the Previous Failure field in RBI 581 Mechanical Fatigue Damage Evaluation records. MI_581_Mechanical_Fatigue_Shaking MI 581 Mechanical Fatigue ShakingPopulates the Visible/Audible Shaking field in RBI 581 Mechanical Fatigue Damage Evaluation records. MI_581_Mechanical_Fatigue_Shaking_Duration MI 581 Mechanical Fatigue Shaking DurationPopulates the Shaking Frequency field in RBI 581 Mechanical Fatigue Damage Evaluation records. MI_581_No_High_Effec_Insp Number of Highest Level Effective InspectionsPopulates the Number of Highest Effective Inspections field in various records. MI_581_ph_Water RBI 581 ph WaterUsed to categorize the values in the pH of Water field in RBI 581 Risk Analysis records. MI_581_Product_Form RBI 581 Product FormPopulates the Product Form field in RBI 581 Cracking Damage Evaluation records. MI_581_Recirculating_System MI_581_Recirculating_SystemPopulates the Recirculating System Type field in RBI 581 Thinning and Lining Evaluation records. MI_581_Recorded_Settlement_Criteria RBI 581 Recorded Settlement Criteria (API 653)Populates the Settlement Adjustment Inspection field in RBI 581 Thinning and Lining Evaluation records. MI_581_RISKSUMMARY RBI 581 Risk Summary TypePopulates the Risk Summary for an RBI 581 Risk Analysis record. MI_581_Sigma_Percentage MI 581 Sigma PercentagePopulates the Sigma Percentage field in RBI 581 Brittle Fracture Damage Evaluation records. MI_581_Soil_Condition  MI_581_Soil_Condition Populates the Soil Condition field in RBI 581 Thinning and Lining records. MI_581_Soil_Types RBI 581 Soil TypesPopulates the Soil Type under Tank bottom field in RBI 581 Consequence Evaluation records. MI_581_Sulfur_Content_Of_Steel RBI 581 Sulfur Content Of SteelPopulates the Sulfur Content of Steel field in RBI 581 Cracking Damage Evaluation records. MI_581_Water_Treatment_Type  MI_581_Water_Treatment_Type Populates the Water Treatment Type field in RBI 581 Thinning and Lining Evaluation records. MI_581_Water_Type  MI_581_Water_Type Populates the Water Type field in RBI 581 Thinning and Lining Evaluation records. MI_ATMOSPHERIC_CONDITION Atmospheric Condition
+Populates the Atmospheric Condition field in the following records:
+ RBI 581 External Cracking Damage Evaluation  RBI 581 External Damage Evaluation 
+ MI DEGRADATION MECHANISM TYPES MI_DEGRADATION_MECHANISM_TYPES Degradation Mechanism TypesPopulates the Degradation Mechanism field in Potential Degradation Mechanism records. MI_RBI_Area_Humidity MI RBI Area HumidityPopulates the Area Humidity field in RBI Components. MI_RBI_CALC_CORRO_SRC RBI Calculated CR SourcePopulates the Source of Calculated Corrosion Rates field in RBI Components. MI_STRESS_LOOKUP_TABLE MI_STRESS_LOOKUP_TABLE
+Populates the Stress Lookup Table field in the following records:
+RBI Components RBI 581 Risk Analysis 
+ MI_YES_NO MI Core, Yes-NoPopulates various fields in the RBI 581 module.
+RBI 581 Risk Analysis State Assignments and Operations
+The RBI 581 Risk Analysis uses specific states and operations from the baseline State Assignments of GE Digital APM. 
+In RBI, State Configuration is used in the following families:
+RBI 581 Risk AnalysesRBI Recommendations
+RBI State Assignments and Operations DiagramNotice that the some of the states are highlighted in Green. When an RBI Criticality Analysis is set to any of these states, the analysis is active. When an RBI Criticality Analysis is set to any of the states highlighted in Red, the analysis is inactive.Additionally, in the diagram, you can see dotted lines and black lines.Dotted lines represent operations that are performed automatically when another RBI Criticality Analysis that is linked to the same RBI Component is set to Risk Completed.Black lines represent operations that you can perform manually.Note:  While the preceding image includes the Reject operation and the Rejected state, this state and operation are not valid in the RBI workflow and are, therefore, colored gray in the image. While they exist in the baseline State Configuration, if you try to reject an RBI 581 Risk Analysis, an error message appears, indicating that this operation is not valid. Details
+Initial State: The Created state is the initial state of all new RBI 581 Risk Analyses.
+Datasheet Configuration: By default, states and operations will appear on the datasheet when you are viewing an RBI 581 Risk Analysis in RBI, the Record Manager, or the Bulk Data Form.
+Reserved States and Operations: The following tables state whether or not the baseline states and operations are reserved. You cannot remove or modify reserved states or operations. You can, however, add your own states and operations to the State Assignment.
+
+States and OperationsStatesIs Reserved?
+ Approved 
+
+Yes
+
+ Accepted by ASM 
+
+Yes
+
+ Archived 
+
+Yes
+
+ Created 
+
+No
+
+ Implemented 
+
+Yes
+
+ Pending Approval 
+
+Yes
+
+ Re-Evaluating 
+
+Yes
+
+ Rejected 
+
+No
+
+ Risk Completed 
+
+Yes
+OperationsIs Reserved?
+ Archive (all Archive operations)
+
+Yes
+
+ Implement 
+
+No
+
+ Finalize Risk 
+
+No
+
+ Reevaluate 
+
+No
+
+ Approve 
+
+No
+
+ Reject 
+
+No
+
+ Reimplement 
+
+No
+ Promote to ASM Yes Submit for Approval No
+
+State Assignment Roles: By default, no State Assignment Roles are assigned to any state in the RBI 581 Risk Analysis State Assignment.
+Analysis Restrictions Based on State
+The following table outlines the actions that you can perform on an RBI 581 RiskAnalysis based on its state.
+
+Analysis StateCalculation is Allowed?Analysis Can Be Deleted?Analysis Fields Can Be Modified?RBI Degradation Mechanisms Can Be Added or Deleted?RBI Recommendations Can Be Created?
+ Created 
+
+Yes
+
+Yes
+
+Yes
+
+Yes
+
+No
+
+ Risk Completed 
+
+No
+
+No
+
+No
+
+No
+
+Yes
+
+ Pending Approval 
+
+No
+
+No
+
+No
+
+No
+
+No
+
+ Approved 
+
+No
+
+No
+
+No
+
+No
+
+No
+
+ Implemented 
+
+No
+
+No
+
+No
+
+No
+
+No
+
+ Archived 
+
+No
+
+No
+
+No
+
+No
+
+No
+
+ Rejected 
+
+No
+
+No
+
+No
+
+No
+
+No
+
+ Re-Evaluating 
+
+No
+
+No
+
+No
+
+No
+
+No
+
+ Accepted by ASM 
+
+No
+
+No
+
+No
+
+No
+
+No
+
+
+If an RBI 581 Risk Analysis is set to Risk Completed, however, the value in the Mitigated Risk field in the RBI Degradation Mechanism to which it is linked can be modified. 
+RBI Site Filtering The RBI Component family, and all the families that are linked to it, use the GE Digital APM Site Control. You can access or modify only the records in RBI that are assigned to the same site to which you are assigned. Important: You cannot modify the site assignment for a record within the RBI user interface. You can change the site assignment by accessing an RBI record in Record Manager. Since it may lead to data integrity issues, however, RBI Best Practices warn against changing site assignments on created records.
+Site Filtering
+Consider an organization that has three sites, Site X, Site Y, and Site Z. 
+ Scenario 1: User assigned to only Site X. 
+This user can access or modify records that are linked to assets only in Site X. However, this user can access all the Potential Degradation Mechanisms in the database.
+ Scenario 2: User assigned to only Site X and Site Y. 
+This user can access or modify records that are linked to assets only in Site X or Site Y. However, this user can access all the Potential Degradation Mechanisms in the database.
+ Scenario 3: Super User 
+This user can access or modify records that are linked to assets in Site X, Site Y, or Site Z.
+
+
+
+
+
+On this pageFields Required to Calculate an RBI 581 Risk AnalysisFields Required for Consequence of Failure (COF) Calculations About Potential Degradation Mechanisms (PDM)Valid Fluids for an RBI 581 Risk AnalysisRBI 581 Representative FluidsRBI Risk Matrix MappingRBI Strategy Mapping ConfigurationRBI 581 Security GroupsState Management for Inspection PlansRBI Recommendation State ManagementRBI URLsInspection Plan URLsRBI 581 System Code TablesRBI 581 Risk Analysis State Assignments and OperationsRBI Site Filtering
+
+
+
+
+
+
+
+
+

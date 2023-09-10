@@ -1,0 +1,99 @@
+
+
+
+Second Quarter of 2023 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+First Quarter of 2019
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Release Notes
+Second Quarter of 2023
+
+
+
+
+
+
+
+Second Quarter of 2023Release Date: May 26, 2023This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo enhance usability, you can now disable and assign a value in the OMC Event check box based on the cause code selected. To facilitate this enhancement, the OMC Event field is always disabled and automatically populated based on the OMC Cause Code selected. US582126To enhance usability, you can now validate the zero value in the Derate Amount field in the primary event record while adding or updating values. To facilitate this enhancement, required field validation has been added for Derate Even Types to the respective Derate Amount field rules and validation check has been added in the before insert and before update family policies of the Primary Event family. For more information, refer to KBA at  https://digitalsupport.ge.com/s/article/GAA-Power-Validation-needed-for-Zero-Derate-Amounts-for-Derate-Event-Types.US582118To enhance usability, when you add a unit and then select Show Unit Summary, the unit names are now sorted in alphabetical order in the Units window. US582105
+
+
+
+
+
+On this pageRelease Date: May 26, 2023
+
+
+
+
+
+
+
+
+

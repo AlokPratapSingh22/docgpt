@@ -1,0 +1,161 @@
+
+
+
+Checklists | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Management of ChangeOverview
+Workflows
+Change Projects
+Checklists
+Exceptions and Tasks
+Changed Elements
+Deployment
+Admin
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Management of Change
+Checklists
+
+
+
+
+
+
+
+ChecklistsAbout ChecklistsIn the Application Settings for MOC, you can create Checklists for various purposes. For example, you can create a checklist for temporary changes, a checklist for permanent changes, a checklist for planning, a checklist for post implementation assessment, and so on. In the Change Project, based on your needs, you can add one or more of Checklists to the project. Checklists created in the Application Settings are used as a template when you add them to the Change Project.When you add a Checklist to a Change Project, GE Digital APM creates copies of the Checklist and the associated Questions and Answer Options. The Change Project is then associated with the copy of the Checklist. This ensures that any changes to the original Checklist do not affect the Change Project. Access a ChecklistAbout This Task
+This topic describes how to access a Checklist that is associated with a Change Project. You can also access a Checklist that you created using the Application Settings for MOC.
+Procedure
+Access the Change Project with which the Checklist you want to access is associated.In the left pane, select the Checklists tab.
+A list of Checklists associated with the Change Project appears. The following columns of information appear in the workspace:
+
+Checklist ID: Contains the value in the Checklist ID field of the Checklist.
+Description: Contains the value in the Description field of the Checklist.
+Answered: Contains a value indicating the number of Questions that you have answered.
+Unanswered: Contains a value indicating the number of Questions that you have not answered.
+Exceptions Triggered: Contains a value indicating the number of Exceptions that have been created based on your responses in the Checklist.
+
+
+
+In the row containing the Checklist that you want to access, in the Checklist ID column, select the link.
+A list of Questions associated with the selected Checklist and the Answer Options associated with each Question appear. 
+
+
+
+Add a Checklist to a Change ProjectBefore You Begin
+
+Create a Checklist
+
+Procedure
+Access the Change Project to which you want to add the Checklist.In the left pane, select the Checklists tab.
+A list of Checklists associated with the Change Project appears. 
+
+
+
+In the upper-left corner of the Checklists workspace, select 
+
+The Add New Checklist window appears, displaying the list of Checklists that you created using the MOC Application Settings. 
+
+
+
+Select the Checklist that you want to add to the Change Project, and then select OK.
+A copy of the selected Checklist is created and associated with the Change Project. 
+Results
+Copies of the Questions and Answer Options associated with the selected Checklist are created, and then associated with the copy of the Checklist. Copies of the Exceptions associated with Answer Options are also created.
+What To Do Next
+
+Respond to Questions in a Checklist
+
+Respond to Questions in a ChecklistProcedure
+Access the Checklist for which you want to respond to Questions.For each Question listed in the workspace, select an Answer Option.
+The Answer Options are selected.
+
+
+
+In the upper-right corner of the workspace, select .
+Your response to each Question in the Checklist is saved.
+Results
+For each Question, if the selected Answer Option is associated with an Exception, then an association is created between the Exception and the Change Project. The Exception appears in the Exceptions and Tasks workspace.
+What To Do Next
+Create Tasks for Exceptions
+Modify Response to a Question in a ChecklistProcedure
+Access the Checklist containing the Question for which you want to modify the response.For the Question for which you want to modify the response, change your selection of Answer Option.
+The Change Answer dialog box appears, indicating that changing the response will remove the association between the Change Project and the Exception created, if any, for the previous Answer Option.
+
+
+
+Select OK, and then in the upper-right corner of the workspace, select .
+The Checklist is saved.
+Results
+Any association between an Exception, created as a result of the previously selected Answer Option, and the Change Project is removed. The Exception and the associated Tasks do not appear in the Exceptions and Tasks workspace.
+If the Answer Option you selected in step 2 is associated with an Exception, then an association is created between the Exception and the Change Project. The Exception appears in the Exceptions and Tasks workspace.
+
+What To Do Next
+If an Exception has been associated with the Change Project, then create Tasks for the Exception.
+
+Delete a ChecklistProcedure
+Access the Change Project with which the Checklist you want to delete is associated.In the left pane, select the Checklists tab.
+A list of Checklists associated with the Change Project appears.
+
+
+
+In the row for each Checklist that you want to delete, select the check box.
+In the upper-right corner of the workspace, the  button is enabled.
+Select .
+The Delete Checklist dialog box appears, asking you to confirm that you want to delete each selected Checklist.
+Note: When you delete a Checklist, the Questions associated with the Checklist, the Answer Options, the Exceptions associated with the Answer Options, and the Tasks associated with the Exceptions are also deleted.
+Select OK.
+Each selected Checklist is deleted.
+
+
+
+
+
+On this pageAbout ChecklistsAccess a ChecklistAdd a Checklist to a Change ProjectRespond to Questions in a ChecklistModify Response to a Question in a ChecklistDelete a Checklist
+
+
+
+
+
+
+
+
+

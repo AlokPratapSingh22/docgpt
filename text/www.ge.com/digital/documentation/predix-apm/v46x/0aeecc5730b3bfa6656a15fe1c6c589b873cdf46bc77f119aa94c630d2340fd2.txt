@@ -1,0 +1,107 @@
+
+
+
+First Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Third Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Release Notes
+First Quarter of 2020
+
+
+
+
+
+
+
+First Quarter of 2020Release Date: March 27, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDYou can now add and update cross-hair on a SmartSignal chart to see the values on all the charts in a card at a particular point in time.F49563The following SmartSignal card related enhancements are now available:You can now delete all the charts on a SmartSignal card by clicking on the delete icon on the card.You can now zoom across all the charts on a SmartSignal card in points mode.The SmartSignal cards now loads faster than in previous releases.The Tag Browser in analysis now loads faster than in previous releases.In tag settings,   is now more prominent on the plotted tags list than in previous releases.You can now differentiate between the alerts that have been selected from the alerts view and navigated to the analysis view from all the other alerts that occur on the asset.You can now switch from the default analysis view to the Event Frame Analysis view for a SmartSignal alert.F48509You can now plot SmartSignal charts with fixed Y-axis based on the mode of the tag. The residual charts scale based on the Y-axis limits set on the actual tag.F47608You can now create separate cards for each alert when you select multiple alerts in the alerts inbox view and navigate to analysis. This setting is driven by tenant preferences set on the tenant.F47607You can now combine the images of all the charts on a card as a PNG image, PDF file, or copy it to a clipboard to insert the image in an email or a document.F47606
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, the inner scroll bar did not appear when the tag panel was minimized. This issue has been resolved.DE128270Previously, chart markers did not appear on the charts when two or more event frames were selected in an Event Frame Analysis. This issue has been resolved.DE126935Previously, filtering based on conditions did not work across all charts. This issue has been resolved.DE125580Previously, when the number of data points exceeded the limit, the Analysis user interface did not display any error messages. This issue has been resolved. DE125444Previously, when you exported all charts as images, an empty file was created instead of a file with images of the charts. This issue has been resolved.DE119486Previously, the scroll bar was not visible in the Analysis page unless the tag browser panel was open. This issue has been resolved. DE107826
+
+
+
+
+
+On this pageRelease Date: March 27, 2020
+
+
+
+
+
+
+
+
+

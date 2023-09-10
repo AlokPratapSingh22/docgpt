@@ -1,0 +1,203 @@
+
+
+
+RBI Recommendations | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+RBI Recommendations
+
+
+
+
+
+
+
+RBI RecommendationsAbout RBI RecommendationsAn RBI Recommendation stores information about actions that should be performed to help mitigate the risk associated with a degradation mechanism (DM). Each RBI Recommendation is linked to:A Degradation Mechanisms record, which defines the type of failure that the recommended action can help mitigate.An Asset record, which defines the piece of asset to which the recommendation applies.An Inspection Plan, which is linked to the associated asset.An RBI 581 Risk Analysis record.Generating Recommendations
+
+GE Digital APM generates RBI Recommendations for:
+A single DM
+Multiple RBI 581 Risk Analyses linked to a single Asset
+
+You can generate Recommendations based on the policies that are mapped to the RBI Strategy Mapping Configuration only if:
+The Damage Mechanism has a value in the field Recommended Inspection Effectiveness. The state of the analysis is Risk Completed.
+
+Recommendations are generated for DMs that are related only to the following DMEs:
+
+RBI 581 Cracking Damage Evaluation RBI 581 External Cracking Damage Evaluation RBI 581 External Damage Evaluation RBI 581 Thinning and Lining Evaluation 
+Recommendations that are linked to approved Inspection Plans can be implemented as Inspection Tasks directly or from Asset Strategy Management (ASM) through the Action created during the Inspection Plan approval.
+Policies Used to Generate RBI Recommendations
+The following table provides a list of Policies that are used to generate RBI Recommendations.
+
+Policy NamePolicy Input Node Name (Field)Component TypeValid DMsRBI 581 Tank Shell Ext Corrosion RecommendationComponent Type (Field: Component Type, Family: RBI 581 Analysis)Storage Tank
+581-Ferritic Component Atmospheric Corrosion  581-Ferritic Component Corrosion Under Insulation
+Inspection Will Mitigate (Field: Inspection Will Mitigate, Family: RBI 581 Risk Analysis). Note: This field is deprecated and no longer used.Insulation Present (Field: Insulated, Family: RBI 581 Risk Analysis) Target Inspection (Field: Recommended Inspection Effectiveness, Family: RBI Degradation Mechanisms)Damage Mechanisms (Field: Degradation Mechanism, Family: RBI Degradation Mechanisms)RBI 581 Tank Shell Int Corrosion RecommendationComponent Type (Field: Component Type, Family: RBI 581 Risk Analysis)Storage Tank
+581-Hydrochloric Acid Corrosion 581-High Temperature H2/H2S Corrosion 581-High Temperature Sulfidic and Naphthenic Acid 581-Sulfuric Acid Corrosion 581-Hydrofluoric Acid Corrosion 581-Alkaline Sour Water Corrosion 581-Amine Corrosion 581-High Temperature Oxidation 581-Acid Sour Water Corrosion 581-Cooling Water Corrosion 581-Soil Side Corrosion 581-Internal Component Lining Damage 
+Target Inspection (Field: Recommended Inspection Effectiveness, Family: RBI Degradation Mechanisms)Inspection Will Mitigate (Field: Inspection Will Mitigate, Family: RBI 581 Risk Analysis)Note: This field is deprecated and no longer used.RBI 581 Tank Bottom Insp RecommendationComponent Type (Field: Component Type, Family: RBI 581 Risk Analysis)Storage Tank Bottom
+581-Atmospheric Tank Bottom Corrosion 581-Caustic Cracking 581-Amine Cracking 581-Sulfide Stress Cracking 581-Alkaline Carbonate Stress Corrosion Cracking 581-Hydrogen Stress Cracking 581-Polythionic Acid Cracking 581-Chloride Stress Corrosion Cracking 581-HIC/SOHIC - H2S 581-HIC/SOHIC - HF 
+Target Inspection (Field: Recommended Inspection Effectiveness, Family: RBI Degradation Mechanisms)Inspection Will Mitigate (Field: Inspection Will Mitigate, Family: RBI 581 Risk Analysis)Note: This field is deprecated and no longer used.RBI 581 Thinning and Lining Insp RecommendationComponent Type (Field: Component Type, Family: RBI 581 Analysis)
+All component types except the following:
+Storage Tank Storage Tank BottomPilot-Operated PRD PRD with Rupture DiskBalanced Bellows PRDRupture Disk OnlyHeat Exchanger-TubesHeat Exchange -BundleHeat Exchanger-Channel
+
+581-Hydrochloric Acid Corrosion 581-High Temperature H2/H2S Corrosion 581-High Temperature Sulfidic and Naphthenic Acid 581-Sulfuric Acid Corrosion 581-Hydrofluoric Acid Corrosion 581-Alkaline Sour Water Corrosion 581-Amine Corrosion 581-High Temperature Oxidation 581-Acid Sour Water Corrosion 581-Cooling Water Corrosion 581-Soil Side Corrosion 581-Internal Component Lining Damage 
+Is Intrusive (Field: Is Intrusive?, Family: RBI 581 Risk Analysis)Inspection Will Mitigate (Field: Inspection Will Mitigate, Family: RBI 581 Risk Analysis)Note: This field is deprecated and no longer used.Target Inspection (Field: Recommended Inspection Effectiveness, Family: RBI Degradation Mechanisms)Liner Present (Field: Liner is Present, Family: RBI 581 Thinning and Lining Evaluation)Thinning Type (Field: Thinning Type, Family: RBI 581 Thinning and Lining Evaluation)RBI 581 External Damage Inspection RecommendationDamage Mechanism (Field: Degradation Mechanism, Family: RBI Degradation Mechanisms)
+All component types except the following:
+Storage Tank Storage Tank BottomPilot-Operated PRD PRD with Rupture DiskBalanced Bellows PRDRupture Disk OnlyHeat Exchanger-TubesHeat Exchange -BundleHeat Exchanger-Channel
+
+581-Ferritic Component Atmospheric Corrosion 581-Ferritic Component Corrosion Under Insulation 581-Austenitic Component Atmospheric Cracking 581-Austenitic Component Cracking Under Insulation 
+Target Inspection (Field: Recommended Inspection Effectiveness, Family: RBI Degradation Mechanisms)Component Type (Field: Component Type, Family: RBI 581 Analysis)Insulation Present (Field: Insulated, Family: RBI 581 Risk Analysis)Note: This field is deprecated and no longer used.Inspection Will Mitigate (Field: Inspection Will Mitigate, Family: RBI 581 Risk Analysis)Note: This field is deprecated and no longer used.RBI 581 Env Cracking Insp RecommendationTarget Inspection (Field: Recommended Inspection Effectiveness, Family: RBI Degradation Mechanisms)
+All component types except the following:
+Storage Tank Storage Tank BottomPilot-Operated PRD PRD with Rupture DiskBalanced Bellows PRDRupture Disk OnlyHeat Exchanger-TubesHeat Exchange -BundleHeat Exchanger-Channel
+
+581-Caustic Cracking 581-Amine Cracking 581-Sulfide Stress Cracking 581-Alkaline Carbonate Stress Corrosion Cracking 581-Hydrogen Stress Cracking 581-Polythionic Acid Cracking 581-Chloride Stress Corrosion Cracking 581-HIC/SOHIC - H2S 
+581-HIC/SOHIC - HF 
+
+Damage Mechanism (Field: Degradation Mechanism, Family: RBI Degradation Mechanisms)Component Type (Field: Component Type, Family: RBI 581 Analysis)Is Intrusive (Field: Is Intrusive?, Family: RBI 581 Risk Analysis)Inspection Will Mitigate (Field: Inspection Will Mitigate, Family: RBI 581 Risk Analysis)Note: This field is deprecated and no longer used.
+
+Access the Recommended Actions PaneProcedure
+Access an RBI 581 Risk Analysis.In the workspace, select .
+The Recommended Actions pane appears, displaying any recommendations associated with the analysis. 
+
+
+
+Results
+For a Recommendation that is promoted to Asset Strategy Management (ASM), you can access the associated Asset Strategy by selecting the link in the Strategy ID column.You can use the functionalities of the Recommended Actions pane. 
+Tip: For information about additional options available when working with the Recommendation records, refer to the Action Management section of the documentation.
+View RBI Recommendations Linked to an Inspection PlanProcedureAccess an Inspection Plan.The Inspection Plan workspace appears, displaying any Recommendations that are linked to the Inspection Plan.Results
+For Recommendations associated with approved Inspection Plans, you can access the associated Asset Strategy in Asset Strategy Manager (ASM) by selecting the Open Strategy link.In the Recommended Actions table, you can perform the following actions:Modify the state of Recommendations to Supersede.Modify the state of Recommendations to Not Required.Delete Recommendations.Implement Recommendations as Inspection Tasks.
+About Auto-Consolidating RBI RecommendationsYou can consolidate RBI Recommendations in:The No Recommendations section in the RBI Overview page.RBI Asset Summary page.The auto-consolidation process consolidates RBI Recommendations that are associated with a single RBI Asset. This process consolidates all RBI Recommendations (both pre-existing and any new RBI Recommendations generated), if they contain the same values in the following fields:Damage MechanismTask TypeWhen you consolidate: The state of the master RBI Recommendation is set to Proposed. The state of the source RBI Recommendations is set to Consolidated.The source RBI Recommendations are linked to the master RBI Recommendation through the Has Consolidate Recommendations relationship. The following example explains how the fields in the master recommendation are mapped from the source recommendations.Example: Recommendation Consolidation
+Suppose you want to generate RBI Recommendations for a single RBI Asset that has two RBI Components with two RBI Recommendations for each component.
+
+Field NameDamage Mechanism(Field on RBI Recommendation)Task Type(Field on RBI Recommendation)Recommended Inspection Effectiveness(Field on RBI Degradation Mechanism)Target Completion Date(Field on RBI Recommendation)Recommendation for Analysis A
+581-Amine Corrosion
+RBI581 NON-INTRUSIVE
+A
+04/15/2025Recommendation for Analysis B581-Amine Corrosion RBI581 NON-INTRUSIVEA04/15/2022Recommendation for Analysis C581-Amine CorrosionRBI581 NON-INTRUSIVEB04/15/2021Recommendation for Analysis D581-Amine CorrosionRBI581 NON-INTRUSIVEB04/15/2021
+
+In this example, because the Damage Mechanism and Task Type have similar values for all RBI Recommendations, these RBI Recommendations qualify for consolidation. The system determines the driving RBI Recommendation based on the following field values:Inspection Effectiveness on RBI Degradation Mechanism linked to the RBI RecommendationTarget Completion Date on RBI Recommendation Recommendation for Analysis B is determined to be the driver based on the above points. 
+The Master RBI Recommendation field values are mapped as follows:Target Inspection Effectiveness is mapped from RBI Degradation Mechanism linked to the driving RBI Recommendation.Inspection Scope is mapped from the driving RBI Recommendation.Note: Target Completion Date is the most conservative of all RBI Recommendations.
+
+The state of the consolidated records is set to Consolidated, and the state of the master record is set to Proposed.
+The following table lists the four RBI Recommendations that are consolidated into a master recommendation as a result of the automatic RBI Recommendation generation process.
+
+RBI RecommendationDamage MechanismTask TypeStateRecommended Inspection EffectivenessTarget Completion DateRecommendation for Analysis A 581-Amine Corrosion RBI581 INTRUSIVEConsolidatedA04/15/2025Recommendation for Analysis B 581-Amine Corrosion RBI581 INTRUSIVEConsolidatedA04/15/2022Recommendation for Analysis C 581-Amine Corrosion RBI581 INTRUSIVEConsolidatedB04/15/2021Recommendation for Analysis D 581-Amine Corrosion RBI581 INTRUSIVEConsolidatedB04/15/2021Master RBI Recommendation581-Amine CorrosionRBI581 INTRUSIVEProposedA04/15/2021
+
+In the master RBI Recommendation, the value in the Recommended Inspection Effectiveness field is set to A because this value is mapped from the related driving Degradation Mechanism for RBI Recommendation that exists in the Recommended Inspection Effectiveness field in the source RBI Recommendations. Similarly, the value in the Target Completion Date field is set to 04/15/2021 because this is the most conservative (that is, lowest) value that exists in the Target Completion Date field in the source RBI Recommendations.
+Create an RBI Recommendation ManuallyBefore You Begin
+
+Modify the state of the analysis to Risk Completed.
+About This TaskThis topic describes how to create an RBI Recommendation manually for a Degradation Mechanism (DM). You can also generate RBI Recommendations for all RBI Analyses linked to a single asset. Procedure
+Access the analysis that contains the DM for which you want to create a recommendation.In the workspace heading, select the Degradation Mechanisms tab.
+The Degradation Mechanisms section appears, displaying a list of DMs associated with the analysis.
+
+
+
+Select the row containing the DM to which you want to add a recommendation.Select . 
+A message appears, confirming that you have created a recommendation for the DM. 
+Results
+The recommendation is linked to the Inspection Plan of the related RBI Asset.
+Note:
+You can use the functionalities of the Recommended Actions pane. If, in the RBI Global Preference settings, the Enable Recommendation To be Generated at Created State check box is selected, recommendations will not be linked to the Inspection Plan until the related analysis is moved to the Risk Complete state and the Inspection Plan is generated.
+
+Tip: For information about additional options available when working with the Recommendation records, refer to the Action Management section of the documentation.
+Generate Recommendations for a Single RBI Criticality AnalysisBefore You Begin
+
+Modify the state of the analysis to Risk Completed.
+About This TaskThis topic describes how to create RBI Recommendations for all Degradation Mechanisms (DMs) contained in an analysis. You can also: Create an RBI Recommendation manually.Generate RBI Recommendations for all RBI Analyses linked to a single asset.
+Procedure
+Access the analysis for which you want to generate recommendations. Select , and then select Generate Recommendations. 
+The Create Recommendations window appears, asking you to confirm that you want to generate recommendations for the analysis. 
+Select Yes. 
+A message appears, confirming that you have generated recommendations for all the DMs contained in the analysis. 
+ResultsThe recommendations are linked to the Inspection Plan of the related RBI Asset.Note:
+You can use the functionalities of the Recommended Actions pane. If, in the RBI Global Preference settings, the Enable Recommendation To be Generated at Created State check box is selected, recommendations will not be linked to the Inspection Plan until the related analysis is moved to the Risk Complete state and the Inspection Plan is generated.
+Tip: For information about additional options available when working with the Recommendation records, refer to the Action Management section of the documentation.Generate RBI Recommendations for Multiple RBI 581 Risk Analyses About This Task
+This topic describes how to generate recommendations for all RBI 581 Risk Analyses linked to components within a single asset. You can also create an RBI Recommendation manually.
+
+Procedure
+Access the Asset Summary workspace for the asset for which you want to generate recommendations. In the upper-right corner of the page, select , and then select Generate Recommendations.
+The Create Recommendations window appears, asking you to confirm that you want to generate recommendations for the asset. 
+Select Yes.
+A message appears, confirming that you have generated recommendations for all the RBI 581 Risk Analyses linked to all the components in the asset. 
+Results
+The recommendations are linked to the Inspection Plan of the related RBI Asset.
+Note:
+You can use the functionalities of the Recommended Actions pane. If, in the RBI Global Preference settings, the Enable Recommendation To be Generated at Created State check box is selected, recommendations will not be linked to the Inspection Plan until the related analysis is moved to the Risk Complete state and the Inspection Plan is generated.
+
+Tip: For information about additional options available when working with the Recommendation records, refer to the Action Management section of the documentation.
+Generate Recommendations for all Analyses in an Asset Hierarchy LevelAbout This TaskThis topic describes how to generate RBI Recommendations for assets linked to a Functional Location in the Asset Hierarchy. You can also: Create an RBI Recommendation manually.Generate Recommendations for a single RBI Analysis.Generate Recommendations for all RBI Analyses linked to a single asset.Note: The consolidation of recommendations is supported only from the asset view when the Enable Recommendation To be Generated at Created State preference is set to True.ProcedureAccess the Risk Based Inspection Overview page for the Asset Hierarchy level for which you want to generate recommendations.Select the No Recommendations tab.The No Recommendations section appears, displaying assets that have at least one component with a Risk Completed analysis with no recommendations. Select the check boxes next to the assets for which you want to generate recommendations. 
+Tip: You can generate recommendations for all listed assets in the No Recommendations section by selecting  when all check boxes in the first column of the table are cleared. If you select the check box in the first row of the table, recommendations are generated for the analyses that appear in the current page in the No Recommendations section (up to 100 analyses can be displayed in a page). You cannot, however, generate RBI Recommendations for all analyses if the Asset Hierarchy level is set to Home. Generating recommendations will only apply to components that do not have recommendations. 
+Select .The Generate Recommendations window appears, asking if you want to consolidate recommendations for each Degradation Mechanism and Task Type.
+Tip: If you choose to consolidate recommendations, the recommendations generated during this process will be consolidated with existing recommendations. For more information on consolidating recommendations, consult recommendation consolidation in RBI 580 and RBI 581.Select Yes.The recommendations are generated. The Recommendation Generation window appears, displaying the progress and number of recommendations generated and consolidated for each asset. 
+Note: You can close the Recommendation Generation window before it is complete. You can view progress using the Schedule Logs. Select Close.Optionally, if you want to view the status of all bulk analyze operations, in the Risk Based Inspection Overview page, select . The Schedule Logs page appears, displaying a list of all the operations in GE Digital APM that are in progress, along with the percentages of completion. You can also access a list of operations that have been successful or have failed. ResultsThe recommendations are linked to the Inspection Plan of the related RBI Asset.Note:
+You can use the functionalities of the Recommended Actions pane. If, in the RBI Global Preference settings, the Enable Recommendation To be Generated at Created State check box is selected, recommendations will not be linked to the Inspection Plan until the related analysis is moved to the Risk Complete state and the Inspection Plan is generated.
+
+
+
+
+
+On this pageAbout RBI RecommendationsAccess the Recommended Actions PaneView RBI Recommendations Linked to an Inspection PlanAbout Auto-Consolidating RBI RecommendationsCreate an RBI Recommendation ManuallyGenerate Recommendations for a Single RBI Criticality AnalysisGenerate RBI Recommendations for Multiple RBI 581 Risk Analyses Generate Recommendations for all Analyses in an Asset Hierarchy Level
+
+
+
+
+
+
+
+
+

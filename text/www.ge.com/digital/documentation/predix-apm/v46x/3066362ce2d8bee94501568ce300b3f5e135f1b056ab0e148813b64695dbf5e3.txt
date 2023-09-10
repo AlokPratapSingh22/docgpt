@@ -1,0 +1,103 @@
+
+
+
+Groups Custom Attributes | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+GroupsGroups Overview
+Groups Custom Attributes
+Group Objects
+
+
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Groups
+Groups Custom Attributes
+
+
+
+
+
+
+
+Groups Custom AttributesAdd a Custom Attribute to a GroupYou can add a custom attribute to a selected group.About This Task
+Creating a new custom attribute allows you to define properties for the selected group. Some attributes may include a list of values. All custom attributes are modifiable in the selected group view.
+ProcedureIn the module navigation menu, go to
+Assets >  Groups.Select a group link in the Groups table.In the Attributes link in the Custom Attributes section on the selected group view, select .Each custom attribute can be uniquely configured. Use the following options to configure the custom attribute:
+For this optionDo thisNameEnter the attribute name. This field is case sensitive and cannot be empty or NULL. The name cannot exceed 100 characters and can contain alphanumeric, underscore, dash, ampersand, or hash characters.DatatypeSelect a data type from the drop-down list. The following values are available:CharacterYou can only enter a single alphanumeric character in the Value box.ShortYou can only enter up to five numeric characters in the Value box.IntegerYou can only enter numeric characters in the Value box.FloatYou can only enter up to 38 numeric characters and one decimal symbol in the Value box.DoubleYou can only enter numerical characters and one decimal symbol in the Value box.BooleanYou can select between True and False from the Value drop-down list box.TimestampThe Time Zone drop-down list box appears under Value where you can select a time zone. The displayed time stamp is converted based on the your choices in the user preferences.StringYou can add up to 100 alphanumeric or special characters to the Value box.ValueEnter the attribute value. Value formats may change based on your Datatype selection. Hints may appear to help with your entries.
+Select Create to save the new attribute. The new attribute appears in the Custom Attributes table for the selected asset.Modify a Custom Attribute for a GroupYou can modify a custom attribute for a selected group.About This Task
+Use this procedure to modify the data type and value of custom defined attributes for a group.
+You can modify a custom attribute by reentering a Value in the table, or by selecting  and then modifying the format and value.
+
+Note: If you want to modify the data type or value of an inherited attribute, you must select the parent classification link for the asset instance where the attribute was originally defined.
+
+ProcedureTo modify a value in custom attributes for a group:In the module navigation menu, go to
+Assets >  Groups.Select a group link from the Groups table.In the Attributes link in the Custom Attributes section on the asset instance view, hover over and select a value in the Custom Attributes table.Enter a new value in the Value box, then press ENTER or select outside the box.The new value is confirmed with a message.To modify the format and value in custom attributes for a group:On the Attributes link in the Custom Attributes section on the asset instance view, hover over and select  for an attribute entry in the Custom Attributes table.In the Attribute window, perform the following, then select Save:
+Select a data type from the Datatype drop-down list box.Enter the attribute value in the Value box. Value formats may change based on your Value selection. Hints may appear to help with your entries.
+The new values are saved and appear in the Custom Attributes table for the attribute selected.Delete a Custom Attribute from a GroupYou can delete a custom attribute from a selected group.About This Task
+Use this procedure to delete a custom attribute from a selected group.
+ProcedureIn the module navigation menu, go to
+Assets >  Groups.Select a group link on the Groups table.On the Attributes link in the Custom Attributes section on the asset instance view, hover over and select  for an attribute entry in the Custom Attributes table.At the confirmation window, select Delete to delete the attribute configuration, history, and information permanently from the system.The attribute is removed on the Custom Attributes table. 
+Related ReferenceAttribute Data Types and Values
+
+
+
+
+On this pageAdd a Custom Attribute to a GroupModify a Custom Attribute for a GroupDelete a Custom Attribute from a Group
+
+
+
+
+
+
+
+
+

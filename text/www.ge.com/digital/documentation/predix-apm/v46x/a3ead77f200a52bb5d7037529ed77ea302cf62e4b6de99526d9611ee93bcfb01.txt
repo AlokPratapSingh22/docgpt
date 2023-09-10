@@ -1,0 +1,318 @@
+
+
+
+SIL Analysis | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+SIL Analysis
+
+
+
+
+
+
+
+SIL AnalysisAbout Safety Integrity Level (SIL) AnalysisA Safety Integrity Level (SIL) analysis lets you assess the safety instrumented systems in your facility to ensure that they are adequately safeguarding your equipment, locations, and processes.When you conduct an SIL analysis, you will:Assess the level of safety integrity per instrumented function, using the GE Digital APM Risk Matrix interface or via a Layer of Protection Analysis (LOPA). Based on the defined risks, the GE Digital APM system calculates the overall SIL for the safety instrumented system.Verify the SIL of the safety instrumented system using the SIL Verification feature, which lets you make up the safety instrumented system and calculate the ability of a protective instrument loop to meet the required SIL for that process. The GE Digital APM system uses equations defined by International Electrotechnical Commission (IEC) to calculate the probability of failure on Demand average (PFD Avg) or probability of failure per hour (PFH).Determine whether further safeguarding is necessary, based on the SIL maintained by those safety instrumented systems.About Revision History The Revision History feature allows you to manage the revisions made for an entire analysis. When you create an SIL Analysis, you link records in multiple families to the SIL Analysis. When you complete an analysis (i.e., it has been approved), you will change the state of the SIL Analysis to Complete. When you do so, a snapshot is taken of the SIL Analysis and each record linked to it.When the state of an SIL Analysis is changed to Complete, one record in each of the following families will be created:SIL Analysis RevisionLogic Solver RevisionInstrumented Function RevisionLOPA RevisionPHA Internal Assessment RevisionRisk Matrix Internal Assessment RevisionExternal Assessment RevisionEach Revision record stores a snapshot of the source record as it appeared when the state of the SIL Analysis was changed.If you re-evaluate the SIL Analysis, the state of the SIL Analysis will change again to the Complete. A second set of Revision records will be created, and so on.About the SIL Analysis TeamThe Safety Integrity Level (SIL) analysis team is a group of members who will complete the SIL analysis. You can add GE Digital APM users and non-GE Digital APM users to the SIL analysis team.
+GE Digital APM users will have an existing GE Digital APM Security User and an associated Human Resource record that was created automatically when the Security User was created.Non-GE Digital APM users will not have a GE Digital APM Security User or a Human Resource record. To add a non-GE Digital APM user to the SIL analysis team, you will need to create a Human Resource record for that user. You can do so via the SIL Analysis Team Members page or using GE Digital APM Tools.Note: A GE Digital APM Security User record is required for logging in to the GE Digital APM application and using SIS Management. SIL analysis team members who do not have a Security User account may participate in and contribute to the analysis but will not be able to use GE Digital APM.Team Member Roles
+SIL analysis team member roles serve as a reference of which SIL analysis team member is responsible for a given task related to the SIL analysis. Any member of the SIL analysis team can be assigned a role within the SIL analysis team. The following roles are available for an SIL analysis:
+
+Owner : The team member who is responsible for assets represented in the SIL analysis. After you assign a team member the role of Owner, that team member's name will appear in the Owner field in the SIL Analysis.
+Facilitator : The team member who is in charge of conducting the analysis and organizing the team.
+There can be only one Process Owner and one Facilitator per analysis. 
+Access an SIL AnalysisProcedure
+Access the SIS Management Overview page.
+
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level. 
+In the workspace, select the SIL Analysis tab.
+The SIL Analysis section appears, displaying a list of SIL Analyses.
+
+
+
+In the Analysis ID column, select the SIL Analysis that you want to access.
+The summary of the SIL Analysis appears. A list of Instrumented Functions in the SIL Analysis appears in the left pane.
+
+
+
+In the workspace, select the Definition tab.
+The datasheet for the SIL Analysis appears.
+
+
+
+If needed, modify values in the available fields.
+Note: You can modify values in the SIL Analysis only if the analysis is in the Planning state.
+In the upper-right corner of the datasheet, select .
+The changes made to the SIL Analysis are saved.
+Create an SIL AnalysisProcedure
+Access the SIS Management Overview page.
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level.
+In the workspace, select the SIL Analysis tab.
+The SIL Analysis section appears, displaying a list of SIL Analyses.
+
+
+
+In the upper-left corner of the section, select .
+A blank datasheet for the SIL Analysis appears.
+
+
+
+As needed, enter values in available fields.In the lower-right corner of the datasheet, select Save.
+The SIL Analysis is created.
+What To Do Next
+ Add Team Members to the SIL Analysis 
+Access the SIL Analysis SummaryBefore You Begin
+You can access the SIL Analysis summary only if you are a member of one of the following Security Groups:MI SIS AdministratorMI SIS EngineerMI SIS User
+You can perform the various tasks on this page based on the privileges granted to these Security Groups.
+
+Procedure
+Access the SIS Management Overview page.
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level.
+In the workspace, select the SIL Analysis tab.
+The SIL Analysis section appears, displaying a list of SIL Analyses.
+
+
+
+In the Analysis ID column, select the SIL Analysis whose summary you want to access.
+The SIL Analysis summary appears.
+
+
+
+The following information appears on the page:
+The left pane displays a list of Instrumented Functions and Logic Solvers in the SIL Analysis.The workspace displays the following tabs: 
+Summary: Displays various graphs for the SIL Analysis.
+Definition: Displays the SIL Analysis datasheet, allowing you to modify the SIL Analysis.
+Team Members : Displays a list of Team Members in the SIL Analysis, allowing you to add a new Team Member, or access, modify, or remove an existing one. You can also assign or modify a Team Member's role.
+Reference Documents: Displays a list of Reference Documents in the SIL Analysis, allowing you to add a new one, or access, modify, or remove an existing one.
+The Summary section displays the following graphs: 
+Proof Testing Results: Plots the number of passed and failed proof tests conducted on the Instrumented Functions and Logic Solvers in the SIL Analysis for the current year and the past four years.
+SIL Distribution: Plots the number of Protective Instrument Loops (associated with each Instrumented Function in the SIL Analysis) with Safety Integrity Levels (SIL) of 1, 2, 3, and 4.
+
+Access the Revision History of an SIL AnalysisProcedure
+Access the SIL Analysis whose revision history you want to access.In the upper-right corner of the page, select Revisions.
+The Revision History page appears, displaying a list of revisions for the analysis. 
+
+
+
+Select the revision that you want to access. 
+The datasheet of the SIL Analysis for the selected revision appears. The left pane displays the Instrumented Functions, SIL Assessments, and Logic Solvers in the analysis.
+
+
+
+If you want to view the changes that have been made for a particular record in that revision, select the record in the left pane, and then, in the upper-right corner of the page, select Show Changes.
+The Changes For Selected Datasheet window appears, displaying a list of old values (i.e., values in the preceding revision) and new values (i.e., values in the selected revision) for all the fields that were modified in the selected revision for the selected record. 
+
+
+
+Access the SIL Analysis Team Members SectionAbout This Task
+This topic describes how to access the Team Members section of an SIL Analysis, from where you can access the list of team members in the analysis, add new ones, assign roles to team members, or modify or delete them.
+Procedure
+Access the SIL Analysis whose Team Members you want to access.In the workspace, select the Team Members tab.
+The Team Members section appears, displaying a list of Team Members in the analysis. 
+
+Tip: For details about working with teams and the Team Members section, refer to the Teams section of the documentation.
+
+
+
+
+Access the Reference Documents in SIS ManagementAbout This Task
+This topic describes how to access the Reference Documents section in SIS Management, from where you can access a list of Reference Documents linked to an SIL Analysis, create a new one, or modify or delete an existing one.
+Procedure
+Access the SIL Analysis whose Reference Documents you want to access.In the workspace, select the Reference Documents tab.
+The Reference Documents section appears, displaying a list of Reference Documents linked to the SIL Analysis.
+
+
+
+Tip: For more information, refer to the Reference Documents section of the documentation.
+Access the Recommended Actions PaneAbout This Task
+The Recommendations that appear on the Recommended Actions pane are filtered based on your selection. 
+If you access an SIL Analysis, the Recommended Actions pane displays a list of Recommendations linked to all the Instrumented Functions in the SIL Analysis.If you access an Instrumented Function, the Recommended Actions pane displays a list of Recommendations linked only to that Instrumented Function.
+Important: You can create a Recommendation only for an Instrumented Function. If you want to create a Recommendation, you must first select the Instrumented Function, and then access the Recommended Actions pane.
+ProcedureAccess the SIL Analysis or the Instrumented Function that is linked to the Recommendation.In the upper-right corner of the page, select .
+The Recommended Actions pane appears, displaying a list of Recommendations.
+
+
+
+Tip: For information about additional options available when working with the Recommendation records, refer to the Action Management section of the documentation.
+Note: If the Instrumented Function for which you created the Recommendation is associated with a Risk Assessment, when you access the Recommendation, a Mitigated Risk section appears, displaying the details of the Risk Assessment.
+What To Do Next
+
+Assess the Mitigated Risk for the Instrumented Function
+
+Access the Mitigated RiskBefore You Begin
+Assess the SIL value of the Instrumented Function using one of the following SIL Assessments:
+LOPA Assessment
+
+Risk Matrix Internal Assessment
+
+PHA Internal Assessment
+
+
+Associate the SIL Assessment with the Instrumented Function. The Risk Assessment associated with the SIL Assessment will be linked to the Instrumented Function.
+Create a Recommendation for the Instrumented Function.
+About This Task
+This topic describes how to perform a mitigated risk assessment for an Instrumented Function in an SIL Analysis.
+Procedure
+Access the Recommendation that is associated with the Instrumented Function for which you want to assess the mitigated risk.Select the Mitigated Risk tab.
+The Mitigated Risk section appears, displaying the overall risk rank and the risk ranks for each risk category.
+
+
+
+Select the section that displays the risk rank.
+The Mitigated Risk Assessment window appears. The window contains a tab for each risk category configured for the Risk Matrix, which you can select to access the Risk Matrix for the category. By default, the  icon appears in the cell in which the  icon appears. 
+Note: You cannot modify the unmitigated risk assessment in the Risk Matrix.
+
+
+
+Select the tab corresponding to the category for which you want to assess the mitigated risk. For example, if you want to assess the mitigated risk for the Environment category, select Environment.
+The Risk Matrix for the selected category appears.
+On the matrix, select the cell whose value represents the mitigated risk for the selected category.
+In the cell that you selected, the  icon appears.
+
+
+
+For each category for which you want to assess the mitigated risk, repeat steps 4 and 5. In the lower-right corner of the Mitigated Risk Assessment window, select Save.
+The mitigated risk for the Instrumented Function is assessed. The Mitigated Risk section appears, displaying the overall mitigated risk rank and risk ranks for individual categories. Depending on the configuration of the Risk Matrix, the overall risk rank can be the highest or the sum of all the ranks for all the categories.
+
+
+
+Note: See the Overview of the Risk Matrix section of the documentation for additional options when working with the Risk Matrix.
+Results
+A Risk Assessment record that stores the details of the mitigated risk is created and linked with the Instrumented Function.
+Change the State of an SIL AnalysisAbout This Task
+This topic describes how to change the state of an SIL Analysis starting from Planning to Complete, while assigning each state to a user. 
+Important:  You can modify an SIL Analysis in a particular state only if you are an administrator or the assignee for that state.
+Procedure
+Access the SIL Analysis for which you want to change the state.In the upper-right corner of the workspace, select the button that indicates the current state of the analysis. For example, if the current state of the analysis is Planning, select Planning.
+A menu appears, displaying the list of operations that you can perform on the analysis to change its state.
+
+
+
+Note: You can view the states assigned to various users by selecting the Manage State Assignments link. If not already done, you can assign the next state of the analysis to the appropriate user, and then select Done.
+Select the necessary operation that will change the state of the analysis, and then select Done. For example, if you want to change the state of the analysis from Planning to Active, select Begin, and then select Done. 
+The state of the SIL Analysis is changed.
+Generate a Report for an SIL AnalysisAbout This Task
+This topic describes how to generate the following reports for an SIL Analysis:
+SIL Analysis reportInstrumented Function reportProtective Instrument Loop report
+Procedure
+Access the SIL Analysis for which you want to generate the report.On the upper-right corner of the page, select .
+A menu appears, displaying the different types of reports that you can generate.
+
+
+
+Select one of the following options:
+If you want to generate a SIL Analysis report, select SIL Analysis Report.
+
+If you want to generate an Instrumented Function report, select Instrumented Function Report.
+ The Select an Instrumented Function window appears, displaying a list of Instrumented Functions associated with the SIL Analysis.
+Select the Instrumented Function for which you want to generate the report, and then select OK.
+
+If you want to generate a Protective Instrument Loop (PIL) report, select Protective Instrument Loop Report.
+The Select Protective Loop window appears, displaying a list of Protective Instrument Loops associated with the SIL Analysis.
+Select the Protective Instrument Loop for which you want to generate the report, and then select OK.
+
+ The selected report is generated and appears on a new page. The following image shows a Protective Instrument Loop report.
+
+
+
+Delete an SIL AnalysisProcedure
+Access the SIS Management Overview page. 
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level. 
+In the workspace, select the SIL Analysis tab.
+The SIL Analysis section appears, displaying a list of SIL Analyses.
+
+
+
+In the row for the SIL Analysis that you want to delete, In the Analysis ID column, select the link.
+The Analysis Summary workspace appears, displaying the summary for the selected the SIL Analysis.
+
+
+
+In the workspace, select the Definition tab. 
+The datasheet for the SIL Analysis appears. 
+
+
+
+In the upper-right corner of the datasheet, select , and then select Delete.
+The Alert dialog box appears, asking you to confirm that you want to delete the selected SIL Analysis.
+Select Yes.
+The SIL Analysis is deleted.
+Results
+
+When you delete the SIL Analysis, the following related records are also deleted:
+Instrumented FunctionsLogic SolversInspection TasksRisk AssessmentsSIL AssessmentsProtective Instrument Loops: They are deleted only if the elements in the loop are not shared with other loops belonging to different SIL Analyses. 
+
+The following records associated with the SIL Analysis are required as part of standard audit procedure and are not deleted when the SIL Analysis is deleted:
+Proof Test TemplatesProof Tests Proof Test DetailsRecommendations
+
+
+
+
+
+
+On this pageAbout Safety Integrity Level (SIL) AnalysisAbout Revision HistoryAbout the SIL Analysis TeamAccess an SIL AnalysisCreate an SIL AnalysisAccess the SIL Analysis SummaryAccess the Revision History of an SIL AnalysisAccess the SIL Analysis Team Members SectionAccess the Reference Documents in SIS ManagementAccess the Recommended Actions PaneAccess the Mitigated RiskChange the State of an SIL AnalysisGenerate a Report for an SIL AnalysisDelete an SIL Analysis
+
+
+
+
+
+
+
+
+

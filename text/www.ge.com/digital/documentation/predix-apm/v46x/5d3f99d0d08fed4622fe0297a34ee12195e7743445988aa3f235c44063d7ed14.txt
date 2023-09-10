@@ -1,0 +1,168 @@
+
+
+
+Risk Based Inspection 581 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health Manager
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+Risk Based Inspection 581
+
+
+
+
+
+
+
+Risk Based Inspection 581Deploy RBI 581 for the First TimeBefore You Begin
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. GE Digital recommends, however, that the tasks be completed in the order in which they are listed.
+
+Results
+StepTaskNotes
+1
+Assign Security Users to one or more of the Security Roles used in RBI.
+This step is required.
+
+2
+
+Add the following types of RBI 581 users to at least one >TM Security Group: 
+Users who are responsible for completing the steps necessary to use TM Analysis values to calculate RBI 581 corrosion rates. Users who should be able to navigate to TM via RBI 581. 
+This step is required only if you are using the integration between the RBI 581 and Thickness Monitoring modules
+3
+Select the Is a Unit? check box in Functional Location records that represent units in your facility.
+This step is required, and marks Functional Location records as Process Units.
+
+4
+Using the Belongs to a Unit relationship, link Equipment records to Functional Location records representing units to which that equipment belongs (the Is a Unit? check box is selected).This step is optional.
+5
+
+
+Add the RBI-581 tab to the datasheet of the following families: 
+Criticality RBI Component - Cylindrical Shell Criticality RBI Component - Exchanger Bundle Criticality RBI Component - Exchanger Header Criticality RBI Component - Exchanger Tube Criticality RBI Component - Piping Criticality RBI Component - Tank Bottom 
+This step is required only for families for which you have customized the datasheet.9Update Risk Matrix Mappings and Policies to account for overridden financial consequence for RBI 581 Risk Analyses.The Operations Category on the Risk Matrix does not account for overridden financial consequence for RBI 581 Risk Analyses. If you are using this feature, you are required to update your Risk Matrix Mappings and Policies by following https://digitalsupport.ge.com/communities/en_US/Article/KNOWN-ISSUE-V4-Risk-Based-Inspection-Operations-Category-on-Risk-Matrix-does-not-account-for-overridden-financial-consequence-for-RBI-581-Risk-Analyses10Add RBI Component Types to the MI RBI COMPONENT TYPES system code table.This step is required only if you want to use additional RBI Component type records that are not provided in the baseline GE Digital APM database.
+Upgrade RBI 581Before You Begin
+
+The following tables outline the steps that you must complete to upgrade this module to the latest version of GE Digital APM
+                    .
+                
+These tasks may be completed by multiple people in your organization. We recommend, however, that the tasks be completed in the order in which they are listed.
+
+After you upgrade: 
+All RBI Assets with Active Analyses will have a related Inspection Plan record created.All RBI recommendations which are not in the Archived state for an RBI Asset with Active Analyses will be related to Inspection Plan record of the RBI Asset.The state caption for RBI Recommendation family with State ID MI_ACCEPTED will be updated to Approved.The Recommendation Methodology field on RBI Recommendation will be updated to RBI 581 where previously the field had the value RBI 581 Recommendation.All security users who belong to the MI RBI Analyst security group will belong to the MI Inspection Plan Approver security role.The MI Inspection Plan Approver security role will have the MI ASM Analyst security group assigned.Piping Stress updatedIn some of the Piping Stress records for B31.3, WPB was misspelled as WFB. These records are now updated based on ASME standards.In some of the Piping Stress records for B31.3 and B31.1 for the year 2014, where the Material Specification field contained the value B366 and B622, the Material Grade had the value NS instead of N/A. These records are now updated based on ASME standards.The following new RBI 581 Representative Fluids will be added to match the API 581, 3rd Edition, Addendum 1 specification:Acid-LPAcid-MPAcid-HPC1-C2C3-C4C6-C8C9-C12For information on the new RBI 581 Representative Fluid Contents, refer to the RBI 581 Representative Fluids topic.RBI 581 Representative Fluid contents will be updated for the following fluids to match the API 581, 3rd Edition, Addendum 1 specification:C13-16 (Diesel)C17-25 (Gas Oil)C25+ (Resid)C5ChlorineCOEOH2H2O (Water)H2SHClHFMEOH (Methanol)NH3PhosgeneSteamFor information on the updated RBI 580 Representative Fluid Contents, refer to the RBI 581 Representative Fluids topic.RBI 581 Representative Fluid content will be updated for the following families to match the API 581, 3rd Edition, Addendum 1 specification:Component Damage FlammableToxic Release Constants HFH2SToxic Cons Eq ConstantToxic Cons Eq Misc Chem
+ProcedureUpgrade to the latest version of GE Digital APM.
+StepTaskNotes1Add existing RBI Component Types to the MI RBI COMPONENT TYPES system code table.This step is required only if you have additional RBI Component type records that are not provided in the baseline GE Digital APM database.2Recalculate the RBI 581 Risk Analyses to get the correct Calculated T-min field value where the Geometry Type field is set to Spherical Head or Hemispherical Head. This step is required if you have RBI 581 Risk Analyses where Geometry Type field is set to Spherical Head or Hemispherical Head. For more information, refer to KBA 000037009. 3Revert the following Risk Based Inspection 581 queries to baselinePublic\Meridium\Modules\Mechanical Integrity\Queries\Dashboard Queries folder.Equipment Outside Risk PolicyPendingRecommendationsRBI 581 Assets Mitigation Overview QueryRBI 581 Assets Not Mitigated QueryRBI 581 With Plan Analyses ReportRBI 581 Without Plan Analyses ReportRBI Risk Matrix QueryRiskMatrixPublic\Meridium\Modules\Risk Based Inspection - 581\Queries folder.Active Analyses for Evergreening – 581Analyses Created For Evergreening – 581Analyses Ready For Evergreening – 581Asset Corrosion Analysis More Current Than RBI 581 AnalysesAssets with No Recommendations (581 Only)Inspections More Current Than RBI 581 AnalysisRBI Components for Inventory GroupAnalyses Ready For Evergreening for Unit - 581Public\Meridium\Modules\Risk Based Inspection - 581\Report Queries  folder.RBI 581 Asset Risk-ComponentsRBI 581 Asset Risk-Corrosion AnalysisRBI 581 Asset Risk-Degradation MechanismsRBI 581 Asset Risk-Equipment DataRBI 581 Asset Risk-Inspection HistoryRBI 581 Asset Risk-RBIRecommendationsRBI 581 Asset Risk-RefDocumentsRBI 581 Asset Risk-RiskTargetsResultsPublic\Meridium\Modules\Risk Based Inspection\Queries folder.Asset Corrosion Analysis More Current Than All AnalysesAsset Counts for UnitsAssets with No RecommendationsCurrent RiskCurrent Risk OverviewInspections More Current Than All AnalysisPast RiskPast Risk OverviewRBI Asset Risk QueryRBI Assets for a Functional LocationRBI Components for UnitSelect Protected AssetsSelect RBI ComponentsView Protected RBI ComponentsReview Analyses by Asset Review Analyses by Asset 581Review Analyses by Corrosion LoopReview Analyses by Corrosion Loop 581Process Unit QueryThis step is required only if you have previously modified the queries and you want to support Functional Location as an Asset.4Update Dynamic Viscosity for H2O (Water) record in RepresentativeFluids.This step is required only if you have previously modified H2O (Water) record in RepresentativeFluids family. For more information, refer to KBA 000038201.5Revert the following Risk Based Inspection 581 queries to baselinePublic\Meridium\Modules\Risk Based Inspection\Queries folder.Inspections More Current Than All AnalysisPublic\Meridium\Modules\Risk Based Inspection -581\Queries folder.Inspections More Current Than RBI 581 AnalysisThis step is required only if you have modified the queries that are used for the Inspection Updates section of the Inspection/TM Updates tab, in the Risk Based Inspection Overview page.6Update PV Stress content and stress lookup fields for RBI 581 Risk Analyses in created state.This step is required only if you want to use the Pressure Vessel stress content with updated Material Grade in accordance with Tables 1A and 1B of ASME Section II, Part D, 2010. For more information, refer to KBA 000038584.7Update PV Stress content and calculate Flow Stress for RBI 581 Risk Analyses in created state with Design Code ASME VIII DIV 1 and Code Year 1998.This step is required only if you want to use the Pressure Vessel stress content with updated Minimum Tensile Strength and Minimum Yield Strength for Design Code ASME VIII DIV 1 and Code Year 1998, to calculate the Flow Stress. For more information, refer to KBA 000038656
+Revert the Risk Based Inspection 581 Queries to BaselineThis action is required only if you have modified the Risk Based Inspection 581 queries.About This Taskf you have modified the following Risk Based Inspection 581 queries, perform the following steps to revert the queries to baseline:Active Analyses for Evergreening – 581Analyses Created for Evergreening – 581ProcedureAccess the Catalog page.Navigate to the Public folder for the query that you want to revert.For Risk Based Inspection 581, the public queries are stored in the following folder:
+Public/Meridium/Modules/RBI 581/QueriesSelect the check box next to the query that you want to revert, and then select .The Confirm Delete window appears, asking you to confirm if you want to delete the selected query.Select OK.The selected query is deleted.Navigate to the Baseline folder for queries.For Risk Based Inspection 581, the baseline queries are stored in the following folder:
+Baseline/Meridium/Modules/RBI 581/QueriesSelect the check box next to the query that you want to revert, and then select .The Catalog Folder Browser window appears.Navigate to the folder containing the public query that you deleted in step 3.Select OK. A success message appears indicating that the selected item has been copied successfully.Repeat Steps 2-8 for each query that you want to revert to baseline.Add the RBI-581 Tab to Criticality RBI Component DatasheetsBefore You Begin
+Note: You must repeat this procedure for each Criticality RBI Component datasheet that you have customized.
+If you have customized the datasheet for one or more of the Criticality RBI Components, after activating the RBI 581 license, you must perform the following procedure to add the RBI-581 section to those customized datasheets. The following table indicates the fields that must appear on each datasheet.
+
+CaptionField IDCriticality RBI Component - Cylindrical ShellCriticality RBI Component - Exchanger BundleCriticality RBI Component - Exchanger HeaderCriticality RBI Component - Exchanger TubeCriticality RBI Component - PipingCriticality RBI Component - Tank BottomBase MaterialBase MaterialMI_CCRBICOM_BASE_MATER_C✓✓✓✓✓✓Cladding MaterialMI_CCRBICOM_CLADDING_MATERIL_C✓✓✓✓✓✓Cladding PresentMI_CCRBICOM_CLADDING_PRESENT_L✓✓✓✓✓✓CM Corrosion RateMI_CCRBICOM_CM_COR_RT_C✓✓✓✓✓✓Coefficient Y MaterialMI_CCRBICOM_COEFFICNT_Y_MTRL_C✕✕✕✕✓✕Corrosion AllowMI_RBICOMPO_CORRO_ALLOW_N✓✓✓✓✓✓Detection SystemMI_CCRBICOM_DETECTION_SYSTEM_C✓✓✓✓✓✓Fluid VelocityMI_CCRBICOM_FLUID_VELOCITY_N✓✓✓✓✓✓Furnished Cladding ThkMI_CCRBICOM_FRNSHD_CLDDG_THK_N✓✓✓✓✓✓Geometry TypeMI_CCRBICOM_GEOMETRY_TYPE_C✓✓✓✓✓✓GFF Component TypeMI_CCRBICOM_GFF_COMPO_TYPE_CHR✓✓✓✓✓✓Has Release Prevention Barrier?MI_CCRBICTB_HAS_RELEA_PREVE_F✕✕✕✕✕✓Is Intrusive?MI_RBICOMPO_IS_INTRU_CHR✓✓✓✓✓✓Isolation SystemMI_CCRBICOM_ISOLA_SYSTE_CHR✓✓✓✓✓✓Liner PresentMI_CCRBICOM_LINER_PRESE_CHR✓✓✓✓✓✓Liner TypeMI_CCRBICOM_LINER_TP_C✓✓✓✓✓✓Minimum Structural ThicknessMI_CCRBICOM_MNMM_STRCTRL_THS_N✓✓✓✓✓✓Mitigation SystemMI_CCRBICOM_MITIGATION_SYSTM_C✓✓✓✓✓✓Percent Liquid VolumeMI_RBICOMPO_PER_LIQ_VOL_N✓✓✓✓✓✓pH of WaterMI_CCRBICOM_PH_OF_WATER_N✓✓✓✓✓✓Specified TminMI_CCRBICOM_SPECIFIED_TMIN_N✓✓✓✓✓✓Total Acid NumberMI_CCRBICOM_TOTAL_ACID_NUMBR_N✓✓✓✓✓✓
+
+Procedure Access the Family Management page. In the left section, select the Criticality RBI Component whose datasheet you want to modify.
+In the workspace, the corresponding Criticality RBI Component family appears, displaying the Information section.
+
+
+
+In the workspace, select the Datasheets tab, and then select Manage Datasheets.
+The Datasheet Builder page appears, displaying the datasheet layout of the selected Criticality RBI Component family.
+
+
+
+In the upper-right corner of the page, select 
+
+A new section tab appears at the top of the workspace, displaying a blank section.
+
+
+
+On the new tab, rename new section to RBI-581.In the RBI-581 section, select . In the right column, in the top cell, enter Value(s).In the left pane, locate a field that corresponds to the table at the beginning of this topic, and then add that field into the empty cell in the Value(s) column using the drag-and-drop method. 
+In the cell, an input box that corresponds to the selected field appears.
+In the left column, enter the caption that corresponds to the field. For example, if you added the Coefficient Y Material field to the Value(s) column, then enter Coefficient Y Material in the corresponding cell in the left column.In the upper-right corner of the page, select .
+In the RBI-581 section, in the table, a new row appears.
+Repeat steps 8 to 10 for each of the fields specified in the table at the beginning of this topic.In the upper-right corner of the page, select Save.
+The datasheet for the Criticality RBI Component that you selected in step 2 is saved, and the RBI-581 tab appears on the selected Criticality RBI Component datasheet.
+Add RBI Component TypesBefore You BeginAbout This TaskProcedureLog in to GE Digital APM as an administrator.Go to Admin > Configuration Manager > System Codes and Tables.Search for MI RBI COMPONENT TYPES.In the System Code section, select .The Create System Code window appears.Add the RBI Component Types to the system code table.Select Save.Log out of GE Digital APM and log in.To add existing RBI Component Types to the MI RBI COMPONENT TYPES system code table, perform the following steps:Select , and enter EquipmentTypes.A blank EquipmentTypes datasheet appears.In the CriticalityItemType box, select the existing RBI Component Type that you have added.Enter values in the required boxes, and then select  to save the record.
+
+
+
+
+On this pageDeploy RBI 581 for the First TimeUpgrade RBI 581Revert the Risk Based Inspection 581 Queries to BaselineAdd the RBI-581 Tab to Criticality RBI Component DatasheetsAdd RBI Component Types
+
+
+
+
+
+
+
+
+

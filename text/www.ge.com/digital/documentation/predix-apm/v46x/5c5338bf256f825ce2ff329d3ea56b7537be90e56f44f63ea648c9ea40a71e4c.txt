@@ -1,0 +1,110 @@
+
+
+
+Fourth Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+Fourth Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Release Notes
+Fourth Quarter of 2020
+
+
+
+
+
+
+
+Fourth Quarter of 2020Release Date: November 20, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, in an RCA Logic Tree, when you added text to a Hypothesis node, the node did not expand to accommodate 15 characters or more. This issue has been resolved. Now, a Hypothesis node expands to accommodate up to 20 characters.DE145503
+Release Date: October 2, 2020This topic provides a list of product changes released for this module on this date.
+Table 2. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDThe following changes have been made to RCA Logic Tree:The nodes now expand based on the content.When you select a node in the design canvas, and then add a node from the properties window, the newly added node is automatically assigned to the selected parent node. The Unassigned Node section has been removed and you can no longer drag and drop a node to assign the node to a parent node.The verifications now appear in the design canvas by default. The Show Verifications and Hide Verifications options are no longer available in the Show/Hide menu. US433762You can now rearrange the nodes in the Logic Tree of a published Root Cause Analysis without unpublishing the analysis. To facilitate this enhancement, the Auto Arrange check-box has been enabled in the Logic Tree workspace of published Root Cause Analyses.US431129You can now configure the Recommendations chart in the Overview section of the Analysis Summary workspace to display the number of recommendations based on their status. To facilitate this enhancement, a new catalog query has been created that can be used by the Recommendations chart to display the data. For more information on importing the catalog query to your GE Digital APM database, refer to KBA 000036178.US418406
+Table 3. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in the RCA Event diagram, the Start Date and End Date fields for nodes did not appear in the language based on your culture setting. This issue has been resolved.DE141547Previously, when creating an analysis using a Root Cause Analysis (RCA) template, if you attempted to modify data in the Analysis Summary workspace, an error message appeared. This issue has been resolved.DE140411Previously, when you exported a diagram that contained text with special characters, the diagram did not appear in the exported file. This issue has been resolved.DE140117Previously, in an RCA Event Timeline diagram, the flags for the events that were closely aligned by date overlapped, and thereby the flag content could not be read. This issue has been resolved.DE139443Previously, when you attempted to create a Root Cause Analysis (RCA) using a Reliability Center Incorporated (RCI) template, in the Asset Finder window, the Add button () that is used to link an asset with the RCA did not appear. This issue has been resolved.DE139442Previously, when you attempted to access a Logic Tree, an error occurred intermittently. This issue has been resolved.DE137086Previously, in a Logic Tree diagram, when you selected the Zoom to Fit button (), the logic tree was not displayed as expected. This issue has been resolved.DE135032Previously, if you were a member of the team associated with a Root Cause Analysis (RCA), you could change the state of the RCA from In Progress to Pending Approval only if you were assigned with the Principal Analyst role. This issue has been resolved. Now, irrespective of the team member role, you can change the state of the RCA if you are assigned to a security group or a security role that has privileges to change the states.DE134640Previously, in a new Logic Tree, if the Show Logic Gates option was selected, the output port circle on the hypothesis nodes disappeared. This issue has been resolved.DE132961
+
+
+
+
+
+On this pageRelease Date: November 20, 2020Release Date: October 2, 2020
+
+
+
+
+
+
+
+
+

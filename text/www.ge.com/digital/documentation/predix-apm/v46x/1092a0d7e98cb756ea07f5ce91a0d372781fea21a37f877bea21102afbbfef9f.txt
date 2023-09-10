@@ -1,0 +1,112 @@
+
+
+
+First Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Third Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Release Notes
+First Quarter of 2019
+
+
+
+
+
+
+
+First Quarter of 2019AnalysisThis topic provides a list of product changes released for this module on the dates listed below.Release Date: March 29, 2019 
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDYou can enable the Y-axis ranges for SmartSignal, allowing you to view a tag's Y Min and Y Max values.F42602You can enable point mode for SmartSignal cards, allowing the X-axis to display the number of data points selected instead of a date-time range.F42537Analysis views from an alert now include both contributing and non-contributing tags displayed on the charts.F41386You can filter the tag data on a SmartSignal chart by threshold.F41139You can view the analytic tags that are On Monitor.F40892You can select a system of measure for analysis cards.F40891You can resize the tag panel, allowing you to view the full tag names shown in the expanded form of the tag browser. F40890You can plot up to 40 SmartSignal tags singly or in groups.F40889
+You can expand and collapse a residual chart for specified charts to display the delta between expected and actual values.You can display the formulas associated with calculated tags on a SmartSignal Chart.You can enable or disable the visibility of SmartSignal markers on SmartSignal charts.You can display the configuration settings for SmartSignal Marker Visibility.
+F39094You can add one or more reference lines to a SmartSignal chart.F33718You can display one or more Alerts for an asset or group of assets along with the contributing and non-contributing tags associated with the generated Alerts from the Tag Browser. The listed alerts for an asset display the alert's severity and color categorization.F33508; F41116
+Table 2. Known Issues
+The following enhancements and new features have been added.
+DescriptionTracking IDWhen you have multiple Y-axes enabled on a time series chart, Y zoom and XY Zoom provide an inconsistent user experience because all the axes do not scale correctly to reflect the zoomed-in state.DE104375If you click on a diagnostic marker on a SmartSignal chart, the hover information on the markers does not appear. In order to get out of the mode, you can refresh the charts and the hover information reappears.DE101633If you enable the cross-hair mode in an analysis and then added new charts to the template, the cross-hair information is not reflected on the new charts, and the cross-hair markers are no longer visible on the existing charts. To prevent this, disable cross-hair mode, add the charts, and then enable cross-hair mode again.DE99126When you delete tags on a time series chart after you have plotted pin markers, the deleted tags appear in the marker data table. The workaround for this is to delete the tags, and then set the pins on the charts.DE95436When making changes to the time series chart in multiple Y-axes mode, select Cancel, not Apply. If you select Apply, the changes are not applied nor are they visible in chart settings. The workaround for this is to select Cancel and to create the template for an ad-hoc view. Or, save the template, and then make your changes for an existing template.DE93811
+Table 3. Limitations
+The following enhancements and new features have been added.
+DescriptionTracking IDYou must use Google Chrome to add multiple charts to a SmartSignal card. Other browsers, including Internet Explorer, are not supported when adding multiple charts to a single SmartSignal card.N/A
+
+
+
+
+
+On this pageAnalysis
+
+
+
+
+
+
+
+
+

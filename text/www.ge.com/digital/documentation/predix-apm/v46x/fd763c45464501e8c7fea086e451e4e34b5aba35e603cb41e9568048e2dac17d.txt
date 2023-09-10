@@ -1,0 +1,103 @@
+
+
+
+First Quarter of 2023 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+First Quarter of 2019
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Release Notes
+First Quarter of 2023
+
+
+
+
+
+
+
+First Quarter of 2023Release Date: February 24, 2023This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo enhance usability, when you create a primary event of the U1 type (that is, Unplanned (forced) Outage - Immediate) for a unit that reports to NERC, the Amplification Code box contains only the following codes:T1T284US555371
+Table 2. Resolved Issues
+The following issues have been resolved.
+DescriptionTracking IDPreviously, the calculation of Forced Outage Rate in the product documentation was incorrect. This issue has been resolved.DE196675 Previously, when you attempted to import an Event 07 report, and if there were any contributing events, the import was not successful. This issue has been resolved.DE192773
+Table 3. Known Issues and LimitationsThe following known issues and limitations exist.DescriptionTracking IDWhile creating or modifying a Primary Event, if you set the Capacity Event Type to U1 and Amplification Code to 84, a message, asking you to select T1 or T2 as the Amplification Code when you have a confirmed cause of event, does not appear.DE197558
+
+
+
+
+
+On this pageRelease Date: February 24, 2023
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,86 @@
+
+
+
+Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+QueriesWorkflow
+Query Creation
+Query Results
+Query Sources, Fields, Joins, and Hyperlinks
+Query Expressions, Clauses, and Prompts
+Query Timeouts
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Queries
+Workflow
+
+
+
+
+
+
+
+WorkflowCore Analysis: Query Analysis WorkflowCore Analysis processes leverage GE Digital APM data to identify opportunities for business improvement. When the process identifies such an opportunity, a Performance Recommendation is raised to communicate the need and track the required work. You can use the Query Analysis Workflow process to identify opportunities or needs for improvement based on generated queries that identify bad actors or high-impact failures.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Start Persona: AnalystTo satisfy a specific business problem, a GE Digital APM User initiates a core analysis that applies standard data analysis techniques.Design a Query Persona: AnalystTo satisfy a specific business need, design a query to select specific data from GE Digital APM entities. Multiple entities can be included in the query design to extract related records.Run the Query Persona: AnalystExecute the query to produce results. The user modifies the query design to achieve the desired result.Review Query Results Persona: AnalystAnalyze the query results. The query can identify bad actors or high impact failures for further analysis. In the analysis of query records, consult other forms of GE Digital APM data.Opportunity Exists? Persona: AnalystIf a GE Digital APM User identifies an opportunity or need for improvement, then a Performance Recommendation is raised to communicate the need and track the required work. Otherwise, the workflow ends.Manage Performance Recommendations Persona: AnalystIf a GE Digital APM User identifies an opportunity or need for improvement, then a Performance Recommendation is raised to communicate the need and track the required work.For more information, please consult the Manage Performance Recommendations documentation.Queries WorkflowThis workflow provides the basic, high-level steps for using this module. The steps in this workflow do not reference every possible procedure.ProcedureAccess the Design workspace.
+Note: Interaction with diagramming and design canvases is not available on touch-screen devices.
+Add at least one query source.Add at least one field from that query source.Run the query to make sure it returns the expected results.Save the query.
+The process of creating a more complicated query might include the following additional steps:
+Add criteria using expressions.Add prompts.Add hyperlinks.Define the results.What To Do Next
+After you have initiated the process of creating a Select query using either of these options, when the Design workspace appears, you can modify the query type to create any of the following types of queries based on that Select query:
+Crosstab queryDelete queryUpdate queryAppend query
+
+
+
+
+
+On this pageCore Analysis: Query Analysis WorkflowStartDesign a QueryRun the QueryReview Query ResultsOpportunity Exists?Manage Performance RecommendationsQueries Workflow
+
+
+
+
+
+
+
+
+

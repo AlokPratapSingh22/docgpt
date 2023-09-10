@@ -1,0 +1,91 @@
+
+
+
+Production Analysis: Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production AnalysisProduction Analysis: Overview
+Production Analysis: Workflow
+Production Analyses
+Production Data
+Production Lines
+
+
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Production Analysis
+Production Analysis: Workflow
+
+
+
+
+
+
+
+Production Analysis: WorkflowReliability Analytics: Production Analysis WorkflowThis workflow describes the process for determining the performance of the asset in production terms, as well as the process reliability.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+View Existing Analysis Persona: AnalystView the details of an existing analysis.Create Analysis Persona: AnalystCreate an analysis based on production data or event data.Draw Lines Persona: AnalystDraw one or more nameplate lines, demonstrated lines, reliability lines, or custom lines through one of the following methods: Regression Fit, Drawing, Enter Beta/Eta, or Specify Point.Define Regions Persona: AnalystSelect a datapoint on the chart to define a region that explains the reason for production quantity.View Report Persona: AnalystView and save the analysis report.Manage Performance Recommendation Persona: AnalystCreate any number of performance recommendations and Approve them using state management.Note: Performance recommendations are not required.Go to the Manage Performance Recommendations workflow.Other Workflows Persona: AnalystOther workflows provide production data from SAP, EAM, Recommendations, and manually entered production data provided by individual customers. 
+
+
+
+
+On this pageReliability Analytics: Production Analysis WorkflowView Existing AnalysisCreate AnalysisDraw LinesDefine RegionsView ReportManage Performance RecommendationOther Workflows
+
+
+
+
+
+
+
+
+

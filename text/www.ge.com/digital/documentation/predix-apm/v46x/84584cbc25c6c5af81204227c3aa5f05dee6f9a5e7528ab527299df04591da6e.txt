@@ -1,0 +1,91 @@
+
+
+
+Third Quarter of 2018 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Asset HierarchyOverview
+Workflow
+Asset Hierarchy Configuration
+Data Loader
+Troubleshooting
+Release NotesFirst Quarter of 2023
+Second Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Asset Hierarchy
+Release Notes
+Third Quarter of 2018
+
+
+
+
+
+
+
+Third Quarter of 2018Asset HierarchyThis topic provides a list of product changes released for this module on the dates listed below.Release Date: September 21, 2018
+Table 1. Enhancements and New FeaturesNoteTracking ID(s)The appearance of the Asset Hierarchy has been modified to improve its presentation and performance. The organization and content of the Asset Hierarchy is unchanged.US278711You can now delete Asset Groups. Before you can delete an Asset Group, you must unlink the Asset Group from all analyses to which it is linked. If you attempt to delete an Asset Group that is linked to one or more analyses, a message displaying the names of the linked analyses appears. US255539
+Table 2. Deferred FeaturesNoteTracking ID(s)Implement pagination in the interface for Asset Groups to resolve an issue where Assets Groups containing very large numbers of assets cause poor performance and can cause the interface to become unresponsive. US258544
+
+
+
+
+On this pageAsset Hierarchy
+
+
+
+
+
+
+
+
+

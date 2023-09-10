@@ -1,0 +1,95 @@
+
+
+
+Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Workflow
+
+
+
+
+
+
+
+WorkflowPolicy Designer: Design Policy WorkflowThis workflow describes the process for designing and validating policies. Policies can be used to automate GE Digital APM workflows by generating email alerts, as well as creating, deleting, or updating records used in the other workflows based on the input values and policy logic.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+ASM (Asset Strategy Management) Persona: Analyst (Strategy)During implementation of an Asset Strategy, the Strategy Analyst may identify policies needed to address Strategy Actions. For example, policies can calculate health indicators, create event logs, and/or provide automated decision support. Actions may be implemented as policy instances or health indicators that are updated by a policy.Create / Modify Policy? Persona: Analyst (Strategy)Determine whether you can modify instances associated with an existing policy to address strategy actions, or if you must create a new policy or modify a policy model or execution settings.Other Workflows Persona: VariousPolicies may use content that is produced in other workflows:
+Queries to access data for analysis.
+
+R Scripts for custom calculations.
+
+Rules to implement custom actions.
+
+Lookup or conversion tables created in GE Digital APM (especially where a mathematical function defining the values to use is unavailable, for example, derived empirically; defined in regulations; looked up from manufacturer data such as a pump curve, etc.).
+Design Policy Persona: Solution Administrator (Policy)Once the required policy logic is outlined and required inputs from other GE Digital APM workflows are defined, design the policy by adding nodes and links to the policy design canvas and configuring them appropriately. Where a policy will take action such as creating a recommendation or sending an email alert, consideration should be given to whether the policy instance needs to be deactivated once the action is taken, to avoid duplicate requests and alerts.Tip:  The overall policy design should be outlined in advance, fully defining all calculations, queries, and look-ups that will be used, as well as decision criteria and actions to be taken in each case. For complex calculations, it may be helpful to prototype the policy using Excel or a similar program. To assist future users in understanding how the policy works, it is good practice to document the policy design in an "as-built" document, as well as assign descriptive names to policy nodes within the model itself.Validate Ad Hoc Persona: Solution Administrator (Policy)Validate the policy using Ad Hoc inputs to verify that all of the required inputs to each node are configured and that the policy returns the correct values for a simple use case. After this is verified, proceed to verify that the policy handles more complex edge cases (for example, if a query used in the policy returns no rows, dividing by zero, etc).To facilitate Ad Hoc validation, you can set up a policy instance and use the Copy to Ad Hoc feature to use instance values as a starting point. You can then edit the values as needed to test various scenarios. This approach is necessary in certain scenarios, as some nodes (for example, the AMS Asset input node) do not feature complete Ad Hoc validation capability. In these cases, you must use an Instance to access test records in the database (for example, example event records).Tip:  When creating complex policies, it is good practice to build and validate small sections of the policy design to check your progress, rather than attempting to build the entire policy in one step.Define Execution Settings Persona: Solution Administrator (Policy)Configure the policy to be executed automatically (when a change occurs in a policy instance input that is set to trigger the policy) or according to a predefined schedule. It is also possible to set a policy to execute both automatically and on a schedule, but the use cases where this is required are rare.Activate Policy Persona: Solution Administrator (Policy)Once the policy and its instances have been thoroughly validated, activate the policy so that the active policy instances associated with the policy will be executed according to the defined execution settings.Add / Edit Instances Persona: Analyst (Policy)Add policy instance(s) to associate a set of existing, related records in the database with the policy.Typically, each instance of a policy would represent a different asset on which the policy will operate. In some cases, a policy could have multiple instances per asset, where each instance is related to a different input data source (for example, Measurement Location or Health Indicator).Validate Instances Persona:  Analyst (Policy)Validate each instance to ensure that the correct records are specified and that the expected results are returned. If you are adding a large numbers of instances, at least a significant sample of them should be validated.Activate Instances Persona:  Analyst (Policy)Activate the instances that you want to be executed (according to the policy's defined execution settings).In some policies, not all instances may be active at all times. For example, you may deactivate instances related to assets that are out of service or undergoing testing or maintenance. Or, an instance may be deactivated by a Deactivate This Instance node included in the policy design to prevent repeated alerts or recommendations being generated.Note:  Activating and deactivating policy instances can be done from Asset Health Manager as well as Policy Designer.Execute Policy Persona: Automated ProcessThe policy is executed according to the execution settings. Go to the Execute Policy workflow.Review Policy Execution History Persona:  Analyst (Policy)Periodically review policy execution history to ensure that policies are functioning as expected. This review may reveal policy instances that need to be reactivated, edge cases that were not considered during policy design, policy execution settings that are inappropriate for the dynamics of the process being monitored, etc.Note:  When initially deploying a new policy, or significant batches of new policy instances, reviewing the initial policy execution results should be part of the final acceptance testing of the policy. Depending on customer requirements, the initial policy execution and review might be done in a test system prior to migrating the policy into a production environment.Policy Designer: Execute Policy WorkflowThis workflow describes the automated policy execution process. Depending on the input values and policy logic, policy execution may generate email alerts, as well as create, delete, or update records used in other GE Digital APM workflows.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Start Persona: Automated ProcessFor policies configured for scheduled execution, the policy is executed when the schedule is due (i.e., date and time configured in a policy schedule is reached).For policies configured for automatic execution, the policy is executed when a policy trigger occurs (i.e., a change occurs in an active policy instance input that is set to trigger the policy).Retrieve Notification from Trigger Queue Persona: Automated ProcessWhen any of the following occurs, a notification is added to the policy trigger queue:A scheduled policy is due.A user requests execution by selecting Execute Now in Policy Designer or selecting a hyperlink configured to execute a policy or policy instance.A GE Digital APM record is inserted, updated, or deleted. For example, a reading is added to a health indicator, or an equipment record is modified.Add Instance to Policy Execution Queue Persona: Automated ProcessThe policy trigger service processes each trigger message in turn to identify the relevant policy instances to be executed. Messages for inactive policies are ignored.For a schedule trigger, all the active instances of the relevant policy will be executed.For other triggers, the active policy instances that use a record that has changed, or that use a measurement location or health indicator that has a new reading, as an input that is configured to trigger the policy, will be executed. The Policy Trigger Service sends a message for each policy instance that must be executed to the policy execution queue. Retrieve Instance Message from Execution Queue Persona: Automated ProcessOne or more Policy Execution Services monitor the policy execution queue and execute the policy instances that are added to it.Messages are processed in the order that they were added to the execution queue. However, policy execution is a multi-thread operation and may be distributed across multiple GE Digital APM servers. Therefore, it is possible for a given policy execution to end after another execution that was after it in the queue.Retrieve Instance Execution Data Persona: Automated ProcessThe input data needed for each instance execution is retrieved from the GE Digital APM database or from the APM Time Series or APM Alerts service.Execute Instance Persona: Automated ProcessDepending on the policy design, the policy instance execution may create, update, or delete records in the GE Digital APM database, or it may send email alerts. In addition, the policy instance may be deactivated after execution to prevent generation of multiple email messages, events, or recommendations in response to a continuing asset condition.For each instance execution, a policy execution record may be created, depending on the policy execution history log settings, and server log messages may be added (these messages are written according to the settings in the Policy Execution Service configuration settings, and their level of detail may vary).GE Digital APM Records Persona: Automated ProcessPolicies can create, update, or delete records used in any other GE Digital APM workflow.Other Workflows Persona: VariousThe results from a policy execution may be used in, or trigger, any other GE Digital APM workflow.
+
+
+
+
+On this pagePolicy Designer: Design Policy WorkflowASM (Asset Strategy Management)Create / Modify Policy?Other WorkflowsDesign PolicyValidate Ad HocDefine Execution SettingsActivate PolicyAdd / Edit InstancesValidate InstancesActivate InstancesExecute PolicyReview Policy Execution HistoryPolicy Designer: Execute Policy WorkflowStartRetrieve Notification from Trigger QueueAdd Instance to Policy Execution QueueRetrieve Instance Message from Execution QueueRetrieve Instance Execution DataExecute InstanceGE Digital APM RecordsOther Workflows
+
+
+
+
+
+
+
+
+

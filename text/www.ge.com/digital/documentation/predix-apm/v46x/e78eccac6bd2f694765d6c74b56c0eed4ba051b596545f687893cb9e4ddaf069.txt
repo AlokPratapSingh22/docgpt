@@ -1,0 +1,110 @@
+
+
+
+Third Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference 
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+ First Quarter of 2019 
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Release Notes
+Third Quarter of 2019
+
+
+
+
+
+
+
+Third Quarter of 2019Inspection ManagementThis topic provides a list of product changes released for this module on the dates listed below.Release Date: September 27, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo enhance usability, when the Inspection Management (IM) Assets and Inspection Management (IM) Functional Location data loaders are run, the following values are now updated in the Interface Log record.
+FieldNoteNumber of Records ProcessedIncreased by one for each asset or functional location displayed in the workbook.Number of Records RejectedIncreased by one for each Inspection record that encounters an error when the record is created or updated.Number of Records CreatedIncreased by one for each new Inspection record that is successfully created.Number of Records UpdatedIncreased by one for each existing Inspection record that is successfully updated.
+US366047To enhance usability when using a UOM conversion set, the values in the numeric fields are rounded off according to the type of the numeric field as described in the following table.Numeric Field TypeNumber of Decimal PlacesSRV Set Pressure (Shell)2SRV Set Pressure (Tube)2Test Pressure (Shell)2Test Pressure (Tube)2SRV Set Pressure (Shell)2SRV Set Pressure (Tube)2Test Pressure (Shell)2Test Pressure (Tube)2This enhancement is applicable to the fields in the following families:Pressure Test InspectionPressure Test Sub-InspectionUS358876You can now implement Recommended Actions that belong to an Inspection Plan in:Asset Strategy Management.Inspection Plan as Inspection Task.To facilitate this enhancement, a new option, Implement Recommended Actions to Tasks in ASM, has been added to the Inspection Configuration section of the IM Admin Preferences page.US335134
+Table 2. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, if your culture setting was not English, when you accessed the checklist inspections for pre-defined API checklists or configured checklist templates, the values in the Name and Category fields of the Checklist Finding records were not translated to the language based on your culture setting. This issue has been resolved. DE116950Previously, if the Inspection ID field of an Inspection Event contained special characters, which were not supported by Windows operating system for a file name, you could not bulk-print the Inspection Event from the Inspection Management Overview page. This issue has been resolved.DE114406Previously, for the Inspection Task record that did not contain an Inspection Document Type, when you selected a link in the CREATE INSPECTION column in the Results section of the query associated with the Underlying Inspection Tasks section, an error message appeared. This issue has been resolved. Now, in this scenario, a window appears to prompt you to select the Inspection Document Type for the record.DE113031Previously, when you switched from the Bulk Review Inspections workspace to a different tab or page, and then returned to the Bulk Review Inspections workspace, you could not approve the Inspection records. This issue has been resolved.DE111741Previously, even if the Keep History check box was selected for a field in the Inspection Task family, you could not access the history of the field in an Inspection Task. This issue has been resolved.DE110746Previously, in the Inspection Data section of the Full Inspection: <Inspection ID> workspace for an inspection, if you updated a master/detail datasheet that was created for the Full Inspection family, and then attempted to save the datasheet, two spinners appeared, indicating that the data was being updated for the inspection. This issue has been resolved. Now, in this scenario, only one spinner appears.DE104168Previously, when adding items to a Checklist Configuration template, when you searched for and added an item to the template, the item was successfully added. However, when you searched for a second item, it did not appear in the search results, even if it was available in the list of items. This issue has been resolved. DE101414Previously, you could modify the site assigned to the Resource Role records because the Resource Role family was enabled for site filtering. When the site assigned to a Resource Role for a given user was modified, the name of that user did not appear in the drop-down list boxes in the respective datasheets. This issue has been resolved. Now, the Resource Role family is no longer enabled for site filtering and the user names appear correctly.Note: The fields containing the user names will continue to be filtered based on the site to which the respective record is assigned.DE91540Previously, for an Inspection Profile, in the Inspection Profile Details section, if the Item ID box contained a special character, GE Digital APM could not automatically generate the General Finding report that was based on the associated Inspection Scope. This issue has been resolved.DE83319Previously, when you used the IM Functional Location Data Loader to load Inspection Methods, if the Inspection Methods did not have a Method Category defined in the data loader, subsequent Inspection Methods that shared an Inspection Profile did not load. This issue has been resolved.DE82397
+Release Date: September 6, 2019
+Table 3. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, when an inspection event was created for an asset for which the Inspection Profile records were defined and sequenced, and when the auto-generate findings for the selected inspection event family was enabled, the automatically created General Finding records were not arranged in the order of the values in the assigned Sequence field. This issue also existed in Inspection Field Data Collection when the inspection event was downloaded. The issue has been resolved. Now, when viewing an inspection event in Inspection Management or in Inspection Field Data Collection, the General Finding records are arranged in the order of the values in the assigned Sequence field.Note: If the Inspection Profile records do not contain a value in the Sequence field, or if the General Finding records have been manually created, the General Finding records are arranged in alphabetical order of the values in the Inspection Profile Item field.DE115888Previously, you could not print Inspection Reports in bulk if the Inspection ID contained special characters that were not supported by the Windows operating system in a file name. This issue has been resolved.DE115279
+
+
+
+
+
+On this pageInspection Management
+
+
+
+
+
+
+
+
+

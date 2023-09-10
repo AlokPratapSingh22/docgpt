@@ -1,0 +1,272 @@
+
+
+
+ASM Integration | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+ReferenceGeneral Reference
+Data Models
+Family Field Descriptions
+Calculations
+Family Search Configuration
+ASM Integration
+Inspection Strategies
+RBI Policies
+Catalog Items
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Reference
+ASM Integration
+
+
+
+
+
+
+
+ASM IntegrationAbout Values Mapped to RBI Recommendations
+When you generate RBI Recommendations, the fields in RBI Recommendations are populated with values from:
+
+The RBI 581 Risk Analysis to which the RBI Recommendation is linked. 
+
+The RBI Components that are linked to the associated RBI 581 Risk Analysis. 
+
+The Asset that is linked to the associated RBI Components.
+
+The Degradation Mechanisms record that is linked to the associated RBI 581 Risk Analysis.
+
+The Inspection Strategy that was used to generate the RBI Recommendation. 
+
+RBI Recommendation Fields Populated from Related Records
+The following table lists the RBI Recommendation fields that are populated automatically from these sources.
+Note: Some of the fields listed in the table are not available on any of the datasheets that are configured for the RBI Recommendation family.
+
+
+This RBI Recommendation field:
+...is populated with:...from the following record:
+Analysis ID 
+
+The value in the Analysis ID field.
+
+The associated RBI 581 Risk Analysis.
+Asset ID The value in the Asset ID field.The related Asset.
+Author Name 
+
+The last and first name of the Security User who created the RBI Recommendation. 
+
+The Security User who initiated the generation of the RBI Recommendation. 
+
+Damage Mechanism 
+
+The value in the Degradation Mechanism field.
+
+The RBI Degradation Mechanism that is linked to the associated RBI 581 Risk Analysis.
+
+Functional Location ID 
+
+The value in the Equipment ID field.
+
+The associated RBI 581 Risk Analysis.
+Intrusive/Non Intrusive The value in the Is Intrusive? field. 
+The associated RBI 581 Risk Analysis.
+Nonrecurring? 
+
+TRUE 
+
+None
+Originating Reference 
+
+The Recommendation ID.
+
+The associated RBI 581 Risk Analysis.
+
+RBI Component 
+
+The value in the Component Description field.
+
+The associated RBI Component.
+RBI Recommendation Methodology 
+
+The value RBI 581.
+
+The associated RBI 581 Risk Analysis.
+Recommendation Basis 
+
+The value in the Inspection Strategy Description field.
+
+The Inspection Strategy that generated the RBI Recommendation. 
+
+Recommendation Headline 
+
+The value RBI- <RBI Components Record ID>-<Damage Mechanism>
+...where:
+
+<RBI Components Record ID> is the Record ID of the associated RBI Component. 
+
+<Damage Mechanism> is the value in the Damage Mechanism field in the RBI Recommendation.
+
+For example, given the following values:
+
+ RBI Components Record ID = Storage Tank
+
+Damage Mechanism = Brittle Fracture
+
+The Recommendation Headline would be:
+RBI- Storage Tank- Brittle Fracture
+
+The associated RBI Component.
+
+Recommended Inspection Scope 
+
+The value in the Recommended Inspection Scope field.
+
+The Inspection Strategy that generated the RBI Recommendation. 
+
+Recommended Interval Scope 
+
+The value 0.
+ 
+Status 
+
+The value Created.
+
+None
+Target Completion Date 
+The date specified in the Cracking Inspection Date or the Target Inspection Date field, whichever is the earliest, if the DM is related to RBI 581 Cracking Damage Evaluation.The date specified in the Target Inspection Date field if the DM is not related to RBI 581 Cracking Damage Evaluation.
+
+The associated RBI 581 Risk Analysis.
+
+Task Type 
+
+The value in the Inspection Task Type field.
+
+The Inspection Strategy that generated the RBI Recommendation. 
+
+
+About Values Mapped to Risk
+When you promote an asset to Asset Strategy Management (ASM), a Risk is created in ASM for each Degradation Mechanisms record (DM) in active RBI 581 Risk Analyses. This Risk contains the details of unmitigated and mitigated risks defined in the DM.
+The following table provides a list of fields on the Risk datasheet that are populated from the DM or the associated RBI 581 Risk Analysis. 
+
+This Risk field:
+...is populated with:...from the following associated records:Name 
+A value in the following format: <Equipment Description> ~ <Degradation Mechanism>
+If there is no value in the Equipment Description field, then the value in the Equipment Type field is used.
+
+RBI 581 Risk Analysis and DM
+Description 
+A value in the following format: <Equipment Description> ~ <Degradation Mechanism>
+If there is no value in the Equipment Description field, then the value in the Equipment Type field is used.
+
+RBI 581 Risk Analysis and DM
+Failure Mode The value in the Degradation Mechanism fieldDMMaintainable Item A value in the following format: <RBI Component Entity ID> ~ <Equipment Description or Equipment Type>RBI 581 Risk Analysis and Criticality Calculator RBI ComponentFailure Cause The value in the Degradation Mechanism fieldDMUnmitigated Financial Risk The value in the Unmitigated Financial Risk Rank fieldDMRisk Basis The value Risk Based InspectionNone
+About Values Mapped to Action
+When you promote an asset to Asset Strategy Management (ASM), an Action is created in ASM for each RBI Recommendation in active RBI 581 Risk Analyses. This Action contains the details of the Recommendation.
+The following table provides a list of the fields on an Action datasheet that are populated from the RBI Recommendation. 
+
+This Action field:
+...is populated with:Action Basis The value RBI 581 Recommendation.Action Source The value RBI.Action Task Type The value in the Task Type field.Action Basis The value in the Action Type field.Cost The value in the Estimated Cost field.Cost Basis The value in the Estimated Cost Basis field.Description <Recommendation Inspection Scope> ~ <Recommendation Basis>Interval 
+
+The value 0.
+
+Interval Basis 
+
+Undefined.
+
+Interval Units The value Months.Name <Damage Mechanism> ~ <Task Type>Nonrecurring The value in the NonRecurring? field.Shutdown Required The value in the Asset Shutdown Required? field.Target Completion Date The value in the Target Completion Date field.
+About Values Mapped to Inspection Task
+When you promote an asset to Asset Strategy Management (ASM), and create an Inspection Task based on an Action, the fields in the Inspection Task are populated with the values in the various records. The following table provides a list of fields on an Inspection Task datasheet that are populated automatically from these sources. 
+
+This Inspection Task field:
+...is populated with:...from the following record:Asset ID The entity key of the Asset that is associated with the Asset Strategy.Asset Strategy Asset Key The entity key of the Asset that is associated with the Asset Strategy.Asset Strategy Desired Interval 
+
+The value 0.
+
+RBI Recommendation 
+Degradation Mechanism Evaluation 
+Asset Corrosion Analysis 
+Desired Interval Basis 
+
+Undefined.
+
+Action Next Date 
+
+The earliest date among all the Target Completion Date values of all RBI Recommendations.
+RBI Recommendation Next Date Basis 
+
+The value RBI 581 Recommendation.
+RBI Recommendation Override Interval FALSE NoneReason The value in the Action basis fieldAction Rejectable 
+The value False if the value in the Mandatory field is set to True.The value True if the value in the Mandatory field is set to False.
+Action Reoccurring 
+
+FALSE .
+NoneTask Details The value in the Description field.Action Task ID The value in the Name field.Action Task Type The value in the Action Task Type field.Action 
+
+
+
+
+
+On this pageAbout Values Mapped to RBI RecommendationsAbout Values Mapped to RiskAbout Values Mapped to ActionAbout Values Mapped to Inspection Task
+
+
+
+
+
+
+
+
+

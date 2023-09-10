@@ -1,0 +1,422 @@
+
+
+
+General Reference | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference Family Field Descriptions
+Catalog Items
+General Reference
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Reference 
+General Reference
+
+
+
+
+
+
+
+General ReferenceGeneral ReferenceThis section contains information on NR13, State Management, and Site Filtering.About NR13NR13 is a Brazilian Regulatory Standard issued by the Department of Labor, applicable only to sites in Brazil. Its general purpose is to ensure safety in all aspects of designing, installing, operating, and maintaining certain types of equipment.The NR13 module expands GE Digital APM's baseline function to support the collecting and storing of technical data that is required to create NR13-compliant inspection reports. The module also adds two new inspection reports specifically for NR13 inspections.The NR13 module is enabled by the NR13 license.You can download the NR13ModuleEnglish.pdf (PDF).Inspection Management State ManagementThe diagram below shows the workflow of the baseline State Management process as it applies to Inspection Recommendations. Details
+The Proposed state is the initial state of all Inspection Recommendations.By default, states will appear in the Recommended Actions pane when you are viewing an Inspection Recommendation or the Record Manager. Operations that are not in reserved states can be accessed by selecting an Inspection Recommendation and then selecting .
+Reserved States and OperationsThe following tables indicate whether or not the baseline states and operations are reserved. You cannot remove or modify reserved states or operations. You can, however, add your own states and operations to the State Assignment.State CaptionReserved StateSecurity RoleApproved NoSC Recommendation Implementer RoleCancelledNoNoneCompletedNoNoneIn Progress NoSC Recommendation Implementer RolePending Approval NoSC Recommendation Reviewer RolePending ReviewNoMI Inspection SupervisorProposed YesMI InspectorRejected NoNoneSuperseded YesNoneOperationsReserved OperationPredecessor StatesSuccessor StateApproveNoPending ApprovalApprovedCancelNo
+Pending ApprovalPending Review
+CancelledMark as CompletedNo
+ApprovedIn Progress
+Completed RejectNo
+Pending ApprovalPending Review
+RejectedRequest for Approval NoPending ReviewPending Approval Request for ReviewNoProposedPending ReviewRework NoPending Approval Pending Review ReworkNoPending ReviewProposedSupersede YesProposedSupersededUnlink from Master YesSuperseded Proposed Inspection Management Site Filtering
+The Work Pack family employs the GE Digital APM
+Site Control; however, Work Packs are not linked to specific assets or Functional Locations. When a Work Pack record is initially created, it is assigned the default site of the user who created the record. The site of the root level Work Pack can only be modified prior to saving the record.
+
+Tip: For more information, refer to the Site Filtering section of the documentation.
+
+If a multi-site user who has access to every site in a root-level Work Pack record links child records from multiple sites to that Work Pack record, another user who does not have access to every sites may only see a potion of the data associated with that record. 
+Tip:  Although having site-specific tasks is allowed by GE Digital APM, Inspection Management Best Practices recommends that Work Packs and their associated tasks be limited to a single location. 
+Example: Work Pack Records 
+Consider an organization that has three sites, Site X, Site Y, and Site Z. Work Pack A, a global record, contains the following tasks:
+Task 1: Assigned to Site XTask 2: Assigned to Site YTask 3: Assigned to Site Z
+Scenario 1: User assigned to only Site X.
+When this user views Work Pack A, he or she will see the following:
+Work Pack A.Task 1.
+Scenario 2: User assigned to both Site Y and Site X.
+When this user views Work Pack A, he or she will see the following:
+Work Pack A.Task 1.Task 2.
+
+Scenario 3: Super User
+
+When this user views Work Pack A, he or she will see the following:
+Work Pack A.Task 1.Task 2.Task 3.
+Important: Although all tasks are contained within the global record Work Pack A, the user will only see the tasks associated with the current site to which they are assigned.
+Inspection Management URLs
+There is one URL route associated with Inspection Management: im. The following table describes the various paths that build on the route, and the elements that you can specify for each.
+ElementDescriptionAccepted Value(s)Notes
+im/asset/<AssetEntityKey>/<WorkspaceName>: Accesses the Inspection Management page.
+im/asset/<AssetEntityKey>/inspection/<InspectionEntityKey>: Accesses the Inspection Data section of the Inspection Overview page.
+im/asset/<AssetEntityKey>/task/<InspectionTaskEntityKey>: Accesses the Manage Task page.
+ <AssetEntityKey> Specifies the level of the Asset Hierarchy for which you want to view Inspection information. 
+Any Asset Entity Key that is associated with an asset in the Asset Hierarchy. 
+
+N/A
+ <WorkspaceName> 
+Specifies the Inspection Management page that you want to view. 
+
+Overview
+Accesses the Inspection Management Overview workspace. ProfileAccesses the Inspection Profile Details section. <InspectionEntityKey> Specifies the level of the Asset Hierarchy for which you want to view Inspection information. Any Inspection Entity Key that is associated with an asset in the Asset Hierarchy. Accesses the Inspection Data section. -1 
+The Inspection Data section. 
+If the <InspectionEntityKey> is a valid Inspection record, you can bypass the <AssetEntityKey> by entering -1.
+ <InspectionTaskEntityKey> Specifies the level of the Asset Hierarchy for which you want to view Inspection Task information. Any Inspection Task Entity Key that is associated with an asset in the Asset Hierarchy. Accesses the Manage Task page. 
+im/functionallocation/<FunctionalLocationEntityKey>/<WorkspaceName>:  Accesses the Inspection Management page. 
+im/functionallocation/<FunctionalLocationEntityKey>/inspection/<InspectionEntityKey>: Accesses the Inspection Data section of the Inspection Overview page. 
+im/functionallocation/<FunctionalLocationEntityKey>/task/<InspectionTaskEntityKey>: Accesses the Manage Task page. 
+
+ <FunctionalLocationEntityKey> 
+
+Specifies the functional location level of the Asset Hierarchy for which you want to view Inspection information. 
+Any Functional Location Entity Key that is associated with an asset in the Asset Hierarchy. N/A <WorkspaceName> 
+Specifies the Inspection Management page that you want to view. 
+
+Overview
+Accesses the Inspection Management Overview page.
+Profile
+Accesses the Inspection Profile Details section. <InspectionEntityKey> 
+Specifies the functional location level of the Asset Hierarchy for which you want to view Inspection information. 
+Any Inspection Entity Key that is associated with an asset in the Asset Hierarchy. Accesses the Inspection Data section.  <InspectionTaskEntityKey> 
+Specifies the functional location level of the Asset Hierarchy for which you want to view Inspection Task information. 
+Any Inspection Task Entity Key that is associated with an asset in the Asset Hierarchy. Accesses the Manage Task page.
+im/workpack/<WorkPackEntityKey>:  Accesses the Work Pack Overview page. 
+im/workpack/<WorkPackEntityKey>/subworkpack/<SubWorkPackEntityKey>: Accesses the Work Pack Overview page for the selected Sub Work pack.
+ <WorkPackEntityKey> Specifies the Work Pack that you want to view. Any related Work Pack Entity Key. Accesses the Definitions section. <SubWorkPackEntityKey> Specifies the Sub Work Pack that you want to view. Any related Sub Work Pack Entity Key. 
+Accesses the Definitions section.
+Note:  You may have two Sub Work Pack strings in a single URL. 
+
+im/task/<InspectionTaskEntityKey>/inspection/0/inspectionfamkey/<InspectionDocumentTypeFamilyKey>: Creates an inspection that is linked to an inspection task.  <InspectionTaskEntityKey> Specifies the Inspection Task key for which you are creating an inspection. Any Inspection Task Entity Key that is associated with an asset in the Asset Hierarchy. The inspection that you create using the URL will be associated with this task. <InspectionDocumentTypeFamilyKey> Specifies the inspection document type family key that is associated with the document type of the inspection.Any Inspection Document Type Family Key that is associated with the selected asset.If you do not have a document type defined, a dialog appears, asking you to select an inspection family or checklist template. im/asset/<AssetEntityKey>/inspection/0: Creates an inspection that is associated with an asset.  <AssetEntityKey> Specifies the level of the Asset Hierarchy for which you want to create an inspection. Any Asset Entity Key that is associated with an asset in the Asset Hierarchy. The inspection that you create using the URL will be associated with this asset.im/asset/<AssetEntityKey>/inspectionfamkey/<InspectionFamilyKey>: Creates an inspection that is associated with an asset and an inspection family.  <AssetEntityKey> Specifies the level of the Asset Hierarchy for which you want to create an inspection. Any Asset Entity Key that is associated with an asset in the Asset Hierarchy. The inspection that you create using the URL will be associated with this asset. <InspectionFamilyKey> Specifies the family key that is associated with the inspection family for which you want to create an inspection.Any Inspection Family Key that is associated with the selected asset.The inspection that you create using the query will be associated with this inspection family. You cannot associate this inspection with a checklist template.
+Example URLs
+Example URLDestination im/asset/64251821851/overview  The Inspection Management Overview page.  im/asset/64251821851/inspection/64251866183 The Inspection Data section of the Inspection Overview page.  im/asset/-1/inspection/64251866183 The Inspection Data section of the Inspection Overview page.  im/asset/64251821851/task/64252712345 The Manage Task page.  im/functionallocation/64253088766/Overview  The Inspection Management Overview page.  im/functionallocation/64253088766/inspection/64251866183 The Inspection Data section of the Inspection Overview page.  im/functionallocation/64253088766/task/64252712345 The Manage Task page.
+ im/workpack/64253082425 
+-or-
+ im/workpack/64253082425/subworkpack/64253156890 
+-or- 
+ im/workpack/64253082425/subworkpack/64253156890/subworkpack/6425315689 
+The Definitions section of the Work Pack Overview page.  im/task/64252712345/inspection/0/inspectionfamkey/6598721675 The Inspection Details page for the inspection you created from the selected inspection task. im/asset/64251821851/inspection/0 The Inspection Details page for the inspection you created from the selected asset. im/asset/64251821851/inspectionfamkey/6256448923 The Inspection Details page for the inspection you created from the selected asset.
+Inspection Management System Code Tables
+The following grid lists the System Code Tables that are used by Inspection Management.
+
+Table ID
+
+Table Description
+
+Function
+
+ INSM 
+
+ Inspection Interval Types 
+
+Used to populate the Desired Interval Basis list in Inspection Task records.
+
+ INST 
+
+ Inspection Status Code 
+
+None.
+
+ MI ACTION 
+
+ CORE, Actions Taken 
+
+Used to populate the Action Taken Code list in General Finding records. Note that only system codes that contain the reference INSPECTION_FINDING_ACTION appear in the Action Taken Code list.
+
+ MI API 510 EXTERNAL CHECKLIST FINDING SECTIONS 
+
+ API 510 External Checklist Finding Section 
+
+Used to display sections and rows on the Inspection Finding Checklist page.
+
+ MI API 510 INTERNAL CHECKLIST FINDING SECTIONS 
+
+ API 510 Internal Checklist Finding Section 
+
+Used to display sections and rows on the Inspection Finding Checklist page.
+
+ MI API 510 INTERNAL EXCHANGER CHECKLIST FINDING SE 
+
+ API 510 Internal Exchanger Checklist Finding Section 
+
+Used to display sections and rows on the Inspection Finding Checklist page.
+
+ MI API 570 EXTERNAL CHECKLIST FINDING SECTIONS 
+
+ API 570 External Checklist Finding Section 
+
+Used to display sections and rows on the Inspection Finding Checklist page.
+
+ MI API 653 EXTERNAL CHECKLIST FINDING SECTIONS 
+
+ API 653 External Checklist Finding Section 
+
+Used to display sections and rows on the Inspection Finding Checklist page.
+
+ MI API 653 INTERNAL CHECKLIST FINDING SECTIONS 
+
+ API 653 Internal Checklist Finding Section 
+
+Used to display sections and rows on the Inspection Finding Checklist page.
+
+ MI BUNDLE ACTION 
+
+ Inspection; Inspection / Maintenance Actions taken on a exchanger bundle 
+
+Used to populate the Action This Inspection list in Bundle Sub-Inspection records.
+
+ MI BUNDLE TYPE 
+
+ Inspection; Bundle Types
+
+Used to populate the Bundle Type list in Bundle Sub-Inspection records.
+
+ MI BUSINESS IMPACT 
+
+ CORE, Impact to company's production carrying out equipment work 
+
+Used to populate the Business Impact list in Inspection Recommendation records.
+MI CHECKLIST CATEGORIESMI_CHECKLIST_CATEGORIES; Checklist CategoriesUsed to populate the Categories list in Checklist Configuration Template page.
+ MI CHECKLIST FINDING ITEMS 
+
+ Checklist Finding Items 
+
+Used to display values in the first column on the Inspection Finding Checklist page.
+
+ MI CHECKLIST FINDING TYPES 
+
+ Checklist Finding Types 
+
+Used to populate the Finding Value lists on the Inspection Finding Checklist page.
+
+ MI COMPLIANCE STANDARD 
+
+ CORE, Compliance Standard 
+
+Used to populate the Certification Type list in Personnel Certification records. Note that only the System Codes that contain the reference INSPECTION_PERS_CERTS appear in the Certification Type list.
+
+ MI CORE REFERENCES 
+
+ CORE, Used to limit values by common components 
+
+Used to populate the Status list in Inspection Recommendation records.
+
+ MI DAMAGE MECHANISM 
+
+ Inspection, Damage Mechanisms 
+
+Used to populate the Damage Mechanism list in General Finding records.
+
+ MI DAMAGE MODE 
+
+ Inspection, Damage Mode
+
+Used to populate the Damage Mode list in General Finding records.
+ MI DAMAGECHECKLIST SECTIONS  Damage Checklist Sections Used to populate the Third Party Damage list in Checklist Findings records.
+ MI DEGRADATION MECHANISM TYPES 
+
+ Degradation Mechanism Types 
+
+Used to populate the Degradation Mechanism list in Inspection records. 
+
+ MI EQUIP OP STATE 
+
+ MI Inspection, Equipment Operating State
+
+Used to populate the Equipment Operating State list in Inspection records. Note that only the System Codes that contain the reference INSPECTION_EQUIPMENT_STATE appear in the Equipment Operating State list.
+
+ MI EVENT REASON 
+
+ CORE, Reason for Event 
+
+Used to populate the Reason for Inspection list in Inspection records. Note that:
+
+References that have been added to the INSPECTION REASON1 System Code Table are available in a Full Inspection record, and references that have been added to the INSPECTION REASON2 System Code Table are available in a General Inspection record.
+
+All System Codes in the MI EVENT REASON System Code appear in the Reason for Inspection list in Bundle Inspection and Pressure Test Inspection records.
+
+
+ MI EXTERNAL PRD CHECKLIST FINDING SECTIONS 
+
+ External PRD Checklist Finding Section 
+
+Used to display sections and rows on the Inspection Finding Checklist page.
+
+ MI FINDING TYPE 
+
+ MI Inspection, Provides categories for an inspection finding 
+
+Used to populate the Type list in General Finding records.
+
+ MI FREQUENCIES 
+
+ CORE, Frequencies 
+
+Used to populate the Frequency of Alert After Due Date list in Inspection Recommendation records. Note that only the System Codes that contain the reference INSPECTION ALERT INTERVAL appear in the Frequency of Alert After Due Date list.
+ MI INSPCONFEV  Inspection Confidence Evaluation None.MI_INSPECTION_HEALTH_EVALUATION_LEVELSInspection Health Evaluation LevelsUsed to cross reference values from the MI_FINDING_TYPE table with health alert levels. The references in this table determine the assigned alert level for a health assessment value.
+ MI INSPECTION METHOD CATEGORY 
+
+ MI INSPECTION METHOD CATEGORY 
+
+Used to populate the Category list in Inspection Method records.
+
+ MI INSPECTION METHOD REFERENCE 
+
+ MI Inspection, Stores system codes and descriptions that represent Inspection Methods 
+
+Used to determine the confidence for each Degradation Mechanism used in RBI Analyses.
+
+ MI INSPECTION PROFILE CATEGORY 
+
+ Inspection, Profile Category
+
+Used to populate the Item Category list in Inspection Profile records.
+
+ MI INSPECTION PROFILE REFERENCE 
+
+ MI Inspection 
+
+Stores the equipment family ID's, system codes, and descriptions to limit the Profile Categories shown for a piece of equipment. Built during implementation when equipment model known
+
+ MI INSPECTION REFERENCES 
+
+ MI Inspection, Inspection Reference Codes - Inspection 
+
+Used to limit values in System Code Tables to values used in the inspection solution.
+
+ MI INSPECTION STRATEGY 
+
+ MI Inspection Strategy 
+
+None.
+
+ MI PDM FILTER 
+
+ MI RBI, Potential Degradation Filter 
+
+Used to populate the Degradation Mechanism list in Inspection records belonging to the PRD Pop Test Checklist subfamily.
+
+ MI PRD INSPECTION TYPE FILTER 
+
+ PRD Inspection Type Filter 
+
+Used to populate the Type of Inspection list in PRD Pop Test Checklist records.
+
+ MI PRD PT CHECKLIST FINDING SECTIONS 
+
+ PRD Pop Test Checklist Finding Sections 
+
+Used to display sections and rows on the Inspection Finding Checklist page. 
+
+ MI PRIORITY 
+
+ CORE, baseline priority types 
+
+Used to populate the Recommendation Priority list in Inspection Recommendation records.
+
+ MI RECOMMENDATION TYPE 
+
+ CORE, Recommendation Type 
+
+Used to populate the Recommendation Type list in Inspection Recommendation records.
+Note that the Recommendation Type field is not included on the baseline Inspection Recommendation datasheet.
+
+ MI RESOURCE ROLE 
+
+ List of user roles 
+
+Used to populate the Role list in Resource Role records.
+
+ MI STATUS 
+
+ Status Codes - CORE 
+
+Used to populate the Inspection Document Status list in Inspection records. Note that only the System Codes that contain the reference INSPECTION_DOCUMENT_STATUS appear in the Inspection Document Status list.
+
+ MI TASK TYPE REFERENCE 
+
+ CORE, Reference values to limit task type lists when creating tasks 
+
+Used to populate the list in the Reference list in Task Types records.
+
+ MI TEST MEDIA 
+
+ Fluids used for testing 
+
+Used to populate the Test Media list in Pressure Test Sub-Inspection records.
+
+ MI YES NO 
+
+ MI Core, Yes-No 
+
+Used to populate the Predictable list in General Finding records.
+
+Inspection Management Data ModelInspection Management simply offers a customized view of individual records that belong to families in the data model. In addition, each step in the Inspection Management workflow allows you to create, view, or manage those records.The following diagram illustrates how records are linked to one another within Inspection Management. The shaded boxes represent entity families, and the arrows represent relationship families. You can determine the direction of each relationship from the direction of the arrowhead: the box to the left of each arrow head is the predecessor in that relationship, and the box to the right of each arrowhead is the successor in that relationship. For example, you can see that Inspection records are linked to Inspection Recommendation records through the Has Recommendations relationship, where the Inspection family is the predecessor. While the image shows one box for the Inspection family, GE Digital APM provides the following Inspection families as part of the baseline Inspection Management content: Bundle Inspection  Bundle Sub-Inspection  API 510 External Checklist  API 510 Internal Exchanger Checklist  API 510 Internal Checklist  API 570 External Checklist  API 653 External Checklist  API 653 Internal Checklist  External PRD Checklist  Full Inspection  General Inspection  PRD Pop Test Checklist  Pressure Test Inspection  Pressure Test Sub Inspection Pipe Rotation EventInspection Health EvaluationIn the image above, the Inspection box is the predecessor to the Checklist Finding box. In the baseline database, however, only the following Inspection families are related to the Checklist Finding family: API 510 External Checklist  API 510 Internal Exchanger Checklist  API 510 Internal Checklist  API 570 External Checklist  API 653 External Checklist  API 653 Internal Checklist  External PRD Checklist  PRD Pop Test Checklist Note that although both the Equipment and Functional Location families are related to the Inspection Profile family, this documentation assumes that you will create Inspection Profiles only for equipment. You will typically not create Inspection Profiles for locations.
+
+
+
+
+On this pageGeneral ReferenceAbout NR13Inspection Management State ManagementInspection Management Site FilteringInspection Management URLsInspection Management System Code TablesInspection Management Data Model
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,98 @@
+
+
+
+Advanced Search | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SearchOverview
+Advanced Search
+Search Configuration
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Search
+Advanced Search
+
+
+
+
+
+
+
+Advanced SearchOverview of the Advanced Search ModuleAdvanced Search allows you to search for records within a selected family, as well as refine search results based on family relationship and field conditions. An advanced search can be saved for future use.Access the Advanced Search PageProcedureOn the left navigation bar, select Tools, and then select Advanced Search.The Advanced Search page appears. If you have created or accessed any advanced searches, the 25 most recently created or accessed advanced searches will appear in the list.
+
+Create an Advanced SearchProcedure
+Access the Advanced Search page.On the upper-right corner of the page, select Create New.
+The page for a new advanced search appears.
+
+
+
+In the Family box, select the family whose records you want to search.Optionally, in the Linked To box, select a family that is related to the family that you selected in the Family box. If you do so, the search will return only the records that both belong to the family in the Family box and are linked to another record belonging to a family in the Linked To box.If you selected a family in the Linked To box, then, in the Through box, select the type of relationship that should exist between the family selected in the Family box and the family selected in the Linked To box. When you run the search, the results will contain only records that are linked via the specified relationship. If only one type of relationship exists between the selected families, the Through box will be populated automatically with that relationship.Optionally, define field conditions. Note that defining field conditions limits advanced search results to only records whose field values match the specified criteria. For example, if the Status field in a family’s records contains either the value Active or Inactive, you could define a field condition such that the search would only return records whose statuses are Active. To define field conditions:Select Conditions.The Conditions section appears.In the Conditions section, in the Family box, select the family to whose field you want to apply a condition.In the Field box, select the field to which you want to apply a condition.In the Condition box, select the condition that you want to apply to the field that you selected in step c.As needed, in the Value box, select the value to associate with the condition that you selected in step d.Select Add.The condition is added to the advanced search criteria, and appears as a box in the Conditions section. Conditions applied to the primary family (i.e., the family selected in step 3) appear as green-bordered boxes. Conditions applied to the linked-to family (i.e., the family selected in step 4) appear as orange-bordered boxes.As needed, repeat steps b through f to create additional conditions.If you would like the search results to include records that match any one of the specified conditions, clear the Match All Conditions check box. If you want the search results to include only the records that match all of the specified conditions, the Match All Conditions check box should remain selected.Select Search.The search is performed, and the results appear below the Conditions section.Tip:  If you want to view multiple records simultaneously via the Bulk Data Form, then, in the row for each record that you want to view, select the check box, and then select View In Bulk.Optionally, to save the advanced search, on the upper-right corner of the page, select . Then, navigate to the location where you want to save the advanced search, then enter values as needed in the available fields, and then select Save.The advanced search is saved, and will appear in the list on the Advanced Search page.Access an Advanced SearchBefore You Begin
+
+Create an advanced search, and save the search.
+Procedure
+Access the Advanced Search page.In the row for the advanced search that you want to access, in the Path cell, select the link.
+-or-
+On the upper-right corner of the page, select Browse. Then, on the window that appears, navigate to and select the advanced search that you want to access, and then select Open.
+The page for the selected advanced search appears.
+Tip:  If you would like to modify the advanced search, modify the search parameters as needed, and then select  to save your changes.
+Modify an Advanced Search ConditionBefore You Begin
+
+Create an advanced search, and save the search.
+Procedure
+Access the Advanced Search page.In the row for the advanced search that you want to access, in the Path cell, select the link.
+-or-
+On the upper-right corner of the page, select Browse. Then, on the window that appears, navigate to and select the advanced search that you want to access, and then select Open.
+The page for the selected advanced search appears.
+In the Conditions section, select  in the condition box that you want to modify, and then select Save.
+
+
+
+
+On this pageOverview of the Advanced Search ModuleAccess the Advanced Search PageCreate an Advanced SearchAccess an Advanced SearchModify an Advanced Search Condition
+
+
+
+
+
+
+
+
+

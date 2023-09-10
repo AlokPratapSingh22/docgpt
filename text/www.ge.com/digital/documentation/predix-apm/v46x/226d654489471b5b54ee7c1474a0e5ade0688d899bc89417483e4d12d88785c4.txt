@@ -1,0 +1,103 @@
+
+
+
+System Reliability: Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System ReliabilitySystem Reliability: Overview
+System Reliability: Workflow
+System Reliability Analyses 
+Resources
+System Scenario
+Diagrams
+Risks
+Actions
+Global Events
+Grid View
+Simulations
+
+
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+System Reliability
+System Reliability: Overview
+
+
+
+
+
+
+
+System Reliability: OverviewOverview of System Reliability AnalysisReliability Analytics
+The Reliability Analytics module provides a collection of tools that apply reliability engineering principles to help you make tactical (short-term) and strategic (long-term) decisions for maintenance and operational equipment management activities. It also provides: A means for analyzing historical failure data to identify trends and predict future failures.A mechanism for simulating what if scenarios regarding the reliability of a system to determine if a new or modified strategy will be effective. The Reliability Analytics module provides the following types of tools: Production AnalysisSystem Reliability AnalysisSpares AnalysisReliability Distribution AnalysisProbability Distribution AnalysisReliability Growth AnalysisAutomation Rules
+                                Each tool provides a unique set of features that allow you to analyze data to develop strategies to improve reliability.
+System Reliability Analysis
+System Reliability Analysis is a tool that allows you to model different system scenarios (often referred to as RAM, i.e., Reliability, Availability, and Modelling) and then run Monte Carlo simulations to simulate the behavior of the system so that you can predict the cost and reliability of the system and its elements.
+System Reliability Analysis WorkflowThis workflow provides the basic, high-level steps to develop a System Reliability Analysis. The steps and links in this workflow do not necessarily reference every possible procedure.
+ Define Analysis Parameters  Provide values for the analysis parameters that will serve as inputs to the simulation.
+ Develop Scenarios: To develop a Scenario, you must create a System Scenario record and then build a Diagram for the Scenario. You can create multiple Scenarios to model different design options for a single system. For each Scenario, you can define Risks, Actions, and Global Events.
+Note: Interaction with diagramming and design canvases is not available on touch-screen devices.
+ Run simulations: You can perform a Monte Carlo simulation of a System Scenario to calculate the availability and cost of failure for an entire system and the individual elements included in each Scenario. Evaluate results: Running the simulation will result in the generation of various calculations and plots. By evaluating the results, you will be able to determine the cost and reliability of each Scenario relative to other Scenarios in the analysis. Modify Scenarios and rerun simulations: By modifying Scenarios and rerunning the simulation, you can determine the impact of those changes to the overall cost and reliability of the system. You can complete this step as many times as needed until you feel that the analysis cannot be refined any further. Make recommendations: After you have modified the Scenarios and have rerun the simulation various times, you should be able to identify the conditions that will result in the lowest cost and the highest reliability. You can then make recommendations about measures that should be implemented based on the analysis results.
+
+
+
+
+On this pageOverview of System Reliability AnalysisSystem Reliability Analysis Workflow
+
+
+
+
+
+
+
+
+

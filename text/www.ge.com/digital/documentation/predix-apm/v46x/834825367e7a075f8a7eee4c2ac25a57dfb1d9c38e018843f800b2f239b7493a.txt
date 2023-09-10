@@ -1,0 +1,118 @@
+
+
+
+Admin | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+Admin
+
+
+
+
+
+
+
+AdminSpecify Search QueriesAbout This Task
+On the SIS Management Overview page, when you select the tabs in the workspace, the following queries are executed:
+
+SIl_Analysis_Search: Returns a list of SIL Analyses. This query is executed when you select SIL Analysis on the SIS Management Overview page.
+All SIL Analyses Tasks: Returns a list of Proof Test Tasks that are linked to Instrumented Functions or Logic Solvers or created in Asset Strategy Management. This query is executed when you select Proof Test Tasks on the SIS Management Overview page.
+Safety_Loop_Template_Search: Returns a list of Protective Instrument Loop Templates. This query is executed when you select PIL Templates on the SIS Management Overview page.
+Final_Element_Reference_Data_Search: Returns a list of Final Element Custom Devices. This query is executed when you select Final Elements from the drop-down list box in the upper-right corner of the Custom Failure Data section.
+Logic_Solver_Reference_Data_Search: Returns a list of Logic Solver Custom Devices. This query is executed when you select Logic Solvers from the drop-down list box in the upper-right corner of the Custom Failure Data section.
+Sensor_Reference_Data_Search: Returns a list of Sensor Custom Devices. This query is executed when you select Sensors from the drop-down list box in the upper-right corner of the Custom Failure Data section.
+SIS_Trip_Report_Search: Returns a list of SIS Trip Reports. This query is executed when you select SIS Trip Reports on the SIS Management Overview page.
+SRS_Project_ALL: Returns a list of SRS Projects. This query is executed when you select SRS on the SIS Management Overview page.
+ This topic describes how to specify search queries for SIS Management, replacing the default ones. You can specify different search queries if you want to modify the columns or rearrange the columns that appear when you select the tabs in SIS Management.
+Note: You can access application settings for SIS Management only if you are a Super User or belong to the MI SIS Administrator Security Group.
+ProcedureIn the module navigation menu, select
+Admin > Application Settings > SIS Management.
+The SIS Admin Preferences page appears, displaying the Query Paths workspace. The default search queries in SIS Management are listed in the workspace.
+
+
+
+Select the Select button next to the query that you want to replace.
+The baseline catalog folder appears.
+Navigate to the folder that contains the query that you want to specify.Select the query that you want to specify, and then select Open.Repeat steps 3 - 5 for all the other queries that you want to replace.In the upper-right corner of the page, select Save.
+The default queries are replaced by the ones that you have selected.
+Results
+On the SIS Management Overview page, when you select the tabs in the workspace, the queries that you have specified are executed.
+Specify the Required SRS Categories for an SRS ProjectAbout This Task
+This topic describes how to specify the required categories that appear when an SRS Project is created. You can access application settings for SIS Management only if you are a Super User or belong to the MI SIS Administrator Security Group.
+Procedure
+In the module navigation menu, select
+Admin > Application Settings > SIS Management.The SIS Admin Preferences page appears, displaying the Query Paths workspace. In the left pane, select SRS Project Settings.The SRS Project Settings workspace appears.Next to the categories that you want to specify as required, select the check box, and then select Save.
+The selected categories are saved as the default categories for an SRS Project. When you create SRS Projects, the SRS Projects will contain all the default categories.
+
+
+
+
+
+On this pageSpecify Search QueriesSpecify the Required SRS Categories for an SRS Project
+
+
+
+
+
+
+
+
+

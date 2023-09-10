@@ -1,0 +1,767 @@
+
+
+
+Reference Information: Query Joins, Functions, and Hyperlinks | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+QueriesWorkflow
+Query Creation
+Query Results
+Query Sources, Fields, Joins, and Hyperlinks
+Query Expressions, Clauses, and Prompts
+Query Timeouts
+ReferenceReference Information: Query Types
+Reference Information: Query Results
+Reference Information: Query Joins, Functions, and Hyperlinks
+Reference Information: Query Expressions, Clauses, Prompts, and Operators
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Queries
+Reference
+Reference Information: Query Joins, Functions, and Hyperlinks
+
+
+
+
+
+
+
+Reference Information: Query Joins, Functions, and HyperlinksAbout Manual Joins
+In many cases, you will want to query the database for information that exists in more than one family. When you do so, you may also want to join a field in a family with a similar field in another family, which will create an adhoc association between the two families. By joining a field in one family to a field in another family, you create a query join.
+Details
+There are two types of manual joins in GE Digital APM:
+
+
+Manual Inner Join: Returns a row for every record where the values in the joined fields in both families are equal. An inner join returns only those records that satisfy the join conditions, so any unmatched records are dropped from the result set.
+
+Manual Outer Join: Returns a row for every record in one family, and a row for every record where the values in the joined fields in both families are equal. An outer join can be either a left outer join or a right outer join. When you add query sources to the grid in the Conditions section and join their fields, the family that you added first is referred to as Table #1, and the family that you added second is referred to as Table #2.A left outer join returns every record in Table #1, regardless of whether each record is linked to a record from Table #2. The results also include the records in Table #2 in which the value in the joined field is equal to that in Table #1.A right outer join returns every record in Table #2, regardless of whether each record is linked to a record in Table #1. The results also include the records in Table #1 in which the value in the joined field is equal to that in Table #2.
+
+The following table shows the line styles that appear in the design canvas to represent manual joins.
+
+Join TypeLine StyleManual Inner Join
+
+
+
+Manual Outer Left Join
+
+
+
+Manual Outer Right Join
+
+
+
+
+
+Example: Manual Inner Join
+Suppose that you notice that two pieces of equipment, such as a centrifugal pump and an air cooled heat exchanger, have been malfunctioning recently. You suspect that the failures could be caused by human error during installation. You decide to query the database to find instances where these pieces of equipment were installed on the same day by the same person.
+To do so, you would need to add the Centrifugal Pump family and the Air Cooled Heat Exchanger family as query sources. You would then need to join the Asset Installation Date fields and the Responsible Installer fields between the two families via an inner join. Doing so would return only records where a centrifugal pump was installed by the same person on the same date as an air cooled heat exchanger.
+About GE Digital APM Inner Joins
+When you use two related entity families as query sources, GE Digital APM creates an inner join between the two entity families by default. This inner join causes the query results to include only the records that are linked through the specified relationship.
+If two entity families are not related through a relationship family, you can manually create an inner join to connect one or more fields in one family to one or more fields in the other family.
+The following table shows the line style that appears in the design canvas to represent GE Digital APM inner joins.
+Join TypeLine Style
+GE Digital APM Inner Join
+
+
+
+
+Example: Inner Join
+Suppose you add the Equipment entity family, Work History entity family, and Has Work History relationship family as query sources. Assuming that the Has Work History family relates the Equipment family to the Work History family, GE Digital APM will create an inner join between the Equipment and Work History families by default. As a result, the query results will return only Equipment records that are linked to a Work History record through the Has Work History relationship. The query results will not include any Equipment records that are not linked to a Work History record or any Work History records that are not linked to an Equipment record.
+About GE Digital APM Outer Joins
+An outer join allows you to return records that satisfy the join conditions and records from one family for which there are no matching records in the other family.
+You can modify the default inner join to manually create an outer join for families that are related through a relationship family.
+The following table shows the line styles that appear in the design canvas to represent GE Digital APM outer joins.
+Join TypeLine Style
+GE Digital APM Outer Left Join
+
+
+
+
+GE Digital APM Outer Right Join
+
+
+
+
+Example 1: Creating a GE Digital APM Outer Join
+If you use two unrelated families as query sources, such as the Centrifugal Pump family and the Rotary Pump family, you can create an outer join to view all Centrifugal Pumps and Rotating Pumps whose manufacturer is the same and all Centrifugal Pumps with a different manufacturer. If the Centrifugal Pump family was added as a query source as Table #1 and the Rotary Pump family was added as Table #2, this would create a left join, which would be indicated in the SQL code.
+On the other hand, if you wanted to view all Rotary Pumps and Centrifugal Pumps whose manufacturer is the same and all Rotary Pumps with a different manufacturer, you would create a right join, which would be indicated in the SQL code.
+Example 2: Creating a GE Digital APM Outer Join
+You can modify a relationship-driven inner join to create an outer join. For example, suppose that you use the Centrifugal Pump entity family, the Failure entity family, and the Asset Has Failure relationship family as query sources. If your system is configured such that the Asset Has Failure family relates the Centrifugal Pump family to the Failure family, GE Digital APM would create an inner join between the two entity families automatically.
+If you ran the query using the default join, the results would include all Centrifugal Pump records that are linked to a Failure record. If you wanted to modify those results, however, to view all Centrifugal Pumps with their linked Failure records and all Centrifugal Pumps that did not have linked Failure records, you would need to modify the inner join to create an outer join. This would return Centrifugal Pumps with and without linked Failure records, but not Failure records without linked Centrifugal Pump records. For example, you could configure a query to show all the Centrifugal Pump records, where only three are linked to Failure records.
+This type of join is considered a left join, as indicated by the following SQL code:
+SELECT [Centrifugal Pump].[ASSET_ID_CHR] "Asset ID", [Failure].[EFAIL_ASSETID_CHR] "Failure ID"
+FROM [Centrifugal Pump]RIGHT JOIN SUCC [Failure] ON {Asset Has Failure}
+You could also decide to return all Failure records with their linked Centrifugal Pump records and all Failure records that do not have linked Centrifugal Pump records.
+This type of join is considered a right join, as indicated by the following SQL code:
+SELECT [Centrifugal Pump].[ASSET_ID_CHR] "Asset ID", [Failure].[EFAIL_ASSETID_CHR] "Failure ID"
+FROM [Centrifugal Pump]RIGHT JOIN SUCC [Failure] ON {Asset Has Failure}
+What is a Function?
+A function is a SQL component that manipulates data and returns a value that is not stored in the database, but is derived from calculating or reformatting values. Functions can be used to calculate or reformat values:
+Stored in the database.Based on static data (e.g., the current date).
+In SQL code, a function can be included as part of the SELECT statement, WHERE clause or HAVING clause, or it can exist outside of these SQL components. You can write functions in the SQL code, or in the Expression Builder.
+You can use the following functions in GE Digital APM:
+
+The GROUP BY Function
+
+Aggregate Functions
+
+Character Functions
+
+Conversion Functions
+
+Number/Mathematical Functions
+
+The DECODE Function
+
+Date Functions
+
+Note:  Throughout this documentation, functions are grouped into categories according to how they are grouped in the Expression Builder.
+Example 1: SUM Function Contained within the SELECT Statement
+In the following SQL code, the SUM function is displayed in bold text.
+SELECT [Asset].[ASSET_ID_CHR] "Asset ID", Sum([Failure].[EFAIL_TOTCST_FROM]) "Total Failure Cost"
+FROM [Asset] JOIN SUCC [Failure] ON {Asset Has Failure}
+WHERE [Failure].[EFAIL TOTCST FRM] > 50000
+GROUP BY [Asset].[ASSET ID CHR]
+In this example, the SUM function is contained within the SELECT statement.
+Example 2: SUM Function Contained within the SELECT Statement and in the HAVING Clause
+In the following SQL code, the SUM function is displayed in bold text and appears twice: once in the SELECT statement and once in the HAVING clause.
+SELECT [Asset].[ASSET_ID_CHR] "Asset ID", Sum([Failure].[EFAIL_TOTCST_FROM]) "Total Failure Cost"
+FROM [Asset] JOIN SUCC [Failure] ON {Asset Has Failure}
+GROUP BY [Asset].[ASSET ID CHR]
+HAVING Sum([Failure].[EFAIL TOTCST FROM]) > 5000
+About the GROUP BY Function
+A GROUP BY function is used to group query results.
+GROUP BY Function
+Suppose that you want to see the total number of failures your equipment has experienced per equipment manufacturer.
+You would add the Asset Manufacturer field and the Failure ID field to the grid in the Conditions section. The Total row indicates that you want to group the results by manufacturer and display a total count of failures for each manufacturer that is returned. The sort preference indicates that you want to sort the results in descending order according to the failure count.
+In the results, each row represents a different manufacturer and the total count of failures for each manufacturer that is returned.
+In this example, the query results are grouped by one field only, so each manufacturer appears only one time. You can, however, group query results by more than one field. When you group a query by multiple rows, the query determines all possible combinations of results and returns each distinct combination. Therefore, the more fields you group by, the more results you will see.
+Continuing with this example, if you add the Asset ID field to the query, the results will contain many more rows because there are more combinations to display. In this case, one manufacturer may be displayed twice if that manufacturer manufactures multiple equipment items.
+About Aggregate and Analytic Functions
+Aggregate functions perform a calculation on a set of values and return a single value. Analytic functions compute an aggregate value based on a set of values, and, unlike aggregate functions, can return multiple rows for each set of values. Throughout this documentation, we refer to queries that contain aggregate functions as aggregate queries, and queries that contain analytic functions as analytic queries.
+If you want to run a query using only aggregate functions, the query will return one row with a column for each field. If you want to run a query using an aggregate function in conjunction with the GROUP BY function, the query will return one row for each value found in the grouped field.
+If you use an aggregate function with any other function in a query, one field in the query must contain the GROUP BY function. For example, if you want to use the SUM function to see the total maintenance cost for all the equipment types in your facility, and you want to view the taxonomy type description in all capital letters using the UPPER function, you must group by the taxonomy type description for the query to run. In this case, the query will return one row for each equipment type in the facility, with the total maintenance cost for each type.
+Aggregate FunctionGROUP BY FunctionOther FunctionWill the query run? Yes  No  No  Yes  Yes  Yes  No  Yes  Yes  Yes  Yes  Yes  Yes  No  Yes  No 
+Aggregate functions may be used in conjunction with the GROUP BY function, which specifies how the query results will be grouped and displayed. In other words, if you use an aggregate function on any field in a query, then all remaining fields must appear in the GROUP BY clause.
+The following table provides a list of the aggregate functions that you can use in queries. The Oracle Function column contains the function you will need to use if you are using an Oracle schema. The SQL Server Function column contains the function you will need to use if you are using a SQL Server database. Selecting a link in the table will open the appropriate example drop-down within this topic.
+Aggregate functions and analytic functions can be selected in the Total cell of the grid in the Conditions section.
+The SUM and AVERAGE functions can be used only on numeric query fields. The MIN, MAX, and COUNT functions can be used on date, numeric, or character fields.
+DescriptionOracle FunctionSQL Server Function Average AVGAVG Count COUNTCOUNT Maximum MAXMAX Minimum MINMIN Standard Deviation STDVSTDV Sum SUMSUM Variance VARIANCEVAR
+Analytic functions compute an aggregate value based on a set of values, and, unlike aggregate functions, can return multiple rows for each set of values. Use analytic functions to compute moving averages, running totals, percentages, or top-N results within a group.
+If you want to run a query using an analytic function, the query will return one row for each field in the defined range of fields used to perform the calculations.
+Note: In the following table, items in the special font (that is, field, field1) represent user-supplied parameters. Items contained within brackets are optional. Do not enter the brackets themselves.
+Analytic FunctionFormat of Code Using the FunctionAVGAVG(field) OVER([PARTITION BY field1[, field2, ...]] ORDER BY field1[, field2, ...])CUME_DISTCUME_DIST() OVER([PARTITION BY field1[, field2, ...]] ORDER BYfield1[, field2, ...])FIRST_VALUEFIRST_VALUE(field) OVER([PARTITION BY field1[,field2, ...]] ORDER BY field1[, field2, ...])LAST_VALUELAST_VALUE(field) OVER([PARTITION BY field1[,field2, ...]] ORDER BY field1[, field2, ...])MAXMAX(field) OVER([PARTITION BY field1[,field2, ...]] ORDER BY field1[, field2, ...])MINMIN(field) OVER([PARTITION BY field1[, field2, ...]] ORDER BY field1[, field2, ...])NTILENTILE(number) OVER([PARTITION BY field1[,field2, ...]] ORDER BY field1[, field2, ...])ROWROW_NUMBER() OVER([PARTITION BYfield1[, field2, ...]] ORDER BY field1[, field2, ...])SUMSUM(field) OVER([PARTITION BY field1[,field2, ...]] ORDER BY field1[,field2, ...])
+About Character Functions
+Character functions are used to manipulate values returned on character fields.
+The following table provides a list of the character functions that you can use in queries. The Oracle Function column contains the function you will need to use if you are using an Oracle schema. The SQL Server Function column contains the function you will need to use if you are using a SQL Server database. Selecting a link in the table will open the appropriate example drop-down within this topic.
+In some cases, there is no SQL Server equivalent of an Oracle function. In these cases, the SQL Server Function column contains an empty, shaded cell.
+DescriptionOracle FunctionSQL Server FunctionConvert character to ASCII ASCII  ASCII Convert ASCII to character CHR  CHAR Convert string if null NVL  ISNULL Translate character string TRANSLATE NoneCombination of letters and numbers that use the Soundex Indexing System to represent the character string (See note) SOUNDEX  SOUNDEX Convert characters to uppercase UPPER  UPPER Convert characters to lowercase LOWER  LOWER Capitalize first letter of each word in string INITCAP NoneGreatest character string in list GREATEST NoneLeast character string in list LEAST NoneString concatenate CONCAT (expression + expression)Substring SUBSTR  SUBSTRING Return starting point of character in character string (from left) INSTR  CHARINDEX Length of character string in list LENGTH  LEN or DATALENGTHPad left side of character string LPAD NoneRemove leading blanks LTRIM  LTRIM Remove trailing blanks RTRIM  RTRIM Replace characters REPLACE  STUFF String of repeated spaces RPAD  SPACE 
+Example: REPLACE Function
+
+Suppose that you want to view the Failure ID of the failure associated with each piece of equipment or location in your database. Failure IDs are stored with a dash in the syntax, and you want to display them with a double colon instead of the dash.
+In this case, you might configure a query on the Asset and Failure families, joined via the Asset Has Failure relationship, and add the Asset ID and Failure ID fields to the query.
+In this example, to return the Failure IDs and replace the dash with a double colon, you would configure an expression using the REPLACE function. You would also configure the alias to ensure that the column displays the text Failure ID.
+In this case, the expression syntax is:
+
+                    REPLACE([Failure].[Failure ID], '-', '::')
+                
+The syntax indicates that you want to replace the dash (-) with a double colon (::).
+Example: LEN Function (SQL Only)
+
+Suppose that you recently implemented a new process for storing Failure IDs in Failure records. Previously, Failure IDs were formatted as FAIL-n, where n indicated the number of the failure. For example, the tenth failure that was recorded contained a Failure ID of FAIL-10. You have decided that you want all failures to contain four digits and that zeroes should be used as placeholders if the failure is not the 1000th failure or later. For example, the tenth failure should be recorded as FAIL-0010 instead of FAIL-10.
+You know that a Failure ID in the new format will contain nine characters, where the dash (-) is considered a character. You want to see which Failure records contain IDs with fewer than nine characters. In this case, you might configure a query on the Failure family, and add the Failure ID field and the ENTY_KEY system field to the query twice each.
+In this example, to display each Failure record with a Failure ID that contains fewer than nine characters, you would configure an expression using the LEN function. You would also configure the alias to indicate that the column displays the number of characters in the Failure ID.
+In this case, the expression syntax is:
+
+                    LEN([Failure].[Failure ID])
+                
+The query also includes criteria on this column that indicates that the results should display only Failure records where the Failure ID contains fewer than nine characters.
+A hyperlink has been added to the Failure ID field so that you can open from the results each Failure record in the Record Manager and update the Failure ID. Because the query is running in unformatted mode and the hyperlink includes the EntityKey parameter and the FamilyKey parameter, the Entity Key field and the Family Key field are also included in the query.
+Note:  You can use the LEN syntax on a SQL Server database only. To use this function on an Oracle schema, use LENGTH instead of LEN.
+More Examples of Character Functions
+
+The following table lists more examples of using Character functions:
+
+FunctionDescriptionExampleStored ValueResult
+CONCAT
+Concatenates two field values and displays the result.
+CONCAT ([Asset)ID], [Asset Type]) 
+ Asset ID: T-101 
+ Asset Type: Tank 
+ T-101Tank 
+&
+Concatenates two or more field values and adds delimiters between the values. [Asset ID] &':' & [Asset Type] 
+ Asset ID: T-101 
+ Asset Type: Tank 
+ T-101:Tank 
+LOWER
+Displays the value in all lowercase letters.
+LOWER ([Asset Type])  Tank  Tank 
+UPPER
+Displays the value in all uppercase letters.
+UPPER ([Asset Type])  Tank  Tank 
+SUBSTR
+Displays a specific number of characters depending on the starting point you specify and the number of characters that you specify should be returned.
+
+SUBSTR ([Asset ID],0,3) 
+Zero (0) specifies the starting point (from left to right) and three (3) specifies the number of characters after the starting point that you want to display.
+ PMP-101  PMP 
+NVL
+Displays a specified value when a null value is found.
+NVL ([Asset Type],'No Value Listed')  Asset Type field contains a null value  No Value Listed 
+INITCAP
+Displays the value with the first letter of each word capitalized.
+INITCAP ([Failure Mode])  bearing failure  bearing failure 
+LTRIM
+Displays the value with the specified characters removed from the beginning (left) of the string.
+LTRIM ([PhoneNumber], '(540)-') (540) 344-9205344-9205
+RTRIM
+Displays the value with the specified characters removed from the end (right) of the string.
+RTRIM ([Failure ID], '-0123456789')  FAIL-1234  FAIL About Conversion Functions
+A Conversion function is used to modify query results by reformatting the data. You can use this type of function if you want to reformat the data to simplify it (e.g., you could remove unnecessary zeros from dates, where 01/07/2007 could be converted to 1/7/2007) or if you want to reformat the data so it appears as a different data type completely (e.g., you could spell out a month instead of representing the month with a number, where 01/07/2007 could be converted to January 7, 2007).
+The following table provides a list of the Conversion functions that you can use in queries. The Oracle Function column contains the function you will need to use if you are using an Oracle schema. The SQL Server Function column contains the function you will need to use if you are using a SQL Server database.
+DescriptionOracle FunctionSQL Server FunctionConvert a number or date to a character TO CHAR  CONVERT Convert a character to a date TO DATE  CONVERT Convert a character to a number TO NUMBER  CONVERT 
+Example: TO_CHAR Function
+Suppose that you want to see only the year in which your shell and tube heat exchangers were installed. All Equipment records in your database contain an Asset Installation Date field, and the values are stored in the format mm/dd/yyyy. You do not want to return the month or day in the query results.
+In this case, you might configure a query on the Shell and Tube Heat Exchanger family, and add the Asset ID, Asset Description, and Year Installed fields to the query.
+In this example, to return the year in which each shell and tube heat exchanger was installed, you would configure an expression using the TO CHAR function. You would also configure the alias to indicate that the column returns the year the item was installed.
+In this case, the expression syntax is:
+TO CHAR([Shell and Tube Heat Exchanger].[Asset Installation Date], 'yyyy')
+The syntax indicates that you want to see the Asset Installation Date field of Shell and Tube Heat Exchanger records and convert the returned values into a yyyy format. In other words, instead of seeing the installation dates in their stored format of mm/dd/yyyy, you will see only the year.
+Other possible uses include:
+Reformat a numeric cost value so that it represents a currency value (e.g., reformat 125.75 as $125.75)Remove the day and year from a date and return only the month (e.g., reformat 12/15/2004 as 12)
+The following table lists more examples of using the TO CHAR function to reformat dates.
+
+ParameterDescriptionExampleStored ValueResult
+D
+Displays a number representing the day of the week (1-7). TO CHAR([Failure].[Failure Date],' D ') 12/1/20055
+DAY
+Displays the name of the day in all capital letters. TO CHAR([Failure].[Failure Date],' DAY ') 5/2/2005MONDAY
+Day
+Displays the name of the day with the first letter capitalized. TO CHAR([Failure].[Failure Date],' 'Day') 5/2/2005Monday
+DY
+
+Displays the abbreviated name of the day.
+This parameter is not case-sensitive. You can enter DY, Dy, dy, or dY, and the result will be displayed with the first letter capitalized.
+ TO CHAR([Failure].[Failure Date],' DY ') 12/1/2005Thu
+DD
+Displays a number representing the day of the month (1-31). TO CHAR([Failure].[Failure Date],' DD ') 12/1/200501
+DDD
+Displays a number representing the day of the year (1-366). TO CHAR([Failure].[Failure Date],' DDD ') 12/1/2005335
+MM
+Displays a number representing the month of the year (01-12). TO CHAR([Failure].[Failure Date],' MM ') 12/1/200512
+MON
+Displays the abbreviated name of the month in all capital letters. TO CHAR([Failure].[Failure Date],' MON ') 12/1/2005DEC
+Mon
+Displays the abbreviated name of the month with the first letter capitalized. TO CHAR([Failure].[Failure Date],' Mon') 12/1/2005Dec
+MONTH
+Displays the full name of the month in all capital letters (up to 9 characters). TO CHAR([Failure].[Failure Date],' MONTH ') 6/8/2005JUNE
+Month
+Displays the full name of the month with the first letter capitalized (up to 9 characters). TO CHAR([Failure].[Failure Date],' Month') 6/8/2005June
+Q
+Displays a number representing the quarter of the year (1, 2, 3, 4, where January through March = 1). TO CHAR([Failure].[Failure Date],' Q ') 12/1/20054
+WW
+Displays a number representing the week of the year (1-53), where week one starts on the first day of the year and ends on the seventh day of the year. TO CHAR([Failure].[Failure Date],' WW ') 12/1/200548
+W
+Displays a number representing the week of the month (1-5), where week one starts on the first day of the month and ends on the seventh day of the month. TO CHAR([Failure].[Failure Date],' W ') 12/1/20051
+YEAR
+Displays the name of the year in all capital letters. TO CHAR([Failure].[Failure Date],' YEAR') 12/1/2005TWO THOUSAND FIVE
+Year
+Displays the name of the year with the first letter capitalized. TO CHAR([Failure].[Failure Date],' Year ') 12/1/2005Two Thousand Five
+YYYY
+Displays a four-digit value representing the year. TO CHAR([Failure].[Failure Date],' YYYY ') 12/1/20052005
+YYY ,YY, Y
+Displays a three-, two-, or one-digit value representing the year. TO CHAR([Failure].[Failure Date],' YY ') 12/1/200505
+
+The following table lists examples of using the TO_CHAR function to reformat numbers.
+
+ParameterDescriptionExampleStored ValueResult
+, (comma)Displays a comma in the specified position. TO CHAR([Failure].[Total Failure Cost], ' 9,999') 12341,234
+. (period)Displays a decimal point in the specified position. TO CHAR([Failure].[Total Failure Cost], ' 9,999.00') 1234111,234.11
+9
+Displays a specific number of digits depending on the number of nines you include. Null values will be displayed for leading zeros. TO CHAR([Failure].[Total Failure Cost], ' 999,999,999.00') 12345.2212,345.00
+$
+Displays a dollar symbol to the left of the value. TO CHAR([Failure].[Total Failure Cost], ' $999,999,999.00 ') 12345.22$12,345.22
+S
+Returns a plus sign (+) in the specified position for positive values and a negative sign (-) for negative values. TO CHAR([Failure].[Total Failure Cost], ' S999,999,999.00 ') 12345.22+12,345.22
+L
+Displays the local currency symbol in this position (as determined by the Windows Regional Settings). TO CHAR([Failure].[Total Failure Cost], ' L999,999,999.00 ') 12345.22$12,345.22 (if local currency is US Dollars)
+
+About Date Functions
+Date functions are used to manipulate values returned on date fields.
+The following table provides a list of the date functions that you can use in query expressions. The Oracle Function column contains the function you will need to use if you are using an Oracle schema. The SQL Server Function column contains the function you will need to use if you are using a SQL Server database. Selecting a link in the table will open the appropriate example drop-down within this topic.
+In some cases, a function cannot be expressed on both an Oracle schema and a SQL Server database. In these cases, the Oracle Function or SQL Server Function column contains an empty, shaded cell.
+Description
+Oracle Function
+SQL Server FunctionDate addition or subtraction
+ MI DateAdd 
+ ADD MONTHS 
+
+ MI DateAdd 
+ DATEADD 
+Last day of the month LAST DAY NoneDifference between dates MONTHS BETWEEN  DATEDIFF Time zone conversion NEW TIME NoneDisplays the first specified weekday after a stored date NEXT DAY NoneSubstitute a value if it is NULL NVL  ISNULL Date round ROUND NoneRe-formats date values TO DATE NoneTruncates numeric values TRUNC NoneReturns part of a date as a character or numeric valueNone DATENAME Returns part of a date as a numeric valueNone DATEPART Returns part of a date as a numeric value MI DatePart  MI DatePart Displays the current date or a date that is earlier or later than the current date NOW  NOW 
+Example: MI_DateAdd
+Suppose that all air cooled heat exchangers in your facility require inspection every six months. You might want to run a query to see the last inspection date of all air cooled heat exchangers and the date that is six months after that date. If each Air Cooled Heat Exchanger record in your database contains an Asset Inspection Date value, you could do so using the MI DateAdd function.
+You might configure a query on the Air Cooled Heat Exchanger family, and add the Asset ID, Asset Description, Asset Inspection Date, and Next Inspection Date fields to the query.
+In this example, to return the next inspection date, you would configure an expression using the MI DateAdd function. You would also configure the alias of this column to indicate that the column returns the next inspection date.
+The expression syntax is:
+MI DateAdd('mm', 6, [Air Cooled Heat Exchanger].[Asset Inspection Date])
+The following table lists more examples of how you can use the MI DateAdd function.
+
+ParameterExampleDescriptionStored ValueResult yy  MI DateAdd(' yy ', 1, [Air Cooled Heat Exchanger].[Asset Installation Date])Adds one year to the date on the Asset Installation Date field in Air Cooled Heat Exchanger records.11/01/200911/01/2010 mm  MI DateAdd(' mm ', 6, [Air Cooled Heat Exchanger].[Asset Installation Date])Add six months to the date on the Asset Installation Date field in Air Cooled Heat Exchanger records.11/01/200905/01/2010 dd  MI DateAdd(' dd ', 4, [Air Cooled Heat Exchanger].[Asset Installation Date])Adds four days to the date on the Asset Installation Date field in Air Cooled Heat Exchanger records.11/01/200911/05/2009 hh  MI DateAdd(' hh ', 4, [Air Cooled Heat Exchanger].[Asset Installation Date])Adds four hours to the date on the Asset Installation Date field in Air Cooled Heat Exchanger records.11/01/2009 4:00:0011/01/2009 8:00:00 mi  MI DateAdd(' mi ', 4, [Air Cooled Heat Exchanger].[Asset Installation Date])Adds four minutes to the date on the Asset Installation Date field in Air Cooled Heat Exchanger records.11/01/2009 4:00:0011/01/2009 4:04:00 mi  MI DateAdd(' mi ', -4, [Air Cooled Heat Exchanger].[Asset Installation Date])Subtracts four minutes from the date on the Asset Installation Date field in Air Cooled Heat Exchanger records.11/01/2009 4:00:0011/01/2009 3:56:00 ss  MI DateAdd(' ss ', 4, [Air Cooled Heat Exchanger].[Asset Installation Date])Adds four seconds to the date on the Asset Installation Date field in Air Cooled Heat Exchanger records.11/01/2009 4:00:0011/01/2009 4:00:04
+
+Example: ADD_MONTHS (Oracle Only) 
+Suppose that all shell and tube heat exchangers in your facility require inspection every six months. You might want to run a query to see if the last inspection date of all shell and tube heat exchangers and the date that is six months after that date. If Shell and Tube Heat Exchanger records in your database contain an Asset Inspection Date value, you could do so using the ADD_MONTHS function.
+You might configure a query on the Shell and Tube Heat Exchanger family, and add the Asset ID, Asset Description, Asset Inspection Date, and Next Inspection fields to the query.
+In this example, to return the next date on which each shell and tube heat exchanger should be inspected, you would configure an expression using the ADD_MONTHS function. You would also configure the alias to indicate that the column returns the next inspection date.
+The expression syntax is:
+ADD MONTHS([Shell and Tube Heat Exchanger].[Asset Inspection Date], 6)
+The following table lists more examples of how you can use the ADD MONTHS function.
+
+Example ExpressionDescriptionStored ValueResult
+ADD MONTHS ([Failure].[Failure Date], 1)Adds one month to the date on the Failure Date field in Failure records and displays the calculated date.Failure Date: 11/01/200912/01/2009
+ADD MONTHS ([Failure].[Failure Date], -1)Subtracts one month from the date on the Failure Date field in Failure records and displays the calculate date.Failure Date: 11/01/200910/1/2009
+
+Example: DATEADD (SQL Only) 
+Suppose that all air cooled heat exchangers in your facility require inspection every six months. You might want to run a query to see the last inspection date of all air cooled heat exchangers and the date that is six months after that date. If each Air Cooled Heat Exchanger record in your database contains an Asset Inspection Date value, you could do so using the DATEADD function.
+You might configure a query on the Shell and Tube Heat Exchanger family, and add the Asset ID, Asset Description, Asset Inspection Date, and Next Inspection fields to the query.
+In this example, to return the next inspection date, you would configure an expression using the DATEADD function. You would also configure the alias of this column to indicate that the column returns the next inspection date.
+The expression syntax is:
+DATEADD('mm', 6, [Air Cooled Heat Exchanger].[Asset Inspection Date])
+The following table lists more examples of how you can use the DATEADD function.ParameterExampleDescriptionStored ValueResult yy  DATEADD('yy', 1, [Shell and Tube Heat Exchanger].[Asset Inspection Date])Adds one year to the date on the Asset Inspection Date field in Shell and Tube Heat Exchanger records.11/01/200911/01/2010 qq  DATEADD('qq', 1, [Shell and Tube Heat Exchanger].[Asset Inspection Date])Adds three months to the date on the Asset Installation Date field in Shell and Tube Heat Exchanger records (i.e., one quarter).11/01/200902/01/2010 mm  DATEADD('mm', 6, [Shell and Tube Heat Exchanger].[Asset Inspection Date])Adds six months to the date on the Asset Installation Date field in Shell and Tube Heat Exchanger records.11/01/200905/02/2010 ww  DATEADD('ww', 2, [Shell and Tube Heat Exchanger].[Asset Inspection Date])Adds two weeks to the date on the Asset Installation Date field in Shell and Tube Heat Exchanger records (i.e., 14 days).11/01/200911/15/2009 dd  DATEADD('dd', 4, [Shell and Tube Heat Exchanger].[Asset Inspection Date])Adds four days to the date on the Asset Installation Date field in Shell and Tube Heat Exchanger records.11/01/200911/05/2009 dd  DATEADD('dd', - 4, [Shell and Tube Heat Exchanger].[Asset Inspection Date])Subtracts four days from the date on the Asset Installation Date field in Shell and Tube Heat Exchanger records.11/01/200910/28/2009 dw  DATEADD('dw', 4, [Shell and Tube Heat Exchanger].[Asset Inspection Date])Adds four days to the date on the Asset Installation Date field in Shell and Tube Heat Exchanger records.11/01/200911/05/2009dy DATEADD('dy', 2, [Shell and Tube Heat Exchanger].[Asset Inspection Date])Adds two days to the date on the Asset Installation Date field in Shell and Tube Heat Exchanger records.11/01/200911/03/2009 hh  DATEADD('hh', 4, [Shell and Tube Heat Exchanger].[Asset Inspection Date])Adds four hours to the date on the Asset Installation Date field in Shell and Tube Heat Exchanger records.11/01/2009 4:00:00 11/01/2009 8:00:00  mi  DATEADD('mi', 4, [Shell and Tube Heat Exchanger].[Asset Inspection Date])Adds four minutes to the date on the Asset Installation Date field in Shell and Tube Heat Exchanger records.11/01/2009 4:00:0011/01/2009 4:04:00 ss  DATEADD('ss', 4, [Shell and Tube Heat Exchanger].[Asset Inspection Date])Adds four seconds to the date on the Asset Installation Date field in Shell and Tube Heat Exchanger records.11/01/2009 4:00:0011/01/2009 4:00:04
+Example: MI_DatePart 
+Suppose that you want to view only the month in which the shell and tube heat exchangers were installed in your facility. If all Shell and Tube Heat Exchanger records in your database contain an Asset Installation Date field, and the values are stored in the format mm/dd/yyyy, you could do so using the MI DatePart function.
+You might configure a query on the Shell and Tube Heat Exchanger family, and add the Asset ID, Asset Description, and Installation Month fields to the query.
+In this example, to return the month in which each shell and tube heat exchanger was installed, you would configure an expression using the MI DatePart function. You would also configure the alias to indicate that the column returns the year the piece of equipment was installed.
+The expression syntax is:
+MI DatePart('mm', [Shell and Tube Heat Exchanger].[Asset Installation Date])
+Using this syntax, instead of displaying the installation date in the stored format of mm/dd/yyyy, the query results will display only the value representing the month.
+The following table lists more examples of how you can use the MI DatePart function.
+
+ParameterExampleDescriptionStored ValueResult yy  MI DatePart('yy', [Shell and Tube Heat Exchanger].[Asset Installation Date])Displays only the year from a stored date value.11/01/20092009 qq  MI DatePart('qq', [Shell and Tube Heat Exchanger].[Asset Installation Date])Displays a number representing the quarter of the year based on a stored date value.11/01/20094 mm  MI DatePart('mm', [Shell and Tube Heat Exchanger].[Asset Installation Date])Displays only the month from a stored date value.11/01/200911 ww  MI DatePart('ww', [Shell and Tube Heat Exchanger].[Asset Installation Date])Displays a number representing the week of the month based on a stored date value.11/01/20091 dd  MI DatePart('dd', [Shell and Tube Heat Exchanger].[Asset Installation Date])Displays only the day from a stored date value.11/01/200901 dw  MI DatePart('dw', [Shell and Tube Heat Exchanger].[Asset Installation Date])Displays a number representing the day of the week based on a stored date value (where 1 = Sunday, 2 = Monday, etc.).11/01/20091dy MI DatePart('dy', [Shell and Tube Heat Exchanger].[Asset Installation Date])Displays a number representing the day of the year based on a stored date value.11/01/2009305 hh  MI DatePart('hh', [Shell and Tube Heat Exchanger].[Asset Installation Date])Displays only the hour from a stored date value.11/01/2009 4:00:004 mi  MI DatePart('mi', [Shell and Tube Heat Exchanger].[Asset Installation Date])Displays only the minutes from a stored date value.11/01/2009 4:00:0000 ss  MI DatePart('ss', [Shell and Tube Heat Exchanger].[Asset Installation Date])Displays only the seconds from a stored date value.11/01/2009 4:00:0000
+
+Example: NOW 
+Suppose that you want to see the tasks that are assigned to a specific user and due in the next thirty days. If Task records contain the Next Date field that stores the date on which the task is due, you could do so using the NOW function.
+You might configure a query on the Task family, and add the Task ID, Next Date, and Task Assigned To fields to the query.
+In this example, you would configure an expression on the Next Date field using the NOW function. Additionally, you would configure a prompt to prompt the user for the name of the user whose Task records you want to view.
+The expression syntax is:
+(>= Now() AND <= (Now() + 30))
+The syntax indicates that you want to view the tasks that are due today and within the next thirty days. For example, if a task is due thirty-one days after today's date, it will not appear in the query results.
+The following table lists more examples of how you can use the NOW function.
+
+Example ExpressionDescriptionCurrent DateResult NOW(0) or NOW()Displays the current date.11/01/200911/01/2009 NOW() - 3Displays the date that is three days prior to the current date.11/01/200910/29/2009 NOW() + 3Displays the date that is three days later than the current date.11/01/200911/04/2009
+
+Example: LAST_DAY (Oracle Only) 
+Suppose that you want to see all the air cooled heat exchanger failures in your facility that occurred in a given month. If each Air Cooled Heat Exchanger record is linked to a Failure record, and each Failure record contains the Failure Date/Time field that stores that date and time on which a failure occurred, you could do so using the LAST DAY function.
+You might configure a query on the Air Cooled Heat Exchanger and Failure families, joined via the Asset Has Failure relationship, and add the Asset ID, Failure ID, Failure Date/Time, and Last Day fields to the query.
+In this example, you would configure an expression using the LAST DAY function. Additionally, you would create a prompt that prompts you to select the last day of the month whose failures you want to view. You would configure the alias to indicate that the column displays the last day of the month.
+The expression syntax is:
+LAST DAY([Failure].[Failure Date/Time])
+The prompt syntax is:
+((? :d :caption='Last Day' :id=Last Day))
+When you run the query, a prompt appears, where you can select 11/30/2009 12:00:00 A.M. to indicate that you want to view failures that occurred during the month of November.
+Example: NEXT_DAY (Oracle Only) 
+After pieces of equipment are installed in your facility, you want to perform a quick check on them the following Monday. If all Equipment records in the database contain the field Installation Date, you could do so using the NEXT DAY function.
+You might configure a query on the Equipment field, and add the Equipment ID, Equipment Short Description, Installation Date, and Following Monday fields to the query.
+In this example, you would configure an expression using the NEXT DAY function. You would also configure the alias to indicate that the column displays the following Monday.
+The expression syntax is:
+NEXT DAY([Equipment].[Installation Date], 2)
+The NEXT DAY function assumes that each week begins on Sunday and ends on Saturday. The expression includes a parameter indicating which day of the week you want to see in the results, where the value is between 1 and 7, where 1 represents Sunday and 7 represents Saturday.
+In this example, the parameter 2 represents Monday. The syntax indicates that you want to see the date of the first Monday following the date stored in the Installation Date field.
+The following table lists more examples of how you can use the NEXT_DAY function.
+
+ParametersExampleDescriptionStored ValueResult
+ Sunday 
+ Monday 
+ Tuesday 
+ Wednesday 
+ Thursday 
+ Friday 
+ Saturday 
+ NEXT DAY([Asset].[Asset Installation Date], ' Wednesday')Displays the date of the Wednesday following the date stored on the Asset Installation Date field. Sunday, 11/01/2009 Wednesday, 11/04/2009
+1
+2
+3
+4
+5
+6
+7
+Note:  Each number corresponds to a day of the week in the order in which they occur, where 1 represents Sunday.
+ NEXT DAY([Asset].[Asset Installation Date], 4)Displays the date of the Wednesday following the date stored on the Asset Installation Date field. Sunday, 11/01/2009 Wednesday, 11/04/2009
+
+Example: MONTHS_BETWEEN 
+After assets have been installed and have failed for the first time, you want to determine how many months passed between the installation date and the failure date. If all Air Cooled Heat Exchanger records contain the Asset Installation Date field, and all Failure records contain the Failure Date/Time field, then you can do so using the MONTHS BETWEEN function.
+You might configure a query on the Air Cooled Heat Exchanger and Failure families, joined via the Asset Has Failure relationship, and add the Asset ID, Asset Description, Asset Installation Date, Failure ID, Failure Date/Time, and Intervals in Months fields to the query.
+In this example, you would configure an expression using the MONTHS_BETWEEN function. You would also configure the alias to indicate that the column returns the number of months between installation and failure.
+The expression syntax is:
+MONTHS BETWEEN([Failure].[Failure Date/Time], 
+[Air Cooled Heat Exchanger].[Asset Installation Date])
+When you run the query, the values in the Interval in Months column will contain decimal points. A more usable result would show rounded values without decimal points. You should, therefore, also use the TRUNC function so that the Interval in Months column displays only whole numbers. In this case, the entire expression syntax would be:
+TRUNC(MONTHS BETWEEN([Failure].[Failure Date/Time], 
+[Air Cooled Heat Exchanger].[Asset Installation Date]))
+Example: DATEDIFF (SQL Only) 
+After pieces of equipment have been installed and have failed for the first time, you want to determine how many days passed between the installation date and the failure date. If all Air Cooled Heat Exchanger records contain the Asset Installation Date field, and all Failure records contain the Failure Date/Time field, then you can do so using the DATEDIFF function.
+You might configure a query on the Air Cooled Heat Exchanger and Failure families, joined via the Asset Has Failure relationship, and add the Asset ID, Asset Description, Asset Installation Date, Failure ID, Failure Date/Time, and Difference fields to the query.
+In this example, you would configure an expression using the DATEDIFF function. You would also configure the alias to indicate that the column displays the difference between the installation date and failure date.
+In this case, the expression syntax is:
+DATEDIFF('day', [Air Cooled Heat Exchanger].[Asset Installation Date], 
+[Failure].[Failure Date/Time])
+The following table lists more examples of how you can use the DATEDIFF function.
+
+ParametersExampleDescriptionStored ValuesResult
+ yy 
+ year 
+ DATEDIFF('yy', [Air Cooled Heat Exchanger].[Asset Installation Date], [Failure].[Failure Date/Time])Displays the difference in years between the dates stored on the Asset Installation Date and Failure Date/Time fields.
+Asset Installation Date: 11/01/2009
+Failure Date/Time: 12/14/2010
+1
+ qq 
+ quarter 
+ DATEDIFF('qq', [Air Cooled Heat Exchanger].[Asset Installation Date], [Failure].[Failure Date/Time])Displays the difference between the dates stored on the Asset Installation Date and Failure Date/Time fields in increments of quarters.
+Asset Installation Date: 11/01/2009
+Failure Date/Time: 12/14/2010
+4
+ mm 
+ month 
+ DATEDIFF('month', [Air Cooled Heat Exchanger].[Asset Installation Date], [Failure].[Failure Date/Time])Displays the difference in months between the dates stored on the Asset Installation Date and Failure Date/time fields.
+Asset Installation Date: 11/01/2009
+Failure Date/Time: 12/14/2010
+13
+ ww 
+ week 
+ DATEDIFF('week', [Air Cooled Heat Exchanger].[Asset Installation Date], [Failure].[Failure Date/Time])Displays the difference in weeks between the dates stored on the Asset Installation Date and Failure Date/Time fields.
+Asset Installation Date: 11/01/2009
+Failure Date/Time: 12/14/2010
+58
+ dd 
+day
+ dw 
+dy
+ dayofyear 
+ DATEDIFF('dd', [Air Cooled Heat Exchanger].[Asset Installation Date], [Failure].[Failure Date/Time])Displays the difference in days between the dates stored on the Asset Installation Date and Failure Date/Time fields.
+Asset Installation Date: 11/01/2009
+Failure Date/Time: 12/14/2010
+409
+ hh 
+ hour 
+ DATEDIFF('hour', [Air Cooled Heat Exchanger].[Asset Installation Date], [Failure].[Failure Date/Time])Displays the difference in hours between the dates stored on the Asset Installation Date and Failure Date/Time fields.
+Asset Installation Date: 11/01/2009
+Failure Date/Time: 12/14/2010
+9816
+ mi 
+ minute 
+ DATEDIFF('mi', [Air Cooled Heat Exchanger].[Asset Installation Date], [Failure].[Failure Date/Time])Displays the difference in minutes between the dates stored on the Asset Installation Date and Failure Date/Time fields.
+Asset Installation Date: 11/01/2009
+Failure Date/Time: 12/14/2010
+588,960
+ ss 
+ second 
+ DATEDIFF('second', [Air Cooled Heat Exchanger].[Asset Installation Date], [Failure].[Failure Date/Time])Displays the difference in seconds between the dates stored on the Asset Installation Date and Failure Date/Time fields.
+Asset Installation Date: 11/01/2009
+Failure Date/Time: 12/14/2010
+35,337,600
+
+Example: TO_DATE (Oracle Only) 
+Suppose you want to convert the values on the Asset Service field in Air Cooled Heat Exchanger records to dates. For example, the values stored on the Asset Service field look something like the following: 11012009. You want to view this number in date format, like this: 11/01/2009.
+In this case, you might configure a query on the Air Cooled Heat Exchanger family, and add the Asset ID, Asset Description, and Asset Service (Date) fields to the query.
+In this example, to return the value on the Asset Service field formatted as a date, you would configure an expression using the TO DATE function. You would also configure the alias to indicate that the column returns the value on the Asset Service field as a date.
+In this case, the expression syntax is:
+TO DATE([Air Cooled Heat Exchanger].[Asset Service], 'MMDDYYYY')
+...where 'MMDDYYYY' corresponds to the order in which the values representing the month (MM), day (DD), and year (YYYY) appear on the Asset Service field. In other words, the values on the Asset Service field appear like this: 11012009, where 11 represents the month (MM), 01 represents the day (DD), and 2009 represents the year (YYYY).
+Note:  The format of the parameter shown above ('MMDDYYYY') is an example. You should format the parameter to match the values that you want to convert.
+Example: NEW_TIME 
+Suppose that times are stored in Air Cooled Heat Exchanger Records in Eastern Standard Time, and you want to convert the values to Pacific Standard Time. If Air Cooled Heat Exchanger records contain the Asset Installation Date field, you could do so using the NEW TIME function.
+You might configure a query on the Air Cooled Heat Exchanger family, and add the Asset ID, Asset Description, and Installation Date (PST) fields to the query.
+In this example, you would configure an expression using the NEW TIME function. You would also configure the alias to indicate that the column displays installation dates in Pacific standard time.
+The expression syntax is:
+NEW TIME([Air Cooled Heat Exchanger].[Asset Installation Date], 'EST', 'PST')
+The following table lists more examples of how you can use the NEW TIME function.
+
+ParameterDescriptionExampleStored ValueResult
+ AST 
+ ADT 
+Converts the stored time to Atlantic Standard or Daylight Time NEW TIME ([Air Cooled Heat Exchanger].[Asset Installation Date], 'EST', 'AST')Asset Installation Date (EST): 10/01/2009 4:00:00 P.M.Asset Installation Date (AST): 10/01/2009 5:00:00 P.M.
+ BST 
+ BDT 
+Converts the stored time to Bering Standard or Daylight Time. NEW TIME ([Air Cooled Heat Exchanger].[Asset Installation Date], 'EST', 'BST')Asset Installation Date (EST): 10/01/2009 4:00:00 P.M.Asset Installation Date (BST): 10/01/2009 9:00:00 A.M.
+ CST 
+ CDT 
+Converts the stored time to Central Standard or Daylight Time. NEW TIME ([Air Cooled Heat Exchanger].[Asset Installation Date], 'EST', 'CST')Asset Installation Date (EST): 10/01/2009 4:00:00 P.M.Asset Installation Date (CST): 10/01/2009 2:00:00 P.M.
+ EST 
+ EDT 
+Converts the stored time to Eastern Standard or Daylight Time. NEW TIME ([Air Cooled Heat Exchanger].[Asset Installation Date], 'EST', 'EST')Asset Installation Date (PST): 10/01/2009 1:00:00 P.M.Asset Installation Date (EST) 10/01/2009 4:00:00 P.M. GMT Converts the stored time to Greenwich Mean Time. NEW TIME ([Air Cooled Heat Exchanger].[Asset Installation Date], 'EST', 'GMT')Asset Installation Date (EST): 10/01/2009 4:00:00 P.M.Asset Installation Date (GMT): 10/01/2009 8:00:00 P.M.
+ HST 
+ HDT 
+Converts the stored time to Alaska-Hawaii Standard or Daylight Time. NEW TIME ([Air Cooled Heat Exchanger].[Asset Installation Date], 'EST', 'HST')Asset Installation Date (EST): 10/01/2009 4:00:00 P.M.Asset Installation Date (HST): 10/01/2009 10:00:00 A.M.
+ MST 
+ MDT 
+Converts the stored time to Mountain Standard or Daylight Time. NEW TIME ([Air Cooled Heat Exchanger].[Asset Installation Date], 'EST', 'MST')Asset Installation Date (EST): 10/01/2009 4:00:00 P.M.Asset Installation Date (MST): 10/01/2009 2:00:00 P.M. NST Converts the stored time to Newfoundland Standard Time. NEW TIME ([Air Cooled Heat Exchanger].[Asset Installation Date], 'EST', 'NST')Asset Installation Date (EST): 10/01/2009 4:00:00 P.M.Asset Installation Date (NST): 10/01/2009 5:30:00 P.M.
+ PST 
+ PDT 
+Converts the stored time to Pacific Standard or Daylight Time. NEW TIME ([Air Cooled Heat Exchanger].[Asset Installation Date], 'EST', 'PST')Asset Installation Date (EST): 10/01/2009 4:00:00 P.M.Asset Installation Date (PST): 10/01/2009 1:00:00 P.M.
+ YST 
+ YDT 
+Converts the stored time to Yukon Standard or Daylight Time. NEW TIME ([Air Cooled Heat Exchanger].[Asset Installation Date], 'EST', 'YST')Asset Installation Date (EST): 10/01/2009 4:00:00 P.M.Asset Installation Date (YST): 10/01/2009 11:00:00 A.M.
+
+Example: NVL (Oracle Only) 
+Suppose that you want to see the serial number of the air cooled heat exchangers in your facility even if the Asset Serial Number field in the Air Cooled Heat Exchanger records is empty, and if the Asset Serial Number field is empty, you want to see the value Not Defined.
+In this case, you might configure a query on the Air Cooled Heat Exchanger family, and add the Asset ID, Asset Description, and Serial Numbers (ALL) fields to the query.
+In this example, you would configure an expression using the NVL function. You would also configure the alias to indicate that the column returns serial numbers.
+In this case, the expression syntax is:
+NVL([Air Cooled Heat Exchanger].[Asset Serial Number], 'Not Defined')
+...where Not Defined is the value that will appear where a null value is found on the Asset Serial Number field in the Air Cooled Heat Exchanger records.
+Example: ISNULL (SQL Only) 
+Suppose that you want to see the installation date of the shell and tube heat exchangers in your facility even if the Asset Installation Date field in the Shell and Tube Heat Exchanger records is empty, and if the Asset Installation Date field is empty, you want to show the value Not Installed.
+In this case, you might configure a query on the Shell and Tube Heat Exchanger family, and add the Asset ID, Asset Description, and Installation Dates (ALL) fields to the query.
+In this example, you would configure an expression using the ISNULL function. You would also configure the alias to indicate that the column returns the installation dates.
+In this case, the expression syntax is:
+IsNull([Shell and Tube Heat Exchanger].[Asset Installation Date], 'Not Installed')
+...where Not Installed is the value that will appear where a null value is found on the Asset Installation Date field in the Shell and Tube Heat Exchanger records.
+Example: ROUND (Oracle Only) 
+Suppose that you want to see the values on the As Left fields for the analyzer instruments in your facility rounded to two decimal places. If all Analyzer Calibration records contain the As Left field, you can do so using the ROUND function.
+You might configure a query on the Analyzer Calibration family, and add the Analyzer ID, Calibration Date, and As Left (rounded) fields to the query.
+In this example, you would configure an expression using the ROUND function. You would also configure the alias to indicate that the column displays the rounded as left values.
+The expression syntax is:
+ROUND([Analyzer Calibration].[As Left], '2')
+...where 2 is the number of decimal places to which the values will be rounded in the results.
+Example: TRUNC (Oracle Only) 
+Suppose that you want to see the number of months between when the air cooled heat exchangers were installed and when they failed for the first time, and you want to view that number in a truncated form. For example, instead of seeing the number of months in the format 3.33333, you want to see only 3.
+You might configure a query on the Air Cooled Heat Exchanger and Failure families, joined via the Asset Has Failure relationship, and add the Asset ID, Asset Description, Asset Installation Date, Failure ID, Failure Date/Time, and Interval in Months fields to the query.
+In this example, you would configure an expression using the TRUNC function and the MONTHS BETWEEN function. You would also configure the alias to indicate that the column returns the interval between installation and failure.
+The expression syntax is:
+TRUNC(MONTHS BETWEEN([Failure].[Failure Date/Time], 
+[Air Cooled Heat Exchanger].[Asset Installation Date]))
+Example: DATENAME 
+Suppose that you want to see the name of the month in which the shell and tube heat exchangers were installed. Instead of 11, you want to see November, and you do not want to return the year or day in the query results. If all Shell and Tube Heat Exchanger records in your database contain an Asset Installation Date field, and the values are stored in the format mm/dd/yyyy (e.g., 11/01/2009), you could do so using the DATENAME function.
+You might configure a query on the Shell and Tube Heat Exchanger family, and add the Asset ID, Asset Description, and Installed by Month fields to the query.
+In this example, you would configure an expression using the DATENAME function. You would also configure the alias to indicate that the results display the month.
+The expression syntax is:
+DATENAME('mm', [Shell and Tube Heat Exchanger].[Asset Installation Date])
+...where mm indicates the part of the date (i.e., month) that you want to convert to its character format.
+The following table lists more examples of how you can use the DATENAME function.
+
+ParameterDescriptionExampleStored ValueResult
+ yy 
+ year 
+Displays a number representing the year from a stored date value. DATENAME('year', [Shell and Tube Heat Exchanger].[Asset Installation Date])11/01/20092009
+ qq 
+ quarter 
+Displays a number representing the quarter of the year based on a stored date value. DATENAME('qq', [Shell and Tube Heat Exchanger].[Asset Installation Date])11/01/20094
+ mm 
+ month 
+Displays the month from a stored date value. DATENAME('mm', [Shell and Tube Heat Exchanger].[Asset Installation Date])11/01/2009 November  ww Displays a number representing the week of the month based on a stored date value. DATENAME('ww', [Shell and Tube Heat Exchanger].[Asset Installation Date])11/01/20091
+ dd 
+day
+Displays a number representing the day from a stored date value. DATENAME('day', [Shell and Tube Heat Exchanger].[Asset Installation Date])11/01/200901 dw Displays the day of the week based on a stored date value. DATENAME('dw', [Shell and Tube Heat Exchanger].[Asset Installation Date])11/01/2009 Sunday 
+dy
+ dayofyear 
+Displays a number representing the day of the year based on a stored date value. DATENAME('dayofyear', [Shell and Tube Heat Exchanger].[Asset Installation Date])11/01/2009305
+
+Example: DATEPART 
+Suppose that you want to see the year in which the shell and tube heat exchangers were installed in your facility. If all Shell and Tube Heat Exchanger records in your database contain an Asset Installation Date field, and the values are stored in the format mm/dd/yyyy (e.g., 11/01/2009), you could do so using the DATEPART function.
+You might configure a query on the Shell and Tube Heat Exchanger family, and add the Asset ID, Asset Description, and Installation Year fields to the query.
+In this example, you would configure an expression using the DATEPART function. You would also configure the alias to indicate that the column displays the installation year.
+The expression syntax is:
+DATEPART('year', [Shell and Tube Heat Exchanger].[Asset Installation Date])
+...where year is the portion of the date value that you want to view.
+
+ParameterDescriptionExampleStored ValueResult
+ yy 
+ year 
+Displays a number representing the year from a stored date value. DATEPART('yy', [Shell and Tube Heat Exchanger].[Asset Installation Date])11/01/20092009
+ qq 
+ quarter 
+Displays a number representing the quarter of the year based on a stored date value. DATEPART('quarter', [Shell and Tube Heat Exchanger].[Asset Installation Date])11/01/20094
+ mm 
+ month 
+Displays a number representing the month from a stored date value. DATEPART('mm', [Shell and Tube Heat Exchanger].[Asset Installation Date])11/01/200911
+ ww 
+ week 
+Displays a number representing the week of the month based on a stored date value. DATEPART('week', [Shell and Tube Heat Exchanger].[Asset Installation Date])11/01/20091
+ dd 
+day
+Displays a number representing the day from a stored date value. DATEPART('dd', [Shell and Tube Heat Exchanger].[Asset Installation Date])11/01/20091
+ dw 
+Displays a number representing the day of the week based on a stored date value. DATEPART('dw', [Shell and Tube Heat Exchanger].[Asset Installation Date])11/01/20091 (i.e., Sunday)
+dy
+ dayofyear 
+Displays a number representing the day of the year based on a stored date value. DATEPART('dy', [Shell and Tube Heat Exchanger].[Asset Installation Date])11/01/2009305
+
+About Number/Mathematical Functions
+A number/mathematical function is used to manipulate values returned on numeric fields.
+The following table provides a list of the number/mathematical functions that you can use in queries. The Oracle Function column contains the function you will need to use if you are using an Oracle schema. The SQL Server Function column contains the function you will need to use if you are using a SQL Server database.
+In some cases, a function cannot be expressed on both an Oracle schema and a SQL Server database. In these cases, the Oracle Function or SQL Server Function column contains an empty, shaded cell.
+DescriptionOracle FunctionSQL Server FunctionAbsolute value ABS  ABS Arc cosine ACOS  ACOS Arc sine ASIN  ASIN Arc tangent of n ATAN  ATAN Arc tangent of n and m ATAN 2
+ ATAN 2
+Smallest integer>=value CEIL  CEILING Cosine COS  COS Hyperbolic cosine COSH  COT Exponential value EXP  EXP Largest integer<=value FLOOR  FLOOR Natural logarithm LN  LOG Logarithm, any base LOG(N)  LOG(N) Logarithm, base 10 LOG(10) LOG 10
+Modulus (remainder)MODUSE MODULO(%) OPERATORPower POWER  POWER Random number  RAND Round ROUND  ROUND Sign of number SIGN  SIGN Sine SIN  SIN Hyperbolic sine SINH NoneSquare root SQRT  SQRT Tangent TAN  TAN Hyperbolic tangent TANH NoneTruncate TRUNC NoneLargest number in list GREATEST NoneSmallest number in list LEAST NoneConvert number if null NVL  ISNULL 
+About the DECODE Function
+A DECODE function is used to evaluate a value in the query results and, based on that evaluation, trigger an action or return a different value.
+Note:  The DECODE function can be used for Oracle schemas only.
+Example: DECODE Function
+Suppose that, in your organization, you have open and closed work history events. Each Work History record contains an Order System Status field, which is used to record the status of that work history event. You want to see how many open work history events you have and how many closed work history events you have. Instead of the stored values of CLSD TECO or OPEN, however, you want to see the values Closed or Open in your query results.
+In addition, you are concerned that not all Work History records contain a value in the Order System Status field. You also want to see in your query results which records do not have a value in this field so that you can update those records.
+In this case, you might configure a query on the Work History family, and then add the Expr and Order System Status fields to the query.
+In this example, to return the status of each work history event as Closed, Open, or No Status (meaning that the record does not contain a value in the Order System Status field), you can configure an expression using the DECODE function.
+In this case, the expression syntax is:
+Decode([Work History].[Order System Status], 
+'CLSD TECO', 'Closed', 'OPEN', 'Open', 'No Status')
+This syntax indicates that for Work History records that contain the value CLSD TECO in the Order System Status field, you want to return the value Closed. For those records with the value OPEN in the Order System Status field, you want to return the value Open. For records where the Order System Status field is empty, you want to return the value No Status.
+You would also add a COUNT function on the Order System Status field so that you can see the number of work history events that fall into each category.
+Other possible uses include:
+You want to review the types of maintenance activities that are being performed in your plant and the total number of failures that resulted in each type of activity. Users can enter any value they choose into a field that tracks maintenance activities, so you know that your users are using different terminology to mean the same thing. For example, to indicate that they replaced broken components, different users might enter replace, replacing, or replacement. You can write a DECODE statement to indicate that the values replace, replacing, and replacement should return the value Replace in the query results.Members of management want to investigate failures that resulted in a failure cost of $50,000 or more. You can write a DECODE statement to indicate that failures with a failure cost greater than or equal to $50,000 should return the value Please Investigate in the query results. Other failures should return the value OK in the query results.
+Additional Meta-SQL Functions
+Meta-SQL constructs are used in functions that pass SQL strings. 
+The following table provides a list of Meta-SQL functions that you can use in query expressions in GE Digital APM.
+Note:  All date and time functions listed in this table operate on UTC.
+Description
+Meta-SQL Function
+ConstructionChange a number or date value to a character value.CastChar 
+
+CastChar(expression [, length]) 
+
+
+Expression: Column or literal of type character, number or datetime. 
+
+Length: Maximum (e.g., truncated) length of resulting string. No padding will occur.
+Change a character string to a number value.CastNum CastNum(expression)
+
+Expression: Column or literal of type character. Change a character value to a datetime value. Date literals must be of the format YYYY-MM-DD. CastDate 
+CastDate(expression)
+
+Expression: Column or literal of type character. 
+Find the index (numbering from 1) of one string in another string. If the index is not found, the value 0 is returned. IndexOf 
+
+IndexOf(lookin, findin [, startat])
+
+
+Lookin: String in which to find a value. 
+
+Findin: String to look for within lookin. 
+
+Startat: Starting location for the search. Must be 1 or greater. 
+Return characters from expression starting in position startat (numbering from 1) and optionally going for length characters. Substring 
+
+Substring(expression, startat [, length])
+
+
+Expression: String from which characters should be returned.
+
+Startat: Starting location for extract. Must be 1 or greater.
+
+Length: Number of characters to return.
+Remove leading spaces from a character value. LTrim 
+
+LTrim(expression)
+
+
+Expression: Character value. 
+Remove trailing spaces from a character value. RTrim 
+
+RTrim(expression)
+
+
+Expression: Character value. 
+Return the 4-digit year of a date value. Year 
+
+Year(expression)
+
+
+Expression: Datetime value.
+Return the 1- or 2-digit day of the month of a date value. Month 
+
+Month(expression)
+
+
+Expression: Datetime value.
+Return the datetime of the server where the database resides. This method must return UTC, because all dates in the GE Digital APM database are UTC.Day
+
+Day(expression)
+
+
+Expression: Datetime value.
+Return the local time of the database server.SysDate 
+SysDate
+Return the date of the last day of the month for the argument expression.LastDate 
+LastDate(expression)
+
+Expression: Datetime value.
+Return the remainder from a division operation.Note: In an Oracle schema, floating point modulus operation is supported (for example, 10.1 mod 3 returns 1.1). However, if you are using a SQL Server database, floating point modulus operation is not supported. In addition, the % operator can be added to SQL queries and MOD function can be added to Oracle queries.ModulusModulus(expression1, expression2)Expression1, expression2:  Integer value.Evaluate one or more When expressions and return the appropriate Then expression. The Else condition is optional. The End statement is required. This function returns the datatype thenexpression. Note: This function is not a selectable option in the Design workspace, but you can enter the function directly in the SQL workspace.Case 
+
+Case evalexpression When whenexpression Then thenexpression [When whenexpression Then thenexpression] [Else thenexpression] End
+
+
+Evalexpression: Any column or literal value. 
+
+Whenexpression: Must be same datatype of evalexpression. 
+
+Thenexpression: All must be the same datatype. Does not have to be the same datatype as evalexpression or whenexpression.
+
+Modulus Function (SQL Only)
+SELECT (CONVERT('int', [AQA REG All Fld Types].[ARAQA_REG_ALL_FLD_TY_NUMER_NBR]) % 2) "Modulus2"
+, Modulus(CONVERT('int', [AQA REG All Fld Types].[ARAQA_REG_ALL_FLD_TY_NUMER_NBR]), 3) "Modulus3"
+FROM [AQA REG All Fld Types]
+
+Modulus Function (Oracle Only)
+SELECT  MOD(ROUND([AQA REG All Fld Types].[ARAQA_REG_ALL_FLD_TY_NUMER_NBR]), 2) "Modulus2"
+, Modulus(ROUND([AQA REG All Fld Types].[ARAQA_REG_ALL_FLD_TY_NUMER_NBR]), 3) "Modulus3"
+FROM [AQA REG All Fld Types]
+
+About Adding Hyperlinks to a Query
+For each column in a query, you can configure one or more URLs to display as hyperlinks in the query results. When a user runs the query, the GE Digital APM system will build the URLs as needed, passing data from the query results into the URL parameters if necessary, and will display in the query results hyperlinks that the user can select to access the associated feature or perform the associated function.
+For example, you might define a URL on a field to an external website. When a user runs the query, the GE Digital APM system will build a hyperlink from that URL and display the link to the user in the query results. The user will be able to select the hyperlink to open the website in a new browser tab.
+If you configure only one URL for a field, when you run the query, that URL will be used to build a single hyperlink in that cell of the query results. If you have not modified the Field cell, whatever values are found in the database for that column will serve as the text for each hyperlink. For example, if an Asset ID column contains a URL to open a record in the Record Manager, when you run the query, the actual Asset IDs retrieved by the GE Digital APM system will appear as hyperlinks in the results.
+
+
+
+
+
+On this pageAbout Manual JoinsAbout GE Digital APM Inner JoinsAbout GE Digital APM Outer JoinsWhat is a Function?About the GROUP BY FunctionAbout Aggregate and Analytic FunctionsAbout Character FunctionsAbout Conversion FunctionsAbout Date FunctionsAbout Number/Mathematical FunctionsAbout the DECODE FunctionAdditional Meta-SQL FunctionsAbout Adding Hyperlinks to a Query
+
+
+
+
+
+
+
+
+

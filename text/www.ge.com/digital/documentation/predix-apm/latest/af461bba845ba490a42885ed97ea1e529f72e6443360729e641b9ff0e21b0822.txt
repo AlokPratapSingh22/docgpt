@@ -1,0 +1,103 @@
+
+
+
+Fourth Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Record ManagerOverview
+Manage Records
+Manage Linked Records
+Manage Bulk Data Form 
+Manage Reference Documents
+Manage Conditional Alerts
+Reference
+Release NotesFourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Third Quarter of 2019
+First Quarter of 2019
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Record Manager
+Release Notes
+Fourth Quarter of 2021
+
+
+
+
+
+
+
+Fourth Quarter of 2021Release Date: December 17, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when you accessed a record using a URL with the format #record-manager/entity_key?datasheetid=ID, the record was displayed using the default datasheet instead of the datasheet with the specified ID. This issue has been resolved.DE167133Previously, when you imported an existing system code reference behaviour on an existing family, and attempted to save the data records, an error occurred. This issue has been resolved.DE166838
+Release Date: October 8, 2021This topic provides a list of product changes released for this module on this date.
+Table 2. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo improve functionality, you can now add an email message (.msg) file as a reference document to a record, from the Add Reference Document window.US499631To improve usability, you can now specify new or updated field values in the URL that is used to open an existing record for editing in Record Manager.Note: The new or updated field values specified in the URL are saved only when you select Save in the Record datasheet.US489063
+Table 3. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, Reference Document features that were not available in Predix APM were accessible in the user interface. This issue has been resolved. Now, in Reference Document Server Credentials, a note that links to external UNC folder paths is not supported, and you are unable to add new shared folders using the user interface. Additionally, in the Reference Document datasheet, the Edit Document Path window now displays only the options that are applicable in Predix APM.US497913Previously, when you accessed records in the Bulk Datasheet view, you were able to edit fields that were disabled by a rule, for example, fields in approved Calibration Events. This issue has been resolved.DE162849Previously, when you manually entered a date in the measurement date field in the two-digit format, (for example, 19 instead of 2019), and then saved the record, the date was updated to the current date and saved. This issue has been resolved.DE159595Previously, when creating a new Conditional Alert record, if you selected an email recipient from the Fixed Distribution List drop-down menu and saved the record, Conditional Alert email was not sent to the recipient. This issue has been resolved.DE158319Previously, when a conditional alert email was generated, the timestamp did not appear in the email. This issue has been resolved.DE158318Previously, when a conditional alert was executed, the alert message was blank in the following scenarios: The conditional alert was associated with a query.The query contained a subquery. This issue has been resolved.DE158316Previously, if you used the recent browser versions to access the GE Digital APM system, and then exported a datasheet or result grid to PDF, the PDF print was broken and resulted in a blank output. This issue has been resolved.DE158106Previously, when you attempted to configure the Reference Document Server credentials, and if you assigned a large number of Sites, Groups, or Roles, or if the Shared Directory path was longer than 100 characters, an error occurred, and you could not save the record. This issue has been resolved.DE157810Previously, the documentation of the URLs to create and open records in Record Manager was incorrect. This issue has been resolved.DE156928Previously, in the Reference Documents list that was displayed in an analysis (for example, in a Root Cause Analysis), the Last Updated Date did not use the correct display format for the user's culture. This issue has been resolved.DE156923Previously, in a datasheet, when the Turn On Help Text feature was enabled, the multi value fields did not display the help text correctly. This issue has been resolved.DE153621Previously, when you displayed records in a Bulk Data Form and selected a Datasheet that used Column layout, the default column captions were displayed instead of the captions defined in the datasheet layout. This issue has been resolved.DE150303Previously, if you deleted or inactivated a predefined value used in the drop-down list for a field, and you viewed an existing record using that value, a null value was displayed. This issue has been resolved. Now inactive is appended to the displayed value and you can no longer select the inactive value when editing the field.DE137420
+Table 4. Obsolete Features
+The following features are no longer available.
+DescriptionTracking IDThe following fields have been removed from the Conditional Alerts datasheet:Email OriginEmail Subject LineUS501541
+
+
+
+
+
+On this pageRelease Date: December 17, 2021Release Date: October 8, 2021
+
+
+
+
+
+
+
+
+

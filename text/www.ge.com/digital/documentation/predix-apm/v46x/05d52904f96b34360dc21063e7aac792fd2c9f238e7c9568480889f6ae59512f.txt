@@ -1,0 +1,97 @@
+
+
+
+Reliability Growth: Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability GrowthReliability Growth: Overview
+Reliability Growth: Workflow
+Reliability Growth Analyses
+Measurement Data
+
+
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Reliability Growth
+Reliability Growth: Overview
+
+
+
+
+
+
+
+Reliability Growth: OverviewOverview of Reliabililty Growth AnalysisReliability Analytics
+The Reliability Analytics module provides a collection of tools that apply reliability engineering principles to help you make tactical (short-term) and strategic (long-term) decisions for maintenance and operational equipment management activities. It also provides: A means for analyzing historical failure data to identify trends and predict future failures.A mechanism for simulating what if scenarios regarding the reliability of a system to determine if a new or modified strategy will be effective. The Reliability Analytics module provides the following types of tools: Production AnalysisSystem Reliability AnalysisSpares AnalysisReliability Distribution AnalysisProbability Distribution AnalysisReliability Growth AnalysisAutomation Rules
+                                Each tool provides a unique set of features that allow you to analyze data to develop strategies to improve reliability.
+Reliability Growth Analysis
+Reliability Growth Analysis is a tool that indicates whether your data measurements are random or follow a trend. After analyzing the analysis, you will be able to make strategic decisions to determine if a new or modified strategy will be effective in improving your reliability.
+Reliability Growth Analysis WorkflowThis workflow provides the basic, high-level steps for developing Reliability Growth Analysis. The steps and links in this workflow do not necessarily reference every possible procedure.
+
+Collect data
+ for the elements that you want to analyze. Create a new Reliability Growth Analysis from an existing query, dataset, or manually entered data. For an analysis from an existing query or dataset, you can create the analysis using Failure Dates or Cumulative Operating Time. 
+Evaluate the results in the following ways using the features of the Reliability Growth Analysis tool. Determine whether the data follows a trend using the Goodness of Fit test.Predict how the data will look in the future by using the extrapolation tool.Determine at what point in time trends in the data changed in the data by using the segment tool.
+
+
+
+
+
+On this pageOverview of Reliabililty Growth AnalysisReliability Growth Analysis Workflow
+
+
+
+
+
+
+
+
+

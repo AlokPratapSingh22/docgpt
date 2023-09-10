@@ -1,0 +1,168 @@
+
+
+
+SmartSignal Templates | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage TemplatesTemplates
+Analysis Templates
+SmartSignal Templates
+Template Sharing
+
+
+Analysis Troubleshooting
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Manage Templates
+SmartSignal Templates
+
+
+
+
+
+
+
+SmartSignal TemplatesEnable Y-Axis Ranges for SmartSignal ChartsYou can enable y-axis ranges and view y-axis min and max values on SmartSignal charts in a view. You can also set the limits on the analytics tags based on the modes. These limits are used when a mode tag is visualized in analysis.Before You Begin
+You must set and ingest a chart limit for the relevant tags to view a chart using chart limits.You must set the options on your Analysis View to view Chart Limits or Autoscaling for your SmartSignal charts. The default option is to auto scale the charts, however, you can override this setting using the user preferences.
+About This TaskAfter you plot your charts in SmartSignal, you can view the chart Y max and Y min for a tag. You can also view the Y-Min and Y-Max values for the tags when you hover over the tag in the tag browser.The following definitions may be helpful when selecting y-axis ranges:Chart LimitThe visual range of values that are plotted by default when the tag is plotted on a chart. If the data is beyond the range, you need to use the pan options on the chart to view the data which is outside the range on the chart. If the threshold falls inside the chart limit, the threshold line is visible on the chart. If the threshold falls outside of the chart limit, the threshold line will not be visible on the chart.Auto ScalingThe default setting for viewing SmartSignal charts. This setting allows you to view the chart using the data present on the selected date and time range.ProcedureNavigate to an analysis view using one of the following methods:
+MethodActionNavigate from a SmartSignal Alert
+In the module navigation menu, go to
+Alerts.Select an Alert Inbox filter, such as Unclaimed or SmartSignal.Select an alert from the Alert Inbox.In the details page, select an Analysis View chart.Select  to expand the Tag Panel.
+Navigate to a SmartSignal Ad Hoc Analysis
+In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Select Add Card, and then select SmartSignal Card.Enter a name for the card in the Name box, and then select Create.Select  to expand the Tag Panel.
+
+Use one of the following methods to enable chart limits or autoscaling:
+MethodActionUse Chart Limits
+Select , and then select Use Chart Limits.
+If the tag that is plotted in the chart belongs to a mode, and the mode level Y-Min and Y-Max values are set, then the actual chart will scale using these values.If the mode level limits are not set, but the Y-Min and Y-Max are defined at the analytic tag level, then those settings are used to plot the chart.If none of the settings are set, then the charts will auto scale for that tag.
+If the analytic tag have the Y-Min and Y-Max values configured, the residual charts for each tag will always use these values. If the analytic tag does not have the limits configured, the residual chart will auto scale in this option.
+Use Auto Scaling
+Select , and then select a date in the calendars, select a preset date range, or enter a date range. Select , and then select Use Auto Scaling.
+
+The Y-axes for the plotted charts change to match your selections.Hover over a tag in the Plotted Tags section to view the Chart Y Max and Chart Y Min values.Enable Point Mode for SmartSignal CardsYou can enable point mode for SmartSignal cards, allowing the x-axis to display the number of data points selected instead of a date-time range.About This Task
+When you enable point mode, the date on the calendar becomes the starting point. You can enter the number of data points for the charts in the card, and select the direction of the points from the starting date.Important: The number of data points that can be plotted to a chart is limited to 4000.
+Plotted data points on a chart are connected in sequential order. Gaps are shown only when there is data that does not reflect a number.Tip:
+When a .csv is exported, the data is generated for the data points plotted.You can save the view as a template.
+
+ProcedureNavigate to an analysis view using one of the following methods:
+MethodActionNavigate from a SmartSignal Alert
+In the module navigation menu, go to
+Alerts.Select an Alert Inbox filter, such as Unclaimed, or SmartSignal.Select an Alert from the Alert Inbox.In the details page, select an Analysis View chart.Select  to expand the Tag Panel.
+Navigate to a SmartSignal Ad Hoc Analysis
+In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Select Add Card, and then select SmartSignal Card.Enter a name for the card in the Name box, and then select Create.Select  to expand the Tag Panel.Plot a model or set of tags.
+
+Optional: Change the date range if necessary.Select , and then select Enable Point Mode for SmartSignal Cards.The date on the calendar becomes the starting point for the data. A new Direction drop-down list box and a new Data Point box appear.Select Forward or Backward in the Direction drop-down list box to configure the direction of the data points when they are plotted.Enter the number of points you want to plot for each chart in the Data Point box, and then select Apply.The charts on the SmartSignal card change to reflect your choices.Enable Zoom Across all Charts in Point Mode for SmartSignal CardsYou can now zoom across all the charts in points mode on a SmartSignal Card.ProcedureNavigate to an analysis view using one of the following methods:
+MethodActionNavigate from a SmartSignal Alert
+In the Applications menu, select Tools > Alerts.Select an Alert Inbox filter, such as Unclaimed or SmartSignal.Select an alert from the Alert Inbox.In the details page, select an Analysis View chart.Select  to expand the Tag Panel.
+Navigate to a SmartSignal Ad Hoc Analysis
+In the Applications menu, select Essentials > Analysis.Use the Context Browser to select an asset context.Select Add Card, and then select SmartSignal Card.Enter a name for the card in the Name box, and then select Create.Select  to expand the Tag Panel.Plot a mode or set of tags. 
+
+Optional: Change the date range if necessary.Select , and then select Enable Point Mode for SmartSignal Cards.The date on the calendar becomes the starting point for the data. A new Direction drop-down list box and a new Data Point box appear.Select Forward or Backward in the Direction drop-down list box to configure the direction of the data points when they are plotted.Enter the number of points you want to plot for each chart in the Data Point box, and then select Apply.Select  on any of the charts to zoom into the charts in X, Y, or XY mode.
+When you zoom on the charts, the chart will zoom into the points selected on the chart and optionally the Y axis range if you have selected an XY zoom.All the other charts in the card will also zoom into the same points and the X axis on the charts will show the point numbers that you have zoomed into.When you reset the zoom on the charts, all the charts will return to their normal points range and values as they were before you zoomed into the charts.Note: This feature is only used to zoom and view the data points on the chart. It does not fetch any new data as all the data points are already visualized on the charts. 
+Enable SmartSignal Marker VisibilityYou can enable or disable the visibility of SmartSignal markers on SmartSignal charts.About This Task
+You can enable or disable marker type (rule) visibility within SmartSignal charts. You cannot change the marker type or configuration settings in this window.
+ProcedureIn the module navigation menu, navigate to My Preferences.Select the SmartSignal Chart and Marker Settings tab.The Marker Visibility table appears.Switch the Enable toggle next to a rule to enable it.The SmartSignal charts reflect the changes made.Display SmartSignal Marker SettingsYou can display the configuration settings for SmartSignal marker visibility.About This Task
+SmartSignal marker visibility is configured in My Preferences. See Enable SmartSignal Marker Visibility. You can display a read-only version of the configuration for SmartSignal markers and time series data from an Analysis View.
+SmartSignal Markers are the symbols shown above and below each SmartSignal chart.Note: For more information on the configurations that determine the visibility of the SmartSignal markers, refer to the SmartSignal Marker Visibility Configurations topic.
+ProcedureNavigate to an Analysis View using one of the following methods:
+MethodActionNavigate from a SmartSignal Alert
+In the module navigation menu, go to
+Alerts.Select an Alert Inbox filter, such as Unclaimed, or SmartSignal.Select an Alert from the Alert Inbox.In the details page, select an Analysis View chart.Select  to expand the Tag Panel.
+Navigate to a SmartSignal Ad Hoc Analysis
+In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.Select Add Card, and then select SmartSignal Card.Enter a name for the card in the Name box, and then select Create.Select  to expand the Tag Panel.Plot a model or set of tags.
+
+Select , and then select Show SmartSignal Marker Visibility.The read-only SmartSignal Marker Visibility window appears, displaying the current visibility configuration for SmartSignal markers and time series data. Visibility cannot be changed in this window.Enable Skip Lazy Loading for SmartSignal Charts About This Task
+You can enable or disable the option to skip lazy loading for SmartSignal charts.
+ProcedureIn the module navigation menu, navigate to My Preferences.Select the Chart and Marker Settings tab, and then go to the Plotting Preferences section.Select the check box corresponding to Skip Lazy Loading for SmartSignal Charts .The SmartSignal charts reflect the changes made.Note: The chart load indicator on the SmartSignal template is not displayed when Skip Lazy Loading for SmartSignal Charts  option is enabled. Enable Filtering for SmartSignal Charts by ThresholdYou can filter the tag data on a SmartSignal chart by threshold.About This Task
+Filtering the data by threshold allows you to view the data in the mode that the tag belongs to. This is helpful for trending data.
+Once you enable filtering by threshold, you can save the setting to an analysis template.
+ProcedureIn the module navigation menu, select Tenant Preferences.Select the SmartSignal Marker Configuration tab.Switch the Filter Chart Data by Mode Thresholds toggle to enable this option.Delete all Charts on a SmartSignal CardYou can delete all charts on a SmartSignal card and plot new tags on the card.About This Task
+Deleting all the tags on a card allows you to reset your analysis quickly and start over again with a new set of tags. In case the current set of tags do not allow you to progress on the analysis of an issue, this feature allows you to delete the current tags and plot new tags on the card to allow you to progress on the analysis of the issue. 
+ProcedureNavigate to a SmartSignal card using one of the following methods:
+MethodActionNavigate from an Analysis template
+In the module navigation menu, go to the HEALTH section, and then select Analysis..Use the Context Browser to select an asset context. In the View Selector, select an existing analysis template, New Time Series Analysis template, or New Event Frame Analysis template. Navigate to an existing SmartSignal card.
+Navigate from an Alert
+In the Applications menu, select Tools > Alerts. In the Alert Inbox filter select SmartSignal.Select an Alert from the Alert Inbox.In the details page, select an Analysis View chart.Select an existing SmartSignal Card.
+
+Select  on the SmartSignal card.You are prompted to confirm if you want to delete all the charts.Select OK.All the charts in the SmartSignal card are deleted and the tags are removed from the tag browser.ResultsYou can now plot new tags on the SmartSignal card and continue analysis.Create an Event Frame Analysis TemplateThis topic describes how to create an Event Frame Analysis template in the Analysis module. The Event Frame Analysis template can be used to visualize the analytics tag information related to event frames detected by the SmartSignal analytics that are deployed on an asset. This allows the visualization of the event frame data for the tags on an asset.Before You Begin
+You must have access to the Analysis module.SmartSignal Analytics must be deployed on the asset.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select the asset on which SmartSignal Analytics is deployed.In the Template drop-down list box, select New Event Frame Analysis.Select the events that you want to visualize.
+The events of the selected type appear in a carousel, along with the following information for each event:Event Type NameEvent Start Date and TimeEvent Duration
+Tip: You can filter the events based on their end date and time. Additionally, you can specify the number of events that you want to appear.
+Select the layout in which you want the data to appear for the tags on the charts.
+LayoutDescriptionSide by SideThe events will be plotted side by side on a single chart for each tag, with the events separated by a gray bar. You can select a maximum of 8 events per analysis. This is the default option for visualizing events.OverlayThe events will be grouped by event type and plotted in overlay mode in the chart, with the events separated by a gray bar.
+In the carousel, select the events that you want to appear.A unique color is assigned to each selected event.Note:
+The colors assigned to the events indicate the events and tags in the Side by Side and Overlay modes, respectively. When the tags are plotted on the charts, the charts will display all the series that are enabled for you, including the following series:ActualEstimateSmoothed ActualSmoothed EstimateResidualSmoothed ResidualThe Event Frame Analysis template supports only SmartSignal cards. Therefore, you must not select the SmartSignal card.
+Tip: You can drag the tags or analytic modes to the chart and plot the tag data for the selected events.Save the template as a private or public template for later use, or associate it with an Alert.Switch from Default Analysis View to Event Frame AnalysisBefore You Begin
+You must have access to the Analysis module.SmartSignal Analytics must be deployed on the asset.
+About This TaskYou can now switch from a default Analysis view on a Smart Signal alert to an Event Frame Analysis view. This allows you to look at the data in terms of events, and not just in terms of time. This capability also allows you to quickly diagnose the issues and increase your efficiency in triaging the issues.ProcedureIn the module navigation menu, go to
+Alerts.Select an alert that has been generated by a Smart Signal analytic.Select the default analysis view to bring up the analysis view of all the tags that are contributing to the alert.Select , and then select Switch to Event Frame Analysis.A new section appears, displaying the all the tags that were plotted on the default analysis view in the Event Frame Analysis view.Select the events that you want to visualize.The events of the selected type appear in a carousel, along with the following information for each event:Event Type NameEvent Start Date and TimeEvent DurationTip: You can filter the events based on their end date and time. Additionally, you can specify the number of events that you want to appear.Select the layout in which you want the data to appear for the tags on the charts.
+LayoutDescriptionSide by SideThe events will be plotted side by side on a single chart for each tag, with the events separated by a gray bar. You can select a maximum of 8 events per analysis. This is the default option for visualizing events.OverlayThe events will be grouped by event type and plotted in overlay mode in the chart, with the events separated by a gray bar.
+In the carousel, select the events that you want to appear.A unique color is assigned to each selected event.Note:
+The colors assigned to the events indicate the events and tags in the Side by Side and Overlay modes respectively. When the tags are plotted on the charts, the charts will display all the series that are enabled for you, including the following series:ActualEstimateSmoothed ActualSmoothed EstimateResidualSmoothed ResidualThe Event Frame Analysis template supports only SmartSignal cards. Therefore, you must not select the SmartSignal card.
+Note: You can drag the tags or analytic modes to the chart and plot the tag data for the selected events.Optional: Add the mode tags to the view to complete your analysis.Compare Assets for Smart Signal Analytic TagsThis topic describes how to compare smart signal analytic tags across multiple assets to understand if an issue impacts a single asset or multiple related assets. This feature is not available on GovCloud.Before You BeginTo access this feature, the following conditions must be met:You must have access to the Analysis module.SmartSignal Analytics must be deployed on the asset.The same SmartSignal Analytics template must be deployed across all the assets.ProcedureSelect the default Analysis Template or an Analysis Template associated with the Alert that has been generated by a SmartSignal Analytic.All the tags that are associated with the Alert template appear in the Analysis view.In the SmartSignal card, select  to compare the plotted tags in the card with other assets.The Select Context window appears.Next to each asset that you want to compare against the asset in context, select .
+Note: You can select up to 5 assets.
+Select Open.A window appears asking if you want to compare similar tags for the selected assets on the plotted charts.Select Yes.All similar tags from the selected assets are plotted on the chart along with the original tag.ResultsThe actual value of the compared tag from the asset is plotted on the actual chart, and the compared residual from the asset is plotted on the residual plot. No markers are plotted on the charts from other assets. Each asset is allocated a random color, and all the tags from the asset has the same color. The tag register is updated to show the value of the tag, when you hover over the tag. The asset name appears for the compared assets in the tag register and not the actual or estimated values.You can also invoke the compare asset functionality from an ad hoc analysis template after you have plotted SmartSignal tags on a card.Note: You can also compare assets from the SmartSignal card and SmartSignal template, using  on the SmartSignal card and the tag browser of the SmartSignal template.Delete an Asset Added using Compare Asset FunctionalityYou can add multiple assets to an analysis view for assets that have SmartSignal analytics deployed. You can also remove assets from the compare mode to allow you to focus on a smaller set of assets or to add new assets for comparison.Before You BeginTo delete an asset from the analysis template, perform the following tasks:ProcedureIn the tag browser, hover over the asset that you want to delete.Next to each asset that you want to delete, select .A window appears asking you to confirm if you want to remove the asset from the comparison. Note: The window contains a check box that enables you to delete all the tags from the assets that are plotted in the charts. It is recommended that you select the check box to clean up the template.Select OK.The asset is removed from the tag browser. The charts are re-drawn with the tags from the remaining assets. You can temporarily mute the tags from an asset on the chart from the tag register.
+Related tasksEnable SmartSignal Marker Visibility
+
+
+
+
+On this pageEnable Y-Axis Ranges for SmartSignal ChartsEnable Point Mode for SmartSignal CardsEnable Zoom Across all Charts in Point Mode for SmartSignal CardsEnable SmartSignal Marker VisibilityDisplay SmartSignal Marker SettingsEnable Skip Lazy Loading for SmartSignal Charts Enable Filtering for SmartSignal Charts by ThresholdDelete all Charts on a SmartSignal CardCreate an Event Frame Analysis TemplateSwitch from Default Analysis View to Event Frame AnalysisCompare Assets for Smart Signal Analytic TagsDelete an Asset Added using Compare Asset Functionality
+
+
+
+
+
+
+
+
+

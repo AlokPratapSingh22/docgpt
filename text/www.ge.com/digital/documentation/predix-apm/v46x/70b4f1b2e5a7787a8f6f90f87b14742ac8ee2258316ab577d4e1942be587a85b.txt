@@ -1,0 +1,104 @@
+
+
+
+Third Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Third Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Release Notes
+Third Quarter of 2021
+
+
+
+
+
+
+
+Third Quarter of 2021Release Notes: September 24, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in alert to analysis flow, with pre-fetched data, the template did not display the correct UOM after changing the System of Measure. This issue has been resolved.DE164718Previously, when you hovered over the Chart Settings button, the tooltip text remained on the screen, regardless of whether you scrolled or clicked anywhere on the page.DE163913Previously, when you applied an X or an XY zoom to the selected data in an Analysis Chart, the timeline for the entire data was displayed. This issue has been resolved. Now, only the timeline for the zoomed data is displayed.DE163197Previously, in the chart settings of an Analysis Chart when you enabled the Show Multiple Y - Axis option and changed the data source to one which did not deliver any time series data, the initial chart setting was removed when you returned to the original data source. This issue has been resolved. DE162905Previously, in the Tag Panel, when you attempted to update the value of a Value-Based Filter or a Conditional Filter, the Apply button was not disabled while the new value was loaded, which saved an incorrect value in the filter. This issue has been resolved. Now, when you update a filter value, the Apply button gets disabled while the new value loads and you can save the correct value. DE162905Previously, if you had set the visibility of an analysis template to one or more user groups, and then if you deleted the user groups, you were not able to reset the visibility permissions on the template. This issue has been resolved. Now, the template owner can reset the visibility permissions on the template.DE155201
+
+
+
+
+
+On this pageRelease Notes: September 24, 2021
+
+
+
+
+
+
+
+
+

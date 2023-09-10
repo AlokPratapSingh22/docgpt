@@ -1,0 +1,190 @@
+
+
+
+Common Cause Failures | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+Common Cause Failures
+
+
+
+
+
+
+
+Common Cause FailuresAbout Common Cause FailureA common cause failure is a failure or condition within a plant that can affect the operation of multiple instrumented functions. SIF Common Cause Failures must be linked to at least two Instrumented Functions. In other words, for every SIF Common Cause Failure, there will be at least two Instrumented Function records that represent the instrumented functions that are affected by the common cause failure defined in the SIF Common Cause Failure record.You can manage SIF Common Cause Failure records via the Common Cause Failures section of the Instrumented Function. Using the Common Cause Failures section, you can specify the common cause failures that exist for the current instrumented function and other instrumented functions that are defined in the GE Digital APM database. More specifically, to define a common cause failure, you will need to:Link SIF Common Cause Failure records to the current Instrumented Function.Link additional Instrumented Function records to those SIF Common Cause Failure records.The following illustration shows the records that will exist for a given common cause failure scenario.
+
+Common Cause Failure
+Incorrect maintenance of sensors can affect multiple instrumented functions. In this case, you would first create an SIF Common Cause Failure to document incorrect maintenance of sensors as a common cause failure, and then link that SIF Common Cause Failure to the Instrumented Function records that would be affected by the incorrect sensor maintenance.
+Access a Common Cause FailureAbout This Task
+This topic describes how to access a Common Cause Failure that is linked to one or more Instrumented Functions.
+Procedure
+Access the Instrumented Function that is linked to the Common Cause Failure that you want to access. In the workspace, select the SIL Assessment tab, and then select Common Cause Failures.
+The Common Cause Failures section appears, displaying a list of Common Cause Failures for the Instrumented Function. 
+
+
+
+Select the Common Cause Failure that you want to access.
+The datasheet for the Common Cause Failure appears.
+
+
+
+If needed, modify values in the available fields.In the lower-right corner of the datasheet, select Save.
+The changes made to the Common Cause Failure are saved.
+Results
+The changes made to the Common Cause Failure are reflected in all the Instrumented Functions linked to the Common Cause Failure.
+Create a Common Cause FailureThis topic describes how to create a Common Cause Failure, and link it to the related Instrumented Functions. You can link a Common Cause Failure to as many Instrumented Functions as needed.Before You Begin
+
+Create an Instrumented Function.
+Procedure
+Access the Instrumented Function for which you want to create a Common Cause Failure. In the workspace, select the SIL Assessment tab, and then select Common Cause Failures.
+The Common Cause Failures subsection appears, displaying a list of Common Cause Failures for the Instrumented Function.
+
+
+
+In the upper-right corner of the section, select , and then select Create New.
+A blank datasheet for the Common Cause Failure appears.
+
+
+
+As needed, enter values in available fields. In the lower-right corner of the datasheet, select Save.
+The Common Cause Failure and the Instrument Function are listed in the workspace. A message appears, prompting you to link the Common Cause Failure to another Instrumented Function.
+In the Related Instrumented Function section, select .
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of Instrumented Functions appears.
+
+
+
+Select the Instrumented Function that you want to link to the Common Cause Failure, and then select OK.
+The Common Cause Failure is linked to the two Instrumented Functions listed in the Related Instrumented Function section.
+Results
+The Common Cause Failure is listed in the Common Cause Failures section for all the Instrumented Functions that you have linked.
+Link a Common Cause FailureThis topic describes how to link an Instrumented Function to a Common Cause Failure that is already linked to one or more Instrumented Functions.Before You Begin
+
+Create an Instrumented Function.
+Procedure
+Access the Instrumented Function that is linked to the Common Cause Failure that you want to link to another Instrumented Function. In the workspace, select the SIL Assessment tab, and then select Common Cause Failures.
+The Common Cause Failures section appears, displaying a list of Common Cause Failures for the Instrumented Function.
+
+
+
+Select the row that corresponds to the Common Cause Failure that you want to link to another Instrumented Function.
+The Instrumented Functions that are linked to the selected Common Cause Failure are listed in the Related Instrumented Function section.
+In the Related Instrumented Function section, select .
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of Instrumented Functions appears.
+
+
+
+Select the check box that corresponds to the Instrumented Function that you want to link to the Common Cause Failure, and then select OK.
+The Common Cause Failure is linked to the Instrumented Function.
+Results
+The Instrumented Function that you have linked is listed in the Related Instrumented Function section.
+Unlink a Common Cause FailureThis topic describes how to unlink a Common Cause Failure that is linked to one or more Instrumented Functions.Before You Begin
+
+Create an Instrumented Function.
+Procedure
+Access the Instrumented Function that is linked to the Common Cause Failure that you want to access. In the workspace, select the SIL Assessment tab, and then select Common Cause Failures.
+The Common Cause Failures section appears, displaying a list of Common Cause Failures for the Instrumented Function. 
+
+
+
+Select the row that corresponds to the Common Cause Failure that you want to unlink from an Instrumented Function.
+The Instrumented Functions that are linked to the selected Common Cause Failure are listed in the Related Instrumented Function section.
+In the Related Instrumented Function, select the  button that corresponds to the Instrumented Function that you want to unlink from the Common Cause Failure.
+A confirmation message appears, asking if you really want to delete the Common Cause related Instrumented Function.
+Select OK.
+The Common Cause Failure is unlinked from the Instrumented Function.
+Delete a Common Cause FailureAbout This Task
+You can delete a Common Cause Failure only if it is linked to a single Instrumented Function. Otherwise, you can only unlink it from the selected Instrumented Function. In this case, you must first unlink the Common Cause Failure from all the other Instrumented Functions, and then delete it. 
+Procedure
+Access the Instrumented Function that is linked to the Common Cause Failure that you want to delete. In the workspace, select the SIL Assessment tab, and then select Common Cause Failures. 
+The Common Cause Failures subsection appears, displaying a list of Common Cause Failures linked to the Instrumented Function.
+
+
+
+Select the  button next to the Common Cause Failure that you want to delete.
+A confirmation message appears, asking if you really want to delete the Common Cause Failure.
+Select Yes.
+The Common Cause Failure is deleted.
+
+
+
+
+
+On this pageAbout Common Cause FailureAccess a Common Cause FailureCreate a Common Cause FailureLink a Common Cause FailureUnlink a Common Cause FailureDelete a Common Cause Failure
+
+
+
+
+
+
+
+
+

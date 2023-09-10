@@ -1,0 +1,101 @@
+
+
+
+Manage Linked Records | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Record ManagerOverview
+Manage Records
+Manage Linked Records
+Manage Bulk Data Form 
+Manage Reference Documents
+Manage Conditional Alerts
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Record Manager
+Manage Linked Records
+
+
+
+
+
+
+
+Manage Linked RecordsAbout Linking RecordsLinking records makes data from related items more readily available to you from an open record. You can create links between records in two ways:You can link an existing record to a record that already exists in the database.You can link an existing record to a new record that you create for the purpose of linking.Link an Existing Record to a New RecordProcedure
+Access Record Manager.In the Record Hierarchy, find the record that you want to link to a new record.Next to the family in which you want to create a new record, select . Select Add New Record.
+A blank datasheet appears.
+As needed, enter values in the available fields.Select .
+The new record is saved and linked to the specified record.
+Link Two Existing RecordsProcedure
+Access Record Manager by accessing the record that you want to link to another record.In the Record Explorer, select a related family in the hierarchy and find the record that you want to link to the root record.Beside the family of the record you want to access, select , and then select Link Existing Record.
+The Search window appears, displaying a list of entities of the family.
+In the drop-down list boxes, select the required options to filter the entities from the list.
+-or-
+In the text box, enter the name of the family or entity that you want to search, and then select .
+Select the record that you want to link, and then select OK.
+The records are linked.
+Make a Linked Record the Root RecordProcedure
+Access Record Manager.In the Record Explorer pane, select a related family to expand it, and then select the record that you want to make the new root record.
+The datasheet of the record appears in the Record Manager workspace.
+Select .
+In the Record Explorer, the record becomes the new root record.
+Unlink RecordsProcedure
+Access Record Manager, selecting the record that you want to unlink.
+The datasheet for the record appears.
+Select , and then select Unlink this record.
+A confirmation message appears, asking if you really want to remove the link.
+Select Yes.
+The record link is removed, but the record is still available in the GE Digital APM database.
+
+
+
+
+
+On this pageAbout Linking RecordsLink an Existing Record to a New RecordLink Two Existing RecordsMake a Linked Record the Root RecordUnlink Records
+
+
+
+
+
+
+
+
+

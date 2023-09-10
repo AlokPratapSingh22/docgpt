@@ -1,0 +1,1702 @@
+
+
+
+Family Field Descriptions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Mappings
+Allowable Event Types in Related Events 
+Fields that can be Populated from one of the Three Related Records 
+Fuel Code Fields 
+Fuel Information Fields 
+Inactive Hours Field 
+Overlapping between an Outage Event and a Derate Event
+Capacity Event Types Affecting Performance Records
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Reference
+Family Field Descriptions
+
+
+
+
+
+
+
+Family Field DescriptionsAmplification Codes Records
+Amplification Codes records store information about the fields in the Amplification Codes family that are used to populate the Amplification Code field in a Primary Event record. This topic provides an alphabetical list of the fields that exist for the Amplification Code family and describes how the fields will be used to populate the Amplification Code field in an Event record. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+Amplification Code
+
+Character
+
+Identifies the cause of an outage and is used to populate the Amplification Code field in the Event record.
+
+By default, this field is populated with the Amplification Codes included in the Amplification Codes family. You can use the GAA Data Loaders to import the latest Amplification Codes.
+This value is defined by NERC in the GADS DRI and CEA in the Generation Equipment Status ERIS.
+
+Description
+CharacterDescribes the type of Amplification Code.You can enter a value manually.Event TypeCharacterIndicates the type of event associated with the Amplification Code.A baseline rules exists to populate this field from the GAA Event Types family.Regulatory OrganizationCharacterIdentifies the council to which data will be reported.
+A baseline rule exists to populate this field with a list of the following values: 
+ Canadian Electricity Association (CEA) North American Electric Reliability Corporation (NERC)
+This field is required.
+Unit TypeCharacterIdentifies the type of unit associated with the Regulatory Organization.A baseline rules exists to populate this field from the GAA Unit Types family.
+APM Event Records
+APM Event records store information about the fields that are defined for the APM Event family in the baseline GE Digital APM database. This topic provides an alphabetical list and description of the fields that exist for the APM Event family and appear on the APM Event datasheet. The information in the table reflects the baseline state and behavior of these fields. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageAPM Event DateDateIndicates when the event began.
+This field is populated automatically using the value in the Event Start Date field in the Primary Event record that is linked to the APM Event record.
+This field is required.
+APM IDCharacterIndicates a value that identifies the APM Event. 
+This field is populated automatically using the following template:
+
+APM~<Unit Name>~<Event Start Date>
+
+where:
+<Unit Name> is the value in the Unit ID field in the GAA Unit record that is linked to the Primary Event record for which the APM Event record exists.<Event Start Date> is the value in the Event Start Date field in the Primary Event record that is linked to the APM Event record.
+The value in the Description field describes the APM event. You can enter a description into this field.
+Critical Event FlagBooleanIndicates if the event was a critical event. If the value in this field is True, the event was a critical event. If the value in this field is False, the event was not a critical event.Plant IDCharacterIndicates the plant in which the event occurred.
+This field is populated automatically with the value in the Plant ID field in the GAA Plant that is linked to the GAA Unit that is linked to the Primary Event for which the APM Event exists.
+The value in the Description field describes the name of Plant in which the event occurred. This field is populated automatically with the value in the Plant name field in the GAA Plant that is linked to the GAA Unit that is linked to the Primary Event for which the APM Event exists.
+Primary Cause CharacterA value that indicates the cause code for the event. 
+This field is populated automatically with the value in the Cause Code field in the Primary Event record that is linked to the APM Event record. 
+The value in the Description field describes the cause code for the event. This field is populated automatically with the value in the Cause Code Description field in the Primary Event that is linked to the APM Event.
+Primary ContactCharacter Indicates the person responsible for information about the APM event. You can enter an alphanumeric value into this field.Unit IDCharacterIndicates the unit to which the event occurred. 
+This field is populated automatically with the value in the Unit ID field in the GAA Unit record that is linked to the Primary Event for which the APM Event exists.
+This field is required.
+The value in the Description field describes the name of Unit in which the event occurred. This field is populated automatically with the value in the Unit Name field in the GAA Unit that is linked to the Primary Event for which the APM Event exists.
+
+Cause Codes Records
+Cause Codes records store information about the fields in the Cause Codes family that are used to populate the Cause Code field in a Primary Event record. This topic provides an alphabetical list of the fields that exist for the Cause Codes family and describes how the fields will be used to populate the Cause Code field in an Event record. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageCodeCharacterUsed to populate the Cause Code field in the Event record.
+This value is defined by NERC in the GADS DRI and CEA in the Generation Equipment Status ERIS.
+ 
+Code DescriptionCharacterUsed to populate the Cause Code and Cause Code Description fields in the Event record.
+This value is defined by NERC in the GADS DRI and CEA in the Generation Equipment Status ERIS. 
+ComponentCharacterUsed to populate the Cause Code Component field and to restrict the list in the Cause Code field to values in Cause Codes records that contain a value in this field that matches the value in the Cause Code Component field in the Event. 
+This value is defined by NERC in the GADS DRI and CEA in the Generation Equipment Status ERIS.
+OMC CodeCharacterUsed to set the value in the OMC Event field automatically. 
+In an Event, when you set the value in the Cause Code field, if the value in this field is:
+True, the GE Digital APM system will automatically set the value in the OMC Event field to True.False, the GE Digital APM system will automatically set the value in the OMC Event field to False.
+Record NumberNumericIndicates the record number based on the Cause Code and the Component.This value is defined by NERC in the GADS DRI and CEA in the Generation Equipment Status ERIS.Regulatory OrganizationCharacterIdentifies the council to which data will be reported.
+A baseline rule exists to populate this field with a list of the following values: 
+ Canadian Electricity Association (CEA) North American Electric Reliability Corporation (NERC)
+This field is required.
+SystemCharacterUsed to populate the Cause Code System field and to restrict the list in the Cause Code Component and Cause Code fields to values in Cause Codes records that contain a value in this field that matches the value in the Cause Code System field in the Event.
+This value is defined by NERC in the GADS DRI and CEA in the Generation Equipment Status ERIS.
+Unit TypeCharacterUsed to restrict the list in the Cause Code System, Cause Code Component, and Cause Code fields to values in Cause Codes records that contain a value in this field that matches the value in the GADS Unit Type field in GAA Unit record with which the Event is associated.
+This value is defined by NERC in the GADS DRI and CEA in the Generation Equipment Status ERIS.
+
+Event Records
+Event records store information about the fields that are defined for the Primary Event and Contributing Event families in the baseline GE Digital APM database. This topic provides an alphabetical list and description of the fields that exist for the Primary Event and Contributing Event families and appear on the Event datasheet. The information in the table reflects the baseline state and behavior of these fields. The values in these fields are defined by NERC in the GADS DRI and CEA in the Generation Equipment Status ERIS. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageAmbiguous Date and Time Preference CharacterIdentifies whether the date and time entered in the Event Start Date field occurred before or after the clock was reset.
+This field is disabled by default. This field is enabled and required when you enter an ambiguous date and time in one of the following fields: 
+Event Start DateEvent End DateWork Started Work Ended
+You can select one of following values in this field: 
+
+First Occurrence: Select this option if the date and time that you entered in the Event Start Date field occurred before the clock was reset. 
+Second Occurrence: Select this option if the date and time that you entered in the Event Start Date field occurred after the clock was reset.
+This field exists in the Primary Event family but not the Contributing Event family.
+Amplification Code CharacterIdentifies the failure mode of the event. 
+This field is enabled only when the Cause Code field is populated with a value. A baseline rule exists to populate this field with a list of values from the Amplification Code field in the Amplification Codes records. 
+Note: Consider the following when the Primary Event is associated with a GAA Unit in which the value in the Primary Regulatory Body field is North American Electric Reliability Corporation (NERC):If you set the Capacity Event Type field to U1, the Amplification Code field contains only the following values: T1T284If you set Amplification Code to 84, a message appears, asking you to select T1 or T2 when you have a confirmed cause of event. 
+This field is required when the Primary Event is in the Unit Approved state. 
+Note: In the Primary Event datasheet, this field is no longer a required field for the CEA Event Types 11-1,11-2,14,14-1,14-2.
+Note: In the Primary Event datasheet, this field is no longer a required field for all the NERC Event Types except U1, D1, D2, D3, PD.
+This field is included in NERC event reports. 
+
+ Capacity Event Type Character
+Identifies the type of event.
+
+For NERC,
+For a Primary Event, this field contains a list of values defined in the GAA Event Types records. If the value of Unit State field in the GAA Unit record is set to Active, the Capacity Event Type field contains a list of types of events associated with the Active state.If the value of Unit State field in the GAA Unit record is set to Inactive, the Capacity Event Type field contains a list of types of events associated with the Inactive state.
+For a Contributing Event, this field is disabled and populated automatically with the value in the Capacity Event Type field in the Primary Event to which it is linked.
+For CEA, this field contains a list of values defined in the GAA Event Types records. 
+If the value of Unit State field in the GAA Unit record is set to Commercial Service (CS), the Capacity Event Type field contains a list of types of events associated with the Available state for a GAA Unit that reports to CEA.If the value of Unit State field in the GAA Unit record is set to Not In Commercial Service (NICS), the Capacity Event Type field contains a list of types of events associated with the Not Available state for a GAA Unit that reports to CEA.
+
+
+This field excludes the Event Types based on the Unit Types that you selected in the Excluded Unit Type field in the GAA Event Types record.
+This field is included in NERC event reports. 
+This field is required. 
+Cause Code CharacterIdentifies the cause code of the cause for the event. 
+A baseline rule exists to populate this field with a list of values in fields in Cause Codes records using the format Cause Code (Cause Code Description). 
+This field is required when the Primary Event is in the Unit Approved state. 
+Note: In the Primary Event datasheet, this field is no longer a required field for the CEA Event Types 11-1,11-2,14,14-1,14-2.
+Cause Code Component CharacterIdentifies the cause code component for the cause of the event. 
+A baseline rule exists to populate this field with a list of values in the Component field in Cause Codes records. 
+This field is required when the Primary Event is in the Unit Approved state. 
+Note: In the Primary Event datasheet, this field is no longer a required field for the CEA Event Types 11-1,11-2,14,14-1,14-2.
+Cause Code Description CharacterIdentifies the description of the cause code associated with the cause of the event.
+A baseline rule exists to populate this field with a list of values in the Cause Code Description field in Cause Codes records. 
+This value is defined by NERC in the GADS DRI and CEA in the Generation Equipment Status ERIS.
+This field is required when the Primary Event is in the Unit Approved state. 
+Cause Code System CharacterIdentifies the system for the cause code associated with the event. 
+A baseline rule exists to populate this field with a list of values in the System field in Cause Code records. 
+This field is required when the Primary Event is in the Unit Approved state. 
+Note: In the Primary Event datasheet, this field is no longer a required field for the CEA Event Types 11-1,11-2,14,14-1,14-2.
+Common Mode OutageCharacterIndicates whether an event is a common mode outage.
+A baseline rule exists to populate this field with a list of System Codes in the MI_GAA_COMMON_MODE_OUTAGE_TYPES System Code Table.
+ This field exists in the Primary Event family but not in the Contributing Event family.
+Cost Calculation Status CharacterIndicates the status of the cost calculation. 
+This field is populated automatically with information regarding the status of the calculation performed in the Capacity Incident Cost field. 
+This field exists in the Primary Event family but not in the Contributing Event family. 
+
+Count of Contributing Events 
+CharacterIndicates the number of Contributing Events that exist for the Primary Event. 
+This field is disabled and populated automatically with a value that indicates the number of Contributing Events that are linked to the Primary Event. The value in this field is updated each time you link a new Contributing Event to the Primary Event and each time you unlink a Contributing Event from the Primary Event. 
+This field exists in the Primary Event family but not the Contributing Event family. 
+
+Cumulative Engine Starts at Time of Event 
+Character
+Identifies the total number of engine starts the unit had experienced at the time the event occurred. 
+
+This field is available in the Additional Reporting section for a Primary Event.
+
+Cumulative Fired Hours at Time of Event 
+Character
+Identifies the total cumulative number of hours the unit spent generating power at the time the event occurred. 
+
+This field is available in the Additional Reporting section for a Primary Event.
+ Dominant Derate Boolean
+Indicates whether the event represents a dominant derate event. 
+
+This field is enabled only when the Capacity Event Type field contains a value that identifies the event as a derate event. If the value in this field is:
+True, the Event represents the dominant derate event.False, the Event does not represent the dominant derate event.
+This field exists in the Primary Event family but not in the Contributing Event family.
+ End Date is Estimated? Boolean
+Indicates whether the value in the Event End Date field is an estimate. 
+
+Select this check box when the value in the Event End Date field represents an estimate of when the event ended or will end.
+Clear this check box if the value in the Event End Date field represents the actual time that the event ended.
+Note: This check box is selected automatically if you enter a future date in the Event End Date field.
+This field exists in the Primary Event family but not in the Contributing Event family.
+ Event Contribution Code Character
+Indicates how the incident contributed to the event. 
+
+A baseline rule exists to populate this field with a list of System Codes in the MI_GAA_EVENT_CONTR_CODE System Code Table.
+You can change the value by selecting one of the following options:
+
+2-Contributed to Primary Cause: Indicates that the event represents a secondary cause that contributed to the primary cause of the event.
+3-Work done during the event: Indicates that the event represents work that was done during the event.
+5-After startup, delayed unit from reaching load point: Indicates that the event delayed the unit from reaching its dependable capacity after startup and prevented the unit from filling its load requirement.
+This value is included in the NERC event reports.
+This field exists in the Contributing Event family but not in the Primary Event family.
+ Event Duration Character
+Indicates how long the event lasted. 
+
+This field is disabled and calculated automatically using the following formula:
+
+Event End Date - Event Start Date
+
+The Event Duration takes into account any existing Daylight Saving Time Reference records for the time period between the Event Start date and Event End date. 
+ Event End Date Date
+Indicates the date and time that the event ended.
+
+
+For a Primary Event, if you enter an ambiguous date and time in this field:
+A message will appear indicating that the value is not valid.
+The Ambiguous Date and Time Preference field will be enabled and required.
+
+You cannot specify a value in the Event End Date field with a year that is different from the year in the value in the Event Start Date field.
+For a Contributing Event, this field is disabled and is populated automatically with the value in the Event End Date field from the Primary Event to which it is linked.
+This value is included in NERC event reports.
+Event ID Character
+For a Primary Event, this value identifies the event with a value that is unique to all Primary Events associated with a given GAA Unit. For a Contributing Event, this value identifies the Primary Event for which the Contributing Event exists. 
+ This field is disabled and populated automatically. Event Number Numeric
+Indicates the order in which the event occurred with respect to other events that exist for the same unit.
+
+For a Primary Event, the value indicates the chronological order in which the event took place. When you create a Primary Event, this field is populated automatically. For example, when you create the third Primary Event for a given GAA Unit for a given reporting month and year, this field will be populated automatically with the value 3 (three).For a Contributing Event, this field is populated automatically with the value in the Event Number field in the Primary Event to which it is linked.
+This field does not appear on the datasheet. 
+Event Start Date Date
+Indicates the date and time that the event began.
+
+
+If you enter an ambiguous date and time in this field: 
+A message will appear indicating that the value is not valid. 
+The Ambiguous Date and Time Preference field will be enabled and required.
+
+You cannot specify a value in the Event Start Date field with a year that is different from the year in the value in the Event End Datefield.
+For a Contributing Event, this field is disabled and is populated automatically with the value in Event Start Date field in the Primary Event to which it is linked.
+This value is included in NERC event reports.
+This field is required.
+Failure Mechanism Code Character
+Indicates the manner in which the component failed. 
+
+A baseline rule exists to populate this field with a list of System Codes in the MI_GM_FAILURE_MECHANISM System Code Table.
+This field exists in the Primary Event family but not the Contributing Event family.
+This field is available in the Additional Reporting section for a Primary Event.
+ Gross Available Capacity Character
+Identifies the gross available generation capacity of the unit during the event.
+
+This field is only enabled for a Reserve Shutdown event. This field contains a value that is calculated depending on the value in the Capacity Event Type field. If the value in the Capacity Event Type field contains a value that identifies the event as:
+A derate event, this field will become required, and the value must be less than the value in the Gross Dependable Capacity field. This field is cleared and becomes required when the Gross Derate Amount field contains no value or the value 0 (zero). If the Gross Derate Amount field contains a value other than 0 (zero), this field will be populated automatically using the following formula:
+Gross Dependable Capacity - Gross Derate Amount
+An outage event, this field will become disabled and populated with the value 0 (zero).
+For a Contributing Event, this field is disabled and populated automatically with the value in the Gross Available Capacity field in the Primary Event to which it is linked.
+Gross Dependable Capacity CharacterIdentifies the gross dependable generation capacity of the unit at which the event occurred. 
+This field is populated automatically with the value in the Gross Dependable Capacity field in the Unit Capacity record for a GAA Unit based on the start date of the Primary Event.
+This field exists in the Primary Event family but not the Contributing Event family. 
+ Gross Derate Amount Character
+Indicates the gross amount of generation capacity that was lost during the event.
+
+This field is only enabled for Derate events. This value is used to calculate the value in the Gross Available Capacity field. The default value is 0 (zero). If the value in the Capacity Event Type field contains a value that identifies the event as:
+A derate event, this field will be required. If this field contains a value other than 0 (zero), the value in the Gross Available Capacity field will be disabled and populated automatically using the following formula:
+
+Gross Dependable Capacity - Gross Derate Amount
+
+Value of this field should be greater than 0 for derate event types.
+An outage event, this field will become disabled and populated with the value of Gross Dependable Capacity.
+For a Contributing Event, this field is disabled and populated automatically with the value in the Gross Derate Amount field in the Primary Event for which the Contributing Event exists.
+Gross Maximum Capacity CharacterIdentifies the gross maximum generation capacity of the unit. 
+This field is populated automatically with the value in the Gross Maximum Capacity field in the Unit Capacity record for a GAA Unit based on the start date of the Primary Event.
+This field does not appear on the datasheet.
+Man-hours Worked NumericIdentifies the number of man hours that were worked correcting the cause of the event or repairing the unit. 
+You can enter a value manually.
+ Net Available Capacity Character
+Identifies the net available capacity of the unit during the event.
+
+This field is only enabled for Reserve Shutdown events. This field contains a value that is calculated depending on the value contained in the Capacity Event Type field. If the value in the Capacity Event Type field contains a value that identifies the event as:
+A derate event, this field will become required, and the value must be less than the value in the Net Dependable Capacity field. This field is cleared and becomes required when the Net Derate Amount field contains no value or the value 0 (zero). If the Net Derate Amount field contains a value, this field will be populated automatically using the following formula:
+Net Dependable Capacity - Net Derate Amount
+An outage event, this field will become disabled and populated with the value 0 (zero).
+For a Contributing Event, this field is disabled and populated automatically with the value in the Net Available Capacity field in the GAA Unit that contains a value in the Unit ID field that matches the value in the Unit ID field in the Event.
+Net Dependable Capacity Character
+Identifies the net dependable generation capacity of the unit at which the event occurred. 
+
+This field is populated automatically with the value in the Net Dependable Capacity field in the Unit Capacity record for a GAA Unit based on the start date of the Primary Event.
+This field exists in the Primary Event family but not the Contributing Event family.
+ Net Derate Amount Character
+Indicates the net amount of generation capacity that was lost during the event.
+
+This field is only enabled for Derate events. This value is used to calculate the value in the Net Available Capacity field. The default value is 0 (zero). If the value in the Capacity Event Type field contains a value that identifies the event as:
+A derate event, this field is a required field. If this field contains a value other than 0 (zero), the value in the Net Available Capacity field will be disabled and populated automatically using the following formula:
+
+Net Dependable Capacity - Net Derate Amount
+
+Value of this field should be greater than 0 (zero) for derate event types.
+An outage event, this field will become disabled and populated with the value of Net Dependable Capacity.
+For a Contributing Event, this field is disabled and populated automatically with the value in the Net Derate Amount field in the Primary Event.
+Net Maximum Capacity CharacterIdentifies the net maximum generation capacity of the unit at which the event occurred. 
+This field is populated automatically with the value in the Net Maximum Capacity field in the Unit Capacity record for a GAA Unit based on the start date of the Primary Event.
+This value is defined by NERC in the GADS DRI. 
+This field does not appear on the datasheet.
+OMC Event Boolean
+Indicates whether the event occurred for reasons that are outside of management control, such as a flood or lightning. 
+
+This field is disabled and  populated automatically based on the OMC Cause Code selected.
+If the value in this field is:
+True, the event is considered outside of management control.False, the event is considered to be within management control.
+Potential Capacity Incident Cost Character
+Identifies the potential cost of the event. 
+
+This field is disabled and populated automatically with the calculated event cost, if a cost has been calculated. 
+This field exists in the Primary Event family but not in the Contributing Event family.
+Primary Incident ID CharacterIdentifies the Primary Event for which the Contributing Event exists. 
+This field is disabled and populated automatically with the value in the Event ID field in the Primary Event to which the Contributing Event is linked. 
+This field exists in the Contributing Event family but not the Primary Event family. 
+ Problem Alert Boolean
+Indicates whether the problem that caused the event is the result of a design flaw or standard operating practices. 
+
+If the value in this field is:
+True, the problem was the result of a design flaw or standard operating practices.False, the problem was the result of another cause.
+ Refresh Incident Cost Boolean
+Indicates whether the GE Digital APM system should refresh the cost calculation for the Primary Event. 
+
+When you save the Primary Event, if the value in this field is:
+True, the GE Digital APM system will update the value in the Capacity Incident Cost field and then save the new value, along with any other changes that you made the Primary Event.False, the GE Digital APM system will save any changes that you made to the Primary Event but will not update the value in the Capacity Incident Cost field.
+This field exists in the Primary Event family but not the Contributing Event family. 
+Reporting Month Character
+Identifies the month for which the data in the Primary Event should be reported. 
+
+This field is disabled and populated automatically with the month indicated by the value in the Event Start Date field. 
+This field exists in the Primary Event family but not the Contributing Event family.
+Reporting Year Numeric
+Identifies the year for which the data in the Primary Event should be reported. 
+
+This field is disabled and populated automatically with the year indicated by the value in the Event Start Date field. 
+This field exists in the Primary Event family but not the Contributing Event family.
+ Revision Numeric
+Identifies the revision number of the Event and should be incremented each time you re-submit a report which includes information in the Event to a Regulatory Organization. 
+
+By default, for an Event submitted to the regulatory organization for the first time, the value in this field is set to 0.
+You must increase the value in this field each time you submit a report to the Regulatory Organization.
+ Start Date is Estimated? Boolean
+Indicates whether the value in the Event Start Date field is an estimate. 
+
+Select this check box when the value in the Event Start Date field represents an estimate of when the event ended or will end.
+Clear this check box if the value in the Event Start Date field represents the actual time that the event ended.
+This field exists in the Primary Event family but not the Contributing Event family.
+Trip Mechanism Character
+Indicates how the unit was shut down during the event.
+
+ This field contains no value by default, and a baseline rule exists to populate this field with a list of the following values:
+
+A - Automatic: The unit shut down automatically.
+M - Manual: The unit was shut down manual by an operator.
+After you select a value in this field and save the Event record, you will not be able to clear the field.
+This field is available in the Additional Reporting section for a Primary Event.
+Unit ID Character
+Identifies the Unit ID of the GAA Unit record with which the Event is associated.
+
+
+For a Primary Event, a baseline rule exists to populate this field with a list of values from the Unit ID and Unit Name fields in all GAA Unit records that you have permission to modify using the formula Unit ID (Unit Name). 
+This field is required when the Primary Event is in the Unit Approved state. 
+For a Contributing Event, this field is disabled and populated automatically with the value in the Unit ID field in the Primary Event for which the Contributing Event exists.
+Unit Name Character
+Identifies the name of the unit to which the event occurred. 
+
+This field is disabled and populated automatically using values from Performance or GAA Unit records.Validate Incident Boolean
+Indicates whether the GE Digital APM system will validate the record against all other existing Primary Events. 
+
+When you save the Primary Event, if the value in this field is:
+True, the GE Digital APM system will check all other Primary Events to validate any sequential event pairs of which the Primary Event is a part, update the value in the Incident Validation Status field if necessary, and then save the Primary Event to the database.False, the GE Digital APM system will save any changes that you made to the record, but will not validate the Primary Event against any other Primary Events.
+This field exists in the Primary Event family but not the Contributing Event family.
+ Verbal DescriptionCharacter
+Describes the event. 
+
+This field can be used to store any information about the event that is not captured in the other fields in the Event record. 
+When you create a Primary Event, you can enter a verbal description of up to 255 characters. When you generate a NERC Event Report, the verbal description in the generated report will display only the first 84 characters of the description that you entered in the Verbal Description field.
+This field is required when the Primary Event is in Unit Approved state. 
+Note: In the Primary Event datasheet, this field is no longer a required field for the CEA Event Types 11-1,11-2,14,14-1,14-2.
+Work Duration Character
+Indicates the duration of the work that was completed as a result of the event. 
+
+This field is disabled and populated automatically using the following formula:
+
+Work Started + Work Ended
+
+ Work Ended Date
+Indicates the date and time when work on the unit ended as a result of the event. 
+
+If you enter an ambiguous date and time in this field, a message will appear and the Ambiguous Date and Time Preference field will be enabled and required.
+This value is included in NERC event reports.
+ Work StartedDate
+Indicates the date and time when work on the unit started as a result of the event. 
+
+If you enter an ambiguous date and time in this field, a message will appear and the Ambiguous Date and Time Preference field will be enabled and required.
+This value is included in NERC event reports.
+
+GAA Code Mapping Records
+GAA Code Mapping records store information about fields that are defined for the GAA Code Mapping family in the baseline GE Digital APM database. This topic provides an alphabetical list and description of the fields that exist for the GAA Code Mapping family and appear on the datasheet. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+CEA Amplification CodeCharacter
+Indicates the CEA Amplification Code for the selected Unit type.
+
+This field is populated using the following format: 
+
+<AmplificationCode>(<Description>)
+
+Where,
+
+<Description> is the value in the Description field in the Amplification Code record, which has Regulatory Organization field set to Canadian Electricity Association (CEA).
+<AmplificationCode> is the value in the Amplification Code field in the Amplification Code record, which has Regulatory Organization field set to Canadian Electricity Association (CEA).
+You can select a value from the available CEA Amplification Codes for the selected Unit Type. 
+The available values appear in this field only after you select a value in the CEA Unit Type field. 
+CEA Cause CodeCharacter
+Indicates the CEA Outage Code for the selected Unit type.
+
+This field is populated using the following format:
+
+<Code> ~ <Code Description>
+
+Where,
+
+<Code> is the value in the Code field in the Cause Code record.
+<Code description> is the value in the Code Description field in the Cause Code record.
+You can select value (s) from the available CEA Outage Codes for the selected Unit Type. 
+The available values appear in this field only after you select a value in the CEA Unit Type field. 
+This field is required.
+CEA Unit TypeCharacter
+Indicates the type of Unit available for CEA.
+
+You can select a type of Unit from the list of available options. 
+This field is required.
+NERC Amplification CodeCharacterIndicates the NERC Amplification Code for the selected Unit type.
+This field is populated using the following format:
+
+ <AmplificationCode>(<Description>)
+
+Where,
+
+<Description> is the value in the Description field in the Amplification Code record, which has Regulatory Organization field set to North American Electric Reliability Corporation (NERC).
+<AmplificationCode> is the value in the Amplification Code field in the Amplification Code record, which has Regulatory Organization field set to North American Electric Reliability Corporation (NERC).
+You can select a value from the available NERC Amplification Codes for the selected Unit Type. 
+NERC Cause CodeCharacter
+Indicates the NERC Cause Code for the selected Unit type.
+
+This field is populated using the following format:
+
+<Code> ~ <Code Description>
+
+Where,
+
+<Code> is the value in the Code field in the Cause Code record, which has Regulatory Organization field set to North American Electric Reliability Corporation (NERC).
+<Code description> is the value in the Code Description field in the Cause Code record, which has Regulatory Organization field set to North American Electric Reliability Corporation (NERC).
+You can a select value from the available NERC Cause Code for the selected Unit Type. 
+This field is required.
+
+GAA Company Records
+GAA Company records store information about fields that are defined for the GAA Company family in the baseline GE Digital APM database. This topic provides an alphabetical list and description of fields that exist for the GAA Company family and appear in the Identification and References sections of the GAA Company datasheet. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageAddress 1CharacterIdentifies the first line of the address of the Company. 
+This field appears in the Identification section.
+You can enter a value in this field.
+Address 2CharacterIdentifies the second line of the address of the Company. 
+This field appears in the Identification section.
+You can enter a value in this field.
+Asset IDCharacterIdentifies the Functional Location associated with the Company.
+This field appears in the Identification section. It is required.
+You can select a Functional Location to associate with the Company.
+CityCharacterIdentifies the city where the Company resides. 
+This field appears in the Identification section.
+You can enter a value in this field.
+Company CountryCharacterIndicates the country where the Company is based. 
+This field appears in the Identification section.
+You can enter a value in this field.
+Company Group 1CharacterIdentifies the first group of persons for additional data analysis.
+This field appears in the References section.
+You can enter a value in this field.
+Company Group 2CharacterIdentifies the second group of persons for additional data analysis. 
+This field appears in the References section.
+You can enter a value in this field.
+Company IDCharacterIdentifies the Company.
+This field appears in the Identification section. It is required.
+You can enter a value in this field. 
+Company NameCharacterIndicates the full name of the Company.
+This field appears in the Identification section. It is required.
+You can enter a value in this field. 
+Company Web Site Address CharacterIdentifies the URL of the corporate website of the Company. 
+This field appears in the References section.
+You can enter a value in this field.
+ContactCharacterIdentifies the name of a person within the Company to contact for reporting. 
+This field appears in the Identification section.
+You can enter a value in this field. 
+CouncilCharacterIndicates the Regulatory Council to which the Company belongs.
+This field appears in the Identification section. It is populated by the MI_GM_POWER_REGION System Code Table.
+Email AddressCharacterIdentifies the email address of the Contact. 
+This field appears in the Identification section.
+You can enter a value in this field.
+GAA TypeCharacterIdentifies the type of the Company.
+This field is populated by the MI_GAA_MODULE_TYPE System Code Table and it is automatically populated with the value Power.
+This field does not appear in the datasheet.
+KeywordCharacterIdentifies the Regulatory Organization keyword for the Company. 
+This field appears in the Identification section.
+You can enter a value in this field.
+Phone Fax NumericIdentifies the fax number of the Contact.
+This field appears in the Identification section.
+You can enter a value in this field.
+Phone VoiceCharacterIdentifies the phone number of the Contact.
+This field appears in the Identification section.
+You can enter a value in this field.
+Primary Regulatory OrganizationCharacterIdentifies the primary council to which the data will be reported.
+This field appears in the Identification section. It is populated by a baseline rule with the following values: 
+Canadian Electricity Association (CEA) North American Electric Reliability Corporation (NERC)
+This field is required and automatically populated with the value North American Electric Reliability Corporation (NERC).
+Primary Utility CodeCharacterIdentifies the code assigned to the Company by the Primary Regulatory Organization. 
+This field appears in the Identification section.
+You can enter a value in this field.
+The Primary Utility Code for NERC must be three characters whereas that for CEA must be two characters.
+Secondary Regulatory OrganizationCharacterIdentifies the secondary council to which the data will be reported.
+This field appears in the Identification section. It is populated by a baseline rule with the following values: 
+Canadian Electricity Association (CEA) North American Electric Reliability Corporation (NERC)
+If the value in the Primary Regulatory Organization field is North American Electric Reliability Corporation (NERC), this field is disabled.
+If the value in the Primary Regulatory Organization field is Canadian Electricity Association (CEA), the value in this field is North American Electric Reliability Corporation (NERC) and the field is disabled.
+Secondary Utility CodeCharacterIdentifies the code assigned to the Company by the Secondary Regulatory Organization. 
+This field appears in the Identification section.
+You can enter a value in this field.
+The Secondary Utility Code for NERC must be three characters whereas that for CEA must be two characters.
+StateCharacterIdentifies the state or province where the Company is based. 
+This field appears in the Identification section. It is populated by the MI_GM_STATE System Code Table.
+Zip CodeCharacterIdentifies the zip code of the location where the Company is based. 
+This field appears in the Identification section.
+You can enter a value in this field.
+
+GAA Event Categories Records
+GAA Event Categories records store information about the fields that are defined for the GAA Event Categories family in the baseline GE Digital APM database. This topic provides an alphabetical list and description of the fields that exist for the GAA Event Categories family and appear on the GAA Event Categories datasheet. The information in the table reflects the baseline state and behavior of these fields. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageAssociated Event TypesCharacterIndicates the Event Types associated with the selected Regulatory Organization.
+A baseline rule exists to populate this field with a list of values based on your selection of Regulatory Organization.
+Color CodeCharacterIndicates the color that represents the Event Category.
+A baseline rule exists to assign a hexadecimal color code for each of the Event Categories.
+When you add a new Event Category, by default, the hexadecimal color code (#000000) corresponding to black color is specified in this field. 
+
+You can enter the hexadecimal color code corresponding to a desired color manually.
+-Or-
+You can save the record with the default value, and then in the Color Code column, select the desired color from the grid. 
+The value in this field will be used to identify color code to be used for the Event Category in the graphs in GAA Overview page and in GAA Unit Summary page.
+Entity IDCharacterIndicates the ID of the Event Category record.
+A baseline rule exists to populate this field based on your selection of Event Category Code and Regulatory Organization.
+
+<Event Category Code>~<Regulatory Organization>
+
+Where, each of the variable represents the value in the corresponding field in this record. 
+This field does not appear on the datasheet.
+Event Category CodeCharacterIdentifies the category of an Event.
+You can enter a value manually.
+This field is required.
+Event Category DescriptionCharacterDescribes the category of an Event.You can enter a value manually.Mapped IDCharacterIndicates the Cause Codes mapped to Regulatory Organization.
+A baseline rule exists to populate this field based on your selection in the Regulatory Organization. 
+If you selected North American Electric Reliability Corporation (NERC) in the Regulatory Organization field, this field is disabled. 
+If you selected Canadian Electricity Association (CEA) in the Regulatory Organization field:
+Value corresponding to NERC is populated. This field is required.
+Regulatory OrganizationCharacterIdentifies the council to which the data will be reported.
+A baseline rule exists to populate this field with a list of the following values:
+ Canadian Electricity Association (CEA) North American Electric Reliability Corporation (NERC)
+This field is required.
+
+GAA Event Transition Records
+GAA Event Transition records store information about the fields that are defined for the GAA Event Transition family in the baseline GE Digital APM database. This topic provides an alphabetical list and description of the fields that exist for the GAA Event Transition family. The information in the table reflects the baseline state and behavior of these fields. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageFrom Event TypeCharacterThe type of the parent event between the two events in transition.A value is required. This field appears as a list that is populated by values in the Event Type Code field in each GAA Event Type record.To Event TypeCharacterThe type of the related event between the two events in transition.
+A value is required. This field appears as a list that is populated by values in the Event Type Code field in each GAA Event Type record. 
+The value in this field is used to populate the Capacity Event Type field in the related event based on the value in the Capacity Event Type, Cause Code, and Net Derate Amount fields in the parent event.
+Validation RuleCharacterThe rule that should be applied for the two events to be in transition. As per Canadian Electricity Association (CEA) guidelines, events of certain event types can be in transition only if certain conditions are satisfied. 
+GE Digital APM validates if the condition that you enter in this field is satisfied. If not, a message appears below the Capacity Event Type box on the Related Event datasheet specifying the condition that must be satisfied.
+GAA Event Types Records
+GAA Event Types records store information about the fields that are defined for the GAA Event Types family in the baseline GE Digital APM database. This topic provides an alphabetical list and description of the fields that exist for the GAA Event Types family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+Color Code
+
+Character
+
+Identifies the color code for the Event Type.
+
+A baseline rule exists to assign a hexadecimal color code for each of the Event Type.
+When you add a new Event Type, by default, the hexadecimal color code (#000000) corresponding to black color is specified in this field. 
+
+You can enter the hexadecimal color code corresponding to a desired color manually.
+-Or-
+You can save the record with the default value, and then in the Color Code column, select the desired color from the grid. 
+The value in this field will be used to identify color code to be used for the Event Type in the graphs in GAA Overview page and in GAA Unit Summary page.
+
+Event Type Code
+
+Character
+
+Identifies the event type.
+
+You can enter a value manually. 
+This field, along with the Event Type Description field, populates the Capacity Event Type field in the Primary Event records.
+This field is required.
+
+Event Type Description
+
+Character
+
+Describes the type of event.
+
+You can enter a value manually. 
+This field, along with the Event Type Code field, populates the Capacity Event Type field in Event records.
+This field is required.
+Excluded Unit TypeCharacterIndicates the Unit Type for the GAA Unit whose associated Event Types will be excluded in the available options in the Capacity Event Type field in the Event record.
+This list of available values in this field are populated only if you select a value in the Regulatory Organization field.
+For an existing Primary Event, you must not exclude Unit Type for the associated GAA Unit. If you do so, the Capacity Event Type field in the Event record will be cleared. 
+
+Is Extension
+
+Logical
+
+Indicates whether the Event Type is an extension event.
+
+If this field is selected, it indicates that the Event Type is an extension of another event.
+If the field is cleared, it indicates that the Event Type is not an extension event.
+Mapped IDNumeric
+Indicates the Cause Codes mapped to Regulatory Organization.
+ 
+
+A baseline rule exists to populate this field based on your selection in the Regulatory Organization.
+If you selected North American Electric Reliability Corporation (NERC) in the Regulatory Organization field, this field is disabled. 
+If you selected Canadian Electricity Association (CEA) in the Regulatory Organization field:
+Value corresponding to NERC is populated. This field is required.
+
+Regulatory Organization
+
+Character
+
+Identifies the council to which the data will be reported.
+
+A baseline rule exists to populate this field with a list of the following values:
+ Canadian Electricity Association (CEA) North American Electric Reliability Corporation (NERC)
+This field is required. 
+
+State Code
+
+Character
+
+Indicates the state of the GAA Unit during the Event.
+
+This field is used by a GAA Unit that reports to CEA.
+You can enter a value manually.
+
+Unit State
+
+Character
+
+Indicates the state of the GAA Unit.
+
+A baseline rule exists to populate this field based on your selection in the Regulatory Organization.
+This field is required.
+
+GAA Fuel Types Records
+GAA Fuel Types records store information about the fields in the family that are used to populate fuel code fields in GAA Unit, Performance, and fuel report records. This topic provides an alphabetical list and description of the fields that exist for the GAA Fuel Types family and appear on the GAA Fuel Types datasheet. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageFuel CodeCharacterIdentifies the fuel code for the fuel based on the Regulatory Organization. 
+You can enter a value manually.
+This value is defined by the Regulatory Organization.
+This field is required. 
+Fuel DescriptionCharacterDescribes the fuel as defined by the Regulatory Organization.
+You can enter a value manually.
+This value is defined by the Regulatory Organization. 
+This field is required.
+Fuel Unit of Measure CharacterIdentifies the unit of measure associated with the fuel. You can enter a value manually.Heat Content High CharacterIdentifies the highest potential heat content of the fuel. 
+You can enter a value manually.
+This value is defined by the Regulatory Organization. 
+Heat Content Low CharacterIdentifies the lowest potential heat content of the fuel. 
+You can enter a value manually.
+This value is defined by the Regulatory Organization. 
+Mapped IDCharacter
+Indicates the mapped Fuel Code and Fuel Description based on the Regulatory Organization.
+
+A baseline rule exists to populate this field with a list of the values using the following format: 
+
+<RegulatoryOrganization> ~ <FuelCode> ~ <FuelDescription> 
+
+Where, 
+
+<RegulatoryOrganization> is the value in the Regulatory Organization field.
+<FuelCode> is the value in the Fuel Code field.
+<FuelDescription> is the value in the Fuel Description field.
+If you selected North American Electric Reliability Corporation (NERC) in the Regulatory Organization field, this field is disabled. 
+If you selected Canadian Electricity Association (CEA) in the Regulatory Organization field:
+Value corresponding to NERC is populated. This field is required.
+Regulatory OrganizationCharacterIdentifies the council to which data will be reported.
+A baseline rule exists to populate this field with a list of the following values:
+ Canadian Electricity Association (CEA) North American Electric Reliability Corporation (NERC)
+ This field is required. 
+
+GAA Performance & Report Records
+GAA Performance & Report records store information about the fields that are defined for the GAA Configuration family in the baseline GE Digital APM database. This topic provides an alphabetical list and description of the fields that exist for the GAA Configuration family and appear on the Default tab. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageAssociated Events Catalog PathCharacterIndicates the catalog path based on which the Event List column will be populated.
+This field is enabled when the value in Record Type field is Performance, and the Is Report field is cleared.
+This field is required.
+DescriptionCharacterDescribes the record that you want to configure for the selected GAA Unit. You can enter a value manually.Entity IDCharacterIndicates the ID of the record or report configured for the selected GAA Unit. 
+This field is populated using the following format:
+
+<Record Name> ~ <Record Type> ~ <Report Format> ~ <Performance Type>
+
+Where, each of the variable represents the value in the corresponding field in this record. 
+This field does not appear on the datasheet.
+Is DefaultLogicalIndicates whether this report will be configured for any new GAA Unit.This field is cleared by default. Is LinkedLogicalIndicates whether the regulatory report is associated with the GAA Unit.
+This field is selected if the report is associated with the GAA Unit. 
+This field does not appear on the datasheet.
+Is ReportLogicalIndicates whether the record represents a Report record or a Performance record.
+This field is selected by default. 
+If you clear this check box, and the value in the Record Type field is Performance then the Report Format and Report Query fields are disabled and the following fields are enabled:
+Policy IDAssociated Events Catalog PathPerformance TypeWeightage Type
+Performance TypeCharacter
+Indicates whether the Performance record will contain all Primary Events including OMC Events or not.
+
+This field is enabled when the value in Record Type field is Performance, and the Is Report field is cleared.
+You can select one of the following options:
+
+AllEvents: Select this option if you want to configure the Performance record to contain all Primary Events including OMC
+Excluding OMC: Select this option if you want to configure the Performance record to contain all Primary Events excluding OMC
+Policy IDCharacterIndicates the name of the design policy that is used to regenerate a Performance record.
+This field is enabled when the value in Record Type field is Performance, and the Is Report field is cleared. 
+This field is required.
+Report FormatCharacterIndicates the format of the Regulatory report.
+This field is enabled only when the Is Report field is selected. 
+A baseline rule exists to populate this field with a list of the following values based on the type of report that you selected in the Report Type field:
+If Report Type is Event, you can select 07 in this field. If Report Type is Performance, you can select 05 in this field.
+This field is required.
+Record NameCharacterIdentifies the full name of the record that you want to configure for the selected GAA Unit. 
+You can enter a value manually. 
+This field is required.
+Record TypeCharacterIndicates the type of Performance record or Regulatory report that the record represents. 
+A baseline rule exists to populate this field with a list of the following values:
+EventPerformance
+This field is required.
+Report QueryCharacterIndicates the query that is used to create the Regulatory report.
+This field is enabled only when the Is Report field is selected. 
+A baseline rule exists to populate this field with a list of queries that exist in the Catalog folder \\Public\Meridium\Modules\Generation Management\Queries\NERC Queries. You must select the query that corresponds to the value you selected in the Report Format field.
+This field is required.
+Weightage TypeCharacterIndicates the capacity type for the selected GAA Unit.
+This field is enabled when the value in Record Type field is Performance, and the Is Report field is cleared.
+You can select multiple capacity types simultaneously from the following options:
+NMCGMC
+This field is required.
+
+GAA Performance Fuel Records
+GAA Performance Fuel records store information about the fields that are defined for the GAA Performance Fuel family in the baseline GE Digital APM database. This topic provides an alphabetical list and description of the fields that exist for the GAA Performance Fuel family and appear on the Fuel datasheet. The information in the table reflects the baseline state and behavior of these fields. The values in these fields are defined by NERC in the GADS DRI and CEA in the Generation Equipment Status ERIS. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Note: Wherever we refer to the unit, we mean the unit represented by the GAA Unit record to which the Performance record is linked.
+FieldData TypeDescriptionBehavior and UsageAsh Softening Temperature NumericIndicates the ash softening temperature for a primary or secondary fuel. 
+You can enter a value manually. 
+Average Heat Content NumericFor a primary fuel, indicates the heat content in BTUs per unit of measure stored in the corresponding Quantity Burned Unit of Measure field. 
+You can enter a value manually.
+Fuel Code CharacterIndicates the fuel code for the fuel used by the GAA Unit. 
+This field is populated automatically with the value in the Primary Fuel Code or Secondary Fuel Code field in the GAA Unit record. Based on the Regulatory Organization to which the data will be reported, the GAA Unit record is linked to the Performance record.
+This field is required. 
+Grindability Index NumericIndicates the grindability index of a given fuel type. 
+You can select a value from the drop-down list.
+For NERC, this field is enabled only if the value in the Fuel Code field indicates coal, peat, or lignite as the fuel. 
+Percent Alkalines NumericIndicates the average sodium and potassium content for a given fuel type. 
+This field is enabled only if the value in the Fuel Code field indicates coal, peat, or lignite as the fuel.
+Percent Ash NumericIndicates the average ash content for a fuel. 
+This field is enabled only if the value in the Fuel Code field indicates coal, peat, or lignite as the fuel.
+Percent Moisture NumericIndicates the average moisture content for a fuel. 
+This field is enabled only if the value in the Fuel Code field indicates coal, peat, or lignite as the fuel.
+Percent Sulfur NumericIndicates the average sulfur content for a fuel. 
+This field is enabled only if the value in the Fuel Code field indicates coal, peat, or lignite as the fuel.
+Quantity Burned NumericFor fuel, indicates the amount of fuel that was consumed by the unit during the month for which the Performance record stores generation data. 
+The value in this field is used to calculate the value in the Energy Source Consumption field in GAA Fuel Report records that are linked to the Performance record. 
+Type of Performance CharacterIndicates whether the Performance record includes OMC events or notThis field does not appear on the datasheet.
+GAA Performance Indexes Records
+GAA Performance Indexes records store information about the fields that are defined for the GAA Performance Indexes family in the baseline GE Digital APM database. This topic provides an alphabetical list and description of the fields that exist for the GAA Performance Indexes family and appear on the datasheet. The information in the table reflects the baseline state and behavior of these fields. The values in these fields are defined by NERC in the GADS DRI and CEA in the Generation Equipment Status ERIS. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Note: Wherever we refer to the unit, we mean the unit represented by the GAA Unit record to which the Performance record is linked.
+FieldData TypeDescriptionBehavior and UsageCapacity FactorNumeric
+Indicates the energy that was produced by a Generating Unit in a given period as a fraction of the Maximum Generation. 
+Maximum Generation is the period hours (PH) times the Maximum Capacity.
+
+This field is disabled and populated automatically using the following formula:
+
+[Actual Generation / (Period Hours X Maximum Capacity)] X 100%
+
+Note: Capacity Factor calculated using this equation can be negative during a period when the unit is shut down. 
+D1 Equivalent Unplanned Derate MWHNumeric
+Indicates the amount of capacity lost (in Mega Watt hours) when the unit cannot reach its full capacity due to Unplanned Derating (D1). 
+
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x Equivalent Unplanned Derated hours (D1)
+D2 Equivalent Unplanned Derate MWHNumericIndicates the amount of capacity lost (in Mega Watt hours) when the unit cannot reach its full capacity due to Unplanned Derating (D2). 
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x Equivalent Unplanned Derated hours (D2)
+D3 Equivalent Unplanned Derate MWHNumericIndicates the amount of capacity lost (in Mega Watt hours) when the unit cannot reach its full capacity due to Unplanned Derating (D3). 
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x Equivalent Unplanned Derated hours (D3)
+D4 Equivalent Maintenance Derate MWHNumericIndicates the amount of capacity lost (in Mega Watt hours) when the unit cannot reach its full capacity due to Unplanned Derating (D4). 
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x Equivalent Unplanned Derated hours (D4)
+Equivalent Availability FactorNumericIndicates the fraction of Maximum Generation that could be provided if limited only by outages and deratings.
+This field is disabled and populated automatically using the following formula:
+[(Available Hours - Equivalent Planned Derated Hours – Equivalent Unplanned Derated Hours - Equivalent Seasonal Derated Hours) / Period Hours] X 100%
+Equivalent Forced Derated Hours During Reserve ShutdownNumericIndicates the number of hours the unit will be inactive when the unit cannot reach its full capacity due to Forced Derating (D1, D2, D3) or portion of any Forced derating which occurred during a Reserve Shutdown (RS). Each individual Forced Derating or the portion of any Forced derating which occurred during a Reserve Shutdown is transformed into equivalent full outage hour(s).
+This field is disabled and populated automatically using the following formula:
+
+(Derating Hours x Size of Reduction) / NMC
+
+Where, 
+ Derating Hours are the sum of individual Forced Derating hours (D1, D2, D3) or the portion of any Forced derating hours which occurred during a Reserve Shutdown (RS).
+ Size of Reduction is calculated by subtracting the Net Available Capacity (NAC) from the Net Dependable Capacity (NDC). For multiple deratings, the Size of Reduction of each derating will be calculated by the difference in the Net Available Capacity of the unit before the derating and the reported Net Available Capacity after the derating.
+This value is defined by NERC in the GADS DRI. 
+Equivalent Forced Outage FactorNumericIndicates the fraction of a given operating period in which a Generating Unit is not available due to forced outages and forced deratings.
+This field is disabled and populated automatically using the following formula:
+[(Forced Outage Hours + Equivalent Forced Derated Hours) / Period Hours] X 100 %
+Equivalent Forced Outage RateNumericA measure of the probability that a GAA Unit will not be available due to forced outages or forced deratings.
+This field is disabled and populated automatically using the following formula:
+[(Forced Outage Hours + Equivalent Forced Derated Hours) / (Forced Outage Hours + Service Hours + Synchronous Hours + Pumping Hours + Equivalent Forced Derated Hours During Reserve Shutdown)] X 100 %
+Equivalent Forced Outage Rate DemandNumericIndicates the portion of time a unit is in demand, but is unavailable due to a forced outage.
+This field is disabled and populated automatically using the following formula:
+[(Forced Outage Hours Demand + Equivalent Forced Derated Hours Demand) / (Service Hours + Forced Outage Hours Demand)] X 100 %
+Equivalent Maintenance Derated Hours Numeric Indicates the number of hours the unit will be inactive when the unit cannot reach its full capacity due to Maintenance Derating (D4, DM). Each individual Maintenance Derating is transformed into equivalent full outage hour(s).
+This field is disabled and populated automatically using the following formula:
+
+(Derating Hours x Size of Reduction) / NMC
+
+Where,
+Derating Hours are the sum of individual Maintenance Derating hours (D4, DM).
+Size of Reduction is calculated by subtracting the Net Available Capacity (NAC) from the Net Dependable Capacity (NDC). For multiple deratings, the Size of Reduction of each derating will be calculated by the difference in the Net Available Capacity of the unit before the derating and the reported Net Available Capacity after the derating.
+This value is defined by NERC in the GADS DRI. 
+Equivalent Maintenance Derated Hours During Reserve ShutdownNumericIndicates the number of hours the unit will be inactive when the unit cannot reach its full capacity due to Maintenance Derating (D4) or the portion of any Maintenance derating which occurred during a Reserve Shutdown (RS). Each individual Maintenance Derating (D4) or the portion of any Maintenance derating which occurred during a Reserve Shutdown is transformed into equivalent full outage hour(s).
+This field is disabled and populated automatically using the following formula:
+
+(Derating Hours x Size of Reduction) / NMC
+
+Where,
+Derating Hours are the sum of individual Maintenance Derating hours (D4) or the portion of any Maintenance derating hours which occurred during a Reserve Shutdown (RS).
+Size of Reduction is calculated by subtracting the Net Available Capacity (NAC) from the Net Dependable Capacity (NDC). For multiple deratings, the Size of Reduction of each derating will be calculated by the difference in the Net Available Capacity of the unit before the derating and the reported Net Available Capacity after the derating.
+This value is defined by NERC in the GADS DRI. 
+Equivalent Maintenance Outage FactorNumericIndicates the fraction of a given operating period in which a Generating Unit is not available due to maintenance outages and maintenance deratings
+This field is disabled and populated automatically using the following formula:
+
+[(Maintenance Outage Hours + Equivalent Maintenance Derated Hours) / Period Hours] X 100 %
+
+Equivalent Maintenance Outage RateNumericA measure of the probability that a GAA Unit will not be available due to maintenance outages or maintenance deratings.
+This field is disabled and populated automatically using the following formula:
+[(Maintenance Outage Hours + Equivalent Maintenance Derated Hours) / ∑ (Maintenance Outage Hours + Service Hours + Synchronous Hours + Pumping Hours + Equivalent Maintenance Derated Hours During Reserve Shutdowns)] X 100%
+Equivalent Planned Derated Hours Numeric
+Indicates the amount of capacity lost (in Mega Watt hours) when the unit cannot reach its full capacity due to Planned Deratings (PD, DP). Each individual Planned Derating is transformed into equivalent full outage hour(s).
+
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x Equipment Planned Derate hours 
+This value is defined by NERC in the GADS DRI. 
+Equivalent Planned Derated Hours During Reserve ShutdownNumericIndicates the number of hours the unit will be inactive when the unit cannot reach its full capacity due to Planned Derating (PD) or the portion of any Planned derating which occurred during a Reserve Shutdown (RS). Each individual Planned Derating or the portion of any Planned derating which occurred during a Reserve Shutdown is transformed into equivalent full outage hour(s). 
+This field is disabled and populated automatically using the following formula:
+
+(Derating Hours x Size of Reduction) / NMC
+
+Where,
+Derating Hours are the sum of individual Planned Derating (PD) or the portion of any Planned derating which occurred during a Reserve Shutdown (RS).
+Size of Reduction is calculated by subtracting the Net Available Capacity (NAC) from the Net Dependable Capacity (NDC). For multiple deratings, the Size of Reduction of each derating will be calculated by the difference in the Net Available Capacity of the unit before the derating and the reported Net Available Capacity after the derating.
+This value is defined by NERC in the GADS DRI.
+
+Equivalent Planned Derate MWHNumeric
+Indicates the amount of capacity lost (in Mega Watt hours) when the unit cannot reach its full capacity due to Planned Deratings (PD, DP). Each individual Planned Derating is transformed into equivalent full outage hour(s).
+
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x Equipment Planned Derate hours 
+Equivalent Planned Outage Factor NumericIndicates the fraction of a given operating period in which a generating unit is not available due to planned outages and planned deratings.
+This field is disabled and populated automatically using the following formula:
+[(Planned Outage Hours + Equivalent Planned Derated Hours) / Period Hours] X 100 %
+Equivalent Planned Outage RateNumericA measure of the probability that a GAA Unit will not be available due to planned outages or planned deratings.
+This field is disabled and populated automatically using the following formula:
+[(Planned Outage Hours + Equivalent Planned Derated Hours) / (Planned Outage Hours + Service Hours + Synchronous Hours + Pumping Hours + Equivalent Planned Derated Hours During Reserve Shutdowns)] X 100%
+Equivalent Scheduled Derated Hours NumericIndicates the number of hours the unit will be inactive when the unit cannot reach its full capacity due to Planned Derating (PD, DP) and Maintenance Derating (D4, DM). Each individual Planned Derating and Maintenance Derating is transformed into equivalent full outage hour(s). 
+This field is disabled and populated automatically using the following formula:
+
+(Derating Hours x Size of Reduction) / NMC
+
+Where,
+Derating Hours are the sum of individual Planned Derating hours (PD, DP) and Maintenance Derating hours (D4, DM).
+Size of Reduction is calculated by subtracting the Net Available Capacity (NAC) from the Net Dependable Capacity (NDC). For multiple deratings, the Size of Reduction of each derating will be calculated by the difference in the Net Available Capacity of the unit before the derating and the reported Net Available Capacity after the derating.
+This value is defined by NERC in the GADS DRI.
+Equivalent Scheduled Outage FactorNumericIndicates the fraction of a given operating period in which a Generating Unit is not available due to scheduled outages and scheduled deratings
+This field is disabled and populated automatically using one of the following formula:
+[(Scheduled Outage Hours + Equivalent Scheduled Derated Hours) / Period Hours] X 100 %
+Equivalent Seasonal Derated Hours NumericIndicates the number of hours the unit will be inactive when the unit cannot reach its full capacity due to seasonal outages.
+This field is disabled and populated automatically using the following formula:
+(Net Maximum Capacity (NMC) - Net Dependable Capacity (NDC) x Available Hours (AH)) / Net Maximum Capacity (NMC).
+((NMC - NDC) x AH) / NMC
+This value is defined by NERC in the GADS DRI.
+Equivalent Unplanned Derated Hours NumericIndicates the number of hours the unit will be inactive when the unit cannot reach its full capacity due to Unplanned Deratings (D1, D2, D3, D4, DM). Each individual Unplanned Derating is transformed into equivalent full outage hour(s). 
+This field is disabled and populated automatically using the following formula:
+
+(Derating Hours x Size of Reduction) / NMC
+
+Where,
+Derating Hours are the sum of individual Unplanned Derating hours (D1, D2, D3, D4, DM) and Unplanned Deratings (D1, D2, D3, D4, DM) during Reserve Shutdowns (RS).
+Size of Reduction is calculated by subtracting the Net Available Capacity (NAC) from the Net Dependable Capacity (NDC). For multiple deratings, the Size of Reduction of each derating will be calculated by the difference in the Net Available Capacity of the unit before the derating and the reported Net Available Capacity after the derating.
+Equivalent Unavailability FactorNumericIndicates the fraction of Maximum Generation that could not be produced due to unit deratings and planned and unplanned outages.
+This field is disabled and populated automatically using the following formula:
+[(Unplanned Outage Hours + Planned Outage Hours + Equivalent Unplanned Derated Hours + Equivalent Planned Derated Hours) / Period Hours] X 100%
+Equivalent Unplanned Outage FactorNumericIndicates the fraction of a given operating period in which a generating unit is not available due to forced and maintenance outages and forced and maintenance deratings.
+This field is disabled and populated automatically using one of the following formula:
+[(Unplanned Outage Hours + Equivalent Unplanned Derated Hours) / Period Hours] X 100%
+Note: The Equivalent Unplanned Outage Factor is identical to the Unit Capability Loss Factor except this equation includes all events, including those outside plant management control.
+Equivalent Unplanned Outage RateNumericA measure of the probability that a GAA Unit will not be available due to unplanned outages or unplanned deratings.
+This field is disabled and populated automatically using the following formula:
+[(Unplanned Outage Hours + Equivalent Unplanned Derated Hours) / Unplanned Outage Hours + Service Hours + Synchronous Hours + Pumping Hours + Equivalent Unplanned Derated Hours During Reserve Shutdowns)] X 100%
+Extended Maintenance Derate Equivalent MWHNumeric
+Indicates the amount of capacity lost (in Mega Watt hours) when the unit cannot reach its full capacity due to extension of a Maintenance Derating beyond its estimated completion date.
+
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x Extended Maintenance Equivalent hours 
+Extended Planned Derate Equivalent MWHNumericIndicates the amount of capacity lost (in Mega Watt hours) when the unit cannot reach its full capacity due to extension of a Planned Derating beyond its estimated completion date.
+This field is disabled and populated automatically using the following formula:
+
+Net Maximum Capacity x Extended Planned Derate Equivalent hours
+
+Forced Outage MWHNumericIndicates the amount of capacity lost (in Mega Watt hours) when the unit was inactive due to immediate, delayed, and postponed outages and startup failure outages.
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x Forced Outage hours
+Maintenance and Extension Outage MWHNumeric
+Indicates the amount of capacity lost (in Mega Watt hours) when the unit was inactive due to Maintenance Outages (MO) and Maintenance Outage Extensions (ME) of any Maintenance Outages (MO). This also includes the extension of a Maintenance Outage beyond its estimated completion date.
+
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x Maintenance and Extended Outage hours
+Maintenance Outage MWHNumeric
+Indicates the amount of capacity lost (in Mega Watt hours) when the unit was inactive due to maintenance outages. This includes all the hours experienced during Maintenance Outages (MO).
+
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x Maintenance Outage hours
+Maintenance Outage Scheduled Extension MWHNumericIndicates the amount of capacity lost (in Mega Watt hours) when the unit was scheduled to be inactive due to extension of a Maintenance Outage beyond its estimated completion date.
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x Maintenance Outage Scheduled Extension hours
+Non Curtailing Event MWHNumeric
+Indicates the amount of capacity lost (in Mega Watt hours) when the unit was inactive due to removal of an equipment or a major component from service for maintenance, testing, or other purposes that did not result in a unit outage or derating.
+
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x Number of Non Curtailing Events
+Output FactorNumericIndicates the Capacity Factor when the period is applicable only to the in service state.
+This field is disabled and populated automatically using the following formula:
+
+[Actual Generation / (Service Hours X Maximum Capacity)] X 100 %
+
+If you selected Net Maximum Capacity (NMC) in the weightage type in the GAA Unit record, the value in this field will based on the net values. 
+If you selected Gross Maximum Capacity (GMC) in the weightage type in the GAA Unit record, the value in this field will based on the gross values. 
+
+Planned and Extension Outage MWH
+NumericIndicates the amount of capacity lost (in Mega Watt hours) when the unit was inactive due to Planned Outages (PO) and Planned Outage Extensions (PE) of any Planned Outages (PO). This also includes the extension of a Planned Outage beyond its estimated completion date.
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x Planned and Extension Outage hours
+Planned Outage MWHNumeric
+Indicates the amount of capacity lost (in Mega Watt hours) when the unit was inactive due to planned outages. This includes all the hours experienced during Planned Outages (PO).
+
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x Planned Outage hours
+
+Planned Outage Scheduled Extension MWH
+Numeric
+Indicates the amount of capacity lost (in Mega Watt hours) when the unit was inactive due to extension of a Planned Outage beyond its estimated completion date.
+
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x Planned Outage Scheduled Extension hours
+Reserve Shutdown MWHNumeric
+Indicates the amount of capacity lost (in Mega Watt hours) when the unit was available, but was not in service.
+
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x Reserve Shutdown hours
+Seasonal Derating FactorNumericIndicates the fraction of Maximum Generation that could not be produced due to seasonal deratings.
+This field is disabled and populated automatically using the following formula:
+
+(Equivalent Seasonal Derated Hours / Period Hours) X 100%
+
+Startup Failure MWHNumericIndicates the amount of capacity lost (in Mega Watt hours) when the unit was unable to start within a specified startup time.
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x Startup Failure hours
+Total Equivalent Derate MWHNumeric
+Indicates the amount of capacity lost (in Mega Watt hours) when the unit will be inactive when the unit cannot reach its full capacity due to any of the derates.
+
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x Total Equivalent Derate hours
+U1 Unplanned Outage MWHNumericIndicates the amount of capacity lost (in Mega Watt hours) when the unit was inactive due to U1 unplanned outages.
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x U1 Unplanned Outage hours
+U2 Unplanned Outage MWHNumericIndicates the amount of capacity lost (in Mega Watt hours) when the unit was inactive due to U2 unplanned outages.
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x U2 Unplanned Outage hours
+U3 Unplanned Outage MWHNumericIndicates the amount of capacity lost (in Mega Watt hours) when the unit was inactive due to U3 unplanned outages.
+This field is disabled and populated automatically using the following formula:
+Net Maximum Capacity x U3 Unplanned Outage hours
+Unit Derating FactorNumericIndicates the fraction of Maximum Generation that could not be produced due to unit deratings.
+This field is disabled and populated automatically using the following formula:
+[(Equivalent Planned Derated Hours + Equivalent Unplanned Derated Hours) / Period Hours] X 100%
+
+GAA Performance Summary Records
+GAA Performance Summary records store information about the fields that are defined for the GAA Performance Summary family in the baseline GE Digital APM database. This topic provides an alphabetical list and description of the fields that exist for the GAA Performance Summary family and appear on the datasheet. The information in the table reflects the baseline state and behavior of these fields. The values in these fields are defined by NERC in the GADS DRI. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Note: Wherever we refer to the unit, we mean the unit represented by the GAA Unit record to which the Performance record is linked.
+FieldData TypeDescriptionBehavior and UsageActual Unit Starts NumericIndicates the number of actual times the unit started within a given month and year. 
+This field is disabled and is populated automatically when the value in the Reporting Status field is set to Unit Level Approval, validation is performed on this field to ensure that the value is equal to the number of Attempted Unit Starts minus the number of Startup Failures. 
+This field is required.
+Attempted Unit Starts NumericIndicates the number of attempted starts for the unit within a given month and year. 
+This field is disabled and is populated automatically when the value in the Reporting Status field is set to Unit Level Approval, validation is performed on this field to ensure that the value is equal to the number of outage events that occurred within the month that the Performance record represents. 
+This field is required.
+Available Hours Numeric
+Indicates the total number of hours in which the unit was available.
+
+ This field is disabled and populated automatically as the sum of Pumping Hours, Reserve Shutdown Hours (RSH), Service Hours (SH), and Synchronous Condensing Hours.
+This field is required. 
+This value is defined by NERC in the GADS DRI and included in NERC performance reports.
+Availability Factor NumericIndicates the fraction of a given operating period in which a Generating Unit is available without any outages
+This field is disabled and populated automatically using the following formula:
+
+(Available Hours / Period Hours) × 100%
+
+This value is defined by NERC in the GADS DRI. 
+Average Run Time NumericIndicates the average number of hours a unit runs and produces power.
+This field is disabled and populated automatically using the following formula:
+
+(Service Hours / Actual Unit Starts ) × 100%
+
+This value is defined by NERC in the GADS DRI. 
+Common Mode Outage Event HoursNumericIndicates the total number of hours a unit was under Common Mode Outage.This field is disabled and populated automatically as the sum of all hours spent in Common Mode Outage events.Extension of Scheduled Outage HoursNumericIndicates the number of hours that the unit was scheduled to be inactive. 
+This field is disabled and populated automatically as the sum of Planned Extension Outage Hours and Maintenance Extension Outage Hours.
+This field is required. 
+Forced Outage Hours NumericIndicates the number of hours the unit was inactive due to immediate, delayed, and postponed outages and startup failure outages.
+This field is disabled and populated automatically as the sum of all hours experienced during Forced Outages (U1, U2, U3) and Startup Failures (SF).
+This field is required.
+Forced Outage Factor NumericIndicates the fraction of a given operating period in which a Generating Unit is not available due to forced outages.
+This field is disabled and populated automatically using the following formula:
+(Forced Outage Hours / Period Hours) × 100%
+This value is defined by NERC in the GADS DRI. 
+Forced Outage Rate NumericA measure of the probability that a GAA Unit will not be available due to forced outages.
+This field is disabled and populated automatically using the following formula:
+[Forced Outage Hours / ∑ (Forced Outage Hours + Service Hours + Synchronous Hours + Pumping Hours)] × 100%
+This value is defined by NERC in the GADS DRI. 
+Forced Outage Rate Demand NumericA measure of the probability that a GAA Unit will not be available due to forced outages when there is demand on the unit to generate.
+This field is disabled and populated automatically using the following formula:
+
+[Forced Outage Hours Demand / (Σ Forced Outage Hours Demand + Service Hours)] × 100%
+
+This value is defined by NERC in the GADS DRI. 
+Gross Actual Generation (G) Numeric
+Indicates the actual gross generation of the unit during the month for which the Performance record stores generation data. 
+
+This field is disabled and populated automatically using the following formula:
+Gross Actual Generation = Max Generation (G) - Unavailable Generation
+Where,
+Max Generation (G) = Period Hours × Gross Max CapacityUnavailable Generation = ∑(All Outage hours + All Equivalent Derate hours + All Reserve Shutdown hours) × Gross Max Capacity
+This field is used to calculate the value in the Gross Generation of Electricity field in the GAA Fuel Report records that are linked to the Performance record.
+This field accepts both positive and negative numbers. In some cases, if a unit does not produce power during the month, the equipment in the plant still consumes power, causing a negative Gross Actual Generation value.
+This field becomes required when the value in the Reporting Status field is set to Unit Level Approval.
+This value is defined by NERC in the GADS DRI and included in NERC performance reports.
+Gross Dependable Capacity (G) NumericIndicates the gross dependable capacity of the unit. 
+This field is populated automatically with the value in the Gross Dependable Capacity field in the Unit Capacity record for a GAA Unit based on the start date of the Performance record.
+This value is defined by NERC in the GADS DRI and included in NERC performance reports. 
+If you modify the value in this field, a validation message appears indicating that the pumping hours or capacity values have changed and that the performance calculation is being run.
+Gross Maximum Capacity (G) NumericIndicates the gross maximum capacity of the unit during the month for which the Performance record stores generation data. 
+This field is populated automatically with the value in the Gross Maximum Capacity field in the Unit Capacity record for a GAA Unit based on the start date of the Performance record.
+This value is defined by NERC in the GADS DRI and included in NERC performance reports. 
+If you modify the value in this field, a validation message appears indicating that the pumping hours or capacity values have changed and that the performance calculation is being run.
+Inactive Hours Numeric
+Indicates the number of hours the unit was inactive during the month for which the Performance record stores generation data. 
+
+This field is disabled and populated automatically with the value from the Event Duration field in the Primary Event record that is linked to the Performance record. 
+This field is populated automatically as the sum of durations of Inactive events (IR, MB, RU).
+This field is required.
+This value is defined by NERC in the GADS DR.
+Maintenance Outage HoursNumeric
+Indicates the number of hours the unit was inactive due to maintenance outages.
+
+This field is disabled and populated automatically as the sum of all hours that occurred during Maintenance Outages (MO) only.
+This field is required.
+Maintenance and Extension Outage HoursNumericIndicates the number of hours the unit was inactive due to maintenance outages and maintenance outage extensions.
+This field is disabled and populated automatically as the sum of all hours that occurred during Maintenance Outages (MO) and Maintenance Outage Extensions (ME) of any Maintenance Outages (MO).
+This field is required.
+Maintenance Outage Schedule Extension HoursNumericIndicates the number of hours the unit was inactive due to maintenance outage extensions.This field is disabled and populated automatically as the sum of all hours that occurred during Maintenance Outage Extensions (ME) only.Maintenance Outage Factor NumericIndicates the fraction of a given operating period in which a Generating Unit is not available due to maintenance outages.
+This field is disabled and populated automatically using the following formula:
+
+(Maintenance Outage Hours / Period Hours) × 100%
+
+This value is defined by NERC in the GADS DRI. 
+Max Generation (G) Numeric
+Indicates the maximum gross generation that the unit is capable of producing during the month for which the Performance record stores generation data. 
+
+This field is disabled and populated automatically using the following formula:
+Max Generation (G) = Period Hours × Gross Max Capacity
+Max Generation (N) Numeric
+Indicates the maximum net generation that the unit is capable of producing during the month for which the Performance record stores generation data. 
+
+This field is disabled and populated automatically using the following formula:
+Max Generation (N) = Period Hours × Net Max Capacity 
+Mean Forced Outage Duration NumericIndicates the average number of hours a unit is unproductive because of forced outage.
+This field is disabled and populated automatically using the following formula:
+Forced Outage Hours which occur from in-service state only / Number of Forced Outages which occur from in-service state only
+This value is defined by NERC in the GADS DRI. 
+Mean Maintenance Outage Duration NumericIndicates the average number of hours a unit is unproductive because of maintenance outage.
+This field is disabled and populated automatically using the following formula:
+Forced Outage Hours which occur from in-service state only / Number of Maintenance Outages which occur from in-service state only
+This value is defined by NERC in the GADS DRI. 
+Mean Planned Outage Duration NumericIndicates the average number of hours a unit is unproductive because of planned outage.
+This field is disabled and populated automatically using the following formula:
+Planned Outage Hours which occur from in-service state only / Number of Planned Outages which occur from in-service state only
+This value is defined by NERC in the GADS DRI. 
+Mean Service Time to Forced OutagesNumericIndex representing mean service time to in-service forced outages.
+This field is disabled and populated automatically using the following formula:
+Service Hours / Number of (Unplanned) Forced Outages which occur from in-service state only
+This value is defined by NERC in the GADS DRI. 
+Mean Service Time to Maintenance Outage NumericIndex representing mean service time to in-service maintenance outages.
+This field is disabled and populated automatically using the following formula:
+Service Hours / Number of Maintenance Outages which occur from in-service state only
+This value is defined by NERC in the GADS DRI. 
+Mean Service Time to Planned Outage NumericIndex representing mean service time to in-service planned outages.
+This field is disabled and populated automatically using the following formula:
+Service Hours / Number of Planned Outages which occur from in-service state only
+This value is defined by NERC in the GADS DRI. 
+Mean Service Time to Unplanned Outage NumericIndex representing mean service time to in-service unplanned outages.
+This field is disabled and populated automatically using the following formula:
+Service Hours / Number of Unplanned Outages which occur from in-service state only
+This value is defined by NERC in the GADS DRI. 
+Mean Unplanned Outage Duration NumericIndicates the average number of hours a unit is unproductive because of unplanned outage.
+This field is disabled and populated automatically using the following formula:
+Unplanned Outage Hours which occur from in-service state only / Number of Unplanned Outages which occur from in-service state only
+This value is defined by NERC in the GADS DRI. 
+Net Actual Generation (N) Numeric
+Indicates the actual net generation of the unit during the month for which the Performance record stores generation data. 
+
+This field is disabled and populated automatically using the following formula:
+Net Actual Generation = Max Generation (N) - Unavailable Generation
+Where,
+Max Generation (N) = Period Hours × Net Max CapacityUnavailable Generation = ∑(All Outage hours + All Equivalent Derate hours + All Reserve Shutdown hours) × Net Max Capacity
+This field is used to calculate the value in the Net Generation of Electricity field in the Generation Fuel Report records that are linked to the Performance record.
+This field accepts both positive and negative numbers. In some cases, if a unit does not produce power during the month, the equipment in the plant still consumes power, causing a negative Net Actual Generation value.
+This field becomes required when the value in the Reporting Status field is set to Unit Level Approval.
+This value is defined by NERC in the GADS DRI and included in NERC performance reports.
+Net Dependable Capacity (N) Numeric
+Indicates the net dependable capacity of the unit. 
+
+This field is populated automatically with the value in the Net Dependable Capacity field in the Unit Capacity record for a GAA Unit based on the start date of the Performance record.
+This field is required.
+This value is defined by NERC in the GADS DRI and included in NERC performance reports.
+If you modify the value in this field, a validation message appears indicating that the pumping hours or capacity values have changed and that the performance calculation is being run.
+Net Maximum Capacity (N) NumericIndicates the net maximum capacity of the unit during the month for which the Performance record stores generation data.
+This field is populated automatically with the value in the Net Maximum Capacity field in the Unit Capacity record for a GAA Unit based on the start date of the Performance record.
+This field is required. 
+This value is defined by NERC in the GADS DRI and included in NERC performance reports. 
+If you modify the value in this field, a validation message appears indicating that the pumping hours or capacity values have changed and that the performance calculation is being run.
+Non Curtailing Event HoursNumericIndicates the number of hours  when an equipment or a major component was removed from service for maintenance, testing, or other purposes, and it did not result in a unit outage or derating.This field is disabled and populated automatically with the sum of all hours when a Non Curtailing Event occurred for a unit.Number of Common Mode Outage EventsNumericIndicates the number of Common Mode Outage events that occur in a unit during the specified month.This field is disabled and populated automatically with the number of Common Mode Outage events that have occurred during the specified month.Number of Forced Outages NumericIndicates the number of times the unit is inactive due to Forced Outages when the unit is in in-service state. This field is disabled and populated automatically when each time the state of the unit changes from In-service to Forced Outage, this field is incremented by 1.Number of Maintenance Outages NumericIndicates the number of times the unit is inactive due to Maintenance Outages when the unit is in in-service state.This field is disabled and populated automatically when each time the state of the unit changes from In-service to Maintenance Outage, this field is incremented by 1.
+Number of Non Curtailing Events
+NumericIndicates the number of Non Curtailing events that occur in a Unit during the specified month.This field is disabled and populated automatically when each time an Event occurs with value in the Capacity Event Type field specified as NC (Noncurtailing Event), this field is incremented by 1.Number of Planned Outages NumericIndicates the number of times the unit is inactive due to Planned Outages when the unit is in the in-service state.This field is disabled and populated automatically when each time the state of the unit changes from In-service to Planned Outage, this field is incremented by 1. Number of Unplanned Outages NumericIndicates the number of times the unit is inactive due to Unplanned Outages when the unit is in the in-service state.This field is disabled and populated automatically when each time the state of the unit changes from In-service to Unplanned Outage, this field is incremented by 1.Period Hours NumericIndicates the number of hours the unit was active during the month for which the Performance record stores generation data. This field is disabled and populated automatically. The value in this field is equal to the sum of the values in the Available Hours field and Unavailable Hrs field.This field is required.Plant ID CharacterIdentifies the plant in which the unit resides.This field is disabled and populated automatically with the value in the Plant ID field in the GAA Plant record. The GAA Plant record is linked to the GAA Unit record for an existing Performance record.Plant Name CharacterIdentifies the name of the plant in which the unit resides.This field is disabled and populated automatically with the value in the Plant Name field in the GAA Plant record. The GAA Plant record is linked to the GAA Unit record for an existing Performance record.Planned Outage Hours NumericIndicates the number of hours the unit was inactive due to planned outages.
+This field is disabled and populated automatically as the sum of all hours experienced during Planned Outages (PO) only.
+This field is required. 
+Planned and Extension Outage HoursNumericIndicates the number of hours the unit was inactive due to planned outages and planned outage extensions.
+This field is disabled and populated automatically as the sum of all hours experienced during Planned Outages (PO) and Planned Outage Extensions (PE) of any Planned Outages (PO).
+This field is required. 
+Planned Outage Schedule Extension HoursNumericIndicates the number of hours the unit was inactive due to planned outage extensions.
+This field is disabled and populated automatically as the sum of all hours that occurred during Planned Outage Extensions (PE) only.
+Planned Outage Factor NumericIndicates the fraction of a given operating period in which a Generating Unit is not available due to planned outages.This field is disabled and populated automatically using the following formula:(Planned Outage Hours / Period Hours ) × 100%This value is defined by NERC in the GADS DRI.Primary Unit Code CharacterIndicates the unit represented by the GAA Unit record to which the Performance record is linked. 
+This field is disabled and populated automatically with the value in the Primary Unit Code field in the GAA Unit record that is linked to a Performance record. 
+This field is required.
+This value is defined by NERC in the GADS DRI and included in NERC performance reports. 
+ Primary Utility CodeCharacterIndicates the utility under which the unit represented by the GAA Unit to which the Performance record is linked operates. 
+This field is disabled and populated automatically with the value in the Primary Utility Code field in the GAA Unit record. 
+This field is required.
+This value is defined by NERC in the GADS DRI and included in NERC performance reports. 
+Pumping Hours NumericIndicates the number of hours the unit operated as a pump. 
+This field is enabled in Performance records that contain the value Pumped Storage/Hydro in the Unit Type field. You can enter a value in this field manually.
+This field is required. 
+This value is defined by NERC in the GADS DRI.
+If you modify the value in this field, a validation message appears indicating that the pumping hours or capacity values have changed and that the performance calculation is being run.
+Reporting Date DateIndicates the date on which the Performance record was approved and reported.
+This field is populated automatically with the date when the record was created.
+This field is disabled when the Performance record is in the Approved state.
+This field is required. 
+Reporting Month CharacterIndicates the month that the Performance record represents. 
+The combination of the value in this field and the Reporting Year field represents a unique year and month combination. You can create only one record with this combination for a particular type of Performance.
+This field is disabled and populated automatically with the month when the record was created.
+This value is included in NERC performance reports. 
+Reporting Year Numeric
+Indicates the year that the Performance record represents. 
+
+The combination of the value in this field and the Reporting Month field represents a unique year and month combination. You can create only one record with this combination for a particular type of Performance.
+This field is disabled and populated automatically with the year of the created record.
+This value is included in NERC performance reports. 
+Reserve Shutdown Hours NumericIndicates the sum of all the hours that the unit was available, but was not in service. 
+This field is disabled and populated automatically as the sum of all hours the unit was not in service.
+This field is required.
+Revision NumericIndicates the revision number of the Performance record. 
+You must increment this number each time you resubmit a report which includes information in the Performance record to NERC or CEA.
+This value is defined by NERC in the GADS DRI. 
+Scheduled Outage Hours NumericIndicates the number of hours that the unit was scheduled to be inactive.
+ This field is disabled and populated automatically with the sum of all hours experienced during Planned Outages (PO), Maintenance Outages (MO), and Scheduled Outage Extensions (PE and ME) of any Maintenance Outages (MO) and Planned Outages (PO).
+This value is defined by NERC in the GADS DRI. 
+Scheduled Outage Factor NumericIndicates the fraction of a given operating period in which a Generating Unit is not available due to scheduled outages.
+This field is disabled and populated automatically using the following formula:
+
+(Scheduled Outage Hours / Period Hours) × 100%
+
+This value is defined by NERC in the GADS DRI.
+Service Factor NumericIndicates the fraction of service hours to period hours in a given operating period.
+This field is disabled and populated automatically using the following formula:
+
+(Service Hours / Period Hours) × 100%
+
+This value is defined by NERC in the GADS DRI.
+Start Reliability Numeric
+Indicates the starting reliability of the unit. 
+
+This field is disabled and populated automatically using the following formula:
+(Actual Unit Starts / Attempted Unit Starts)*100
+Synchronous Condensing Hours NumericIndicates the number of hours the unit operated in synchronous condensing mode. You can enter a value in this field manually.If you modify the value in this field, an informational message appears on saving the datasheet indicating that the synchronous condensing hours or pumping hours have changed and that the performance calculation is being run.
+
+Typical Unit Loading Characteristics 
+NumericIndicates the time during which the unit was responsible for generating power. 
+This field is populated automatically with the value in the Default Unit Loading field in the GAA Unit record to which the Performance record is linked. 
+This value is defined by NERC in the GADS DRI. 
+Unit ID CharacterIdentifies the unit.This field is disabled and populated automatically with the value in the Unit ID field in the GAA Unit record that is linked to a Performance record.Unit Name CharacterIdentifies the name of the unit. This field is disabled and populated automatically with the value in the Unit Name field in the GAA Unit record in an existing Performance record.Unavailable Hours Numeric
+Indicates the number of hours that the unit was unavailable. 
+
+This field is disabled and populated automatically as the sum of the Forced Outage Hours (FOH), Maintenance Outage Hours (MOH), and Planned Outage Hours (POH).
+This value is included in NERC performance reports.
+Unplanned Outage Hours NumericIndicates the number of hours that the unit was inactive due to unscheduled outages.This field is disabled and populated automatically with the sum of all hours experienced during Forced Outages (U1, U2, U3), Startup Failures (SF), Maintenance Outages (MO), and Maintenance Outage Extensions (ME) of any Maintenance Outages (MO).Unit Type CharacterIdentifies the type of the unit. This field is disabled and populated automatically with the value in the GADS Unit Type field in the GAA Unit record that is linked to a Performance record. Unavailability Factor NumericIndicates the fraction of a given operating period in which a Generating Unit is not available due to outages.
+This field is disabled and populated automatically using the following formula:
+
+(Unavailable Hours / Period Hours) × 100%
+
+This value is defined by NERC in the GADS DRI.
+Unplanned Outage Factor NumericIndicates the fraction of period a Generating Unit is not available due to unplanned outages.
+This field is disabled and populated automatically using the following formula:
+(Unplanned Outage Hours / Period Hours ) × 100%
+This value is defined by NERC in the GADS DRI.
+Verbal Description CharacterIndicates additional information about the GAA Unit record that is linked to the Performance record. 
+You can manually enter the description in this field.
+When you create a Performance record, you can enter a verbal description of up to 255 characters. When you generate a NERC Performance Report, the verbal description in the generated report will display only the first 50 characters of the description that you entered in the Verbal Description field.
+
+GAA Plant Records
+GAA Plant records store information about the fields that are defined for the GAA Plant family in the baseline GE Digital APM database. This topic provides an alphabetical list and description of the fields that exist for the GAA Plant family and appear on the Plant section. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageAddress 1CharacterIdentifies the first line of the address of the plant. 
+You can enter a value manually. We recommend that you use the address that is on file with the Regulatory Organization.
+This field is available in the Plant section. 
+Address 2CharacterIdentifies the second line of the address of the plant. 
+You can enter a value manually. We recommend that you use the address that is on file with the Regulatory Organization.
+This field is available in the Plant section. 
+AreaCharacterUsed to group GAA Plants into an area. 
+A baseline rule exists to populate this field with a list of each unique value that exists in the Area field in all other GAA Plants.
+You can enter a value manually.
+When you enter a value in the Area field for one GAA Plant, the value will be available in the Area drop-down for next plant. 
+This field is available in the Plant section. 
+Asset IDCharacterIdentifies the Functional Location associated with the GAA Plant.
+You can select a Functional Location to associate with the GAA Plant.
+This field is required.
+CityCharacterIdentifies the city in which the plant resides. 
+You can enter a value manually. We recommend that you use the city associated with the address that is on file with the Regulatory Organization. 
+This field is available in the Plant section. 
+Company IDCharacterIdentifies the company that owns the plant. 
+When a GAA Plant is created, this field is populated automatically with the value in the Company ID field in the GAA Company to which the GAA Plant is linked. 
+This field is available in the Plant section. 
+Company NameCharacterIdentifies the full name of the company that owns the plant. 
+When a GAA Plant is created, this field is populated automatically with the value in the Company Name field in the GAA Company to which the GAA Plant is linked.
+This field is available in the Plant section. 
+CountryCharacterIndicates the country in which the plant resides. 
+You can enter a value manually. We recommend that you use the country associated with the address that is on file with the Regulatory Organization. 
+This field is available in the Plant section. 
+Organization CharacterIdentifies the organization to which the plant belongs. 
+You can enter a value manually. After you enter a value in the Organization field for one GAA Plant, the Organization value will be available in the drop-down list for the next plant. Therefore, when you create a new plant, you can either enter a new value or select the Organization value for an existing plant in the list.
+This field is available in the Plant section.
+Plant IDCharacterIdentifies the plant and is used to populate the Record ID. 
+This field is required for all GAA Plants. 
+This field is available in the Plant section.
+Plant NameCharacterIdentifies the full name of the plant and is used to populate the Record ID. 
+This is a character field that is required for all GAA Plants. This value is defined by the Regulatory Organization. 
+This field is available in the Plant section.
+Primary Plant CodeCharacterIdentifies the code that is assigned to the GAA Plant by the regulatory body selected in the Primary Regulatory Body field of the GAA Company record.
+You can enter a value manually.
+This field is required.
+Primary Regulatory BodyCharacterIdentifies the first council to which data will be reported.
+A baseline rule exists to populate this field based on your selection in the Primary Regulatory Body field in the GAA Company record and is disabled.
+This field is available in the Plant section.
+Secondary Plant CodeCharacterIdentifies the code that is assigned to the GAA Plant by the regulatory body selected in the Secondary Regulatory Body field of the GAA Company record.
+This field is required only if the Primary Regulatory Organization is CEA and is disabled.
+Secondary Regulatory BodyCharacterIdentifies the second council to which data will be reported.
+The Plant family inherits Secondary Regulatory Body field from the Company.
+This field is available in the Plant section.
+StateCharacterIndicates the state in which the plant resides. 
+A baseline rule exists to populate this field with a list of System Codes in the MI_GM_STATE System Code Table. We recommend that you use the state associated with the address that is on file with the Regulatory Organization. 
+This field is available in the Plant section. 
+Time ZoneCharacterIndicates the time zone to which the GAA Plant is associated.
+By default, this field is set to Eastern Standard Time. You can select a time zone from the available list of time zones. 
+This field is available in the Plant section. 
+This field is required.
+Use Daylight Saving TimeBoolean
+Indicates whether Daylight Saving Time should be used in records that are associated with the GAA Plant.
+
+ If the value in this field is:
+True, Daylight Saving Time will be adjusted automatically.False, Daylight Saving Time will not be adjusted automatically.
+This field is available in the Plant section. 
+Zip CodeCharacterIdentifies the zip code of the location of the plant. 
+You can enter a value manually. We recommend that you use the zip code associated with the address that is on file with the Regulatory Organization. 
+This field is available in the Plant section. 
+
+GAA Supported Organizations Records
+GAA Supported Organizations records store information about the fields that are defined for the GAA Supported Organizations family in the baseline GE Digital APM database. This topic provides an alphabetical list and description of the fields that exist for the GAA Supported Organizations family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive. 
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageOrganization DescriptionCharacterProvides a description of the organization.
+You can enter a value manually.
+Organization IDCharacterIdentifies the identification of the Regulatory Organization.
+This field is required.
+Supports Contributing EventsBooleanIndicates whether the Regulatory Organization supports Contributing Events.
+This field is selected by default if the Regulatory Organization is North American Electric Reliability Corporation (NERC).
+Supports Related EventsBooleanIndicates whether the Regulatory Organization supports Related Events.
+This field is selected by default if the Regulatory Organization is North American Electric Reliability Corporation (NERC).
+
+GAA Unit Records
+GAA Unit records store information about the fields that are defined for the GAA Unit family in the baseline GE Digital APM database. This topic provides an alphabetical list and description of the fields that exist for the GAA Unit family and appear on the Unit, References, Calculation Settings, Fuel Data, Startup Summary, and Operating Notes sections. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageAPM Event Creation Character
+
+Determines under what conditions APM Events will be created. 
+
+A baseline rule exists to populate this field with a list of the following values:
+All Primary EventsMWH Loss Exceeds ReferenceProduction Loss Exceeds Reference
+This field is available in the Calculation Settings section. 
+APM Event Creation Reference Value NumericUsed to determine when an APM Event will be created. 
+This field is enabled and required if the value in the APM Event Creation is MWH Loss Exceeds Reference or Production Loss Exceeds Reference.
+ This field is available in the Calculation Settings section. 
+Asset IDCharacterIdentifies the Functional Location associated with the GAA Unit.
+You can select a Functional Location to associate with the GAA Unit.
+This field is required.
+Block Number Character
+Identifies the generation block for the unit. 
+
+This field contains a list of all values in the Block Number field in all other GAA Units. Block number typically applies to combined-cycle or co-generation unit types.
+In Primary Events and Contributing Events that are linked to a GAA Unit that has a value in the Block Number field, the following fields will contain the cause code values that are associated with the value in the Unit Type field of all GAA Units which contain the same value in the Block Number field.
+Cause Code SystemCause Code ComponentCause Code fields
+This field is available in the References section. 
+You can enter a value in this field.
+When you enter a value in the Block Number field for one GAA Unit, the value will be available in the Block Number drop-down for next unit. 
+Capable of Banking?BooleanIndicates whether the GAA Unit is capable of producing required heating output.
+If the value in this field is:
+True, it indicates that the GAA Unit is able to produce the required heating output.False, it indicates that the GAA Unit is not able to produce the required heating output.
+This field is available in the Startup Summary section.
+Capable of Quick Start?BooleanIndicates whether the GAA Unit is capable of starting immediately.
+If the value in this field is:
+True, it indicates that the GAA Unit can start immediately.False, it indicates that the GAA Unit cannot start immediately.
+This field is available in the Startup Summary section.
+Cold Start MMBTUNumericIndicates the fuel consumption of a cold startup in MMBTU.
+You can enter a value in this field.
+This field is available in the Startup Summary section.
+Company ID CharacterIdentifies the company that owns the unit. 
+When a GAA Unit is first created, this field is disabled and populated automatically with the value in the Company ID field for the GAA Plant to which the GAA Unit is linked. 
+This field is available in the Unit section. 
+Company NameCharacterIdentifies the full name of the company that owns the unit. 
+When a GAA Unit is first created, this field is disabled and populated automatically with the value in the Company Name field in the GAA Plant to which the GAA Unit is linked. 
+This field is available in the Unit section. 
+Create Outside Management Control Statistics? Boolean
+Indicates whether a Performance record will be created to exclude Primary Events and Contributing Events in which the value in the OMC Event field is True. 
+
+If the value in this field is:
+True, a Performance record will be created to exclude data for OMC events.False, a Performance record will NOT be created to exclude data for OMC events.
+This field is available in the Calculation Settings section. 
+Default Unit Loading CharacterIndicates the time during which the unit is responsible for generating power. 
+A baseline rule exists to populate this field with a list of System Codes in the MI_GM_UNIT_LOADING System Code Table based on the value in the Primary Regulatory Body field in GAA Unit record. 
+This field is available in the Fuel Data section.
+Derating Calculation Method CharacterUsed by the History Rollup Query when it rolls up event data in the order that the events occurred based on their start date. 
+This field is required. You should accept the default value, Event Order Number. You should not select Ranked Masking and All Additives. 
+This field is available in the Calculation Settings section. 
+EUCG Plant ReferenceNumericIndicates a plant reference number assigned by EUCG. EUCG is a global association of utility professionals and member companies which is recognized as the electric energy industry source for performance information.
+You can enter a value in this field.
+This field is available in the References section.
+Generation Cost Model Character
+Determines how the Potential Event Cost will be calculated in Primary Events that are linked to the GAA Unit. 
+This field is available in the Calculation Settings section. It is disabled and set to No Cost Calculation by default.Generation Cost Reference Value NumericDetermines the cost of power lost by reduced capacity of the unit. 
+This field is enabled and required when the value in the Generation Cost Model field is set to Reference Value. 
+This field is available in the Calculation Settings section. 
+Hot Start MMBTUNumericIndicates the fuel consumption for a hot startup in MMBTU.
+You can enter a value in this field.
+This field is available in the Startup Summary section.
+Lock GADS DataBoolean
+Determines whether Primary Event or Performance records that are linked to the GAA Unit can be modified. 
+
+If the value in this field is:
+True, only a member of the MI GAA Administrator Security Group will be allowed to create Primary Event or Performance records to link to the GAA Unit or modify Primary Events or Performance records that are already linked to the GAA Unit.False, the ability to create and modify Primary Events and Performance records will be controlled by GAA role-based security.
+This field is available in the Unit section. 
+Minimum Down TimeNumeric
+Indicates the minimum time for which the GAA Unit is shut down and is not producing power.
+
+You can enter a value in this field.
+This field is available in the Startup Summary section.
+Minimum Up TimeNumericIndicates the minimum time for which the GAA Unit is producing power.
+You can enter a value in this field.
+This field is available in the Startup Summary section.
+Nameplate Gross Dependable Capacity NumericIdentifies the gross dependable electrical generation capacity of the unit. This field is available in the Unit section.Nameplate Gross Maximum Capacity NumericIdentifies the gross maximum electrical generation capacity of the unit. 
+Either this field or the Nameplate Net Maximum Capacity field must be populated in order to save a GAA Unit. 
+This field is available in the Unit section.
+This field is required. 
+Nameplate Net Dependable Capacity NumericIdentifies the net dependable electrical generation capacity of the unit. 
+This field is available in the Unit section.
+Nameplate Net Maximum Capacity NumericIdentifies the net maximum electrical generation capacity of the unit. 
+Either this field or the Nameplate Gross Maximum Capacity field must be populated in order to save a GAA Unit. 
+This field is available in the Unit section.
+This field is required. 
+ Net Rating NumericIdentifies the manufacturer's official net rating for the unit. 
+This value is defined by NERC in the GADS DRI and CEA in the Generation Equipment Status ERIS. 
+This field is available in the References section.
+Percent Generation NumericRepresents the percentage of the unit's generation from the unit that belongs to the company represented by the GAA Company that is associated with the GAA Unit. 
+This field is available in the Unit section and is populated with the value 100(PCT) by default. 
+Percent Operated NumericRepresents the percentage of unit operation that belongs to the company represented by the GAA Company that is associated with the GAA Unit. 
+This field is available in the Unit section and is populated with the value 100(PCT) by default. 
+Percent Owned NumericRepresents the percentage of the unit owned by the company represented by the GAA Company that is associated with the GAA Unit. 
+This field is available in the Unit section and is populated with the value 100(PCT) by default. 
+Plant ID CharacterIdentifies the plant in which the unit resides. 
+When a GAA Unit is created, this field is disabled and populated automatically with the value in the Plant ID field in the GAA Plant to which the GAA Unit is linked. 
+This field is available in the Unit section.
+Plant Name CharacterIdentifies the full name of the plant in which the unit resides. 
+When a GAA Unit is created, this field is disabled and populated automatically with the value in the Plant Name field in the GAA Plant to which the GAA Unit is linked. 
+This field is available in the Unit section.
+Primary Fuel Code CharacterIdentifies the fuel code for the primary fuel used by the GAA unit. 
+A baseline rule exists to populate this field with values in GAA Fuel Types records.
+
+ This field is required. 
+This field is available in the Fuel Data section.
+Primary Regulatory OrganizationCharacterIdentifies the first council to which data will be reported.
+A baseline rule exists to populate this field based on your selection in the Primary Regulatory Organization field in the GAA Company record. You can, however, modify the value in this field.
+If the value in this field is set to North American Electric Reliability Corporation (NERC), the Secondary Regulatory Organization field is disabled.
+If the value in this field is set to Canadian Electricity Association (CEA) , the value in Secondary Regulatory Organization field is set to North American Electric Reliability Corporation (NERC) and the field is disabled.
+ This field is required. 
+This field is available in the Unit section. 
+Primary Unit CodeCharacterIndicates the code that is assigned to the GAA Unit by the regulatory body selected in the Primary Regulatory Body field.
+You can enter a value in this field.
+The Primary Unit Code for NERC must be three characters. The Primary Unit Code for CEA must be two characters.
+This field is available in the References section.
+This is a required field.
+Primary Utility Code NumericIdentifies the utility under which the unit operates. 
+This value is defined by NERC in the GADS DRI and CEA in the Generation Equipment Status ERIS. 
+ This field is required. 
+This field is available in the References section.
+Quaternary Fuel Code CharacterIdentifies the fuel code for the quaternary fuel used by the GAA unit. 
+A baseline rule exists to populate this field with values in GAA Fuel Types records.
+
+This field is available in the Fuel Data section.
+Quick Start ReserveNumericIndicates that the Unit is not synchronized but can be loaded within the specified time (in minutes). Typical examples are 10 minutes or 30 minutes. 
+You can enter a value in this field.
+This field is available in the Startup Summary section.
+ Region CharacterIndicates the region code of the plant in which the unit resides. 
+A baseline rule exists to populate this field with a list of System Codes in the MI_GM_POWER_REGION System Code Table. This value is defined by NERC in the GADS DRI and CEA in the Generation Equipment Status ERIS. 
+ This field is required only if the Primary Regulatory Organization is NERC. 
+This field is available in the References section.
+Report Capacity Data CharacterSpecifies how event data should be reported for Primary Events that are linked to the GAA Unit. 
+A baseline rule exists to populate this field with a list of the following values: NERC, Internal, NERC and Internal, and Do Not Report. 
+This field is available in the References section.
+Secondary Fuel Code CharacterIdentifies the fuel code for the secondary fuel used by the GAA unit. 
+A baseline rule exists to populate this field with values in GAA Fuel Types records.
+
+This field is available in the Fuel Data section.
+Secondary Regulatory OrganizationCharacterIdentifies the second council to which data will be reported.
+A baseline rule exists to populate this field based on your selection in the Secondary Regulatory Organization field in the GAA Company record. You can, however, modify the value in this field.
+If the value in the Primary Regulatory Organization field is set to North American Electric Reliability Corporation (NERC), this field is disabled.
+If the value in the Primary Regulatory Organization field is set to Canadian Electricity Association (CEA) , the value in this field is set to North American Electric Reliability Corporation (NERC) and the field is disabled.
+This field is available in the Unit section.
+Secondary Unit CodeCharacterIndicates the code that is assigned to the GAA Unit by the regulatory body selected in the Secondary Regulatory Body field.
+You can enter a value in this field.
+You must enter a value in this field if you have selected a value in the Secondary Regulatory Organization field.
+The Secondary Unit Code for NERC must be three characters. The Primary Unit Code for CEA must be two characters.
+This field is available in the References section.
+Secondary Utility CodeCharacterIdentifies the utility code under which the unit operates. 
+This value is defined by NERC in the GADS DRI and CEA in the Generation Equipment Status ERIS.
+ If the value in the Primary Regulatory organization field is Canadian Electricity Association (CEA), then the Secondary Utility Code field is enabled and will be required.
+This field is available in the References section.
+Subregion CharacterIndicates the subregion of the plant in which the unit resides. 
+A baseline rule exists to populate this field with a list of the System Codes in the MI_GM_POWER_SUBREGION System Code Table that contain a System Code Reference to the System Code identified by the value in the Region field. 
+This value is defined by NERC in the GADS DRI and CEA in the Generation Equipment Status ERIS.
+ This field is required only if the Primary Regulatory Organization is NERC. 
+This field is available in the References section.
+Tertiary Fuel Code CharacterIdentifies the fuel code for the tertiary fuel used by the GAA unit. 
+A baseline rule exists to populate this field with values in GAA Fuel Types records.
+
+This field is available in the Fuel Data section.
+Typical Cold Down TimeNumeric
+Indicates the minimum time for which the unit is shut down to be classified for cold start.
+
+You can enter a value in this field.
+This field is available in the Startup Summary section.
+Typical Cold StartNumericIndicates the time in hours for a unit to start from cold.
+You can enter a value in this field.
+This field is available in the Startup Summary section.
+Typical Hot Down TimeNumericIndicates the time for which the unit is shut down to be classified for hot start.
+You can enter a value in this field.
+This field is available in the Startup Summary section.
+Typical Hot StartNumeric
+Indicates the time in hours for a unit to start from hot.
+
+You can enter a value in this field.
+This field is available in the Startup Summary section.
+Unit ID CharacterIdentifies the unit and is used to populate the Record ID. 
+The value in this field should not exceed 50 characters in length. While you can save a GAA Unit that contains more than 50 characters in this field, when you attempt to create a Primary Event for that unit, an error message will be displayed. 
+ This field is required. 
+This field is available in the Unit section.
+Unit Name CharacterIdentifies the full name of the unit and is used to populate the Record ID. 
+ This field is required. 
+This field is available in the Unit section.
+Unit Operating Characteristics CharacterStores any information about the unit that is not captured in other fields. 
+This field is available in the Operating Notes section.
+Unit State Character
+Indicates whether the unit represented by the GAA Unit is active. 
+
+A baseline rule exists to populate this field with a list of the values based on your selection in the Primary Regulatory Organization field.
+If you selected North American Electric Reliability Corporation (NERC) in the Primary Regulatory Organization field, the following options appear in drop-down list box:
+
+Active (Active)
+
+Inactive (Inactive)
+If you select this value, make sure that the GAA Unit has at least one event which meets the following criteria:
+
+Capacity Event Type field in the Event record is set to:Reserve Shutdown when the Event Type is IR (Inactive Reserve)Outage when the Event Type is MB (Mothballed)Mothball 
+
+Duration of the Event is more than 60 days
+
+Note: When a GAA Unit is in Inactive state, you cannot have an event associated with the Active state.
+If you selected Canadian Electricity Association (CEA) in the Primary Regulatory Organization field, the following options appear in drop-down list box:
+Not In Commercial Service (NICS)Commercial Service (CS)
+ This field is required. 
+This field is available in the Unit section.
+ Unit Type CharacterIdentifies the type of unit. 
+ A baseline rule exists to populate this field based on your selection in the Primary Regulatory Organization field. The value in this field will be used in conjunction with the Nameplate Gross Maximum Capacity or Nameplate Net Maximum Capacity to calculate missing capacity values.
+This field is required. 
+This field is available in the References section.
+Verbal Description CharacterStores a description of the unit. 
+This field is available in the Fuel Data section. 
+ZoneCharacterIdentifies the zone in which the unit resides for the purpose of associating Power Price Curves with the GAA Unit. 
+If the value in the Generation Cost Model field is Price Curve, this field becomes required and the value will be used to associate Power Price Curves with the same Zone with events linked to the GAA Unit. 
+A baseline rule exists to populate this field with a list of System Codes in the MI_GM_POWER_PRICE_ZONE System Code Table. 
+This field is available in the Calculation Settings section. 
+
+GAA Unit States Records
+GAA Unit States records store information about the fields that are defined for the GAA Unit States family in the baseline GE Digital APM database. This topic provides an alphabetical list and description of the fields that exist for the GAA Unit States family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageRegulatory OrganizationCharacterIdentifies the council to which data will be reported.
+A baseline rule exists to populate this field with a list of the following values:
+ Canadian Electricity Association (CEA) North American Electric Reliability Corporation (NERC)
+ This field is required. 
+State DescriptionCharacter
+Indicates the state of the GAA Unit.
+This field is required. State IDCharacter
+Indicates the identification for the state represented by the GAA Unit.
+This field is required. 
+GAA Unit Types Records
+GAA Unit Types records store information about the fields that are defined for the GAA Unit Types family in the baseline GE Digital APM database. This topic provides an alphabetical list and description of the fields that exist for the GAA Unit Types family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+Regulatory Organization
+
+Character
+
+Identifies the council to which data will be reported.
+
+A baseline rule exists to populate this field with a list of the following values:
+ Canadian Electricity Association (CEA) North American Electric Reliability Corporation (NERC)
+This field is required.
+Unit AbbreviationCharacterIndicates the abbreviation for the Unit Type.You can enter a value manually.Unit Type DescriptionCharacterIndicates the description of the Unit Type.This field is required. Unit Type IDCharacter
+Indicates the identification of the Unit Type associated with the GAA Unit.
+This field is required. 
+GAA Unit Capacity Records
+GAA Unit Capacity records store information about the fields that are defined for the GAA Unit Capacity family in the baseline GE Digital APM database. This topic provides an alphabetical list and description of the fields that exist for the GAA Unit Capacity family and appear in the Information section of the GAA Unit Capacity datasheet. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageEnd DateDateIdentifies the end date till when the Unit Capacities will be applicable on the GAA Unit.If no End Date is defined in a GAA Unit Capacity record, the Start Date of the next GAA Unit Capacity record will be considered as the End Date for this GAA Unit Capacity record. Entity IDCharacter
+Identifies the GAA Unit Capacity record.
+
+This field is populated using the following format:
+<UnitID> ~ <StartDate> ~ <EndDate>
+Where, 
+
+<UnitID> is the value in the Unit Id field in the GAA Unit record
+<StartDate> is the value in the Start Date field in the GAA Unit Capacity record
+<EndDate> is the value in the End Date field in the GAA Unit Capacity record
+Gross Dependable Capacity NumericIdentifies the gross dependable electrical generation capacity of the GAA Unit during the specified period.
+The value in Gross Dependable Capacity field must be less than the value in Gross Maximum Capacity field.
+Gross Maximum Capacity NumericIdentifies the gross maximum electrical generation capacity of the GAA Unit during the specified period.
+You must provide a value in this field or the Net Maximum Capacity field. This field is required if you do not provide a value in the Net Maximum Capacity field.
+The value in Gross Maximum Capacity field must be greater than the value in Net Maximum Capacity field.
+Net Dependable Capacity NumericIdentifies the net dependable electrical generation capacity of the GAA Unit during the specified period. 
+The value in Net Dependable Capacity field must be less than the value in Net Maximum Capacity field.
+Net Maximum Capacity NumericIdentifies the net maximum electrical generation capacity of the GAA Unit during the specified period. 
+You must provide a value in this field or the Gross Maximum Capacity field. This field is required if you do not provide a value in the Gross Maximum Capacity field.
+The value in Net Maximum Capacity field must be less than the value in Gross Maximum Capacity field.
+Start DateDateIdentifies the start date when the Unit Capacities will be applicable on the GAA Unit.
+The Start Date of any GAA Unit Capacity record must be a date after the End Date of the previous GAA Unit Capacity record. 
+When you add a GAA Unit record, a GAA Unit Capacity record is automatically created with the values defined in the capacity related fields in the GAA Unit record. In the default GAA Unit Capacity record, the Start Date is set to 01/01/1900 00:00:00 and the End Date is blank. If you want to add an additional GAA Unit Capacity record, you must modify the End Date of the default record and set it to a date before the Start Date of the new record. 
+This field is required.
+
+Primary Event History Records
+Primary Event History records store information about the history of a Primary Event. This topic provides an alphabetical list and description of the fields that exist for the Primary Event History family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+Action on Primary Event
+
+Character
+
+Indicates the type of action taken on the Primary Event.
+
+This field is populated automatically.
+Depending on the action taken on the Primary Event, the field is populated with either Update or Delete.
+Last Updated UserCharacterIndicates the name of the user who modified the Primary Event.This field is populated automatically.Last Updated StateCharacterIndicates which state the Primary Event was in during the modification.
+This field is populated automatically with one of the following states:
+ApprovedIn ProgressNewPending ReviewReviewedUnit Approved
+
+
+
+
+
+
+On this pageAmplification Codes RecordsAPM Event RecordsCause Codes RecordsEvent RecordsGAA Code Mapping RecordsGAA Company RecordsGAA Event Categories RecordsGAA Event Transition RecordsGAA Event Types RecordsGAA Fuel Types RecordsGAA Performance & Report RecordsGAA Performance Fuel RecordsGAA Performance Indexes RecordsGAA Performance Summary RecordsGAA Plant RecordsGAA Supported Organizations RecordsGAA Unit RecordsGAA Unit States RecordsGAA Unit Types RecordsGAA Unit Capacity RecordsPrimary Event History Records
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,202 @@
+
+
+
+Grid View | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System ReliabilitySystem Reliability: Overview
+System Reliability: Workflow
+System Reliability Analyses 
+Resources
+System Scenario
+Diagrams
+Risks
+Actions
+Global Events
+Grid View
+Simulations
+
+
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+System Reliability
+Grid View
+
+
+
+
+
+
+
+Grid ViewAccess Grid View for a ScenarioProcedure
+Access the System Scenario for which you want to view information in a grid. In the workspace, select the Grid View tab.
+A grid appears, displaying information for the elements that exist in the selected Scenario. 
+
+
+
+By default, the data that appears in the grid is filtered by Action. You can also filter the data specific to one of the following elements:
+
+Asset
+
+Buffer
+
+Distribution
+
+Link
+
+Risk
+
+Subsystem
+
+Switch
+
+Different columns in the grid appear based on the element selected from the list.
+In the grid, under the Name column, a hierarchy displays an organizational view of the elements in the Diagram associated with the selected Scenario. The root Subsystem is displayed at the top, with any elements belonging to the root Subsystem listed below it. Any other subsystems are listed below the root Subsystem, with any elements belonging to them listed below them.
+Note: Within the grid, you can modify the properties of the Scenario elements. To do so, locate the row containing the element whose properties you want to modify, and then select  to enable the fields. As needed, modify the values in the available fields, and then select  to save your changes. 
+About Filtering Grid View by Action
+When you filter the grid view by Action, the grid displays data related to the Actions that exist in the selected Scenario. Following columns of information appear in the grid. 
+
+Name: Contains a hierarchy that lists the Subsystems, Assets, Switches, and Actions that exist in the Scenario. Actions appear in the hierarchy below the Asset, Switch, or Subsystem element to which they belong.
+Action Cost($): Contains the value that exists in the Action Cost field in the System Action record.
+Interval: Contains the value that exists in the Interval field in the System Action record
+
+Interval Units: Contains the value that exists in the Interval Units field in the System Action record.
+Duration: Contains the value that exists in the Duration field in the System Action record.
+Duration Units: Contains the value that exists in the Duration Units field in the System Action record.
+Shut Down Required: Contains the value that exists in the Shutdown Required field in the System Action record.
+One Time Action: Contains the value that exists in the One Time Action field in the System Action record.
+About Filtering Grid View by Asset
+When you filter the grid view by Asset, the grid displays data related to the Assets and Subsystems that exist in the selected Scenario. Following columns of information appear in the grid. 
+
+Name: Contains a hierarchy that lists the Subsystems and Assets that exist in the Scenario. Assets appear below the Subsystem element to which they belong.
+Production Contribution (%): Contains the value that exists in the Production Contribution field in the System Asset or System Subsystem record.
+Fixed Cost (%): Contains the value that exists in the Fixed Cost field in the System Asset or System Subsystem record.
+Variable Cost Units: Contains the value that exists in the Variable Cost Units field in the System Asset or System Subsystem record.
+Lost Production Cost ($): Contains the value that exists in the Lost Production Cost field in the System Asset or System Subsystem record.
+Lost Production Cost Units: Displays the value that exists in the Lost Production Cost Units field in the System Asset or System Subsystem record.
+About Filtering Grid View by Buffer
+When you filter the grid view by Buffer, the grid displays data related to the Buffers that exist in the selected Scenario. Following columns of information appear in the grid. 
+
+Name: Contains a hierarchy that lists the Buffers that exist in the Scenario, including Buffers that belong directly to the root Subsystem and Buffers that belong to any Subsystem elements. Buffers appear in the hierarchy below the Subsystem element to which they belong.
+Description: Contains the value that exists in the Description field in the System Buffer record.
+Production Contribution (%): Contains the value that exists in the Production Contribution field in the System Buffer or System Subsystem record.
+Initial Quantity (%): Contains the value that exists in the Initial Quantity in Percentage field in the System Buffer record.
+Time to Empty Units: Contains the value that exists in the Time to Empty Units field in the System Buffer record.
+Time to Refill: Contains the value that exists in the Time to Refill field in the System Buffer record.
+Time to Refill Units: Contains the value that exists in the Time to Refill Units field in the System Buffer record.
+About Filtering Grid View by Distribution
+When you filter the grid view by Distribution, the grid displays data related to the Distribution records that are associated with the selected Scenario. In the 
+Grid View section, Distribution records are shown as properties of the Risk elements with which they are associated.
+Following columns of information appear in the grid. 
+
+Name: Contains a hierarchy that lists the Subsystems, Assets, Switches, Risks, and distributions that exist in the Scenario. Distributions appear in the hierarchy below the Risk to which they belong.
+Distribution Type: Contains the name of the family to which the Distribution record belongs.
+Time Unit: Contains the value that exists in the Unit field of the Distribution record.
+
+Parameter 1: Contains the value that exists in the Beta field in a Weibull record, the MTBF field in an Exponential record, the Mean field in a Normal record, or the Mu field in a Lognormal record.
+Note: When you select the value Single Value in the Distribution Type list on the TTF Distribution or TTR Distribution window, you create a Normal record with a Standard Deviation value of 0 (zero). For these records, the Parameter 1 column displays the value that exists in the Value field, rather than the Mean field.
+
+Parameter 2: Contains the value that exists in the Eta field in a Weibull record, the Standard Deviation for a Normal record, or the Sigma field for a Lognormal record.
+Parameter 3: Contains the value that exists in the Gamma field in the Weibull record or Lognormal record.
+About Filtering Grid View by Link
+When you filter the grid view by Link, the grid displays data related to the Links that exist in the selected Scenario. Following columns of information appear in the grid. 
+
+Name: Contains a hierarchy that lists only the Subsystems which contain Links and the Links that exist in the Scenario. Links appear in the hierarchy below the Subsystem element to which they belong.
+Minimum Predecessors: Contains the value that exists in the Minimum Predecessors field in the System Link record. You cannot modify this value in the 
+Grid View section.
+About Filtering Grid View by Risk
+When you filter the grid view by Risk, the grid displays data related to the Risks that exist in the selected Scenario. Following columns of information appear in the grid. 
+
+Name: Contains a hierarchy that lists the Subsystems, Assets, Switches, and Risks that exist in the Scenario. Risks appear in the hierarchy placed below the Asset or Switch element to which they belong.
+Fixed Unplanned Correction Cost ($): Contains the value that exists in the Fixed Unplanned Correction Cost field in the System Risk record.
+Variable Unplanned Correction Cost ($): Contains the value that exists in the Variable Unplanned Correction Cost field in the System Risk record.
+Variable Unplanned Correction Cost Units: Contains the value that exists in the Planned Correction Cost Units field in the System Risk record.
+Planned Correction Cost ($): Contains the value that exists in the Planned Correction Cost field in the System Risk record. 
+Planned Correction Duration: Contains the value that exists in the Planned Correction Duration field in the System Risk record.
+Planned Correction Duration Units: Contains the value that exists in the Planned Correction Duration Units field in the System Risk record.
+PF Interval: Contains the value that exists in the PF Interval field in the System Risk record.
+PF Interval Units: Contains the value that exists in the PF Interval Units field in the System Risk record.
+About Filtering Grid View by Subsystem
+When you filter the grid view by Susystem, the grid displays data related to the Subsystems that exist in the selected Scenario. Following columns of information appear in the grid. 
+
+Name: Contains a hierarchy that lists the Subsystems that exist in the Scenario.
+Production Contribution (%): Contains the value that exists in the Production Contribution field in the System Subsystem record.
+Fixed Cost (%): Contains the value that exists in the Fixed Cost field in the System Subsystem record.
+Variable Cost ($): Contains the value that exists in the Variable Cost field in the System Subsystem record.
+Variable Cost Units: Contains the value that exists in the Variable Cost Units field in the System Subsystem record.
+Lost Production Cost ($): Contains the value that exists in the Lost Production Cost field in the System Subsystem record.
+Lost Production Cost Units: Contains the value that exists in the Lost Production Cost Units field in the System Subsystem.
+About Filtering Grid View by Switch
+When you filter the grid view by Switch, the grid displays data related to the Switches that exist in the selected Scenario. Following columns of information appear in the grid. 
+
+Name: Contains a hierarchy that lists the Switches that exist in the Scenario, including Switches that belong directly to the root Subsystem and Switches that belong to any Subsystem elements. Switches appear in the hierarchy below the Subsystem element to which they belong.
+Is Initially On: Contains the value that exists in the Is Initially On field in the System Switch record.
+Fixed Cost ($): Contains the value that exists in the Fixed Cost field in the System Switch.
+Variable Cost ($): Contains the value that exists in the Variable Cost field in the System Switch.
+Variable Cost Units: Contains the value that exists in the Variable Cost Units field in the System Switch.
+Lost Production Cost ($): Contains the value that exists in the Lost Production Cost field in the System Switch.
+Lost Production Cost Units: Contains the value that exists in the Lost Production Cost Units field in the System Switch.
+
+
+
+
+
+On this pageAccess Grid View for a ScenarioAbout Filtering Grid View by ActionAbout Filtering Grid View by AssetAbout Filtering Grid View by BufferAbout Filtering Grid View by DistributionAbout Filtering Grid View by LinkAbout Filtering Grid View by RiskAbout Filtering Grid View by SubsystemAbout Filtering Grid View by Switch
+
+
+
+
+
+
+
+
+

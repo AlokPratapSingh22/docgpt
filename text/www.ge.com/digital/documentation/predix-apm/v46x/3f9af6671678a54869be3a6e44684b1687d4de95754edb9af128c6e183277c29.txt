@@ -1,0 +1,91 @@
+
+
+
+Group Objects | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+GroupsGroups Overview
+Groups Custom Attributes
+Group Objects
+
+
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Groups
+Group Objects
+
+
+
+
+
+
+
+Group ObjectsAccess Objects in a Group You can view information about the assets or tags (objects) belonging to a specific group.About This Task
+Objects are the assets or tags associated with a group. On the Objects in a Group table, you can jump to a specific member's instance or classification. 
+ProcedureIn the module navigation menu, go to
+Assets >  Groups.Select a group link on the Groups table.Select the Objects in Group link to access the following information:
+This column Describes thisObject NameThe name of the member object present in the group is located in the column. Select a link to access the instance view for the member object. The instance view provides information on the Attributes, Location, and Tags associated with the member object. Source IDThe source ID of the member object is located in the column.Parent ClassificationThe parent classification of the member object is located in the column. Select a link to access the classification view for the member object. The classification view provides information on Reserved Attributes, Custom Attributes, and Inherited Attributes associated with the classification. DescriptionThe description for the member object is located in the column.
+Remove Objects from a GroupYou can remove member objects from an existing group.ProcedureIn the module navigation menu, go to
+Assets >  Groups.Select a group link in the Groups table.The selected group page appears.Select the Objects in Group link.In the Objects in Group Section, hover over an object name in the table, and then select .The member object is removed from the group.
+
+
+
+
+On this pageAccess Objects in a GroupRemove Objects from a Group
+
+
+
+
+
+
+
+
+

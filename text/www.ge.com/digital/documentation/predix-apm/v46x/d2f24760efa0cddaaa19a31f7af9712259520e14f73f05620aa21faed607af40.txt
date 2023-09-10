@@ -1,0 +1,121 @@
+
+
+
+Failure Probability | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability DistributionReliability Distribution: Overview
+Reliability Distribution: Workflow
+Reliability Distribution Analyses
+Confidence Level and P Value
+Failure Probability
+
+
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Reliability Distribution
+Failure Probability
+
+
+
+
+
+
+
+Failure ProbabilityAbout Failure ProbabilityThe GE Digital APM system can perform calculations on the data used in a Reliability Distribution Analysis to estimate how likely it is that a piece of equipment will fail today. Then, using future values that you supply, the GE Digital APM system can calculate how likely it is that a piece of equipment will fail at some point in the future.The current failure probability is based on the current age of the piece of equipment, which is the amount of time that has passed between the last replacement date (i.e., the last failure date) and the End Date of the Analysis Period.Two options are available for calculating future failure probability calculations:You can specify an operating time to define a future age for the piece of equipment, and then the GE Digital APM system will determine how likely it is that a piece of equipment will fail when it has reached that age.You can specify a failure probability, and the GE Digital APM system will determine the age at which the piece of equipment will reach that likelihood of failing.
+The grid in the Failure Probability workspace contains the following columns of information: 
+Asset ID: Contains the Asset ID for each piece of equipment included in the analysis.
+Installation Date: Contains the initial date that the piece of equipment was installed.
+Last Replacement: Contains the date the piece of equipment last failed and, as a result, was replaced.
+Present Age: Contains the current age of the piece of equipment. The value in the Present Age column represents the amount of time between the date in the Last Replacement column and the end date of the Analysis Period, expressed in the Time Units selected for the analysis.
+Future Age: The age that is used for determining the value in the Future Failure Probability column. The value in the Future Age column is determined by adding the Operating Time you specified to the Present Age of the piece of equipment.
+Present Failure Probability: The current probability of failure for each piece of equipment based on the present age of the piece of equipment.
+Future Failure Probability: The probability that the piece of equipment will fail between the present time and the value in the Future Age column. The Future Failure Probability is based on the assumption that at the Present Age the piece of equipment has not failed.
+
+Note: Since pieces of equipment contain multiple sub-elements, probability of failure calculations will be affected when the failure type is Failures Without Replacements.Calculate the Probability of Failure at a Specified AgeProcedure
+Access the Reliability Distribution Analysis for which you want to specify the future age to calculate the future probability of failure.In the left pane, select the Failure Probability tab. 
+The Failure Probability information appears in a grid.
+In the upper-right corner of the grid, select the Distribution Options list, and then select Future Age.
+The Set Future Age window appears. The Future Age box displays the value that was last used to perform the calculation. 
+
+
+
+As needed, enter value in the Future Age box, and then select OK.
+The system recalculates the future probability of failure values and displays them for each piece of equipment in the grid.
+Calculate the Age When a Certain Probability of Failure will be ReachedProcedure
+Access the Reliability Distribution Analysis for which you want to specify the probability of failure.In the left pane, select the Failure Probability tab. 
+The Failure Probability information appears in a grid.
+
+
+
+In the upper-right corner of the grid, select the Distribution Options list, and then select Future Probability.
+The Set Future Probability window appears. 
+
+
+
+As needed, enter value in the Future Probability box, and then select OK.
+The system recalculates the future probability of failure values and displays them for each piece of equipment in the grid.
+
+
+
+
+
+On this pageAbout Failure ProbabilityCalculate the Probability of Failure at a Specified AgeCalculate the Age When a Certain Probability of Failure will be Reached
+
+
+
+
+
+
+
+
+

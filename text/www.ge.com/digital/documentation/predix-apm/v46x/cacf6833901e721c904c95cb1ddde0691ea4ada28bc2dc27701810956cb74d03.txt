@@ -1,0 +1,106 @@
+
+
+
+Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference 
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Overview
+
+
+
+
+
+
+
+OverviewOverview of the Inspection Management Module An accurate understanding of the current conditions of equipment and location conditions is critical to analyzing their reliability. The Inspection Management module allows you to document, manage, and analyze data associated with the inspections of equipment and locations in your facilities. More Details
+Inspection Management functionality is fully integrated with other GE Digital APM features to give you access to other analytical tools, such as Thickness Monitoring and Risk Based Inspection.
+Access the Inspection Management Overview Page for a Functional LocationProcedureIn the module navigation menu, select
+Integrity > Inspection Management.
+
+Note: You can also access the Inspection Management Overview page for a hierarchy level. To do so:In the upper-left corner of the top navigation bar, select . The Asset Hierarchy page appears. In the left pane, navigate to the functional location for which you want to access the Inspection Management Overview page, and then select Integrity in the workspace.The Integrity section appears.In the Inspection Management row, select the link. 
+ResultsThe Inspection Management Overview page appears, displaying the following information:The Inspection Assets section: Contains a list of assets with at least one Inspection or Inspection Task for the selected asset or underlying ones. The Underlying Open Inspections section: Contains the following subsections: Underlying Open Inspections: Contains a list of Inspections that are in the Draft, Pending Approval, or Re-referred state and performed on underlying assets.My Open Inspections: Contains a list of Inspections assigned to you that are in the Draft, Pending Approval, or Re-referred state and are performed on underlying assets. All Inspections for This Location: Contains a list of Inspections that are linked to the selected Functional Location. The Underlying Inspection Tasks section: Contains the following subsections: Underlying Inspection Tasks: Contains a list of Inspection Tasks that are associated with underlying assets. Inspection Tasks for this Location: Contains a list of Inspection Tasks that are associated with the selected Functional Location. The Underlying Recommendations section: Contains the following subsections: Underlying Open Recommendations: Contains a list of Inspection Recommendations for underlying assets that are in the Proposed, Pending Review, or Pending Approval state.Recommendations Due for Implementation: Contains a list of Inspection Recommendations for underlying assets that are in the Approved or In Progress state.All Recommendations for This Location: Contains a list of Inspection Recommendations for the selected Functional Location. The Work Packs section: Contains a list of Work Packs. The Task Types Coming Due Within the Year graph: Contains a graph that shows the total number of Inspection Tasks of each type that are due in the current year. The All Inspections Pending Approval for Reviewers section: Contains a list of Inspections that are pending your approval. The Open Inspection Recommendations by Asset graph: Contains a graph that shows the number of open Inspection Recommendations for each asset in the selected Functional Location. Tip:  To return to the Inspection Management Overview page after selecting a tab, select the tab again.Note: The Inspection Management Overview page is not updated automatically when you return to the previously opened tab. You can select Refresh () button to update the page.
+Access the Inspection Management Overview Page for an AssetAbout This Task
+This topic describes how to access the Inspection Management Overview page for an asset that does not contain underlying assets in the asset hierarchy.
+Procedure
+Access the Inspection Management Overview page for the Functional Location that contains the asset.Select Inspection Assets.The Inspection Assets section appears, displaying a list of assets (associated with the selected Functional Location or underlying assets) that are linked to an Inspection, Inspection Task, or an Inspection Health Evaluation.
+In the row containing the Equipment for which you want to access the Inspection Management Overview page, select the link.The Inspection Management Overview page for the selected asset appears, displaying the following information:The Inspections section: Contains a list of Inspections linked to the asset.The Inspection Tasks section: Contains a list of Inspection Tasks linked to the asset.The Recommendations section: Contains a list of Inspection Recommendations that are linked to the asset.The Work Packs section: Contains a list of Work Packs.The Health Evaluations section: Contains a list of Health Evaluations related to the asset.Note: This section appears if at least one inspection event family has the Health Evaluation option selected in the Event Configuration section of the Inspection Admin Preferences.
+Inspection Management Workflow This workflow provides the basic, high-level steps for using this module. The steps and links in this workflow do not necessarily reference every possible procedure.
+Access the Equipment or Functional Location to be inspected from the Asset Hierarchy.
+
+Create an Inspection.
+
+Create an Inspection Profile.
+
+Add an Inspection Method.
+
+Define the Inspection Scope.
+
+Create Inspection Tasks.
+
+Create Work Packs.
+
+
+
+
+
+On this pageOverview of the Inspection Management Module Access the Inspection Management Overview Page for a Functional LocationAccess the Inspection Management Overview Page for an AssetInspection Management Workflow
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,156 @@
+
+
+
+RBI Policies | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+ReferenceGeneral Reference
+Data Models
+Family Field Descriptions
+Calculations
+Family Search Configuration
+ASM Integration
+Inspection Strategies
+RBI Policies
+Catalog Items
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Reference
+RBI Policies
+
+
+
+
+
+
+
+RBI PoliciesRBI PoliciesAn RBI Policy allows you to develop and execute strategies based on historical data and dynamic data, which is obtained by monitoring conditions in real time. The policies used in RBI are categorized as follows:
+Policies used to calculate an analysis 
+
+Policies used to generate recommendations
+
+Policies used in risk mapping
+These policies appear in the Module Workflow Policies section of the Policy Designer Overview page.Policies used to Calculate an RBI 581 Risk Analysis
+This topic provides a list of Policies used by each family in RBI 581 to calculate an RBI 581 Risk Analysis.
+If you want to design a policy, you must be a member of the following Security Groups:
+
+MI Policy Designer
+-and-
+ MI RBI Calculation Policy Designer
+ If you want to view a policy, you must be a member of the following Security Groups:
+
+MI Policy Viewer
+-and-
+MI RBI Calculation Policy Viewer
+Family: RBI 581 Cracking Damage Evaluation
+The following table provides a list of Policies that are used by RBI 581 Cracking Damage Evaluation. Degradation MechanismPolicy
+581-Sulfide Stress Cracking
+581-HIC/SOHIC-H2S
+RBI 581 Calculate Environmental Severity581-HIC/SOHIC-H2SRBI 581 Calculate Susceptibility - HIC/SOHIC H2S581-Alkaline Carbonate Stress Corrosion CrackingRBI 581 Calculate Susceptibility - Alkaline581-Amine CrackingRBI 581 Calculate Susceptibility - Amine Cracking581-Caustic CrackingRBI 581 Calculate Susceptibility - Caustic581-Chloride Stress Corrosion CrackingRBI 581 Calculate Susceptibility - CISCC581-HIC/SOHIC-HFRBI 581 Calculate Susceptibility - HIC/SOHIC HF
+581-Hydrogen Stress Cracking
+581-HIC/SOHIC-HF
+RBI 581 Calculate Susceptibility - HSC HF581-Polythionic Acid CrackingRBI 581 Calculate Susceptibility - PASCC581-Sulfide Stress CrackingRBI 581 Calculated Susceptibility - SSC
+Family: RBI 581 External Cracking Damage Evaluation
+The following table provides a list of Policies that are used by RBI 581 External Cracking Damage Evaluation. 
+
+Degradation MechanismPolicy581-Austenitic Component Cracking Under Insulation  RBI 581 Calculate Susceptibility - Austenitic CUI581-Austenitic Component Atmospheric CrackingRBI 581 Calculate Susceptibility - Austenitic
+
+Family: RBI 581 Mechanical Fatigue Damage Evaluation
+The following table provides a list of Policies that are used by RBI 581 Mechanical Fatigue Damage Evaluation. 
+
+Degradation MechanismPolicy581-Piping Mechanical FatigueRBI 581 Mechanical Fatigue Pipe Damage Evaluation
+
+Family: RBI 581 Thinning and Lining Evaluation
+The following table provides a list of Policies that are used by RBI 581 Thinning and Lining Evaluation.
+
+Degradation MechanismPolicy581-Amine CorrosionRBI 581 Amine Corrosion Rate581-Acid Sour Water CorrosionRBI 581 Acid Sour Corrosion Rate581-Alkaline Sour Water CorrosionRBI 581 Alkaline Sour Water Corrosion Rate581-Atmospheric Tank Bottom CorrosionRBI 581 AST Bottom Corrosion Rate RBI 581 Damage Factor - AST Bottom Thinning581-Cooling Water CorrosionRBI 581 Cooling Water Corrosion Rate Estimation581-Soil Side CorrosionRBI 581 Soil Side Corrosion Rate Calculation581-High Temperature H2/H2S CorrosionRBI 581 H2-H2S Corrosion Rate581-Sulfuric Acid CorrosionRBI 581 H2SO4 Corrosion Rate 581-Hydrochloric Acid CorrosionRBI 581 HCL Corrosion Rate581-High Temperature OxidationRBI 581 HT Oxidation Corrosion Rate581-Hydrofluoric Acid CorrosionRBI 581 Hydrofluoric Acid Corrosion Rate581-High Temperature Sulfidic and Naphthenic Acid Corrosion RBI 581 Sulfidic and Naphthenic Corrosion Rate
+
+Policies used to Generate Recommendations
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+Policies used in Risk Mapping
+This following policies are used in risk mapping in RBI 581: 
+581-DEF-RISK_MAPPING-OPERATIONS581-DEF-RISK_MAPPING-SAFETY
+If you want to design a policy, you must be a member of the following Security Groups:
+
+MI Policy Designer
+-and-
+RBI Risk Mapping Policy Designer
+ If you want to view a policy, you must be a member of the following Security Groups:
+
+MI Policy Viewer
+-and-
+RBI Risk Mapping Policy Viewer
+Policies and Fields Used to Calculate Corrosion Rate
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+Policies and Fields Used to Calculate Susceptibility
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+
+
+
+
+
+On this pageRBI PoliciesPolicies used to Calculate an RBI 581 Risk AnalysisPolicies used to Generate RecommendationsPolicies used in Risk MappingPolicies and Fields Used to Calculate Corrosion RatePolicies and Fields Used to Calculate Susceptibility
+
+
+
+
+
+
+
+
+

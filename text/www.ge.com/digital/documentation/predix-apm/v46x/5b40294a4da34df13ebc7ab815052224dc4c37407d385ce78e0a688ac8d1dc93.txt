@@ -1,0 +1,102 @@
+
+
+
+Fourth Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+First Quarter of 2019
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Release Notes
+Fourth Quarter of 2021
+
+
+
+
+
+
+
+Fourth Quarter of 2021Release Date: October 8, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDYou can now view Event Number for the corresponding event in the NERC GADS Event Report 07. By default, the Event Number field in an event report shows sequential numbers. To facilitate this enhancement, a new query, Get the Record Order Preference for Event Report, has been added to the Catalog folder \\Public\Meridium\Modules\Generation Management\Queries. You can now modify the query to return Event ID for the Event Number field. For more information on modifying the query, refer to KBA 000037247.US492759To enhance usability, in the HEADER and TRAILER fields of the CEA Event Report, value from the Primary Utility Code field is included instead of value from the Company Name field.US489816To enhance performance, in CEA Events, when the state of the event is moved to Unit Approved, for the CEA Event Types 11-1,11-2,14,14-1,14-2, the Cause Code System, Cause Code Component, Cause Code, Amplification Code, and Verbal Description fields in the Primary Event datasheet are no longer required fields. For more information on modifying the query, refer to KBA 000037693.US489811
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when you created a primary event with an Event Start Date value as the first or the last date of the month, the capacity values populated from the unit capacity record would not get populated as expected. This issue has been resolved. Now, irrespective of your time zone while creating a primary event, the capacity values get populated for all the Event Start Date.DE163196Previously, when you created a Primary Event record, and then selected an event type, the value of the fields Gross Available Capacity and Net Available Capacity were calculated incorrectly. This issue has been resolved.DE160176
+
+
+
+
+
+On this pageRelease Date: October 8, 2021
+
+
+
+
+
+
+
+
+

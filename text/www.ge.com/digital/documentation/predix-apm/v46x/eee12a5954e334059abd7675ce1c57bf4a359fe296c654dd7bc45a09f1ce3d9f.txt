@@ -1,0 +1,105 @@
+
+
+
+Fourth Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Third Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Release Notes
+Fourth Quarter of 2021
+
+
+
+
+
+
+
+Fourth Quarter of 2021Release Date: December 17, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Enhancements and New FeaturesThe following enhancements and new features have been added.DescriptionTracking IDTo improve usability, in the SmartSignal charts, the chart controls are grouped for both residual and the primary graphs in the chart header. To facilitate this enhancement, you can now find the chart controls for zoom, pan, enlarge and so on in the chart header.US512619To enhance usability, you can now drag the tags to the SmartSignal card anywhere within the blue line on the card.US511467To enhance usability, in the SmartSignal card view workspace, the (Card Options) drop-down list options are replaced with icons in the card header. The options are replaced with the following icons: (Add Card) (Export Charts on this Card As) (Delete this Card) (Export Data as CSV)(Settings for all SmartSignal Charts on this Card)US511465To enhance usability, you can now toggle between  and  to expand and collapse a SmartSignal chart in the Analysis instance.US511285
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in the Analysis view, when you attempted to select a new card from the Card Selector menu, the card selector drop-down menu was partially hidden behind the modules navigation menu which made you unable to select the new card. This issue has been resolved. Now, when you attempt to select a new card, the card selector drop-down appears completely and you can select the required card.DE169600Previously, if an expression contained a conditional operator and there were multiple operands on any side of the conditional operator, and if these operands were not enclosed within a parenthesis, then the expression did not work, and an error occurred.Note: Now a warning message is displayed when these operands are not enclosed within a parenthesis.DE166930Previously, in the chart view workspace, the charts for the selected templates were cropped and you were not able to view the x-axis of the charts at the bottom. The down arrow slider that enables you to scroll down and view the charts at the bottom did not appear.DE163339Previously, in the chart view workspace, when you selected the Hide Template Information from the Analysis Settings drop-down list and attempted to change the size of the charts by selecting Resize Charts, then the Template information header appeared again. This issue has been resolved.DE163339Previously, in the Analysis Settings, when the Show Template Information option was selected to show the template information, you were still able to see the option in the Analysis Settings drop-down list. You had to select the option again to make the Hide Template Information option visible in the drop-down list if you had to hide the template information header. This issue has been resolved.DE163339
+
+
+
+
+
+On this pageRelease Date: December 17, 2021
+
+
+
+
+
+
+
+
+

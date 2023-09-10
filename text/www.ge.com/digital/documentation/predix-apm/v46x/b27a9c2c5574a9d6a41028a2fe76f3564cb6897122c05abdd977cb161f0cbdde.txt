@@ -1,0 +1,91 @@
+
+
+
+Event Management | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+WorkflowsAdministration
+Event Management
+Performance
+Reporting
+
+
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Workflows
+Event Management
+
+
+
+
+
+
+
+Event ManagementGAA Event Management WorkflowThis workflow describes the process for managing events that occur in a GAA Unit.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+eLog Persona: Solution AdministratorCreate or associate log entries to document events that occur during shifts for power generation.Go to the eLog workflow.GAA Administration Persona: Solution AdministratorDefine an event when operating status or capability of a GAA Unit changes. Go to the GAA Administration workflow.UnitPersona: Solution AdministratorDefining GAA Unit provides GAA Unit record, Unit Capacity record, and GAA Report record.Create Event Persona: Operator or SupervisorDefine an event when operating status or capability of a GAA Unit changes. Review Event Persona: AnalystUse state management to track the progress of an event and review the event for Unit Level approval.Approve Event Persona: Solution AdministratorUse state management to track the progress of an event and review the event for submittal to NERC.Root Cause Analysis (RCA) Persona: AnalystCreate an RCA for the selected event. Go to the Root Cause Analysis.GAA Reporting Persona: Solution Administrator or AnalystGenerate Regulatory or Management reports based on events or performance. Go to the GAA Reporting.Asset Health Management ViewPersona: AnalystNavigate to the Asset Health Management View to see all the Health Indicators for the selected GAA Unit. Go to the Manage Health Indicators Workflow.
+
+
+
+
+On this pageGAA Event Management WorkfloweLogGAA AdministrationUnitCreate EventReview EventApprove EventRoot Cause Analysis (RCA)GAA ReportingAsset Health Management View
+
+
+
+
+
+
+
+
+

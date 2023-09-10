@@ -1,0 +1,318 @@
+
+
+
+Policy Examples | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Policy Examples
+Input Nodes
+Condition, Logic, and Calculation Nodes
+Action Nodes
+Baseline Policies
+Glossary
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Reference
+Policy Examples
+
+
+
+
+
+
+
+Policy ExamplesPolicy Model Basic PrinciplesA policy model is made up of nodes and connections that define the policy logic. In order to build a functioning policy model, you must understand several basic principles.Configuring a Policy Model
+The following principles apply to working with a policy model:
+Policy models do not reference specific records. Rather, they contain nodes that reference families. You must use policy instances to identify the individual records whose values are evaluated when the policy is executed.The first node in a policy model must be an Input node rather than a Query node.A node can use an input from any predecessor node in the same logic path, even if the nodes are not directly connected.Any number of nodes can use an input from the same predecessor node.With the exception of the Or node and the Case node, a node will be executed only when all necessary preceding nodes have been successfully executed.A policy model can often be arranged in various configurations without impacting the execution results. You may want to arrange the policy model in the configuration that provides the best visual representation of the policy.
+Connections that start at a Condition or Logic
+                                    node can be configured to create separate logic paths in a
+                                    policy model. Specifically: If the connection property is Yes, the corresponding
+                                            path will be followed when the logical result of the
+                                            Condition of Logic node is yes. If you do not configure
+                                            a logic path for a connection, a Yes path is assumed but
+                                            does not appear on the model.If the connection property is No, the corresponding path
+                                            will be followed when the logical result of the
+                                            Condition or Logic node is no.
+
+Configuring Node Properties
+Most nodes have outputs that successor nodes can use as inputs. You must specify inputs for each successor node using the Properties window that appears when you select the node in the policy model.Note: Outputs and inputs may represent either a single value or a collection of values. The types of outputs that each node generates and the types of inputs that each node accepts is different for each node. When building a policy model, you must use corresponding input and output types.Any numeric values entered in Calculation nodes should be entered in the format matching the user's culture setting. For example, a user with German culture would enter 4,5 to represent four and a half, whereas a user with US-English culture would enter 4.5.There are specific formats in which you can enter dates and times and amounts of time (that is, time spans). Refer to the respective topics for details.When using a policy node to update values in a record:If a field has complex behavior defined by field-level rules (for example, rules for valid values) and field-level behaviors, this behavior will not be reflected in the Properties window or detected by policy validation. Therefore, you are responsible for ensuring that the values you specify are valid according to any baseline or custom field-level rules for the corresponding field.If a field value is defined by a system code, the value that
+                                        you specify in the corresponding section must be the system
+                                        code, not the value that is displayed to the end user.
+Policy Model Principles Illustrated
+The principles for working with a policy model can be illustrated through the following example model:
+
+In this example model, the node named Temperature is an OT Connect Tag node which represents a process historian tag. When this policy is executed, if the Latest Reading Value that is associated with the process historian tag is greater than or equal to 200, the GE Digital APM system will send an email message to the email address that is specified in the Human Resource record that is associated with the Analyst User node.
+The following table describes each of the policy model basic principles in the context of this example:
+Policy Model PrincipleExamplePolicy models do not reference specific records. Rather, they contain nodes that reference families. You must use policy instances to identify the individual records whose values are evaluated when the policy is executed.The Temperature and Analyst nodes represent families. The specific records whose values are evaluated are determined by policy instances.The first node in a policy model must be an Input node rather than a Query node.The Temperature node is an OPC Tag node, which is a type of Input node.Most nodes have outputs that successor nodes can use as inputs. You must specify inputs for each successor node using the Properties window that appears when you select the node in the policy model. Note: Outputs and inputs may represent either a single value or a collection of values. The types of outputs that each node generates and the types of inputs that each node accepts is different for each node. When building a policy model, you must use corresponding input and output types.The output Latest Reading Value from the Temperature node is used as an input to the Condition node. This output represents a single value, which corresponds to the type of input that the Condition node accepts.The value 200 is used as the second input to the Condition node, but it is not an output from another node. Instead, it is a constant value that is specified directly in the Properties window for the Condition node.A node can use an input from any predecessor node in the same logic path, even if the nodes are not directly connected.The Email Contact node can use an input from the Temperature node even though the two nodes are not directly connected.Any number of nodes can use an input from the same predecessor node.The Email Contact node and the Condition node can both use inputs from the Temperature node.With the exception of the Or node and the Case node, a node will be executed only when all necessary preceding nodes have been successfully executed.The Email Contact node will be executed only when all of the nodes preceding it have been successfully executed. If, for example, the condition defined in the Condition node was not met or if an error occurred when executing the Analyst node, the Email Contact node would not be executed.A policy model can often be arranged in various configurations without impacting the execution results. You may want to arrange the policy model in the configuration that provides the best visual representation of the policy.The execution results of the policy would be identical even if the Analyst node were connected to the Temperature node or the Condition node. The current configuration, however, provides a clear visual representation of the policy because the Email Contact node is the only node in the model that uses an input value from the Analyst node.
+Connections that start at a Condition or Logic
+                                    node can be configured to create separate logic paths in a
+                                    policy model. Specifically: If the connection property is Yes, the corresponding
+                                            path will be followed when the logical result of the
+                                            Condition of Logic node is yes. If you do not configure
+                                            a logic path for a connection, a Yes path is assumed but
+                                            does not appear on the model.If the connection property is No, the corresponding path
+                                            will be followed when the logical result of the
+                                            Condition or Logic node is no.
+A property is not defined for the connection between the Condition node and the Email Contact node, therefore, a value of Yes is assumed. This means that an email message is sent only if the preceding condition is true. If the condition is false, policy execution will not continue.
+Policy ExamplesYou can use Policy Designer to accomplish tasks in a wide variety of scenarios. These examples illustrate a few of these scenarios.
+Basic Policy and Policy Instance
+Suppose that a certain motor is known to fail when it exceeds a temperature of 200 degrees. Part of the strategy for maintaining the motor might be to create a policy that continually monitors the motor's temperature.
+ In this example, temperature readings are gathered as readings associated with a process historian tag, which is represented in a policy by an OT Connect Tag node.
+Policy Model
+
+Policy Logic Summary
+If the temperature of the motor exceeds 200 degrees, an email message will be sent to the responsible analyst. This policy would likely be configured to execute automatically when records belonging to a policy instance are updated.
+Individual Node Descriptions
+Node NameNode TypeDescriptionTemperature 
+OT Connect TagRepresents the process historian tag whose associated reading values are inputs to the policy.The specific process historian tags that this policy monitors are identified by the policy instances belonging to this policy.Analyst  User 
+Represents the system user whose information is used by the policy. The specific user records used by this policy are identified by the individual policy instances belonging to this policy.Note:  User nodes retrieve data from records in the Security User and Human Resource families. Latest Reading Value > 200Comparison
+Defines the logic that will be applied to values associated with the process historian tag that the OT Connect Tag node represents.Specifically, this Condition node specifies that the policy logic will continue (i.e., an email message will be sent) only when the Latest Reading Value is greater than or equal to 200.Email Contact 
+ Email Contact 
+Represents an action to send an email message. The email message will be sent to the email address defined in the specific user record that is included in the corresponding policy instance.
+Policy Instance
+A policy instance that is associated with this policy might look like this:
+
+...where: The specific process historian tag is A1113F. The User ID associated with the specific user record is bwilliams.
+When this policy is executed, if the process historian tag A1113F has a Latest Reading Value that is greater than or equal to 200, the GE Digital APM system will send an email message to the user with the User ID bwilliams.
+If you want to apply the same logic to monitor the temperatures of additional motors, you can define an additional policy instance for each specific process historian tag whose related Latest Reading Values contain the temperature readings for the motors that you want to monitor.
+Monitoring a Single Value
+Suppose a factory contains a heat exchanger shell, which can fail as a result of hot hydrogen attack. Part of the mitigation strategy for the heat exchanger shell, therefore, is to monitor the temperature of the process stream exposed to the shell component to ensure that it does not exceed 600 degrees Fahrenheit.
+Context The following table outlines how this policy is used within a larger workflow that also includes other GE Digital APM modules or features.
+StepModuleTask1RBIAssess the risk of loss of containment for a heat exchanger shell, which is associated with the damage mechanism Hot Hydrogen Attack.2OT ConnectCreate a Source Tag record representing the process historian tag that record the process stream temperature of the heat exchanger shell.3AHMOptionally create a Health Indicator record based on the Source Tag record.4 Policy Designer Create a policy to monitor the temperature values retrieved from the process historian.
+Policy ModelPolicy Logic Summary
+If the temperature of the heat exchanger shell rises above 600 degrees Fahrenheit more than once during a specified interval:
+A Policy Recommendation record will be created and configured to create a work request for immediate corrective action.An email message will be sent to a process engineer.
+This policy should be configured with a scheduled execution frequency of once a week. 
+Individual Node Descriptions
+Node NameNode TypeDescription Temperature 
+OPC TagProvides reading values that are passed to the Above 600 F node.Last WeekCollection FilterDefines the time range for which historical reading values will be retrieved from the process historian. Note that if no time range is defined, all the available readings for the tag will be retrieved, subject to a maximum of 1,000,000 readings per retrieval. Above 600 F 
+ Threshold Statistics 
+Compares the collection of reading values returned by the Temperature node to the threshold value 600, and counts number of times that reading values exceed the threshold value. Count > 1 
+Comparison
+Compares 1 to the number of times that the reading values exceeded the threshold.Create Recommendation 
+ Create Recommendation 
+Creates a Policy Recommendation record linked to the Asset and assigned to the User.Email Contact 
+ Email Contact 
+Sends an email message.Engineer 
+ User 
+Supplies a User ID to the Create Recommendation node and an email address to the Email Contact node.Asset 
+ Entity 
+Represents the asset to which the Policy Recommendation record will be linked.
+Monitoring Multiple Values
+Suppose a factory contains a highly critical pump, which can pose risk if one of its bearings fails. Part of the mitigation strategy for the pump, therefore, is to perform a vibration analysis and monitor multiple variables in order to create a composite view of the pump's condition.
+Context
+The following table outlines how this policy is used within a larger workflow that also includes other GE Digital APM modules or features.
+StepModuleTask1ASMAssess the risk of bearing failure for the pump.2OT ConnectCreate a Source Tag record representing the process historian tag that records the process stream temperature of the heat exchanger shell.3AHMCreate Health Indicator records based on the process historian tag.4Policy Designer Create a policy to monitor the values that are stored in the process historian.
+Policy Model
+Policy Logic Summary
+If the pump conditions indicate a pending failure (i.e., all of the conditions specified in the policy logic are true):
+A Policy Recommendation record will be created and configured to create a work request for immediate corrective action.An email message will be sent to a reliability engineer.The corresponding policy instance will be deactivated so that only one recommendation is created and only one email is sent for the same failure condition.
+Individual Node Descriptions 
+Node NameNode TypeDescription Bearing Temp 
+OPC TagProvides Latest Reading Values that are evaluated by the Bearing Temp > 200 node.Pressure 
+OPC TagProvides Latest Reading Values that are evaluated by the Pressure < 100 node.Flow 
+OPC TagProvides Latest Reading Values that are evaluated by the Flow > 200 node.Vibration Level 
+ Measurement Location 
+Provides Measurement Location readings that are evaluated by the Last Reading and Value > .15 nodes.Asset 
+ Entity 
+Represents the Equipment family and supplies a criticality indicator to the Condition node Criticality Indicator = A.Pressure < 100 
+
+Comparison
+
+Evaluates the process historian pressure readings to determine if any readings are less than 100.Bearing Temp > 200 
+Comparison
+Evaluates the process historian temperature readings to determine if any readings are greater than 200.Flow > 200 
+Comparison
+Evaluates the process historian flow readings to determine if any readings are greater than 200.Last Reading 
+ Last 
+Evaluates the collection of readings associated with the Vibration Level node and returns the last row in the collection, which, in this case, contains the most recent reading.Value > .15 
+Comparison
+Evaluates the value in the Value field of the Measurement Location reading returned by the Last Reading node to determine if it is greater than .15.Criticality Indicator = A 
+Comparison
+Evaluates the value in the Criticality Indicator field in the Equipment record to determine if it contains the value A.Engineer 
+ User 
+Supplies user information to the Create Recommendation and Email Contact nodes.Create Recommendation 
+ Create Recommendation 
+Creates a Policy Recommendation record if all of the preceding conditions are met.Deactivate This Instance 
+ Deactivate This Instance 
+Deactivates automatically the policy instance whose values caused the Deactivate This Instance node to be executed.Email Contact 
+ Email Contact 
+Sends an email message.
+Creating Health Indicator Value Records
+ The policy in this example illustrates how you can manipulate multiple readings to create health indicator readings that represent the overall health of an asset.
+Suppose you are using Asset Health Manger to monitor the health of a pump using the following indicators, which are tracked using Health Indicator records whose primary source records are Measurement Location records:
+Flow RatePressureLubricationGeneral operationVibration
+You can use Asset Health Manager to evaluate the health of the pump in terms of these individual indicators by viewing gauges and trends for them on an individual basis. But you might also want to evaluate the overall health of the pump as a composite view of all of these underlying factors. If so, you can create a policy that facilitates this.
+ContextThe following table outlines how this policy is used within a larger workflow that also includes other GE Digital APM modules or features.StepModuleTask1RoundsCreate the Measurement Location records that will be used to measure the pump's conditions. Complete the Rounds workflow to yield reading values for those checkpoints.2Asset Health ManagerCreate Health Indicator records based on the Measurement Location records.3Policy DesignerCreate a policy to monitor the values that are stored in the Health Indicator records and create a new health indicator that indicates the overall health of the pump.Policy Model
+
+Policy Logic Summary
+The values in the existing Health Indicator records will be used in calculations that determine an overall, single value that provides a composite view of the pump's health. This calculated value is stored in a Health Indicator Value record that gets created automatically each time the policy is executed and is linked to a different Health Indicator record that will be used to evaluate the overall health of the pump.
+This policy would likely be configured with a scheduled execution of once a day. 
+Individual Node Explanation
+Node NameNode TypeDescription Flow, Pressure, Lube Check, Ops Check, and Vibration 
+ Health Indicator 
+Represents various existing Health Indicator records whose primary source records are Measurement Locations.These records provide the values used in successor nodes to determine the overall health of the pump.Alert Level + 1 
+ Add 
+Adds 1 to the value in the Alert Level field in the corresponding Health Indicator record. The resulting value (n+1) is used as the denominator in the successor Divide nodes. 20 / <Health Indicator name> Alert 
+ Divide 
+Divides 20 by the result of the corresponding Add node. This value represents the Health Index contribution for each node. 20 is used as the numerator to ensure that each individual Health Indicator has equal weight, (i.e., since there are five Health Indicators, 20 is one-fifth of 100).  Various 
+ Add 
+Combines the results from the Division nodes. This sum represents the overall health index of the pump on a numeric scale between 1 and 100, where a higher value is better than a lower value. Round to nearest integer 
+ Round 
+Rounds the value of the overall health index to the nearest integer.Health Index  Add Value to Health Indicator
+Adds the rounded value of the overall health index to a new Health Indicator Value record and links the record to a Health Indicator record. Health Indicator  Health Indicator 
+Represents the Health Indicator record to which the Health Indicator Value record will be linked when the policy is executed.
+Creating and Updating a Policy Event Record
+ Suppose a factory contains a heat exchanger, which can fail as a result of hot hydrogen attack. Part of the mitigation strategy for the heat exchanger shell, therefore, is to monitor the temperature of the process stream exposed to the shell component to ensure that it does not exceed 600 degrees Fahrenheit. Specifically, the organizational policy dictates that all operation above 550 degrees Fahrenheit will be recorded so that mechanical integrity experts can evaluate the risk related to exceeding a safe operating temperature.
+Context
+The following table outlines how this policy is used within a larger workflow that also includes other GE Digital APM modules or features.
+StepModuleTask1RBIAssess the risk of loss of containment for a heat exchanger shell, which is associated with the damage mechanism Hot Hydrogen Attack.2Process Data IntegrationThe GE Digital APM System automatically creates an OPC Tag record for the location on the heat exchanger shell where the process stream temperature is monitored and recorded (using a process historian). 3Policy DesignerCreate a policy that monitors the temperature values that are stored in the process historian and creates and updates a Policy Event record.
+Policy Model
+
+Policy Logic Summary
+If the temperature of the process stream exposed to the exchanger shell:
+Rises to or above 550 degrees Fahrenheit, a Policy Event record will be created.Falls back below 550 degrees Fahrenheit (after rising to or above 550 degrees Fahrenheit), the Policy Event record will be updated to indicate that the event has closed.
+This policy would likely be configured to execute automatically when records belonging to a policy instance are updated.
+Individual Node Descriptions
+Node NameNode TypeDescriptionTemperature 
+OPC TagProvides reading values that are passed to the Latest Temperature Reading node. Latest Temperature Reading 
+ Last 
+Provides reading values that are passed to the Value ≥ 550 and Value < 550 nodes for evaluation.Value ≥ 550 
+Comparison
+Compares the reading value returned by the Latest Temperature Reading node. If the reading value is greater than or equal to 550, the Create Event node is triggered.Value < 550 Comparison
+Compares the reading value returned by the Latest Temperature Reading node. If the reading value is less than 550, the Close Event node is triggered.Asset 
+ Entity 
+Represents the asset that is associated with the Policy Event record that is created by the Create Event node.Create Event (High temperature excursion) 
+ Create Event 
+ Creates a Policy Event record. Close Event (High temperature excursion) 
+ Close Event 
+If there is an open Policy Event record for this instance of the policy, updates the record to indicate that the event is now closed.
+Creating an Entity Record and Linking it to Another Record
+The policy in this example illustrates how you can use a policy to monitor certain conditions and, in a specific scenario, create new entity and relationship records in the GE Digital APM database.
+Suppose that you are a Rounds user and you know that when a reading value exceeds a certain threshold, a recommendation should be created for a mobile Rounds user to address the situation. You can configure a policy to monitor these conditions and then create an OPR Recommendation that mobile Rounds users can then view on a handheld device as they complete their routes.
+ContextThe following table outlines how this policy is used within a larger workflow that also includes other GE Digital APM modules or features.StepModuleTask1Rounds DesignerCreate a Route with Measurement Locations and define the threshold values for readings. 2Rounds Data CollectionEnter new readings for Measurement Locations on a Route.3Policy DesignerCreate a policy to monitor the reading values and create a new OPR Recommendations if the threshold limits are exceeded and an OPR recommendation has not been added since the reading value was taken. 4Rounds Data Collection or Rounds DesignerView the recommendations on a handheld device or in Route Manager and take any action necessary. Policy Model
+
+Policy Logic Summary
+If a reading value is recorded that exceeds the Upper Level 2 threshold, an OPR Recommendation will be created and linked to the associated Equipment and Measurement Location. There is also a check to see if an OPR Recommendation was already created since the reading was taken, in which case a Recommendation will not be created.
+This policy would likely be configured to execute automatically when records belonging to a policy instance are updated.
+Individual Node Descriptions
+Node NameNode TypeDescription Measurement Location 
+ Measurement Location 
+Provides reading values that are evaluated by the policy.  Last Reading 
+ Last 
+Represents the most recent reading associated with the Measurement Location. ≥ Upper Level 2
+ Greater Than or Equal To 
+Compares the most recent reading with the Upper Level 2 threshold value defined for the Measurement Location. If the reading is greater than or equal to the threshold value, the successor nodes are executed. Query Recent OPR Recs for ML 
+ Query 
+Gets any OPR Recommendations that are linked to the Measurement Location, where the created date is after the date and time of the most recent reading.  Count Recent OPR Recs 
+ Count 
+Calculates the number of results returned by the Query node. Count Recent Recs > 0 
+ Greater Than 
+Determines whether any OPR Recommendations linked to the Measurement Location were created after the date and time of the most recent reading. If there were not, the successor nodes are executed. Create Entity OPR Rec 
+ Create Entity 
+Creates a new OPR Recommendation record using various data from the Measurement Location, Equipment, and the Last Reading nodes. Equipment 
+ Entity 
+Represents the piece of equipment related to the Measurement Location. Create Relationship Equip Has Recommendations 
+ Create Relationship 
+Creates a relationship between the OPR Recommendation record being created and the Equipment record represented by the Equipment node.  Create Relationship ML has OPR Recommendations 
+ Create Relationship 
+Creates a relationship between the OPR Recommendation record being created and the Measurement Location record represented by the Measurement Location node.
+Creating a Production Event Record
+ The policy in this example illustrates how you can analyze relevant readings from external systems (for example, process historians), and, when certain conditions are met, create a Production Event record to trigger the Production Loss Analysis workflow.
+Context
+The following table outlines how this policy is used within a larger workflow that also includes other GE Digital APM modules or features.
+StepModuleTask1Process Data IntegrationSet up tags in your process historian to monitor parameters that indicate whether a process is operating as expected.2Policy DesignerDefine a policy and set up instances to analyze the data received from the process historian that will identify conditions indicating a process interruption and create a Production Event record if this occurs. 3Production Loss AnalysisInvestigate the production event and update the Production Event record with the findings, including the root cause of the event and the related losses. This information will then be used in a production reliability analysis.
+Policy Model
+
+Policy Logic Summary
+If the speed of a conveyor falls below the minimum operating speed, and the speed reduction was not commanded, a Production Event record is created. The policy could be expanded to also send an email message is sent to the responsible engineer.
+This policy would likely be configured to execute automatically when the values associated with the OPC Tag Speed Signal node are updated.
+Individual Node Descriptions
+Node NameNode TypeDescription OPC Tag Speed Signal 
+OPC TagRepresents the speed of a conveyor. Changes in values associated with this node trigger the policy execution. DA Reading < 1.2 
+ Less Than 
+Compares the speed of the conveyor with the minimum operating speed of 1.2 ft/sec. OPC Tag Throttle Signal 
+OPC TagRepresents the throttle signal of a conveyor. Filter Values for Last 5 minutes 
+ Collection Filter 
+Filters the throttle signal values to only those from the last 5 minutes (that is, the 5 minutes prior to the speed of the conveyor falling below 1.2 ft/sec). Average 
+ Average 
+Determines the average throttle signal for the last 5 minutes. Average < 1.5 
+ Less Than 
+Compares the average throttle signal with 1.5 ft/sec to determine whether the speed reduction was commanded. And 
+ And 
+Evaluates the preceding logic branches and allows policy execution to continue only when the speed of the conveyor falls below 1.2 ft/sec and the average throttle signal for the last 5 minute was not less than 1.5 ft/sec. Production Unit 
+ Entity 
+Represents a Production Unit record. Equipment 
+ Entity 
+Represents the conveyor being monitored. Create Production Event Un-commanded speed reduction 
+ Create Production Event 
+When all prior conditions are met (that is, policy logic indicates that the speed reduction was not commanded), creates a new Production Event record. The properties for the Create Production Event node are configured such that the new record is linked to the related Production Unit record and the Equipment record representing the conveyor is defined as the causing asset. 
+
+
+
+
+
+On this pagePolicy Model Basic PrinciplesPolicy ExamplesBasic Policy and Policy InstanceMonitoring a Single ValueMonitoring Multiple ValuesCreating Health Indicator Value RecordsCreating and Updating a Policy Event RecordCreating an Entity Record and Linking it to Another RecordCreating a Production Event Record
+
+
+
+
+
+
+
+
+

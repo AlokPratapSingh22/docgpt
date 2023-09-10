@@ -1,0 +1,129 @@
+
+
+
+SRS Categories | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+SRS Categories
+
+
+
+
+
+
+
+SRS CategoriesAbout Administration Settings to Define Required CategoriesA user can use the SRS Project administration settings to create a custom selection of required categories when an SRS Project is created. New SRS Projects will automatically contain all default SRS Categories.Add an SRS Category to an SRS ProjectProcedure
+Access the SRS Project for which you want to create an SRS Category.In the left pane, select .
+The Create new SRS category window appears, displaying a lst of SRS Categories in the left pane.
+
+
+
+Select the required SRS category from the list.
+In the Create new SRS category window, a list of SRS Templates associated with the SRS Category appears.
+From the list of templates, select the template that you want to use for the SRS Project, and then select OK.
+The SRS Category is added to the SRS Project.
+Change the SRS Template that is Defined for an SRS Category in an SRS ProjectProcedure
+Access the SRS Project for which you want to change the template used in an SRS Category.In the left pane, select the SRS Category in which the SRS Template needs to be changed.
+The SRS Category page appears.
+
+
+
+In the upper-right corner of the workspace, select Change Template.
+The Create new SRS category window appears, displaying a list of available SRS templates.
+
+
+
+Select the <SRS Template> radio button, and then select OK.
+The new SRS template is added to the list of SRS categories displayed in the left pane of the <SRS Project> page.
+Update a Particular SRS Category in an SRS ProjectProcedure
+Access the SRS Project for which you want to update the SRS Category.In the left pane, select the SRS Category that you want to update.
+The SRS Category page appears.
+
+
+
+Modify the values in the fields, as required.In the upper-right corner of the workspace, select .
+A confirmation message appears, indicating that the datasheet has been saved successfully.
+Delete an SRS Category from an SRS ProjectProcedure
+Access the SRS Project for which you want to create an SRS Category.In the left pane, select the SRS Category which you want to delete.
+The SRS Category page appears, displaying the datasheet for the SRS Category.
+
+
+
+In the upper-right corner of the datasheet, select , and then select Delete.
+Note: You can delete an SRS Category only if the SRS Project is in the In Progress state.
+The Confirm Delete dialog box appears, asking you to confirm that you want to delete the selected catergory.
+Select Yes.
+The SRS Category is deleted from the SRS Project.
+
+
+
+
+
+On this pageAbout Administration Settings to Define Required CategoriesAdd an SRS Category to an SRS ProjectChange the SRS Template that is Defined for an SRS Category in an SRS ProjectUpdate a Particular SRS Category in an SRS ProjectDelete an SRS Category from an SRS Project
+
+
+
+
+
+
+
+
+

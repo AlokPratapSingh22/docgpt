@@ -1,0 +1,1181 @@
+
+
+
+Family Field Descriptions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Calculations
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+Reference
+Family Field Descriptions
+
+
+
+
+
+
+
+Family Field DescriptionsElectrical Records
+This topic provides an alphabetical list and description of the fields that exist for the Electrical family and appear on the Electrical datasheet, unless otherwise specified. The information in the table reflects the baseline state and behavior of these fields.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+
+I/O Power Redundancy Requirements
+
+
+Text
+Describes if redundant power supplies are feeding power to the SIS.
+On the datasheet, this field appears as a text box, in which you can enter a true or false and then the description of the redundancy (dual or triple redundant).
+
+I/O Power Requirements
+TextI/O power provided for the SIS.On the datasheet, this field appears as a text box labeled Description, in which you can enter a description of the I/O power provided (for example: 24V DC)
+I/O Power Sources
+TextThe source of the I/O power (for example, clean power from a UPS, batter power, etc)On the datasheet, this field appears as a text box, in which you can enter a true or false and then the description of the source (for example: from UPS A, or battery bank B)
+Is Default
+LogicalIndicates whether the record is the default one.If set true, then the SRS Template is a default template for the category supplied by GE Digital.
+Last Modified By
+CharacterThe name of the user who last modified the record.On the datasheet, this field is disabled and updated automatically whenever the record is modified.
+Last Modified Date
+DateThe date on which the record was last modified.On the datasheet, this field is disabled and populated automatically.
+Loss of SIS Energy Sources
+TextThe consequences, if one or more SIS energy (power) sources are disabled.On the datasheet, this field appears as a text box, in which you can enter the description of consequence if one more sources is disabled.
+Revision Number
+NumericA number that represents the number of times the record has been revised.On the datasheet, this field is disabled and populated.
+SRS Template Description
+CharacterA description of the record.On the datasheet, this field appears as a text box labeled Description, in which you can enter a description of the record.
+SRS Template ID
+CharacterThe ID of the record.On the datasheet, this field appears as a text box labeled Field ID, in which you can type the ID.
+Environment Records
+This topic provides an alphabetical list and description of the fields that exist for the Environment family and appear on the Environment datasheet, unless otherwise specified. The information in the table reflects the baseline state and behavior of these fields.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+
+Is Default
+
+
+Logical
+Indicates whether the record is the default one.
+If set true, then the SRS Template is a default template for the category supplied by GE Digital.
+
+Last Modified By
+CharacterThe name of the user who last modified the record.On the datasheet, this field is disabled and updated automatically whenever the record is modified.
+Last Modified Date
+DateThe date on which the record was last modified.On the datasheet, this field is disabled and populated automatically.
+Revision Number
+NumericA number that represents the number of times the record has been revised.On the datasheet, this field is disabled and populated.
+SIS Environment - Electrical Classification
+TextDescribes if the SIS is approved for hazardous area. CSA, FM, ATEX and IECx certification will be described here. Also, electrical housing holding the SIS will be described here.On the datasheet, this field appears as a text box, in which you can enter the hazardour area approval details.
+SIS Environment - Humidity
+TextThe relative humidity specification for the SIS control system will be described here. (for example, 5 to 95% non-condensing) On the datasheet, this field appears as a text box, in which you can enter the relative humidity specifications that the SIS is designed to handle.
+SIS Environment-Temperature
+TextThe operating temperature range and the storage temperature range will be described here. (for example, -40 to 70 C operating temperature range and -40 to 85 C storage temperature range).On the datasheet, this field appears as a text box, in which you can enter the operating temperature range specifications and storage temperature specification range that the SIS is designed to handle.
+SIS Environmental Conditions
+TextThe environmental fields describes the airborne contaminants, shock and vibration conditions. (for example, airborne contaminants: ISA-S71.04-1985 Airborne Contaminants Class G3 Conformal coating, shock: 10 g ½-sine wave for 11 ms and vibration: 1 mm peak-to-peak from 2 to 13.2 Hz)On the datasheet, this field appears as a text box, in which you can enter the environmental specifications that the SIS is designed to handle.
+SRS Template Description
+CharacterA description of the record.On the datasheet, this field appears as a text box labeled Description, in which you can enter a description of the record.
+SRS Template ID
+CharacterThe ID of the record.On the datasheet, this field appears as a text box labeled Field ID, in which you can type the ID.
+SIS Functional Test Detail Records
+This topic provides an alphabetical list and description of the fields that exist in the SIS Functional Test Detail family. When you apply a Proof Test Template to a Proof Test, a Functional Test Detail is created for each Proof Test Template Detail. The values in most of these fields are populated with the values in the corresponding fields in the related Proof Test Template Detail. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+As Found Travel Time NumericThe time taken by the Final Element to reach the safe state from its normal operating state. This value is measured in seconds.
+This field is enabled only if the value in the Step Type field is Final Element. 
+ If the value in this field exceeds the value in the Travel Time Limit field, then the proof test step fails. 
+As Found Trip Point NumericA number that defines when the element has activated an SIS shutdown. 
+This value is used to calculate the As Found Trip Point Error.
+As Found Trip Point Error NumericThe error value calculated for the value that you have entered in the As Found Trip Point field.
+This value is disabled and calculated as follows:
+
+As Found Trip Point Error = [(As Found Trip Point - Trip Point) *100] / Trip Point
+
+If this value is less than the value in the Trip Point Error Limit field, then the proof test step has passed. Otherwise, it has failed.
+As Left Travel Time NumericThe time taken by the Final Element to reach the safe state from its normal operating state, after repairing the element. This value is measured in seconds.
+ This field is enabled only if the value in the Step Type field is Final Element. 
+As Left Trip Point NumericA number that defines when the element has activated an SIS shutdown after repairing the element.This value is used to calculate the As Left Trip Point Error.As Left Trip Point Error NumericThe error value calculated for the value that you have entered in the As Left Trip Point field.
+This value is disabled and calculated as follows:
+
+As Left Trip Point Error = [(As Left Trip Point - Trip Point) *100] / Trip Point
+
+Comments CharacterComments about the proof test.
+None
+
+Equipment ID 
+
+Character
+
+The ID of the Equipment against which the step is performed. 
+This field is disabled and populated with the value in the Equipment ID field in the corresponding Proof Test Template Detail.Executed By CharacterThe ID of the user who conducted the proof test.This field is disabled and populated with the ID of the current user.Execution Date DateThe date on which the proof test was conducted.This field is disabled and populated with the date and time on which the Functional Test Detail is saved.Failure Condition CharacterThe condition in which the proof test step failed.NoneFailure Type CharacterThe type of the failure.
+This field contains the following values:
+Safe Dangerous No Effect 
+Location ID CharacterThe ID of the Functional Location against which the step is performed. This field is disabled and populated with the value in the Location ID field in the corresponding Proof Test Template Detail.Pass/Fail CharacterIndicates whether the proof test step has passed or failed based on the pass/fail criteria that you have specified in the corresponding Proof Test Template Detail.
+This field contains the following values:
+Pass Fail Skip Complete 
+Result Criteria TextA description of what is considered to be an acceptable result of the step. This field is disabled and populated with the value in the Result Criteria field in the corresponding Proof Test Template Detail. Step Sequence Number NumericA number that represents the order in which the step should be performed, relative to other steps. This field is disabled and populated with the value in the Step Sequence Number field in the corresponding Proof Test Template Detail. Step Type CharacterThe type of the step. This field is disabled and populated with the value in the Step Type field in the Proof Test Template Detail. Template Detail ID CharacterAn alphanumeric value that identifies the SIS Functional Test Detail. 
+This field is disabled and populated with the value in the Template Detail ID field in the corresponding Proof Test Template Detail.
+Test Criteria CharacterThe criteria or conditions for conducting the proof test.This field is disabled and populated with the value in the Test Criteria field in the corresponding Proof Test Template Detail.Travel Time Limit NumericA number that quantifies the maximum acceptable travel time for this step, in seconds. This field is enabled only in SIS Proof Test Template Details that are linked to records representing final elements. Trip Point NumericA number that defines when the element should activate an SIS shutdown. This field is enabled only in SIS Proof Test Template Details that are linked to records representing sensors, final elements, or logic solvers. Trip Point Direction CharacterThe trend of Trip Point values. This field is disabled and populated with the value in the Trip Point Direction field in the corresponding Proof Test Template Detail.Trip Point Error Limit NumericA value that defines the range, plus or minus, within which the Trip Point value must fall to be acceptable. This field is disabled and populated with the value in the Trip Point Error Limit field in the corresponding Proof Test Template Detail.Trip Point Units CharacterThe unit of measure associated with the value in the Trip Point field. This field is disabled and populated with the value in the Trip Point Units field in the corresponding Proof Test Template Detail.
+General Data Records
+This topic provides an alphabetical list and description of the fields that exist for the General Data family and appear on the General Data datasheet, unless otherwise specified. The information in the table reflects the baseline state and behavior of these fields.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+
+Emergency Requirement
+
+
+Text
+This field describes the details of handling the failure of SIS in case of emergency.On the datasheet, this field appears as a text box, in which you can enter the SIS handling in case of emergency. The description may detail manual override of SIS.
+Is Default
+LogicalIndicates whether the record is the default one.If set true, then the SRS Template is a default template for the category supplied by GE Digital.
+Last Modified By
+CharacterThe name of the user who last modified the record.On the datasheet, this field is disabled and updated automatically whenever the record is modified.
+Last Modified Date
+DateThe date on which the record was last modified.On the datasheet, this field is disabled and populated automatically.
+Normal Operation Requirement
+TextThe behavior of the SIS during normal operation.On the datasheet, this field appears as a text box, in which you can enter the normal operating behavior that the SIS is designed to handle.
+Revision Number
+NumericA number that represents the number of times the record has been revised.On the datasheet, this field is disabled and populated.
+SIF Demand Mode of operation
+Text
+The demand rate exerted on the safety system. 
+
+Low Demand Mode: Safety Function demand rate is less than or equal to once a year.
+High Demand Mode: Safety Function demand rate is greater than once a year.
+Continuous Mode: Safety Function is operating as a continuous control function.
+On the datasheet, this field appears as a text box, in which you can enter the demand rate on the SIS that the SIS is designed to handle.
+SIF Protection Mode
+TextThe SIL level used for protecting the asset. (for example, SIL 1, SIL2 or SIL3) On the datasheet, this field appears as a text box, in which you can enter the SIL specifications that the SIS is designed to handle. (example: SIL 1, SIL2 or SIL3)
+SRS Methodology
+TextThe methodology used to allocate the safety integrity requirements, depending the necessary risk reduction. (for example, quantitative method (numeric risk reduction) or qualitative method (risk matrix, risk graph)On the datasheet, this field appears as a text box, in which you can enter the methodology used for allocating the safety integrity requirements that the SIS is designed to handle.
+SRS Purpose and Scope
+TextThe purpose of the SIS and the details of the coverage.On the datasheet, this field appears as a text box, in which you can enter the SIL purpose and what SIF it is targeted to cover are described.
+SRS Standards Used
+TextThe standards used in designing the SRS.On the datasheet, this field appears as a text box, in which you can enter the SIL standard that the SIS design is based on (IEC 61508 or ISA 84).
+SRS Template Description
+CharacterA description of the record.On the datasheet, this field appears as a text box labeled Description, in which you can enter a description of the record.
+SRS Template ID
+CharacterThe ID of the record.On the datasheet, this field appears as a text box labeled Field ID, in which you can type the ID.
+System Definition
+TextThe system under consideration.On the datasheet, this field appears as a text box, in which you can enter the system specifications that the SIS is designed to handle.
+Hardware Records
+This topic provides an alphabetical list and description of the fields that exist for the Hardware family and appear on the Hardware datasheet, unless otherwise specified. The information in the table reflects the baseline state and behavior of these fields.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+
+Inputs Accuracy
+
+
+Text
+This field describes the accuracy of the input hardware.On the datasheet, this field appears as a text box, in which you can enter the input point signal accuracy specifications that the SIS input point is designed to handle.
+Inputs Certification Requirements
+TextThis field describes the certifications for the input hardware.On the datasheet, this field appears as a text box, in which you can enter the input point certifications (design basis).
+Inputs Response Time
+TextThis field describes the response time of the input hardware.On the datasheet, this field appears as a text box, in which you can enter the input point response time specifications that the SIS input point is designed for.
+Inputs Trip Set Points
+TextThis field describes the trip setpoint used for the input hardware.On the datasheet, this field appears as a text box, in which you can enter the input point trip setpoints that the SIS input point is designed to handle.
+Is Default
+LogicalIndicates whether the record is the default one.If set true, then the SRS Template is a default template for the category supplied by GE Digital.
+Last Modified By
+CharacterThe name of the user who last modified the record.On the datasheet, this field is disabled and updated automatically whenever the record is modified.
+Last Modified Date
+DateThe date on which the record was last modified.On the datasheet, this field is disabled and populated automatically.
+Outputs Certification Requirements
+TextThis field describes the certifications of the output hardware.On the datasheet, this field appears as a text box, in which you can enter the design basis for the output point certifications.
+Outputs Stroke Times
+TextThis field describes the stroke times of the output hardware.On the datasheet, this field appears as a text box, in which you can enter the design basis for the output point stroke times.
+Outputs leakage requirements
+TextThis field describes the leakage requirements of the output hardware.On the datasheet, this field appears as a text box, in which you can enter the design basis for the output point leakage requirements.
+Revision Number
+NumericA number that represents the number of times the record has been revised.On the datasheet, this field is disabled and populated.
+SIS Input (sensor) Module Requirements
+TextThis field describes the requirements for the input hardware module.On the datasheet, this field appears as a text box, in which you can enter the input module design basis, typically supplied by the OEM of the input module.
+SIS Logic Solver Requirements
+TextThis field describes the requirements for the logic solver hardware module.On the datasheet, this field appears as a text box, in which you can enter the logic solver design basis, typically supplied by the OEM of the input module.
+SIS Output (final element) Module Requirements
+TextThis field describes the requirements for the output hardware module.On the datasheet, this field appears as a text box, in which you can enter the output module design basis, typically supplied by the OEM of the input module.
+SRS Template Description
+CharacterA description of the record.On the datasheet, this field appears as a text box labeled Description, in which you can enter a description of the record.
+SRS Template ID
+CharacterThe ID of the record.On the datasheet, this field appears as a text box labeled Field ID, in which you can type the ID.
+Instrumented Function Records
+Instrumented Function records store details about a specific function of a safety instrumented system. This topic provides an alphabetical list and description of the fields that exist for the Instrumented Function family. The information in this table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and Usage
+Abnormal State 
+
+Character
+
+A short description of the specific abnormal state of the operation.
+This field does not appear on the datasheet.Availability Target NumberThe percentage of time that the instrumented function must be operational. Provide a value between 0 and 100. This value is compared with the availability of a Protective Instrument Loop to determine if the loop meets the availability target.
+Concurrent Safe State Hazard 
+
+Text
+
+A description of the hazardous event that could occur if the safe state associated with the instrumented function occurs simultaneously with the safe state of a different instrumented function. 
+This field appears on the Concurrent Safe State Hazard datasheet without a field caption, and a value is set by default. You can remove this value and enter your own value. Concurrent Safe State Hazard? LogicalIndicates whether the safe state associated with the instrumented function can cause a hazardous event if it occurs concurrently with the safe state of a different instrumented function. This field appears on the Concurrent Safe State Hazard datasheet, which you can select to indicate that the safe state for the instrumented function can lead to a hazardous event if that safe state occurs simultaneously with the safe state of a different instrumented function.Consequence Description TextA description of the risk that is associated with the hazardous event that exists in the Hazardous Event field.  If the value in the SIL Assessment Method field is PHA - Internal, after you select a Risk Assessment record from a Hazards Analysis, this field is populated with the value in the Consequence Description field in the Hazards Analysis Consequence record that is linked to the Risk Assessment record you selected. Demand Rate (Source) CharacterThe demand rate for the instrumented function (i.e., Low demand or High demand). This field appears on the Safety Requirement Specification datasheet, and contains the text Low Demand by default. You can modify this value.Equipment ID CharacterThe ID of the Equipment that you want to link to the Instrumented Function. On the datasheet, this field contains a  button, which you can select to search for the Equipment. After you select an Equipment, a link is created between the selected Equipment and this Instrumented Function. This field needs to be set in order to perform the Proof Test task workflow.Equipment Key NumberThe Entity Key of the Equipment that is linked to this Instrumented Function.The GE Digital APM system uses this value to populate the Equipment ID field that appears on the Instrumented Function datasheet.Failure Rate UOM CharacterThe unit of measure that is associated with the value in the Required Probability of Failure field.This field contains the following values:  PFD Avg. PFH When the value in the SIL Mode field is High Demand or Continuous, this field is disabled and populated with PFH. When the value in the SIL Mode field is Low Demand, this field is disabled and populated with PFD Avg.Frequency of Initiating Event (Per yr) NumberThe number of times per year that the initiating event occurs.  If the value in the SIL Assessment Method field is PHA - Internal, after you select a Risk Assessment record from a Hazards Analysis, this field is populated with the value in the Cause Frequency (per year) field in the Hazards Analysis Cause record that is linked to the Hazards Analysis Consequence record that is linked to the Risk Assessment record you selected. Function Type CharacterThe type of the instrumented function. This field contains a list with the following baseline values: Safety  Protective
+Functional Location ID CharacterThe ID of the Functional Location that is linked to the Instrumented Function. On the datasheet, this field a  button, which you can select to search for the Functional Location. Functional Location Key NumberThe Entity Key of the Functional Location that is linked to this Instrumented Function. The GE Digital APM system uses this value to populate the Functional Location ID field. Hazardous Event CharacterA description of the event for which the instrumented function exists to prevent or mitigate risk.  If the value in the SIL Assessment Method field is PHA - Internal, after you select a Risk Assessment record from a Hazards Analysis, this field is populated with the value in the Consequence Type field in the Hazards Analysis Consequence record that is linked to the Risk Assessment record you selected. Hazards Analysis Date DateThe date the Hazards Analysis to which this Instrumented Function is linked was last modified. On the datasheet, this field is disabled and populated automatically with the value stored in the Last Modified Date field in the Hazards Analysis that is linked to this Instrumented Function and whose ID appears in the Hazards Analysis Reference field.Hazards Analysis Reference CharacterThe ID of the Hazards Analysis that is linked to this Instrumented Function. This field does not appear on the datasheet.Hazards Analysis Reference Key NumberThe Entity Key for the Hazards Analysis that is linked to this Instrumented Function. This field is used by the GE Digital APM system to populate this Instrumented Function record with information from the Hazards Analysis that is linked to this Instrumented Function. Initiating Event CharacterA short description of the initiating event whose description exists in the Initiating Event Description field. If the value in the SIL Assessment Method field is PHA - Internal, after you select a Risk Assessment record from a Hazards Analysis, this field is populated automatically with the value in the Cause Type field in the Hazards Analysis Cause record that is linked to the Hazards Analysis Consequence record that is linked to the Risk Assessment record you selected. Initiating Event Description TextA description of the event which could initiate a series of events that present the risk whose description exists in the Consequence Description field.  If the value in the SIL Assessment Method field is PHA - Internal, after you select a Risk Assessment record from a Hazards Analysis, this field is populated automatically with the value in the Cause Description field in the Hazards Analysis Cause record that is linked to the Hazards Analysis Consequence record that is linked to the Risk Assessment record you selected. I/O Functional Relationship Details TextA description of the relationship between the inputs and outputs for the process, including details such as logic and mathematical functions. This field appears on the Safety Requirement Specification datasheet. Last Modified By CharacterThe name of the user who last modified the record. On the datasheet, this field is disabled and updated automatically whenever the record is modified. Last Modified Date DateThe date on which the record was last modified. On the datasheet, this field is disabled and populated automatically. Maintenance and Test Requirements TextA description of the requirements for maintenance and testing procedures for the instrumented function. This field appears on the Safety Requirement Specification datasheet, and a value is set by default. You can remove this value and enter your own values.Maintenance Override LogicalA logical field that stores the value True or False and indicates whether the process requires override procedures for maintenance activities. By default, this field does not appear on the datasheet.Manual Shutdown LogicalA logical field that stores the value True or False and indicates whether the process requires manual shutdown. By default, this field does not appear on the datasheet.Max Process Variable NumberA number representing the upper value for the process variable range. This field appears on the Safety Requirement Specification datasheet. This value combined with the value stored in the Min Process Variable field make up the process variable range. Min Process Variable NumberA number representing the lower value for the process variable range. This field appears on the Safety Requirement Specification datasheet. This value combined with the value stored in the Max Process Variable field make up the process variable range. Normal Operation Mode TextA description of the normal operating mode for the instrumented function. By default, this field appears on the  Safety Requirement Specification datasheet and a value is set. You can remove this text and enter your own values. Operation Mode Description CharacterThe description of the abnormal mode of operation.This field appears on the Safety Requirement Specification datasheet and is enabled only if the value for the Operation Modes field is ABNORMAL. If the value in the Operation Modes field is NORMAL, this field is disabled.Operation Modes CharacterThe mode of operation for the instrumented function. This field appears on the Safety Requirement Specification datasheet and contains the following values: 
+Normal : By default, this is the value that is selected. 
+Abnormal : If you select this value, the following fields are enabled: Abnormal StatesOperation Mode Description
+Operator Interface Requirement TextA description of the Operator Interface requirements. This field appears on the Safety Requirement Specification datasheet, and a value is set by default. You can remove this text and enter your own values. PIF Description CharacterStores a description of the instrumented function. On the datasheet, this field appears as a text box labeled IF Description, in which you can enter your own value. PIF ID CharacterAn ID for the instrumented function. On the datasheet, this field appears as a text box labeled IF ID, in which you can enter your own value. This value will appear in the list of Instrumented Functions on the left pane on the SIL Analysis Summary page. This field is required.Pre Alarm NumberA number representing the point on the process variable range at which the pre-alarm should be triggered. This field appears on the Safety Requirement Specification datasheet. Process Service Description TextA description of the specifications for the process service. This field appears on the Safety Requirement Specification datasheet. Process Speed NumberA number representing the time in seconds that the process for which the instrumented function takes to complete.  NoneRequired Probability of Failure NumberA number that represents the target probability that an instrumented function failure will occur. 
+If the value in the SIL Assessment Method field is Risk Matrix - Internal, this field is disabled and populated automatically based on the SIL requirements from the Risk Matrix.  If the value in the SIL Assessment field is Layer of Protection Analysis Internal, this field is disabled and populated automatically with the difference between the values in the Mitigated Consequence Frequency field and the Required Mitigated Consequence Frequency field on the LOPA datasheet. For all other SIL Assessment methods, you can type a value manually in the Required Probability of Failure field. Note that:The value that you type must fall within a certain range, which is determined by the value in the Selected SIL Level field. If you modify the value in the Selected SIL Level field, the value in this field will be updated automatically to fall within the correct range of values for that level.If you try to type a value into the Required Probability of Failure field without first selecting a value from the Selected SIL Level list or you type a value that is outside of the acceptable range, an error message will appear.If the value in the SIL Mode field is Low Demand, when you type a value in the Required Probability of Failure field, the value in the Risk Reduction Factor field will be populated automatically with the inverse of the value you type. Likewise, if you type a value in the Risk Reduction Factor box, the value in the Required Probability of Failure field will be populated automatically with the inverse of the value that you type.
+After you type a value in the Required Probability of Failure field, it is converted automatically to scientific notation form (e.g., 1E-07).Required SIF Action TextA description of the action that the instrumented function performs in response to a triggered alarm. This field appears on the Safety Requirement Specification datasheet. Reset Requirement TextA description of the requirements for resetting a process after it has been tripped. This field appears on the Safety Requirement Specification datasheet and a value is set by default. You can remove this text and enter your own value. Response Time NumberA numeric value that represents the time in seconds that it takes for the instrumented function to respond to the initiating event and bring the process to a safe state.  NoneRisk Reduction Factor (RRF) NumberA number representing the factor by which the risk should be reduced for the instrumented function. 
+If the value in the SIL Mode field is Low Demand and the value in the SIL Assessment Method field is Layer of Protection Analysis - Internal or Risk Matrix - Internal, this field is disabled and populated automatically with the inverse of the value in the Required Probability of Failure field.
+For all the other SIL Assessment methods, when the value in the SIL Mode field is Low Demand and the value in the SIL Assessment Method field is not Layer of Protection Analysis - Internal or Risk Matrix - Internal, this field is enabled and you can type a value directly into the Risk Reduction Factor field. Note that:
+The value that you type must fall within a certain range, which is determined by the value in the Selected SIL Level field. If you modify the value in the Selected SIL Level field, the value in this field will be updated automatically to fall within the correct range of values for that level.If you try to type a value in the Risk Reduction Factor field without first selecting a value from the Selected SIL Level list or you type a value that is outside of the acceptable range, an error message will appear.If you type a value in the Risk Reduction Factor field, the value in the Required Probability of Failure field will be populated automatically with the inverse of the value that you type. Likewise, if you type a value into the Required Probability of Failure field, the value in the Risk Reduction Factor field will be populated automatically with the inverse of the value that you type.
+If the value in the SIL Mode field is High Demand or Continuous, this field is disabled and does not contain a value.
+Safe State Description TextA description of the safe state to which the process should be taken via the instrumented function. None Selected SIL Level NumberA number representing the SIL value that is required for the instrumented function. 
+On the datasheet, this field is disabled and populated automatically if the value in the SIL Assessment Method field is anything other than External. 
+If the SIL Assessment Method field contains an External value, this field is enabled and appears as a list that is populated with values from the MI SAFETY INDEX LEVEL System Code Table. You can select a value from the list.
+If a value exists in the Required Probability of Failure field and you try to delete the value in the Selected SIL Level field, an error message appears, and you will not be able to delete the value.
+SIL Analysis Key NumberThe Entity Key of the SIL Analysis to which the Instrumented Function is linked. This field is used internally by the GE Digital APM system. SIL Assessment Method CharacterThe method used to assess the risk that is associated with the instrumented function. This field contains the following values:  Risk Matrix - Internal Layer of Protection Analysis Internal PHA Internal  External  These values are defined in the MI_SIL_ASSESSMENT_METHOD system code table. If you select the PHA - Internal option, there must be a value in the Hazards Analysis Reference field. Otherwise, an error message will appear. SIL Mode CharacterThe SIL mode that is defined for this instrumented function. This field contains the following baseline values: Low Demand  High Demand Continuous
+SIS System ID CharacterThe ID of the Logic Solver to which the Instrumented Function is linked. On the datasheet, this field appears as a list labeled SIS ID and contains the values that exist in the SIS ID field in the Logic Solvers that are linked to the SIL Analysis with which you are currently working. If a logic solver has been set as default, then the ID of the same logic solver is populated in the SIS System ID field. Site Description CharacterA description of the site that is specified in the Site ID field. NoneSite ID CharacterThe ID of the site that is associated with the instrumented function. On the datasheet, this field is disabled and populated automatically with the value in the Site ID field of the associated SIL Analysis. Spurious Trip Limit (per yr) NumberA number representing the number of times per year it is acceptable for a spurious trip to occur for this instrumented function.  This value is used to determine the value in the Meets STR Limit field in a Protective Instrument Loop that is linked to the Instrumented Function. Startup And Restart Procedure TextA detailed description of the start up and restart procedures for the process. This field appears on the Safety Requirement Specification datasheet and a value is set by default. You can remove this text and enter your own value. Survival Requirement TextA description of the requirements for the instrumented function to survive a catastrophic event, such as an earthquake. This field appears on the Safety Requirement Specification datasheet and a value is set by default. You can remove this text and enter your own value. Trip Mode CharacterA short description of the trip mode (i.e., energize to trip or de-energize to trip). This field appears on the Safety Requirement Specification datasheet and the value is set to de-energize to trip by default. You can remove this value and enter your own value. Trip Point NumberA number representing the point on the process variable range at which the trip alarm should be triggered. This field appears on the Safety Requirement Specification datasheet. Unit Description CharacterA description of the unit that is specified in the Unit ID field. NoneUnit ID CharacterThe ID for the unit where the instrumented function exists. You can enter your own value. UOM CharacterUnits of measure for values such as Trip Point, Min Process Variable, Max Process Variable, Pre-alarm.None
+Interfaces Records
+This topic provides an alphabetical list and description of the fields that exist for the Interfaces family and appear on the Interfaces datasheet, unless otherwise specified. The information in the table reflects the baseline state and behavior of these fields.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+
+Is Default
+
+
+Logical
+Indicates whether the record is the default one.If set true, then the SRS Template is a default template for the category supplied by GE Digital.
+Last Modified By
+CharacterThe name of the user who last modified the record.On the datasheet, this field is disabled and updated automatically whenever the record is modified.
+Last Modified Date
+DateThe date on which the record was last modified.On the datasheet, this field is disabled and populated automatically.
+Revision Number
+NumericA number that represents the number of times the record has been revised.On the datasheet, this field is disabled and populated.
+SIF Process Interfaces
+TextAll the interfaces to and from the SIS.On the datasheet, this field appears as a text box, in which you can enter the interfaces (in and out) to and from the SIS.
+SIS Sequence of Events Recording
+TextThe sequence of events recording for the events in a SIS.On the datasheet, this field appears as a text box, in which you can enter the SOE design details, typically supplied by the OEM of the SER. (Sequence of events recorder)
+SIS to BPCS Interface Details
+TextThe interface to a DCS or BPCS.On the datasheet, this field appears as a text box, in which you can enter the BPCS interface design details.
+SIS to Historian Interface Details
+TextThe interfaces to a process historian.On the datasheet, this field appears as a text box, in which you can enter the process historian interface design details.
+SRS Template Description
+CharacterA description of the record.On the datasheet, this field appears as a text box labeled Description, in which you can enter a description of the record.
+SRS Template ID
+CharacterThe ID of the record.On the datasheet, this field appears as a text box labeled Field ID, in which you can type the ID.
+LOPA Assessment Records
+LOPA Assessment records store information that is mapped from the LOPA that you use to assess the SIL level of an Instrumented Function. This topic provides an alphabetical list and description of the fields that exist for the LOPA Assessment family and appear on the LOPA Assessment datasheet. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+LOPA Assessment ID CharacterIndicates the identification for the LOPA.
+This field is required and must be unique among all the LOPA records linked to an Instrumented Function. Otherwise, an error message appears. 
+You can enter a value manually. The value will appear in the list of assessments for an Instrumented Function and is used to distinguish the LOPA from the others.
+LOPA Description CharacterSpecifies a description for the LOPA. This field appears on the LOPA Assessment datasheet.Linked LOPA ID CharacterIndicates the identification of the LOPA that is linked to the instrumented function.
+You can select a LOPA to associate with the LOPA Assessment record.
+You can link only LOPA records that are in Approved state.
+Frequency of Initiating Event NumericIndicates the number of times in a year an initiating event specified in the Initiating Event Type field in the LOPA record will occur. 
+This field is automatically populated with the value in the Frequency of Initiating Event field in the LOPA record that is associated with the Instrumented Function.
+This field does not appear on the datasheet. 
+Mitigated Consequence Frequency NumericIndicates the frequency of the mitigated consequence (i.e., the frequency of consequence after layers of protection have been added). 
+This field is automatically populated with the value in the Mitigated Consequence Frequency field in the LOPA record that is associated with the Instrumented Function.
+This field does not appear on the datasheet. 
+Required Mitigated Consequence Frequency NumericIndicates the maximum allowable frequency at which the initiating event can occur for the risk that is described in the Unacceptable Consequence field in the LOPA record. 
+This field is automatically populated with the value in the Required Mitigated Consequence Frequency field in the LOPA that is associated with the Instrumented Function.
+This field does not appear on the datasheet. 
+Required Probability of Failure NumericIndicates the target probability that a failure will occur. 
+This field is automatically populated with the value in the Required PIF PFD field in the LOPA that is associated with the Instrumented Function.
+This field does not appear on the datasheet. 
+Risk Reduction Factor (RRF) NumericIndicates the factor by which the risk should be reduced.
+This field is automatically populated with the value in the Required PIF Risk Reduction Factor field in the LOPA that is associated with the Instrumented Function.
+Selected SIL NumericThe SIL value that is required to mitigate the risk that is associated with the Instrumented Function to which this LOPA is linked.
+This field is automatically populated with the value in the Calculated SIL field in the LOPA that is associated with the Instrumented Function.
+Total IPL PFD NumericThe PFD value that is associated with all the IPLs associated with the LOPA.
+This field is automatically populated with the value in the Total IPL PFD field in the LOPA record that is associated with the Instrumented Function.
+This field does not appear on the datasheet. 
+Unmitigated Consequence Frequency NumericIndicates the frequency of unmitigated consequence (i.e, the frequency consequence before the layers of protection have been added). 
+This field is automatically populated with the value in the Unmitigated Consequence Frequency field in the LOPA record that is associated with the Instrumented Function.
+This field does not appear on the datasheet. 
+
+Logic Solver Records
+Logic Solver records store details about the safety instrumented system that they represent. This topic provides an alphabetical list and description of the fields that exist for the Logic Solver family. Unless otherwise specified, the fields appear on the Logic Solver datasheet. The information in this table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageAbnormal Mode Description TextA detailed description of the abnormal mode of operation.  This field is enabled only if Abnormal is selected in the Plant Operation Mode list. Otherwise, this field is disabled.Abnormal State CharacterA short description of the specific abnormal state of the operation. This field contains a list with the following values: Start-Up Shutdown Bypass Maintenance EmergencyOther This field is enabled and required only if Abormal is selected in the Plant Operation Mode list. Otherwise, this field is disabled.Communication Links CharacterThe type of communication link that exists between components within the logic solver and any other network device (e.g., Ethernet).  NoneIs Default SIS LogicalIndicates whether the Logic Solver is the default one. This field does not appear on the datasheet by default. Last Modified By CharacterThe name of the user who last modified the record. On the datasheet, this field is disabled and updated automatically whenever the record is modified. Last Modified Date DateThe date on which the record was last modified. On the datasheet, this field is disabled and populated automatically. Logic Solver ID CharacterThe ID for the logic solver that is associated with the safety instrumented system. This value should correspond to the value stored in the Logic Solver ID field in the Protective Instrument Loop Logic Solver that represents the desired logic solver. Logic Solver Type CharacterThe type of logic solver. This field contains the following baseline System Codes in the MI LOGIC SOLVER TYPE System Code Table: PLC BPCS Relay
+Long Description TextA statement describing the purpose of the safety instrumented system.  NoneManual Shutdown Description TextA description of the method by which the safety instrumented system can be manually shut down. None Mission Time NumberA numeric value (in years) that represents the time that the safety instrumented system will be in use before it is replaced or remanufactured. On the datasheet, this field appears as a text box labeled Mission Time with an additional label, Years, to the right of the text box. You can enter your own value, which should be equal to or greater than the length of time specified in the Target SIS Test Interval field. Operation Mode CharacterThe mode of operation for the safety instrumented system.   On the datasheet, this field appears as a list labeled Plant Operation Mode and contains the following values: Normal : This is the value that is selected by default. Abnormal : If you select this value, the following fields are enabled : Abnormal StateAbnormal Mode Description
+
+Plant ID CharacterThe ID of the plant in which the safety instrumented system exists. By default, this field does not appear on the datasheet. Plant Operation Mode CharacterThe operational mode of the process for which the logic solver is expected to operate.This field contains a list with following values: NormalAbnormal
+Power Source CharacterA description of the power supply to the safety instrumented system. None Remove Default LogicalAllows you to remove the default logic solver settings.After you remove the default logic solver settings: No logic solver is marked as default in the list of logic solvers in the left section.If you create an Instrumented Function, the SIS ID field is blank, and you can select a logic solver from the list.
+Reset Procedure TextA description of the method by which the safety instrumented system can be reset.  None Set as Default LogicalAllows you to set the selected logic solver as default.After you set a logic solver as default:  The logic solver is marked as default in the list of logic solvers in the left pane. If you create an Instrumented Function, the SIS ID field is automatically populated with the ID of the default logic solver.
+Note: If the selected logic solver is already set as default, the Remove Default button is displayed instead of the Set as Default button.
+SIS Description CharacterA description for the safety instrumented system.  None SIS ID CharacterA name for the safety instrumented system.  This field is required, and must be unique. If the value that you enter is already specified for an existing Logic Solver, a message will appear, indicating that the value is already in use. You will need to specify a different value before you can save the record. Site Description CharacterA description of the site that is specified in the Site ID field. This field does not appear on the datasheet by default. Site ID CharacterThe ID of the Site that is associated with the safety instrumented system. On the datasheet, this field is disabled and populated automatically with the value stored in the Site ID field in the associated SIL Analysis. You should not modify this value. Target SIS Test Interval NumberA number that represents the interval in months by which regular testing will be performed on the safety instrumented system. None Unit Description CharacterA description of the unit specified in the Unit ID field. This field does not appear on the datasheet by default. Unit ID CharacterA description of the area in which the safety instrumented system exists. None 
+Operations Records
+This topic provides an alphabetical list and description of the fields that exist for the Operations family and appear on the Operations datasheet, unless otherwise specified. The information in the table reflects the baseline state and behavior of these fields.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+
+Interlocks that are used for bypassing SIFs during start up or other operations
+
+
+Text
+The interlock used to bypass the SIF during startup or other unique operations such as proof testing.On the datasheet, this field appears as a text box, in which you can enter the interlocks bypass design basis (used during startup, proof testing or overrides).
+Is Default
+LogicalIndicates whether the record is the default one.If set true, then the SRS Template is a default template for the category supplied by GE Digital.
+Last Modified By
+CharacterThe name of the user who last modified the record.On the datasheet, this field is disabled and updated automatically whenever the record is modified.
+Last Modified Date
+DateThe date on which the record was last modified.On the datasheet, this field is disabled and populated automatically.
+Revision Number
+NumericA number that represents the number of times the record has been revised.On the datasheet, this field is disabled and populated.
+SIF Bypass Requirements
+TextThe bypass requirements the SIF during startup or other unique operations such as proof testing.On the datasheet, this field appears as a text box, in which you can enter the SIF bypass design basis (used during startup, proof testing or overrides).
+SIF Manual Shutdown
+TextThe method of manually shutting down an SIF.On the datasheet, this field appears as a text box, in which you can enter the methodology to manually shut down SIF. (during emergency situations).
+SIF Proof Test Interval
+TextThe proof test interval.On the datasheet, this field appears as a text box, in which you can enter the proof testing interval (for example 24 months).
+SIF Start Up Requirements
+TextThe sequence and method of starting up an SIF.On the datasheet, this field appears as a text box, in which you can enter the sequence and method of startup of a SIF.
+SRS Template Description
+CharacterA description of the record.On the datasheet, this field appears as a text box labeled Description, in which you can enter a description of the record.
+SRS Template ID
+CharacterThe ID of the record.On the datasheet, this field appears as a text box labeled Field ID, in which you can type the ID.
+Performance Data Records
+This topic provides an alphabetical list and description of the fields that exist for the Performance Data family and appear on the Performance Data datasheet, unless otherwise specified. The information in the table reflects the baseline state and behavior of these fields.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+
+Allowable Demand Rates
+
+
+Text
+Defines allowable demand rates based on the demand mode.On the datasheet, this field appears as a text box, in which you can enter the design basis for allowable demand rates on the SIF.
+Allowable Spurious Trips
+TextThe safe failure rate commonly referred to as the false trip, nuisance trip, or spurious trip rate.On the datasheet, this field appears as a text box, in which you can enter the design basis for allowable spurious trip rates on the SIF.
+Is Default
+LogicalIndicates whether the record is the default one.If set true, then the SRS Template is a default template for the category supplied by GE Digital.
+Last Modified By
+CharacterThe name of the user who last modified the record.On the datasheet, this field is disabled and updated automatically whenever the record is modified.
+Last Modified Date
+DateThe date on which the record was last modified.On the datasheet, this field is disabled and populated automatically.
+Requirement for SRS Review
+TextThe requirements for the SRS review based on the organizational practices and standards.On the datasheet, this field appears as a text box, in which you can enter the organizational requirements for SRS review.
+Revision Number
+NumericA number that represents the number of times the record has been revised.On the datasheet, this field is disabled and populated.
+SIF Response Time
+TextThe typical response time by the SIF for a dangerous detected failure.On the datasheet, this field appears as a text box, in which you can enter the design response time on the SIF, when a dangerous failure is detected.
+SIS Design Requirements
+TextThe design requirements for the SIS.On the datasheet, this field appears as a text box, in which you can enter the design for requirements on the SIF.
+SIS Mission Time
+TextThe mission time (typically in years) for an SIS.On the datasheet, this field appears as a text box, in which you can enter the mission time typically in years for the SIS.
+SRS Template Description
+CharacterA description of the record.On the datasheet, this field appears as a text box labeled Description, in which you can enter a description of the record.
+SRS Template ID
+CharacterThe ID of the record.On the datasheet, this field appears as a text box labeled Field ID, in which you can type the ID.
+Protective Instrument Loop Records
+Protective Instrument Loop records store details about a protective instrument loop that you have created as part of SIL verification. This topic provides an alphabetical list and description of the fields that exist for the Protective Instrument Loop family and appear on the Protective Instrument Loop datasheet by default. The information in this table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and Usage
+Achieved SIL 
+
+Number
+
+A number representing the overall SIL value for the protective instrument loop. 
+
+This list appears in the Calculated Results section and contains the following options: 
+ 0 (zero) 1  2  3  4When the value in the SIL Verification Method field is External Calculation, this field is enabled.When the value in the SIL Verification Method field is Internal Calculation, this field is disabled and populated automatically with the lowest value of the values stored in the following fields:Calculated SILCalculated SIL Architectural ConstraintsCalculated SIL Systematic Capabilities
+
+For example, if the value in each of these fields is 2, the value in the Achieved SIL field will be 2. If the value in two of the fields is 2 and the value in one of the fields is 1, the value in the Achieved SIL field will be 1.
+Application Test MethodCharacterThe application test method that is used in the loop.
+This list contains the following options:
+IEC 61508IEC 61508 : 2010 tables [per 61511-1 11.4.5]IEC 61508 : 2000 tables [per 61511-1 11.4.5]IEC 61511 [ignore 11.4.3 for Type A devices]IEC 61511IEC 61511 [ignore 11.4.3 for Type A devices]
+These values are defined in the MI_ARCHITECTURE_CONSTRAINT System Code Table.
+
+Availability 
+
+Number
+
+A number representing the percentage of time that the protective instrument loop is expected to be available in the case of a demand.
+
+This field appears in the Calculated Results section and is enabled or disabled based on the following criteria: 
+When the value in the SIL Verification Method field is External Calculation, this field is enabled.  When the value in the SIL Verification Method field is Internal Calculation, the GE Digital APM system calculates this value automatically as follows: 
+
+Availability = (1-PFD Avg.) *100 
+Calculated SIL NumberA number representing the SIL value for the protective instrument loop, which is the value stored in the Loop PFD Avg field.
+This field appears in the Calculated Results section and is enabled or disabled based on the following criteria: 
+When the value in the SIL Verification Method field is External Calculation, this field is enabled. When the value in the SIL Verification Method field is Internal Calculation, the GE Digital APM system calculates this value automatically, based on the value in the Loop PFD Avg field, and displays one of the following values as read-only:  0 (zero) 1  2  3  4
+
+Calculated SIL Architectural Constraints NumberThe SIL value for the protective instrument loop, which is based on architectural constraints defined in the Test Architecture Constraints field. 
+This field appears in the Calculated Results section on the datasheet and is enabled or disabled based upon the following criteria: 
+ When the value in the SIL Verification Method field is External Calculation, this field is enabled. When the value in the SIL Verification Method field is Internal Calculation, the GE Digital APM system calculates this value automatically, based on the value in the Test Architecture Constraints field, and displays one of the following values as read-only: 0 (zero) 1  2  3  4
+
+Calculated SIL Systematic Capabilities Number
+The SIL value for the protective instrument loop, which is based on systematic capabilities defined in the failure rate data associated with each protective instrument loop element. This is the lowest SIL value among the SIL values of all the elements in the loop. For example, assume that the elements in the loop are capable to achieve the following SIL values:
+Logic Solver - 3Sensor - 2Final Element - 1
+Then the SIL value for the entire protective instrument loop is 1. 
+
+This field appears in the Calculated Results section and is enabled or disabled based on the following criteria: 
+ When the value in the SIL Verification Method field is External Calculation, this field is enabled. When the value in the SIL Verification Method field is Internal Calculation, the GE Digital APM system calculates this value automatically, based on the systematic capabilities defined in the failure rate data associated with each protective instrument loop element, and displays one of the following values as read-only: 0 (zero) 1  2  3  4
+
+Calculated STR NumberA number representing the spurious trip rate for the protective instrument loop.   
+This field appears in the Calculated Results section and is enabled or disabled based on the following criteria: 
+When the value in the SIL Verification Method field is External Calculation, this field is enabled.  When the value in the SIL Verification Method field is Internal Calculation, the GE Digital APM system calculates this value automatically and displays that value as read-only. 
+Calculation EngineCharacterStores the exSILentia Calculation Engine version (that is, exSILentia V3 or exSILentia V4) used by the Protective Instrument Loop.This field is disabled and populated automatically when the Protective Instrument Loop is upgraded.Demand Mode CharacterRepresents the estimated probability that a dangerous condition will exist where the instrumented function is required to take the process to its safe state. For instance, if the demand rate is more than once a year, the hazard rate must not be higher than the failure rate. In this case, the SIL mode is high demand or continuous. This field is disabled and populated automatically with the value stored in the SIL Mode field in the Instrumented Function that is linked to the Protective Instrument Loop. Description CharacterA brief description of the protective instrument loop. None Final Element MCI NumberA percentage that represents the Maintenance Capability Index.  
+This field contains the following options: 
+ MCI 0 (0%) : Indicates that repair actions are never performed. MCI 1 (60%) : Indicates that repair actions are effective 60 percent of the time. MCI 2 (90%) : Indicates that repair actions are effective 90 percent of the time. MCI 3 (99%) : Indicates that repair actions are effective 99 percent of the time.  MCI 4 (100%) : Indicates that repair actions are always performed perfectly.
+IO channels on separate moduleBooleanSpecifies whether the redundant I/O channels should be on separate modules.This field is only applicable to exSILentia v4 loops.If this field is set to True, the value in this field is reset to False when the protective instrument loop is upgraded to exSILentia v4.Last Modified By CharacterThe name of the user who last modified the record. This field is disabled and populated with the name of the GE Digital APM Security User who last modified the Protective Instrument Loop. Last Modified Date DateThe date on which the record was last modified. This field is disabled and populated with the date on which the Protective Instrument Loop was last modified. Logic Solver MCI NumberA percentage that represents the Maintenance Capability Index.  
+This field contains the following options: 
+MCI 0 (0%) : Indicates that repair actions are never performed.  MCI 1 (60%) : Indicates that repair actions are effective 60 percent of the time.  MCI 2 (90%) : Indicates that repair actions are effective 90 percent of the time. MCI 3 (99%) : Indicates that repair actions are effective 99 percent of the time. MCI 4 (100%) : Indicates that repair actions are always performed perfectly. 
+Loop Class CharacterA value that indicates whether the protective instrument loop is designed to mitigate safety risks or commercial risks. 
+This list contains the following options: 
+
+Safety : Indicates that the protective instrument loop is designed to mitigate risks related to safety. For example, a safety loop might prevent a high motor current from causing a fire. 
+Protective : Indicates that the protective instrument loop is designed to mitigate commercial risks only. For example, a protective loop might prevent low lube pressure from causing a mechanical failure where there is no safety risk involved.  
+Loop ID CharacterThe ID of the protective instrument loop. This value is required and must be unique. Loop PFD Avg NumberA number representing the probability that the protective instrument loop will fail in the event of a demand while operating in low demand mode. 
+This field appears in the Calculated Results section, which is enabled or disabled based on the following criteria: 
+ When the value in the SIL Verification Method field is External Calculation, this field is enabled. When the value in the SIL Verification Method field is Internal Calculation, the GE Digital APM system calculates this value automatically and displays that value as read-only.
+Loop PFH NumberA number representing the probability per hour that the protective instrument loop will fail in the event of a demand while operating in high demand or continuous mode. 
+This field appears in the Calculated Results section, which is enabled or disabled based on the following criteria: 
+When the value in the SIL Verification Method field is External Calculation, this field is enabled. When the value in the SIL Verification Method field is Internal Calculation, the GE Digital APM system calculates this value automatically and displays that value as read-only.  
+Loop Type CharacterA value representing the category of the protective instrument loop, based on the type of data that the sensor is measuring. 
+This field contains the following options: 
+ Analysis Flow Level Load Pressure Speed Temperature
+Meets Architectural Constraints? CharacterA value that indicates whether the protective instrument loop's architectural constraints, specified by the standard in the Test Architectural Constraints field, meet the requirement defined by the value in the Required SIL field. 
+This list appears in the Calculated Results section and contains the following options: 
+ Incomplete Yes No N/A
+ By default, this value is set to Incomplete. 
+When the value in the SIL Verification Method field is External Calculation, this field is enabled. When the value in the SIL Verification Method field is Internal Calculation, this field is disabled and populated automatically using the following logic:  If the value in the Calculated SIL Architectural Constraints field is greater than or equal to the value in the Required SIL field, this value is set to Yes. Otherwise, this value is set to No. 
+If the value in the Test Architectural Constraints field is Not Consider, this value is set to NA.Meets Availability Target? CharacterA value that indicates whether the protective instrument loop's availability meets the availability requirement defined in the Instrumented Function that is linked to the Protective Instrument Loop. 
+This list appears in the Calculated Results section and contains the following options: 
+ Incomplete Yes No N/A
+ By default, this value is set to Incomplete. 
+When the value in the SIL Verification Method field is External Calculation, this field is enabled. When the value in the SIL Verification Method field is Internal Calculation, the Meets Availability Target field is disabled and populated automatically. After you calculate the SIL Verification results, this field is populated using the following logic:  If the value in the Demand Mode field is Low Demand, and the value in the Availability field is greater than or equal to the value stored in the Availability Target field in the Instrumented Function that is linked to the Protective Instrument Loop this value is set to Yes. Otherwise, this value is set to No. 
+
+ If the value in the Demand Mode field is High Demand or Continuous, this value is N/A.
+Meets SIL Requirement? Character
+A value that indicates whether the protective instrument loop's SIL value meets the SIL requirement defined in the Required SIL field.
+In order to meet the SIL requirement, the values in the following fields must be greater than or equal to the value in the Required SIL field:
+Achieved SIL Calculated SIL Architectural Constraints Calculated SIL Systematic Capabilities 
+ 
+
+This list appears in the Calculated Results section and contains the following options: 
+Incomplete Yes No  N/A 
+By default, this value is set to Incomplete. 
+ When the value in the SIL Verification Method field is External Calculation, this field is enabled. When the value in the SIL Verification Method field is Internal Calculation, this field is disabled and populated automatically using the following logic: If the value in the Achieved SIL field is greater than or equal to the value in the Required SIL field, this value is set to Yes. Otherwise, this value is set to No.
+
+Meets STR Limit? CharacterA value that indicates whether the protective instrument loop's spurious trip rate meets the spurious trip rate requirement defined in the Instrumented Function that is linked to the Protective Instrument Loop. 
+This list in the Calculated Results section and contains the following options: 
+ Incomplete Yes  No N/A 
+By default, this value is set to Incomplete. 
+When the value in the SIL Verification Method field is External Calculation, the Meets STR Limit field is enabled. When the value in the SIL Verification Method field is Internal Calculation, the Meets STR Limit field is disabled and populated using the following logic: If the inverse of the value stored in the MTTS field is greater than or equal to the value stored in the Spurious Trip Limit (per yr) field in the Instrumented Function that is linked to the Protective Instrument Loop, this value is set to No. Otherwise, this value is set to Yes.
+ If the Protective Instrument Loop is part of a protective instrument loop template, this value is set to N/A. Meets Systematic Capabilities? CharacterA value that indicates whether the protective instrument loop's systematic capability meets the systematic capability requirement defined in the Required SIL field. This list appears in the Calculated Results section and contains the following options:  Incomplete Yes No N/A 
+This value is set to Incomplete by default. 
+ When the value in the SIL Verification Method field is External Calculation, this field is enabled.   When the value in the SIL Verification Method field is Internal Calculation, this field is disabled and populated automatically using the following logic: If the value in the Calculated SIL Systematic Capabilities field is greater than or equal to the value in the Required SIL field, this value is set to Yes. Otherwise, this value is set to No. 
+
+ If the value in the Systematic Capability Validation field is False, this value is set to N/A. 
+Mission Time NumberA number that represents the time that the protective instrument loop or the element will be in use before it is replaced.  This value is measured in years. This value is determined by the least mission time value among the values for all the elements of the protective instrument loop. For example, if the mission time values for the logic solver, final element, and sensor are 10 years, 5 years, and 20 years respectively, then the mission time for the entire loop is 5 years.MTTFS NumberA number that represents the Mean Time To Fail Spuriously (i.e., the mean time until a failure of the loop causes a process trip when a hazard was not present). 
+This field appears in the Calculated Results section, which is enabled or disabled based on the following criteria: 
+When the value in the SIL Verification Method field is External Calculation, this field is enabled.  When the value in the SIL Verification Method field is Internal Calculation, the GE Digital APM system calculates this value automatically and displays that value as read-only.   
+This value is measured in years. 
+Required SIL NumberA number representing the SIL value that is required for the protective instrument loop. This field is disabled and populated with the value stored in the Selected SIL Level field in the Instrumented Function that is linked to the Protective Instrument Loop. Risk Reduction Factor NumberA number representing the factor by which the risk should be reduced for the protective instrument loop. 
+This field appears in the Calculated Results section and is enabled or disabled based on the following criteria: 
+ When the value in the  SIL Verification Method field is External Calculation, this field is enabled. When the value in the  SIL Verification Method field is Internal Calculation, the GE Digital APM system calculates this value automatically and displays that value as read-only. 
+Sensor MCI NumberA value that represents the Maintenance Capability Index.  
+This field contains the following options: 
+
+MCI 0 (0%) : Indicates that repair actions are never performed. 
+MCI 1 (60%) : Indicates that repair actions are effective 60 percent of the time. 
+MCI 2 (90%) : Indicates that repair actions are effective 90 percent of the time. 
+MCI 3 (99%) : Indicates that repair actions are effective 99 percent of the time. 
+MCI 4 (100%) : Indicates that repair actions are always performed perfectly. 
+SIL Verification Method CharacterA value that represents the type of method used to calculate the SIL verification results for the protective instrument loop. 
+This field contains the following options: 
+
+Internal Calculation : Indicates that the GE Digital APM system will calculate the SIL verification results using the IEC 61508 and the IEC 61511 functional safety standards. When this option is selected, the GE Digital APM system calculates the values in all fields in the Calculated Results section automatically and displays them as read-only. 
+External Calculation : Indicates that you will enter SIL verification results directly into the fields on the Protective Instrument Loop datasheet. When this option is selected, all the fields in the Calculated Results section are enabled, and you can enter values directly into those fields.
+Startup Time NumberA number representing the amount of time the protective instrument loop has been bypassed since it was in the startup mode.  This value is measured in hours. Systematic Capability Validation BooleanA value that indicates whether the SIL value for the protective instrument loop will account for systematic capabilities, which are defined in the failure data for each protective instrument loop element.If you select this check box, the protective instrument loop will use systematic capabilities. If you clear this check box, the protective instrument loop will not use systematic capabilities. Test Architecture Constraints CharacterA value that indicates the level of safety certification that is associated with the elements in the protective instrument loop. 
+This field contains the following options: 
+
+IEC 61508 : Indicates that the elements in the protective instrument loop have been certified according to the IEC 61508 standard. 
+IEC 61511 : Indicates that the elements in the protective instrument loop have been certified according to the IEC 61511 standard. 
+Not Consider : Indicates that the architectural constraints will not be considered in the SIL calculation.
+
+Protective Instrument Loop Final Element Group Records
+Protective Instrument Loop Final Element Group records store details about a protective instrument loop final element group that you have created as part of SIL verification. This topic provides an alphabetical list and description of the fields that exist for the Protective Instrument Loop Final Element Group family and appear on the Protective Instrument Loop Final Element Group datasheet by default. The information in this table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageATI / PVST Automatic/ManualCharacterIndicates whether partial valve stroke testing (PVST) is automatic or manual.
+You can select one of the following values:
+Automatic Manual
+ATI / PVST CoverageNumberThe percentage of failures expected detected by PVST.NoneATI / PVST EnabledLogical
+Indicates if PVST is performed on the final elements in the group.
+
+If this field is selected, then the following fields are enabled:
+ATI / PVST Automatic/ManualATI / PVST IntervalATI / PVST Interval UOM
+ATI / PVST IntervalNumberThe interval at which the PVST is performed on the final elements in the group. It is recommended that the partial valve stroke test interval is performed at least an order of magnitude more frequent than the proof test. For example, if you perform the proof test once a year, you must perform the PVST at least once a month.ATI / PVST Interval UOMCharacterThe units of the PVST interval that you have specified in the ATI / PVST Interval field.
+You can select one of the following values:
+MonthsDays
+Availability NumberA number representing the percentage of time that the final element in the group are expected to be available in the case of a demand.
+The GE Digital APM system calculates this value automatically as follows: 
+
+Availability = (1-PFD Avg.) *100
+
+Calculated PFD Avg NumberA number representing the probability that the final element group will fail to react during a demand when the loop is operating in a low demand mode. This field is disabled. The GE Digital APM system calculates and populates this value. This value depends on the failure rate of the final element group.Calculated PFH NumberA number representing the probability that the final element group will fail to react during a demand when the loop is operating in high demand or continuous mode of operation. This field is disabled. The GE Digital APM system calculates and populates this value. This value depends on the failure rate of the final element group.Calculated STR NumberA number representing the spurious trip rate for the final element group. This field is disabled. The GE Digital APM system calculates and populates this value.Common Cause (Beta) NumberA number representing the percentage of failure that would affect the functioning of multiple devices. For example, a power supply failure for a final element group that is shared across multiple loops can cause all the loops to fail. In this case, the beta factor is the probability that the loops fail in case of a power supply failure to the final element group. 
+ If the value in the Voting field is 1oo1, this value is not applicable. This value is populated automatically when you select a device.
+If the Final Element Group contains multiple Final Elements, then you can enter a value manually in this field.
+Custom Vote M NumberThe minimum number of final elements that should trip when the final element detects a potential hazard.You must use this option if you want to add more than six final elements in the group. If the number of final elements in the group is less than or equal to six, then this field is disabled and populated with the minimum number of final elements that should trip in the event of a potential hazard (the first digit in the Voting field).Custom Vote N NumberThe number of final elements in the group.You must use this option if you want to add more than six final elements in the group. If the number of final elements in the group is less than or equal to six, then this field is disabled and populated with the number of final elements (the last digit in the Voting field).Diverse LogicalIndicates whether the final elements in the group are similar or diverse.
+If you clear this check box, all the final elements in the group are similar. Hence, all the final elements in the group will have datasheets with the same values, except for the Final Element ID. If you modify the details of a final element, the same change is reflected in all the final element datasheets. By default, the check box is cleared. 
+If you select this check box, each final element in the group will have a datasheet with different values.
+ If there are more than three final elements in the group, this field is cleared. If there is only one final element in the group, this field is disabled.
+
+Group ID 
+Character
+The ID of the protective instrument loop. 
+This value is required and must be unique. The GE Digital APM system provides a default value, which you can modify if required. Group Mission TimeNumberSpecifies a numeric value (in years) that represents the Mission Time at the group level.This field is only applicable to exSILentia v4 loops.If a value is specified in this field, the value is reset to the value in the Mission Time field of the Protective Instrument Loop record when the protective instrument loop is upgraded to exSILentia v4.Has Independent Mission TimeBooleanSpecifies whether or not the group has an independent mission time.This field is only applicable to exSILentia v4 loops.If this field is set to True, the value in this field is reset to False when the protective instrument loop is upgraded to exSILentia v4.MTTFS NumberMean Time To Fail Spuriously. It is the average amount of time between failures of final elements in the group that occur during safe scenarios.This field appears in the Calculated Results section and is disabled. This value is measured in years.MTTR NumberMean Time To Repair. It is the average time that is required to repair the final elements in the group.This value is measured in hours and is required.Proof Test Coverage NumberThe percentage of failures that are detected by the proof test (i.e., how effectively the proof test identifies failures). For example, 100% proof test coverage indicates that the proof test would identify 100% of the failures that occurred.By default, this value is required and is set to 0. Proof Test DurationNumberSpecifies the duration of the Proof Test.This field is populated with a default value of 1 hour when the protective instrument loop is upgraded to ExSILentia v4.Proof Test Interval NumberA numeric value representing the frequency at which the proof test should be performed.This value is set to 12 by default. You can, however, change this value if required. This value is required and is measured in months.SIL Architectural Constraints NumberA number that represents the SIL value for the final element group, which is based on the architectural constraints that are defined in the Test Architecture Constraints field. This field is disabled. The GE Digital APM system calculates and populates this value.SIL Systematic Capability NumberA number that represents the SIL value for the final element group, which is based on the systematic capability that is defined in the Test Architecture Constraints field. This field is disabled. The GE Digital APM system calculates and populates this value.Use Custom PVST CoverageLogicalIndicates whether custom PVST coverage is considered.NoneVoting CharacterThe voting architecture that represents the minimum number of final elements that should trip (in the event of a failure) and the number of final elements available in the group. For example, if the voting is 1oo2, then for the logic solver to detect a failure, at least one final element should trip out of the two final elements that are available in the group.
+This field is updated automatically when you add or remove a final element from the group.
+The following combinations are available:
+1oo1 1oo2 2oo2 1oo3 2oo3 3oo3 1oo4 2oo4 [2oo(1oo2)] 4oo4 5oo5 6oo6 MooN 
+This value is required. These values are defined in the MI_SIL_FINALELEMVOTE system code table.
+
+Protective Instrument Loop Final Element Records
+Protective Instrument Loop Final Element records store details about final elements for a protective instrument loop. This topic provides an alphabetical list and description of the fields that exist for the Protective Instrument Loop Final Element family. The information in this table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Approved Custom Device LogicalIndicates whether the final element is approved to be used.This field is disabled and selected if the final element has been approved to use via the Validation Failure Rate Reference Data feature.Base SFF NumberSafe Failure Fraction without diagnostic detection.This field is disabled. The GE Digital APM system calculates this value based on the final element, the interfaces, and the pneumatic elements for the final element.
+Custom PVST Coverage 
+
+Number
+
+A numeric value representing the percentage of possible failures that could be detected by the partial valve stroke test. 
+
+This field is enabled only if the Partial Valve Stroke Testing check box is selected. 
+Dangerous combination of outputs? LogicalIndicates whether the output associated with the final element can lead to a hazardous event if it occurs simultaneously with the output associated with another final element. 
+ By default, this check box is cleared. When you select this check box:
+ The Potential Dangerous Combination of Outputs Description field is enabled and required. You must link another final element whose output can be hazardous if it occurs simultaneously with the output of this final element. You can clear this check box only if no final element is linked to the current final element as a dangerous combination of outputs.
+Description CharacterA description for the final element.  NoneFinal Element CharacterThe name of the final element.
+The values in this list are from Exida's Safety Equipment Reliability Handbook (SERH) and approved custom devices in the GE Digital APM system. After you select a value from the list, the following details about the final element appear in the Devices pane:
+ID Device Tag Dangerous Detected Dangerous Undetected Safe Detected Safe Undetected 
+Final Element ID CharacterAn ID for the final element. This value is displayed in the diagram to identify the final element. This field is required.   Interface Module CharacterThe interface between the final element and the logic solver.The values in this list are from Exida's Safety Equipment Reliability Handbook (SERH) and approved custom devices in the GE Digital APM system and are based on the value in the Final Element field.Potential Dangerous Combination of Outputs Description Text
+A description of the hazard that can occur based on the position or combination of two or more final elements.
+This field is enabled and required only if the Dangerous Combination of Outputs? check box is selected. Otherwise, this field is disabled. Severe Service LogicalIndicates that the final element is exposed to severe service conditions such as heat, corrosion, fluid composition, and so on, which can influence the effectiveness of the final element.This is applicable only if the final element is a valve.SFF NumberSafe Failure Fraction after applying diagnostics for the final element.This field is disabled. The GE Digital APM system calculates this value, which is used to calculate MTTFS.Tight Shutoff Required LogicalIndicates that a tight shut off is required to achieve a safe state.This is applicable only if the final element is a valve.Use Combination LogicalIndicates that remotely operated valves are used to include common valve and actuator combinations.This is applicable only if the final element is a valve.Valve Trip Open LogicalIndicates that the valve, which is the final element, will trip open to achieve a safe state.This is applicable only if the final element is a valve.
+Protective Instrument Loop Final Element System Records
+Protective Instrument Loop Final Element System records store details about a protective instrument loop final element system that you have created as part of SIL verification. This topic provides an alphabetical list and description of the fields that exist for the Protective Instrument Loop Final Element System family and appear on the Protective Instrument Loop datasheet by default. The information in this table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageAvailability NumberA number representing the percentage of time between proof tests that the final element system is expected to be available. 
+The GE Digital APM system calculates this value using the following calculation:
+ Availability = (1 - PFD) * 100 
+Calculated PFD Avg NumberA number representing the probability that the final element system will fail to react during a demand when the loop is operating in a low demand mode. This field is disabled. The GE Digital APM system calculates and populates this value. This value depends on the failure rate of the final element system.Calculated PFH NumberA number representing the probability that the final element system will fail to react during a demand when the loop is operating in high demand or continuous mode of operation. This field is disabled. TheGE Digital APM system calculates and populates this value. This value depends on the failure rate of the final element system.Calculated STR NumberA number representing the spurious trip rate for the logic solver. This field is disabled. The GE Digital APM system calculates and populates this value.Common Cause (Beta) NumberA number representing the percentage of failure that would affect the functioning of multiple devices. For example, a power supply failure for a final element system that is shared across multiple loops can cause all the loops to fail. In this case, the beta factor is the probability that the loops fail in case of a power supply failure to the final element system. 
+ If the value in the Voting field is 1oo1 or 1001D, this value is not applicable. This value is populated automatically when you select a device.
+HFT NumberA number representing the hardware fault tolerance, or the number of failures the final element system can tolerate before failing. For example, a final element system with 1oo2 redundancy has a HFT of 1 because it can tolerate one failure and can still continue to operate.MTTFS NumberA number representing Mean Time To Fail Spuriously for a Final Element. For example, suppose a final element system senses a hazard that does not exist. In this case, MTTFS is the expected time that the process fails spuriously. This field is disabled. The GE Digital APM system calculates and populates this value.Number of Groups NumberThe number of final element groups in the system.This field is disabled and populated with the number of final element groups in the system.SIL Architectural Constraints NumberA number that represents the SIL value for the final element system, which is based on the architectural constraints that are defined in the Test Architecture Constraints field. This field is disabled. The GE Digital APM system calculates and populates this value.SIL Systematic Capability NumberA number that represents the SIL value for the final element system, which is based on the systematic capability that is defined in the Test Architecture Constraints field. This field is disabled. The GE Digital APM system calculates and populates this value.System ID CharacterThe ID of the final element system.This value is required and is populated with a default value. You can, however, provide a different value.Voting Between Groups CharacterThe voting architecture that represents the minimum number of final element groups that should trip (in the event of a failure) and the number of final element groups available in the system. For example, if the voting is 1oo2, then for the logic solver to detect a failure, at least one final element group should trip out of the two final element groups that are available in the group.
+This field is updated automatically when you add or remove a final element group from the system.
+The following options are available:
+1oo1 1oo2 2oo2 1oo3 2oo3 3oo3 1oo4 4oo4 
+This value is required. 
+
+Protective Instrument Loop Logic Solver Records
+Protective Instrument Loop Logic Solver records store details about logic solvers for a protective instrument loop. This topic provides an alphabetical list and description of the fields that exist for the Protective Instrument Loop Logic Solver family and appear on the Protective Instrument Loop Logic Solver datasheet. The information in this table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+App Diagnostic Test BooleanIndicates whether application diagnostic testing is considered for the logic solver.None
+Approved Custom Device 
+Boolean
+Indicates whether the logic solver that is identified in the Exida Name field is approved for use in the protective instrument loop.
+This field is disabled and selected if the logic solver has been approved to use via the Validation Failure Rate Reference Data feature.
+Architectural Type 
+Character
+Indicates whether the device is a simplex or a complex device.
+
+If the Manual Entry check box is cleared, this value is disabled and populated with one of the following values based on the device identified in the Exida Name field:
+A (simplex device)B (complex device)
+If the Manual Entry check box is selected, this field is enabled. 
+Automatic Channel Count BooleanIndicates whether the number of each type of channel is counted.If you select this check box, the Channels column in the Channels/Modules pane is populated with the number of channels.Automatic Prooftest Switchover BooleanIndicates whether the logic solver performs proof tests automatically.If you select this check box, the logic solver performs proof tests automatically. Automatic Prooftest Switchover Interval NumericA numeric value representing the frequency at which proof tests are performed by the logic solver.This value is measured in months.Availability NumericA number representing the percentage of time between proof tests that the logic solver is expected to be available. 
+The GE Digital APM system calculates this value using the following calculation:
+
+Availability = (1 - PFD) * 100 
+Calculated PFD Avg NumericA number representing the probability that the logic solver will fail to react during a demand when the loop is operating in a low demand mode. This field is disabled. The GE Digital APM system calculates and populates this value. This value depends on the failure rate of the logic solver.Calculated PFH NumericA number representing the probability that the logic solver will fail to react during a demand when the loop is operating in high demand or continuous mode of operation. This field is disabled. The GE Digital APM system calculates and populates this value. This value depends on the failure rate of the logic solver.Calculated STR NumericA number representing the spurious trip rate for the logic solver. This field is disabled. The GE Digital APM system calculates and populates this value.Common Cause (Beta) NumericA number representing the percentage of failure that would affect the functioning of multiple devices. For example, a power supply failure for a logic solver that is shared across multiple loops can cause all the loops to fail. In this case, the beta factor is the probability that the loops fail in case of a power supply failure to the logic solver. 
+ If the value in the Voting field is 1oo1 or 1001D, this value is not applicable. This value is populated automatically when you select a device.
+Description CharacterA brief description of the logic solver. None Device Name CharacterThe name of the logic solver device.This field is disabled and populated when you link or apply a logic solver from Exida's Safety Equipment Reliability Handbook (SERH).Diagnostic Test Automatic/ManualCharacterIndicates whether the application diagnostic test is automatic or manual.
+You can select one of the following values:
+AutomaticManual
+Diagnostic Test CoverageNumericThe percentage of failures that could be detected as part of automatic diagnostic test coverage.NoneDiagnostic Test IntervalNumericThe application diagnostic test interval for the logic solver.NoneDiagnostic Test Interval UOMCharacterThe units for the application diagnostic test interval that you have specified in the Diagnostic Test Interval field.
+You can select one of the following values:
+MonthsDays
+Equipment CharacterThe ID of the Equipment to which the Protective Instrument Loop Logic Solver is linked. This field contains a  button, which you can select to search for the desired Equipment. You can link only one Equipment. This field is disabled and populated when you link or apply a logic solver from Exida's Safety Equipment Reliability Handbook (SERH) or from the approved custom devices in the GE Digital APM system. Functional Location CharacterThe ID of the Functional Location that is linked to the Protective Instrument Loop Logic Solver record. This field contains a  button, which you can select to search for the desired Functional Location. You can link to only one Functional Location. This field is disabled and populated when you link or apply a logic solver from Exida's Safety Equipment Reliability Handbook (SERH) or from approved custom devices in the GE Digital APM system. Group Mission TimeNumberSpecifies a numeric value (in years) that represents the Mission Time at the group level.This field is only applicable to exSILentia v4 loops.Has Independent Mission TimeBooleanSpecifies whether or not the group has an independent mission time.This field is only applicable to exSILentia v4 loops.If this field is set to True, the value in this field is reset to False when the protective instrument loop is upgraded to ExSILentia v4.HFT NumericA number representing the hardware fault tolerance, or the number of failures the logic solver can tolerate before failing. For example, a logic solver with 1oo2 redundancy has a HFT of 1 because it can tolerate one failure and can still continue to operate.Is Proof Test Performed OnlineBooleanSpecifies whether or not the Proof Test is performed online.NoneLogic Solver ID CharacterAn ID for the logic solver. This value is required and is populated with a default value. You can, however, provide a different value. This value must be unique.Manual EntryBooleanIndicates whether you will enter data in a Protective Instrument Loop Logic Solver Channel manually or the GE Digital APM system will populate this values. If this check box is selected, the 
+
+ button in the Channels/Modules section appears. Once you select this check box, you cannot clear it. MTTFS NumericA number representing Mean Time To Fail Spuriously for a logic solver. For example, suppose a logic solver senses a hazard that does not exist. In this case, MTTFS is the expected time that the process fails spuriously. The GE Digital APM system calculates this number automatically and displays it as read-only. This value is measured in years. MTTR NumericA number representing Mean Time To Repair, or the time it takes to repair the logic solver after a failure is detected.  This value is measured in hours. The value that you enter must be between 4 and 336. Otherwise, an error message will appear. This value is required.Proof Test Alternative ProtectionBooleanSpecifies whether or not an alternative protection exists during the proof test.NoneProof Test Coverage NumericA number representing the percentage of failures that are detected by the proof test (i.e., how effectively the proof test identifies failures). For example, 100% proof test coverage indicates that the proof test would identify 100% of the failures that could have occurred. The number that you enter must be between 0 and 100. Otherwise, an error message will appear. This value is required.Proof Test DurationNumberSpecifies the duration of the Proof Test.This field is populated with a default value of 1 hour when the protective instrument loop is upgraded to ExSILentia v4.Proof Test Interval NumericA number representing the monthly intervals at which the proof test should be performed.  The number that you enter must be between 1 and 360, or an error message will appear. This value is required. Reference Data Date DateThe date on which that the reference data was published for the device that is identified in the Exida Name field.   
+This field displays the Calendar feature. 
+ When the Manual Entry check box is selected, this field is enabled. 
+When the Manual Entry check box is cleared, this value is disabled and populated with the date on which the reference data was published for the device that is identified in the Exida Name field.
+Reference Data Reference CharacterThe specific failure data reference as it appears in the Exida data source that is identified in the Reference Data Source field. 
+When the Manual Entry check box is selected, this value is enabled. 
+When the Manual Entry check box is cleared, this field is disabled and populated with the data reference for the device that is identified in the Exida Name field. 
+Reference Data Revision CharacterA number that represents the number of times the reference data has been revised in the Exida database. 
+ When the Manual Entry check box is selected, this value is enabled. 
+When the Manual Entry check box is cleared, this field is disabled and populated with the data revision for the device identified in the Exida Name field.
+Reference Data Source CharacterThe source of the reference data (e.g., Exida). 
+When the Manual Entry check box is selected, this value is enabled. 
+When the Manual Entry check box is cleared, this field is disabled and populated with the data source for the device identified in the Exida Name field.
+SERH Library Version CharacterSpecifies the SERH library version for determining the Failure Rates.NoneSIL Architectural Constraints NumericA number that represents the SIL value for the logic solver, which is based on the architectural constraints that are defined in the Test Architecture Constraints field. This field is disabled. The GE Digital APM system calculates and populates this value.SIL Systematic Capability NumericA number that represents the SIL value for the logic solver which is based on the systematic capabilities that are defined in the failure rate data. 
+This field is enabled or disabled based on the following criteria: 
+When the Manual Entry check box is selected, the SIL Sytematic Capabilities field is enabled. When the Manual Entry check box is cleared, the GE Digital APM system calculates the number automatically, based on the systematic capabilities that are defined in the failure rate data associated with the logic solver device, and displays one of the following values as read-only in the SIL Systematic Capability field:  0 (zero)  1  2  3  4
+
+Voting Character
+The configuration of the logic solver that help achieve the target SIL value.
+
+This list contains the following options: 
+1oo1  1oo1D 1oo2 1oo2D 1oo3 2oo3 3oo3 
+ This value is populated automatically when you select a device. 
+With Enhanced Diagnostics BooleanSpecifies whether or not the Logic Solver supports enhanced diagnostics.None
+Protective Instrument Loop Sensor Group Records
+Protective Instrument Loop Sensor Group records store details about a protective instrument loop sensor group that you have created as part of SIL verification. This topic provides an alphabetical list and description of the fields that exist for the Protective Instrument Loop Sensor Group family and appear on the Protective Instrument Loop Sensor Group datasheet by default. The information in this table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageATI / PVST Automatic/ManualCharacterIndicates whether application testing is automatic or manual.
+You can select one of the following values:
+Automatic Manual
+ATI / PVST CoverageNumberThe percentage of failures that could be detected by application testing coverage.NoneATI / PVST EnabledLogical
+Indicates if application testing is enabled for the sensors in the group.
+
+If this field is selected, then the following fields are enabled:
+ATI / PVST Automatic/ManualATI / PVST IntervalATI / PVST Interval UOM
+ATI / PVST IntervalNumberThe interval at which the application testing is performed on the sensors in the group.NoneATI / PVST Interval UOMCharacterThe units of the application testing interval that you have specified in the ATI / PVST Interval field.
+You can select one of the following values:
+MonthsDays
+Availability NumberA number representing the percentage of time that the sensors in the group are expected to be available in the case of a demand.
+The GE Digital APM system calculates this value automatically as follows: 
+ Availability = (1-PFD Avg) *100 
+Calculated PFD Avg NumberA number representing the probability that the sensor group will fail to react during a demand when the loop is operating in a low demand mode. This field is disabled. The GE Digital APM system calculates and populates this value. This value depends on the failure rate of the sensor group.Calculated PFH NumberA number representing the probability that the sensor group will fail to react during a demand when the loop is operating in high demand or continuous mode of operation. This field is disabled. The GE Digital APM system calculates and populates this value. This value depends on the failure rate of the sensor group.Calculated STR NumberA number representing the spurious trip rate for the sensor group. This field is disabled. The GE Digital APM system calculates and populates this value.Common Cause (Beta) NumberA number representing the percentage of failure that would affect the functioning of multiple devices. For example, a power supply failure for a sensor group that is shared across multiple loops can cause all the loops to fail. In this case, the beta factor is the probability that the loops fail in case of a power supply failure to the sensor group. 
+ If the value in the Voting field is 1oo1 or 1001D, this value is not applicable. This value is populated when you select a device.
+Custom Vote M NumberThe minimum number of sensors that should trip when the sensor detects a potential hazard.You must use this option if you want to add more than four sensors in the group. If the number of sensors in the group is less than or equal to four, then this field is disabled and populated with the minimum number of sensors that should trip in the event of a potential hazard (the first digit in the Voting field).Custom Vote N NumberThe number of sensors in the group.You must use this option if you want to add more than four sensors in the group. If the number of sensors in the group is less than or equal to four, then this field is disabled and populated with the number of sensors (the last digit in the Voting field).Diverse LogicalIndicates whether the sensors in the group are similar or diverse.
+If you clear this check box, all the sensors in the group are similar. Hence, all the sensors in the group will have datasheets with the same values, except for the Sensor ID. If you modify the details of a sensor, the same change is reflected in all the sensor datasheets. By default, the check box is cleared. 
+If you select this check box, each sensor in the group will have a datasheet with different values.
+ If there are more than three sensors in the group, this field is cleared. If there is only one sensor in the group, this field is disabled.
+Group ID CharacterThe ID of the protective instrument loop. This value is required and must be unique. The GE Digital APM system provides a default value, which you can modify if required. Group Mission TimeNumberSpecifies a numeric value (in years) that represents the Mission Time at the group level.This field is only applicable to exSILentia v4 loops.If a value is specified in this field, the value is reset to the value in the Mission Time field of the Protective Instrument Loop record when the protective instrument loop is upgraded to exSILentia v4.Has Independent Mission TimeBooleanSpecifies whether or not the group has an independent mission time.This field is only applicable to exSILentia v4 loops.If this field is set to True, the value in this field is reset to False when the protective instrument loop is upgraded to exSILentia v4.MTTFS NumberMean Time To Fail Spuriously. (that is, Mean time for a sensor to detect a hazard when an unsafe condition is not present.)This field appears in the Calculated Results section and is disabled. This value is measured in years.MTTR NumberMean Time To Repair. It is the average time that is required to repair the sensors in the group.This value is measured in hours and is required.Proof Test Coverage NumberThe percentage of failures that are detected by the proof test (that is, how effectively the proof test identifies failures). For example, 100% proof test coverage indicates that the proof test would identify 100% of the failures that occurred.This value is required and is set to 0 by default. Proof Test DurationNumberSpecifies the duration of the Proof Test.This field is populated with a default value of 1 hour when the protective instrument loop is upgraded to ExSILentia v4.Proof Test Interval NumberA numeric value representing the frequency at which the proof test should be performed.This value is set to 12 by default. You can, however, change this value if required. This value is required and is measured in months.SIL Architectural Constraints NumberA number that represents the SIL value for the sensor group, which is based on the architectural constraints that are defined in the Test Architecture Constraints field. This field is disabled. The GE Digital APM system calculates and populates this value.SIL Systematic Capability NumberA number that represents the SIL value for the sensor group, which is based on the systematic capability that is defined in the Test Architecture Constraints field. This field is disabled. The GE Digital APM system calculates and populates this value.Voting CharacterThe voting architecture that represents the minimum number of sensors that should trip (in the event of a failure) and the number of sensors available in the group. For example, if the voting is 1oo2, then for the logic solver to detect a failure, at least one sensor should trip out of the two sensors that are available in the group.
+This field is updated automatically when you add or remove a sensor from the group.
+The following combinations are available:
+1oo1 1oo1D 1oo2 1oo2D 2oo2 1oo3 2oo3 3oo3 1oo4 2oo4 3oo4 4oo4 MooN 
+This value is required. These values are defined in the MI_SIL_SENSORVOTE system code table.
+
+Protective Instrument Loop Sensor Records
+Protective Instrument Loop Sensor records store details about a protective instrument loop sensor that you have created as part of SIL verification. This topic provides an alphabetical list and description of the fields that exist for the Protective Instrument Loop Sensor family and appear on the Protective Instrument Loop datasheet by default. The information in this table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageAlarm Filter LogicalIndicates whether alarm filtering will be used.Select this check box if the sensor reports the origin of a failure. This should be used in conjunction with Alarm Setting (High/Low) and is applicable only for diagnostic selection.Alarm Setting(High/Low) LogicalIndicates the direction of the alarm.If the alarm setting is high, select this check box. If the alarm setting is low, clear this check box. This should be used in conjunction with Alarm Filter and is applicable only for diagnostic selection.Alarm Voted as Trip LogicalIndicates whether the alarm is voted as a trip.If the alarm is voted as a trip, select this check box. This is applicable only for diagnostic selection.Analog Trip Character
+Indicates the direction of the trip.
+
+The following options are available:
+High Low 
+This is applicable only for diagnostic selection.
+Approved Custom Device LogicalIndicates whether the sensor is approved to be used.
+This field is disabled and selected if the sensor has been approved to use via the Validation Failure Rate Reference Data feature.
+Base SFF NumberSafe Failure Fraction without diagnostic detection.This field is disabled. The GE Digital APM system calculates this value based on the sensor, the interfaces, and the connections for the sensor.Connection CharacterThe type of physical connection between the sensor and the process.The values in this list are based on the value in the Sensor Type field.Description CharacterA brief description of the sensor.None External Comparison LogicalIndicates whether the sensor is compared with another similar sensor.Select this check box if you will use another device for comparative measurement. This is applicable only for diagnostic selection.External Comparison Value NumberThe percentage of failure detected by external comparison.This field is enabled only if the External Comparison check box is selected. This is applicable only for diagnostic selection.Interface A CharacterThe interface between the sensor and the logic solver.The values in this list are from Exida's Safety Equipment Reliability Handbook (SERH) and are based on the value in the Sensor field.Interface B CharacterA second interface between the sensor and the logic solver.The values in this list are from Exida's Safety Equipment Reliability Handbook (SERH) and are based on the values in the Sensor and Interface A fields.Over/Under Range LogicalIndicates the direction of failure detected by the sensor.If the sensor detects a failure for over range, select this check box. If the sensor detects a failure for under range, clear this check box. This is applicable only for diagnostic selection.Sensor CharacterThe name of the sensor.The values in this list are from Exida's Safety Equipment Reliability Handbook (SERH) and are based on the value in the Sensor Type field.Sensor ID CharacterThe ID of the sensor.This value is required and is populated with a default value. You can, however, provide a different value. This value must be unique.
+Sensor Type 
+ 
+CharacterA value representing the measurement type of the sensor. 
+This field contains the following options: 
+ FireGas Flow Level Other Pressure Proximity
+SFF NumberSafe Failure Fraction after applying diagnostics for the sensor.This field is disabled. The GE Digital APM system calculates this value, which is used to calculate MTTFS.
+Protective Instrument Loop Sensor System Records
+Protective Instrument Loop Sensor System records store details about a protective instrument loop sensor system that you have created as part of SIL verification. This topic provides an alphabetical list and description of the fields that exist for the Protective Instrument Loop Sensor System family and appear on the Protective Instrument Loop datasheet by default. The information in this table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageAvailability NumberA number representing the percentage of time between proof tests that the logic solver is expected to be available. 
+The GE Digital APM system calculates this value using the following calculation:
+
+Availability = (1 - PFD) * 100 
+Calculated PFD Avg NumberA number representing the probability that the sensor system will fail to react during a demand when the loop is operating in a low demand mode. This field is disabled. The GE Digital APM system calculates and populates this value. This value depends on the failure rate of the sensor system.Calculated PFH NumberA number representing the probability that the sensor system will fail to react during a demand when the loop is operating in high demand or continuous mode of operation. This field is disabled. The GE Digital APM system calculates and populates this value. This value depends on the failure rate of the sensor system.Calculated STR NumberA number representing the spurious trip rate for the sensor system. This field is disabled. The GE Digital APM system calculates and populates this value.Common Cause (Beta) NumberA number representing the percentage of failure that would affect the functioning of multiple devices. For example, a power supply failure for a sensor system that is shared across multiple loops can cause all the loops to fail. In this case, the beta factor is the probability that the loops fail in case of a power supply failure to the sensor system. 
+ If the value in the Voting field is 1oo1 or 1001D, this value is not applicable. This value is populated automatically when you select a device.
+HFT NumberA number representing the hardware fault tolerance, or the number of failures the sensor system can tolerate before failing. For example, a sensor system with 1oo2 redundancy has a HFT of 1 because it can tolerate one failure and can still continue to operate.MTTFS NumberA number representing Mean Time To Fail Spuriously for a Sensor System. This field is disabled. The GE Digital APM system calculates and populates this value.Number of Groups NumberThe number of sensor groups in the system.This field is disabled and populated with the number of sensor groups in the system.SIL Architectural Constraints NumberA number that represents the SIL value for the sensor system, which is based on the architectural constraints that are defined in the Test Architecture Constraints field. This field is disabled. The GE Digital APM system calculates and populates this value.SIL Systematic Capability NumberA number that represents the SIL value for the sensor system, which is based on the systematic capability that is defined in the Test Architecture Constraints field. This field is disabled. The GE Digital APM system calculates and populates this value.System ID CharacterThe ID of the sensor system.This value is required and is populated with a default value. You can, however, provide a different value. This value must be unique.Voting Between Groups CharacterThe voting architecture that represents the minimum number of sensor groups that should trip (in the event of a failure) and the number of sensor groups that are available in the system. For example, if the voting is 1oo2, then for the logic solver to detect a failure, at least one sensor group should trip out of the two sensor groups that are available in the group.
+This field is updated automatically when you add or remove a sensor group from the system.
+The following combinations are available:
+1oo1 1oo2 2oo2 1oo3 2oo3 3oo3 1oo4 4oo4 
+This value is required. 
+
+Proven In Use Justification Records
+Proven In Use Justification records store information about the basis for use of a device (i.e., a Sensor or a Final Element). This topic provides an alphabetical list and description of the fields that exist for the Proven In Use Justification family and appear on the Proven In Use Justification datasheet. The information in the table reflects the baseline state and behavior of these fields. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Application Character Describes how and where you plan to use the device.You can enter a value manually.Comment TextAdditional information on the basis of justification to use the device in the loop.You can enter a value manually.Device Type CharacterThe type of device for which the Proven In Use Justification is defined.You can enter a value manually. Prepared By CharacterThe name of the person who created the justification.You can enter a value manually.Prepared Date DateThe date when the justification was created.You can select a date in this field.Subsystem ID CharacterThe identification of the subsystem with which the device is associated.This field does not appear on the datasheet.
+Risk Assessment Recommendation Records
+Recommendation records store details about the recommendation that you have proposed to mitigate the risk. This topic provides an alphabetical list and description of the fields that exist for the Recommendation family. These fields appear on the Recommendation datasheet, unless otherwise specified. The information in this table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Alert Assignee When Due? LogicalIndicates whether an email notification must be sent to the user selected in the Assigned To Name field when the recommendation is due.This field appears in the Alert datasheet.Assigned To Name CharacterThe name of the user who is assigned the Recommendation.You can select a user from the list.Author Name CharacterThe first and last name of the Security User who created the Recommendation.This field is populated with the name of the user who was logged in while creating the Recommendation. Business Impact CharacterThe impact to the business if the recommended action is performed. 
+This field contains a list of System Codes that exist in the MI BUSINESS IMPACT System Code Table. You can choose from the following baseline values: 
+Facility Shutdown (FACILITY SHUTDOWN) Facility Slowdown (FACILITY SLOWDOWN) Unit Shutdown (UNIT SHUTDOWN) Unit Slowdown (UNIT SLOWDOWN) System Shutdown (SYSTEM SHUTDOWN) System Slowdown (SYSTEM SLOWDOWN)
+Completed Date DateThe date on which the recommended action was performed.This field contains a  button, which you can select to access the Calendar feature.Create SAP Notification? LogicalIndicates whether a notification should be created in an external EAM system when this Recommendation is saved.NoneDays Before Due Date to be Notified NumericThe number of days before the Target Completion Date that an email notification must be sent to the user selected in the Assigned To Name field.This field appears in the Alert datasheet. This field is required when the Alert Assignee When Due check box is selected.Equipment ID CharacterThe Equipment that is associated with the Instrumented Function for which you are proposing the Recommendation.This field is disabled and populated with the value stored in the Equipment ID field in the Instrumented Function datasheet.Final Approver Name CharacterThe name of the user who must grant the final approval for the Recommendation.You can select a user from the list.Frequency of Alert After Due Date NumericSpecifies how often email messages will be sent after the completion date has passed. 
+You can choose any of the following options: 
+Never Daily Weekly Monthly Yearly 
+This field appears in the Alert datasheet. This field is required when the Alert Assignee When Due check box is selected.
+Functional Location ID CharacterThe Functional Location that is associated with the Instrumented Function for which you are proposing the Recommendation.This field is disabled and populated with the value stored in the Functional Location ID field in the Instrumented Function datasheet.Implementation Alert Text CharacterThe text that will be included in the email notification sent to the approver.This field appears in the Alert datasheet.Interval NumericThe interval at which the Action related to the Recommendation needs to be performed. This Action is created as part of an Asset Strategy after the Recommendation is promoted to ASM.For example, if the value in this field is 4, and if the value in the Interval Units field is Days, then that Action must be performed every four days. Interval Units CharacterThe units of the interval at which the Action related to the Recommendation needs to be performed. This Action is created as part of an Asset Strategy after the Recommendation is promoted to ASM.For example, if the value in this field is Days, and if the value in the Interval field is 4, then that Action must be performed every four days.Mandatory Date DateThe date by which the recommended action must be completed if it was not completed by the target completion date.This field contains a  button, which you can select to access the Calendar feature.Recommendation Basis CharacterThe basis for the Recommendation.NoneRecommendation Description CharacterA description of the Recommendation.NoneRecommendation Headline CharacterA short description of the Recommendation.
+If you select the Alert Assignee When Due check box, the value that you provide in the Recommendation Headline field becomes the subject of the alert email.
+
+Recommendation ID 
+
+Character
+
+The ID for the Recommendation
+
+This value must be unique.
+Recommendation Priority CharacterThe priority of the recommended action.
+This field contains a list of System Codes that exist in the MI_PRIORITY System Code Table. You can choose from the following baseline values: 
+ High (HIGH) Medium (MEDIUM) Low (LOW)
+Reevaluate? LogicalIndicates whether you want to reevaluate the Recommendation.This field appears in the Alert datasheet.Reevaluation Alert Body Text CharacterThe text that will be included in the reevaluation email message.This filed appears in the Alert datasheet. This field is enabled only when the Revaluate? check box is selected.Reevaluation Date DateThe date on which a reevaluation email message will be sent to the users selected in the Reevaluation Notification List field.This field appears in the Alert datasheet. This field is required when the Reevaluate? check box is selected.Reevaluation Notification List CharacterThe users to whom the reevaluation email message will be sent.This field appears in the Alert datasheet. This field is enabled and is required when the Reevaluate? check box is selected.Required Equipment Status CharacterThe state in which the equipment should exist before performing the recommended action against it. 
+This field contains a list of System Codes that exist in the MI_STATUS System Code Table. You can choose from the following baseline values: 
+ ON-LINE (ON-LINE) Off-Line (OFF-LINE) Not Applicable (N/A)
+Reviewer Name CharacterThe name of the user who will review the Recommendation.You can select a user from the list.Status CharacterThe status of the Recommendation.
+This field contains a list of the following states:
+Created (CREATED)Pending Review (PENDING REVIEW)Reviewed (REVIEWED)Rejected (REJECTED)Cancelled (CANCELLED)Superseded (SUPERSEDED)
+Target Completion Date DateThe date by which the recommended action should be completed.This field contains a  button, which you can select to access the Calendar feature.Work Request Equipment CharacterThe work request number when a recommendation is converted from a notification within the EAM to a work order. (e.g., using functionality provided with the SAP Interfaces, Oracle EBS eAM Interfaces, and Maximo Interfaces). This field is disabled and populated after the external work request is created.Work Request Functional Location CharacterThe work request number when a recommendation is converted from a notification within the EAM to a work order. (e.g., using functionality provided with the SAP Interfaces, Oracle EBS eAM Interfaces, and Maximo Interfaces). This field is disabled and populated after the external work request is created.Work Request Reference CharacterThe ID of the external work request that was created from this Recommendation(e.g., using functionality provided with the SAP Interfaces, Oracle EBS EAM Interfaces, and Maximo Interfaces).This field is disabled and populated after the SAP Notification or Oracle EBS EAM Work Request is created.
+SIF Common Cause Failure Records
+SIF Common Cause Failure records store details about a failure or a condition within a plant that can affect the operation of multiple instrumented functions (i.e., common cause failures). This topic provides an alphabetical list and description of the fields that exist for the SIF Common Cause Failure family and appear on the SIF Common Cause Failures datasheet. The information in the table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+CCF Description 
+
+Text
+
+The description of the common cause failure. 
+
+This field is required. On the SIF Common Cause Failure datasheet, you can select the button to define this value manually via the CCF Description dialog box.
+CCF ID CharacterThe ID for the common cause failure. This field is required. On the Common Cause Failures tab on the <Record ID> (Instrumented Function) window, this value appears as a hyperlink that you can select to access the contents of the corresponding SIF Common Cause Failure in a new window. CCF Mitigation TextA brief description of ways to mitigate the effect of the common cause failure. This field is required. On the SIF Common Cause Failure datasheet, you can select the  button to define this value manually via the CCF Mitigation window.
+SIL Analysis Records
+SIL Analysis records store details about an SIL analysis. This topic provides an alphabetical list and description of the fields that exist for the SIL Analysis family. The information in this table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and Usage
+Analysis Description 
+
+Character
+
+A brief description for the SIL analysis. 
+None Analysis End Date DateThe date on which the SIL analysis will end. You can enter or select the appropriate date. The start date must be later than the date in the Analysis Start Date field, or an error message will appear. When you copy an SIL Analysis, the value in this field is not copied to the new record.  Analysis ID CharacterThe ID for the SIL analysis.   This field is required and must be unique. If you access an existing SIL Analysis and delete the value in the Analysis ID field, if you then re-enter that same value and try to save the record, an error message will appear, indicating that the Analysis ID already exists. Analysis Re-evaluation NumberA number indicating how many years after the completion of the Hazards Analysis that is associated with the SIL analysis that the Hazards Analysis should be re-evaluated. 
+On the datasheet, this field appears as a text box that is labeled Hazards Next Reevaluation Interval with an additional label, Years, to the right of the text box. If the SIL Analysis is linked to a Hazards Analysis, this field is populated automatically with the value in the Reevaluation Interval field in the Hazards Analysis that is linked to this SIL Analysis. 
+ If this SIL Analysis is not linked to a Hazards Analysis, this field is enabled and you can populate it manually.
+Analysis Start Date DateThe date on which this SIL analysis was started. You can enter or select the appropriate date. The analysis start date must be earlier than the end date of the analysis, or an error message will appear. When you copy an SIL Analysis, this field is populated automatically with the current date.  Equipment ID CharacterThe ID for the Equipment that is linked to this SIL analysis. This is the equipment for which the SIS exists to mitigate the risk of failure on that equipment. On the datasheet, this field is disabled and contains a  button, which you can select to search for an existing Equipment to link to the SIL Analysis. Equipment Key NumberThe Entity Key of the Equipment that is linked to the SIL Analysis.By default, this field does not appear on the SIL Analysis datasheet. Facilitator CharacterThe name of the SIL analysis team member who is specified as the Facilitator on the SIL Analysis Team page. By default, this field does not appear on the SIL Analysis datasheet. Functional Location ID CharacterThe ID for the Functional Location that is linked to this SIL Analysis. On the datasheet, this field is disabled and contains a  button, which you can select to search for an existing Functional Location to link to the SIL Analysis. Functional Location ID NumberThe Entity Key of the Functional Location that is linked to the SIL Analysis. By default, this field does not appear on the SIL Analysis datasheet. Hazards Analysis Date DateThe value that exists in the Last Modified Date field in the Hazards Analysis whose record ID appears in the Hazards Analysis Reference field.If the SIL Analysis is linked to a Hazards Analysis, this field is populated with the value in the Last Modified Date field in that Hazards Analysis. If the SIL Analysis is not linked to a Hazards Analysis, this field is enabled, and you can enter a value. Hazards Analysis Reference CharacterThe ID of the Hazards Analysis that is linked to the SIL Analysis. On the datasheet, this field is disabled and contains a  button, which you can select to search for an existing Hazards Analysis to link to the SIL Analysis. After you select the Hazards Analysis, the Hazards Analysis Reference field is populated automatically with the Record ID from the corresponding Hazards Analysis. The Hazards Analysis ID appears as a hyperlink, which opens in a new window the Hazards Analysis with that ID. Note:  In order to link a Hazards Analysis to an SIL Analysis, you must have at least View privileges to the Hazards Analysis family.
+Hazards Analysis Reference Key NumberThe Entity Key for the Hazards Analysis that is linked to the SIL Analysis. By default, this field does not appear on the SIL Analysis datasheet. Hazards Analysis Reevaluation Date DateThe date on which the Hazards Analysis that is associated with the SIL analysis should be re-evaluated. This field is populated automatically with the output of the following calculation: Hazards Reevaluation Date = Hazards Analysis Date + Analysis Re-evaluationIf the SIL Analysis is not linked to a Hazards Analysis (i.e., the record from which the values in the calculation shown above are mapped), this field is enabled, and you can enter a value manually. On the datasheet, this field is labeled HAZOPS Reevaluation Date.Hazards Analysis Revision CharacterThe numeric value that exists in the Revision Number field in the Hazards Analysis whose Record ID appears in the Hazards Analysis Reference field. If the SIL analysis is linked to a Hazards Analysis, this field is populated with the value in the Revision Number field in that Hazards Analysis. If the SIL Analysis is not linked to a Hazards Analysis, this field is enabled, and you can populate it manually. Hazards Analysis State CharacterThe current state of the Hazards Analysis that is linked to the SIL Analysis. If the SIL Analysis is linked to a Hazards Analysis, this field is populated with the state of that Hazards Analysis. If the SIL Analysis is not linked to a Hazards Analysis, this field is enabled, and you can enter a value. Is Deleted LogicalSpecifies whether the SIL Analysis has been removed from the SIL Analysis search results. The value in this field is used by the GE Digital APM system. You should not modify this value. By default, this field does not appear on the SIL Analysis datasheet. Last Modified By CharacterThe name of the GE Digital APM Security User who last modified the record. This field is disabled and populated with the name of the user who was logged in when the record was last modified. When you copy an SIL Analysis, the value in this field is not copied. Last Modified Date DateThe date on which the record was last modified. This field is disabled and populated. When you copy an SIL Analysis, the value in this field is not copied. Logic Solver Failure Response TextA description of how the logic solver responds to a failure. The value in this field is set by default. You can remove the default value and enter your own values. This field contains a button, which you can select to access the Text Editor. Long Description TextA detailed explanation of the SIL analysis that you want to conduct. None Loss of SIS Energy Sources TextA description of how the safety instrumented system responds to a loss of energy. The value in this field is set by default. You can remove the default text and enter your own values.Normal Operation Requirement TextA description of the requirements for the normal mode of the instrumented function. The value in this field is set by default. You can remove the default value and enter your own values.Owner CharacterThe name of the SIL analysis team member who is specified as the Process Owner of the SIL Analysis. This field is disabled and populated automatically with the first and last name of the team member as it appears in the First Name and Last Name fields in the user's Human Resource record. Process Owner CharacterThe name of the SIL analysis team member who is specified as the Process Owner of the SIL Analysis. This value is used to populate the Owner field and does not appear on the SIL Analysis datasheet by default. Requirement for SRS Review TextA description of the requirement for the safety requirement review. The value in this field is set by default. You can remove the default value and enter your own values. SIF Bypass Requirements TextA description of the bypass requirements for the instrumented function. The value in this field is set by default. You can remove the default value and enter your own values. SIF Common Cause Sources TextA description of the sources for common cause failures in instrumented functions. The value in this field is set by default. You can remove the default value and enter your own values. SIF Demand Mode of operation TextA description of the demand mode associated with an instrumented function. The value in this field is set by default. You can remove the default value and enter your own values. SIF Diagnostics TextA description of component diagnostics for an instrumented function. The value in this field is set by default. You can remove the default value and enter your own values.SIF Emergency Requirement TextA description of the requirement for an instrumented function in the case of emergency. The value in this field is set by default. You can remove the default value and enter your own values. SIF Failure Modes TextA description of the configuration of instrumented function failure modes. The value in this field is set by default. You can remove the default value and enter your own values. SIF Maintenance Overrides TextA description of the manual override procedures needed for maintenance on an instrumented function. The value in this field is set by default. You can remove the default value and enter your own values. SIF Manual Shutdown TextA description of the manual shutdown operation for an instrumented function.The value in this field is set by default. You can remove the default value and enter your own values.. SIF Pre-Alarms TextA description of the pre-alarms for an instrumented function. The value in this field is set by default. You can remove the default value and enter your own values. SIF Process Interfaces TextA description of process interfaces for instrumented functions. The value in this field is set by default. You can remove the default value and enter your own values. SIF Proof Test Interval TextThe interval, in years, for which proof tests are conducted for an instrumented function.The value in this field is set by default. You can remove the default value and enter your own values. SIF Proof Test Procedures Text A detailed description of the proof test procedures associated with an instrumented function. The value in this field is set by default. You can remove the default value and enter your own values. SIF Protection Mode TextA description of the way in which the instrumented function will respond in protection mode. The value in this field is set by default. You can remove the default value and enter your own values. SIF Regulations and Standards TextA description of all the regulations and standards associated with an instrumented function. For example, if you have a low flow SIF, you will not be able to start the process because the flow will already be low. In this case, you may specify that a low flow bypass shall be implemented where the minimum flow set point must be exceeded for 30 seconds before the instrumented function is activated. The value in this field is set by default. You can remove the default value and enter your own values. SIF Response Time TextThe maximum time that the instrumented function can take to detect a hazard and take the process to a safe state.Also referred to as process safety time.SIF Start Up Requirements TextSpecial requirements for the instrumented function that only apply when the process is being started.The value in this field is set by default. You can remove the default value and enter your own values. SIF Spurious Trip Rate TextA description of the acceptable spurious trip rate for an instrumented function. The value in this field is set by default. You can remove the default value and enter your own values. SIF Trip Reset TextA description of the reset procedures in the case of a tripped instrumented function. The value in this field is set by default. You can remove the default value and enter your own values. SIS Design Requirements TextA description of the design requirements for the safety instrumented system. The value in this field is set by default. You can remove the default value and enter your own values. SIS Electrical Power TextA description of the specific electrical requirements for the safety instrumented system. The value in this field is set by default. You can remove the default value and enter your own values. SIS Environmental Conditions TextA description of the environmental operating conditions of the safety instrumented system. The value in this field is set by default. You can remove the default value and enter your own values. SIS Interfaces TextA description of the interfaces for the safety instrumented system. The value in this field is set by default. You can remove the default value and enter your own values. SIS Logic Solver Failure Response TextThe state to which the process must be taken in case of a logic solver failure (e.g., a recurring diagnostic message must be sent to the operator every four hours indicating that the logic solver has a detected failure).
+The value in this field is set by default. You can remove the default value and enter your own values. 
+SIS Mission Time NumberA numeric value (in years) that represents the time that the safety instrumented system will be in use.None SIS Sequence of Events Recording TextA description of sequence of event recordings that exist for the safety instrumented system. This field is populated automatically. You can remove the default value and enter your own values if needed. SIS Software Requirements TextA description of the software programing languages that are permitted for use. This field is populated automatically. You can remove the default value and enter your own values if needed. Site Description CharacterA description of the site specified in the Site ID field. By default, this field does not appear on the SIL Analysis datasheet. Site ID CharacterThe ID of the site that is associated with the SIL analysis. This field contains IDs taken from the Name field for each existing Site Reference records. The record that you select here is used to identify which risk matrix to display when you create Risk Assessment records in SIS Management. If this field is empty, the default risk matrix will be used. SRS Methodology TextA long description of the methodology for the Safety Requirement Specification report. The value in this field is set by default. You can remove the default value and enter your own values. SRS Purpose and Scope TextA long description of the purpose and scope of the Safety Requirement Specification report for the SIL analysis. The value in this field is set by default. You can remove the default value and enter your own values. SRS Standards Used TextA description of the standards that are used within the Safety Requirement Specification report. The value in this field is set by default. You can remove the default value and enter your own values. System Definition TextA description of the safety instrumented system. The value in this field is set by default. You can remove the default value and enter your own values. Unit Description CharacterA description of the unit that is specified in the Unit ID field. By default, this field does not appear on the SIL Analysis datasheet. Unit ID CharacterThe ID for the unit where the safety instrumented system for which you are conducting the SIL analysis exists.  None 
+SIL Threshold Records
+ SIL Threshold records store information about the numeric range for risk value for each Safety Integrity level, and are used when assessing SIL value using Risk Matrix or PHA. This topic provides an alphabetical list and description of the fields that exist for the SIL Threshold family. The information in the table reflects the baseline state and behavior of these fields.
+Important: The records in this family can be modified only by users who belong to the Security Groups MI SIS Administrator.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Lower Boundary NumericThe lower boundary value of risk rank for the SIL value identified in the SIL level field.You can enter a value manually.Mitigated Risk FactorNumericA number indicating the tolerable risk probability for an Instrumented Function.
+You can enter a value greater than 0 and less than or equal to 1.
+The value in this field is divided by the Driving Risk Rank value in the Risk Matrix of the SIL Assessment to determine the Required Probability of Failure. 
+If this field is blank, a default value of 1 will be used in the calculation. 
+SIL Level NumericThe Safety Integrity Level for which the unmitigated risk range is defined.You can enter a value manually.Upper Boundary NumericThe upper boundary value of risk rank for the SIL value identified in the SIL level field.You can enter a value manually.
+SIS Proof Test Records
+SIS Proof Test records store details about a proof test that is executed, including the results of the proof test. This topic provides an alphabetical list and description of the fields that exist for the SIS Proof Test family and appear on the SIS Proof Test datasheet, unless otherwise specified. The information in the table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Actual Work TimeNumericThe number of hours required to complete the SIS Proof Test.If the SIS Proof Test is integrated with Work Management, the value in this field is used to create a confirmation record when the SIS Proof Test is closed.Cleared All Bypasses and Forced LogicLogicalIndicates whether or not you have cleared all bypasses and forced logic while performing the proof test.NoneCommencement Date DateThe date on which the proof test was started.NoneCompletion Date DateThe date on which you completed the proof test. NoneEquipment Operating State CharacterThe current state of the equipment that you are testing. 
+This field contains the System Codes that exist in the MI EQUIP OP STATE System Code Table. You can choose from the following baseline values: 
+ON-LINE (ON-LINE) Off-Line (OFF-LINE) Not Applicable (NA)
+Functional Test Closed LogicalA value that indicates whether or not the proof test has been completed. If you select this check box, all fields on the SIS Proof Test datasheet are disabled. Functional Test Status CharacterStores the current status of the proof test. 
+This field contains the System Codes that exist in the MI FUNCTIONAL TEST STATUS System Code Table. You can choose from the following baseline values: 
+Active Complete  Closed
+Functional Test Template CharacterThe ID of the SIS Proof Test Template that was used to create the SIS Proof Test. This field contains a list of proof test templates that are approved and linked to the instrumented function on which you are conducting the proof test. This field is required. After you select a template from the list and save the record, this field is disabled. The Proof Test Template Detail records linked to the selected template are listed in the Analysis Details section. SIS Or PIF Key NumericThe Entity Key of the Instrumented Function or the Logic Solver to which the SIS Proof Test record is linked. This field does not appear on the datasheet by default. SIS Tester Name CharacterThe name of the user who is responsible for performing the proof test. 
+This field contains the names of: 
+The Security User who created the SIS Proof Test -and- Members of the MI SIS Administrator, MI SIS Engineer, or MI SIS User Security Groups
+Task Addressed Numeric The inspection task that is addressed by the proof test. This field contains the inspection tasks that are linked to the instrumented function or the logic solver on which you have performed the proof test. Test Description CharacterA description of the proof test. NoneTest ID CharacterThe ID for the proof test. 
+None
+Test Summary TextA summary of the proof test that you have performed. NoneType of Test CharacterThe type of the proof test that you have performed. 
+This field contains the following baseline values: 
+Functional Test  System Validation
+
+SIS Proof Test Task Records
+SIS Proof Test Task records store details about an inspection task of the type proof test. This topic provides an alphabetical list and description of the fields that exist for the SIS Proof Test family and appear on the SIS Proof Test datasheet, unless otherwise specified. The information in the table reflects the baseline state and behavior of these fields.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageCoverage NumberA number that indicates how confident you are that the proof test will be able to detect failures.Enter a value between 0 and 100.Desired Interval Number A number indicating how often the task should be completed. 
+This number must be between the Min Interval and Max Interval values. 
+Before you can save a value in this field, the Last Date field must contain a value. The next date is calculated automatically using both the last date and desired interval.
+The units that you select for the desired interval are also applicable to the Max Interval and Min Interval.
+Desired Interval Basis CharacterThe basis on which you have specified the desired interval.NoneLast Date DateThe date on which the associated Proof Test Event is closed. 
+By default, this field contains the date on which the Proof Test Task is created. After you close the Proof Test Event linked to this Proof Test Task, this field is disabled and populated with the date on which the Proof Test Event is closed. 
+This value is also populated in the Date Executed field in the Task Execution record that is linked to this Proof Test Task.
+Max Date DateThe latest date by when you must perform the task.
+ This field is disabled and calculated as follows:
+ Max Date = Last Date + Max Interval 
+Max Interval Number
+The maximum interval to perform the task.
+For example, if the value in this field is 30 days, it implies that you must perform the task within 30 days from the day you last performed the task.
+NoneMin Date DateThe earliest date on which you can perform the task.
+ This field is disabled and calculated as follows:
+ Min Date = Last Date + Min Interval 
+Min Interval Number
+The minimum interval to perform the task.
+For example, if the value in this field is 15 days, it implies that you must perform the task after 15 days from the day you last performed this task.
+NoneModifiable LogicalIndicates whether the Task can be modified.This check box is selected automatically when you create a Proof Test Task and cleared after you save the record.Next Date Date
+The suggested date by when you must perform the task.
+For example, if the value in this field is 20 days, it is suggested that you perform the proof test task after 20 days from the day you last performed this task.
+
+This field is disabled and calculated as follows:
+ Next Date = Last Date + Desired Interval 
+Next Date Basis CharacterThe basis on which you have specified the next date for performing the task.NoneOverride Interval LogicalIndicates whether you can override the value in the Desired Interval field.If you select this check box, you can modify the value in the Desired Interval field.Rejectable LogicalIndicates whether the task can be rejected.If you clear this check box, you will not be able to reject the task.Related Entity ID Character The ID of the Asset that is linked to the task. NoneReoccurring LogicalIndicates whether the task is recurring.NoneSource Type CharacterThe type of the source for the proof test (e.g., Hazards Analysis, SIS, FMEA).NoneTask Assigned To CharacterThe name of the person who has been assigned the task.NoneTask Description CharacterA description for the task.NoneTask Details CharacterThe details of the task.NoneTask ID CharacterThe ID for the task.This field must be unique.Task State Character The state associated with the Calibration Task. By default this field contains the value Proposed. This field contains a list of states. After you save a new Calibration Task, this value is changed automatically from Proposed to Scheduled without change. Task Type Character The type of task.
+This field appears contains a list of values from the Task Type family that correspond to types of calibrations (e.g., CALIBRATION: AUTOMATED, ANALOG, 11 UP/DN, LINEAR, DCV/DCV). 
+You must select the value PROOF TEST.
+Unconstrain Min/Max Dates LogicalIndicates whether you can override the next date.
+When you select this check box, the values in the Min Date and Max Date fields are cleared.
+
+SIS Proof Test Template Records
+SIS Proof Test Template records store details about the proof test template that they represent. This topic provides a list of the fields that exist in the SIS Proof Test Template family.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and Usage
+Author 
+
+Character
+
+The name of the user who defined the proof test template. 
+
+ This field contains a list of all the users in the GE Digital APM system. When you create a Proof Test Template, this field is populated with the name of the user who is currently logged in.
+Modified By Character The name of the user who last modified the SIS Proof Test Template. This field is disabled and populated with the name of the person who is currently logged in. Modified Date DateThe date on which the Proof Test Template was last modified. This field is disabled and populated. Pre-Test Conditions TextA description of the required conditions of the equipment or system on which the proof test will be performed. None Template Description CharacterA brief description of the proof test.None Template ID CharacterThe ID for the proof test template. 
+This field is populated with a default value in this format: 
+PTT - <ID of the Instrumented Function or the Logic Solver> - <date and time of creating the template>
+You can modify this value if required. This value must be unique.
+
+SIS Proof Test Template Detail Records
+This topic provides a list of the fields that exist in the SIS Proof Test Template Detail family. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Comments CharacterComments about the proof test.
+This field does not appear in the Proof Test Template datasheet. However, it appears in the Functional Test Detail datasheet when you link this Proof Test Template to a Proof Test. This field also appears when you print the Proof Test Template. 
+
+Equipment ID 
+
+Character
+
+The ID of the Equipment against which the step should be performed. 
+
+You can select the associated Equipment by selecting the in the Equipment ID field.
+Location ID CharacterThe ID of the Functional Location against which the step should be performed. You can select the associated Functional Location by selecting the Location ID field. Result Criteria TextA description of what is considered to be an acceptable result of the step. NoneStep Sequence Number NumberA number that represents the order in which the step should be performed, relative to other steps. When you create a new SIS Proof Test Template Detail this value is set automatically based upon the values in existing SIS Proof Test Template Details. You can modify this value manually in both new and existing records. Step Type CharacterThe type of step. 
+On the datasheet, you can select the step type from a list of the following options: 
+ Pretest Setup  Sensor Logic Solver Final Element  Post Test Procedure
+Template Detail ID CharacterAn alphanumeric value that identifies the SIS Proof Test Template Detail. 
+This field is populated with a default value appended with the step number and the step type. You can modify this value if required. This value must be unique.
+Travel Time Limit NumberA number that quantifies the maximum acceptable travel time for this step, in seconds. This field is enabled only in SIS Proof Test Template Details where the step type is Final Element. Trip Point NumberA number that defines when the element will activate an SIS shutdown. This field is enabled only in SIS Proof Test Template Details where the step type is either Sensor, Final Element, or Logic Solver. Trip Point Direction CharacterThe trend of Trip Point values. This field is enabled only in SIS Proof Test Template Details where the step type is either Sensor, Final Element, or Logic Solver. Trip Point Error Limit NumberA value that defines the range, plus or minus, within which the Trip Point value must fall to be acceptable. This field is enabled only in SIS Proof Test Template Details where the step type is either Sensor, Final Element, or Logic Solver. Trip Point Units CharacterThe unit of measure associated with the value in the Trip Point field. This field is populated with a list of System Codes that exist in the UOME system code table. This field is enabled only in SIS Proof Test Template Details where the step type is either Sensor, Final Element, or Logic Solver. 
+SIS Trip Report Records
+This topic provides a list of the fields that exist in the SIS Trip Report family. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+Created ByCharacterThe ID of the user who created the SIS Trip Report.This field is disabled and populated.Created DateDateThe date on which you have created the SIS Trip Report.This field is disabled and populated.Initiating Event DescriptionCharacterThe description of the event that initiated the trip.NoneLogic Solver IDCharacterThe ID and description of the Logic Solver which is linked to the SIS Trip Report.This field is required. When you add an SIS Trip Report Detail, you can select an Instrumented Function from among those that are linked to this Logic Solver.LPO CostsNumberLost Profit Opportunity (LPO) costs represents the approximate profits that are lost because of the trip.You can enter a value manually.Modified ByCharacterThe ID of the user who modified the SIS Trip Report.This field is disabled and populated.Modified DateDateThe date on which the SIS Trip Report has been modified.This field is disabled and populated.System Down TimeNumberThe duration, in hours, for which the safety instrumented system has been shut down because of the trip.NoneTrip DateDateThe date on which the trip occurred.This field contains a  button, which you can select to access the Calendar feature.Trip Report DescriptionCharacterThe description of the SIS Trip Report.NoneTrip Report IDCharacterThe ID of the SIS Trip Report.This field is required and must be unique.
+Trip Type
+CharacterThe type of the trip.
+This field contains the following values:
+Spurious Trip (Spurious)Unsafe Demand (Unsafe)
+
+Software Records
+This topic provides an alphabetical list and description of the fields that exist for the Software family and appear on the Software datasheet, unless otherwise specified. The information in the table reflects the baseline state and behavior of these fields.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+Is Default
+LogicalIndicates whether the record is the default one.If set true, then the SRS Template is a default template for the category supplied by GE Digital.
+Last Modified By
+CharacterThe name of the user who last modified the record.On the datasheet, this field is disabled and updated automatically whenever the record is modified.
+Last Modified Date
+DateThe date on which the record was last modified.On the datasheet, this field is disabled and populated automatically.
+Revision Number
+NumericA number that represents the number of times the record has been revised.On the datasheet, this field is disabled and populated.
+SIS Firmware 61508 Certificate
+TextCertificate location and certifying agency for the SIS firmware (typically from exida or TUV)On the datasheet, this field appears as a text box, in which you can enter the certifying agency for the SIS firmware, as well as the location and validity of the certificate.
+SIS Firmware Version
+TextThe firmware version of the SIS from the OEM. On the datasheet, this field appears as a text box, in which you can enter the firmware version for the SIS firmware, typically supplied by the OEM.
+SIS Maintenance Software Name
+TextThe name of the SIS maintenance software (for example: GE ToolboxST) On the datasheet, this field appears as a text box, in which you can enter the name and version of the SIS maintenance software and other licensing details.
+SIS Maintenance Software Version Number
+TextThe software version compatible with the SIS hardware.On the datasheet, this field appears as a text box, in which you can enter the version of the SIS maintenance software compatible with the SIS hardware.
+SIS Programming Software Name
+TextThe name of the SIS maintenance software (for example: GE ToolboxST)On the datasheet, this field appears as a text box, in which you can enter the name and version of the SIS programming software and other licensing details.
+SIS Programming Software Version Number
+TextThe software version compatible with the SIS hardware.On the datasheet, this field appears as a text box, in which you can enter the version of the SIS programming software compatible with the SIS hardware.
+SIS Software Requirements
+TextThe workstation and other platform requirements for the software.On the datasheet, this field appears as a text box, in which you can enter the workstation and other platform requirements (such as Windows 10 profession version) for the SIS maintenance software and SIS programming software.
+SRS Template Description
+CharacterA description of the record.On the datasheet, this field appears as a text box labeled Description, in which you can enter a description of the record.
+SRS Template ID
+CharacterThe ID of the record.On the datasheet, this field appears as a text box labeled Field ID, in which you can type the ID.
+SRS Project Records
+This topic provides an alphabetical list and description of the fields that exist for the SRS Project family and appear on the SRS Project datasheet, unless otherwise specified. The information in the table reflects the baseline state and behavior of these fields.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+
+Last Modified By
+
+
+Character
+The name of the user who last modified the record.On the datasheet, this field is disabled and updated automatically whenever the record is modified.
+Last Modified Date
+DateThe date on which the record was last modified.On the datasheet, this field is disabled and populated automatically.
+Project Description
+CharacterA description of the record.On the datasheet, this field appears as a text box labeled Description, in which you can enter a description of the record.
+Project ID
+CharacterThe ID of the record.On the datasheet, this field appears as a text box labeled ID, in which you can type the ID.
+Revision Number
+NumericA number that represents the number of times the record has been revised.On the datasheet, this field is disabled and populated.
+SRS Template Records
+This topic provides an alphabetical list and description of the fields that exist for the SRS Template family, unless otherwise specified. The information in the table reflects the baseline state and behavior of these fields.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+
+Is Default
+
+
+Logical
+Indicates whether the record is the default one.If set true, then the SRS Template is a default template for the category supplied by GE Digital.
+Last Modified By
+CharacterThe name of the user who last modified the record.On the datasheet, this field is disabled and updated automatically whenever the record is modified.
+Last Modified Date
+DateThe date on which the record was last modified.On the datasheet, this field is disabled and populated automatically.
+Revision Number
+NumericA number that represents the number of times the record has been revised.On the datasheet, this field is disabled and populated.
+SRS Template Description
+CharacterA description of the record.On the datasheet, this field appears as a text box labeled Description, in which you can enter a description of the record.
+SRS Template ID
+CharacterThe ID of the record.On the datasheet, this field appears as a text box labeled Field ID, in which you can type the ID.
+Testing/Faults Records
+This topic provides an alphabetical list and description of the fields that exist for the Testing/Faults family and appear on the Testing/Faults datasheet, unless otherwise specified. The information in the table reflects the baseline state and behavior of these fields.
+
+Field
+
+Data Type
+
+Description
+
+Behavior and Usage
+
+Design Requirements to Support Testing
+TextThe design details for testing the SIS.On the datasheet, this field appears as a text box, in which you can enter the SIS testing details.
+Fault or Failure Alarms or Status Indicators
+TextThe failure, diagnostics, faults and other indicators.On the datasheet, this field appears as a text box, in which you can enter the SIS failures, faults, diagnostics and other indicators that are available during testing.
+Is Default
+LogicalIndicates whether the record is the default one.If set true, then the SRS Template is a default template for the category supplied by GE Digital.
+Last Modified By
+CharacterThe name of the user who last modified the record.On the datasheet, this field is disabled and updated automatically whenever the record is modified.
+Last Modified Date
+DateThe date on which the record was last modified.On the datasheet, this field is disabled and populated automatically.
+Revision Number
+NumericA number that represents the number of times the record has been revised.On the datasheet, this field is disabled and populated.
+SIF Common Cause Sources
+TextThe common cause failure possible for SIS.On the datasheet, this field appears as a text box, in which you can enter the common cause failures that can trigger the SIS operation.
+SIF Pre-Alarms
+TextThe alarms.On the datasheet, this field appears as a text box, in which you can enter the SIS alarms.
+SIF Trip Reset
+TextThe method and steps to reset an SIS after a trip.On the datasheet, this field appears as a text box, in which you can describe the method to reset SIS after a trip.
+SRS Template Description
+CharacterA description of the record.On the datasheet, this field appears as a text box labeled Description, in which you can enter a description of the record.
+SRS Template ID
+CharacterThe ID of the record.On the datasheet, this field appears as a text box labeled Field ID, in which you can type the ID.
+Testing interval
+TextThe field describes how often the safety system is expected to be tested (proof testing interval)On the datasheet, this field appears as a text box, in which you can enter the SIS proof testing interval details including partial proof testing interval details.
+Testing methods
+TextThe field describes the methodology for the safety system proof testing. On the datasheet, this field appears as a text box, in which you can enter the SIS proof testing step details including partial proof testing step details.
+
+
+
+
+
+On this pageElectrical RecordsEnvironment RecordsSIS Functional Test Detail RecordsGeneral Data RecordsHardware RecordsInstrumented Function RecordsInterfaces RecordsLOPA Assessment RecordsLogic Solver RecordsOperations RecordsPerformance Data RecordsProtective Instrument Loop RecordsProtective Instrument Loop Final Element Group RecordsProtective Instrument Loop Final Element RecordsProtective Instrument Loop Final Element System RecordsProtective Instrument Loop Logic Solver RecordsProtective Instrument Loop Sensor Group RecordsProtective Instrument Loop Sensor RecordsProtective Instrument Loop Sensor System RecordsProven In Use Justification RecordsRisk Assessment Recommendation RecordsSIF Common Cause Failure RecordsSIL Analysis RecordsSIL Threshold RecordsSIS Proof Test RecordsSIS Proof Test Task RecordsSIS Proof Test Template RecordsSIS Proof Test Template Detail RecordsSIS Trip Report RecordsSoftware RecordsSRS Project RecordsSRS Template RecordsTesting/Faults Records
+
+
+
+
+
+
+
+
+

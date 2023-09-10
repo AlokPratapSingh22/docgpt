@@ -1,0 +1,108 @@
+
+
+
+Fourth Quarter of 2018 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Third Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Third Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+Second Quarter of 2018
+First Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Release Notes
+Fourth Quarter of 2018
+
+
+
+
+
+
+
+Fourth Quarter of 2018AnalysisThis topic provides a list of product changes released for this module on the dates listed below.Release Date: December 14, 2018
+This topic provides a list of product changes released for this module. 
+Table 1. Enhancements and New FeaturesDescriptionTracking IDSmartSignal supports configuration of the shape, color, row position, and rendering priority for all the static and dynamic and rule event markers.F38717You can now view inactive SmartSignal Analytic models in the Tag Browser so that the user can view the inactive tags in a model and plot them on the charts.F38546You can now display positive and negative thresholds on SmartSignal residual charts to enable you to view the thresholds that have been exceeded when the tag rules are triggered on a SmartSignal Analytic tag.F38197
+The following enhancements have been made:Support up to 100 tags in the Data Grid chart. This may cause performance issues in the Browser so it is recommended that users do not plot any other charts on the card with the Data Grid that contains more than 40 tags.Added tag details to plotted tags in Alert View Template view for SmartSignal charts. Added the ability to switch between Source Tags and Tag Alias for SmartSignal charts. This allows the different user persona to view the tags in the mode that they recognize.Added the ability to view additional tag information on the SmartSignal charts. This includes the alias of the tag in parenthesis, the source tag name, and the tag description (if available).
+F38070You can now view all the templates created on the shared asset in the current tenant, and view any templates created on the shared assets by the shared to tenant. You can also view all public templates created on the shared asset, but you cannot modify it. F36995To enhance usability, you can now associate an Analysis template, including SmartSignal charts, to an Asset classification. F36078You can now use SmartSignal Analytics to monitor assets and to create a default analysis template that visualizes the SmartSignal Analytics tags associated with the asset. You can now visualize the assets using the same template for both Asset instances and Asset classifications. F36077To group data events and to visualize them in Bar chart form, you can now plot data in an analysis as a Bar chart using the Event Based Analysis templates. F36075To enhance usability, you can now search for and navigate to a specific enterprise, site, segment, or asset in the Context Browser. When selecting an item returned from the Context Browser, this is used to set the context of the Context Browser in Analysis.F36074To enhance usability, in the New Time Series Analysis page, you can now select two data points on the chart and view the values of all the tags on the chart for the selected time stamps, as well as the delta between the values of the tags for the selected time stamps in both absolute and percentages.F36073
+The following enhancements have been made:Enabled the direction arrow in Polar charts to display the direction of change.Enabled you to view the tag aliases in AVT flow to allow you to view the tags in their preferred form.Scale the axis on the time series charts to accommodate the thresholds on the charts.Allow you to select line style and line color for tag thresholds and save them to the template.Sort the advanced search results in alphabetical order to allow you to find the tags of interest easily.Sort the template names in analysis in alphabetical order to allow you to find the templates easily.Enhanced tick markers on charts to ensure that each tick has a unique value when you zoom into charts.
+F34719You can now view assets from another tenant that have been shared with the current tenant. For the assets, you can now create templates for these assets, plot tags based on these assets, and save the templates.F34712You can now view the default analysis for multiple SmartSignal alerts in a single analysis view across one or more assets.F33717To enhance usability, on the time series chart you can highlight a section of data points on the y-axis and have the data points in the selected time range reflected on all the other charts in the card.F33666 You can now save the current analysis state as an evidence to an alert or case. You can now get back to this state of the analysis from the Alert or Case, modify it, update it, and save it again to the Alert or Case by overwriting the existing evidence or save it as a new evidence. F33488You can now set the range of the axis for a chart. This allows you to focus on the range of values that is most relevant for the analysis. This is available for Time Series charts, X-Y charts, and Polar charts. F33460You can now view the value of tags across the occurrences of an event in Event Based Analysis as a time series chart. This allows you to visualize the change on the selected tags across the various occurrences of the event to identify potential degradation of the asset over time.F24485
+Table 2. Known IssuesDescriptionTracking IDWhen you delete tags on a time series chart after you have plotted pin markers, the deleted tags appear in the marker data table. The workaround for this is to delete the tags, and then set the pins on the charts.DE95436When you make changes to the time series chart in multi y-axis mode, and you cancel out of it, then the changes do not get applied and are not visible in chart settings. The workaround for this is to create the template for an ad hoc view. Or, save the template, and make your changes for an existing template. DE93811
+
+
+
+
+
+On this pageAnalysis
+
+
+
+
+
+
+
+
+

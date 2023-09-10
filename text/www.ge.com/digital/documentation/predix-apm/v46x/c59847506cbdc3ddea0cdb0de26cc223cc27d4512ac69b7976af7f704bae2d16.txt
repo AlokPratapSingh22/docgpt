@@ -1,0 +1,161 @@
+
+
+
+SIS Trip Reports | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+SIS Trip Reports
+
+
+
+
+
+
+
+SIS Trip ReportsAbout SIS Trip ReportSIS Trip Reports are records that store details on events, which occurred on a safety instrumented system, such as a trip alarm. For example, if during a process, the gas pressure level increased to an unmanageable level and the safety instrumented system turned off the gas feed, you would create one SIS Trip Report to record the details of that trip alarm event.When you create an SIS Trip Report, you will link it to a Logic Solver. When you create an SIS Trip Report Detail, you will select an Instrumented Function from among the ones that are linked to the Logic Solver. GE Digital APM creates an SIS Trip Report Detail for each Instrumented Function that you have selected.SIS Trip Report Details store details of the Instrumented Function with which it is associated. They also contain the decision that is made around the particular trip event, which is stored in the Action box. For example, you can specify a trip event as Dangerous or Safe.Access an SIS Trip ReportProcedure
+Access the SIS Management Overview page.
+
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level. 
+In the workspace, select the SIS Trip Reports tab.
+The SIS Trip Reports section appears, displaying a list of SIS Trip Reports.
+
+
+
+Select the SIS Trip Report that you want to access.
+Tip: You can also filter and search for the piece of test equipment by selecting  in the upper-left corner of the workspace. The search results appear as you enter values.
+The datasheet for the SIS Trip Report appears.
+
+
+
+If needed, modify values in the available fields.In the upper-right corner of the datasheet, select .
+The changes made to the SIS Trip Report are saved.
+Create an SIS Trip ReportProcedure
+Access the SIS Management Overview page.
+Tip: You can also access the SIS Management Overview page for a selected hierarchy level.
+Select the SIS Trip Reports tab.
+The SIS Trip Reports section appears, displaying a list of SIS Trip Reports.
+
+
+
+In the upper-left corner of the section, select .
+A blank datasheet for the SIS Trip Report appears.
+
+
+
+Next to the Logic Solver ID box, select .
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of Logic Solvers appears.
+Select the check box that corresponds to the Logic Solver that you want to select, and then in the lower-right corner of the window, select OK.
+The Logic Solver is selected.
+As needed, enter values in the other available fields. In the upper-right corner of the datasheet, select .
+The SIS Trip Report is created.
+What To Do Next
+
+Create an SIS Trip Report Detail
+
+Create an SIS Trip Report DetailBefore You Begin
+
+Create an SIS Trip Report.
+Procedure
+Access the SIS Trip Report for which you want to create an SIS Trip Report Detail.In the workspace, select the Trip Report Details tab.
+The SIS Trip Report Details section appears.
+
+
+
+In the upper-left corner of the section, select Add Trip Details.
+The Trip Details window appears, displaying a list of Instrumented Functions. These are the Instrumented Functions that are linked to the Logic Solver whose ID is populated in the Logic Solver ID field in the SIS Trip Report datasheet.
+
+
+
+Select the check box that corresponds to the Instrumented Function for which you want to create an SIS Trip Report Detail.In the lower-right corner of the window, select Add.
+The SIS Trip Report Detail is created.
+Select the SIS Trip Report Detail, and in the datasheet that appears, modify the details as needed, and select Save.
+The SIS Trip Report Detail is saved.
+Delete an SIS Trip ReportAbout This Task
+Important: Deleting an SIS Trip Report also deletes the linked SIS Trip Report Details.
+Procedure
+Access the SIS Management Overview page.
+In the workspace, select the SIS Trip Reports tab.
+The SIS Trip Reports section appears, displaying a list of SIS Trip Reports.
+
+
+
+Select the check box that corresponds to the SIS Trip Report that you want to delete.In the upper-right corner of the section, select .
+The SIS Trip Report, along with all the related SIS Trip Report Details, is deleted.
+
+
+
+
+
+On this pageAbout SIS Trip ReportAccess an SIS Trip ReportCreate an SIS Trip ReportCreate an SIS Trip Report DetailDelete an SIS Trip Report
+
+
+
+
+
+
+
+
+

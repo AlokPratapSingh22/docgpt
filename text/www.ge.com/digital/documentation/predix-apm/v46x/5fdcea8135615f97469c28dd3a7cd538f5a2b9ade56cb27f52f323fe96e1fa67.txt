@@ -1,0 +1,137 @@
+
+
+
+System Reliability: Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System ReliabilitySystem Reliability: Overview
+System Reliability: Workflow
+System Reliability Analyses 
+Resources
+System Scenario
+Diagrams
+Risks
+Actions
+Global Events
+Grid View
+Simulations
+
+
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+System Reliability
+System Reliability: Workflow
+
+
+
+
+
+
+
+System Reliability: WorkflowReliability Analytics: System Reliability Analysis WorkflowThis workflow describes the process for determining the impact of changes from a series of scenarios to determine the overall cost and reliability of the system.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+View Existing Analysis Persona: AnalystFind and view an existing analysis on the Analysis Summary page. From this page, charts and graphs can be viewed, or the analysis can be modified. Create Analysis Persona: AnalystCreate an analysis to set-up all of the required data fields and families that are needed to conduct the remainder of the analysis. Create New Scenario Persona: AnalystScenario creation is the initial step required to set-up all of the required data fields and families that are needed to model the Reliability Availability and Maintainability of the scenario View, Modify, or Copy Scenario Persona: AnalystCopy a scenario to create a version that contains all Risks, Actions, Diagram elements, and Global Events. The copy feature allows users to make small changes to a scenario and compare one scenario against the next Diagram the System Persona: AnalystDiagram the system using the palette containing the following diagram elements: Assets, Sub-System, Buffer, Link Switch, and Sensor. The diagram tools allow the user to connect elements to one another to diagrammatically express a physical system.Add a Subsystem
+Add a subsystem to present a new diagram palette. A diagram does not require subsystems, but can contain as many subsystems as you require.
+Add an Asset to the Subsystem
+Add an Asset diagram element to the subsystem to express an entity that is essential to system function (e.g., a pumping system would likely have an asset of Pump).
+Import a Growth Analysis
+Import a Growth Analysis by searching and selecting a growth analysis from the generated list. The imported growth analysis will be expressed in the diagram as an Asset, where the asset has a failure rate that is based on the growth analysis.
+Import a Reliability Distribution
+Import a Reliability Distribution by searching and selecting a reliability distribution from the generated list. The imported reliability distribution will be expressed in the diagram as an Asset where the asset has a failure rate (TTF) and repair rate (TTR) that is based on the reliability distribution.
+Import an Asset
+Import an Asset by searching and selecting an asset from the hierarchy. The imported asset will be expressed in the diagram as an Asset where the failure rates of the asset are based on previous reliability distributions or growth analyses. Additionally, this will create a relationship between the analysis and the asset
+Build K Out of N Subsystem
+Build K out of N Subsystems, where K is the number of assets required in order to meet the system requirements (e.g., a pumping system could have three pumps in parallel, where each pump has a production contribution of 50% and the system requirement is met by having any two of the three pumps available).
+Simulate Partial Production Loss
+Simulate partial production loss using a model of parallel assets where one asset does not imply total failure of a system, but instead reduces the system capacity.
+Build a Subsystem with a Buffer
+Build a subsystem with a buffer, which can be used to simulate time delays.
+Build a Backup Subsystem
+Build a backup subsystem by using a model where K number of assets are required to be available to meet the system requirements.
+For example, a pumping system could have three pumps in parallel, where each pump has a production contribution of 50% and the system requirement is met by having any two of the three pumps available. In this case, one of the assets will have the initial setting of Off and the other two assets will have initial settings of On. Through the application of switches and sensors, the system does not experience a failure because the backup asset will be turned On when a failure occurs in either of the other two assets
+Define Risks and Resource Usage Persona: AnalystDefine a risk to express the financial impact of a failure of an asset.Edit Distribution (TTF)
+Edit the TTF Distribution to define the rate at which failures occur to the asset.
+Edit Distribution (TTR)
+Edit the TTR Distribution to define the rate at which repairs occur to the asset.
+Add Resource Usage (Planned)
+Add a Planned Resource Usage to define usages of resources and their associated costs. Associated costs include, but are not limited to, Parts, Personnel, Fuel, and Equipment Rental that are incurred on a planned basis.
+Add Resource Usage (Unplanned)
+Add an Unplanned Resource Usage to define usages of resources and their associated costs. Associated costs include, but are not limited to, Parts, Personnel, Fuel, and Equipment Rental that are incurred on an unplanned basis. In many instances, unplanned resource usage incurs a larger cost to the organization that planned usages of the same resource.
+Reset Related Risks
+Reset Related Risks to reset specific failures based on the execution of an Action. 
+For example a pumping system could have three failure modes, such as bearing failure, seal failure, and impeller failure. If a rebuild Action took place, then this could effectively reset the risk of each of these failure modes.
+Import Reliability Distribution Values
+Import Reliability Distribution Values by searching and selecting a reliability distribution from the list. The failure rates of the distribution will be associated with the given risk
+Import Reliability Growth Values
+Import Reliability Growth Values by searching and selecting a growth analysis from the list. The failure rates of the growth analysis will be associated with the given risk.
+Define Actions and Resource Usage Persona: AnalystDefine actions to mitigate the severity and frequency of risks.Add Resource Usage
+Add Resource Usage to define usages of resources and their associated costs. Associated costs include, but are not limited to, Parts, Personnel, Fuel, and Equipment Rental that are incurred as part of the Action.
+Mitigate Risks
+Mitigate risks by selecting which of the risks the action will mitigate within the context of an Action.
+Create Global Events Persona: AnalystCreate Global Events to define one-time or recurring events that take the system out of service for a period of time. Align Actions with Global Events Persona: AnalystAlign specific Actions with global events (e.g., during this scheduled two-week maintenance outage, I will perform the Pump Rebuild Action, and omit the Weekly Lubrication check).  Run Simulation Persona: AnalystQueue the simulation service to run a selected number of iterations based on the costs, rates, and uncertainties associated with the analysis parameters to find the mean reliability, availability, and maintainability values. Review Simulation Results Persona: AnalystReview table and chart values of the various scenarios to determine the optimal scenario that will provide the best reliability, availability, and maintainability at the lowest operating cost. View Report Persona: AnalystView a report containing GE Digital APM data in a clear and concise format. By viewing a report, the analysis can be saved as a file and reused at a later time by other applications View Summary Charts/Graphs Persona: AnalystView summary charts and graphs in the analysis summary, where a number of charts and graphs display the costs associated with each of the scenarios. For more details, see the test plan for this workflow Manage Performance Recommendations Persona: AnalystCreate any number of performance recommendations and approve them using state management. Note:  Performance recommendations are not required.Go to the Manage Performance Recommendations workflow.View a Recommendation in ASM (Optional)
+View existing asset strategies to view the details of a performance recommendation.
+Other Workflows Persona: AnalystOther workflows provide production data from SAP, EAM, and Recommendations.
+
+
+
+
+On this pageReliability Analytics: System Reliability Analysis WorkflowView Existing AnalysisCreate AnalysisCreate New ScenarioView, Modify, or Copy ScenarioDiagram the SystemDefine Risks and Resource UsageDefine Actions and Resource UsageCreate Global EventsAlign Actions with Global EventsRun SimulationReview Simulation ResultsView ReportView Summary Charts/GraphsManage Performance RecommendationsOther Workflows
+
+
+
+
+
+
+
+
+

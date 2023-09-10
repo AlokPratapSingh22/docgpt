@@ -1,0 +1,193 @@
+
+
+
+RBI Bulk Evergreening 581 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+RBI Bulk Evergreening 581
+
+
+
+
+
+
+
+RBI Bulk Evergreening 581About RBI Bulk EvergreeningRBI Bulk Evergreening is the process of duplicating active analyses in bulk based on the associated process unit or functional location. The evergreened analyses use the latest Risk Completed data available to create more up-to-date analyses for the process unit or functional location. When to Evergreen
+When an analysis is initially created, its record contains details that are observed at the time of the assessment. Evergreening is useful when a functional location or process unit has undergone changes. These changes can include the implementation of risk mitigation strategies or maintenance. Additionally, evergreening is useful after a set amount of time has passed since the previous analysis. 
+Batches
+During the duplication process, you select or create an Evergreening Batch ID to group your evergreened analyses. You can filter analyses based on the batch in the RBI Bulk Evergreening workspace. The Evergreen Batch ID that you select will be copied to the Scenario ID field in the duplicated analysis. 
+Access Analyses that are Pending EvergreeningAbout This Task
+Analyses that are ready for evergreening or pending reassessment are analyses which are active on components that are linked to assets related to the given functional location or process unit.Note: The analyses that are ready for evergreening are either 580 or 581 analyses. You can choose which analyses you want to evergreen in the Global Preferences page in Application Settings. Also, RBI PRD Criticality analyses and RBI Pipeline analyses are not supported for evergreening.
+ProcedureAccess Analyses that are Pending Evergreening from the RBI Bulk Evergreening workspace:Select the Actions button.Select the RBI Bulk Evergreening option.
+The RBI Bulk Evergreening workspace appears, displaying a list of analyses that are ready for evergreening under the Pending Evergreening tab.
+
+Access Analyses that are Pending Evergreening from the Risk Based Inspection Overview page:Select the Pending Reassessment tab.
+The Pending Reassessment section appears, displaying a list of analyses that are ready for evergreening. The analyses listed have a Date Criticality Calculated that is five or more years prior to the current date.
+
+Access Analyses that are Pending Evergreening from a Process Unit:Access the Risk Based Inspection Overview page.Select the Process Units tab.
+The Process Units section appears.
+
+Select the process unit that you want to evergreen.Select .
+The RBI Bulk Evergreening workspace appears, displaying a list of analyses that are ready for evergreening. The analyses listed belong to the selected process unit.
+
+Duplicate Analysis for EvergreeningProcedureAccess the RBI Bulk Evergreening workspace from a process unit or any workspaceIn the Ready for Evergreening section, select the analyses that you want to duplicate.Select .
+The Duplicate Active Analyses window appears.
+
+
+
+In the Evergreen Batch ID box:
+
+Select an existing Evergreen Batch ID. 
+-or-
+
+Select add caption and enter a new scenario.
+
+Note: The Evergreen Batch ID you select is copied to the Scenario ID field. Also, the batch you select is saved as a user preference in your browser.
+In the RBI Date box, enter a date.
+In the Plan Date box, enter a date.Select Done.
+Note:  If you select an existing Evergreen Batch ID and then select Done, a window appears, stating the batch already exists and asking if you want to continue.
+The Created section appears, displaying a list of analyses that have been created. A progress indicator for the duplication process appears in the Created section. If the analyses duplicated successfully, a green check mark appears. If there were errors in the duplication process, a red warning icon appears. 
+
+
+
+Optionally, if you want to view the status of all bulk analyze operations, in the Risk Based Inspection Overview page, select . 
+The Schedule Logs page appears, displaying a list of all the operations in GE Digital APM that are in progress, along with the percentages of completion. You can also access a list of operations that have been successful or have failed. 
+Delete Analyses Created for EvergreeningProcedureAccess the RBI Bulk Evergreening workspace from a process unit or any workspaceSelect the Created tab.
+The Created section appears.
+
+
+
+Next to each analysis that you want to delete, select the check box.
+Tip:  For optimal performance, GE Digital APM recommends deleting 10 or fewer analyses at a time.
+Select .
+A message appears, asking you to confirm that you want to delete one or more selected analyses.
+Select Yes.
+The selected analyses are deleted.
+Export Evergreened AnalysesAbout This TaskThe RBI Export functionality gives users the ability to export one or more Analyses and its related data from the Evergreening page. The export allows the user to bulk review analyses and its related data and subsequently allows to import it back to GE Digital APM. To facilitate this functionality, the data is exported to a file which is in the RBI 581 Data Loader format to allow for importing and updating the data.Note: The RBI 581 Data Loader file that is exported will contain relevant Asset, Component, Consequence Evaluation, and Degradation Mechanism Evaluation data related to the Analyses selected for export.ProcedureAccess the RBI Bulk Evergreening workspace from a process unit or any workspace.Select the Created tab.The Created section appears. Tip: The analyses that appear in this section are filtered by Evergreen Batch ID. The Evergreen Batch ID that appears by default is the one you selected while creating analyses; the batch that appears is also a default user preference in your browser. You can select a batch using the Evergreen Batch box in the RBI Bulk Evergreening workspace. To access all analyses, select the blank value in the box. Next to each analysis that you want to export, select the check box.Select .A message appears, asking you to confirm that you want to export one or more selected analyses.Select Yes.The selected analyses are exported to an excel file which is downloaded to the browser.Note:
+The RBI 581 Data loader excel worksheets which is exported from the Evergreening page will include all fields present on the respective family’s Default datasheet. All fields that are considered calculated, system populated, or informational fields will not be exported.Exported excel worksheet field values will take into account the logged in users culture settings and unit of measure conversion set. 
+Calculate Evergreened AnalysesProcedureAccess the RBI Bulk Evergreening workspace from a process unit or any workspaceSelect the Created tab.
+The Created section appears.
+
+
+
+Tip: The analyses that appear in this section are filtered by Evergreen Batch ID. The Evergreen Batch ID that appears by default is the one you selected while creating analyses; the batch that appears is also a default user preference in your browser. You can select a batch using the Evergreen Batch box in the RBI Bulk Evergreening workspace. To access all analyses, select the blank value in the box. 
+Next to each analysis that you want to calculate, select the check box.Select .
+The Analysis Calculation window appears, displaying the calculation progress and a log detailing any errors. 
+
+
+
+After the calculation is complete: 
+
+To view the log details for all calculated analyses, select View Complete Log.
+
+To view the log details for a single analysis, in the list, select that analysis. 
+
+To close the window, select Close.
+
+The evergreened analysis is calculated.
+Optionally, if you want to view the status of all bulk analyze operations, in the Risk Based Inspection Overview page, select . 
+The Schedule Logs page appears, displaying a list of all the operations in GE Digital APM that are in progress, along with the percentages of completion. You can also access a list of operations that have been successful or have failed. 
+Finalize Risk for Evergreened AnalysesBefore You Begin
+You must calculate risk on an evergreened analysis before finalizing risk.
+ProcedureAccess the RBI Bulk Evergreening workspace from a process unit or any workspaceSelect the Created tab.
+The Created section appears.
+
+
+
+Tip: The analyses that appear in this section are filtered by Evergreen Batch ID. The Evergreen Batch ID that appears by default is the one you selected while creating analyses; the batch that appears is also a default user preference in your browser. You can select a batch using the Evergreen Batch box in the RBI Bulk Evergreening workspace. To access all analyses, select the blank value in the box. 
+Next to each analysis for which you want to finalize risk, select the check box.Select .
+A window appears, confirming that you want to finalize risk for the selected analyses.
+Select Yes.The selected analyses are moved to the Risk Completed state.Note: If an Inspection Plan does not exist on the parent asset of the analyses, a new Inspection Plan will be created and linked to the asset after the analysis has been successfully moved to the Risk Completed state.The Active section appears, displaying a list of active evergreened analyses for the selected batch.
+
+Access Active AnalysesAbout This Task
+
+Active evergreened analyses are RBI Criticality Analyses for RBI Components linked to RBI Assets. These analyses were created during the bulk evergreening process, and they are not in the Created or Archived state.
+ProcedureAccess the RBI Bulk Evergreening workspace from a process unit or any workspace.In the RBI Bulk Evergreening workspace, select the Active tab.
+The Active section appears, displaying a list of active evergreen analyses and a count of their associated RBI Recommendations records.
+
+
+
+Tip: The analyses that appear in this section are filtered by Evergreen Batch ID. The Evergreen Batch ID that appears by default is the one you selected while creating analyses; the batch that appears is also a default user preference in your browser. You can select a batch using the Evergreen Batch box in the RBI Bulk Evergreening workspace. To access all analyses, select the blank value in the box. 
+Generate Recommendations for Active Evergreened AnalysesProcedure
+Access the RBI Bulk Evergreening workspace from a process unit or any workspace.Select the Active tab.
+The Active section appears. 
+                        
+Tip: The analyses that appear in this section are filtered by Evergreen Batch ID. The Evergreen Batch ID that appears by default is the one you selected while creating analyses; the batch that appears is also a default user preference in your browser. You can select a batch using the Evergreen Batch box in the RBI Bulk Evergreening workspace. To access all analyses, select the blank value in the box. 
+Next to each analysis for which you want to generate recommendations, select the check box.
+Tip:
+You can generate recommendations for all listed analyses in the selected batch in the Active section by selecting  when all check boxes in the first column of the table are cleared. If you select the check box in the first row of the table, recommendations are generated for the analyses that appear in the current page in the Active section (up to 100 analyses can be displayed in a page).The Recommendations column contains a count of recommendations that are directly linked to the analysis. Consolidated recommendations (CREC) are excluded from this count.
+
+Select .The Confirm Bulk Generate Recommendations window appears, asking if you want to generate recommendations and generate duplicate recommendations if recommendations have already been generated.Select Yes.The Generate Recommendations window appears, asking if you want to consolidate recommendations for each Degradation Mechanism and Task Type. Tip: If you choose to consolidate recommendations, the recommendations generated during this process will be consolidated with existing recommendations. For more information on consolidating recommendations, consult recommendation consolidation in RBI 580 and RBI 581. Select Yes.The Recommendations are generated. The Recommendation Generation window appears, displaying the progress and number of Recommendations generated and consolidated for each asset. 
+Note: You can close the Recommendation Generation window before it is complete. You can view progress using the Schedule Logs. Select Close.Optionally, if you want to view the status of all bulk operations, select . The Schedule Logs page appears, displaying a list of all the operations in GE Digital APM that are in progress, along with the percentage of completion. You can also access a list of operations that have been successful or have failed.ResultsGenerated recommendations are linked to the Inspection Plan of the related RBI asset.Note:
+You can use the Inspection Plan Summary page to approve the Inspection Plan and implement recommendations. If, in the RBI Global Preference settings, the Enable Recommendation To be Generated at Created State check box is selected, recommendations will not be linked to the Inspection Plan until the related analysis is moved to the Risk Complete state and the Inspection Plan is generated.
+
+
+
+
+
+On this pageAbout RBI Bulk EvergreeningAccess Analyses that are Pending EvergreeningDuplicate Analysis for EvergreeningDelete Analyses Created for EvergreeningExport Evergreened AnalysesCalculate Evergreened AnalysesFinalize Risk for Evergreened AnalysesAccess Active AnalysesGenerate Recommendations for Active Evergreened Analyses
+
+
+
+
+
+
+
+
+

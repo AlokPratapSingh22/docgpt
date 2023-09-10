@@ -1,0 +1,108 @@
+
+
+
+Asset Custom Attributes | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+InstancesAsset Instances
+Asset AttributesAsset Reserved Attributes
+Asset Custom Attributes
+
+
+Tag Instances
+Tag Attributes
+Location Information
+Events
+
+
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Instances
+Asset Attributes
+Asset Custom Attributes
+
+
+
+
+
+
+
+Asset Custom AttributesAbout Custom Attributes for an Asset InstanceYou can define custom attributes for an asset instance.When you ingest an asset, you can define custom attributes for an asset instance. Each attribute uses a format and a value that helps define how the asset behaves. For example, suppose you have a reserved attribute that designates the model of a physical piece of equipment, and you want to include the model number as an attribute. You can use Custom Attributes to add a model number as an attribute for the selected asset instance.Sort Custom Attributes for an Asset InstanceYou can sort custom attributes for an asset instance by the attribute name.About This TaskThe custom attributes appear in ascending order of the attribute name, by default. You can, however, sort the attributes in the desired order.ProcedureIn the module navigation menu, go to Assets > Asset Instances.Select an asset context using the context browser.In the Custom Attributes section, select Attribute Name. ResultsThe custom attributes are sorted in the reverse order.Export Custom Attributes for an Asset InstanceProcedureIn the module navigation menu, go to Assets > Asset Instances.Select an asset context using the context browser.In the Attributes section, select Export All Attributes. ResultsThe custom attributes and reserved attributes are downloaded and saved to a .csv file.Filter Custom Attributes for an Asset InstanceYou can filter custom attributes for an asset instance based on attribute names.ProcedureIn the module navigation menu, go to Assets > Asset Instances.Select an asset context using the context browser.In the Custom Attributes section, in the Filter box, enter one or more characters that form the name of the criterion based on which you want to filter the attributes.As you enter the characters, all matching instances of the criterion appear in the attributes list.Add a Custom Attribute for an Asset InstanceYou can add a custom attribute to a selected asset instance.About This Task
+Creating a new custom attribute allows you to define properties for the selected asset. Attributes may include a unit of measure next to the entered value on the asset instance view. Some attributes may include multiple values in a list of values. All custom attributes are modified on the asset instance view.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.In the Custom Attributes section on the asset instance view, select .Each custom attribute can be uniquely configured. Use the following options to configure the custom attribute:
+For this optionDo thisNameEnter the attribute name. This field is case sensitive and cannot be empty or NULL. The name cannot exceed 100 characters and can contain alphanumeric and UTF-8 special characters.DatatypeSelect a data type from the drop-down list. The following values are available:CharacterYou can only enter a single alphanumeric character in the Value box.ShortYou can only enter up to five numeric characters in the Value box.IntegerYou can only enter numeric characters in the Value box.FloatYou can only enter up to 38 numeric characters and one decimal symbol in the Value box.DoubleYou can only enter numerical characters and one decimal symbol in the Value box.BooleanYou can select between True and False from the Value drop-down list box.TimestampThe Time Zone drop-down list box appears under Value where you can select a time zone. The displayed time stamp is converted based on the your choices in the user preferences.StringYou can add up to 100 alphanumeric or special characters to the Value box.ValueEnter the attribute value. Value formats may change based on your Datatype selection. Hints may appear to help with your entries.Note: You can add special character in the Value field of the attribute. If you want to search assets with the value that contains ,(comma), :(colon), or *(asterisk), you can search it only via wild card.Time ZoneNote: Time Zone only applies if the datatype is a timestamp.The time zone you selected in the user preference page appears by default. If you did not select a time zone in user preferences, the default time zone appears as UTC.To select another time zone, select a time zone from the drop-down list.
+Select Create to save the new attribute. The new attribute appears in the Custom Attributes section for the selected asset.Modify a Custom Attribute for an Asset InstanceYou can modify a custom attribute for a selected asset instance.About This Task
+Use this procedure to modify the data type and value of custom defined attributes for an asset instance.
+You can modify a custom attribute by reentering a Value in the table, or by selecting  and modifying the format and value from there.
+
+Note: If you want to modify the data type or value of an inherited attribute, you must select the parent classification link for the asset instance where the attribute was originally defined.
+
+ProcedureTo modify a value in custom attributes for an asset instance:In the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.In the Custom Attributes section in the asset instance view, hover over and select a value in the Custom Attributes table.Enter a new value in the Value box, then press ENTER or select outside the box.Alternatively, you can hover over a reserved attribute value, select , and then enter a value in the Attribute Value Definition box.Note: You cannot change the datatype of the attribute.The new value is added. To enter or modify multiple values for a custom attribute:In the Custom Attributes section, hover over a reserved attribute value, and select . Enter a value in the Attribute Value Definition box. The value must match the data type for the attribute. A hint may appear if you enter a value incorrectly.Select .Enter an additional value in the new Attribute Value Definition box.Continue selecting  and entering values as needed.Select Save.The entered values are saved and populate the  drop-down list in the Value column for the selected custom attribute.Delete a Custom Attribute from an Asset InstanceYou can delete a custom attribute for a selected asset instance. However, if an attribute is defined in the classification, and have been inherited to an asset instance, you cannot delete the attribute from an asset instance. About This Task
+Use this procedure to delete a custom attribute from an asset instance. 
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.In the Custom Attributes section on the asset instance view, hover over and select  for an attribute entry in the Custom Attributes table.A confirmation window appears.To delete the attribute, configuration, and history information permanently from the system, select Delete.The attribute is removed from the Custom Attributes table. 
+Related ReferenceAttribute Data Types and Values
+
+
+
+
+On this pageAbout Custom Attributes for an Asset InstanceSort Custom Attributes for an Asset InstanceExport Custom Attributes for an Asset InstanceFilter Custom Attributes for an Asset InstanceAdd a Custom Attribute for an Asset InstanceModify a Custom Attribute for an Asset InstanceDelete a Custom Attribute from an Asset Instance
+
+
+
+
+
+
+
+
+

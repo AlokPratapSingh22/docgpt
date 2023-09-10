@@ -1,0 +1,103 @@
+
+
+
+Capacity Event Types Affecting Performance Records | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Mappings
+Allowable Event Types in Related Events 
+Fields that can be Populated from one of the Three Related Records 
+Fuel Code Fields 
+Fuel Information Fields 
+Inactive Hours Field 
+Overlapping between an Outage Event and a Derate Event
+Capacity Event Types Affecting Performance Records
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Reference
+Capacity Event Types Affecting Performance Records
+
+
+
+
+
+
+
+Capacity Event Types Affecting Performance RecordsCapacity Event Types Affecting Performance Records
+In Performance records, the following fields are populated using the sum of the values in the Event Duration field in Primary Event records that are linked to the Performance record:
+
+Planned and Ext Outage Hrs: Populated using the sum of the values in the Event Duration field in Primary Event records in which the value in the Capacity Event Type field is either PE or PO.
+Ext Sched Outages Hrs: Populated using the sum of the values in the Event Duration field in Primary Event records in which the value in the Capacity Event Type field is any of the following Capacity Event Types: ME, DM, PE, SE, DE, or DP.
+Eqv Upl Frcd Derate Hrs RS (G) and Eqv Upl Frcd Derate Hrs RS (N): Populated with calculated values when the Primary Event records to which it is linked have a Capacity Event Type of D1, D2, D3, D4, PD, or RS with values entered for both the Gross Derate Amount and the Net Derate Amount in the following cases:If a Reserved Shutdown event occurred during a Derate event.If a Derate event occurred during a Reserved Shutdown event.A Derate event started and ended during a Reserved Shutdown event.A Derate event started during a Reserved Shutdown event but ended after the Event End date of the Reserved Shutdown.A Derate event and a Reserved Shutdown event had the same Event Start and Event End dates.
+
+Note: If none of the following cases have occurred during the month for which the Performance record stores generation data, the Eqv Upl Frcd Derate Hrs RS (G) and Eqv Upl Frcd Derate Hrs RS (N) fields will be populated with the value 0 (zero).
+
+
+
+
+
+On this pageCapacity Event Types Affecting Performance Records
+
+
+
+
+
+
+
+
+

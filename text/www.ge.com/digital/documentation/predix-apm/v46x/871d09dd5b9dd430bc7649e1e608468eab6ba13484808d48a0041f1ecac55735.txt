@@ -1,0 +1,109 @@
+
+
+
+Fourth Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Release Notes
+Fourth Quarter of 2019
+
+
+
+
+
+
+
+Fourth Quarter of 2019Policy DesignerThis topic provides a list of product changes released for this module on the specified dates.Release Date: December 13, 2019
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, if you updated the schedule settings for a policy with an existing schedule and saved the policy, the updated schedule settings were not applied. This issue has been resolved.DE122328Previously, if you configured a Last, Min, or Max node to operate on the output collection from a Sub Policy node, and mapped the output of the Last, Min, or Max node to another node and saved the policy, when the policy was reloaded in the Design workspace, the mapping was lost. This issue has been resolved.DE121181
+Release Date: November 8, 2019
+Table 2. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDThe performance while loading a policy in the Design workspace has been significantly improved. To facilitate this enhancement, the connections no longer connect directly to the nodes where the values appear on the design canvas when viewing the validation or execution results.DE120166
+Table 3. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when the job configured to delete old policy execution history records from the GE Digital APM database was run, the following issues intermittently occurred:The job timed out.The job locked the policy execution history table of the database due to which policies were not executed.These issues have been resolved. Now, each time the job runs, it deletes as many records as possible and may run multiple times to delete all old policy execution history records.US378820Previously, in the Properties window for a Predix Time Series node, if you specified the values for both Start Time and End Time fields, the End Time was not considered for retrieving the readings from the Time Series data source due to which a large number of readings were retrieved. This issue has been resolved.DE120933Previously, if a policy contained a node that must not be executed if its output is not used by any successor node, and if you mapped the output of such a node to only a Case node, the node was not executed. This issue has been resolved.DE120494
+
+
+
+
+
+On this pagePolicy Designer
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,108 @@
+
+
+
+Manage Privileges | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Metrics and ScorecardsOverview
+Workflow
+Manage Scorecards
+Manage Key Performance Indicators (KPIs)
+Manage Metric Views
+Manage Privileges
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Metrics and Scorecards
+Manage Privileges
+
+
+
+
+
+
+
+Manage PrivilegesAbout Security in Metrics and ScorecardsIn GE Digital APM, you can manage privileges for specific:
+KPIs
+
+Scorecards
+Note:
+Only Super Users and members of the MI Metrics Administrator Security Group can manage privileges for the Analysis Services Cube records. Members of the MI Metrics Administrator Security Group can manage the privileges for individual KPIs and Scorecards. Other users can manage privileges only for the KPIs and Scorecards that they created and for which they have been granted update privileges.If a Security User is assigned to multiple Security Groups, the user is granted the privileges of the Security Group with the most permissions. For example, if a Security User is assigned to both, the MI Metrics Viewer and the MI Metrics Admin Security Groups, the user is granted view, create, update and delete privileges.
+About KPI PrivilegesThe KPI privileges that you set up in the GE Digital APM are applied in addition to family-level permissions defined for the KPI families.By default, all the MI Metrics User are given the View, Insert, Update, and Delete permissions to the KPI family.  You can also manage privileges at entity-level by selecting the users and groups that should have access to a given KPI. Via the 
+Schedule, Alerts, and Privileges section, you can grant or revoke the privileges for the users and the groups.The Super Users and members of the MI Metrics Administrator Security Group can, by default, manage privileges for all KPIs. Other users can manage the privileges for a KPI that they create, unless those privileges are revoked by an administrative user. Non-administrative users can also manage privileges for KPIs to which they have been granted Update privilege.About Scorecard PrivilegesThe Scorecard privileges that you set up in the GE Digital APM are applied in addition to family-level permissions defined for the Scorecard families. By default, all the MI Metrics User are given the View, Insert, Update, and Delete permissions to the Scorecard family.  You can also manage privileges at entity-level by selecting the users and groups that should have access to a given Scorecard. Via the 
+Privileges section, you can grant or revoke the privileges for users and groups.The Super Users and members of the MI Metrics Administrator Security Group can manage privileges for all Scorecards. By default, other users can manage the privileges for any Scorecards that they create, unless those privileges are revoked by an administrative user. Non-administrative users can also manage privileges for Scorecards to which they have been granted Update privilege.Modify Access Rights to a ScorecardAbout This Task
+ To view a Scorecard, a user must be granted privileges to specific Scorecards via the GE Digital APM application. You can revoke privileges for users and groups that no longer need to access the Scorecard.
+Note: Super Users and members of the MI Metrics Administrator Security Group can manage privileges for ALL Scorecards. Other users can, by default, manage the privileges for any Scorecard that they create, unless those privileges are revoked by an administrative user. Non-administrative users can also manage privileges for Scorecards to which they have been granted Update privileges.
+Procedure
+Access the Scorecard design page.Select the Privileges tab.
+The Privileges section appears, displaying the User/Group subsection.
+Note: To revoke access from a user or group, in the User/Group list, next to the user or group whose privileges you want to revoke, select .
+To grant access to users and groups, select the User/Group link.
+The Select Users or Groups window appears, displaying the User section.
+Next to each user to whom you want to grant access to the Scorecard, select the check box.Select the Group tab. The Group section appears.Next to each group to which you want to grant access to the Scorecard, select the check box.Select OK. The Select Users or Groups window closes, and the new users or groups appears in the User/Group list.In the User/Group list, next to each user or group, clear the check boxes for any privileges that you do not want the user or group to have:
+
+View: Allows the user or the group to view the Scorecard.
+Update: Allows the user or the group to edit the Scorecard. 
+Delete: Allows the user or the group to delete the Scorecard.
+In the upper-right corner of the page, select .Your changes are saved.Modify Access Rights to a KPIAbout This Task
+To view a KPI, a user must be granted privileges to specific KPIs via the GE Digital APM application. By managing privileges, you select the users and groups that have access rights to a given KPI. You can also revoke privileges for users and groups that no longer need to access the KPI.
+Note: Super Users and members of the MI Metrics Administrator Security Group can manage privileges for all KPIs. Other users can manage the privileges for any KPI that they create by default, unless those privileges are revoked by an administrative user. Non-administrative users can also manage privileges for KPIs to which they have been granted Update privileges.
+Procedure
+Access the KPI design page.In the upper-right corner of the page, select .The KPI design page appears.Select the Schedule, Alerts, and Privileges tab.The Schedule, Alerts, and Privileges section appears, displaying the Select Users or Group list in the Privileges subsection.Note: To revoke access from a user or group, in the User/Group list, next to the user or group whose privileges you want to revoke, select .To grant access to users and groups, select the User/Group link.The Select User or Group window appears displaying the User section.Next to each user to whom you want to grant access to the KPI, select the check box. Select the Group tab.The Group section appears.Next to each group to which you want to grant access to the KPI, select the check box.Select OK .The Select Users or Group window closes, and the new users and groups appear in the User/Group list. In the User/Group list, next to each user or group, clear the check boxes for any privileges that you do not want the user or group to have:
+
+View: Allows the user or the group to view the KPI.
+Update: Allows the user or the group to edit the KPI
+Delete: Allows the user or the group to delete the KPI.
+In the upper-right corner of the page, select .Your changes are saved.
+
+
+
+
+On this pageAbout Security in Metrics and ScorecardsAbout KPI PrivilegesAbout Scorecard PrivilegesModify Access Rights to a ScorecardModify Access Rights to a KPI
+
+
+
+
+
+
+
+
+

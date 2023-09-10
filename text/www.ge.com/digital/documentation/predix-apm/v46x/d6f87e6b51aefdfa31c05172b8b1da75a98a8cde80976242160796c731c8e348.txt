@@ -1,0 +1,158 @@
+
+
+
+Simulations | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System ReliabilitySystem Reliability: Overview
+System Reliability: Workflow
+System Reliability Analyses 
+Resources
+System Scenario
+Diagrams
+Risks
+Actions
+Global Events
+Grid View
+Simulations
+
+
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+System Reliability
+Simulations
+
+
+
+
+
+
+
+SimulationsAbout Monte Carlo Simulations
+GE Digital APM System Reliability Analysis uses Monte Carlo simulations to predict the reliability of a system. Monte Carlo methods offer a common statistical model for simulating physical systems and are especially useful for modeling systems with variable and uncertain inputs. When you create a System Reliability Analysis, you will specify certain values that will serve as inputs to the simulation. Other inputs will be generated at random to simulate possible conditions. Outputs will be generated based on the inputs and combined to provide a summary the projected system reliability. Details
+When you run a simulation, you start the process of running Monte Carlo iterations for each Scenario in a System Reliability Analysis and accessing the results calculated from those simulations. When you run the simulation, all Diagrams are validated. 
+You need to run a simulation, if you make changes to a System Reliability Analysis that would affect the simulation results, such as changing the simulation parameters or modifying a Scenario. 
+It takes time to run simulations. Various factors influence the speed of the simulation process, including:
+The number of iterations defined.The complexity of the Scenarios (i.e., the number of Assets, Risks, Actions, and Subsystems).The frequency at which Actions occur.The frequency at which failures occur.
+To shorten the run time of your simulation, you can reduce the number of iterations or the complexity of the analysis. 
+You can run only one simulation at a time for an analysis. For example, if you are running a simulation for Analysis A, you cannot run another simulation for Analysis A. You can, however, run simulation for Analysis B while running the simulation for Analysis A. While a simulation is running, you can continue working in other areas of GE Digital APM.
+Rolling a Dice
+ Consider a simple example of rolling dice. Assume that you want to determine the probability of rolling a seven using two dice with values one through six. There are 36 possible combinations for the two dice, six of which will total seven, as shown in the following image. 
+
+
+
+ This means that mathematical probability of rolling a seven is six in 36, or 16.67 percent.
+But is the mathematical probability the same as the actual probability? Or are there other factors that might affect the mathematical probability, such as the design of the dice themselves, the surface on which they are thrown, and the technique that is used to roll them?
+To determine the actual probability of rolling a seven, you might physically roll the dice 100 times and record the outcome each time. Assume that you did this and rolled a seven 17 out of 100 times, or 17 percent of the time. Although this result would represent an actual, physical result, it would still represent an approximate result. If you continued to roll the dice again and again, the result would become less and less approximate.
+A Monte Carlo simulation is the mathematical representation of this process. It allows you to simulate the act of physically rolling the dice and lets you specify how many times to roll them. Each roll of the dice represents a single iteration in the overall simulation; as you increase the number of iterations, the simulation results become more and more accurate. For each iteration, variable inputs are generated at random to simulate conditions such as dice design, rolling surface, and throwing technique. The results of the simulation would provide a statistical representation of the physical experiment described above.
+Run a SimulationBefore You Begin
+Be sure that you understand the principles of running a Simulation.
+Procedure
+Access the System Reliability Analysis for which you want to run simulation.
+Note:  The Run Simulation link is only enabled when the analysis is first created or when changes have been made that affect the simulation results. If changes are made to an existing simulation, only the modified scenario will run.
+In the left pane, select Run Simulation.
+The simulation begins, and the status indicating the progress of the simulation appears in the left pane.
+After the simulation is complete, a confirmation message appears in the upper-right corner of the page. 
+What To Do Next
+
+Access Simulation Results
+
+Access Simulation ResultsBefore You Begin
+
+Run a simulation.
+Procedure
+Access the System Reliability Analysis you want to view.In the left pane, select Simulation Results.
+The Simulation Results workspace appears. 
+
+
+
+The workspace displays the following information:
+
+
+Elements tab 
+
+
+Actions tab 
+
+
+Resources tab 
+
+By selecting a cell in the grid, you can view detailed information in the following graphs:
+
+
+ Histogram plot 
+
+
+
+ Trend plot 
+
+
+
+ Impact plot 
+
+
+Note: If values that will affect the simulation results have been modified since the simulation was last run, a message will be displayed at the top of the page indicating that the simulation needs to be rerun to view the latest results. Whenever this message appears, we recommend that you rerun the simulation to ensure that valid results are displayed.
+
+
+
+
+
+On this pageAbout Monte Carlo SimulationsRun a SimulationAccess Simulation Results
+
+
+
+
+
+
+
+
+

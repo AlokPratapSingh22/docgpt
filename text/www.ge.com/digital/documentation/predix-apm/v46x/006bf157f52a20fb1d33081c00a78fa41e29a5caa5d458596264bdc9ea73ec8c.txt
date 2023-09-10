@@ -1,0 +1,215 @@
+
+
+
+Chart Types | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage ChartsCharts
+Analysis Charts
+SmartSignal Charts
+Chart Types
+
+
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Manage Charts
+Chart Types
+
+
+
+
+
+
+
+Chart TypesSelect a Chart TypeAbout This Task
+When you analyze an issue, it can be beneficial to view the data in different types of charts. GE Digital APM includes a variety of charts to help make your analysis more meaningful.
+You will need to select a context, an analysis view, and create a chart on a card. When you select Analysis, a message to select a context appears, beginning the process.
+Chart types can only be applied to ad hoc analysis views. You can create either a new Time Series Analysis or an Event Data Analysis view. Once you have created a chart, you can save it as an Analysis Template. Analysis Templates can be displayed using the View Selector, and are used in Alert Templates. This ensures that triggered alerts associated with an Alert Template use the selected Analysis Template.
+Note:
+Tags with no data for the time range do not appear on the chart. Tags on a parallel axis chart with no data for the time range do not display lines across the axes where there is no data.For more information on the available chart types and their requirements, refer to the Chart Types topic.
+
+ProcedureTo select a new chart type for an asset with no default view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, complete one of the following actions:
+Select Public Templates or My Templates view.Select New Time Series Analysis or New Event Data Analysis.
+In the Chart Type, select a chart type.
+Tip: Use the Action drop-down list box, and then select Edit Card to change the card name.
+The selected chart type appears with no tags plotted.To select a new chart type for an asset with a default view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.The default view appears.Select , and then select Add New Card.In the Chart Type, select a chart type.The selected chart type appears with no tags plotted.Tip: You cannot change a chart type for a card once it has been selected and tags have been plotted. The most efficient way to change a chart type for an existing card is to add a card with the new chart type, add the same tags to charts as the existing card, then delete the existing card.What To Do NextPlot tags for the chart.Create a Time-Series Chart (Line or Scatter)The time-series chart allows you to analyze trends over time. About This Task
+The time-series chart displays data points at successive time intervals. You can use a time-series chart to evaluate patterns and behavior in data over time. A time-series plot displays observations on the Y-axis against equally spaced time intervals on the X-axis. Time-series charts can be line or scatter.
+You can create a time series chart from both a Time Series Analysis or Event Data Analysis view.
+You can select the time range, add multiple tags, and compare multiple charts on the same card. GE Digital APM allows you to save charts as templates for reuse with other GE Digital APM modules.
+The Plotted Tags section in the Tag Tree Browser displays a hierarchy of the view's card names, chart names, and tag names for tags that are plotted on a chart in the view. You cannot drag tags in the Plotted Tags list to a chart.
+In the Time-Series (Line) chart, the logical tags are plotted on the Y-axis in an evenly spaced manner. Each tag appears as a straight line with a unique color to identify the tag by name in the tag register. When you hover over the tag, the value of the logical tag appears on the tag register.
+Note: Enable Timestamps mode to view one vertical and all horizontal lines on the chart. By default, Points mode is enabled that displays one vertical and one horizontal line on the chart.
+ProcedureTo create a time series chart from a Time Series view:In the module navigation menu, go to
+Analysis.Select Create Analysis to create a new analysis view.In the Choose New Analysis Type selector, select New Time Series Analysis.Use the Context Browser to select an asset context for the primary asset.Select Time-Series (Line) or Time-Series (Scatter) in the Chart Type drop-down list box.Add secondary assets as needed.
+Note: When you add secondary assets to the chart, you cannot save the card as a class template.
+Use the Date Picker to select a date and time range.Plot at least one tag or tag expression.Modify the chart as needed.The plotted tags appear in the Plotted Tags list for each chart on a card.To create a time series chart from an Event Data view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context for the primary asset.In the Choose New Analysis Type selector, select New Event Data Analysis.Select Time-Series (Line) or Time-Series (Scatter) in the Chart Type drop-down list box.Add secondary assets as needed.
+Note: When you add secondary assets to the chart, you cannot save the card as a class template.
+Select an event type in the Event Type drop-down list box.Enter a value into the Events field, and then select an end date in the To date selector to create Event Frames for your chart.Plot one tag or tag expression per chart.Modify the chart as needed.The selected number of event frames display under Event Frames, and the plotted tag or tag expression appears in the Plotted Tags list for each chart on a card.Create a Timing Diagram ChartThe Timing Diagram chart allows you to analyze trends over time. About This Task
+The Timing Diagram chart displays data points at successive time intervals. You can use a timing diagram chart to evaluate patterns and behavior in data over time. A Timing Diagram plot displays observations on the Y-axis against equally spaced time intervals on the X-axis.
+You can create a Timing Diagram chart from a Time Series Analysis template only.
+You can select the time range, add multiple tags, and compare multiple charts on the same card. GE Digital APM allows you to save charts as templates for reuse with other GE Digital APM modules.
+The Plotted Tags section in the Tag Tree Browser displays a hierarchy of the view's card names, chart names, and tag names for tags that are plotted on a chart in the view. You cannot drag tags in the Plotted Tags list to a chart. You can drag and drop the tags to the two overlays available, Logical Overlay and Standard Overlay, to identify the tags respectively.
+In the Timing Diagram chart, the logical tags are plotted on the Y-axis in a stacked-up manner. The standard tags are plotted on the Y-axis in a linear manner. Maximum 40 tags can be plotted on the chart, out of which maximum 20 can be logical tags.
+In the Timing Diagram chart, in logical overlay, each tag appears as a straight line with a unique color to identify the tag by the name in the tag register. However, the tags with values other than 0 or 1 are represented in step-up manner on the chart. When you hover over the tag, the value of the logical tag appears on the tag register.
+Note: Enable Timestamps mode to view one vertical and all horizontal lines on the chart. By default, Points mode is enabled that displays one vertical and one horizontal line on the chart.
+ProcedureTo create a Timing Diagram chart from a Time Series Analysis view:In the module navigation menu, go to
+Analysis.Select Create Analysis to create a new analysis view.In the Choose New Analysis Type selector, select New Time Series Analysis.Use the Context Browser to select an asset context for the primary asset.Select Timing Diagram in the Chart Type drop-down list box.Add secondary assets as needed.
+Note: When you add secondary assets to the chart, you cannot save the card as a class template.
+Use the Date Picker to select a date and time range.Plot at least one tag or tag expression.Modify the chart as needed.The plotted tags display in the Plotted Tags list for each chart on a card.Create a Parallel Axis ChartUse the parallel axis chart to plot individual data elements across many dimensions. About This Task
+Each dimension corresponds to a vertical axis, with each data element displayed as a series of connected points along the axes for the connected relationship between points to appear. While similar to a time-series chart, a parallel axis chart differs in that it is used to apply data where the axes do not correspond to point in time.
+You can create a parallel axis chart from both a Time Series Analysis or Event Data Analysis view.
+Parallel Axis Charts support multiple colors in order to help you differentiate between recent data, oldest data and all the data in between. Colors for the chart update when the date range or data resolution is changed. For more information on what the colors of the lines used in a chart indicate, refer to the Chart Line Colors topic.
+You can zoom along the axis on the Parallel Axis chart to zoom in on a specific value range across all the charts. 
+You can select a custom time range. While at least three tags must be selected, adding more than 40 tags while using Internet Explorer will degrade the chart performance significantly.
+You can use brushing to emphasize a portion of vertical axes, and reorder vertical axes to help display data in a more meaningful way during analysis. 
+GE Digital APM allows tags with no data to be plotted. Tags with no data appear only in the Plotted Tags list and do not appear in the chart register or in the chart until data becomes available by changing the time range selected. Reference tags cannot be added in the timeline slider, which controls the x-axis display area of the chart. GE Digital APM allows you to save your charts as templates for reuse with GE Digital APM modules.
+Note:
+Tags that are not configured for an asset or do not have data, appear only in the Plotted Tags list on a chart with a not configured (NC) or no data (ND) indicator respectively, and do not appear on the chart or the Tag Register.If one or more tags plotted on the chart become NC (not configured to an asset) or ND (no data), the number of tags that can show data on the chart may reduce to less than the minimum tags required. In this case, the chart appears in the overlay mode. A message appears indicating that the minimum criteria for the chart is not met.
+
+The Plotted Tags section in the Tag Tree Browser displays a hierarchy of the view's card names, chart names, and tag names for tags that are plotted on a chart in the view. You cannot drag tags in the Plotted Tags list to a chart.
+ProcedureTo create a parallel axis chart from a Time Series view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context for the primary asset.In the View selector, select New Time Series Analysis.Select Parallel Axis in the Chart Type drop-down list box.Add secondary assets as needed.
+Note: You cannot save the card as a class template if you have added secondary assets.
+Use the Date Picker to select a date and time range.Plot a minimum of three tags or tag expressions.Modify your chart as needed.The plotted tags display in the Plotted Tags list for each chart on a card.To create a parallel axis chart from an Event Data view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context for the primary asset.In the View selector, select New Event Data Analysis.Select Parallel Axis in the Chart Type drop-down list box.Add secondary assets as needed.
+Note: You cannot save the card as a class template if you have added secondary assets.
+Select an event type in the Event Type drop-down list box.Enter a value into the Events field, and select an end date in the To date selector to create Event Frames for your chart.Plot a minimum of three tags or tag expressions.Modify your chart as needed.The selected number of event frames display under Event Frames, and the plotted tags display in the Plotted Tags list for each chart on a card.Configure the Color Range for the Parallel Axis ChartAbout This TaskYou can view the chart plots with different color variants by specifying minimum and maximum value range. You can change the value range of the color variants as per your requirements so that the chart is plotted according to your preferences.ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a New Time Series Analysis or New Event Data Analysis.On an existing card with a chart on it, select , and then select Change Min/Max Range Colors.
+The Chart Color Settings box appears for the selected chart.
+Specify the Minimum and Maximum values in the MIN and MAX fields.Select Apply.The specified value range for each of the color is set and the plots are displayed on the chart in the colors configured for the range.Note: Select Save as New Template to save the chart color preferences.Create an X-Y ChartThe X-Y chart plots two groups of numbers as one series of X-Y coordinates for how two sets of data are related. About This Task
+Data for the X-axis displays an independent variable, and data for the Y-axis displays a dependent variable. X-Y charts can be line or scatter. Use the X-Y chart to compare relationships among numeric values in data series. 
+You can create an X-Y chart from both a Time Series Analysis or Event Data Analysis view.Note: Event Data Analysis X-Y charts only display one tag series. You cannot rename or bring an event frame to the front for display.
+When you plot multiple tag series on a time series chart. You can select a tag series on the chart and bring it to the front so it appears on top of the other series in the chart. If only one tag series is plotted, the tag name appears on the Y-axis. Muted tags are unmuted when displayed in this way. Templates containing multiple tag series do not save the order in which the series are displayed.
+You can select a custom time range. 
+Each tag is plotted to an axis area, and both tags are considered a tag series. Once tags are plotted, they appear as a tag series in the Plotted Tags section, and each UoM is displayed for the tag plotted. Tag expressions are treated the same as any other tag, and can be added as a component of a tag series. All tags can be filtered, including tag expressions. You cannot drag and drop a tag series in the Plotted Tags section. Additional tag pairs plotted to the chart must match UoMs with the tag series already plotted. 
+All plotted tags are displayed separately in the Tag Information table. Plotted tags are displayed as tag series in the Chart Register. You can delete, mute, and unmute tag series using both the Chart Register and the Plotted Tags section for the chart in which they are displayed. Single tags can be reused to plot different tag series in the same chart or in additional charts. 
+GE Digital APM allows tags with no data to be plotted. Tags with no data appear only in the Plotted Tags list and do not appear in the chart register or in the chart until data becomes available by changing the time range selected.  When you plot tags associated with a power curve, you can plot a reference curve for comparison. Reference tags cannot be added in the timeline slider, which controls the X-axis display area of the chart. 
+Note:
+Tags that are not configured for an asset or do not have data, appear only in the Plotted Tags list on a chart with a not configured (NC) or no data (ND) indicator respectively, and do not appear on the chart or the Tag Register.If one or both the tags plotted on the chart become NC (not configured to an asset) or ND (no data) tags, the time series does not appear any more on the chart. A message appears indicating that the minimum criteria for the chart is not met.
+
+The Plotted Tags section in the Tag Tree Browser displays a hierarchy of the view's card names, chart names, and tag names for tags that are plotted on a chart in the view. You cannot drag tags in the Plotted Tags list to a chart.
+GE Digital APM allows you to save your charts as templates for reuse with GE Digital APM modules.
+ProcedureTo create an x-y chart from a Time Series view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context for the primary asset.In the View selector, select New Time Series Analysis.Select X-Y (line) or X-Y (Scatter) in the Chart Type drop-down list box.Add secondary assets as needed.
+Note: You cannot save the card as a class template if you have added secondary assets.
+Use the Date Picker to select a date and time range.Plot tags or tag expressions as needed.Display and rename the tag series as needed.Modify your chart as needed.The plotted tags display as a tag series in the Plotted Tags list for each chart on a card.To create an x-y chart from an Event Data view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context for the primary asset.In the View selector, select New Event Data Analysis.Select X-Y (line) or X-Y (Scatter) in the Chart Type drop-down list box.Add secondary assets as needed.
+Note: You cannot save the card as a class template if you have added secondary assets.
+Select an event type in the Event Type drop-down list box.Enter a value into the Events field, and select an end date in the To date selector to create Event Frames for your chart.Plot tags or tag expressions as needed.Modify your chart as needed.The selected number of event frames display under Event Frames, and the plotted tags display as a tag series in the Plotted Tags list for each chart on a card.Create a Spiderweb ChartUse a Spiderweb chart to plot different variable types that are related within a category over time. About This Task
+Spiderweb charts plot the values of three or more variables along separate axes that starts in the center of the chart and ends on the outer ring. It compares the aggregate values of multiple data series. A Spiderweb chart can be used to plot different variable types that are related within a category over time, allowing you to make comparisons between the variable types. Use the spiderweb chart when you want to look at several different factors all related to one item.
+You can create a Spiderweb chart from both a Time Series Analysis or Event Data Analysis view.
+Spiderweb charts support multiple colors in order to help you differentiate between recent data, oldest data and all the data in between. Colors for the chart update when the date range or data resolution is changed. For more information on what the colors of the lines used in a chart indicate, refer to the Chart Line Colors topic.
+You can zoom along the axis on a Spiderweb chart to zoom in on a specific value range on any of the axis on the chart.
+You can select a custom time range. While at least three tags must be selected, adding more than 40 tags while using Internet Explorer will degrade the chart performance significantly.
+You can use brushing to emphasize a portion of vertical axes, and reorder vertical axes to help display data in a more meaningful way during analysis. 
+GE Digital APM allows tags with no data to be plotted. Tags with no data appear only in the Plotted Tags list and do not appear in the chart register or in the chart until data becomes available by changing the time range selected. Reference tags cannot be added in the timeline slider, which controls the x-axis display area of the chart. GE Digital APM allows you to save your charts as templates for reuse with GE Digital APM modules. 
+Note:
+Tags that are not configured for an asset or do not have data, appear only in the Plotted Tags list on a chart with a not configured (NC) or no data (ND) indicator respectively, and do not appear on the chart or the Tag Register.If one or more tags plotted on the chart become NC (not configured to an asset) or ND (no data), the number of tags that can show data on the chart may reduce to less than the minimum tags required. In this case, the chart appears in the overlay mode. A message appears indicating that the minimum criteria for the chart is not met.
+
+The Plotted Tags section in the Tag Tree Browser displays a hierarchy of the view's card names, chart names, and tag names for tags that are plotted on a chart in the view. You cannot drag tags in the Plotted Tags list to a chart.
+ProcedureTo create a Spiderweb chart from a Time Series view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context for the primary asset.In the View selector, select New Time Series Analysis.Select Spiderweb in the Chart Type drop-down list box.Add secondary assets as needed.
+Note: You cannot save the card as a class template if you have added secondary assets.
+Use the Date Picker to select a date and time range.Plot a minimum of three tags or tag expressions.Modify your chart as needed.The plotted tags display in the Plotted Tags list for each chart on a card.To create a Spiderweb chart from an Event Data view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context for the primary asset.In the View selector, select New Event Data Analysis.Select Spiderweb in the Chart Type drop-down list box.Add secondary assets as needed.
+Note: You cannot save the card as a class template if you have added secondary assets.
+Select an event type in the Event Type drop-down list box.Enter a value into the Events field, and select an end date in the To date selector to create Event Frames for your chart.Plot a minimum of three tags or tag expressions.Modify your chart as needed.The selected number of event frames display under Event Frames, and the plotted tags display in the Plotted Tags list for each chart on a card.Create Polar ChartUse a Polar chart to plot a pair of phase and amplitude tags.About This Task
+Polar charts are circular graphs on which data points are displayed using the distance and angle in the center point. The X-axis is located on the boundaries of the circle, and the Y-axis connects the center of the circle with the X-axis. A Polar chart displays a series as a set of points that are grouped by category on a circle. Values are represented by the length of the point as measured in the center of the circle. The farther the point is in the center, the greater its value. Use a polar chart when each data point is determined by an angle and a distance, otherwise a Spiderweb chart may be more appropriate.
+When you drop a tag onto the Distance zone (Y-axis) on the chart, the tag is considered an amplitude tag. When you drop a tag onto the Angle zone (X-axis) on the chart, then the tag is considered a phase tag.Important: The system does not validate amplitude and phase data. You must ingest valid data.
+You can create a Polar chart from both a Time Series Analysis or Event Data Analysis view.
+Note: Event Data Analysis X-Y charts only display one tag series. You cannot rename or bring an event frame to the front for display.
+You can zoom along the axis on a Polar chart to zoom in on the amplitude or the angle axis on the chart.
+When you plot multiple tag series on a Time Series chart. You can select a tag series on the chart and bring it to the front so it appears on top of the other series in the chart. If only one tag series is plotted, the tag name appears on the Y-axis. Muted tags are unmuted when displayed in this way. Templates containing multiple tag series do not save the order in which the series are displayed.
+You can select a custom time range. Placement of amplitude and phase tags are marked on the chart. 
+Each tag is plotted to an axis area, and both tags are considered a tag series. Tag expressions are treated the same as any other tag, and can be added as a component of a tag series. All tags can be filtered, including tag expressions. Once tags are plotted, they appear as a tag series in the Plotted Tags section, and each UoM is displayed for the tag plotted. You cannot drag and drop a tag series in the Plotted Tags section. Additional tag series plotted to the chart must match UoMs to the tag series already plotted. Once the tags are plotted, you can change the orientation or direction of the chart.
+All plotted tags are displayed separately in the Tag Information table. Plotted tags are displayed as tag series in the Chart Register. You can delete, mute, and unmute tag series using both the Chart Register and the Plotted Tags section for the chart in which they are displayed. Single tags can be reused to plot different tag series in the same chart or in additional charts. 
+GE Digital APM allows tags with no data to be plotted. Tags with no data appear only in the Plotted Tags list and do not appear in the chart register or in the chart until data becomes available by changing the time range selected. Reference tags cannot be added in the timeline slider, which controls the X-axis display area of the chart. GE Digital APM allows you to save your charts as templates for reuse with GE Digital APM modules. 
+Note:
+Tags that are not configured for an asset or do not have data, appear only in the Plotted Tags list on a chart with a not configured (NC) or no data (ND) indicator respectively, and do not appear on the chart or the Tag Register.If one or more tags plotted on the chart become NC (not configured to an asset) or ND (no data), the number of tags that can show data on the chart may reduce to less than the minimum tags required. In this case, the chart appears blank without any data. A message appears indicating that the minimum criteria for the chart is not met.
+
+The Plotted Tags section in the Tag Tree Browser displays a hierarchy of the view's card names, chart names, and tag names for tags that are plotted on a chart in the view. You cannot drag tags in the Plotted Tags list to a chart.
+ProcedureTo create a Polar chart from a Time Series view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context for the primary asset.In the View selector, select New Time Series Analysis.Select Polar in the Chart Type drop-down list box.Add secondary assets as needed.
+Note: You cannot save the card as a class template if you have added secondary assets.
+Use the Date Picker to select a date and time range.Plot tags or tag expressions as needed.Display and rename the tag series as needed.Select , to access the chart settings.In the Chart Direction drop-down list box, select Clockwise or Counter-Clockwise.In the AMPLITUDE RANGE section, in the MIN and MAX boxes, enter the minimum and maximum amplitude limit values for the chart, and select Apply.
+Note:
+By default, the limits are set to Automatic. You can set the value for one or both the limits. When the limits on the amplitude are set , the data that plotted on the chart remains within the range. Data outside the range is not visible on the chart unless you pan to other ranges in the chart.
+
+Modify your chart as needed.The plotted tags display as a tag series in the Plotted Tags list for each chart on a card.To create a Polar chart from an Event Data view:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context for the primary asset.In the View selector, select New Event Data Analysis.Select Polar in the Chart Type drop-down list box.Add secondary assets as needed.
+Note: You cannot save the card as a class template if you have added secondary assets.
+Select an event type in the Event Type drop-down list box.Enter a value in the Events field, and select an end date in the To date selector to create Event Frames for your chart.Plot tags or tag expressions as needed.Select , to access the chart settings.In the Chart Direction drop-down list box, select Clockwise or Counter-Clockwise.In the AMPLITUDE RANGE section, in the MIN and MAX boxes, enter the minimum and maximum amplitude limit values for the chart, and select Apply.
+Note:
+By default, the limits are set to Automatic. You can set the value for one or both the limits. When the limits on the amplitude are set , the data that plotted on the chart remains within the range. Data outside the range is not visible on the chart unless you pan to other ranges in the chart.
+
+Modify your chart as needed.The selected number of event frames display under Event Frames, and the plotted tags display as a tag series in the Plotted Tags list for each chart on a card.Create a Bar ChartUse Bar charts to plot data in Analysis.About This Task
+ You can use the Bar chart only in the Event Based Analysis templates. This allows you to group data by events and visualize them in a bar chart form. 
+You can add additional assets, add cards and charts, select a layout, change the date range, mute and unmute tags, plot tags, filter tags, plot tag expressions, and make other necessary modifications.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select New Event Data Analysis.Select a chart type in the Chart Type drop-down list box.Plot tags in the Tag Tree Browser. You can plot up to 40 tags. Select a value in the Value drop-down list box. The default is Maximum. The options are: Maximum, Minimum, Average, and Sum.Select an option in the Group By drop-down list box. The default is Tags. The options are: Tags and Events. Plot event frames in the Event Frames section. You can select  too zoom in, or select  to zoom out. Modify the chart as needed.Select the Time Zone, Data Resolution, or Data Source drop-down list box.Export Tag DataAbout This TaskYou can export tags directly to a CSV file from GE Digital APM for record-keeping or ingestion purposes.ProcedureIn the module navigation menu, go to Analysis. Select Create Analysis to create a new analysis view.  Select New Time Series Analysis in the View Selector. Use the Context Browser to select an asset context.Select Export Tag Data. In the Tags to Export text box, add tags that you want to export using one of the following methods:
+Enter a tag name - a list of tag names starting with the entered characters is displayed for selection Enter multiple comma-separated tag names Copy and paste multiple comma-separated tag names Drag and drop tag names 
+Note: You can only export 100 tags at a time.
+Select the Exclude Data Quality on export check box if you want to exclude the Quality column for each tag in the CSV output. Select Export. The Export Successful message appears.Note: If there is an error, the invalid tags are highlighted in the Tags to Export text box and the list of invalid tags is displayed along with a description of the error. Invalid tags are of two types: No Data - The tag contains no data for the selected date range.Not Configured – The tag is not configured for the asset. Results
+GE Digital APM exports the chart data to a CSV file, which is downloaded to the Downloads folder. 
+
+
+
+
+On this pageSelect a Chart TypeCreate a Time-Series Chart (Line or Scatter)Create a Timing Diagram ChartCreate a Parallel Axis ChartConfigure the Color Range for the Parallel Axis ChartCreate an X-Y ChartCreate a Spiderweb ChartCreate Polar ChartCreate a Bar ChartExport Tag Data
+
+
+
+
+
+
+
+
+

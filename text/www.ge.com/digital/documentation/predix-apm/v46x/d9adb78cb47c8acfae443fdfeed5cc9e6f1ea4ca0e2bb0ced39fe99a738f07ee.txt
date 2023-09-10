@@ -1,0 +1,257 @@
+
+
+
+Reports | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Reports
+
+
+
+
+
+
+
+ReportsAbout Regulatory Reports
+GE Digital APM provides following types of Regulatory reports, each of which reports a different set of data:
+NERC Event Reports: Includes data about Events for which the Regulatory Organization is NERC. This report contains all NERC Events logged in a GAA Unit for a specified period. GE Digital APM provides the NERC GADS Event Report 07 in the baseline GAA NERC Report record that can be used to generate NERC Event report. The NERC GADS Event Report 07 returns event data in the 07 format required by NERC.
+CEA Event Reports: Includes data about Events for which the Regulatory Organization is CEA. This report contains all CEA Events logged in a GAA Unit for a specified period. GE Digital APM provides the CEA Event Report in the baseline GAA NERC Report record that can be used to generate CEA Event report. The  CEA Event Report returns event data in the Generation Equipment Status File format as specified by CEA.
+NERC Performance Reports: Includes data about unit performance for the specified month.GE Digital APM provides the NERC GADS Performance Report 05 baseline GAA NERC Report record that can be used to generate NERC performance report. The NERC GADS Performance Report 05 returns performance data in the 05 format required by NERC. GE Digital APM also provides the CEA Performance Report which contains data based on NERC calculations.All the Regulatory reports are downloaded as text files. You can view a list of Regulatory reports configured for a GAA Unit only if the reports have been configured for a GAA Unit by the administrator. About Management Reports
+GE Digital APM provides three types of Management reports, each of which reports a different set of data:
+Event Reports: Includes data about Events. 
+Performance Reports: Includes data about unit performance. 
+Events Based on Cause Code and Date Reports: Includes Event data based on the Unit ID, Cause Code System, and the events that have Event start date or Even end date within the specified period.Data Included in an Event Report
+The Event Report contains the following sections:
+
+A – Event Identification: Contains values from the following fields in Event records:Record Code: For a NERC GADS Event Report 07, the value in this field is 07.Primary Utility CodeGADS Unit CodeReporting YearEvent NumberRevisionEvent Type
+
+B – Event Magnitude: Contains values from the following fields in Event records:Event StartEvent EndGross Available CapacityNet Available CapacityDominant DerateDominant DerateRecord Number
+
+C – Primary Cause of Event: Contains values from the following fields in Event records:Cause Code SystemAmplification CodeWork StartedWork EndedEvent Contribution CodeProblem AlertMan-hours WorkedVerbal Description
+
+D – Additional Work During Event: Contains values from the following fields in Event records: Cause Code SystemAmplification CodeWork StartedWork EndedEvent Contribution CodeProblem AlertMan-hours WorkedVerbal Description
+
+Note:
+In NERC Event reports, the following values are gathered only from Primary Event records: Event EndEvent StartWork EndedWork StartedThe values in the above fields from the Contributing Event records are not used.You can view Event Number for the corresponding event in the NERC GADS Event Report 07. By default, the Event Number field in an event report shows sequential numbers. You can modify the Get the Record Order Preference for Event Report query to return the Event ID for the Event Number field.For more information on modifying the query, refer to KBA 000048318.
+
+Data Included in a Performance Report
+The Performance Report contains the following sections:
+
+A – Unit Identification: Contains values from the following fields in Performance records: Record Code: For a NERC GADS Performance Report 05, the value in this field is 05. Utility CodeUnit CodeReporting YearReporting MonthRevision
+
+B – Unit Generation Performance: Contains values from the following fields in Performance records: Gross Maximum CapacityGross Dependable CapacityGross Actual GenerationNet Maximum CapacityNet Dependable CapacityNet Actual Generation
+
+C – Unit Starting Characteristics: Contains values from the following fields in Performance records: Typical Unit Loading CharacteristicsAttempted Unit StartsActual Unit StartsVerbal DescriptionRecord Number
+
+D – Unit Time Information: Contains values from the following fields in Performance records: Service HoursReserve Shutdown HoursPumping Hours Synchronous Condensing HoursAvailable HoursPlanned Outage HoursForced Outage HoursMaintenance Outage hoursExtensions of Scheduled Outages HoursUnavailable HoursPeriod HoursInactive HoursRecord Number
+
+E – Primary Fuel: Contains values from the following fields in Performance records:Fuel CodeQuantity BurnedAverage Heat ContentPercent AshPercent MoisturePercent SulfurPercent AlkalinesGrindability IndexAsh Softening Temp
+
+F – Secondary Fuel: Contains values from the following fields in Performance records:Fuel CodeQuantity BurnedAverage Heat ContentPercent AshPercent MoisturePercent SulfurPercent AlkalinesGrindability IndexAsh Softening TempRecord Number
+
+Data Included in an Events Based on Cause Code and Date Report
+The Events Based on Cause Code and Date Report contains the following fields, which contain values from the Event record. 
+Unit ID Unit Name Plant Name Event Number Event ID Capacity Event Type Event Start Date Event End Date Cause Code System Cause code Component Cause Code Amplification Code Verbal Description 
+Access a Regulatory ReportBefore You Begin
+Configure and associate a Report
+Procedure
+Access the GAA Overview page.Select the Generation Reports tab.
+A list of GAA reports appears, displaying the following columns of information:
+
+Report ID
+
+Unit ID
+
+Modified By
+
+Last Modified
+
+
+
+
+In the Report ID column, select the link to the Regulatory report that you want to access. 
+Tip: All the Regulatory reports are text files.
+The Save As window appears.
+Note: These steps may change depending on the browser and browser settings that you use.
+Navigate to the location to which you want to save the report.In the File name box, enter the name of the file, and then select Save.
+The report is saved to the selected location. The Regulatory report is saved as a text file as per NERC requirement. You can send this report directly to NERC. 
+Generate a Regulatory ReportBefore You Begin
+Configure and associate a Report
+Procedure
+Access the GAA Overview page.Select the Generation Reports tab.
+A list of GAA reports appears.
+
+
+
+In the upper-right corner of the Generation Reports section, select Manage Reports. 
+The Units window appears. 
+Note: The Units window will appear if there is more than one GAA Unit. If there is only one GAA Unit, the Performance & Reports workspace appears, displaying the Regulatory Reports section. If this occurs, proceed to step 6.
+Select the GAA Unit for which you want to generate a Regulatory report. 
+Note: You can generate only the reports that you have configured and associated with the selected GAA Unit. 
+Select Open Reports.
+The Performance & Reports workspace appears, displaying the Regulatory Reports section.
+
+
+
+For the month for which you want to generate a Regulatory report, in the Created On column, select Generate Report. 
+The report is generated and saved to the Reference Document family. 
+Note: When you generate a single or bulk Performance Report, the error or warning messages appear in the following scenarios:If the Performance Record does not exist for a particular month and year, an Error window  appears, and you cannot generate the report successfully.If the Performance Record exists for a particular month and year but is not in the approved state, a Warning window appears, asking you to confirm if you want to generate the report.If you generate an Event Report for which an Event does not exist, an Error window appears, and you cannot generate the report successfully.
+Important:
+For the bulk report generation, validation messages appear in the log file. However, for the single report generation, the validation messages appear in the windows.
+
+The following columns of information are updated in the Regulatory Reports section:
+
+
+Report Name: Contains the name of the report. The name of the report appears in the following format:
+<Regulatory Organization> <Report Name> <Reporting Month> <Reporting Year>.txt
+If the report is generated, the name appears as a hyperlink and the date when the report was generated appears in the Created On column. If the report is not generated, the name appears as plain text and the Generate Report button appears in the Created On column.
+
+Report Type: Indicates whether the report is an Event report or a Performance report.
+Created By: Indicates the user who generated the report.
+Created On: Contains the date when the report was generated.
+By default, the reports appear for the current year. If you want to view reports for a previous year, you can select  to specify a different year. 
+Note: For a GAA Unit that reports to CEA, in the regulatory report, the Common Mode Outage, Auxiliary Number, and Selected Component Outage fields will be blank. Also, in a GAA Unit, if the Primary Regulatory Body and Secondary Regulatory Body are configured, then the report will be generated for both.
+Generate a Management ReportBefore You Begin
+Configure and associate a Report
+Procedure
+Access the GAA Overview page.Select the Generation Reports tab.
+A list of GAA reports appears.
+
+
+
+Note:
+You can also generate a Management report via the Management Reports section. To do so:
+
+In the upper-right corner of the Generation Reports section, select Manage Reports. 
+The Units window appears. The Units window will appear if there are more than one GAA Units. If there is only one GAA Unit, the Performance & Reports workspace appears, displaying the Regulatory Reports section.
+
+Select the GAA Unit for which you want to generate a Management report. 
+
+Select Open Reports.
+The Performance & Reports workspace appears, displaying the Regulatory Reports section.
+
+Select the Management Reports tab.
+A list of Management Reports appears, displaying links for the various Management reports.
+
+
+In the Report ID column, as needed, select a link for an Event report, Performance report, or Events Based on Cause Code and Date report.
+Note: You can generate only the reports that you have configured and associated for the selected GAA Unit. 
+The Enter Parameter Values window appears.
+If you selected Event or Performance report in the previous step, enter the values in the following fields:
+In the Unit ID cell, enter the ID of the Unit for which you want to generate a report.In the Reporting Month cell, enter the month for which you want to generate a report.In the Reporting Year cell, enter the year for which you want to generate a report.
+If you selected Events Based on Cause Code and Date report in the previous step, enter the values in the following fields:
+In the Unit ID cell, enter the ID of the Unit for which you want to generate a report.In the Start Date cell, enter the date when the Event started.In the End Date cell, enter the date when the Event ended.In the Cause Code System cell, select the value for which you want to generate a report.
+Select Done.
+The Management report is generated and appears in a new tab. The following image shows the Performance report.
+
+
+
+Regenerate a Regulatory ReportBefore You Begin
+
+Configure a Report
+
+Procedure
+Access the GAA Overview page.Select the Generation Reports tab.
+A list of GAA reports appears.
+
+
+
+In the upper-right corner of the Generation Reports section, select Manage Reports. 
+The Units window appears.
+Note: The Units window will appear if there are more than one GAA Units. If there is only one GAA Unit, the Performance & Reports workspace appears, displaying the Regulatory Reports section.
+Select the GAA Unit for which you want to regenerate a Regulatory report. Select Open Reports.
+The Performance & Reports workspace appears, displaying the Regulatory Reports section.
+For the month for which you want to regenerate a Regulatory report, locate the row containing the report that you want to regenerate.
+Note: Regardless of which Event report you select to regenerate, both the Event Reports are regenerated. For example, if you select Event report for NERC to regenerate, the Event report for CEA is also regenerated, and vice versa.
+In the upper-right corner of the section, select .
+The Regenerate Report dialog box appears, asking you to confirm that you want to regenerate the selected report.
+Select Yes.
+The selected report is regenerated. 
+Note: When you generate a single or bulk Performance Report, you get the error or warning messages in the following scenarios:If the Performance Record does not exist for a particular month and year, the Generate Report dialog box appears that does not allow you to generate the report.If the Performance Record exists for a particular month and year but is not in the approved state, a warning message appears asking you to confirm if you want to generate the report.
+Important: For the bulk report generation, validation messages appear in the log file, but for the single report generation, they appear in the pop-up windows.
+Delete a Regulatory ReportProcedure
+Access the GAA Overview page.Select the Generation Reports tab.
+A list of GAA reports appears.
+
+
+
+In the upper-right corner of the Generation Reports section, select Manage Reports. 
+The Units window appears. 
+Note: The Units window will appear only if there is more than one GAA Unit. If there is only one GAA Unit, then the Performance & Reports workspace appears, displaying the Regulatory Reports section.
+Select the GAA Unit for which you want to regenerate a Regulatory report. Select Open Reports.
+The Performance & Reports workspace appears, displaying the Regulatory Reports section.
+For the month for which you want to delete a Regulatory report, locate the row containing the report that you want to delete.In the upper-right corner of the section, select .
+The Delete Report dialog box appears, asking you to confirm that you want to delete the selected report.
+Select Yes.
+The selected report is deleted. 
+Generate Regulatory ReportsYou can generate and download Regulatory Reports in bulk for a GAA Unit record.Procedure
+Access the GAA Overview page.Select Bulk Generation.The Bulk Generation page appears.Select the Generate tab, and then select Report.As needed, enter values in the following fields.
+FieldsDescriptionCompanyThe name of the company that contains the GAA Units for which you want to generate the reports.UnitsThe GAA Units for which you want to generate the reports.YearThe year for which you want to generate the reports.MonthsThe months in the year for which you want to include the details in the reports.Report TypeThe type of the report that you will generate for the selected GAA Units.
+Select Submit.The generation of the report starts. You can view the status of the job by selecting the Bulk Generation Logs button. What To Do NextAfter the reports are generated, you can download the reports by selecting the Download tab in the Bulk Generation page. You can download the reports as a single file or multiple files by selecting the appropriate option.
+
+
+
+
+On this pageAbout Regulatory ReportsAbout Management ReportsData Included in an Event ReportData Included in a Performance ReportData Included in an Events Based on Cause Code and Date ReportAccess a Regulatory ReportGenerate a Regulatory ReportGenerate a Management ReportRegenerate a Regulatory ReportDelete a Regulatory ReportGenerate Regulatory Reports
+
+
+
+
+
+
+
+
+

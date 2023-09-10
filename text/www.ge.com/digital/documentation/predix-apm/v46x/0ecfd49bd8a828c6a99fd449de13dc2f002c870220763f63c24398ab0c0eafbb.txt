@@ -1,0 +1,147 @@
+
+
+
+Catalog Items | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Management of ChangeOverview
+Workflows
+Change Projects
+Checklists
+Exceptions and Tasks
+Changed Elements
+Deployment
+Admin
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Management of Change
+Reference
+Catalog Items
+
+
+
+
+
+
+
+Catalog ItemsCatalog Items The Management of Change Catalog folders contain queries, graphs, and reports that appear throughout MOC and display information contained in the records that make up a Change Project.Queries Folder
+The Catalog folder \\Public\Meridium\Modules\Management Of Change\Queries contains the following items. 
+
+Query Name
+
+Behavior and Usage
+
+All Change Projects
+
+ Returns the list of Change Projects. This query is used when you select the Change Projects tab on the MOC Overview page.
+All MOC TasksReturns the list of Operations Tasks. This query is used when you select the Tasks tab on the MOC Overview page.All Exceptions Admin QueryReturns the list of Exceptions available in the database. This query is used when you select the Exceptions tab on the MoC Admin page.Change Project Checklist Query Returns the list of Checklists associated with a Change Project. This query is used when you select the Checklists tab in the pane to the left of the Project Summary workspace.Checklist Questions QueryReturns the list of Questions associated with a Checklist. This query is used when you select the Checklist Items tab for a Checklist on the MoC Admin page.Exception Graph QueryThis query is used to create the Exception Summary Graph, which appears in the Summary section in the Project Summary workspace of a Change Project.Exceptions Admin QueryReturns the list of Exceptions assigned to a specific site. This query is used while creating Questions, when you search for an Exception to associate with an Answer Option.MOC All Checklist Admin QueryReturns the list of Checklists available in the database. This query is used when you select the Checklists tab on the MoC Admin page.MOC Checklists Admin QueryReturns the list of Checklists assigned to a specific site. This query is used when you add Checklists to a Change Project.MOC Questions Admin QueryReturns the list of Checklist Questions available in the database. This query is used when you select the Questions tab on the MoC Admin page.Remaining QuestionsReturns the list of Questions that belong to the same site as that of the Checklist and that are not associated with any Checklist. This query is used to display results on the Select questions to add window, which appears when you add Questions to a Checklist.Task states count queryThis query is used to display the number of tasks in each state available for the Operations Task family.Task Summary Graph QueryThis query is used to create the Task Summary Graph, which appears in the Summary section in the Project Summary workspace of a Change Project.Answered Count by ChecklistThis query is used to calculate the number of Questions that are answered in a Checklist.Unanswered Count by ChecklistThis query is used to calculate the number of Questions that have not been answered in a Checklist.Exceptions Triggered by Change ProjectThis query is used to calculate the number of Exceptions that have been created based on your responses in a Checklist for a Change Project.
+Graphs Folder
+ The Catalog folder \\Public\Meridium\Modules\Management Of Change\Graphs contains the following items. 
+
+Graph Name
+
+Behavior and Usage
+
+Exception Summary Graph
+ 
+
+Displays the percentages of Exceptions in each of the following statuses:
+Not Started In Progress Complete
+The graph appears in the Project Summary workspace of a Change Project.
+Task Summary Graph
+Displays the percentages of Tasks in each state defined for the Operations Task family.
+The graph appears in the Project Summary workspace of a Change Project.
+
+Dashboards Folder
+ The Catalog folder \\Public\Meridium\Modules\ManagementOfChange\Dashboards contains the following items:
+
+Name
+
+Behavior and Usage
+
+MOC Overview Dashboard 
+
+Displays the dashboard, which contains the MOC Overview Graph and the MOC Calendar Query, for the Management of Change module.
+
+The Catalog folder \\Public\Meridium\Modules\ManagementOfChange\Dashboards\Charts contains the following items:
+
+Graph Name
+
+Behavior and Usage
+MOC Overview Graph 
+Displays the number of Change Projects in each year, for the last five years including the current year, in the following categories:
+PermanentTemporaryExpired
+The Change Projects are filtered based on the selected hierarchy level.
+
+The Catalog folder \\Public\Meridium\Modules\ManagementOfChange\Dashboards\Queries contains the following items:
+
+Query Name 
+
+Behavior and Usage
+MOC Calendar Query Returns the list of Operations Tasks available for the selected hierarchy level. This query is used to populate the tasks in the calendar that appears on the MOC Overview page.
+MOC Last 5 Years 
+
+Returns the last five years including the current year.
+MOC Overview Chart Query This query is used to create the MOC Overview Graph, which appears on the MOC Overview page.MOC Permanent Projects Returns a list and number of permanent Change Projects. MOC Temporary Expired Projects 
+Returns a list and number of temporary Change Projects that satisfy the following criteria:
+The value in the Change Valid Until field is less than the current date.The state of the project is not Finalized.
+MOC Temporary Projects 
+Returns a list and number of temporary Change Projects whose value in the Change Valid Until field is greater than the current date. 
+
+
+
+
+
+
+On this pageCatalog Items Queries FolderGraphs FolderDashboards Folder
+
+
+
+
+
+
+
+
+

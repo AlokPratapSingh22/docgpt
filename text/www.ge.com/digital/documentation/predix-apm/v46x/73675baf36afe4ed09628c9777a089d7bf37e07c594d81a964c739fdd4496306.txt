@@ -1,0 +1,89 @@
+
+
+
+Automation Rules: Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation RulesAutomation Rules: Overview
+Automation Rules: Workflow
+Automation Rules
+
+
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Automation Rules
+Automation Rules: Workflow
+
+
+
+
+
+
+
+Automation Rules: WorkflowReliability Analytics: Automation Rule WorkflowThis workflow describes the process for creating multiple distribution or growth analyses at a single time based on the execution of a query or an asset/event relationship.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+View Existing Rule Persona: AnalystOpen an existing automation rule that has been saved on the database and is accessible via hyperlinks from the Automation Rules section in Reliability AnalyticsCreate Rule Persona: AnalystCreate a new automation rule using the wizard provided.Merge Possible Analyses Persona: AnalystMerge sections of insufficient data to create enough data to support an analysis. Execute Rule Persona: AnalystQueue the service that runs the rule that provides progress feedback and shows the details of the analyses. Other Workflows Persona: AnalystOther workflows provide production data from: SAP, EAM, Recommendations.
+
+
+
+
+On this pageReliability Analytics: Automation Rule WorkflowView Existing RuleCreate RuleMerge Possible AnalysesExecute RuleOther Workflows
+
+
+
+
+
+
+
+
+

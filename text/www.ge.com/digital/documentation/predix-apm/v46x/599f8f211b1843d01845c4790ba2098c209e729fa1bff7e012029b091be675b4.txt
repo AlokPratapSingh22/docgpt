@@ -1,0 +1,83 @@
+
+
+
+
+About Classifications | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About ClassificationsA classification is a reusable definition based on the process of classifying something according to shared qualities or characteristics. Classifications can represent multiple instances of the same type that have common characteristics. For example, you can create a classification to identify equipment with common reserved attributes. You can create sub-classifications, such as turbines, gas turbines, and high-availability turbines from the parent equipment class. Sub-classifications inherit reserved attributes from the parent, and can be assigned their own custom attributes. You can create classifications for:EnterpriseSiteSegmentAssetTagYou can use the Asset APIs or ingestion to:Create a classification.List classifications by criteria and URI.List inherited classifications.List parent classifications.Update a classification.Delete a classification.A JSON is required when using an API or ingesting a classification. The JSON structure for ingestion or APIs is different.Use the following API requests:This requestDoes thisPOST
+Create a classification and link member instances to the classification. 
+Bulk ingestion is supported via the asset ingestion endpoint, /v1/asset/upload.
+GETList the classifications using the Asset APIs. You can list by criteria or URI. PATCHUpdate the classification using the Asset APIs.DELETEDelete a specific classification by UUID, and remove instances from a classification.
+Important: When you delete a classification, use the APIs to first remove all member instances.
+To use the API to configure a classification, refer to the the Asset APIs documentation. Classification Rules
+Use classification rules when creating a classification.A classification must contain an id that is unique per classification. Multiple classifications using the same id can overwrite each other.A classification must be one of the classifications types (ccomClass).A classification may have child classifications that are derived from the classification parent.A classification must be the same classification type as its parent.A classification inherits all properties from its parent classification. Any custom properties defined in the child classification are customized to the child.
+Create a Classification Type
+You can create a classification type using a parent node in the JSON. Use your Asset Model to determine placement of the classification. The JSONs for ingestion and API are different.You will need to add values under classifications into the JSON for ingestion.idnamedesciptionparent (used if a sub-classification)ccomClass (define as one of the following types: ENTERPRISE_TYPE, SITE_TYPE, SEGMENT_TYPE, or ASSET_TYPE).properties (includes sub-values)typeidvaluereservedProperties (inherited from parent classification)Note: You can define attributes in key-value pairs. Each key is a type of String and value is an object with variables type, and value (array of values). You cannot define the attribute key with special characters such as !@#$%^&*?().Repeat the previous step for any classification you want to add.Save the JSON, then ingest it using the REST client.
+You are ready to add instances for the classifications.
+Add Instances to a Classification
+After you define your classifications, you can create instances for those classifications.You will need to add values under instances into the JSON for ingestion.idnamedesciptionclassificationccomClass (define as one of the following: ENTERPRISE, SITE, SEGMENT, or ASSET).properties (includes sub-values)typeidvaluereservedProperties (for ccomClass: ASSET only)Note: You can define attributes in key-value pairs. Each key is a type of String and value is an object with variables type, and value (array of values). You cannot define the attribute key with special characters such as !@#$%^&*?().location (for ccomClass: ASSET only; includes sub-values)nameorderlatitudelongitudealtitudeRepeat the previous step for any instance you want to add.Save the JSON, then ingest it using the REST client.
+Create a Tag Classification Type
+You can create a tag classification using a parent node in the JSON. Use your Asset Model to determine placement of the tag classification. The JSONs for ingestion and API are different.You will need to add values under tagClassifications in the JSON for ingestion.idnamedescriptionunitGroupparentproperties (includes sub-values)typeidvalueRepeat the previous step for any tag classification you want to add.Save the JSON, then ingest it using the REST client.
+You are ready to add tag associations. For more information, refer to the About Instances documentation.
+List Classifications
+You can retrieve a list of classifications by criteria or URI using the APIs.
+You can use the API to retrieve a list of classifications, classification types, inherited classification types, and parent classification types.
+Use the API request parameters to narrow the list by criteria (e.g., sourceKey).
+The following search parameters are supported for asset and tag types:urinamesourcekeydescriptionattributesreservedattributesparent
+
+Note: Enterprise, site and segment types have not been enabled.
+
+Delete a Classification
+You can delete a classification from the JSON.Important: A classification may be connected to multiple instances. If you are deleting the classification entirely, make sure that all instances connected to the classification are removed or moved prior to deleting the classification.Find the instances connected to the classification and remove or move them to a different classification.Remove the classification id, name, description, parent, ccomClass, properties, and reservedProperties using the API.
+
+
+
+
+
+
+
+
+
+
+
+

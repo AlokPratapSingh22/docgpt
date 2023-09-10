@@ -1,0 +1,101 @@
+
+
+
+Second Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference 
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+ First Quarter of 2019 
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Release Notes
+Second Quarter of 2019
+
+
+
+
+
+
+
+Second Quarter of 2019Inspection ManagementThis topic provides a list of product changes released for this module on the dates listed below.Release Date: June 7, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDA new Human Resource role, Contract Inspector, is now available. A Contract Inspector can modify the Inspection Document Status field in Inspection records to Pending Approval without being the user defined in the Inspection Report Owner field if they are a Team Member in the associated Inspection record.US346807Using the Inspection Management (IM) Assets and Inspection Management (IM) Functional Location data loaders, a Contract Inspector who is a Team Member in the associated Inspection record can now modify the Status field to Pending Approval without being the user defined in the Inspection Report Owner field.US346807If you are using Status to manage your Inspection Recommendation records and you are a Team Member in the associated Inspection record, you can now transition the Inspection Recommendation to the Pending Review status without being the user defined in the Author field.US346807Previously, the Inspection Lock field was disabled unless you were the Inspection Report Owner. This field is now enabled if you are a Team Member in the associated Inspection record.US346807
+
+
+
+
+
+On this pageInspection Management
+
+
+
+
+
+
+
+
+

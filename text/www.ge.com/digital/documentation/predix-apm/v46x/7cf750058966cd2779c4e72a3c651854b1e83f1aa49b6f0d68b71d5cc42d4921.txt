@@ -1,0 +1,104 @@
+
+
+
+Second Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Compliance ManagementOverview
+Workflows
+Inspection Plans
+Inspection Plan Management
+Compliance Recommendations
+Inspection Plan Revision History
+Suggested Compliance Strategy Templates
+Admin
+Deployment
+Reference 
+Release NotesFourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Third Quarter of 2019
+ Second Quarter of 2019 
+ First Quarter of 2019 
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Compliance Management
+Release Notes
+Second Quarter of 2020
+
+
+
+
+
+
+
+Second Quarter of 2020Release Date: June 19, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issue
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when you tried to approve an Inspection Plan on Compliance Recommendations where recommended interval scope was not set, an error occurred. This issue has been resolved.DE135626Previously, when the parent asset was a Functional Location, an error occurred when implementing multiple Compliance Recommendations on Inspection Plans to Inspection Tasks. This issue has been resolved.DE134658
+Release Date: May 8, 2020This topic provides a list of product changes released for this module on this date.
+Table 2. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDPreviously, you could search records from all the Compliance Management families in the Global Search. Now, all families from Compliance Management have been excluded from Global Search, except for the following families:Compliance Policy MappingCompliance RecommendationCompliance Recommendation MappingCompliance StrategyCompliance Strategy TemplateInspection PlanHowever, you can configure a family to be included or excluded from Global Search using the Search Configuration.US384419
+Table 3. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in the Inspection Plan page, if the RBI Recommendations were in a Proposed state and did not have a baseline state ID, the following buttons were not enabled or disabled correctly:SupersedeNot RequiredDeleteThis issue has been resolved.DE119883
+Table 4. Obsolete Features
+The following features are no longer available.
+DescriptionTracking IDThe relationship family Compliance Template Has Mapping has been deprecated. DE129072
+
+
+
+
+
+On this pageRelease Date: June 19, 2020Release Date: May 8, 2020
+
+
+
+
+
+
+
+
+

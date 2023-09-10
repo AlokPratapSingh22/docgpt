@@ -1,0 +1,145 @@
+
+
+
+Data Loader | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Data Loader
+
+
+
+
+
+
+
+Data LoaderAbout the Policy Instance Data LoaderUsing the Policy Instance Data Loader, you can add or update large numbers of policy instances for a policy in GE Digital APM.To import data using the Policy Instance Data Loader, GE Digital APM provides an Excel template, Policy Instance.xlsx.Note: In this documentation, the Excel template is referred to as the data loader workbook.About the Policy Instance Data Loader RequirementsBefore you use the Policy Instance Data Loader, ensure that the Policy Name and the node details specified in the data loader workbook exist in the Policy Designer module in GE Digital APM.Security Settings
+The user who loads data must be associated with the following Security Groups and Security Roles:
+MI Data Loader User Security Role or MI Data Loader Admin Security RoleMI Policy Administrator, MI Policy Designer, or MI Policy User Security Group; or a Security Role that is associated with the MI Policy Administrator, MI Policy Designer, or MI Policy User Security Group
+About the Policy Instance Data Loader Data ModelA Policy Instance record has a foreign-key relationship to the Policy record that defines the instance.The following data model illustrates the Policy Instance Data Loader:About the Policy Instance Data Loader General Loading StrategyThis section describes the prerequisites for loading the data and the order in which the data will be loaded.Prerequisites
+
+The policy for which you want to import the instances must already exist in the GE Digital APM database.Identify the Input nodes contained in the policy or policies for which you want to create instances. The Input nodes determine the columns required in the MI_POLICY_INST sheet of the data loader workbook.All input records that will be used in the policy instances must already exist in the GE Digital APM database.Extract the data required to populate the data loader workbook from GE Digital APM. You can do this by querying the database to retrieve the entity keys or entity IDs to use as inputs for the policy instances. You can then export the results of the query to an Excel spreadsheet to update the Policy Instance Data Loader workbook.
+Important: In a data loader workbook, you must define the instances for only one policy. If you define instances for multiple policies in the same workbook, the data loader will not be imported.
+
+Load Sequence
+
+Download the Policy Instance Data Loader workbook provided by GE Digital APM.Modify the worksheet with the data extracted from GE Digital APM.Load the data loader workbook.Monitor the status of the data load operation.Access the data loader log to check for errors and warnings.Conduct tests in GE Digital APM to make sure that the imported data is correctly loaded.
+
+About the Policy Instance Data Loader Workbook Layout and Use
+To load data using the Policy Instance Data Loader, GE Digital APM provides an Excel workbook, Policy Instance.xlsx, which supports baseline policy instances in GE Digital APM.Tip: You can export the data loader for a specific policy, including the data for current instances.
+The following table lists the worksheets that are included in the Policy Instance Data Loader workbook:
+WorksheetDescriptionConfigurationThis worksheet is used to specify whether policy instances will be updated.MI_POLICY_INSTThis worksheet is used to specify policy instances per policy.
+Configuration Worksheet
+In the Configuration worksheet, you must specify the settings for the import.
+Field CaptionField IDData TypeCommentsBatch IDBATCH_IDNumeric
+Enter a serial number (for example, 1).
+Note: Records with different Batch ID values are processed as separate batches by the data loader.
+Replace Existing Instance?OPTION_REPLACE_INSTANCECharacter
+Enter one of the following values:
+FALSE: The existing policy instances that may be specified in the MI_POLICY_INST worksheet will not be updated. TRUE: The existing policy instances that may be specified in the MI_POLICY_INST worksheet will be updated.
+Note: If you do not enter a value, the value FALSE will be considered and existing policy instances will not be updated.
+
+MI_POLICY_INST Worksheet
+In the MI_POLICY_INST worksheet, you must specify the existing or new instances to be imported for a policy. You must use the entity key or the entity ID of a record to map it to a node. By default, the MI_POLICY_INST worksheet is configured to use the entity keys to identify the records. If you want to specify entity IDs instead of entity keys, you must replace the text 'ENTY_KEY' with 'ENTY_ID' in the field ID of the required columns of the worksheet, and then enter the relevant entity IDs in the subsequent rows. For example, if you want to specify entity IDs instead of entity keys for a column with the field ID n0|ENTY_KEY, you must change the field ID to n0|ENTY_ID before entering the values in the subsequent rows.
+Important: A record specified in the worksheet is not identified under the following conditions:If the entity ID is associated with multiple records and there is no primary record specified for the instance.If the entity ID is associated with multiple records that are linked to the primary record specified for the instance.If the entity ID or entity key does not exist in the specified entity family.Under these conditions, the information associated with the relevant record is not imported, though it will not affect the rest of the information in the workbook, and a warning message appears in the data loader log, indicating the record that could not be imported. However, if an entity ID is associated with multiple records, among which, only one record is linked to the primary record specified for the instance, the record that is linked to the primary record is identified for the entity ID.
+Field CaptionField IDData TypeCommentsBatch IDBATCH_IDNumeric
+Enter a serial number (for example, 1).
+Note: Records with different Batch ID values are processed as separate batches by the data loader.
+Policy NameMI_POLICY_INST_POLICY_GUIDText
+Enter the name of an existing policy.
+Policy Instance IDMI_POLICY_INST_ID_CText
+Enter the name of a policy instance to associate with the specified policy.
+This value must be unique within a policy. 
+Note: If the worksheet contains duplicate Policy Instance IDs within a policy, only the last row associated with the Policy Instance ID is imported, and a warning message appears in the data loader log, indicating the instances that could not be imported due to the duplicate IDs.
+Active?MI_POLICY_INST_ENABLED_FCharacter
+Enter one of the following values:
+FALSE: Deactivates the policy instance.TRUE: Activates the policy instance only if all the required information is available. Otherwise, it will remain inactive.
+Note: If you do not enter a value, the value FALSE will be considered for a new policy instance, whereas for an existing policy instance, its status will be retained.
+Primary Record (ignored if there is a Primary Node)FAMILY_ID|ENTY_KEYText
+Enter the family ID and entity key of the record that you want to specify as the primary record in the policy (for example, MI_EQUIP000|64262245939).
+Note: If the policy contains a primary node, this field will be ignored.
+<Input node name>One of the following:<Input node ID>|ENTY_KEY<Input node ID>| FAMILY_ID|ENTY_KEY|FIELD_ID<Input node ID>|CONSTANTText
+For each Input node that you want to specify, you must create a new <Input node name> column.
+Specify the name of the Input node (for example, Oil Level HI) as the field caption.
+Enter the ID of the Input node and one of the following values as the field description:
+ENTY_KEY: Used for an Input node other than the Point Value node (for example, n0|ENTY_KEY). This value indicates that the subsequent rows contain the entity keys of the records that you want to map to this node.Note: For a User node, this value indicates that the subsequent rows contain the entity keys of the Security User records that you want to map to the node.FAMILY_ID|ENTY_KEY|FIELD_ID: Used for a Point Value node or a Predix Time Series node that represents a value from a field (for example, n0| FAMILY_ID|ENTY_KEY|FIELD_ID). This value indicates that the subsequent rows contain sets of family ID, entity key, and field ID of the records that you want to map to this node.CONSTANT: Used for a Point Value node that represents a constant value or a Predix Time Series node (for example, n0|CONSTANT). This value indicates that the subsequent rows contain the constant values or tag IDs that you want to use for this node.
+In the subsequent rows:
+For <Input node ID>|ENTY_KEY, enter the entity key (for example, 64251832824).For <Input node ID>| FAMILY_ID|ENTY_KEY|FIELD_ID, enter the following values:Family IDEntity keyField ID(For example, MI_MEAS_LOC|64254041888|Checkpoint ID) For <Input node ID>|CONSTANT, enter the Constant value (for example, 5) or the tag ID (for example, Array2-ASSET-TYPE2.Tag_Temperature), as applicable.
+
+Example Policy Instance Data Loader WorkbookThis topic provides a sample of the worksheets in the Policy Instance Data Loader workbook to illustrate the process of adding and updating policy instances.
+The following Configuration worksheet is populated to update the policy instance that is specified in the MI_POLICY_INST worksheet:
+Replace Existing Instance?OPTION_REPLACE_INSTANCETRUE
+The following MI_POLICY_INST worksheet is populated to add and update policy instances for a policy named Equipment Lubrication Policy:
+
+Instance 1 is an existing policy instance that you want to assign to the following Input nodes of Equipment Lubrication Policy:
+n0, an Input node other than the Point Value node whose entity key is 64251832824.n2, a Point Value node that represents a constant value and whose constant value is 5.
+Instance 2 is a new policy instance that you want to assign to the following Input nodes of Equipment Lubrication Policy:
+n0, an Input node other than the Point Value node whose entity key is 64251959674.n2, a Point Value node that represents a value from a field and whose family ID is MI_MEAS_LOC, entity key is 64254041888, and field ID is Checkpoint ID.
+When this Policy Instance data loader workbook is successfully imported into GE Digital APM:
+Instance 1 will be updated in Equipment Lubrication Policy according to the respective node details defined in the worksheet.Instance 2, with the respective node details defined in the worksheet, will be added to Equipment Lubrication Policy; however, it will not be activated because the Active column had the value FALSE.
+About the Policy Instance Data Loader Load VerificationAfter the data loader completes, this is how you verify the load was successful.ProcedureIn the Policy Designer Overview page, in the Policies section, review the list of relevant policy or policies.These list shows the number of instances associated with each policy, allowing you to confirm that the expected number of instances were created.In Policy Designer, access the relevant policy or policies and run a sample of new or updated instances to confirm that the policy instances perform as you expect.After the policy is active, review the execution history regularly to identify any errors that may be related to incorrectly configured new or updated policy instances.
+
+
+
+
+On this pageAbout the Policy Instance Data LoaderAbout the Policy Instance Data Loader RequirementsAbout the Policy Instance Data Loader Data ModelAbout the Policy Instance Data Loader General Loading StrategyAbout the Policy Instance Data Loader Workbook Layout and UseExample Policy Instance Data Loader WorkbookAbout the Policy Instance Data Loader Load Verification
+
+
+
+
+
+
+
+
+

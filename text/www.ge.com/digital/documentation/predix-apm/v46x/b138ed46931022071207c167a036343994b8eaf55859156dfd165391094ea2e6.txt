@@ -1,0 +1,92 @@
+
+
+
+Fourth Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+GraphsOverview
+Workflow
+Graphs
+Reference
+Release NotesSecond Quarter of 2023
+Fourth Quarter of 2021
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Graphs
+Release Notes
+Fourth Quarter of 2021
+
+
+
+
+
+
+
+Fourth Quarter of 2021Release Date: December 17, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when you created a Stock Chart Graph, and selected the Stack Tool tips option, the tooltips were incorrectly displayed. This issue has been resolved.DE117569
+Release Date: October 8, 2021This topic provides a list of product changes released for this module on this date.
+Table 2. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo enhance usability, you can now open a graph for editing in the Graph Result workspace from the view-only graph page. To facilitate this enhancement, the Open in Graph Editor
+ button has been added to the view-only graph page.US497984To enhance usability, the display order for legend entries in a horizontal bar graph has changed. Now, the first entry in the legend represents the top bar in a clustered bar graph or the left segment in a stacked bar graph.US489988To enhance usability, in a Graph, when you select a hyperlinked area or a point that references another Graph, the hyperlinked Graph now opens in a new tab.US487712
+Table 3. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, if you selected a series that included zero values in a bar graph, nothing was displayed for the zero values. This issue has been resolved. Now, a single width line appears with a tooltip that shows the zero value when you hover over the line.US501452
+
+
+
+
+
+On this pageRelease Date: December 17, 2021Release Date: October 8, 2021
+
+
+
+
+
+
+
+
+

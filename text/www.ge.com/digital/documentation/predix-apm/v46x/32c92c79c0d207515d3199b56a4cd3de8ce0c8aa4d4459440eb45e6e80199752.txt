@@ -1,0 +1,90 @@
+
+
+
+5 Whys Analyses | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+5 Whys Analyses
+
+
+
+
+
+
+
+5 Whys AnalysesAbout 5 Whys AnalysesA 5 Whys Analysis is a simplified, interrogative analysis that explores the cause-and-effect relationships of a failure. The goal of this analysis is to determine the root cause of an issue by repeating the question of "why." Each time a "why" is answered, a new question can be formed to determine the root cause of an issue. By asking a series of five questions, you can avoid making assumptions and falling into logic traps. Instead, you can see a direct line of cause-and-effect relationships that determines how an issue was reached and the root cause of that issue.Pump FailureA pump has failed, and a system shutdown has occurred. Using the 5 Whys methodology, you can ask the following questions to find out why:QuestionWhyReason1Why did the system shutdown?Safety cutout applied when the cooling pump failed. 2Why did the pump fail?The bearing seized.3Why did the bearing seize?The bearing was dry and overheated.4Why was the bearing dry and overheated?Scheduled lubrication inspections were not completed.5Why weren't the scheduled inspections completed?The inspection schedule is missing the appropriate tasks for pump lubrication. For each question in the Why column, the answer in the Reason helps to generate the following Why, eventually leading to the root cause of an issue. Based on this table, you can see that the system shutdown is the direct result of incomplete inspections for pump lubrication. Create a 5 Whys AnalysisProcedureAccess the 5 Whys Analysis for the selected RCA.In the workspace, enter values in the available fields.As needed, in the Why and Reason boxes of one or more rows, enter the questions and answers that illustrate the direct line of cause-and-effect relationships through which an issue was reached, ultimately determining the root cause of that issue.
+Note:
+For an example of a 5 Whys Analysis and an explanation of the concept, see About 5 Whys Analyses. 
+
+Select .The 5 Whys Analysis is saved for the selected RCA.Access a 5 Whys AnalysisBefore You BeginTo access a 5 Whys Analysis, you must first configure RCA to display 5 Whys Analyses. 5 Whys Analyses are not configured to appear in baseline GE Digital APM.ProcedureAccess the Root Cause Analysis containing the 5 Whys Analysis that you want to access.In the pane, select the 5 Whys tab.
+The 5 Whys Analysis for the selected RCA appears in the workspace. Note: If there is not currently a 5 Whys Analysis for the RCA, a blank datasheet appears.
+Modify a 5 Whys AnalysisProcedureAccess the 5 Whys Analysis for the selected RCA.In the workspace, modify values in the available fields.As needed, in one or more Why or Reason boxes, modify the text.Select .The 5 Whys Analysis is saved for the selected RCA.
+
+
+
+
+On this pageAbout 5 Whys AnalysesCreate a 5 Whys AnalysisAccess a 5 Whys AnalysisModify a 5 Whys Analysis
+
+
+
+
+
+
+
+
+

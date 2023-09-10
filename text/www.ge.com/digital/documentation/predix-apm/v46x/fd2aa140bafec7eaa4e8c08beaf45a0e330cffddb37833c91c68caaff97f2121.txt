@@ -1,0 +1,105 @@
+
+
+
+First Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+Workflows
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data Loaders
+Admin
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+Release Notes
+First Quarter of 2021
+
+
+
+
+
+
+
+First Quarter of 2021Release Date: March 26, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, when performing a Rotate or Flip operation against a Piping Component, if any calculated measurement created due to the operation had a negative value, the operation was properly halted. However, a database transaction was kept open that may have caused GE Digital APM to become unresponsive. This issue has been resolved. DE153949
+Release Date: January 8, 2021This topic provides a list of product changes released for this module on this date.
+Table 2. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, when using Column Chooser from the Measurements section of the Analysis Overview workspace, you could add a field to the Display Fields section multiple times. Due to this, the data in the Measurement Table did not load. This issue has been resolved.DE146972Previously, in the TM Admin Preferences page, if you configured the Subcomponent to Asset preference of the Equipment or Functional Location family with the Has TML Group family, it could result in an infinite loop while performing Bulk Calculations causing the application to become unresponsive. This issue has been resolved.DE147642
+
+
+
+
+
+On this pageRelease Date: March 26, 2021Release Date: January 8, 2021
+
+
+
+
+
+
+
+
+

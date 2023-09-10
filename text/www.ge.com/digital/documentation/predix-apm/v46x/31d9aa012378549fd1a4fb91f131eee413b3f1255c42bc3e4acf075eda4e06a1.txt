@@ -1,0 +1,172 @@
+
+
+
+PROACT® RCA Analysis-At-A-Glance Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+ReportsComprehensive Analysis Report
+PROACT® RCA Analysis-At-A-Glance Overview
+Individual Reports
+
+
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Reference
+Reports
+PROACT® RCA Analysis-At-A-Glance Overview
+
+
+
+
+
+
+
+PROACT® RCA Analysis-At-A-Glance OverviewAbout PROACT® RCA Analysis-At-A-Glance OverviewThe PROACT® RCA Analysis-At-A-Glance Overview section of the Comprehensive Analysis report displays a summary of the RCA. This section includes the following subsections:
+Analyze and Team Data
+
+Assets
+
+Status of Preserve
+
+Status of Analyze
+
+Status of Communicate
+Analysis and Team Data Subsection
+The Analysis and Team Data subsection contains summary information about the RCA.
+The following image shows an example of the Analysis and Team Data subsection of the PROACT® RCA Analysis-At-A-Glance Overview section for the example RCA.
+
+
+
+The following table lists each item in the Analysis and Team Data subsection and the corresponding record field whose data is displayed in the report.
+Report ItemRecord FamilyRecord FieldAnalysis Name RCA Analysis Analysis Name Principal Analyst Human Resource 
+First Name, Last Name 
+Note: These values are stored in the Human Resource record that is linked to the RCA Team Member record that contains the value Principal Analyst.
+Team Members Human Resource First Name, Last Name Team Charter RCA Analysis Charter Critical Success Factors RCA Critical Success Factor CSF Start Date RCA Analysis Start Date Estimated Completion Date RCA Analysis End Date Estimated Cost of Event RCA Analysis Cost 
+Assets
+The Assets subsection contains information about the Asset records that are linked to the RCA Analysis record. The following image shows an example of the Assets subsection of the PROACT® RCA Analysis-At-A-Glance Overview section for the example RCA.
+
+
+
+The following table lists each item in the Assets subsection and the corresponding record field whose data is displayed in the report.
+Report ItemRecord FamilyRecord Field
+Record ID 
+
+Equipment or Functional Location
+
+Equipment ID or Functional Location ID 
+Note: This column contains the Record ID of each Equipment or Functional Location record that is linked to the RCA Analysis record.
+
+Family 
+None 
+Note: This field is populated automatically with the name of the family to which the piece of equipment or location belongs. If it belongs to the Equipment family, this field will be populated automatically with Equipment. If it belongs to the Functional Location family, this field will be populated automatically with Functional Location. 
+
+Status of Preserve
+The Status of Preserve subsection contains the number of Preserve Records that have been created, completed, or assigned to RCA Team Members.
+The following image shows an example of the Status of Preserve subsection of the PROACT RCA Analysis-At-A-Glance Overview section for the example RCA.
+
+
+
+The following table lists each item displayed in the Status of Preserve subsection. 
+Report ItemDescription
+Number of Data Collection Tasks Assigned 
+
+The total number of RCA Preserve Item records linked to the RCA Analysis record.
+
+Number of Data Collection Tasks Completed 
+The number of RCA Preserve Item records that contain the value True in the Completed? field. 
+% of Data Collection Tasks Completed
+The percentage of RCA Preserve Items records that contain the value True in the Completed? field. 
+Status of Analyze
+The Status of Analyze subsection contains the number of Hypothesis and Verifications that have been created, completed, or assigned to RCA Team Members.
+The following image shows an example of the Status of Analyze subsection of the PROACT RCA Analysis-At-A-Glance Overview section for the example RCA.
+
+
+
+The following table lists each item displayed in the Status of Analyze subsection.
+Report ItemDescriptionNumber of Hypothesis The total number of RCA Hypothesis records that are linked to the RCA Analysis record. Number of Verification Assigned The total number of RCA Verification records that are linked to RCA Hypothesis records. Number of Verification Completed The number of RCA Verification records that contain the value True in the Completed? field. % of Verification Completed The percentage of RCA Verification records that contain the value True in the Completed? field. 
+Status of Communicate
+The Status of Communicate subsection contains the number of Root Causes and Recommendations that have been created, completed, or assigned to RCA Team Members.
+The following image shows an example of the Status of Communicate subsection of the PROACT RCA Analysis-At-A-Glance Overview section for the example RCA.
+
+
+
+The following table lists each item displayed in the Status of Communicate subsection.
+Report ItemDescriptionNumber of Root Causes Identified The number of RCA Hypothesis records that contain the value Cause - Human, Cause - Latent, or Cause - Physical in the State field. 
+Number of Recommendations 
+Approved Created Pending Review Reviewed Rejected Superseded In Progress Implemented 
+
+The number of RCA Recommendation records that contain a certain value (e.g., Created) in the Status field.
+Note: If there are no records that contain a certain value in the Status field, they do not appear in the report. For example, if an RCA Recommendation record contained the value Reviewed in the Status field, the value Reviewed would appear under the Number of Recommendations field, and the number 1 would appear next to it. If there are no RCA Recommendation records with the value Reviewed in the Status field, the value Reviewed does not appear under the Number of Recommendations field. 
+
+
+
+
+
+
+On this pageAbout PROACT® RCA Analysis-At-A-Glance OverviewAnalysis and Team Data SubsectionAssetsStatus of PreserveStatus of AnalyzeStatus of Communicate
+
+
+
+
+
+
+
+
+

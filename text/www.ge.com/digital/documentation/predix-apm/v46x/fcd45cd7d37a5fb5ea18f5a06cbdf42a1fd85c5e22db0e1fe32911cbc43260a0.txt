@@ -1,0 +1,98 @@
+
+
+
+SIL Validation | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+WorkflowsSIL Assessment
+SIL Verification
+SIL Validation 
+SIS Trip Reporting
+Custom Device
+SRS
+
+
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+Workflows
+SIL Validation 
+
+
+
+
+
+
+
+SIL Validation SIS Management: SIL Validation WorkflowThis workflow describes the process of validating the function of the safety equipment (sensors, logic solvers, and final elements) installed to safeguard an instrumented function.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Define Proof Test Template Persona: AnalystCreate a Proof Test Template and Proof Test Template Details to specify the trip points and error limits for each element in the PIL. Approve Proof Test Template Persona: AnalystApprove the Proof Test Template by selecting Approved in the Template Status field.Define Proof Test Task Persona: AnalystCreate a Proof Test Task record to schedule the proof test and assign the task to a user. You can also use Inspection Tasks (of the type Proof Test) created in Asset Strategy Management, which are listed in the Proof Test Tasks section of the SIS Management Overview page.Perform Proof Test Persona: TechnicianPrint the Proof Test Template. Perform the proof test in the field as per the instructions provided in the Proof Test Template.Enter Proof Test Results and Complete Proof Test Persona: TechnicianCreate a Proof Test to enter the readings taken while performing the proof test in the field. Link the Proof Test to the Proof Test Template and the Proof Test Task. GE Digital APM indicates whether each step in the proof test has passed or failed.Review, Approve, and Close Proof Test  Persona: AnalystReview the proof test results, and then close it by selecting Closed in the Functional Test Status field.Create Recommendation Persona: AnalystYou can create a Recommendation to provide suggestions to improve the proof test results or to prevent overt failures such as broken electrical conduit, failure of a protective element, rusted wires, or the presence of excess moisture.Promote to ASM Persona: AnalystPromote the Recommendation to Asset Strategy Management (ASM), where the associated action can be implemented as an Inspection Task of the task type Proof Test.Asset Strategy Management Persona: AnalystGo to the Asset Strategy Management workflow.SIL Assessment Persona: AnalystGo to the SIL Assessment workflow.SIL Verification Persona: AnalystGo to the SIL Verification workflow.
+
+
+
+
+On this pageSIS Management: SIL Validation WorkflowDefine Proof Test TemplateApprove Proof Test TemplateDefine Proof Test TaskPerform Proof TestEnter Proof Test Results and Complete Proof TestReview, Approve, and Close Proof Test Create RecommendationPromote to ASMAsset Strategy ManagementSIL AssessmentSIL Verification
+
+
+
+
+
+
+
+
+

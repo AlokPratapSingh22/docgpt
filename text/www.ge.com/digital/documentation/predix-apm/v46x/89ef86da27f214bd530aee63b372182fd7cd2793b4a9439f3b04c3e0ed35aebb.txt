@@ -1,0 +1,1245 @@
+
+
+
+Distribution Types | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Distribution Types
+Calculations
+Failure Data
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Reference
+Distribution Types
+
+
+
+
+
+
+
+Distribution TypesAbout Normal Distribution
+A Normal Distribution describes the spread of data values through the calculation of two parameters: mean and standard deviation. When using the Normal Distribution on time to failure data, the mean exactly equals MTBF and is a straight arithmetic average of failure data. Standard deviation (denoted by sigma) gives estimate of data spread or variance.
+A Normal Distribution uses the following parameters:
+ Mean: The arithmetic average of the datapoints. Standard Deviation: A value that represents the scatter (how tightly the datapoints are clustered around the mean).
+About Weibull Distribution
+A Weibull Distribution describes the type of failure mode experienced by the population (infant mortality, early wear out, random failures, rapid wear-out). Estimates are given for Beta (shape factor) and Eta (scale). MTBF (Mean Time Between Failures) is based on characteristic life curve, not straight arithmetic average.
+A Weibull Distribution uses the following parameters:
+
+Beta: Beta, also called the shape factor, controls the type of failure of the element (infant mortality, wear-out, or random).  
+Eta: Eta is the scale factor, representing the time when 63.2 % of the total population is failed.  
+Gamma: Gamma is the location parameter that allows offsetting the Weibull distribution on time. The Gamma parameter should be used if the datapoints on the Weibull plot do not fall on a straight line.  
+If the value of Beta is greater than one (1), you can perform Preventative Maintenance (PM) Optimizations. A Gamma different from a value zero (0) means that the distribution is shifted to fit the datapoints more closely.
+Note: This is an advanced feature and should be used in the proper context and with a good understanding of how to apply a three-parameter Weibull distribution.
+Weibull Analysis Information
+You can use the following information to compare the results of individual Weibull analyses. The following results are for good populations of equipment.
+
+ Beta Values Weibull Shape Factor 
+Components
+
+Low
+
+Typical
+
+High
+
+Low (days)
+
+Typical (days)
+
+High (days)
+
+Ball bearing 
+
+0.7 
+
+1.3 
+
+3.5 
+
+583 
+
+1667 
+
+10417 
+
+Roller bearings 
+
+0.7 
+
+1.3 
+
+3.5 
+
+375 
+
+2083 
+
+5208 
+
+Sleeve bearing 
+
+0.7 
+
+1 
+
+3 
+
+417 
+
+2083 
+
+5958 
+
+Belts drive 
+
+0.5 
+
+1.2 
+
+2.8 
+
+375 
+
+1250 
+
+3792 
+
+Bellows hydraulic 
+
+0.5 
+
+1.3 
+
+3 
+
+583 
+
+2083 
+
+4167 
+
+Bolts 
+
+0.5 
+
+3 
+
+10 
+
+5208 
+
+12500 
+
+4166667 
+
+Clutches friction 
+
+0.5 
+
+1.4 
+
+3 
+
+2792 
+
+4167 
+
+20833 
+
+Clutches magnetic 
+
+0.8 
+
+1 
+
+1.6 
+
+4167 
+
+6250 
+
+13875 
+
+Couplings 
+
+0.8 
+
+2 
+
+6 
+
+1042 
+
+3125 
+
+13875 
+
+Couplings gear 
+
+0.8 
+
+2.5 
+
+4 
+
+1042 
+
+3125 
+
+52083 
+
+Cylinders hydraulic 
+
+1 
+
+2 
+
+3.8 
+
+375000 
+
+37500 
+
+8333333 
+
+Diaphragm metal 
+
+0.5 
+
+3 
+
+6 
+
+2083 
+
+2708 
+
+20833 
+
+Diaphragm rubber 
+
+0.5 
+
+1.1 
+
+1.4 
+
+2083 
+
+2500 
+
+12500 
+
+Gaskets hydraulics 
+
+0.5 
+
+1.1 
+
+1.4 
+
+29167 
+
+3125 
+
+137500 
+
+Filter oil 
+
+0.5 
+
+1.1 
+
+1.4 
+
+833 
+
+1042 
+
+5208 
+
+Gears 
+
+0.5 
+
+2 
+
+6 
+
+1375 
+
+3125 
+
+20833 
+
+Impellers pumps 
+
+0.5 
+
+2.5 
+
+6 
+
+5208 
+
+6250 
+
+58333 
+
+Joints mechanical 
+
+0.5 
+
+1.2 
+
+6 
+
+58333 
+
+6250 
+
+416667 
+
+Knife edges fulcrum 
+
+0.5 
+
+1 
+
+6 
+
+70833 
+
+83333 
+
+695833 
+
+Liner recip. comp. cyl. 
+
+0.5 
+
+1.8 
+
+3 
+
+833 
+
+2083 
+
+12500 
+
+Nuts 
+
+0.5 
+
+1.1 
+
+1.4 
+
+583 
+
+2083 
+
+20833 
+
+"O"-rings elastomeric 
+
+0.5 
+
+1.1 
+
+1.4 
+
+208 
+
+833 
+
+1375 
+
+Packings recip. comp. rod 
+
+0.5 
+
+1.1 
+
+1.4 
+
+208 
+
+833 
+
+1375 
+
+Pins 
+
+0.5 
+
+1.4 
+
+5 
+
+708 
+
+2083 
+
+7083 
+
+Pivots 
+
+0.5 
+
+1.4 
+
+5 
+
+12500 
+
+16667 
+
+58333 
+
+Pistons engines 
+
+0.5 
+
+1.4 
+
+3 
+
+833 
+
+3125 
+
+7083 
+
+Pumps lubricators 
+
+0.5 
+
+1.1 
+
+1.4 
+
+542 
+
+2083 
+
+5208 
+
+Seals mechanical 
+
+0.8 
+
+1.4 
+
+4 
+
+125 
+
+1042 
+
+2083 
+
+Shafts cent. pumps 
+
+0.8 
+
+1.2 
+
+3 
+
+2083 
+
+2083 
+
+12500 
+
+Springs 
+
+0.5 
+
+1.1 
+
+3 
+
+583 
+
+1042 
+
+208333 
+
+Vibration mounts 
+
+0.5 
+
+1.1 
+
+2.2 
+
+708 
+
+2083 
+
+8333 
+
+Wear rings cent. pumps 
+
+0.5 
+
+1.1 
+
+4 
+
+417 
+
+2083 
+
+3750 
+
+Valves recip comp. 
+
+0.5 
+
+1.4 
+
+4 
+
+125 
+
+1667 
+
+3333 
+
+Equipment Assemblies
+
+Low
+
+Typical
+
+High
+
+Low (days)
+
+Typical (days)  
+
+High (days)
+
+Circuit breakers 
+
+0.5 
+
+1.5 
+
+3 
+
+2792 
+
+4167 
+
+58333 
+
+Compressors centrifugal 
+
+0.5 
+
+1.9 
+
+3 
+
+833 
+
+2500 
+
+5000 
+
+Compressor blades 
+
+0.5 
+
+2.5 
+
+3 
+
+16667 
+
+33333 
+
+62500 
+
+Compressor vanes 
+
+0.5 
+
+3 
+
+4 
+
+20833 
+
+41667 
+
+83333 
+
+Diaphragm couplings 
+
+0.5 
+
+2 
+
+4 
+
+5208 
+
+12500 
+
+25000 
+
+Gas turb. comp. blades/vanes 
+
+1.2 
+
+2.5 
+
+6.6 
+
+417 
+
+10417 
+
+12500 
+
+Gas turb. blades/vanes 
+
+0.9 
+
+1.6 
+
+2.7 
+
+417 
+
+5208 
+
+6667 
+
+Motors AC 
+
+0.5 
+
+1.2 
+
+3 
+
+42 
+
+4167 
+
+8333 
+
+Motors DC 
+
+0.5 
+
+1.2 
+
+3 
+
+4 
+
+2083 
+
+4167 
+
+Pumps centrifugal 
+
+0.5 
+
+1.2 
+
+3 
+
+42 
+
+1458 
+
+5208 
+
+Steam turbines 
+
+0.5 
+
+1.7 
+
+3 
+
+458 
+
+2708 
+
+7083 
+
+Steam turbine blades 
+
+0.5 
+
+2.5 
+
+3 
+
+16667 
+
+33333 
+
+62500 
+
+Steam turbine vanes 
+
+0.5 
+
+3 
+
+3 
+
+20833 
+
+37500 
+
+75000 
+
+Transformers 
+
+0.5 
+
+1.1 
+
+3 
+
+583 
+
+8333 
+
+591667 
+
+Instrumentation
+
+Low
+
+Typical
+
+High
+
+Low (days)
+
+Typical (days)
+
+High (days)
+
+Controllers pneumatic 
+
+0.5 
+
+1.1 
+
+2 
+
+42 
+
+1042 
+
+41667 
+
+Controllers solid state 
+
+0.5 
+
+0.7 
+
+1.1 
+
+833 
+
+4167 
+
+8333 
+
+Control valves 
+
+0.5 
+
+1 
+
+2 
+
+583 
+
+4167 
+
+13875 
+
+Motorized valves 
+
+0.5 
+
+1.1 
+
+3 
+
+708 
+
+1042 
+
+41667 
+
+Solenoid valves 
+
+0.5 
+
+1.1 
+
+3 
+
+2083 
+
+3125 
+
+41667 
+
+Transducers 
+
+0.5 
+
+1 
+
+3 
+
+458 
+
+833 
+
+3750 
+
+Transmitters 
+
+0.5 
+
+1 
+
+2 
+
+4167 
+
+6250 
+
+45833 
+
+Temperature indicators 
+
+0.5 
+
+1 
+
+2 
+
+5833 
+
+6250 
+
+137500 
+
+Pressure indicators 
+
+0.5 
+
+1.2 
+
+3 
+
+4583 
+
+5208 
+
+137500 
+
+Flow instrumentation 
+
+0.5 
+
+1 
+
+3 
+
+4167 
+
+5208 
+
+416667 
+
+Level instrumentation 
+
+0.5 
+
+1 
+
+3 
+
+583 
+
+1042 
+
+20833 
+
+Electro-mechanical parts 
+
+0.5 
+
+1 
+
+3 
+
+542 
+
+1042 
+
+41667 
+
+Static Equipment
+
+Low
+
+Typical
+
+High
+
+Low (days)
+
+Typical (days)
+
+High (days)
+
+Boilers condensers 
+
+0.5 
+
+1.2 
+
+3 
+
+458 
+
+2083 
+
+137500 
+
+Pressure vessels 
+
+0.5 
+
+1.5 
+
+6 
+
+52083 
+
+83333 
+
+1375000 
+
+Filters strainers 
+
+0.5 
+
+1 
+
+3 
+
+208333 
+
+208333 
+
+8333333 
+
+Check valves 
+
+0.5 
+
+1 
+
+3 
+
+4167 
+
+4167 
+
+52083 
+
+Relief valves 
+
+0.5 
+
+1 
+
+3 
+
+4167 
+
+4167 
+
+41667 
+
+Service Liquids
+
+Low
+
+Typical
+
+High
+
+Low (days)
+
+Typical (days)
+
+High (days)
+
+Coolants 
+
+0.5 
+
+1.1 
+
+2 
+
+458 
+
+625 
+
+1375 
+
+Lubricants screw compr. 
+
+0.5 
+
+1.1 
+
+3 
+
+458 
+
+625 
+
+1667 
+
+Lube oils mineral 
+
+0.5 
+
+1.1 
+
+3 
+
+125 
+
+417 
+
+1042 
+
+Lube oils synthetic 
+
+0.5 
+
+1.1 
+
+3 
+
+1375 
+
+2083 
+
+10417 
+
+Greases 
+
+0.5 
+
+1.1 
+
+3 
+
+292 
+
+417 
+
+1375 
+
+
+Weibull Results Interpretation
+
+GE Digital APM Reliability shows the failure pattern of a single piece of equipment or groups of similar equipment using Weibull analysis methods. This helps you determine the appropriate repair strategy to improve reliability.
+Is the Probability Plot a good fit?
+Follow these steps to determine whether or not the plot is a good fit:
+Identify Beta (slope) and its associated failure pattern.Compare Eta (characteristic life) to standard values.Check goodness of fit, compare with Weibull database.Make a decision about the nature of the failure and its prevention.
+The following chart demonstrates how to interpret the Weibull analysis data using the Beta parameter, Eta parameter, and typical failure mode to determine a failure cause.
+
+ Weibull Results  Interpretation 
+Beta
+
+Eta
+
+Typical Failure Mode
+
+Failure Cause
+
+Greater than 4
+
+Low compared with standard values for failed parts (less than 20%)
+
+Old age, rapid wear out (systematic, regular)
+
+Poor machine design
+
+Greater than 4
+
+Low compared with standard values for failed parts (less than 20%)
+
+Old age, rapid wear out (systematic, regular)
+
+Poor material selection
+
+Between 1 and 4
+
+Low compared with standard values for failed parts (less than 20%)
+
+Early wear out
+
+Poor system design
+
+Between 1 and 4
+
+Low
+
+Early wear out
+
+Construction problem
+
+Less than 1
+
+Low
+
+Infant Mortality
+
+Inadequate maintenance procedure
+
+Between 1 and 4
+
+Between 1 and 4
+
+Less than manufacturer recommended PM cycle
+
+Inadequate PM schedule
+ 
+
+Around 1
+
+Much less than
+
+Random failures with definable causes
+
+Inadequate operating procedure
+
+
+Goodness of Fit (GOF) Tests for a Weibull Distribution
+A Goodness of Fit test is a statistical test that determines whether the analysis data follows the distribution model.
+If the data passes the Goodness of Fit test, it means that it follows the model pattern closely enough that predictions can be made based on that model.If the data fails the Goodness of Fit test, it means that the data does not follow the model closely enough to confidently make predictions and that the data does not appear to follow a specific pattern.  
+Weibull results are valid if Goodness of Fit (GOF) tests are satisfied. Goodness of Fit tests for a Weibull distribution include the following types:
+
+R-Squared Linear regression (least squares): An R-Squared test statistic greater than 0.9 is considered a good fit for linear regression.
+Kolmogorov-Smirnov: The GE Digital APM system uses confidence level and P-Value to determine if the data is considered a good fit. If the P-Value is greater than 1 minus the confidence level, the test passes.
+Note: The R-Squared test statistic is calculated only for reference. The GE Digital APM system uses the Kolmogorov-Smirnov test as the Goodness of Fit test.
+About Exponential Distribution
+An Exponential Distribution is a mathematical distribution that describes a purely random process. It is a single parameter distribution where the mean value describes MTBF (Mean Time Between Failures). It is simulated by the Weibull distribution for value of Beta = 1. When applied to failure data, the Exponential distribution exhibits a constant failure rate, independent of time in service. The Exponential Distribution is often used in reliability modeling, when the failure rate is known but the failure pattern is not.
+An Exponential Distribution uses the following parameter:
+ MTBF: Mean time between failures calculated for the analysis.
+About Lognormal Distribution
+In Lognormal Distributions of failure data, two parameters are calculated: Mu and Sigma. These do not represent mean and standard deviation, but they are used to calculate MTBF. In Lognormal analysis, the median (antilog of mu) is often used as the MTBF. The standard deviation factor (antilog of sigma) gives the degree of variance in the data.
+A Lognormal Distribution uses the following parameters:
+ Mu: The logarithmic average for the Distribution function.   Sigma: The scatter. Gamma: A location parameter.
+About Triangular Distribution
+Triangular Distribution is typically used as a subjective description of a population for which there is only limited sample data, and especially in cases where the relationship between variables is known, but data is scarce (possibly because of the high cost of collection). It is based on a knowledge of the minimum (a) and maximum (b) and an inspired guess as to the modal value (c).
+A Triangular Distribution is a continuous Probability Distribution with: Lower limit aUpper limit bMode c
+…where a < b and a ≤ c ≤ b.
+About Gumbel Distribution 
+The Gumbel Distribution is a continuous probability distribution. Gumbel distributions are a family of distributions of the same general form. These distributions differ in their location and scale parameters: the mean of the distribution defines its location, and the standard deviation, or variability, defines the scale.
+The Gumbel Distribution is a probability distribution of extreme values.
+In probability theory and statistics, the Gumbel distribution is used to model the distribution of the maximum (or the minimum) of a number of samples of various distributions. 
+About Generalized Extreme Value Distribution 
+In probability theory and statistics, the Generalized Extreme Value (GEV) Distribution is a family of continuous probability distributions developed within extreme value theory. 
+By the Extreme Value Theorem, the GEV Distribution is the only possible limit distribution of properly normalized maxima of a sequence of independent and identically distributed random variables. 
+
+
+
+
+
+On this pageAbout Normal DistributionAbout Weibull DistributionAbout Exponential DistributionAbout Lognormal DistributionAbout Triangular DistributionAbout Gumbel Distribution About Generalized Extreme Value Distribution 
+
+
+
+
+
+
+
+
+

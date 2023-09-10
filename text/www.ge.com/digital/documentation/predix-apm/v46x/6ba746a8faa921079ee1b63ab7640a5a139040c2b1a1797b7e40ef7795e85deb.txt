@@ -1,0 +1,102 @@
+
+
+
+First Quarter of 2023 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Release Notes
+First Quarter of 2023
+
+
+
+
+
+
+
+First Quarter of 2023Release Date: February 24, 2023This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, if your  system used an Oracle schema, when you attempted to sort the execution history on the Summary column, an error occurred and the sorted list was not displayed. It is not possible to fully address this issue due to performance limitations. Now, if your  system uses an Oracle schema, when you attempt to sort on the Summary column, a message is displayed requesting you to sort on a different column.DE191242
+
+
+
+
+
+On this pageRelease Date: February 24, 2023
+
+
+
+
+
+
+
+
+

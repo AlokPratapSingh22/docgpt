@@ -1,0 +1,521 @@
+
+
+
+Reliability Recommendation Records | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field DescriptionsReliability Recommendation Records
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+
+
+Catalog Items
+Distribution Types
+Calculations
+Failure Data
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Reference
+Family Field Descriptions
+Reliability Recommendation Records
+
+
+
+
+
+
+
+Reliability Recommendation RecordsReliability Recommendation Records
+Recommendation records in Reliability Analytics store details of a recommendation and the progress associated with getting the recommendation approved and implemented. The following table provides an alphabetical list and description of the fields that exist for the Reliability Recommendation family. The information in the table reflects the baseline state and behavior of these fields. This list is not comprehensive.
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+FieldData TypeDescriptionBehavior and UsageAlert Assignee When Due? 
+Logical 
+
+An option that lets you send an alert to the person responsible for implementing the recommendation.
+
+If this field is selected, the GE Digital APM system will send an alert to the person in the Assigned to Name field on the date defined in the Target Completion Date field.
+This field is labeled Alert Responsible Party When Due? and is available on the Alert tab on the datasheet.
+
+Analysis ID 
+
+Character 
+
+The ID of the analysis associated with the recommendation.
+
+This field is populated automatically with the Record ID of the analysis to which the Reliability Recommendation record will be linked when it is saved. 
+
+Asset ID 
+
+Character 
+
+The ID for the Equipment associated with the recommendation.
+
+You can define this field by selecting <insert ellipsis icon> and searching for the required Equipment. You can then selecting the Equipment, then select OK to link it to the Recommendation.
+This field is labeled Equipment ID and is available on the General Information tab on the datasheet.
+
+Assigned to Name 
+
+Character 
+
+The name of the person responsible for ensuring the recommendation is implemented.
+
+ This field contains a list of all Security Users in the database, presented in the following format: 
+
+<last name>, <first name>, <user ID> 
+This field is optional. You can select a user from the list. 
+This field is available on the General Information tab on the datasheet.
+
+Author Name 
+
+Character 
+
+The name of the person proposing the recommendation.
+
+You can select a team member from a list of current human resources.
+This field is available on the General Information tab on the datasheet.
+
+Business Impact 
+
+Character 
+
+The impact to the manufacturing process during the recommendation implementation.
+
+You can choose this value from a list of the following options:
+
+Safety 
+
+Environmental 
+
+Production 
+
+Economic 
+
+This field is available on the General Information tab on the datasheet.
+
+Completed 
+
+Logical 
+
+Indicates that the recommendation is complete.
+
+You can set this value to True to indicate that this recommendation is complete.
+
+Completion Comments 
+
+Text 
+
+Details about the completed recommendation.
+
+This field is required if the value in the Status field is Rejected, Cancelled,or Superseded.
+This field is labeled Close-Out Comments and is available on the General Information tab on the datasheet.
+
+Creation Date 
+
+Date 
+
+The date the recommendation was created.
+
+This field is disabled and populated automatically with the date on which the RA Recommendation was created.
+This field is available on the General Information tab on the datasheet.
+
+Date Reviewed 
+
+Date 
+
+The date the recommendation status was changed to Reviewed.
+
+This field is populated automatically with the current date when the Status field is updated to Reviewed.
+
+Days before Due Date to be Notified 
+
+Number 
+
+The numbers of days prior to the target date that the email message should be sent.
+
+This field is enabled only when the Alert Responsible Part When Due? field is set to True, in which case this field is required.
+This field is labeled Days before Due Date to be Alerted and is available on the Alert tab on the datasheet.
+
+Equipment Technical Number 
+
+Character 
+
+The technical number of the piece of equipment for which the recommendation is being made.
+
+When you select a value in the Equipment ID field, this field is populated automatically with the value in the Equipment Technical Number field of the associated Equipment.
+This field is labeled Technical Number and is available on the General Information tab on the datasheet.
+
+Final Action Taken 
+
+Text 
+
+The actions taken to implement the recommendation.
+
+You can define this field manually by typing a description of final actions in this field.
+
+Final Approver Name 
+
+Character 
+
+The name of the person responsible for approving the recommendation and the associated cost.
+
+ This field contains a list of all Security Users in the database, presented in the following format: 
+
+<last name>, <first name>, <user ID>
+
+You can select a user from the list. 
+Note: An email alert will be sent only if the user specified in the Final Approver Name field has logged in to GE Digital APM system.
+This field is available on the General Information tab on the datasheet.
+
+Frequency of Alert After Due Date 
+
+Character 
+
+The frequency after the target date that the alert will be resent.
+
+This field is enabled only when the value in the Alert Responsible Part When Due? field is True, in which case this field is required, and you can choose a value from the list of following values:
+
+Never 
+
+Daily 
+
+Weekly 
+
+Monthly 
+
+Yearly 
+
+This field is available on the Alert tab on the datasheet.
+
+Functional Location ID 
+
+Character 
+
+The ID of the Functional Location that is either linked to the Equipment that appears in the Equipment ID field or linked separately to the RA Recommendation.
+
+This value is populated automatically if a Functional Location exists and is linked to the Equipment that appears in the Equipment ID field. You can also select <insert ellipsis icon> to search for the desired Functional Location, select it. When you select OK, the Functional Location is linked to the RA Recommendation.
+This field is available on the General Information tab on the datasheet.
+
+Implemented Date 
+
+Date
+
+The date the recommendation was implemented.
+
+This field is populated automatically when the RA Recommendation is implemented. When this occurs, the field becomes disabled.
+This field is available on the General Information tab on the datasheet.
+
+Implementation Alert Text 
+
+Text 
+
+Text the user can add that will be sent in the body of the alert to the assignee to remind them the recommendation must be met by the target date.
+
+You can type the text you wish to appear in the Alert email.
+This field is available on the Alert tab on the datasheet.
+
+Mandatory Date 
+
+Date 
+
+The date by which the recommendation must be implemented.
+
+You can select a date using the Calendar tool.
+This field is available on the General Information tab on the datasheet.
+
+Recommendation Basis 
+
+Character 
+
+Background information about why the recommendation is being made.
+ The reason the recommended action is needed. 
+
+You can type any necessary background information in this field.
+This field is available on the General Information tab on the datasheet.
+
+Recommendation Closure Date 
+
+Date 
+
+The date the recommendation status is changed to Implemented, Rejected, or Superseded.
+
+This field is populated automatically with the current date when the value in the status field is changed to Implemented, Rejected, or Superseded.
+
+Recommendation Description 
+
+Text 
+
+A detailed description of the recommendation. 
+
+You can type a description of the recommendation in this field.
+This field is available on the General Information tab on the datasheet.
+
+Recommendation Headline 
+
+Character 
+
+A brief summary of the recommendation. 
+
+You can type a brief summary of the recommendation in this field.
+This field is available on the General Information tab on the datasheet.
+
+Recommendation ID 
+
+Character 
+
+The ID for the RA Recommendation.
+
+This field is populated automatically with a unique name (e.g., REC_888) when the recommendation is created. You can change this value if desired.
+This field is available on the General Information tab on the datasheet.  
+
+Recommendation Priority 
+
+Character 
+
+A value that represents the priority or criticality level of the recommendation for implementation.
+
+You can chose from a list of the following values:
+
+High 
+
+Medium 
+
+Low 
+
+This field is available on the General Information tab on the datasheet.
+
+Reevaluate? 
+
+Logical 
+
+Indicates whether team members should evaluate the recommendation again.
+
+If this check box is selected, an alert will be sent to users specified in the Reevaluation Notification List field.
+This field is available on the Alert tab on the datasheet.
+
+Reevaluation Alert Body Text 
+
+Text 
+
+The message text in the body of the reevaluation alert, which will be sent to users in the reevaluation notification list.
+
+This field is enabled only when the Reevaluate? field check box is selected. Then the field is required.
+This field is available on the Alert tab on the datasheet.
+
+Reevaluation Notification List 
+
+Character 
+
+Individuals that will be sent to the reevaluation alert.
+
+This field is enabled only when the Reevaluate? field is set to True. Then the field is required. You can select from a list of names with Human Resources.
+This field is labeled Reevaluation Alert List and is available on the Alert tab on the datasheet.
+
+Reevaluation Date 
+
+Date 
+
+The date on which an alert is sent out to tell the alert recipient to re-evaluate the recommendation.
+
+This field is enabled only when the Reevaluate? field is set to True. Then the field is required. You can select a date using the Calendar tool.
+This field is available on the Alert tab on the datasheet.
+
+Required Equipment Status 
+
+Character 
+
+The operating status the piece of equipment must be under, in order for the recommendation to be implemented.
+
+You can choose from a list of the following values:
+
+On-line 
+
+Off-line 
+
+Not Applicable 
+
+This field is available on the General Information tab on the datasheet.
+
+Reviewer Name 
+
+Character 
+
+The first and last name of the person who should review the information in the Recommendation before the recommended action is performed.
+
+ This field contains a list of all Security Users in the database, presented in the following format: 
+
+<last name>, <first name>, <user ID>
+
+You can select a user from a list of security users in the database.
+This field is available on the General Information tab on the datasheet.
+
+Status 
+
+Character 
+
+The status of the recommendation.
+
+You can choose from a list of the following values:
+
+Approved 
+
+Created 
+
+Pending Review 
+
+Reviewed 
+
+Rejected 
+Canceled 
+Superseded 
+
+In Progress 
+
+Implemented 
+
+When the is created, the field is set to Created, but can be modified if needed. This field is required.
+You can send an alert only if the Status field is set to Approved or In Progress value. 
+This field is available on the General Information tab on the datasheet.
+
+Status Changed By 
+
+Character 
+
+The ID of the user who last changed value in the Status field.
+
+This field is populated automatically when the Status field is updated.
+This value does not appear on the datasheet by Work default.
+
+Status Changed by Name 
+
+Character 
+
+The name of the person who last changed the Status field.
+
+This field is populated automatically when the Status field is updated.
+This value does not appear on the datasheet by default.
+
+Status Date 
+
+Date 
+
+The date the Status field was most recently changed.
+
+This field is populated automatically with the current date when the Status field is updated.
+This value does not appear on the datasheet by default.
+
+Target Completion Date 
+
+Date 
+
+The date the recommendation is intended to be implemented.
+
+You can select a date using the Calendar tool.  This field is required.
+This field is available on the General Information tab on the datasheet.
+
+Work Order Number 
+
+Character 
+
+The ID of the work order arising from the work request.
+
+This field is populated automatically after a notification has been created in SAP.
+This value does not appear on the datasheet by default.
+
+Work Request Equipment 
+
+Character 
+
+The ID of the Equipment in SAP that is associated with the SAP Notification that was created.
+
+This field is populated automatically after a notification has been created in SAP.
+This field is available on the General Information tab on the datasheet.
+
+Work Request Functional Location 
+
+Character 
+
+The ID of the Functional Location in SAP that is associated with the SAP Notification that was created.  
+
+This field is populated automatically after a notification has been created in SAP.
+This field is available on the General Information tab on the datasheet.
+
+Work Request Reference 
+
+Character 
+
+The ID of the SAP Notification.
+
+This field is populated automatically after a notification has been created in SAP.
+This field is available on the General Information tab on the datasheet.
+
+
+
+
+
+
+On this pageReliability Recommendation Records
+
+
+
+
+
+
+
+
+

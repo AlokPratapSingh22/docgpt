@@ -1,0 +1,100 @@
+
+
+
+Reliability Distribution: Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability DistributionReliability Distribution: Overview
+Reliability Distribution: Workflow
+Reliability Distribution Analyses
+Confidence Level and P Value
+Failure Probability
+
+
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Reliability Distribution
+Reliability Distribution: Overview
+
+
+
+
+
+
+
+Reliability Distribution: OverviewOverview of Reliability Distribution AnalysisReliability Analytics
+The Reliability Analytics module provides a collection of tools that apply reliability engineering principles to help you make tactical (short-term) and strategic (long-term) decisions for maintenance and operational equipment management activities. It also provides: A means for analyzing historical failure data to identify trends and predict future failures.A mechanism for simulating what if scenarios regarding the reliability of a system to determine if a new or modified strategy will be effective. The Reliability Analytics module provides the following types of tools: Production AnalysisSystem Reliability AnalysisSpares AnalysisReliability Distribution AnalysisProbability Distribution AnalysisReliability Growth AnalysisAutomation Rules
+                                Each tool provides a unique set of features that allow you to analyze data to develop strategies to improve reliability.
+Reliability Distribution Analysis
+Reliability Distribution Analysis is a tool that allows you to create a statistical distribution that describes how Time to Failure is distributed over the lifetime of equipment. With a closer look at the individual failure mode over one or multiple pieces of equipment, you will be able to identify trends and predict future failures.
+Reliability Distribution Analysis WorkflowThis workflow provides the basic, high-level steps for developing Reliability Distribution Analysis. The steps and links in this workflow do not necessarily reference every possible procedure.
+
+Collect failure data
+.
+Create a new Reliability Distribution analysis from a GE Digital APM query or dataset, or from manually entered data. The Reliability Distribution Analysis should be based on the failure data collected in the previous step.
+
+Evaluate the results
+ of conducting the Reliability Distribution Analysis.
+
+
+
+
+On this pageOverview of Reliability Distribution AnalysisReliability Distribution Analysis Workflow
+
+
+
+
+
+
+
+
+

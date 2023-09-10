@@ -1,0 +1,131 @@
+
+
+
+Related Events | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Related Events
+
+
+
+
+
+
+
+Related EventsAbout Related EventsSometimes, one event will directly follow another event, where each event is represented by a separate Primary Event. There is no limit to the chain of subsequent events that may occur, each of which will be represented by its own Primary Event. In this documentation, we refer to two Primary Events that represent two related events as related Primary Events. A chain of sequential events can be represented by multiple sequential Primary Event pairs.The GE Digital APM system determines that two Primary Events represent related events when the value in the Event Start Date field in a new Primary Event matches the value in the Event End Date field of an existing Primary Event that is linked to the same GAA Unit. In this case, the value in the Capacity Event Type field in the subsequent event can contain only certain values, depending on the value in the Capacity Event Type field in the preceding event.Note: Because certain Capacity Event Type values are allowed only for subsequent Primary events, if you select one of these values in a new Primary Event and the record for the preceding event does not already exist, a warning message appears.When creating a subsequent Primary Event, if you select a Capacity Event Type value that is not listed as an allowable event type in the subsequent Event and you specify a value in the Cause Code field, a warning message appears, explaining that you have selected an invalid scenario that follows an existing Primary Event.Note: In a chain of events, only the value in the Capacity Event Type field of the immediately preceding event determines the allowable Capacity Event Type in the subsequent event.Access a Related EventProcedure
+Access the Primary Event whose Related Event you want to access.In the Events workspace, select the Related Event tab.
+A hyperlink to the Related Event associated with the selected Primary Event appears.
+
+
+
+Select the link.
+The datasheet for the selected Related Event appears. 
+Note: As needed, you can modify the values in the available fields, and then select  to save your changes. 
+Create a Related EventBefore You Begin
+
+Create a Primary Event. The Primary Event must have a value in the Event End Date field.The Primary Event must not have another Related Event.
+Procedure
+Access the Primary Event for which you want to create a Related Event. Select the Related Event tab.
+The Related Event section appears. 
+In the upper-left corner of the section, select Create Related Event. 
+An Event datasheet appears. 
+Note:
+The Event Start Date field on the datasheet will be disabled and populated with the value that you specified in the Event End Date field for the Primary Event .  The Capacity Event Type field on the datasheet will be filtered based on the value that you specified in the Capacity Event Type field for the Primary Event. 
+
+As needed, enter values in the available fields.Select .
+The related Primary Event is saved and linked to the selected Primary Event. 
+Example
+Consider an example of GAA Unit A, represented by the GAA Unit record GAA Unit A. On January 3, 2016, GAA Unit A suffered an unplanned outage due to an external influence and had to be repaired before it could be used again. Repairs began at 9:00 A.M. on January 5 and continued until 5:00 P.M., when it was determined that a new part had to be ordered to complete the repairs. The new part arrived on January 8, and the repairs were finished by 5:00 P.M. on January 8.
+In this scenario, you would have needed to create three Primary Events:
+One to capture the initial outage.One to capture the maintenance.One to capture the extended maintenance due to other circumstances.
+Consider the following table, where each column represents an Event that you would have created in this scenario.
+
+Fields
+
+Primary Event 1
+
+Primary Event 2
+
+Primary Event 3
+
+Capacity Event Type
+
+U1 (Unplanned (forced) Outage - Immediate)
+
+MO (Maintenance Outage)
+ME (Maintenance Outage Extension)Event Start DateJanuary 3, 2016, 9:00 A.M.January 5, 2016, 9:00 A.M.January 5, 2016, 5:00 P.M.Event End DateJanuary 5, 2016, 9:00 A.M.January 5, 2016, 5:00 P.M.
+January 8, 2016, 5:00 P.M.
+
+In this example, you would have created two sequential Primary Event pairs:
+Pair 1: Primary Event 1 + Primary Event 2.Pair 2: Primary Event 2 + Primary Event 3.
+None of these Primary Events can stand alone because none of them describes completely what happened to GAA Unit A.
+Primary Event 1 indicates that the unit was out during the time between when it stopped producing power and repairs began. By itself, it would not indicate that any repairs were attempted on the unit.Primary Event 2 indicates that repairs on the unit began at 9:00 A.M. on January 5, 2016 and ended at 5:00 P.M. the same day. By itself, it neither indicates that the unit had stopped producing power before the repairs began nor that maintenance was extended to account for the time it takes to order and receive a new part. The Capacity Event Type value for Primary Event 2 is MO, which is a valid event type for subsequent events of type U1, as defined in Primary Event 1.Primary Event 3 indicates that maintenance was extended but does not indicate when repairs began on the unit or that it had stopped producing power before the repairs began. The Capacity Event Type value for Primary Event 3 is ME, which is a valid event type for subsequent events of type MO, as defined in Primary Event 2.
+Note:  The event type ME is not valid when the event type of the preceding event is U1. But because valid event type for subsequent event are determined only by the immediately preceding event, the event type of the first event is not considered when determining allowable event types for the third event.
+
+
+
+
+
+On this pageAbout Related EventsAccess a Related EventCreate a Related Event
+
+
+
+
+
+
+
+
+

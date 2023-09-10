@@ -1,0 +1,73 @@
+
+
+
+Configure Search | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Configure SearchProcedureAccess the Search Configuration page selecting the family for which you want to configure search results.As necessary, modify the following options for the family:
+
+Increase Rank: You can enter a numeric value to specify the location of the family within search results. The higher the number, the higher the priority. The lowest number that you can enter is 0.
+
+Exclude: Indicates whether or not the family is indexed, and therefore searchable. 
+Important: Before you modify this option, you should ensure that you understand how this setting may affect other areas of the application.
+
+As necessary, in the Field Search Settings section, modify the following options for each field within a family:
+
+
+Display Field?: Indicates the field whose text will be displayed in the search results. The ENTITY_ID field is the default for all fields.
+
+Index?: Indicates whether or not the field is indexed, and therefore searchable.
+Partial Search Pattern: This field allows you to use regular expressions to configure more streamlined searches. For examples and instructions on how to properly use this field, refer to Use Partial Search Patterns.
+Select Save.
+Your changes are reflected in search results throughout GE Digital APM.
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,210 @@
+
+
+
+Reference Information: Query Results | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+QueriesWorkflow
+Query Creation
+Query Results
+Query Sources, Fields, Joins, and Hyperlinks
+Query Expressions, Clauses, and Prompts
+Query Timeouts
+ReferenceReference Information: Query Types
+Reference Information: Query Results
+Reference Information: Query Joins, Functions, and Hyperlinks
+Reference Information: Query Expressions, Clauses, Prompts, and Operators
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Queries
+Reference
+Reference Information: Query Results
+
+
+
+
+
+
+
+Reference Information: Query ResultsAbout Displaying Custom Text Instead of Field Values
+By default, the values displayed in each column in the results are the values in the fields of records included in the results. You can modify the default behavior, however, if you want all cells in a column to display the same text.
+To modify the values displayed in a column, you will need to modify the value in the Field cell for the appropriate column in the grid in the Conditions section of the Design workspace.
+Tip:  If you modify the value in the Field cell for a column that contains Group By in the Total cell, an error message will appear when you run the query. If you receive this error, try changing Group By to Min, Max, or Expression.
+Custom Text in the Installation Date Column
+If your query returns the Asset Installation Date for all Pump records, the values in the Asset Installation Date column will be the installation dates that are stored in the Pump records in your database. You could, instead, make the column display custom text instead of the stored dates. For example, the installation dates might fall within a given time period, such as January 2005 and December 2005, so you might want the text to read Installed in 2005 to indicate the time frame as opposed to the actual date.
+Hyperlinks
+If your query results contain hyperlinks, you will probably want to customize the text of your hyperlinks. For example, if your query returns all Pump records, you might include the Asset ID, Asset Description, and Asset Installation Date in the results. By default, the columns will display the value stored in the Asset ID, Asset Description, and Asset Installation fields of each record.
+You might decide to add a hyperlink to the Asset ID field that will open each record in the results in the Record Manager. Suppose you want the hyperlinks to display some text other than the Asset ID. For example, you might want the hyperlink to display the text Open in Record Manager.
+About Formatted and Unformatted Mode
+You can run Select queries in two different modes: formatted and unformatted.
+Details
+
+
+Formatted Mode: Causes the results to display formatted values rather than stored values. In other words, the values displayed in the results will be formatted based on any format rules or criteria defined for the fields included in the query.
+Note:  If you clear the Included check box for the System field, and then run the query in formatted mode, selecting a hyperlink in the query results may cause the following error message to appear: An entity with the key '{<X>}' could not be found. Please close the tab. If this occurs, select the Included check box for the System field, and then rerun the query.
+
+
+Unformatted Mode: Causes the results to display stored values rather than formatted values. In other words, any format rules that have been defined will not be applied, and the results will display values exactly as they exist in the database.
+Note: When you run a query in unformatted mode, the results will still display formatted date values. Date values will always be displayed in the local time for the user; however, if you export the unformatted query result set to a dataset, the exported date values will be unformatted.
+
+Formatted Mode
+Consider an example where the System Code Table Priority contains the System Codes listed in the following table and is configured to display descriptions only.
+
+IDDescription1Very High2High3Medium4Low5Very Low
+
+Suppose that your database contains the Task family, which contains a Priority field, and also assume that a Valid Values rule has been applied to this field so that it displays a list of values from the Priority System Code Table. Because this System Code Table is set up to display descriptions only, the available values for this field will be Very High, High, Medium, Low, and Very Low. When a user selects one of these values, the corresponding numeric ID will be stored in the field.
+When you create a Select query on the Task family, you can choose to run it in formatted or unformatted mode. If you create a query that includes the Task ID, Task Type, and Priority fields and run it in unformatted mode, the results might look something like the following image.
+
+
+
+Notice in this image that numeric values are displayed in the Priority column. These are the System Code ID values that are stored in the Priority fields of these records. If you run the same query in formatted mode, the results would look like the following image.
+
+
+
+Notice that the Priority column now displays the System Code descriptions that correspond to the stored IDs. In other words, the results now show the formatted values rather than the stored values.
+By default, newly created Select queries will run in unformatted mode. You can change the mode and save it with the query so that the next time you run the query, it will use the mode that you last saved. Note that the Formatted check box is available only for Select queries.
+Note:  If you select the Show Totals option, the query behaves as if it were running in unformatted mode even if you select to run it in formatted mode.
+About Sort Options for Formatted Queries
+When you run a Select query in formatted mode, the query results will display formatted values rather than stored values. For example, a field that stores a currency value might store the value 100, but if a format rule has been applied to that field, the value might be displayed as $100.00 in a query configured to run in formatted mode.
+When you execute a query in formatted mode where the displayed value differs from the stored value, sorting based on the displayed value versus the stored value may produce different results. Therefore, when you run a Select query in formatted mode, you have the option of sorting the results based on the formatted (i.e., displayed) value or the stored values.
+Sorting By Priority
+Consider an example of a query on the Task family. If you sort the formatted query based on the displayed values, when you sort the Priority column in ascending order, the results should look like the following image.
+
+
+
+The values in the Priority column are sorted in ascending alphabetical order according to the displayed value. This sort order does not correspond to the priority order of the tasks, where tasks with a Very High priority should appear at the top of the list, and tasks with a Very Low priority should appear at the bottom of the list. Alternatively, if you were to sort the results based on the stored value, the results should look like the following image.
+
+
+
+The values in the Priority column are now sorted in ascending numeric order according to the stored value. This sort order corresponds to the task priority, where tasks with a Very High priority appear at the top of the list, and tasks with a Very Low priority appear at the bottom of the list.
+About Defining an Alias
+The alias for a field specifies how it will be labeled in the query results and in any report or graph that is created from the query. When you add fields to the grid in the Conditions section, the alias is set automatically to the field caption. You can modify the alias.
+Details
+When defining aliases, keep in mind the following considerations:
+Within a given query, each alias must be unique. If you specify an alias that has already been defined for another column in the same query, a number will be appended to the end of each duplicate alias to distinguish them from the other aliases in the query. For example, if you specify Asset as the alias in four columns, the aliases would be changed to:AssetAsset0Asset1Asset2
+Each duplicate alias will be numbered in this way using the next available number (i.e., 3, 4, 5, and so on).
+The alias cannot exceed 27 characters in length (including spaces). You will not be able to enter more than 27 characters into any Alias cell.
+About Displaying Unique Records Only
+You can specify that results of a query return only unique records. For example, if you design a query to return all types of Air Cooled Heat Exchangers, you might get 10 results, but there might be only two different types of Air Cooled Heat Exchangers within those results, such as Air Cooled Heat Exchanger and Cooling Tower. If you specify that the query return only records where the asset type is unique, you will see only two results: one Air Cooled Heat Exchanger result and one Cooling Tower result.
+Uniqueness is defined at the query level, not the field level. This means that if the same query that returns two results with different asset types is also designed to return the asset status, and you specify that the query return only unique records, you will see records where the asset type and status are unique. You could see results where there are active Air Cooled Heat Exchangers, Inactive Air Cooled Heat Exchangers, and active Cooling Towers in the database.
+Note:  When you are using Oracle schema, if a text field is exists in a query and the Unique Records Only check box is selected when the query is run, an error message will appear. If you are using an Oracle database and want to run a query with a text field, do not select the Unique Records Only check box.
+About Query Performance
+Query performance is influenced by a number of factors, including hardware efficiency (e.g., how fast the Server machines are), the system's workload at the time you run the query (e.g., how many users are logged in and making requests), and the efficiency of the database (e.g., how well the database is being maintained). As you can see, many of the factors that influence query performance are beyond your control. For example, you cannot control how many other users are currently using the system.
+Query performance is also affected by a number of factors that you can control, including how you construct the query and the options that you choose for running it. The following Details sections discuss things that you can do to maximize the performance of queries.
+Note:  The suggestions provided here may not improve the performance of all queries. In addition, other factors (e.g., deficiencies in hardware resources) may negate any improvement that would otherwise be achieved by implementing these suggestions.
+Limiting the Size of the Query
+Generally, the more data that you attempt to retrieve with a query, the longer the query will take to run. For example, a query that retrieves data for all fields in the Recommendation family (which has many subfamilies) will take longer to run than a query that returns only a few fields from the GE Digital APM General Recommendation family (A subfamily of the Recommendation family).
+Knowing this, you can improve query performance by limiting the amount of data that you return in the query results. For example:
+Always query on the lowest-level family possible. For example, instead of querying on a family, query on individual subfamilies. If you need to query on more than one subfamily, you might want to create more than one query.Only include in your query results the fields that you actually need. Instead of returning the information for all fields in a given family, limit your results to only the specific fields that you want to analyze.Use criteria to limit results to a specific set of records. For example, if you are interested only in the pumps associated with a given manufacturer, limit your query results by applying criteria to the Manufacturer field.
+Note:  Performance improvement from limiting the size of the query will be seen only when comparing queries that are otherwise similar.
+Running Select Queries in Unformatted Mode
+
+GE Digital APM provides two output modes for running Select queries: formatted mode and unformatted mode.
+Because unformatted mode returns results without taking the extra step of applying formatting before displaying results, running a query in unformatted mode can be more efficient than running the same query in formatted mode. This performance improvement is particularly significant when you run a query that includes many formatted fields.
+Note:  Unformatted mode is the default output format for new Select queries.
+About Limiting the Number of Results
+You might want to limit the number of results that are returned for certain queries such that only the first n number of records are returned based on a specific set of criteria.
+Note:  This feature can be used only with Select queries.
+Limit the Number of Results
+Suppose you want to view the 20 most expensive equipment items according to total cost, where the value in the Breakdown Indicator field is set to True. In this case, you would create the query on the Equipment and Work History fields, joined via the Has Work History relationship, and add the Equipment ID, Equipment Short Description, and Total Cost fields to the query.
+The Total Cost field is included, and the query is configured to show the sum of all total cost values, grouped by Equipment ID. In this case, rather than showing two separate rows in the results for each Work History record that is linked to this Equipment record, the results will contain one row for this Equipment record, and the Total Cost column will display the sum of the individual values in the Total Cost field in each Work History record. Additionally, the query is configured to show the results in descending order according to total cost.
+Based on this query configuration, if you were to run the query at this point, you would see all Equipment records that meet the query criteria.
+In this scenario, however, you want to view only the 20 most expensive pieces of equipment. To refine this query to suit your needs, in the Conditions section heading, set the limit to 20. When you run the query again, only those 20 Equipment records will be returned by the query.
+SQL Servers and Duplicate Values
+If you are using a SQL Server database, sort the query by a field, and then configure the query to return a limited number of records, if more than one record contains the same value in the field by which you sorted the query, those records will be displayed in a random order relative to one another. For instance, if two Equipment records are linked to Work History records with the same total cost, each time you ran the query, those Equipment records would be displayed in a random order relative to one another. In other words, the first time you ran the query, the Equipment record with the ID 000000000001060839 might appear above the Equipment record with the ID 000000000001060840. The second time you ran the query, however, those Equipment records might appear in the reverse order. This limitation applies to SQL Server databases only.
+Query URLs
+There are two URL routes associated with queries: query and qdetail. The following table describes the various paths that build on the route, and the elements that you can specify for each.
+ElementDescriptionAccepted Value(s)Syntax
+query : Displays the Query page.
+query/<EntityKey>/<WorkspaceName> : Displays the <QueryName> or New Query page.
+Catalog Item Key
+Specifies the Catalog Item Key of the query that you want to open in the Query tool.Numeric Catalog item key#query/Catalog Item Key
+
+Catalog Item Path
+Specifies the path and name of the query that you want to open in the Query tool.
+Catalog item path
+#query?path=Catalog Path\Query name
+
+p0, p1, p2 etc. (specifying a literal value)Specifies a literal value that will be passed into a query containing a prompt.Any value that is acceptable for the prompt type (e.g., numeric values for numeric prompts)
+#query/Catalog Item Key?p0=Literal Value
+
+#query?path=Catalog Path\Query name&p0=Literal Value
+
+
+p0, p1, p2 etc. (specifying a variable value)Specifies a variable value from a specified column key in a query that will be passed from a query into a query containing a prompt.Any value that is acceptable for the prompt type (e.g., numeric values for numeric prompts)
+#query/Catalog Item Key?p0={Column Key}
+
+#query?path=Catalog Path\Query name&p0={Column Key}
+
+
+qdetail/<Catalog Item Key>: Displays the query in a new, view-only page.
+Parameter Name = Parameter Value
+Specifies the Parameter Name and Parameter Value of the query whose results you want to open in a new, view-only page.Parameter Names and Parameter Values#qdetail/Catalog Item Key?Parameter Name=Parameter Value
+
+Examples: Query URLs
+
+Example URLDestination#query/3223198
+Opens the query with the Catalog Item Key of 3223198 in the Query tool.
+#query?path=Public\Meridium\Modules\Core\Queries\APM Query
+
+Opens the query named 'APM Query' in the Query tool that is found in the specified Catalog folder.#query/3223198?p0=Literal Value
+Opens the query with the Catalog Item Key of 3223198 in the Query tool and passes the specified literal value into the first prompt in the query.#query?path=Public\Meridium\Modules\Core\Queries\APM Query&p0=Literal Value
+Opens the query named 'APM Query' in the Query tool that is found in the specified Catalog folder and passes the specified literal value into the first prompt in the query.#query/3223198?p0={1}
+Opens the query with the Catalog Item Key of 3223198 in the Query tool and passes the specified variable from an existing query into the first prompt of the query.#query?path=Public\Meridium\Modules\Core\Queries\APM Query&p0={1}
+Opens the query named 'APM Query' in the Query tool that is found in the specified Catalog folder and passes the specified variable value from an existing query into the first prompt of the query.#qdetail/900000003707?Manufacturer=UNITED%2BPUMPS
+Opens the results of the query with the Catalog Item Key 900000003707, Parameter Name Manufacturer, and Parameter Value UNITED%2BPUMPS in a new, view-only page.
+
+
+
+
+
+
+On this pageAbout Displaying Custom Text Instead of Field ValuesAbout Formatted and Unformatted ModeAbout Sort Options for Formatted QueriesAbout Defining an AliasAbout Displaying Unique Records OnlyAbout Query PerformanceAbout Limiting the Number of ResultsQuery URLs
+
+
+
+
+
+
+
+
+

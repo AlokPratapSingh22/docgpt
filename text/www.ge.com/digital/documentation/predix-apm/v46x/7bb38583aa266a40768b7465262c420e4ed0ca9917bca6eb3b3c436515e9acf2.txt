@@ -1,0 +1,100 @@
+
+
+
+Second Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+Release Notes
+Second Quarter of 2021
+
+
+
+
+
+
+
+Second Quarter of 2021Release Date: June 4, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, when you attempted to add a team member to an SIL Analysis, users across all sites were displayed. This issue has been resolved. Now, only the users linked with the site of the SIL Analysis are displayed.US482905Previously, when you used the Import from Exida functionality in SIL Analysis, the performance of GE Digital APM was not as expected if there were a large number of analyses present in APM. This issue has been resolved.DE158039Previously, when you used the Export to Exida functionality in SIL Analysis, the performance of GE Digital APM was not as expected, if there were a large number of analyses present in APM. This issue has been resolved.DE157727Previously, if the Hazards Analysis license was not active in GE Digital APM, when you attempted to add a team member to the team associated with a Safety Integrity Level (SIL) Analysis, an error occurred. This issue has been resolved.DE156236
+
+
+
+
+
+On this pageRelease Date: June 4, 2021
+
+
+
+
+
+
+
+
+

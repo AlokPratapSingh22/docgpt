@@ -1,0 +1,85 @@
+
+
+
+Asset Modeler Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+WorkflowsAsset Modeler Workflow
+Tag Modeler Workflow
+
+
+Instances
+Groups
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Workflows
+Asset Modeler Workflow
+
+
+
+
+
+
+
+Asset Modeler WorkflowAsset Modeler WorkflowThe asset modeler creates the business functional hierarchy through APIs or ingestion using one or more JSONs.The asset modeler can set up a tenant business functional hierarchy that includes:ClassificationsInstancesParent-child connectionsGroups for classifications or instancesTo create an asset model for a tenant, do the following:Create asset classifications, which define the asset hierarchy.Values for classification in the JSON include:idnamedescriptionccomClassThe ccomClass values for a classification represent the type (ENTERPRISE_TYPE, SITE_TYPE, SEGMENT_TYPE, or ASSET_TYPE).Next, add values for reserved attributes. Adding values for reserved attributes to a classification allows sub-classifications to inherit those values. Values for reservedProperties and properties are added under the named classification node.Create asset instances.Instances represent a specific entity associated with a type of classification. Values for instances in the JSON include:idnamedescriptionclassificationproopertiesccomClassThe classification values for an instance represent a type of named entry, such as a company name, or regional designation. The ccomClass values for an instance are predetermined according to their place in the hierarchy (ENTERPRISE, SITE, SEGMENT, ASSET).Next, add location geopoints to define the instance location. Geopoints represent coordinates that define the location of the instance. The location may include a group of geopoints. Values for location > geopoints include:nameorderlatitudelongitudealtitudeAdd connections which define the parent-child relationships between asset instances and Business Functional Objects.Connections represents a mapped connection from an instance to another instance in a parent-child relationship. Values for connection > from include:idccomClassThe ccomClass values for the from connection are predetermined according to their place in the hierarchy (ENTERPRISE, SITE, SEGMENT, or ASSET).Values for connection > to include:typeidccomClassThe type values are parent or child. The ccomClass values for the to connection are predetermined according to their place in the hierarchy (ENTERPRISE, SITE, SEGMENT, or ASSET).Add group associations for the asset instances.Group associations include classifications of one type that are related or connected in some way. Groups include member instances which can be added in the JSON. Values for groups > mappedInstances include:idnamedescriptionccomClassassociatedEntityCcomClasspropertiesThe ccomClass value is predefined as GROUP. The associatedEntityCcomClass values is the type (ASSET or TAG) of the member instance listed under the group parent node.For more information, refer to the ingestion or APIs documentation to complete the workflow.
+Related ConceptsAbout Tag ModelRelated tasksIngest Assets through the REST Client for Legacy Predix APMIngest Assets through the User Interface for Legacy Predix APM
+
+
+
+
+On this pageAsset Modeler Workflow
+
+
+
+
+
+
+
+
+

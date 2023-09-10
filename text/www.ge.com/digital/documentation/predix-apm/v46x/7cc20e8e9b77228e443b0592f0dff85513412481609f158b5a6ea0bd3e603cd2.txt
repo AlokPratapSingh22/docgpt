@@ -1,0 +1,165 @@
+
+
+
+Query Creation | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+QueriesWorkflow
+Query Creation
+Query Results
+Query Sources, Fields, Joins, and Hyperlinks
+Query Expressions, Clauses, and Prompts
+Query Timeouts
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Queries
+Query Creation
+
+
+
+
+
+
+
+Query CreationAbout Creating QueriesWhen you initiate the query creation process, you can choose to select the query sources (entity and relationship families) and query columns (family fields) using either of the following options:
+Design workspace: Provides a visual representation of a query, and lets you manually add sources, criteria, and links.
+SQL workspace: Provides a workspace into which you can directly enter SQL code to build a query. The SQL View is intended for more advanced Query users.About Running QueriesQueries are available in many places throughout GE Digital APM. In some cases, you might create a query manually and save it for future use. In other cases, you might run a query that another user constructed or that is delivered with the baseline content.When you run a query, you will see the results in the Results workspace, which will make it obvious that you are looking at query results. For example, if you open a query from the Catalog or select a dashboard hyperlink that references a stored query, the results will be displayed on the Results workspace.In other cases, however, you might run a query and see the results in a different format on a different screen. In these cases, you might not realize that you are looking at query results. Inspection Management, for example, provides a customized workflow that allows you to execute queries that return specific information, such as equipment that can have bundle inspections. In addition, searches provide a customized form where you can search the database for records in families that meet specific criteria. In other words, performing a search is simply another way of querying the database to return a subset of records.When a query is created, it can be configured to return raw data stored in the database or reformatted data. This means that you might run different queries that return the same data in different formats. In addition, queries can be configured to prompt you for information before returning any results.Queries are not stand-alone tools; they can be incorporated throughout GE Digital APM.About Saving QueriesAfter you create a query, you can save it so that you or other users can access it later. Queries are saved as Catalog items to the GE Digital APM Catalog.Details
+After a query has been saved to the Catalog, whenever you make changes to it, you will need to re-save the query to retain your changes.
+Saving a query is similar to saving any other item to the Catalog, but consider the following query-specific considerations:
+When you save a query while viewing the Design or the SQL workspace, any saved personal or Super User grid layout will be discarded. The default layout will be saved and used the next time any user runs the query.If you save a query with invalid SQL syntax, an error will appear, pointing to the location of the problem within the SQL code.Links to queries whose names contain special characters may not function correctly. For example, the following issues result from using double quotation marks ("), the pound symbol (#), or angle brackets (<>):If a query name contains double quotation marks (") and you send a link to the query to an email recipient or the desktop, selecting the email link or the desktop shortcut will open the New Query window instead of the saved query.If a query name contains the pound symbol (#) and you send a link to the query to an email recipient or the desktop, selecting the email link or the desktop shortcut will cause GE Digital APMto display a message that the query cannot be loaded.If a query name contains angle brackets (<>) and you send a link to the query to an email recipient, selecting the email link will cause GE Digital APMto display a message that the query cannot be loaded. If a query name contains angle brackets and you send a link to the query to the desktop, the shortcut will function correctly.
+Depending on your query privilege settings, you may need to run the query before you can save it.To save a Super User grid layout for a query, you must use the Save for All Users option on the shortcut menu in the results. The save options on the Common Tasks menu will not save the current layout for all users, even if you are logged in as a Super User at the time you save the query.
+About SQL CodeIf you are familiar with SQL syntax, then instead of designing the query, you can enter SQL code directly and run the query to view the results.SQL Details
+
+GE Digital APM supports the use of Oracle schemata and SQL server databases, both of which can be queried using SQL statements. While the same basic SQL code can be used to query either type of database, there are some differences in the syntax that is supported by each database server. Therefore, GE Digital APM uses a proprietary version of SQL that is constructed automatically and translated at runtime by the system into the SQL syntax that is appropriate for the type of database you are using. We call this form of SQL Meta-SQL.
+In most cases, Meta-SQL syntax is the same as standard SQL syntax. This means that in most cases, you can type the SQL syntax that you are familiar with. If, however, you use functions that are specific to one database server (e.g., Oracle), when you run the query on a different database server (e.g., SQL Server), an error appears, and you will be unable to run the query and view its results until you correct the SQL code.
+In other words, when you type SQL code directly and select , the following events occur:
+
+GE Digital APM reads the syntax and determines whether or not it is valid Meta-SQL.
+GE Digital APM translates the Meta-SQL into SQL that can be interpreted by SQL Server or Oracle, depending on the type of database you are using.SQL Server or Oracle executes that translated code and returns results to GE Digital APM.The query results appear.
+Throughout the GE Digital APM documentation, we use the term SQL when referring to the SQL code that appears when you select SQL in the content header.
+All tasks that you can perform when designing a query write Meta-SQL code that can be viewed when you select the SQL tab. Not all SQL code that you enter directly, however, can be interpreted by the Design workspace. This means that in some cases, you can write SQL code that will cause the Design workspace to be unavailable. If you write a query using SQL code and want other users to be able to modify the query design, first try to access the Design workspace to make sure that it is available before saving the query.
+Specific instructions for writing SQL code are beyond the scope of this documentation. Where appropriate, we provide guidelines and suggestions for how to write SQL expressions and use SQL functions, but this documentation does not contain comprehensive SQL code explanations.
+Access the Query PageProcedureOn the GE Digital APM navigation menu, select Tools, and then select Queries.
+The Query page appears, displaying a list of queries. 
+
+
+
+Tip: You can select a link in the View Query column to access a results-only view of a query in a new page. You can select the links in the Path column to access the full, modifiable view of a query in a new page. You can also access the modifiable view from the results-only view. To export a query to a file, you can use the Export to a File () button.
+Note:  Only queries created or accessed via the Query page will appear in the list. The 25 most recently accessed queries will appear in the list. 
+Access the Design WorkspaceProcedureTo access the Design workspace for a new query, perform the following steps.Access the Queries page.In the upper-right corner, select Create New.
+The Design workspace appears, and the Select a Family or Query window is active, where you can add sources to the design canvas. After adding a source, you can use the design canvas to add fields to the grid in the Conditions section and to add criteria to the query.
+
+
+
+To access the Design workspace for an existing query, perform the following steps.Access the Queries page.Select Browse.
+The Select a query from the catalog window appears.
+Navigate to the folder that contains the query you want to view. Select the query, and then select Open.
+The Results workspace appears.
+In the page heading, select Design.
+The Design workspace appears, where you can add sources to the design canvas. Use the design canvas to add fields to the grid in the Conditions section. Use the Conditions section to add criteria to the query.
+What To Do Next
+
+Add a source
+
+Access the SQL WorkspaceProcedureTo access the SQL workspace for a new query:Access the Queries page.In the upper-right corner, select Create New.
+The Design workspace appears.
+In the page heading, select SQL.
+The SQL workspace appears, where you can modify the SQL code directly.
+To access the SQL workspace for an existing query:Access the Queries page.In the upper-right corner, select Browse.
+The Select a query from the catalog window appears.
+On the left side of the window, navigate to the folder that contains the query you want to view. Select the query, and then select Open.
+The Results workspace appears.
+In the page heading, select SQL.
+The SQL workspace appears, where you can modify the SQL code directly.
+Modify a QueryProcedure
+Access the Design workspace for an existing query, or access the SQL workspace for an existing query.Modify the query as needed, and then save the query.The query is modified.Modify the Query TypeAbout This TaskThis topic describes how to select the type of query that you want to create, or modify the type of an existing query.Note:  You should not create a Delete query from a Select query that contains relationship families. If you create a Delete query from a Select query, and then you select the relationship family as the target source on the Target Query Source window, an error message will appear, and the values in the design canvas and Conditions section will be removed.Procedure
+Access the Design workspace.In the page heading, select the drop-down list box, and then select one of the following query types: Select Query; Crosstab Query; Delete Query; Update Query; Append Query.The Conditions section changes to display rows that are appropriate for the selected query.Include or Exclude a Field in the SQL CodeBefore You Begin
+When you create a query, all the fields that you added are selected by default to be included in the SQL code. In some cases, you might want to add a field to the grid in the Conditions section so that you can define criteria for that field without including it in the SQL code.
+For example, you might want to configure a query that returns all Pumps installed on a certain date. You could add the Pump ID field and the Asset Installation Date to the query, define criteria to limit the Asset Installation Date to a certain date, and then exclude the Asset Installation Date. This would increase performance and still return the records you are interested in viewing.
+About This TaskThis topic describes how to include or exclude a field in the SQL code for a Select query.Procedure
+Access the Design workspace.For the field that you do not want to include in the SQL code, in the Include cell, clear the check box.When you run the query, the field will not appear in the results.Results
+When you clear the Include check box for a field, the Display check box for that field is automatically cleared. Fields can be displayed in the results only if they are also included in the SQL code.If you exclude a field from the SQL code, you must define content in the Criteria cell, the Sort cell, or the Total cell in that column for the field to be saved with the query code. In other words, if the field is not included in the query, it must be included in the SQL code in some other way to be saved with the query. Otherwise, when you open or run the saved query, the excluded field will not be displayed in the Design, Results, or SQL workspaces.
+Create a Crosstab QueryProcedure
+Access the Design workspace.In the page heading, select the drop-down list box, and then select Crosstab Query.
+The Conditions section is updated to include the following rows:
+FieldAliasTableTotalCrosstabSortSort IndexCriteriaOr
+For the fields that you want to use as column headings in the Results workspace, in the Crosstab cells, in the drop-down lists, select Column Heading.
+Important: The Total cell that corresponds to at least one field that you want to use as a column heading must be set to Group By.
+For the fields that you want to use as row headings in the Results workspace, in the Crosstab cells, in the drop-down lists, select Row Heading.
+Important: The Total cell that corresponds to at least one field that you want to use as a row heading must be set to Group By.
+For the field that you want to use as the aggregate (i.e., the intersection of the row and column), in the Crosstab cell, in the drop-down list, select Value.
+Important: For the field that you selected as the aggregate, the Total cell cannot be set to Group By, Expression, or Where. Also, you cannot use as the aggregate a field on which a numeric expression is defined, or an error will appear when you run the query. Additionally, if you enter text in the Criteria cell for a field that is selected as the aggregate, an error will appear when you run the query.
+After you have made your selections, in the page heading, select  to run the query and confirm that it returns the appropriate results, and then save the query.Create an Update QueryAbout This TaskNote that, when you create an update query, entered times are assumed to be in UTC.Procedure
+Access the Design workspace.In the page heading, select the drop-down list box, and then select Update Query.If your query contains one query source, the source is selected as the target source.-or-If your query contains more than one query source, the Target Query Source window appears.On the Target Query Source window, select a source from the sources on the canvas, and then select Add. If the query contains more than one query source, the query sources that you do not select are removed automatically from the design canvas.The Conditions section is updated to include the following rows:FieldTableUpdate ToCriteriaOr
+
+For the fields that you want to modify, in the Update To cells, create expressions to specify criteria for the record update. Any record that meets the specified criteria will be updated according to the expression. For example, if you want to update Motor records for which the manufacturer is WEST to the manufacturer WEST&LONG, you can create a criteria expression in the Update To cell for the Asset Manufacturer field in the Motor family.In the page heading, select .A dialog box appears, indicating how many records will be updated by the query.To perform the update, select Yes, or, to stop the update, select No.Depending on your selection, the update is performed or stopped.Note:  When you run an Update query that will update a large number of records, an error message may appear. If this occurs, adjust the query criteria to reduce the number of records that will be updated at one time.Create an Append QueryProcedure
+Access the Design workspace.In the page heading, select the drop-down list box, and then select Append Query.The Append Query - Target Source window appears.In the Families list, select the target family or the family to which you want to append records, and then select Add.The Target Source link appears in the page heading. You can select this link to modify the target family.The Conditions section is updated to include the following rows:FieldAliasTableSortSort IndexAppend ToCriteriaOr
+
+
+Add one or more sources to the design canvas, and then add one or more fields from those sources to the grid in the Conditions section.For the fields that contain records that you want to append to fields in the target family, in the Append To cells, in the drop-down lists, select the desired fields in the target family. In the Criteria cells, create expressions to specify criteria. Any record that meets the specified criteria will be appended to the specified field in the target family.To run the query, in the page heading, select . Confirm that it returns the appropriate results, and then save the query.Create a Delete QueryProcedure
+Access the Design workspace.In the page heading, select the Select Query box, and then select Delete Query.If your query contains one query source, the source is selected as the target source.-or-If your query contains more than one query source, the Target Query Source window appears.On the Target Query Source window, select a source from the sources on the canvas, and then select Add. If the query contains more than one query source, the query sources that you do not select are removed automatically from the design canvas.
+The Conditions section is updated to include the following rows:
+FieldTableCriteriaOr
+
+
+
+For the fields that you want to delete, in the Criteria cells, create expressions to specify criteria for the record deletion. Any record that meets the specified criteria will be deleted. For example, if you want to delete Motor records for which the manufacturer is WESTINGHOUSE, you can create the expression 'WESTINGHOUSE' in the Criteria cell for the Manufacturer field in the Motor family.Select the Force Delete check box.In the page heading, select .A dialog box appears, indicating how many records will be deleted by the query.To perform the deletion, select Yes, or, to stop the deletion, select No.
+Depending on your selection, the deletion is performed or stopped.
+Run a QueryProcedure
+Access the Design workspace for the Select query whose results you want to view.In the workspace heading, select .The query results appear in the Results workspace.What To Do Next
+
+Save a query.
+Save a QueryProcedure
+Access the Design workspace.In the page heading, select . If the query has already been saved, any changes that you have made will be saved to the same Catalog folder with the existing Catalog item properties. If the query has not yet been saved, the Save As window will appear. The following instructions assume that you are saving the query for the first time. If you are viewing a previously saved query and you want to save a copy of the current query with a different name or to a different location, you can select , and then use the following instructions to complete that task. The process is the same as saving a query for the first time.In the folder hierarchy, navigate to the folder in which you want to save the query.In the Name box, enter a name for the query. The name is required and must be unique to the Catalog folder in which you are saving the query.The Caption box is populated automatically with the value that you entered in the Name box.In the Description box, you can enter a description for the query. This is not required to save the query.The Of type box is populated automatically with the Catalog item type.Select Save.The query is saved to the Catalog.
+
+
+
+
+On this pageAbout Creating QueriesAbout Running QueriesAbout Saving QueriesAbout SQL CodeAccess the Query PageAccess the Design WorkspaceAccess the SQL WorkspaceModify a QueryModify the Query TypeInclude or Exclude a Field in the SQL CodeCreate a Crosstab QueryCreate an Update QueryCreate an Append QueryCreate a Delete QueryRun a QuerySave a Query
+
+
+
+
+
+
+
+
+

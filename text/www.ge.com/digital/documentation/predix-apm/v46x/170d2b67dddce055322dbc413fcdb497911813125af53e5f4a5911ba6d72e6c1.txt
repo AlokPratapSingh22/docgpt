@@ -1,0 +1,107 @@
+
+
+
+Data Models | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Compliance ManagementOverview
+Workflows
+Inspection Plans
+Inspection Plan Management
+Compliance Recommendations
+Inspection Plan Revision History
+Suggested Compliance Strategy Templates
+Admin
+Deployment
+Reference General Reference
+Data Models
+Family Field Descriptions
+Family Search Configuration
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Compliance Management
+Reference 
+Data Models
+
+
+
+
+
+
+
+Data ModelsCompliance Management Data ModelThe following diagram illustrates how families are related within the Compliance Management data models. In the following images, boxes represent entity families, and arrows represent relationship families that are configured in the baseline database.Asset Has Inspection Plan RelationshipThe Asset Has Inspection Plan family links an asset to an Inspection Plan.
+The table below provides a description of the relationship definitions that exist for the Asset Has Inspection Plan Relationships family. 
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+PredecessorSuccessorCardinalityEquipmentInspection PlanOne to OneFunctional LocationInspection PlanOne to One
+Inspection Plan Has Recommendations RelationshipThe Inspection Plan Has Recommendations family links Compliance Recommendations to Inspection Plans. This family also links the Recommendation Revision and the Inspection Plan revision.
+The table below provides a description of the relationship definitions that exist for the Inspection Plan Has Recommendations family. 
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+PredecessorSuccessorCardinalityInspection PlanCompliance RecommendationOne to ManyInspection Plan RevisionRecommendation RevisionOne to Many
+Has Inspection Plan Revision RelationshipThe Has Inspection Plan Revision family is a relationship family that links the Inspection Plan to the Inspection Plan revision. 
+The table below provides a description of the relationship definitions that exist for the Has Inspection Plan Revision family. 
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+PredecessorSuccessor CardinalityForeign Key Inspection PlanInspection Plan RevisionOne to ManyFK_HAIN_PR_INPL_INPL_R_N on the Inspection Plan Revision record.
+Implements Compliance Recommendation RelationshipThe Implements Compliance Recommendation family links Compliance Recommendations to Inspection Tasks. 
+The table below provides a description of the relationship definitions that exist for the Implements Compliance Recommendation family. 
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+PredecessorSuccessorCardinalityInspection TaskCompliance RecommendationOne to One
+Has Driving Recommendation Relationship
+The Has Driving Recommendation family links Compliance Recommendations to Actions.
+The table below provides a description of the relationship definitions that exist for the Has Driving Recommendation family.
+This family is not enabled for site filtering, which means that records in this family can be accessed by any user with the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+PredecessorSuccessorCardinalityActionCompliance RecommendationOne to One
+
+
+
+
+
+On this pageCompliance Management Data ModelAsset Has Inspection Plan RelationshipInspection Plan Has Recommendations RelationshipHas Inspection Plan Revision RelationshipImplements Compliance Recommendation RelationshipHas Driving Recommendation Relationship
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,239 @@
+
+
+
+Thickness Measurements | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+Workflows
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data Loaders
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+Thickness Measurements
+
+
+
+
+
+
+
+Thickness MeasurementsAbout Thickness MeasurementsThickness Measurements represent readings that are recorded at locations on an asset or one of its components. They are created and linked to TMLs.Details
+
+A Thickness Measurement is a value that quantifies the thickness of a given TML at a specific point in time.
+Each TML will have various types of Thickness Measurements, including:
+
+Base Measurement
+: The first measurement taken for the TML.
+Near Measurement
+: The second-most-recently-recorded measurement for the TML.
+Last Measurement
+: The most-recently-recorded measurement for the TML.
+Base, Near and Last Measurements are not recorded in the Thickness Measurements themselves. Instead, they are determined for the TML Corrosion Analysis by evaluating how many Thickness Measurements exist, and when the Thickness Measurements were created. After you create a new TML, you will want to record the base measurement, which represents the first recorded reading for that TML. Additional Thickness Measurements will be created later, as measurement readings are taken throughout the life of the asset.
+Important: To ensure data integrity, existing Thickness Measurements should be managed using Thickness Monitoring instead of the Record Manager.
+
+About Nominal and Actual MeasurementsEach Thickness Measurement can be classified as either a nominal measurement or an actual measurement. A nominal measurement represents a reading that is not taken physically but is recorded from some other source, such as a design specification. An actual measurement represents a reading that is taken manually at the physical thickness measurement location on the equipment. Details
+
+Actual measurements are typically more accurate and result in calculations that are more representative of the actual asset. Nominal measurements may not be as accurate, but provide an efficient mechanism for recording initial measurement data.
+Any nominal measurement value can be used in the creation of a nominal measurement. Nominal measurements are used only for the base measurement (i.e., the first measurement). 
+Measurement data will be populated automatically for the initial Thickness Measurement linked to TMLs configured for nominal base measurements.Measurement data must be entered manually for Thickness Measurements that are linked to TMLs that are not configured for nominal base measurements.
+Thickness Monitoring will use all active thickness measurements for performing TML Corrosion Analysis calculations. Nominal measurements will become inactive measurement automatically after two subsequent actual measurements have been recorded. In other words, if the Measurement Taken Date of any two actual measurements is after the Measurement Taken Date of a nominal measurement, the nominal measurement will become an inactive measurement.
+
+About Skipped Measurements
+GE Digital APM Thickness Monitoring provides the option to skip measurements. This applies when you want to satisfy inspection requirements, but do not want to take an actual measurement at the TML. When you skip a measurement, instead of creating a Thickness Measurement for a TML, you will create a Measurement Not Taken (MNT) record to store the inspection data.Important: The GE Digital APM Thickness Monitoring Best Practice is to record actual readings for all inspections and not skip measurements. This section of the documentation provides information on using this functionality. All TM documentation outside of this section assumes that the Skip Measurements feature is disabled.Details
+
+Some reasons that you may want to skip measurements include:
+The physical location of certain TMLs may be difficult to reach or may require a shutdown in order to take a measurement.Your organization may have a strategy that calculates based on a certain percentage of TML measurements for an asset.Resource limitations may make it difficult or impossible to take measurements at all TMLs on an asset or its components.
+In order to skip measurements in Thickness Monitoring, the Allow Measurements to be Skipped check box must be selected on the TM Admin Preferences page. Then you will need to create MNT records to represent any measurement that was skipped. After you have enabled this option and created MNT records, Corrosion Analyses containing skipped measurements will be updated to take those MNT records into account.
+
+Skipping Measurements Consecutively 
+
+If you enable the option to skip measurements in TM, you will also have the option to enable a feature that allows you to skip measurements consecutively. When you do this, you will be able to create successive MNT records.
+ Example: Skipping Measurements Consecutively
+Suppose that the TML TML01 is difficult to reach. As a result, your organizational policy dictates that while readings for all other TMLs on the associated piece of equipment must be taken every six months, a reading for TML01 must be taken only once per year, as illustrated in the following table.
+
+TMLScheduled ReadingsTML01 
+June 1, 2014
+June 1, 2015
+TML02 
+June 1, 2014
+December 1, 2014
+June 1, 2015
+December 1, 2015
+TML03 
+June 1, 2014
+December 1, 2014
+June 1, 2015
+December 1, 2015
+
+
+Suppose that you create an MNT record when a reading is skipped for TML01 on December 1, 2014. Next, suppose that, due to budget constraints at your facility, the scaffolding necessary to gain access to TML01 is unable to be built on June 1, 2015 (the date on which an actual thickness measurement reading is scheduled to be taken for this TML). In this case, you may want to create another MNT record for TML01, assuming that an actual measurement will be taken when possible.
+
+Interpreting Calculations in Corrosion Analyses that Include Skipped Measurements
+
+When active Thickness Measurements and MNT records exist in a Corrosion Analysis, all calculations, with the exception of Interval Next Inspection Date, are calculated as if MNT records are not included in your Corrosion Analysis.
+Consider the calculation for Short Term Corrosion Rate. Short Term Corrosion Rate is calculated using the Short Term Loss and Short Term Interval, where:
+Short Term Corrosion Rate = Short Term Loss / Short Term Interval
+...where:
+Short Term Loss = Near Measurement Value - Last Measurement Value
+...and:
+Short Term Interval = Last Measurement Date - Near Measurement Date
+Example: Corrosion Analyses that Include Skipped Measurements 
+Consider the following measurements.
+ReadingDateMeasurement (inches)
+
+ReadingDateMeasurement (Inches)Base1/1/1985.2N/A1/1/1987<Measurement Not Taken>Near1/1/1990.195N/A1/1/1993<Measurement Not Taken>Last1/1/1995.19N/A1/1/2000<Measurement Not Taken>
+
+Short Term Loss = .195 - .19
+Short Term Loss = .005
+Short Term Interval = 1/1/1995 - 1/1/1990
+Short Term Interval = 5 years
+Short Term Corrosion Rate = .005 / 5
+Short Term Corrosion Rate = .001
+The Short Term Loss was not calculated using a Last Measurement Value of 1/1/2000, the date in the MNT record that is associated with the most recent inspection of this TML. There is no value associated with this date (or the date in ANY MNT record) and therefore, these records are ignored in all calculations with the exception of Interval Next Inspection Date.
+
+Interval Next Inspection Date
+
+When MNT records are included in a Corrosion Analysis, Interval Next Inspection Date is calculated using the following equation:
+Interval Next Inspection Date = Last Measurement Date + Default Inspection Interval
+Where Last Measurement Date is the most recent value in the Measurement Taken Date field of both the active Thickness Measurement and active MNT records linked to a given TM 
+Example: Interval Next Inspection Date
+Consider a Default Inspection Interval of 60 months (i.e., 5 years) and a TML that is linked to records with the following Measurement Taken Dates:
+
+Record Measurement Taken DateThickness Measurement 1/1/2004Measurement Not Taken 1/1/2005Thickness Measurement 1/1/2006Measurement Not Taken 1/1/2007
+
+In this case, the Interval Next Inspection Date would be calculated as:
+Interval Next Inspection Date = 1/1/2007 + 60 months
+Interval Next Inspection Date = 1/1/2012
+
+Skipped Measurements and TML Corrosion Analysis Fields
+
+When the most recent date is from an MNT record, and when the Corrosion Rate of a TML is less than the Controlling Corrosion Rate of the asset, the following fields in the TML Corrosion Analysis are populated with data based on the Controlling Corrosion Rate:
+Asset Average Corrosion Rate Asset Average Corrosion Rate Remaining Life Asset Average Corrosion Rate Retirement Date Asset Average Corrosion Rate Next Inspection Date 
+This differs from when the fields are populated in a Corrosion Analysis that does not include skipped measurements.
+Example: Skipped Measurements in TML Corrosion Analysis Fields
+Consider an asset with:
+An Asset Corrosion Analysis with a Controlling Corrosion Rate of 2.9 Mils/year.A TML Corrosion Analysis for a TML linked to the asset, with a Corrosion Rate of 2.2 Mils/year. The most recent measurement date is from an MNT record.
+In this case, the Asset Average Corrosion Rate would be set to 2.9 Mils/year.
+This Asset Average Corrosion Rate value could be the result of any method that is specified to determine the asset controlling corrosion rate (Maximum, Average, or Formula). This differs from a Corrosion Analysis that does not include skipped measurements. When a Corrosion Analysis does not include skipped measurements, the Asset Average Corrosion Rate field is populated only when certain settings are specified, and this value can be the result only of an Average or Formula method.
+Asset Average Corrosion Rate is an input to some of the calculations that are used to populate the Asset Average Corrosion Rate Remaining Life, Retirement Date, and Next Inspection Date fields. These calculations are performed using the same formulas that are used when a Corrosion Analysis does not include skipped measurements. The results of the same calculations in a Corrosion Analysis that includes skipped measurements versus a Corrosion Analysis that does not include skipped measurements, however, may differ because of the values that will be used to populate the Asset Average Corrosion Rate field in each of these Corrosion Analyses.
+In every case, the value selected will be the most conservative (i.e., highest) corrosion rate, whether from the TML Corrosion Analysis Corrosion Rate field, or the Asset Corrosion Analysis Controlling Corrosion Rate field.
+
+How Measurement Values Are DeterminedThe final value associated with a Thickness Measurement is stored in the Measurement Value field. Values are not, however, entered directly into the Measurement Value field itself. Instead, values are entered into the Readings field.To determine the Measurement Value for a Thickness Measurement, one or more readings will be collected at a given TML. To account for the margin of error associated with user error, equipment malfunction, or environmental conditions, you may wish to collect multiple readings for each Thickness Measurement. The number of readings that you may take for a measurement will depend upon various factors, including your company's policies, the characteristics of the TML, and the method that you are using to collect the readings. The number of readings that you must take for each measurement is determined by the value specified in the Number of Readings field in the TML to which the Thickness Measurement is linked.After you have determined how many readings you must take for a specific measurement and have collected those readings, you will add a Thickness Measurement and log the reading values in the Readings box. A calculation will be performed against the values in the Readings box, based on the settings that you have defined for measurement readings. Then, the Uncorrected Measurement field will be populated with the result of that calculation. Finally, the Measurement Value field will be populated with the value in the Uncorrected Measurement field. The Measurement Value field will then contain a value representing the final, corrected thickness measurement value.Note: The Uncorrected Measurement field is meant to serve as an intermediate storage location between the Readings and Measurement Value fields. In Thickness Monitoring, the Measurement Value field is simply populated with the value in the Uncorrected Measurement field. About Measurement and Corrosion Rate Variance
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+About Measurement and Corrosion Rate Variance Validation
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+Access Thickness MeasurementsAbout This TaskYou can access Thickness Measurements in any one of the following sections:TMLsMeasurementsProcedureTo access Thickness Measurements in the TMLs section, perform the following steps: 
+Access the Analysis Overview workspace for the asset or TML Group that contains the TML that you want to access.Select the TMLs tab.
+The TMLs section appears, displaying the following information: 
+If you selected an asset, a table of TMLs linked to the asset appears. This table includes TMLs linked to TML Groups or subcomponents linked to the selected asset.If you selected a TML Group, a table of TMLs linked to the TML Group appears.
+
+Note: If the TML Group that you want to access does not contain any TMLs, the Details section appears when you access the Analysis Overview workspace.
+In the row containing the TML for which you want to access the Thickness Measurement, select .The row is expanded, and the Thickness Measurements appear below the row.The visual cue that appears in each row indicates the color-coding category that is applicable to the Thickness Measurement.Note: By default, only active Thickness Measurements are displayed. If you want to access all measurements, clear the Active Measurements Only check box.Tip: You can select the Column Chooser () button to add or remove columns from the table. The Measurement Taken Date field is pinned to the first column and is always displayed. In addition, the MEASUREMENT TAKEN DATE column is locked when using the scroll box to move through the columns. The fields that appear in the Choose Columns window are taken from the Thickness Measurement family. By default, the following columns are displayed:MEASUREMENT TAKEN DATEMEASUREMENT VALUEREADINGSREADINGS PASS/FAILVERIFY MEASUREMENTMEASUREMENT VERIFIEDMEASUREMENT TAKEN BYMEASUREMENT STATUS INDICATORNOMINALThis preference is saved for each Security User.To access Thickness Measurements in the Measurements section, perform the following steps: 
+Access the TML that contains the thickness measurement that you want to access.In the workspace, select the Measurements tab.The Measurements section appears, displaying a table of measurements linked to the TML. The visual cue that appears in each row indicates the color-coding category that is applicable to the Thickness Measurement. The column after the visual cue is locked when using the scroll box to move through the columns.Note: By default, only active Thickness Measurements are displayed. If you want to access all measurements, clear the Active Measurements Only check box.Tip: You can select the Column Chooser () button to add or remove columns from the table. The Measurement Taken Date field is pinned to the first column and is always displayed. In addition, the MEASUREMENT TAKEN DATE column is locked when using the scroll box to move through the columns. The fields that appear in the Choose Columns window are taken from the Thickness Measurement family. By default, the following columns are displayed:MEASUREMENT TAKEN DATEMEASUREMENT VALUEREADINGSREADINGS PASS/FAILVERIFY MEASUREMENTMEASUREMENT VERIFIEDMEASUREMENT TAKEN BYMEASUREMENT STATUS INDICATORNOMINALThis preference is saved for each Security User.If you want to access the Thickness Measurements datasheet, in the row containing the Thickness Measurement, select the link in the MEASUREMENT TAKEN DATE column.The Thickness Measurements datasheet appears.
+Tip: If needed, you can modify values in the available fields, and then select  to save your changes.Add a Thickness MeasurementBefore You Begin
+If you are recording readings for multiple Thickness Measurements, you can use the 
+Measurement Data Entry workspace. Additionally, you can use a datalogger to record Thickness Measurement readings.
+Procedure
+Access Thickness Measurements for the TML to which you want to add a Thickness Measurement.In the Measurements section, select . 
+Note: If skipping measurements has been enabled, select , and then select Add Measurement.
+The Add Measurement window appears.
+In the Readings box, enter the measurement value.
+Note: The number of readings you will enter is determined by the value in the Number of Readings field in the TML datasheet.
+In the Measurement Date box, enter the date when the measurement was taken. Select Done. The new Thickness Measurement is added to the TML.What To Do NextCalculate a Corrosion Analysis
+Add a Nominal MeasurementProcedure
+Access the TML for which you want to create a nominal measurement.In the workspace, select the TML Details tab.The TML datasheet appears, displaying the General Information section.
+In the datasheet, select the Design General tab, and then, in the Nominal Thickness box, enter a value.
+-or-
+In the datasheet heading, select the Piping tab, and then select the appropriate values in the following boxes:
+Piping Nominal Diameter - NPSPiping Nominal Diameter - DNSchedule
+The Nominal Thickness box is automatically populated with a value based on the values you selected.
+Select . The nominal measurement values are saved.Access the Analysis Overview page of the TML.Select , and then select Nominal Measurements.
+Note: For piping assets, the Nominal Measurements option is only available at the component and band levels.
+The Nominal Measurements window appears, displaying a list of possible Nominal Measurements.Tip: For piping components and bands, you can view the position of each TML in the band from the Position column.Note: You can create nominal measurements only for TMLs that have a valid value in the Nominal Thickness field and do not have any active measurements.Optional: If all the measurements are taken on the same date, specify the date in the Common Measurement Taken Date box.Select the check boxes next to the TMLs for which you want to create measurements.Specify the measurement taken dates for the TMLs.Select OK.The nominal measurement creation process starts, and the progress appears on the upper-right corner of the Nominal Measurements window.Tip: The nominal measurement creation process continues even if you close the Nominal Measurements window. You can select the  button in the Thickness Monitoring Overview page to view the progress of the job in the scheduler. In case the nominal measurement creation fails for any TML, the job appears in the Failed section of the Schedule Logs page.ResultsFor each check box you selected, a Thickness Measurement is created and linked to the corresponding TML. The value of the Thickness Measurement is marked as the Nominal Thickness value in the TML datasheet.Note: When two or more active measurements are created, the nominal measurement becomes inactive. In such cases, the system ignores the nominal measurements and calculates the corrosion rate using actual measurements.Create Measurement Not Taken (MNT) RecordsBefore You BeginTo Skip Measurements by creating MNT records, the 
+Allow Measurements to be Skipped check box must be selected on the TM Admin Preferences page. Optionally, you can also select the Allow Consecutive Measurements to be Skipped check box to allow the recording of multiple consecutive MNTs for a single TML without the recording of an actual measurement. Procedure
+Access Thickness Measurements for the TML to which you want to create an MNT record.Select , and then select Add Skipped Measurement.The Add Skipped Measurement window appears.
+In the Readings box, the default value <Not Taken> will populate and cannot be adjusted by the user.In the Measurement Date box, enter the date for the measurement that you want to skip.Select Done. The new MNT record is added to the TML.Modify a Thickness MeasurementProcedure
+Access Thickness Measurements for the TML that contains the Thickness Measurement that you want to modify.In the Measurements section, in the row containing the Thickness Measurement that you want to modify, select the link in the MEASUREMENT TAKEN DATE column.The Thickness Measurement datasheet appears.
+Tip:  If you want to modify only the value in the Readings column, in the row containing the Thickness Measurement, select the link in the MEASUREMENT VALUE column, and then enter a value.Modify values in the available fields, and then select .The Thickness Measurement is saved.Use the Measurement Data Entry (MDE) WorkspaceProcedure
+Access the Analysis Overview workspace for the Asset or TML Group for which you want to record Thickness Measurements.Select .The Measurement Data Entry workspace appears, displaying a list of TMLs. Note: For Piping Assets, the Measurement Data Entry workspace does not contain the TML Asset ID column, but it contains the Component ID, Piping Band ID, and Position columns.
+ In the Common Measurement Data section, enter values in the Measurement Taken Date, Measurement Taken By, and Temperature boxes. 
+Note: If you have customized the common measurement data section, there may be additional boxes available.
+In the data entry grid, enter values in the Readings box for each TML.Each time you enter a value into a Readings box, the other boxes in the row are populated with the values that you entered in step 3.If you want to enter multiple readings for a TML, then perform one of the following steps:
+In the Readings box, enter the readings separated by semi-colon.The Readings box is populated with the values that you entered, separated by semi-colon.
+-or-
+In the Readings box, select .The Readings window appears. In each box, enter a value, and then select OK.The Measurement Data Entry workspace appears. The Readings box is populated with the values that you entered, separated by semi-colon.
+Do one of the following:Select .The readings are saved.-or-Select .The readings are saved and the calculation starts for the asset.
+Note: If you do not enter a value in the Readings box for all the TMLs displayed in the grid, a confirmation message appears, indicating that one or more measurement values were not entered. The message asks you to confirm that you want to continue.
+Results
+For each reading that is saved, a Thickness Measurement is created and linked to the corresponding TML. You can now recalculate the corrosion analysis.
+Delete a Thickness MeasurementProcedure
+Access Thickness Measurements for a TML.Next to the Thickness Measurement you want to delete, select .
+Note: The Delete button () is only available for security users associated with the MI Thickness Monitoring Administrator Security Group.
+
+A message appears, asking you to confirm that you want to delete the measurement.
+Select Yes.
+The Thickness Measurement is deleted.
+The  button will change color to indicate that the analysis needs to be recalculated.
+
+
+
+
+
+On this pageAbout Thickness MeasurementsAbout Nominal and Actual MeasurementsAbout Skipped MeasurementsHow Measurement Values Are DeterminedAbout Measurement and Corrosion Rate VarianceAbout Measurement and Corrosion Rate Variance ValidationAccess Thickness MeasurementsAdd a Thickness MeasurementAdd a Nominal MeasurementCreate Measurement Not Taken (MNT) RecordsModify a Thickness MeasurementUse the Measurement Data Entry (MDE) WorkspaceDelete a Thickness Measurement
+
+
+
+
+
+
+
+
+

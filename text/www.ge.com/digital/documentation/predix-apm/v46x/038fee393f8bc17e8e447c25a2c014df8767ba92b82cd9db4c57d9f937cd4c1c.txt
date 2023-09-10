@@ -1,0 +1,107 @@
+
+
+
+Fourth Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesFirst Quarter of 2023
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Release Notes
+Fourth Quarter of 2020
+
+
+
+
+
+
+
+Fourth Quarter of 2020Release Date: November 20, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, when creating a Production Analysis from a query, if the data contained a large number of records, the operation exceeded the timeout period and failed. This issue has been resolved. Now, to avoid the timeout issue, the query results have been restricted to 5000 records. If there are more than 5000 records, a warning message appears asking you to modify the query.DE143733
+Release Date: October 2, 2020This topic provides a list of product changes released for this module on this date.
+Table 2. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo enhance the usability of the System Reliability Data Loader, the data loader workbook now contains sample data for your reference.US392615
+Table 3. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, for a Reliability Analysis that was created manually, the Reload and Go To Source options appeared in the Analysis Data menu of the Production Data workspace, even though the options were not applicable. This issue has been resolved.US391240Previously, in Spares Analysis with two or more Applications for a Spare, the HTML Report incorrectly includes the application data and failure distributions from the first Application in the results for the second Application. This issue has been resolved.DE140182Previously, in the Description box of the Spares Analysis datasheet, when you entered more than 255 characters, and then attempted to save the record, an error occurred and the datasheet stopped responding. This issue has been resolved.DE139895Previously, in the Diagram section of the System Scenario associated with a System Reliability Analysis, when you attempted to import an asset to a diagram, an error occurred intermittently. This issue has been resolved.DE136777Previously, when creating a Reliability Growth Analysis using a dataset, if you selected the I want to use the time of the first data point as the start time for this analysis check box in the Analysis Start Time window, and then selected Finish, an error message appeared and the analysis was not created. This issue has been resolved.DE136770Previously, when generating a comparison plot across several Reliability Growth Analyses (RGA), Production Analyses (PA), Probability Distribution (PD), or Reliability Distribution (RD), the colored chart lines indicating each source analysis were using the same shape symbol on the line. This was in conflict with the chart legend and was difficult to differentiate by color. This issue has been resolved.DE129166Previously, in System Reliability Analysis, Monte Carlo simulation included detection failures even when the PF interval was zero, which resulted in slow performance. This issue has been resolved. DE126740
+
+
+
+
+
+On this pageRelease Date: November 20, 2020Release Date: October 2, 2020
+
+
+
+
+
+
+
+
+

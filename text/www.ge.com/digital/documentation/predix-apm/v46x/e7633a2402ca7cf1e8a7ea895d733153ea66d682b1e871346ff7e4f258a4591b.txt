@@ -1,0 +1,138 @@
+
+
+
+Event Types | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+AdminAccess the GAA Administrator Page
+GAA Administrator Workflow
+System Codes
+Event Categories
+Event Types
+Cause Codes
+Amplification Codes
+Fuel Types
+Mapping Records
+Event Transitions
+Companies
+Plants
+Units
+Unit Capacity
+Performance Record and Report Configuration
+
+
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Admin
+Event Types
+
+
+
+
+
+
+
+Event TypesAccess an Event TypeProcedure
+Access the GAA Administrator page.In the System Codes section, select Event Types.
+The Event Types subsection appears, displaying the following columns of information:
+
+Event Type Code
+
+Event Type Description
+
+Color Code
+
+Mapped ID
+
+Regulatory Organization
+
+
+
+
+Locate the row that contains the Event Type that you want to access.In the Event Type Code column, select the link.
+The Edit Event Types window appears, displaying the datasheet of the selected Event Type. 
+Note: As needed, you can modify the values in the available fields, and then select  to save your changes.
+Add an Event TypeProcedure
+Access the GAA Administrator page.In the System Codes section, select Event Types.
+The Event Types subsection appears.
+
+
+
+In the upper-left corner of the Events Types section, select .
+The Add Event Type window appears.
+As needed, enter the values in the available fields. Select .
+The new Event Type is added. 
+Delete an Event TypeAbout This Task
+Important: You must not delete a baseline Event Type.
+Procedure
+Access the GAA Administrator page.In the System Codes section, select Event Types.
+The Event Types subsection appears.
+Select the row containing the Event Type that you want to delete.In the upper-right corner of the Events Types section, select .
+The Delete Event Type dialog box appears, asking you to confirm that you want to delete the selected Event Type.
+Select Yes.
+The selected Event Type is deleted and the updated list of Event Types appears.
+
+
+
+
+
+On this pageAccess an Event TypeAdd an Event TypeDelete an Event Type
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+
+
+
+Certificate-Based Authentication | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Users and PermissionsPermission Sets
+Permission Set Definitions
+Manage a Permission Set
+Users
+Groups
+Certificate-Based Authentication
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Users and Permissions
+Certificate-Based Authentication
+
+
+
+
+
+
+
+Certificate-Based AuthenticationAdministrator Action - Send Certificates for AuthenticationThis topic is applicable only to environments using Certificates for authentication and tenants for whom Certificate-based authentication has been enabled. Certificate-based authentication is an alternative to IP address authentication. This topic describes how an administrator can issue Certificates to one or more users via email.Before You Begin
+
+Log in to GE Digital APM as a tenant administrator.If they are not already created, create the users to whom you will send Certificates for authentication.In the module navigation menu, select Administration, and then select Permission Sets.Verify whether a row named PREDIX DCS appears, and then complete one of the following steps:If the PREDIX DCS row appears, select Edit Permission Set, and then, in the features for the permission set, ensure that the Certificate Read Access and Certificate Admin Access check boxes are selected. If they are not, in the Permissions section, select those check boxes, and then select Save.If the PREDIX DCS row does not appear, select Add New Permission Set, then enter PREDIX DCS in the Permission Set Name box, then, in the Permissions section, select the Certificate Read Access and Certificate Admin Access check boxes, and then select Save.In the module navigation menu, select Administration, and then select Users.For each user to whom you will send a Certificate for authentication, in the Users page, in the row for the user, select Assign Permission Set, then, if it is not already assigned, select the PREDIX DCS permission set, and then select Done.Note: The PREDIX DCS permission set must be assigned to each user to whom you will send a Certificate for authentication; otherwise, the user will be unable to access the DCS dashboard.
+
+About This TaskFor a user requiring Certificates for authentication, the user must download and run a unique script on each device that will be used to access GE Digital APM. This is accomplished in a two-part process. First, an administrative user must send an email to each user needing a Certificate for authentication. Then, each user must use the instructions in the received email to download and execute a script to install the Certificate.Important: Each certificate expires after one year, at which point a new Certificate must be issued and installed.ProcedureAs the administrative user who will send emails to the users needing Certificates for authentication, using an email client of your choice, create an email addressed to each user needing Certificates for authentication.In the email, copy and paste the following text.Dear User,Thank you for your interest in GE Digital APM. Please follow these instructions to enable Certificate-based authentication on the devices you will use to access GE Digital APM.To access GE Digital APM, you must download a Certificate for your browser. To do so, please use the following link and instructions. When you select the link, you will need to log in with your standard GE Digital APM user name and password. Link to DCS Dashboard: <link to DCS Dashboard>Note: This is an unrestricted URL that can be accessed without any issues as long as you have internet access.Important: Once downloaded, you must run the script within 30 minutes or it will expire. If this occurs, you can follow the same link and download a new script.Note: Certificates for authentication expire after one year, at which point you must download and install a new Certificate for authentication. 1. In the DCS Dashboard page, select the Script Usage Instructions link to access the Certificate-Based Authentication documentation, and then, based on whether you will install a Certificate for authentication on a Windows, Linux, or MacOSX device, follow the steps in the appropriate topic:Install a Certificate on a Windows DeviceInstall a Certificate on a Linux or MacOSX Device2. As needed, repeat these steps to install Certificates for authentication on each device you will use to access GE Digital APM.After you have successfully installed a Certificate on a device, you can access GE Digital APM via the following link: <link to target system>If you encounter any issues, please contact an administrator. Thank you,Tenant Admin for <tenant name>In the email text, replace the <link to the DCS Dashboard> text with the appropriate URL. To access the URL, in GE Digital APM, in the module navigation menu, select Admin, and then select Setup. In the Setup page, the URL appears in the DCS Dashboard URL row.In the email text, replace the <link to target system> and the <tenant name> text with the appropriate values.Send the email.Install a Certificate on a Windows DeviceComplete these steps if you need to install a Certificate for authentication on a Windows device.Before You BeginThis procedure applies to users who require a Certificate for authentication. This procedure can only be completed after you receive an email containing a link to the installation files from an administrative user.The following software components are required on any Windows device on which you will install a Certificate for authentication:Windows 10 or higherOpenSSL version 1.0.2k 26 Jan 2017This installation requires that OpenSSL is available on the device. If not present, OpenSSL will be downloaded automatically when the script is run.ProcedureUse the link in the email you received to access the DCS Dashboard.The DCS Dashboard page appears.Select the Windows button to download the appropriate script.The downloaded file appears in the browser page.Select the downloaded file, and then save it in a location of your choice.
+Note: You must run the script in the downloaded file within 30 minutes of downloading it, after which the script expires.
+Select the Start button () on the Windows taskbar, then enter powershell, and then, in the results that appear, right-click Windows PowerShell, and then select Run as Administrator, as shown in the following image.In Windows PowerShell, enter cd <filepath>, where <filepath> is the location of the folder containing the downloaded script, and then press Enter.If you receive a message indicating that a security restriction is preventing you from running the script, access Windows PowerShell, selecting the option to run the program as an administrator, and then enter the command > Get-ExecutionPolicyNote the current value of the execution policy, as you will need to revert back to that value after executing the script. For example, the current value may be Restricted.Run the command Set-ExecutionPolicy bypass -ForceThe command is run.Run the following command to run the PowerShell Terminal in Admin mode: .\run-win.ps1The installation begins. When it is finished, in your browser, a message indicating whether or not the installation was successful appears. If you receive confirmation that the installation was successful, the Certificate installation procedure is complete. If successful, Windows PowerShell will display a screen similar to the following image.If you receive a message indicating that installation was not successful, please record the error message that you receive, and contact GE Global Support Services.To revert the execution policy to its original value, run the command Set-ExecutionPolicy bypass -<x>, where <x> is the value you recorded in step 7.ResultsThe Certificate for your user profile is installed. You can now access GE Digital APM via the URL https://apmprod.app.aws-usw02-pr.predix.io/<TENANT_NAME>, where <TENANT_NAME> is your tenant name. Install a Certificate on a Linux or MacOSX DeviceComplete these steps if you need to install a Certificate for authentication on a Linux or MacOSX device.Before You BeginThis procedure applies to users who require a Certificate for authentication. This procedure can only be completed after you receive an email containing a link to the installation files from an administrative user.ProcedureUse the link in the email you received to access the DCS Dashboard, and then download the script for a Linux or MacOSX device.
+Note: You must run the script within 30 minutes of downloading it, after which the script expires. 
+Access the terminal.Enter $ cd <filepath>, where <filepath> is the location of the folder containing the downloaded script, and then press Enter.The directory is changed to the folder in which the script is located.Enter $ bash run-nix.sh, and then press Enter.ResultsThe message Response Code= 200 should appear. The Certificate for your user profile is installed. A message indicating whether or not the Certificate was installed successfully appears in your browser.Troubleshoot Certificate Management
+Important: You may have an issue related to managing Certificates for authentication if, when you attempt to log in to GE Digital APM, the following error message appears: ErrorCode: 718GTS
+If you are experiencing problems related to managing Certificates for authentication, first, please complete the following procedure to ensure that the Certificate is installed properly and has not expired:Access the Internet Explorer web browser, then select Tools, and then select Internet Options.The Internet Options window appears.Select the Content tab.In the Certificates list, select Certificates.In the list that appears, to view the details of any Certificate, select the Certificate, and then select View.Verify that the Certificate issued by GE Digital APM appears, and, if it does, check the Issue Date for the Certificate.If the Certificate does not appear, or if the Issue Date for the Certificate is more than a year old, a new Certificate must be issued by an administrator. Regardless, please contact an administrator with this information to determine how to proceed. The administrator will be able to authenticate you and issue a Certificate if needed.
+
+
+
+
+
+On this pageAdministrator Action - Send Certificates for AuthenticationInstall a Certificate on a Windows DeviceInstall a Certificate on a Linux or MacOSX DeviceTroubleshoot Certificate Management
+
+
+
+
+
+
+
+
+

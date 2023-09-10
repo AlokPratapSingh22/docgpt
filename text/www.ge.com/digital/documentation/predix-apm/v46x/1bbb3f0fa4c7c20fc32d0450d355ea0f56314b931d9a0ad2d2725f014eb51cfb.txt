@@ -1,0 +1,63 @@
+
+
+
+Inspection Events | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Inspection Events
+As a part of European Inspection Regulation, a new datasheet is added to the Full Inspection family. The Inspection Events family datasheet stores inspection related information required for Managing Inspection Events.
+Note: European Inspection Event is introduced to the Full Inspection family to manage the Inspection Events, according to the European Inspection Regulation.
+The table below provides an alphabetical list and description of the fields that exist for Inspection Events Family. The information in the table reflects the type and behavior of these fields. This list is not comprehensive.
+FieldData TypeDescriptionBehavior and UsageApplicable RegulationCharacterStores the application regulation for an eventThis field is populated with a list of regulations to be linked to a task. This field is populated with a description of system codes stored in MI_INTGY_REGULATION system code table. This field is always disabled.CertificationCharacterStores the certification valueThe values in this field are populated from a drop-down list box and contains a list of system codes that exist in the MI_COMPLIANCE_STANDARDS system code table. In baseline, the Certification field populates the values which are referenced by MI_INTGY_REGULATION system code table. By default, it shows ZUS and BP. Inspection Document CategoryCharacterStores the inspection document categoryThis field will display a pick list. It will be disabled if Applicable regulation is "European Inspection Regulation" and Certification is "ZUS". If no option is selected or anyone of the option is selected, then the respective field will be enabled.It contains a list of system codes that exist in the MI_EN_DOC_CTGY system code table. The field populates the following values: Test Certificate by ZUSTest Record by Company InspectorTest Report by SubcontractorInspection InstructionCharacterStores instructions for the inspector It contains a list of system codes that exist in the EU_INSP_INST system code table. 
+
+
+
+
+
+
+
+
+
+
+
+

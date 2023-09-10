@@ -1,0 +1,101 @@
+
+
+
+Third Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Family ManagementRules
+Overview
+Entity and Relationship Families
+Fields
+Datasheets
+Offline Forms
+Family Reports
+Relationship Definition
+State Configuration
+Associated Pages
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+Third Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Family Management
+Release Notes
+Third Quarter of 2019
+
+
+
+
+
+
+
+Third Quarter of 2019Family ManagementThis topic provides a list of product changes released for this module on the dates listed below.Release Date: September 27, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDThe following enhancements have been made to the Behavior section of the  <Field Name> workspace:You can now use the YYYY-MM-DD date format in a datasheet. To facilitate this enhancement, in the Format behavior, the Custom option has been added to the Format Value drop-down list box.You can now validate if the current user is assigned to a Security Group. In addition, you can compare a field value or the current user ID with a query result for complex field-level security for the Disabled and Required behavior types. To facilitate these enhancements, the Security Group and Security Group Query options have been added to the Condition drop-down list box.You can now add and combine multiple behavior statements for a field behavior using the If then Else conditional logic. To facilitate this enhancement, the Add  button has been added in the If and Else sections.You can now validate if an entity is new or not for the Disabled, Required, and Hidden behavior types. To facilitate this enhancement, Is New and Is Not New options have been added to the Condition drop-down list box.You can now create a dynamic picklist using a catalog query. To facilitate this enhancement, in the Picklist behavior, the QueryList option has been added to the Operator drop-down list box.You can now use the current time stamp in a date field. To facilitate this enhancement, the default behavior of the date fields has been changed.The following enhancements have been made to the Picklist behavior:You can now select a system code dynamically from a value in a field.You can now select a query from the catalog and then use the query to populate the picklist.You can now select a query with prompts set from one or more field values and then use the query to populate the picklist.F44331In an offline form, if you enter a value in a field, the values in the subsequent fields are now populated based on the value you entered. To facilitate this enhancement, the drop-down list boxes are now dynamically populated with values from the system code table that references values from the related family field.US343642
+Table 2. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, when creating a family field, if you selected the Always Required option, the Spread to SubFamily check box was automatically selected. This issue has been resolved. DE106515Previously, when you changed the field length for a character field using Family Management, the change did not reflect in the physical table of the data source. This issue has been resolved.DE102614Previously, you could create a family that contained invalid data (Microsoft SQL Server reserved keywords) as the family caption even though an error message appeared. This issue has been resolved.DE97431Previously, while executing a query in the State Configuration field in the RBI Recommendation family, the field value returned by the query was not formatted correctly, although the Formatted check box had been selected. This issue has been resolved. DE77356 
+
+
+
+
+
+On this pageFamily Management
+
+
+
+
+
+
+
+
+

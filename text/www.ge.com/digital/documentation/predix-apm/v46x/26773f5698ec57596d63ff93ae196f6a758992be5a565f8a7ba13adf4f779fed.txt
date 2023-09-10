@@ -1,0 +1,89 @@
+
+
+
+General Reference | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+European Inspection ManagementOverview
+Configuration
+Workflow
+ReferenceGeneral Reference
+Data Models
+Annexure-1
+Family Field Descriptions
+Field Mappings
+Policies
+System Code Tables
+Queries
+
+
+ Admin
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+European Inspection Management
+Reference
+General Reference
+
+
+
+
+
+
+
+General ReferenceSecurity GroupsThe following table provides a list of the baseline family-level privileges that exist for the Security Groups:
+Security GroupPrivileges to the Fluid Data FamilyPrivileges to the Asset Technical Data FamilyPrivileges to the Compliance Recommendation Mapping FamilyPrivileges to the Inspection Summary Reference FamilyPrivileges to the European Admin Settings FamilyMI RBI AdministratorView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteMI RBI AnalystView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteMI Thickness Monitoring ViewerViewViewViewMI RBI ViewerViewViewViewViewViewMI Thickness Monitoring UserViewViewViewMI Thickness Monitoring InspectorViewViewViewViewViewMI Thickness Monitoring AdministratorView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteMI InspectionView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteView, Update, Insert, DeleteMI Inspection ViewerViewViewViewViewView
+Compliance Strategy TemplatesThe following table lists the Compliance Strategy Templates for the European Inspection Management:
+Compliance Strategy TemplateAsset TypePolicyFamilyQueryEU_PIPE_FLPipingEU_PIPE_FLOCFunctional LocationPublic\Meridium\Modules\Inspection\Compliance\EU Regulation\Queries\EU_Available_Assets_Piping_FLOCEU_PIPE_EQPipingEU_PIPE_EQPTEquipmentPublic\Meridium\Modules\Inspection\Compliance\EU Regulation\Queries\EU_Available_Assets_Piping_EQPEU_SB_FLSteam BoilerEU_SB_FLOCFunctional LocationPublic\Meridium\Modules\Inspection\Compliance\EU Regulation\Queries\EU_Available_Assets_SteamBoiler_FLOCEU_SB_EQSteam BoilerEU_SB_EQPTEquipmentPublic\Meridium\Modules\Inspection\Compliance\EU Regulation\Queries\EU_Available_Assets_SteamBoiler_EQPEU_SPV_FLSimple Pressure VesselEU_SPV_FLOCFunctional LocationPublic\Meridium\Modules\Inspection\Compliance\EU Regulation\Queries\EU_Available_Assets_SPV_FLOCEU_SPV_EQSimple Pressure VesselEU_SPV_EQPTEquipmentPublic\Meridium\Modules\Inspection\Compliance\EU Regulation\Queries\EU_Available_Assets_SPV_EQPEU_PV_FLPressure VesselEU_PV_FLOCFunctional LocationPublic\Meridium\Modules\Inspection\Compliance\EU Regulation\Queries\EU_Available_Assets_PressureVessel_FLOCEU_PV_EQPressure VesselEU_PV_EQPTEquipmentPublic\Meridium\Modules\Inspection\Compliance\EU Regulation\Queries\EU_Available_Assets_PressureVessel_EQP
+
+
+
+
+
+On this pageSecurity GroupsCompliance Strategy Templates
+
+
+
+
+
+
+
+
+

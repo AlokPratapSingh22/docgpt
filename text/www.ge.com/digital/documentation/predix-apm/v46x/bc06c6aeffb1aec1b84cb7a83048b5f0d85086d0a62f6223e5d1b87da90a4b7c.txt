@@ -1,0 +1,87 @@
+
+
+
+Inspection Assessment Workflow | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+WorkflowsInspection Planning Workflow
+Inspection Assessment Workflow
+
+
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+Admin
+Data Loaders
+Deployment
+Reference 
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Workflows
+Inspection Assessment Workflow
+
+
+
+
+
+
+
+Inspection Assessment WorkflowInspection Management: Inspection Assessment WorkflowThis workflow details the process for executing Inspection Tasks and documenting inspection results. The result of any inspection may also yield recommendations for corrective work. The full documentation provides Inspection History, which is used to re-evaluate strategies to validate or improve the current planned work, procedures, or policies.In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Inspection Planning Persona: TechnicianThis workflow details procedures related to the management of inspection profile items, inspection methods, inspection tasks, and work packs for execution.Go to the Inspection Planning workflow.Initiate Inspection Report Persona: TechnicianBased on Inspection Tasks or Work Pack definition, initiate Inspection Reports to document upcoming or completed inspection activities. You can also initiate an inspection report based on a one-time Inspection Task created as a result of a performance recommendation.Review Inspection History Persona: TechnicianPrior to performing the inspection activities, review previous inspections based on past Inspection Reports.Collect Data Offline? Persona: TechnicianDetermine whether you want to collect data online (by entering data directly in GE Digital APM) or offline (by entering data in the offline form).Download Offline Form Persona: TechnicianDownload the Offline Form of the Inspection record. This is used to record the findings when you inspect the asset.Record Data for Inspection Event Persona: TechnicianInspect each Inspection Profile Item based on the scope of the Inspection Task, and record the details either in the offline form or on the datasheet. If you have performed a Full Inspection Event, then record the General Findings. If you are performing a Checklist Event, then record the Checklist Findings. This information may help identify a degradation or a potential failure mechanism. Document Any Immediate Action Taken Persona: TechnicianBased on the findings, if an immediate action has been taken to mitigate a potential risk, document the action in the Inspection Report.New Recommendation Needed? Persona: TechnicianBased on the findings of the inspection, determine whether a new recommendation is needed.Inspect Asset Persona: TechnicianInspect the asset based on Task scope and, with consideration of the previous inspection history, implement recommendations and operational history.This step is performed outside of GE Digital APM, in the field.Ready for Check-In? Persona: AnalystDetermine whether the data that you have entered in the offline form is complete or additional information is needed.Sync Data Persona: TechnicianAfter the information is ready to be checked-in, and the device is connected to the network, sync the data to GE Digital APM. Document Inspection Confidence for Multiple DMs Persona: TechnicianCreate an Inspection Confidence Evaluation record to evaluate the Inspection Confidence or Inspection Effectiveness for multiple Damage Mechanisms (DMs) for this Inspection Event. This data will be used in Risk Based Inspection to evaluate the DMs.Create Performance Recommendation Persona: TechnicianIf follow-up action is necessary, then create one or more Recommendations and manage them forward.Inspection Confidence Evaluation Record to be Linked to RBI Component? Persona: TechnicianDetermine whether you want to link the Inspection Confidence Evaluation records to RBI Components.Link Inspection Confidence Evaluation Record to RBI Component Persona: TechnicianLink the Inspection Confidence Evaluation records to RBI Components.Send Inspection Report for Review Persona: TechnicianBased on the scope of the Inspection Task, and the information entered in the Inspection Report (including findings, recommendations, and any reference documents), determine if the Inspection Report is ready for review. If yes, send it to a supervisor for review.Review Inspection Report Persona: SupervisorReview the information in the report, including the findings and recommendations.Approve Inspection? Persona: SupervisorDetermine if the Inspection Report is complete based on the scope defined in the Inspection Task. If the Inspection Report is incomplete, you can assign the Inspection Task again to the Technician to update the Inspection Report.Update Inspection Report Persona: TechnicianInspect the asset again, and update the Inspection Report based on the review comments.Approved Inspection Report Persona: SupervisorAfter you approve the Inspection Report, the associated Inspection Tasks are updated with the new inspection dates based on the desired interval defined in the Asset Strategy.Inspection History Persona: TechnicianThe Inspection Report is included in the overall Inspection History for the asset. Inspection History is used to re-evaluate asset strategies to validate or improve the planned work, procedures and policies. The Inspection History is also available for follow-up analysis, using the Core Analysis Workflow.Recommendation Needed? Persona: AnalystDetermine if a follow-up action is necessary as a result of the overall inspection of the asset. This process is followed in the Recommendation Management work process.Review Recommendations Persona: SupervisorRecommendations created from inspection activities are reviewed while reviewing the Inspection Report. These recommendations, are, however, reviewed again by the asset owner before they are implemented. This process is followed in the Recommendation Management work process.Approve Recommendations Persona: ApproverThe reviewed recommendations are approved for implementation.Implement Recommendations Persona: TechnicianThe approved recommendations are implemented.Core Analysis Persona: TechnicianFor follow-up analysis, use Core Analysis.Go to the Core Analysis: Asset Event Analysis workflow.Go to the Core Analysis: Graph Analysis workflow.Go to the Core Analysis: Query Analysis workflow. Go to the Core Analysis: Report Analysis workflow. Recommendation Management Persona: TechnicianThe new recommendation is managed for approval and implementation through the Manage Performance Recommendations workflow.Go to the Performance Recommendation Workflow.
+
+
+
+
+On this pageInspection Management: Inspection Assessment WorkflowInspection PlanningInitiate Inspection ReportReview Inspection HistoryCollect Data Offline?Download Offline FormRecord Data for Inspection EventDocument Any Immediate Action TakenNew Recommendation Needed?Inspect AssetReady for Check-In?Sync DataDocument Inspection Confidence for Multiple DMsCreate Performance RecommendationInspection Confidence Evaluation Record to be Linked to RBI Component?Link Inspection Confidence Evaluation Record to RBI ComponentSend Inspection Report for ReviewReview Inspection ReportApprove Inspection?Update Inspection ReportApproved Inspection ReportInspection HistoryRecommendation Needed?Review RecommendationsApprove RecommendationsImplement RecommendationsCore AnalysisRecommendation Management
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,112 @@
+
+
+
+
+About Instances | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About InstancesYou can add, modify, search, and delete instances, and add and remove instances in the Business Functional Hierarchy.An instance represents a single business functional object within the business functional hierarchy, a physical asset, and tag components in the Asset Model. You can create and assign instances to a business functional object, or another instance in the business functional hierarchy. Instances can be created for:EnterpriseSiteSegmentAssetTagImportant:
+In Predix APM, adding or modifying assets using the Legacy Predix APM user interface, APIs, or Asset Ingestion Service, or bypassing the Unified Asset Ingestion Data Loader, causes the asset databases to become out-of-sync. 
+In Predix APM:You must add or modify assets using the Unified Asset Ingestion Data Loader.You cannot delete assets.You must use the Asset Ingestion Service to add tags to assets.
+In Legacy Predix APM:You can add, modify, or delete assets in the user interface, using APIs, or using the Asset Ingestion Service.You can add tags to assets in the user interface, using APIs, or using the Asset Ingestion Service. 
+When you create an instance, you can add reserved attributes to the instance that are inherited by instances directly lower in the hierarchy. Reserved attributes are added to a parent node in the JSON.You can use the Asset APIs or ingestion to:Create an instance.List instances by criteria and URI.List child nodes link to an instance.List tags associated with an instance.Add tags to an instance.Note: When using the API, you must set the nextRelatedTag section tagUri field to null in order to remove the correlation.Remove tags from an instance.Update an instance.Delete an instance.A JSON is required when using an API or ingesting an asset group. The JSON structure for ingestion or APIs is different.Use the following API requests:This requestDoes thisPOSTCreate an instance and link tags to the instance.GETList the instances using the Asset APIs. You can list by criteria or URI. You can also list directly linked child nodes using UUID, and list tag associations. Browse instances, all instances, or accessible resources. Parent instances are included in the accessible resources response.PATCHUpdate the instance using the Asset APIs.DELETEDelete a specific instance by UIID, and remove tags from an instance. The next page link is not supported for the /browse endpoint. This is our API to populate the context browser only. Instead we recommend the following approach:For the direct objects underneath the enterprise use /enterprises/{{uuid}}/children.For all the sites underneath an enterprise use /enterprises/{{uuid}}/children?deepSearch=true&childPrefix=/sites. An alternate approach is /sites/query?q=parent->uri=/enterprise/{{uuid}}.Note: If you are looking for just a single type of object, it is more efficient to use the specific /sites or /assets endpoint with the query parameters.For all the sites, segments, and assets underneath an enterprise, use /enterprises/{{uuid}}/children?deepSearch=true.For all the assets underneath a specific enterprise, use:/assets/query?q=parent->name={{name of the enterprise}}/assets/query?q=parent->uri={{uri of the enterprise}}For all the assets underneath a specific site, replace id of enterprise with the id of site.
+Important: When you delete an instance, use the APIs to first remove it from all associated Business Functional Objects.
+To use the API to configure an instance, refer to the Asset APIs documentation.Maximum number of resultsThe maximum number of results in the set for the /browse API is 250, and not changeable. If you use our other endpoints, you can configure it from 1-1000./v1/assets?pageSize=250Instance Rules
+Use instance rules when creating an instance.You must have edit permissions.You cannot add a parent instance to itself or a descendant.If a business functional object or an asset instance is removed from the business functional hierarchy, it is orphaned and only an administrator can view it.
+Create an Instance
+You can create an instance using a parent node in the JSON. Use your Asset Model to determine placement of the instance. The JSON's for ingestion and API are different.You will need to add the following values to instances in the JSON for ingestion.nameiddescriptionclassification (names classification type)ccomClass (names Business Functional Hierarchy; ENTERPRISE, SITE, SEGMENT, ASSET).associatedEntityCcomClassproperties (includes sub-values)idvaluetypeRepeat the previous step for any instance you want to add.Save the JSON, then ingest it using the REST client.
+You are ready to add the instance to the business functional hierarchy.
+Add an Instance to the Business Functional Hierarchy
+You can add an enterprise, site, segment, or asset instance to the business functional hierarchy. Tag instances are added to an existing instance.
+You can move an existing site, segment, or asset instance to another site, segment, or asset instance in the business functional hierarchy. Use your Asset Model to determine placement of the instance. You can add or move an instance to a node that is higher in the business functional hierarchy.
+When you provide an ingestion file with a connection to that business functional object, then the system stores the association.You will need to add the following values to connections in the JSON for ingestion:from (includes sub-values)idccomClass (names originating connection; SITE, SEGMENT, ASSET)to (includes sub-values)type (predefined as parent)idccomClass (names parent object; ENTERPRISE, SITE, SEGMENT, ASSET)Repeat the previous step for each instance you want to connect to the business function hierarchy.Save the JSON, then ingest it using the REST client.
+Move an Instance within the Business Functional Hierarchy
+You can move an instance from one area in the business functional hierarchy to another.
+You can move entails using PATCH or ingestion to update and replace the classification for an instance.
+Note: You can move only the instances with type Enterprise, Site, Segment, and Asset to a different classification. An asset instance can only be moved within the same business functional hierarchy.
+Based on the following scenarios, an instance is moved within the business functional hierarchy as follows:
+If the custom attribute of the new classification has same name but different datatype than that of an instance attribute, an error message appears. In this case, you must either delete the instance attribute or delete the classification attribute to resolve the conflict.If the custom attribute of the new classification has same name and same datatype of an instance attribute, the attribute that matches the new classification will be inherited to the instance from the new classification. However, the instance attribute values will not be updated even if the classification has the same attribute as that of the instance.If the new classification contains attributes that are not available in the instance, the classification attributes are inherited to the instance along with their default values.
+To move an instance:Find the business functional object node from which you want to move the instance.Change the following parameters using PATCH or ingestion:[{
+"op" : "replace",
+"path" : "/type"
+"value" : "new type URI"
+}]Save the JSON, and then update it using the APIs.
+Remove an Instance from the Business Functional Hierarchy
+You can remove instances from a business functional object.
+You can use the API to remove the association when an instance no longer has a relationship to the business functional object.Find the business functional object node from which you are removing the instance.Remove the association between the asset instance URI and the business functional object URI.Save the JSON, then update it using the APIs.
+Add Tags to an Instance
+You can add tag instances to an instance (enterprise, site, segment, or asset). A tag instance cannot be added to more than one business functional object. You can create a tag instance using tagAssociations in the JSON.You will need to add values under tagAssociations for ingestion:monitoredEntity (includes sub-values)id (names the instance in the business functional hierarachy for which the tag is associated)ccomClass (names the classification type; e.g., ENTERPRISE)tags (includes sub-values)name (tag name)id descriptionclassification (names associated tag type classification)aliases (names one or more tag aliases)nextRelatedTag (includes sub-value)idNote: You must set the ID field to null in order to remove the correlation.Repeat the previous step for any tag associations you want to add.Save the JSON, then ingest it using the REST client.
+Remove Tags from an Instance
+You can remove tag instances from an instance using the APIs.Find the instance node from which you are removing the tag instances.Remove the association between the tag instance URI and the instance URI.Save the JSON, then update it using APIs.
+Search for Instances
+You can retrieve a list of instances by criteria or URI using the APIs.
+You can use the API to retrieve the instances associated to a business functional object. 
+Use the API request parameters to narrow the list by criteria (e.g., sourceKey).Note: Parameter names are case sensitive.
+The following search parameters are supported for enterprise, site, and segment instances:urinamesourcekeydescriptionattributesreservedattributestypeparent
+The following search parameters are supported for tag instances:urinamesourcekeydescriptionattributesreservedattributestypemonitoredentityurimonitoredentitynamemonitoredentitysourcekeyNote: Querying a tag by alias is not supported at this time.
+Delete an Instance
+You can delete an instance using an API. Using API, you can delete one instance at a time by providing the UUID of the instance.Note: There are APIs to delete only the asset and tag instances, and not Site, Segment, or Enterprise instances.
+Cascade Delete of Instances
+If you submit a request for cascade deletion with the SourceKey of a specific object in the tree, then the system validates against all the rules. Once all the validations pass, then the system deletes the object and all of its children at level of the hierarchy and Audit Logs page gets updated.Note: Removing business functional objects via ingestion is not supported.Note: The Cascade Delete API can delete up to 2000 objects in the child hierarchy including Tags and Groups. When you attempt to delete an object that has more than 2000 children, an error message appears with the reason for the call rejection. In this case, you must delete the lowest level objects before deleting the higher level.
+You must use precautionary measures when using the API to delete an asset or tag instance. The delete functionality permanently removes all child-assets, group associations, and the actual instance. 
+Upon successful deletion, the Audit Logs page updates the following information: Timestamp, UserName, Name, Resource, Resource Type, Action, Reason, and Detail. For example, Deleted Asset Instance-1234 (ID212434). 
+The following rules apply:Delete all objects in the entire hierarchy including tag instances associated to the objects.Cannot delete if an object has more than one parent in the deletion path.Cannot delete if the tag instance is associated to any object not in the deletion path.
+The API performs the following actions when deleting an enterprise instance:Deletes all the site, segment, and asset instances under the segmentDeletes all the association with groups for the enterpriseDeletes the object (enterprise)
+The API performs the following actions when deleting a site instance:Deletes all the segment and asset instances under the segmentDeletes all the association with groups for the siteDeletes the object (site)
+The API performs the following actions when deleting a segment instance: Deletes all the asset instances under the segmentDeletes all the association with groups for the segmentDeletes all the segment instances under the segmentDeletes the object (segment)
+The API performs the following actions on the asset instance and all its children when you execute cascade delete on an asset instance object:Deletes all the tag instances of the asset Deletes all the association with groups for the assetDeletes the object (asset)
+The API deletes the tag instance association and the tag instance. 
+Upon deletion the following HTTP status codes provide information that help with troubleshooting:
+Status CodeDescription202Confirms that the request is accepted for processing. The deletion activity is asynchronous and runs in the background. 404The cascade delete entity is not found.
+
+Related ConceptsAbout Asset ModelAbout Tag ModelRelated tasksIngest Assets through the REST Client for Legacy Predix APMIngest Assets through the User Interface for Legacy Predix APM
+
+
+
+
+
+
+
+
+
+
+

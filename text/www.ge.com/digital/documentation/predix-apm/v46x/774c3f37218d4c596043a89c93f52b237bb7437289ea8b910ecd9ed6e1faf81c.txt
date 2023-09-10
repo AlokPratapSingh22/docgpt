@@ -1,0 +1,111 @@
+
+
+
+Fourth Quarter of 2020 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Release Notes
+Fourth Quarter of 2020
+
+
+
+
+
+
+
+Fourth Quarter of 2020Release Date: November 20, 2020This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved IssuesThe following issues, which existed in one or more previous versions, have been resolved.DescriptionTracking IDPreviously, when you provided a numeric value in one input field of a Subtract node, and the other input field of the Subtract node used an output with string or unknown data type from a predecessor node, an error message was displayed in the notification bar and you could not activate the Policy. This issue has been resolved.DE151447Previously, when using an aggregate function in a query running in Oracle, the data types were not returned correctly, this resulted in validation errors in the calculate and comparison nodes. This issue has been resolved.DE144642
+Release Date: October 2, 2020This topic provides a list of product changes released for this module on this date.
+Table 2. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDTo reduce the load on the GE Digital APM database that is caused by frequent executions of policies, the default concurrency limit of the Policy Execution Service has been reduced from 16 to 8.US431473You can now save only summary in the Execution History records. To facilitate this enhancement, the Summary Only option has been added to the Execution History Log Setting section of the Details workspace in the Policy Designer page.US345230
+Table 3. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, if the Policy Trigger Service stopped running, the policy trigger jobs that were in progress were not completed even when the service was restarted. This issue has been resolved.US422994Previously, the output of a Math node configured to operate on a mathematical expression containing logical operators did not always conform to generally accepted mathematical principles. This issue has been resolved.For example, a Math node configured with the mathematical expression A|B&C will now be evaluated as A|(B&C), whereas it was previously evaluated as (A|B)&C.
+Note: This may cause unexpected results in existing policies.US412813Previously, error messages related to MassTransit appeared in the Policy Execution service logs. This issue has been resolved.DE142399Previously, if you configured a policy with nodes as successors to an email node, the successor nodes were not executed. This issue has been resolved.DE142388Previously, if a policy updated or created records at a high frequency, GE Digital APM stopped responding. This issue has been resolved.DE140181Previously, in the Properties window for a Point Value node, in the Data Type box, if you did not select any value, and then configured the node to represent a large timespan value in days or months, the policy execution failed. This issue has been resolved.DE139758Previously, if execution of a Sub Policy node was in progress, execution of the policy did not time out even if it exceeded the time limit configured for the Policy Execution Service. This issue has been resolved.DE139233Previously, if execution of an action node resulted in an error, a null reference error appeared in the execution results of any successor action node. This issue has been resolved.DE139232Previously, if a policy was configured to send an email, the URLs included automatically in the email text were incorrect. This issue has been resolved.DE137689Previously, in the Instances pane, when you searched for a record to assign it to a User node, no results appeared in the Search window. This issue has been resolved.DE137324Previously, in the Properties window for a Rule node, when you modified the value in the Rule Path box, an error message appeared in the notification bar and you could not select any value in the Rule Class box. This issue has been resolved.DE136785Previously, if the Policy Execution Service stopped running, the policy executions that were in progress were not completed even when the service was restarted. This issue has been resolved.DE134838Previously, the timeout feature of the Math node was disabled. This issue has been resolved. Now, if the time taken by a Math node to perform a calculation exceeds the configured time limit, the execution of the policy that contains the node is cancelled.DE133382Previously, the input values of a policy instance that were of string data type appeared incorrectly in the Validation workspace. This issue has been resolved.DE132300Previously, in a policy instance where a primary record is defined, when you searched for a record to assign to another Input node, the search results were not filtered to display only the records linked to the primary record. This issue has been resolved.DE130744Previously, when you searched for an Instance in the Instances, Execution History, or Validation pane of the Design workspace, the search result was not retained when you accessed another pane. This issue has been resolved.DE126111Previously, in the Execution History pane, regardless of the page size you selected, only the first 50 rows of each page of execution results were displayed. This issue has been resolved.DE124582Previously, when you configured a Predix Time Series node to use the output of a Query node as its input, if the output of the Query node contained a calculated date or time value, the following issues occurred:An error message appeared in the notification bar.You could not activate the policy. These issues have been resolved.DE122929Previously, in a policy that did not contain an R Script node, when you configured a Sub Policy node to call a policy that contained an R Script node, the performance of the policy execution degraded. This issue has been resolved. DE121915Previously, when you added or deleted an Input node and then saved the policy, the Ad Hoc section of the Validation pane was not updated until you reloaded the policy. This issue has been resolved.DE111262
+Table 4. Obsolete Features
+The following features are no longer available.
+DescriptionTracking IDThe backward compatibility support for the start time and end time fields of some nodes in the Policies that were created in APM Classic V3.5.0 is no longer available. The following nodes in the Policies now operate on the entire collection mapped to their input fields instead of filtering the date range of the collection:Average NodeLast NodeMax NodeMin NodeThreshold Statistics NodeUS396094
+
+
+
+
+
+On this pageRelease Date: November 20, 2020Release Date: October 2, 2020
+
+
+
+
+
+
+
+
+

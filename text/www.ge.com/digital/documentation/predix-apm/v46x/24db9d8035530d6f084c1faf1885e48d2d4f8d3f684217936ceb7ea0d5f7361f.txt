@@ -1,0 +1,152 @@
+
+
+
+General Reference | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Compliance ManagementOverview
+Workflows
+Inspection Plans
+Inspection Plan Management
+Compliance Recommendations
+Inspection Plan Revision History
+Suggested Compliance Strategy Templates
+Admin
+Deployment
+Reference General Reference
+Data Models
+Family Field Descriptions
+Family Search Configuration
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Compliance Management
+Reference 
+General Reference
+
+
+
+
+
+
+
+General ReferenceCompliance QueriesCompliance Folder Items
+The Catalog folder \\Public\Meridium\Modules\Inspection\Compliance\Queries contains the following queries used in the Compliance workflow.
+ Query  Behavior and Usage Assets with Templates without Inspection Plans Displays assets that have a Compliance Strategy Template linked. This query is used in the Assets with Templates section in the Compliance Management Overview page. The entity key of the asset must be used in the query and have the alias ASSET_ENTY_KEY.Assets without TemplatesDisplays assets that do not have a Compliance Strategy Template linked. This query is used in the Assets without Templates section in the Compliance Management Overview page. The following columns in the query must be used, and the aliases must contain the following values.ColumnAliasMI_ENTITY.ENTY_KEYASSET_ENTY_KEY[MI_SUGG_COMP_TEMP].[MI_SUGG_COMP_TEMP_TMP_KEY_N]TEMP_KEYCompliance Template AssetsDisplays the Compliance Strategy Templates for a given compliance category. This query is used for populating the Assets section in the Compliance Strategy Template in the Compliance Configuration section of the IM Admin Preferences page.Important:
+The ASSET_ENTY_KEY must not be modified or deleted.If you are using assets that are from families other than Equipment or Functional Location, you must add the family to the query using a union.
+Compliance Templates by CategoryDisplays the assets associated with a given Compliance Strategy Template.Important: The [MI_COMP_STRAT_TEMP].ENTY_KEY column must not be removed, and the alias, ENTY_KEY, must not be modified. In the WHERE criteria, the ID of the parameter must be category. Assets with Inspection PlansDisplays the assets that are associated with an Inspection Plan.Compliance Management Overview Filter ParametersThis query is used in the Compliance Management Overview page.Compliance TemplatesThis query is used in the Compliance Templates section in the Compliance Management Overview page.Assets with Compliance RecommendationsDisplays the Compliance Recommendations count for an Asset.
+Inspection Plan Queries
+The Catalog folder \\Public\Meridium\Modules\Inspection\Compliance\Queries contains the following queries used in the Inspection Plan workflow.
+ Query  Behavior and Usage Compliance Recommendations by PlanDisplays Recommendations based on the Inspection Plan.The following columns in the query must be used, and the aliases must contain the following values.ColumnAlias[MI_COMP_RECOMM].ENTY_ID AND [MI_RBIRECOM].ENTY_IDREC_ENTY_ID[MI_COMP_RECOMM].ENTY_KEY AND [MI_RBIRECOM].ENTY_KEYREC_ENTY_KEY[MI_TASKINSP].[MI_TASK_ID]Task IDa."SUCC_ENTY_KEY"Linked Actions[MI_TASKINSP].ENTY_KEYTASK KEY{MIR_RBICRAN}.PRED_ENTY_KEYNote: For Compliance Recommendations, the column must be set to NULL. For RBI Consolidated Recommendations, the column must be set to 0.Comp KeyPRED_ENTY_KEYNote: For Compliance Recommendations, the column must be set to NULL. For RBI Consolidated Recommendations, the column must be set to 0.Analysis KeyMI_SM_STATES.SMST_IDSTATE_ID[MI_COMP_RECOMM].FMLY_KEY AND [MI_RBIRECOM].FMLY_KEYFMLY_KEY[MI_RBIRECOM].[MI_RBIRECOM_NONRE_FLG]NonRecurring?Important: \\Public\Meridium\Modules\Inspection\Compliance\Queries\Compliance Superseded Recommendation Counts is a subquery and must not be removed from the parent query. In this subquery, the SUCC_ENTY_KEY column is required, and the alias must not be modified. Compliance Recommendations to SupersedeDisplays Recommendations for a given entity keys. This query is used to select the master Recommended Action while superseding Compliance Recommendations in the Recommendation section of the Inspection Plan page.Important: The [MI_RBIRECOM].ENTY_KEY column must not be removed, and the alias REC_ENTY_KEY must not be modified.Compliance Superseded RecommendationsDisplays a list of Consolidated and Superseded Recommendations. This query is used to access the linked actions in the Inspection Plan page.Note: The [MI_RBIRECOM].ENTY_KEY column must not be removed, and the alias REC_ENTY_KEY must not be modified.Inspection Tasks for AssetDisplays the Inspection Tasks for an asset. This query is used to access the Existing Tasks in the Inspection Plan page. Important: In the WHERE criteria, the ID of the parameter must be ASSET_ENTY_KEY.Compliance Superseded Recommendation CountsReturns the count of Consolidated and Superseded Recommendations. This query is used in the Recommendation section of the Inspection Plan page.Inspection Tasks Available to ImplementDisplays the Inspection Tasks available to implement for a Compliance Recommendation. This query is used to access the Inspection tasks after selecting the Implement button in the Inspection Plan page.Recommended Actions by Selected PlansDisplays unimplemented actions from a given Inspection Plan. This query is used in the Inspection Plan page. The following columns in the query must be used, and the aliases must not be changed.
+ColumnAlias[MI_COMP_RECOMM].ENTY_ID AND [MI_RBIRECOM].ENTY_IDREC_ENTY_ID{MIR_ASST_HAS_INSP_PLAN}.PRED_ENTY_KEY ASSET_KEY
+Important: In the WHERE clause, the ID of the parameter must be ENTY_KEYS.
+Link Existing Task to Recommended ActionReturns an Inspection Task to link to a given Recommendation based on Asset and Task Type. This query is used in the Inspection Plan page. The following columns in the query must be used, and the aliases must not be changed.
+ColumnAlias[MI_TASKINSP].ENTY_KEYENTY_KEY
+Important: In the WHERE clause, the following parameter IDs must be provided and not modified:TASK_TYPEASSET_KEY
+All Inspection Plans for UnitReturns all Inspection Plans for the selected location in the hierarchy. This query is used to access all the Inspection plans in the Inspection Plan Management page.Active Recommendations of Plans for UnitReturns all active recommendations for Inspection Plans for the selected location in the hierarchy. This query is used to view active recommendations in the Inspection Plan Management page.Inspection Plan RevisionsDisplays the Inspection Plan Revisions for a given Inspection Plan. This query is used to retrieve the revisions for an Inspection Plan.Important:
+The column [MI_INSP_PLAN_REV].[MI_INSP_PLAN_REV_REVI_DATE_D] must not be removed and its alias must not be changed.In the WHERE clause, the ID of the parameter must be PLAN_ENTY_KEY.
+Compliance Recommendation Revisions for Inspection PlanDisplays the Recommendation Revision records for a given Inspection Plan Revision. This query is used in the Inspection Plan page to view the revisions for a Recommendation.Important:
+The column [MI_COMP_REC_REV].[MI_REC_ID] must not be removed and its alias must not be changed.In the WHERE clause, the ID of the parameter must be PLAN_REV_ENTY_KEY.
+
+Dashboard Queries Folder Items
+The Catalog folder \\Public\Meridium\Modules\MehcanicalIntegrity\Queries\Dashboard Queries contains the following items that are used in the Compliance Management Overview page.QueryBehavior and UsageCompliance Recommendations with Approved PlansThis query is used in the Active Recommendation Summary section in the Compliance Management Overview page.Inspection Plan StatesThis query is used in the Inspection Plan Summary section in the Compliance Management Overview page.
+Compliance Permissions
+The following security privileges have been assigned to the \\Public\Meridium\Modules\Inspection\Compliance\ folder.
+RolePermissionsMI Inspection
+ViewEditCreateDelete
+MI Inspection ViewerViewMI RBI AdministratorViewMI RBI AnalystViewMI Thickness Monitoring AdministratorViewMI Thickness Monitoring InspectorViewMI Thickness Monitoring UserView
+Compliance Management URLs
+There is one URL route associated with Compliance Management: cm. The following table describes the various paths that build on the route and the elements that you can specify for each.
+URLDestinationcm/overview The Compliance Management Overview page.
+Compliance Strategies URLs
+The following URLs in Inspection Management allow you to access Compliance Strategies administrative options.
+ElementDescriptionAccepted Value(s)Notesim-admin-preferences/compliance-configuration: Accesses the Compliance Strategies workspace.im-admin-preferences/compliance-configuration/<templateKey>: Accesses a Compliance Strategy Template.<templateKey>Specifies the entity key of the Compliance Strategy Template that you want to view.The entity key of any Compliance Strategy Template.None.
+Inspection Plan URLs
+The following table describes the various paths that are used for the Inspection Plan workflow.
+ElementDescriptionAccepted Value(s)Notescm/asset/<assetKey>: Accesses the Inspection Plan for the specified asset.cm/plans: Accesses the Inspection Plan Management page. <assetKey>Specifies the entity key of the asset record which you want to view.Any asset key that is associated with an asset in the Asset HierarchyYou should use the asset key of an asset that has an Inspection Plan created. If you select an asset that does not have an Inspection Plan, a warning message appears.
+URLs
+Example URLDestination cm/asset/3290820029The Inspection Plan for the selected asset. 
+Compliance Management System Code Tables
+The following table lists the System Code Tables that are used by Compliance Management.
+Table IDTable DescriptionFunctionINSM Inspection Interval Types Used to populate the Desired Interval Basis list in Inspection Task records.MI DEGRADATION MECHANISM TYPES Degradation Mechanism Types Used to populate the Degradation Mechanism list in Inspection Plan records. 
+Compliance Management State ManagementThe following state changes can be applied to Compliance Recommendations and Inspection Plans based on user Security Roles.The diagram below shows the workflow of the baseline State Management process as it applies to Compliance Recommendations.
+The diagram below shows the workflow of the baseline State Management process as it applies to Inspection Plans. Details
+The Proposed state is the initial state of all Compliance Recommendations.The Proposed state is the initial state of all Inspection Plans.When you change the state of an Inspection Plan from Approved to Modified, an Inspection Plan Revision History record is created.Operations in Compliance Management change the state of Compliance Recommendations or Inspection Plans. Users must have the appropriate security roles to execute these operations. 
+Reserved States and Operations for Compliance Recommendations
+The following tables indicate whether the baseline states and operations are reserved. You cannot remove or modify reserved states or operations. 
+State CaptionReserved StateSecurity RoleImplementedYes
+MI Compliance AnalystMI Inspection Plan Approver
+Not RequiredYes
+MI Compliance AnalystMI Inspection Plan Approver
+ProposedNo
+MI Compliance AnalystMI Inspection Plan Approver
+SupersededYes
+MI Compliance AnalystMI Inspection Plan Approver
+
+OperationReserved OperationPredecessor StateSuccessor StateImplementYesProposedImplementedProposeNoNot RequiredProposedProposeNoSupersededProposedMark Not RequiredYesProposedNot RequiredSupersedeYesProposedSupersededUnimplementYesImplementedProposedApproveYesProposedApproved
+Reserved States and Operations for Inspection Plans
+The following tables indicate whether the baseline states and operations are reserved. You cannot remove or modify reserved states or operations. 
+State CaptionReserved StateSecurity RolesApprovedNoMI Inspection Plan ApproverModifiedYes
+MI Compliance AnalystMI Inspection Plan Approver
+ProposedNo
+MI Compliance AnalystMI Inspection Plan Approver
+
+Operation IDReserved OperationPredecessorSuccessorMI_APPROVENoProposedApprovedMI_APPV_MODIFIEDNoModifiedApprovedMI_MODIFYYesApprovedModifiedMI_PROMOTEYesProposedAccepted
+Compliance Recommendation and Inspection Task MappingsWhen you implement a Compliance Recommendation, you can create new Inspection Tasks or link existing Inspection Tasks to the Compliance Recommendation. Values from the Compliance Recommendation fields populate fields in the Inspection Task.
+The following tables list the Inspection Task fields that are populated automatically from these sources.
+Table 1. Link Existing Inspection Tasks to Compliance RecommendationsFieldValueSourceDesired IntervalThe value in the Recommended Interval Scope field.Note: This field is populated with the value of the Recommended Interval Scope field only if the value in the Override Interval field is False.Compliance RecommendationDesired Interval BasisCompliance RecommendationNote: This field is populated with the value of the Recommended Interval Scope field only if the value in the Override Interval field is False.Compliance RecommendationTask DetailsThe value in the Recommended Inspection Scope field.Compliance RecommendationTask TypeThe value in the Task Type field.Compliance Recommendation
+Table 2. Link New Tasks to Compliance RecommendationsFieldValueSourceDesired IntervalThe value in the Recommended Interval Scope field.Compliance Recommendation Desired Interval BasisCompliance RecommendationCompliance RecommendationOverride IntervalFalseCompliance RecommendationTask DetailsThe value in the Recommended Inspection Scope field.Compliance RecommendationTask IDThe values in the Damage Mechanism and Task Type fields in the following format: <Damage Mechanism><Task Type>.Compliance RecommendationTask TypeThe value from the Task Type field.Compliance RecommendationAsset KeyThe key of the asset that the recommendation is linked to.Compliance RecommendationLast DateUser provided input. Default value is current date.Compliance Recommendation
+
+
+
+
+
+On this pageCompliance QueriesCompliance Management URLsInspection Plan URLsCompliance Management System Code TablesCompliance Management State ManagementCompliance Recommendation and Inspection Task Mappings
+
+
+
+
+
+
+
+
+

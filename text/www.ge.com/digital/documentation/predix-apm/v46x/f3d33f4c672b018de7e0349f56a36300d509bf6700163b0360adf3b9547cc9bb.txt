@@ -1,0 +1,178 @@
+
+
+
+Policy Instances | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Policy Instances
+
+
+
+
+
+
+
+Policy InstancesAbout Primary Records and Primary NodesThe primary record is a record in a policy instance to which most or all other records in the instance are linked. The primary record may or may not be represented by a node in the policy model. Not every policy will be configured such that its instances have primary records, but if it is, you can use the primary record feature to streamline the process of creating policy instances.Typically when creating a policy instance, for each node in the policy model, you must access a Search window and configure the appropriate search criteria in order to locate the record that you want to assign to the node. If, however, you specify a primary record, the search criteria are configured automatically to return only records that are linked to the primary record. Further, rather than using a Search window at all, you can simply select a record from a list of records that are linked to the primary record. If the primary record is represented by a node in the policy model, before you create a policy instance, you can specify that node as the primary node. Then, in each policy that you create, the record that you assign to the primary node will become the primary record automatically.If the primary record is not represented by a node in the policy model, you can specify the primary record directly in each policy instance.Primary record represented by a node in the policy model
+Consider the following policy that monitors various types of information for a piece of equipment. 
+
+The Equipment node in this model represents an Equipment record to which all of the other input records (represented by other Input nodes) are linked. Therefore, the Equipment node has been specified as the primary node, as indicated by the blue star that appears on the node in the model.
+In a policy instance associated with this policy, a blue star appears next to the node name, indicating that the record specified for the Equipment node will be the primary record. In the following image, an Equipment record with the Record ID ~ #1 STEAM REHEATER ~ HXST90 has been specified for the Equipment node and is, as a result, also the primary record for this policy instance.
+
+Primary record not represented by a node in the policy model
+Consider the following policy that monitors various types of information for a piece of equipment.
+
+
+
+The Input nodes in this policy model represent records that are related to a single Equipment record, but the Equipment record itself is not represented by a node in the model. Therefore, there is not a primary node in this policy model. However, you can still specify a primary record in each policy instance. 
+In a policy instance that is associated with this policy, the top row contains a blue star that indicates the primary record, but the row does not contain a node name because there is not a primary node in the model. In the following image, an Equipment record with the Record ID ~ #1 STEAM REHEATER ~ HXST90 is specified as the primary record.
+
+
+
+Assigning records to nodes after a primary record is specified
+Continuing with the previous examples in this topic, after a primary record has been specified, when you assign records to the remaining nodes in the model, you can select the record you want from the list that is enabled. As shown in the following image, the list contains records in the database that are linked to the Equipment record ~ #1 STEAM REHEATER ~ HXST90.
+
+
+
+You can also enter a Record ID directly in the cell. When you do this, the list is re-populated with the linked records whose Record IDs contain the value that you entered, as shown in the following image.
+
+
+
+Alternately, you can use the Search window to search for and select a record to assign to an Input node. When you do this, the search criteria that are defined by default will return only records that are linked to the Equipment record specified in the instance, as shown in the following image.
+
+
+
+Note: The layout of the Search window varies depending on the type of the input node.
+Specify the Primary Node in a Policy ModelBefore You Begin
+ Build a policy model.Note the following limitations that apply to primary nodes:You can specify only one primary node in a policy. Any Input node except for a Constant, Query, or Point Value node can be specified as the primary node. 
+About This TaskIf a policy contains a node that represents a primary record, you can specify that node as the primary node in a policy model. Doing so will streamline the process of creating policy instances.Procedure
+Access the policy for which you want to specify a primary node. In the Design workspace, select the Input node that you want to specify as the primary node.The Properties window for the Input node appears.On the Properties window, select the Primary Record check box.
+A blue star appears on the upper-left corner of the node in the policy model, indicating that the node is the primary node in the policy.
+
+Select Save.The policy is saved.Results
+When you create a policy instance, the record that you assign to the primary node will be the primary record for that instance. 
+Create a Policy InstanceBefore You Begin
+ Build a policy model.
+Specify the primary node, if there is one.
+Procedure
+Access the policy for which you want to create a policy instance.At the bottom of the Design workspace, select the Instances tab.The Instances pane appears.
+Tip:
+To resize the pane, drag the top edge of the pane.To maximize the pane, select .To restore the pane to its original size, select .To close the pane, select .
+On the left side of the Instances pane, select .
+A new policy instance appears, which includes options to assign a record to each Input node in the policy (excluding Query and Constant nodes whose values are not specified in policy instances).
+
+
+
+Optionally, in the Instance box, enter a name for the instance other than the default name. If you want to use the primary record feature to streamline the process for assigning records to nodes, select  next to the text box under the blue star. 
+Note:  Depending on whether or not you have specified a primary node, this text box may or may not correspond to a node in the policy model.
+or
+If you do not want to use the primary record feature, select  next to the text box corresponding to a node in the policy model. 
+The Search window appears. The search criteria are defined automatically to return only records in the family represented by the selected node.Important: If a family has been excluded from the global search, you will not be able to assign records from that family to a policy instance.
+
+
+
+Note: The appearance of the Search window varies depending on the type of the selected input node.
+Specify additional search criteria as needed, and then select .In the search results, select the record that you want to assign to the policy instance, and then select OK.
+The Search window closes, and the Record ID of the selected record appears in the corresponding text box.
+ The following image shows an example in which the Equipment record with the Record ID ~ #1 STEAM REHEATER ~ HXST130 has been assigned to the node Equipment. The blue star above the text box indicates that ~ #1 STEAM REHEATER ~ HXST130 is also the primary record.
+
+Choose one of the following methods to assign a record to each remaining node included on the right side of the Instances pane. If you have specified a primary record, you can do this in one of the following ways:Select a record from the list in the corresponding text box. This list contains the records in the corresponding family that are linked to the primary record.Enter part of a Record ID directly in the text box. When you do this, the list is re-populated with the records whose Record IDs contain the value that you entered.Select  to access the Search window. By default, the search criteria are defined to return only records that are linked to the primary record.If you have not specified a primary record in the policy, repeat steps 5 through 7 (that is, use the Search window to assign records to each node).
+Note: If a policy model contains a Health Indicator node, within a policy instance, instead of assigning an existing Health Indicator record to the node, you can optionally create a new Health Indicator record to assign to the node.
+On the Instances pane, select .The policy instance is saved.Results
+A Policy Instance record representing the policy instance is saved to the GE Digital APM database.
+Create a New Health Indicator Record from the Instances PaneBefore You Begin
+ Build a policy model.
+Create a policy instance.
+About This TaskIf a policy model contains a Health Indicator node, within a policy instance that is associated with that policy, you can assign an existing Health Indicator record to that node or create a new Health Indicator record to assign to that node. The following instructions explain how to create a new Health Indicator record that will be assigned to a Health Indicator node. You can then use the Add Value to Health Indicator node to create Health Indicator Value records and link them to the new Health Indicator record.Procedure
+Access the policy that is associated with the policy instance for which you want to assign a new Health Indicator record to a Health Indicator node.At the bottom of the Design workspace, select the Instances tab.The Instances pane appears. On the right side of the Instances pane, next to the text box for the Health Indicator node to which you want to assign a new Health Indicator record, select .The Create Health Indicator window appears. Next to the Asset text box, select , and then use the Hierarchy Finder window to select the asset record to which you want to link the Health Indicator record (e.g., a record in the Equipment family).In the Name text box, enter a name for the health indicator.Optionally, in the Description text box, enter a description for the health indicator.In the remaining text boxes, enter values to indicate the thresholds against which values associated with this health indicator will be compared to determine the status of the health indicator.Select CreateThe new Health Indicator record is created, and the Instances pane is updated to show the Record ID of the new record.On the Instances pane, select .The policy instance is saved.Repeat these steps for each instance that is associated with the policy.Configure OT Connect Tag Limits from the Instances PaneBefore You Begin
+Build a policy model.
+Create a policy instance.
+About This TaskIf a policy model contains an OT Connect Tag node, within a policy instance that is associated with that policy, you can configure the limit values that must be evaluated during the policy execution. These limit values are associated with the use of the selected Source Tag only in this specific policy instance and are stored in a Content Map record associated with the policy instance and the Source Tag. This means that you can use different limits in each policy instance where a Source Tag is used, depending on the purpose of the policy.Procedure
+Access the policy that is associated with the policy instance for which you want to configure the OT Connect Tag limits.At the bottom of the Design workspace, select the Instances tab.The Instances pane appears.On the right side of the Instances pane, next to the text box for the OT Connect Tag node for which you want to configure the limit values, select . Note: The  icon is enabled for the field only if a record is assigned to the OT Connect Tag node.The Edit Numeric Limits or the Edit Character Limits window appears, based on the data type of the Source Tag, numeric or character, which is assigned to the OT Connect Tag node. Enter the required limit values.
+Note: It is not mandatory to specify all the limit values. However, for numeric limits, the values entered must be in the following order: The value assigned to Upper level 3 field must be greater than that assigned to Upper level 2 field. The value assigned to Upper level 2 field must be greater than that assigned to Upper level 1 field.The value assigned to Upper level 1 field must be greater than that assigned to Lower level 1 field.The value assigned to Lower level 1 field must be greater than that assigned to Lower level 2 field.The value assigned to Lower level 2 field must be greater than that assigned to Lower level 3 field. 
+The following table provides sample values for the numeric limits:
+FieldValueFieldValueUpper level 36Lower level 13Upper level 25Lower level 22Upper level 14Lower level 31
+Select Save
+On the Instances pane, select .The policy instance is saved.Activate or Deactivate a Single Policy InstanceBefore You Begin
+
+Create a policy instance.
+About This TaskYou can activate or deactivate a single policy instance or all instances associated with a policy. This topic describes how to activate or deactivate a single policy instance.Procedure
+Access the policy that is associated with the policy instance that you want to activate or deactivate.At the bottom of the Design workspace, select the Instances tab.The Instances pane appears. On the left side of the Instances pane, select the policy instance that you want to activate or deactivate.On the right side of the pane, above the grid, either the  button or the  button is displayed.
+If the  button is displayed, the policy instance is active. To deactivate the policy instance, select this button.If the  button is displayed, the policy instance is not active. To activate the policy instance, select this button.
+In the left pane, the corresponding active/inactive indicator changes to reflect your selection. On the Instances pane, select .The policy instance is saved.Results
+If you activated the policy instance and if the policy is active, the instance will be executed according to the policy's execution settings.If you deactivated the policy instance, the instance will not be executed.
+Activate or Deactivate All Policy Instances Associated with a PolicyBefore You Begin
+
+Create a policy instance.
+About This TaskYou can activate or deactivate a single policy instance or all instances associated with a policy. This topic describes how to activate or deactivate all policy instances associated with a policy.Procedure
+Access the policy that is associated with the policy instances that you want to activate or deactivate.At the bottom of the Design workspace, select the Instances tab.The Instances pane appears. On the left side of the Instances pane, below the grid: If you want to activate all policy instances, select the  button.Note:  If a policy instance is not fully configured (indicated by the red ), it will be excluded.If you want to deactivate all policy instances, select the  button.In the left pane, the corresponding active/inactive indicators change to reflect your selection.Select Save.The policy is saved.Results
+If you activated all policy instances and the policy is active, all policy instances will be executed according to the policy's execution settings.If you deactivated all policy instances, no instances that are associated with the policy will be executed.
+Export Policy InstancesAbout This TaskYou can export the instances associated with a Policy to a Microsoft Excel (.xlsx) file.Tip: You can modify the instance details in the exported file, and then import the same file using the Policy Instance Data Loader to update the instances in the GE Digital APM database.Procedure
+Access the policy associated with the instances that you want to export.In the Design workspace, select the Instances tab.The Instances section appears.In the Instances section, select , and then select .All instances associated with the Policy are exported to a Microsoft Excel (.xslx) file and the file is downloaded to your local drive.Note: By default, the name of the file is in the Policy_Instances_<PolicyName>.xlsx format.Duplicate a Policy InstanceProcedure
+Access the policy that is associated with the policy instance that you want to delete.At the bottom of the Design workspace, select the Instances tab.The Instances pane appears. On the left side of the Instances pane, select the policy instance that you want to copy.On the right side of the pane, select .A confirmation message appears. Select Yes.The policy instance is copied from the Instances pane, and the Policy Instance record representing the policy instance is duplicated in the GE Digital APM database.Delete a Policy InstanceProcedure
+Access the policy that is associated with the policy instance that you want to delete.At the bottom of the Design workspace, select the Instances tab.The Instances pane appears. On the left side of the Instances pane, select the policy instance that you want to delete.On the right side of the pane, select .A confirmation message appears. Select Yes.The policy instance is removed from the Instances pane, and the Policy Instance record representing the policy instance is deleted from the GE Digital APM database.
+
+
+
+
+On this pageAbout Primary Records and Primary NodesSpecify the Primary Node in a Policy ModelCreate a Policy InstanceCreate a New Health Indicator Record from the Instances PaneConfigure OT Connect Tag Limits from the Instances PaneActivate or Deactivate a Single Policy InstanceActivate or Deactivate All Policy Instances Associated with a PolicyExport Policy InstancesDuplicate a Policy InstanceDelete a Policy Instance
+
+
+
+
+
+
+
+
+

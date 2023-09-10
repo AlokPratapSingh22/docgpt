@@ -1,0 +1,94 @@
+
+
+
+Managing Recommended Actions in Inspection Plan | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection PlansRBI Inspection Plans
+Inspection Plan Management
+Managing Recommended Actions in Inspection Plan
+Implement Recommended Actions to Inspection Tasks
+Inspection Plan Revision History
+
+
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Inspection Plans
+Managing Recommended Actions in Inspection Plan
+
+
+
+
+
+
+
+Managing Recommended Actions in Inspection PlanModify an RBI Recommendation RBI Recommendations can be marked not required, superseded, or deleted from the Inspection Plan workspace.Before You BeginYou must either belong to the MI RBI Analyst Security Group or have MI Inspection Plan Approver Security Role to modify an RBI Recommendation.ProcedureAccess the Inspection Plan that contains the RBI Recommendations that you want to modify.Modify the RBI Recommendation in one of the following ways:StateActionSupersede ()Changes the state of the RBI Recommendation to Superseded. To supersede recommendations:Next to two or more Recommendations, select the check boxes.Select .The Supersede Recommended Actions window appears.Select the recommendation that you want to designate as the master recommendation.Select Supersede.The master recommendation supersedes the other recommendations and appears in the grid.Note: You can view the superseded recommendations by selecting the number in the Linked Actions column.Not Required ()Changes the state of the RBI Recommendation to Not Required. Next to each Recommendation that you want to mark Not Required, select the check box.Select .A window appears, asking you to confirm that you want to mark the recommendation as Not Required.Select Yes.The Reason for Not Required window appears, asking you to state a reason for marking the recommendation as Not Required.Enter a reason for marking the recommendation as Not Required, and then select Done.The RBI Recommendation is moved to the Not Required state.Unlink Superseded RecommendationsChanges the state of the recommendations from Superseded to Proposed. This unlinks superseded recommendations from the master recommendation.In the row containing the recommendation that you want to modify, in the Linked Actions column, select the number.The Linked Recommended Actions window appears, displaying the linked superseded and consolidated recommendations.Next to each superseded recommendation that you want to unlink, select the check box.Note: You can only unlink superseded recommendations from the Inspection Plan. To unlink consolidated recommendations, you must use the Recommended Actions pane from the Asset Summary workspace for the related asset.Select Unlink.The selected RBI Recommendations are unlinked from the master recommendation and appear in the grid. The RBI recommendations are moved to the Proposed state.
+Note: To consolidate RBI Recommendations, you must use the Recommended Actions pane from the Asset Summary workspace for the related asset.
+Delete an RBI RecommendationProcedureAccess the Inspection Plan that contains the RBI recommendation that you want to delete.Next to each recommendation that you want to delete, select the check box.Select .A window appears, asking if you want to delete the selected records.Select Yes.The RBI Recommendations are deleted.
+
+
+
+
+On this pageModify an RBI RecommendationDelete an RBI Recommendation
+
+
+
+
+
+
+
+
+

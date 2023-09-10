@@ -1,0 +1,107 @@
+
+
+
+Fourth Quarter of 2022 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Release Notes
+Fourth Quarter of 2022
+
+
+
+
+
+
+
+Fourth Quarter of 2022Release Date: November 18, 2022This topic provides a list of product changes released for this module on this date.RBI 581
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when the Operating Temperature field of an RBI 581 External Damage Evaluation was greater than 90 degrees Fahrenheit, the Calculated Corrosion Rate field was not set to the most conservative value from Table 15.2 (Corrosion Rates for Calculation of the DF-External Corrosion) of the RBI 581 Specification. This issue has been resolved.DE190815
+
+
+
+
+
+On this pageRelease Date: November 18, 2022
+
+
+
+
+
+
+
+
+

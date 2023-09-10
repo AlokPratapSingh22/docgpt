@@ -1,0 +1,255 @@
+
+
+
+Production Lines | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production AnalysisProduction Analysis: Overview
+Production Analysis: Workflow
+Production Analyses
+Production Data
+Production Lines
+
+
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Production Analysis
+Production Lines
+
+
+
+
+
+
+
+Production LinesAbout the Production Lines
+Production Line is a way to study or assess the results of a Production Analysis. When you view the results of a Production Analysis, you can define the following types of lines:
+Reliability Line : Represents the components of the system and how they are connected, which marks the location at which datapoints begin to trend away from the Demonstrated Line.Demonstrated Line: Represents the production output when the unit is operating at its observed rate of its capability. The region between the Demonstrated Line and the Nameplate Line is represented as the Efficiency/Utilization Loss region in the Production Loss Regions pane.Nameplate Line : Represents the most ideal production output of the unit.Custom Line: Provides a visual comparison between the Demonstrated Line and other observed or theoretical production rates. You can have more than one Custom Line per analysis.
+The Production Lines pane contains rows representing Production lines created on the Production Data plot. The color and background of each row corresponds to the color of the line on the analysis. Optionally, within the Production Lines pane, you can choose any line color from the color palette that appears when you select the color palette in the Color column.
+
+
+
+For each row, the Production Lines section provides following columns of information:
+
+Name: Contains the names of the production lines that exist in the analysis.
+
+Beta: Contains the Beta value for the line. In a Production Analysis, the Beta value indicates how reliable the production process is. The closer the line is to vertical, the higher the Beta value. A higher Beta value indicates less variation in the production process (more reliable); a lower Beta value indicates more variation in the production process (less reliable). You can use the following general guidelines to evaluate the production process according to the Beta value.
+ Beta = 5: Large variation in production output; a very poor production process. Beta = 10: Moderate variation in production output; a fair production process. Beta = 25: Some variation in production output; a good production process. Beta = 50: Minimal variation in production output; a very good production process. Beta = 100: Only minor variations in production output; an excellent production process. Beta = 200: Almost no variation in production output; an outstanding production process.
+
+Eta : Contains the Eta value for the line. You can delete the column and differentiate it with colors.
+You can manually change the Beta and Eta values for the selected line by selecting any Beta and Eta value field from the Production Lines list, deleting the current value, and defining a different one.
+Demonstrated Line
+Somewhere on the Production Analysis, you should be able to identify a group of datapoints that represent your typical output. This output is represented by a Demonstrated Line. The Demonstrated Line extends beyond the plotted datapoint to show what the production would have been if the production rate had not started to drop off due to reliability problems, such as Asset failures, cutbacks, and downtime. Drawing the Demonstrated Line first can help you determine where to draw the Process Reliability Line. You will want to draw the Process Reliability Line where the datapoints begin to deviate from the Demonstrated Line.
+The following image shows an example of a Demonstrated Line:
+
+
+
+Process Reliability Line
+An ideal process will produce the maximum possible output at all times, but actual processes demonstrate variation in output over time. The variation in output can be caused by various factors, including process problems, Asset problems, shutdowns, and cutbacks. 
+The Process Reliability Line marks the location at which datapoints begin to trend away from the Demonstrated Line. This is the location at which variation in output shifts from being attributed to production losses to being attributed to reliability losses. It defines the reliability of the process, expressed as a percentage. It is the point at which the process shifts from being fairly reliable to being unreliable.
+The decision of where to draw the Process Reliability Line is somewhat subjective and will be determined by how your datapoints look after they have been plotted and how you interpret the plot. If your datapoints do not exhibit a distinct trend away from the Demonstrated Line, and are plotted in a fairly straight, diagonal line, it may not be appropriate to draw the Process Reliability Line at all.
+The following image shows an example of a Process Reliability line showing that reliability of the process is 53.28%:
+
+
+
+Nameplate Line
+Every process will have both ideal output value and actual output values. Ideally, a process should always produce the maximum possible output. The maximum possible output is determined by a variety of factors and is often influenced most significantly by manufacturer specifications. Many manufacturers specify a nameplate value for their equipment to indicate the highest capacity of a given piece of equipment under ideal operating conditions. Together, the nameplate values for the individual pieces of equipment can help you determine the nameplate value for the entire unit, which is the maximum production output for the process under ideal operating conditions.
+After you have plotted your production data, you will want to draw a Nameplate Line on the Production Analysis Plot to indicate the ideal output. GE Digital APM will calculate the difference between the ideal output and your observed output values (represented by the Demonstrated Line) to determine your Efficiency/Utilization Losses.
+It may not always be appropriate to use the manufacturer's nameplate value as the nameplate value for your process. The maximum production capacity based on manufacturers' specifications may be unrealistic if you intentionally operate under conditions that do not meet those specifications. For example, you may operate at a lower temperature due to environmental constraints. If you calculate your production losses based on an impossible goal, your losses may appear inflated. In this case, you may want to take these factors into account to determine a more realistic nameplate value: one that actually can be achieved.
+The following image shows an example of a Nameplate Line:
+
+
+
+Custom Line
+After you have drawn the Demonstrated Line, the Process Reliability Line, and the Nameplate Line, you can optionally draw one or more additional Custom Lines to compare historical or projected production rates to the observed production rate. For example, you might draw a Custom Line:
+To compare the current year's production to the previous year's production.To compare your company's production rates with the production rates of another company that is using the same process.To project how much more you could produce the next year if you improved your process to achieve a projected production rate.
+The following image shows a Custom line drawn using a Beta value of 10 and Eta value of 1:
+
+
+
+Define a New Production LineAbout This Task
+This topic describes how to define the following types of lines:
+Demonstrated LineNameplate LineCustom Line
+You can also define a Process Reliability line. 
+Procedure
+Access Production Analysis for which you want to define a Production Line.In the left pane, select the Production Data tab.
+The Production Data workspace appears.
+
+
+
+In the upper-right corner of the workspace, select Production Lines.In the list, select the type of Production Line that you want to define. You can define one of the following types of Production Lines:
+
+
+Demonstrated Line (DL)
+: Represents the production output when the unit is operating at its observed rate of its capability. The region between the Demonstrated Line and the Nameplate Line is represented as the Efficiency/Utilization Loss region in the Production Loss Regions pane.
+
+Nameplate Line (NL)
+: Represents the most ideal production output of the unit.
+Custom Line (CL)
+: Provides a visual comparison between the Demonstrated Line and other observed or theoretical production rates. You can have more than one Custom Line per analysis.
+Reliability Line
+: You must select a datapoint before defining a Reliability Line.
+The Add/Modify <Production Line> window appears, where <Production Line> is type of the Production Line that you selected. The window displays various methods to define a Production Line. 
+For example, the following image displays the window for adding a Demonstrated Line:
+
+
+
+Note: If you selected Custom Line, then the Add Custom Line window appears.
+Select one of the following methods:
+
+
+Regression Fit: This option allows you to select a group of datapoints and then calculates the best-fit method to draw a line for that set of datapoints. 
+
+Draw Line
+: This option allows you to draw a line manually anywhere on the current analysis. 
+
+Specify Beta and Select a Point
+: This option allows you to specify the Beta value to determine the slope of the line, and then define a line by selecting a datapoint.
+
+Specifying Beta and Eta
+: This option allows you to draw a line by specifying both the Beta and Eta values. 
+Select OK.
+The selected type of Production Line is drawn.
+Use Regression FitAbout This Task
+The Regression Fit option allows you to select a group of datapoints, and then calculate the best-fit method to draw a line for that set of datapoints. For example, the following steps demonstrate how to draw a Demonstrated Line using Regression Fit option.
+Procedure
+Define a Demonstrated Line.
+
+
+
+On the Add/Modify Demonstrated Line window, select Regression Fit, and then select OK.
+The Production Data plot appears in a new window.
+
+
+
+Select . Drag the pointer or use the standard spread move to create a box around at least two datapoints.
+The Demonstrated Line is added to the Production Data plot.
+Note:  If you attempt to draw a regression fit around datapoints where the Beta value will be close to zero or too vertical and Eta will be too large or small or not present on the graph, an error message appears, explaining that Eta is out of range. 
+The following image shows an example of a line drawn using the Regression Fit method:
+
+
+
+Draw Line ManuallyAbout This Task
+The Draw Line option allows you to draw a Production Line manually anywhere on the current analysis. For example, the following steps demonstrate how to draw a Nameplate Line using Draw Line option.
+Procedure
+Define a Nameplate Line. 
+
+
+
+On the Add/Modify Demonstrated Line window, select Draw Line, and then select OK.
+The Production Data plot appears in a new window.
+
+
+
+Select .Drag the pointer where you want the line to appear.
+The Nameplate Line is added to the Production Data plot.
+ Specify Beta Value and Select a Point About This Task
+When you define a new Production Line, selecting the Specify Beta and Select a Point option allows you to enter the Beta value to determine the slope of the line by selecting a datapoint. For example, the following steps demonstrate how to draw a Nameplate Line using the Specify Beta and Select a Point option.
+Procedure
+Define a Nameplate Line. 
+
+
+
+On the Add/Modify Demonstrated Line window, select Specify Beta & Select Point.In the Beta box, enter the desired Beta value, and then select OK.
+Note: If a Nameplate Line does not currently exist, the value for Beta is set by default to 0, but can be changed to any number between .001 and 1000. If a Nameplate Line does exist, the value for Beta is set to the value of that line but can be changed to any number between .001 and 1000. Keep in mind that the higher the Beta value, the more vertical the line will be.
+Select OK.
+The Nameplate Line is drawn through the selected datapoint, its slope determined by the specified Beta value. 
+Specify Beta and EtaAbout This Task
+The Specify Beta & Eta option allows you to draw a line by entering both the Beta and Eta values. This tool may be useful when you create a Production Line to indicate the production rate of output used in another Production Analysis. You can copy the Beta and Eta values for the Demonstrated Line from that analysis and then provide them when using this option. For example, the following steps demonstrate how to create a Custom Line using the Specify Beta & Eta option.
+Procedure
+Define a Custom Line. 
+
+
+
+On the Add/Modify Custom Line window, select Specify Beta & Eta.
+The Beta and Eta boxes are enabled.
+In the Beta box, enter the desired Beta value. The Beta value is set to 1 by default, but can be changed to any number between .001 and 1000.In the Eta box, enter the desired Eta value. The Eta value is set to 1 by default, but can be changed to any number less than 1000000000.Select OK.
+The Custom line is added.
+Define a Process Reliability LineProcedure
+Access the Production Analysis for which you want to define a Reliability Line.In the left pane, select the Production Data tab.
+The Production Data workspace appears.
+
+
+
+In the upper-right corner of the workspace, select Production Lines.In the list, select Reliability Line.In the Production Data plot, select the point at which datapoints begin to trend away from the Demonstrated Line.
+A dotted line appears and is labeled Process Reliability: <Percentage> , where <Percentage> indicates the reliability of the process.
+Delete a Production LineProcedure
+Access the Production Analysis from which you want to delete a Production Line.In the left pane, select Production Data tab.
+The Production Data workspace appears.
+
+
+
+In the lower-left corner of the workspace, select Production Lines, and then select . 
+A grid appears, displaying a row for each Production Line.
+
+
+
+Tip: You can also view them in full screen by selecting .
+Locate the row containing the Production Line that you want to delete, and then select Delete.
+The Delete Production Line dialog box appears, asking you to confirm that you want to delete the selected Production Line.
+Select OK.
+The selected Production Line is deleted.
+
+
+
+
+
+On this pageAbout the Production LinesDefine a New Production LineUse Regression FitDraw Line Manually Specify Beta Value and Select a Point Specify Beta and EtaDefine a Process Reliability LineDelete a Production Line
+
+
+
+
+
+
+
+
+

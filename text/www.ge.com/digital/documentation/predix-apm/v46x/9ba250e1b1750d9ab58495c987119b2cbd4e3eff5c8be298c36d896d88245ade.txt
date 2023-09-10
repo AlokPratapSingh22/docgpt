@@ -1,0 +1,107 @@
+
+
+
+General Reference | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage Cards
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+ReferenceGeneral Reference
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Reference
+General Reference
+
+
+
+
+
+
+
+General ReferenceAnalysis Template Browser Columns
+The table in the Analysis Browser page displays details about the analysis templates available. This topic provides a list and description of the Analysis Browser table columns. 
+ColumnDescriptionANALYSIS NAMEThe analysis template associated with an asset or classification.CLASSIFICATION/ASSET NAMEThe asset classification or the asset instance that is associated with the analysis template. CREATED DATEThe date on which the Analysis template was created.CREATED USERThe name of the individual who created the analysis template.KINDThe kind of view that is applied to the analysis template.TEMPLATE TYPEThe template type, Classification or Instance, based on the assets or asset instance to which the analysis tempalte is associated.UPDATED DATEThe date on which the analysis template was last updated.UPDATED USERThe name of the individual who last updated the analysis template.VISIBILTYThe type of visibility, Public or Private, based on the users to whom the analysis template is visible.
+Chart Options
+The following table describes the Chart Options that can be used to configure how multiple charts on a card appear:
+Chart OptionDescriptionOne-UpDisplays one chart per row that utilizes the full horizontal space on the card. The following variations apply:By default, Points mode is enabled which displays one vertical and one horizontal line on the chart.Enable Timestamps mode for Time Series Analysis to view one vertical and all horizontal lines on the chart.Enable Timestamps mode for Event Data Analysis to view all vertical and all horizontal lines on the chart.Two-UpDisplays two charts side-by-side on the card. The following variations apply:If there are two charts on the card then the charts are placed side-by-side.If there is an even number of charts on the card, each row has two charts.If there is an odd number of charts, each row has two charts and the bottom row is filled with one chart.Three-UpDisplays three charts side-by-side on the card. The following variations apply:If there are three charts on the card then the charts are placed side-by-side.If there are more than three charts on the card, each row has three charts.If there are fewer than three charts in a row, each row has three charts and the bottom row is filled with either one or two charts.Chart registers and timeline do not appear.Four-UpDisplays four charts side-by-side on the card. The following variations apply:If there are four charts on the card then the charts are placed side-by-side.If the screen is too small to accommodate four charts, the option to configure the layout for a four-up layout does not appear.If you access a four-up layout (saved template) in a smaller screen, it defaults to one-up charts. If there are more than four charts on the card, each row has four charts.If there are fewer than four charts in a row, each row has four charts and the bottom row is filled with either one, two, or three charts.Chart registers and timelines do not appear.PreviewDisplays a panel to the right that contains an accordion view of all the charts on the card. You can expand a thumbnail for a chart in the panel by selecting the relevant accordion. Double-tapping the chart, appears to the left of the panel. The following variations apply:All the charts are collapsed into an accordion.One thumbnail chart at a time is expanded in the main panel.Double-tapping the chart maximizes that chart and minimizes the current chart.Chart registers and timelines do not appear.
+Chart Types
+The following table describes the requirements of each chart type available in GE Digital APM:
+Chart TypeRequirementTime-Series (Line)At least one tag must be present on the chart for data to appear.Time-Series (Scatter)At least one tag must be present on the chart for the data to appear.Timing DiagramAt least one tag must be present on the chart for the data to appear.Parallel AxisAt least three tags must be present on the chart for data to appear.X-Y (Line or Scatter)Two tags must be present on the chart for data to appear.SpiderwebAt least three tags must be present on the chart for data to appear.PolarAn amplitude and phase tag must be present on the chart for data to appear.Data TableAt least one tag must be plotted on to the table for the data to appear. Bar At least one tag must be present on the chart for data to appear. This chart type is only available for Event Based Query analysis. 
+Chart Line Colors
+The following table describes what the colors of the lines used in a chart indicate:
+Line ColorIndicationBlackTags with top 5 records.BlueTags with the most recent data.GreenTags with data in between recent and oldest.YellowTags with the oldest data.
+Statistical Functions
+The following table describes the statistical functions that can be added to tag expressions:
+FunctionExampleDescriptionAVGAVG(x1,x2,x3,...) Average of the comma separated list of values.MAVGMAVG(t,n) Moving average on the data set returned by evaluation Tag t, over n number of data points to calculate averages (The argument to MAVG can only be a tag and not an expression).MAXMAX(x1,x2,x3,...) Average of the comma separated list of values.MEDIANMEDIAN(x1,x2,x3,...) Median of a comma separated list of values (middle value from a corresponding sorted list).MINMIN(x1,x2,x3,...) Minimum value from a comma separated list of values.SUMSUM(x1,x2,x3,..) Addition of a comma separated list of values.
+Math and Trigonometric Functions
+The following table describes the math and trigonometric functions that can be added to tag expressions:
+FunctionExampleDescriptionABSABS(x) Absolute of value x.ACOSACOS(x) The arccosine (in radians) of the given number if it is between -1 and 1; otherwise, NaN.ASINASIN(x) The arcsine (in radians) of the given number if it is between -1 and 1; otherwise, NaN.ATANATAN(x) The arctangent (in radians) of the given number.ATAN2ATAN2(x) The arctangent of the quotient of the given arguments.CEILCEIL(x)The smallest integer greater than or equal to the given number.COSCOS(x) The cosine of the given number (x is a number given in unit of radians).COTCOT(x) The cotangent of a value. Defined as 1 / TAN(x).CSCCSC(x)The cosecant of a value, defined as 1/SIN(x).EXPEXP(x) A number representing e^x, where e is Euler's number and x is the argument.FLOORFLOOR(x)A number representing the largest integer less than or equal to the specified number.LOGLOG(x)The natural logarithm (base e) of the given number. If the number is negative, NaN is returned.MODMOD(x,y) Remainder of x divided by y.POWPOW(x,y) A number representing the given base taken to the power of the given exponent (x= the base number, y= the exponent used to raise the base).RANDOMRANDOM() A floating-point, pseudo-random number between 0 (inclusive) and 1 (exclusive).ROUNDROUND(x) The value of the given number rounded to the nearest integer.SECSEC(x) The secant of a value, defined as 1/COS(x).SINSIN(x) The sine of the given number (x is a number given in radians).SQRTSQRT(x)The square root of the given number. If the number is negative, NaN is returned.TANTAN(x) The tangent of the given number (x is a number representing an angle in radians).
+Search Modifiers
+The following table lists the search modifiers that can be used to narrow the search results to specific tags and the results of the modifiers:
+Search ModifierResultname: tag or asset instance nameTags or assets matching the characters entered within the enterprise.sourceKey: unique identifierA single tag or asset that uses the unique identifier entered.inContext: asset contextSelected assets and their associated tags within the enterprise.ofClass: classification nameAssets or tags that are associated with a specific class within the enterprise.<attributeName>: attribute valueAssets or tags within the enterprise that use the selected attribute value.
+Template Information Categories
+The following table describes the categories of information that appears in the Template Information bar:
+CategoryDescriptionOwnerThe owner of an alert when accessed from an alert.MakeThe asset model.Asset TypeThe class for the selected asset.Analysis TypeAd Hoc Analysis or Template, depending on if the analysis view was saved as a template. Templates are analysis views selected in the View Selector.Applied ToA selection made during template creation for the applicability between the instance and the class.Published ToA selection made during template creation for the analysis view between My Templates and Public Templates.
+SmartSignal Marker Visibility Configurations
+The following table describes the configurations that determine the visibility of the SmartSignal markers:
+ConfigurationDescriptionTypeAvailable rules that trigger SmartSignal markers.Marker SymbolDistinct colored symbols that appear on a SmartSignal chart when a marker rule is triggered.PositionMarkers can be positioned above or below SmartSignal charts. Marker position is shown as Top 1, Middle 2, and Bottom 3. More than one type of marker can be placed in a lane.OrderOrder controls how each marker overlaps. Each lane has five levels, 5 being the top, and 1 being the bottom. This means that some markers may be superimposed over another marker in SmartSignal charts.VisibilityVisibility displays if the selected rule is enabled.
+
+
+
+
+
+On this pageAnalysis Template Browser ColumnsChart OptionsChart TypesChart Line ColorsStatistical FunctionsMath and Trigonometric FunctionsSearch ModifiersTemplate Information CategoriesSmartSignal Marker Visibility Configurations
+
+
+
+
+
+
+
+
+

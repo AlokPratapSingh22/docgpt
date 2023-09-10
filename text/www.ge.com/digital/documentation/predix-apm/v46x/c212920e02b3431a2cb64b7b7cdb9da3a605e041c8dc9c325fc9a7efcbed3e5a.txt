@@ -1,0 +1,99 @@
+
+
+
+Overlapping between an Outage Event and a Derate Event | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Mappings
+Allowable Event Types in Related Events 
+Fields that can be Populated from one of the Three Related Records 
+Fuel Code Fields 
+Fuel Information Fields 
+Inactive Hours Field 
+Overlapping between an Outage Event and a Derate Event
+Capacity Event Types Affecting Performance Records
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Reference
+Overlapping between an Outage Event and a Derate Event
+
+
+
+
+
+
+
+Overlapping between an Outage Event and a Derate EventOverlapping between an Outage Event and a Derate EventIn Performance records, the Total Eqv Derate Hrs (N) and Total Eqv Derate MWh (N) fields store the sum of the values in the Total Equivalent Derate Hours w/out Shadowing and Total Equivalent Derate MWh w/out Shadowing fields in all Primary Event records for a given reporting month and year. If an outage event overlaps a derate event, the values in the Total Eqv Derate Hrs (N) and Total Eqv Derate MWh (N) will NOT include derate data for the time during which the outage event was also occurring.Consider an example of two Primary Event records, Primary Event - Outage and Primary Event - Derate, whose fields are populated as shown in the following table. Assume that both Primary Events records are linked to the GAA Unit record GAA Unit 1, which has a Gross Dependable Capacity of 600 MW and a Net Dependable Capacity of 500 MW. Primary Event - Outage Primary Event - Derate Capacity Event Type U1D1Event Start 11/1/2016 12:00 PM 11/2/2016 12:00 PM Event End 11/4/2016 12:00 AM 11/5/2016 12:00 PM Gross Available Capacity 0500Net Available Capacity 0400Event Duration 6072Total Equivalent Derate Hours w/out Shadowing 014.4Total Equivalent Derate MWh w/out Shadowing 07200The date range established by the values in the Event Start Date and Event End Date fields of the two Primary Event records overlap between 11/02/2016 12:00 P.M. and 11/04/2016 12:00 A.M., or 36 hours. So although the derate event lasted 72 hours total, for 36 of those hours, an outage event was also occurring.In this example, if the entire derate event were included in the Performance calculations, in the Performance record for November 2016 that is linked to GAA Unit 1, the following values would be calculated and stored in the Performance record:
+Total Equivalent Derate Hours (N): 14.4
+Total Equivalent Derate MWh (N): 7200Because an outage event was occurring during 36 hours of the derate event, however, half of the derate event is not counted, and the values in the Performance record become:
+Total Equivalent Derate Hours (N): 7.2
+Total Equivalent Derate MWh (N): 3600
+
+
+
+
+On this pageOverlapping between an Outage Event and a Derate Event
+
+
+
+
+
+
+
+
+

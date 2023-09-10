@@ -1,0 +1,96 @@
+
+
+
+Perform an RBI Analysis | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+WorkflowsDefine Component
+Perform an RBI Analysis
+RBI Recommendation Management
+RBI Recommendation Implementation
+
+
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Workflows
+Perform an RBI Analysis
+
+
+
+
+
+
+
+Perform an RBI AnalysisRBI: Perform RBI AnalysisThis workflow describes the process of performing an RBI Criticality Analysis or an RBI 581 Risk Analysis on the components that you have created. Specifically, this workflow describes how to evaluate consequences and probability of failure and assess the unmitigated risk rank for each damage mechanism in an analysis. In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Define Components Persona: AnalystGo to the Define Components workflow.Create RBI Analysis Persona: AnalystFor each RBI Component that you have defined:If you want to perform an RBI 580 analysis, create an RBI Criticality Analysis record.If you want to perform an RBI 581 analysis, create an RBI 581 Risk Analysis record.Note: For an RBI Component, you can create multiple RBI analyses. However, only one analysis is active per component. When you create an RBI Analysis, information related to the operating conditions and design data of the component is inherited by the analysis. You can, however, modify these values. The RBI Analysis also stores details of the risk assessments, probability of failure, and other details.Review Operational and Work History Persona: AnalystReview and understand the relevant history of the RBI Component from the following records: Operational History: This will provide details on the extent of degradation that may have already taken place with regard to each PDM. This information is available in the Asset Health Manager module. Work History: This will provide details of the repair, replacement, or refurbishment activities that may have been performed on the component. This information is available in the APM Foundation module.Review Corrosion Data Persona: AnalystReview and understand the corrosion data of the component. This information is available in the TM Corrosion Analysis performed on the asset in the Thickness Monitoring module.After you integrate the RBI and Thickness Monitoring modules, the controlling corrosion data defined in the TM Corrosion Analysis is used to populate the corresponding field in the component.Review Inspection History Persona: AnalystReview the most recent evaluation of the condition of the component. You can access a list of Inspections performed on a specific Degradation Mechanism by accessing the Inspection History of the Degradation Mechanism. After an Inspection is assigned to a Degradation Mechanism, the inspection is accounted for mitigating risk during inspection planning.Evaluate Consequences and Probability of Failure Persona: AnalystIf you are performing an RBI 581 Risk Analysis, then assess the outcome of a failure event or situation for the component by evaluating the Safety, Health, and Environmental (SHE) Consequences, and Financial Consequences. If you are performing an RBI Criticality Analysis, then assess the outcome of a failure event or situation for that particular component by evaluating Flammable, Toxic, Product loss, Environmental, and Production loss consequence categories in addition to evaluating the damage mechanism.Evaluate the probability of failure for each DM. Calculate Analysis Persona: AnalystCalculate the analysis to view the final damage factor, driving risk, and risk summary. The risk summary indicates whether risk is mitigated by plan date with help of inspection planning.Review Risk Persona: AnalystIf you have performed an RBI 580 analysis, assess the unmitigated risk for each damage mechanism (that is, the Probability of Failure determined for the individual DMs combined with the Consequence). This unmitigated risk is represented on a RBI 5x5 risk matrix and forms the basis for prioritizing Inspection Activities.If you have performed an RBI 581 analysis, assess the mitigated and unmitigated risk for each damage mechanism (i.e., the Probability of Failure determined for the individual DMs combined with the Consequence). The unmitigated and mitigated risks are represented on a RBI 581 ISO risk graph.Finalize Risk Persona: AnalystAfter the RBI analysis is calculated, the analyst needs to review the risk and approve the calculations. When the risk is finalized, an inspection plan is created or updated for that asset.If you have performed an RBI 580 analysis, finalize the unmitigated risk assessment by:Reviewing the cumulative risk rank for RBI 580 analysis.Changing the state of the analysis to Risk Completed.If you have performed an RBI 581 analysis, finalize the mitigated and unmitigated risk assessments by:Reviewing the Safety, Health, and Environmental (SHE) Risk and the Probability of Failure (POF) values for an RBI 581 analysis. Changing the state of the analysis to Risk Completed.Generate Recommendations Persona: AnalystAfter you finalize the unmitigated risk assessment, you can have GE Digital APM generate Recommendations for the analysis.Recommendations are generated based on the unmitigated risk that you have assessed and the acceptable risk threshold values. These recommendations, when implemented, can mitigate the risk associated with the individual damage mechanisms. Inspection Strategies outline the recommended inspection scope, method, and interval or target completion date to be applied based on the result of the RBI Analysis. After the recommendations are generated, they can be reviewed and approved within the Inspection Plan.If you have performed an RBI 580 analysis: Each damage mechanism in the analysis is designated an Inspection priority value based on the unmitigated risk. This value is used to generate recommendations. Implementing these recommendations will mitigate the risk. As a general rule, an increased scope, a more effective inspection method, and more frequent inspections will be recommended for higher risk assets.
+Inspection Strategies provide recommendations for inspection activities to mitigate risks assessed for the individual damage mechanisms. After you complete the analysis, each damage mechanism is assigned an Inspection Priority value based on the unmitigated risk. This value, along with a few others, is used to generate Recommendations.
+Recommendations are generated only for quantitative damage mechanisms. The recommendations are recurring.If you have performed an RBI 581 analysis:Recommendations are generated for all the damage mechanisms that contain a value in the Recommended Inspection Effectiveness field.The recommendations are non-recurring.Recommendation Management Persona: AnalystGo to the Recommendation Management workflow.
+
+
+
+
+On this pageRBI: Perform RBI AnalysisDefine ComponentsCreate RBI AnalysisReview Operational and Work HistoryReview Corrosion DataReview Inspection HistoryEvaluate Consequences and Probability of FailureCalculate AnalysisReview RiskFinalize RiskGenerate RecommendationsRecommendation Management
+
+
+
+
+
+
+
+
+

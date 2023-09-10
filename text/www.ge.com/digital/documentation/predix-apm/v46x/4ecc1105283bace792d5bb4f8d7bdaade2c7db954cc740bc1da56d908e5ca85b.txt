@@ -1,0 +1,175 @@
+
+
+
+Data Loaders | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Generation Availability AnalysisOverview
+Workflows
+Primary Events
+Contributing Events
+Related Events
+Performance Records
+Manage Root Cause Analysis (RCA) from GAA
+Manage Log Entries from GAA
+Reports
+Admin
+Data Loaders
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Generation Availability Analysis
+Data Loaders
+
+
+
+
+
+
+
+Data LoadersAbout the GAA Data LoadersGAA provides three data loaders.  Generation Availability Analysis (GAA) Amplification Codes Data LoaderThis data loader allows you to import the latest Amplification Codes to the GE Digital APM system to populate the Amplification Codes family.  Generation Availability Analysis (GAA) Cause Codes Data LoaderThis data loader allows you to import the latest Cause Codes to the GE Digital APM system to populate the Cause Codes family.
+Generation Availability Analysis (GAA) Events Data LoaderThis data loader allows you to import the primary, related, and contributing Events to GE Digital APM.
+About the GAA Data Loaders RequirementsTo use the GAA Amplification Codes Data Loader, GAA Cause Codes Data Loader, and GAA Events Data Loader, your organization must have completed the deployment of the Generation Availability Analysis module.Security Settings
+The Security User performing the data load operation must be associated with either the MI Data Loader User or MI Data Loader Admin Security Role, and must also be associated with the MI GAA Administrator Security Group or a Security Role that is associated with this Security Group.
+About the GAA Data Loaders General Loading StrategyImportant:  When importing Amplification and Cause Codes using the GAA Data Loaders, you must ensure that the latest Amplification and Cause Codes from the corresponding documentation is used.Limitations
+This section documents a list of the limitations for the GAA Data Loaders:
+You must use the GAA Amplification Codes Data Loader workbook (Generation Availability Analysis (GAA) Amplification Codes.xlsx), GAA Cause Codes Data Loader workbook (Generation Availability Analysis (GAA) Cause Code.xlsx), and GAA Events Data Loader workbook (Generation Availability Analysis (GAA) Events.xlsx. Any modifications made by the user to the values in column headings in any of the worksheets will not be imported.Note:  Any column values in a customized format will not be imported by the GAA Amplification Codes Data Loader and the GAA Cause Codes Data Loader.If the user imports the same data multiple times, the most recently imported data is included in the database. If a record currently resides in the database and is then reimported, the newly imported file will replace the existing file in the database. The GAA Data Loader does not append the existing record. 
+Recommendations
+While using the GAA Events Data Loader, we recommend that you:Include the primary event and its related and contributing events in the same batch.Process only up to 100 records in a batch.Modify only the fields that are editable from the GE Digital APM application.
+About the GAA Data Loaders Workbook Layout and Use
+To import Amplification codes, Cause codes, and Events, GE Digital APM provides the GAA Amplification Codes Data Loader workbook (Generation Availability Analysis (GAA) Amplification Codes.xlsx), GAA Cause Codes Data Loader workbook (Generation Availability Analysis (GAA) Cause Code.xlsx), and GAA Events Data Loader workbook (Generation Availability Analysis (GAA) Events.xlsx). These workbooks support baseline GAA in GE Digital APM. You must use these workbooks to load Amplification Codes, Cause Codes, and Events, respectively. 
+Tip: You can download the GAA Events data loader template from either the Download Templates window of the APM Power Generation category or by selecting the Export button () in the Events section of the Units Summary workspace.
+GAA Amplification Codes Data Loader
+The following table lists the worksheets that are included in the Generation Availability Analysis (GAA) Amplification Codes.xlsx workbook:
+
+WorksheetDescriptionConfiguration Worksheet 
+The Configuration worksheet is needed to describe the type of data that you will be loading and how that data should be handled during the data load.
+AmplificationCodes Worksheet 
+The AmplificationCodes Worksheet is used to import the latest Amplification Codes to the GE Digital APM system to populate the Amplification Code family.
+
+
+Configuration Worksheet
+
+Field CaptionField IDData Type (Length)CommentsData Worksheet ID DATA_WORKSHEET_ID Character This column contains the name of the <data> worksheet where the actual data is located. It needs to have the same name as the <data> worksheet in the data loader workbook.Batch SizeBATCH_SIZECharacter 
+Modifying this field is required to determine the number of records processed in each batch. Enter the batch size you want, and the Data Loader will process that many records per batch.
+For example, if you want to use a batch size of 100, enter 100, and the data loader will process 100 records per batch. 
+Note:  The recommended batch size is 100. If the Batch Size column is removed from the source workbook, the data loader will default to a batch size of 100. 
+In addition to processing the data in batches, the log file reports progress by batch. 
+Primary Family IDPRIMARY_FAMILY_ID Character
+Depending on the type of data that you are working with, this will contain the Relationship Family ID or the Entity Family ID. You can also allow the data in source file to determine the Family ID by encapsulating the Field ID that contains the Family ID data in brackets (<>). 
+For example, if in the <data> worksheet, there exists a column with the ID of PRIMARY_FAMILY_ID, where each row contains the corresponding Family ID, then in this column, you should put the value of <PRIMARY_FAMILY_ID>. 
+If the Family ID in the GE Digital APM metadata contains spaces, then you must use this feature.
+Primary Family Key Fields PRIMARY_FAMILY_KEY_FIELDS Character
+This column contains the Field IDs associated with the Primary Family that are used to uniquely identify a record. If more than one field is to be used, then each Field ID needs to be separated by a | (Pipe) character. In the case where you are loading data into a relationship, if no keys fields exist or are used, use the <none> constant. 
+If the Primary Action is ACTION_INSERTONLY, then no key fields need to be specified, so you can use the <none> constant.
+Family Type FAMILY_TYPE CharacterThe value is this column should be Entity or Relationship depending on the type of data that is being loaded.Predecessor Family ID PRED_FAMILY_ID CharacterWhen the Family Type is Relationship, this column will contain the value of the Entity Family ID that is the predecessor in the relationship. Otherwise, it should contain the <none> constant. You can also use the data in each of the rows to determine the Predecessor Family ID. Predecessor Family Key Fields PRED_FAMILY_KEY_FIELDS Character
+This column contains the Field ID or IDs associated with the Predecessor Family that are used to uniquely identify the predecessor record. If more than one field is to be used, then each Field ID needs to be separated by a | (Pipe) character. 
+If the Predecessor Action is ACTION_INSERTONLY, then no key fields need to be specified, so you can use the <none> constant.
+Successor Family ID SUCC_FAMILY_ID CharacterWhen the Family Type is Relationship, this column will contain the value of the Entity Family ID that is the successor in the relationship. Otherwise, it should contain the <none> constant. You can also use the data in each of the rows to determine the Successor Family ID. Successor Family Key Fields SUCC_FAMILY_KEY_FIELDS Character
+This column contains the Field ID or IDs associated with the Successor Family that are used to uniquely identify the successor record. If more than one field is to be used, then each Field ID needs to be separated by a | (Pipe) character. 
+If the Successor Action is ACTION_INSERTONLY, then no key fields need to be specified, so you can use the <none> constant. 
+Primary Action PRIMARY_ACTION Character
+The value in this column will determine the action that will be applied to the Primary Family records. If the Family Type is Entity, then the possible values are: 
+ACTION_INSERTONLYACTION_INSERTUPDATE ACTION_UPDATEONLY ACTION_DELETE ACTION_PURGE 
+Deleting a record and purging a record will both delete the current record, the difference being that the purge action will delete the record and all of the links or relationships tied to that record. The delete action will simply attempt to delete the record, and if it is related to another record, the delete will fail. If The Family Type is Relationship, then the possible values are: 
+ACTION_INSERTONLY ACTION_INSERTUPDATEACTION_UPDATEONLY ACTION_DELETE 
+Predecessor Action PRED_ACTION Character
+The value in this column will determine the action that will be applied to the Predecessor Family records. The possible values are: 
+ACTION_INSERTONLY ACTION_INSERTUPDATE ACTION_UPDATEONLY ACTION_DELETE ACTION_PURGE ACTION_LOCATE 
+If The Family Type is Entity then the values needs to be:
+ACTION_NONE 
+Successor Action SUCC_ACTION Character
+The value in this column will determine the action that will be applied to the Successor Family records. The possible values are: 
+ACTION_INSERTONLY ACTION_INSERTUPDATE ACTION_UPDATEONLYACTION_DELETE ACTION_PURGE ACTION_LOCATE 
+If The Family Type is Entity then the values needs to be:
+ACTION_NONE 
+Insert with Null Values? OPTION_INSERT_ON_NULL BooleanWhen setting field values on a new record, if a value coming across is NULL, the field values will be set to NULL if this option is set to True.Update with Null Values? OPTION_UPDATE_ON_NULL BooleanWhen setting field values on an existing record, if a value coming across is NULL, the field values will be set to NULL if this option is set to True.Replace an Existing Link? OPTION_REPLACE_EXISTING_LINK Boolean
+The Replace Existing Relationship option is used to determine how a relationship is to be maintained by its cardinality definition. 
+For example, the relationship Location Contains Asset that is defined in the Configuration Manager. It has a cardinality defined as Zero or One to Zero or One, has a Location LP-2300, and contains the Asset P-2300. If, in the data load, you assign the Asset P-5000 to be contained in the Location LP-2300, and you have set the Replace Existing Link property to True, then the data loader will link P-5000 to LP-2300 and unlink P-2300 from LP-2300. This assumes that P-5000 is not currently linked to another location. The same is true for a relationship that is defined as Zero or One to Zero or Many, or Zero or Many to Zero or One. 
+Allow Change of Family? OPTION_ALLOW_CHANGE_OF_FAMILY Boolean
+Allows the data loader to move an entity from one family to another. 
+For example, this would allow an entity that is currently assigned to the Centrifugal Pump family to be moved to the Reciprocating Pump family. 
+All relationships will be maintained as long as the family to which the entity is being moved allows the same relationships. 
+Note:  Because of the extra processing required, by selecting this option, the interface performance will decrease. 
+
+
+AmplificationCodes Worksheet
+
+Field CaptionField IDData Type (Length)CommentsAmplification Code MI_GADS_AMPL_CODE_AMPL_CODE_C Character (50)This field is required.Description MI_GADS_AMPL_CODE_DESC_C Character (1000)This field is required.Regulatory OrganizationMI_GADS_AMP_COD_REG_REP_ORG_CCharacter (50)This field is required.Event TypeMI_GADS_AMPL_CODE_EVEN_TYPE_CCharacter (50)NoneEnterprise Support 1 CodeMI_REF_TABLES_ENTER_SUPPO_1_CODE_CHRCharacter (50)NoneEnterprise Support 1 DescriptionMI_REF_TABLES_ENTER_SUPPO_1_DESCR_CHRCharacter (50)NoneEnterprise Support 2 CodeMI_REF_TABLES_ENTER_SUPPO_2_CODE_CHRCharacter (50)NoneEnterprise Support 2 DescriptionMI_REF_TABLES_ENTER_SUPPO_2_DESCR_CHRCharacter (50)NoneEnterprise Support 3 CodeMI_REF_TABLES_ENTER_SUPPO_3_CODE_CHRCharacter (50)NoneEnterprise Support 3 DescriptionMI_REF_TABLES_ENTER_SUPPO_3_DESCR_CHRCharacter (50)NoneEnterprise Support 4 CodeMI_REF_TABLES_ENTER_SUPPO_4_CODE_CHRCharacter (50)NoneEnterprise Support 4 DescriptionMI_REF_TABLES_ENTER_SUPPO_4_DESCR_CHRCharacter (50)NoneEnterprise Support 5 CodeMI_REF_TABLES_ENTER_SUPPO_5_CODE_CHRCharacter (50)NoneEnterprise Support 5 DescriptionMI_REF_TABLES_ENTER_SUPPO_5_DESCR_CHRCharacter (50)NoneEnterprise Support 6 CodeMI_REF_TABLES_ENTER_SUPPO_6_CODE_CHRCharacter (50)NoneEnterprise Support 6 DescriptionMI_REF_TABLES_ENTER_SUPPO_6_DESCR_CHRCharacter (50)NoneEnterprise Support 7 CodeMI_REF_TABLES_ENTER_SUPPO_7_CODE_CHRCharacter (50)NoneEnterprise Support 7 DescriptionMI_REF_TABLES_ENTER_SUPPO_7_DESCR_CHRCharacter (50)NoneEnterprise Support 8 CodeMI_REF_TABLES_ENTER_SUPPO_8_CODE_CHRCharacter (50)NoneEnterprise Support 8 DescriptionMI_REF_TABLES_ENTER_SUPPO_8_DESCR_CHRCharacter (50)NoneUnit TypeMI_GADS_AMPL_CODE_UNIT_TYPE_NCharacter (50)None
+
+GAA Cause Codes Data Loader
+The following table lists the worksheet that is included in the Generation Availability Analysis (GAA) Cause Code.xlsx workbook:
+
+WorksheetDescriptionCauseCodeThe CauseCodes worksheet is used to import the latest GADS Cause Codes to the GE Digital APM system to populate the GADS Cause Code family.Mapped IDThe Mapped to ID worksheet is used to populate values based on your selection in the Regulatory Reporting Organization in the Cause Codes record.Unique Key
+The Unique Key field is populated and must be in a sequential order.
+This field is required.
+
+
+CauseCode Worksheet
+
+Field CaptionField IDData Type (Length)CommentsCode  MI_CAUSECODE_CODE_C Character (5)This field is required.Unit Type MI_CAUSECODE_UNITTYPE NumericThis field is required.Cause Code Description MI_CAUSECODE_DESC Character (250)This field is required.System MI_CAUSECODE_SYSTEM Character (50)This field is required.Component MI_CAUSECODE_COMPONENT Character (50)This field is required.Is OMC Event? MI_CAUSECODE_OMCBooleanFor an OMC Event, set this field to TRUE. For a non-OMC Event, this field must be blank.Regulatory Organization MI_GMGADCAU_REG_REP_ORG_CCharacter (50)This field is required.
+
+GAA Events Data Loader
+The following table lists the worksheet that is included in the Generation Availability Analysis (GAA) Events.xlsx workbook.
+
+WorksheetDescriptionPrimary and Related EventsThe Primary and Related Events worksheet is used to import the primary and related events.Contributing EventsThe Contributing Events worksheet is used to import the contributing events that are associated with the primary events.
+
+Primary and Related Events Worksheet
+Field CaptionField IDData Type (Length)CommentsBatch Number BATCH_NUMBER Numeric This field is required.Batch Numbers are used for processing records in batches.
+Records with the same batch number are processed within a single batch. First, the primary events will be processed and then the related events.Timezone ID TIMEZONE_IDCharacterThis field is required.The date fields in the worksheet will be considered in the specified timezone.Unit ID MI_GMCAPINC_UNIT_ID_C CharacterThis field is required.Note: You cannot modify the Unit ID of an existing event. Event ID MI_EVENT_ID CharacterIf an Event ID is provided, the record with the corresponding Event ID will be updated. Otherwise, the import fails.Note: You cannot modify the Event ID of an existing event. Parent Event IDMI_PARENT_EVENT_ID CharacterIf a Parent Event ID is provided, the event will be created or updated as related event to the primary event with Event ID as Parent Event ID.Capacity Event TypeMI_GMCAPINC_CAP_EVT_TYPE_CCharacterThis field is required.Event Start DateMI_EVENT_STRT_DTDateThis field is required.Event End DateMI_EVENT_END_DTDateNoneCause CodeMI_GMCAPINC_CAUSE_CD_CCharacterNoneAmplification CodeMI_GMCAPINC_AMPLI_CD_CCharacterNoneIs OMC Event MI_GMCAPINC_OMC_EVENT_FBooleanNoneIs Dominant Derate MI_GMPRIINC_DOM_DRT_FBooleanNoneWork Started DateMI_GMCAPINC_WORK_STRT_DDateNoneWork Ended DateMI_GMCAPINC_WORK_ENDED_DDateNoneVerbal DescriptionMI_EVENT_SHRT_DSC_CHRCharacterNoneRevisionMI_GMCAPINC_REV_NNumericThis field is required.
+Contributing Events Worksheet
+Important: You can create a contributing event only for a primary event that is associated with a GAA Unit for which the primary regulatory body is North American Electric Reliability Corporation (NERC).
+Field CaptionField IDData Type (Length)CommentsBatch Number BATCH_NUMBER Numeric This field is required.Batch Numbers are used for processing records in batches.Records with the same batch number are processed within a single batch.Timezone ID TIMEZONE_IDCharacterThis field is required.The date fields in the worksheet will be considered in the specified timezone.Event ID MI_EVENT_ID CharacterIf an Event ID is provided, the record with the corresponding Event ID will be updated. Otherwise, the import fails.Note: You cannot modify the Event ID of an existing event. Parent Event IDMI_PARENT_EVENT_ID CharacterThis field is required.The event will be created or updated as a contributing event to the primary event with Event ID as Parent Event ID.Note: If no parent level event exists for a contributing event, the contributing event is not created.Cause CodeMI_GMCAPINC_CAUSE_CD_CCharacterNoneIs OMC Event MI_GMCAPINC_OMC_EVENT_FBooleanNoneWork Started DateMI_GMCAPINC_WORK_STRT_DDateNoneWork Ended DateMI_GMCAPINC_WORK_ENDED_DDateNoneMan-hours WorkedMI_GMCAPINC_MANH_WORKE_NNumericNoneEvent Contribution CodeMI_GMCAPINC_EVT_CONTR_CD_CCharacterNoneProblem AlertMI_GMCAPINC_PROBLEM_ALERT_FBooleanNoneVerbal DescriptionMI_EVENT_SHRT_DSC_CHRCharacterNoneRevisionMI_GMCAPINC_REV_NNumericThis field is required.
+About the GAA Data Loaders Load VerificationAbout This TaskA successful data import can be verified using one of the following methods:On the Data Loaders page, view the value in the Status and Log column. If the value Complete appears in the Status and Log column, then the data has been loaded successfully.On the Data Loaders page, select the hyperlink in the Job ID column to access the Interface Log datasheet, and then view the value in the Status field. If the value Complete appears in the Status field, then the data has been loaded successfully.Navigate to the Primary Event datasheet and view the fields that belong to the GADS Amplification Codes and GADS Cause Codes families. If you can populate the fields using values available in the drop-down lists on this datasheet, then the data has been loaded successfully.In the Unit Summary workspace, select the Events tab to view the list of events. If the imported events appear and the fields of the existing events are updated, the data has been loaded successfully.
+
+
+
+
+On this pageAbout the GAA Data LoadersAbout the GAA Data Loaders RequirementsAbout the GAA Data Loaders General Loading StrategyAbout the GAA Data Loaders Workbook Layout and UseAbout the GAA Data Loaders Load Verification
+
+
+
+
+
+
+
+
+

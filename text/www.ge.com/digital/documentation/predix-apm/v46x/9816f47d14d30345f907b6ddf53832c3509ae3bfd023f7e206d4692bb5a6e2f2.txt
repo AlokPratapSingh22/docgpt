@@ -1,0 +1,84 @@
+
+
+
+Suggested Compliance Strategy Templates | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Compliance ManagementOverview
+Workflows
+Inspection Plans
+Inspection Plan Management
+Compliance Recommendations
+Inspection Plan Revision History
+Suggested Compliance Strategy Templates
+Admin
+Deployment
+Reference 
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Compliance Management
+Suggested Compliance Strategy Templates
+
+
+
+
+
+
+
+Suggested Compliance Strategy TemplatesAbout Suggested TemplatesUsers can generate suggested Compliance Strategy Templates for assets in the Assets without Templates section of the Compliance Management Overview page. This section contains assets that do not have linked Compliance Strategy Templates, but match query results that are associated with existing templates. The Suggested Templates are based on query results used in Compliance Strategy Templates for adding assets.When a user creates a Compliance Strategy Template, they can add assets using a query. When they select the query that adds the assets, the query is added to the Compliance Strategy Template record and is saved for later use. In the Assets without Templates section of the Compliance Management Overview page, a user can select the Suggest Templates button to generate suggested Compliance Strategy Templates for each asset. When this job is executed, the queries that are defined in Compliance Strategy Template records are executed for all assets in the Assets without Templates section. If the assets find a match with a query related to a Compliance Strategy Template, the Compliance Strategy Template becomes the suggested template for the asset. If a Compliance Strategy Template does not have a query attached to the record, it is excluded from the Suggest Templates job. Additionally, if an asset does not match a query that is attached to a Compliance Strategy Template, it will not receive a suggested Compliance Strategy Template.Suggest a Compliance Strategy Template for an AssetUsers can get suggested Compliance Strategy Templates for assets that are in the Assets without Templates section of the Compliance Management Overview page.Before You BeginAn MI Compliance Administrator must have selected a query on your Compliance Strategy Templates by adding assets to the template using a query.If a Compliance Strategy Template does not have a query attached to the record, it is excluded from the Suggest Templates job. Additionally, if an asset does not match a query that is attached to a Compliance Strategy Template, it will not receive a suggested Compliance Strategy Template.ProcedureAccess the Configuration Management Overview page, and then select the Assets without Templates tab.The Assets without Templates section appears.Select Suggest Templates.A window appears, stating that the current Suggested Compliance Template records will be deleted if you proceed.Select Yes.The Suggest Templates process executes. A scheduled job is created.Optionally, if you want to view the status of the job, select . The Schedule Logs page appears, displaying a list of all the operations in GE Digital APM that are in progress, along with the percentages of completion. You can also access a list of operations that have been successful or have failed.Refresh the Compliance Management Overview page to update the Assets without Templates section.Suggested Compliance Templates appear in the Suggested Template column for each selected asset.Apply a Compliance Strategy Template to an AssetAfter using Suggest Templates to match assets to Compliance Strategy Templates, users can apply Compliance Strategy Templates to assets that are in the Assets without Templates section of the Compliance Management Overview page.Before You BeginYou must have assets with Suggested Compliance Templates.ProcedureAccess the Configuration Management Overview page, and then select the Assets without Templates tab.The Assets without Templates section appears.Next to the assets for which you want to apply Compliance Strategy Templates, select the check box.
+Note:
+The Apply Template button is disabled until you select assets.The assets that you select must have a Compliance Strategy Template listed in the Suggested Template column.
+
+Select Apply Template.A window appears, asking you to confirm that you want to apply the suggested template to the selected asset.Select Yes. The assets that have templates applied appear in the Assets without Inspection Plans section of the Compliance Management Overview page.
+
+
+
+
+On this pageAbout Suggested TemplatesSuggest a Compliance Strategy Template for an AssetApply a Compliance Strategy Template to an Asset
+
+
+
+
+
+
+
+
+

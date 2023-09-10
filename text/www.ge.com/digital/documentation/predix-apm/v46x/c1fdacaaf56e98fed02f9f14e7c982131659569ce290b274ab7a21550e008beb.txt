@@ -1,0 +1,116 @@
+
+
+
+Groups Overview | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AssetsOverview
+Asset Hierarchy
+Workflows
+Instances
+GroupsGroups Overview
+Groups Custom Attributes
+Group Objects
+
+
+Classifications
+Asset and Tag Instance Search
+Asset Restrictions
+Manage Ingestion
+Asset Developer Documentation
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Assets
+Groups
+Groups Overview
+
+
+
+
+
+
+
+Groups OverviewAbout GroupsGroups are a collection of assets or tags of the same type.Groups are logical structures that hold instances of the same object type, and are associated to parent nodes in the business functional hierarchy.For example, a group of asset instances cannot contain any tag instances. The group of asset instances can be associated with a segment. site, or asset instance node that is higher in the business functional hierarchy.You can add Groups for classifications and add custom attributes for the group.You can use Groups to locate assets or tags by the type of data provided. For instance, you can access a group of tags by function.You can add, search and access groups by:All GroupsTag Classification GroupsAsset Classification GroupsBusiness Functional Hierarchy GroupsGE Digital APM Groups allows you to add, search, select and configure a specific group.The Groups table lists the first 250 groups. Use the scroll bar to access additional groups.Each specific group includes custom attributes and the objects in the group. You can add or modify custom attributes for the group. You can jump to the relevant asset or tag instance and the associated classification using links in the Objects in Group table. Objects in the group cannot be added in the user interface. For more information, refer to the related links for API and ingestion information.Add a GroupYou can add groups for classifications and instances.About This Task
+You can select the following object types when adding a group:Business Functional Hierarchy ClassificationsAsset ClassificationsTag ClassificationsBusiness Functional Hierarchy InstancesAsset InstancesTag InstancesNote: You cannot mix object types when creating a group.
+ProcedureIn the module navigation menu, go to
+Assets >  Groups.From the Groups page, select .The New Group page appears.Do the following:Enter a name for the group in the Group Name box.Enter a source ID in the Source ID box.
+Note: Entering a source ID allows you to specify a unique identifier for the new group.
+Enter a description for the new group in the Description box.Select an option from the Type of Objects in Group drop-down list box.Select Create.The new group page appears.What To Do NextYou can now add member objects and custom attributes to the group.Access Groups Via SearchYou can search for groups listed in the Groups table.About This TaskGroups are categorized during ingestion by group type. Use the Group Type drop-down list box, enter search criteria or modifiers to search the Groups table for specific groups. Available group types are:All GroupsTag Classification GroupsAsset Classification GroupsBusiness Functional Hierarchy GroupsAsset Instance GroupsTag Instance GroupsNote: The Groups table lists the first 250 groups. Use the scroll bar to access additional groups.When you enter search criteria, the first 250 matching entries for any column in the Groups table display in the Search Results. Use modifiers to construct queries, narrowing your search.Search results display using a combination of search filters and on the selection of the group type selected from the drop-down list. The following columns are displayed in the Groups table:Group NameSource KeyGroup TypeDescriptionUse three or more characters in your search text to avoid time-outs. You can use multiple modifiers when searching. When you perform the search with multiple query options or fewer search characters, your search scope is widened, leading to slower result retrieval.ProcedureIn the module navigation menu, go to
+Assets >  Groups.Select an option from the Groups Type drop-down list box to narrow the groups in the list to a specific type.Optional: Select the View search modifiers link to see a list of possible modifiers that can be used during search.To refine your search results, use the following search modifiers:
+Search ModifiersDescriptionName: Group Name
+Enter a partial or full name of a group in the Search box, such as Name:Boiler Feed Group.Press Enter to activate the string in the Search box.
+Source Key: unique identifier
+Enter a partial or full source key of a group in the Search box. Press Enter to activate the string in the Search box.
+<attributeName>: attribute value
+In the Search box, enter the attribute name followed by a colon and the fully specified value. (for example, type "manufacturer:GE". Press Enter to activate the string in the Search box.
+
+If no results are found, the message "No Results Found" appears. If the search fails, the message "Data failed to load" appears.Tip: When using modifiers, you must match the modifier value exactly to get a result.Select Search.The group options in the Groups table narrow according to your criteria.Modify a Group NameYou can modify a group name.About This Task
+Group Names are visible in the Group table. Once you have selected a group in the Group table, you can modify the name. The new name for the group is propagated throughout GE Digital APM.
+ProcedureIn the module navigation menu, go to
+Assets >  Groups.Select a group link from the Groups table.In the group view, hover over, then select the group name.Enter a new name in the Group Name box, then press ENTER or select outside the field.The new name appears for the group on the group view. Note: The new group name is visible in the group view and Group table in place of the old name.Modify a Group DescriptionYou can modify a group description.About This Task
+Once you have selected a group in the Group table, you can modify the description. The new description for the group is propagated throughout GE Digital APM.
+ProcedureIn the module navigation menu, go to
+Assets >  Groups.Select a group link from the Groups table.On the groups view, hover over, then select the group description.Enter a new description in the Group Description box, then press ENTER or select outside the box.The new description appears for the group on the group view. Navigate to an Instance from a GroupYou can access an instance for a member object in a group.About This Task
+Member objects of a group are the assets or tags associated with a group. For instance, you can access a group with tags that are grouped by functions such as temperature, pressure, and vibration. You can then jump to the tag instance for temperature from the group.
+ProcedureIn the module navigation menu, go to
+Assets >  Groups.Select a group link on the Groups table.Select the Objects in a Group link.Scroll through the member objects in the group and select the Object Name link.The instance for the member object is being accessed.Navigate to a Classification from a GroupYou can navigate to a classification or parent classification from a group if the classification is a member object of the group.About This Task
+Groups are user-defined collections of like-type classifications or instances. Classifications can be member objects of a group.
+Member objects of a group are the assets or tags associated with a group. For instance, you can access a group with tags that are grouped by functions such as temperature, pressure, and vibration. You can then jump to the tag classification for temperature from the group.
+ProcedureIn the module navigation menu, go to
+Assets >  Groups.Search for a group type.The selected group items appear in the Groups table.Select a group from the table.Select the Objects in a Group link.In the Objects in Group table, select a link from the Object Name or Parent Class column.The view navigates to the specified classification for the selected group in the Classifications navigation menu.Delete a GroupYou can remove a group and all of its member objects.About This Task
+You can select a group and remove it from the Groups table. When you remove a group, all of its member objects are also removed.
+ProcedureIn the module navigation menu, go to
+Assets >  Groups.Select a group link in the the Groups table.The selected group page appears.Select .The group and all its object members are removed.Important: This action cannot be undone.
+Related ConceptsAbout Asset GroupsRelated tasksIngest Assets through the REST Client for Legacy Predix APMIngest Assets through the User Interface for Legacy Predix APM
+
+
+
+
+On this pageAbout GroupsAdd a GroupAccess Groups Via SearchModify a Group NameModify a Group DescriptionNavigate to an Instance from a GroupNavigate to a Classification from a GroupDelete a Group
+
+
+
+
+
+
+
+
+

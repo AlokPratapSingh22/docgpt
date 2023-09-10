@@ -1,0 +1,106 @@
+
+
+
+Third Quarter of 2018 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data Loaders
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Third Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Release Notes
+Third Quarter of 2018
+
+
+
+
+
+
+
+Third Quarter of 2018Risk Based Inspection (RBI) 581This topic provides a list of product changes released for this module on the dates listed below.Release Date: September 21, 2018
+Table 1. Enhancements and New FeaturesNoteTracking ID(s)You can now link RBI Components to TML Groups using a data loader. To facilitate this enhancement, a new data loader, RBI Components To TML Groups Relationship, has been added.US274082You can now link multiple RBI Components to a TML Group. To facilitate this enhancement, the TML Group to RBI Component cardinality has been modified to Many to Many in the Mapped to RBI Component relationship family.US274081You can now generate recommendations from the Active section of the RBI Bulk Evergreening workspace.US274079The No Recommendations section in the Risk Based Inspection Overview page now displays assets that have at least one component with a Risk Completed analysis with no recommendations. Also, recommendations are now generated for components that have no recommendations. US273998When you automatically consolidate recommendations, pre-existing recommendations are now consolidated with the new recommendations that are being generated.US273998The following fields in the RBI 581 Consequence Evaluation family are now populated upon calculation with the values from API RBI 3rd Edition Addendum 1 when the component type is not Storage Tank or Tank Bottom:Release Hole Diameter (Large)Release Hole Diameter (Medium)Release Hole Diameter (Rupture)Release Hole Diameter (Small)US273472The Leak Duration Max calculation now adheres to API RBI 3rd Edition Addendum 1. As a result, the values in the following fields may change upon calculation:Release Mass (Large)Release Mass (Medium)Release Mass (Rupture)Release Mass (Small)US273472When an inspection is linked to the Degradation Mechanism Evaluation (DME), the Last Known Inspection Date field in RBI 581 Damage Mechanism Evaluation records is now populated by the date in the Completion Date. If more than one inspection is linked to the DME, the Last Known Inspection Date field uses the latest Completion Date of all linked inspections. If all inspections are unlinked from the DME, the Last Known Inspection Date field is blank. Also, if the Inspection Auto-Selection preference is enabled, the date uses the most recent date from all inspections linked during analysis creation.US273157To enhance usability, in the Unit Summary page, when viewing an RBI Component that is linked to a Corrosion Loop, you can now use the More button () to access the RBI component in the Asset Summary page. Additionally, if you are viewing the RBI Component from the Asset Summary page, you can use the More button () to access the RBI Component in the Unit Summary page if the RBI Component is linked to a Corrosion Loop.US269097RBI Analysis has been enhanced to use linear interpolation to look up the values in the following fields:Allowable Stress based on the value in the Design Temperature field.Flow Stress based on the value in the Yield Strength and Tensile Strength fields.To facilitate this enhancement, the Use Interpolation for Stress Reference Tables check box has been added in the Global Preferences page to enable or disable the linear interpolation for piping and pressure vessel components.US266658
+Table 2. Resolved IssuesNoteTracking ID(s)Previously, when calculating an analysis on a Storage Tank Bottom component with a 581 Thinning Damage Mechanism while using metric units, the value in the Expected Metal Loss Fraction (Art) field was incorrect. This value also affected the values in the Base Damage Factor and Final Damage Factor fields. This issue has been resolved.DE87817Previously, if you had the RBI 581 license but not the Risk Based Inspection license, you could not access the Risk Based Inspection (RBI) Corrosion Loop data loader. This issue has been resolved.DE86846Previously, in the Risk Based Inspection module, if you used a family (parent or child) other than the baseline Functional Location family to denote a functional location, the Asset Summary page appeared as if the functional location were an asset. This issue has been resolved. Now, the Risk Based Inspection Overview page appears as expected.DE84510Previously, in the Asset Hierarchy Configuration page, if you used a family (parent or child) other than the baseline Functional Location family to denote a functional location, in the Integrity section, an incorrect hyperlink appeared, behaving as if the functional location were an asset. Also, the number of linked records in the Asset Hierarchy page was incorrect. This issue has been resolved.DE84510Previously, when you created an analysis where the value in the Design Temperature field was zero and the Stress Lookup Table was Piping or Pressure Vessel, the Allowable Stress field was blank, although the other stress input fields contained valid values. This issue has been resolved.DE84129Previously, in the RBI Asset Summary and RBI Unit Summary pages, when you tried to delete an RBI component that had related records linked to it, the Delete button () was disabled. This issue has been resolved. Now, the Delete button () is enabled, and, if you try to delete a component with related records, an error message appears, stating that you cannot.DE82415Previously, when you accessed the No Recommendations section in the Risk Based Inspection Overview page, an error occurred in the following scenarios:You had an active RBI 580 license but not an RBI 581 license.You had an active RBI 581 license but not an RBI 580 license.This issue has been resolved.DE82358Previously, when viewing the Inspection History for a DM that was related to an RBI Analysis, if you tried to unlink a locked Inspection from the DM, an error occurred. This issue has been resolved.DE82226Previously, you could not promote an asset to ASM although you were a member of the MI Mechanical Integrity Power role. This issue has been resolved. To facilitate this fix, the MI ASM Analyst security group has been added to the MI Mechanical Integrity Power role.DE81525Previously, you could calculate an analysis only if the Design Temperature of the component was greater than or equal to the Operating Temperature. The behavior was the same for both positive and negative values in the temperature fields. This issue has been resolved. Now, if the value in Design Temperature field is less than zero, you can calculate the analysis with any value in the Operating Temperature field. Similarly, you could calculate an analysis only if the Design Pressure was greater than or equal to the Operating Pressure and Operating Pressure was greater than or equal to zero. However, an appropriate message was not displayed if the validation failed. This issue has been resolved. Now, you cannot calculate the analysis with a negative value either in the Design Pressure or in the Operating Pressure field, and an appropriate message is displayed if the validation fails.DE81272
+
+
+
+
+
+On this pageRisk Based Inspection (RBI) 581
+
+
+
+
+
+
+
+
+

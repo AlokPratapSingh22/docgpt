@@ -1,0 +1,269 @@
+
+
+
+Hazards Analysis | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Hazards AnalysisOverview
+Workflows
+Hazards Analysis
+Components in a Hazards Analysis
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Hazards Analysis
+Hazards Analysis
+
+
+
+
+
+
+
+Hazards AnalysisAbout the Hazards Analysis TeamThe hazards analysis team is a group of individuals who will complete the hazards analysis. You can add GE Digital APM users and non-GE Digital APM users to the hazards analysis team.
+GE Digital APM users will have an existing GE Digital APM Security User and an associated Human Resource record that was created automatically when the Security User was created.Non-GE Digital APM users will not have a GE Digital APM Security User or a Human Resource record. To add a non-GE Digital APM user to the SIL analysis team, you will need to create a Human Resource record for that user. You can do so via the SIL Analysis Team Members page or using GE Digital APM Tools.Note: A GE Digital APM Security User record is required for logging in to the GE Digital APM application and using Hazards Analysis. Hazards analysis team members who do not have a Security User account may participate in and contribute to the analysis but will not be able to use GE Digital APM .Team Member Roles
+Hazards analysis team member roles is used to as a reference to understand which team member is responsible for a given task related to the analysis. Any member of the team can be assigned a role. The following roles are available for a hazards analysis: 
+Owner: The team member who is responsible for completing the hazards analysis. After you assign a team member the role of Owner, the name of that team member will appear in the Owner field in the Hazards Analysis.Facilitator: The team member who is in charge of conducting the analysis and organizing the team.
+There can be only one Owner and one Facilitator per analysis. 
+About Revision HistoryYou can use the revision history in a hazards analysis to manage the revisions made for an entire analysis (i.e., HAZOP or What If). When you create an analysis, you link records in multiple families to the Hazards Analysis. When you complete an analysis (i.e., it has been approved), you will change the state of the Hazards Analysis to Complete. When you do so, a snapshot is taken of the Hazards Analysis and each record linked to it.When the state of a Hazards Analysis is changed to Complete, one record in each of the following families will be created:Hazards Analysis RevisionHazards Analysis System/Node RevisionHAZOP Deviation Revision (for HAZOP Analyses)What If Revision (for What If Analyses)Hazards Analysis Cause RevisionHazards Analysis Consequence RevisionHazards Analysis Safeguard RevisionIPL Checklist RevisionIn other words, after the record state for the Hazards Analysis is changed to Complete, one Revision record is created for each record that is linked to the Hazards Analysis (with the exception of the Human Resource, Risk Assessment Recommendation, and Risk Assessment families). Each Revision record stores a snapshot of the source record as it appeared when the state of the Hazards Analysis was changed.If you re-evaluate the Hazards Analysis, the state of the Hazards Analysis will change to Complete. A second set of Revision records will be created, and so on.Create a Hazards AnalysisProcedure
+Access the Hazards Analysis Overview page.
+Tip: You can also access the Hazards Analysis Overview page for a particular hierarchy level.
+In the workspace heading:
+If you are conducting a HAZOP Analysis, select the Hazop tab.If you are conducting a What If Analysis, select the What If tab.
+The selected section appears, displaying a list of Hazards Analyses of the selected type.
+
+
+
+In the upper-left corner of the workspace, select .
+A blank datasheet for the Hazards Analysis appears.
+
+
+
+As needed, enter values in the available fields. In the lower-right corner of the datasheet, select Save.
+The Hazards Analysis is created.
+What To Do Next
+
+Create a System/Node
+ Add Team Members to the Hazards Analysis
+Access a Hazards AnalysisProcedure
+Access the Hazards Analysis Overview page. 
+Tip: You can also access the Hazards Analysis Overview page for a particular hierarchy level.
+In the workspace heading:
+If you want to access a HAZOP Analysis, select the Hazop tab.If you want to access a What If Analysis, select the What If tab.
+The selected section appears, displaying a list of Hazards Analyses of the selected type.
+
+
+
+Select the Hazards Analysis that you want to access.
+The Analysis Overview section appears, displaying the Risk Assessment graph.
+
+
+
+In the workspace, select the Definition tab.
+The datasheet for the Hazards Analysis appears.
+
+
+
+If needed, modify values in the available fields.
+Tip: You can modify a Hazards Analysis only if it is in the Planning state.
+ In the upper-right corner of the datasheet, select .
+The changes made to the Hazards Analysis are saved.
+Results
+A list of Systems/Nodes for the Hazards Analysis appears in the left pane.
+Access a List of Assets Linked to an AnalysisAbout This Task
+This topic describes how to access a list of Assets (Equipment and Functional Locations) that are linked to each System/Node, Cause, and Safeguard in a Hazards Analysis. 
+Procedure
+Access the Hazards Analysis Overview page. 
+Tip: You can also access the Hazards Analysis Overview page for a particular hierarchy level.
+In the workspace:
+If you want to access the Assets linked to a HAZOP Analysis, select the Hazop tab.If you want to access the Assets linked to a What If Analysis, select the What If tab.
+The selected section appears, displaying a list of Hazards Analyses of the selected type. 
+Select the Hazards Analysis for which you want to access a list of linked Assets.
+The Analysis Overview section appears, displaying the Risk Assessment graph.
+
+
+
+In the workspace, select the Linked Assets tab. 
+The Linked Assets section appears, displaying a list of Assets linked to the Systems/Nodes, Causes, and Safeguards in the Hazards Analysis.
+
+
+
+Access the Recommended Actions PaneAbout This Task
+The Recommendations that appear on the Recommended Actions pane are filtered based on your selection. 
+If you access a Hazards Analysis, the Recommended Actions pane displays a list of Risk Assessment Recommendations linked to all the Consequences in the Hazards Analysis.If you access a System/Node, Deviation, What If, or a Cause, the Recommended Actions pane displays a list of Risk Assessment Recommendations linked to all the Consequences in the System/Node.If you access a Consequence, the Recommended Actions pane displays a list of Risk Assessment Recommendations linked to the Consequence. 
+Important: You can create a Recommendation only for a Consequence.
+ProcedureAccess the Hazards Analysis, System/Node, or the Consequence that is linked to the Recommendation.In the upper-right corner of the page, select .
+The Recommended Actions pane appears, displaying a list of Recommendations linked to the Hazards Analysis, System/Node, or the Consequence.
+
+
+
+Tip: For information about additional options available when working with the Recommendation records, refer to the Action Management section of the documentation.
+Tip: If you want to create a Recommendation, you must first select the Consequence, and then access the Recommended Actions pane.
+Create a Recommendation Procedure
+Access the Consequence for which you want to create a Risk Assessment Recommendation.In the upper-right corner of the page, select .
+The Recommended Actions pane appears, displaying a list of Risk Assessment Recommendations linked to the Consequence.
+
+
+
+In the upper-left corner of the pane, select .
+A blank datasheet for Risk Assessment Recommendation appears.
+
+
+
+As needed, enter values in the available fields, and then in the upper-right corner of the datasheet, select .
+The Recommendation is created.
+Tip: For information about additional options available when working with the Recommendation records, refer to the Action Management section of the documentation.
+Results
+The Risk Assessment Recommendation that you have created is listed in the Recommended Actions pane for the related Hazards Analysis, System/Node, Deviation or What If, and the Cause that are linked to the Consequence.
+Access the PHA Re-Validation ScheduleAbout This Task
+The Hazards Analysis module allows you to view a list of analyses for which revalidation (also called reevaluation) is overdue or must be completed in the next 30 days.
+The PHA Re-Validation Schedule section on the Hazards Analysis Overview page displays a list of Hazards Analyses that satisfy any of the following conditions:
+The value in the Next Reevaluation Date field falls within the next 30 days.The value in the Next Reevaluation Date field is a past date.
+Procedure
+Access the Hazards Analysis Overview page. 
+Tip: You can also access the Hazards Analysis Overview page for a particular hierarchy level.
+Select the PHA Re-Validation Schedule tab.
+The PHA Re-Validation Schedule section appears, displaying a list of Hazards Analyses for which revalidation is overdue or due within the next 30 days. The following columns appear in the section:
+Analysis ID: Contains a link, which you can select to view the details of the Hazards Analysis.Revision: Contains a value indicating the number of revisions performed on the Hazards Analysis.Revision Date: Contains the value in the Revision Date field of the Hazards Analysis.Next Reevaluation Date: Contains the value in the Next Reevaluation Date field of the Hazards Analysis. 
+
+
+
+ By default, the hierarchy level on the Hazards Analysis Overview page is set to Home and the information that appears in the PHA Re-Validation Schedule section is related to all Hierarchy Levels, including records that are not associated with any asset. You can filter the information that appears on the page based on a specific asset by selecting  in the upper-left corner of the page.
+Access the Hazards Analysis Team Members SectionAbout This Task
+This topic describes how to access the Team Members section of a Hazards Analysis, from where you can access the list of team members in the analysis, add new ones, assign roles to team members, or modify or delete them.
+Procedure
+Access the Hazards Analysis whose Team Members you want to access.In the workspace, select the Team Members tab.
+The Team Members section appears, displaying a list of Team Members in the analysis. 
+
+
+
+
+Tip: For details about working with teams and the Team Members section, refer to the Teams section of the documentation.
+
+Access the Reference Documents Section in Hazards AnalysisAbout This Task
+This topic describes how to access the Reference Documents section in Hazards Analysis, from where you can access a list of Reference Documents linked to a Hazards Analysis, create a new one, or modify or delete an existing one.
+Procedure
+Access the Hazards Analysis whose Reference Documents you want to access.In the workspace, select the Reference Documents tab.
+The Reference Documents section appears, displaying a list of Reference Documents linked to the Hazards Analysis.
+
+
+
+Tip: For more information, refer to the Reference Documents section of the documentation.
+Access the Revision History of a Hazards AnalysisAbout This Task
+This topic describes how to access the revision history of a Hazards Analysis for each revision of the analysis.
+Procedure
+Access the Hazards Analysis for which you want to access the revision history.In the upper-right corner of the page, select Revisions.
+The Revision History page appears, displaying a list of revisions for the analysis. 
+
+
+
+Select the revision that you want to access. 
+The datasheet of the Hazards Analysis for the selected revision appears. The left pane displays a hierarchical structure of the Systems/Nodes and their elements.
+
+
+
+If you want to view the changes that have been made for a particular record in that revision, select the record in the left pane, and then, in the upper-right corner of the page, select Show Changes.
+The Changes For Selected Datasheet window appears, displaying a list of old values (i.e., values in the preceding revision) and new values (i.e., values in the selected revision) for all the fields that were modified in the selected revision for the selected record. 
+
+
+
+Accessing the Revision of a Hazards Analysis
+Suppose that a Hazards Analysis has been re-evaluated (i.e., cycled through the states, Planning to Complete) twice. Therefore, this creates two revisions of the analysis. 
+ If you want to view Revision 1 of the analysis, then: Access the Hazards Analysis.In the upper-right corner of the page, select 2 Revisions. The Revision History page appears, displaying the two revisions.
+Select the hyperlink that corresponds to Revision 1. The Analysis Summary workspace for Revision 1 of the analysis appears. The left pane displays a hierarchical structure of the Systems/Nodes and their elements.
+
+ If you want to view the changes that have been made for a System/Node in Revision 1, then select the System/Node, and then, in the upper-right corner of the page, select Show Changes. The Changes for Selected Datasheet window appears, displaying a list of old and new values for each field that was modified in Revision 1 compared to Revision 0.
+
+
+
+Change the State of a Hazards AnalysisAbout This Task
+This topic describes how to change the state of a Hazards Analysis, while assigning the state to a user.
+Important: You can modify a Hazards Analysis in a particular state only if you are an administrator or the assignee for that state.
+Procedure
+Access the Hazards Analysis for which you want to change the state.In the upper-right corner of the workspace, select the button that indicates the current state of the analysis. For example, if the current state of the analysis is Planning, select the Planning button.
+A menu appears, displaying a list of operations that you can perform on the analysis to change its state.
+
+
+
+Select Manage State Assignments.
+The State Assignments window appears. 
+
+
+
+If not already done, assign the next state of the analysis to the appropriate user, and then select Done.The State Assignments window closes. In the workspace heading, select the button that indicates the current state of the analysis. For example, if the current state of the analysis is Planning, select the Planning button.
+A menu appears, displaying the operation that you can perform to change the state of the project.
+Select the necessary operation that will change the state of the analysis, and then select Done. For example, if you want to change the state of the analysis from Planning to Active, select Begin, and then select Done. 
+The state of the analysis is changed.
+Generate the Report of a Hazards AnalysisProcedure
+Access the Hazards Analysis whose report you want to generate.In the upper-right corner of the page, select .
+The Hazards Analysis report is generated. You can print, save, or export the report, or attach it to an email.
+Delete a Hazards AnalysisAbout This Task
+Note: You can delete a Hazards Analysis only if it is in the Planning state.
+Important: Deleting a Hazards Analysis deletes the following associated records: System/Nodes, Deviations or What Ifs, Causes, Consequences, and Safeguards. If the Consequence is linked to a LOPA, the related Safeguards are not deleted. The LOPA records associated with the Consequences and the Risk Assessments and Recommendations associated with the System/Nodes are not deleted.
+Procedure
+Access the Hazards Analysis that you want to delete.In the workspace, select the Definition tab.
+The Definition section appears, displaying the datasheet for the Hazards Analysis.
+
+
+
+In the upper-right corner of the datasheet, select , and then select 
+Delete.
+The Confirm Delete dialog box appears, asking if you really want to delete the Hazards Analysis and all the related records.
+Select Yes. 
+The Hazards Analysis is deleted.
+
+
+
+
+
+On this pageAbout the Hazards Analysis TeamAbout Revision HistoryCreate a Hazards AnalysisAccess a Hazards AnalysisAccess a List of Assets Linked to an AnalysisAccess the Recommended Actions PaneCreate a Recommendation Access the PHA Re-Validation ScheduleAccess the Hazards Analysis Team Members SectionAccess the Reference Documents Section in Hazards AnalysisAccess the Revision History of a Hazards AnalysisChange the State of a Hazards AnalysisGenerate the Report of a Hazards AnalysisDelete a Hazards Analysis
+
+
+
+
+
+
+
+
+

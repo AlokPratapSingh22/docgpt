@@ -1,0 +1,424 @@
+
+
+
+Action Nodes | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Policy DesignerOverview
+Workflow
+Policy Management
+Security Settings
+Policy Models
+Policy Instances
+Policy Logic Validation
+Policy Execution
+Admin
+Data Loader
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Catalog Items
+Policy Examples
+Input Nodes
+Condition, Logic, and Calculation Nodes
+Action Nodes
+Baseline Policies
+Glossary
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Policy Designer
+Reference
+Action Nodes
+
+
+
+
+
+
+
+Action NodesAbout Action Nodes in Policies Action nodes represent actions that are performed when a policy is executed and the conditions preceding the Action node are met.  Action Nodes
+
+Add Value to Health Indicator
+
+Apply Strategy Template
+
+Close Event
+Create Alert
+Create Entity
+
+Create Event
+
+Create Production Event
+
+Create Recommendation
+
+Create Relationship
+
+Deactivate This Instance
+
+Delete Entity
+
+Delete Relationship
+
+Edit Entity
+
+Email Contact
+
+Return Value
+
+Sub Policy
+
+ Add Value to Health Indicator Nodes in Policy Designer 
+An Add Value to Health Indicator node represents an action to create a Health Indicator Value record and link it to a Health Indicator record. 
+When an Add Value to Health Indicator node is executed, a Health Indicator Value record is created with the timestamp and value defined by the policy logic and corresponding instances.
+The outputs of an Add Value to Health Indicator node are the Content GUID and Entity Key of the record that the node creates.
+Node Properties
+The Properties window for an Add Value to Health Indicator node contains the items that are described in the following table.
+ItemDescriptionNotes
+Health Indicator Entity Key sectionSpecifies the entity key of the Health Indicator record to which the new Health Indicator Value record will be linked.You must specify a Health Indicator record without a source.If an appropriate Health Indicator record does not yet exist, you can specify a Health Indicator node and then create the record via the Instances pane.
+Timestamp sectionSpecifies the value that will populate the Timestamp field in the new Health Indicator Value record.
+You can select  to specify the output of a predecessor node in this section.
+The value in this section must be a timestamp.
+
+Value (Numeric) sectionSpecifies the value that will populate the Value (Numeric) field in the new Health Indicator Value record.
+You can select  to specify the output of a predecessor node in this section.
+The value in this section must be numeric.
+
+Tip: Click here to see an example policy in which an Add Value to Health Indicator node is used to create health indicator readings that represent the overall health of an asset.
+Apply Strategy Template Nodes in Policy Designer
+The Apply Strategy Template node represents an action to apply an asset strategy template to an asset or asset strategy. You can use the Apply Strategy Template node to apply the asset strategy template as a copy or master to the asset or asset strategy. For more information on asset strategy and asset strategy templates, refer to the Asset Strategy Management documentation.
+Note:
+You can use the Apply Strategy Template node only if you have the Asset Strategy Management license.Even if the execution of the Apply Strategy Template node is successful, the specified template is applied to the asset or asset strategy only if the policy containing the node is successfully executed.
+
+Node Properties
+The Properties window for an Apply Strategy Template node contains the fields and sections described in the following table:
+Field/SectionDescriptionNoteStrategy Template KeySpecifies the entity key of the asset strategy record that you want to apply as a template.None.Asset or Strategy KeySpecifies the entity key of the asset or asset strategy record to which you want to apply the template.None.Select option to apply templateSpecifies whether the template must be applied as a copy or master.In this section, you can select one of the following options:Apply the template as a copyApply the template as a masterNote: By default, the Apply the template as a copy option is selected.Select portions of template to applySpecifies whether both actions and risks, or only the risks associated with the template must be applied to the asset or asset strategy.Note: This section is enabled only if you select Apply the template as a copy in the Select option to apply template section.In this section, you can select one of the following options:Apply both actions and risksApply risks onlyNote: By default, the Apply both actions and risks option is selected.Select option to handle existing Asset StrategiesSpecifies whether the actions and risks that are already associated with the strategy must be deleted or the items of the template that you want to apply must be appended to the existing actions and risks associated with the strategy.Note: This section is enabled only if you select Apply the template as a copy in the Select option to apply template section.In this section, you can select one of the following options:Mark existing items for deletionAppend the template items to the existing itemsNote: By default, the Mark existing items for deletion option is selected.
+The following example illustrates how you can use a Apply Strategy Template node to apply an appropriate asset strategy template as master to every Equipment record that is added to the GE Digital APM database:In this example, the Current Entity node represents the Equipment record that is added to the database. Based on the model of the equipment, the Query node identifies the asset strategy template that must be applied to the equipment. The Apply Strategy Template node then applies the template identified by the Query node as master to the equipment.The Properties window for the Apply Strategy Template node described in this example is shown in the following image: Close Event Nodes in Policy Designer 
+A Close Event node represents an action to populate fields in an existing Policy Event record to signify that the associated event has been closed.
+When a Close Event node is executed, the following fields will be populated in the associated Policy Event record:
+ End Time  Close Description 
+To use a Close Event node, the policy model must also contain a Create Event node that is associated with the same Policy Event record (that is, with the same value specified in the Event Name section on the Properties window). The properties of the Create Event node must be configured such that:
+The Has Duration section is set to True.The Start Time section contains a value.The End Time section does not contain a value.
+In the policy model, a dotted line will appear between Create Event and Close Event nodes that are associated with the same Policy Event record.
+Node Properties
+The Properties window for a Close Event node contains the items that are described in the following table. In each section, you can select  to display the output of a predecessor node. The values that you define in each section will be used to populate the corresponding fields in the associated Policy Event record.
+ItemDescriptionNotes
+Event Name section Specifies the name of the event that you want to close. 
+Important:  The value that you specify in this section must match the Event Name value for the corresponding Create Event node (that is the value in the Name field in the associated Policy Event record) in order for the event to be closed successfully.
+Note:
+ If you specify the output of a predecessor node, whether the nodes match depends on the values used when the policy is executed. 
+For example, you can specify the Event Name in the Create Event node using a field from an Entity node and specify the Event Name in the Close Event node using the output of a Case node. As long as the values used in execution match, the events will be recognized as matching. 
+
+End Time sectionSpecifies the timestamp that is associated with the end of the event.This value is required.If you enter a date, you must use the correct format.Close Description section Specifies a description of why the event was closed.None.
+Tip: Click here to see an example of this node used within a complete policy model.
+Create Alert Nodes in Policy Designer 
+A Create Alert node represents an action to create an alert for an enterprise, site, segment, or asset. You can specify the alert template and attributes for the new alert as input values in the Properties window for the node.
+The output values of the Create Alert node are the unique ID and URL of the new alert.
+Note: Recurring alerts do not provide a unique ID or URL. For such alerts, the node output values are null.
+Node Properties
+The Properties window for a Create Alert node contains the items that are described in the following table.
+FieldDescriptionNoteAlert NameSpecifies the type of alert that the Create Alert node will create.This list contains all the alert templates that are defined in GE Digital APM. Start TimeSpecifies the Event Start Time for the alert.None.End TimeSpecifies the End Time for the alert.This field appears only if you select Yes in the Recurring field.Storage Receive TimeSpecifies the Storage Receive Time for the alert.This field appears only if you select No in the Recurring field.Asset Unique IDSpecifies the unique identifier of the enterprise, site, segment, or asset for which you want to create an alert. If you want to create the alert for an Equipment or a Functional Location record configured to represent an enterprise, site, segment, or asset, you can use the value in the Unique ID field of the record as the Asset Unique ID value for the node.RecurringSpecifies whether to create a recurring alert.None.FrequencySpecifies the frequency of a recurring alert.This field is enabled only if you select Yes in the Recurring field.FieldSpecifies an attribute for the new alert.This list contains all the standard and custom attributes that are configured for alerts in GE Digital APM.ValueSpecifies the new value for the corresponding attribute.The values that you specify must comply with the requirements of the corresponding attribute.
+For full details of the standard attributes and accepted values, refer to the API documentation for creating an Alert (i.e. POST /alertmgmt/v1/alarms) at https://apm-apidocs-rc.int-app.aws-usw02-pr.predix.io/.
+Some of the standard attributes for Alerts that you can set in policy are described in the following table. If an attribute is a JSON object type, you can use a Text node to create the required value, using inputs including tag ids, timestamps, and reading values from the other nodes in the policy.
+FieldData TypeUsage NotesExampleSeverityNumericBy default, the severity of an alert is set automatically according to the value specified in the selected Alert Template. You can override the default severity when creating an alert by specifying a value in the policy.NonescanGroupData JSON ObjectA list of key value pairs containing the tags and values that triggered the alert. 
+{"BRG_1_VIB_2_1X_AMP":"53.95484042",
+"BRG_1_VIB_1_OVERALL":"62.4367112"}
+
+Sample Text Pattern for use in a Text node: 
+    {"{0}":"{1}"} 
+where Index {0} is a tag id and Index {1} is a value. 
+
+incidentJSON ObjectA list of key value pairs containing additional alert details.
+{"incidentEventCount":"125",
+"firstOccurance":"2015-08-11T19:07:00.000Z",
+"lastOccurance":"2015-08-19T15:47:00.000Z"}
+
+Sample Text node pattern for use in a Text node: 
+    {"incident event count":"1", 
+    "firstOccurance":"{0:s}.000Z",
+     "lastOccurance":"{0:s}.000Z"} 
+where Index {0} is a timestamp and ‘s’ is the standard
+ format specifier for sortable date/time pattern i.e. YYYY-MM-DDTHH:MM:SS.
+tagsOfInterest, JSON ObjectA list of time series tags that may be of interest when reviewing the alert.
+[{"uuid":"e6d65833-028f-4d0f-b0cc-8334bdcf2d53",
+"isContributing":false,"displayGrouped":true,
+"displayGroupedName":"DRIVER_LOAD","uom":"KLB/HR"},
+{"uuid":"8288f357-4ab2-4e99-ab14-c0717b27fe5b",
+"isContributing":false,"displayGrouped":true,
+"displayGroupedName":"PUMP_SPEED","uom":"rpm"}]
+
+
+Example of a Text node configured to create a JSON object for the incident field:
+
+
+Example of a Text node configure to create a JSON object for the scanGroupData field:
+
+Create Alert nodeThe following example illustrates how you can use a Create Alert node to create an alert if a reading in a time series exceeds a specified limit.In this example, the most recent reading from a time series is represented by the Last Reading node. The reading is then compared with a threshold value that is represented by the Point Value node. If the reading is greater than the threshold value, the Create Alert node creates an alert and assigns it to the asset represented by the Equipment node.The following image shows the Properties window of the Create Alert node described in the example.Create Entity Nodes in Policy Designer
+A Create Entity node represents an action to create a new record in a baseline or custom entity family. The fields in the new record are populated with the input values that you specify in the Properties window for the node.
+Note: The Create Entity node displays only the entity families for which your GE Digital APM system has active licenses, and for which you have create permissions.
+The outputs of the Create Entity node are the following system fields for a record that the node creates: collection, Content GUID, and Entity Key.
+Node Properties
+The Properties window for a Create Entity node contains the items described in the following table.
+ItemDescriptionNotesFamily IDSpecifies the unique ID of the family for which you want to create a record.The Family ID list contains all the baseline and custom entity families in GE Digital APM for which you have update privileges.Site KeySpecifies the Site Reference Key of the site to which the new record must be assigned.None.Auto-map field valuesSpecifies whether the fields of the newly created record must be automatically populated with the values of a collection.If the values that you want to specify for the record are part of a collection, you can use this option to specify the values for the fields of the record. If you use this option to specify the values for only some fields of the record, you must manually specify the values for the remaining fields.Field values collectionSpecifies the collection that contains the values that you want to specify for the newly created records.Note: If the collection is the result of a query, make sure the query is run in unformatted mode.This section is enabled only when you select Yes for the Auto-map field values option. Depending on the source of the collection, the fields of the newly created records are automatically populated with the collection values in the following ways:For a collection that is created using a query, if the label of a column matches the Field ID of a field, the field in each record is populated with the corresponding value of the column. For example, if the Field ID of the Reading Taken Date field is MI_READING0_RDG_TAKEN_DT_D, the field in each record is populated with the corresponding value of the collection column whose caption is MI_READING0_RDG_TAKEN_DT_D.For a collection that is not created using a query, if the Column ID of a column matches the Field ID of a field, the field in each record is populated with the corresponding value of the column. For example, if the Field ID of the Reading Taken Date field is MI_READING0_RDG_TAKEN_DT_D, the field in each record is populated with the corresponding value of the collection column whose Column ID is MI_READING0_RDG_TAKEN_DT_D.Note: If the Field ID of a field does not match the Column ID or name of any column in the collection, the field is not populated with any value.Adds a new row to the Properties window. Each newly added row represents a field in the record for which you want to specify a value.Note: If you specify a value for a field that is configured to be auto-populated from a collection, the value that you specify takes precedence over the corresponding value in the collection.FieldSpecifies the field in the newly created record for which you want to specify a value.This list contains baseline and custom fields of the record.ValueSpecifies the new value for the corresponding field.
+If a field has a complex behavior defined by the field-level rules (for example, rules for valid values) and field-level behaviors, this behavior will not be reflected in the Properties window or detected during policy validation. Therefore, make sure that the values you specify are valid according to the baseline or custom field-level rules for the corresponding field.
+If a field value is defined by a system code, you must specify the system code in this field and not the value that is displayed to the user.
+
+Tip: Click here to see an example of this node used within a complete policy model.
+ Create Event Nodes in Policy Designer 
+A Create Event node represents an action to create a Policy Event record, which stores information about events that are associated with Equipment or Functional Location records. 
+When a Create Event node is executed, a Policy Event record will be created using the values that you specify on the Properties window for the node. One Policy Event record will be created for each Create Event node in the policy model that has a unique name.
+The outputs of the Create Event node are the following system fields for the record that the node creates: Content GUID, Entity Key, Entity ID, and Site Key.
+If a Policy Event record is created for an event that has a duration, additional Policy Event records with the same name will not be created until the event is closed (that is, the End Time field in the Policy Event record contains a value).
+Note:  You can use a corresponding Close Event node to populate the End Time and Close Description fields in the same Policy Event record when subsequent conditions indicate that the event has closed.
+Node Properties
+The Properties window for a Create Event node contains the items that are described in the following table. The values that you define in each section will be used to populate the corresponding fields in the Policy Event record that is created.
+ItemDescriptionNotesAsset Key section Specifies the entity key of the Equipment or Functional Location record that is associated with the event, (that is, the record to which the Policy Event record will be linked).This value is required.Event Name section Specifies the name of the event. This value is required.You can select  to specify the output of a predecessor node in this section.
+Description section Specifies a description of the event. 
+You can select  to specify the output of a predecessor node in this section.
+
+Event Type list Specifies the type of event. 
+You can select one of the following values:
+Generic: Indicates that the event is not associated with a specific type of event.Excursion: Indicates that the event is associated with an operation that is outside of an established operating window.
+
+Severity list Specifies the severity of the event. 
+You can select one of the following values:
+Information: Routine events not affecting asset health.Warning: Events indicating a low-risk or early warning of asset health issues.Alert: Events indicating a high-risk or imminent warning of asset health issues.
+Start Time section Specifies the timestamp that is associated with the beginning of the event.This value is required.You can select  to specify the output of a predecessor node in this section.If you enter a date, you must use the correct format.End Time sectionSpecifies the timestamp that is associated with the end of the event.You should only define a value in this section when the Has Duration field is set to True.Important:  If the policy contains a corresponding Close Event node, you should not specify values in this section. You should specify values in the End Time section on the Properties window that is displayed for the Close Event node.You can select  to specify the output of a predecessor node in this section.
+If you enter a date, you must use the correct format.Close Description section Specifies a description of why the event was closed.
+Important:  If the policy contains a corresponding Close Event node, you should not specify values in this section. You should specify values in the Close Description section on the Properties window that is displayed for the Close Event node.
+You can select  to specify the output of a predecessor node in this section.
+Has Duration sectionSpecifies whether or not there is an end time associated with the event.
+You can select  to specify the output of a predecessor node in this section.
+The value that you define must be a logical result (that is, Yes or No.)
+Important:  If the policy contains a corresponding Close Event node, you must set the value in this section to Yes.
+Time Line Reset section This field is not currently used.None.
+Tip: Click here to see an example of this node used within a complete policy model.
+Create Production Event Nodes in Policy Designer 
+A Create Production Event node represents an action to create a Production Event record that is populated with the input values that you specify on the Properties window.
+The outputs of the Create Production Event node are the following system fields for the record that the node creates: Content GUID, Entity Key, Entity ID, and Site Key.
+Node Properties
+The Properties window for a Create Production Event node contains the items that are described in the following table. In each section, you can select  to display the output of a predecessor node. The values that you define in each section will be used to populate the corresponding fields in the Production Event record that is created.
+ItemDescriptionNotes
+Causing Asset Key section Specifies the Equipment record that represents the piece of equipment that caused the event. The Causing Asset Key value must match exactly the Entity Key of the asset that caused the event.
+Description sectionSpecifies a detailed description of the event. None.End Date sectionSpecifies the date that the event ended.Along with the start date, the end date determines whether or not the production event will be available in the Production Event list in the Production Event workspace. 
+Headline sectionSpecifies a short description of the event.None.
+Source Production Unit sectionSpecifies the production unit to which loss is attributed. The created Production Event record will be automatically linked to the specified Production Unit record. 
+Start Date sectionSpecifies the date that the event started. Along with the end date, the start date determines whether or not the production event will be available in the Production Event list in the Production Event workspace. 
+Note: If you add a custom field to the Production Event family, that field will also appear in the Properties window for the Create Production Event node.
+Tip: Click here to see an example of this node used within a complete policy model.
+ Create Recommendation Nodes in Policy Designer 
+A Create Recommendation node represents an action to create a Policy Recommendation record that is populated with the input values that you specify on the Properties window for the node and includes (in the Recommendation Description field) a summary of the policy logic that caused the record to be created.Note: You cannot specify the value for the Recommendation Description field in the Properties window for the Create Recommendation node. If you want to specify your own description instead of the automated policy logic summary, you can use a Create Entity node.
+The outputs of the Create Recommendation node are the following system fields for the record that the node creates: Content GUID, Entity Key, Entity ID, and Site Key.
+Node Properties
+The Properties window for a Create Recommendation node contains the items that are described in the following table. In each section, you can select  to display the output of a predecessor node. The values that you define in each section will be used to populate the corresponding fields in the Policy Recommendation record that is created.
+ItemDescriptionNotes
+Associated Reference sectionSpecifies the Reference ID of the event or any other entity that originated the recommendation.None.State Assignee User ID
+Specifies the user that is assigned to the initial state.The state assignee value must match exactly a valid User ID for an active Security User.Create Work Request section
+Specifies whether a work request for the EAM system that you have configured in GE Digital APM will be created from the Policy Recommendation record.
+The value in this section must be a logical result (that is, Yes or No).Equipment ID sectionThe Record ID of the Equipment record to which the Policy Recommendation record will be linked.
+You do not need to specify a value in both the Equipment ID and Functional Location ID sections. If you specify a value in either section, the GE Digital APM system will automatically create relationships between the related Equipment, Functional Location, and Recommendation records. However, if you do specify values in both sections, they must correspond to the same asset.
+Event Start Date sectionSpecifies the timestamp that is associated with the beginning of the event for which the Policy Recommendation record is created.If you enter a date, you must use the correct format.Functional Location ID sectionThe Record ID of the Functional Location record to which the Policy Recommendation record will be linked.
+You do not need to specify a value in both the Equipment ID and Functional Location ID sections. If you specify a value in either section, the GE Digital APM system will automatically create relationships between the related Equipment, Functional Location, and Recommendation records. However, if you do specify values in both sections, they must correspond to the same asset.
+Recommendation Headline sectionA short description of the recommended action.
+None.
+Recommendation Priority sectionSpecifies a priority value used to rank the importance of the recommendation.The value that you specify must be a valid system code and be valid according to any field-level rules that you have specified for the Recommendation Priority field.Target Completion Date
+The date by which the recommended action should be completed.
+This value is required. If you enter a date, you must use the correct format.
+Note: If you add a custom field to the Policy Recommendation family, that field will also appear in the Properties window for the Create Recommendation node.
+Tip: Click here to see an example of this node used within a complete policy model.
+Create Relationship Nodes in Policy Designer 
+A Create Relationship node represents an action to create one or more new records in any baseline or custom relationship family. Each new record creates a relationship between a specified predecessor and successor entity record. 
+The outputs of the Create Relationship node are the following system fields for the record that the node creates: Content GUID, Entity Key, Entity ID, and Site Key.
+Note: The Create Relationship node displays only the relationship families for which your GE Digital APM system has active licenses, and for which you have create permissions.
+Node Properties
+The Properties window for a Create Relationship node contains the items that are described in the following table.
+ItemDescriptionNotes
+Family ID listSpecifies the type of record that the Create Relationship node will create.The Family ID list contains all the baseline and custom relationship families in GE Digital APM for which you have insert privileges.
+Predecessor Entity Key(s) sectionSpecifies the keys of the predecessor entity records in the relationship.
+You can create relationships in the following ways depending on how you specify values in the Predecessor Entity Key(s) and Successor Entity Key(s) sections:
+
+Single one-to-one relationship: Specify a single key in each section.
+
+Multiple one-to-one relationships: Specify the same number of keys in each section. A relationship will be added between each pair of keys.
+
+One-to-many relationship: Specify a key in one section and multiple keys in the other section.
+In each section, you can select  to display the output of a predecessor node.
+Tip:  You can specify the Entity Key output from an Action node that creates records (such as the Create Entity node) to use the newly created records as either the predecessors or successors of a relationship.
+Relationships will not be created in the following scenarios:
+If the relationship you specify already exists.If no relationship definition is defined for the records you specify.When attempting to create multiple one-to-one relationships, if the number of keys in each section do not match.
+
+Successor Entity Key(s) sectionSpecifies the keys of the successor entity records in the relationship.
+Tip: Click here to see an example of this node used within a complete policy model. 
+Deactivate This Instance Nodes in Policy Designer
+A Deactivate This Instance node represents an action to deactivate the current policy instance. You can use this node to ensure that an action is taken only once per instance.
+When a Deactivate This Instance node is executed, the policy instance whose values caused the node to be executed will be deactivated automatically. If more than one policy instance is associated with the policy, all other policy instances will remain unchanged.
+After the conditions that caused the instance to be deactivated have been addressed, you can reactivate the policy instance manually from the Instances pane in Policy Designer or the Policies section in Asset Health Manager.
+Node Properties
+Other than optionally specifying a name for the node, there are no properties to configure for a Deactivate This Instance node.
+
+The following example illustrates how you can use a Deactivate This Instance node to ensure that only one Policy Recommendation record is created as a result of the policy conditions being met for a specific policy instance. Consider the following nodes and connection.
+
+In this example, the OPC Tag node and the Condition node to which it is connected indicate that a Policy Recommendation record should be created when the DA Reading Value associated with the OPC Tag node exceeds 200.
+Assume that the following records are associated with the OPC Tag node via policy instances:
+Pump 101, whose DA Reading Value is greater than 200.Pump 102, whose DA Reading Value is not greater than 200.
+When the policy is executed, a Policy Recommendation record for Pump 101 will be created. Because the policy also includes a Deactivate This Instance node, after the Policy Recommendation record is created, the GE Digital APM system will deactivate automatically the policy instance that is associated with Pump 101. The policy instance that is associated with Pump 102 will remain active.
+Because the policy instance that is associated with Pump 101 is no longer active, even if the DA Reading Value associated with the pump continues to exceed 200, additional Policy Recommendation records will not be created.
+ Delete Entity Nodes in Policy Designer 
+A Delete Entity node represents an action to delete from the GE Digital APM database one or more records in any baseline or custom entity family. 
+Node Properties
+The Properties window for a Delete Entity node contains the items that are described in the following table. 
+ItemDescriptionNotes
+Entity Key(s) sectionSpecifies the entity key(s) of the record(s) that will be deleted.
+You can select  to specify the output of a predecessor node in this section.
+If you specify multiple records to be deleted at the same time, they do not have to be in the same family.
+
+ Delete Relationship Nodes in Policy Designer A Delete Relationship node represents an action to delete from the GE Digital APM database one or more records in any baseline or custom relationship family. Note: The Delete Relationship node displays only the relationship families for which your GE Digital APM system has active licenses, and for which you have delete permissions.Node Properties
+The Properties window for a Delete Relationship node contains the items that are described in the following table.
+ItemDescriptionNotes
+Family ID listSpecifies the type of record that the Delete Relationship node will delete.The Family ID list contains all of the baseline and custom relationship families in GE Digital APM for which you have delete privileges.
+Predecessor Entity Key(s) sectionSpecifies the key(s) of the predecessor entity record(s) in the relationship that will be deleted.You can delete the following types of relationships depending on how you specify values in the Predecessor Entity Key(s) and Successor Entity Key(s) sections:Single one-to-one relationship : Specify a single key in each section. The relationship between the two entity records will be deleted.Multiple one-to-one relationships : Specify the same number of keys in each section. The relationship between each pair of entity records will be deleted.
+One-to-many relationship : Specify one key in the one section and multiple keys in the other section. The relationship between the single entity record and all the entity records specified in the other section will be deleted.In each section, you can select  to display the output of a predecessor node. If you specify multiple predecessor and successor records, they do not have to be in the same family.Relationships will not be deleted in the following scenarios:If a relationship you specify does not exist. However, other valid relationships in the same transaction will be deleted.When attempting to delete multiple one-to-one relationships, if the number of keys in each section do not match.
+Successor Entity Key(s) sectionSpecifies the key(s) of the successor entity record(s) in the relationship that will be deleted.
+Tip: Refer to the Family Policies documentation to see an example of this node.
+Edit Entity Nodes in Policy Designer 
+An Edit Entity node represents an action to modify a record of a baseline or custom entity family. The fields in the specified record are updated with the values that you specify in the Properties window for the node. The fields for which you do not specify any value in the Properties window are not modified.
+Note: The Edit Entity node displays only the entity families for which your GE Digital APM system has active licenses, and for which you have edit permissions.
+Node Properties
+The Properties window for an Edit Entity node contains the items described in the following table. 
+ItemDescriptionNotesFamily IDSpecifies the unique ID of the family associated with the record that must be modified.The Family ID list contains all the baseline and custom entity families in GE Digital APM for which you have update privileges.Entity Key(s)Specifies the entity key of the record that must be modified.The entity key that you specify must belong to the family selected in the Family ID list.Auto-map field valuesSpecifies whether the field values for the records must be automatically updated from a collection.If the values that you want to specify for the record are part of a collection, you can use this option to specify the values for the fields of the record. If you use this option to specify the values for only some fields of the record, you must manually specify the values for the remaining fields.Field values collectionSpecifies the collection that contains the values that you want to map to the records.Note: If you specify the result of a query, make sure you run the query in unformatted mode.This section is enabled only when you select Yes for the Auto-map field values option. The records that are modified is determined as follows:If the collection that you specify contains a column with the name ENTY_KEY, the records specified in the Entity Key(s) section that have matching Entity Keys are automatically modified.If the collection does not contain a column with the name ENTY_KEY, all records specified in the Entity Key(s) section are updated with values from the first row in the collection.Depending on the source of the collection, the fields of a record are automatically updated with the collection values in the following ways:For a collection that is created using a query, if the label of a column matches the Field ID of a field, the field in each record is updated with the corresponding value of the column. For example, if the Field ID of the Reading Taken Date field in the records is MI_READING0_RDG_TAKEN_DT_D, the field in each record is updated with the corresponding value of the collection column whose label is MI_READING0_RDG_TAKEN_DT_D.For a collection that is not created using a query, if the Column ID of a column matches the Field ID of a field, the field in each record is updated with the corresponding value of the column. For example, if the Field ID of the Reading Taken Date field in the records is MI_READING0_RDG_TAKEN_DT_D, the field in each record is updated with the corresponding value of the collection column whose Column ID is MI_READING0_RDG_TAKEN_DT_D.Note: If the Field ID of a field does not match the Column ID or label of any column in the collection, the value in the field is not modified.Entity Key ColumnSpecifies the collection column that contains the entity keys of the records that you want to modify.Note: If you mapped the field values collection from an R Script node or a Sub Policy node, no values are available for selection in this drop-down list box.
+This section is enabled only when you select Yes for the Auto-map field values option.Depending on the value that you specify in this drop-down list box, the records are modified as follows:If any value in the specified entity key column of the field values collection matches an entity key specified in the Entity Key(s) section, the record associated with the entity key is automatically updated with the values in the collection row corresponding to the entity key.If the values in the specified entity key column of the field values collection do not match any entity key specified in the Entity Key(s) section, the records are not modified.If you do not select a value in this drop-down list box and if the field values collection contains a column with the name ENTY_KEY, the values of the ENTY_KEY column are compared with the entity keys specified in the Entity Key(s) section, and the associated records are updated accordingly.If the collection has only a single row, all records associated with the entity keys specified in the Entity Key(s) section are updated with the values in that row.Adds a new row to the Properties window. Each row represents a field that you want to update in the record.Note: If you specify a value for a field that is configured to be updated from a collection, the value that you specify takes precedence over the corresponding value in the collection.FieldSpecifies a field that you want to update in the record.This list contains both baseline and custom fields of the record.ValueSpecifies the new value for the corresponding field.
+If a field has a complex behavior defined by the field-level rules (for example, rules for valid values) and field-level behaviors, this behavior will not be reflected in the Properties window or detected during policy validation. Therefore, make sure that the values you specify are valid according to the baseline or custom field-level rules for the corresponding field.
+If a field value is defined by a system code, you must specify the system code in this field and not the value that is displayed to the user.
+Note: Irrespective of the Unit of Measure (UOM) Conversion Set configured for your user account, the value that you specify in this field is considered to be in the base UOM of the field.
+
+Edit Entity nodeIn this example, the following queries are used:LR Entity Keys Query: Returns the Entity Keys of the Lubrication Requirement records related to the Lubrication Requirement Template.LRT Fields Query: Returns the current values in some fields of the Lubrication Requirement Template record specified in a policy instance. The Column IDs in the query are defined to match the Field IDs of the Lubrication Requirement family.As shown in the following image of the Properties window for the Edit Entity node, the results of the LR Entity Keys Query provide the entity keys of the Lubrication Requirement records that will be updated. The node is additionally configured to automatically update the fields of the Lubrication Requirement records with the results of the LRT Fields Query. No field values are specified in addition to the values to be updated from the LRT Fields Query.
+
+On executing this policy, all Lubrication Requirements related to the Lubrication Requirement Template that is specified in the policy instance are updated with the new values from the Lubrication Requirement Template record.
+
+Email Contact Nodes in Policy Designer
+An Email Contact node represents an action to send an email message. When an Email Contact node is executed, an email message with a summary of the policy execution will be sent to the specified recipient(s).  You can define a subject, message, and a table of results to be included in the email.
+Node Properties
+The Properties window for an Email Contact node contains the items that are described in the following table.
+ItemDescriptionNotesTo Address
+The email address(es) to which the message should be sent.
+You can select  to specify the output of a predecessor node in this section.
+When you specify a constant value, you can enter one or more email addresses directly in the text box, or you can select the  button to select a recipient via the Choose Users window.
+If you enter more than one email address in the text box, each email address must be separated by a comma or semicolon.
+
+Message
+Content that you want to include in the email message in addition to the summary of the policy execution (which is included by default).
+You can select  to specify the output of a predecessor node in this section.
+
+Subject
+The subject line that you want to appear in the email message. The length is limited to 255 characters. 
+You can select  to specify the output of a predecessor node in this section.
+If you do not specify a value in this section, the email subject line is set to "Notification from Policy <Name>").
+
+Show Policy logic summary?
+Specifies whether the Policy Logic Summary is included in the email message or not.The option Yes is selected by default. In case you do not need the summary displayed in the email message, you can select the option No.
+Results Table
+Specifies how the query result is shared in an email message. You can select from the list to Embed in email message, Attach to email as file, or Both.Note: The attachment is shared only in the .csv format.Note: Attached files are stored in GE Digital APM as Reference Document records. If the attached file size exceeds the configured limit, the Reference Document is created but the file is not attached to the email message. You need to access GE Digital APM to open the Reference Document.
+Include query/collection results section
+The query or collection results are included in the email message.  By default, the results are displayed in the table format.You can select query or collection from the drop down . You can select  to specify the output of a predecessor node in this section.Note: Numeric values are displayed to two decimal places. Dates and times are displayed in UTC.Note: Tables embedded in the email body are truncated to display the first 500 rows only.Note: To avoid display issues with some email clients, it is recommended to limit the number of columns in the embedded table to 30.
+Tip: Click here to see an example of this node used within a complete policy model.
+ Return Value Nodes in Policy Designer 
+A Return Value node represents an action to return a specific value. You can use this node for a variety of reason, such as: 
+To include specified values in the execution results summary for a policy.While designing a policy, to show the result of a specific node in order to verify that certain values are being evaluated as expected in cases where the value would not otherwise be displayed in the validation results (because validation results only display the values that are used by a subsequent node). Once the policy logic is fully validated, you can remove the Return Value nodes to make the policy smaller.When used within a baseline policy for a GE Digital APM analysis (for example, Risk Based Inspection), to pass values from the policy back to the analysis process that triggers the policy.
+Note:  The name that you specify for a Return Value node should be unique unless the policy logic is configured such that only one Return Value node with a given name can be executed each time that the policy is executed.
+Node Properties
+The Properties window for a Return Value node contains the items that are described in the following table.
+
+Item
+
+Description
+
+Notes
+
+Return Value sectionSpecifies the value that you want to return.
+You can select  to specify the output of a predecessor node in this section.
+
+Return Value node
+The following example illustrates how you can use a Return Value node to include relevant values in the execution results summary of the policy. Consider the following nodes and connections.
+
+In this policy, the two Return Value nodes are configured to return the Accumulated Time and Count values, respectively, from the Threshold Statistics node. Because the Return Value nodes are included in this policy, the Accumulated Time and Count values are easily accessible in the execution results summary of the policy.
+Sub Policy Nodes in Policy Designer 
+A Sub Policy node is an Action node that you can use in the policy model to pass values from one policy (the calling policy) to be evaluated or acted on by a different policy (the sub policy). Results from the sub policy may be returned to the calling policy for further evaluation or action.
+A sub policy can be created for commonly used policy logic to reduce policy development time and ensure consistency. It also allows large policy models to be broken down into a series of sub policies, which are easier to understand and perform better in the Policy Designer user interface.
+Note: You can configure a Sub Policy node to pass values to only those policies for which you have Designer or User permissions.
+Node Properties
+The Properties window for a Sub Policy node contains items that are described in the following table.
+ItemDescriptionNotePolicyName of the sub policy to call.NoneIterate Over Collection?Specifies whether the sub policy must be executed for each row in a collection that is used as an input for the node.NoneExecute Specific Instance?Specifies whether a specific instance associated with the sub policy must be executed.If you select Yes, in the Instance Id box that appears, you can specify the name of the sub policy instance that you want to be executed.Additional sections corresponding to the inputs defined by the Point Value nodes contained in the sub policy. Specifies the values to be represented by the Point Value nodes in the sub policy. A Point Value node in the sub policy can represent a single value. If the Sub Policy node is configured to iterate the execution of the associated sub policy, you can specify a column of an input collection as the input for a Point Value node in the sub policy.
+Working with Sub Policies
+You must configure the sub policy such that all the required inputs are defined as single value Point Value nodes (that is, collection inputs are not supported). Results from the sub policy may be passed back to the calling policy by using Return Value nodes. If you configure the sub policy to be executed for each row of an input collection, each output of the sub policy is a collection of values.
+Important:
+Make sure that the sub policies called by a policy are active. If a sub policy is inactive, a message appears in the notification bar and the calling policy cannot be activated.Changes to Point Value or Return Value nodes, or the name of a sub policy will not be automatically reflected in calling policies that use the sub policy. It is possible to specify additional security for a sub policy to minimize the inadvertent impact to other policies.While it is possible for a sub policy to act as a calling policy for another sub policy, it is essential that a circular execution path is not created. In other words, if policy A calls policy B, which calls policy C, then policy C must not call policy A or policy B. If such a circular execution path is detected while you are editing the policy, a message appears in the notification bar. However, a circular execution path where the sub policy acts on the same entity that triggers the calling policy is not detected and no message appears in the notification bar. Make sure that such a circular execution path is not created in a policy.If an error occurs during the execution of a sub policy, execution of the calling policy fails, irrespective of the execution status of other sub policies called by the policy.If a Return Value node in a sub policy represents a collection, other nodes in the calling policy model that use the output of the Sub Policy node cannot process the values in the columns of the collection.You cannot use a Create Event node paired with a Close Event node in a sub policy to create and close Policy Events with duration, unless you are calling a specific instance of the sub policy because the Close Event node depends on the open Policy Event that is linked to the policy instance.
+
+Sub Policy Node Execution Details
+After you validate or execute a policy that contains a Sub Policy node, you can select the Sub Policy node to view the execution details of the node in the Node Execution Details window. Along with viewing the execution details of the node, you can select the View Execution Details link in the Node Execution Details window to view the policy model and execution details of the sub policy that is mapped to the node.
+The following image is an example of the Node Execution Details window for a Sub Policy node:
+
+The following image is an example of the Sub policy execution details for policy window that appears when you select the View Execution Details link in the Node Execution Details window for a Sub Policy node:
+
+Sub Policy Node Configured for Single ExecutionThe following is an example of how a Sub Policy node can be used to implement a standard calculation method which could be applied in any number of other policies. Consider the following nodes and connections:In this example, the latest reading values from two measurement locations and a constant value are passed into a sub policy, which calculates a value to be used in the Email node. The Properties window for the Sub Policy node is shown in the following image:The sub policy used in the above example includes Is Null nodes which provide default values to be used if the calling policy does not supply an input value, as shown in the following image:Sub Policy Node Configured for Iterated Execution
+The following is an example of how a Sub Policy node can be used to add a collection of calculated values to a health indicator.
+
+In this example, the Collection Filter nodes are used to filter the readings that are taken for the last two days from two Measurement Location nodes. An Entity node is used to define the health indicator record to which the readings must be added. The collections of readings and time stamps are passed to the sub policy and a single health indicator entity key value is used for each iteration of the sub policy. Each execution of the sub policy calculates a new value based on the readings from the two measurement locations and updates it to the health indicator. The following image shows the Properties window for the Sub Policy node:
+
+The following image shows the sub policy used in the above example:
+
+The sub policy contains four Point Value input nodes. The Reading Value 1, Reading Value 2, and Health Indicator Key Point Value nodes are configured to represent Decimal data type values, and the Reading Date/Time node is configured to represent a Time & Date data type value. Even though the calling policy is configured to pass a collection of values, each iteration of the sub policy will use a single value from each input collection.
+The values represented by the Reading Value 1, Reading Value 2 nodes are passed to a Math node which calculates a new value to be written to the health indicator by the Add Value to Health Indicator node. The Return Value node is configured to return the single value output from the Math node. In the calling policy, the corresponding output from the Sub Policy node is a collection made up of the results from each iteration of the sub policy.
+
+
+
+
+
+On this pageAbout Action Nodes in Policies Add Value to Health Indicator Nodes in Policy Designer Apply Strategy Template Nodes in Policy Designer Close Event Nodes in Policy Designer Create Alert Nodes in Policy Designer Create Entity Nodes in Policy Designer Create Event Nodes in Policy Designer Create Production Event Nodes in Policy Designer  Create Recommendation Nodes in Policy Designer Create Relationship Nodes in Policy Designer Deactivate This Instance Nodes in Policy Designer Delete Entity Nodes in Policy Designer  Delete Relationship Nodes in Policy Designer Edit Entity Nodes in Policy Designer Email Contact Nodes in Policy Designer Return Value Nodes in Policy Designer Sub Policy Nodes in Policy Designer 
+
+
+
+
+
+
+
+
+

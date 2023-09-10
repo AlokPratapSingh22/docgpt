@@ -1,0 +1,2137 @@
+
+
+
+RBI 581 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Risk Based Inspection (RBI) 581Overview
+Workflows
+Corrosion Loops
+RBI Components
+RBI Analyses
+RBI Bulk Evergreening 581
+RBI Analysis Export
+RBI 581 ISO Risk Plot
+Degradation Mechanisms
+RBI Recommendations
+Inspection Plans
+ASM Integration
+Admin
+Deployment
+Data LoadersRBI 581
+Corrosion Loop
+RBI Components to TML Groups Relationship Data Loader
+
+
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Risk Based Inspection (RBI) 581
+Data Loaders
+RBI 581
+
+
+
+
+
+
+
+RBI 581About RBI Data Loaders
+GE Digital APM, through the Risk Based Inspection module, provides the functionality to carry out an RBI Analysis on various types of RBI components to calculate corrosion rate, and the probability and consequence of failure, and then develop intelligent strategies. Using the RBI Data Loaders, you can generate all components for a Process Unit along with the associated analyses.About the Risk Based Inspection (RBI) 581 Data LoaderUsing the Risk Based Inspection (RBI) 581 Data Loader, you can implement Risk Based Inspection when you have RBI data in a legacy system, which is not supported by GE Digital APM. To import data using the Risk Based Inspection (RBI) 581 Data Loader, GE Digital APM provides an Excel template, RBI_581_Data_Loader.xlsx, which supports baseline Risk Based Inspection GE Digital APM. You must export your legacy system so that the data can be used to populate the template. The data from the template will then be imported into GE Digital APM using the Risk Based Inspection (RBI) 581 Data Loader. Note:  The Excel template is referred to throughout this documentation as the data loader workbook. The data loader workbook can be used in the following scenarios: Create or update componentsCreate or update analysesLoading components and risk analysis data into GE Digital APM so that you can retain visibility into the analysis details and calculations, and generate recommendations.Calculate risk, probability and consequence of failure, and then utilize the Inspection Planning feature to mitigate the risk by the plan date.After importing the data, the Risk Based Inspection (RBI) 581 Data Loader creates the following records in GE Digital APM:Criticality Calculator RBI ComponentRBI 581 Risk Analysis RBI Consequence EvaluationRBI 581 Thinning and Lining EvaluationRBI 581 External Damage EvaluationRBI 581 External Cracking Damage EvaluationRBI 581 Cracking Damage EvaluationRBI 581 HTHA Damage EvaluationRBI 581 Brittle Fracture Damage EvaluationYou cannot, however, create RBI 581 Mechanical Fatigue Damage Evaluation records using the Risk Based Inspection (RBI) 581 Data Loader.The data on the (Picklist) worksheet is not loaded when you load data using the Risk Based Inspection (RBI) 581 Data Loader.Note:  This data loader workbook is not backward compatible to earlier versions of GE Digital APM.About the Risk Based Inspection (RBI) 581 Data Loader RequirementsBefore you use the Risk Based Inspection (RBI) 581 Data Loader, you must complete the following steps:Ensure that the RBI 581 module is deployed.
+Ensure that the following data is present:Site ReferenceEquipment TaxonomyEquipment and Functional Location FamiliesRBI Data MappingUnits of Measure Conversion Sets
+Stress Tables (GE Digital APM provides Stress Tables for Pressure Vessels and Tanks. If you want to use values from these Stress Tables with the data load, you must ensure that the records are imported into your database prior to performing the data load. GE Digital APM does not provide Piping Stress Tables).
+Representative Fluids
+If you have added custom fields to Risk Mapping families (e.g., RBI Risk Matrix Mapping, Risk Analysis Mapping), you must ensure that mappings exist for those fields, or data may not be populated as expected after the data load. This is because the Risk Based Inspection (RBI) 581 Data Loader relies on Risk Mapping families to ensure that fields on RBI 581 Risk Analysis and related records are correctly populated with data, and that resulting risk values can be mapped to the Default Risk Matrix.The Security User performing the data load operation must be associated with either the MI Data Loader User or MI Data Loader Admin Security Role, and must also be associated with the MI RBI Analyst Security Group or a Security Role that is associated with this Security Group.The data loader workbook contains sample data in each column. It is only for your reference. You must remove this data before using the data loader workbook.About the Risk Based Inspection (RBI) 581 Data Loader Data Model
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+About the Risk Based Inspection (RBI) 581 Data Loader General Loading Strategy The imported data must load in a specific sequence in order to successfully populate fields, to create records, and to link them to the predecessor and/or successor records. Best Practices
+When importing data using the Risk Based Inspection (RBI) 581 Data Loader, you must use the following best practices:
+ ID fields must not include special characters or spaces.Columns (including columns representing custom fields) in the worksheets should be formatted as Text.Import a maximum of 500 assets in each data load. The maximum number of records that you can load per asset using the data loader is specified in the Best Practices for Loading a Single Asset topic.Do not try to create and update a component in the same data loader workbook.Ensure that you enter values in cells that correspond to fields required to calculate an analysis. Otherwise, warnings will be issued in the log for the analysis and related records with invalid data.When a field whose value is required based on the value in another field is blank, a warning is logged in the log file of the import job.You must consider the rules described in the Workbook Layout and Use section of this document while using the Risk Based Inspection (RBI) 581 Data Loader.If you have entered data related to an analysis or a DME, then you must always enter data of the associated component in the RBI_Component worksheet, even if the corresponding Criticality Calculator RBI Component record exists in the GE Digital APM database.You must enter a valid value in the following cells in the RBI_Component worksheet; Otherwise, the row that corresponds to that component is skipped:Component IDComponent Type Process FluidNote: If the value is left blank, a valid value must be provided for each associated RBI 581 Risk Analyses.GFF Component Type Note: If the value is left blank, a valid value must be provided for each associated RBI 581 Risk Analyses.
+When you use the data loader to create an analysis and a cell that requires a Boolean value is blank, the corresponding field in GE Digital APM is updated with the value False. When you use the data loader to update an analysis and a cell that requires a Boolean value is blank, the corresponding field in GE Digital APM is not updated. Therefore, to avoid ambiguity, we recommend that you enter the valueTrue or False in the cell and not leave it blank. 
+If you want to override the default values that you have specified in the 
+RBI 581 Admin Options
+ workspace, you can include those values in the Risk Based Inspection (RBI) 581 Data Loader. For example, if the value for the Atmospheric Condition field for an RBI 581 External Damage Evaluation record is set to Temperate in the RBI 581 Admin Options workspace. You can override this value by entering a different value in the Atmospheric Condition cell in the DME_ExternalDamage worksheet. If you want to override values that are populated from the associated component, you can include those values in the Risk Based Inspection (RBI) 581 Data Loader. For example, the value for the Operating Temperature field in an RBI 581 Risk Analysis is populated from the corresponding field in the associated RBI Component. If you want to override this value for the analysis, you must include a column for Operating Temperature in the RBI_581_Analysis worksheet in the data loader workbook, and enter the value in that cell.
+In addition to the fields included in the Risk Based Inspection (RBI) 581 Data Loader, if you want to add values for more fields for a record, you can add columns for those fields in the appropriate worksheet. 
+Note:  The fields that you want to add to the data loader workbook must already exist in the corresponding family. If not, you must add the fields to the family via Configuration Manager. 
+You should not add columns that correspond to fields in the Outputs and Intermediate Outputs sections of a datasheet; Otherwise, the calculations might not be correct. You should not add a column that corresponds to the Use Combined Confidence and Use Related Inspection fields to any of the following worksheets:
+DME_Thinning
+DME_ExternalCracking
+DME_Cracking
+The Use Combined Confidence field is part of the integration of the Risk Based Inspection and Inspection Management modules. A value should only be set in GE Digital APM.
+
+Load Sequence
+The data is loaded in the following sequence in order to create all necessary relationships between records:
+
+The Assets worksheet is processed. The Data Loader searches for the asset that corresponds to the Asset ID, Asset CMMS System, Equipment Technical Number (only for an Equipment asset) and Asset Family information that you provide in the Assets worksheet. 
+If an asset specified on the worksheet does not exist, it will be skipped, as well as all entries in the subsequent worksheets corresponding to that asset.
+
+The RBI_Component worksheet is processed. The Data Loader searches for the RBI Component based on the asset data and the values in the Component and Component Type cells.
+If a component exists in the GE Digital APM database, it will be updated. If not, a new component will be created, and linked to the asset.
+
+The RBI 581 Analysis worksheet is processed. For each row based on the cells specified in steps 1 and 2, a new analysis is created and linked to that component. You cannot update an analysis using the data loader workbook. The value in the Analysis Unique ID cell is not stored but will be used to identify all the Degradation Mechanism Evaluations and Consequence Evaluations specified on the subsequent worksheets that should be linked to the analysis. 
+If there is invalid data for calculating an analysis, the analysis will still be loaded, but warnings will be issued in the log for all fields with incorrect values.
+The RBI 581 Consequence worksheet is processed. For each row based on the cells specified in steps 1 to 3, a Consequence Evaluation is created, and linked to the specified analysis.
+The worksheets representing Degradation Mechanism Evaluations are processed. For each row based on the cells specified in steps 1 to 3, a Degradation Mechanism Evaluation is created, and linked to the specified analysis. Additionally, for each Damage Mechanism, a corresponding Potential Degradation Mechanism is created, and linked to the component, unless a Potential Degradation Mechanism of the same type is already linked to the same component.
+When the Degradation Mechanism Evaluations are processed, if you have not included a Degradation Mechanism in the worksheet that corresponds to an existing Potential Degradation Mechanism on the component, that Potential Degradation Mechanism will be unlinked.
+
+Data that you specify in the cells on each worksheet will be included in the records. Additionally, fields in the records will be populated with data based on your RBI Data Mapping. For example, an RBI 581 Risk Analysis will be populated with data from the RBI Component to which it is linked the same way it happens if you create the same records in GE Digital APM.
+Best Practices for Loading a Single AssetFor optimal performance, we recommend that you load a maximum of 14 Components with three DMEs each or 9 Components with seven DMEs. To avoid performance degradation of the data loader, you must maintain the total number of records within this limit. If you want to load more number of DMEs, you must reduce the maximum number of components.The following tables provide illustrations of the maximum number of records that you can load per Component or Analysis, as applicable. It also provides the maximum total number of records that you can load per Asset.Important: The numbers shown in the table are for reference purpose only, and not the maximum number of records that the data loader is designed to load. These numbers are derived based on the test results obtained from the labortory machines. However, the performance of the data loader may vary based on the database server configuration, application server configuration, load on the servers, network speed, and other performance factors. If you find a degration in the data loader performance, we recommend that you reduce the number of records in a single batch and upload the records in multiple batches.Record NameAn example of the maximum number of records you can load per Asset/Component/AnalysisAn example of the total number of records you can load per AssetRBI Component9 per Asset9RBI 581 Risk Analysis1 per Component9RBI 581 Consequence Evaluation1 per Analysis9Internal DME1 per Analysis9External DME1 per Analysis9Cracking DME1 per Analysis9Lining DME1 per Analysis9External Cracking DME1 per Analysis9HTHA DME1 per Analysis9Brittle Fracture DME1 per Analysis9Total number of records90About the Risk Based Inspection (RBI) 581 Data Loader Workbook Layout and Use
+To import data using the Risk Based Inspection (RBI) 581 Data Loader, GE Digital APM provides an Excel workbook, Risk Based Inspection (RBI) 581.xlsx, which supports baseline Risk Based Inspection in GE Digital APM. This workbook must be used to perform the data load. You can modify the Excel workbook to include custom fields used by your organization.
+Note: The Excel workbook is referred to throughout this documentation as the data loader workbook.
+WorksheetDescriptionAssetsThis worksheet is used to specify existing Asset records to which components will be linked.RBI_ComponentsThis worksheet is used to specify the following types of RBI Component records that will be updated or created and linked to assets. Cylindrical ShellExchanger BundleExchanger TubePipingPump Compressor CasingTank BottomRBI_581_AnalysisThis worksheet is used to define RBI 581 Analysis records that will be linked to components. You cannot update an RBI 581 Risk Analysis using the data loader workbook.RBI_581_ConsequenceThis worksheet is used to define RBI 581 Consequence Evaluation records that will be linked to analyses. Each analysis can be linked to only one RBI 581 Consequence Evaluation.DME_LiningThis worksheet is used to specify the 581-Internal Component Lining Damage DMs (which are or will be represented by the RBI 581 Thinning and Lining Evaluation records) that you want to create or update. These records will be linked to an RBI 581 Risk Analysis. You can specify these DMs only if the value in the Lining Present column is True in the RBI_Component worksheet for the associated component.DME_AST
+This worksheet is used to specify the 581-Atmospheric Tank Bottom Corrosion DMs (which are or will be represented by the RBI 581 Thinning and Lining Evaluation records) that you want to create or update. These records will be linked to an RBI 581 Risk Analysis.
+You can specify these DMs only if:
+ The component tamily is Tank Bottom (i.e., the value in the Component Family column in the RBI_Component worksheet for the associated component is MI_CCRBICTB).  The value in the Is Intrusive column in the RBI_Component worksheet for the associated component is True. 
+DME_ThinningThis worksheet is used to specify the following DMs that you want to create or update:581-High Temperature Oxidation581-Cooling Water Corrosion581-High Temperature H2/H2S Corrosion581-Amine Corrosion581-Hydrofluoric Acid Corrosion581-Sulfuric Acid Corrosion581-Hydrochloric Acid Corrosion581-Acid Sour Water Corrosion581-High Temperature Sulfidic and Naphthenic Acid581-Alkaline Sour Water Corrosion581-Soil Side Corrosion581-Thinning Damage
+These DMs belong to the RBI 581 Thinning and Lining Evaluation methodology. These records will be linked to an RBI 581 Risk Analysis.
+DME_ExternalDamage
+This worksheet is used to define the following DMs that you want to create or update:
+ 581-Ferritic Component Atmospheric Corrosion  581-Ferritic Component Corrosion Under Insulation 
+These DMs belong to the RBI 581 External Damage Evaluation methodology. These records will be linked to an RBI 581 Risk Analysis. You can specify these DMs only if the component type is not Tank Bottom (i.e., the value in the Component Family column in the RBI_Component worksheet is not MI_CCRBICTB).
+DME_ExternalCracking
+This worksheet is used to define the following DMs that you want to create or update:
+ 581-Austenitic Component Cracking Under Insulation  581-Austenitic Component Atmospheric Cracking 
+These DMs belong to the RBI 581 External Cracking Damage Evaluation methodology. These records will be linked to an RBI 581 Risk Analysis. You can specify these DMs only if the component type is not Tank Bottom (i.e., the value in the Component Family column in the RBI_Component worksheet is not MI_CCRBICTB).
+DME_Cracking
+This worksheet is used to specify the following DMs that you want to create or update:
+ 581-Amine Cracking  581-Alkaline Carbonate Stress Corrosion Cracking  581-HIC/SOHIC - HF  581-HIC/SOHIC - H2S  581-Caustic Cracking  581-Hydrogen Stress Cracking  581-Other Cracking  581-Sulfide Stress Cracking  581-Chloride Stress Corrosion Cracking  581-Polythionic Acid Cracking 
+These DMs belong to the RBI 581 Cracking Damage Evaluation methodology. These records will be linked to an RBI 581 Risk Analysis.
+DME_HTHAThis worksheet is used to specify the 581-High Temperature Hydrogen Attack DMs (which are or will be represented by the RBI 581 HTHA Damage Evaluation records) that you want to create or update. These records will be linked to an RBI 581 Risk Analysis. You can specify these DMs only if the component type is not Tank Bottom (i.e., the value in the Component Family column in the RBI_Component worksheet is not MI_CCRBICTB).DME_BrittleFracture
+This worksheet is used to specify the following DMs (which are or will be represented by the RBI 581 Brittle Fracture Damage Evaluation records) that you want to create or update.
+ 581-Sigma Phase Embrittlement  581-885F Embrittlement  581-Brittle Fracture  581-Low Alloy Steel Embrittlement 
+These records will be linked to an RBI 581 Risk Analysis. You can specify these DMs only if the component type is not Tank Bottom (i.e., the value in the Component Family column in the RBI_Component worksheet is not MI_CCRBICTB).
+(PickList)
+This worksheet contains a list of valid values that you can enter in each column (as applicable) in the aforementioned worksheets. When you load data using the data loader, the data on this worksheet is not loaded.
+The values in the some of the columns are filtered based on the values in other fields. For example, the values in the following columns are filtered based on the values in the Stress Lookup Table column:
+ BM Code  BM Year  BM Spec  BM Grade 
+Also, if you select a value in the BM Code column, the values in the BM Year, BM Spec, and BM Grade columns are filtered accordingly.
+
+Important: The Risk Based Inspection (RBI) 581 Data Loader overrides the default values specified in the RBI 581 Admin Options workspace.
+Color Coding
+Certain columns on the worksheets have different functions and requirements. To illustrate this, certain columns are color-coded. The following table lists the colors and what they represent.
+
+Color
+
+Description
+
+Comments
+
+Grey 
+
+Lookup Fields
+
+Indicates columns that contain values that are used by the Risk Based Inspection (RBI) 581 Data Loader to look up and create records. If these columns are removed from the worksheets, the data load will fail. While the worksheets require that these columns be present, values are not necessarily required in these columns.
+
+Red 
+
+ Fields Required for Calculation 
+
+Indicates columns that contain values that are required to perform calculations in Risk Based Inspection. Some cells only require values in certain cases. Such cases are found in parentheses in the first row of each worksheet.
+
+Blue 
+
+ Recommended Fields 
+
+Indicates columns that, according to GE Digital APM Best Practice for Risk Based Inspection, should contain values.
+
+Green
+
+Custom Fields
+
+Indicates columns where you can specify custom fields.
+
+Limitations
+The Risk Based Inspection (RBI) 581 Data Loader has the following limitations:
+You must use the data loader workbook. If you modify the format of the values in columns in any of the worksheets, you will not be able to import data.Components of the Heat Exchanger - Bundle type are not supported as part of the baseline GE Digital APM, but you can enter data related to the component.The values that you enter in the data loader workbook are case-sensitive.You cannot import data related to a custom DME using the Risk Based Inspection (RBI) 581 Data Loader. You must import only those DMEs that are included in the data loader workbook.
+If you reimport data, the records that have been created by the Data Loader will be updated. Therefore, while reimporting data, if you remove the data for a field in the data loader workbook, the value for the corresponding field in GE Digital APM will be blank.
+ You cannot create Inventory Group Configuration records, or link a Component to an inventory group using the data loader workbook. 
+When you use the data loader to update an RBI 581 Analysis and the associated Consequence Evaluation, Damage Mechanisms, and Damage Mechanism Evaluations:
+If a cell contains data, the value in the corresponding field will be updated in the database. If a cell is blank, the value in the corresponding field will not be updated with a blank value in the database. The value that previously existed in the field is retained.
+You cannot delete the Consequence Evaluation and the Degradation Mechanism Evaluations associated with an RBI Analysis using the data loader.You cannot update a What-If analysis using the data loader.
+Assets Worksheet
+In the Assets worksheet, you will specify assets to which you want to link components. The columns that appear on this worksheet also appear on every subsequent worksheet, and are used to identify the records that will be linked, directly or indirectly, to the assets. The combination of values in the three columns on this worksheet must be unique.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Asset ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+This column requires at least one cell to have a value. For a Functional Location asset, the field MI_FNCLOC00_FNC_LOC_C should be used.
+
+Asset CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+If the Asset record has a value in the CMMS System field, enter that value in this column. For a Functional Location asset the field MI_FNCLOC00_SAP_SYSTEM_C should be used.
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+If you are required to enter a value for the CMMS System cell for an Equipment asset, and the Equipment has a value in the Equipment Technical Number field, enter that value in this column.
+If there is no value in the CMMS System field, this column can be blank, even if the Equipment record contains a value for the Equipment Technical Number field.
+Note: This field must be left blank for a Functional Location asset.
+Asset FamilyASSET_FAMILY_IDCharacter (255)This field is required when loading Functional Location assets. If no value is provided, the asset will be considered an Equipment asset.Note: Following are the valid values:MI_EQUIP000MI_FNCLOC00
+
+RBI_Component Worksheet
+In the RBI_Component worksheet, you will specify the components (which are or will be represented by RBI Component records) that you want to create or update.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Asset ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet. Multiple components can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Asset CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple components can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple components can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Component
+
+MI_RBICOMPO_COMPO_C
+Character (250)A value is required and must be unique. This value identifies the component.
+Component Type
+
+MI_RBICOMPO_COMPO_TYPE_C
+Character (60)A value is required. This cell may only contain one of the following values, which exist in the list in the Component Type field for RBI Component records:
+1" Pipe
+
+1.25" Pipe
+
+1.5" Pipe
+
+1/2" Pipe
+
+10" Pipe
+
+102" Pipe
+
+12" Pipe
+
+14" Pipe
+
+16" Pipe
+
+18" Pipe
+
+2" Pipe
+
+2.5" Pipe
+
+20" Pipe
+
+24" Pipe
+
+26" Pipe
+
+28" Pipe
+
+3" Pipe
+
+3/4" Pipe
+
+30" Pipe
+
+32" Pipe
+
+34" Pipe
+
+36" Pipe
+
+4" Pipe
+
+40" Pipe
+
+42" Pipe
+
+48" Pipe
+
+5" Pipe
+
+54" Pipe
+
+56" Pipe
+
+6" Pipe
+
+60" Pipe
+
+8" Pipe
+
+90" Pipe
+
+Air Cooled Exchanger-Header
+
+Air Cooled Exchanger-Tbs
+
+Balanced Bellows PRD
+
+Column-Bottom
+
+Column-Middle
+
+Column-Tank Bottom
+
+Column-Top
+
+Compressor
+
+Conventional PRD
+
+Filter
+
+Fin/Fan Cooler
+
+Heat Exchanger Tubes
+
+Heat Exchanger-Bundle
+
+Heat Exchanger-Chan
+
+Heat Exchanger-Channel
+
+Heat Exchanger-Shell
+
+Heat Exchanger-Tubes
+
+Pilot-Operated PRD
+
+PRD with Rupture Disk
+
+Pressure Vessel
+
+Pump
+
+Reactor
+
+Rupture Disk Only
+
+Storage Tank
+
+Storage Tank Bottom
+
+
+Component Family
+
+ FAMILY_ID 
+ Character (50) 
+A value is required. 
+This cell may only contain one of the following values:
+
+ValueComponent FamilyMI_CCRBICCSCylindrical ShellMI_CCRBICEHExchanger HeaderMI_CCRBICETExchanger TubeMI_CCRBICPIPipingMI_CCRBIPCCPump Compressor CasingMI_CCRBICTBTank Bottom
+
+
+Component Description
+
+MI_RBICOMPO_COMPO_DESCR_C
+Character (255)None
+Component Start Date
+
+ MI_RBICOMPO_COMP_STRT_DATE_DT
+ Date A value is required. Enter the value in the following format: YYYY-MM-DD hh:mm:ss
+Circuit From
+
+MI_CCRBICPI_CIRCU_FROM_C
+Character (250)This value is applicable only if the component type is piping (i.e., the value in the Component Family cell is MI_CCRBICPI).
+Circuit To
+
+MI_CCRBICPI_CIRCU_TO_C
+Character (250)This value is applicable only if the component type is piping (i.e., the value in the Component Family cell is MI_CCRBICPI).
+Component Comments
+
+MI_RBICOMPO_COMPO_COMME_TX
+TextNone
+Operating Pressure
+
+MI_RBICOMPO_OPERA_PRESS_N
+Numeric
+A value is required.
+The value in this cell is copied to the Operating Pressure field of the associated RBI Analysis.
+The value in this cell is compared with the value in the Design Pressure cell for the analysis to be created.
+The value in this cell must be greater than or equal to zero, and less than or equal to the value in the Design Pressure cell.
+
+Operating Temperature
+
+MI_RBICOMPO_OPERA_TEMPE_N
+Numeric
+A value is required.
+The value in this cell is copied to the Operating Temperature field of the associated RBI Analysis.
+The value in this cell is compared with the value in the Design Temperature cell for the analysis to be created.
+If the value in the Design Temperature cell is greater than or equal to zero, the value in this cell must be less than or equal to the value in the Design Temperature cell.
+If the value in the Design Temperature cell is less than zero, the analysis can be created with any value in this cell.
+
+Foundation Type
+
+MI_CCRBICTB_FOUND_TYPE_C
+Character (50)
+A value is required if the value in the Component Type cell is Storage Tank Bottom.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+Clay
+
+Silt
+
+Sand
+
+Gravel
+
+Concrete
+
+Double Floor
+
+The list in this field is populated by the FOUNDATION TYPES System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+
+Initial Fluid Phase
+
+MI_RBICOMPO_INIT_FLU_PHASE_C
+Character (20)
+A value is required. 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+Liquid
+Gas
+The list in this field is populated by the FLUID TYPES System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+
+Process Fluid
+
+MI_RBICOMPO_PROCE_FLUID_C
+Character (50)
+The field is required. If the value is left blank, a valid value must be provided on the related child analysis records.
+This cell may only contain a value that exists in the list in the Process Fluid field for RBI Component records. If you enter a value that is not valid for RBI 581, the Data Loader will skip that row.
+If the value in the Component Type is Storage Tank Bottom, then this cell may only contain a fluid with a Dynamic Viscosity greater than 0. In the baseline APM, the following fluids have a valid Dynamic Viscosity and are supported by the Storage Tank Bottom:
+C6-C8C9-C12C13-16 (Diesel)C17-25 (Gas Oil)C25+ (Resid)H2O (Water)
+
+Toxic Mixture 
+
+MI_RBICOMPO_TOXIC_MIX_F
+Boolean
+Enter True or False.
+
+Toxic Fluid
+
+MI_RBICOMPO_TOXIC_MODEL_C
+Character (50)
+A value is required if the value in the Toxic Mixture cell is True. 
+This cell may only contain a value that exists in the list in the Toxic Fluid field for RBI Component records.
+
+Percent Toxic
+
+MI_RBICOMPO_PERCE_TOXIC_N
+NumericA value is required if the value in the Toxic Mixture cell is True.
+Inventory
+
+MI_RBICOMPO_INVEN_N
+NumericA value is required if component type is not Tank Bottom (i.e., the value in the Component Family cell is not MI_CCRBICTB).
+Inventory Group
+
+MI_RBICOMPO_INVEN_GROUP_C
+Character (50)
+You cannot use this column to link the Component to an inventory group. You can link a component to an inventory group only by accessing the MI Admin Preferences page in GE Digital APM.
+If the Component is already linked to an inventory group, you can override the value in the Inventory Group field by entering a value in this column. However, the calculated value in the Inventory Group Mass field remains as is.
+
+Design Pressure
+
+MI_RBICOMPO_DESIG_PRESS_N
+Numeric
+A value is required if the component is linked to the following Potential Degradation Mechanisms (PDMs):
+RBI 581 Thinning and Lining EvaluationRBI 581 External Damage Evaluation
+The value in this cell is copied to the Design Pressure field of the associated RBI Analysis. 
+The value in this cell is compared with the value in the Operating Pressure cell for the analysis to be created.
+The value in this cell must be greater than or equal to zero, and greater than or equal to the value in the Operating Pressure cell.
+
+Design Temperature
+
+MI_RBICOMPO_DESIG_TEMPE_N
+Numeric
+A value is required if the component is linked to a PDM that belongs to the following DMEs:
+RBI 581 Thinning and Lining EvaluationRBI 581 External Damage Evaluation
+The value in this cell is copied to the Design Temperature field of the associated RBI Analysis.
+The value in this cell is compared with the value in the Operating Temperature cell for the analysis to be created.
+If the value in this cell is greater than or equal to zero, the value in the Operating Temperature cell must be less than or equal to the value in this field.
+If the value in this cell is less than zero, the analysis is created with any value in the Operating Temperature cell.
+
+Diameter
+
+MI_RBICOMPO_DIAME_INNER_N
+NumericA value is required.
+Length
+
+MI_RBICOMPO_LENGT_N
+Numeric
+A value is required if you want to calculate inventory.
+Fill HeightMI_CCRBICTB_FILL_HEIGH_NNumeric
+A value is required if the value in the Component Type cell is Storage Tank Bottom or Storage Tank.
+
+Nominal Thickness
+
+MI_RBICOMPO_NOMIN_THICK_N
+Numeric
+A value is required if the component is linked to an analysis that is linked to the following damage mechanisms (DMs):
+581-Brittle Fracture581-Low Alloy Steel EmbrittlementAll DMs that belong to RBI 581 Thinning and Lining EvaluationAll DMs that belong to RBI 581 External Damage Evaluation
+
+Stress Lookup Table
+
+MI_RBICOMPO_STRESS_TABLE_C
+Character (50)
+A value is required if the component is linked to an analysis that is linked to the following damage mechanisms (DMs):
+581-Brittle Fracture581-Low Alloy Steel EmbrittlementAll DMs that belong to RBI 581 Thinning and Lining EvaluationAll DMs that belong to RBI 581 External Damage Evaluation
+In the baseline GE Digital APM system, this cell may only contain one of the following values:
+Pressure VesselsTanksPiping
+If the family has been customized, the valid values could be different. This cell may only contain a value that exists in the list in the Stress Lookup Table field for RBI Component records.
+
+BM CODE
+
+MI_RBICOMPO_BM_CODE_C
+Character (30)
+A value is required if the component is linked to an analysis that is linked to the following damage mechanisms (DMs):
+581-Brittle Fracture581-Low Alloy Steel EmbrittlementAll DMs that belong to RBI 581 Thinning and Lining EvaluationAll DMs that belong to RBI 581 External Damage Evaluation
+Refer to the (Picklist) worksheet in the excel workbook for valid values that you can enter in this cell.
+
+BM YEAR
+
+MI_RBICOMPO_BM_YEAR_C
+Character (50)
+A value is required if the component is linked to an analysis that is linked to the following damage mechanisms (DMs):
+581-Brittle Fracture581-Low Alloy Steel EmbrittlementAll DMs that belong to RBI 581 Thinning and Lining EvaluationAll DMs that belong to RBI 581 External Damage Evaluation
+Refer to the (Picklist) worksheet in the excel workbook for valid values that you can enter in this cell.
+
+BM SPEC
+
+MI_RBICOMPO_BM_SPEC_C
+Character (50)
+A value is required if the component is linked to an analysis that is linked to the following damage mechanisms (DMs):
+581-Brittle Fracture581-Low Alloy Steel EmbrittlementAll DMs that belong to RBI 581 Thinning and Lining EvaluationAll DMs that belong to RBI 581 External Damage Evaluation
+Refer to the (Picklist) worksheet in the excel workbook for valid values that you can enter in this cell.
+
+BM GRADE
+
+MI_RBICOMPO_BM_GRADE_C
+Character (50)
+A value is required if the component is linked to an analysis that is linked to the following damage mechanisms (DMs):
+581-Brittle Fracture581-Low Alloy Steel EmbrittlementAll DMs that belong to RBI 581 Thinning and Lining EvaluationAll DMs that belong to RBI 581 External Damage Evaluation
+
+Weld Joint Effy
+
+MI_RBICOMPO_WELD_JOINT_EFFY_N
+Numeric
+A value is required if the component is linked to a PDM that belongs to the following DMEs:
+RBI 581 Thinning and Lining EvaluationRBI 581 External Damage Evaluation
+In the baseline GE Digital APM, this cell may only contain one of the following values:
+0.350.40.450.50.550.60.650.70.750.80.850.90.951
+If the family has been customized, the valid values could be different. This cell may only contain a value that exists in the list in the Weld Joint Efficiency field for RBI Component records.
+
+Insulated?
+
+MI_RBICOMPO_INSUL_F
+Boolean
+Enter True or False. The value in this cell must be True if the an analysis in the component is linked to one of the following DMs:
+581-Ferritic Component Corrosion Under Insulation581-Austenitic Component Cracking Under Insulation
+Insulation TypeMI_RBICOMPO_INSUL_CCharacter (200)
+A value is required if the value in the Insulated? cell is True. 
+This cell may only contain one of the following values, which exist in the list in the Insulation Type field for RBI Component records:
+Asbestos Calcium Silicate (Cl Free) Calcium Silicate (Not Cl Free) Foam/Cellular Glass Mineral Wool/Fiber Glass Pearlite Unknown 
+If the family has been customized, the valid values could be different. This cell may only contain a value that exists in the list in the Insulation Type field for RBI Component records.
+Injection Point DataMI_CCRBICPI_INJ_PT_CIR_CCharacter (50)A value is required if the component type is Piping (i.e., the value in the Component Family cell is CCRBICPI).Piping Circuit LengthMI_CCRBICPI_PIP_CIR_LENG_NNumeric
+A value is required if:
+
+ The component type is Piping (i.e., the value in the Component Family cell is MI_CCRBICPI).
+-and-
+The value in the Use Calculate Inventory cell in the RBI_581_Consequence worksheet is True.
+PWHTMI_RBICOMPO_PWHT_FBooleanEnter True or False.Internal Corrosion Type MI_RBICOMPO_INTER_CORR_TYPE_CCharacter (50)
+A value is required if component is linked to RBI 581 Thinning and Lining Evaluation.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+GeneralLocalizedPitting
+The list in this field is populated by the CORROSION TYPES System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in yourGE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Predictable Int. Corr. LocationMI_CCRBICOM_PRED_INT_COR_LOC_FBooleanEnter True or False.Estimated Internal Corrosion RateMI_RBICOMPO_EXP_INT_CORR_RT_NNumeric
+A value is required if:
+
+The component is linked to the 581 Internal Component Lining Damage DM.
+-and-
+The value in the Selected Base Material Corrosion Rate cell in the linked DM is Estimated Rate.
+Estimated External Corrosion RateMI_RBICOMPO_EXP_EXT_CORR_RT_NNumeric
+A value is required if:
+
+The component is linked to a PDM that belongs to RBI 581 External Cracking Damage Evaluation or RBI 581 External Corrosion Damage Evaluation.
+-and-
+The value in the Selected External Corrosion Rate cell for the associated DMs is Estimated.
+Measured External Corrosion RateMI_RBICOMPO_MEAS_EXT_COR_RT_NNumericNoneSource of Calculated Corrosion RatesMI_CCRBICOM_CALCD_CR_SRC_CCharacter (50)
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+ASSETCOMPONENTMANUAL
+The list in this field is populated by the MI_RBI_CALC_CORRO_SRC System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Percent Liquid VolumeMI_RBICOMPO_PER_LIQ_VOL_NNumeric
+A value is required if you want to calculate inventory.
+Detection SystemMI_CCRBICOM_DETECTION_SYSTEM_CCharacter (4)
+A value is required.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+
+System Code IDDetection SystemALoss Of Pressure Or FlowBPressure EnvelopeCVisual Detection
+
+The list in this field is populated by the 581_Detection System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Isolation SystemMI_CCRBICOM_ISOLA_SYSTE_CHRCharacter (50)
+A value is required. 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+
+System Code IDIsolation SystemAAuto ShutdownBLeakage Shutdown (This value is valid only if the value in the Detection System cell is B or C).CManual Shutdown (This value is valid only if the value in the Detection System cell is C).
+
+The list in this field is populated by the 581_Isolation System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Mitigation SystemMI_CCRBICOM_MITIGATION_SYSTM_CCharacter (60)
+A value is required. 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+
+System Code IDMitigation System1Inventory blowdown2Fire water deluge system3Fire water monitors only4Foam spray system5No mitigation system
+
+The list in this field is populated by the 581_Mitigation_System System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Fluid VelocityMI_CCRBICOM_FLUID_VELOCITY_NNumeric
+A value is required if an analysis in the component is linked to any of the following DMs:
+581-Acid Sour Water Corrosion581-Hydrofluoric Acid Corrosion581-Amine Corrosion581-Cooling Water Corrosion581-High Temperature Sulfidic and Naphthenic Acid581-Sulfuric Acid Corrosion581-Alkaline Sour Water Corrosion
+pH of WaterMI_CCRBICOM_PH_OF_WATER_NNumeric
+A value is required if an analysis in the component is linked to any of the following DMs:
+581-Acid Sour Water Corrosion581-Cooling Water Corrosion581-Hydrochloric Acid Corrosion
+581-Alkaline Carbonate Stress Corrosion Cracking
+
+581-Chloride Stress Corrosion Cracking
+
+581-HIC/SOHIC - H2S
+
+581-Sulfide Stress Cracking
+
+Geometry Type MI_CCRBICOM_GEOMETRY_TYPE_CCharacter (60)
+A value is required if the component is linked to any of the following PDMs:
+RBI 581 Thinning and Lining EvaluationRBI 581 External Corrosion Damage Evaluation
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+
+System Code IDGeometry TypeCYLCylinderSPHSpherical HeadHEMHemispherical HeadPIPEPipingHEADHeadPLTPLT (only if the value in the Component Family cell is MI_CCRBICTB)
+
+The list in this field is populated by the MI_581_Component_Geometry_Types System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+GFF Component TypeMI_CCRBICOM_GFF_COMPO_TYPE_CHRCharacter (50)
+A value is required.
+This cell may only contain one of the following values, which exist in the list in the GFF Component Type field for RBI Component records:
+
+ValueGeneral Fail Frequency (GFF) Component TypeCOLBTMVessel/FinFanCOLMIDVessel/FinFanCOLTOPVessel/FinFanCOMPCCompressorCOMPRCompressorCOURSE-1-10Tank650 (only for an AST Shell component)DRUMVessel/FinFanFILTERVessel/FinFanFINFANVessel/FinFanHEXSSHeat ExchangerHEXTSHeat ExchangerKODRUMVessel/FinFanPIPE-1PipePIPE-10PipePIPE-12PipePIPE-16PipePIPE-2PipePIPE-4PipePIPE-6PipePIPE-8PipePIPEGT16PipePUMP1SPumpPUMP2SPumpPUMPRPumpREACTORVessel/FinFanTANKBOTTOMTank650 (only if the value in the Component Family cell is MI_CCRBICTB)
+
+Cladding PresentMI_CCRBICOM_CLADDING_PRESENT_LCharacter (50)
+A value is required if an associated analysis is linked to any of the following DMs: 
+
+581-HIC/SOHIC – HF
+
+581-Hydrogen Stress Cracking
+
+581-Polythionic Acid Cracking
+All DMs that belong to RBI 581 Thinning and Lining Evaluation
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDCladding PresentYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Furnished Cladding ThicknessMI_CCRBICOM_CHRNumericA value is required if the value in the Cladding Present cell is Y.Minimum Structural Thickness MI_CCRBICOM_MNMM_STRCTRL_THS_NNumeric
+A value is required if the component is linked to any of the following PDMs:
+RBI 581 Thinning and Lining EvaluationRBI 581 External Corrosion Damage Evaluation
+Liner Present MI_CCRBICOM_LINER_PRESE_CHRCharacter (50)
+A value is required if the component is linked to the RBI 581 Thinning and Lining Evaluation PDM.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDLiner PresentYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+For the 581-Internal Component Lining Damage DM, the value in this cell must be Yes.
+Liner TypeMI_CCRBICOM_LINER_TP_CCharacter (50)
+A value is required if the value in the Liner Present cell is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+
+System Code IDLiner Type1Strip Lined Alloy2Organic Coating (typically > 0.762mm / 30 mils)3Thermal Resistant Service - Castable Refractory6Severe/Abrasive Service - Castable Refractory8Glass Linings10Fiberglass
+
+The list in this field is populated by the MI_581_Lining_Types_And_Resistance System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Has Release Prevention Barrier? MI_CCRBICTB_HAS_RELEA_PREVE_FBoolean
+A value is required if the value in the Component Type cell is Storage Tank Bottom. 
+Enter True or False. If you enter True, then after you load data, the value in the Maximum Fill Height in AST field is populated with the value 0.25 feet.
+CM Corrosion Rate MI_CCRBICOM_CM_COR_RT_CNumeric
+A value is required if:
+The value in the Cladding Present cell is Y.The value in the Cladding Material Corrosion Rate is Estimated.
+Corrosion AllowMI_RBICOMPO_CORRO_ALLOW_NNumericNoneIs Intrusive?MI_RBICOMPO_IS_INTRU_CHRCharacter (50)
+A value is required if an analysis in the component is linked to any of the following DMs: 
+581-High Temperature Oxidation581-Cooling Water Corrosion581-High Temperature H2/H2S Corrosion581-Amine Corrosion581-Hydrofluoric Acid Corrosion581-Sulfuric Acid Corrosion581-Hydrochloric Acid Corrosion581-Acid Sour Water Corrosion581-High Temperature Sulfidic and Naphthenic Acid581-Alkaline Sour Water Corrosion581-Soil Side Corrosion581-Thinning DamageAll DMs that belong to RBI 581 Cracking Damage EvaluationAll DMs that belong to RBI 581 External Cracking Damage EvaluationAll DMs that belong to RBI 581 External Damage Evaluation
+Specified TminMI_CCRBICOM_SPECIFIED_TMIN_NNumericA value is required if the value in the Override Minimum Thickness cell is True.Base Material MI_CCRBICOM_BASE_MATER_CCharacter (50)
+A value is required if an analysis in the component is linked to any of the following DMs: 
+
+581-HIC/SOHIC – HF (only if the value in the Cladding Present field is No (N))581-Hydrogen Stress Cracking (only if the value in the Cladding Present field is No (N))581-Polythionic Acid Cracking (only if the value in the Cladding Present field is No (N))581-High Temperature Hydrogen Attack581-Brittle FractureAll DMs that belong to RBI 581 Thinning and Lining Evaluation
+
+This cell may only contain one of the values that exist in the list in the Base Material field for RBI Component records.
+Cladding Material MI_CCRBICOM_CLADDING_MATERIL_CCharacter (50)
+A value is required if:
+ The value in the Cladding Present cell is Y.An analysis in the component is linked to one of the following DMs:
+
+581-High Temperature Oxidation
+
+581-Cooling Water Corrosion
+
+581-High Temperature H2/H2S Corrosion
+
+581-Amine Corrosion
+
+581-Hydrofluoric Acid Corrosion
+
+581-Sulfuric Acid Corrosion
+
+581-Hydrochloric Acid Corrosion
+
+581-Acid Sour Water Corrosion
+
+581-High Temperature Sulfidic and Naphthenic Acid
+
+581-Alkaline Sour Water Corrosion
+
+581-Soil Side Corrosion
+581-Thinning Damage
+
+
+
+This cell may only contain one of the values that exist in the list in the Cladding Material field for RBI Component records.
+Total Acid NumberMI_CCRBICOM_TOTAL_ACID_NUMBR_NNumericA value is required if an analysis in the component is linked to the 581-High Temperature Sulfidic and Naphthenic Acid DM.
+
+RBI_581_Analysis Worksheet
+In the RBI_581_Analysis worksheet, you will specify the analyses (which will be represented by RBI 581 Risk Analysis records) that you want to create. You cannot update an RBI 581 Risk Analysis using the data loader workbook.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Asset ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet. Multiple analyses can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Asset CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple analyses can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple components can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Component
+
+MI_RBICOMPO_COMPO_C
+Character (250)Values in this column must match values entered on the RBI_Component worksheet, if they exist. Multiple analyses can be linked to the same component (i.e., rows may have the same value in this column).
+Component Type
+
+MI_RBICOMPO_COMPO_TYPE_C
+Character (60)
+Values in this column must match values that you entered in the Component Type column in the RBI_Component worksheet for the associated component.
+Analysis Unique IDMI_ANALYSIS_IDCharacter (255)A value is required and must be unique. This value identifies the analysis. However, in the RBI 581 Risk Analysis records that are created by the data loader in GE Digital APM, the value in the Analysis ID field is different from the value that you enter in this cell. Scenario IDMI_CRITANAL_TURNAROUND_ID_CCharacter (50)NoneCoefficient Y MaterialMI_581RANAL_COEFFICNT_Y_MTRL_CCharacter (255)
+A value is required if the component type is Piping (i.e., the value in the Component Family cell is MI_CCRBICPI). 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDCoefficient Y Material1Ferritic Steels2Austenitic Steels3Other Ductile Metals4Cast Iron
+
+The list in this field is populated by the MI_581_Coefficient_Materials System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Stress OverrideMI_581RANAL_STRES_OVER_FBooleanEnter True or False.Allowable StressMI_CRITANAL_MTL_ALLOW_STRESS_NNumericA value is required if the value in the Stress Override cell is True.Flow Stress MI_581RANAL_FLOW_STRESS_NNumericA value is required if the value in the Stress Override cell is True.Override Minimum Required ThicknessMI_581RANAL_OVERR_MINIM_REQUI_THICK_FLGBooleanEnter True or False.Course NumberMI_581RANAL_COURS_NUMBE_NBRNumericA value is required if the analysis is linked to a component of type Storage Tank (i.e., the value in the Component Type cell in the RBI_Component worksheet for the associated component is Storage Tank).
+
+RBI_581_Consequence Worksheet
+In the RBI_581_Consequence worksheet, you will specify the consequences (which are or will be represented by RBI 581 Consequence Evaluation records) that you want to create or update. You can create only one RBI 581 Consequence Evaluation for an RBI 581 Risk Analysis.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Asset ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+Values in this column must match values entered on the Assets worksheet. Multiple Consequence Evaluations can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Asset CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+Values in this column must match values entered on the Assets worksheet, if they exist. Multiple Consequence Evaluations can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+Values in this column must match values entered on the Assets worksheet, if they exist. Multiple Consequence Evaluations can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Component
+
+MI_RBICOMPO_COMPO_C
+Character (250)Values in this column must match values entered on the RBI_Component worksheet, if they exist. Multiple Consequence Evaluations can be linked to the same component (i.e., rows may have the same value in this column).
+Component Type
+
+MI_RBICOMPO_COMPO_TYPE_C
+Character (60)
+Values in this column must match values that you entered in the Component Type column on the RBI_Component worksheet for the associated component.
+Analysis Unique IDMI_ANALYSIS_IDCharacter (255)Values in this column must match values entered on the RBI_581_Analysis worksheet. Each analysis can have only one Consequence Evaluation.ConsequenceMI_RCONEVAL_CONS_CCharacter (50)A value is required in this cell if you are creating more than one Consequence Evaluation for the same analysis. If left blank, the Consequence field will be populated with the value RBI Consequence.Use Calculated InventoryMI_RBI_EVN0_USE_CAL_INV_LBoolean
+Enter True or False. 
+If the value in this cell is True, values in the following cells in the RBI_Component worksheet for the associated component are required:
+Length DiameterPiping Circuit Length
+Inventory Group MassMI_RBI_EVN0_INV_GRP_MSS_NNumeric
+A value is required if the value in the Component Family cell is not Storage Tank Bottom.
+Include Personnel InjuryMI_RBI_EVN0_INCLDPRSNNLNJRYG_LBooleanEnter True or False.Injury Cost MI_RCONEVAL_INJUR_COST_NNumericA value is required if the value in the Include Personnel Injury cell is True.Asset CostMI_RCONEVAL_EQU_COST_NNumericA value is required if the value in the Component Type cell is not Storage Tank Bottom.Production CostMI_RCONEVAL_PROD_COST_NNumericA value is required.Environmental Clean-up CostsMI_RBI_EVN0_ENVIR_CLEAN_COSTS_NBRNumericA value is required if the value in the Component Type cell is not Storage Tank Bottom.Allow Override of Total Financial ConsequenceMI_RBI_EVN0_ALW_OVE_OF_TT_FC_FLAGBooleanEnter True or False.User Total Financial ConsequencesMI_RBI_EVN0_USERTOTAL_FC_NNumericA value is required if the value in the Allow Override of Total Financial Consequence cell is True.Maximum Fill Height in ASTMI_RBI_EVN0_MXM_FLL_HGT_AST_NNumeric
+A value is required if, on the RBI_Component worksheet:
+The value in the Component Type cell is Storage Tank or Storage Tank Bottom.The value in the Has Release Prevention Barrier cell is False.
+If, however, the value in the Has Release Prevention Barrier cell is True, after you load data, the Maximum Fill Height is AST field is populated with the value 0.25 feet irrespective of the value in this cell.
+Fluid Percent Leaving Dike MI_RBI_EVN0_FLD_PRCT_LVG_DKE_NNumericA value is required if the component type is Storage Tank or component type is Storage Tank Bottom and component family is Tank Bottom (i.e., the value in the Component Family column in the RBI_Component worksheet is MI_CCRBICTB).Fluid Percent OnsiteMI_RBI_EVN0_FLUD_PRCNT_ONSTE_NNumericA value is required if the component type is Storage Tank or component type is Storage Tank Bottom and component family is Tank Bottom (i.e., the value in the Component Family column in the RBI_Component worksheet is MI_CCRBICTB).Fluid Percent Offsite MI_RBI_EVN0_FLD_PRCNT_OFFSTE_NNumericA value is required if the component type is Storage Tank or component type is Storage Tank Bottom and component family is Tank Bottom (i.e., the value in the Component Family column in the RBI_Component worksheet is MI_CCRBICTB).Environmental SensitivityMI_RBI_EVN0_ENVRNMNTL_SNSTVY_CCharacter (50)
+A value is required if the component type is Storage Tank or component type is Storage Tank Bottom and component family is Tank Bottom (i.e., the value in the Component Family column in the RBI_Component worksheet is MI_CCRBICTB).
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDEnvironmental SensitivityLLowMMediumHHigh
+
+The list in this field is populated by the MI_581_Environmental_Sensitivity System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Tank Course HeightMI_RBI_EVN0_TANK_COURSE_HGHT_NNumericA value is required if the value in the Component Type cell is Storage Tank.Distance from Tankbottom to GroundwaterMI_RBI_EVN0_DSE_FRM_TNM_GRR_NNumericA value is required if the value in the Component Type cell is Storage Tank Bottom.Soil Type under Tank bottomMI_RBI_EVN0_SL_TYE_UNR_T_BTM_CCharacter (50)
+A value is required if the value in the Component Type cell is Storage Tank Bottom. 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDSoil TypeCLClayCSCoarse SandCAConcrete AsphaltFSFine SandGRGravelSCSandy ClaySLSlitVFVery Fine Sand
+
+The list in this field is populated by the MI_581_Soil_Types System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+
+
+DME_Lining Worksheet
+On the DME_Lining worksheet, you will specify the 581-Atmospheric Tank Bottom Corrosion DMs (which are or will be represented by the RBI 581 Thinning and Lining Evaluation records) that you want to create or update. You can specify these records only if the value in the Liner Present cell in the RBI_Component worksheet for the associated component is Y.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Asset ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Asset CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Component
+
+MI_RBICOMPO_COMPO_C
+Character (250)Values in this column must match values entered in the RBI_Component worksheet, if they exist. Multiple DMs can be linked to the same component (i.e., rows may have the same value in this column).
+Component Type
+
+MI_RBICOMPO_COMPO_TYPE_C
+Character (60)
+Values in this column must match values that you entered in the Component Type column in the RBI_Component worksheet for the associated component.
+Analysis Unique IDMI_ANALYSIS_IDCharacter (255)Values in this column must match values entered in the RBI_581_Analysis worksheet, if they exist. Multiple DMs can be linked to the same analysis (i.e., rows may have the same value in this column).Damage MechanismMI_RBDEMEEV_DAM_MECH_CCharacter (50)Enter 581-Internal Component Lining Damage.Last Known Inspection DateMI_581DMCHE_LST_KNWN_INN_DTE_DDateEnter a value in the following format: YYYY-MM-DD hh:mm:ssOnline Monitoring FlagMI_581DMCHE_ONLNE_MNTRNG_FLG_CCharacter (50)
+A value is required.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDOnline Monitoring FlagYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Key Process Variable? MI_581DMCHE_KEY_PROCSS_VRBLE_CCharacter (3)
+A value is required if the value in the Online Monitoring Flag column is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDKey Process VariableYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Electrical Resistance Probes?MI_581DMCHE_ELCTRCL_RSSE_PRS_CCharacter (3)
+A value is required if the value in the Online Monitoring Flag column is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDElectrical Resistance ProbesYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Corrosion Coupons? MI_581DMCHE_CORROSION_COUPNS_CCharacter (3)
+A value is required if the value in the Online Monitoring Flag column is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDCorrosion CouponsYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Liner Installation DateMI_581THNL_LIN_INST_DT_DDate
+A value is required. Enter the value in the following format: YYYY-MM-DD hh:mm:ss
+Liner ConditionMI_581THNL_LINER_COND_CCharacter (50)
+A value is required.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDLiner ConditionAGoodBAverageCPoor
+
+The list in this field is populated by the MI_581_Lining_Condition System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Immersion Grade Coating QualityMI_581THNL_IMMN_GRE_CTG_QLY_CCharacter (50)
+A value is required if the liner type is organic coating (i.e., the value in the Liner Type column in the RBI_Component worksheet for the associated component is 2).
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDImmersion Grade Coating QualityAHighBMerdiumCLow
+
+The list in this field is populated by the MI_581_Coating_Quality System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+
+
+DME_AST Worksheet
+In the DME_Lining worksheet, you will specify the 581-Atmospheric Tank Bottom Corrosion DM (which are or will be represented by the RBI 581 Thinning and Lining Evaluation records) that you want to create or update.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Asset ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Asset CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple components can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Component
+
+MI_RBICOMPO_COMPO_C
+Character (250)Values in this column must match values entered in the RBI_Component worksheet, if they exist. Multiple DMs can be linked to the same component (i.e., rows may have the same value in this column).
+Component Type
+
+MI_RBICOMPO_COMPO_TYPE_C
+Character (60)
+Values in this column must match values that you entered in the Component Type column in the RBI_Component worksheet for the associated component.
+Analysis Unique IDMI_ANALYSIS_IDCharacter (255)Values in this column must match values entered in the RBI_581_Analysis worksheet, if they exist. Multiple Consequences can be linked to the same analysis (i.e., rows may have the same value in this column).Damage MechanismMI_RBDEMEEV_DAM_MECH_CCharacter (50)Enter 581-Atmospheric Tank Bottom Corrosion.Selected Base Material Corrosion RateMI_581THNL_SELEC_BM_COR_R_CCharacter (50)
+ A value is required. 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+Calculated Rate Estimated RateShort Term Avg Long Term AvgControlling Corrosion Rate
+The list in this field is populated by the 581_CORR_TYPE System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Long Term Avg Corr RateMI_581THNL_LNG_TRM_AVG_COR_R_NNumeric
+A value is required if:
+
+The value in the Selected Base Material Corrosion Rate column is Long Term Avg.
+-and-
+
+The value in the Source of Calculated Corrosion Rates column in the RBI_Component worksheet for the associated component is MANUAL.
+
+Short Term Avg Corr RateMI_581THNL_SHRT_TRM_AVG_COR_NNumeric
+A value is required if:
+
+The value in the Selected Base Material Corrosion Rate column is Short Term Avg.
+-and-
+
+The value in the Source of Calculated Corrosion Rates column in the RBI_Component worksheet for the associated component is MANUAL.
+
+Selected Cladding Material Corrosion RateMI_581THNL_SELEC_CLADD_COR_R_CCharacter (50)
+A value is required if the value in the Cladding Present column in the RBI_Component worksheet for the associated component is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+Calculated Rate Estimated RateShort Term Avg Long Term AvgControlling Corrosion Rate
+The list in this field is populated by the 581_CORR_TYPE System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Thinning TypeMI_RBDEMEEV_THIN_TYPE_CCharacter (50)
+A value is required.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+General LocalizedPitting
+The list in this field is populated by the CORROSION TYPES System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Highest Effective Inspection LevelMI_RBDEMEEV_HIGH_EFF_INSP_CCharacter (25)
+A value is required.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+
+System Code IDHighest Effective Inspection LevelAHighly EffectiveBUsually EffectiveCFairly EffectiveDPoorly EffectiveEIneffective (None)
+
+The list in this field is populated by the MI_581_Inspection_Effectiveness System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Number of Highest Effective InspectionsMI_RBDEMEEV_NO_HIGH_EFF_INS_NNumeric
+A value is required.
+The value must be either 0 or 1. If you enter 0 in this column, then the value in the Highest Effective Inspection Level column must be E.
+Welded Construction FlagMI_581DMCHE_WLDD_CNSTRCN_FLG_CCharacter (50)
+A value is required.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDWelded Construction FlagYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+API 653 Maintenance FlagMI_581THNL_API_653_MNTE_FLG_LBooleanA value is required. Enter True or False.Foundation TypeMI_581DMCHE_FOUND_TYPE_CHRCharacter (50)
+A value is required.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+Clay
+
+Silt
+
+Sand
+
+Gravel
+
+Concrete
+
+Double Floor
+
+The list in this field is populated by the FOUNDATION TYPES System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Settlement Adjustment Flag MI_581DMCHE_STTLMNT_ADJT_FLG_CCharacter (3)
+A value is required if the value in the Foundation Type column is not Concrete.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDSettlement Adjustment FlagYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Settlement Adjustment Inspection MI_581DMCHE_STTLMNT_ADJT_INN_CCharacter (50)
+A value is required if the value in the Settlement Adjustment Flag column is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDSettlement Adjustment Inspection1Meets API 6531.5Never Evaluated2Exceeds API 653
+
+The list in this field is populated by the MI_581_Recorded_Settlement_Criteria System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Online Monitoring FlagMI_581DMCHE_ONLNE_MNTRNG_FLG_CCharacter (50)
+A value is required.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDOnline Monitoring FlagYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Key Process Variable? MI_581DMCHE_KEY_PROCSS_VRBLE_CCharacter (3)
+A value is required if the value in the Online Monitoring Flag column is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDKey Process VariableYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Electrical Resistance Probes? MI_581DMCHE_ELCTRCL_RSSE_PRS_CCharacter (3)
+A value is required if the value in the Online Monitoring Flag column is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDElectrical Resistance ProbesYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Corrosion Coupons?MI_581DMCHE_CORROSION_COUPNS_CCharacter (3)
+A value is required if the value in the Online Monitoring Flag column is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDCorrosion CouponsYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Soil Resistivity MI_581THNL_SOIL_RESIS_CNumeric
+A value is required if the value in the Selected Base Material Corrosion Rate cell is Calculated Rate. 
+AST PadMI_581THNL_AST_PAD_CCharacter (50)
+A value is required if the value in the Selected Base Material Corrosion Rate cell is Calculated Rate. 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+Soil With High Salt
+
+Crushed Limestone
+
+Native Soil
+
+Construction Grade Sand
+
+Continuous Asphalt
+
+Continuous Concrete
+
+Oil Sand
+
+High Resistivity Low Chloride Sand
+
+The list in this field is populated by the 581_AST_PAD_MAT_TYPE System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+AST DrainageMI_581THNL_AST_DRAINAGE_CCharacter (50)
+A value is required if the value in the Selected Base Material Corrosion Rate cell is Calculated Rate. 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+One Third Frequently UnderwaterStorm Water Collects At AST BaseStorm Water Does Not Collect At AST Base
+The list in this field is populated by the 581_AST_DRAINAGE_TYPE System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+AST Steam Coil HeaterMI_581THNL_AST_STEAM_CL_HTR_CCharacter (50)
+A value is required if the value in the Selected Base Material Corrosion Rate cell is Calculated Rate. 
+In the baselineGE Digital APM system, this cell may only contain one of the following System Code IDs: 
+YES NO
+The list in this field is populated by the MI_581_AST_STEAMCOIL_WATERDRWASOFF System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+AST Bottom TypeMI_581THNL_AST_BOTTOM_TYPE_CCharacter (50)
+A value is required if the value in the Selected Base Material Corrosion Rate cell is Calculated Rate. 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+RPB Not Per API 650RPB Per API 650Single Bottom
+The list in this field is populated by the 581_AST_BOTTOM_TYPE System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Cathodic ProtectionMI_581THNL_CATHODIC_PROTCTN_CCharacter (50)
+A value is required if the value in the Selected Base Material Corrosion Rate cell is Calculated Rate. 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDCathodic ProtectionNoneNoneYes Not Per API 651Yes and Not Per API 651Yes Per API 651Yes and Per API 651
+
+The list in this field is populated by the 581_AST_Cathodic Protection System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Product Side ConditionMI_581THNL_PRODCT_SDE_CNDTN_CCharacter (50)
+A value is required if the value in the Selected Base Material Corrosion Rate cell is Calculated Rate. 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+WetDry
+The list in this field is populated by the 581_Product_Side_Condition System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Water Product DrawsMI_581THNL_WATER_PRDCT_DRWS_CCharacter (50)
+A value is required if the value in the Selected Base Material Corrosion Rate cell is Calculated Rate. 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+YES NO
+The list in this field is populated by the MI_581_AST_STEAMCOIL_WATERDRWASOFF System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+
+
+DME_Thinning Worksheet
+In the DME_Thinning worksheet, you will specify the following DMs (which are or will be represented by the RBI 581 Thinning and Lining Evaluation records) that you want to create or update.
+
+581-High Temperature Oxidation
+
+581-Cooling Water Corrosion
+
+581-High Temperature H2/H2S Corrosion
+
+581-Amine Corrosion
+
+581-Hydrofluoric Acid Corrosion
+
+581-Sulfuric Acid Corrosion
+
+581-Hydrochloric Acid Corrosion
+
+581-Acid Sour Water Corrosion
+
+581-High Temperature Sulfidic and Naphthenic Acid
+
+581-Alkaline Sour Water Corrosion
+
+581-Soil Side Corrosion
+
+These DMs belong to the RBI 581 Thinning and Lining Evaluation methodology. You can specify these DMs only if the value in the Component Type cell in the RBI_Component worksheet for the associated component is not Storage Tank Bottom.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Asset ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Asset CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Component
+
+MI_RBICOMPO_COMPO_C
+Character (250)Values in this column must match values entered in the RBI_Component worksheet, if they exist. Multiple DMs can be linked to the same component (i.e., rows may have the same value in this column).
+Component Type
+
+MI_RBICOMPO_COMPO_TYPE_C
+Character (60)
+Values in this column must match values that you entered in the Component Type column on the RBI_Component worksheet for the associated component.
+Analysis Unique IDMI_ANALYSIS_IDCharacter (255)Values in this column must match values entered in the RBI_581_Analysis worksheet, if they exist. Multiple DMs can be linked to the same analysis (i.e., rows may have the same value in this column).Damage MechanismMI_RBDEMEEV_DAM_MECH_CCharacter (50)
+In the baseline GE Digital APM system, this cell may only contain one of the following values, which exist in the list in the Damage Mechanism field in the Potential Degradation Mechanisms record:
+
+581-High Temperature Oxidation
+
+581-Cooling Water Corrosion
+
+581-High Temperature H2/H2S Corrosion
+
+581-Amine Corrosion
+
+581-Hydrofluoric Acid Corrosion
+
+581-Sulfuric Acid Corrosion
+
+581-Hydrochloric Acid Corrosion
+
+581-Acid Sour Water Corrosion
+
+581-High Temperature Sulfidic and Naphthenic Acid
+
+581-Alkaline Sour Water Corrosion
+
+581-Soil Side Corrosion
+581-Thinning Damage
+Governing Thinning Damage MechanismMI_581THNL_GOV_THIN_DMG_MECH_CCharacter (50)
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+Ammonium Bisulfide Corrosion (Alkaline Sour Water)Cooling Water CorrosionDealloyingDecarburizationErosion/Erosion-CorrosionFlue Gas Dew Point CorrosionFuel Ash CorrosionGalvanic CorrosionGraphitic CorrosionHigh Temperature H2/H2SHCl Acid CorrosionAmmonium Chloride CorrosionHydrofluoric Acid CorrosionOxidationMetal DustingMicrobiologically Induced Corrosion (MIC)Naphthenic Acid Corrosion (NAC)NitridingPhenol (Carbonic Acid) CorrosionPhosphoric Acid CorrosionSoil CorrosionSour Water Corrosion (Acidic)Amine CorrosionSulfidationSulfuric Acid CorrosionOtherAqueous Organic Acid CorrosionBoiler Water Condensate (BW/C) CorrosionCarburizationCaustic CorrosionCavitationCO2 Corrosion
+The list in this field is populated by the MI_581_GOV_THINNING_DAMAGE System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Last Known Inspection DateMI_581DMCHE_LST_KNWN_INN_DTE_DDateEnter a value in the following format: YYYY-MM-DD hh:mm:ssLast Known ThicknessMI_581DMCHE_LST_KNWN_THCKNSS_NNumericA value is required if you entered a value in the Last Known Inspection Date cell.Selected Base Material Corrosion RateMI_581THNL_SELEC_BM_COR_R_CCharacter (50)
+A value is required. 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+Calculated Rate Estimated RateShort Term Avg Long Term AvgControlling Corrosion Rate
+The list in this field is populated by the 581_CORR_TYPE System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Long Term Avg Corr RateMI_581THNL_LNG_TRM_AVG_COR_R_NNumeric
+A value is required if:
+
+The value in the Selected Base Material Corrosion Rate column is Long Term Avg.
+-and-
+
+The value in the Source of Calculated Corrosion Rates column in the RBI_Component worksheet for the associated component is MANUAL.
+
+Short Term Avg Corr RateMI_581THNL_SHRT_TRM_AVG_COR_NNumeric
+A value is required if:
+
+The value in the Selected Base Material Corrosion Rate column is Short Term Avg.
+-and-
+
+The value in the Source of Calculated Corrosion Rates column in the RBI_Component worksheet for the associated component is MANUAL.
+
+Selected Cladding Material Corrosion RateMI_581THNL_SELEC_CLADD_COR_R_CCharacter (50)
+A value is required if the value in the Cladding Present column in the RBI_Component worksheet for the associated component is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+Calculated Rate Estimated RateShort Term Avg Long Term AvgControlling Corrosion Rate
+The list in this field is populated by the 581_CORR_TYPE System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Number of A Level InspectionsMI_581DMCHE_NMR_OF_A_LVL_INS_NNumericA value is required.Number of B Level InspectionsMI_581DMCHE_NMR_OF_B_LVL_INS_NNumericA value is required.Number of C Level InspectionsMI_581DMCHE_NMR_OF_C_LVL_INS_NNumericA value is required.Number of D Level InspectionsMI_581DMCHE_NMR_OF_D_LVL_INS_NNumericA value is required.Thinning TypeMI_RBDEMEEV_THIN_TYPE_CCharacter (50)
+A value is required.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+General LocalizedPitting
+The list in this field is populated by the CORROSION TYPES System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Highest Effective Inspection LevelMI_RBDEMEEV_HIGH_EFF_INSP_CCharacter (25)This field is included as it is present on the Thinning Damage Mechanism Evaluation datasheet. However, this field is used only for 581-Atmospheric Tank Bottom Corrosion.Number of Highest Effective InspectionsMI_RBDEMEEV_NO_HIGH_EFF_INS_NNumericThis field is included as it is present on the Thinning Damage Mechanism Evaluation datasheet. However, this field is used only for 581-Atmospheric Tank Bottom Corrosion.Injection Point FlagMI_581DMCHE_INJECTIN_PNT_FLG_CCharacter (50)
+A value is required if the component type is piping (i.e., the value in the Component Family column in the RBI_Component worksheet for the associated component is MI_CCRBICPI).
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+
+System Code IDInjection Point FlagYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Injection Point InspectionMI_581DMCHE_INJCTN_PNT_INSPN_CCharacter (50)
+A value is required if the value in the Injection Point Flag column is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+
+System Code IDInjection Point InspectionYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Deadleg Flag MI_581DMCHE_DEADLEG_FLAG_CCharacter (50)
+A value is required if the component type is piping (i.e., the value in the Component Family column in the RBI_Component worksheet for the associated component is MI_CCRBICPI).
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+
+System Code IDDeadleg FlagYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Deadleg InspectionMI_581DMCHE_DEADLEG_INSPECTN_CCharacter (50)
+A value is required if the value in the Deadleg Flag column is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+
+System Code IDDeadleg InspectionYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Welded Construction FlagMI_581DMCHE_WLDD_CNSTRCN_FLG_CCharacter (50)
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+
+System Code IDWelded Construction FlagYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+API 653 Maintenance FlagMI_581THNL_API_653_MNTE_FLG_LBooleanEnter True or False.Foundation TypeMI_581DMCHE_FOUND_TYPE_CHRCharacter (50)
+A value is required.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+Clay
+
+Silt
+
+Sand
+
+Gravel
+
+Concrete
+
+Double Floor
+
+The list in this field is populated by the FOUNDATION TYPES System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Settlement Adjustment Flag MI_581DMCHE_STTLMNT_ADJT_FLG_CCharacter (3)
+A value is required if the value in the Foundation Type column is not Concrete.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+
+System Code IDSettlement Adjustment FlagYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Settlement Adjustment Inspection MI_581DMCHE_STTLMNT_ADJT_INN_CCharacter (50)
+A value is required if the value in the Settlement Adjustment Flag column is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDSettlement Adjustment Inspection1Meets API 6531.5Never Evaluated2Exceeds API 653
+
+The list in this field is populated by the MI_581_Recorded_Settlement_Criteria System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Online Monitoring FlagMI_581DMCHE_ONLNE_MNTRNG_FLG_CCharacter (50)
+A value is required.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDOnline Monitoring FlagYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Key Process Variable? MI_581DMCHE_KEY_PROCSS_VRBLE_CCharacter (3)
+A value is required if the value in the Online Monitoring Flag column is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDKey Process VariableYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Electrical Resistance Probes? MI_581DMCHE_ELCTRCL_RSSE_PRS_CCharacter (3)
+A value is required if the value in the Online Monitoring Flag column is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDElectrical Resistance ProbesYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Corrosion Coupons?MI_581DMCHE_CORROSION_COUPNS_CCharacter (3)
+A value is required if the value in the Online Monitoring Flag column is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDCorrosion CouponsYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Cl ConcentrationMI_581THNL_HCL_CONCENTRATIN_NNumericA value is required if the value in the Damage Mechanism column is 581-Cooling Water Corrosion.Is Air or Oxidant Present?MI_581THNL_IS_AR_OR_OXN_PRT_CCharacter (50)
+A value is required if the Damage Mechanism column contains one of the following values:
+581-Hydrochloric Acid Corrosion581-High Temperature Oxidation581-Sulfuric Acid Corrosion
+Soil ResistivityMI_581THNL_SOIL_RESIS_CNumericA value is required if the value in the Damage Mechanism column is 581-Soil Side Corrosion.H2S ContentMI_581THNL_H2_CONTENT_NNumericA value is required if the value in the Damage Mechanism column is 581-High Temperature H2/H2S Corrosion.Hydrocarbon TypeMI_581THNL_HYDROCARBON_TYPE_CCharacter (50)
+A value is required if the value in the Damage Mechanism column is 581-High Temperature H2/H2S Corrosion.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+NAPTHA
+GAS OIL
+The list in this field is populated by the MI_581_HYDROCARBON_TYPES System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Sulphur ConcentrationMI_581THNL_SULPHUR_CNCNTRTN_NNumericA value is required if the value in the Damage Mechanism column is 581-High Temperature Sulfidic and Naphthenic Acid.Cooling System TypeMI_581THNL_COOLI_SYSTE_TYPE_CCharacter (50)
+A value is required if the value in the Damage Mechanism column is 581-Cooling Water Corrosion. 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+Once-Through
+Recirculating
+The list in this field is populated by the MI_581_Cooling_System System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Water TypeMI_581THNL_WATER_TYPE_CCharacter (50)
+A value is required if the value in the Cooling System Type column is Once-Through.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+Fresh Water
+Sea Water
+The list in this field is populated by the MI_581_Water_Type System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Water Treatment Type MI_581THNL_WATER_TREAT_TYPE_CCharacter (50)
+A value is required if:
+
+ The value in the Cooling System Type column is Recirculating.
+-or-
+The value in the Water Type column is Fresh Water.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+Treated
+Untreated
+The list in this field is populated by the MI_581_Water_Treatment_Type System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Recirculating System TypeMI_581THNL_RECIR_SYSTE_TYPE_CCharacter (50)
+A value is required if the value in the Cooling System Type column is Recirculating.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+Open
+Closed
+The list in this field is populated by the MI_581_Recirculating_System System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Calcium HardnessMI_581THNL_CALCI_HARDN_NNumeric
+A value is required if:
+
+ The value in the Cooling System Type column is Recirculating.
+-or-
+The value in the Water Type column is Fresh Water and the value in the Water Treatment Type column is Untreated.
+Total Dissolved SolidsMI_581THNL_TOTAL_DISSO_SOLID_NNumeric
+A value is required if:
+
+ The value in the Cooling System Type column is Recirculating.
+-or-
+The value in the Water Type column is Fresh Water and the value in the Water Treatment Type column is Untreated.
+MO AlkalinityMI_581THNL_MO_ALKAL_NNumeric
+A value is required if:
+
+ The value in the Cooling System Type column is Recirculating.
+-or-
+The value in the Water Type column is Fresh Water and the value in the Water Treatment Type column is Untreated.
+Oxygen in the Process StreamMI_581THNL_OXYGN_ADJSTT_FCR_NNumericA value is required if the value in the Damage Mechanism column is 581-Acid Sour Water Corrosion.Acid ConcentrationMI_581THNL_ACID_CONCENTRATN_NNumericA value is required if the value in the Damage Mechanism column is 581-Sulfuric Acid Corrosion.Soil TypeMI_581THNL_SOIL_TYPE_CCharacter (50)
+A value is required if the value in the Damage Mechanism column is 581-Soil Side Corrosion.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+SandSiltClay
+The list in this field is populated by the 581_Primary_Soil_Type System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Cathodic Protection EffectivenessMI_581THNL_CATHO_PROTE_EFFEC_CCharacter (50)
+A value is required if the value in the Damage Mechanism column is 581-Soil Side Corrosion.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDCathodic Protection EffectivenessCathodic_Protection_ exists_NONACE RP0169Cathodic Protection exists not per NACE RP0169No_Cathodic_ProtectionNo Cathodic ProtectionCathodic_Protection_TestedCathodic Protection is tested annuallyNo_CP_StructureNo Cathodic Protection on StructureCP_Tested_ NACE RP0169_SupportedTested Cathodic protection NACE RP0169 supported
+
+The list in this field is populated by the MI_581_Cathodic Protection Effectiveness Factors System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Coating Present?MI_581DMCHE_COATING_PRESENT_CCharacter (3)
+A value is required if the value in the Damage Mechanism column is 581-Soil Side Corrosion.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDCoating Present?YYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Coating AgeMI_581DMCHE_COATING_AGE_NNumeric
+A value is required if the value in the Coating Present? column is Y.
+Maximum Coating Temperature Rating Exceeded?MI_581THNL_MAXCOTEMP_EXCEE_CCharacter (50)
+A value is required if the value in the Coating Present? column is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDMaximum Coating Temperature Rating Exceeded?YYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Coating Maintenance Rare or None? MI_581THNLCOATI_MAINT_NONE_CCharacter (50)
+A value is required if the value in the Coating Present? column is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDCoating Maintenance Rare or None? YYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Coating TypeMI_581THNL_COATINGTYPE_CCharacter (50)
+A value is required if the value in the Coating Present? column is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDCoating TypeFusn_Bnd_EpxyFusion Bonded EpoxyLqd_EpxyLiquid EpoxyAsphl_EnmlAsphalt EnamelAsphlt_MasticAsphalt MasticCoat_Tar_EnmlCoat Tar EnamelExtrd_Polythln_with_mastic_rubberExtruded Polyethylene with mastic rubberMill_Appld_PE_Tape_with_masticMill Applied PE Tape with masticField_Appld_PE_Tape_with_masticField Applied PE Tape with masticThree_Layer_PE_or_PPThree-Layer PE or PP
+
+The list in this field is populated by the 581_Coating_Type System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Amine TypeMI_581THNL_AMINE_TYPE_CCharacter (50)
+A value is required if the value in the Damage Mechanism column is 581-Amine Corrosion.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+MEADEAMDEA
+The list in this field is populated by the MI_581_Amine_Types System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Heat Stable Amine Salts(HSAS)MI_581THNL_HSAS_NNumericA value is required if the value in the Damage Mechanism column is 581-Amine Corrosion.Acid Gas LoadingMI_581THNL_ACID_GAS_LOADING_NNumericA value is required if the value in the Damage Mechanism column is 581-Amine Corrosion.Amine ConcentrationMI_581THNL_AMINE_CONCENTRTN_NNumericA value is required if the value in the Damage Mechanism column is 581-Amine Corrosion.HF ConcentrationMI_581THNL_HF_CONCE_NBRNumericA value is required if the value in the Damage Mechanism column is 581-Hydrofluoric Acid Corrosion.H2S Partial PressureMI_581THNL_H2S_PARTI_PRESS_NBRNumericA value is required if the value in the Damage Mechanism column is 581-Alkaline Sour Water Corrosion.NH4HS ConcentrationMI_581THNL_NH4HS_CONCE_NBRNumericA value is required if the value in the Damage Mechanism column is 581-Alkaline Sour Water Corrosion.
+
+DME_ExternalDamage Worksheet
+In the DME_ExternalDamage worksheet, you can specify the following DMs that you want to create or update:
+
+581-Ferritic Component Atmospheric Corrosion
+
+581-Ferritic Component Corrosion Under Insulation
+
+These DMs belong to the RBI 581 External Damage Evaluation methodology. These records will be linked to an RBI 581 Risk Analysis. You can specify these DMs only if the component type is not Tank Bottom (i.e., the value in the Component Family column in the RBI_Component worksheet is not MI_CCRBICTB).
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Asset ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Asset CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Component
+
+MI_RBICOMPO_COMPO_C
+Character (250)Values in this column must match values entered in the RBI_Component worksheet, if they exist. Multiple DMs can be linked to the same component (i.e., rows may have the same value in this column).
+Component Type
+
+MI_RBICOMPO_COMPO_TYPE_C
+Character (60)
+Values in this column must match values that you entered in the Component Type column on the RBI_Component worksheet for the associated component.
+Analysis Unique IDMI_ANALYSIS_IDCharacter (255)Values in this column must match values entered in the RBI_581_Analysis worksheet, if they exist. Multiple DMs can be linked to the same analysis (i.e., rows may have the same value in this column).Damage MechanismMI_RBDEMEEV_DAM_MECH_CCharacter (50)
+In the baseline GE Digital APM system, this cell may only contain one of the following values, which exist in the list in the Damage Mechanism field in the Potential Degradation Mechanisms record:
+
+581-Ferritic Component Atmospheric Corrosion
+
+581-Ferritic Component Corrosion Under Insulation
+
+Selected External Corrosion RateMI_581_XDME_SEL_EXT_CORR_RT_CCharacter (50)
+A value is required.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+EstimatedCalculatedMeasured
+The list in this field is populated by the MI_581_Corrosion_Rate System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Base Material Measured RateMI_RBDEMEEV_BM_MEASU_RT_NNumericA value is required if the value in the Selected External Corrosion Rate cell is Estimated.Thinning TypeMI_RBDEMEEV_THIN_TYPE_CCharacter (50)
+A value is required.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+General LocalizedPitting
+The list in this field is populated by the CORROSION TYPES System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Coating Present?MI_581DMCHE_COATING_PRESENT_CCharacter (3)
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDCoating Present?YYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Coating Installation DateMI_581DMCHE_CTNG_INSTLLN_DTE_DDateA value is required if the value in the Coating Present? cell is Y. Enter the value in the following format: YYYY-MM-DD hh:mm:ssCoating QualityMI_RBDEMEEV_COAT_QUAL_CCharacter (50)
+A value is required if the value in the Coating Present? cell is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+NONE POORMEDIUMHIGH
+The list in this field is populated by the 581_Coating_Quality System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Insulation ConditionMI_RBDEMEEV_INSUL_CON_CCharacter (50)
+A value is required if the value in the Damage Mechanism cell is 581-Ferritic Component Corrosion Under Insulation.
+This cell may only contain one of the following values:
+Above Average Average Below Average 
+Piping System ComplexityMI_RBDEMEEV_PIP_SYS_COMPL_CCharacter (50)
+A value is required if the value in the Damage Mechanism cell is 581-Ferritic Component Corrosion Under Insulation.
+This cell may only contain one of the following values:
+Above Average Average Below Average 
+Corrosion Rate Adjustment for bad Design/FabricationMI_581_XDME_ADJST_FR_DSN_FBN_CBooleanEnter True or False.Soil to Air Interface Present?MI_581_XDME_SL_TO_AR_INE_PRT_LBooleanEnter True or False.Atmospheric ConditionMI_581_XDME_ATMOSPHERC_CNDTN_CCharacter (50)
+A value is required if the value in the Selected External Corrosion Rate cell is Calculated.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+MARINETEMPERATEDRYSEVERE
+The list in this field is populated by the MI_ATMOSPHERIC_CONDITION System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Last Known Inspection DateMI_581DMCHE_LST_KNWN_INN_DTE_DDateEnter a value in the following format: YYYY-MM-DD hh:mm:ssLast Known ThicknessMI_581DMCHE_LST_KNWN_THCKNSS_NNumericA value is required if you entered a value in the Last Known Inspection Date cell.Number of A Level InspectionsMI_581DMCHE_NMR_OF_A_LVL_INS_NNumericA value is required.Number of B Level InspectionsMI_581DMCHE_NMR_OF_B_LVL_INS_NNumericA value is required.Number of C Level InspectionsMI_581DMCHE_NMR_OF_C_LVL_INS_NNumericA value is required.Number of D Level InspectionsMI_581DMCHE_NMR_OF_D_LVL_INS_NNumericA value is required.
+
+DME_ExternalCracking Worksheet
+In the DME_ExternalCracking worksheet, you can specify the following DMs that you want to create or update:
+581-Austenitic Component Cracking Under Insulation581-Austenitic Component Atmospheric Cracking
+These DMs belong to the RBI 581 External Cracking Damage Evaluation methodology. These records will be linked to an RBI 581 Risk Analysis. You can specify these DMs only if the component type is not Tank Bottom (i.e., the value in the Component Family column in the RBI_Component worksheet is not MI_CCRBICTB).
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Asset ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Asset CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Component
+
+MI_RBICOMPO_COMPO_C
+Character (250)Values in this column must match values entered in the RBI_Component worksheet, if they exist. Multiple DMs can be linked to the same component (i.e., rows may have the same value in this column).
+Component Type
+
+MI_RBICOMPO_COMPO_TYPE_C
+Character (60)
+Values in this column must match values that you entered in the Component Type column on the RBI_Component worksheet for the associated component.
+Analysis Unique IDMI_ANALYSIS_IDCharacter (255)Values in this column must match values entered in the RBI_581_Analysis worksheet, if they exist. Multiple DMs can be linked to the same analysis (i.e., rows may have the same value in this column).Damage MechanismMI_RBDEMEEV_DAM_MECH_CCharacter (50)
+In the baseline GE Digital APM system, this cell may only contain one of the following values, which exist in the list in the Damage Mechanism field in the Potential Degradation Mechanism record:
+
+581-Ferritic Component Atmospheric Corrosion
+
+581-Ferritic Component Corrosion Under Insulation
+
+Number of Highest Effective InspectionsMI_RBDEMEEV_NO_HIGH_EFF_INS_NNumericA value is required, and must be between 0 and 6. If you enter 0 in this column, then the value in the Highest Effective Inspection Level column must be E.Highest Effective Inspection LevelMI_RBDEMEEV_HIGH_EFF_INSP_CCharacter (25)
+A value is required.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+
+System Code IDHighest Effective Inspection LevelAHighly EffectiveBUsually EffectiveCFairly EffectiveDPoorly EffectiveEIneffective (None)
+
+The list in this field is populated by the MI_581_Inspection_Effectiveness System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Last Known Inspection DateMI_581DMCHE_LST_KNWN_INN_DTE_DDateEnter a value in the following format: YYYY-MM-DD hh:mm:ssSusceptibility TypeMI_581DMCHE_SUSCEPTBLTY_TYPE_CCharacter (50)
+A value is required. 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+EstimatedDetectedCalculated
+The list in this field is populated by the MI_581_Cracking_Susceptibility_Types System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Atmospheric ConditionMI_581_XCDME_ATMOS_CONDI_CCharacter (50)
+A value is required if the value in the Susceptibility Type cell is Calculated.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+MARINETEMPERATEDRYSEVERE
+The list in this field is populated by the MI_ATMOSPHERIC_CONDITION System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APMM system, via Configuration Manager, refer to the appropriate table.
+SusceptibilityMI_581DMCHE_SUSCEPTIBILITY_CCharacter (50)
+A value is required if the value in the Susceptibility Type cell is Estimated.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+HighMediumLow None
+The list in this field is populated by the MI_581_Cracking_Susceptibility System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Coating Present?MI_581DMCHE_COATING_PRESENT_CCharacter (3)
+A value is required.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDCoating Present?YYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Coating Installation DateMI_581DMCHE_CTNG_INSTLLN_DTE_DDateA value is required if the value in the Coating Present? cell is Y. Enter the value in the following format: YYYY-MM-DD hh:mm:ssCoating QualityMI_RBDEMEEV_COAT_QUAL_CCharacter (50)
+A value is required if the value in the Coating Present? cell is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+NONE POORMEDIUMHIGH
+The list in this field is populated by the 581_Coating_Quality System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Piping System ComplexityMI_RBDEMEEV_PIP_SYS_COMPL_CCharacter (50)
+A value is required if the value in the Damage Mechanism cell is 581-Austenitic Component Cracking Under Insulation.
+This cell may only contain one of the following values:
+Above Average Average Below Average 
+Insulation ConditionMI_RBDEMEEV_INSUL_CON_CCharacter (50)
+A value is required if the value in the Damage Mechanism cell is 581-Austenitic Component Cracking Under Insulation.
+This cell may only contain one of the following values:
+Above Average Average Below Average 
+Chloride Free InsulationMI_581_XCDME_CHL_FREE_INSUL_CCharacter (50)
+A value is required if the value in the Damage Mechanism cell is 581-Austenitic Component Cracking Under Insulation.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDCoating Present?YYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+
+
+DME_Cracking Worksheet
+In the DME_Cracking worksheet, you can specify the following DMs that you want to create or update:
+581-Amine Cracking581-Alkaline Carbonate Stress Corrosion Cracking581-HIC/SOHIC - HF581-HIC/SOHIC - H2S581-Caustic Cracking581-Hydrogen Stress Cracking581-Other Cracking581-Sulfide Stress Cracking581-Chloride Stress Corrosion Cracking581-Polythionic Acid Cracking
+These DMs belong to the RBI 581 Cracking Damage Evaluation methodology. These records will be linked to an RBI 581 Risk Analysis.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Asset ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Asset CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Component
+
+MI_RBICOMPO_COMPO_C
+Character (250)Values in this column must match values entered in the RBI_Component worksheet, if they exist. Multiple DMs can be linked to the same component (i.e., rows may have the same value in this column).
+Component Type
+
+MI_RBICOMPO_COMPO_TYPE_C
+Character (60)
+Values in this column must match values that you entered in the Component Type column on the RBI_Component worksheet for the associated component.
+Analysis Unique IDMI_ANALYSIS_IDCharacter (255)Values in this column must match values entered in the RBI_581_Analysis worksheet, if they exist. Multiple DMs can be linked to the same analysis (i.e., rows may have the same value in this column).Damage MechanismMI_RBDEMEEV_DAM_MECH_CCharacter (50)
+In the baseline GE Digital APM system, this cell may only contain one of the following values, which exist in the list in the Damage Mechanism field in the Potential Degradation Mechanism record:
+581-Amine Cracking581-Alkaline Carbonate Stress Corrosion Cracking581-HIC/SOHIC - HF581-HIC/SOHIC - H2S581-Caustic Cracking581-Hydrogen Stress Cracking581-Other Cracking581-Sulfide Stress Cracking581-Chloride Stress Corrosion Cracking581-Polythionic Acid Cracking
+Number of Highest Effective InspectionsMI_RBDEMEEV_NO_HIGH_EFF_INS_NNumericA value is required, and must be between 0 and 6. If you enter 0 in this column, then the value in the Highest Effective Inspection Level column must be E. Highest Effective Inspection LevelMI_RBDEMEEV_HIGH_EFF_INSP_CCharacter (25)
+A value is required.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+
+System Code IDHighest Effective Inspection LevelAHighly EffectiveBUsually EffectiveCFairly EffectiveDPoorly EffectiveEIneffective (None)
+
+The list in this field is populated by the MI_581_Inspection_Effectiveness System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Last Known Inspection DateMI_581DMCHE_LST_KNWN_INN_DTE_DDateEnter a value in the following format: YYYY-MM-DD hh:mm:ssSusceptibility TypeMI_581DMCHE_SUSCEPTBLTY_TYPE_CCharacter (50)
+A value is required. 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+EstimatedDetectedCalculated
+The list in this field is populated by the MI_581_Cracking_Susceptibility_Types System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+SusceptibilityMI_581DMCHE_SUSCEPTIBILITY_CCharacter (50)
+A value is required only if the value in the Susceptibility Type cell is Estimated. If the value in the Susceptibility Type cell is Calculated or Detected, then GE Digital APM will not consider the value that you enter in this cell. 
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs:
+HighMediumLow None
+The list in this field is populated by the MI_581_Cracking_Susceptibility System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Severity Index Adjustment FactorMI_581DMCHE_SVRY_INX_ADT_FCR_NNumeric
+A value is required if the value in the Damage Mechanism cell is 581-Other Cracking.
+In the baseline GE Digital APM system, this cell may only contain one of the following values:
+10.20.02
+If the family has been customized, the valid values could be different. This cell may only contain a value that exists in the list in the Severity Index Adjustment Factor field for RBI 581 Cracking Damage Evaluation records.
+Online Monitoring FlagMI_581DMCHE_ONLNE_MNTRNG_FLG_CCharacter (50)
+A value is required if the value in the Damage Mechanism cell is 581-HIC/SOHIC - H2S.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDOnline Monitoring FlagYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Key Process Variable? MI_581DMCHE_KEY_PROCSS_VRBLE_CCharacter (3)
+A value is required if the value in the Online Monitoring Flag cell is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDKey Process VariableYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Hydrogen ProbesMI_581DMCHE_HYDROGEN_PROBES_CCharacter (3)
+A value is required if the value in the Online Monitoring Flag cell is Y.
+ 
+Steam Out?MI_581CRKEV_STEAM_OUT_CCharacter (50)
+A value is required if:
+
+ The value in the Damage Mechanism cell is 581-Amine Cracking or 581-Caustic Cracking.
+-and-
+The value in the Susceptibility Type cell is Calculated.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDSteam Out?YYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Sulfur Content of SteelMI_581CRKEV_SLFR_CNTT_OF_STL_CCharacter (50)
+A value is required if:
+
+The value in the Damage Mechanism cell is 581-HIC/SOHIC - H2S.
+-and-
+The value in the Susceptibility Type cell is Calculated.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+High Sulfur Steel (>0.01% S)Low Sulfur Steel (<=0.01% S)
+The list in this field is populated by the MI_581_Sulfur_Content_Of_Steel System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Maximum Brinnell HardnessMI_581CRKEV_MAX_BRIN_HARD_NNumeric
+A value is required if:
+
+The value in the Damage Mechanism cell is 581-Hydrogen Stress Cracking or 581-Sulfide Stress Cracking.
+-and-
+The value in the Susceptibility Type cell is Calculated.
+Heat Traced?MI_581CRKEV_HEAT_TRACED_CCharacter (50)
+A value is required if:
+
+The value in the Damage Mechanism cell is 581-Amine Cracking or 581-Caustic Cracking.
+-and-
+The value in the Susceptibility Type cell is Calculated.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDHeat Traced?YYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+H2S Water ContentMI_581DMCHE_H2S_WTR_CONT_NNumeric
+A value is required if:
+
+The value in the Damage Mechanism cell is 581-HIC/SOHIC - H2S.
+-and-
+The value in the Susceptibility Type cell is Calculated.
+Product FormMI_581CRKEV_PRODUCT_FORM_CCharacter (50)
+A value is required if:
+
+The value in the Damage Mechanism cell is 581-HIC/SOHIC - H2S.
+-and-
+The value in the Susceptibility Type cell is Calculated.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+Seamless/Extruded PipeRolled Plate
+The list in this field is populated by the MI_581_Product_Form System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+HF Present?MI_581CRKEV_HF_PRESENT_CCharacter (50)
+A value is required if:
+
+The value in the Damage Mechanism cell is 581-HIC/SOHIC - HF or 581-Hydrogen Stress Cracking.
+-and-
+The value in the Susceptibility Type cell is Calculated.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDHF Present?YYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Amine Solution TypeMI_581CRKEV_AMINE_SOLTN_TYPE_CCharacter (50)
+A value is required if:
+
+The value in the Damage Mechanism cell is 581-Amine Cracking.
+-and-
+The value in the Susceptibility Type cell is Calculated.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+FreshLeanRich
+The list in this field is populated by the MI_581_Amine_Solution_Types System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Amine TypeMI_581CRKEV_AMINE_TYPE_CCharacter (50)
+A value is required if:
+
+The value in the Damage Mechanism cell is 581-Amine Cracking.
+-and-
+The value in the Susceptibility Type cell is Calculated.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+MEADIPADEAOther Amine
+The list in this field is populated by the MI_581_Amine_Types System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in yourGE Digital APM system, via Configuration Manager, refer to the appropriate table.
+CyanidesMI_RBDEMEEV_CYANI_FBoolean
+Enter True or False. 
+Caustic TypeMI_581CRKEV_CAUST_TYPE_CCharacter (50)
+A value is required if:
+
+ The value in the Damage Mechanism cell is 581-Caustic Cracking.
+-and-
+The value in the Susceptibility Type cell is Calculated.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+Area AArea BArea C
+The list in this field is populated by the MI_581_Caustic_Types System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+NaOH Caustic ConcentrationMI_581CRKEV_NH_CSTC_CNCNTRTN_NNumeric
+A value is required if:
+
+ The value in the Damage Mechanism cell is 581-Caustic Cracking.
+-and-
+The value in the Susceptibility Type cell is Calculated.
+CO3 Concentration in Water MI_581CRKEV_CO3_CONC_IN_WTR_NNumeric
+A value is required if:
+
+ The value in the Damage Mechanism cell is 581-Alkaline Carbonate Stress Corrosion Cracking.
+-and-
+The value in the Susceptibility Type cell is Calculated.
+Chloride Concentration Water Process MI_581CRKEV_CH_CNC_OF_PR_WTR_CNumeric
+A value is required if:
+
+ The value in the Damage Mechanism cell is 581-Chloride Stress Corrosion Cracking.
+-and-
+The value in the Susceptibility Type cell is Calculated.
+Exposure to Oxygen During Operation/DowntimeMI_581CRKEV_EXE_TO_OXN_D_OPE_CCharacter (50)
+A value is required if:
+
+ The value in the Damage Mechanism cell is 581-Polythionic Acid Cracking.
+-and-
+The value in the Susceptibility Type cell is Calculated.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDExposure to Oxygen During Operation/DowntimeYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Exposure to Sulfur During Operation/DowntimeMI_581CRKEV_EXE_TO_SLR_D_OPE_CCharacter (50)
+A value is required if:
+
+ The value in the Damage Mechanism cell is 581-Polythionic Acid Cracking.
+-and-
+The value in the Susceptibility Type cell is Calculated.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDExposure to Sulfur During Operation/DowntimeYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Exposure to Water During Operation/ShutdownMI_581CRKEV_EXE_TO_WTR_D_OPN_CCharacter (50)
+A value is required if:
+
+ The value in the Damage Mechanism cell is 581-Polythionic Acid Cracking.
+-and-
+The value in the Susceptibility Type cell is Calculated.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDExposure to Water During Operation/ShutdownYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Downtime Protection UsedMI_581CRKEV_DWNTME_PRTCN_USD_CCharacter (50)
+A value is required if:
+
+ The value in the Damage Mechanism cell is 581-Polythionic Acid Cracking.
+-and-
+The value in the Susceptibility Type cell is Calculated.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDDowntime Protection UsedYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Thermal History (Heat Treatment History)MI_581CRKEV_THL_HSY_HT_T_HSY_CCharacter (50)
+A value is required if:
+
+ The value in the Damage Mechanism cell is 581-Polythionic Acid Cracking.
+-and-
+The value in the Susceptibility Type cell is Calculated.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+Solution AnnealedStabilized Before WeldingStabilized After Welding
+The list in this field is populated by the MI_581_Heat_Treatment_History System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+
+
+DME_HTHA Worksheet
+In the DME_HTHA worksheet, you can specify the 581-High Temperature Hydrogen Attack DM that you want to create or update. This DM, however, is not applicable for a component of type Storage Tank Bottom.
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Asset ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Asset CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Component
+
+MI_RBICOMPO_COMPO_C
+Character (250)
+Values in this column must match values entered in the RBI_Component worksheet, if they exist. Multiple DMs can be linked to the same component (i.e., rows may have the same value in this column).
+
+Component Type
+
+MI_RBICOMPO_COMPO_TYPE_C
+Character (60)
+Values in this column must match values that you entered in the Component Type column on the RBI_Component worksheet for the associated component.
+Analysis Unique IDMI_ANALYSIS_IDCharacter (255)Values in this column must match values entered in the RBI_581_Analysis worksheet, if they exist. Multiple DMs can be linked to the same analysis (i.e., rows may have the same value in this column).Damage MechanismMI_RBDEMEEV_DAM_MECH_CCharacter (50)
+Enter 581-High Temperature Hydrogen Attack.
+Is HTHA Damage ObservedMI_581_HTHA_IS_DAMAG_OBS_CCharacter (50)
+A value is required.
+In the baselineGE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDIs HTHA ObservedYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Is Component ReplacedMI_581_HTHA_IS_COMPO_REPLA_CCharacter (50)
+A value is required if the value in the Is HTHA Damage Observed cell is Y.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDIs Component ReplacedYYesNNo
+
+The list in this field is populated by the MI_YES_NO System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Exposure Hydrogen Partial PressureMI_581_HTHA_HYDRO_PAR_PRESS_NNumeric
+A value is required if the value in the Is HTHA Damage Observed cell is N.
+Delta TemperatureMI_581_HTHA_DELTA_TEMPE_CCharacter (50)
+A value is required if the value in the Is HTHA Damage Observed cell is N.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+>=0>= -50 and < 0>= -100 and < -50< -100
+The list in this field is populated by the MI_581_HTHA_Delta_Temperature System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+
+
+DME_BrittleFracture Worksheet
+In the DME_BrittleFracture worksheet, you can specify the following DMs that you want to create or update:
+581-Sigma Phase Embrittlement581-885F Embrittlement581-Brittle Fracture581-Low Alloy Steel Embrittlement
+
+
+Field Caption
+
+Field ID
+
+Data Type (Length)
+
+Comments
+
+Asset ID
+
+MI_EQUIP000_EQUIP_ID_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Asset CMMS System
+
+MI_EQUIP000_SAP_SYSTEM_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Equipment Technical Number
+
+MI_EQUIP000_EQUIP_TECH_NBR_C
+
+Character (255)
+
+Values in this column must match values entered in the Assets worksheet, if they exist. Multiple DMs can be linked to the same asset (i.e., rows may have the same value in this column).
+
+Component
+
+MI_RBICOMPO_COMPO_C
+Character (250)Values in this column must match values entered in the RBI_Component worksheet, if they exist. Multiple DMs can be linked to the same component (i.e., rows may have the same value in this column).
+Component Type
+
+MI_RBICOMPO_COMPO_TYPE_C
+Character (60)
+Values in this column must match values that you entered in the Component Type column on the RBI_Component worksheet for the associated component.
+Analysis Unique IDMI_ANALYSIS_IDCharacter (255)Values in this column must match values entered in the RBI_581_Analysis worksheet, if they exist. Multiple DMs can be linked to the same analysis (i.e., rows may have the same value in this column).Damage MechanismMI_RBDEMEEV_DAM_MECH_CCharacter (50)
+In the baseline GE Digital APM system, this cell may only contain one of the following values, which exist in the list in the Damage Mechanism field in the Potential Degradation Mechanism record:
+581-Sigma Phase Embrittlement581-885F Embrittlement581-Brittle Fracture581-Low Alloy Steel Embrittlement
+Material Exemption CurveMI_581BRFRAC_MTRL_EXMPTNCRVE_NCharacter (50)
+A value is required if the value in the Damage Mechanism cell is 581-Brittle Fracture or 581-Low Alloy Steel Embrittlement.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDMaterial Exemption CurveATemperature Exemption A CurveBTemperature Exemption B CurveCTemperature Exemption C CurveDTemperature Exemption D Curve
+
+The list in this field is populated by the MI_581_Material_Temperature_Exemption_Curves System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+Minimum Allowable TemperatureMI_581BRFRAC_MNMM_ALLWBLETME_NNumeric
+A value is required if the Damage Mechanism cell contains one of the following values:
+581-Sigma Phase Embrittlement581-885F Embrittlement581-Low Alloy Steel Embrittlement
+Minimum Design Metal Temperature (MDMT)MI_581BRFRAC_MNM_DSN_MTL_MDT_NNumeric
+A value is required if the Damage Mechanism cell contains one of the following values:
+581-885F Embrittlement581-Low Alloy Steel Embrittlement
+Critical Exposure Temperature(CET)MI_581BRFRAC_CRTCLEXPSRE_TMT_NNumeric
+A value is required if the value in the Damage Mechanism cell is 581-Brittle Fracture.
+Is CET at the MAWP >= -29°CMI_581BRIFRAC_IS_CT_PVPCRT_LBooleanEnter True or False.Is Cyclic service Design RequirementMI_581BRIFRAC_IS_CYC_SREFRQT_LBooleanEnter True or False.Is Asset Or Circuit Subject to EVN CrackingMI_581BRIFRAC_IS_EQT_CRCRG_LBooleanEnter True or False.Is Asset Or Circuit Subject to Shock ChillingMI_581BRIFRAC_IS_EQT_CR_SCHG_LBooleanEnter True or False.Is Fabricated From P-1 and P-3 SteelsMI_581BRIFRAC_IS_FBD_FRMP65F_LBooleanEnter True or False.Is Nominal Operating Conditions ChangedMI_581BRIFRAC_IS_NML_OPGCCHD_LBooleanEnter True or False.Is Nominal Uncorroded Thickness < 50.8 mm (2 inch)MI_581BRIFRAC_NML_UNDTHS_INH_LBooleanEnter True or False.Is Satisfied All Requirements For FabricationMI_581BRIFRAC_IS_STD_ALLRFRN_LBooleanEnter True or False.Fracture Appearance Transition Temperature(FATT)MI_581BRFRAC_FRCEAPE_TRN_TME_NNumericA value is required if the value in the Damage Mechanism cell is 581-Low Alloy Steel Embrittlement.Sigma PercentageMI_581BRIFRAC_SIGMA_AMOUNT_NNumeric
+A value is required if the value in the Damage Mechanism cell is 581-Sigma Phase Embrittlement.
+In the baseline GE Digital APM system, this cell may only contain one of the following System Code IDs: 
+
+System Code IDSigma Percentage11223344556677889910>=10
+
+The list in this field is populated by the MI_581_Sigma_Percentage System Code Table. If the system code table has been customized, the valid values could be different. To verify which options are acceptable in your GE Digital APM system, via Configuration Manager, refer to the appropriate table.
+
+
+About the Risk Based Inspection (RBI) 581 Data Loader Load VerificationAbout This TaskFollowing a data load, you should perform the following steps in GE Digital APM to confirm the integrity and accuracy of the data imported from the data loader workbook.ProcedureAccess the details of the import job. These details will indicate if any errors, minor or otherwise, were encountered during the import job. The log may help account for any records that are unexpectedly absent after the data load.In Risk Based Inspection or Record Manager, access the assets specified in the data loader workbook, and then verify that the expected components are present or updated, and that any associated records that you expected to be created are also present in the database.
+You can enter the following query in the SQL workspace of the Query page to review a list of components created after a specified date:
+SELECT [MI_CCRBICOM].LAST_UPDT_DT "LAST_UPDT_DT", [MI_CCRBICOM].[MI_RBICOMPO_COMPO_C] "Component", [MI_CCRBICOM].[MI_RBICOMPO_COMPO_TYPE_C] "Component Type", [MI_CCRBICOM].[MI_RBICOMPO_EQUIP_C] "Asset", [MI_CCRBICOM].ENTY_ID "ENTY_ID" FROM [MI_CCRBICOM] WHERE [MI_CCRBICOM].LAST_UPDT_DT >= CONVERT(VARCHAR(255), (? :d :caption='Enter a Date'), 110) ORDER BY [MI_CCRBICOM].LAST_UPDT_DT Desc,[MI_CCRBICOM].[MI_RBICOMPO_EQUIP_C] Asc
+You can enter the following query in the Oracle workspace of the Query page to review a list of components created after a specified date:
+SELECT [MI_CCRBICOM].LAST_UPDT_DT "LAST_UPDT_DT", [MI_CCRBICOM].[MI_RBICOMPO_COMPO_C] "Component", [MI_CCRBICOM].[MI_RBICOMPO_COMPO_TYPE_C] "Component Type", [MI_CCRBICOM].[MI_RBICOMPO_EQUIP_C] "Asset", [MI_CCRBICOM].ENTY_ID "ENTY_ID" FROM [MI_CCRBICOM] WHERE [MI_CCRBICOM].LAST_UPDT_DT >= to_date(to_char((? :d :caption='Enter a Date'),'mm/dd/yyyy'),'mm/dd/yyyy') ORDER BY [MI_CCRBICOM].LAST_UPDT_DT Desc,[MI_CCRBICOM].[MI_RBICOMPO_EQUIP_C] Asc
+When prompted, enter the date on which the data load was performed.
+
+
+
+
+On this pageAbout RBI Data LoadersAbout the Risk Based Inspection (RBI) 581 Data LoaderAbout the Risk Based Inspection (RBI) 581 Data Loader RequirementsAbout the Risk Based Inspection (RBI) 581 Data Loader Data ModelAbout the Risk Based Inspection (RBI) 581 Data Loader General Loading Strategy Best Practices for Loading a Single AssetAbout the Risk Based Inspection (RBI) 581 Data Loader Workbook Layout and UseAbout the Risk Based Inspection (RBI) 581 Data Loader Load Verification
+
+
+
+
+
+
+
+
+

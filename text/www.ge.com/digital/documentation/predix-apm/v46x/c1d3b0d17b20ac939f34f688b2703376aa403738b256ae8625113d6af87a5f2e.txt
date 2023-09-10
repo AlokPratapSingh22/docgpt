@@ -1,0 +1,98 @@
+
+
+
+SIL Assessment | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+WorkflowsSIL Assessment
+SIL Verification
+SIL Validation 
+SIS Trip Reporting
+Custom Device
+SRS
+
+
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+Workflows
+SIL Assessment
+
+
+
+
+
+
+
+SIL AssessmentSIS Management: SIL Assessment WorkflowThis workflow describes the process of performing a Safety Integrity Level (SIL) assessment by defining the instrumented functions and the target SIL for each instrumented function. In the following workflow diagram, the blue text in a shape indicates that a corresponding description has been provided in the sections that follow the diagram.
+
+
+Create SIL Analysis Persona: AnalystCreate an SIL Analysis record to store the details of the SIL Analysis that you want to conduct.Define Logic Solver Requirements Persona: AnalystIdentify the logic solver that you want to use in the SIL Analysis. Create a Logic Solver to store the details of the logic solver.Safety Instrumented Function? Persona: AnalystDetermine if the instrumented function is critical to operational, health, and environmental aspects of safety, and assemble all the background information. You must assess the Safety Integrity level (SIL) and the logic solver requirements that you need to maintain for the instrumented function to keep the process safe.Protective Instrumented Function? Persona: AnalystDetermine if the instrumented function is not critical to safety, but is required to minimize the economic impact in the event of a failure. Define Standard Control System Alarm/Interlock Persona: AnalystIf the instrumented function is not critical to safety or is not protective, then you must install a standard control system interlock to warn an operator in case of a failure. However, you need not perform SIL assessment for the control system.Create Instrumented Function Persona: AnalystCreate an Instrumented Function to record the details of the instrumented function such as the initiating event, safe state, and response time.HAZOP Analysis Persona: AnalystGo to the HAZOP Analysis workflow.SIL Thresholds Persona: AnalystIf you will perform SIL assessment using a Risk Matrix, you must refer to the SIL threshold values defined in a SIL Threshold record. The risk rank that you specify in the Risk Matrix will be compared with these SIL threshold values to calculate the target SIL value.Asset Strategy Management Persona: AnalystGo to the Asset Strategy Management workflow.Qualitatively Assess SIL Persona: AnalystIf you will perform SIL assessment using a Hazards Analysis, and then link the Hazards Analysis to the Instrumented Function. If you will perform SIL assessment using a Risk Matrix, specify the risk rank for the various aspects of the Risk Matrix (e.g., Safety, Operational, Environment). You can also perform an external SIL assessment.Select SIL Assessment Method Persona: AnalystAfter performing various types of SIL assessment (i.e., LOPA, Risk Matrix, PHA, External), you must associate one of them with the Instrumented Function. The SIL calculations related to the selected record will be associated with the Instrumented Function. These calculations are used to compare the achieved SIL values (from SIL Verification).Create Risk Assessment Recommendation  Persona: AnalystCreate a Risk Assessment Recommendation to provide suggestions on how to achieve the target SIL.Promote to ASM Persona: AnalystPromote the Recommendation to Asset Strategy Management (ASM), where the associated action can be implemented as an Inspection Task of the task type Proof Test.LOPA Persona: AnalystGo to the LOPA workflow.SIL Verification Persona: AnalystGo to the SIL Verification workflow.
+
+
+
+
+On this pageSIS Management: SIL Assessment WorkflowCreate SIL AnalysisDefine Logic Solver RequirementsSafety Instrumented Function?Protective Instrumented Function?Define Standard Control System Alarm/InterlockCreate Instrumented FunctionHAZOP AnalysisSIL ThresholdsAsset Strategy ManagementQualitatively Assess SILSelect SIL Assessment MethodCreate Risk Assessment Recommendation Promote to ASMLOPASIL Verification
+
+
+
+
+
+
+
+
+

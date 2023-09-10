@@ -1,0 +1,97 @@
+
+
+
+Analysis Cards | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+AnalysisOverview
+Workflow
+Manage CardsCards
+Analysis Cards
+SmartSignal Cards
+
+
+Manage Charts
+Tag Panel
+Manage Templates
+Analysis Troubleshooting
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Analysis
+Manage Cards
+Analysis Cards
+
+
+
+
+
+
+
+Analysis CardsAbout Analysis CardsAnalysis cards are part of the view layout. Each card contains one or more charts. Analysis Cards allow you to logically group sets of charts that can be used to isolate or investigate a specific issue. The cards also allow you to quickly move to the chart set that would allow access to a specific set of charts.Cards include charts on the analysis view, allowing you to perform analysis on the selected tags. All views contain at least one card. New cards contain a default blank chart where you can select a chart type. You can add cards using  via the view and in the Action drop-down list box in an existing card in the view. Cards can be shared to other templates.When a view contains multiple cards, you can use  to select and navigate to the cards in the view. A layout for the charts in each card can be selected.The Action drop-down box on each card allows you to:Modify the card name.Add a card below the current card.Delete the current card.Share the current card to an existing template for the selected asset context.Select a card layout. Note: Deleting a card deletes all associated charts. This action cannot be undone.Add an Analysis CardAdding cards allows you to organize charts for the selected view.About This Task
+You can add a card to an analysis view using  on the view header or the card Action drop-down list box.Note: These options are also available when creating Time Series Analysis and Event Data Analysis views.
+For the purposes of this documentation, it is assumed that you are adding a card to an existing template view.
+ProcedureTo add a card through the view header:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a System Templates or My Templates view.Select , and then select Add Card.Enter a name for the card in the Name Your Card field, and then select Create.If you do not enter a name when you create a card, your cursor is positioned in the Card Name field when the card is created so you can change the name.A default analysis card appears at the bottom of the view.Tip: You can change the card name by using the Action drop-down box on the selected card.To add a card below the currently selected card:In the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a System Templates or My Templates view.On a card on the view, select , select Add Card, and then select Card.In the Name Your Card window, enter a name for the new card, and then select Create.If you do not enter a name when you create a card, your cursor is positioned in the Card Name field when the card is created so you can change the name.A new card with the selected name appears just below the currently selected card.What To Do NextSelect a chart type.Modify an Analysis CardAbout This TaskTo better organize your cards within a view, you can modify the Analysis and SmartSignal cards. Note: Edit Analytic does not work on SmartSignal. ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a System Templates or My Templates view.On a selected card, select , and then select Edit Card Name.In the Edit Card Name window, enter a new name in the field, and then select Save.The card name changes to your new entry.Share an Analysis CardYou can share cards containing charts with templates that are available to you.About This Task
+You can use an existing template's cards as a building block when building new templates. Sharing cards allows you to take the existing cards in a template and add them to the new template so you can create new templates faster.
+When you share a card on a view, you can apply it to one or more public or private Analysis Templates selected by you. Analysis Templates with shared cards can then be viewed, modified, and associated with an Alert Template. Analysis Templates that have modified cards affect existing associations with Alert Templates.
+The name of the shared card can be modified prior to sharing, but cannot be left blank. Shared cards contain the charts, layout, and tags plotted, including tag expressions, but do not include any filter settings for the tags.
+You can select from private templates and public templates associated with the selected asset context, both instance and class, as templates to which to add your selected card. Templates with successfully shared cards are available for additional card sharing.Note: It is possible for templates with shared cards to contain cards with the same name. Consider modifying the card name on the receiving template after it has been shared.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a System Templates or My Templates view.On a card on the view, select , and then select Share Card.In the Share Card window, in the Card Name field, enter a card name.Select a template in the list under Share to Template, and then select Share.The card is shared with the selected template.Note: You can share the card with additional templates by repeating the steps above. Select a Card LayoutYou can select how charts on a card appear by selecting a card layout.About This Task
+Use Chart Options to configure how multiple charts on a card appear. Chart options apply to the selected card in a view. Selecting a chart option for the card automatically arranges the charts to fit the selection. Charts are arranged according to the order they are created on the card.Note: For more information on Chart Options, refer to the Chart Options topic.
+ProcedureIn the module navigation menu, go to
+Analysis.Use the Context Browser to select an asset context.In the View Selector, select a System Templates or My Templates view.Add one or more cards, then add multiple charts to the cards.Select Action, and select Card Layout, and then select a card layout option.The charts for the selected card are arranged according to the selection.Export Data on a CardYou can export the data from a card to a CSV file for record-keeping or ingestion purposes.ProcedureNavigate to the desired Analysis card.In the Analysis card workspace, select  to access the drop-down list and then select Export Data.The CSV file of the exported card data is downloaded to the downloads folder.Note: To remove the Quality column in the CSV file, select  and then select Export Data without Data Quality.
+
+
+
+
+On this pageAbout Analysis CardsAdd an Analysis CardModify an Analysis CardShare an Analysis CardSelect a Card LayoutExport Data on a Card
+
+
+
+
+
+
+
+
+

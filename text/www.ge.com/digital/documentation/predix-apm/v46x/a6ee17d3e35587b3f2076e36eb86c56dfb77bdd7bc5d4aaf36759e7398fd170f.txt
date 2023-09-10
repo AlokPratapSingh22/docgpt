@@ -1,0 +1,125 @@
+
+
+
+Calculations | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+Workflows
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data Loaders
+Admin
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Corrosion Rates in Thickness Monitoring
+Calculations
+Family Search Configuration
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+Reference
+Calculations
+
+
+
+
+
+
+
+CalculationsOverview of TM Calculations
+A Corrosion Analysis includes one or more assets and all the TM-specific records that are linked to them. As you conduct a Corrosion Analysis, various calculations and validations are performed, and the results are stored in various records involved in the Corrosion Analysis.
+In this section of the documentation, we provide descriptions of the calculations and validations that are performed within a Corrosion Analysis. These descriptions are classified according to the type of record for which the calculation or validation is performed:
+
+Asset Corrosion Analysis: Stores summary information and calculations that are performed using the information in the related Thickness Measurement Location and Thickness Measurement records.
+
+TML Corrosion Analysis: Stores summary information and calculations performed using the information in related Thickness Measurement Location and Thickness Measurement records.
+
+
+Thickness Measurement: Stores measurement data and performs calculations. The values calculated in Thickness Measurement records are used for calculating values in the associated TML Corrosion Analysis record.
+
+Thickness Monitoring uses specific formulas, equations, and estimation methods to arrive at the values that are stored in these records. In order to understand the information that is displayed to you for a given analysis, you must understand how the values were determined.
+Measurement Calculations
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+Datasheet Calculations
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+About Interpolation
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+About the Calculated T-Min Formulas
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+Reference Tables that are Used to Calculate Allowable Stress
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+Maximum Allowable Working Pressure (MAWP) Calculation 
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+About Fields Required for Calculated T-Min
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+Interpret the Calculation Details
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+Piping Nominal T-Min Reference Table
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+Piping Nominal Diameter
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+Tank T-Min Annular Ring Reference Table
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+Reading Tolerance
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+
+
+
+
+
+On this pageOverview of TM CalculationsMeasurement CalculationsDatasheet CalculationsAbout InterpolationAbout the Calculated T-Min FormulasReference Tables that are Used to Calculate Allowable StressMaximum Allowable Working Pressure (MAWP) Calculation About Fields Required for Calculated T-MinInterpret the Calculation DetailsPiping Nominal T-Min Reference TablePiping Nominal DiameterTank T-Min Annular Ring Reference TableReading Tolerance
+
+
+
+
+
+
+
+
+

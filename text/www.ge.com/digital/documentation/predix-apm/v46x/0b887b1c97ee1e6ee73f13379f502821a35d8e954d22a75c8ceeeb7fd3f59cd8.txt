@@ -1,0 +1,182 @@
+
+
+
+Mobile Proof Testing | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Mobile Proof TestingMobile Proof Testing
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Mobile Proof Testing
+Mobile Proof Testing
+
+
+
+
+
+
+
+Mobile Proof TestingOverview of the Mobile Proof Testing ModuleThe Mobile Proof Testing module allows you to manage Proof Tests without a network connection. Mobile proof testing enables the maintenance personnel to be offline (i.e., not connected to GE Digital APM), and still execute test procedures and collect proof testing data using mobile devices such as a tablet. The Proof Test Data is synchronized automatically to the SIS Management module when you are online (i.e., connected to the GE Digital APM).Mobile Proof Testing WorkflowThis workflow provides the basic, high-level steps for using this module. The steps and links in this workflow do not necessarily reference every possible procedure. Download a Proof Test Task for offline access.
+Record the Proof Test Details for the Proof Test.
+Create a Recommendation. You can also attach an image to the Recommendation.The values that you recorded in the Proof Tests when you were offline are synchronized automatically to the GE Digital APM database when you reconnect the mobile device to the network.About Mobile Proof TestsYou can use Mobile Proof Testing on the GE Digital APM mobile application to run test procedures and collect proof testing data using mobile devices, such as a tablet. You can record values for the Proof Test and create recommendations (e.g., a maintenance follow-up) for the proof test, directly from the mobile device even if the mobile device is disconnected from the network.When you download a Proof Test Task for offline access, on the Mobile Proof Testing page, the  icon appears on the downloaded Proof Test Task, indicating that the Proof Test Task is downloaded to the mobile device that you will use for recording values for the Proof Test. About Synchronizing Mobile Proof TestsWhen you reconnect the mobile device to the network, the values that you recorded in the Proof Tests and the Recommendations that you created are uploaded automatically to the GE Digital APM database.The color of the  icon that appears on the upper-right corner of the Proof Test in the Mobile Proof Testing page, indicates the status of synchronization. The  icon changes to one of the following:
+ : Indicates that the synchronization is completed successfully. The values that you recorded in the Proof Test and the associated Recommendations are uploaded to the database.
+
+ : Indicates that the synchronization failed. When you select , a message appears, describing the error that has caused the synchronization to fail. The error may be either in the Proof Test or in the Recommendation. 
+On successful synchronization, GE Digital APM copies the values in the Proof Tests that you executed in the mobile device to the corresponding Proof Tests in the database. You can access these Proof Tests from the SIS Management module. 
+GE Digital APM system creates copies of the Recommendations that you created in the mobile device, and then links them to the Instrumented Functions with which the Proof Test Tasks are associated. The images attached to the Recommendations that you created for the Proof Test appear as Reference Documents in the Recommendations created for the Instrumented Function. Tip: For more information, refer to the Reference Documents section of the documentation.Access the Mobile Proof Testing PageThis topic describes how to access the Mobile Proof Testing page, also known as the Offline Store. The Mobile Proof Testing page contains the list of Proof Test Tasks that you downloaded for offline use.Before You Begin
+
+ Download a Proof Test Task for offline access. 
+Note:  Downloaded Proof Test Tasks are stored in the device's internal storage.
+
+ProcedureIn the module navigation menu, select
+Integrity > Mobile Proof Testing.
+The Mobile Proof Testing page appears, displaying the list of proof test tasks that you downloaded.
+
+
+
+Access a Proof Test in Offline ModeBefore You Begin
+ Download a Proof Test Task for offline access.
+Procedure
+Access the Mobile Proof Testing page.Select the Proof Test Task that you want to view.
+The Proof Test workspace appears, displaying the datasheet for the selected Proof Test. The left pane contains a list proof test details associated with the Proof Test.
+
+
+
+Access a Proof Test Recommendation in Offline ModeBefore You Begin
+
+Create a Proof Test Recommendation in offline mode.
+Procedure
+Access the Proof Test Task for which you want to access the Recommendation.In the upper-right corner of the page, select .
+The Recommendations pane appears, displaying a list of Recommendations that are associated with the Proof Test.
+
+
+
+In the list, select the Recommendation that you want to access.
+The datasheet for the selected offline Recommendation appears.
+
+
+
+Record Values for Proof Test in Offline ModeProcedure
+Access the Proof Test for which you want to modify details.As needed, modify the values in the available fields.In the left pane, select the proof test detail that you want to modify.
+The <Proof Test Detail> page appears. 
+Where <Proof Test Detail> is the value in the Template Detail ID field of the selected Proof Test Detail.
+
+
+
+As needed, enter values in the available fields.
+In the left pane, the progress of the proof test details appears, displaying the number of proof test details you have completed.
+
+
+
+Perform one of the following steps:If you want to navigate to the next proof test detail, in the upper-right corner of the workspace, select .If you want to navigate to the previous proof test detail, in the upper-left corner of the workspace, select . 
+The values are automatically saved when you navigate away from the proof test detail.
+Create a Proof Test Recommendation in Offline ModeBefore You Begin
+
+Download a Proof Test Task for offline access for which you want to create a Proof Test Recommendation.
+
+About This Task
+During proof testing, if you observe an abnormality or failure that cannot be resolved immediately, you can create a Recommendation. You can also attach an image to the recommendation.
+Note: You can create Recommendations for a Proof Test only if the Proof Test is executed using the Mobile Proof Testing module.
+Procedure
+Access the Proof Test Task for which you want to create a Recommendation in offline mode.On the upper-right corner of the page, select .
+The Recommendations pane appears, displaying a list of Recommendations that are associated with the Proof Test.
+
+
+
+In the upper-left corner of the Recommendations pane, select 
+
+A blank datasheet for the Recommendation appears.
+
+
+
+As needed, enter values in the available fields.On the upper-right corner of the datasheet, select .
+The Recommendation for the Proof Test is created.
+Results
+The Recommendation that you created is listed in the Recommendations pane for the Proof Test. 
+If there are two Proof Tests for the same Instrumented Function, then the Recommendation will appear in the list of Recommendations for both the Proof Tests. 
+The Recommendation is synchronized automatically when you are online (i.e., connected to the GE Digital APM), and will appear on the Recommendations pane of the Instrumented Function associated with the Proof Test for which you created the Recommendation.
+Attach an Image to the RecommendationBefore You Begin
+
+Create a Recommendation for a Proof Test in offline mode.
+Important: To attach an image to the Recommendation, you must use the GE Digital APM mobile application. If you are using GE Digital APM in a web browser, you cannot access the camera on your device.
+ProcedureUsing the GE Digital APM mobile application, access the Recommendation for which you want to attach an image in offline mode.On the upper-left corner of the Recommendation datasheet, select .
+The default camera application for your device appears.
+Using the camera on your mobile device, take a picture of the asset whose image you want to attach to the Recommendation.
+The captured image is attached to the Recommendation and appears as a thumbnail above the datasheet.
+
+
+
+Note:
+ If you want to delete an image from the Recommendation:
+
+ In the upper-right corner of the image thumbnail, select .
+The Confirm Delete dialog box, asking you to confirm that you want to delete the image.
+
+Select Yes.
+The image is deleted.
+
+
+Delete a Proof Test from the Offline StoreProcedure
+Access the Mobile Proof Testing page.In the right corner of the Proof Test that you want to delete, select .
+The Confirm Delete dialog box appears, asking you if you want to delete the Proof Test from the offline store.
+Select Yes.
+The selected Proof Test is deleted from the offline store. 
+Note:
+When you delete a Proof Test, the associated Proof Tests Details are also deleted from the offline store. When you delete a Proof Test from the offline store, the related Proof Test will still be available in the GE Digital APM database. As needed, you can manually delete the Proof Test from the database.
+
+Results
+If the Proof Test that you deleted was associated with a Recommendation, then the Recommendation and any image associated with the Recommendation are deleted from the offline store.If a Recommendation is associated with more than one Proof Test, and you deleted one of the Proof Test, then the Recommendation and associated images will not be deleted.
+
+
+
+
+
+On this pageOverview of the Mobile Proof Testing ModuleMobile Proof Testing WorkflowAbout Mobile Proof TestsAbout Synchronizing Mobile Proof TestsAccess the Mobile Proof Testing PageAccess a Proof Test in Offline ModeAccess a Proof Test Recommendation in Offline ModeRecord Values for Proof Test in Offline ModeCreate a Proof Test Recommendation in Offline ModeAttach an Image to the RecommendationDelete a Proof Test from the Offline Store
+
+
+
+
+
+
+
+
+

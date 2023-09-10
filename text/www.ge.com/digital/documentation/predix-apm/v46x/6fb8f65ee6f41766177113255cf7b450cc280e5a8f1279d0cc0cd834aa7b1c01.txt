@@ -1,0 +1,81 @@
+
+
+
+
+Compliance Management State Management | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Compliance Management State ManagementThe following state changes can be applied to Compliance Recommendations and Inspection Plans based on user Security Roles.The diagram below shows the workflow of the baseline State Management process as it applies to Compliance Recommendations.
+The diagram below shows the workflow of the baseline State Management process as it applies to Inspection Plans. Details
+The Proposed state is the initial state of all Compliance Recommendations.The Proposed state is the initial state of all Inspection Plans.When you change the state of an Inspection Plan from Approved to Modified, an Inspection Plan Revision History record is created.Operations in Compliance Management change the state of Compliance Recommendations or Inspection Plans. Users must have the appropriate security roles to execute these operations. 
+Reserved States and Operations for Compliance Recommendations
+The following tables indicate whether the baseline states and operations are reserved. You cannot remove or modify reserved states or operations. 
+State CaptionReserved StateSecurity RoleImplementedYes
+MI Compliance AnalystMI Inspection Plan Approver
+Not RequiredYes
+MI Compliance AnalystMI Inspection Plan Approver
+ProposedNo
+MI Compliance AnalystMI Inspection Plan Approver
+SupersededYes
+MI Compliance AnalystMI Inspection Plan Approver
+
+OperationReserved OperationPredecessor StateSuccessor StateImplementYesProposedImplementedProposeNoNot RequiredProposedProposeNoSupersededProposedMark Not RequiredYesProposedNot RequiredSupersedeYesProposedSupersededUnimplementYesImplementedProposedApproveYesProposedApproved
+Reserved States and Operations for Inspection Plans
+The following tables indicate whether the baseline states and operations are reserved. You cannot remove or modify reserved states or operations. 
+State CaptionReserved StateSecurity RolesApprovedNoMI Inspection Plan ApproverModifiedYes
+MI Compliance AnalystMI Inspection Plan Approver
+ProposedNo
+MI Compliance AnalystMI Inspection Plan Approver
+
+Operation IDReserved OperationPredecessorSuccessorMI_APPROVENoProposedApprovedMI_APPV_MODIFIEDNoModifiedApprovedMI_MODIFYYesApprovedModifiedMI_PROMOTEYesProposedAccepted
+
+
+
+
+
+
+
+
+
+
+
+

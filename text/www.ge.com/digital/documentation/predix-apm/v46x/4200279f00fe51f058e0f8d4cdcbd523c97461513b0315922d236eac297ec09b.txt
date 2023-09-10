@@ -1,0 +1,86 @@
+
+
+
+Manage System Code Tables | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+System Codes and TablesOverview
+Manage System Code Tables
+Manage System Codes
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+System Codes and Tables
+Manage System Code Tables
+
+
+
+
+
+
+
+Manage System Code TablesAdd a System Code TableProcedureAccess the System Codes and Tables page.In the System Tables section, select .An empty form appears in the Add Table section.In the ID box, enter the System Code Table ID.
+Note: This is a required field. The ID must be unique and must not exceed 50 characters.
+In the Description box, enter a description for the table.
+Note: This description should specify the purpose of the table and the type of codes present within the table. The description must be limited to 255 characters. The description that you provide appears as table name in the System Code and Tables section.
+In the Display Format subsection, select a display format that specifies how the codes will be displayed.You can select one of the following options:
+Code Only
+
+Description Only
+
+Code and Description
+Note: If you choose Code Only, your code must be descriptive.Select .The new System Code Table is created and added to the list of all System Code Tables.Modify the Properties of a System Code TableBefore You Begin
+
+The System Code Table is added and is available in the System Tables section.
+ProcedureAccess the System Codes and Tables page.In the System Tables section, select the table that you want to modify.The properties of the table appear.Modify the fields as required.Select .The table properties are modified.Delete a System Code TableProcedureAccess the System Codes and Tables page.In the System Tables section, select the table that you want to delete.The properties of the table appear.In the upper-right corner of the page, select .The System Codes and Tables dialog box appears, asking if you want to delete the table.Select Yes.A confirmation message appears, indicating that the System Code Table is deleted.
+
+
+
+
+On this pageAdd a System Code TableModify the Properties of a System Code TableDelete a System Code Table
+
+
+
+
+
+
+
+
+

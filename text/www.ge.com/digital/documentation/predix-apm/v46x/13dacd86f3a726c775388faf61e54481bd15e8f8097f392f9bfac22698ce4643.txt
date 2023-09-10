@@ -1,0 +1,120 @@
+
+
+
+Automation Rules | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+Admin
+Data Loader
+Deployment
+ReferenceGeneral ReferenceReliability Analytics Security Groups
+Reliability Analytics URLs
+Reliability Analytics System Code Tables
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System Reliability
+
+
+Family Field Descriptions
+Catalog Items
+Distribution Types
+Calculations
+Failure Data
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+Reference
+General Reference
+Automation Rules
+
+
+
+
+
+
+
+Automation RulesAbout Site Filtering in Automation RulesIn Automation Rules, when a rule is created , the site is assigned based on the user's selection in the Site control, and all subsequent analyses that are executed will inherit the Site Reference Key from the rule. 
+Tip: For more information, refer to the Site Filtering section of the documentation.
+Automation Rules that are created for a single site and that are based on a query containing multi-site data will contain multi-site data. A single-site user with access to the Automation Rule can open the Automation Rule and view all of the multi-site data in it. When creating query-based and event/date-based automation rules, you can specify the sites of data on which the analyses are based. When the rule is executed, the analyses will use data from the specified sites.Note:  Reloading the data will re-run the query, limiting the results displayed to the data points based on those to which the single-site user has access. In Automation Rules, users will see only data that is assigned to their site(s) or that is global data.
+Consider an organization that has three sites, Site X, Site Y, and Site Z. The following Automation Rule records exist:
+Automation Rule A: Assigned to Site XAutomation Rule B: Assigned to Site YAutomation Rule C: Assigned to Site ZAutomation Rule D: No site assigned (global record)
+ Scenario 1: User assigned to only Site X 
+This user will see Automation Rules A and D.
+If a child record assigned to Site X and a child record assigned to Site Y are linked to Automation Rule D, the Site X user will see only the records assigned to Site X.
+ Scenario 2: User assigned to both Site X and Site Y 
+This user will see Automation Rules A, B, and D.
+ Scenario 3: Super User 
+This user will see Automation Rules A, B, C, and D.
+Important: If a multi-site user, or a Super User, links child records from multiple sites to a parent record designated as Global, another user who does not have access to all sites may only see a portion of the data associated with that record.
+Reliability Automation Rule Data Model
+The following diagram shows how the families used in Reliability Automation Rules are related to one another.
+
+
+
+Note: In the diagram, boxes represent entity families and arrows represent relationship families that are configured in the baseline database. You can determine the direction of the each relationship definition from the direction of the arrow head: the box from which the arrow originates is the predecessor, and the box to which the arrow head points is the successor.
+
+
+
+
+
+On this pageAbout Site Filtering in Automation RulesReliability Automation Rule Data Model
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,118 @@
+
+
+
+Third Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+QueriesWorkflow
+Query Creation
+Query Results
+Query Sources, Fields, Joins, and Hyperlinks
+Query Expressions, Clauses, and Prompts
+Query Timeouts
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+First Quarter of 2019
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Queries
+Release Notes
+Third Quarter of 2019
+
+
+
+
+
+
+
+Third Quarter of 2019QueriesThis topic provides a list of product changes released for this module on the dates listed below.Release Date: September 27, 2019
+Table 1. Enhancements and New Features
+The following enhancements and new features have been added.
+DescriptionTracking IDYou can now use the general form of the CASE expression to create a Meta-SQL conditional query.Example: Use of the general form of the CASE expression in a queryCASE
+WHEN [MI_ACTION].[MI_ACTION_DESCRIPTION_T] LIKE '%lubricant%' THEN
+'Lubrication Action'
+ELSE
+'Other'
+END
+US311695To make large queries easier to understand and maintain, you can now define multiple CTE query definitions in a single query.US304986
+Table 2. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, the Number/Mathematical Functions MOD and % did not function and returned an error message. Due to this, you could not determine the remainder from a division operation. This issue has been resolved. Now, the Modulus Meta-SQL function has been introduced for determining the remainder from a division operation.DE113169Previously, if you selected a null date from the query parameter window, an error message appeared in an Oracle database. This issue has been resolved. Now, null dates are excluded from the query parameter values.DE107985Previously, when you ran an aggregate query that performed a calculation on the results column of a stored query that contained both TOP and ORDER BY clauses, the aggregate query returned an incorrect value. This issue has been resolved.DE104815Previously, in the Conditions section of the Design workspace, when you scrolled down in the grid using the scroll bar, you could not scroll up using the scroll bar. This issue has been resolved.DE104612Previously, in an Oracle database, when you ran a query that contained the TOP clause but no ORDER BY clause in formatted mode, the records that appeared in the Results workspace were different from the records that appeared when you ran the same query in unformatted mode. This issue has been resolved.DE104520Previously, when you ran a query with the Limit Results to Top condition, if the number of records that were returned was less than the value specified in the Limit Results to Top box, this value appeared as the record count in the Results workspace, instead of the actual record count. This issue has been resolved. DE104519Previously, for a query other than the SELECT query, in the View Query column of the Query page, when you selected a link to access the results-only view of the query, an incorrect error message appeared. This issue has been resolved.DE103993Previously, in the Condition section of the Design workspace, when you accessed a simple expression in the Criteria or Or cell, the expression appeared in the Advanced section instead of the Simple section of the Expression Builder window, and the Simple tab was disabled. This issue has been resolved.DE103971Previously, in an Oracle database, when you ran a query that contained the MI_DatePart function, incorrect values appeared in certain columns containing the parts of the date in the query results. This issue has been resolved.DE102611Previously, when you attempted to run a formatted query containing multivalue fields, an error message appeared, and no results were returned. This issue has been resolved.Note: For limitations in running queries containing multivalue fields in an Oracle data source, refer to: Known Issue KBA V4 – Error message appears when you run a query with multivalue fields.DE102144Previously, in the Design workspace, when you saved a query for which the Show Totals check box was selected, in the Conditions section, the column that contained the value Group By in the Total row and a value in the Criteria row was duplicated. This issue has been resolved.DE101176
+Previously, you could access a query that contained the EXISTS condition for the SELECT subquery in the Design workspace. Note: The Meta-SQL code cannot be represented in the Design workspace because the EXISTS condition does not have an associated column. Therefore, it should not be accessible from the Design workspace.
+This issue has been resolved. Now, when you attempt to access the query from the Design workspace, a message appears, stating that the query cannot be displayed in the Design workspace.
+DE100395Previously, when you accessed a query in the Design workspace and cleared the Include check box for a column, the code related to the column was deleted from the SQL workspace when the query was saved. This issue has been resolved.DE97437Previously, in the Design workspace, in the Conditions section, when you selected the Show Totals check box, and then selected the value Count in the Total cell for a field that contained an expression, the COUNT function was not added to the SQL code in the SQL workspace. In addition, when you cleared the Show Totals check box for a query that contained the COUNT function in the SQL code in the SQL workspace, the COUNT function was not deleted from the SQL code. These issues have been resolved.DE93645
+Previously, when you ran a query that contained a prompt, the following issues existed in the Enter Parameter Values window:You could not select a value from any other drop-down list box.If the underlying query for a parameter value was invalid, an error message appeared as selectable values within the corresponding drop-down list box in the window.
+These issues have been resolved.
+DE50924
+Table 3. Obsolete Features
+As of this release, the following items are no longer available.
+DescriptionTracking IDThe fields that appeared when the Include check box was cleared no longer appear in the Entity Key drop-down list box in the Specify Parameters section of the URL Builder window. This change has been made because when you selected a field when the Include check box was cleared, an invalid link was created.US313866
+Release Date: July 26, 2019
+Table 4. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, if conditions were defined for a query, and if you attempted to add a condition in the Or row of the Conditions section, an error occurred. This issue has been resolved.DE112501
+
+
+
+
+
+On this pageQueries
+
+
+
+
+
+
+
+
+

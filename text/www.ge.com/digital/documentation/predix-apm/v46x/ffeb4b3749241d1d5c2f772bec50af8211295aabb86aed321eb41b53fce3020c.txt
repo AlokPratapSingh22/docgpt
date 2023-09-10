@@ -1,0 +1,108 @@
+
+
+
+Policies | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+European Inspection ManagementOverview
+Configuration
+Workflow
+ReferenceGeneral Reference
+Data Models
+Annexure-1
+Family Field Descriptions
+Field Mappings
+Policies
+System Code Tables
+Queries
+
+
+ Admin
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+European Inspection Management
+Reference
+Policies
+
+
+
+
+
+
+
+PoliciesPolicies
+GE Digital APM provides eight Policies for the European Inspection Compliance. You can use these Policies in the Compliance Strategy Templates to generate the Compliance Recommendations in intervals specified in the Inspection Requirements for European Regulation. The following table lists the names of the Policies along with the IDs of the corresponding Compliance Strategies:
+Policy NameDescriptionCompliance Strategy IDEU_PIPE_EQPTGenerates European Compliance Recommendations for Piping with respect to the Asset family.
+EU_PIPE_EV_STRAT_008EU_PIPE_IV_STRAT_004EU_PIPE_STR_STRAT_012
+EU_PIPE_FLOCGenerates European Compliance Recommendations for Piping with respect to the Functional Location family.
+EU_PIPE_EV_STRAT_008EU_PIPE_IV_STRAT_004EU_PIPE_STR_STRAT_012
+EU_PV_EQPTGenerates European Compliance Recommendations for Pressure Vessel with respect to the Asset family.
+EU_PV_EV_STRAT_005EU_PV_IV_STRAT_001EU_PV_STR_STRAT_009
+EU_PV_FLOCGenerates European Compliance Recommendations for Pressure Vessel with respect to the Functional Location.
+EU_PV_EV_STRAT_005EU_PV_IV_STRAT_001EU_PV_STR_STRAT_009
+EU_SB_EQPTGenerates European Compliance Recommendations for Steam Boiler with respect to the Asset family.
+EU_SB_EV_STRAT_007EU_SB_IV_STRAT_003EU_SB_STR_STRAT_011
+EU_SB_FLOCGenerates European Compliance Recommendations for Steam Boiler with respect to the Functional Location family.
+EU_SB_EV_STRAT_007EU_SB_IV_STRAT_003EU_SB_STR_STRAT_011
+EU_SPV_EQPTGenerates European Compliance Recommendations for Simple Pressure Vessel with respect to the Asset family.
+EU_SPV_EV_STRAT_006EU_SPV_IV_STRAT_002EU_SPV_STR_STRAT_010
+EU_SPV_FLOCGenerates European Compliance Recommendations for Simple Pressure Vessel with respect to the Functional Location family.
+EU_SPV_EV_STRAT_006EU_SPV_IV_STRAT_002EU_SPV_STR_STRAT_010
+
+EU_PIPE_EQPT
+This Policy is used in the Compliance Strategies to generate European Compliance Recommendations for Piping with respect to the Asset family. The following image illustrates the model of the EU_PIPE_EQPT policy:
+This policy uses two input nodes:Asset: This is an entity node which represents the Equipment family.Piping: This is a constant node of string Piping.
+The node, Asset Technical Data Filter is a Query node that runs the EU_Piping_Filter_EQ query. The Asset Technical Data Filter node uses the Entity Key of the Asset represented by the Asset node and the string represented by the Piping node as prompts for the EU_Piping_Filter_EQ query. When the Policy is executed, it generates a result set that contains the following information:The Entity Key of the Asset Technical Data related to the Asset represented by the Asset node.The Family ID of Asset Technical Data related to the Asset represented by the Asset node.The Strategy ID used to generate the Compliance Recommendation.The policy then uses this information in the result set to generate the Compliance Recommendations and map the data to it, using the Compliance Recommendation Mapping family.
+
+
+
+
+
+On this pagePolicies
+
+
+
+
+
+
+
+
+

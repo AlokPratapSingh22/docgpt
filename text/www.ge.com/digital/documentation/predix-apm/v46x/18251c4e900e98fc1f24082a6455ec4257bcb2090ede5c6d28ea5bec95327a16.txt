@@ -1,0 +1,288 @@
+
+
+
+Actions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Reliability AnalyticsReliability Analytics: Overview
+Automation Rules
+Probability Distribution
+Production Analysis
+Reliability Distribution
+Reliability Growth
+Spares Analysis
+System ReliabilitySystem Reliability: Overview
+System Reliability: Workflow
+System Reliability Analyses 
+Resources
+System Scenario
+Diagrams
+Risks
+Actions
+Global Events
+Grid View
+Simulations
+
+
+Admin
+Data Loader
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Reliability Analytics
+System Reliability
+Actions
+
+
+
+
+
+
+
+ActionsAbout ActionsIn a System Reliability Analysis, an Action represents an operation that can be performed against a piece of equipment, location, or a switch. Actions can represent inspections, general maintenance, or specific events that mitigate Risks, such as training or procedures.Actions can be unique events that happen only once during a simulation period, or they can be repeated at certain times during the simulation period. You can optionally assign Resources to Actions to associate a specific cost with the Action. When you assign Resources to Actions, a System Resource Usage record will be created.Details
+Actions in System Reliability Analyses are stored in the following records, which can be linked to System Asset and System Switch records:
+
+ System Condition Monitor Records: Store information about continuous, condition-based maintenance Actions. An example of this type of Action would be an Action that continuously monitors the level of fluid in a gauge.
+ System Inspection Records: Store information about periodic, condition-based maintenance Actions. An example of this type of Action is the Vibration Analysis Action in Scenario B of our System Reliability Analysis Example.
+ System Preventive Maintenance Records: Store information about time-based maintenance Actions. An example of this type of Action is the Replace Seals Action in Scenario B of our System Reliability Analysis Example.
+ System Special Action Records: Store information about procedural, redesign, or training Actions. An example of this type of Action is the Redesign Impeller Action in Scenario B of our System Reliability Analysis Example.
+About Actions and Risks
+After you create an Action in a System Reliability Analysis, you can assign a single Risk or multiple Risks to that Action. When you assign a Risk to an Action, a link is created between a System Risk Assessment record, which stores the GUID of the mitigated Risk in the Risk GUID field, and the Action. This allows the Action to mitigate the Risk. An Action may mitigate a Risk by changing certain properties, such as failure consequences or the failure distribution, of the Risk.
+                               Actions mitigate Risks in different ways depending on the type of Action that is assigned to the Risk. The different types of Actions mitigate Risks in the following ways:
+                                
+Preventive Maintenance Action: Can mitigate the Time to Fail (TTF) distribution of the Risk by increasing the maximum operating time of the Risk, as defined by the fields in the Distribution record that defines the TTF distribution associated with the Risk. For example, the Replace Seal Action in Scenario B of the System Reliability Analysis Example mitigates the Seal Failure Risk by creating more operating time by replacing the existing seals, which have a smaller amount of operating time, with new seals that have a larger amount of operating time.
+Condition Monitor or Inspection Action: Can mitigate the consequences of failure by fixing potential failures before they occur. This allows proactive repairs, or planned corrections, to be made to the system instead of fixing a failure using an unplanned correction. Planned corrections can consume less Resources and lower the costs of a Scenario. For example, the Vibration Analysis Action in Scenario B of the System Reliability Analysis Example mitigates the Bearing Failure Risk by identifying a potential Bearing Failure and executing a planned correction, which requires less Resources and less Resource usage than executing an unplanned correction.
+Special Action: Can mitigate the failure consequences of the Risk, as defined in the Fixed Unplanned Correction Cost field of the System Risk record, and the TTF distribution, as defined by the Distribution record that represents the TTF distribution associated with the Risk. For example, the occurrence of the Redesign Impeller Action in Scenario B of the System Reliability Analysis Example mitigates the Impeller Failure by reducing the fixed unplanned correction cost and extending the TTF distribution of the Impeller Failure Risk.
+Note: An Action does not have to mitigate a Risk, but associating an Action with a Risk and mitigating the Risk creates a more reliable system.
+
+Access an ActionProcedure
+Access the System Scenario for which you want to view details of an Action.In the workspace, select the Actions tab.
+A list of System Subsystems, a grid containing a list of Actions associated with the selected System Scenario, and the Properties pane appear.
+
+
+
+Note: As needed, in the Properties pane, you can select  to modify the values in the available fields, and then select  to save your changes.
+The grid contains the following columns of information:
+
+Name: Displays the value in the Name field in the System Action record.
+Description: Displays the value in the Description field in the System Action record.
+Resource Usages: Displays the Resource Usages link, which provides access to any Resources that have been assigned to the Action.
+In the pane to the left of the grid, select the Asset for which you want to view Actions.
+The list of Actions associated with the selected Asset appears in the grid.
+In the grid, select the Action whose details you want to view.
+The properties of the selected Action appear in the Properties pane at the bottom of the page. The tabs in the Properties pane appear based on the Action Type.
+About Action OptimizationAction Optimization allows you to optimize a group of actions associated with an analysis to determine the optimum interval at which to perform an inspection or preventative maintenance. After you have found the optimal interval for an action, you can apply it to that action. When you do so, in the Actions section of the workspace for the System Reliability Analysis, the value in the Interval field in the System Action record will be overwritten with the value that exists in the Optimal Interval field. After you apply the optimal interval, you can then run the simulation for the System Reliability Analysis to update the results based upon the optimized interval.Add a Periodic Condition-Based Maintenance ActionProcedure
+Access the System Scenario for which you want to add an Action.In the Actions section, in the pane to the left of the grid, select the Asset to which you want to add an Action, and then select .
+The Action Type subsection appears in the workspace.
+
+
+
+In the Action Type list, select Condition-Based Maintenance (Predictive) (CM).In the Condition Monitoring Type list, select Periodic.As needed, in the New Inspection sub-section, enter the values in the available fields, and then select .
+The newly added Periodic Condition-Based Maintenance Action appears in the Actions section.
+Add a Continuous Condition-Based Maintenance ActionProcedure
+Access the System Scenario for which you want to add an Action.In the Actions section, in the pane to the left of the grid, select the Asset for which you want to add an Action, and then select .
+The Action Type subsection appears in the workspace.
+
+
+
+In the Action Type list, select Condition-Based Maintenance (Predictive) (CM).In the Condition Monitoring Type list, select Continuous.
+The New Condition Monitor sub-section appears in the workspace.
+As needed, in the New Inspection sub-section, enter the values in the available fields, and then select .
+The Continuous Condition-Based Maintenance Action is saved and appears in the Actions section.
+Add a Time-Based Maintenance ActionProcedure
+Access the System Scenario for which you want to add an Action.In the Actions section, in the pane to the left of the grid, select the Asset for which you want to add an Action, and then select .
+The Action Type subsection appears in the workspace.
+
+
+
+In the Action Type list, select Time-Based Maintenance (Preventative) (PM).
+Note: The Condition Monitoring Type list is hidden.
+The New Preventive Maintenance subsection appears in the workspace.
+As needed, enter the values in the available fields, and then select .
+The Time-Based Maintenance Action is saved and appears in the Actions section.
+Add a Special ActionProcedure
+Access the System Scenario for which you want to add an Action.In the Actions section, in the pane to the left of the grid, select the Asset to which you want to add an Action, and then select .
+The Action Type subsection appears in the workspace.
+
+
+
+In the Action Type list, select one of the following: 
+
+Procedure (PROC)
+
+Redesign (DSN)
+
+Training (TRN)
+
+Note: The Condition Monitoring Type list is hidden.
+The New Special Action sub-section appears in the workspace.
+As needed, enter the values in the available fields, and then select .
+The Special Action appears in the Actions section.
+Assign a New Resource to an ActionAbout This Task
+This topic describes how to create and assign a new Resource to an Action. You can also assign an existing Resource to an Action. 
+Procedure
+Access the Action to which you want to assign a resource. In the grid, locate the row containing the Action to which you want to assign a Resource. Select the Resource Usage link.
+The <Action> - Resource Usage grid appears, displaying the list of resources that are assigned to the selected Action. <Action> is the name of the Action that you selected. 
+
+
+
+Select . 
+The datasheet for new System Resource Usage appears. 
+
+
+
+As needed, enter the value in the available fields, and then select .
+A new Resource is created and assigned to the Action.
+Assign an Existing Resource to an ActionAbout This Task
+After Resources exist for a System Reliability Analysis, you can assign them to Actions. When you do so, you associate the cost of that Resource with each occurrence of the Action. This allows you to assign a realistic cost to the Action that can be included in the simulation results.
+When you assign a Resource to an Action, a System Resource Usage record will be created and will store information that specifies how the Resource will be used (e.g., the quantity and duration).
+This topic describes how to assign an existing Resource to an Action. You can also create and assign a new Resource to an Action.
+Procedure
+Access the Action to which you want to assign a resource. In the grid, locate the row containing the Action to which you want to assign a Resource.Select the Resource Usage link.
+The <Action> - Resource Usage grid appears, displaying the list of resources that are assigned to the selected Action. <Action> is the name of the Action that you selected. 
+
+
+
+In the upper-left corner of the grid, select . 
+The New Resource Usage from Existing Resources window appears.
+
+
+
+As needed, enter the value in the available fields, and then select Finish.
+The selected Resource is assigned to the Action.
+Modify a Resource Assigned to an ActionAbout This Task
+When you modify a Resource that is assigned to an Action, you are modifying the System Resource Usage record. The actual System Resource record is not changed.
+Procedure
+Access the Action for which you want to modify a resource.In the row containing the Action for which you want to modify an assigned Resource, select Resource Usage.
+The <Action> - Resource Usage grid appears, displaying the list of Resources that are assigned to the selected Action. <Action> is the name of the Action that you selected. 
+
+
+
+Select the row containing the Resource that you want to modify, and then select .
+The Edit Resource Usage datasheet appears.
+As needed, modify values in the available fields, and then select .
+Your changes are saved.
+Remove a Resource from an ActionAbout This Task
+When you remove a Resource from an Action, you delete the System Resource Usage record so that the Resource is not used by the selected Action. The actual System Resource record is still available for the System Reliability Analysis and can be used again if needed.
+Procedure
+Access the Action for which you want to delete an assigned resource. In the row containing the Action for which you want to delete an assigned Resource, select Resource Usage. 
+The <Action> - Resource Usage grid appears, displaying the list of resources that are assigned to the selected Action. <Action> is the name of the Action that you selected. 
+
+
+
+In the grid, select a row containing the resource that you want to delete, and then select .
+A message appears, asking you to confirm that you want to remove the selected Resource.
+Select OK.
+The Resource is removed from the grid, and the System Resource Usage record is deleted from the database.
+Access a Mitigated RiskProcedure
+Access the Action for which you want to view a mitigated risk.In the grid, select the row containing the Action whose mitigating risk you want to view.In the upper-right corner of the Actions section, select Show Mitigated Risk.
+The grid for the selected mitigated risk appears, displaying the list of Risks associated with the selected Action.
+Note: The New TTF Distribution and New Failure Consequence columns appear only if the Action Type is Redesign (DSN), Procedure (PROC), or Training (TRN).
+
+
+
+Specify TTF Distribution Values for the SimulationFor each Mitigated Risk that is associated with the Special Action, you can specify the TTF Distribution values that you want to be used in the simulation when the Special Action is completed to mitigate the occurrence of the given Risk.Procedure
+Access the Mitigated Risk for which you want to specify the TTF Distribution values. Locate the row containing the Risk for which you want to specify the TTF Distribution values.In the New TTF Distribution column, select the hyperlink.
+The TTF Distribution window appears. 
+
+
+
+In the lower-left corner, select the Replace TTF Distribution check box.
+The fields in the TTF Distribution window are enabled.
+In the remaining fields, modify the values as desired.Select OK. 
+The changes are saved, and the values that you specified will be used the next time the simulation is run.
+Specify Failure Consequence Values for the SimulationFor each Mitigated Risk that is associated with the Special Action, you can specify the Failure Consequence values that you want to be used in the simulation when the Special Action is completed to mitigate the occurrence of the given Risk.Procedure
+Access the Mitigated Risk for which you want to specify the Failure Consequence values. Locate the row containing the Risk for which you want to specify the Failure Consequence values.In the New Failure Consequence column, select the hyperlink.
+The Failure Consequence window appears. 
+
+
+
+In the lower-left corner, select the Replace Failure Consequence check box.
+The fields in the Failure Consequence window are enabled.
+In the Fixed Unplanned Correction Cost text box, modify the value as desired.Select OK. 
+The changes are saved, and the values that you specified will be used the next time the simulation is run.
+Add a Risk to an ActionProcedure
+Access an Action to which you want to assign a Risk.In the grid, select the row containing the appropriate Action.In the upper-right corner of the Actions section, select Show Mitigated Risk.
+The Actions/Mitigated Risks grid appears. 
+
+
+
+If you want to assign a new Risk, in the upper-right corner of the grid, select Assign New Risk. 
+The datasheet for new Risk appears. 
+
+
+
+You can enter values in the available fields to add a Risk, and then select  to add the Risk to the Action.
+-or-
+If you want to assign an existing Risk, in the upper-right corner of the grid, select Assign Existing Risk. 
+The /Mitigating Actions/From Existing grid appears, displaying a list of Risks. 
+In the grid, locate the row that contains the Risk that you want to assign to the Action.In the Selected column, select the check box.In the upper-right corner of the grid, select Submit.
+The selected Risk is assigned to the Action.
+Run Action OptimizationBefore You Begin
+To run Action Optimization, you must have existing actions in your System Reliability Analysis.
+Procedure
+Access the System Reliability Analysis whose actions you want to optimize. In the pane, select Action Optimization.The Action Optimization details for the selected System Reliability Analysis appear in the workspace.In the workspace, next to the name of the scenario containing the action that you want to optimize, select , and then navigate to the specific action that you want to optimize.The details of the actions appear.Next to the action you want to optimize, select Run Optimization.Note:  The Run Optimization link is only enabled when there is no optimization in progress for the selected action. The optimization begins, and the status indicating the progress of the optimization appears in the details of the action. Note: You can select  to view the details of the optimization. When you select , the Schedule Logs page appears, displaying the In Progress, Successful, and Failed tabs. The number on each tab indicates the number of optimizations in the corresponding state. The Action Optimization details for the selected System Reliability Analysis appear in the workspace.In the workspace, next to the name of the scenario containing the action that you want to optimize, select , and then navigate to the action you optimized.The details of the Optimized Action appear, with values populated in the Last Optimized and Optimal Interval columns.Next to the value in the Optimal Interval field, select Apply to set the optimized interval value in the Optimal Interval field as the value in the Current Interval field.  The value in the Current Interval field is optimized for the System Reliability Analysis.What To Do NextView the Action Optimization results.View Action Optimization ResultsBefore You Begin
+
+Run Action Optimization. 
+Procedure
+Access the System Reliability Analysis whose Action Optimization results you want to view. In the pane, select Action Optimization.The Action Optimization details for the selected System Reliability Analysis appear in the workspace.In the workspace, next to the name of the scenario containing the action optimization results that you want to view, select , and then navigate to the specific action.The details of the actions appear.In the workspace, select the action whose Action Optimization results you want to view.The Cost chart appears in the workspace. You can hover over an item in the chart to view specific details used in the optimization process.What To Do NextRun the simulation for the System Reliability Analysis to update the results based upon the optimized action interval.Delete an ActionProcedure
+Access the System Scenario whose Action you want to delete. In the workspace, select the Actions tab.
+A list of System Subsystems, a grid containing a list of Risks associated with the selected System Scenario, and the Properties pane appear.
+
+
+
+In the grid, select the Action that you want to delete, and then select .
+The selected Action is deleted.
+
+
+
+
+
+On this pageAbout ActionsAccess an ActionAbout Action OptimizationAdd a Periodic Condition-Based Maintenance ActionAdd a Continuous Condition-Based Maintenance ActionAdd a Time-Based Maintenance ActionAdd a Special ActionAssign a New Resource to an ActionAssign an Existing Resource to an ActionModify a Resource Assigned to an ActionRemove a Resource from an ActionAccess a Mitigated RiskSpecify TTF Distribution Values for the SimulationSpecify Failure Consequence Values for the SimulationAdd a Risk to an ActionRun Action OptimizationView Action Optimization ResultsDelete an Action
+
+
+
+
+
+
+
+
+

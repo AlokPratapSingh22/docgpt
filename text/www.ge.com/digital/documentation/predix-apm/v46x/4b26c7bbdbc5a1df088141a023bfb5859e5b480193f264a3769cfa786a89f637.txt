@@ -1,0 +1,216 @@
+
+
+
+Corrosion Analyses in Thickness Monitoring | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+Workflows
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data Loaders
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+Corrosion Analyses in Thickness Monitoring
+
+
+
+
+
+
+
+Corrosion Analyses in Thickness MonitoringAbout Corrosion Analyses in Thickness MonitoringA Thickness Monitoring Corrosion Analysis is a top-level summary of corrosion data for an asset, determined by calculations made using the values in Thickness Measurements linked to TMLs. Often, TMLs are linked in batches to TML Groups, which represent component parts of an asset. Details
+
+To conduct a Corrosion Analysis for an asset, you must:
+Identify an asset to analyze.Optionally, identify components of the asset you want to include as TML Groups.Organize equipment into TMLs.Collect measurement data for those TMLs.
+You will complete these tasks by creating records, populating them with the appropriate information, and linking them together to establish relationships. As you complete these tasks, other records will be created to store calculations based upon the records that you created. Throughout this documentation, we refer to all these records and links collectively as a Corrosion Analysis.
+
+About the Types of Corrosion AnalysesThere are two kinds of Corrosion Analysis records:An Asset Corrosion Analysis, which is created and linked automatically to an asset when you first define Corrosion Analysis Settings for that asset.A TML Corrosion Analysis, which is created and linked automatically to a TML when the TML is first created.The Asset Corrosion Analysis linked to an asset can be considered the top-level Corrosion Analysis, as it aggregates all data from the other Corrosion Analyses linked directly or indirectly to the asset.Asset Corrosion Analyses
+
+ In addition to assets, Asset Corrosion Analyses are also created and linked automatically to any TML Group that is included in the Corrosion Analysis for an asset.
+An Asset Corrosion Analysis represents a summary of the calculations that are stored in the TML Corrosion Analysis for each TML linked to a single asset or TML Group. Using an Asset Corrosion Analysis, you can determine the overall corrosion of an asset and make decisions about the actions that should be taken based upon the analysis results.
+An Asset Corrosion Analysis represents:
+
+An Equipment record or TML Group.
+
+All the TMLs of a given TML Analysis Type (UT, RT, or TML) that are linked to the Equipment record or TML Group.
+
+All the Thickness Measurements that are linked to the TMLs.
+
+All the calculations that are performed based upon the values in the TMLs and Thickness Measurements.
+
+Because baseline Thickness Monitoring supports the use of three TML Analysis Types (UT, RT, and TML), each Equipment record or TML Group can have up to three Asset Corrosion Analyses linked to it. 
+The TML Analysis Types UT and RT are provided for customers who want to classify TMLs according to measurement-collection method (ultrasonic thickness or radiographic thickness), and then perform calculations on each set of TMLs. 
+The TML Analysis Type TML is provided for customers who do not want to classify TMLs according to measurement-collection method, and instead prefer to analyze all TMLs together. Typically, you will use either both UT and RT, or only TML. Most customers will not use all three. Therefore, Equipment records and TML Groups will usually have either one or two Asset Corrosion Analyses linked to them.
+
+TML Corrosion Analyses
+
+Each TML Corrosion Analysis stores summary information and calculation results that are determined using the Thickness Measurements linked to TMLs.
+When TMLs are linked to an asset or TML Group, the TML Corrosion Analyses linked to the TMLs will provide the information to the Asset Corrosion Analysis, which serves as an overview of the corrosion information gathered for each TML.
+While the Asset Corrosion Analysis provides a useful summary of the corrosion status of a given asset, if you want to get a more detailed perspective of the corrosion of the equipment, you will need to examine the individual TML Corrosion Analyses. Because values in the Asset Corrosion Analysis are determined using values stored in individual TML Corrosion Analyses, you may need to review the TML Corrosion Analyses in order to interpret the data in a Corrosion Analysis Summary.
+
+Equipment-Level Analysis Information
+
+In most cases, the values stored in the Asset Corrosion Analysis represent calculations that are performed for TMLs using values in the TML Corrosion Analyses, which have been summarized based on settings defined for the analysis. For example, in the Corrosion Analysis Settings, you can specify whether you want the Asset Controlling Corrosion Rate to be the maximum corrosion rate for all TMLs, or an average of the corrosion rates that have been calculated for the TMLs. In other words, Asset Corrosion Analysis values are typically not unique to the Asset Corrosion Analysis itself.
+In Corrosion Analyses that include both assets and TML Groups, the Asset Corrosion Analysis will contain information that is derived from the information stored in the Asset Corrosion Analyses for the assets and the TML Group.
+For example, consider a piping circuit that contains three piping lines where the information for the piping circuit is stored in four records:
+
+Equipment A - Piping Circuit
+TML Group 1 - Piping Line 1 TML Group 2 - Piping Line 2TML Group 3 - Piping Line 3
+Additionally, assume that TMLs exist for each TML Group, and each of those TMLs has its own TML Corrosion Analysis. In this situation, each TML Group will have its own Asset Corrosion Analysis that stores summary information about the calculations stored in the corresponding TML Corrosion Analyses. The asset will also be linked to its own Asset Corrosion Analysis that stores summary information that is derived from the information in the analyses that are linked to each TML Group.
+
+About Corrosion Analysis SettingsCorrosion Analysis Settings let you specify certain options that control how various values will be calculated in Asset and TML Corrosion Analyses. While Corrosion Analysis Settings exist as records, the settings should only be accessed and modified via Thickness Monitoring. Corrosion Analysis Settings are used to calculate fields in Asset Corrosion Analyses. They are also used to populate fields in TMLs, and to determine values in the linked TML Corrosion Analyses. Some values can be defined at the asset or TML Group level, and then customized at the TML level. You will need to configure the Corrosion Analysis Settings based on the requirements of your organization. This will ensure that the analyses yield results that are useful and are meaningful to you and your organization. For Assets and TML GroupsIn a Corrosion Analysis that includes both an asset and TML Groups, Corrosion Analysis Settings must be defined for the asset and each TML Group. If you access an asset or TML Group in Thickness Monitoring that does not have Corrosion Analysis Settings defined, the Corrosion Analysis Settings workspace will be displayed automatically. Different settings can be defined for each Inspection Type (UT, RT, and TML). When you create the Corrosion Analysis Settings for an asset or TML Group, you will need to choose the Inspection Type for which you want to configure settings. The Corrosion Analysis Settings that you create at the asset level can then be spread to the TML Group level (i.e., Corrosion Analysis Setting can be created and linked automatically to the TML Group) in the following scenarios:When you create a new TML Group for asset.When you define Corrosion Analysis Settings of a new Inspection Type for an asset. You can specify which existing TML Groups receive the new settings through the Select Spreading window.The Corrosion Analysis Settings for a TML Group can also be accessed and modified individually.Important: Analysis settings must be defined for asset and TML Group before you begin creating TMLs of a given TML Analysis Type and linking them to TML Groups.For TMLs
+On the TML level, the Corrosion Analysis Settings control how various values will be calculated in the TML Corrosion Analysis that is linked to a TML. 
+When you create a TML, Corrosion Analysis Settings are created and linked to it automatically. The Corrosion Analysis Settings for a TML are created using the settings defined for the asset or TML Group to which the TML is linked.
+Most Corrosion Analysis Settings are defined at the asset or TML Group level. The following settings can be defined at the TML level:
+Allowable Measurement Variance Corrosion Rate Variance Default Inspection Interval Minimum Corrosion Rate Std Deviation Factor 
+ After Corrosion Analysis Setting exist for a TML, you can modify the TML-specific settings via the Corrosion Analysis Settings workspace.
+About Thickness Monitoring TasksThickness Monitoring Tasks can be used to manage the inspection schedules for assets that you analyze in TM. Thickness Monitoring Task records will be created automatically when you create Corrosion Analysis Settings for an asset or TML Group. If you select the Auto Manage Tasks check box on the TM Admin Preferences page, when you update a TML, the corresponding Thickness Monitoring Task will be updated automatically.The Auto Manage Tasks setting is disabled by default. If the Risk Based Inspection license is active, you should accept the default setting because you will use the Tasks generated from RBI, rather than TM, to determine your inspection intervals. If the Risk Based Inspection license is not active, you should enable the Auto Manage Tasks setting.Note: Thickness Monitoring will create and update Thickness Monitoring Tasks automatically only if the Component ID setting is defined for the Equipment or TML Group family.About Archived Asset Corrosion AnalysesWhen you archive an Asset Corrosion Analysis, you create a copy of the current, active Asset Corrosion Analysis and stores the data in a new, inactive Asset Corrosion Analysis. Details
+
+The value in the Analysis State field for the inactive Asset Corrosion Analysis is set to Archived. Additionally, Asset Corrosion Analyses:
+Are linked to the asset or TML Group through the Has Archived Corrosion Analyses relationship.
+Are linked to Corrosion Analysis Settings through the Has Archived Corrosion Analysis Settings relationship. When the Asset Corrosion Analysis is archived, a copy of the Corrosion Analysis Settings is also created and stored. 
+Tip: When you review an archived Asset Corrosion Analysis, the archived Corrosion Analysis Settings are visible in the Archived Corrosion Analyses workspace.
+Are not linked to TMLs. TMLs and Thickness Measurements linked to those TMLs remain linked only to the active Asset Corrosion Analysis.
+Archived Asset Corrosion Analyses are meant to serve as a historical record of the conditions that existed at the time the Asset Corrosion Analysis was archived. Archiving an Asset Corrosion Analysis can be useful if you want to:
+Create a snapshot of the Asset Corrosion Analysis based on certain Corrosion Analysis Settings, and then modify the settings to see how they affect the calculations.Create a copy of the existing Asset Corrosion Analysis before making changes to the related TMLs or Thickness Measurements, such as adding or excluding TMLs.
+Each asset and TML Group can have multiple archived analyses. You can archive the current, active Asset Corrosion Analysis as many times as needed.
+Note:  When you archive an Asset Corrosion Analysis, the Asset Corrosion Analyses for TML Groups linked to the asset will also be archived.
+
+About Bulk AnalysisBulk Analysis allows you to use a single action to update calculations for all or selected assets, as well as all TMLs and TML Groups linked to those assets. 
+When you calculate a bulk analysis, you:Calculate an analysis for each selected asset, as well as TML Groups and TMLs linked to the selected asset.Print or save a log of all the calculated analyses.About the Remaining Life Graph
+The data on the Remaining Life graph represents how long after the current day an asset or TML Group can be in service, based on the T-Min value and the current rate of corrosion. 
+Details
+
+When you access the Remaining Life graph, the results of the analysis performed on a specific asset or component are displayed in sections. By default, the sections are ranges of years:
+0 - 56 - 1011 - 25> 25
+The size of a section is determined by the number of TMLs that have a Remaining Life that fall in the range of the section. 
+On the Remaining Life graph, you can:
+View a list of TMLs or TML Groups for a range, along with their remaining life values and the IDs of the associated assets, by selecting the section on the graph.Clear the filter by selecting Clear Filter.Filter the data based on the analysis type by selecting the appropriate value in the Analysis Type box.
+
+Create Corrosion Analysis SettingsAbout This Task
+Before an asset can be accessed via the Thickness Monitoring Overview page, you must create Corrosion Analysis Settings for that asset.
+ProcedureOn the top navigation bar, select .The Asset Hierarchy page appears.On the Asset Hierarchy page, select the asset for which you want to create corrosion analysis settings.In the workspace, select the Integrity tab, and then, in the Thickness Monitoring row, select TML Groups.Note:
+TML Groups will only appear if you have selected an asset. If you have selected a functional location, Assets replaces TML Groups.The TM page appears, displaying the Corrosion Analysis Settings workspace.  By default, values in the following boxes are populated automatically as follows:The Inspection Type box is set to UT. The Controlling Corrosion Rate box is set to Maximum.The Std Deviation Factor, Remaining Life Critical Number of TMLs, Minimum Corrosion Rate, and Remaining Life Factor boxes are populated with values.Note: The value in the Remaining Life Critical Number of TMLs box has no significance in the calculation of remaining life.The Short Term, Long Term, Factor Remaining Life, and Inspection Interval check boxes are selected.Tip: If needed, you can modify values in the available fields. Optional: For piping assets, select the Piping Asset check box.
+Note: The Piping Asset check box appears only if you enable the piping rotation workflow in the Pipe Rotation Preferences section of the Global Preferences workspace found in the TM Admin Preferences page.
+Select Create Settings.The Corrosion Analysis Settings record is created.What To Do Next
+Access a TML.Access the Analysis Overview WorkspaceBefore You BeginCreate Corrosion Analysis Settings.Procedure
+Access the Thickness Monitoring Overview page for the Functional Location that contains the asset, TML Group, or TML whose Analysis Overview workspace you want to access.In the workspace, select the Assets tab.The Assets section appears, displaying a list of assets with Corrosion Analysis Settings that are contained in the Functional Location. 
+In the row containing the asset whose Analysis Overview workspace you want to access, select the link.The Analysis Overview workspace for the asset appears.
+Tip:  To access or modify the datasheet for the selected asset or TML Group, in the workspace, select the Details tab.If you want to access the Analysis Overview for a:TML Group, proceed to the next step.TML, proceed to step 5.In the left pane, select a TML Group.The Analysis Overview workspace for the TML Group appears.To access the Analysis Overview workspace for a TML, complete the following steps:In the left pane, select a TML.The Measurements section for the TML appears.Select the Analysis Output tab.The Analysis Overview workspace for the TML appears.
+Tip:
+To access or modify the datasheet of the selected TML, in the workspace, select the TML Details tab.To access or modify the datasheet of the selected asset or TML Group, in the workspace, select the Details tab.To access the Asset Corrosion Analysis or the TML Analysis datasheet for the selected asset, TML Group, or TML, select the Details tab within the Analysis Output section.
+
+ResultsFrom the Analysis Overview workspace for an asset or TML Group, you can also:
+Access the Remaining Life graph.
+Access linked TMLs.Access the datasheet for the selected asset or TML Group, or the Asset Corrosion Analysis.From the Analysis Overview workspace for a TML, you can also:
+Access the Trends graph.
+Access linked measurements.Access the datasheet for the selected TML, or the TML Corrosion Analysis.From the Analysis Overview workspace, in the Analysis Output section, you can also access a summary of the Asset Corrosion Analysis or the TML Corrosion Analysis for the selected asset, TML Group, or TML.Access the Remaining Life GraphProcedure
+Access the Analysis Overview workspace for the Asset or TML Group that contains the 
+Remaining Life graph that you want to access.In the workspace, expand the REMAINING LIFE section.The REMAINING LIFE section is expanded, and displays the following information:
+The Remaining Life graph: Displays a pie chart of the remaining life (in years) of the TMLs linked to the selected Asset or TML Group.
+The Remaining Life table: Displays a list of TMLs along with their remaining life values, the IDs of the associated assets, and their analysis types. This list is filtered based on your selection on the graph. If you want to view a list of all the TMLs in the TML Group or Asset, select Clear Filter.Note: If you have selected an Asset, and the Asset contains only TML Groups, but no TMLs directly linked to it, a list of TML Groups appears in the table. For piping assets, a list of components appears at the Asset level, and a list of bands appears at the component level. In addition, a list of TMLs sorted by their positions in the band appears at the band level.
+Tip: By default, the graph is plotted for TMLs associated with all analysis types. You can, however, filter the graph by selecting an analysis type in the Analysis Type box. Modify Corrosion Analysis SettingsBefore You Begin
+Create Corrosion Analysis Settings.About This TaskIf you modify the settings for an asset, you can apply the modified settings to the associated TML Groups and TMLs as well. After modifying the corrosion analysis settings, the analysis will be recalculated.Procedure
+Access the Analysis Overview workspace for the asset, TML Group, or TML whose corrosion analysis settings you want to modify.In the upper-right corner of the workspace, select . The Corrosion Analysis Settings workspace appears. Modify the settings as needed. Select Update Settings or Create Settings. Note: The Create Settings button appears only if you have selected an Inspection Type for the analysis that does not yet exist for the selected record.A message appears, indicating that the settings have been updated successfully. In addition: If you selected a TML, the analysis is recalculated using the new settings. If so, skip to step 10. If you selected an asset that is not linked to TML Groups or TMLs, the analysis is recalculated using the new settings. If so, skip to step 10.If you selected an asset or TML Group that is linked to TMLs that have settings, the Select Dependencies to Update window appears, displaying a list of those TMLs. If so, skip to step 8. If you selected an asset that is linked to TML Groups with settings of the same Inspection Type as the asset, the Select Dependencies to Update window appears. If so, skip to step 6. If the selected asset is linked to TML Groups that do not have settings of the same Inspection Type as the asset, the Select Spreading window appears. By default, all rows in the list are selected. If so, proceed to the next step. In the Select Spreading window, in the list, clear the rows that correspond to the TML Groups for which you do not want to create settings of the same Inspection Type.Select Done.The settings for the selected TMLs are saved. In addition:If there are no additional TMLs linked to the selected asset that share the same Inspection Type as the asset, the procedure is complete. If so, skip to step 10. If there are additional TML Groups that are linked to the asset that share the same Inspection Type as the asset, the Select Dependencies to Update window appears. If so, proceed to the next step. In the Select Dependencies to Update window, in the list, select the check boxes that correspond to the TML Groups whose settings you want to update.
+Select Next.A new window appears, displaying a list of TMLs. By default, the check boxes for all TMLs are selected. In the list, clear the check boxes corresponding to each TML whose settings you do not want to update. 
+Note: Only the settings that were changed in step 2 will be updated. 
+Select Finish.A message appears, indicating that the settings for the selected asset or TML Group and all selected dependent settings have been updated successfully. Then, the analysis is recalculated. To return to the Analysis Overview workspace, select Cancel.Calculate a Corrosion AnalysisBefore You Begin
+
+Create Corrosion Analysis Settings.
+Create a Thickness Measurement Location (TML).
+Add a Thickness Measurement.
+Procedure
+Access the Analysis Overview workspace for the asset, TML Group, or TML whose analysis you want to calculate.In the upper-right corner of the workspace, select .
+Note:  If the button is an orange , data has changed since the last calculation, and the analysis needs to be recalculated. The analysis is calculated.Results
+The Calculated Date field on the Asset Corrosion Analysis or the TML Corrosion Analysis datasheet is updated with the current date. Any other analysis data that changes will also be updated on the datasheet.
+Perform a Bulk AnalysisAbout This TaskWhen you perform a bulk analysis, the following analyses will be updated:Asset Corrosion Analyses for all or selected assets. Asset Corrosion Analyses for TML Groups that are linked to all or selected assets.TML Corrosion Analyses for TMLs that are linked to the assets and TML Groups.Procedure
+Access the Thickness Monitoring Overview page.
+Select the Assets tab or the Assets Requiring a Calculation tab.The corresponding section appears. 
+If you want to analyze all the assets in the list, select Bulk Analyze in the upper-right corner of the section.-or-If you want to analyze a subset of the available assets, then select the check box for each asset that you want to analyze, and then select Bulk Analyze in the upper-right corner of the section.A message appears, asking you to confirm that you want to validate and analyze those assets that require calculation.Select Done.Note: The assets that required calculation are calculated while those that have been previously calculated are skipped. If, however, you select the Calculate 100 assets check box, all the selected assets are calculated regardless of their previous calculation status.The Bulk Analyze window appears, displaying the calculation progress and a log detailing any errors. If the calculation fails, a list of the required fields appears in an error report at the bottom of the Bulk Analyze window.
+After the calculation is complete: 
+To view the log details for all calculated analyses, select View Complete Log.To view the log details for a single analysis, in the list, select that analysis.To close the window, select Close.
+Note:  If the calculation is still in progress, a message appears, stating that the calculation continues even after you close the Bulk Analyze window. If the calculation is complete, then the window closes, and the lists of assets in the Assets and Assets Requiring a Calculation sections on the Thickness Monitoring Overview page are updated.
+Archive an Asset Corrosion AnalysisBefore You Begin
+When you archive an Asset Corrosion Analysis, the Asset Corrosion Analyses for TML Groups linked to the asset will also be archived. 
+Procedure
+Access the Analysis Overview workspace for the asset that contains the Asset Corrosion Analysis that you want to archive. 
+Note: Asset Corrosion Analyses can only be archived on the asset level.
+In the upper right corner of the workspace, select , and then select Archive Analyses.
+A message appears, asking you to confirm that you want to archive the selected Asset Corrosion Analysis. 
+Results
+You can now review the archived analyses. 
+Review Archived AnalysesProcedure
+Access the Analysis Overview workspace for the asset or TML Group that contains the archived Asset Corrosion Analysis that you want to review. In the upper-right corner of the workspace, select , and then select Review Archived Analyses.The Archived Corrosion Analyses workspace appears. 
+Tip: Archived Asset Corrosion Analyses can only be reviewed at the selected level. For example, if you select an asset, you cannot review the archived Asset Corrosion Analysis for a linked TML Group.Reset Maximum Historical Corrosion Rate (MHCR)About This Task
+When you reset the Maximum Historical Corrosion Rate (MHCR) for:
+An Asset Corrosion Analysis, the Maximum Historical Corrosion Rate in the analysis is replaced with the Controlling Corrosion Rate.A TML Corrosion Analysis, the Maximum Historical Corrosion Rate in the analysis is populated with the value in the Corrosion Rate field.
+Procedure
+Access the Analysis Overview workspace for the asset, TML Group, or TML for which you want to reset MHCR.In the workspace heading, select , and then select Reset MCHR.
+The Confirm MHCR Reset dialog box appears, asking you to confirm that you want to reset the MHCR.
+Note: If the TML Group for which you want to reset the MHCR has analyses of different inspection types, the Reset MHCR window appears. Next to the Inspection Types that you want to reset, select the check boxes.
+Select Yes. 
+The MHCR is reset. 
+Results
+The corrosion analysis for which you reset MHCR needs to be recalculated.
+
+
+
+
+
+On this pageAbout Corrosion Analyses in Thickness MonitoringAbout the Types of Corrosion AnalysesAbout Corrosion Analysis SettingsAbout Thickness Monitoring TasksAbout Archived Asset Corrosion AnalysesAbout Bulk AnalysisAbout the Remaining Life GraphCreate Corrosion Analysis SettingsAccess the Analysis Overview WorkspaceAccess the Remaining Life GraphModify Corrosion Analysis SettingsCalculate a Corrosion AnalysisPerform a Bulk AnalysisArchive an Asset Corrosion AnalysisReview Archived AnalysesReset Maximum Historical Corrosion Rate (MHCR)
+
+
+
+
+
+
+
+
+

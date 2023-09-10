@@ -1,0 +1,113 @@
+
+
+
+General Reference | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Record ManagerOverview
+Manage Records
+Manage Linked Records
+Manage Bulk Data Form 
+Manage Reference Documents
+Manage Conditional Alerts
+ReferenceGeneral Reference
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Record Manager
+Reference
+General Reference
+
+
+
+
+
+
+
+General ReferenceReference Documents System RequirementsLicense Requirements
+This feature is available with the core GE Digital APM application; no specific license is required.
+Record Manager URLs
+There is one URL route associated with Record Manager: record-manager. The following table describes the various paths that build on the route, and the values that you can specify for each element in the path.
+ElementDescriptionAccepted Value(s)Notes
+ record-manager: Displays the Record Explorer page.
+ #record-manager/<EntityKey>: Opens the Record Manager page for that entity.
+Entity Key Specifies the Entity Key of the record that you want to open in the Record Manager.Any Entity Key that corresponds to an asset.None
+ #record-manager/<EntityKey>/<FamilyKey>: Opens the Record Manager page for a family with the family key.
+ record-manager/<EntityKey>/<FamilyID>: Opens a Record Manager page for a family with the family ID.
+
+#record-manager/0/<FamilyKey or ID>: Creates a new record in the Record Manager for a given family using default datasheet with no values set.
+#record-manager/0/<FamilyKey or ID>?<FieldID1>=Value1&<FieldID2>=Value2: Creates a new record in the Record Manager for a given family using default datasheet with values set in given fields.
+#record-manager/0/<FamilyKey or ID>/ID/<DatasheetID>?<FieldID1>=Value1&<FieldID2>=Value2: Creates a new record in the Record Manager for a given family using specific datasheet with values set in given fields.
+Family Key 
+Specifies the Entity Key and Family Key of the record that you want to open in the Record Manager. 
+Any Family Key that corresponds to a family. 
+N/A
+ 
+0
+Displays a blank record for the family.
+Family ID Specifies the family ID for a new record.Alphanumeric Family IDThe Family ID parameter provides the same functionality as the Family Key parameter. In each URL that contains the Entity Key parameter, you can use either the Family Key or Family ID parameter. You do not need to use both.
+ #record-manager/<EntityKey>/ID/<DatasheetID>: Opens the Record Manager page of the entity on the desired datasheet.
+ record-manager/<Entitykey>?<FieldID>=<FieldValue>:Opens the Record Manager page of the entity and assigns the field value to the desired field.
+#record-manager/<Enty_Key>?<FieldID1>=Value1&<FieldID2>=Value2: Opens the Record Manager page of the entity and updates the specified fields with the given values.
+#record-manager/<Enty_Key>/<Family Key or ID>?<FieldID1>=Value1&<FieldID2>=Value2: Opens the Record Manager page for the entity of a given family and updates the specified fields with the given values.
+#record-manager/<Enty_Key>/ID/<Datasheet ID>?<FieldID1>=Value1&<FieldID2>=Value2: Opens the Record Manager page of the entity on the desired datasheet and updates the specified fields with the given values.
+#record-manager/<Enty_Key>/<Family Key or ID>/ID/<Datasheet ID>?<FieldID1 1>=Value1&<FieldID2>=Value2: Opens the Record Manager page for the entity of a given family on the desired datasheet and updates the specified fields with the given values.
+Datasheet ID Specifies the datasheet that you want to display in the Record Manager.The Datasheet ID of the desired datasheet.The Datasheet ID must correspond to a datasheet that has been defined for the specified family in the Configuration Manager. If you do not specify this parameter, the GE Digital APM system will use the datasheet that the current user was last using when viewing a record in the specified family or the default datasheet if the user has never opened a record in that family before.Field ID Defines fields that you want to populate automatically, as well as the values that you want to use to populate them.Values that are appropriate for the specified fields.When you construct a Route to create a new record, you can specify values that will be used to populate fields in that record automatically. The actual parameter names should correspond to fields that you want to populate. You must use the Field ID as the parameter name. The parameter values will vary depending on the values that you want to use to populate the fields, but you should make sure to specify values that are appropriate for the field types (e.g., specify numbers for numeric fields).
+Example URLs 
+
+Example URLDestination#record-manager/1234567 Opens the Record Manager, displaying the record with the Entity Key 1234567.#record-manager/1234567/1234567 Opens the Record Manager, displaying the record with the Entity Key 1234567 and with the Family Key 1234567.#record-manager/0/1234567 Opens the Record Manager, displaying a blank record for the family with the Family Key 1234567.#record-manager/0/Pump Opens the Record Manager, displaying a blank record for the Pump family.#record-manager/1234567?datasheetid=Custom_Datasheet Opens the Record Manager, displaying the record with the Entity Key 1234567. The datasheet Custom_Datasheet is selected by default.#record-manager/0/1234567?Asset_Manf_CHR=Pacific Opens the Record Manager, displaying a blank record for the family with the Family Key 1234567. The field with the ID Asset_Manf_CHR is populated automatically with the value Pacific.
+
+Site Filtering in Record ManagerWhen you open a record in Record Manager, the site to which the record is assigned is displayed in the Site field, as shown below. The Site field is not displayed when you access a record in a family for which the site filtering is disabled.When you create or edit a record in the Record Manager, you can modify the value of the Site field according to the site filtering constraints for the relevant families and your site assignment. When you use the Add New Record option to create a new record linked to an existing record, and the family of the new record has site filtering enabled, the site of the new record is set automatically based on the site of the existing record.When you open an existing record in Record Manager and use the Link Existing Record option, the Search window only displays the records that can be linked with the existing record according to the site filtering configuration of the relevant families.Note:  In most cases, the Search window displays only records assigned to the same site as the record initially opened in Record Manager, and records assigned to the Global site.If you are a Super User, when you open an existing record in Record Manager, you can use the Site fields to change the site of the record.
+
+
+
+
+On this pageReference Documents System RequirementsRecord Manager URLsSite Filtering in Record Manager
+
+
+
+
+
+
+
+
+

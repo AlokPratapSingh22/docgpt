@@ -1,0 +1,114 @@
+
+
+
+T-Min Calculations | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+Workflows
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data Loaders
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+T-Min Calculations
+
+
+
+
+
+
+
+T-Min CalculationsAbout T-Min Calculations
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+About the Calculated T-Min Value using PolicyThe Calculated T-Min value is determined by performing calculations using T-Min formulas and values from the Thickness Measurement Location (TML). This calculation will be performed using a policy that is provided in the TM Rules Lookup.Policy execution is defined in a way that it takes the TML entity as an input and should return a numeric value after the execution. Policy can also return a string if any validation failures occur during executing.Note: If the T-Min Formula Policy field is set in the TM Rules Lookup record, the T-min calculator will execute the specified policy. Else, the calculator will check the Formula Rule field and execute it.About the Calculated T-Min Value using Formula
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+About Nominal AllowanceThe Nominal Allowance T-Min is the minimum thickness value that is derived by deducting Corrosion Allowance from Nominal Thickness.About Default T-Min
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+About User-Defined T-Min
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+About the Results of a T-Min Calculation
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+About the Calculation Details
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+About TML Calculation Details
+This topic has been intentionally excluded from the GE Digital APM product documentation website. This topic is available to you via the product documentation that is provided within the GE Digital APM system.
+Calculate Minimum Thickness (T-Min)Before You BeginEnsure there are values in the fields required to calculate T-Min for each TML. Procedure
+Access the Analysis Overview workspace for the asset or TML Group that contains the TMLs whose T-Min you want to calculate.
+Tip: When you select an asset, T-Min will be calculated for TMLs linked to the asset, as well as TMLs linked to TML Groups the asset contains. When you select a TML Group, T-Min is calculated only for the TMLs it contains.
+Select , and then select T-Min Calculator.
+Note: For piping assets, the T-Min Calculator option is only available at the component and band levels.
+The T-Min Calculator Disclaimer appears.
+Read the disclaimer completely, and then, if you agree, select OK.The T-Min Calculator workspace appears, displaying a list of TMLs. Tip: For piping components and bands, you can view the position of each TML in the band from the Position column.
+In the list, select the check boxes corresponding to the TMLs whose T-Min you want to calculate.
+Note: If you want to specify a user defined T-Min value for a TML, enter a value in the corresponding User Defined box.
+Select Calculate T-Min.The T-Min Calculation Output dialog box appears. After the operation is complete, it displays the calculation log.
+Select OK. In the T-Min Calculator workspace,  and  images appear next to the TML IDs to indicate whether the TMLs have been calculated successfully. The Calculated column is updated to reflect the new calculated values. 
+Note: If you want to investigate why a TML was not calculated, select the  image next to the TML ID. The T-Min Calculation Output dialog box appears, displaying the calculation log. For each TML, in the last column, select a value in the Selected T-Min Source box.
+Note: The default selection in the Selected T-Min Source list is the field containing the most conservative (i.e., the largest) value, based on the Calculated, Default, Nominal, and User Defined T-Min values. For example, if the User Defined T-Min value was 0.81, and the Calculated T-Min value was 0.76, the Final T-Min Source would default to User Defined.The selection in the Selected T-Min Source list determines what value is saved as the TML's current T-Min Value. For example, if you specified a User Defined T-Min value of 0.18, and the Calculated T-Min value was 0.281, you could choose to save the value in the Calculated field by selecting Calculated in the Selected T-Min Source list, instead of User Defined.
+If you want to review the output of the most recent calculations before saving, in the upper-right corner of the workspace, select View Calculation Output.The T-Min Calculation Output dialog box appears, displaying the log of the most recent T-Min calculations.Select Save T-Min Values.The new T-Min Values, as determined by the selected T-Min source for each TML, are saved, and the analysis is recalculated.Tip: To return to the Analysis Overview workspace, select .View T-Min Calculation HistoryProcedure
+Access the Analysis Overview workspace for the asset or TML Group that contains the TMLs whose T-Min you want to calculate.
+Note: When you select an asset, T-Min will be calculated for TMLs linked to the asset, as well as TMLs linked to TML Groups the asset contains. When you select a TML Group, T-Min is calculated only for the TMLs it contains.
+Select , and then select T-Min Calculator.The T-Min Calculator Disclaimer appears. 
+Read the disclaimer completely, and then, if you agree, select OK.The T-Min Calculator workspace appears, displaying a list of TMLs. Tip: For piping assets, you can view the position of each TML from the Position column.
+At the end of the row corresponding to the TML whose history you want to view, select .The T-Min Calculation Output dialog box appears, displaying a historical log of all calculations that were saved for that TML.
+
+
+
+
+On this pageAbout T-Min CalculationsAbout the Calculated T-Min Value using PolicyAbout the Calculated T-Min Value using FormulaAbout Nominal AllowanceAbout Default T-MinAbout User-Defined T-MinAbout the Results of a T-Min CalculationAbout the Calculation DetailsAbout TML Calculation DetailsCalculate Minimum Thickness (T-Min)View T-Min Calculation History
+
+
+
+
+
+
+
+
+

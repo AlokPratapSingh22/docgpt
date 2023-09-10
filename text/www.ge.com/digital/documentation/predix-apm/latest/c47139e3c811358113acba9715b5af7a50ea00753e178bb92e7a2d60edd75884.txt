@@ -1,0 +1,133 @@
+
+
+
+Manage Reference Documents | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Record ManagerOverview
+Manage Records
+Manage Linked Records
+Manage Bulk Data Form 
+Manage Reference Documents
+Manage Conditional Alerts
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Record Manager
+Manage Reference Documents
+
+
+
+
+
+
+
+Manage Reference DocumentsAbout Reference DocumentsReference documents allow you to associate files or websites with a record in the GE Digital APM database. For example, while performing an inspection, you might take pictures of the piece of equipment that you are inspecting and save them on your local machine or company network. Then, while recording the inspection details in a General Inspection record in GE Digital APM, you can link those images, as reference documents, to the General Inspection record, so that when other users open the General Inspection record, they will be able to view the images.Each time you associate a reference document file with a record, a Reference Document record will be created and linked to that record. You can link Reference Document records to any record belonging to a family for which the Has Reference Documents relationship has been defined via the Configuration Manager. The GE Digital APM system supports two different types of reference documents:Internal Reference Documents: Reference document files that are stored in the GE Digital APM database.External Reference Documents: Reference document files and websites that reside outside of the GE Digital APM database and are referenced in a Reference Document record. Internal reference documents can be accessed only by users who have permission to access the location in which they are stored. Other users would be able to view an external reference document that is stored in a public location, such as a network drive.Reference document access is available via the Record Manager, but you can also access reference documents by performing a search.Access Reference DocumentsProcedure
+Access Record Manager, selecting the record whose reference documents you want to view.Select , and then select Reference Documents.
+In the drop-down menu, the number listed before the Reference Documents menu indicates the number of existing reference documents for that record. On selecting this menu, the list of available reference documents appears for that record. 
+Reference Documents WorkflowNote: Before manipulating Reference Documents, you must configure the Has Reference Documents relationship. Many of the baseline families in GE Digital APM already possess the Has Reference Documents relationship, but it will need to be added for any new or custom families.This workflow provides the basic, high-level steps for using Reference Documents. The steps and links in this workflow do not necessarily reference every possible procedure.
+Add a Reference Document.
+Modify a Reference Document.
+Unlink a Reference Document from a Record.
+Access a File Associated with a Reference Document.
+Save a Copy of a Reference Document to a Different Location.Add a Reference DocumentAbout This Task
+You can add a new reference document or link an existing reference document to a record. Complete one of the following sequences of steps.
+ProcedureCreate a Reference Document
+Access Record Manager. Select , and then select Reference Documents.Select 
+
+.
+The Add Reference Document window appears.
+
+
+
+In the ID box, enter a name for the reference document.In the Description box, enter a brief description.In the Document Path box, select .
+The Edit Document Path window appears.
+If you want to store the reference document in the GE Digital APM database:
+Select Upload a Local File, then select , and then select a file to upload.Select Save.
+The document path is added to the datasheet.
+The following file formats are supported:
+Microsoft PowerPoint (.ppt, pptx, .pptm, .pps, .ppsx, or .ppsm)Microsoft Word (.doc, .docx, or .docm)Text files (.txt, .rtf, or .odt)Adobe Portable Document Format (.pdf)Images (.jpg, .jpeg, .jpe, .gif, .png, .tif, .vsd, .vss, .vst .vdx, .vsx, or .bmp)Email Messages (.msg)
+The following file protocols are supported:HTTP (Hypertext Transfer Protocol)HTTPS (HTTP over SSL)
+Select .The reference document is saved.
+Note: The link to the document appears in the Document Path box.
+Link a Record to a Reference Document
+Access Record Manager.Select , and then select Reference Documents. Select .
+The Search window appears.
+If you want to search reference documents of all families, select .
+-or-
+If you know the name of the reference document that you want to link, enter the name in the search box, and then press Enter.
+Select the check box next to the reference document that you want to link, and then select OK.
+The reference document is linked to the record.
+Modify a Reference DocumentProcedure
+Access Reference Documents for the record that you want to modify.Select the row for the reference document you want to modify, and then select .
+The datasheet for the selected reference document appears.
+Modify the datasheet fields as desired.Select .
+The changes you made to the reference document record are saved.
+Access the File Associated with a Reference DocumentProcedureAccess Reference Documents.In the Document Path box, select the link.If the file type is supported by a web browser, the file opens in a web browser . Otherwise, the file is downloaded on your machine.Note: Depending on the operating system of your mobile device, Accessing Reference Documents using the GE Digital APM mobile application will vary. For example, on a Window or an Android device, when you attempt to access a Reference Document for the first time, a dialog box appears, asking you to select the application in which you want to open the file. This selection will be saved as the default setting. Whereas, on an iOS device, each time you attempt to access a Reference document, the dialog box appears. When you attempt to download a file and the operating system of your mobile device does not recognize the file type, a message appears.Unlink a Reference Document from a RecordProcedure
+Access Reference Documents.Select the row for the reference document you want to unlink, and then select .
+The Alert dialog box appears asking you to confirm that you want to unlink the reference document.
+Select OK.
+The reference document is unlinked from that record.
+Note: When you unlink a reference document from a record, the reference document no longer appears in the list for that record, but it still exists in the GE Digital APM database. You can re-link the reference document or link it to another record by following the procedure to add a reference document by linking.
+Save a Copy of a Reference Document to a Different LocationProcedure
+Access Reference Documents.Select the reference document that you want to open.
+The file is downloaded and ready to be accessed.
+Open the file, and then save it to your desired location.Delete a Reference DocumentProcedure
+Access Reference Documents for the record that you want to delete.Select , and then select Delete.
+The Alert dialog box appears, asking you to confirm the deletion.
+Select Yes.
+The record is deleted from the GE Digital APM database.
+Note: Only Super Users are granted the privileges of deleting the global records. 
+
+
+
+
+
+On this pageAbout Reference DocumentsAccess Reference DocumentsReference Documents WorkflowAdd a Reference DocumentModify a Reference DocumentAccess the File Associated with a Reference DocumentUnlink a Reference Document from a RecordSave a Copy of a Reference Document to a Different LocationDelete a Reference Document
+
+
+
+
+
+
+
+
+

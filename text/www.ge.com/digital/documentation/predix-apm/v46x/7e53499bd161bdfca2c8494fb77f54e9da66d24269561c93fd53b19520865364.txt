@@ -1,0 +1,84 @@
+
+
+
+
+Create an Instance in the Business Functional Hierarchy | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create an Instance in the Business Functional HierarchyYou can create new instances or child-instances for each level in the business functional hierarchy.About This Task
+You can begin your creation of instances from a selection in the Context Browser. While in the process of creating an instance, it is possible to change to a different parent node and create a child-instance for that node.Important: After you have created an instance, you cannot modify the placement of the instance in the business functional hierarchy. For information on deleting an instance from a Business Functional Object, refer to  the Delete an Asset Instance section of the documentation, and begin again.
+You can create instances in the business functional hierarchy as follows:Table 1. Available Classification InstancesBeginning from hereYou can create this type of instanceEnterpriseYou can create a child-Enterprise, or a Site.SiteYou can create a child-Site, a Segment, or an Asset.SegmentYou can create a child-Segment, or an Asset.AssetYou can create a child-Asset.
+
+When you create a new instance, you must define the following:Table 2. Classification DefinitionsFieldDescriptionInstance nameThe name of the new instance.(Optional) DescriptionA description of the new instance.Source IDA unique identifier for a new instance.Note: You can assign the same source ID to different types of business functional hierarchy such as Enterprise, Site, Segment, and Asset in different cases.For example: TurbineSiteType (SiteType), turbinesitetype (AssetType), Turbinesitetype (SegmentType)Lifecycle StageYou can select a new lifecycle stage for the instance.StatusYou can select a new status for the instance.(Optional) Position in Hierarchy check boxCreates the new instance at the top level in the hierarchy. This disables the Parent Node context selection.Parent NodeAllows you to define the level in the hierarchy in which the instance is created as a child-node. Selecting  in the Parent Node box accesses the Context Browser, allowing you to select from the choices available in the hierarchy.Classification Type drop-downSpecifies the type of instance (Enterprise, Site, Segment, or Asset). If a type is not allowed for this instance, the selection is greyed out.Parent Classification drop-downThe specific classification associated with the instance. The Parent Classification is based on the Classification Type selected. If the Asset
+Type is selected as a classification type, you can search for a classification.
+ProcedureIn the module navigation menu, go to
+Assets >  Asset Instances.Use the Context Browser to select an asset context.An instance appears for the selected asset context.In the instance view, select .
+Note: Instances can be Enterprise, Site, Segment, or Asset.
+The New Instance page appears.Enter the required information in the new instance form:Enter an instance name in the Instance Name box.Optional: Enter a description for the new instance in the Description box.
+Note: You can add UTF-8 special characters in the Instance Name and Description boxes.
+Enter a sourcekey for the new instance in the Source ID box.Select an option from the Lifecycle Stage drop-down list box.Select an option from the Status drop-down list box.Optional: If you want the new instance to be placed into the top level of the hierarchy, select the Set as top level node check box.
+Important: Selecting this option disables the Parent Node context selector.
+If you want to change the parent node, select  in the Parent Node box to access the Context Browser, select an entry in the column in which you would like the new instance to reside as a child-node, and then select Open.
+The Parent Node option is preselected to your selection from the Context Browser. If you are creating an instance that requires a different parent node, you will need to change the selection.Parent Node and Type are disabled if the Set as top level node option is selected.
+Select an option from the Type drop-down list box.Depending upon the context set by the parent node, some of the classification types may be disabled. For more information, refer to the Available Classification Types table above.If you want to change the Parent Classification option, choose from the following:
+For an Enterprise, Site, or Segment
+Type selection, select an option from Parent Classification.For an Asset
+Type selection, select  in the Parent Classification box to access the Select Classification window. Enter your search criteria and then Select. For more information about how to select a classification, refer to the Find and Select a Parent Classification for an Asset Instance documentation.
+
+Tip:
+The Parent Classification option associated with the Type selected appears by default. The Parent Classification option is optionally preselected to your selection from the Context Browser. If you are creating an instance that requires a different parent classification, you will need to change the selection.For any Type selection, the Parent Classification may be – No Name - by default.
+
+Select Create.
+Note: Create is not available until all required fields have been completed.
+The new instance appears. The instance includes the identifier information of the classification, including any inherited attributes. Instances created using the new instance are included in the selected column in the Context Browser.
+Related tasksDelete an Asset Instance
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,96 @@
+
+
+
+First Quarter of 2019 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+QueriesWorkflow
+Query Creation
+Query Results
+Query Sources, Fields, Joins, and Hyperlinks
+Query Expressions, Clauses, and Prompts
+Query Timeouts
+Reference
+Release NotesSecond Quarter of 2023
+First Quarter of 2023
+Fourth Quarter of 2022
+Second Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+First Quarter of 2019
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Queries
+Release Notes
+First Quarter of 2019
+
+
+
+
+
+
+
+First Quarter of 2019QueriesThis topic provides a list of product changes released for this module on the dates listed below.Release Date: March 29, 2019
+Table 1. Resolved Issues
+The following issues that existed in one or more previous versions have been resolved.
+DescriptionTracking IDPreviously, if your culture setting was anything other than English and you ran a query with a field that was added twice with different aliases, if one of the fields was configured such that it did not appear in the query results, no values were displayed in the query results. This issue has been resolved. DE103503 Previously, when you used the ORDER BY clause to sort a column in a query that contained the UNION operator or a SELECT DISTINCT statement and ran the query, an incorrect column was sorted in the query results. This issue occurred when the ORDER BY clause referenced an expression column by its alias. This issue has been resolved.DE101497Previously, when you ran a query that used the UNION operator as a formatted query, an error occurred, and the query did not return any results. This issue has been resolved.DE101292Previously, when you ran a query that used the UNION operator to combine the result set of two SELECT statements containing a WHERE clause, if the WHERE clause did not contain an AND operator, an error occurred, and the query did not return any results. This issue has been resolved.DE100416Previously, when you ran a formatted query with the limit results to top condition, the query did not return the expected results. This issue has been resolved.DE99794Previously, in the Conditions section of the Design workspace, when you hovered over a Hyperlink, Criteria or Or cell, a tooltip did not appear. This issue has been resolved.DE94420Previously, when you attempted to export a query result set to a dataset, only the first 100 records in the query result set were exported. This issue has been resolved. DE93641Previously, when you ran a query that joined a family to multiple sub-families and the relationship family caption contained a hyphen, an error occurred, and the query did not return any results. This issue has been resolved.DE89510Previously, when you accessed a Crosstab query in which a Total cell contained an aggregate function, incorrect values appeared in the Field and Alias cells. This issue has been resolved. DE88704Previously, when you exported the results of a formatted query that contained the ENTY_KEY and FMLY_KEY fields to a dataset, the ENTY_KEY and FMLY_KEY columns in the dataset were blank. This issue has been resolved.DE88523Previously, when you ran a formatted query where the same family was selected as the source and the related source, and the same field was selected from both sources, the related source field incorrectly displayed the source field value in the query results. This issue has been resolved.DE88332Previously, when you ran a formatted query to create left joins on two subqueries that pull data from the same family, the query did not return the expected results. This issue has been resolved.DE88141Previously, after selecting the Limit Results to Top check box and entering a value, if you ran an unformatted query and exported the query results to a Microsoft Excel file, the exported data in the file was different from the actual query results. This issue has been resolved.DE79754
+
+
+
+
+
+On this pageQueries
+
+
+
+
+
+
+
+
+

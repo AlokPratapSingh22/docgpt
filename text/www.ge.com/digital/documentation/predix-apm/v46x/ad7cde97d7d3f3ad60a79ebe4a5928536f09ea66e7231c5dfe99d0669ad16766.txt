@@ -1,0 +1,126 @@
+
+
+
+Concurrent Safe State Hazards | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+SIS ManagementOverview
+Workflows
+SIL Analysis
+Logic Solvers
+Instrumented Functions
+Common Cause Failures
+Concurrent Safe State Hazards
+SIL Assessment
+SIL Verification
+SIL Validation
+SIS Trip Reports
+SRS Templates
+SRS Projects
+SRS Categories
+Exida Project Files
+Admin
+Deployment
+Reference
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+SIS Management
+Concurrent Safe State Hazards
+
+
+
+
+
+
+
+Concurrent Safe State HazardsAbout Concurrent Safe State HazardsWhen you create an Instrumented Function, you will define the safe state of the instrumented function, which is responsible for modifying the process in the event that the condition of the process is in an unsafe state. In other words, if a given process is approaching an unsafe condition, the instrumented function that monitors that process will change the process to a condition that is specified as the safe state for that process. In some cases, if a given process is in its associated safe state at the same time as a different Instrumented Function, while the individual processes are in a safe state, the combination of these conditions could trigger a hazardous event. For example, assume that to reach a safe state in a Flare system, the process valve needs to vent. Now assume that two process valves need to vent at the same time. In this case, the Flare system can become overloaded due to both processes reaching their safe states concurrently.In GE Digital APM, the combinations of safe states that can lead to hazardous events are referred to as concurrent safe state hazards. You can document the concurrent safe state hazards that exist for instrumented functions via the Instrumented Function record. In other words, for each instrumented function that participates in a potentially hazardous relationship, you will need to define the concurrent safe state hazard(s) for that instrumented function.The Concurrent Safe States section of the Instrumented Function allows you to manage all the concurrent safe state hazards that exist for an instrumented function. To define concurrent safe state hazards for an instrumented function, you will need to:Link the Instrumented Function to the other Instrumented Function whose concurrent safe state can cause a hazard. Instrumented Functions can be linked to one or more other Instrumented Functions through the Has Hazardous Event relationship.Describe the hazardous event that can occur when the safe state conditions occur concurrently. Since some instrumented functions can participate in multiple concurrent safe state scenarios, in each Instrumented Function, you will need to describe the hazardous events that are associated with that instrumented function. In other words, describing the hazardous event in one Instrumented Function will not automatically populate the linked Instrumented Function with the same description. You will need to access the linked Instrumented Function and enter the description of the concurrent safe state hazard. Create a Concurrent Safe States RecordBefore You Begin
+
+Create an Instrumented Function.
+Procedure
+Access the Instrumented Function to which you want to create a Concurrent Safe States record. In the workspace, select the SIL Assessment tab, and then select Concurrent Safe States. 
+The Concurrent Safe States section appears, displaying a list of Concurrent Safe States for the Instrumented Function. 
+
+
+
+Note: If the fields in the Concurrent Safe States section do not appear on the datasheet, select the Hazard for Concurrent Safe State check box.
+In the upper-right corner of the section, select .
+The Search window appears.
+
+
+
+In the upper-right corner of the window, select .
+A list of Instrumented Functions appears.
+
+
+
+Select the check box that corresponds to the Instrumented Function whose output can be hazardous if combined with the output of the current Instrumented Function.Select OK.
+The ID, description, and safe states description of the selected Instrumented Function are listed in the Individual Safe State Details grid. A message appears, asking you to provide a description for the concurrent safe state hazard.
+Provide a description in the Potential Concurrent safe State Hazard box, and then select Save.
+The Concurrent Safe States record is created and linked to the Instrumented Function.
+Results
+The Concurrent Safe States record is linked to both the Instrumented Functions that you have selected.
+Delete a Concurrent Safe States RecordProcedure
+Access the Instrumented Function that is linked to the Concurrent Safe States record. In the workspace, select the SIL Assessment tab, and then select Concurrent Safe States. 
+The Concurrent Safe States section appears, displaying a list of Concurrent Safe States for the Instrumented Function. 
+
+
+
+Note: If the fields in the Concurrent Safe States section do not appear on the datasheet, select the Hazards for Concurrent Safe State check box.
+In the Individual Safe State Details grid, select the  button next to the Instrumented Function that is related to the Concurrent Safe States record that you want to remove. 
+A confirmation message appears, asking if you really want to remove the Instrumented Function.
+Select OK.
+The selected Instrumented Function is unlinked and removed from the Individual Safe State Details grid, thus deleting the Concurrent Safe States record.
+Results
+The Concurrent Safe States record is deleted from both the Instrumented Functions that you have selected.
+
+
+
+
+
+On this pageAbout Concurrent Safe State HazardsCreate a Concurrent Safe States RecordDelete a Concurrent Safe States Record
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,94 @@
+
+
+
+Overview Configuration | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Inspection ManagementOverview
+Workflows
+Inspections
+Inspection Profiles
+Team Members
+Inspection Tasks and Recommendations
+Work Packs
+AdminInspection Configuration
+Taxonomy Configuration
+Overview Configuration
+Compliance Configuration
+Human Resources
+
+
+Data Loaders
+Deployment
+Reference 
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Inspection Management
+Admin
+Overview Configuration
+
+
+
+
+
+
+
+Overview ConfigurationModify Date FiltersAbout This TaskIn the Date Filters section, you can modify the date filters that appear in the Underlying Inspection Tasks, Underlying Open Recommendations, and Recommendations Due for Implementation sections. When you select a Default filter, the selected filter will show only the corresponding tasks and recommendations when a user navigates to the page. When you select the Display check box beside a filter, the selected filter will appear as an option in the list of filters in the respective page. Note: By default, the 30 Days filter is selected for the Underlying Inspection Tasks, and Underlying Open Recommendations, and Recommendations Due for Implementation sections.Tip: If the user selects an available filter in the page other than the Default filter defined by the administrator, refreshing the page or navigating to a different page will reset the filter to the Default filter instead of the filter that the user selected. ProcedureIn the module navigation menu, select
+Admin > Application Settings > Inspection Management.Select Overview Configuration.The Overview Configuration workspace appears, displaying the Date Filters section.In the Date Filters section, select .The Date Filters section can now be modified.In the Task Next Date Filter Options list: 
+In the Default column, select the filter that you want to use as the default. In the Display column, select the filters that you want to use in the Underlying Inspection Tasks page.Optionally, if you selected the Custom filter as the default filter, enter values in the Months Prior to Current Date and Months After Current Date boxes.
+In the Recommendation Target Completion Date Filter Options list: 
+In the Default column, select the filter that you want to use as the default. In the Display column, select the filters that you want to use in the Underlying Recommendations page.Optionally, if you selected the Custom filter as the default filter, enter values in the Months Prior to Current Date and Months After Current Date boxes.
+In the Recommendations Due for Implementation Date Filter Options list: 
+In the Default column, select the filter that you want to use as the default. In the Display column, select the filters that you want to use in the Underlying Recommendations page.Optionally, if you selected the Custom filter as the default filter, enter values in the Months Prior to Current Date and Months After Current Date boxes.
+Select .The date filters are saved.About QueriesThe Queries section of the Overview Configuration workspace displays query paths for navigating the Functional Location Overview and Asset Overview pages in Inspection Management. For a complete list of queries and their expected behavior, refer to the Overview Queries Folder in Inspection Management. 
+
+
+
+
+On this pageModify Date FiltersAbout Queries
+
+
+
+
+
+
+
+
+

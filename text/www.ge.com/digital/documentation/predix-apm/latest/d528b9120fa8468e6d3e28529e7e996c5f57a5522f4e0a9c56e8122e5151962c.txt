@@ -1,0 +1,126 @@
+
+
+
+Root Cause Analysis | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2022 General Electric Company. All rights reserved. | Privacy | Terms | Cookies 
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+APM Deployment and UpgradeOverview
+Action Management
+Asset Criticality Analysis
+Asset Health Manager
+Asset Strategy Management
+Asset Strategy Optimization
+Calibration Management
+Compliance Management
+eLog
+Failure Modes and Effects Analysis
+Generation Availability Analysis
+Generation Availability Analysis Wind
+Hazards Analysis
+Inspection Management
+Layers of Protection Analysis
+Life Cycle Cost Analysis
+Management of Change
+Metrics and Scorecards
+Policy Designer
+Production Loss Analysis
+R Scripts
+Reliability Analytics
+Reliability Centered Maintenance
+Risk Based Inspection 580
+Risk Based Inspection 581
+Root Cause Analysis
+Rounds Designer
+Rounds Pro
+SIS Management
+Thickness Monitoring
+
+
+
+
+
+
+
+
+
+
+Home
+APM Deployment and Upgrade
+Root Cause Analysis
+
+
+
+
+
+
+
+Root Cause AnalysisDeploy RCA for the First TimeBefore You Begin
+
+The following table outlines the steps that you must complete to deploy and configure this module for the first time. 
+                
+These tasks may be completed by multiple people in your organization. GE Digital recommends, however, that the tasks be completed in the order in which they are listed.
+
+Results
+StepTaskNotes
+1
+Assign Security Users to one or more of the RCA Security Groups and Roles.
+This step is required. Users will not be able to access Root Cause Analysis unless they belong to an RCA Security Group.
+2
+
+Specify the Team Charter after you create a new Root Cause Analysis record.This step is optional. A default Team Charter exists in the baseline GE Digital APM database. You can select the default Team Charter or define your own.
+3
+
+Specify the Critical Success Factors after you create a new Root Cause Analysis record.This step is optional. Default Critical Success Factors exist in the baseline GE Digital APM database. You can select one or more default Critical Success Factors or define your own.
+Upgrade RCABefore You Begin
+
+The following tables outline the steps that you must complete to upgrade this module to the latest version of GE Digital APM
+                    .
+                
+These tasks may be completed by multiple people in your organization. We recommend, however, that the tasks be completed in the order in which they are listed.
+
+ProcedureUpgrade to the latest version of GE Digital APM.
+This module will be upgraded to the latest version of Predix APM
+                                     automatically. No additional steps are required.
+
+
+
+
+
+On this pageDeploy RCA for the First TimeUpgrade RCA
+
+
+
+
+
+
+
+
+

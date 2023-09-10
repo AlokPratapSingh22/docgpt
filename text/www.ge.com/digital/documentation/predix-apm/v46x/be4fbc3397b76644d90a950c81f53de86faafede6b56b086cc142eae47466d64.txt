@@ -1,0 +1,109 @@
+
+
+
+Fourth Quarter of 2021 | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Root Cause AnalysisOverview
+Workflow
+Root Cause Analyses
+Critical Success Factors
+RCA Preserve Item Records
+5 Whys Analyses
+Event Diagram
+Event Timeline
+Logic Tree
+Results
+Tracking Items
+Admin
+Data Loader
+Deployment
+Reference
+Release NotesSecond Quarter of 2023
+Fourth Quarter of 2022
+First Quarter of 2022
+Fourth Quarter of 2021
+Second Quarter of 2021
+First Quarter of 2021
+Fourth Quarter of 2020
+Second Quarter of 2020
+First Quarter of 2020
+Fourth Quarter of 2019
+Third Quarter of 2019
+Second Quarter of 2019
+First Quarter of 2019
+Fourth Quarter of 2018
+Third Quarter of 2018
+
+
+
+
+
+
+
+
+
+
+
+
+Home
+Root Cause Analysis
+Release Notes
+Fourth Quarter of 2021
+
+
+
+
+
+
+
+Fourth Quarter of 2021Release Date: December 17, 2021This topic provides a list of product changes released for this module on this date.
+Table 1. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, in an RCA recommendation, when you enabled the State to Status mappings, and Completed the Recommendation from the Recommendation Panel, the Implementation Date and Status field values were not updated. This issue has been resolved.DE167035
+Release Date: October 8, 2021This topic provides a list of product changes released for this module on this date.
+Table 2. Resolved Issues
+The following issues, which existed in one or more previous versions, have been resolved.
+DescriptionTracking IDPreviously, when you navigated quickly between the tabs in the RCA module, an error occurred. This issue has been resolved.US483938Previously, you could not save RCA Recommendations if the target completion date had passed. This issue has been resolved.US419972Previously, when you copied a node in an RCA Event diagram and enabled the Show Event Dates option, the copied node displayed the timestamp for copying, with the event dates. This issue has been resolved. Now, the copied node correctly displays only the event dates associated with the node.DE164773Previously, when you accessed a Verification added to a Hypothesis in an RCA Analysis created from a Template, an Unsaved Changes window appeared even when you did not make any changes. This issue has been resolved.DE164725Previously, when you created a new RCA Analysis and navigated to a logic tree or an event diagram, the RCA Event displayed a global site key, irrespective of the site key of the parent analysis. This issue has been resolved. Now, for a new analysis, both RCA Analysis and RCA Event display the site key of your default site.DE164699Previously, even when you enabled the Send Notification on Due Date? field in an RCA Verification, you did not receive the email alert on the due date set. This issue has been resolved. DE164646Previously, when you generated the RCA SSRS Comprehensive Analysis Report, the report did not include the details from the RCA Verifications. This issue has been resolved.DE164520Previously, when you created a copy of an RCA Analysis, the newly created Analysis could not copy the Assigned To details for the RCA Verifications. This issue has been resolved. DE164343Previously, when you published an RCA analysis, the email notification to the designated addressee failed. This issue has been resolved.DE162656Previously, in the grid below the Hypothesis Verification chart, the details in the Hypothesis and Team Members fields were not populated . This issue has been resolved.DE162532Previously, if you were a member of the team associated with a Root Cause Analysis (RCA), you could change the state of the RCA from In Progress to Pending Approval only if you were assigned with the Principal Analyst role. This issue has been resolved. Now, irrespective of the team member role, you can change the state of the RCA if you are assigned to a security group or a security role that has privileges to change the states.DE162398Previously, in the RCA Recommendations, the fields did not appear in the language based on your language settings. This issue has been resolved.DE162393Previously, when State Management was enabled in RCA analysis, you were unable to save the analysis as a template in any other state except for Not Started, and an error message appeared. This issue has been resolved.DE162391Previously, you were unable to save RCA Recommendations if target completion date was in the past. This issue has been resolved.DE162351Previously, when you attempted to load a large RCA Logic Tree, the time taken was more than expected. This issue has been resolved. Now, a few API calls have been optimized to improve the performance.DE162452Previously, when you generated RCA Comprehensive Analysis report, the report was generated without Logic Tree and Event diagrams. This issue has been resolved. DE162401Previously, in the Team Members tab of the RCA Analysis Summary section, as an MI RCA PROACT Admin you were unable to modify the Team Member permissions when you were not part of that Team on an RCA Analysis. This issue has been resolved.DE162381Previously, when you accessed the RCA Event Diagram for existing analyses, some icons did not appear in the Palette section. This issue has been resolved.DE162372Previously, in the RCA Overview page, you could not publish RCA Template even though the RCI check box was selected and the Publish option was enabled. This issue has been resolved. Now, the Publish option for RCA Template is enabled only in the following scenarios:The selected RCA Template is sourced from an RCA Analysis, and is not an RCI sourced Template. RCA Administrator permission are set for the user.DE160244Previously, in the RCA Event Timeline, the labels along the time axis did not appear in the language set in the culture setting. This issue has been resolved.DE159709Previously, in the RCA Administrator workspace, the Event Type List for Event Timeline did not appear in the language based on your culture setting. This issue has been resolved.DE159707Previously, in the RCA Event Diagram, when you double-clicked a node in the diagram, an error message "Failed to load datasheet" may occur. This issue has been resolved.DE159806Previously, when you accessed the RCA Event Diagram originating from the GE Digital APM V3 in GE Digital APM V4, the nodes did not appear as expected. This issue has been resolved.DE158454Previously, if your Language setting was not English, and you accessed the Event Timeline diagram for an analysis, the event types were not translated to the language corresponding to your Language setting. This issue has been resolved.DE158383Previously, in the RCA Event Timeline, irrespective of the event that you changed and saved, a message appeared that the secondary event was saved successfully. This issue has been resolved. Now, you receive a message indicating the specific event that you have changed.DE158190Previously, when you selected an RCA Template, you could view the Publish and Unpublish buttons without Super User or Administrator privileges. This issue has been resolved. Now, you can view the Publish and Unpublish buttons only if you have the required privileges.DE158187Previously, in the Preserve Records section for a Root Cause Analysis, some of the fields were not translated based on the Language setting for your user account. This issue has been resolved.DE158186Previously, in the Team Members section for a Root Cause Analysis, some of the fields were not translated based on the Language setting for your user account. This issue has been resolved.DE158182Previously, when you published an RCA Analysis and enabled the option to send an email to the linked EAM system, the email message was not received by the linked EAM system. This issue has been resolved.DE158179Previously, any RCA User could delete an analysis. This issue has been resolved. Now, only Super Users, APM Administrators, and Principal Analyst for the specified analysis can delete an RCA Analysis.DE158178Previously, in the RCA Team Members section of the Analysis Summary page, when you accessed the HR record, it opened the list of all available APM users. This issue has been resolved. Now, when you open the HR Record in Teams, it loads only the APM users with site permissions corresponding to the parent analysis.DE158051
+
+
+
+
+
+On this pageRelease Date: December 17, 2021Release Date: October 8, 2021
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,90 @@
+
+
+
+Inspection Plan Management | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Predix Asset Performance Management
+Copyright © 2021 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Compliance ManagementOverview
+Workflows
+Inspection Plans
+Inspection Plan Management
+Compliance Recommendations
+Inspection Plan Revision History
+Suggested Compliance Strategy Templates
+Admin
+Deployment
+Reference 
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Compliance Management
+Inspection Plan Management
+
+
+
+
+
+
+
+Inspection Plan ManagementOverviewThe Inspection Plan Management page allows you to review multiple inspection plans and active recommended actions for any level in the Asset Hierarchy. In addition, you can approve or implement multiple Inspection Plans in bulk.Note: Inspection plans can be created in either Risk Based Inspection or in Compliance Management.Access Inspection Plan ManagementProcedureIn the Compliance Management Overview page, select .The Inspection Plan Management page appears, displaying the Inspection Plans section.What To Do NextYou can access Inspection Plans and Active Recommended Actions. You can also implement Inspection Plans that are in the Approved state in bulk. Approve Inspection Plans in BulkBefore You Begin
+You must have one or more Inspection Plans that are in the Modified or Proposed state.
+ProcedureAccess the Inspection Plan Management page.
+The Inspection Plan Management page appears, displaying the Inspection Plans section.
+Select the check box next to each Inspection Plan in the Inspection Plans section.Select Approve.The Confirm Approval window appears, asking you to confirm if you want to approve the selected Inspection Plans.Select Yes.The job status appears in the page heading, displaying the progress of the Inspection Plan approval for the selected plans. To review the progress, you can select  to access the Schedule Logs page and search for Type Mechanical Integrity and Description Inspection Plan Approval to check the progress of the approval.Note: The Recommended Actions linked to the Approved Inspection Plans can be accessed in the Active Recommended Actions section.User can choose to implement the Recommended Actions to Tasks in Asset Strategy Management or in Inspection Plan Management page.Implement Inspection Plans in Bulk by Creating New Inspection TasksBefore You BeginYou must have one or more Inspection Plans that are in the Approved state.Note: This option is only available when the following selection in the Inspection Configuration section of the IM Admin Preferences available in the Applications settings of the Inspection Management is set to false. Implement Recommended Actions to Tasks in ASM should be unchecked.
+ProcedureAccess the Inspection Plan Management page.The Inspection Plan Management page appears, displaying the Inspection Plans section.In the Inspection Plans section, next to each Approved Inspection Plan that you want to implement, select the check box.Select Implement, and then select Create New.The Create New window appears, displaying the Select Recommended Actions section. This section displays all the Recommendations linked to the Inspection Plan that have not been implemented to Tasks. Select each Recommended Action for which you want to create new Inspection Tasks.Select Next.The Edit Details section appears.You can edit Last Date in bulk using the Bulk Edit Last Date or edit Last Date for individual records in edit details section for recurring recommendations only.
+Note: For all non-recurring recommendations, one cannot edit the Last Date column in the Edit Details sections. Last Date is blank for non-recurring recommendations and is not updated when user edits the date in Bulk Edit Last Date field.
+Modify the details for the Recommended Actions that you selected.Select Finish.The job status appears in the page heading, displaying the progress of the Inspection Task creation. When the process is complete, you can select  to access the Schedule Logs page.ResultsThe newly created Inspection Tasks are linked to the selected Recommended Actions and linked to the Asset related to the Inspection Plan.Implement Inspection Plans in Bulk by Linking Existing Inspection TasksBefore You BeginYou must have one or more Inspection Plans that are in the Approved state.Note: This option is only available when the Implement Recommended Actions to Tasks in ASM preference in the Inspection Configuration section of the IM Admin Preferences available in the Applications settings of the Inspection Management is unchecked.
+ProcedureAccess the Inspection Plan Management page.The Inspection Plan Management page appears, displaying the Inspection Plans section.In the Inspection Plans section, next to each Approved Inspection Plan that you want to implement, select the check box.Select Implement, and then select Link Existing.The Link Existing Inspection Tasks window appears, displaying the Select Recommended Actions section. This section displays all the Recommendations linked to the Inspection Plan that has not been implemented to Tasks.Select each Recommended Action that you want to link to Inspection Tasks.
+Note: For optimal performance, no more than 100 recommended actions should be selected at one time.
+Select Next.The Edit Details section appears with the Recommended Actions and the existing task which will be linked. The task to link is matched, based on the task type and related asset.Note: If no task with a matching task type or related asset is found or if the recommended action is recurring and the matching task is nonrecurring, an error will be displayed.Select Finish.The job status appears in the page heading, displaying the progress of the Inspection Task creation. When the process is complete, you can select  to access the Schedule Logs page.ResultsThe Inspection Tasks are linked to the selected Recommended Actions.Review Active Recommended ActionsThe Active Recommended Actions section displays all the recommended actions that have Inspection Plans in an Approved state. 
+
+
+
+
+On this pageOverviewAccess Inspection Plan ManagementApprove Inspection Plans in BulkImplement Inspection Plans in Bulk by Creating New Inspection TasksImplement Inspection Plans in Bulk by Linking Existing Inspection TasksReview Active Recommended Actions
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+
+
+
+About Alert Severity and Status | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+About Alert Severity and StatusAlert Severity
+Each alert displays a colored box containing a number, both of which reflect the severity of the alert. 
+Table 1. Alert Icon Colors and Corresponding Severity LevelsColorSeverity levelDark Red1Red2Orange3Pale Orange4Yellow5
+SmartSignal advisories display an incident-event count in parentheses to the left of the alert name.
+Alert Status
+The following table shows possible alert status:
+Table 2. Possible Alert StatusStatusDescriptionReadyAlert is ready to be claimed.In ProcessAlert has an owner.ProcessedAlert has been marked as processed.In Process EscalatedAlert has been escalated.In Process MaintenanceAnalytic associated with the alert is in maintenance.
+
+
+
+
+
+
+
+
+
+
+
+

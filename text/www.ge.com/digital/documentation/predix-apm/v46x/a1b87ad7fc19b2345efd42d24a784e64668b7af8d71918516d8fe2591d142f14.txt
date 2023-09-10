@@ -1,0 +1,1057 @@
+
+
+
+Family Field Descriptions | Predix APM | GE Digital
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Predix Asset Performance Management
+Copyright © 2023 General Electric Company. All rights reserved. | Privacy | Terms | Cookies
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+Thickness MonitoringOverview
+Workflows
+Corrosion Analyses in Thickness Monitoring
+TMLs
+TML Groups
+Thickness Measurements
+T-Min Calculations
+Piping Rotation and Flip
+Dataloggers in Thickness Monitoring
+Data Loaders
+Admin
+Deployment
+ReferenceGeneral Reference
+Family Field Descriptions
+Corrosion Rates in Thickness Monitoring
+Calculations
+Family Search Configuration
+
+
+Release Notes
+
+
+
+
+
+
+
+
+
+
+Home
+Thickness Monitoring
+Reference
+Family Field Descriptions
+
+
+
+
+
+
+
+Family Field DescriptionsThickness Monitoring Analyses, Corrosion Analysis Settings, and Tasks
+The following tables provide lists of various fields that are defined for the Asset Corrosion Analysis, TML Corrosion Analysis, and Corrosion Analysis Settings families in the baseline GE Digital APM database. Depending on how your system has been configured, additional fields may be available in the families, and some fields may not behave exactly as described in the table.
+Note:  Although the fields are listed in alphabetical order in the tables, they will appear in a different order in the application. This list is not comprehensive. Baseline fields that are not displayed in the application are omitted. Certain datasheets may be divided into tabs. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+Asset Corrosion Analysis
+ Each Asset Corrosion Analysis contains read-only fields that store calculations and summary information. This data is derived from the TML Corrosion Analyses that are linked to the TMLs for the asset or TML Group. The following table provides an alphabetical list of the fields that are visible on the tabs of an Asset Corrosion Analysis datasheet.
+
+
+Field
+Data Type
+Description
+Behavior and Usage
+Analysis ID 
+
+Character
+
+Identifies the Asset Corrosion Analysis. 
+
+Always disabled.
+The Analysis ID is created automatically, and consists of the ID from the related asset or TML Group, the Analysis Type, and the text Corrosion Analysis.
+
+Analysis Required 
+Boolean
+When selected, indicates that data has changed such that the analysis must be recalculated.
+
+Always disabled.
+The check box in this field is selected automatically by Thickness Monitoring. It is cleared when the analysis is calculated.
+
+Asset Calc Adjusted Next Insp Date 
+Date
+Specifies the date of the next required inspection of the asset or TML Group, based on the Asset Average Corrosion Rate.
+
+Always disabled.
+This field is populated with the most conservative (i.e., earliest) date from the Asset Average Corrosion Rate Next Inspection Date fields in the TML Corrosion Analyses linked to the analysis.
+This field is populated only if the Controlling Corrosion Rate setting in the related Corrosion Analysis Settings has been set to Average or Formula, and the Apply CCR to TML Rem Life Next Insp Date Calc check box was selected at the same time.
+
+Asset Calc Adjusted Remaining Life 
+Numeric
+Specifies the remaining life of the asset or TML Group, based on the Asset Average Corrosion Rate.
+
+Always disabled.
+This field is populated with the most conservative (i.e., lowest) value from the Asset Average Corrosion Rate Remaining Life fields in the TML Corrosion Analyses linked to the analysis.
+This field is populated only if the Controlling Corrosion Rate setting in the related Corrosion Analysis Settings has been set to Average or Formula, and the Apply CCR to TML Rem Life Next Insp Date Calc check box was selected at the same time.
+Asset Calc Adjusted Retire Date DateSpecifies the recommended retirement date for the asset or TML Group, based on the Asset Average Corrosion Rate.
+Always disabled.
+This field is populated with the most conservative (i.e., earliest) date from the Asset Average Corrosion Rate Retirement Date fields in the TML Corrosion Analyses linked to the analysis.
+This field is populated only if the Controlling Corrosion Rate setting in the related Corrosion Analysis Settings has been set to Average or Formula, and the Apply CCR to TML Rem Life Next Insp Date Calc check box was selected at the same time.
+
+Asset Calculated Next Insp Date 
+Date
+Specifies the date of the next required inspection of the asset or TML Group.
+
+Always disabled.
+This field is populated with the most conservative (i.e., earliest) date from the Scheduled Next Inspection Date fields in the TML Corrosion Analyses linked to the analysis.
+
+Asset Calculated Remaining Life 
+Numeric
+Specifies the remaining life of the asset or TML Group.
+
+Always disabled.
+This field is populated with the most conservative (i.e., lowest) value from the Remaining Life fields in the TML Corrosion Analyses linked to the analysis.
+
+Asset Calculated Retire Date 
+Date
+Specifies the recommended retirement date for the asset or TML Group.
+
+Always disabled.
+This field is populated with the most conservative (i.e., earliest) date from the Retirement Date fields in the TMLs linked to the analysis.
+
+Average Corrosion Rate 
+Numeric
+Specifies the average rate at which the asset or TML Group is corroding.
+
+Always disabled.
+By default, this field is calculated by taking the sum of the Corrosion Rates for all TML Corrosion Analyses linked to the analysis, and dividing it by the number of linked TMLs. For TMLs with negative corrosion rates, the corrosion rates are replaced with zero for the purpose of calculation.
+The value in this field may change based on the following options in the related Corrosion Analysis Settings:
+Safety Factor Minimum Number of TMLs Percentile 
+
+Average Corrosion Rate Standard Deviation 
+NumberNumeric
+None.
+
+Average Corrosion Rate TML's Used 
+Text
+Stores a list of TMLs that were used for calculating the Average Corrosion Rate for the Asset Corrosion Analysis. 
+
+Always disabled.
+This list is used to construct the Based on list of TMLs that appear as links in the Summary section of the Analysis Output workspace for the asset or TML Group.
+
+Controlling Corrosion Rate 
+Numeric
+Specifies the corrosion rate of the asset or TML Group. 
+
+Always disabled.
+This field is determined using the corrosion rates that exist for the TMLs linked to the analysis, and the Controlling Corrosion Rate option (Average, Formula, or Maximum) selected in the related Corrosion Analysis Settings.
+
+Corrosion Inspection Type 
+Character
+Specifies the type of inspection (UT, RT, or TML) for the Asset Corrosion Analysis. 
+
+Always disabled.
+This field is populated automatically based on the related Corrosion Analysis Settings. 
+Only data from linked TML Corrosion Analyses with a Corrosion Inspection Type that matches this field will be used with this analysis. 
+
+Estimated Remaining Life 
+Numeric
+Specifies the remaining life of the asset or TML Group.
+
+Always disabled.
+In the related Corrosion Analysis Settings, if the Apply CCR to TML Rem Life Next Insp Date Calc check box is selected, this field is populated with the value in the Asset Calc Adjusted Remaining Life field. Otherwise, this field is populated with the value in the Asset Calculated Remaining Life field.
+
+Last Date / Time Analysis Calculated 
+Date
+Specifies the date and time when the analysis was last calculated.
+
+Always disabled.
+This field is populated automatically when the analysis is calculated.
+
+Maximum Allowable Working Pressure 
+Numeric
+Specifies the Maximum Allowable Working Pressure for the asset or TML Group. 
+
+Always disabled.
+This field is populated with the most conservative (i.e., lowest) value from the Maximum Allowable Working Pressure fields in the TML Corrosion Analyses linked to the analysis.
+
+Maximum Corrosion Rate 
+Numeric
+Specifies the highest rate at which the asset or TML Group is corroding.
+
+Always disabled.
+This field is populated with the highest rate from the Corrosion Rate fields in the TML Corrosion Analyses linked to the analysis.
+
+Maximum Historical Corrosion Rate 
+Numeric
+Specifies the highest corrosion rate that has ever been calculated for any TML that is linked to analysis.
+
+Always disabled.
+When the analysis is recalculated, this field is only updated if the value in the Controlling Corrosion Rate field for any TML Corrosion Analysis linked to the analysis exceeds the current value of this field. If the value in this field is exceeded by the Controlling Corrosion Rate from multiple TML Corrosion Analyses, only the highest value is used to populate this field.
+
+Projected T-min Date 
+Date
+Specifies the recommended retirement date for the asset or TML Group.
+
+Always disabled.
+In the related Corrosion Analysis Settings, if the Apply CCR to TML Rem Life Next Insp Date Calc check box is selected, this field is populated with the value in the Asset Calc Adjusted Retire Date field. Otherwise, this field is populated with the value in the Asset Calculated Retire Date field.
+
+Scheduled Next Date Asset 
+Date
+Specifies the date of the next required inspection of the asset or TML Group.
+
+Always disabled.
+In the related Corrosion Analysis Settings, if the Apply CCR to TML Rem Life Next Insp Date Calc check box is selected, this field is populated with the value in the Asset Calc Adjusted Next Insp Date field. Otherwise, this field is populated with the value in the Asset Calculated Next Insp Date field.
+
+Statistical Corrosion Rate 
+Numeric
+Specifies an average corrosion rate that is calculated after eliminating certain TMLs that are identified as statistical outliers.
+
+Always disabled.
+This field is calculated by performing a statistical analysis of the Corrosion Rates for all TML Corrosion Analyses linked to the analysis.
+
+Statistical Corrosion Rate TMLs Used 
+Text
+Stores a list of TMLs that were used for calculating the Statistical Corrosion Rate for the Asset Corrosion Analysis. 
+Always disabled.
+
+TML Corrosion Analysis
+ For each TML linked to an asset or TML Group, a TML Corrosion Analysis is created. Fields in the TML Corrosion Analysis are read-only and are updated based on calculations for the TML and any related Thickness Measurements. The following table provides an alphabetical list of the fields that are visible on the TML Corrosion Analysis datasheet.
+
+
+Field
+Data Type
+Description
+
+Behavior and Usage
+Alert LevelNumericIndicates the TML alert level, based on the Wall Ratio.This field is always disabled.
+Allowable Measurement Variance Applied 
+Boolean
+When selected, indicates that the Allowable Measurement Variance has been used to determine the Short Term Corrosion Rate.
+
+This field is always disabled.
+The check box in this field is selected automatically if the Allowable Measurement Variance has been used to calculate the value in the Short Term Corrosion Rate field.
+
+Analysis ID 
+
+Character
+
+Identifies the TML Corrosion Analysis.
+
+Always disabled.
+The Analysis ID is created automatically, and consists of the ID of the TML, the Corrosion Inspection Type, and the text Corrosion Analysis.
+
+Analysis Required 
+
+Boolean
+
+When selected, indicates that data has changed such that the analysis must be recalculated.
+
+Always disabled.
+The check box in this field is selected automatically by Thickness Monitoring. It is cleared when the analysis is calculated.
+
+Asset Average Corrosion Rate 
+Numeric
+Specifies the average corrosion rate for the asset or TML Group, calculated using the Controlling Corrosion Rate from all linked TML Corrosion Analyses.
+
+Always disabled.
+This field is populated only if the Controlling Corrosion Rate setting in the related Corrosion Analysis Settings has been set to Average or Formula, and the Apply CCR to TML Rem Life Next Insp Date Calc check box was selected at the same time.
+
+Asset Average Corrosion Rate Next Inspection Date 
+Date
+Specifies the date of the next required inspection, based on the Asset Average Corrosion Rate Remaining Life.
+
+Always disabled.
+This field is populated only if the Controlling Corrosion Rate setting in the related Corrosion Analysis Settings has been set to Average or Formula, and the Apply CCR to TML Rem Life Next Insp Date Calc check box was selected at the same time.
+
+Asset Average Corrosion Rate Remaining Life 
+Numeric
+Specifies the remaining life for the TML, based on the Asset Average Corrosion Rate.
+
+Always disabled.
+This field is populated only if the Controlling Corrosion Rate setting in the related Corrosion Analysis Settings has been set to Average or Formula, and the Apply CCR to TML Rem Life Next Insp Date Calc check box was selected at the same time.
+
+Asset Average Corrosion Rate Retirement Date 
+Date
+Specifies the recommended retirement date for the TML, based on the Asset Average Corrosion Rate Remaining Life.
+
+Always disabled.
+This field is populated only if the Controlling Corrosion Rate setting in the related Corrosion Analysis Settings has been set to Average or Formula, and the Apply CCR to TML Rem Life Next Insp Date Calc check box was selected at the same time.
+
+Base Measurement Date 
+Date
+Specifies the date the Thickness Measurement used for the Base Measurement Value was taken.
+
+Always disabled.
+If the Base Measurement Value field is populated, this field is populated with the Measurement Taken Date for the Thickness Measurement used as the Base Measurement.
+
+Base Measurement Value 
+Numeric
+Specifies the value of the Thickness Measurement that was recorded first based on the value in the Measurement Taken Date field.
+
+Always disabled.
+This field is populated when at least one Thickness Measurement has been recorded for the TML.
+
+Corrosion Inspection Type 
+Character
+Specifies the type of inspection (UT, RT, or TML) for the TML Corrosion Analysis. 
+
+Always disabled.
+This field is populated automatically based on the related Corrosion Analysis Settings. 
+
+Corrosion Rate 
+
+Numeric
+
+Specifies the maximum corrosion rate of the calculated corrosion rates selected in the related Corrosion Analysis Settings.
+
+Always disabled.
+This field is populated with the value of the highest calculated corrosion rate. Only the corrosion rates selected in the asset Corrosion Analysis Settings are calculated.
+In the Analysis Output section of the Analysis Overview workspace for a TML, this corresponds to the Controlling Corrosion Rate.
+If Thickness Measurements are not available and corrosion rates cannot be calculated, this field will be populated with the Minimum Corrosion Rate defined in the related Corrosion Analysis Settings. 
+
+Custom Calculation A Corrosion Rate 
+Numeric
+Specifies the corrosion rate determined by custom corrosion rate A, as defined in the TM Admin Preferences.
+
+Always disabled.
+The values in this table correspond to the baseline field and datasheet captions that exist for these fields. These captions are not dynamic based upon the label specified for the corrosion rates in the application settings. If you want these captions to match the custom labels that you have defined for these calculations, you will need to customize the captions via the Configuration Manager application.
+
+Custom Calculation A Loss 
+Numeric
+Specifies the amount of corroded material calculated by custom corrosion rate A, as defined in the TM Admin Preferences.
+
+Always disabled.
+The values in this table correspond to the baseline field and datasheet captions that exist for these fields. These captions are not dynamic based upon the label specified for the corrosion rates in the application settings. If you want these captions to match the custom labels that you have defined for these calculations, you will need to customize the captions via the Configuration Manager application.
+This feature is only available in the on-premises version of GE Digital APM.
+
+Custom Calculation B Corrosion Rate 
+Numeric
+Specifies the corrosion rate determined by custom corrosion rate B, as defined in the application settings.
+
+Always disabled.
+The values in this table correspond to the baseline field and datasheet captions that exist for these fields. These captions are not dynamic based upon the label specified for the corrosion rates in the application settings. If you want these captions to match the custom labels that you have defined for these calculations, you will need to customize the captions via the Configuration Manager application.
+This feature is only available in the on-premises version of GE Digital APM.
+
+Custom Calculation B Loss 
+Numeric
+Specifies the amount of corroded material calculated by custom corrosion rate B, as defined in the application settings.
+
+Always disabled.
+The values in this table correspond to the baseline field and datasheet captions that exist for these fields. These captions are not dynamic based upon the label specified for the corrosion rates in the application settings. If you want these captions to match the custom labels that you have defined for these calculations, you will need to customize the captions via the Configuration Manager application.
+This feature is only available in the on-premises version of GE Digital APM.
+Custom Rate A Retirement Date 
+Date
+Specifies the recommended retirement date for the TML, based on custom corrosion rate A. 
+Always disabled.
+This field is determined using the value in the Custom Calculation A Corrosion Rate field.
+This feature is only available in the on-premises version of GE Digital APM.
+Custom Rate B Retirement Date DateSpecifies the recommended retirement date for the TML, based on custom corrosion rate B. 
+Always disabled.
+This field is determined using the value in the Custom Calculation B Corrosion Rate field.
+This feature is only available in the on-premises version of GE Digital APM.
+
+Factor Remaining Life Date 
+Date
+Specifies a date based on the Remaining Life Factor in the related Corrosion Analysis Settings.
+
+Always disabled.
+When the associated TML is below T-Min, this field is populated with the value in the Last Measurement Date field.
+When the associated TML is not below T-Min, a calculation is used to determine the date with which this field is populated.
+
+Interval Next Inspection Date 
+Date
+Specifies the date of the next required inspection for the TML.
+
+Always disabled.
+This field is populated with a date based on the Default Inspection Interval in the related Corrosion Analysis Settings.
+
+Last Measurement Date 
+Date
+Specifies the date the Thickness Measurement used for the Last Measurement Value was taken.
+
+Always disabled.
+If the Last Measurement Value field is populated, this field is populated with the Measurement Taken Date for the Thickness Measurement used as the Last Measurement.
+
+Last Measurement Value 
+Numeric
+Specifies the value of the Thickness Measurement that was recorded last based on the value in the Measurement Taken Date field.
+
+Always disabled.
+This field is populated when at least two Thickness Measurements have been recorded for the TML.
+
+Least Squares Corrosion Rate 
+Numeric
+Specifies a value that represents the corrosion rate that was determined using the Least Squares linear regression method. 
+Note: The Least Squares method plots the thickness measurements for the TML and then draws a line that minimizes the sum of the squares of the offsets of the datapoints. The Least Squares Corrosion Rate represents the slope of the line on the plot.
+
+Always disabled.
+This field is populated only if the Least Squares option for the Corrosion Rate Options setting is selected in the related Corrosion Analysis Settings.
+Least Squares Retirement Date DateSpecifies the recommended retirement date for the TML, based on the Least Squares Corrosion Rate.
+Always disabled.
+This field is populated only if the Least Squares option for the Corrosion Rate Options setting is selected in the related Corrosion Analysis Settings.
+
+Long Term Based On Minimum Measurement Interval
+Boolean
+Indicates when the Long Term Corrosion Rate is based on the Minimum Measurement Interval criteria.
+
+Always disabled. 
+This field is populated only if the Long Term Corrosion Rate was affected by the Minimum Measurement Interval preferences.
+
+Long Term Corrosion Rate 
+Numeric
+Specifies a value that represents the corrosion rate over the time between the first and last measurements.
+
+Always disabled.
+The rate of corrosion between the Base Measurement Value and the Last Measurement Value is calculated using the following equation:
+
+Long Term Corrosion Rate = Long Term Loss / Long Term Interval
+
+This field is populated only if the Long Term option for the Corrosion Rate Options setting is selected in the related Corrosion Analysis Settings.
+
+Long Term Loss 
+Numeric
+Specifies the amount of material that was corroded over the time between the first and last measurements.
+
+Always disabled.
+The amount of material corroded between the Base Measurement Value and the Last Measurement Value is calculated using the following equation:
+Long Term Loss = Base Measurement Value - Last Measurement Value
+This field is populated only if the Long Term option for the Corrosion Rate Options setting is selected in the related Corrosion Analysis Settings.
+Long Term Retirement Date DateSpecifies the recommended retirement date for the TML, based on the Long Term Corrosion Rate.
+Always disabled.
+This field is populated only if the Long Term option for the Corrosion Rate Options setting is selected in the related Corrosion Analysis Settings.
+
+Maximum Allowable Working Pressure 
+Numeric
+Specifies the maximum pressure at which the associated asset is designed to operate. 
+
+Always disabled.
+This field is populated only if the TML contains the data necessary to perform the calculation, and only for assets or TML Groups that represent pipes or components that make up pipes.
+
+Maximum Historical Corrosion Rate 
+Numeric
+Specifies the highest corrosion rate calculated during the life of the TML. The Maximum Historical Corrosion Rate may come from any of the calculated corrosion rates.
+
+Always disabled.
+When the analysis is recalculated, this field is only updated if one of the calculated corrosion rates that is selected in the related Corrosion Analysis Settings exceeds the current value in this field.
+
+Minimum Corrosion Rate Used 
+Boolean
+When selected, indicates the value in the Corrosion Rate field has been set to the Minimum Corrosion Rate value defined in the related Corrosion Analysis Settings.
+
+Always disabled.
+The check box in this field is selected automatically when the Minimum Corrosion Rate value is used to populate the Corrosion Rate field.
+
+Near Measurement Date 
+Date
+Specifies the date the Thickness Measurement used for the Near Measurement Value was taken.
+
+Always disabled.
+If the Near Measurement Value field is populated, this field is populated with the Measurement Taken Date for the Thickness Measurement used as the Near Measurement. 
+
+Near Measurement Value 
+Numeric
+Specifies the value of the Thickness Measurement that was recorded next-to-last based on the value in the Measurement Taken Date field.
+
+Always disabled.
+This field is populated when at least two Thickness Measurements have been recorded for the TML.
+
+Projected T-min Date 
+Date
+Specifies the date when the TML will reach its minimum thickness.
+
+Always disabled.
+This field is calculated using the current rate of corrosion and the T-Min value for the TML.
+
+Remaining Life 
+Numeric
+Specifies in the months the remaining life of the TML after the date of the last measurement recorded. 
+
+ Always disabled.
+This field is calculated using the current rate of corrosion and the T-Min value for the TML.
+
+Scheduled Next Inspection Date 
+Date
+Specifies the date of the next suggested inspection of the TML.
+
+Always disabled.
+If both the Interval Next Inspection Date and Factor Remaining Life Date fields are populated, this field will be populated with the most conservative (i.e., earliest) of the two dates.
+If only the Interval Next Inspection Date or Factor Remaining Life field is populated, this field will be populated with the date from that field.
+If neither the Interval Next Inspection Date or Factor Remaining Life fields are populated, this field will be populated with the date from the Projected T-Min Date field.
+
+Short Term Based On Minimum Measurement Interval
+Boolean
+Indicates when the Short Term Corrosion Rate is based on the Minimum Measurement Interval criteria.
+
+Always disabled. 
+This field is populated only if the Short Term Corrosion Rate was affected by the Minimum Measurement Interval preferences.
+
+Short Term Corrosion Rate 
+Numeric
+Specifies a value that represents the corrosion rate over the time between the next-to-last and last measurements.
+
+Always disabled.
+The rate of corrosion between the Near Measurement Value and the Last Measurement Value is calculated using the equation:
+Short Term Corrosion Rate = Short Term Loss / Short Term Interval
+This field is populated only if the Short Term option for the Corrosion Rate Options setting is selected in the related Corrosion Analysis Settings.
+
+Short Term Loss 
+Numeric
+Specifies the amount of material that was corroded over the time between the next-to-last and last measurements.
+
+Always disabled.
+The amount of material that is corroded between the Near Measurement Value and the Last Measurement Value is calculated using the following equation:
+Short Term Loss = Near Measurement Value - Last Measurement Value
+This field is populated only if the Short Term option for the Corrosion Rate Options setting is selected in the related Corrosion Analysis Settings.
+Short Term Retirement Date DateSpecifies the recommended retirement date for the TML, based on the Short Term Corrosion Rate.
+Always disabled.
+This field is populated only if the Short Term option for the Corrosion Rate Options setting is selected in the related Corrosion Analysis Settings.
+
+Verify Measurements 
+
+Character
+
+When the value in this field is Yes, indicates that linked Thickness Measurements require manual verification.
+
+Always disabled.
+This field is populated automatically if the Measurement Value field in linked Thickness Measurements requires manual verification based upon the Corrosion Rate Variance validation.
+
+
+Corrosion Analysis Settings
+Each Asset and TML Corrosion Analysis has a set of related Corrosion Analysis Settings. In the case of TML Corrosion Analyses, most values in the Corrosion Analysis Settings are inherited from the settings specified for the asset or TML Group to which the TML is linked. When you create or modify Corrosion Analysis Settings, you are viewing a representation of the Corrosion Analysis Settings datasheet linked to the Asset or TML Corrosion Analysis. 
+It is recommended that you only access the datasheet in the context of the Corrosion Analysis Settings Workspace. The following table provides an alphabetical list of the fields that are visible on the Corrosion Analysis Settings workspace.
+Corrosion Analysis Settings are accessible via an asset or TML Group, or via a TML. The table refers to the former as the asset level, and the latter as the TML level.
+
+
+Field
+Data Type
+Description
+
+Behavior and Usage
+Allowable Measurement Variance NumericSpecifies a value for the amount of variation that is allowed between values in the Measurement Value fields of the two most recent Thickness Measurements linked to the related TML. 
+This field is used to validate measurement data.
+The value in this field is only considered if it is greater than 0. 
+Apply CCR to TML Rem Life Next Insp Date Calc BooleanWhen selected, indicates that Asset and TML Corrosion Analyses will use adjusted values for determining corrosion rate, remaining life, and next inspection dates.
+This field is only considered if the Controlling Corrosion Rate is set to Average or Formula.
+When the check box in this field is selected, in an Asset Corrosion Analysis, the following occurs:
+The Asset Controlling Next Insp Date field is set to the value of the Asset Calc Adjusted Next Insp Date field.The Asset Controlling Remaining Life field is set to the value of the Asset Calc Adjusted Remaining Life field.The Asset Controlling Retire Date is set to the value of the Asset Calc Adjusted Retire Date field.
+When the check box in this field is selected, in a TML Corrosion Analysis the following fields are populated, if possible:
+Asset Average Corrosion Rate Asset Average Corrosion Rate Next Inspection Date Asset Average Corrosion Rate Remaining Life Asset Average Corrosion Rate Retirement Date 
+Comments TextStores comments.This field is not visible at the TML level.
+Controlling Corrosion Rate 
+
+Character
+
+Specifies the method (Maximum, Average, or Formula) by which a corrosion rate will be calculated for the asset.
+
+This field is disabled at the TML level.
+Required.
+When Average is selected, in the related Asset Corrosion Analysis, the Controlling Corrosion Rate field will be populated with the value in the Average Corrosion Rate field. Additionally, when Average is selected, the following fields appear:
+Apply CCR to TML Rem Life Next Insp Date Calc Safety Factor Minimum Number of TMLs Percentile 
+When Formula is selected, in the related Asset Corrosion Analysis, the Controlling Corrosion Rate field will be populated with the value in the Statistical Corrosion Rate field. Additionally, when Formula is selected, the Apply CCR to TML Rem Life Next Insp Date Calc field appears.
+When Maximum is selected, in the related Asset Corrosion Analysis, the Controlling Corrosion Rate field will be populated with the value in the Maximum Corrosion Rate field. By default, when you create Corrosion Analysis Settings, Maximum is selected.
+Corrosion Rate Options BooleanIndicates which corrosion rates will be calculated for the TML.
+This section is disabled at the TML level.
+The check boxes correspond to the following fields on the Corrosion Analysis Settings datasheet:
+
+Least Squares corresponds to Corrosion Rate Options - Least Square.
+Short Term corresponds to Corrosion Rate Options - Short Term.
+Long Term corresponds to Corrosion Rate Options - Long Term.
+By default, the Short Term and Long Term check boxes are selected.
+If custom corrosion rates are enabled, additional check boxes will be visible that correspond to those corrosion rates. Custom corrosion rates are only available in the on-premises version of GE Digital APM.
+Additionally, the check boxes determine the data that will be plotted on the TML Trends Graph.
+Corrosion Rate Variance NumericSpecifies a value for the amount of variation that is allowed between the Short Term Corrosion Rate in the related TML Corrosion Analysis, and the Minimum Corrosion Rate. 
+This field is used to validate measurement data.
+The value in this field is only considered if it is greater than 0. 
+Default Inspection Interval NumericSpecifies in months the default interval for inspections for the TML.
+This field is used to populate the Interval Next Inspection Date field in the related TML Corrosion Analysis. 
+Default T-Min NumericSpecifies the default minimum thickness value for calculations in the related corrosion analysis.
+This field is disabled at the TML level.
+If the related TML Corrosion Analysis has no value in the Minimum Thickness field, the value in this field is used instead.
+By default, this field is 0.
+Inspection Interval Options BooleanWhen selected, indicate that Remaining Life Factor and Default Inspection Interval should be used to determine the Factor Remaining Life Date and Interval Next Inspection Date, respectively. Additionally, this determines how Scheduled Next Inspection Date will be calculated for the related corrosion analysis.
+This field is disabled at the TML level.
+The check boxes correspond to the following fields on the Corrosion Analysis Settings datasheet:
+
+Factor Remaining Life corresponds to Inspection Interval Options - Factor Remaining Life.
+Inspection Interval corresponds to Inspection Interval Options - Inspection Interval.
+When the Factor Remaining Life check box is selected, the Remaining Life Factor field is used to calculate the Factor Remaining Life Date field in the related TML Corrosion Analysis.
+When the Inspection Interval check box is selected, the Default Inspection Interval field is used to calculate the Interval Next Inspection Date field.
+Minimum Corrosion Rate NumericSpecifies the default minimum corrosion rate value for calculations in the related corrosion analysis.
+If a corrosion rate cannot be determined in the related corrosion analysis, the value in this field is used instead.
+Minimum Number of TMLs Numeric Specifies the minimum number of TMLs that must be used to calculate the Average Corrosion Rate when the Percentile field is less than 100.
+This field is only considered if the Controlling Corrosion Rate is set to Average.
+When the value in the Percentile field excludes TMLs from being used to calculate the Average Corrosion Rate, the value in this field ensures a minimum number of TMLs are still used to make the calculation.
+For example, assume the Minimum Number of TMLs field was set to 20. If the value in the Percentile field determined that only the 10 TMLs with the highest rate of corrosion linked to an asset should be used to calculate Average Corrosion Rate, the value in the Minimum Number of TMLs field would take precedence, and the 20 TMLs highest rate of corrosion would be used instead. 
+By default, the value in this field is 1.
+Percentile NumericSpecifies what percentage of TMLs linked to an asset should be used to calculate Average Corrosion Rate.
+This field is only considered if the Controlling Corrosion Rate is set to Average.
+This field determines the percentage of TMLs linked to an asset or TML Group that will be used to calculate the Average Corrosion Rate for the related Asset Corrosion Analysis. The TMLs used will always be those with the most conservative (highest) corrosion rates.
+For example, if you have an asset with 50 linked TMLs, and the Percentile field is set to 20, the 10 TMLs with the highest rate of corrosion will be used to calculate the Average Corrosion Rate for the asset.
+By default, value in this field is 100, which means all TMLs linked to an asset are used to calculate the Average Corrosion Rate.
+Piping AssetBoolean When selected, indicates that the Asset is a Piping Asset and suitable for Piping Rotation.
+This field is always disabled at the child level of the parent asset.
+This field is enabled only if you enable the piping rotation workflow from the TM Admin Preferences page.
+Remaining Life Critical Number of TMLsNumericObsolete: This field is no longer used during the calculation of remaining life for an asset.N/ARemaining Life Factor NumericSpecifies a value that is used to multiply the Remaining Life in the related TML Corrosion Analysis.
+This field is disabled at the TML level.
+The value in this field must be greater than 0 and less than or equal to 1. It is only used to multiply the value in the Remaining Life field in the related TML Corrosion Analysis if the Factor Remaining Life check box is selected.
+Safety Factor NumericSpecifies a value that is used to multiply the calculated average in order to determine the Average Corrosion Rate.
+This field is only considered if the Controlling Corrosion Rate is set to Average.
+The value in this field is used as a multiplier for the Average Corrosion Rate in an Asset Corrosion Analysis, which determines the displayed value in the Average Corrosion Rate field.
+By default, the value in this field is 1, which means the actual Average Corrosion Rate will be used.
+Std Deviation Factor NumericSpecifies a value that is used to determine outliers when calculating Statistical Corrosion Rate. 
+This field is only considered if the Controlling Corrosion Rate is set to Formula.
+The value in this field is used as a multiplier for TML CR SD when calculating the Statistical Corrosion Rate in the related Asset Corrosion Analysis.
+By default, the value in this field is 2.
+Use Minimum Corrosion Rate BooleanWhen selected, indicates that when the calculated corrosion rate for a TML is less than the Minimum Corrosion Rate, the Minimum Corrosion Rate will be used for calculations instead.
+This field is disabled at the TML level.
+When the check box is selected, the value in the Minimum Corrosion Rate field will be used for calculations in place of the value in the Corrosion Rate field in the related TML, if that value is less than the Minimum Corrosion Rate. 
+Note: If the Use Minimum Corrosion Rate check box is cleared and only one Thickness Measurement is linked to a TML, the Minimum Corrosion Rate will be used.
+
+
+Thickness Monitoring Tasks
+The following table lists the Thickness Monitoring Task fields that are populated automatically when a Thickness Monitoring Task record is created. The following table provides an alphabetical list of the fields visible on the Thickness Monitoring Task datasheet.
+
+
+Field
+Data Type
+Description
+
+Behavior and Usage
+Asset ID CharacterSpecifies a unique ID for the asset.The Record ID of the Equipment or TML Group record to which the Thickness Monitoring Task record is linked. Coverage NumericSpecifies the percentage of the asset to be inspected.
+By default, this field is set to 0.
+Desired Interval NumericSpecifies the desired time between inspections.By default, this field is set to 0.Equipment Technical Number CharacterSpecifies a unique ID for the asset that is recognized by operations and inspection personnel.The value in this field is typically from a piping and instrumentation diagram.Last Date DateSpecifies the date on which the asset was last inspected.This field is populated with the date the asset or TML Group was last inspected.Max Date DateSpecifies the date on which the maximum interval will be reached.This field is populated with the date in the Calculated Date field in the linked Asset Corrosion Analysis. Max Interval NumericSpecifies the maximum time between inspection events.By default, this field is set to 0.Min Date NumericSpecifies the date on which the asset may become eligible for inspection.This field is populated with the date in the Calculated Date field in the linked Asset Corrosion Analysis. Min Interval NumericSpecifies the minimum time between inspection events.By default, this field is set to 0.Modifiable BooleanIndicates that you have allowed this record to be modified by others.By default, this field is False.Next Date DateSpecifies the date on which the next inspection must be performed.
+This field is populated with the date in the Asset Controlling Next Insp Date field in the linked Asset Corrosion Analysis.
+Next Date Basis CharacterSpecifies the driver of the next date.Usually, the value for the driver in this field is a Code, a company policy, or based on Remaining Life calculations.Reason TextSpecifies why this work is being requested.For example, a value in this field could be Defects found on asset.Rejectable BooleanIndicates that this task can be rejected by the requested approver.By default, this field is False.Reoccurring BooleanIndicates that this is a repeating task.By default, this field is False.Task Description CharacterSpecifies the work to be performed during the execution of the task.For example a value in this field could be Insulation to be replaced.Task ID CharacterSpecifies a unique ID for the task.This field is populated automatically when the Thickness Monitoring Task is created.Task State CharacterSpecifies the state of the task in the approval and execution process.Usually, the states available in this field are created to support the workflow of the organization.Task Type CharacterSpecifies what inspection methodology should be used for this task.For example, a value in this field could be Internal Inspection, or External Inspection.Unconstrain Min/Max Dates BooleanIndicates that you will set the Max and Min Date fields manually.By default, this field is False.
+
+TML Groups, TMLs, and Measurements
+The following tables provide a list of various fields that are defined for the TML Group, Thickness Measurement Location, and Thickness Measurement families in the baseline GE Digital APM database. Depending on how your system has been configured, additional fields may be available in the families, and some fields may not behave exactly as described in the table.
+Note:  Although the fields are listed in alphabetical order in the tables, they will appear in a different order in the application. This list is not comprehensive. Baseline fields that are not displayed in the application are omitted. Certain datasheets may be divided into sections. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+TML Group
+
+FieldData TypeDescriptionBehavior and UsageComments TextStores comments.NoneComponent IDCharacterSpecifies a unique ID for the component.The value in this field must be entered when a component is created, and must be unique within the asset.Corrosion Group CharacterSpecifies a system level identifier. The value in this field appears as text following the TML Group ID.Description CharacterSpecifies a short description of the TML Group.None.Distance from InletNumberSpecifies a value that indicates the distance of the band from the inlet of the component.
+This field is populated automatically from the value that you have entered when creating the band.
+Drawing Number CharacterSpecifies a unique ID for the Isometric Drawing, PFD or P&ID.The value in this field helps the inspector identify where the TML Group is located on an asset.Line Class CharacterSpecifies a class (Class 1, Class 2, Class 3, or Injection Point) that is used to determine inspection intervals based on API 570. This field is relevant only to Piping assets.Material Grade CharacterSpecifies a Material Grade for the TML Group.
+The list of valid values for this field comes from the Materials of Construction family
+Used for determining Allowable Stress.
+Material Specification CharacterSpecifies a Material Specification for the TML Group.
+The list of valid values for this field comes from the Materials of Construction family
+Used for determining Allowable Stress.
+Material Type CharacterSpecifies a Material Type for the TML Group.
+The list of valid values for this field comes from the Materials of Construction family
+Used for determining Allowable Stress.
+Number of PositionsNumberSpecifies the number of TML positions on a band.
+This field is always disabled.
+This field is populated automatically from the value that you have entered when creating the band.
+Operating Pressure NumberSpecifies an Operating Pressure for the TML Group.The value in this field should be less than the Design Pressure of the component.Operating Temperature NumberSpecifies an Operating Temperature for the TML Group.The value in this field should be less than the Design Temperature of the component.Piping Band IDCharacterSpecifies a unique ID for the band.The value in this field must be entered when a band is created, and must be unique within the component.Piping Band Type CharacterSpecifies the type of band (that is Mirror, Center, Odd, or Extrados).This field is populated automatically from the value that you have entered when creating the band. This field is populated by the MI_TML_GROUP_BAND_TYPES System Code Table. Note: The Extrados Band Type is only available when the Piping Component Type is either Bent Elbow or Mitered Elbow.Piping Component Type CharacterSpecifies the type of Piping Component (that is Straight Spool, Bent Elbow, or Mitered Elbow).
+This field is always disabled.
+This field is populated automatically from the value that you have entered when creating the component. This field is populated by the MI_TML_GROUP_COMP_TYPES System Code Table.
+System Type CharacterSpecifies a classification for a TML Group (i.e., Floor of a Tank). NoneTML Group ID CharacterSpecifies a unique ID for the TML Group.The value in this field is populated automatically when the TML Group is created.TML Group Type CharacterSpecifies the type of TML Group (that is Piping Component or Piping Band).
+This field is always disabled.
+This field is populated automatically based on whether you are creating a Piping Component or a Piping Band. This field is populated by the MI_TML_GROUP_TYPES System Code Table.
+
+
+Thickness Measurement Location 
+Thickness Measurement Location records contain various fields that store information to identify a TML. When you create a new TML, you will need to supply information in some of these fields. The values in other fields will be populated or calculated automatically based on other values in the TML and related values.
+
+FieldData TypeDescriptionBehavior and UsageAccess 
+Character
+Specifies a special requirement (Man Lift, Ladder, or Scaffold) for how a location must be accessed.
+A value should be selected in this field when the TML is created, but can be modified later.
+Additional Thickness NumberSpecifies the thickness that is over that which is required to prevent loss of containment plus corrosion allowance.None.Allowable Stress NumberSpecifies a value that represents the maximum amount of pressure that can safely be withstood at a given TML.
+This field is enabled only if the Override Allowable Stress check box is selected. Otherwise, this field is disabled and populated automatically.
+
+Apex Angle NumberThe angle of any conical section of the asset.The value in this field is used for conical T-Min calculations.CalculatedNumberStores the value after the T-Min is calculated for the TML.This field is automatically populated when the T-Min is calculated for the first time. If you change the value in the Minimum Thickness Type field to Calculated, then the value from this field will be populated to the Minimum Thickness field.Code Year (Allowable Stress Lookup) CharacterSpecifies the year in which the Design Code was defined or updated.
+This field appears as a list retrieved from the Piping Stress, PV Stress or Tank Stress reference table based on the value in the Design Code field. The value in this field is used to populate the Allowable Stress field.
+
+Code Year (T-Min Formula) 
+CharacterSpecifies the year in which the Design Code was defined or updated.
+The Code Year (T-Min Formula) field is populated with a list of years that exist in Thickness Monitoring Rules Lookup records and correspond to the value in the Design Code field in the TML. The value in the Code Year (T-Min Formula) field is used for determining which formula will be used for calculating the T-Min and Maximum Allowable Working Pressure values.
+Component Type CharacterSpecifies the type of component being inspected.The value in this field is used to populate the Allowable Stress field.Corrosion Allowance NumberSpecifies the additional thickness built in by design to allow for a specific expected corrosion rate and usable life of the asset.The value in this field is used to determine the remaining life of the asset.Course Height NumberSpecifies the height of each shell course on an AST.The value in this field allows the user to calculated the static head pressure for each shell course and thus the minimum allowable thickness needed.Course Number NumberSpecifies the shell course on an AST being inspected or to which the TML is assigned.
+ For Tanks of the type Welded Shell, the value in this field is used to calculate the Allowable Stress field.
+Design Code CharacterSpecifies a design code associated with the TML that is used for calculating T-Min.
+This field appears as a list that is populated by the DSCD System Code Table. The value in this field is used to filter the list of values that appear in the Code Year (Allowable Stress Lookup) field. It is also used to determine the equipment type of a given Thickness Measurement Location. The MI_ASSET_TYPE System Code Table contains references to System Codes in the DSCD System Code Table.
+Design Factor NumberSpecifies a factor used to calculate T-Min.
+This field is a consideration of the design metal temperature (based on ambient temperatures), the maximum design temperature, the design specific gravity, the corrosion allowance (if any), and the seismic factor.
+The value in this field must be between 0 and 1. It will be rounded to 2 decimal places. The value in this field is used as an input for the T-Min Calculator only when Design Code is set to B31.8.
+Design Pressure NumberSpecifies the maximum pressure at the TML.This value is taken from the original design documents for the piece of equipment.Design Temperature NumberSpecifies the maximum temperature at the TML.This value is taken from the original design documents for the piece of equipment.Dish Radius NumberNone.None.Distance From the Bottom NumberSpecifies a value that indicates how far the TML is from the bottom of the tank.This field applies only to TMLs that are linked to assets or TML Groups that represent Tanks.Excluded From Analysis Boolean
+Indicates whether the TML will be excluded from the Corrosion Analysis.
+
+This field is read-only in the Thickness Measurement Location and displays the value that is defined via the 
+Exclude TMLs
+ window.
+When this check box is selected, the TML will not be used when performing asset corrosion calculations, and the Scheduled Next Inspection Date, Projected T-Min Date, and Estimated Remaining Life for the TML will be set to null.
+In addition, the corrosion rates for the excluded TMLs will be calculated for the TML Corrosion Analysis, but will not be used to determine a corrosion rate for the Asset Corrosion Analysis.
+Only members of the MI Thickness Monitoring Inspector Security Group can exclude TMLs from an analysis.
+Fill Height NumberSpecifies the normal operating liquid height in the AST. The value in this field may be used to calculate T-Min.Floor Plate has Detection? BooleanIndicates whether or not the AST has a means to detect a leak.The value in this field may be used to extend the recommended inspection intervals.Floor Plate has Reinforced Lining?BooleanIndicates whether or not the AST has a lined and/or reinforced floor.The value in this field may allow the user to specify a lower T-Min.Head DiameterNumberSpecifies the diameter of a circular or cylindrical Head.The value in this field is used for calculating T-Min.Inside DiameterNumberSpecifies the diameter of a circular or cylindrical asset, measured using the inside wall.The value in this field is used for calculating T-Min.Inside RadiusNumberSpecifies the radius of a circular or cylindrical asset, measured to the inside wall.The value in this field is used for calculating T-Min.Inspection Sequence Number NumberSpecifies a value that indicates the order in which a given TML will be inspected with respect to the other TMLs linked to the same asset or TML Group.This field is used only to facilitate TML based inspection workflows, and is not used in any calculations.Insulated Flag BooleanIndicates whether the asset or TML Group is insulated at the TML.This check box should be selected if the equipment is insulated. This field is for reference only. It does not have any affect on calculations.ISO Drawing Number CharacterSpecifies a unique ID for the Isometric Drawing, PFD or P&ID.This will help the inspector identify where a TML is located on an asset.Joint Factor NumberNone.None.Knuckle Radius NumberNone.None.Location CharacterSpecifies the location of the TML on the asset or component. 
+This field used to provide a description of the location on the asset or component. When creating a new TML, you should type a description that will help you and others locate this TML.
+Material Grade CharacterSpecifies the grade of material used for the TML.
+This field appears as a list that is filtered based on the value in the Material Specification field as specified in the Piping Stress, PV Stress, or Tank Stress reference table. The value in this field is used to populate the Allowable Stress field.
+Material Specification CharacterSpecifies the industrial specification of the material used for the TML.
+This field appears as a list that is filtered based on the value in the Design Code field as specified in the Piping Stress, PV Stress, or Tank Stress reference table. The value in this field is used to populate the Allowable Stress field.
+Material Type CharacterSpecifies the type of material used for the TML.This field is used to provide a description of material used at the location on the asset or component.Maximum Operating Fill Height NumberSpecifies the maximum fill height for the AST.The value in this field is used for calculating T-Min on an AST.Mechanical Allowance NumberNone.None.Minimum Tensile Strength NumberNone.None. Minimum Thickness NumberSpecifies the T-Min value for the TML, which is the minimum wall thickness allowed at the specific location. Typically, you will want to replace an asset or component before any of its TMLs reach the minimum thickness.
+The value in this field can be entered manually, or it can be calculated on the T-Min Calculator workspace. If this field does not contain a value, a value of 0 will be used in any calculations that use the T-Min value.
+Minimum Thickness Type (Obsolete)Character
+Specifies how the T-Min value was obtained. This field is populated with one of the following values:
+
+Calculated
+
+Nominal
+
+User Defined
+
+
+This field is populated automatically only after the Minimum Thickness field has been populated.
+Minimum Thickness TypeCharacterSpecifies how the T-Min value was obtained. This field is populated from the System code table (MI_MIN_THICKNESS_TYPE).This field is populated automatically only after the Minimum Thickness field has been populated.Minimum Yield Strength NumberNone.None. Nominal Thickness NumberSpecifies a value that is intended to represent the value of the first measurement recorded for a TML, if the base measurement is recorded from a design specification or other published standard.
+The value in this field is populated automatically based on a specified Piping Nominal Diameter value. 
+ This value is used to create a Nominal Measurement for a piping asset. 
+Number of Readings NumberSpecifies the number of values that can be entered in the Readings field in Thickness Measurements that are linked to the TML. 
+This field accepts only whole number, values between 1 (one) and 26.
+The data entry grid that is available in the Readings field will have a number of rows based on the value in this field.
+Outside Diameter NumberSpecifies the diameter of a circular or cylindrical asset, measured using the outside wall.
+The value in this field is used for calculating T-Min.
+The value in this field is populated automatically based on a specified Piping Nominal Diameter value. 
+Outside Radius NumberSpecifies the diameter of a circular or cylindrical asset, measured to the outside wall.The value in this field is used for calculating T-Min.Override Allowable Stress BooleanIndicates that the Allowable Stress field has been modified manually.When this check box is selected, the Allowable Stress field is enabled and a value can be entered manually.Override Minimum Thickness TypeBooleanThis field indicates whether the Minimum Thickness Type field has been overridden.
+If this check box is selected, you can select multiple options from the picklist in the Minimum Thickness Type field. The system auto-calculates the values for each selection. If the Minimum Thickness Type is set to a value other than User Defined, Minimum Thickness will be Disabled.
+If this check box is cleared, and you change the value in the Minimum Thickness field, then the Minimum Thickness Type will be set to User Defined.
+Note: If this field is selected, the Minimum Thickness calculations will not be saved for that TML from the T-Min screen.
+Piping Formula CharacterSpecifies the B31.3 piping formula.
+The values in this list are populated from the PIPFMU System Code Table. 
+This field controls which B31.3 formula is used for the T-Min calculator.
+Piping Nominal Diameter - DN NumberSpecifies a Nominal Diameter for piping.
+DN (Nominal Diameter) data is considered a dimensionless designator, meaning that it does not have an assigned unit of measure and is determined by ASME specifications. The value in this field is used to populate fields for Piping Nominal Diameter. 
+When you select a value for either the Piping Nominal Diameter - NPS or the Piping Nominal Diameter - DN fields:
+A list of possible values is generated for the Schedule field in the Piping section of the TML datasheet. 
+After a value is selected for the Schedule field, the Pipe Properties reference table populates the Nominal Thickness and the Outside Diameter fields in the Design General section of the TML datasheet. 
+
+Piping Nominal Diameter - NPS NumberSpecifies a Nominal Pipe Size for piping.
+NPS (Nominal Pipe Size) considered a dimensionless designator, meaning that it does not have an assigned unit of measure and is determined by ASME specifications. The value in this field is used to populate fields for Piping Nominal Diameter. 
+When you select a value for either the Piping Nominal Diameter - NPS or the Piping Nominal Diameter - DN fields:
+A list of possible values is generated for the Schedule field in the Piping section of the TML datasheet. 
+After a value is selected for the Schedule field, the Pipe Properties reference table populates the Nominal Thickness and the Outside Diameter fields in the Design General section of the TML datasheet. 
+
+Plate Thickness NumberSpecifies the thickness of the plates used to construct an AST.The value in this field is used for determining nominal thickness for an AST.Position NumberStores the position number currently occupied by a TML.
+This field is always disabled.
+This field is populated automatically after the band is created and during a rotation or flip.
+Previous Band CharacterStores the Band ID of the band previously occupied by a TML.
+This field is always disabled.
+This field is populated automatically during a rotation or flip.
+Previous Position NumberStores the position number previously occupied by a TML.
+This field is always disabled.
+This field is populated automatically during a rotation or flip.
+Renew Historical Sequence Number NumberSpecifies a value that indicates the number of times a given Thickness Measurement Location has been renewed. 
+This field is read-only and contains no value if the Thickness Measurement Location has never been renewed.
+Schedule CharacterSpecifies a piping schedule for the TML.The value in this field, along with the value in either the Piping Nominal Diameter - ND or the Piping Nominal Diameter - NPS field, uses the Pipe Properties reference table to populate the Nominal Thickness and the Outside Diameter fields in the Design General section of the TML datasheet. Shell TypeCharacterSpecifies the geometry of the Shell.The value in this field is used for calculating T-Min.Specific Gravity NumberSpecifies the molecular weight of the representative fluid in an AST.
+The value in this field is used to calculate:
+T-Min for an AST.Allowable Stress for tanks of the type, Annular Ring .
+Status Changed By CharacterSpecifies the name of the GE Digital APM Security User who last changed the value in the Status Indicator field.
+This field is always disabled.
+This field is populated automatically whenever the Status Indicator is changed. When a TML is created, this field is populated with the name of the Security User who created it. 
+Status Changed Date DateSpecifies the date when the value in the Status Indicator field was last changed.
+This field is always disabled.
+This field is populated automatically whenever the Status Indicator is changed. When a TML is created, this field is populated with the current date.
+Status IndicatorCharacterSpecifies the status of the TML, either Active or Inactive.
+This field contains a list of values from the MI STATUS INDICATOR System Code Table. In the baseline GE Digital APM database, the list contains the following values:
+
+Active.
+
+Inactive.
+
+When this value is modified, the Status Changed By and Status Changed Date will be updated automatically.
+When this field is set to Inactive, values will be deleted from the following fields in the linked TML Corrosion Analysis:
+
+Remaining Life.
+
+Projected T-min Date.
+
+Factor Remaining Life Date.
+
+Interval Next Inspection Date.
+
+Scheduled Next Inspection Date.
+
+Additionally, an inactive TML will not be included in corrosion calculations for an Asset Corrosion Analysis.
+Tank Diameter NumberSpecifies the diameter of a tank.
+This value is only used for TMLs that are linked to assets or TML Groups that represent tanks or components of a tank.
+Note: If this field contains a value that is greater than 200, T-Min cannot be calculated for the TML. 
+Tank TypeCharacterSpecifies the method of construction for an AST.The value in this field will be used to calculate T-Min and Allowable Stress.Temperature Factor NumberNone.None. TML Analysis TypeCharacter
+Specifies the type of analysis (UT, RT, or TML).
+The value used by the Asset Corrosion Analysis to determine how to group the analysis results. A value must be selected in this field when the Thickness Measurement Location is created.
+
+This field is populated with a list of values that are stored in the Inspection Type field in the Corrosion Analysis Settings that are linked to the asset or TML Group to which the TML is linked. In the baseline database, these values are stored as System Codes in the System Code Table CITP (Corrosion Inspection Type). By default, this System Code Table contains three System Codes: UT, RT, and TML.
+
+UT (ultrasonic thickness) and RT (radiographic thickness) are provided for customers who want to classify TMLs according to inspection type and then perform calculations on each set.
+
+TML is provided for customers who prefer to analyze all TMLs together.
+
+TML Asset ID CharacterSpecifies the ID of the Equipment or TML Group record for which the TML is created.
+This field is always disabled.
+This field is populated automatically after the TML is first saved based on the Component ID Field setting for the Equipment or TML Group family.
+TML Comment CharacterStores descriptive information that is not recorded in another field in the TML.
+None.
+TML IDCharacterSpecifies a unique ID for the TML.
+The value in this field must be entered when a TML is created, and must be unique.
+Vessel TypeCharacterSpecifies the geometry of the vessel.The value in this field determines what formula is used when calculating T-Min.
+Note: The existing Minimum Thickness Type field is made obsolete. A new field Minimum Thickness Type, with the same field name is added.
+
+Thickness Measurements
+Thickness Measurements contain various fields that store information to identify a specific thickness reading at a TML. When you create a new Thickness Measurement, you will need to supply information in some of these fields. The values in other fields will be populated automatically based upon other values in the Thickness Measurement. 
+
+FieldData TypeDescriptionBehavior and Usage
+Historical Sequence Number 
+Number
+Specifies a value that identifies the renewal sequence of the Thickness Measurement.
+
+For example, if a Thickness Measurement Location has three Active Thickness Measurements, when the Thickness Measurement Location is renewed for the first time, the Historical Sequence Number of those three Thickness Measurements will be set to 1. If the Thickness Measurement Location is renewed again, the Historical Sequence Number of any Thickness Measurements that are Active at the time of the renewal will be set to 2.
+
+Instrument Probe 
+Number
+Specifies a value that uniquely identifies the specific probe that was used to collect the measurement value. This field is populated only when a measurement is recorded using a handheld device. 
+None.
+Measurement Comment 
+
+Character
+
+Specifies additional information about the measurement. 
+
+This field is used to store descriptive information that is not recorded in another field in the Thickness Measurement.
+
+Measurement ID 
+Character
+Specifies the Record ID of the Thickness Measurement.
+
+The value from the Record ID field is copied to the Measurement ID field when the Thickness Measurement is saved. Note that if you modify the ID Template of the Thickness Measurement family and update existing Record IDs, values in the Measurement ID field will not be updated in existing Thickness Measurements until those measurements are saved. 
+Measurement Imported by Data LoaderBooleanIndicates whether the Thickness Measurement is loaded by the data loader.This field is populated with the value True if the Thickness Measurement record is loaded by the data loader. If the value in this field is True, duplicate validations are removed when the record is loaded through data loader.
+Measurement Status Changed By 
+Character
+Specifies the first and last names of the GE Digital APM Security User who last changed the value in the Measurement Status Indicator field.
+
+This value is populated from a list of System Codes in the MI_MEAS_STAT_IND_BASIS System Code Table whenever the value in the Measurement Status Indicator field is changed, either manually or automatically (for example, when the root Thickness Measurement Location is renewed). 
+
+Measurement Status Indicator 
+Character
+Specifies whether the Thickness Measurement is Active or Inactive.
+
+Thickness Measurements that are flagged as Inactive are not used for performing TML Corrosion Analysis calculations.
+When the value in this field is set to Inactive as a result of rotation or flip of a piping component, if the user performs an undo operation on the rotation or flip, the value in this field is set to null.
+Measurement Status Indicator BasisCharacter
+Indicates the basis for which the value in the Measurement Status Indicator was changed to Inactive.
+
+This value is populated automatically from a list of System Codes in the MI_MEAS_STAT_IND_BASIS System Code Table whenever the value in the Measurement Status Indicator field is changed to Inactive.
+This field is populated when:TMLs are renewedPiping components are rotated or flippedA measurement is manually inactivated from the Measurement Status Indicator fieldA nominal measurement is set to inactive after two actual measurements
+
+Note: This field must not be included in data loader workbooks.
+
+
+Measurement Taken By 
+Character
+Specifies the person who recorded the measurement value in the following format: <Last Name>, <First Name> ~ <User ID>
+
+The list in this field contains the names of individual(s) who have been granted the TM Technician role. 
+When you create a Thickness Measurement, if you have been granted the TM Technician role, the value is set by default to your name. You can change the value by selecting another name in the list.
+The default rule on the Measurement Taken By field specifies that the list is restricted, meaning that you cannot type your own value in the list. If the default rule has been modified to make the list unrestricted, you will be able to type a value in this field, and save it with the Thickness Measurement.
+The Human Resource records used to populate this field are filtered based on the user's applied sites. If the Human Resource record is not associated with a specific user, the record is included by default. 
+
+Measurement Taken Date 
+Date
+Specifies the date that the measurement value was recorded.
+
+This may be the date that the Thickness Measurement was created, or it may be a different date, particularly if the Thickness Measurement was created some time after the measurement was physically recorded.
+
+Measurement Value 
+Number
+Specifies the value, in inches, for a given thickness measurement. 
+
+The Measurement Value represents the thickness of the asset or component at the TML on the Measurement Taken Date.
+The Measurement Value can be a reading that was taken physically or that was recorded based on a design code or specification. This field is populated automatically with the value in the Uncorrected Measurement field.
+
+Measurement Verified 
+Character
+Specifies whether the Measurement Value has been manually verified. 
+
+This field is populated with a list of System Codes in the MI_YES System Code Table.
+After the value in the Verify Measurement field has been set to Yes, this field should be set to Yes to indicate that the measurement data in question has been validated and corrected if needed.
+
+Nominal 
+Boolean
+Indicates whether the measurement was taken physically (the check box is not selected) or recorded from another source, such as a published design specification (the check box is selected).
+
+All Nominal Thickness Measurements will be set automatically to Inactive after two subsequent Actual Thickness Measurements have been created. Thickness Measurements that are marked as Inactive will not be used for performing TML Corrosion Analysis calculations. This means that after two or more Actual Thickness Measurements exist, Nominal Thickness Measurements will no longer be used in calculations.
+
+Readings 
+Character
+Specifies values that represent the readings that were collected for a given thickness measurement. 
+ 
+
+The number of values that can be recorded in the Readings field corresponds to the value in the Number of Readings field in the Thickness Measurement Location to which the Thickness Measurement is linked.
+The Readings field provides access to an editable grid that contains one row per reading value that can be entered.
+After values have been entered in the Readings field in a given Thickness Measurement, the value in the Uncorrected Measurement field in that same measurement is calculated based on the Application Settings that have been defined for measurement readings. 
+
+Readings Pass/Fail 
+Character
+Specifies a value that indicates whether the values in the Readings field passed or failed evaluation based on the Reading Tolerance setting.
+
+This field is populated with a list of System Codes in the MI_PASS_FAIL_ONLY System Code Table.
+
+Status Changed Date 
+Date
+Specifies the date that the value in the Status Indicator field was last changed.
+
+This field is updated automatically whenever the value in the Status Indicator field changes. 
+
+Temperature 
+Number
+Specifies the temperature at which the measurement value was recorded.
+
+This is an optional field that, by default, stores the value entered by the user. This field is provided so that custom rules can be developed, if desired, to allow for a calculation that will adjust the measurement value based upon the temperature at which the reading was taken. 
+
+Uncorrected Measurement 
+Number
+Specifies a value that is the result of the calculation that was performed against values in the Readings field.
+
+The Uncorrected Measurement field is meant to serve as an intermediate storage location between the Readings and Measurement Value fields. If needed, you can create custom rules for the Measurement Value field so that the Uncorrected Measurement value is adjusted based on additional factors and the result of that calculation becomes the value in the Measurement Value field. 
+
+Verify Measurement 
+Character
+Specifies a value that indicates whether the value in the Measurement Value field requires manual verification based on the Allowable Measurement Variance and/or Corrosion Rate Variance validation.
+
+This field is populated with a list of System Codes in the MI_YES_NO System Code Table.
+
+
+Thickness Monitoring Rules Lookup 
+FieldData TypeDescriptionBehavior and UsageAsset TypeCharacterSpecifies the following asset type associated with a TML:PipingPressure VesselTankThis value is User defined. You should select appropriate values from the picklist.Code YearCharacterSpecifies the year in which the Design Code was defined or updated. The Code Year field is populated with a list of years that exist in Thickness Monitoring Rules Lookup records and correspond to the value in the Design Code field in the TML.This value is User defined. You should select appropriate values from the picklist.Component TypeCharacterSpecifies the Component type.This value is User defined. You should select appropriate values from the picklist.Design CodeCharacterSpecifies a design code associated with the TML that is used for calculating T-Min and allowable stress.This value is User defined. You should select appropriate values from the picklist.Formula ClassificationCharacterSpecifies the formulas associated with the each asset type.This value is User defined. You should select appropriate values from the picklist.Formula RuleCharacterThis field stores the formula location for Calculating the T-Min.This value is User defined. Users shall select the more options button and then select a project and method from the catalog.MAWP Formula RuleCharacterThis field stores the formula location for Calculating MAWP.This value is User defined. Users shall select the more options button and then select a project and method from the catalog.T-Min Formula PolicyCharacterThis field stores the Policy ID.A picklist will be displayed with all the policies.
+TML Position, Pipe Rotation Event, and Position Rotation Revision
+The following tables provide a list of various fields that are defined for the TML Position, Pipe Rotation Event, and Position Rotation Revision families in the baseline GE Digital APM database. These families are specific to piping assets and are necessary for Piping Rotation and Flip. Depending on how your system has been configured, additional fields may be available in the families, and some fields may not behave exactly as described in the table.
+Note:  Although the fields are listed in alphabetical order in the tables, they will appear in a different order in the application. This list is not comprehensive. Baseline fields that are not displayed in the application are omitted. Certain datasheets may be divided into sections. 
+This family is enabled for site filtering, which means that records in this family can be assigned to a specific site, and will only be accessible to users who are assigned to the same site and have the appropriate license and family privileges. For more information, refer to the Sites section of the documentation.
+TML Position
+For each TML linked to a band, a TML Position is created. TML Positions contain read-only fields that store position information for each TML. The following table provides an alphabetical list of the fields that are visible on the TML Position datasheet.
+
+FieldData TypeDescriptionBehavior and UsagePosition IDNumericStores the position of the TML in a band.
+This field is always disabled.
+This field is populated automatically during the creation of the TML in a band.
+Top CenterBooleanIndicates if the TML is at the top center position.
+This field is always disabled.
+This field is assigned automatically during the creation of the TML in a band.
+
+
+Pipe Rotation Event
+
+
+FieldData TypeDescriptionBehavior and UsageComponent ID CharacterStores the component ID of the piping component.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+Move Type CharacterIdentifies the type of movement (that is Rotate or Flip).
+This field is always disabled.
+This field is automatically populated during a rotation or flip. This field is populated by the MI_PIPE_MOVE_TYPES System Code Table.
+Moved By CharacterStores the Security User key of the user that performed the rotation or flip.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+Movement Date Date Stores the date of the rotation or flip.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+Rate Method CharacterStores the Rate Method specified when performing a rotation or flip.The value in this field must be selected when performing a rotation or flip.Remaining Life AfterNumericStores the remaining life of the component after the rotation or flip.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+Remaining Life BeforeNumericStores the remaining life of the component before the rotation or flip. This is calculated with reference to the date on which the movement is performed.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+Retirement Date After Date Stores the retirement date of the component after the rotation or flip.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+Retirement Date Before Date Stores the retirement date of the component before the rotation or flip.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+RevertedBooleanIndicates whether or not the Piping Rotation Event has been reverted as a result of the undo movement operation.
+This field is always disabled.
+This field is automatically populated when an undo movement operation is performed.
+Rotation Sequence Number NumericStores the sequence number of the movement.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+Scenario ID CharacterStores the Scenario ID for a What If scenario.The value in this field must be entered when a What If scenario is created.Top Center Moved To NumericStores the Position ID of the position that the top center was moved to.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+What If MethodCharacterStores the method used to generate the What If scenario.
+This field is always disabled.
+This field is populated automatically when a What If scenario is created. This field is populated by the MI_PIPE_WHAT_IF_TYPES System Code Table.
+
+
+Position Rotation Revision
+When a piping component is rotated or flipped, a Position Rotation Revision is created for each TML. Fields in the Position Rotation Revision are read-only and are updated during a rotation or flip. The following table provides an alphabetical list of the fields that are visible on the Position Rotation Revision datasheet. 
+
+FieldData TypeDescriptionBehavior and UsageCorrosion Rate Numeric Stores the Controlling Corrosion Rate of the TML that occupied the position before the rotation or flip.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+Piping Band ID CharacterSpecifies a unique ID for the band.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+Position ID NumericStores the position of the TML in a band.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+Previous Band CharacterStores the band ID of the band previously occupied by the TML.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+Remaining Life AfterNumericStores the remaining life of the TML that occupies the position after the rotation or flip.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+Remaining Life BeforeNumericStores the remaining life of the TML that occupied the position before the rotation or flip. This is calculated with reference to the date on which the movement is performed.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+Retirement Date AfterDate Stores the retirement date of the TML that occupies the position after the rotation or flip.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+Retirement Date BeforeDate Stores the retirement date of the TML that occupied the position before the rotation or flip.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+Revision Sequence NumericStores the sequence of the position revision.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+TML AfterCharacterStores the ID of the TML that occupies the position after the rotation or flip.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+TML BeforeCharacterStores the ID of the TML that occupied the position before the rotation or flip.
+This field is always disabled.
+This field is automatically populated during a rotation or flip.
+
+
+Datalogger History
+Datalogger History contains various fields that store the history of data sent to and received from the Olympus 38DL Plus Ultrasonic Thickness Gage datalogger device. The following table provides an alphabetical list of the fields that are visible in the Datalogger History datasheet.
+FieldData TypeDescriptionBehavior and Usage Device TypeCharacterStores the device type of the datalogger device the file was sent to.This field is populated automatically with the value representing the datalogger device the file was sent to. This field is populated by the M655 System Code Table.File NameCharacterStores the file name of the file sent to the datalogger device.This field is populated automatically with the file name of the file sent to the datalogger device. Receive DateDateStores the date when the files were received from the datalogger device.This field is populated automatically with the date on which data was received from the datalogger device.Send DateDateStores the date when the files were sent to the datalogger device.This field is populated automatically with the date on which data was sent to the datalogger device.StatusCharacterStores the current status of the datalogger file (that is Sent, Received).This field is populated automatically by the MI_DLG_HIST_STATUSES System Code Table.TML JSONTextStores the JSON object representing the collection of TMLs for a given file in the order that they were sent to or received from a datalogger device.This field is populated automatically when files are sent to or received from a datalogger device.
+
+
+
+
+
+On this pageThickness Monitoring Analyses, Corrosion Analysis Settings, and TasksTML Groups, TMLs, and MeasurementsThickness Monitoring Rules Lookup TML Position, Pipe Rotation Event, and Position Rotation RevisionDatalogger History
+
+
+
+
+
+
+
+
+
